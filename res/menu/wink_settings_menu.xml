@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <item glass:id="@id/wink_setup" glass:name="@string/wink_menu_setup" glass:image="@drawable/ic_wink_for_photo_on_big" />
+    <item glass:id="@id/wink_turn_off" glass:name="@string/wink_menu_turn_off" glass:image="@drawable/ic_power_medium" />
+    <item glass:id="@id/wink_help" glass:name="@string/wink_menu_help" glass:image="@drawable/ic_help_medium" />
+</menu>

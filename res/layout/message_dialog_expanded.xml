@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ms_dialog" android:padding="30.0px" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:gravity="center" android:id="@id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" style="@style/MediumOverlayText" />
+    <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:gravity="center" android:id="@id/secondary_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" style="@style/SmallOverlayText" />
+</LinearLayout>

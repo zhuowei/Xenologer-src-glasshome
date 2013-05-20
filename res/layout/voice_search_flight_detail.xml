@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="@dimen/main_content_height" android:stretchColumns="1">
+        <TableRow android:paddingBottom="8.0px">
+            <com.google.glass.widget.TypophileTextView android:id="@id/airport" android:layout_width="fill_parent" android:layout_height="100.0px" android:layout_marginTop="-16.0px" style="@style/ExtraLargeOverlayText" />
+        </TableRow>
+        <View android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <TableRow android:paddingTop="4.0px" android:layout_width="fill_parent" android:layout_height="40.0px">
+            <com.google.glass.widget.TypophileTextView android:id="@id/timeLabel" style="@style/SmallOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:text="@string/voice_search_flight_terminal" style="@style/SmallOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:text="@string/voice_search_flight_gate" style="@style/SmallOverlayText" />
+        </TableRow>
+        <TableRow android:layout_width="fill_parent" android:layout_height="100.0px">
+            <com.google.glass.widget.TypophileTextView android:id="@id/time" android:paddingRight="40.0px" style="@style/LargeOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/terminal" style="@style/LargeOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/gate" style="@style/LargeOverlayText" />
+        </TableRow>
+    </TableLayout>
+    <include layout="@layout/right_footer_single_line_text" />
+</FrameLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="dynamic_text_sizes">
+        <item>70.0px</item>
+        <item>50.0px</item>
+        <item>40.0px</item>
+        <item>34.0px</item>
+        <item>32.0px</item>
+        <item>30.0px</item>
+    </array>
+    <string-array name="voice_search_flight_status_summary">
+        <item>@string/voice_search_flight_status_unknown</item>
+        <item>@string/voice_search_flight_status_scheduled</item>
+        <item>@string/voice_search_flight_status_on_time</item>
+        <item>@string/voice_search_flight_status_landed</item>
+        <item>@string/voice_search_flight_status_delayed</item>
+        <item>@string/voice_search_flight_status_cancelled</item>
+        <item>@string/voice_search_flight_status_diverted</item>
+        <item>@string/voice_search_flight_status_redirected</item>
+        <item>@string/voice_search_flight_status_not_operational</item>
+    </string-array>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" style="@style/AdjustedCardFooter"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <com.google.glass.widget.DynamicSizeTextView android:id="@id/text" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/OverlayText" />
+    <include layout="@layout/timeline_item_footer" />
+</LinearLayout>

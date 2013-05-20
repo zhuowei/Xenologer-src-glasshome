@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/don_doff_settings_card" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+        <ImageView android:id="@id/don_doff_main_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_on_head_on_160" />
+    </LinearLayout>
+    <RelativeLayout style="@style/GenericCardRhs">
+        <com.google.glass.widget.TypophileTextView android:id="@id/don_doff_enable_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/don_doff_enable_title" style="@style/MediumOverlayText" />
+        <com.google.glass.widget.TypophileTextView android:id="@id/don_doff_enable_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/don_doff_enable_title" style="@style/MediumOverlayText" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:src="@drawable/ic_reset_medium" />
+        <com.google.glass.widget.TypophileTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deviceinfo_reset_confirm" style="@style/LargeOverlayText" />
+    </LinearLayout>
+    <com.google.glass.widget.TypophileTextView android:id="@id/secondary_label" android:paddingBottom="@dimen/rhs_vertical_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deviceinfo_reset_confirm_tip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="@style/SmallOverlayText" />
+</RelativeLayout>

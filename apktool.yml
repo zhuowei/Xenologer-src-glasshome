@@ -1,0 +1,12 @@
+version: 1.5.2
+apkFileName: GlassHome.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '15'
+packageInfo:
+  cur_package: com.google.glass.home
+  orig_package: com.google.glass.home
+compressionType: false

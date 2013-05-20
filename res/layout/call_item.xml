@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/background_dark_gray" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="top|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0px" android:src="@drawable/ic_anon_big" />
+    <ImageView android:id="@id/phone_call_caller_profile_picture" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/overlay_medium" />
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:paddingBottom="30.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0px" android:layout_marginRight="20.0px">
+        <ImageView android:id="@id/phone_call_current_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:src="@drawable/ic_phone_in_medium" />
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/phone_call_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/phone_call_calling" android:maxLines="1" android:singleLine="true" style="@style/LargeOverlayText" />
+    </LinearLayout>
+</FrameLayout>

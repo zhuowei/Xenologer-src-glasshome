@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/wink_setup_card" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+        <ImageView android:id="@id/wink_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_wink_for_photo_on_big" />
+    </LinearLayout>
+    <RelativeLayout style="@style/GenericCardRhs">
+        <com.google.glass.widget.TypophileTextView android:id="@id/wink_card_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wink_card_title" style="@style/MediumOverlayText" />
+        <com.google.glass.widget.TypophileTextView android:id="@id/wink_enable_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/wink_card_title" style="@style/MediumOverlayText" />
+    </RelativeLayout>
+</LinearLayout>

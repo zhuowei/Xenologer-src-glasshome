@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" style="@style/AdjustedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.google.glass.widget.DynamicSizeTextView android:id="@id/snippet" android:layout_width="fill_parent" android:layout_height="@dimen/main_content_height" style="@style/LargeOverlayText" />
+    <com.google.glass.widget.TypophileTextView android:layout_gravity="bottom" android:id="@id/domain" android:layout_width="fill_parent" android:layout_height="@dimen/footer_height" style="@style/SmallOverlayText" />
+</LinearLayout>

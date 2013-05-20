@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <state-item glass:id="@id/head_wake_enable_menu_item">
+        <state glass:id="@id/head_wake_turn_on_state" glass:name="@string/head_wake_menu_turn_on" glass:image="@drawable/ic_power_medium" />
+        <state glass:id="@id/head_wake_turn_off_state" glass:name="@string/head_wake_menu_turn_off" glass:image="@drawable/ic_power_medium" />
+    </state-item>
+    <item glass:id="@id/head_wake_set_trigger_angle" glass:name="@string/head_wake_menu_set_trigger_angle" glass:image="@drawable/ic_head_wake_set_trigger_angle" />
+</menu>

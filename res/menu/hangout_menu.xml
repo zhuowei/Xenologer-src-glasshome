@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <item glass:id="@id/hangout_menu_resume" glass:name="@string/hangout_menu_resume" glass:image="@drawable/ic_hangout_medium" />
+    <item glass:id="@id/hangout_menu_exit" glass:name="@string/hangout_menu_leave" glass:image="@drawable/ic_hangout_medium" />
+</menu>

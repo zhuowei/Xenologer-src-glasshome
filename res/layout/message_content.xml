@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@color/background_black_semitransparent" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/error_icon" android:paddingTop="20.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_warning_large" android:scaleType="center" />
+    <com.google.glass.widget.TypophileTextView android:id="@id/error_message" android:paddingTop="20.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-5.0px" style="@style/ErrorDialogText" />
+    <com.google.glass.widget.TypophileTextView android:id="@id/error_sub_message" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-5.0px" style="@style/ErrorDialogSubText" />
+</LinearLayout>

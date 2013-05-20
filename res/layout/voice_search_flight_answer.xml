@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent">
+        <com.google.glass.widget.TypophileTextView android:gravity="center_horizontal" android:id="@id/from_airport" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-16.0px" style="@style/ExtraLargeOverlayText" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="80.0px">
+            <ImageView android:gravity="center" android:layout_gravity="center" android:id="@id/airplane" android:layout_width="48.0px" android:layout_height="48.0px" android:src="@drawable/ic_flight_on_time" />
+            <com.google.glass.widget.TypophileTextView android:gravity="center" android:layout_gravity="center" android:id="@id/stop" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SmallOverlayText" />
+        </LinearLayout>
+        <com.google.glass.widget.TypophileTextView android:gravity="center_horizontal" android:id="@id/to_airport" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-12.0px" style="@style/ExtraLargeOverlayText" />
+    </LinearLayout>
+    <include layout="@layout/vertical_divider" />
+    <FrameLayout android:layout_width="wrap_content" style="@style/GenericCardInnerRhs">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="@dimen/main_content_height">
+            <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/airline" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/MediumOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/flight" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/MediumOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/departure_time" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/MediumOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/flight_status" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/MediumOverlayText" />
+        </LinearLayout>
+        <include layout="@layout/right_footer_single_line_text" />
+    </FrameLayout>
+</LinearLayout>

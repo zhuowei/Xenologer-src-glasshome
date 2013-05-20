@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@color/background_dark_gray" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center" android:id="@id/sender_picture_placeholder" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-25.0px" android:src="@drawable/ic_anon_big" />
+        <ImageView android:id="@id/sender_picture" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/overlay_small" android:scaleType="centerCrop" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0px" android:layout_marginTop="40.0px" android:layout_marginRight="40.0px" android:layout_marginBottom="24.0px">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/sender_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/phone_call_unknown_caller" android:maxLines="2" style="@style/MediumOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="@style/MediumOverlayText" />
+        </LinearLayout>
+        <include layout="@layout/timeline_item_footer" />
+    </LinearLayout>
+</LinearLayout>

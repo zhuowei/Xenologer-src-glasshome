@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@*android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextureView android:id="@id/barcode_viewfinder" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.0" />
+    <LinearLayout android:id="@id/barcode_shade" android:background="@*android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:alpha="0.5" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/settings_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/timeline_lhs" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+            <ImageView android:id="@id/wifi_signal_strength" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_wifi4_big" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/wifi_security" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" style="@style/TimelineLhsTextLabel" />
+        </LinearLayout>
+        <RelativeLayout android:id="@id/timeline_rhs" style="@style/GenericCardRhs">
+            <com.google.glass.widget.TypophileTextView android:id="@id/wifi_network_name" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/wifi_connection_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/wifi_network_name" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/wifi_data_state" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wifi_no_data" android:layout_below="@id/wifi_connection_state" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/wifi_other_networks" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/SettingsFooterText" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

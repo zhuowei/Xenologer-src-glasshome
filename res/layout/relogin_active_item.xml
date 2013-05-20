@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@color/background_black_semitransparent" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:paddingTop="20.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_warning_large" android:scaleType="center" />
+    <com.google.glass.widget.TypophileTextView android:paddingTop="20.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-5.0px" android:text="@string/relogin_password_incorrect" style="@style/ErrorDialogText" />
+    <com.google.glass.widget.TypophileTextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-5.0px" android:text="@string/relogin_tap_to_update" style="@style/ErrorDialogSubText" />
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <state-item glass:id="@id/guest_mode_menu_item">
+        <state glass:id="@id/guest_mode_start_state" glass:name="@string/guest_settings_turn_on" glass:image="@drawable/ic_power_medium" />
+        <state glass:id="@id/guest_mode_disable_state" glass:name="@string/guest_settings_turn_off" glass:image="@drawable/ic_power_medium" />
+    </state-item>
+</menu>

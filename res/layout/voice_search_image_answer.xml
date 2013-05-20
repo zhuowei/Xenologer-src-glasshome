@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center" android:id="@id/image" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:layout_gravity="bottom|left|center" android:id="@id/attribution" android:paddingLeft="@dimen/footer_text_horizontal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/SmallOverlayText" />
+</FrameLayout>

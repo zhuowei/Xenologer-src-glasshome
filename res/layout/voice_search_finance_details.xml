@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TableRow>
+            <com.google.glass.widget.TypophileTextView android:id="@id/openLabel" android:layout_width="@dimen/half_width" style="@style/FitSixLinesOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/open" style="@style/FitSixLinesOverlayText" />
+        </TableRow>
+        <TableRow>
+            <com.google.glass.widget.TypophileTextView android:id="@id/highLabel" android:layout_width="@dimen/half_width" style="@style/FitSixLinesOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/high" style="@style/FitSixLinesOverlayText" />
+        </TableRow>
+        <TableRow>
+            <com.google.glass.widget.TypophileTextView android:id="@id/lowLabel" android:layout_width="@dimen/half_width" style="@style/FitSixLinesOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/low" style="@style/FitSixLinesOverlayText" />
+        </TableRow>
+        <TableRow>
+            <com.google.glass.widget.TypophileTextView android:id="@id/volumeLabel" android:layout_width="@dimen/half_width" style="@style/FitSixLinesOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/volume" style="@style/FitSixLinesOverlayText" />
+        </TableRow>
+        <TableRow>
+            <com.google.glass.widget.TypophileTextView android:id="@id/avgVolumeLabel" android:layout_width="@dimen/half_width" style="@style/FitSixLinesOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/avgVolume" style="@style/FitSixLinesOverlayText" />
+        </TableRow>
+        <TableRow>
+            <com.google.glass.widget.TypophileTextView android:id="@id/marketCapLabel" android:layout_width="@dimen/half_width" style="@style/FitSixLinesOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/marketCap" style="@style/FitSixLinesOverlayText" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

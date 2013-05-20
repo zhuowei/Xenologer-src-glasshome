@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/map" style="@style/GenericCard" />
+    <LinearLayout android:id="@id/query_overlay" android:background="@color/background_black_search_cover_transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:id="@id/query_cover" android:background="@drawable/overlay_small" android:visibility="gone" style="@style/PaddedCard">
+        <com.google.glass.widget.DynamicSizeTextView android:ellipsize="end" android:layout_gravity="top|left|center" android:id="@id/recognition_result" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/LargeOverlayText" />
+    </LinearLayout>
+</FrameLayout>

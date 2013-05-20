@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/GenericCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/map" android:src="@drawable/voice_search_local_placeholder" style="@style/GenericCardLhsImage" />
+    <LinearLayout android:orientation="vertical" style="@style/AdjustedCardFooterRhs">
+        <com.google.glass.widget.DynamicSizeTextView android:ellipsize="end" android:id="@id/details" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxLines="6" style="@style/MediumOverlayText" />
+    </LinearLayout>
+</LinearLayout>

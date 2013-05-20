@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:versionCode="1001" android:versionName="1.001" package="com.google.glass.home"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <permission android:name="com.google.glass.home.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <permission android:name="com.google.glass.home.permission.COMPANION_MESSAGING" android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_COMPONENT_ENABLED_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_FRAME_BUFFER" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SET_TIME_ZONE" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.glass.home.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.glass.deviceadmin.REMOTE_WIPE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <application android:theme="@style/GlassTheme" android:label="@string/glass_home" android:icon="@drawable/ic_launcher" android:name="HomeApplication" android:largeHeap="true">
+        <uses-library android:name="com.google.android.glass" android:required="true" />
+        <receiver android:name="com.google.glass.companion.DebugConnectivityChecker" />
+        <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.google.glass.home" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ReloginReceiver">
+            <intent-filter>
+                <action android:name="com.google.glass.action.RELOGIN_REQUIRED" />
+                <action android:name="com.google.glass.action.RELOGIN_HIDE" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GCMIntentService" />
+        <activity android:theme="@style/GlassTheme.Translucent" android:name="com.google.glass.share.ShareActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="content" android:host="com.google.glass.timeline" android:pathPrefix="/items/*" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".settings.SettingsTimelineActivity" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.google.glass.action.ACTION_GO_TO_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.Translucent" android:name=".settings.WifiSettingsMenuActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Translucent" android:name=".settings.HeadWakeAngleChooserActivity" android:launchMode="singleTask" />
+        <activity android:name=".settings.DonDoffCalibrationActivity" android:launchMode="singleTask" />
+        <activity android:name=".settings.DebugActivity" android:launchMode="singleTask" />
+        <activity android:name=".settings.ViewLicensesActivity" />
+        <activity android:name=".settings.FactoryResetActivity" />
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.TouchMainMenuActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.VoiceMainMenuActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".voice.VoiceMessageActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_SEND_VOICE_MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".search.VoiceSearchActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".voice.GlasswareVoiceInputActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".search.VoiceNavigationActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".search.VoiceSearchResultsActivity" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_VIEW_VOICE_SEARCH_RESULT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".search.VoiceSearchResultsDebugActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.MainTimeline" android:name=".timeline.MainTimelineActivity" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".timeline.BundleTimelineActivity" android:launchMode="standard">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_GO_TO_BUNDLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.Translucent" android:name=".ConfirmationActivity" />
+        <activity android:name=".ErrorActivity" />
+        <activity android:name=".FullScreenMessagingDialogActivity" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.google.glass.action.MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.google.glass.camera.SharedCameraService" />
+        <service android:name="com.google.glass.voice.VoiceService" />
+        <service android:name=".sync.TimelineSyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/timeline_sync_adapter" />
+        </service>
+        <service android:name=".sync.EntitySyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/entity_sync_adapter" />
+        </service>
+        <service android:name=".sync.LocationSyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/location_sync_adapter" />
+        </service>
+        <service android:name=".sync.SavedAudioSyncService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/saved_audio_sync_adapter" />
+        </service>
+        <service android:name=".timeline.TimelineNotificationService" />
+        <service android:name=".companion.CompanionService" android:permission="com.google.glass.home.permission.COMPANION_MESSAGING" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.glass.companion.MESSENGER" />
+            </intent-filter>
+        </service>
+        <service android:name="com.google.glass.location.GpsBackgroundService" />
+        <service android:name="com.google.glass.location.LocationService" android:permission="android.permission.ACCESS_FINE_LOCATION" android:exported="true" />
+        <service android:name="com.google.glass.location.LocationReportingService" />
+        <service android:name="com.google.glass.ongoing.OngoingActivityService" android:exported="true" />
+        <service android:name=".ScreenOffService" android:exported="false" />
+        <provider android:name="com.google.glass.timeline.TimelineProvider" android:authorities="com.google.glass.timeline" />
+        <provider android:name="com.google.glass.entity.EntityProvider" android:authorities="com.google.glass.entity" />
+        <provider android:name="com.google.glass.location.LocationContentProviderStub" android:authorities="com.google.glass.location" />
+        <provider android:name="com.google.glass.logging.audio.SavedAudioContentProviderStub" android:authorities="com.google.glass.savedaudio" />
+        <receiver android:name=".voice.MicrophoneMuteReceiver">
+            <intent-filter>
+                <action android:name="com.google.glass.action.TOGGLE_MICROPHONE_MUTE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".DonStateReceiver">
+            <intent-filter>
+                <action android:name="com.google.glass.action.DON_STATE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".HeadGestureSettingsReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".BugReportReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BUG_REPORT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".camera.QrReceiver">
+            <intent-filter>
+                <action android:name="com.google.glass.action.PROCESS_BARCODE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".EyeGestureReceiver">
+            <intent-filter>
+                <action android:name="com.google.glass.action.EYE_GESTURE" />
+                <action android:name="com.google.glass.action.HANGOUT_STATUS" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".LongTapReceiver">
+            <intent-filter android:priority="0">
+                <action android:name="com.google.glass.action.LONG_TAP" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".ShutdownReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".settings.OtaUpdateReceiver">
+            <intent-filter>
+                <action android:name="android.server.checkin.CHECKIN" />
+                <action android:name="com.google.glass.action.CHECKIN_SUCCESSFUL" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.glass.home">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/settings_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/timeline_lhs" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+            <com.google.glass.home.settings.BatteryStateImageView android:id="@id/battery_state_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_battery_discharging_smaller_0_big" />
+            <ImageView android:id="@id/data_connection_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_data_off_big" />
+        </LinearLayout>
+        <RelativeLayout android:orientation="vertical" style="@style/GenericCardRhs">
+            <com.google.glass.widget.TypophileTextView android:id="@id/setting_title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/battery_state_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_cover_battery_state_unknown" android:singleLine="true" android:layout_below="@id/setting_title_text" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/data_connection_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings_cover_connection_no_data" android:singleLine="true" android:layout_below="@id/battery_state_text" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/extra_info" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/SettingsFooterText" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ImageView android:layout_gravity="top|right|center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bundle_corner" />
+</FrameLayout>

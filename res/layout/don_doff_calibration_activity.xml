@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:id="@id/don_doff_calibration_card" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <VideoView android:id="@id/don_doff_background_video_view" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/overlay" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/overlay_medium" />
+    <com.google.glass.widget.TipsView android:id="@id/don_doff_calibration_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/generic_card_padding" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" glass:tip="@string/don_doff_calibration_instruction" style="@style/TipsViewText" />
+</RelativeLayout>

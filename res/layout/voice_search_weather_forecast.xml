@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/column1" layout="@layout/voice_search_weather_forecast_column" />
+    <include layout="@layout/vertical_divider" />
+    <include android:id="@id/column2" layout="@layout/voice_search_weather_forecast_column" />
+    <include layout="@layout/vertical_divider" />
+    <include android:id="@id/column3" layout="@layout/voice_search_weather_forecast_column" />
+</LinearLayout>

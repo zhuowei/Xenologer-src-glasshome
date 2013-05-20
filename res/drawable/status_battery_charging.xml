@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim0" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim15" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim28" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim43" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim57" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim71" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim85" />
+    <item android:duration="500" android:drawable="@drawable/status_battery_charge_anim100" />
+</animation-list>

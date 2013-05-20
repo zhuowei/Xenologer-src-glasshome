@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/body" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.google.glass.widget.MosaicView android:id="@id/participants" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" />
+        <LinearLayout android:orientation="vertical" style="@style/AdjustedCardFooterRhs">
+            <com.google.glass.widget.DynamicSizeTextView android:id="@id/message" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" style="@style/OverlayText" />
+            <include layout="@layout/timeline_item_footer" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/failed_overlay" android:padding="30.0px" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_warning_large" />
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/timeline_overlay_failed_to_send_message" android:maxLines="2" style="@style/MediumOverlayText" />
+    </LinearLayout>
+</FrameLayout>

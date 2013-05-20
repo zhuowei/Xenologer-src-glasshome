@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <item glass:id="@id/wifi_menu_switch" glass:name="@string/wifi_menu_switch" glass:image="@drawable/ic_wifi_medium" />
+    <item glass:id="@id/wifi_menu_join" glass:name="@string/wifi_menu_join" glass:image="@drawable/ic_wifi_medium" />
+    <item glass:id="@id/wifi_menu_forget_network" glass:name="@string/wifi_menu_forget" glass:image="@drawable/ic_delete_medium" />
+</menu>

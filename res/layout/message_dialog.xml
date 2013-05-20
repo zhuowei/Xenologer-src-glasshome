@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/ms_dialog" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="70.0px" android:layout_marginRight="10.0px" android:adjustViewBounds="true" android:maxWidth="124.0px" android:minWidth="70.0px" />
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" style="@style/LargeOverlayText" />
+    </LinearLayout>
+    <com.google.glass.widget.SliderView android:id="@id/slider" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+</RelativeLayout>

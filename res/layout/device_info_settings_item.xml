@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/settings_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:id="@id/timeline_lhs" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_glass_big" />
+        </LinearLayout>
+        <RelativeLayout style="@style/GenericCardRhs">
+            <com.google.glass.widget.TypophileTextView android:id="@id/header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/deviceinfo_title" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/update_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/header" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/storage_state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/update_state" style="@style/SettingsHeaderText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/serial" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" style="@style/SettingsFooterText" />
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

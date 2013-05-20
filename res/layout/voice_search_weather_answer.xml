@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/PaddedCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="top|center" android:orientation="vertical" style="@style/GenericCardInnerLhs">
+            <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:id="@id/current_weather_icon" android:layout_width="@dimen/voice_search_weather_icon_size" android:layout_height="@dimen/voice_search_weather_icon_size" android:minHeight="@dimen/voice_search_weather_icon_size" android:layout_centerVertical="true" />
+                <com.google.glass.widget.TypophileTextView android:id="@id/temperature_high" android:paddingLeft="@dimen/between_icon_text_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/current_weather_icon" style="@style/MediumOverlayText" />
+                <com.google.glass.widget.TypophileTextView android:id="@id/temperature_low" android:paddingLeft="@dimen/between_icon_text_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/current_weather_icon" android:layout_below="@id/temperature_high" style="@style/MediumOverlayGrayText" />
+            </RelativeLayout>
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="60.0px">
+                <ImageView android:id="@id/chance_of_precipitation_icon" android:layout_width="@dimen/voice_search_weather_icon_size" android:layout_height="@dimen/voice_search_weather_icon_size" android:src="@drawable/chance_of_precipitation" android:minHeight="@dimen/voice_search_weather_icon_size" android:layout_centerVertical="true" />
+                <com.google.glass.widget.TypophileTextView android:id="@id/chance_of_precipitation" android:paddingLeft="@dimen/between_icon_text_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/MediumOverlayText" />
+            </LinearLayout>
+        </LinearLayout>
+        <include layout="@layout/vertical_divider" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" style="@style/GenericCardInnerRhs">
+            <com.google.glass.widget.DynamicSizeTextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/location_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="@style/MediumOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/temperature" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-32.0px" style="@style/CurrentTemperatureText" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

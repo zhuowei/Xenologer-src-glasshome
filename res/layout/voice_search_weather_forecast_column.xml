@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="@dimen/one_third_width" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/main_content_height">
+        <ImageView android:id="@id/current_weather_icon" android:layout_width="@dimen/voice_search_weather_icon_size" android:layout_height="@dimen/voice_search_weather_icon_size" android:minHeight="@dimen/voice_search_weather_icon_size" />
+        <com.google.glass.widget.TypophileTextView android:id="@id/temperature_high" android:paddingTop="@dimen/between_icon_text_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/MediumOverlayText" />
+        <com.google.glass.widget.TypophileTextView android:id="@id/temperature_low" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/MediumOverlayGrayText" />
+    </LinearLayout>
+    <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:gravity="bottom|center" android:layout_gravity="bottom" android:id="@id/label" android:layout_width="fill_parent" android:layout_height="@dimen/footer_height" android:singleLine="true" style="@style/SmallOverlayText" />
+</FrameLayout>

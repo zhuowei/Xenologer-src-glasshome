@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/head_wake_angle_chooser_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:keepScreenOn="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+        <com.google.glass.home.settings.HeadWakePosableHeadViewGroup android:id="@id/head_wake_angle_chooser_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </LinearLayout>
+    <RelativeLayout style="@style/GenericCardRhs">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.google.glass.widget.TypophileTextView android:id="@id/head_wake_angle_label_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/head_wake_angle_label" style="@style/MediumOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/head_wake_angle_chooser_angle_text" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/AngleText" />
+        </LinearLayout>
+        <com.google.glass.widget.TypophileTextView android:id="@id/head_wake_angle_chooser_instructions_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/head_wake_angle_chooser_instructions" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="@style/SettingsFooterText" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout style="@style/AdjustedCardFooter"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/main_content_height">
+        <com.google.glass.widget.DynamicSizeTextView android:ellipsize="end" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="@style/MediumOverlayText" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.glass.widget.TypophileTextView android:textSize="104.0px" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/price" android:paddingRight="24.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/OverlayText" />
+            <com.google.glass.widget.DynamicSizeTextView android:gravity="right|center" android:layout_gravity="right|center" android:id="@id/change" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="2" style="@style/MediumOverlayText" />
+        </LinearLayout>
+    </LinearLayout>
+    <include android:id="@id/status" layout="@layout/right_footer_single_line_text" />
+</FrameLayout>

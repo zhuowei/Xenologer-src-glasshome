@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/head_wake_settings_card" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res/com.google.glass.home">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="@dimen/lhs_width" android:layout_height="fill_parent" style="@style/TimelineLhs">
+        <com.google.glass.home.settings.BatteryStateImageView android:id="@id/battery_state_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_battery_discharging_smaller_0_big" />
+    </LinearLayout>
+    <RelativeLayout style="@style/GenericCardRhs">
+        <com.google.glass.widget.TypophileTextView android:id="@id/battery_settings_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/battery" style="@style/SettingsHeaderText" />
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/battery_state_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/battery_charge_unknown" android:singleLine="true" android:layout_below="@id/battery_settings_header" style="@style/SettingsHeaderText" />
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/battery_state_duration_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/battery_duration_unknown" android:singleLine="true" android:layout_below="@id/battery_state_text" style="@style/SettingsHeaderText" />
+        <com.google.glass.widget.TypophileTextView android:id="@id/battery_state_connect_charger_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/battery_connect_charger" android:layout_below="@id/battery_state_duration_text" android:layout_alignParentBottom="true" style="@style/SettingsFooterText" />
+    </RelativeLayout>
+</LinearLayout>

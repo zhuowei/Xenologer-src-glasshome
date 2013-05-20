@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/GenericCard"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/left_image_frame" layout="@layout/generic_lhs_image_with_attribution" />
+    <FrameLayout android:id="@id/right_text_frame" style="@style/AdjustedCardFooterRhs">
+        <com.google.glass.widget.DynamicSizeTextView android:id="@id/answer" android:layout_width="fill_parent" android:layout_height="@dimen/main_content_height" style="@style/LargeOverlayText" />
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:gravity="bottom" android:layout_gravity="bottom" android:id="@id/answer_attribution" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="@style/SmallOverlayText" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('file:///system/glass_fonts/Roboto-Light.ttf');
+}
+
+body {
+ font-family: 'Roboto';
+ font-size: 26px;
+ background-color: black;
+ color: white;
+}
+
+.label {
+ font-family: 'Roboto';
+ font-size: 26px;
+}
+
+.file-list {
+ font-family: 'Roboto';
+ font-size: 26px;
+}
+
+.license-text {
+ font-family: 'Roboto';
+ font-size: 26px;
+ white-space: pre-line;
+}
