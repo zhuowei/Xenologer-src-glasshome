@@ -34,7 +34,7 @@
     <uses-permission android:name="com.google.glass.deviceadmin.REMOTE_WIPE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <application android:theme="@style/GlassTheme" android:label="@string/glass_home" android:icon="@drawable/ic_launcher" android:name="HomeApplication" android:largeHeap="true">
-        <uses-library android:name="com.google.android.glass" android:required="true" />
+
         <receiver android:name="com.google.glass.companion.DebugConnectivityChecker" />
         <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
