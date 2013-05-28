@@ -96,20 +96,22 @@ public final class BitArray
 
   public int getNextSet(int paramInt)
   {
-    int k;
+    int k = 0;
     if (paramInt >= this.size)
       k = this.size;
     do
     {
-      return k;
       int i = paramInt >> 5;
+      int holder = 0;
+
       for (int j = this.bits[i] & (0xFFFFFFFF ^ -1 + (1 << (paramInt & 0x1F))); j == 0; j = this.bits[i])
       {
         i++;
+          holder = j;
         if (i == this.bits.length)
           return this.size;
       }
-      k = (i << 5) + Integer.numberOfTrailingZeros(j);
+      k = (i << 5) + Integer.numberOfTrailingZeros(holder);
     }
     while (k <= this.size);
     return this.size;
@@ -117,20 +119,21 @@ public final class BitArray
 
   public int getNextUnset(int paramInt)
   {
-    int k;
+    int k = 0;
     if (paramInt >= this.size)
       k = this.size;
     do
     {
-      return k;
+       int holder = 0;
       int i = paramInt >> 5;
       for (int j = (0xFFFFFFFF ^ this.bits[i]) & (0xFFFFFFFF ^ -1 + (1 << (paramInt & 0x1F))); j == 0; j = 0xFFFFFFFF ^ this.bits[i])
       {
         i++;
+          holder = j;
         if (i == this.bits.length)
           return this.size;
       }
-      k = (i << 5) + Integer.numberOfTrailingZeros(j);
+      k = (i << 5) + Integer.numberOfTrailingZeros(holder);
     }
     while (k <= this.size);
     return this.size;
@@ -153,46 +156,50 @@ public final class BitArray
     if (paramInt2 == paramInt1);
     while (true)
     {
-      return true;
+
       int i = paramInt2 - 1;
       int j = paramInt1 >> 5;
       int k = i >> 5;
-      label156: label162: for (int m = j; m <= k; m++)
+      int holder = 0;
+      for (int m = j; m <= k; m++){
+           holder = m;
+      return true;}
       {
-        int n;
-        int i1;
-        label68: int i2;
-        label83: int i4;
-        if (m > j)
+        int n = 0;
+        int i1 = 0;
+        int i2 = 0;
+        int i4 = 0;
+        if (holder > j)
         {
           n = 0;
-          if (m >= k)
-            break label117;
+          if (holder >= k)
+            break;
           i1 = 31;
           if ((n != 0) || (i1 != 31))
-            break label127;
+            break;
           i2 = -1;
-          i4 = i2 & this.bits[m];
+          i4 = i2 & this.bits[holder];
           if (!paramBoolean)
-            break label156;
+            break;
         }
         while (true)
         {
           if (i4 == i2)
-            break label162;
-          return false;
+            break;
+          else {
+
           n = paramInt1 & 0x1F;
-          break;
-          label117: i1 = i & 0x1F;
-          break label68;
-          label127: i2 = 0;
+
+          i1 = i & 0x1F;
+          i2 = 0;
           for (int i3 = n; i3 <= i1; i3++)
             i2 |= 1 << i3;
-          break label83;
           i2 = 0;
+        }
         }
       }
     }
+    return true;
   }
 
   public void reverse()
@@ -230,19 +237,16 @@ public final class BitArray
     int j = paramInt1 >> 5;
     int k = i >> 5;
     int m = j;
-    label37: int n;
-    label54: int i1;
-    label65: int i2;
+    int n = 0;
+    int i1 = 0;
+    int i2 = 0;
     if (m <= k)
     {
       if (m <= j)
-        break label105;
       n = 0;
       if (m >= k)
-        break label114;
       i1 = 31;
       if ((n != 0) || (i1 != 31))
-        break label123;
       i2 = -1;
     }
     while (true)
@@ -250,12 +254,9 @@ public final class BitArray
       int[] arrayOfInt = this.bits;
       arrayOfInt[m] = (i2 | arrayOfInt[m]);
       m++;
-      break label37;
-      break;
+
       label105: n = paramInt1 & 0x1F;
-      break label54;
       label114: i1 = i & 0x1F;
-      break label65;
       label123: i2 = 0;
       for (int i3 = n; i3 <= i1; i3++)
         i2 |= 1 << i3;
