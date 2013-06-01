@@ -220,56 +220,10 @@
     .locals 6
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 93
-    iget-object v2, p0, Lcom/google/glass/util/InetConnectionState;->connectivityManager:Landroid/net/ConnectivityManager;
-
-    invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
-
-    move-result-object v2
-
-    if-nez v2, :cond_1
-
-    .line 102
-    :cond_0
-    :goto_0
-    return v1
-
-    .line 97
-    :cond_1
-    iget-object v2, p0, Lcom/google/glass/util/InetConnectionState;->context:Landroid/content/Context;
-
-    const/4 v3, 0x0
-
-    new-instance v4, Landroid/content/IntentFilter;
-
-    sget-object v5, Lcom/google/glass/util/InetConnectionState;->INET_CONDITION_ACTION:Ljava/lang/String;
-
-    invoke-direct {v4, v5}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    .line 98
-    .local v0, intent:Landroid/content/Intent;
-    if-eqz v0, :cond_0
-
-    .line 102
-    sget-object v2, Lcom/google/glass/util/InetConnectionState;->EXTRA_INET_CONDITION:Ljava/lang/String;
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v2
-
-    const/16 v3, 0x32
-
-    if-le v2, v3, :cond_0
-
     const/4 v1, 0x1
 
-    goto :goto_0
+    return v1
+
 .end method
 
 .method public removeListener(Lcom/google/glass/util/InetConnectionState$Listener;)V
