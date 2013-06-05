@@ -58,21 +58,7 @@
 
     .line 294
     :cond_0
-    invoke-static {}, Lcom/google/glass/util/BuildHelper;->isUser()Z
 
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 295
-    invoke-virtual {p0}, Lcom/google/glass/util/Labs$Feature;->getDefaultValue()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    .line 299
-    :cond_1
     invoke-virtual {p0}, Lcom/google/glass/util/Labs$Feature;->getPropertyKey()Ljava/lang/String;
 
     move-result-object v0
