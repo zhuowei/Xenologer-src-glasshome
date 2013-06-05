@@ -124,15 +124,6 @@
     .line 30
     invoke-virtual {p0}, Lcom/google/glass/util/PowerHelper;->dontStayAwake()V
 
-    .line 31
-    iget-object v0, p0, Lcom/google/glass/util/PowerHelper;->powerManager:Landroid/os/PowerManager;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v1
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/PowerManager;->goToSleep(J)V
-
     .line 32
     return-void
 .end method
