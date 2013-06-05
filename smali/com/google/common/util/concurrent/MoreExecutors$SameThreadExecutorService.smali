@@ -31,17 +31,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 228
+    .line 266
     invoke-direct {p0}, Lcom/google/common/util/concurrent/AbstractListeningExecutorService;-><init>()V
 
-    .line 234
+    .line 271
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
-    .line 237
+    .line 274
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->newCondition()Ljava/util/concurrent/locks/Condition;
@@ -50,10 +50,10 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->termination:Ljava/util/concurrent/locks/Condition;
 
-    .line 246
+    .line 283
     iput v1, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->runningTasks:I
 
-    .line 247
+    .line 284
     iput-boolean v1, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->shutdown:Z
 
     return-void
@@ -64,7 +64,7 @@
     .parameter "x0"
 
     .prologue
-    .line 228
+    .line 266
     invoke-direct {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;-><init>()V
 
     return-void
@@ -74,12 +74,12 @@
     .locals 2
 
     .prologue
-    .line 339
+    .line 370
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 341
+    .line 372
     :try_start_0
     iget v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->runningTasks:I
 
@@ -87,30 +87,30 @@
 
     iput v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->runningTasks:I
 
-    .line 342
+    .line 373
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->isTerminated()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 343
+    .line 374
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->termination:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signalAll()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 346
+    .line 377
     :cond_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 348
+    .line 379
     return-void
 
-    .line 346
+    .line 377
     :catchall_0
     move-exception v0
 
@@ -125,12 +125,12 @@
     .locals 2
 
     .prologue
-    .line 324
+    .line 355
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 326
+    .line 357
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->isShutdown()Z
 
@@ -138,7 +138,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 327
+    .line 358
     new-instance v0, Ljava/util/concurrent/RejectedExecutionException;
 
     const-string v1, "Executor already shutdown"
@@ -149,7 +149,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 331
+    .line 362
     :catchall_0
     move-exception v0
 
@@ -159,7 +159,7 @@
 
     throw v0
 
-    .line 329
+    .line 360
     :cond_0
     :try_start_1
     iget v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->runningTasks:I
@@ -170,12 +170,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 331
+    .line 362
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 333
+    .line 364
     return-void
 .end method
 
@@ -192,18 +192,18 @@
     .end annotation
 
     .prologue
-    .line 299
+    .line 330
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
     move-result-wide v0
 
-    .line 300
+    .line 331
     .local v0, nanos:J
     iget-object v2, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 303
+    .line 334
     :goto_0
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->isTerminated()Z
@@ -214,10 +214,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 304
+    .line 335
     const/4 v2, 0x1
 
-    .line 312
+    .line 343
     iget-object v3, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v3}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -225,7 +225,7 @@
     :goto_1
     return v2
 
-    .line 305
+    .line 336
     :cond_0
     const-wide/16 v2, 0x0
 
@@ -233,17 +233,17 @@
 
     if-gtz v2, :cond_1
 
-    .line 306
+    .line 337
     const/4 v2, 0x0
 
-    .line 312
+    .line 343
     iget-object v3, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v3}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
     goto :goto_1
 
-    .line 308
+    .line 339
     :cond_1
     :try_start_1
     iget-object v2, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->termination:Ljava/util/concurrent/locks/Condition;
@@ -256,7 +256,7 @@
 
     goto :goto_0
 
-    .line 312
+    .line 343
     :catchall_0
     move-exception v2
 
@@ -272,22 +272,22 @@
     .parameter "command"
 
     .prologue
-    .line 251
+    .line 287
     invoke-direct {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->startTask()V
 
-    .line 253
+    .line 289
     :try_start_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 255
+    .line 291
     invoke-direct {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->endTask()V
 
-    .line 257
+    .line 293
     return-void
 
-    .line 255
+    .line 291
     :catchall_0
     move-exception v0
 
@@ -300,18 +300,18 @@
     .locals 2
 
     .prologue
-    .line 261
+    .line 296
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 263
+    .line 298
     :try_start_0
     iget-boolean v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->shutdown:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 265
+    .line 300
     iget-object v1, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v1}, Ljava/util/concurrent/locks/Lock;->unlock()V
@@ -332,12 +332,12 @@
     .locals 2
 
     .prologue
-    .line 288
+    .line 321
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 290
+    .line 323
     :try_start_0
     iget-boolean v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->shutdown:Z
 
@@ -351,7 +351,7 @@
 
     const/4 v0, 0x1
 
-    .line 292
+    .line 325
     :goto_0
     iget-object v1, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
@@ -359,13 +359,13 @@
 
     return v0
 
-    .line 290
+    .line 323
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 292
+    .line 325
     :catchall_0
     move-exception v0
 
@@ -380,12 +380,12 @@
     .locals 2
 
     .prologue
-    .line 271
+    .line 305
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
 
-    .line 273
+    .line 307
     const/4 v0, 0x1
 
     :try_start_0
@@ -393,15 +393,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 275
+    .line 309
     iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->lock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 277
+    .line 311
     return-void
 
-    .line 275
+    .line 309
     :catchall_0
     move-exception v0
 
@@ -425,10 +425,10 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 316
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/MoreExecutors$SameThreadExecutorService;->shutdown()V
 
-    .line 283
+    .line 317
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0

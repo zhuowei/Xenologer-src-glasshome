@@ -7,6 +7,9 @@
 .annotation build Lcom/google/common/annotations/Beta;
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # instance fields
 .field private left:J
@@ -21,18 +24,18 @@
     .parameter "limit"
 
     .prologue
-    .line 45
+    .line 48
     invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 36
+    .line 39
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/google/common/io/LimitInputStream;->mark:J
 
-    .line 46
+    .line 49
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 47
+    .line 50
     const-wide/16 v0, 0x0
 
     cmp-long v0, p2, v0
@@ -46,13 +49,13 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 48
+    .line 51
     iput-wide p2, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
-    .line 49
+    .line 52
     return-void
 
-    .line 47
+    .line 50
     :cond_0
     const/4 v0, 0x0
 
@@ -70,7 +73,7 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 56
     iget-object v0, p0, Lcom/google/common/io/LimitInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->available()I
@@ -95,7 +98,7 @@
     .parameter "readlimit"
 
     .prologue
-    .line 56
+    .line 61
     monitor-enter p0
 
     :try_start_0
@@ -103,19 +106,19 @@
 
     invoke-virtual {v0, p1}, Ljava/io/InputStream;->mark(I)V
 
-    .line 57
+    .line 62
     iget-wide v0, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
     iput-wide v0, p0, Lcom/google/common/io/LimitInputStream;->mark:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 59
+    .line 64
     monitor-exit p0
 
     return-void
 
-    .line 56
+    .line 61
     :catchall_0
     move-exception v0
 
@@ -135,7 +138,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 62
+    .line 68
     iget-wide v2, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
     const-wide/16 v4, 0x0
@@ -146,12 +149,12 @@
 
     move v0, v1
 
-    .line 70
+    .line 76
     :cond_0
     :goto_0
     return v0
 
-    .line 66
+    .line 72
     :cond_1
     iget-object v2, p0, Lcom/google/common/io/LimitInputStream;->in:Ljava/io/InputStream;
 
@@ -159,11 +162,11 @@
 
     move-result v0
 
-    .line 67
+    .line 73
     .local v0, result:I
     if-eq v0, v1, :cond_0
 
-    .line 68
+    .line 74
     iget-wide v1, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
     const-wide/16 v3, 0x1
@@ -189,7 +192,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 74
+    .line 81
     iget-wide v2, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
     const-wide/16 v4, 0x0
@@ -200,12 +203,12 @@
 
     move v0, v1
 
-    .line 83
+    .line 90
     :cond_0
     :goto_0
     return v0
 
-    .line 78
+    .line 85
     :cond_1
     int-to-long v2, p3
 
@@ -217,18 +220,18 @@
 
     long-to-int p3, v2
 
-    .line 79
+    .line 86
     iget-object v2, p0, Lcom/google/common/io/LimitInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v2, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v0
 
-    .line 80
+    .line 87
     .local v0, result:I
     if-eq v0, v1, :cond_0
 
-    .line 81
+    .line 88
     iget-wide v1, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
     int-to-long v3, v0
@@ -249,7 +252,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 95
     monitor-enter p0
 
     :try_start_0
@@ -261,7 +264,7 @@
 
     if-nez v0, :cond_0
 
-    .line 88
+    .line 96
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Mark not supported"
@@ -272,7 +275,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 87
+    .line 95
     :catchall_0
     move-exception v0
 
@@ -280,7 +283,7 @@
 
     throw v0
 
-    .line 90
+    .line 98
     :cond_0
     :try_start_1
     iget-wide v0, p0, Lcom/google/common/io/LimitInputStream;->mark:J
@@ -291,7 +294,7 @@
 
     if-nez v0, :cond_1
 
-    .line 91
+    .line 99
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Mark not set"
@@ -300,20 +303,20 @@
 
     throw v0
 
-    .line 94
+    .line 102
     :cond_1
     iget-object v0, p0, Lcom/google/common/io/LimitInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
 
-    .line 95
+    .line 103
     iget-wide v0, p0, Lcom/google/common/io/LimitInputStream;->mark:J
 
     iput-wide v0, p0, Lcom/google/common/io/LimitInputStream;->left:J
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 96
+    .line 104
     monitor-exit p0
 
     return-void
@@ -329,21 +332,21 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 108
     iget-wide v2, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
     invoke-static {p1, p2, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p1
 
-    .line 100
+    .line 109
     iget-object v2, p0, Lcom/google/common/io/LimitInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v2, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
     move-result-wide v0
 
-    .line 101
+    .line 110
     .local v0, skipped:J
     iget-wide v2, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
@@ -351,6 +354,6 @@
 
     iput-wide v2, p0, Lcom/google/common/io/LimitInputStream;->left:J
 
-    .line 102
+    .line 111
     return-wide v0
 .end method

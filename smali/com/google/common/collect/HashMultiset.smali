@@ -33,7 +33,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 71
     .local p0, this:Lcom/google/common/collect/HashMultiset;,"Lcom/google/common/collect/HashMultiset<TE;>;"
     new-instance v0, Ljava/util/HashMap;
 
@@ -41,7 +41,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;-><init>(Ljava/util/Map;)V
 
-    .line 73
+    .line 72
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .parameter "distinctElements"
 
     .prologue
-    .line 76
+    .line 75
     .local p0, this:Lcom/google/common/collect/HashMultiset;,"Lcom/google/common/collect/HashMultiset<TE;>;"
     invoke-static {p1}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
@@ -58,7 +58,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;-><init>(Ljava/util/Map;)V
 
-    .line 77
+    .line 76
     return-void
 .end method
 
@@ -131,11 +131,11 @@
 
     move-result-object v0
 
-    .line 67
+    .line 66
     .local v0, multiset:Lcom/google/common/collect/HashMultiset;,"Lcom/google/common/collect/HashMultiset<TE;>;"
     invoke-static {v0, p0}, Lcom/google/common/collect/Iterables;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    .line 68
+    .line 67
     return-object v0
 .end method
 
@@ -154,16 +154,16 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 90
     .local p0, this:Lcom/google/common/collect/HashMultiset;,"Lcom/google/common/collect/HashMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 93
+    .line 91
     invoke-static {p1}, Lcom/google/common/collect/Serialization;->readCount(Ljava/io/ObjectInputStream;)I
 
     move-result v0
 
-    .line 94
+    .line 92
     .local v0, distinctElements:I
     invoke-static {v0}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
@@ -171,10 +171,10 @@
 
     invoke-virtual {p0, v1}, Lcom/google/common/collect/HashMultiset;->setBackingMap(Ljava/util/Map;)V
 
-    .line 96
+    .line 93
     invoke-static {p0, p1, v0}, Lcom/google/common/collect/Serialization;->populateMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectInputStream;I)V
 
-    .line 97
+    .line 94
     return-void
 .end method
 
@@ -192,14 +192,14 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 84
     .local p0, this:Lcom/google/common/collect/HashMultiset;,"Lcom/google/common/collect/HashMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 86
+    .line 85
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->writeMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectOutputStream;)V
 
-    .line 87
+    .line 86
     return-void
 .end method
 

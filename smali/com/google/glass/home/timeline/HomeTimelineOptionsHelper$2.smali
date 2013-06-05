@@ -53,10 +53,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
     .line 76
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
@@ -66,15 +66,30 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->val$timelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    iget-object v1, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
-    invoke-static {v0, v1}, Lcom/google/glass/home/companion/CompanionHelper;->sendTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
+    #getter for: Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
+    invoke-static {v1}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->access$000(Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;)Lcom/google/glass/app/GlassActivity;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->val$timelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+
+    invoke-static {v0, v1, v2}, Lcom/google/glass/companion/CompanionUtils;->sendTimelineItem(Landroid/content/Context;Lcom/google/glass/companion/RemoteCompanionProxy;Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 77
+    .line 78
     invoke-static {}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -83,7 +98,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 78
+    .line 79
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
@@ -99,23 +114,30 @@
 
     sget-object v2, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->SYNC_FAILED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/google/glass/home/companion/CompanionHelper;->updateCompanionSyncStatus(Landroid/content/Context;Ljava/lang/String;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;Z)V
+    iget-object v3, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
-    .line 80
+    #getter for: Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
+    invoke-static {v3}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->access$200(Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;)Lcom/google/glass/timeline/TimelineHelper;
+
+    move-result-object v3
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/glass/companion/CompanionUtils;->updateCompanionSyncStatus(Landroid/content/Context;Ljava/lang/String;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;Lcom/google/glass/timeline/TimelineHelper;Z)V
+
+    .line 82
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->val$sent:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v0, v4}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 87
+    .line 90
     :goto_0
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->val$dialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->autoHide()V
 
-    .line 88
+    .line 91
     return-void
 
-    .line 82
+    .line 84
     :cond_0
     invoke-static {}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->access$100()Ljava/lang/String;
 
@@ -125,7 +147,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
+    .line 85
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
@@ -141,9 +163,16 @@
 
     sget-object v2, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    invoke-static {v0, v1, v2, v3}, Lcom/google/glass/home/companion/CompanionHelper;->updateCompanionSyncStatus(Landroid/content/Context;Ljava/lang/String;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;Z)V
+    iget-object v3, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
-    .line 85
+    #getter for: Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
+    invoke-static {v3}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->access$200(Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;)Lcom/google/glass/timeline/TimelineHelper;
+
+    move-result-object v3
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/glass/companion/CompanionUtils;->updateCompanionSyncStatus(Landroid/content/Context;Ljava/lang/String;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;Lcom/google/glass/timeline/TimelineHelper;Z)V
+
+    .line 88
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$2;->val$sent:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x1

@@ -2,6 +2,9 @@
 .super Lcom/google/glass/app/GlassApplication;
 .source "LoggingApplication.java"
 
+# interfaces
+.implements Lcom/google/glass/companion/CompanionStateChangeListener;
+
 
 # static fields
 .field private static final CACHED_FILES_DIRECTORY:Ljava/lang/String; = null
@@ -10,9 +13,13 @@
 
 .field private static final MAX_SIZE_SDCARD_FILES:J = 0x40000000L
 
+.field private static final TAG:Ljava/lang/String;
+
 
 # instance fields
-.field private companionMessenger:Lcom/google/glass/util/RemoteMessenger;
+.field private pendingBundle:Landroid/os/Bundle;
+
+.field private proxy:Lcom/google/glass/companion/RemoteCompanionProxy;
 
 
 # direct methods
@@ -20,7 +27,16 @@
     .locals 2
 
     .prologue
-    .line 25
+    .line 23
+    const-class v0, Lcom/google/glass/logging/LoggingApplication;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/glass/logging/LoggingApplication;->TAG:Ljava/lang/String;
+
+    .line 28
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,7 +78,7 @@
     .locals 0
 
     .prologue
-    .line 21
+    .line 22
     invoke-direct {p0}, Lcom/google/glass/app/GlassApplication;-><init>()V
 
     return-void
@@ -73,24 +89,24 @@
     .parameter "context"
 
     .prologue
-    .line 56
+    .line 58
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 57
+    .line 59
     .local v0, applicationContext:Landroid/content/Context;
     instance-of v1, v0, Lcom/google/glass/logging/LoggingApplication;
 
     if-eqz v1, :cond_0
 
-    .line 58
+    .line 60
     check-cast v0, Lcom/google/glass/logging/LoggingApplication;
 
     .end local v0           #applicationContext:Landroid/content/Context;
     return-object v0
 
-    .line 60
+    .line 62
     .restart local v0       #applicationContext:Landroid/content/Context;
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -104,45 +120,93 @@
 
 
 # virtual methods
-.method public getCompanionMessenger()Lcom/google/glass/util/RemoteMessenger;
+.method public onCreate()V
     .locals 1
 
     .prologue
-    .line 72
-    iget-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->companionMessenger:Lcom/google/glass/util/RemoteMessenger;
-
-    return-object v0
-.end method
-
-.method public onCreate()V
-    .locals 3
-
-    .prologue
-    .line 46
+    .line 48
     invoke-super {p0}, Lcom/google/glass/app/GlassApplication;->onCreate()V
 
-    .line 47
-    new-instance v0, Lcom/google/glass/util/RemoteMessenger;
-
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "com.google.glass.companion.MESSENGER"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v0, p0, v1}, Lcom/google/glass/util/RemoteMessenger;-><init>(Landroid/content/Context;Landroid/content/Intent;)V
-
-    iput-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->companionMessenger:Lcom/google/glass/util/RemoteMessenger;
-
     .line 49
+    new-instance v0, Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-direct {v0, p0}, Lcom/google/glass/companion/RemoteCompanionProxy;-><init>(Landroid/app/Application;)V
+
+    iput-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->proxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    .line 50
+    iget-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->proxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-virtual {v0, p0}, Lcom/google/glass/companion/RemoteCompanionProxy;->addListener(Lcom/google/glass/companion/CompanionStateChangeListener;)V
+
+    .line 51
     return-void
+.end method
+
+.method public onStateChange(ZII)V
+    .locals 1
+    .parameter "isConnected"
+    .parameter "remoteVersion"
+    .parameter "localVersion"
+
+    .prologue
+    .line 88
+    if-eqz p1, :cond_0
+
+    .line 89
+    iget-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->pendingBundle:Landroid/os/Bundle;
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/logging/LoggingApplication;->sendBundleToCompanion(Landroid/os/Bundle;)V
+
+    .line 91
+    :cond_0
+    return-void
+.end method
+
+.method public sendBundleToCompanion(Landroid/os/Bundle;)V
+    .locals 1
+    .parameter "bundle"
+
+    .prologue
+    .line 74
+    invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
+
+    .line 75
+    if-nez p1, :cond_0
+
+    .line 84
+    :goto_0
+    return-void
+
+    .line 78
+    :cond_0
+    iget-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->proxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-virtual {v0}, Lcom/google/glass/companion/RemoteCompanionProxy;->isConnected()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 79
+    iget-object v0, p0, Lcom/google/glass/logging/LoggingApplication;->proxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-virtual {v0, p1}, Lcom/google/glass/companion/RemoteCompanionProxy;->sendCompanionMessage(Landroid/os/Bundle;)Z
+
+    goto :goto_0
+
+    .line 82
+    :cond_1
+    iput-object p1, p0, Lcom/google/glass/logging/LoggingApplication;->pendingBundle:Landroid/os/Bundle;
+
+    goto :goto_0
 .end method
 
 .method protected setupCachedFilesManager()V
     .locals 5
 
     .prologue
-    .line 67
+    .line 69
     new-instance v0, Lcom/google/glass/util/CachedFilesManager;
 
     sget-object v1, Lcom/google/glass/logging/LoggingApplication;->CACHED_FILES_DIRECTORY:Ljava/lang/String;
@@ -155,6 +219,6 @@
 
     invoke-static {v0}, Lcom/google/glass/util/CachedFilesManager;->setSharedInstance(Lcom/google/glass/util/CachedFilesManager;)V
 
-    .line 69
+    .line 71
     return-void
 .end method

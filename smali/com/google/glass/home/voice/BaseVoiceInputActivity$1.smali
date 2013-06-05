@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 178
+    .line 198
     iput-object p1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,7 +43,7 @@
 
     const/4 v4, 0x0
 
-    .line 183
+    .line 203
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     invoke-virtual {v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isFinishing()Z
@@ -52,11 +52,11 @@
 
     if-eqz v1, :cond_0
 
-    .line 231
+    .line 257
     :goto_0
     return-void
 
-    .line 187
+    .line 207
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -65,7 +65,7 @@
     #calls: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->updatePowerHelper(I)V
     invoke-static {v1, v2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$000(Lcom/google/glass/home/voice/BaseVoiceInputActivity;I)V
 
-    .line 188
+    .line 208
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget v2, p1, Landroid/os/Message;->what:I
@@ -73,14 +73,14 @@
     #calls: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->updateKeepScreenOn(I)V
     invoke-static {v1, v2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$100(Lcom/google/glass/home/voice/BaseVoiceInputActivity;I)V
 
-    .line 191
+    .line 211
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
     goto :goto_0
 
-    .line 194
+    .line 214
     :pswitch_0
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 197
+    .line 217
     :pswitch_1
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 220
     :pswitch_2
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -107,7 +107,7 @@
 
     goto :goto_0
 
-    .line 203
+    .line 223
     :pswitch_3
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 206
+    .line 226
     :pswitch_4
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 209
+    .line 229
     :pswitch_5
     iget-object v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -138,7 +138,7 @@
 
     goto :goto_0
 
-    .line 212
+    .line 232
     :pswitch_6
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -148,7 +148,7 @@
 
     check-cast v0, [Ljava/lang/Object;
 
-    .line 213
+    .line 233
     .local v0, args:[Ljava/lang/Object;
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 216
+    .line 236
     .end local v0           #args:[Ljava/lang/Object;
     :pswitch_7
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
@@ -176,7 +176,7 @@
 
     check-cast v0, [Ljava/lang/Object;
 
-    .line 217
+    .line 237
     .restart local v0       #args:[Ljava/lang/Object;
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -197,7 +197,7 @@
 
     goto :goto_0
 
-    .line 220
+    .line 240
     .end local v0           #args:[Ljava/lang/Object;
     :pswitch_8
     iget-object v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
@@ -211,25 +211,51 @@
 
     goto :goto_0
 
-    .line 223
+    .line 243
     :pswitch_9
     iget-object v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;
+    check-cast v1, Ljava/lang/String;
 
-    #calls: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnError(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
-    invoke-static {v2, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1100(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
+    #calls: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnHtmlAnswerCardResult(Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1100(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 228
+    .line 246
     :pswitch_a
+    iget-object v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+
+    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;
+
+    #calls: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+    invoke-static {v2, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1200(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+
+    goto/16 :goto_0
+
+    .line 249
+    :pswitch_b
+    iget-object v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+
+    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v1, Lcom/google/glass/voice/network/SpeechException;
+
+    #calls: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnError(Lcom/google/glass/voice/network/SpeechException;)V
+    invoke-static {v2, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1300(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Lcom/google/glass/voice/network/SpeechException;)V
+
+    goto/16 :goto_0
+
+    .line 254
+    :pswitch_c
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     #getter for: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
-    invoke-static {v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1200(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/widget/SliderView;
+    invoke-static {v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1400(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/widget/SliderView;
 
     move-result-object v1
 
@@ -237,7 +263,7 @@
 
     goto/16 :goto_0
 
-    .line 191
+    .line 211
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -249,7 +275,9 @@
         :pswitch_6
         :pswitch_7
         :pswitch_8
-        :pswitch_9
         :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_9
     .end packed-switch
 .end method

@@ -62,15 +62,15 @@
     .end annotation
 
     .prologue
-    .line 365
+    .line 377
     .local p0, this:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<TT;>;"
     .local p1, components:Ljava/util/List;,"Ljava/util/List<+Lcom/google/common/base/Predicate<-TT;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 366
+    .line 378
     iput-object p1, p0, Lcom/google/common/base/Predicates$OrPredicate;->components:Ljava/util/List;
 
-    .line 367
+    .line 379
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "x1"
 
     .prologue
-    .line 362
+    .line 374
     .local p0, this:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$OrPredicate;-><init>(Ljava/util/List;)V
 
@@ -92,6 +92,9 @@
 .method public apply(Ljava/lang/Object;)Z
     .locals 2
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -99,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 370
+    .line 383
     .local p0, this:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<TT;>;"
     .local p1, t:Ljava/lang/Object;,"TT;"
     const/4 v0, 0x0
@@ -114,7 +117,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 371
+    .line 384
     iget-object v1, p0, Lcom/google/common/base/Predicates$OrPredicate;->components:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -129,20 +132,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 372
+    .line 385
     const/4 v1, 0x1
 
-    .line 375
+    .line 388
     :goto_1
     return v1
 
-    .line 370
+    .line 383
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 375
+    .line 388
     :cond_1
     const/4 v1, 0x0
 
@@ -157,7 +160,7 @@
     .end parameter
 
     .prologue
-    .line 382
+    .line 399
     .local p0, this:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<TT;>;"
     instance-of v1, p1, Lcom/google/common/base/Predicates$OrPredicate;
 
@@ -165,10 +168,10 @@
 
     move-object v0, p1
 
-    .line 383
+    .line 400
     check-cast v0, Lcom/google/common/base/Predicates$OrPredicate;
 
-    .line 384
+    .line 401
     .local v0, that:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<*>;"
     iget-object v1, p0, Lcom/google/common/base/Predicates$OrPredicate;->components:Ljava/util/List;
 
@@ -178,7 +181,7 @@
 
     move-result v1
 
-    .line 386
+    .line 403
     .end local v0           #that:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<*>;"
     :goto_0
     return v1
@@ -193,7 +196,7 @@
     .locals 2
 
     .prologue
-    .line 379
+    .line 394
     .local p0, this:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$OrPredicate;->components:Ljava/util/List;
 
@@ -212,7 +215,7 @@
     .locals 3
 
     .prologue
-    .line 389
+    .line 408
     .local p0, this:Lcom/google/common/base/Predicates$OrPredicate;,"Lcom/google/common/base/Predicates$OrPredicate<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

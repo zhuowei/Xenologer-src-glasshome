@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 437
+    .line 443
     invoke-static {}, Lcom/google/protobuf/WireFormat$JavaType;->values()[Lcom/google/protobuf/WireFormat$JavaType;
 
     move-result-object v0

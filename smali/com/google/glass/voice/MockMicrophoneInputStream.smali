@@ -19,6 +19,8 @@
     .end annotation
 .end field
 
+.field private feedingCannedAudio:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -44,17 +46,22 @@
     .parameter "sampleRate"
 
     .prologue
-    .line 21
+    .line 23
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/voice/MicrophoneInputStream;-><init>(Landroid/content/Context;Lcom/google/glass/voice/MicrophoneInputStream$MicrophoneInputStreamListener;I)V
 
     .line 16
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->feedingCannedAudio:Z
+
+    .line 18
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->cannedAudioInputStreamRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    .line 22
+    .line 24
     return-void
 .end method
 
@@ -65,10 +72,10 @@
     .parameter "cannedAudioInputStream"
 
     .prologue
-    .line 74
+    .line 79
     if-nez p1, :cond_0
 
-    .line 75
+    .line 80
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Canned audio input stream cannot be null"
@@ -77,7 +84,7 @@
 
     throw v0
 
-    .line 78
+    .line 83
     :cond_0
     sget-object v0, Lcom/google/glass/voice/MockMicrophoneInputStream;->TAG:Ljava/lang/String;
 
@@ -85,33 +92,52 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
+    .line 84
     iget-object v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->cannedAudioInputStreamRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 80
+    .line 85
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->feedingCannedAudio:Z
+
+    .line 86
     return-void
+.end method
+
+.method public isFeedingCannedAudio()Z
+    .locals 1
+
+    .prologue
+    .line 92
+    iget-boolean v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->feedingCannedAudio:Z
+
+    return v0
 .end method
 
 .method protected isMock()Z
     .locals 1
 
     .prologue
-    .line 84
+    .line 97
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public read([BII)I
-    .locals 6
+    .locals 8
     .parameter "b"
     .parameter "offset"
     .parameter "length"
 
     .prologue
-    .line 38
+    const/4 v7, 0x0
+
+    const/4 v6, 0x0
+
+    .line 40
     iget-object v4, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->cannedAudioInputStreamRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -120,31 +146,31 @@
 
     check-cast v0, Ljava/io/InputStream;
 
-    .line 39
+    .line 41
     .local v0, cannedAudioInputStream:Ljava/io/InputStream;
     if-eqz v0, :cond_1
 
-    .line 41
+    .line 43
     :try_start_0
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
     move-result v3
 
-    .line 42
+    .line 44
     .local v3, readReturn:I
     const/4 v4, -0x1
 
     if-eq v3, v4, :cond_0
 
-    .line 43
+    .line 45
     invoke-virtual {p0, p1, p2, v3}, Lcom/google/glass/voice/MockMicrophoneInputStream;->onRawBytesRead([BII)V
 
-    .line 63
+    .line 68
     .end local v3           #readReturn:I
     :goto_0
     return v3
 
-    .line 46
+    .line 48
     .restart local v3       #readReturn:I
     :cond_0
     sget-object v4, Lcom/google/glass/voice/MockMicrophoneInputStream;->TAG:Ljava/lang/String;
@@ -153,19 +179,24 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
+    .line 49
     invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
-    .line 50
+    .line 52
     iget-object v4, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->cannedAudioInputStreamRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v0, v5}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 53
+    const/4 v4, 0x0
+
+    iput-boolean v4, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->feedingCannedAudio:Z
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 57
+    .line 62
     .end local v3           #readReturn:I
     :cond_1
     :goto_1
@@ -177,22 +208,20 @@
 
     if-ge v2, v4, :cond_2
 
-    .line 58
-    const/4 v4, 0x0
+    .line 63
+    aput-byte v6, p1, v2
 
-    aput-byte v4, p1, v2
-
-    .line 57
+    .line 62
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 
-    .line 52
+    .line 55
     .end local v2           #i:I
     :catch_0
     move-exception v1
 
-    .line 53
+    .line 56
     .local v1, e:Ljava/io/IOException;
     sget-object v4, Lcom/google/glass/voice/MockMicrophoneInputStream;->TAG:Ljava/lang/String;
 
@@ -200,9 +229,17 @@
 
     invoke-static {v4, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 57
+    iget-object v4, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->cannedAudioInputStreamRef:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v4, v0, v7}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 58
+    iput-boolean v6, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->feedingCannedAudio:Z
+
     goto :goto_1
 
-    .line 61
+    .line 66
     .end local v1           #e:Ljava/io/IOException;
     .restart local v2       #i:I
     :cond_2
@@ -210,7 +247,7 @@
 
     move v3, p3
 
-    .line 63
+    .line 68
     goto :goto_0
 .end method
 
@@ -218,19 +255,19 @@
     .locals 2
 
     .prologue
-    .line 26
+    .line 28
     sget-object v0, Lcom/google/glass/voice/MockMicrophoneInputStream;->TAG:Ljava/lang/String;
 
     const-string v1, "starting listening"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 27
+    .line 29
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->listening:Z
 
-    .line 28
+    .line 30
     return-void
 .end method
 
@@ -238,18 +275,18 @@
     .locals 2
 
     .prologue
-    .line 32
+    .line 34
     sget-object v0, Lcom/google/glass/voice/MockMicrophoneInputStream;->TAG:Ljava/lang/String;
 
     const-string v1, "stopping listening"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 33
+    .line 35
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/voice/MockMicrophoneInputStream;->listening:Z
 
-    .line 34
+    .line 36
     return-void
 .end method

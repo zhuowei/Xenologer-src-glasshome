@@ -66,9 +66,7 @@
 
     .line 154
     .local v0, e:Ljava/lang/RuntimeException;
-    invoke-static {}, Lcom/google/common/util/concurrent/ExecutionList;->access$000()Ljava/util/logging/Logger;
-
-    move-result-object v1
+    sget-object v1, Lcom/google/common/util/concurrent/ExecutionList;->log:Ljava/util/logging/Logger;
 
     sget-object v2, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
 

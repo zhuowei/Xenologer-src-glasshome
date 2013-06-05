@@ -36,14 +36,14 @@
     .parameter
 
     .prologue
-    .line 73
+    .line 74
     iput-object p1, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->this$0:Lcom/google/glass/voice/network/SpeechLibFactoryImpl;
 
     iput-object p2, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->val$engineParams:Lcom/google/android/speech/params/RecognitionEngineParams;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 74
+    .line 75
     const-class v0, Lcom/google/android/speech/RecognitionEngineStore;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -52,14 +52,14 @@
 
     iput-object v0, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->TAG:Ljava/lang/String;
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->createEmbeddedEngine()Lcom/google/android/speech/engine/RecognitionEngine;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->embeddedEngine:Lcom/google/android/speech/engine/RecognitionEngine;
 
-    .line 77
+    .line 78
     invoke-direct {p0}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->createNetworkEngine()Lcom/google/android/speech/engine/RecognitionEngine;
 
     move-result-object v0
@@ -73,14 +73,14 @@
     .locals 10
 
     .prologue
-    .line 120
+    .line 121
     iget-object v0, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->val$engineParams:Lcom/google/android/speech/params/RecognitionEngineParams;
 
     invoke-virtual {v0}, Lcom/google/android/speech/params/RecognitionEngineParams;->getEmbeddedParams()Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
 
     move-result-object v9
 
-    .line 121
+    .line 122
     .local v9, params:Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
     new-instance v0, Lcom/google/android/speech/embedded/Greco3RecognitionEngine;
 
@@ -125,14 +125,14 @@
     .locals 8
 
     .prologue
-    .line 148
+    .line 149
     iget-object v0, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->val$engineParams:Lcom/google/android/speech/params/RecognitionEngineParams;
 
     invoke-virtual {v0}, Lcom/google/android/speech/params/RecognitionEngineParams;->getNetworkParams()Lcom/google/android/speech/params/RecognitionEngineParams$NetworkParams;
 
     move-result-object v7
 
-    .line 149
+    .line 150
     .local v7, params:Lcom/google/android/speech/params/RecognitionEngineParams$NetworkParams;
     iget-object v0, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->this$0:Lcom/google/glass/voice/network/SpeechLibFactoryImpl;
 
@@ -140,7 +140,7 @@
 
     move-result-object v6
 
-    .line 150
+    .line 151
     .local v6, speechLibLogger:Lcom/google/android/speech/logger/SpeechLibLogger;
     new-instance v5, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;
 
@@ -154,7 +154,7 @@
 
     invoke-direct {v5, v0, v1, v6}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;-><init>(Ljava/util/concurrent/ExecutorService;Lcom/google/android/speech/params/NetworkRequestProducerParams;Lcom/google/android/speech/logger/SpeechLibLogger;)V
 
-    .line 153
+    .line 154
     .local v5, factory:Lcom/google/android/speech/network/producers/RequestProducerFactory;
     new-instance v0, Lcom/google/android/speech/engine/NetworkRecognitionEngine;
 
@@ -202,7 +202,7 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 82
     .local p1, engineIndices:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -212,7 +212,7 @@
 
     move-result-object v0
 
-    .line 83
+    .line 84
     .local v0, engines:Ljava/util/List;,"Ljava/util/List<Landroid/util/Pair<Ljava/lang/Integer;Lcom/google/android/speech/engine/RecognitionEngine;>;>;"
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -236,11 +236,11 @@
 
     move-result v2
 
-    .line 84
+    .line 85
     .local v2, index:I
     packed-switch v2, :pswitch_data_0
 
-    .line 100
+    .line 101
     iget-object v3, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->TAG:Ljava/lang/String;
 
     const-string v4, "Unknown engine index"
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 86
+    .line 87
     :pswitch_0
     iget-object v3, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->TAG:Ljava/lang/String;
 
@@ -257,7 +257,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
+    .line 88
     const/4 v3, 0x1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -290,7 +290,7 @@
 
     goto :goto_0
 
-    .line 93
+    .line 94
     :pswitch_1
     iget-object v3, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;->TAG:Ljava/lang/String;
 
@@ -298,7 +298,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
+    .line 95
     const/4 v3, 0x2
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -331,12 +331,12 @@
 
     goto :goto_0
 
-    .line 103
+    .line 104
     .end local v2           #index:I
     :cond_0
     return-object v0
 
-    .line 84
+    .line 85
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

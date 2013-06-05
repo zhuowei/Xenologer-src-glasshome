@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 915
+    .line 953
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMapEntry;-><init>()V
@@ -52,7 +52,7 @@
     .end annotation
 
     .prologue
-    .line 917
+    .line 956
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 915
+    .line 953
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$1;->getValue()Ljava/util/Collection;
 
     move-result-object v0
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 921
+    .line 961
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$1;->val$entry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 130
+    .line 131
     iput-object p1, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2$1$1;->this$2:Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "recognizerLog"
 
     .prologue
-    .line 141
+    .line 142
     return-void
 .end method
 
@@ -50,6 +50,6 @@
     .locals 0
 
     .prologue
-    .line 134
+    .line 135
     return-void
 .end method

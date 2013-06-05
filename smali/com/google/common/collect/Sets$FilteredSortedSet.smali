@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/Sets$FilteredSortedSet;
-.super Lcom/google/common/collect/Collections2$FilteredCollection;
+.super Lcom/google/common/collect/Sets$FilteredSet;
 .source "Sets.java"
 
 # interfaces
@@ -21,7 +21,7 @@
         "<E:",
         "Ljava/lang/Object;",
         ">",
-        "Lcom/google/common/collect/Collections2$FilteredCollection",
+        "Lcom/google/common/collect/Sets$FilteredSet",
         "<TE;>;",
         "Ljava/util/SortedSet",
         "<TE;>;"
@@ -45,13 +45,13 @@
     .end annotation
 
     .prologue
-    .line 833
+    .line 905
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     .local p1, unfiltered:Ljava/util/SortedSet;,"Ljava/util/SortedSet<TE;>;"
     .local p2, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TE;>;"
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Collections2$FilteredCollection;-><init>(Ljava/util/Collection;Lcom/google/common/base/Predicate;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Sets$FilteredSet;-><init>(Ljava/util/Set;Lcom/google/common/base/Predicate;)V
 
-    .line 834
+    .line 906
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 846
+    .line 909
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$FilteredSortedSet;->unfiltered:Ljava/util/Collection;
 
@@ -81,23 +81,6 @@
     return-object v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "object"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 837
-    .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
-    invoke-static {p0, p1}, Lcom/google/common/collect/Sets;->equalsImpl(Ljava/util/Set;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public first()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -107,7 +90,7 @@
     .end annotation
 
     .prologue
-    .line 867
+    .line 926
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$FilteredSortedSet;->iterator()Ljava/util/Iterator;
 
@@ -118,19 +101,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    .prologue
-    .line 841
-    .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
-    invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
@@ -145,7 +115,7 @@
     .end annotation
 
     .prologue
-    .line 857
+    .line 918
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     .local p1, toElement:Ljava/lang/Object;,"TE;"
     new-instance v1, Lcom/google/common/collect/Sets$FilteredSortedSet;
@@ -174,20 +144,20 @@
     .end annotation
 
     .prologue
-    .line 872
+    .line 930
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Sets$FilteredSortedSet;->unfiltered:Ljava/util/Collection;
 
     check-cast v1, Ljava/util/SortedSet;
 
-    .line 874
+    .line 932
     .local v1, sortedUnfiltered:Ljava/util/SortedSet;,"Ljava/util/SortedSet<TE;>;"
     :goto_0
     invoke-interface {v1}, Ljava/util/SortedSet;->last()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 875
+    .line 933
     .local v0, element:Ljava/lang/Object;,"TE;"
     iget-object v2, p0, Lcom/google/common/collect/Sets$FilteredSortedSet;->predicate:Lcom/google/common/base/Predicate;
 
@@ -197,16 +167,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 876
+    .line 934
     return-object v0
 
-    .line 878
+    .line 936
     :cond_0
     invoke-interface {v1, v0}, Ljava/util/SortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
 
     move-result-object v1
 
-    .line 879
+    .line 937
     goto :goto_0
 .end method
 
@@ -223,7 +193,7 @@
     .end annotation
 
     .prologue
-    .line 851
+    .line 913
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     .local p2, toElement:Ljava/lang/Object;,"TE;"
@@ -256,7 +226,7 @@
     .end annotation
 
     .prologue
-    .line 862
+    .line 922
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSortedSet;,"Lcom/google/common/collect/Sets$FilteredSortedSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     new-instance v1, Lcom/google/common/collect/Sets$FilteredSortedSet;

@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 154
+    .line 161
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;-><init>(Ljava/lang/String;ILcom/google/common/collect/SortedLists$1;)V
@@ -34,15 +34,8 @@
 .method public resultIndex(I)I
     .locals 0
     .parameter "higherIndex"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Object;",
-            ">(I)I"
-        }
-    .end annotation
 
     .prologue
-    .line 157
+    .line 165
     return p1
 .end method

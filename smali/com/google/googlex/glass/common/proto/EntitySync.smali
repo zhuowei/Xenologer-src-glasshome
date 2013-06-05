@@ -17,12 +17,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
     .line 29
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -38,7 +38,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -51,17 +51,23 @@
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
     new-array v2, v2, [Ljava/lang/String;
 
     const-string v3, "DeviceId"
 
-    aput-object v3, v2, v4
+    aput-object v3, v2, v5
 
     const-string v3, "AllShareTargets"
 
-    aput-object v3, v2, v5
+    aput-object v3, v2, v6
+
+    const/4 v3, 0x2
+
+    const-string v4, "EnabledTargetsOnly"
+
+    aput-object v4, v2, v3
 
     invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
 
@@ -76,7 +82,7 @@
 
     move-result-object v0
 
-    invoke-interface {v0, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -89,11 +95,11 @@
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    new-array v2, v5, [Ljava/lang/String;
+    new-array v2, v6, [Ljava/lang/String;
 
     const-string v3, "Entities"
 
-    aput-object v3, v2, v4
+    aput-object v3, v2, v5
 
     invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
 

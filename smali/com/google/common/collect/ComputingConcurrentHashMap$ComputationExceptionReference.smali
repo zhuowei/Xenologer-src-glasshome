@@ -40,14 +40,14 @@
     .parameter "t"
 
     .prologue
-    .line 213
+    .line 210
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 214
+    .line 211
     iput-object p1, p0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;->t:Ljava/lang/Throwable;
 
-    .line 215
+    .line 212
     return-void
 .end method
 
@@ -65,21 +65,22 @@
     .end annotation
 
     .prologue
-    .line 243
+    .line 234
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     .local p1, newValue:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$ValueReference<TK;TV;>;"
     return-void
 .end method
 
-.method public copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
+.method public copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
     .locals 0
+    .parameter
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/ref/ReferenceQueue",
-            "<TV;>;",
+            "<TV;>;TV;",
             "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry",
             "<TK;TV;>;)",
             "Lcom/google/common/collect/MapMakerInternalMap$ValueReference",
@@ -88,10 +89,11 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 223
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
+    .local p3, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     return-object p0
 .end method
 
@@ -104,7 +106,7 @@
     .end annotation
 
     .prologue
-    .line 219
+    .line 215
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -122,7 +124,7 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 219
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -133,7 +135,7 @@
     .locals 1
 
     .prologue
-    .line 234
+    .line 227
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -155,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 239
+    .line 231
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,"Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference<TK;TV;>;"
     new-instance v0, Ljava/util/concurrent/ExecutionException;
 

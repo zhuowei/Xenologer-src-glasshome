@@ -19,13 +19,13 @@
 
     new-array v1, v2, [Ljava/lang/String;
 
-    const-string v2, "\nBjava/com/google/googlex/glass/common/clientserverproto/admin.proto\u0012\u001agooglex_glass_common_proto\",\n\u0017WipeConfirmationRequest\u0012\u0011\n\tdevice_id\u0018\u0001 \u0001(\t\"\u00af\u0001\n\u0018WipeConfirmationResponse\u0012K\n\u0006status\u0018\u0001 \u0001(\u000e2;.googlex_glass_common_proto.WipeConfirmationResponse.Status\u0012$\n\u0015wipe_external_storage\u0018\u0002 \u0001(\u0008:\u0005false\" \n\u0006Status\u0012\u000b\n\u0007PROCEED\u0010\u0000\u0012\t\n\u0005ABORT\u0010\u0001\"Y\n\u000bPendingWipe\u0012\u0011\n\ttimestamp\u0018\u0001 \u0001(\u0004\u0012\u0011\n\tdevice_id\u0018\u0002 \u0001(\t\u0012$\n\u0015wipe_external_storage\u0018\u0003"
+    const-string v2, "\nBjava/com/google/googlex/glass/common/clientserverproto/admin.proto\u0012\u001agooglex_glass_common_proto\",\n\u0017WipeConfirmationRequest\u0012\u0011\n\tdevice_id\u0018\u0001 \u0001(\t\"\u00af\u0001\n\u0018WipeConfirmationResponse\u0012K\n\u0006status\u0018\u0001 \u0001(\u000e2;.googlex_glass_common_proto.WipeConfirmationResponse.Status\u0012$\n\u0015wipe_external_storage\u0018\u0002 \u0001(\u0008:\u0005false\" \n\u0006Status\u0012\u000b\n\u0007PROCEED\u0010\u0000\u0012\t\n\u0005ABORT\u0010\u0001\"q\n\u000bPendingWipe\u0012\u0011\n\ttimestamp\u0018\u0001 \u0001(\u0004\u0012\u0011\n\tdevice_id\u0018\u0002 \u0001(\t\u0012$\n\u0015wipe_external_storage\u0018\u0003"
 
     aput-object v2, v1, v4
 
     const/4 v2, 0x1
 
-    const-string v3, " \u0001(\u0008:\u0005falseB)\n%com.google.googlex.glass.common.protoP\u0001"
+    const-string v3, " \u0001(\u0008:\u0005false\u0012\u0016\n\u000bretry_count\u0018\u0004 \u0001(\r:\u00010B)\n%com.google.googlex.glass.common.protoP\u0001"
 
     aput-object v3, v1, v2
 

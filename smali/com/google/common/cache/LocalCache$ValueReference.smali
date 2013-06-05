@@ -26,12 +26,20 @@
 
 
 # virtual methods
-.method public abstract copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ValueReference;
+.method public abstract copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ValueReference;
+    .parameter
+    .end parameter
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/ref/ReferenceQueue",
-            "<TV;>;",
+            "<TV;>;TV;",
             "Lcom/google/common/cache/LocalCache$ReferenceEntry",
             "<TK;TV;>;)",
             "Lcom/google/common/cache/LocalCache$ValueReference",

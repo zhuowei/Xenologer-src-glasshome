@@ -1,5 +1,5 @@
 .class public abstract Lcom/google/glass/home/voice/MainMenuActivity;
-.super Lcom/google/glass/app/GlassActivity;
+.super Lcom/google/glass/app/GlassVoiceActivity;
 .source "MainMenuActivity.java"
 
 # interfaces
@@ -11,8 +11,8 @@
     .locals 0
 
     .prologue
-    .line 18
-    invoke-direct {p0}, Lcom/google/glass/app/GlassActivity;-><init>()V
+    .line 20
+    invoke-direct {p0}, Lcom/google/glass/app/GlassVoiceActivity;-><init>()V
 
     return-void
 .end method
@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 33
+    .line 35
     return-object p0
 .end method
 
@@ -40,7 +40,7 @@
     .end annotation
 
     .prologue
-    .line 22
+    .line 24
     invoke-static {p0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->getMainMenuItems(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -52,7 +52,7 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 30
     invoke-virtual {p0}, Lcom/google/glass/home/voice/MainMenuActivity;->getGlassApplication()Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -68,27 +68,43 @@
     return v0
 .end method
 
+.method protected isInGuestMode()Z
+    .locals 1
+
+    .prologue
+    .line 49
+    new-instance v0, Lcom/google/glass/util/SettingsHelper;
+
+    invoke-direct {v0, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
     .locals 1
     .parameter "action"
     .parameter "data"
 
     .prologue
-    .line 61
+    .line 54
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 62
-    invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;)V
+    .line 55
+    invoke-super {p0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 64
+    .line 57
     :cond_0
-    invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+    invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassVoiceActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 65
+    .line 58
     return-void
 .end method
 
@@ -97,51 +113,30 @@
     .parameter "soundId"
 
     .prologue
-    .line 38
+    .line 40
     invoke-virtual {p0}, Lcom/google/glass/home/voice/MainMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 39
+    .line 41
     return-void
 .end method
 
-.method public playSoundForPendingOpenEndedInput(Z)V
-    .locals 3
-    .parameter "spoken"
+.method public playSound(Lcom/google/glass/sound/SoundManager$SoundId;Lcom/google/glass/sound/SoundManager$OnSoundDoneListener;)V
+    .locals 1
+    .parameter "soundId"
+    .parameter "listener"
 
     .prologue
-    .line 47
-    if-nez p1, :cond_0
-
-    .line 48
+    .line 45
     invoke-virtual {p0}, Lcom/google/glass/home/voice/MainMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;Lcom/google/glass/sound/SoundManager$OnSoundDoneListener;)I
 
-    new-instance v2, Lcom/google/glass/home/voice/MainMenuActivity$1;
-
-    invoke-direct {v2, p0}, Lcom/google/glass/home/voice/MainMenuActivity$1;-><init>(Lcom/google/glass/home/voice/MainMenuActivity;)V
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;Lcom/google/glass/sound/SoundManager$OnSoundDoneListener;)I
-
-    .line 57
-    :goto_0
+    .line 46
     return-void
-
-    .line 55
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/MainMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->VOICE_PENDING:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
-
-    goto :goto_0
 .end method

@@ -628,9 +628,8 @@
     return-void
 .end method
 
-.method public onConfirm(Lcom/google/glass/app/GlassActivity;)Z
+.method public onConfirm()Z
     .locals 2
-    .parameter "activity"
 
     .prologue
     .line 190
@@ -639,7 +638,15 @@
     if-eqz v0, :cond_0
 
     .line 194
-    invoke-virtual {p1}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/active/CallItemView;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/app/GlassApplication;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
 

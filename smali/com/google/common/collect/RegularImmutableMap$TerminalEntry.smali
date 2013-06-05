@@ -46,13 +46,13 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 131
     .local p0, this:Lcom/google/common/collect/RegularImmutableMap$TerminalEntry;,"Lcom/google/common/collect/RegularImmutableMap$TerminalEntry<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/ImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 135
+    .line 132
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 136
     .local p0, this:Lcom/google/common/collect/RegularImmutableMap$TerminalEntry;,"Lcom/google/common/collect/RegularImmutableMap$TerminalEntry<TK;TV;>;"
     const/4 v0, 0x0
 

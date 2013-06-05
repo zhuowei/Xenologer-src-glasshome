@@ -30,19 +30,19 @@
     .parameter "bundle"
 
     .prologue
-    .line 62
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 75
     iput-object p1, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
 
-    .line 64
+    .line 76
     iput-object p2, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->optionMenu:Lcom/google/glass/widget/OptionMenu;
 
-    .line 65
+    .line 77
     iput-object p3, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->bundle:Landroid/os/Bundle;
 
-    .line 66
+    .line 78
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 89
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->bundle:Landroid/os/Bundle;
 
     return-object v0
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 85
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->optionMenu:Lcom/google/glass/widget/OptionMenu;
 
     return-object v0
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 81
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
 
     return-object v0

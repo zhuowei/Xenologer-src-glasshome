@@ -34,7 +34,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1178
+    .line 1202
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$1;,"Lcom/google/common/collect/Sets$PowerSet.1;"
     iput-object p1, p0, Lcom/google/common/collect/Sets$PowerSet$1;->this$0:Lcom/google/common/collect/Sets$PowerSet;
 
@@ -50,7 +50,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1178
+    .line 1202
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$1;,"Lcom/google/common/collect/Sets$PowerSet.1;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Sets$PowerSet$1;->get(I)Ljava/util/Set;
 
@@ -71,7 +71,7 @@
     .end annotation
 
     .prologue
-    .line 1180
+    .line 1205
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$1;,"Lcom/google/common/collect/Sets$PowerSet.1;"
     new-instance v0, Lcom/google/common/collect/Sets$PowerSet$1$1;
 

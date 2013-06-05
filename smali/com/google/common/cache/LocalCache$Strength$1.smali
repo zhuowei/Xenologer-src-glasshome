@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 373
+    .line 376
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/cache/LocalCache$Strength;-><init>(Ljava/lang/String;ILcom/google/common/cache/LocalCache$1;)V
@@ -44,8 +44,8 @@
     .end annotation
 
     .prologue
-    .line 384
-    invoke-static {}, Lcom/google/common/base/Equivalences;->equals()Lcom/google/common/base/Equivalence;
+    .line 387
+    invoke-static {}, Lcom/google/common/base/Equivalence;->equals()Lcom/google/common/base/Equivalence;
 
     move-result-object v0
 
@@ -75,7 +75,7 @@
     .end annotation
 
     .prologue
-    .line 377
+    .line 381
     .local p1, segment:Lcom/google/common/cache/LocalCache$Segment;,"Lcom/google/common/cache/LocalCache$Segment<TK;TV;>;"
     .local p2, entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     .local p3, value:Ljava/lang/Object;,"TV;"

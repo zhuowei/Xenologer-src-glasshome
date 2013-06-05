@@ -29,8 +29,6 @@
 
 
 # instance fields
-.field private final adapterObserver:Landroid/database/DataSetObserver;
-
 .field private uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
 .field private wrappers:Ljava/util/List;
@@ -50,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 27
     const-class v0, Lcom/google/glass/home/timeline/TimelineView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -59,7 +57,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineView;->TAG:Ljava/lang/String;
 
-    .line 32
+    .line 30
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
@@ -74,14 +72,14 @@
     .parameter "context"
 
     .prologue
-    .line 132
+    .line 115
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 133
+    .line 116
     return-void
 .end method
 
@@ -91,12 +89,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 136
+    .line 119
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 137
+    .line 120
     return-void
 .end method
 
@@ -107,35 +105,18 @@
     .parameter "defStyle"
 
     .prologue
-    .line 140
+    .line 123
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IZ)V
 
-    .line 111
-    new-instance v0, Lcom/google/glass/home/timeline/TimelineView$1;
-
-    invoke-direct {v0, p0}, Lcom/google/glass/home/timeline/TimelineView$1;-><init>(Lcom/google/glass/home/timeline/TimelineView;)V
-
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineView;->adapterObserver:Landroid/database/DataSetObserver;
-
-    .line 143
+    .line 126
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/TimelineView;->setWillNotDraw(Z)V
 
-    .line 144
+    .line 127
     return-void
-.end method
-
-.method static synthetic access$000()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 28
-    sget-object v0, Lcom/google/glass/home/timeline/TimelineView;->TAG:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 
@@ -145,31 +126,31 @@
     .parameter "canvas"
 
     .prologue
-    .line 153
+    .line 136
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     if-eqz v0, :cond_0
 
-    .line 154
+    .line 137
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/UiPerformanceLog;->onRenderStart()V
 
-    .line 156
+    .line 139
     :cond_0
     invoke-super {p0, p1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 157
+    .line 140
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     if-eqz v0, :cond_1
 
-    .line 158
+    .line 141
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/UiPerformanceLog;->onRenderEnd()V
 
-    .line 160
+    .line 143
     :cond_1
     return-void
 .end method
@@ -179,14 +160,14 @@
     .parameter "id"
 
     .prologue
-    .line 245
+    .line 216
     const/4 v1, 0x0
 
-    .line 246
+    .line 217
     .local v1, matched:Z
     const/4 v3, -0x1
 
-    .line 247
+    .line 218
     .local v3, result:I
     const/4 v0, 0x0
 
@@ -201,7 +182,7 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 248
+    .line 219
     iget-object v5, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -210,25 +191,25 @@
 
     check-cast v4, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 249
+    .line 220
     .local v4, wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     if-eqz v1, :cond_1
 
-    .line 251
+    .line 222
     invoke-virtual {v4, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->matches(Lcom/google/glass/timeline/TimelineItemId;)Z
 
     move-result v5
 
     invoke-static {v5}, Lcom/google/glass/util/Assert;->assertFalse(Z)V
 
-    .line 247
+    .line 218
     :cond_0
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 253
+    .line 224
     :cond_1
     invoke-virtual {v4, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->matches(Lcom/google/glass/timeline/TimelineItemId;)Z
 
@@ -236,18 +217,18 @@
 
     if-eqz v5, :cond_0
 
-    .line 254
+    .line 225
     const/4 v1, 0x1
 
-    .line 255
+    .line 226
     invoke-virtual {v4, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->findIdPosition(Lcom/google/glass/timeline/TimelineItemId;)I
 
     move-result v3
 
-    .line 256
+    .line 227
     if-ltz v3, :cond_0
 
-    .line 257
+    .line 228
     invoke-virtual {p0, v4}, Lcom/google/glass/home/timeline/TimelineView;->getAdapterOffset(Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)I
 
     move-result v5
@@ -256,7 +237,7 @@
 
     goto :goto_1
 
-    .line 262
+    .line 233
     .end local v4           #wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     :cond_2
     return v3
@@ -267,7 +248,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 26
     check-cast p1, Lcom/google/glass/timeline/TimelineItemId;
 
     .end local p1
@@ -283,7 +264,7 @@
     .parameter "item"
 
     .prologue
-    .line 267
+    .line 238
     new-instance v0, Lcom/google/glass/timeline/TimelineItemId;
 
     invoke-direct {v0, p1}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
@@ -300,7 +281,7 @@
     .parameter "x0"
 
     .prologue
-    .line 28
+    .line 26
     check-cast p1, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     .end local p1
@@ -326,11 +307,11 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 262
     .local p1, w:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     const/4 v2, 0x0
 
-    .line 292
+    .line 263
     .local v2, offset:I
     const/4 v0, 0x0
 
@@ -345,7 +326,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 293
+    .line 264
     iget-object v4, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -354,14 +335,14 @@
 
     check-cast v3, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 294
+    .line 265
     .local v3, wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     if-ne v3, p1, :cond_0
 
-    .line 295
+    .line 266
     return v2
 
-    .line 297
+    .line 268
     :cond_0
     invoke-virtual {v3}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
 
@@ -373,12 +354,12 @@
 
     add-int/2addr v2, v4
 
-    .line 292
+    .line 263
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 299
+    .line 270
     .end local v3           #wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     :cond_1
     new-instance v4, Ljava/lang/IllegalStateException;
@@ -395,10 +376,10 @@
     .parameter "pinned"
 
     .prologue
-    .line 309
+    .line 280
     if-eqz p1, :cond_0
 
-    .line 310
+    .line 281
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -413,7 +394,7 @@
 
     add-long/2addr v0, v2
 
-    .line 312
+    .line 283
     :goto_0
     return-wide v0
 
@@ -434,7 +415,7 @@
     .parameter "position"
 
     .prologue
-    .line 272
+    .line 243
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineView;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
@@ -454,7 +435,7 @@
     .parameter "view"
 
     .prologue
-    .line 277
+    .line 248
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -468,7 +449,7 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 278
+    .line 249
     iget-object v4, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -477,7 +458,7 @@
 
     check-cast v3, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 279
+    .line 250
     .local v3, wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     invoke-virtual {v3}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
 
@@ -487,26 +468,26 @@
 
     move-result v0
 
-    .line 280
+    .line 251
     .local v0, count:I
     if-ge p1, v0, :cond_0
 
-    .line 281
+    .line 252
     invoke-virtual {v3, p1, p2}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->rebind(ILandroid/view/View;)V
 
-    .line 282
+    .line 253
     return-void
 
-    .line 284
+    .line 255
     :cond_0
     sub-int/2addr p1, v0
 
-    .line 277
+    .line 248
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 286
+    .line 257
     .end local v0           #count:I
     .end local v3           #wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     :cond_1
@@ -535,44 +516,6 @@
     throw v4
 .end method
 
-.method public setAdapter(Landroid/widget/Adapter;)V
-    .locals 2
-    .parameter "adapter"
-
-    .prologue
-    .line 204
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineView;->getAdapter()Landroid/widget/Adapter;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 205
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineView;->getAdapter()Landroid/widget/Adapter;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineView;->adapterObserver:Landroid/database/DataSetObserver;
-
-    invoke-interface {v0, v1}, Landroid/widget/Adapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
-
-    .line 207
-    :cond_0
-    invoke-super {p0, p1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->setAdapter(Landroid/widget/Adapter;)V
-
-    .line 208
-    if-eqz p1, :cond_1
-
-    .line 209
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView;->adapterObserver:Landroid/database/DataSetObserver;
-
-    invoke-interface {p1, v0}, Landroid/widget/Adapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
-
-    .line 211
-    :cond_1
-    return-void
-.end method
-
 .method varargs setAdapters([Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)V
     .locals 11
     .parameter
@@ -591,29 +534,29 @@
     .local p1, newWrappers:[Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"[Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     const/4 v10, 0x0
 
-    .line 169
+    .line 152
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v8, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
-    .line 172
+    .line 155
     array-length v8, p1
 
     if-nez v8, :cond_1
 
-    .line 173
+    .line 156
     const/4 v8, 0x0
 
     invoke-virtual {p0, v8}, Lcom/google/glass/home/timeline/TimelineView;->setAdapter(Landroid/widget/Adapter;)V
 
-    .line 199
+    .line 182
     :cond_0
     :goto_0
     return-void
 
-    .line 178
+    .line 161
     :cond_1
     array-length v8, p1
 
@@ -621,14 +564,14 @@
 
     if-ne v8, v9, :cond_2
 
-    .line 179
+    .line 162
     iget-object v8, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     aget-object v9, p1, v10
 
     invoke-interface {v8, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 180
+    .line 163
     aget-object v8, p1, v10
 
     invoke-virtual {v8}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
@@ -639,7 +582,7 @@
 
     goto :goto_0
 
-    .line 185
+    .line 168
     :cond_2
     array-length v8, p1
 
@@ -651,7 +594,7 @@
 
     move-result-object v6
 
-    .line 186
+    .line 169
     .local v6, second:Landroid/widget/Adapter;
     array-length v8, p1
 
@@ -663,13 +606,13 @@
 
     move-result-object v2
 
-    .line 187
+    .line 170
     .local v2, first:Landroid/widget/Adapter;
     new-instance v1, Lcom/google/glass/util/CompositeAdapter;
 
     invoke-direct {v1, v2, v6}, Lcom/google/glass/util/CompositeAdapter;-><init>(Landroid/widget/Adapter;Landroid/widget/Adapter;)V
 
-    .line 188
+    .line 171
     .local v1, compositeAdapter:Lcom/google/glass/util/CompositeAdapter;
     array-length v8, p1
 
@@ -679,33 +622,33 @@
     :goto_1
     if-ltz v3, :cond_3
 
-    .line 189
+    .line 172
     aget-object v8, p1, v3
 
     invoke-virtual {v8}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v2
 
-    .line 190
+    .line 173
     move-object v6, v1
 
-    .line 191
+    .line 174
     new-instance v1, Lcom/google/glass/util/CompositeAdapter;
 
     .end local v1           #compositeAdapter:Lcom/google/glass/util/CompositeAdapter;
     invoke-direct {v1, v2, v6}, Lcom/google/glass/util/CompositeAdapter;-><init>(Landroid/widget/Adapter;Landroid/widget/Adapter;)V
 
-    .line 188
+    .line 171
     .restart local v1       #compositeAdapter:Lcom/google/glass/util/CompositeAdapter;
     add-int/lit8 v3, v3, -0x1
 
     goto :goto_1
 
-    .line 193
+    .line 176
     :cond_3
     invoke-virtual {p0, v1}, Lcom/google/glass/home/timeline/TimelineView;->setAdapter(Landroid/widget/Adapter;)V
 
-    .line 196
+    .line 179
     move-object v0, p1
 
     .local v0, arr$:[Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
@@ -720,13 +663,13 @@
 
     aget-object v7, v0, v4
 
-    .line 197
+    .line 180
     .local v7, wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     iget-object v8, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     invoke-interface {v8, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 196
+    .line 179
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
@@ -737,10 +680,10 @@
     .parameter "uiPerformanceLog"
 
     .prologue
-    .line 148
+    .line 131
     iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineView;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
-    .line 149
+    .line 132
     return-void
 .end method
 
@@ -748,7 +691,7 @@
     .locals 3
 
     .prologue
-    .line 218
+    .line 189
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -762,7 +705,7 @@
     :goto_0
     if-ge v0, v1, :cond_0
 
-    .line 219
+    .line 190
     iget-object v2, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -773,12 +716,12 @@
 
     invoke-virtual {v2}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->updateQueryParameters()V
 
-    .line 218
+    .line 189
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 221
+    .line 192
     :cond_0
     return-void
 .end method
@@ -789,10 +732,10 @@
     .parameter "onLoad"
 
     .prologue
-    .line 228
+    .line 199
     const/4 v1, 0x0
 
-    .line 229
+    .line 200
     .local v1, matched:Z
     const/4 v0, 0x0
 
@@ -807,7 +750,7 @@
     :goto_0
     if-ge v0, v2, :cond_2
 
-    .line 230
+    .line 201
     iget-object v4, p0, Lcom/google/glass/home/timeline/TimelineView;->wrappers:Ljava/util/List;
 
     invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -816,25 +759,25 @@
 
     check-cast v3, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 231
+    .line 202
     .local v3, wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     if-eqz v1, :cond_1
 
-    .line 233
+    .line 204
     invoke-virtual {v3, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->matches(Lcom/google/glass/timeline/TimelineItemId;)Z
 
     move-result v4
 
     invoke-static {v4}, Lcom/google/glass/util/Assert;->assertFalse(Z)V
 
-    .line 229
+    .line 200
     :cond_0
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 235
+    .line 206
     :cond_1
     invoke-virtual {v3, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->matches(Lcom/google/glass/timeline/TimelineItemId;)Z
 
@@ -842,15 +785,15 @@
 
     if-eqz v4, :cond_0
 
-    .line 236
+    .line 207
     const/4 v1, 0x1
 
-    .line 237
+    .line 208
     invoke-virtual {v3, p2}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->waitForLoad(Ljava/lang/Runnable;)V
 
     goto :goto_1
 
-    .line 241
+    .line 212
     .end local v3           #wrapper:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     :cond_2
     return-void

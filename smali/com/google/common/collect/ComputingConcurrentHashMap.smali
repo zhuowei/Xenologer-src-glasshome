@@ -7,7 +7,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingSerializationProxy;,
-        Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingMapAdapter;,
         Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingValueReference;,
         Lcom/google/common/collect/ComputingConcurrentHashMap$ComputedReference;,
         Lcom/google/common/collect/ComputingConcurrentHashMap$ComputationExceptionReference;,
@@ -58,12 +57,12 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 50
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap;,"Lcom/google/common/collect/ComputingConcurrentHashMap<TK;TV;>;"
     .local p2, computingFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;+TV;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/MapMakerInternalMap;-><init>(Lcom/google/common/collect/MapMaker;)V
 
-    .line 54
+    .line 51
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -72,7 +71,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ComputingConcurrentHashMap;->computingFunction:Lcom/google/common/base/Function;
 
-    .line 55
+    .line 52
     return-void
 .end method
 
@@ -91,7 +90,7 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 56
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap;,"Lcom/google/common/collect/ComputingConcurrentHashMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingSegment;
 
@@ -116,7 +115,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 65
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap;,"Lcom/google/common/collect/ComputingConcurrentHashMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -127,7 +126,7 @@
 
     move-result v0
 
-    .line 69
+    .line 66
     .local v0, hash:I
     invoke-virtual {p0, v0}, Lcom/google/common/collect/ComputingConcurrentHashMap;->segmentFor(I)Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingSegment;
 
@@ -154,7 +153,7 @@
     .end annotation
 
     .prologue
-    .line 64
+    .line 61
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap;,"Lcom/google/common/collect/ComputingConcurrentHashMap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/MapMakerInternalMap;->segmentFor(I)Lcom/google/common/collect/MapMakerInternalMap$Segment;
 
@@ -170,7 +169,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 42
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap;,"Lcom/google/common/collect/ComputingConcurrentHashMap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ComputingConcurrentHashMap;->segmentFor(I)Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingSegment;
 
@@ -183,7 +182,7 @@
     .locals 14
 
     .prologue
-    .line 413
+    .line 363
     .local p0, this:Lcom/google/common/collect/ComputingConcurrentHashMap;,"Lcom/google/common/collect/ComputingConcurrentHashMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ComputingConcurrentHashMap$ComputingSerializationProxy;
 

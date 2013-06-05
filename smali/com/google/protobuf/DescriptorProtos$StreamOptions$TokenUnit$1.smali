@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 32995
+    .line 33003
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 32997
+    .line 33005
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$StreamOptions$TokenUnit;->valueOf(I)Lcom/google/protobuf/DescriptorProtos$StreamOptions$TokenUnit;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 32995
+    .line 33003
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$StreamOptions$TokenUnit$1;->findValueByNumber(I)Lcom/google/protobuf/DescriptorProtos$StreamOptions$TokenUnit;
 
     move-result-object v0

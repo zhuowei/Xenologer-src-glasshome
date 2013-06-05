@@ -1,5 +1,5 @@
 .class Lcom/google/glass/widget/DynamicSizeTextView$1;
-.super Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
+.super Landroid/os/AsyncTask;
 .source "DynamicSizeTextView.java"
 
 
@@ -15,8 +15,10 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/glass/util/DeferredContentLoader$LoadingTask",
+        "Landroid/os/AsyncTask",
         "<",
+        "Ljava/lang/Void;",
+        "Ljava/lang/Void;",
         "Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;",
         ">;"
     }
@@ -51,7 +53,7 @@
     .parameter
 
     .prologue
-    .line 364
+    .line 380
     iput-object p1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
     iput-object p2, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->val$text:Ljava/lang/CharSequence;
@@ -66,139 +68,29 @@
 
     iput-object p7, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->val$alignment:Landroid/text/Layout$Alignment;
 
-    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>()V
+    invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected bindContent(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
-    .locals 4
-    .parameter "result"
+.method protected varargs doInBackground([Ljava/lang/Void;)Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
+    .locals 7
+    .parameter "params"
 
     .prologue
     .line 383
-    invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView$1;->isCancelled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 404
-    :goto_0
-    return-void
-
-    .line 386
-    :cond_0
-    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
-
-    #getter for: Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
-    invoke-static {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->access$100(Lcom/google/glass/widget/DynamicSizeTextView;)Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
-
-    move-result-object v1
-
-    if-eq v1, p0, :cond_1
-
-    .line 391
-    invoke-static {}, Lcom/google/glass/widget/DynamicSizeTextView;->access$200()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "Failed to cancel text sizing task, ignoring result."
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 396
-    :cond_1
-    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
-
-    #calls: Lcom/google/glass/widget/DynamicSizeTextView;->applyTextSize(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
-    invoke-static {v1, p1}, Lcom/google/glass/widget/DynamicSizeTextView;->access$300(Lcom/google/glass/widget/DynamicSizeTextView;Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
-
-    .line 399
-    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setAlpha(F)V
-
-    .line 400
-    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setVisibility(I)V
-
-    .line 401
-    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
-
-    invoke-virtual {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    sget v2, Lcom/google/glass/common/R$integer;->horizontal_scroll_deferred_load_animation_duration_ms:I
-
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v0
-
-    .line 403
-    .local v0, duration:I
-    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
-
-    invoke-virtual {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->animate()Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    const/high16 v2, 0x3f80
-
-    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    int-to-long v2, v0
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    goto :goto_0
-.end method
-
-.method protected bridge synthetic bindContent(Ljava/lang/Object;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 364
-    check-cast p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/glass/widget/DynamicSizeTextView$1;->bindContent(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
-
-    return-void
-.end method
-
-.method protected loadContent()Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
-    .locals 7
-
-    .prologue
-    .line 372
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView$1;->isCancelled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 373
+    .line 384
     const/4 v0, 0x0
 
-    .line 377
+    .line 388
     :goto_0
     return-object v0
 
@@ -225,22 +117,129 @@
     goto :goto_0
 .end method
 
-.method protected bridge synthetic loadContent()Ljava/lang/Object;
+.method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 364
-    invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView$1;->loadContent()Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
+    .line 380
+    check-cast p1, [Ljava/lang/Void;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/glass/widget/DynamicSizeTextView$1;->doInBackground([Ljava/lang/Void;)Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected prepareContent()V
-    .locals 0
+.method protected onPostExecute(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
+    .locals 4
+    .parameter "result"
 
     .prologue
-    .line 368
+    .line 394
+    invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView$1;->isCancelled()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 415
+    :goto_0
+    return-void
+
+    .line 397
+    :cond_0
+    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
+
+    #getter for: Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
+    invoke-static {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->access$100(Lcom/google/glass/widget/DynamicSizeTextView;)Landroid/os/AsyncTask;
+
+    move-result-object v1
+
+    if-eq v1, p0, :cond_1
+
+    .line 402
+    invoke-static {}, Lcom/google/glass/widget/DynamicSizeTextView;->access$200()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "Failed to cancel text sizing task, ignoring result."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 407
+    :cond_1
+    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
+
+    #calls: Lcom/google/glass/widget/DynamicSizeTextView;->applyTextSize(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
+    invoke-static {v1, p1}, Lcom/google/glass/widget/DynamicSizeTextView;->access$300(Lcom/google/glass/widget/DynamicSizeTextView;Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
+
+    .line 410
+    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setAlpha(F)V
+
+    .line 411
+    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setVisibility(I)V
+
+    .line 412
+    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
+
+    invoke-virtual {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    sget v2, Lcom/google/glass/common/R$integer;->horizontal_scroll_deferred_load_animation_duration_ms:I
+
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v0
+
+    .line 414
+    .local v0, duration:I
+    iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
+
+    invoke-virtual {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    const/high16 v2, 0x3f80
+
+    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    int-to-long v2, v0
+
+    invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
+
+    goto :goto_0
+.end method
+
+.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 380
+    check-cast p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/glass/widget/DynamicSizeTextView$1;->onPostExecute(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
+
     return-void
 .end method

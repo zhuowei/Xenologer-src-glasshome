@@ -13,11 +13,21 @@
     name = "ToStringHelper"
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+    }
+.end annotation
+
 
 # instance fields
-.field private final builder:Ljava/lang/StringBuilder;
+.field private final className:Ljava/lang/String;
 
-.field private needsSeparator:Z
+.field private holderHead:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+.field private holderTail:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+.field private omitNullValues:Z
 
 
 # direct methods
@@ -26,37 +36,38 @@
     .parameter "className"
 
     .prologue
-    .line 190
+    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 185
+    .line 197
+    new-instance v0, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;-><init>(Lcom/google/common/base/Objects$1;)V
+
+    iput-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->holderHead:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+    .line 198
+    iget-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->holderHead:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+    iput-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->holderTail:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+    .line 199
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->needsSeparator:Z
+    iput-boolean v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->omitNullValues:Z
 
-    .line 191
+    .line 205
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 192
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x20
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    const/16 v1, 0x7b
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    iput-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->className:Ljava/lang/String;
 
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
-
-    .line 193
+    .line 206
     return-void
 .end method
 
@@ -66,70 +77,86 @@
     .parameter "x1"
 
     .prologue
-    .line 183
+    .line 195
     invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method private addHolder()Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
     .locals 2
-    .parameter "name"
 
     .prologue
-    .line 272
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 403
+    new-instance v0, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    .line 273
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    invoke-direct {v0, v1}, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;-><init>(Lcom/google/common/base/Objects$1;)V
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 404
+    .local v0, valueHolder:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+    iget-object v1, p0, Lcom/google/common/base/Objects$ToStringHelper;->holderTail:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    move-result-object v0
+    iput-object v0, v1, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->next:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    const/16 v1, 0x3d
+    iput-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->holderTail:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
+    .line 405
     return-object v0
 .end method
 
-.method private maybeAppendSeparator()Ljava/lang/StringBuilder;
-    .locals 2
+.method private addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
+    .locals 1
+    .parameter "value"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 380
-    iget-boolean v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->needsSeparator:Z
-
-    if-eqz v0, :cond_0
-
-    .line 381
-    iget-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
-
-    const-string v1, ", "
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 409
+    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder()Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
     move-result-object v0
 
-    .line 384
-    :goto_0
-    return-object v0
+    .line 410
+    .local v0, valueHolder:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+    iput-object p1, v0, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->value:Ljava/lang/Object;
 
-    .line 383
-    :cond_0
-    const/4 v0, 0x1
+    .line 411
+    return-object p0
+.end method
 
-    iput-boolean v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->needsSeparator:Z
+.method private addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
+    .locals 2
+    .parameter "name"
+    .end parameter
+    .parameter "value"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
-    .line 384
-    iget-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
+    .prologue
+    .line 415
+    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder()Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    goto :goto_0
+    move-result-object v0
+
+    .line 416
+    .local v0, valueHolder:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+    iput-object p2, v0, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->value:Ljava/lang/Object;
+
+    .line 417
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->name:Ljava/lang/String;
+
+    .line 418
+    return-object p0
 .end method
 
 
@@ -140,15 +167,16 @@
     .parameter "value"
 
     .prologue
-    .line 223
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 247
+    invoke-static {p2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 224
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public add(Ljava/lang/String;D)Lcom/google/common/base/Objects$ToStringHelper;
@@ -157,15 +185,16 @@
     .parameter "value"
 
     .prologue
-    .line 234
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 257
+    invoke-static {p2, p3}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 235
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public add(Ljava/lang/String;F)Lcom/google/common/base/Objects$ToStringHelper;
@@ -174,15 +203,16 @@
     .parameter "value"
 
     .prologue
-    .line 245
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 267
+    invoke-static {p2}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 246
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public add(Ljava/lang/String;I)Lcom/google/common/base/Objects$ToStringHelper;
@@ -191,15 +221,16 @@
     .parameter "value"
 
     .prologue
-    .line 256
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 277
+    invoke-static {p2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 257
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public add(Ljava/lang/String;J)Lcom/google/common/base/Objects$ToStringHelper;
@@ -208,15 +239,16 @@
     .parameter "value"
 
     .prologue
-    .line 267
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 287
+    invoke-static {p2, p3}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 268
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
@@ -229,15 +261,12 @@
     .end parameter
 
     .prologue
-    .line 201
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 227
+    invoke-direct {p0, p1, p2}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 202
-    return-object p0
+    return-object v0
 .end method
 
 .method public add(Ljava/lang/String;Z)Lcom/google/common/base/Objects$ToStringHelper;
@@ -246,15 +275,16 @@
     .parameter "value"
 
     .prologue
-    .line 212
-    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->checkNameAndAppend(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 237
+    invoke-static {p2}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-direct {p0, p1, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 213
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public addValue(C)Lcom/google/common/base/Objects$ToStringHelper;
@@ -262,15 +292,16 @@
     .parameter "value"
 
     .prologue
-    .line 309
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 321
+    invoke-static {p1}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 310
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public addValue(D)Lcom/google/common/base/Objects$ToStringHelper;
@@ -278,15 +309,16 @@
     .parameter "value"
 
     .prologue
-    .line 322
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 333
+    invoke-static {p1, p2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 323
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public addValue(F)Lcom/google/common/base/Objects$ToStringHelper;
@@ -294,15 +326,16 @@
     .parameter "value"
 
     .prologue
-    .line 335
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 345
+    invoke-static {p1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 336
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public addValue(I)Lcom/google/common/base/Objects$ToStringHelper;
@@ -310,15 +343,16 @@
     .parameter "value"
 
     .prologue
-    .line 348
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 357
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 349
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public addValue(J)Lcom/google/common/base/Objects$ToStringHelper;
@@ -326,15 +360,16 @@
     .parameter "value"
 
     .prologue
-    .line 361
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 369
+    invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 362
-    return-object p0
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public addValue(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
@@ -345,15 +380,12 @@
     .end parameter
 
     .prologue
-    .line 283
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 297
+    invoke-direct {p0, p1}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 284
-    return-object p0
+    return-object v0
 .end method
 
 .method public addValue(Z)Lcom/google/common/base/Objects$ToStringHelper;
@@ -361,66 +393,125 @@
     .parameter "value"
 
     .prologue
-    .line 296
-    invoke-direct {p0}, Lcom/google/common/base/Objects$ToStringHelper;->maybeAppendSeparator()Ljava/lang/StringBuilder;
+    .line 309
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-direct {p0, v0}, Lcom/google/common/base/Objects$ToStringHelper;->addHolder(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
-    .line 297
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public omitNullValues()Lcom/google/common/base/Objects$ToStringHelper;
+    .locals 1
+
+    .prologue
+    .line 216
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->omitNullValues:Z
+
+    .line 217
     return-object p0
 .end method
 
 .method public toString()Ljava/lang/String;
-    .locals 3
+    .locals 6
 
     .prologue
-    .line 371
-    :try_start_0
-    iget-object v0, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
+    .line 385
+    iget-boolean v2, p0, Lcom/google/common/base/Objects$ToStringHelper;->omitNullValues:Z
 
-    const/16 v1, 0x7d
+    .line 386
+    .local v2, omitNullValuesSnapshot:Z
+    const-string v1, ""
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    .line 387
+    .local v1, nextSeparator:Ljava/lang/String;
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const/16 v5, 0x20
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    iget-object v5, p0, Lcom/google/common/base/Objects$ToStringHelper;->className:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const/16 v5, 0x7b
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .line 388
+    .local v0, builder:Ljava/lang/StringBuilder;
+    iget-object v4, p0, Lcom/google/common/base/Objects$ToStringHelper;->holderHead:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    move-result-object v0
+    iget-object v3, v4, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->next:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
 
-    .line 375
-    iget-object v1, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
+    .local v3, valueHolder:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+    :goto_0
+    if-eqz v3, :cond_3
 
-    iget-object v2, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
+    .line 389
+    if-eqz v2, :cond_0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
+    iget-object v4, v3, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->value:Ljava/lang/Object;
 
-    move-result v2
+    if-eqz v4, :cond_2
 
-    add-int/lit8 v2, v2, -0x1
+    .line 390
+    :cond_0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
+    .line 391
+    const-string v1, ", "
 
-    return-object v0
+    .line 393
+    iget-object v4, v3, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->name:Ljava/lang/String;
 
-    :catchall_0
-    move-exception v0
+    if-eqz v4, :cond_1
 
-    iget-object v1, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
+    .line 394
+    iget-object v4, v3, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->name:Ljava/lang/String;
 
-    iget-object v2, p0, Lcom/google/common/base/Objects$ToStringHelper;->builder:Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
+    move-result-object v4
 
-    move-result v2
+    const/16 v5, 0x3d
 
-    add-int/lit8 v2, v2, -0x1
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->setLength(I)V
+    .line 396
+    :cond_1
+    iget-object v4, v3, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->value:Ljava/lang/Object;
 
-    throw v0
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 388
+    :cond_2
+    iget-object v3, v3, Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;->next:Lcom/google/common/base/Objects$ToStringHelper$ValueHolder;
+
+    goto :goto_0
+
+    .line 399
+    :cond_3
+    const/16 v4, 0x7d
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    return-object v4
 .end method

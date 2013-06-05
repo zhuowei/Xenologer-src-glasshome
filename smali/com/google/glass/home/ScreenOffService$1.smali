@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 97
+    .line 107
     iput-object p1, p0, Lcom/google/glass/home/ScreenOffService$1;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "msg"
 
     .prologue
-    .line 100
+    .line 110
     iget v0, p1, Landroid/os/Message;->what:I
 
     if-nez v0, :cond_0
 
-    .line 101
+    .line 111
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 102
+    .line 112
     iget-object v0, p0, Lcom/google/glass/home/ScreenOffService$1;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const/4 v1, 0x1
@@ -61,7 +61,7 @@
     #calls: Lcom/google/glass/home/ScreenOffService;->closeNotificationWindow(Z)V
     invoke-static {v0, v1}, Lcom/google/glass/home/ScreenOffService;->access$100(Lcom/google/glass/home/ScreenOffService;Z)V
 
-    .line 104
+    .line 114
     :cond_0
     return-void
 .end method

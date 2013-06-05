@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;
+        Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;,
+        Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;
     }
 .end annotation
 
@@ -20,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 32
+    .line 33
     const-class v0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -36,10 +37,10 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 32
     invoke-direct {p0}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;-><init>()V
 
-    .line 42
+    .line 98
     return-void
 .end method
 
@@ -47,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 31
+    .line 32
     sget-object v0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -58,7 +59,7 @@
     .parameter "viewGroup"
 
     .prologue
-    .line 158
+    .line 220
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -69,38 +70,38 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 159
+    .line 221
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 160
+    .line 222
     .local v0, child:Landroid/view/View;
     instance-of v2, v0, Landroid/view/ViewGroup;
 
     if-eqz v2, :cond_1
 
-    .line 161
+    .line 223
     check-cast v0, Landroid/view/ViewGroup;
 
     .end local v0           #child:Landroid/view/View;
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->clearImagesFromViewGroup(Landroid/view/ViewGroup;)V
 
-    .line 158
+    .line 220
     :cond_0
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 162
+    .line 224
     .restart local v0       #child:Landroid/view/View;
     :cond_1
     instance-of v2, v0, Landroid/widget/ImageView;
 
     if-eqz v2, :cond_0
 
-    .line 163
+    .line 225
     check-cast v0, Landroid/widget/ImageView;
 
     .end local v0           #child:Landroid/view/View;
@@ -110,7 +111,7 @@
 
     goto :goto_1
 
-    .line 166
+    .line 228
     :cond_2
     return-void
 .end method
@@ -121,14 +122,14 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 37
     sget v0, Lcom/google/glass/home/R$layout;->timeline_item_search:I
 
     return v0
 .end method
 
 .method protected onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
-    .locals 5
+    .locals 7
     .parameter "context"
     .parameter "item"
     .parameter "inBundle"
@@ -138,68 +139,106 @@
     .parameter "textClipListener"
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v6, 0x1
 
-    .line 106
-    const/4 v2, 0x1
+    const/4 v5, 0x0
 
-    new-array v2, v2, [Ljava/lang/String;
+    .line 162
+    const/4 v3, 0x2
 
-    const-string v3, "proto/search"
+    new-array v3, v3, [Ljava/lang/String;
 
-    aput-object v3, v2, v4
+    const-string v4, "proto/search"
 
-    invoke-static {p2, v2}, Lcom/google/glass/timeline/TimelineHelper;->hasAttachmentOfTypes(Lcom/google/googlex/glass/common/proto/TimelineItem;[Ljava/lang/String;)Z
+    aput-object v4, v3, v5
 
-    move-result v2
+    const-string v4, "application/glass+html"
 
-    if-nez v2, :cond_0
+    aput-object v4, v3, v6
 
-    .line 107
-    sget-object v2, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->TAG:Ljava/lang/String;
+    invoke-static {p2, v3}, Lcom/google/glass/timeline/TimelineHelper;->hasAttachmentOfTypes(Lcom/google/googlex/glass/common/proto/TimelineItem;[Ljava/lang/String;)Z
 
-    const-string v3, "Timeline item does not have a search proto attachment"
+    move-result v3
 
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    if-nez v3, :cond_0
 
-    .line 120
+    .line 165
+    sget-object v3, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->TAG:Ljava/lang/String;
+
+    const-string v4, "Timeline item does not have a search proto or answer card HTML attachment"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 182
     :goto_0
-    return v4
+    return v5
 
-    .line 111
+    .line 169
     :cond_0
-    sget v2, Lcom/google/glass/home/R$id;->cover:I
+    new-array v3, v6, [Ljava/lang/String;
 
-    invoke-virtual {p5, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    const-string v4, "application/glass+html"
+
+    aput-object v4, v3, v5
+
+    invoke-static {p2, v3}, Lcom/google/glass/timeline/TimelineHelper;->hasAttachmentOfTypes(Lcom/google/googlex/glass/common/proto/TimelineItem;[Ljava/lang/String;)Z
+
+    move-result v1
+
+    .line 172
+    .local v1, isAnswerCard:Z
+    sget v3, Lcom/google/glass/home/R$id;->cover:I
+
+    invoke-virtual {p5, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 113
+    .line 174
     .local v0, coverView:Landroid/widget/LinearLayout;
-    new-instance v1, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;
+    if-eqz v1, :cond_1
 
-    invoke-virtual {p2, v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachment(I)Lcom/google/googlex/glass/common/proto/Attachment;
+    new-instance v2, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;
 
-    move-result-object v2
-
-    invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
+    invoke-virtual {p2, v5}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachment(I)Lcom/google/googlex/glass/common/proto/Attachment;
 
     move-result-object v3
 
-    invoke-direct {v1, p0, v2, v3, v0}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;-><init>(Lcom/google/glass/home/timeline/database/SearchItemViewBinder;Lcom/google/googlex/glass/common/proto/Attachment;Ljava/lang/String;Landroid/view/ViewGroup;)V
+    invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
 
-    .line 117
-    .local v1, loadingTask:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<*>;"
-    sget v2, Lcom/google/glass/home/R$id;->tag_loading_task:I
+    move-result-object v4
 
-    invoke-virtual {p5, v2, v1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-direct {v2, p0, v3, v4, v0}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;-><init>(Lcom/google/glass/home/timeline/database/SearchItemViewBinder;Lcom/google/googlex/glass/common/proto/Attachment;Ljava/lang/String;Landroid/view/ViewGroup;)V
 
-    .line 118
-    invoke-static {p5, v1}, Lcom/google/glass/util/DeferredContentLoader;->loadForScrollItemSubview(Landroid/view/View;Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
+    .line 179
+    .local v2, loadingTask:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<*>;"
+    :goto_1
+    sget v3, Lcom/google/glass/home/R$id;->tag_loading_task:I
+
+    invoke-virtual {p5, v3, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 180
+    invoke-static {p5, v2}, Lcom/google/glass/util/DeferredContentLoader;->loadForScrollItemSubview(Landroid/view/View;Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
     goto :goto_0
+
+    .line 174
+    .end local v2           #loadingTask:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<*>;"
+    :cond_1
+    new-instance v2, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;
+
+    invoke-virtual {p2, v5}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachment(I)Lcom/google/googlex/glass/common/proto/Attachment;
+
+    move-result-object v3
+
+    invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-direct {v2, p0, v3, v4, v0}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;-><init>(Lcom/google/glass/home/timeline/database/SearchItemViewBinder;Lcom/google/googlex/glass/common/proto/Attachment;Ljava/lang/String;Landroid/view/ViewGroup;)V
+
+    goto :goto_1
 .end method
 
 .method protected onClear(Landroid/view/View;Z)V
@@ -208,7 +247,7 @@
     .parameter "willBindSameItem"
 
     .prologue
-    .line 143
+    .line 205
     sget v1, Lcom/google/glass/home/R$id;->tag_loading_task:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -217,33 +256,33 @@
 
     check-cast v0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
-    .line 145
+    .line 207
     .local v0, loadingTask:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<*>;"
     if-eqz v0, :cond_0
 
-    .line 146
+    .line 208
     invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader;->cancel(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
-    .line 147
+    .line 209
     sget v1, Lcom/google/glass/home/R$id;->tag_loading_task:I
 
     const/4 v2, 0x0
 
     invoke-virtual {p1, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 150
+    .line 212
     :cond_0
     instance-of v1, p1, Landroid/view/ViewGroup;
 
     if-eqz v1, :cond_1
 
-    .line 153
+    .line 215
     check-cast p1, Landroid/view/ViewGroup;
 
     .end local p1
     invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->clearImagesFromViewGroup(Landroid/view/ViewGroup;)V
 
-    .line 155
+    .line 217
     :cond_1
     return-void
 .end method
@@ -253,7 +292,7 @@
     .parameter "item"
 
     .prologue
-    .line 128
+    .line 190
     const/4 v0, 0x0
 
     return-object v0
@@ -264,7 +303,7 @@
     .parameter "item"
 
     .prologue
-    .line 135
+    .line 197
     const/4 v0, 0x1
 
     return v0
@@ -286,7 +325,7 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 232
     .local p2, split:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     sget-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->SEARCH:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
@@ -300,9 +339,9 @@
 
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 174
+    .line 236
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 175
+    .line 237
     return-void
 .end method

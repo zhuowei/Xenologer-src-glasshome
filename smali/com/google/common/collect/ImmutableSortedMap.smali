@@ -1,4 +1,4 @@
-.class public Lcom/google/common/collect/ImmutableSortedMap;
+.class public abstract Lcom/google/common/collect/ImmutableSortedMap;
 .super Lcom/google/common/collect/ImmutableSortedMapFauxverideShim;
 .source "ImmutableSortedMap.java"
 
@@ -15,10 +15,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/common/collect/ImmutableSortedMap$SerializedForm;,
-        Lcom/google/common/collect/ImmutableSortedMap$ValuesSerializedForm;,
-        Lcom/google/common/collect/ImmutableSortedMap$Values;,
-        Lcom/google/common/collect/ImmutableSortedMap$EntrySetSerializedForm;,
-        Lcom/google/common/collect/ImmutableSortedMap$EntrySet;,
         Lcom/google/common/collect/ImmutableSortedMap$Builder;
     }
 .end annotation
@@ -66,51 +62,11 @@
 
 
 # instance fields
-.field private final transient comparator:Ljava/util/Comparator;
+.field private transient descendingMap:Lcom/google/common/collect/ImmutableSortedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Comparator",
-            "<-TK;>;"
-        }
-    .end annotation
-.end field
-
-.field final transient entries:Lcom/google/common/collect/ImmutableList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableList",
-            "<",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;>;"
-        }
-    .end annotation
-.end field
-
-.field private transient entrySet:Lcom/google/common/collect/ImmutableSet;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableSet",
-            "<",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;>;"
-        }
-    .end annotation
-.end field
-
-.field private transient keySet:Lcom/google/common/collect/ImmutableSortedSet;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableSortedSet",
-            "<TK;>;"
-        }
-    .end annotation
-.end field
-
-.field private transient values:Lcom/google/common/collect/ImmutableCollection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableCollection",
-            "<TV;>;"
+            "Lcom/google/common/collect/ImmutableSortedMap",
+            "<TK;TV;>;"
         }
     .end annotation
 .end field
@@ -118,62 +74,60 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 71
+    .line 65
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_ORDER:Ljava/util/Comparator;
 
-    .line 75
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap;
+    .line 67
+    new-instance v0, Lcom/google/common/collect/EmptyImmutableSortedMap;
 
-    invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
+    sget-object v1, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_ORDER:Ljava/util/Comparator;
 
-    move-result-object v1
-
-    sget-object v2, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_ORDER:Ljava/util/Comparator;
-
-    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+    invoke-direct {v0, v1}, Lcom/google/common/collect/EmptyImmutableSortedMap;-><init>(Ljava/util/Comparator;)V
 
     sput-object v0, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_EMPTY_MAP:Lcom/google/common/collect/ImmutableSortedMap;
 
     return-void
 .end method
 
-.method constructor <init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
+
+    .prologue
+    .line 411
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    invoke-direct {p0}, Lcom/google/common/collect/ImmutableSortedMapFauxverideShim;-><init>()V
+
+    return-void
+.end method
+
+.method constructor <init>(Lcom/google/common/collect/ImmutableSortedMap;)V
+    .locals 0
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/common/collect/ImmutableList",
-            "<",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;>;",
-            "Ljava/util/Comparator",
-            "<-TK;>;)V"
+            "Lcom/google/common/collect/ImmutableSortedMap",
+            "<TK;TV;>;)V"
         }
     .end annotation
 
     .prologue
-    .line 417
+    .line 413
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    .local p1, entries:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<Ljava/util/Map$Entry<TK;TV;>;>;"
-    .local p2, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
+    .local p1, descendingMap:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSortedMapFauxverideShim;-><init>()V
 
-    .line 418
-    iput-object p1, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    .line 414
+    iput-object p1, p0, Lcom/google/common/collect/ImmutableSortedMap;->descendingMap:Lcom/google/common/collect/ImmutableSortedMap;
 
-    .line 419
-    iput-object p2, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
-
-    .line 420
+    .line 415
     return-void
 .end method
 
@@ -183,7 +137,7 @@
     .parameter "x1"
 
     .prologue
-    .line 61
+    .line 59
     invoke-static {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->sortEntries(Ljava/util/List;Ljava/util/Comparator;)V
 
     return-void
@@ -195,7 +149,7 @@
     .parameter "x1"
 
     .prologue
-    .line 61
+    .line 59
     invoke-static {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->validateEntries(Ljava/util/List;Ljava/util/Comparator;)V
 
     return-void
@@ -219,13 +173,13 @@
     .end annotation
 
     .prologue
-    .line 183
+    .line 192
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
 
-    .line 184
+    .line 193
     .local v0, naturalOrder:Lcom/google/common/collect/Ordering;,"Lcom/google/common/collect/Ordering<TK;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/ImmutableSortedMap;->copyOfInternal(Ljava/util/Map;Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
 
@@ -255,7 +209,7 @@
     .end annotation
 
     .prologue
-    .line 201
+    .line 210
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -296,10 +250,10 @@
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     const/4 v8, 0x0
 
-    .line 228
+    .line 236
     const/4 v6, 0x0
 
-    .line 229
+    .line 237
     .local v6, sameComparator:Z
     instance-of v9, p0, Ljava/util/SortedMap;
 
@@ -307,16 +261,16 @@
 
     move-object v7, p0
 
-    .line 230
+    .line 238
     check-cast v7, Ljava/util/SortedMap;
 
-    .line 231
+    .line 239
     .local v7, sortedMap:Ljava/util/SortedMap;,"Ljava/util/SortedMap<**>;"
     invoke-interface {v7}, Ljava/util/SortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
-    .line 232
+    .line 240
     .local v0, comparator2:Ljava/util/Comparator;,"Ljava/util/Comparator<*>;"
     if-nez v0, :cond_2
 
@@ -326,7 +280,7 @@
 
     const/4 v6, 0x1
 
-    .line 237
+    .line 244
     .end local v0           #comparator2:Ljava/util/Comparator;,"Ljava/util/Comparator<*>;"
     .end local v7           #sortedMap:Ljava/util/SortedMap;,"Ljava/util/SortedMap<**>;"
     :cond_0
@@ -339,10 +293,10 @@
 
     move-object v4, p0
 
-    .line 241
+    .line 248
     check-cast v4, Lcom/google/common/collect/ImmutableSortedMap;
 
-    .line 242
+    .line 249
     .local v4, kvMap:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {v4}, Lcom/google/common/collect/ImmutableSortedMap;->isPartialView()Z
 
@@ -350,7 +304,7 @@
 
     if-nez v9, :cond_3
 
-    .line 265
+    .line 272
     .end local v4           #kvMap:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     :goto_1
     return-object v4
@@ -360,7 +314,7 @@
     :cond_1
     move v6, v8
 
-    .line 232
+    .line 240
     goto :goto_0
 
     :cond_2
@@ -370,7 +324,7 @@
 
     goto :goto_0
 
-    .line 251
+    .line 258
     .end local v0           #comparator2:Ljava/util/Comparator;,"Ljava/util/Comparator<*>;"
     .end local v7           #sortedMap:Ljava/util/SortedMap;,"Ljava/util/SortedMap<**>;"
     :cond_3
@@ -386,7 +340,7 @@
 
     check-cast v1, [Ljava/util/Map$Entry;
 
-    .line 253
+    .line 260
     .local v1, entries:[Ljava/util/Map$Entry;,"[Ljava/util/Map$Entry<TK;TV;>;"
     const/4 v3, 0x0
 
@@ -396,10 +350,10 @@
 
     if-ge v3, v8, :cond_4
 
-    .line 254
+    .line 261
     aget-object v2, v1, v3
 
-    .line 255
+    .line 262
     .local v2, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -415,37 +369,33 @@
 
     aput-object v8, v1, v3
 
-    .line 253
+    .line 260
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 258
+    .line 265
     .end local v2           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     :cond_4
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v5
 
-    .line 260
+    .line 267
     .local v5, list:Ljava/util/List;,"Ljava/util/List<Ljava/util/Map$Entry<TK;TV;>;>;"
     if-nez v6, :cond_5
 
-    .line 261
+    .line 268
     invoke-static {v5, p1}, Lcom/google/common/collect/ImmutableSortedMap;->sortEntries(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 262
+    .line 269
     invoke-static {v5, p1}, Lcom/google/common/collect/ImmutableSortedMap;->validateEntries(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 265
+    .line 272
     :cond_5
-    new-instance v4, Lcom/google/common/collect/ImmutableSortedMap;
+    invoke-static {p1, v5}, Lcom/google/common/collect/ImmutableSortedMap;->fromSortedEntries(Ljava/util/Comparator;Ljava/util/Collection;)Lcom/google/common/collect/ImmutableSortedMap;
 
-    invoke-static {v5}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v8
-
-    invoke-direct {v4, v8, p1}, Lcom/google/common/collect/ImmutableSortedMap;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+    move-result-object v4
 
     goto :goto_1
 .end method
@@ -468,20 +418,20 @@
     .end annotation
 
     .prologue
-    .line 217
+    .line 225
     .local p0, map:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;+TV;>;"
     invoke-interface {p0}, Ljava/util/SortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
-    .line 218
+    .line 226
     .local v0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     if-nez v0, :cond_0
 
-    .line 221
+    .line 229
     sget-object v0, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_ORDER:Ljava/util/Comparator;
 
-    .line 223
+    .line 231
     :cond_0
     invoke-static {p0, v0}, Lcom/google/common/collect/ImmutableSortedMap;->copyOfInternal(Ljava/util/Map;Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
 
@@ -490,134 +440,8 @@
     return-object v1
 .end method
 
-.method private createEntrySet()Lcom/google/common/collect/ImmutableSet;
+.method static emptyMap(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableSet",
-            "<",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 471
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;
-
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableSortedMap$EntrySet;-><init>(Lcom/google/common/collect/ImmutableSortedMap;)V
-
-    goto :goto_0
-.end method
-
-.method private createKeySet()Lcom/google/common/collect/ImmutableSortedSet;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableSortedSet",
-            "<TK;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 533
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 534
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
-
-    invoke-static {v0}, Lcom/google/common/collect/ImmutableSortedSet;->emptySet(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedSet;
-
-    move-result-object v0
-
-    .line 537
-    :goto_0
-    return-object v0
-
-    :cond_0
-    new-instance v0, Lcom/google/common/collect/RegularImmutableSortedSet;
-
-    new-instance v1, Lcom/google/common/collect/ImmutableSortedMap$2;
-
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
-
-    invoke-direct {v1, p0, v2}, Lcom/google/common/collect/ImmutableSortedMap$2;-><init>(Lcom/google/common/collect/ImmutableSortedMap;Lcom/google/common/collect/ImmutableList;)V
-
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
-
-    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/RegularImmutableSortedSet;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
-
-    goto :goto_0
-.end method
-
-.method private createSubmap(II)Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 3
-    .parameter "newFromIndex"
-    .parameter "newToIndex"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(II)",
-            "Lcom/google/common/collect/ImmutableSortedMap",
-            "<TK;TV;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 732
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    if-ge p1, p2, :cond_0
-
-    .line 733
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap;
-
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
-
-    invoke-virtual {v1, p1, p2}, Lcom/google/common/collect/ImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
-
-    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
-
-    .line 736
-    :goto_0
-    return-object v0
-
-    :cond_0
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
-
-    invoke-static {v0}, Lcom/google/common/collect/ImmutableSortedMap;->emptyMap(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method private static emptyMap(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -634,9 +458,11 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 71
     .local p0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
-    sget-object v0, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_ORDER:Ljava/util/Comparator;
+    invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
+
+    move-result-object v0
 
     invoke-virtual {v0, p0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -644,73 +470,189 @@
 
     if-eqz v0, :cond_0
 
-    .line 93
-    sget-object v0, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_EMPTY_MAP:Lcom/google/common/collect/ImmutableSortedMap;
+    .line 72
+    invoke-static {}, Lcom/google/common/collect/ImmutableSortedMap;->of()Lcom/google/common/collect/ImmutableSortedMap;
 
-    .line 95
+    move-result-object v0
+
+    .line 74
     :goto_0
     return-object v0
 
     :cond_0
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap;
+    new-instance v0, Lcom/google/common/collect/EmptyImmutableSortedMap;
 
-    invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1, p0}, Lcom/google/common/collect/ImmutableSortedMap;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/EmptyImmutableSortedMap;-><init>(Ljava/util/Comparator;)V
 
     goto :goto_0
 .end method
 
-.method private index(Ljava/lang/Object;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-    .locals 3
-    .parameter "key"
-    .parameter "presentBehavior"
-    .parameter "absentBehavior"
-
-    .prologue
-    .line 726
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    invoke-direct {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keyList()Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v0
-
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->unsafeComparator()Ljava/util/Comparator;
-
-    move-result-object v2
-
-    invoke-static {v0, v1, v2, p2, p3}, Lcom/google/common/collect/SortedLists;->binarySearch(Ljava/util/List;Ljava/lang/Object;Ljava/util/Comparator;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private keyList()Lcom/google/common/collect/ImmutableList;
-    .locals 2
+.method static from(Lcom/google/common/collect/ImmutableSortedSet;Lcom/google/common/collect/ImmutableList;)Lcom/google/common/collect/ImmutableSortedMap;
+    .locals 1
+    .parameter
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/ImmutableSortedSet",
+            "<TK;>;",
             "Lcom/google/common/collect/ImmutableList",
-            "<TK;>;"
+            "<TV;>;)",
+            "Lcom/google/common/collect/ImmutableSortedMap",
+            "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
-    .line 716
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$4;
+    .line 97
+    .local p0, keySet:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TK;>;"
+    .local p1, valueList:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedSet;->isEmpty()Z
 
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    move-result v0
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/ImmutableSortedMap$4;-><init>(Lcom/google/common/collect/ImmutableSortedMap;Lcom/google/common/collect/ImmutableList;)V
+    if-eqz v0, :cond_0
 
+    .line 98
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/ImmutableSortedMap;->emptyMap(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v0
+
+    .line 100
+    .end local p0           #keySet:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TK;>;"
+    :goto_0
     return-object v0
+
+    .restart local p0       #keySet:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TK;>;"
+    :cond_0
+    new-instance v0, Lcom/google/common/collect/RegularImmutableSortedMap;
+
+    check-cast p0, Lcom/google/common/collect/RegularImmutableSortedSet;
+
+    .end local p0           #keySet:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TK;>;"
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/RegularImmutableSortedMap;-><init>(Lcom/google/common/collect/RegularImmutableSortedSet;Lcom/google/common/collect/ImmutableList;)V
+
+    goto :goto_0
+.end method
+
+.method static fromSortedEntries(Ljava/util/Comparator;Ljava/util/Collection;)Lcom/google/common/collect/ImmutableSortedMap;
+    .locals 7
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Comparator",
+            "<-TK;>;",
+            "Ljava/util/Collection",
+            "<+",
+            "Ljava/util/Map$Entry",
+            "<+TK;+TV;>;>;)",
+            "Lcom/google/common/collect/ImmutableSortedMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 80
+    .local p0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
+    .local p1, entries:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/Map$Entry<+TK;+TV;>;>;"
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 81
+    invoke-static {p0}, Lcom/google/common/collect/ImmutableSortedMap;->emptyMap(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v4
+
+    .line 91
+    :goto_0
+    return-object v4
+
+    .line 84
+    :cond_0
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
+
+    move-result-object v2
+
+    .line 85
+    .local v2, keyBuilder:Lcom/google/common/collect/ImmutableList$Builder;,"Lcom/google/common/collect/ImmutableList$Builder<TK;>;"
+    invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
+
+    move-result-object v3
+
+    .line 86
+    .local v3, valueBuilder:Lcom/google/common/collect/ImmutableList$Builder;,"Lcom/google/common/collect/ImmutableList$Builder<TV;>;"
+    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 87
+    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+
+    .line 88
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
+
+    goto :goto_1
+
+    .line 91
+    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
+    :cond_1
+    new-instance v4, Lcom/google/common/collect/RegularImmutableSortedMap;
+
+    new-instance v5, Lcom/google/common/collect/RegularImmutableSortedSet;
+
+    invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v6
+
+    invoke-direct {v5, v6, p0}, Lcom/google/common/collect/RegularImmutableSortedSet;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+
+    invoke-virtual {v3}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v6
+
+    invoke-direct {v4, v5, v6}, Lcom/google/common/collect/RegularImmutableSortedMap;-><init>(Lcom/google/common/collect/RegularImmutableSortedSet;Lcom/google/common/collect/ImmutableList;)V
+
+    goto :goto_0
 .end method
 
 .method public static naturalOrder()Lcom/google/common/collect/ImmutableSortedMap$Builder;
@@ -719,7 +661,7 @@
         value = {
             "<K::",
             "Ljava/lang/Comparable",
-            "<TK;>;V:",
+            "<*>;V:",
             "Ljava/lang/Object;",
             ">()",
             "Lcom/google/common/collect/ImmutableSortedMap$Builder",
@@ -755,14 +697,14 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 111
     sget-object v0, Lcom/google/common/collect/ImmutableSortedMap;->NATURAL_EMPTY_MAP:Lcom/google/common/collect/ImmutableSortedMap;
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Comparable;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 3
+    .locals 2
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -778,24 +720,20 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 118
     .local p0, k1:Ljava/lang/Comparable;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap;
+    invoke-static {p0}, Lcom/google/common/collect/ImmutableSortedSet;->of(Ljava/lang/Comparable;)Lcom/google/common/collect/ImmutableSortedSet;
 
-    invoke-static {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->entryOf(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
+    move-result-object v0
 
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
+    invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v1
 
-    invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
+    invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableSortedMap;->from(Lcom/google/common/collect/ImmutableSortedSet;Lcom/google/common/collect/ImmutableList;)Lcom/google/common/collect/ImmutableSortedMap;
 
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+    move-result-object v0
 
     return-object v0
 .end method
@@ -819,7 +757,7 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 130
     .local p0, k1:Ljava/lang/Comparable;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Comparable;,"TK;"
@@ -868,7 +806,7 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 142
     .local p0, k1:Ljava/lang/Comparable;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Comparable;,"TK;"
@@ -925,7 +863,7 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 154
     .local p0, k1:Ljava/lang/Comparable;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Comparable;,"TK;"
@@ -990,7 +928,7 @@
     .end annotation
 
     .prologue
-    .line 157
+    .line 167
     .local p0, k1:Ljava/lang/Comparable;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Comparable;,"TK;"
@@ -1069,7 +1007,7 @@
         value = {
             "<K::",
             "Ljava/lang/Comparable",
-            "<TK;>;V:",
+            "<*>;V:",
             "Ljava/lang/Object;",
             ">()",
             "Lcom/google/common/collect/ImmutableSortedMap$Builder",
@@ -1078,7 +1016,7 @@
     .end annotation
 
     .prologue
-    .line 328
+    .line 323
     new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$Builder;
 
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
@@ -1115,18 +1053,18 @@
     .end annotation
 
     .prologue
-    .line 270
+    .line 277
     .local p0, entries:Ljava/util/List;,"Ljava/util/List<Ljava/util/Map$Entry<TK;TV;>;>;"
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$1;
 
     invoke-direct {v0, p1}, Lcom/google/common/collect/ImmutableSortedMap$1;-><init>(Ljava/util/Comparator;)V
 
-    .line 277
+    .line 284
     .local v0, entryComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 278
+    .line 285
     return-void
 .end method
 
@@ -1151,7 +1089,7 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 289
     .local p0, entries:Ljava/util/List;,"Ljava/util/List<Ljava/util/Map$Entry<TK;TV;>;>;"
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     const/4 v0, 0x1
@@ -1164,7 +1102,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 283
+    .line 290
     add-int/lit8 v1, v0, -0x1
 
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1193,7 +1131,7 @@
 
     if-nez v1, :cond_0
 
-    .line 285
+    .line 291
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1238,19 +1176,71 @@
 
     throw v1
 
-    .line 282
+    .line 289
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 290
+    .line 295
     :cond_1
     return-void
 .end method
 
 
 # virtual methods
+.method public ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 593
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    const/4 v0, 0x1
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ImmutableSortedMap;->tailMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->firstEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 597
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public comparator()Ljava/util/Comparator;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -1262,9 +1252,15 @@
     .end annotation
 
     .prologue
-    .line 620
+    .line 461
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedSet;->comparator()Ljava/util/Comparator;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -1277,27 +1273,84 @@
     .end parameter
 
     .prologue
-    .line 449
+    .line 423
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    if-nez p1, :cond_0
-
-    .line 450
-    const/4 v0, 0x0
-
-    .line 452
-    :goto_0
-    return v0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->valueIterator()Lcom/google/common/collect/UnmodifiableIterator;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->values()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/collect/Iterators;->contains(Ljava/util/Iterator;Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableCollection;->contains(Ljava/lang/Object;)Z
 
     move-result v0
 
-    goto :goto_0
+    return v0
+.end method
+
+.method abstract createDescendingMap()Lcom/google/common/collect/ImmutableSortedMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableSortedMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+.end method
+
+.method public descendingKeySet()Lcom/google/common/collect/ImmutableSortedSet;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableSortedSet",
+            "<TK;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 655
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedSet;->descendingSet()Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public descendingMap()Lcom/google/common/collect/ImmutableSortedMap;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableSortedMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 641
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->descendingMap:Lcom/google/common/collect/ImmutableSortedMap;
+
+    .line 642
+    .local v0, result:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    if-nez v0, :cond_0
+
+    .line 643
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->createDescendingMap()Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v0
+
+    .end local v0           #result:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->descendingMap:Lcom/google/common/collect/ImmutableSortedMap;
+
+    .line 645
+    .restart local v0       #result:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    :cond_0
+    return-object v0
 .end method
 
 .method public entrySet()Lcom/google/common/collect/ImmutableSet;
@@ -1313,22 +1366,12 @@
     .end annotation
 
     .prologue
-    .line 466
+    .line 437
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->entrySet:Lcom/google/common/collect/ImmutableSet;
-
-    .line 467
-    .local v0, es:Lcom/google/common/collect/ImmutableSet;,"Lcom/google/common/collect/ImmutableSet<Ljava/util/Map$Entry<TK;TV;>;>;"
-    if-nez v0, :cond_0
-
-    invoke-direct {p0}, Lcom/google/common/collect/ImmutableSortedMap;->createEntrySet()Lcom/google/common/collect/ImmutableSet;
+    invoke-super {p0}, Lcom/google/common/collect/ImmutableSortedMapFauxverideShim;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
 
-    .end local v0           #es:Lcom/google/common/collect/ImmutableSet;,"Lcom/google/common/collect/ImmutableSet<Ljava/util/Map$Entry<TK;TV;>;>;"
-    iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->entrySet:Lcom/google/common/collect/ImmutableSet;
-
-    :cond_0
     return-object v0
 .end method
 
@@ -1336,7 +1379,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
@@ -1345,16 +1388,18 @@
     return-object v0
 .end method
 
-.method public firstKey()Ljava/lang/Object;
+.method public firstEntry()Ljava/util/Map$Entry;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TK;"
+            "()",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
-    .line 625
+    .line 609
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->isEmpty()Z
 
@@ -1362,16 +1407,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 626
-    new-instance v0, Ljava/util/NoSuchElementException;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    :goto_0
+    return-object v0
 
-    throw v0
-
-    .line 628
     :cond_0
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet;->asList()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v0
 
     const/4 v1, 0x0
 
@@ -1381,78 +1429,81 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    goto :goto_0
+.end method
+
+.method public firstKey()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 465
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedSet;->first()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-    .parameter "key"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
+.method public floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")TV;"
+            "(TK;)",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
+    .line 585
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    const/4 v2, 0x0
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    const/4 v0, 0x1
 
-    .line 436
-    if-nez p1, :cond_1
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ImmutableSortedMap;->headMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
 
-    .line 445
-    :cond_0
-    :goto_0
-    return-object v2
+    move-result-object v0
 
-    .line 441
-    :cond_1
-    :try_start_0
-    sget-object v3, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->ANY_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->lastEntry()Ljava/util/Map$Entry;
 
-    sget-object v4, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->INVERTED_INSERTION_INDEX:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
+    move-result-object v0
 
-    invoke-direct {p0, p1, v3, v4}, Lcom/google/common/collect/ImmutableSortedMap;->index(Ljava/lang/Object;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-    :try_end_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+    return-object v0
+.end method
 
-    move-result v1
+.method public floorKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)TK;"
+        }
+    .end annotation
 
-    .line 445
-    .local v1, i:I
-    if-ltz v1, :cond_0
+    .prologue
+    .line 589
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
 
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    move-result-object v0
 
-    invoke-virtual {v2, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Ljava/util/Map$Entry;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    .line 442
-    .end local v1           #i:I
-    :catch_0
-    move-exception v0
-
-    .line 443
-    .local v0, e:Ljava/lang/ClassCastException;
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public headMap(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedMap;
@@ -1467,7 +1518,7 @@
     .end annotation
 
     .prologue
-    .line 651
+    .line 484
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     .local p1, toKey:Ljava/lang/Object;,"TK;"
     const/4 v0, 0x0
@@ -1479,10 +1530,7 @@
     return-object v0
 .end method
 
-.method headMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 3
-    .parameter
-    .parameter "inclusive"
+.method public abstract headMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -1490,48 +1538,6 @@
             "<TK;TV;>;"
         }
     .end annotation
-
-    .prologue
-    .line 656
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    .local p1, toKey:Ljava/lang/Object;,"TK;"
-    if-eqz p2, :cond_0
-
-    .line 657
-    sget-object v1, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->ANY_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
-
-    sget-object v2, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_LOWER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
-
-    invoke-direct {p0, p1, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;->index(Ljava/lang/Object;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-
-    move-result v1
-
-    add-int/lit8 v0, v1, 0x1
-
-    .line 661
-    .local v0, index:I
-    :goto_0
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v1, v0}, Lcom/google/common/collect/ImmutableSortedMap;->createSubmap(II)Lcom/google/common/collect/ImmutableSortedMap;
-
-    move-result-object v1
-
-    return-object v1
-
-    .line 659
-    .end local v0           #index:I
-    :cond_0
-    sget-object v1, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->ANY_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
-
-    sget-object v2, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
-
-    invoke-direct {p0, p1, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;->index(Ljava/lang/Object;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-
-    move-result v0
-
-    .restart local v0       #index:I
-    goto :goto_0
 .end method
 
 .method public bridge synthetic headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
@@ -1539,9 +1545,61 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->headMap(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 601
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ImmutableSortedMap;->tailMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->firstEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public higherKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 605
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1552,22 +1610,45 @@
     .locals 1
 
     .prologue
-    .line 456
+    .line 428
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->isPartialView()Z
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedSet;->isPartialView()Z
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->values()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->isPartialView()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public bridge synthetic keySet()Lcom/google/common/collect/ImmutableSet;
     .locals 1
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
 
@@ -1576,8 +1657,7 @@
     return-object v0
 .end method
 
-.method public keySet()Lcom/google/common/collect/ImmutableSortedSet;
-    .locals 1
+.method public abstract keySet()Lcom/google/common/collect/ImmutableSortedSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1585,32 +1665,13 @@
             "<TK;>;"
         }
     .end annotation
-
-    .prologue
-    .line 527
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->keySet:Lcom/google/common/collect/ImmutableSortedSet;
-
-    .line 528
-    .local v0, ks:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TK;>;"
-    if-nez v0, :cond_0
-
-    invoke-direct {p0}, Lcom/google/common/collect/ImmutableSortedMap;->createKeySet()Lcom/google/common/collect/ImmutableSortedSet;
-
-    move-result-object v0
-
-    .end local v0           #ks:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TK;>;"
-    iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->keySet:Lcom/google/common/collect/ImmutableSortedSet;
-
-    :cond_0
-    return-object v0
 .end method
 
 .method public bridge synthetic keySet()Ljava/util/Set;
     .locals 1
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
 
@@ -1619,16 +1680,18 @@
     return-object v0
 .end method
 
-.method public lastKey()Ljava/lang/Object;
+.method public lastEntry()Ljava/util/Map$Entry;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TK;"
+            "()",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
-    .line 633
+    .line 613
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->isEmpty()Z
 
@@ -1636,16 +1699,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 634
-    new-instance v0, Ljava/util/NoSuchElementException;
+    const/4 v0, 0x0
 
-    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+    :goto_0
+    return-object v0
 
-    throw v0
-
-    .line 636
     :cond_0
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSet;->asList()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v0
 
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->size()I
 
@@ -1659,22 +1725,160 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    goto :goto_0
+.end method
+
+.method public lastKey()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 469
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedSet;->last()Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
+.method public lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 577
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ImmutableSortedMap;->headMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableSortedMap;->lastEntry()Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public lowerKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 581
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public navigableKeySet()Lcom/google/common/collect/ImmutableSortedSet;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableSortedSet",
+            "<TK;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 651
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->keySet()Lcom/google/common/collect/ImmutableSortedSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final pollFirstEntry()Ljava/util/Map$Entry;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 624
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
+.method public final pollLastEntry()Ljava/util/Map$Entry;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 635
+    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+
+    throw v0
+.end method
+
 .method public size()I
     .locals 1
 
     .prologue
-    .line 424
+    .line 418
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->values()Lcom/google/common/collect/ImmutableCollection;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->size()I
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->size()I
 
     move-result v0
 
@@ -1694,7 +1898,7 @@
     .end annotation
 
     .prologue
-    .line 679
+    .line 517
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     .local p1, fromKey:Ljava/lang/Object;,"TK;"
     .local p2, toKey:Ljava/lang/Object;,"TK;"
@@ -1709,8 +1913,8 @@
     return-object v0
 .end method
 
-.method subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 1
+.method public subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
+    .locals 5
     .parameter
     .parameter "fromInclusive"
     .parameter
@@ -1724,17 +1928,23 @@
     .end annotation
 
     .prologue
-    .line 684
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     .local p1, fromKey:Ljava/lang/Object;,"TK;"
     .local p3, toKey:Ljava/lang/Object;,"TK;"
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 538
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 685
+    .line 539
     invoke-static {p3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 686
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
+    .line 540
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->comparator()Ljava/util/Comparator;
+
+    move-result-object v0
 
     invoke-interface {v0, p1, p3}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
 
@@ -1742,26 +1952,36 @@
 
     if-gtz v0, :cond_0
 
-    const/4 v0, 0x1
+    move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
+    const-string v3, "expected fromKey <= toKey but %s > %s"
 
-    .line 687
-    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableSortedMap;->tailMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
+    const/4 v4, 0x2
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    aput-object p1, v4, v2
+
+    aput-object p3, v4, v1
+
+    invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+
+    .line 542
+    invoke-virtual {p0, p3, p4}, Lcom/google/common/collect/ImmutableSortedMap;->headMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
 
     move-result-object v0
 
-    invoke-virtual {v0, p3, p4}, Lcom/google/common/collect/ImmutableSortedMap;->headMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
+    invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/ImmutableSortedMap;->tailMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
 
     move-result-object v0
 
     return-object v0
 
-    .line 686
     :cond_0
-    const/4 v0, 0x0
+    move v0, v2
 
+    .line 540
     goto :goto_0
 .end method
 
@@ -1771,7 +1991,7 @@
     .parameter "x1"
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableSortedMap;->subMap(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedMap;
 
@@ -1792,7 +2012,7 @@
     .end annotation
 
     .prologue
-    .line 702
+    .line 557
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     .local p1, fromKey:Ljava/lang/Object;,"TK;"
     const/4 v0, 0x1
@@ -1804,10 +2024,7 @@
     return-object v0
 .end method
 
-.method tailMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 3
-    .parameter
-    .parameter "inclusive"
+.method public abstract tailMap(Ljava/lang/Object;Z)Lcom/google/common/collect/ImmutableSortedMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;Z)",
@@ -1815,50 +2032,6 @@
             "<TK;TV;>;"
         }
     .end annotation
-
-    .prologue
-    .line 707
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    .local p1, fromKey:Ljava/lang/Object;,"TK;"
-    if-eqz p2, :cond_0
-
-    .line 708
-    sget-object v1, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->ANY_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
-
-    sget-object v2, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
-
-    invoke-direct {p0, p1, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;->index(Ljava/lang/Object;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-
-    move-result v0
-
-    .line 712
-    .local v0, index:I
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->size()I
-
-    move-result v1
-
-    invoke-direct {p0, v0, v1}, Lcom/google/common/collect/ImmutableSortedMap;->createSubmap(II)Lcom/google/common/collect/ImmutableSortedMap;
-
-    move-result-object v1
-
-    return-object v1
-
-    .line 710
-    .end local v0           #index:I
-    :cond_0
-    sget-object v1, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;->ANY_PRESENT:Lcom/google/common/collect/SortedLists$KeyPresentBehavior;
-
-    sget-object v2, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_LOWER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
-
-    invoke-direct {p0, p1, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;->index(Ljava/lang/Object;Lcom/google/common/collect/SortedLists$KeyPresentBehavior;Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;)I
-
-    move-result v1
-
-    add-int/lit8 v0, v1, 0x1
-
-    .restart local v0       #index:I
-    goto :goto_0
 .end method
 
 .method public bridge synthetic tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
@@ -1866,7 +2039,7 @@
     .parameter "x0"
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap;->tailMap(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedMap;
 
@@ -1875,56 +2048,7 @@
     return-object v0
 .end method
 
-.method unsafeComparator()Ljava/util/Comparator;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Comparator",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 432
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->comparator:Ljava/util/Comparator;
-
-    return-object v0
-.end method
-
-.method valueIterator()Lcom/google/common/collect/UnmodifiableIterator;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/UnmodifiableIterator",
-            "<TV;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 558
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap;->entries:Lcom/google/common/collect/ImmutableList;
-
-    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
-
-    move-result-object v0
-
-    .line 559
-    .local v0, entryIterator:Lcom/google/common/collect/UnmodifiableIterator;,"Lcom/google/common/collect/UnmodifiableIterator<Ljava/util/Map$Entry<TK;TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/ImmutableSortedMap$3;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ImmutableSortedMap$3;-><init>(Lcom/google/common/collect/ImmutableSortedMap;Lcom/google/common/collect/UnmodifiableIterator;)V
-
-    return-object v1
-.end method
-
-.method public values()Lcom/google/common/collect/ImmutableCollection;
-    .locals 1
+.method public abstract values()Lcom/google/common/collect/ImmutableCollection;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1932,32 +2056,13 @@
             "<TV;>;"
         }
     .end annotation
-
-    .prologue
-    .line 553
-    .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->values:Lcom/google/common/collect/ImmutableCollection;
-
-    .line 554
-    .local v0, v:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TV;>;"
-    if-nez v0, :cond_0
-
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$Values;
-
-    .end local v0           #v:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TV;>;"
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableSortedMap$Values;-><init>(Lcom/google/common/collect/ImmutableSortedMap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap;->values:Lcom/google/common/collect/ImmutableCollection;
-
-    :cond_0
-    return-object v0
 .end method
 
 .method public bridge synthetic values()Ljava/util/Collection;
     .locals 1
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap;->values()Lcom/google/common/collect/ImmutableCollection;
 
@@ -1970,7 +2075,7 @@
     .locals 1
 
     .prologue
-    .line 761
+    .line 684
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap;,"Lcom/google/common/collect/ImmutableSortedMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableSortedMap$SerializedForm;
 

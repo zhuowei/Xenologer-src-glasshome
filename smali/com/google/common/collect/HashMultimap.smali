@@ -23,7 +23,7 @@
 
 
 # static fields
-.field private static final DEFAULT_VALUES_PER_KEY:I = 0x8
+.field private static final DEFAULT_VALUES_PER_KEY:I = 0x2
 
 .field private static final serialVersionUID:J
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 89
     .local p0, this:Lcom/google/common/collect/HashMultimap;,"Lcom/google/common/collect/HashMultimap<TK;TV;>;"
     new-instance v0, Ljava/util/HashMap;
 
@@ -53,11 +53,11 @@
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSetMultimap;-><init>(Ljava/util/Map;)V
 
     .line 53
-    const/16 v0, 0x8
+    const/4 v0, 0x2
 
     iput v0, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 
-    .line 92
+    .line 90
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .parameter "expectedValuesPerKey"
 
     .prologue
-    .line 95
+    .line 93
     .local p0, this:Lcom/google/common/collect/HashMultimap;,"Lcom/google/common/collect/HashMultimap<TK;TV;>;"
     invoke-static {p1}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
@@ -76,11 +76,11 @@
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSetMultimap;-><init>(Ljava/util/Map;)V
 
     .line 53
-    const/16 v0, 0x8
+    const/4 v0, 0x2
 
     iput v0, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 
-    .line 96
+    .line 94
     if-ltz p2, :cond_0
 
     const/4 v0, 0x1
@@ -88,13 +88,13 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 97
+    .line 95
     iput p2, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 
-    .line 98
+    .line 96
     return-void
 
-    .line 96
+    .line 94
     :cond_0
     const/4 v0, 0x0
 
@@ -113,7 +113,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 99
     .local p0, this:Lcom/google/common/collect/HashMultimap;,"Lcom/google/common/collect/HashMultimap<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/Multimap;->keySet()Ljava/util/Set;
@@ -131,14 +131,14 @@
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractSetMultimap;-><init>(Ljava/util/Map;)V
 
     .line 53
-    const/16 v0, 0x8
+    const/4 v0, 0x2
 
     iput v0, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 
-    .line 103
+    .line 100
     invoke-virtual {p0, p1}, Lcom/google/common/collect/HashMultimap;->putAll(Lcom/google/common/collect/Multimap;)Z
 
-    .line 104
+    .line 101
     return-void
 .end method
 
@@ -182,7 +182,7 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 74
     new-instance v0, Lcom/google/common/collect/HashMultimap;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/HashMultimap;-><init>(II)V
@@ -208,7 +208,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 85
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     new-instance v0, Lcom/google/common/collect/HashMultimap;
 
@@ -232,36 +232,36 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 129
     .local p0, this:Lcom/google/common/collect/HashMultimap;,"Lcom/google/common/collect/HashMultimap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 133
+    .line 130
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 
-    .line 134
+    .line 131
     invoke-static {p1}, Lcom/google/common/collect/Serialization;->readCount(Ljava/io/ObjectInputStream;)I
 
     move-result v0
 
-    .line 135
+    .line 132
     .local v0, distinctKeys:I
     invoke-static {v0}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 136
+    .line 133
     .local v1, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     invoke-virtual {p0, v1}, Lcom/google/common/collect/HashMultimap;->setMap(Ljava/util/Map;)V
 
-    .line 137
+    .line 134
     invoke-static {p0, p1, v0}, Lcom/google/common/collect/Serialization;->populateMultimap(Lcom/google/common/collect/Multimap;Ljava/io/ObjectInputStream;I)V
 
-    .line 138
+    .line 135
     return-void
 .end method
 
@@ -279,19 +279,19 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 122
     .local p0, this:Lcom/google/common/collect/HashMultimap;,"Lcom/google/common/collect/HashMultimap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 125
+    .line 123
     iget v0, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 126
+    .line 124
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->writeMultimap(Lcom/google/common/collect/Multimap;Ljava/io/ObjectOutputStream;)V
 
-    .line 127
+    .line 125
     return-void
 .end method
 
@@ -388,7 +388,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 112
     .local p0, this:Lcom/google/common/collect/HashMultimap;,"Lcom/google/common/collect/HashMultimap<TK;TV;>;"
     iget v0, p0, Lcom/google/common/collect/HashMultimap;->expectedValuesPerKey:I
 

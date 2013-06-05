@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 40
+    .line 41
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractIdleService$1$1;->this$1:Lcom/google/common/util/concurrent/AbstractIdleService$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 43
+    .line 44
     :try_start_0
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractIdleService$1$1;->this$1:Lcom/google/common/util/concurrent/AbstractIdleService$1;
 
@@ -49,27 +49,27 @@
 
     invoke-virtual {v1}, Lcom/google/common/util/concurrent/AbstractIdleService;->startUp()V
 
-    .line 44
+    .line 45
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractIdleService$1$1;->this$1:Lcom/google/common/util/concurrent/AbstractIdleService$1;
 
     invoke-virtual {v1}, Lcom/google/common/util/concurrent/AbstractIdleService$1;->notifyStarted()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 49
+    .line 50
     return-void
 
-    .line 45
+    .line 46
     :catch_0
     move-exception v0
 
-    .line 46
+    .line 47
     .local v0, t:Ljava/lang/Throwable;
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractIdleService$1$1;->this$1:Lcom/google/common/util/concurrent/AbstractIdleService$1;
 
     invoke-virtual {v1, v0}, Lcom/google/common/util/concurrent/AbstractIdleService$1;->notifyFailed(Ljava/lang/Throwable;)V
 
-    .line 47
+    .line 48
     invoke-static {v0}, Lcom/google/common/base/Throwables;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object v1

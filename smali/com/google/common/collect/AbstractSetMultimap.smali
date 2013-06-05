@@ -1,5 +1,5 @@
 .class abstract Lcom/google/common/collect/AbstractSetMultimap;
-.super Lcom/google/common/collect/AbstractMultimap;
+.super Lcom/google/common/collect/AbstractMapBasedMultimap;
 .source "AbstractSetMultimap.java"
 
 # interfaces
@@ -17,7 +17,7 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Lcom/google/common/collect/AbstractMultimap",
+        "Lcom/google/common/collect/AbstractMapBasedMultimap",
         "<TK;TV;>;",
         "Lcom/google/common/collect/SetMultimap",
         "<TK;TV;>;"
@@ -47,7 +47,7 @@
     .line 44
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
-    invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMultimap;-><init>(Ljava/util/Map;)V
+    invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultimap;-><init>(Ljava/util/Map;)V
 
     .line 45
     return-void
@@ -68,9 +68,9 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 115
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
-    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->asMap()Ljava/util/Map;
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap;->asMap()Ljava/util/Map;
 
     move-result-object v0
 
@@ -100,6 +100,39 @@
     .end annotation
 .end method
 
+.method bridge synthetic createUnmodifiableEmptyCollection()Ljava/util/Collection;
+    .locals 1
+
+    .prologue
+    .line 34
+    .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/AbstractSetMultimap;->createUnmodifiableEmptyCollection()Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method createUnmodifiableEmptyCollection()Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set",
+            "<TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 52
+    .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
+    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public bridge synthetic entries()Ljava/util/Collection;
     .locals 1
 
@@ -126,9 +159,9 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 78
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
-    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->entries()Ljava/util/Collection;
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultimap;->entries()Ljava/util/Collection;
 
     move-result-object v0
 
@@ -145,9 +178,9 @@
     .end parameter
 
     .prologue
-    .line 128
+    .line 140
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
-    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->equals(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultimap;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -183,10 +216,10 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 66
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
-    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->get(Ljava/lang/Object;)Ljava/util/Collection;
+    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultimap;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
@@ -198,7 +231,13 @@
 .method public put(Ljava/lang/Object;Ljava/lang/Object;)Z
     .locals 1
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)Z"
@@ -206,11 +245,11 @@
     .end annotation
 
     .prologue
-    .line 117
+    .line 128
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
-    invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMapBasedMultimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -248,9 +287,9 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 90
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
-    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Collection;
+    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v0
 
@@ -293,11 +332,11 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 104
     .local p0, this:Lcom/google/common/collect/AbstractSetMultimap;,"Lcom/google/common/collect/AbstractSetMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
-    invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Collection;
+    invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMapBasedMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Collection;
 
     move-result-object v0
 

@@ -3,16 +3,42 @@
 .source "Charsets.java"
 
 
+# annotations
+.annotation build Lcom/google/common/annotations/GwtCompatible;
+    emulated = true
+.end annotation
+
+
 # static fields
 .field public static final ISO_8859_1:Ljava/nio/charset/Charset;
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "Non-UTF-8 Charset"
+    .end annotation
+.end field
 
 .field public static final US_ASCII:Ljava/nio/charset/Charset;
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "Non-UTF-8 Charset"
+    .end annotation
+.end field
 
 .field public static final UTF_16:Ljava/nio/charset/Charset;
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "Non-UTF-8 Charset"
+    .end annotation
+.end field
 
 .field public static final UTF_16BE:Ljava/nio/charset/Charset;
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "Non-UTF-8 Charset"
+    .end annotation
+.end field
 
 .field public static final UTF_16LE:Ljava/nio/charset/Charset;
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "Non-UTF-8 Charset"
+    .end annotation
+.end field
 
 .field public static final UTF_8:Ljava/nio/charset/Charset;
 
@@ -22,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 45
     const-string v0, "US-ASCII"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -31,7 +57,7 @@
 
     sput-object v0, Lcom/google/common/base/Charsets;->US_ASCII:Ljava/nio/charset/Charset;
 
-    .line 39
+    .line 51
     const-string v0, "ISO-8859-1"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -40,7 +66,7 @@
 
     sput-object v0, Lcom/google/common/base/Charsets;->ISO_8859_1:Ljava/nio/charset/Charset;
 
-    .line 44
+    .line 56
     const-string v0, "UTF-8"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -49,7 +75,7 @@
 
     sput-object v0, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 49
+    .line 62
     const-string v0, "UTF-16BE"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -58,7 +84,7 @@
 
     sput-object v0, Lcom/google/common/base/Charsets;->UTF_16BE:Ljava/nio/charset/Charset;
 
-    .line 54
+    .line 68
     const-string v0, "UTF-16LE"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -67,7 +93,7 @@
 
     sput-object v0, Lcom/google/common/base/Charsets;->UTF_16LE:Ljava/nio/charset/Charset;
 
-    .line 60
+    .line 75
     const-string v0, "UTF-16"
 
     invoke-static {v0}, Ljava/nio/charset/Charset;->forName(Ljava/lang/String;)Ljava/nio/charset/Charset;
@@ -83,7 +109,7 @@
     .locals 0
 
     .prologue
-    .line 29
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

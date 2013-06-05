@@ -6,6 +6,14 @@
 .implements Lcom/google/android/speech/SpeechLibFactory;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/glass/voice/network/SpeechLibFactoryImpl$SpeechLibLoggerImpl;
+    }
+.end annotation
+
+
 # static fields
 .field private static final ENGINE_EMBEDDED:I = 0x1
 
@@ -17,9 +25,10 @@
     .locals 0
 
     .prologue
-    .line 32
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 170
     return-void
 .end method
 
@@ -31,7 +40,7 @@
     .parameter "sessionParams"
 
     .prologue
-    .line 47
+    .line 48
     new-instance v0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$1;-><init>(Lcom/google/glass/voice/network/SpeechLibFactoryImpl;)V
@@ -44,7 +53,7 @@
     .parameter "engineParams"
 
     .prologue
-    .line 73
+    .line 74
     new-instance v0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$2;-><init>(Lcom/google/glass/voice/network/SpeechLibFactoryImpl;Lcom/google/android/speech/params/RecognitionEngineParams;)V
@@ -62,7 +71,7 @@
     .parameter "timeoutExecutor"
 
     .prologue
-    .line 41
+    .line 42
     new-instance v0, Lcom/google/glass/voice/network/ResultsMergerImpl;
 
     invoke-direct {v0, p2, p4}, Lcom/google/glass/voice/network/ResultsMergerImpl;-><init>(Lcom/google/android/speech/dispatcher/RecognitionDispatcher;Lcom/google/android/speech/callback/RecognitionEngineCallback;)V
@@ -74,10 +83,10 @@
     .locals 1
 
     .prologue
-    .line 166
-    new-instance v0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$3;
+    .line 163
+    new-instance v0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$SpeechLibLoggerImpl;
 
-    invoke-direct {v0, p0}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$3;-><init>(Lcom/google/glass/voice/network/SpeechLibFactoryImpl;)V
+    invoke-direct {v0}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$SpeechLibLoggerImpl;-><init>()V
 
     return-object v0
 .end method

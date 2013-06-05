@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 361
+    .line 387
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$9$1;->this$1:Lcom/google/glass/home/HomeApplication$9;
 
     iput-object p2, p0, Lcom/google/glass/home/HomeApplication$9$1;->val$registrationId:Ljava/lang/String;
@@ -53,7 +53,7 @@
     .parameter "errorCode"
 
     .prologue
-    .line 366
+    .line 392
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$9$1;->this$1:Lcom/google/glass/home/HomeApplication$9;
 
     iget-object v0, v0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
@@ -62,7 +62,7 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/home/GCMIntentService;->registerWithGlassServer(Lcom/google/glass/home/HomeApplication;Ljava/lang/String;)V
 
-    .line 367
+    .line 393
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "responseProto"
 
     .prologue
-    .line 373
+    .line 399
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/C2DMRegistrationResponse$ResponseCode;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationResponse;->getResponseCode()Lcom/google/googlex/glass/common/proto/C2DMRegistrationResponse$ResponseCode;
@@ -84,7 +84,7 @@
 
     if-nez v0, :cond_0
 
-    .line 375
+    .line 401
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$9$1;->this$1:Lcom/google/glass/home/HomeApplication$9;
 
     iget-object v0, v0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
@@ -93,7 +93,7 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/home/GCMIntentService;->registerWithGlassServer(Lcom/google/glass/home/HomeApplication;Ljava/lang/String;)V
 
-    .line 377
+    .line 403
     :cond_0
     return-void
 .end method
@@ -103,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 361
+    .line 387
     check-cast p1, Lcom/google/googlex/glass/common/proto/C2DMRegistrationResponse;
 
     .end local p1

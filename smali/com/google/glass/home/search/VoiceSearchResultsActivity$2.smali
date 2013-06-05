@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/search/VoiceSearchResultsActivity;->insertSearchInTimeline()V
+    value = Lcom/google/glass/home/search/VoiceSearchResultsActivity;->insertMajelSearchInTimeline()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 456
+    .line 518
     iput-object p1, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 9
 
     .prologue
-    .line 460
+    .line 522
     iget-object v5, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
     #getter for: Lcom/google/glass/home/search/VoiceSearchResultsActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
@@ -65,13 +65,13 @@
 
     move-result-object v1
 
-    .line 466
+    .line 528
     .local v1, builder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
     invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 468
+    .line 530
     .local v2, fileName:Ljava/lang/String;
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
 
@@ -96,7 +96,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 470
+    .line 532
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
 
     move-result-object v5
@@ -107,7 +107,7 @@
 
     move-result-object v3
 
-    .line 472
+    .line 534
     .local v3, filePath:Ljava/lang/String;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Attachment;->newBuilder()Lcom/google/googlex/glass/common/proto/Attachment$Builder;
 
@@ -127,32 +127,41 @@
 
     move-result-object v0
 
-    .line 477
+    .line 539
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addAttachment(Lcom/google/googlex/glass/common/proto/Attachment;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 480
+    .line 542
     iget-object v5, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
-    #calls: Lcom/google/glass/home/search/VoiceSearchResultsActivity;->addTimelineOptionsMenu(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)V
-    invoke-static {v5, v1}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$200(Lcom/google/glass/home/search/VoiceSearchResultsActivity;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)V
+    iget-object v6, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
-    .line 483
+    #getter for: Lcom/google/glass/home/search/VoiceSearchResultsActivity;->results:Lcom/google/glass/home/search/results/ResultsContainer;
+    invoke-static {v6}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$200(Lcom/google/glass/home/search/VoiceSearchResultsActivity;)Lcom/google/glass/home/search/results/ResultsContainer;
+
+    move-result-object v6
+
+    const/4 v7, 0x1
+
+    #calls: Lcom/google/glass/home/search/VoiceSearchResultsActivity;->addTimelineOptionsMenu(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Lcom/google/glass/home/search/results/ResultsContainer;Z)V
+    invoke-static {v5, v1, v6, v7}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$300(Lcom/google/glass/home/search/VoiceSearchResultsActivity;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Lcom/google/glass/home/search/results/ResultsContainer;Z)V
+
+    .line 545
     iget-object v5, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
     #getter for: Lcom/google/glass/home/search/VoiceSearchResultsActivity;->recognitionResult:Ljava/lang/String;
-    invoke-static {v5}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$300(Lcom/google/glass/home/search/VoiceSearchResultsActivity;)Ljava/lang/String;
+    invoke-static {v5}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$400(Lcom/google/glass/home/search/VoiceSearchResultsActivity;)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 485
+    .line 547
     invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->build()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v4
 
-    .line 486
+    .line 548
     .local v4, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     iget-object v5, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
@@ -169,7 +178,7 @@
 
     invoke-virtual {v5, v6, v4, v7, v8}, Lcom/google/glass/timeline/TimelineHelper;->insertTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;Lcom/google/googlex/glass/common/proto/UserAction;)Landroid/net/Uri;
 
-    .line 490
+    .line 552
     iget-object v5, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$2;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
     new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
@@ -177,9 +186,9 @@
     invoke-direct {v6, v4}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
     #setter for: Lcom/google/glass/home/search/VoiceSearchResultsActivity;->lastSavedTimelineItemId:Lcom/google/glass/timeline/TimelineItemId;
-    invoke-static {v5, v6}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$402(Lcom/google/glass/home/search/VoiceSearchResultsActivity;Lcom/google/glass/timeline/TimelineItemId;)Lcom/google/glass/timeline/TimelineItemId;
+    invoke-static {v5, v6}, Lcom/google/glass/home/search/VoiceSearchResultsActivity;->access$502(Lcom/google/glass/home/search/VoiceSearchResultsActivity;Lcom/google/glass/timeline/TimelineItemId;)Lcom/google/glass/timeline/TimelineItemId;
 
-    .line 492
+    .line 554
     .end local v0           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     .end local v3           #filePath:Ljava/lang/String;
     .end local v4           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;

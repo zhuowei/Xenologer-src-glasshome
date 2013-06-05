@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 178
+    .line 153
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
@@ -47,14 +47,56 @@
 
 
 # virtual methods
+.method public onBufferingStateChanged(Z)V
+    .locals 1
+    .parameter "isBuffering"
+
+    .prologue
+    .line 201
+    if-eqz p1, :cond_0
+
+    .line 202
+    iget-object v0, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
+
+    #calls: Lcom/google/glass/home/timeline/VideoItemView;->showBufferingIndicator()V
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoItemView;->access$500(Lcom/google/glass/home/timeline/VideoItemView;)V
+
+    .line 206
+    :goto_0
+    return-void
+
+    .line 204
+    :cond_0
+    iget-object v0, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
+
+    #calls: Lcom/google/glass/home/timeline/VideoItemView;->hideBufferingIndicator()V
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoItemView;->access$300(Lcom/google/glass/home/timeline/VideoItemView;)V
+
+    goto :goto_0
+.end method
+
+.method public onError()V
+    .locals 1
+
+    .prologue
+    .line 196
+    iget-object v0, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
+
+    #calls: Lcom/google/glass/home/timeline/VideoItemView;->showErrorMessage()V
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoItemView;->access$400(Lcom/google/glass/home/timeline/VideoItemView;)V
+
+    .line 197
+    return-void
+.end method
+
 .method public onVideoPlaybackStarted()V
     .locals 4
 
     .prologue
-    .line 181
+    .line 156
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 182
+    .line 157
     invoke-static {}, Lcom/google/glass/home/timeline/VideoItemView;->access$200()Ljava/lang/String;
 
     move-result-object v1
@@ -63,7 +105,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 185
+    .line 160
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/VideoItemView;->getResources()Landroid/content/res/Resources;
@@ -76,7 +118,7 @@
 
     move-result v0
 
-    .line 186
+    .line 161
     .local v0, fadeDuration:I
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
 
@@ -84,7 +126,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 187
+    .line 162
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -113,7 +155,13 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 197
+    .line 172
+    iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
+
+    #calls: Lcom/google/glass/home/timeline/VideoItemView;->hideBufferingIndicator()V
+    invoke-static {v1}, Lcom/google/glass/home/timeline/VideoItemView;->access$300(Lcom/google/glass/home/timeline/VideoItemView;)V
+
+    .line 173
     return-void
 .end method
 
@@ -123,10 +171,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 201
+    .line 177
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 202
+    .line 178
     invoke-static {}, Lcom/google/glass/home/timeline/VideoItemView;->access$200()Ljava/lang/String;
 
     move-result-object v1
@@ -135,7 +183,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
+    .line 181
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/VideoItemView;->getResources()Landroid/content/res/Resources;
@@ -148,7 +196,7 @@
 
     move-result v0
 
-    .line 206
+    .line 182
     .local v0, fadeDuration:I
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
 
@@ -156,12 +204,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 207
+    .line 183
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 208
+    .line 184
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -188,11 +236,11 @@
 
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 215
+    .line 191
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$videoView:Landroid/view/TextureView;
 
     invoke-virtual {v1, v4}, Landroid/view/TextureView;->setKeepScreenOn(Z)V
 
-    .line 216
+    .line 192
     return-void
 .end method

@@ -37,7 +37,7 @@
     iput p1, p0, Lcom/google/glass/widget/OptionMenu$ItemState;->id:I
 
     .line 68
-    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {p2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 

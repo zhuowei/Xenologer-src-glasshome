@@ -35,60 +35,23 @@
     .parameter "string"
 
     .prologue
-    .line 545
+    .line 688
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableList;-><init>()V
 
-    .line 609
+    .line 742
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->hash:I
 
-    .line 546
+    .line 689
     iput-object p1, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
 
-    .line 547
+    .line 690
     return-void
-.end method
-
-.method static synthetic access$000(Lcom/google/common/collect/Lists$StringAsImmutableList;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 540
-    iget-object v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
-
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public contains(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "object"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 550
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/Lists$StringAsImmutableList;->indexOf(Ljava/lang/Object;)I
-
-    move-result v0
-
-    if-ltz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 8
     .parameter "obj"
@@ -99,12 +62,12 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 590
+    .line 724
     instance-of v6, p1, Ljava/util/List;
 
     if-nez v6, :cond_1
 
-    .line 606
+    .line 739
     :cond_0
     :goto_0
     return v5
@@ -112,10 +75,10 @@
     :cond_1
     move-object v3, p1
 
-    .line 593
+    .line 727
     check-cast v3, Ljava/util/List;
 
-    .line 594
+    .line 728
     .local v3, list:Ljava/util/List;,"Ljava/util/List<*>;"
     iget-object v6, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
 
@@ -123,7 +86,7 @@
 
     move-result v4
 
-    .line 595
+    .line 729
     .local v4, n:I
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -131,12 +94,12 @@
 
     if-ne v4, v6, :cond_0
 
-    .line 598
+    .line 732
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .line 599
+    .line 733
     .local v2, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<*>;"
     const/4 v1, 0x0
 
@@ -144,12 +107,12 @@
     :goto_1
     if-ge v1, v4, :cond_2
 
-    .line 600
+    .line 734
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 601
+    .line 735
     .local v0, elem:Ljava/lang/Object;
     instance-of v6, v0, Ljava/lang/Character;
 
@@ -170,12 +133,12 @@
 
     if-ne v6, v7, :cond_0
 
-    .line 599
+    .line 733
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 606
+    .line 739
     :cond_2
     const/4 v5, 0x1
 
@@ -187,7 +150,14 @@
     .parameter "index"
 
     .prologue
-    .line 582
+    .line 714
+    invoke-virtual {p0}, Lcom/google/common/collect/Lists$StringAsImmutableList;->size()I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
+
+    .line 715
     iget-object v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
 
     invoke-virtual {v0, p1}, Ljava/lang/String;->charAt(I)C
@@ -206,7 +176,7 @@
     .parameter "x0"
 
     .prologue
-    .line 539
+    .line 682
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Lists$StringAsImmutableList;->get(I)Ljava/lang/Character;
 
     move-result-object v0
@@ -218,17 +188,17 @@
     .locals 4
 
     .prologue
-    .line 612
+    .line 746
     iget v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->hash:I
 
-    .line 613
+    .line 747
     .local v0, h:I
     if-nez v0, :cond_1
 
-    .line 614
+    .line 748
     const/4 v0, 0x1
 
-    .line 615
+    .line 749
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -241,7 +211,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 616
+    .line 750
     mul-int/lit8 v2, v0, 0x1f
 
     iget-object v3, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
@@ -252,16 +222,16 @@
 
     add-int v0, v2, v3
 
-    .line 615
+    .line 749
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 618
+    .line 752
     :cond_0
     iput v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->hash:I
 
-    .line 620
+    .line 754
     .end local v1           #i:I
     :cond_1
     return v0
@@ -275,7 +245,7 @@
     .end parameter
 
     .prologue
-    .line 554
+    .line 694
     instance-of v0, p1, Ljava/lang/Character;
 
     if-eqz v0, :cond_0
@@ -307,7 +277,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 710
     const/4 v0, 0x0
 
     return v0
@@ -321,7 +291,7 @@
     .end parameter
 
     .prologue
-    .line 559
+    .line 699
     instance-of v0, p1, Ljava/lang/Character;
 
     if-eqz v0, :cond_0
@@ -349,50 +319,11 @@
     goto :goto_0
 .end method
 
-.method public listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
-    .locals 2
-    .parameter "index"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Lcom/google/common/collect/UnmodifiableListIterator",
-            "<",
-            "Ljava/lang/Character;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 565
-    new-instance v0, Lcom/google/common/collect/Lists$StringAsImmutableList$1;
-
-    invoke-virtual {p0}, Lcom/google/common/collect/Lists$StringAsImmutableList;->size()I
-
-    move-result v1
-
-    invoke-direct {v0, p0, v1, p1}, Lcom/google/common/collect/Lists$StringAsImmutableList$1;-><init>(Lcom/google/common/collect/Lists$StringAsImmutableList;II)V
-
-    return-object v0
-.end method
-
-.method public bridge synthetic listIterator(I)Ljava/util/ListIterator;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 539
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/Lists$StringAsImmutableList;->listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public size()I
     .locals 1
 
     .prologue
-    .line 586
+    .line 719
     iget-object v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -417,7 +348,14 @@
     .end annotation
 
     .prologue
-    .line 574
+    .line 704
+    invoke-virtual {p0}, Lcom/google/common/collect/Lists$StringAsImmutableList;->size()I
+
+    move-result v0
+
+    invoke-static {p1, p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
+
+    .line 705
     iget-object v0, p0, Lcom/google/common/collect/Lists$StringAsImmutableList;->string:Ljava/lang/String;
 
     invoke-virtual {v0, p1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -437,7 +375,7 @@
     .parameter "x1"
 
     .prologue
-    .line 539
+    .line 682
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Lists$StringAsImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0

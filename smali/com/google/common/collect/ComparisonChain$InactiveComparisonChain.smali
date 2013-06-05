@@ -24,15 +24,15 @@
     .parameter "result"
 
     .prologue
-    .line 104
+    .line 127
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/ComparisonChain;-><init>(Lcom/google/common/collect/ComparisonChain$1;)V
 
-    .line 105
+    .line 128
     iput p1, p0, Lcom/google/common/collect/ComparisonChain$InactiveComparisonChain;->result:I
 
-    .line 106
+    .line 129
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .parameter "right"
 
     .prologue
-    .line 125
+    .line 159
     return-object p0
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "right"
 
     .prologue
-    .line 122
+    .line 154
     return-object p0
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "right"
 
     .prologue
-    .line 116
+    .line 144
     return-object p0
 .end method
 
@@ -74,7 +74,7 @@
     .parameter "right"
 
     .prologue
-    .line 119
+    .line 149
     return-object p0
 .end method
 
@@ -90,7 +90,7 @@
     .end parameter
 
     .prologue
-    .line 109
+    .line 133
     return-object p0
 .end method
 
@@ -120,20 +120,30 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 139
     .local p1, left:Ljava/lang/Object;,"TT;"
     .local p2, right:Ljava/lang/Object;,"TT;"
     .local p3, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<TT;>;"
     return-object p0
 .end method
 
-.method public compare(ZZ)Lcom/google/common/collect/ComparisonChain;
+.method public compareFalseFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
     .locals 0
     .parameter "left"
     .parameter "right"
 
     .prologue
-    .line 128
+    .line 169
+    return-object p0
+.end method
+
+.method public compareTrueFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
+    .locals 0
+    .parameter "left"
+    .parameter "right"
+
+    .prologue
+    .line 164
     return-object p0
 .end method
 
@@ -141,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 131
+    .line 174
     iget v0, p0, Lcom/google/common/collect/ComparisonChain$InactiveComparisonChain;->result:I
 
     return v0

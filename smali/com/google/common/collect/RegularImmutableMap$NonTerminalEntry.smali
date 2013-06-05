@@ -60,17 +60,17 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 112
     .local p0, this:Lcom/google/common/collect/RegularImmutableMap$NonTerminalEntry;,"Lcom/google/common/collect/RegularImmutableMap$NonTerminalEntry<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
     .local p3, next:Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;,"Lcom/google/common/collect/RegularImmutableMap$LinkedEntry<TK;TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/ImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 117
+    .line 113
     iput-object p3, p0, Lcom/google/common/collect/RegularImmutableMap$NonTerminalEntry;->next:Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;
 
-    .line 118
+    .line 114
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 117
     .local p0, this:Lcom/google/common/collect/RegularImmutableMap$NonTerminalEntry;,"Lcom/google/common/collect/RegularImmutableMap$NonTerminalEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$NonTerminalEntry;->next:Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;
 

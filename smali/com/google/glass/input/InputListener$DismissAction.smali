@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 35
+    .line 33
     new-instance v0, Lcom/google/glass/input/InputListener$DismissAction;
 
     const-string v1, "SWIPE_DOWN"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/glass/input/InputListener$DismissAction;->SWIPE_DOWN:Lcom/google/glass/input/InputListener$DismissAction;
 
-    .line 36
+    .line 34
     new-instance v0, Lcom/google/glass/input/InputListener$DismissAction;
 
     const-string v1, "NUDGE"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/glass/input/InputListener$DismissAction;->NUDGE:Lcom/google/glass/input/InputListener$DismissAction;
 
-    .line 37
+    .line 35
     new-instance v0, Lcom/google/glass/input/InputListener$DismissAction;
 
     const-string v1, "OPTION_ITEM"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/glass/input/InputListener$DismissAction;->OPTION_ITEM:Lcom/google/glass/input/InputListener$DismissAction;
 
-    .line 34
+    .line 32
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/input/InputListener$DismissAction;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 34
+    .line 32
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 34
+    .line 32
     const-class v0, Lcom/google/glass/input/InputListener$DismissAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 32
     sget-object v0, Lcom/google/glass/input/InputListener$DismissAction;->$VALUES:[Lcom/google/glass/input/InputListener$DismissAction;
 
     invoke-virtual {v0}, [Lcom/google/glass/input/InputListener$DismissAction;->clone()Ljava/lang/Object;

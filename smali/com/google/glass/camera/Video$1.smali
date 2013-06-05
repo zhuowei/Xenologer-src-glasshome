@@ -3,12 +3,12 @@
 .source "Video.java"
 
 # interfaces
-.implements Lcom/google/glass/util/FileSaver$Saver;
+.implements Landroid/os/Parcelable$Creator;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/camera/Video;->createThumbnail(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Bitmap;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/glass/camera/Video;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,20 +16,23 @@
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic val$thumbnail:Landroid/graphics/Bitmap;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Landroid/os/Parcelable$Creator",
+        "<",
+        "Lcom/google/glass/camera/Video;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Landroid/graphics/Bitmap;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
 
     .prologue
-    .line 116
-    iput-object p1, p0, Lcom/google/glass/camera/Video$1;->val$thumbnail:Landroid/graphics/Bitmap;
-
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,36 +40,52 @@
 
 
 # virtual methods
-.method public getEstimatedSizeBytes()J
-    .locals 2
+.method public createFromParcel(Landroid/os/Parcel;)Lcom/google/glass/camera/Video;
+    .locals 1
+    .parameter "in"
 
     .prologue
-    .line 124
-    iget-object v0, p0, Lcom/google/glass/camera/Video$1;->val$thumbnail:Landroid/graphics/Bitmap;
+    .line 30
+    new-instance v0, Lcom/google/glass/camera/Video;
 
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getByteCount()I
+    invoke-direct {v0, p1}, Lcom/google/glass/camera/Video;-><init>(Landroid/os/Parcel;)V
 
-    move-result v0
-
-    int-to-long v0, v0
-
-    return-wide v0
+    return-object v0
 .end method
 
-.method public save(Ljava/io/OutputStream;)V
-    .locals 3
-    .parameter "os"
+.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 119
-    iget-object v0, p0, Lcom/google/glass/camera/Video$1;->val$thumbnail:Landroid/graphics/Bitmap;
+    .line 27
+    invoke-virtual {p0, p1}, Lcom/google/glass/camera/Video$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/glass/camera/Video;
 
-    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+    move-result-object v0
 
-    const/16 v2, 0x5a
+    return-object v0
+.end method
 
-    invoke-virtual {v0, v1, v2, p1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+.method public newArray(I)[Lcom/google/glass/camera/Video;
+    .locals 1
+    .parameter "size"
 
-    .line 120
-    return-void
+    .prologue
+    .line 35
+    new-array v0, p1, [Lcom/google/glass/camera/Video;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 27
+    invoke-virtual {p0, p1}, Lcom/google/glass/camera/Video$1;->newArray(I)[Lcom/google/glass/camera/Video;
+
+    move-result-object v0
+
+    return-object v0
 .end method

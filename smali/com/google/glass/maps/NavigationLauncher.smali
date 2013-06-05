@@ -26,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 20
+    .line 21
     const-class v0, Lcom/google/glass/maps/NavigationLauncher;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -42,10 +42,10 @@
     .locals 0
 
     .prologue
-    .line 52
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 54
+    .line 55
     return-void
 .end method
 
@@ -54,14 +54,14 @@
     .parameter "context"
 
     .prologue
-    .line 58
+    .line 59
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.NAVIGATION_BROADCAST"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 59
+    .line 60
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "operation"
 
@@ -69,10 +69,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 60
+    .line 61
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 61
+    .line 62
     return-void
 .end method
 
@@ -81,23 +81,23 @@
     .parameter "uri"
 
     .prologue
-    .line 169
+    .line 176
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 170
+    .line 177
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 171
+    .line 178
     invoke-virtual {v0, p0}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 172
+    .line 179
     return-object v0
 .end method
 
@@ -108,10 +108,10 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 85
     const/4 v0, 0x0
 
-    .line 85
+    .line 86
     .local v0, query:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Location;->getAddress()Ljava/lang/String;
 
@@ -123,12 +123,12 @@
 
     if-nez v3, :cond_0
 
-    .line 86
+    .line 87
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Location;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 88
+    .line 89
     :cond_0
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -146,12 +146,12 @@
 
     if-nez v3, :cond_1
 
-    .line 89
+    .line 90
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Location;->getDisplayName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 92
+    .line 93
     :cond_1
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -171,7 +171,7 @@
 
     if-nez v3, :cond_3
 
-    .line 93
+    .line 94
     :cond_2
     sget-object v3, Lcom/google/glass/maps/NavigationLauncher;->TAG:Ljava/lang/String;
 
@@ -179,32 +179,32 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 94
+    .line 95
     const/4 v3, 0x0
 
-    .line 121
+    .line 122
     :goto_0
     return-object v3
 
-    .line 98
+    .line 99
     :cond_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Location;->getDisplayName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 100
+    .line 101
     .local v1, title:Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 101
+    .line 102
     .local v2, uri:Ljava/lang/StringBuilder;
     const-string v3, "google.navigation:"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 102
+    .line 103
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Location;->hasLatitude()Z
 
     move-result v3
@@ -217,7 +217,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 103
+    .line 104
     const-string v3, "ll="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -244,7 +244,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    .line 105
+    .line 106
     :cond_4
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -252,7 +252,7 @@
 
     if-nez v3, :cond_6
 
-    .line 106
+    .line 107
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -265,12 +265,12 @@
 
     if-le v3, v4, :cond_5
 
-    .line 107
+    .line 108
     const-string v3, "&"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 109
+    .line 110
     :cond_5
     const-string v3, "title="
 
@@ -284,7 +284,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 111
+    .line 112
     :cond_6
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -292,7 +292,7 @@
 
     if-nez v3, :cond_8
 
-    .line 112
+    .line 113
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -305,12 +305,12 @@
 
     if-le v3, v4, :cond_7
 
-    .line 113
+    .line 114
     const-string v3, "&"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 115
+    .line 116
     :cond_7
     const-string v3, "q="
 
@@ -324,13 +324,13 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 119
+    .line 120
     :cond_8
     const-string v3, "&mode=mru"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 121
+    .line 122
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -344,23 +344,23 @@
     .parameter "context"
 
     .prologue
-    .line 72
+    .line 73
     invoke-static {p0}, Lcom/google/glass/maps/NavigationLauncher;->getNavigationUriString(Lcom/google/googlex/glass/common/proto/Location;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 73
+    .line 74
     .local v0, navigationUriString:Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 74
+    .line 75
     const/4 v1, 0x0
 
-    .line 77
+    .line 78
     :goto_0
     return v1
 
-    .line 76
+    .line 77
     :cond_0
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -372,7 +372,7 @@
 
     invoke-virtual {p1, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 77
+    .line 78
     const/4 v1, 0x1
 
     goto :goto_0
@@ -385,90 +385,37 @@
     .parameter "displayVoiceSearchResult"
 
     .prologue
-    .line 136
-    :try_start_0
-    const-string v3, "UTF-8"
+    const/4 v3, 0x0
 
-    invoke-static {p0, v3}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 138
+    :try_start_0
+    const-string v4, "UTF-8"
+
+    invoke-static {p0, v4}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v1
 
-    .line 142
-    .local v1, encodedQuery:Ljava/lang/String;
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "google.navigation:q="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "&mode=mru"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/google/glass/maps/NavigationLauncher;->buildIntent(Landroid/net/Uri;)Landroid/content/Intent;
-
-    move-result-object v2
-
-    .line 143
-    .local v2, intent:Landroid/content/Intent;
-    if-eqz p2, :cond_0
-
     .line 144
-    const-string v3, "voice_search_result"
-
-    invoke-virtual {v2, v3, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 146
-    :cond_0
-    invoke-virtual {p1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    .line 148
-    const/4 v3, 0x1
-
-    .end local v1           #encodedQuery:Ljava/lang/String;
-    .end local v2           #intent:Landroid/content/Intent;
-    :goto_0
-    return v3
-
-    .line 137
-    :catch_0
-    move-exception v0
-
-    .line 138
-    .local v0, e:Ljava/io/UnsupportedEncodingException;
-    sget-object v3, Lcom/google/glass/maps/NavigationLauncher;->TAG:Ljava/lang/String;
-
+    .local v1, encodedQuery:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "Error encoding navigation query: "
+    const-string v5, "google.navigation:q="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "&mode=mru"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -476,10 +423,66 @@
 
     move-result-object v4
 
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/google/glass/maps/NavigationLauncher;->buildIntent(Landroid/net/Uri;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    .line 145
+    .local v2, intent:Landroid/content/Intent;
+    if-eqz p2, :cond_0
+
+    .line 146
+    const-string v4, "voice_search_result"
+
+    invoke-virtual {v2, v4, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 149
+    :cond_0
+    :try_start_1
+    invoke-virtual {p1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_1
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 155
+    const/4 v3, 0x1
+
+    .end local v1           #encodedQuery:Ljava/lang/String;
+    .end local v2           #intent:Landroid/content/Intent;
+    :goto_0
+    return v3
 
     .line 139
-    const/4 v3, 0x0
+    :catch_0
+    move-exception v0
+
+    .line 140
+    .local v0, e:Ljava/io/UnsupportedEncodingException;
+    sget-object v4, Lcom/google/glass/maps/NavigationLauncher;->TAG:Ljava/lang/String;
+
+    const-string v5, "Error encoding navigation query"
+
+    invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    .line 150
+    .end local v0           #e:Ljava/io/UnsupportedEncodingException;
+    .restart local v1       #encodedQuery:Ljava/lang/String;
+    .restart local v2       #intent:Landroid/content/Intent;
+    :catch_1
+    move-exception v0
+
+    .line 151
+    .local v0, e:Landroid/content/ActivityNotFoundException;
+    sget-object v4, Lcom/google/glass/maps/NavigationLauncher;->TAG:Ljava/lang/String;
+
+    const-string v5, "No activity found to start navigation"
+
+    invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -489,14 +492,14 @@
     .parameter "context"
 
     .prologue
-    .line 153
+    .line 160
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.NAVIGATION_BROADCAST"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 154
+    .line 161
     .local v0, stopNavigationIntent:Landroid/content/Intent;
     const-string v1, "operation"
 
@@ -504,10 +507,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 155
+    .line 162
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 156
+    .line 163
     return-void
 .end method
 
@@ -516,14 +519,14 @@
     .parameter "context"
 
     .prologue
-    .line 163
+    .line 170
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.NAVIGATION_BROADCAST"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 164
+    .line 171
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "operation"
 
@@ -531,9 +534,9 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 165
+    .line 172
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 166
+    .line 173
     return-void
 .end method

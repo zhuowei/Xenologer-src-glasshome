@@ -17,7 +17,7 @@
     .parameter "in"
 
     .prologue
-    .line 53
+    .line 52
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -26,7 +26,7 @@
 
     invoke-direct {p0, v0}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 54
+    .line 53
     return-void
 .end method
 
@@ -40,27 +40,27 @@
     .end annotation
 
     .prologue
-    .line 223
+    .line 215
     iget-object v1, p0, Lcom/google/common/io/LittleEndianDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 225
+    .line 217
     .local v0, b1:I
     const/4 v1, -0x1
 
     if-ne v1, v0, :cond_0
 
-    .line 226
+    .line 218
     new-instance v1, Ljava/io/EOFException;
 
     invoke-direct {v1}, Ljava/io/EOFException;-><init>()V
 
     throw v1
 
-    .line 229
+    .line 221
     :cond_0
     int-to-byte v1, v0
 
@@ -78,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 203
     invoke-virtual {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readUnsignedByte()I
 
     move-result v0
@@ -105,7 +105,7 @@
     .end annotation
 
     .prologue
-    .line 206
+    .line 199
     invoke-virtual {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readUnsignedByte()I
 
     move-result v0
@@ -124,7 +124,7 @@
     .end annotation
 
     .prologue
-    .line 201
+    .line 195
     invoke-virtual {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readUnsignedShort()I
 
     move-result v0
@@ -143,7 +143,7 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 165
     invoke-virtual {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readLong()J
 
     move-result-wide v0
@@ -164,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 156
+    .line 151
     invoke-virtual {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readInt()I
 
     move-result v0
@@ -186,10 +186,10 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 64
     invoke-static {p0, p1}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[B)V
 
-    .line 67
+    .line 65
     return-void
 .end method
 
@@ -205,10 +205,10 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 68
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[BII)V
 
-    .line 72
+    .line 69
     return-void
 .end method
 
@@ -221,30 +221,30 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 111
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v0
 
-    .line 117
+    .line 112
     .local v0, b1:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v1
 
-    .line 118
+    .line 113
     .local v1, b2:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v2
 
-    .line 119
+    .line 114
     .local v2, b3:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v3
 
-    .line 121
+    .line 116
     .local v3, b4:B
     invoke-static {v3, v2, v1, v0}, Lcom/google/common/primitives/Ints;->fromBytes(BBBB)I
 
@@ -257,7 +257,7 @@
     .locals 2
 
     .prologue
-    .line 61
+    .line 60
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "readLine is not supported"
@@ -276,54 +276,54 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 129
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v7
 
-    .line 135
+    .line 130
     .local v7, b1:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v6
 
-    .line 136
+    .line 131
     .local v6, b2:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v5
 
-    .line 137
+    .line 132
     .local v5, b3:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v4
 
-    .line 138
+    .line 133
     .local v4, b4:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v3
 
-    .line 139
+    .line 134
     .local v3, b5:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v2
 
-    .line 140
+    .line 135
     .local v2, b6:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v1
 
-    .line 141
+    .line 136
     .local v1, b7:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v0
 
-    .line 143
+    .line 138
     .local v0, b8:B
     invoke-static/range {v0 .. v7}, Lcom/google/common/primitives/Longs;->fromBytes(BBBBBBBB)J
 
@@ -341,7 +341,7 @@
     .end annotation
 
     .prologue
-    .line 188
+    .line 182
     invoke-virtual {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readUnsignedShort()I
 
     move-result v0
@@ -360,7 +360,7 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 169
     new-instance v0, Ljava/io/DataInputStream;
 
     iget-object v1, p0, Lcom/google/common/io/LittleEndianDataInputStream;->in:Ljava/io/InputStream;
@@ -383,25 +383,25 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 76
     iget-object v1, p0, Lcom/google/common/io/LittleEndianDataInputStream;->in:Ljava/io/InputStream;
 
     invoke-virtual {v1}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 82
+    .line 77
     .local v0, b1:I
     if-gez v0, :cond_0
 
-    .line 83
+    .line 78
     new-instance v1, Ljava/io/EOFException;
 
     invoke-direct {v1}, Ljava/io/EOFException;-><init>()V
 
     throw v1
 
-    .line 86
+    .line 81
     :cond_0
     return v0
 .end method
@@ -417,18 +417,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 100
+    .line 95
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v0
 
-    .line 101
+    .line 96
     .local v0, b1:B
     invoke-direct {p0}, Lcom/google/common/io/LittleEndianDataInputStream;->readAndCheckByte()B
 
     move-result v1
 
-    .line 103
+    .line 98
     .local v1, b2:B
     invoke-static {v2, v2, v1, v0}, Lcom/google/common/primitives/Ints;->fromBytes(BBBB)I
 
@@ -447,7 +447,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 72
     iget-object v0, p0, Lcom/google/common/io/LittleEndianDataInputStream;->in:Ljava/io/InputStream;
 
     int-to-long v1, p1

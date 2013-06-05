@@ -1,6 +1,9 @@
 .class Lcom/google/glass/home/HomeApplication$1;
-.super Lcom/google/glass/home/companion/CompanionService$SimpleCompanionListener;
+.super Ljava/lang/Object;
 .source "HomeApplication.java"
+
+# interfaces
+.implements Landroid/content/ServiceConnection;
 
 
 # annotations
@@ -24,78 +27,160 @@
     .parameter
 
     .prologue
-    .line 65
+    .line 85
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    invoke-direct {p0}, Lcom/google/glass/home/companion/CompanionService$SimpleCompanionListener;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onCompanionConnected(Landroid/bluetooth/BluetoothDevice;)V
-    .locals 2
-    .parameter "device"
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 3
+    .parameter "name"
+    .parameter "binder"
 
     .prologue
-    .line 68
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    #getter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$000(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
+    .line 96
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Connected to "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getShortClassName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 97
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-class v1, Lcom/google/glass/location/LocationService;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 69
+    .line 98
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
+
+    invoke-static {}, Lcom/google/glass/location/LocationService;->getRunningInstance()Lcom/google/glass/location/LocationService;
+
+    move-result-object v1
+
+    #setter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
+    invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$102(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
+
+    .line 99
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
     #getter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$000(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
+    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$100(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/glass/location/LocationService;->onCompanionConnected()V
+    iget-object v1, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    .line 71
+    #getter for: Lcom/google/glass/home/HomeApplication;->companionLocationProxy:Lcom/google/glass/location/CompanionLocationProxy;
+    invoke-static {v1}, Lcom/google/glass/home/HomeApplication;->access$200(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/CompanionLocationProxy;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/location/LocationService;->setLocationProxy(Lcom/google/glass/location/LocationProxy;)V
+
+    .line 101
     :cond_0
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    const-string v1, "com.google.glass.location"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 72
     return-void
 .end method
 
-.method public onCompanionDisconnected()V
-    .locals 1
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 3
+    .parameter "name"
 
     .prologue
-    .line 76
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    #getter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$000(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
+    .line 88
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Disconnected from "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getShortClassName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 89
+    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-class v1, Lcom/google/glass/location/LocationService;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 77
+    .line 90
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    #getter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$000(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
+    const/4 v1, 0x0
 
-    move-result-object v0
+    #setter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
+    invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$102(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
 
-    invoke-virtual {v0}, Lcom/google/glass/location/LocationService;->onCompanionDisconnected()V
-
-    .line 79
+    .line 92
     :cond_0
     return-void
 .end method

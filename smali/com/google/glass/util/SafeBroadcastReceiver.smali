@@ -16,7 +16,7 @@
     .locals 1
 
     .prologue
-    .line 25
+    .line 26
     const-class v0, Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 24
+    .line 25
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
     .parameter "context"
 
     .prologue
-    .line 85
+    .line 102
     new-instance v0, Lcom/google/glass/logging/UserEventHelper;
 
     invoke-direct {v0, p1}, Lcom/google/glass/logging/UserEventHelper;-><init>(Landroid/content/Context;)V
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 88
     iget-boolean v0, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
 
     return v0
@@ -72,14 +72,14 @@
     .parameter "action"
 
     .prologue
-    .line 97
+    .line 114
     invoke-virtual {p0, p1}, Lcom/google/glass/util/SafeBroadcastReceiver;->getUserEventHelper(Landroid/content/Context;)Lcom/google/glass/logging/UserEventHelper;
 
     move-result-object v0
 
     invoke-virtual {v0, p2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 98
+    .line 115
     return-void
 .end method
 
@@ -90,14 +90,14 @@
     .parameter "data"
 
     .prologue
-    .line 110
+    .line 127
     invoke-virtual {p0, p1}, Lcom/google/glass/util/SafeBroadcastReceiver;->getUserEventHelper(Landroid/content/Context;)Lcom/google/glass/logging/UserEventHelper;
 
     move-result-object v0
 
     invoke-virtual {v0, p2, p3}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 111
+    .line 128
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .parameter "intentFilter"
 
     .prologue
-    .line 39
+    .line 40
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;Ljava/lang/String;)Landroid/content/Intent;
@@ -118,119 +118,152 @@
 .end method
 
 .method public register(Landroid/content/Context;Landroid/content/IntentFilter;Ljava/lang/String;)Landroid/content/Intent;
-    .locals 4
+    .locals 9
     .parameter "context"
     .parameter "intentFilter"
     .parameter "permission"
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 43
-    iget-boolean v1, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
-
-    if-eqz v1, :cond_0
+    const/4 v4, 0x0
 
     .line 44
-    sget-object v1, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
+    iget-boolean v5, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    if-eqz v5, :cond_0
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 45
+    sget-object v5, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
 
-    const-string v3, "Not registering receiver \'"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v2
+    const-string v7, "Not registering receiver \'"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->getTag()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v6
 
-    const-string v3, "\', because it is already registered."
+    const-string v7, "\', because it is already registered."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 56
+    .line 60
     :goto_0
-    return-object v0
+    return-object v4
 
     .line 49
     :cond_0
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    .line 51
+    .local v2, before:J
     invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v5
 
-    if-eqz v1, :cond_1
+    if-eqz v5, :cond_1
 
-    .line 50
+    .line 52
     invoke-virtual {p1, p0, p2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    move-result-object v0
+    move-result-object v4
 
-    .line 54
-    .local v0, stickyIntent:Landroid/content/Intent;
+    .line 56
+    .local v4, stickyIntent:Landroid/content/Intent;
     :goto_1
-    const/4 v1, 0x1
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    iput-boolean v1, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
+    move-result-wide v0
 
-    .line 55
-    sget-object v1, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
+    .line 57
+    .local v0, after:J
+    const/4 v5, 0x1
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    iput-boolean v5, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    .line 58
+    sget-object v5, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
 
-    const-string v3, "Registered receiver \'"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v2
+    const-string v7, "Registered receiver \'"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->getTag()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v6
 
-    const-string v3, "\'."
+    const-string v7, "\', took "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v6
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sub-long v7, v0, v2
 
-    move-result-object v2
+    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v6
+
+    const-string v7, "ms, UI thread: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/util/Assert;->isUiThread()Z
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 52
-    .end local v0           #stickyIntent:Landroid/content/Intent;
+    .line 54
+    .end local v0           #after:J
+    .end local v4           #stickyIntent:Landroid/content/Intent;
     :cond_1
-    invoke-virtual {p1, p0, p2, p3, v0}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+    invoke-virtual {p1, p0, p2, p3, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
 
-    move-result-object v0
+    move-result-object v4
 
-    .restart local v0       #stickyIntent:Landroid/content/Intent;
+    .restart local v4       #stickyIntent:Landroid/content/Intent;
     goto :goto_1
 .end method
 
@@ -240,12 +273,12 @@
     .parameter "actions"
 
     .prologue
-    .line 31
+    .line 32
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 32
+    .line 33
     .local v3, intentFilter:Landroid/content/IntentFilter;
     move-object v1, p2
 
@@ -261,16 +294,16 @@
 
     aget-object v0, v1, v2
 
-    .line 33
+    .line 34
     .local v0, action:Ljava/lang/String;
     invoke-virtual {v3, v0}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 32
+    .line 33
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 35
+    .line 36
     .end local v0           #action:Ljava/lang/String;
     :cond_0
     invoke-virtual {p0, p1, v3}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
@@ -284,7 +317,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 139
     invoke-virtual {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -293,93 +326,190 @@
 .end method
 
 .method public unregister(Landroid/content/Context;)V
-    .locals 3
+    .locals 9
     .parameter "context"
 
     .prologue
-    .line 60
-    iget-boolean v0, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
+    const/4 v8, 0x0
 
-    if-nez v0, :cond_0
+    .line 64
+    iget-boolean v5, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
 
-    .line 61
-    sget-object v0, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
+    if-nez v5, :cond_0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 65
+    sget-object v5, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v2, "Not unregistering receiver \'"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v7, "Not unregistering receiver \'"
 
-    move-result-object v1
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->getTag()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v7
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v6
 
-    const-string v2, "\', because it is not registered."
+    const-string v7, "\', because it is not registered."
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 68
+    .line 85
     :goto_0
     return-void
 
-    .line 65
+    .line 69
     :cond_0
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    .line 74
+    .local v2, before:J
+    :try_start_0
     invoke-virtual {p1, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 66
-    const/4 v0, 0x0
+    .line 80
+    iput-boolean v8, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
 
-    iput-boolean v0, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
+    .line 82
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    .line 67
-    sget-object v0, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
+    move-result-wide v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 83
+    .local v0, after:J
+    sget-object v5, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    const-string v2, "Unregistered receiver \'"
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v7, "Unregistered receiver \'"
 
-    move-result-object v1
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
 
     invoke-virtual {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->getTag()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v7
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v6
 
-    const-string v2, "\'."
+    const-string v7, "\', took "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sub-long v7, v0, v2
 
-    move-result-object v1
+    invoke-virtual {v6, v7, v8}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v6
+
+    const-string v7, "ms, UI thread: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/util/Assert;->isUiThread()Z
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+
+    .line 75
+    .end local v0           #after:J
+    :catch_0
+    move-exception v4
+
+    .line 76
+    .local v4, e:Ljava/lang/IllegalArgumentException;
+    :try_start_1
+    sget-object v5, Lcom/google/glass/util/SafeBroadcastReceiver;->TAG:Ljava/lang/String;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Receiver: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->getTag()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, " could not be unregistered.  It was probably "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, "forcibly unregistered by android.  See above logs."
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 80
+    iput-boolean v8, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
+
+    goto :goto_0
+
+    .end local v4           #e:Ljava/lang/IllegalArgumentException;
+    :catchall_0
+    move-exception v5
+
+    iput-boolean v8, p0, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered:Z
+
+    throw v5
 .end method

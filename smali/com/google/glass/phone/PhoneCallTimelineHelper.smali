@@ -105,6 +105,13 @@
 
     .prologue
     .line 122
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 123
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -117,7 +124,8 @@
 
     invoke-virtual {v0, p1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setId(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 123
+    .line 125
+    :cond_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -126,7 +134,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 124
+    .line 126
     return-void
 .end method
 
@@ -139,24 +147,24 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 165
     const-wide/16 v3, 0x0
 
-    .line 164
+    .line 166
     .local v3, hours:J
     const-wide/16 v5, 0x0
 
-    .line 165
+    .line 167
     .local v5, minutes:J
     const-wide/16 v7, 0x0
 
-    .line 167
+    .line 169
     .local v7, seconds:J
     const-wide/16 v9, 0x3e8
 
     div-long v0, p1, v9
 
-    .line 169
+    .line 171
     .local v0, elapsedSeconds:J
     const-wide/16 v9, 0x3c
 
@@ -164,42 +172,42 @@
 
     if-ltz v9, :cond_0
 
-    .line 170
+    .line 172
     const-wide/16 v9, 0x3c
 
     div-long v5, v0, v9
 
-    .line 171
+    .line 173
     const-wide/16 v9, 0x3c
 
     mul-long/2addr v9, v5
 
     sub-long/2addr v0, v9
 
-    .line 173
+    .line 175
     :cond_0
     move-wide v7, v0
 
-    .line 175
+    .line 177
     const-wide/16 v9, 0x3c
 
     cmp-long v9, v5, v9
 
     if-ltz v9, :cond_1
 
-    .line 176
+    .line 178
     const-wide/16 v9, 0x3c
 
     div-long v3, v5, v9
 
-    .line 177
+    .line 179
     const-wide/16 v9, 0x3c
 
     mul-long/2addr v9, v3
 
     sub-long/2addr v5, v9
 
-    .line 181
+    .line 183
     :cond_1
     const-wide/16 v9, 0x0
 
@@ -207,7 +215,7 @@
 
     if-lez v9, :cond_2
 
-    .line 182
+    .line 184
     iget-object v9, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
 
     sget v10, Lcom/google/glass/common/R$string;->phone_call_duration_hours_minutes_seconds:I
@@ -244,12 +252,12 @@
 
     move-result-object v2
 
-    .line 191
+    .line 193
     .local v2, formattedText:Ljava/lang/String;
     :goto_0
     return-object v2
 
-    .line 184
+    .line 186
     .end local v2           #formattedText:Ljava/lang/String;
     :cond_2
     const-wide/16 v9, 0x0
@@ -258,7 +266,7 @@
 
     if-lez v9, :cond_3
 
-    .line 185
+    .line 187
     iget-object v9, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
 
     sget v10, Lcom/google/glass/common/R$string;->phone_call_duration_minutes_seconds:I
@@ -290,7 +298,7 @@
     .restart local v2       #formattedText:Ljava/lang/String;
     goto :goto_0
 
-    .line 188
+    .line 190
     .end local v2           #formattedText:Ljava/lang/String;
     :cond_3
     iget-object v9, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
@@ -390,7 +398,7 @@
     .end annotation
 
     .prologue
-    .line 153
+    .line 155
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
@@ -404,7 +412,7 @@
     .end annotation
 
     .prologue
-    .line 143
+    .line 145
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity;->newBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
 
     move-result-object v0
@@ -459,7 +467,7 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 136
     if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->hasDisplayName()Z
@@ -474,7 +482,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 137
+    .line 139
     .end local p1
     :cond_0
     :goto_0

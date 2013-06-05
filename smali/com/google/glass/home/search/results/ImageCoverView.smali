@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/search/results/ImageCoverView;
-.super Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+.super Lcom/google/glass/horizontalscroll/LinearLayoutCard;
 .source "ImageCoverView.java"
 
 
@@ -20,7 +20,7 @@
 
     .prologue
     .line 30
-    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;)V
 
     .line 31
     invoke-direct {p0}, Lcom/google/glass/home/search/results/ImageCoverView;->init()V
@@ -36,7 +36,7 @@
 
     .prologue
     .line 35
-    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 36
     invoke-direct {p0}, Lcom/google/glass/home/search/results/ImageCoverView;->init()V
@@ -53,7 +53,7 @@
 
     .prologue
     .line 40
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 41
     invoke-direct {p0}, Lcom/google/glass/home/search/results/ImageCoverView;->init()V

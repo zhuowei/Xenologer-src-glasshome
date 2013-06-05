@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation build Lcom/google/common/annotations/GwtCompatible;
     emulated = true
 .end annotation
@@ -37,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 47
+    .line 55
     .local p0, this:Lcom/google/common/cache/CacheLoader;,"Lcom/google/common/cache/CacheLoader<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,6 +44,9 @@
 .method public static from(Lcom/google/common/base/Function;)Lcom/google/common/cache/CacheLoader;
     .locals 1
     .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -62,7 +62,7 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 135
     .local p0, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<TK;TV;>;"
     new-instance v0, Lcom/google/common/cache/CacheLoader$FunctionToCacheLoader;
 
@@ -74,6 +74,9 @@
 .method public static from(Lcom/google/common/base/Supplier;)Lcom/google/common/cache/CacheLoader;
     .locals 1
     .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -89,7 +92,7 @@
     .end annotation
 
     .prologue
-    .line 130
+    .line 165
     .local p0, supplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TV;>;"
     new-instance v0, Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader;
 
@@ -134,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 122
     .local p0, this:Lcom/google/common/cache/CacheLoader;,"Lcom/google/common/cache/CacheLoader<TK;TV;>;"
     .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TK;>;"
     new-instance v0, Lcom/google/common/cache/CacheLoader$UnsupportedLoadingOperationException;
@@ -167,10 +170,16 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 92
     .local p0, this:Lcom/google/common/cache/CacheLoader;,"Lcom/google/common/cache/CacheLoader<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, oldValue:Ljava/lang/Object;,"TV;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 93
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 94
     invoke-virtual {p0, p1}, Lcom/google/common/cache/CacheLoader;->load(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0

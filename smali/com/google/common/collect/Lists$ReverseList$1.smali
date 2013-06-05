@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 824
+    .line 981
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     iput-object p1, p0, Lcom/google/common/collect/Lists$ReverseList$1;->this$0:Lcom/google/common/collect/Lists$ReverseList;
 
@@ -65,26 +65,26 @@
     .end annotation
 
     .prologue
-    .line 830
+    .line 987
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     .local p1, e:Ljava/lang/Object;,"TT;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
     invoke-interface {v0, p1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
 
-    .line 831
+    .line 988
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
 
-    .line 832
+    .line 989
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canRemove:Z
 
     iput-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canSet:Z
 
-    .line 833
+    .line 990
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 836
+    .line 993
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
@@ -107,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 840
+    .line 997
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
@@ -127,7 +127,7 @@
     .end annotation
 
     .prologue
-    .line 844
+    .line 1001
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Lists$ReverseList$1;->hasNext()Z
 
@@ -135,14 +135,14 @@
 
     if-nez v0, :cond_0
 
-    .line 845
+    .line 1002
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 
-    .line 847
+    .line 1004
     :cond_0
     const/4 v0, 0x1
 
@@ -150,7 +150,7 @@
 
     iput-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canSet:Z
 
-    .line 848
+    .line 1005
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
     invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
@@ -164,7 +164,7 @@
     .locals 2
 
     .prologue
-    .line 852
+    .line 1009
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->this$0:Lcom/google/common/collect/Lists$ReverseList;
 
@@ -175,7 +175,7 @@
     move-result v1
 
     #calls: Lcom/google/common/collect/Lists$ReverseList;->reversePosition(I)I
-    invoke-static {v0, v1}, Lcom/google/common/collect/Lists$ReverseList;->access$100(Lcom/google/common/collect/Lists$ReverseList;I)I
+    invoke-static {v0, v1}, Lcom/google/common/collect/Lists$ReverseList;->access$000(Lcom/google/common/collect/Lists$ReverseList;I)I
 
     move-result v0
 
@@ -191,7 +191,7 @@
     .end annotation
 
     .prologue
-    .line 856
+    .line 1013
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Lists$ReverseList$1;->hasPrevious()Z
 
@@ -199,14 +199,14 @@
 
     if-nez v0, :cond_0
 
-    .line 857
+    .line 1014
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 
-    .line 859
+    .line 1016
     :cond_0
     const/4 v0, 0x1
 
@@ -214,7 +214,7 @@
 
     iput-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canSet:Z
 
-    .line 860
+    .line 1017
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
     invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
@@ -228,7 +228,7 @@
     .locals 1
 
     .prologue
-    .line 864
+    .line 1021
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Lists$ReverseList$1;->nextIndex()I
 
@@ -243,25 +243,25 @@
     .locals 1
 
     .prologue
-    .line 868
+    .line 1025
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     iget-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canRemove:Z
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkState(Z)V
 
-    .line 869
+    .line 1026
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
     invoke-interface {v0}, Ljava/util/ListIterator;->remove()V
 
-    .line 870
+    .line 1027
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canSet:Z
 
     iput-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canRemove:Z
 
-    .line 871
+    .line 1028
     return-void
 .end method
 
@@ -275,18 +275,18 @@
     .end annotation
 
     .prologue
-    .line 874
+    .line 1031
     .local p0, this:Lcom/google/common/collect/Lists$ReverseList$1;,"Lcom/google/common/collect/Lists$ReverseList.1;"
     .local p1, e:Ljava/lang/Object;,"TT;"
     iget-boolean v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->canSet:Z
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkState(Z)V
 
-    .line 875
+    .line 1032
     iget-object v0, p0, Lcom/google/common/collect/Lists$ReverseList$1;->val$forwardIterator:Ljava/util/ListIterator;
 
     invoke-interface {v0, p1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V
 
-    .line 876
+    .line 1033
     return-void
 .end method

@@ -184,12 +184,12 @@
     .locals 1
 
     .prologue
-    .line 100
+    .line 102
     iget-object v0, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelOpportunisticUpload()V
 
-    .line 101
+    .line 103
     return-void
 .end method
 
@@ -197,7 +197,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 94
     sget-object v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -261,11 +261,11 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 87
+    .line 89
     :goto_0
     invoke-virtual {v2}, Lcom/google/glass/home/sync/SyncStats;->log()V
 
-    .line 88
+    .line 90
     return-void
 
     .line 81
@@ -276,24 +276,34 @@
     .local v0, e:Ljava/lang/InterruptedException;
     sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
-    const-string v4, "Exception waiting for timeline upload to complete."
+    const-string v4, "Exception waiting for timeline upload to complete -- aborting upload."
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 83
+    iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
+
+    invoke-virtual {v3}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelUpload()V
+
     goto :goto_0
 
-    .line 83
+    .line 84
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catch_1
     move-exception v0
 
-    .line 84
+    .line 85
     .local v0, e:Ljava/util/concurrent/ExecutionException;
     sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
-    const-string v4, "Exception waiting for timeline upload to complete."
+    const-string v4, "Exception waiting for timeline upload to complete -- aborting upload."
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 86
+    iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
+
+    invoke-virtual {v3}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelUpload()V
 
     goto :goto_0
 .end method

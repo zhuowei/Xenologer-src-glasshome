@@ -165,6 +165,37 @@
     goto :goto_0
 .end method
 
+.method protected final onPostExecute(Ljava/lang/Object;)V
+    .locals 0
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TResult;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 88
+    .local p0, this:Lcom/google/glass/util/SerialAsyncTask;,"Lcom/google/glass/util/SerialAsyncTask<TParams;TProgress;TResult;>;"
+    .local p1, result:Ljava/lang/Object;,"TResult;"
+    invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
+
+    .line 89
+    return-void
+.end method
+
+.method protected final onPreExecute()V
+    .locals 0
+
+    .prologue
+    .line 82
+    .local p0, this:Lcom/google/glass/util/SerialAsyncTask;,"Lcom/google/glass/util/SerialAsyncTask<TParams;TProgress;TResult;>;"
+    invoke-super {p0}, Landroid/os/AsyncTask;->onPreExecute()V
+
+    .line 83
+    return-void
+.end method
+
 .method protected varargs abstract serialDoInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {

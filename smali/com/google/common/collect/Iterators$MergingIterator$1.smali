@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 1297
+    .line 1308
     .local p0, this:Lcom/google/common/collect/Iterators$MergingIterator$1;,"Lcom/google/common/collect/Iterators$MergingIterator.1;"
     iput-object p1, p0, Lcom/google/common/collect/Iterators$MergingIterator$1;->this$0:Lcom/google/common/collect/Iterators$MergingIterator;
 
@@ -63,7 +63,7 @@
     .end annotation
 
     .prologue
-    .line 1300
+    .line 1311
     .local p0, this:Lcom/google/common/collect/Iterators$MergingIterator$1;,"Lcom/google/common/collect/Iterators$MergingIterator.1;"
     .local p1, o1:Lcom/google/common/collect/PeekingIterator;,"Lcom/google/common/collect/PeekingIterator<TT;>;"
     .local p2, o2:Lcom/google/common/collect/PeekingIterator;,"Lcom/google/common/collect/PeekingIterator<TT;>;"
@@ -92,7 +92,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1297
+    .line 1308
     .local p0, this:Lcom/google/common/collect/Iterators$MergingIterator$1;,"Lcom/google/common/collect/Iterators$MergingIterator.1;"
     check-cast p1, Lcom/google/common/collect/PeekingIterator;
 

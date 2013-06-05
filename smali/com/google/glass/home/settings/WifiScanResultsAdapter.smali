@@ -194,11 +194,11 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/glass/home/HomeApplication;->getCompanionState()Lcom/google/glass/home/companion/CompanionState;
+    invoke-virtual {v3}, Lcom/google/glass/home/HomeApplication;->getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/glass/home/companion/CompanionState;->isConnected()Z
+    invoke-virtual {v3}, Lcom/google/glass/companion/RemoteCompanionProxy;->isConnected()Z
 
     move-result v3
 

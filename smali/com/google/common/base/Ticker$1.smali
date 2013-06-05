@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 57
     invoke-direct {p0}, Lcom/google/common/base/Ticker;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 57
+    .line 61
     invoke-static {}, Lcom/google/common/base/Platform;->systemNanoTime()J
 
     move-result-wide v0

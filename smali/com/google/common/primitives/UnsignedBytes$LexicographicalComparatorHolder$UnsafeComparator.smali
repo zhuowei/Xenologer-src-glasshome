@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 218
+    .line 296
     new-instance v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
 
     const-string v1, "INSTANCE"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->INSTANCE:Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
 
-    .line 216
+    .line 294
     new-array v0, v3, [Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
 
     sget-object v1, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->INSTANCE:Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->$VALUES:[Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
 
-    .line 220
+    .line 298
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
     move-result-object v0
@@ -83,20 +83,14 @@
 
     sput-boolean v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->littleEndian:Z
 
-    .line 248
-    new-instance v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator$1;
-
-    invoke-direct {v0}, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator$1;-><init>()V
-
-    invoke-static {v0}, Ljava/security/AccessController;->doPrivileged(Ljava/security/PrivilegedAction;)Ljava/lang/Object;
+    .line 325
+    invoke-static {}, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->getUnsafe()Lsun/misc/Unsafe;
 
     move-result-object v0
 
-    check-cast v0, Lsun/misc/Unsafe;
-
     sput-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->theUnsafe:Lsun/misc/Unsafe;
 
-    .line 266
+    .line 327
     sget-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->theUnsafe:Lsun/misc/Unsafe;
 
     const-class v1, [B
@@ -107,7 +101,7 @@
 
     sput v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->BYTE_ARRAY_BASE_OFFSET:I
 
-    .line 269
+    .line 330
     sget-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->theUnsafe:Lsun/misc/Unsafe;
 
     const-class v1, [B
@@ -118,14 +112,14 @@
 
     if-eq v0, v3, :cond_0
 
-    .line 270
+    .line 331
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 272
+    .line 333
     :cond_0
     return-void
 .end method
@@ -141,10 +135,65 @@
     .end annotation
 
     .prologue
-    .line 217
+    .line 295
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method private static getUnsafe()Lsun/misc/Unsafe;
+    .locals 4
+
+    .prologue
+    .line 344
+    :try_start_0
+    invoke-static {}, Lsun/misc/Unsafe;->getUnsafe()Lsun/misc/Unsafe;
+    :try_end_0
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 347
+    :goto_0
+    return-object v1
+
+    .line 345
+    :catch_0
+    move-exception v1
+
+    .line 347
+    :try_start_1
+    new-instance v1, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator$1;
+
+    invoke-direct {v1}, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator$1;-><init>()V
+
+    invoke-static {v1}, Ljava/security/AccessController;->doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lsun/misc/Unsafe;
+    :try_end_1
+    .catch Ljava/security/PrivilegedActionException; {:try_start_1 .. :try_end_1} :catch_1
+
+    goto :goto_0
+
+    .line 359
+    :catch_1
+    move-exception v0
+
+    .line 360
+    .local v0, e:Ljava/security/PrivilegedActionException;
+    new-instance v1, Ljava/lang/RuntimeException;
+
+    const-string v2, "Could not initialize intrinsics"
+
+    invoke-virtual {v0}, Ljava/security/PrivilegedActionException;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    throw v1
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
@@ -152,7 +201,7 @@
     .parameter "name"
 
     .prologue
-    .line 216
+    .line 294
     const-class v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -168,7 +217,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 294
     sget-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->$VALUES:[Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;
 
     invoke-virtual {v0}, [Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->clone()Ljava/lang/Object;
@@ -188,7 +237,7 @@
     .parameter "x1"
 
     .prologue
-    .line 216
+    .line 294
     check-cast p1, [B
 
     .end local p1
@@ -208,7 +257,7 @@
     .parameter "right"
 
     .prologue
-    .line 275
+    .line 366
     move-object/from16 v0, p1
 
     array-length v0, v0
@@ -225,11 +274,11 @@
 
     move-result v9
 
-    .line 276
+    .line 367
     .local v9, minLength:I
     div-int/lit8 v10, v9, 0x8
 
-    .line 283
+    .line 374
     .local v10, minWords:I
     const/4 v6, 0x0
 
@@ -241,7 +290,7 @@
 
     if-ge v6, v0, :cond_6
 
-    .line 284
+    .line 375
     sget-object v17, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->theUnsafe:Lsun/misc/Unsafe;
 
     sget v18, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->BYTE_ARRAY_BASE_OFFSET:I
@@ -268,7 +317,7 @@
 
     move-result-wide v7
 
-    .line 285
+    .line 376
     .local v7, lw:J
     sget-object v17, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->theUnsafe:Lsun/misc/Unsafe;
 
@@ -296,11 +345,11 @@
 
     move-result-wide v13
 
-    .line 286
+    .line 377
     .local v13, rw:J
     xor-long v4, v7, v13
 
-    .line 288
+    .line 379
     .local v4, diff:J
     const-wide/16 v17, 0x0
 
@@ -308,17 +357,17 @@
 
     if-eqz v17, :cond_5
 
-    .line 289
+    .line 380
     sget-boolean v17, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder$UnsafeComparator;->littleEndian:Z
 
     if-nez v17, :cond_1
 
-    .line 290
+    .line 381
     invoke-static {v7, v8, v13, v14}, Lcom/google/common/primitives/UnsignedLongs;->compare(JJ)I
 
     move-result v12
 
-    .line 324
+    .line 415
     .end local v4           #diff:J
     .end local v7           #lw:J
     .end local v13           #rw:J
@@ -326,22 +375,22 @@
     :goto_1
     return v12
 
-    .line 294
+    .line 385
     .restart local v4       #diff:J
     .restart local v7       #lw:J
     .restart local v13       #rw:J
     :cond_1
     const/4 v11, 0x0
 
-    .line 296
+    .line 387
     .local v11, n:I
     long-to-int v15, v4
 
-    .line 297
+    .line 388
     .local v15, x:I
     if-nez v15, :cond_2
 
-    .line 298
+    .line 389
     const/16 v17, 0x20
 
     ushr-long v17, v4, v17
@@ -350,31 +399,31 @@
 
     long-to-int v15, v0
 
-    .line 299
+    .line 390
     const/16 v11, 0x20
 
-    .line 302
+    .line 393
     :cond_2
     shl-int/lit8 v16, v15, 0x10
 
-    .line 303
+    .line 394
     .local v16, y:I
     if-nez v16, :cond_4
 
-    .line 304
+    .line 395
     add-int/lit8 v11, v11, 0x10
 
-    .line 309
+    .line 400
     :goto_2
     shl-int/lit8 v16, v15, 0x8
 
-    .line 310
+    .line 401
     if-nez v16, :cond_3
 
-    .line 311
+    .line 402
     add-int/lit8 v11, v11, 0x8
 
-    .line 313
+    .line 404
     :cond_3
     ushr-long v17, v7, v11
 
@@ -396,13 +445,13 @@
 
     goto :goto_1
 
-    .line 306
+    .line 397
     :cond_4
     move/from16 v15, v16
 
     goto :goto_2
 
-    .line 283
+    .line 374
     .end local v11           #n:I
     .end local v15           #x:I
     .end local v16           #y:I
@@ -411,7 +460,7 @@
 
     goto :goto_0
 
-    .line 318
+    .line 409
     .end local v4           #diff:J
     .end local v7           #lw:J
     .end local v13           #rw:J
@@ -421,7 +470,7 @@
     :goto_3
     if-ge v6, v9, :cond_7
 
-    .line 319
+    .line 410
     aget-byte v17, p1, v6
 
     aget-byte v18, p2, v6
@@ -430,16 +479,16 @@
 
     move-result v12
 
-    .line 320
+    .line 411
     .local v12, result:I
     if-nez v12, :cond_0
 
-    .line 318
+    .line 409
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_3
 
-    .line 324
+    .line 415
     .end local v12           #result:I
     :cond_7
     move-object/from16 v0, p1

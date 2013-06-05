@@ -61,20 +61,7 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 29
-    invoke-virtual {p0, p1, p2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)Ljava/lang/String;
+.method static synthetic access$100(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
@@ -85,7 +72,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Ljava/lang/String;Ljava/lang/String;)V
+.method static synthetic access$200(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -98,7 +85,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)V
+.method static synthetic access$300(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)V
     .locals 0
     .parameter "x0"
 
@@ -331,12 +318,12 @@
 
 
 # virtual methods
-.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 1
 
     .prologue
     .line 70
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
 .end method
@@ -361,12 +348,12 @@
     return-object v0
 .end method
 
-.method protected getRetryVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method protected getRetryVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 1
 
     .prologue
     .line 75
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
 .end method
@@ -526,9 +513,9 @@
     iput-object p1, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recognitionResult:Ljava/lang/String;
 
     .line 113
-    sget-object v3, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v3, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    invoke-virtual {p0, v3}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
+    invoke-virtual {p0, v3}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
     .line 115
     invoke-direct {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getCancelTip()Landroid/view/View;

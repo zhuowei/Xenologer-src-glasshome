@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 27
     const-class v0, Lcom/google/glass/home/timeline/active/NavigationItemView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -49,12 +49,12 @@
     .parameter "context"
 
     .prologue
-    .line 37
+    .line 36
     sget-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->NAVIGATION:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/timeline/active/ActiveItemView;-><init>(Landroid/content/Context;Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;)V
 
-    .line 38
+    .line 37
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 26
     sget-object v0, Lcom/google/glass/home/timeline/active/NavigationItemView;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -74,22 +74,22 @@
     .parameter "text"
 
     .prologue
-    .line 83
+    .line 82
     if-eqz p2, :cond_0
 
-    .line 84
+    .line 83
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 85
+    .line 84
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 89
+    .line 88
     :goto_0
     return-void
 
-    .line 87
+    .line 86
     :cond_0
     const/16 v0, 0x8
 
@@ -100,19 +100,18 @@
 
 
 # virtual methods
-.method public onConfirm(Lcom/google/glass/app/GlassActivity;)Z
+.method public onConfirm()Z
     .locals 1
-    .parameter "activity"
 
     .prologue
-    .line 78
+    .line 77
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-static {v0}, Lcom/google/glass/maps/NavigationLauncher;->bringNavigationToForeground(Landroid/content/Context;)V
 
-    .line 79
+    .line 78
     const/4 v0, 0x1
 
     return v0
@@ -122,14 +121,14 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 54
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->getParameters()Landroid/os/Bundle;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->onParametersChanged(Landroid/os/Bundle;)V
 
-    .line 56
+    .line 55
     return-void
 .end method
 
@@ -140,23 +139,23 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 60
+    .line 59
     invoke-static {p1}, Lcom/google/glass/maps/NavigationActiveItemParams;->fromBundle(Landroid/os/Bundle;)Lcom/google/glass/maps/NavigationActiveItemParams;
 
     move-result-object v0
 
-    .line 61
+    .line 60
     .local v0, params:Lcom/google/glass/maps/NavigationActiveItemParams;
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconLoader:Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;
 
     if-eqz v1, :cond_0
 
-    .line 62
+    .line 61
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconLoader:Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;
 
     invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;->cancel(Z)Z
 
-    .line 64
+    .line 63
     :cond_0
     invoke-virtual {v0}, Lcom/google/glass/maps/NavigationActiveItemParams;->getIconUri()Ljava/lang/String;
 
@@ -164,7 +163,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 65
+    .line 64
     new-instance v1, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;
 
     iget-object v2, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconView:Landroid/widget/ImageView;
@@ -173,7 +172,7 @@
 
     iput-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconLoader:Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;
 
-    .line 66
+    .line 65
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconLoader:Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;
 
     new-array v2, v3, [Ljava/lang/String;
@@ -188,7 +187,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 71
+    .line 70
     :goto_0
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->messageView:Landroid/widget/TextView;
 
@@ -198,7 +197,7 @@
 
     invoke-direct {p0, v1, v2}, Lcom/google/glass/home/timeline/active/NavigationItemView;->setTextOrHide(Landroid/widget/TextView;Ljava/lang/String;)V
 
-    .line 72
+    .line 71
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->destinationNameView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Lcom/google/glass/maps/NavigationActiveItemParams;->getDestinationName()Ljava/lang/String;
@@ -207,7 +206,7 @@
 
     invoke-direct {p0, v1, v2}, Lcom/google/glass/home/timeline/active/NavigationItemView;->setTextOrHide(Landroid/widget/TextView;Ljava/lang/String;)V
 
-    .line 73
+    .line 72
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->timeRemainingView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Lcom/google/glass/maps/NavigationActiveItemParams;->getTimeRemaining()Ljava/lang/String;
@@ -216,10 +215,10 @@
 
     invoke-direct {p0, v1, v2}, Lcom/google/glass/home/timeline/active/NavigationItemView;->setTextOrHide(Landroid/widget/TextView;Ljava/lang/String;)V
 
-    .line 74
+    .line 73
     return-void
 
-    .line 68
+    .line 67
     :cond_1
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconView:Landroid/widget/ImageView;
 
@@ -234,7 +233,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 46
     sget v0, Lcom/google/glass/home/R$id;->turn_icon:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->findViewById(I)Landroid/view/View;
@@ -245,7 +244,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->iconView:Landroid/widget/ImageView;
 
-    .line 48
+    .line 47
     sget v0, Lcom/google/glass/home/R$id;->message:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->findViewById(I)Landroid/view/View;
@@ -256,7 +255,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->messageView:Landroid/widget/TextView;
 
-    .line 49
+    .line 48
     sget v0, Lcom/google/glass/home/R$id;->destination_name:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->findViewById(I)Landroid/view/View;
@@ -267,7 +266,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->destinationNameView:Landroid/widget/TextView;
 
-    .line 50
+    .line 49
     sget v0, Lcom/google/glass/home/R$id;->time_remaining:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/active/NavigationItemView;->findViewById(I)Landroid/view/View;
@@ -278,7 +277,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/active/NavigationItemView;->timeRemainingView:Landroid/widget/TextView;
 
-    .line 51
+    .line 50
     return-void
 .end method
 
@@ -286,7 +285,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 41
     sget v0, Lcom/google/glass/home/R$layout;->navigation_item:I
 
     return v0

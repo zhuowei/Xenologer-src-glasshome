@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchStartPreview()V
+    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/camera/SharedCameraClient;
 
+.field final synthetic val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;)V
+.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/android/libraries/barhopper/Barcode;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 436
+    .line 444
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$10;->this$0:Lcom/google/glass/camera/SharedCameraClient;
+
+    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$10;->val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,14 +43,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 439
+    .line 447
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$10;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraClient;->onStartPreview()V
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$10;->val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
 
-    .line 440
+    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+
+    .line 448
     return-void
 .end method

@@ -4,18 +4,10 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation build Lcom/google/common/annotations/GwtCompatible;
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/common/collect/DiscreteDomains$BigIntegerDomain;,
-        Lcom/google/common/collect/DiscreteDomains$LongDomain;,
-        Lcom/google/common/collect/DiscreteDomains$IntegerDomain;
-    }
+.annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
@@ -24,31 +16,10 @@
     .locals 0
 
     .prologue
-    .line 34
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
-.end method
-
-.method static bigIntegers()Lcom/google/common/collect/DiscreteDomain;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/DiscreteDomain",
-            "<",
-            "Ljava/math/BigInteger;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 128
-    invoke-static {}, Lcom/google/common/collect/DiscreteDomains$BigIntegerDomain;->access$200()Lcom/google/common/collect/DiscreteDomains$BigIntegerDomain;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public static integers()Lcom/google/common/collect/DiscreteDomain;
@@ -64,8 +35,8 @@
     .end annotation
 
     .prologue
-    .line 40
-    invoke-static {}, Lcom/google/common/collect/DiscreteDomains$IntegerDomain;->access$000()Lcom/google/common/collect/DiscreteDomains$IntegerDomain;
+    .line 42
+    invoke-static {}, Lcom/google/common/collect/DiscreteDomain;->integers()Lcom/google/common/collect/DiscreteDomain;
 
     move-result-object v0
 
@@ -85,8 +56,8 @@
     .end annotation
 
     .prologue
-    .line 80
-    invoke-static {}, Lcom/google/common/collect/DiscreteDomains$LongDomain;->access$100()Lcom/google/common/collect/DiscreteDomains$LongDomain;
+    .line 49
+    invoke-static {}, Lcom/google/common/collect/DiscreteDomain;->longs()Lcom/google/common/collect/DiscreteDomain;
 
     move-result-object v0
 

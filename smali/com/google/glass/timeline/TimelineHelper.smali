@@ -17,9 +17,9 @@
 
 .field public static final ACTION_NOTIFICATION_RECEIVED:Ljava/lang/String; = "com.google.glass.ACTION_NOTIFICATION_RECEIVED"
 
-.field public static final EXTRA_IS_NOTIFICATION:Ljava/lang/String; = "is_notification"
+.field public static final ACTION_READ_MORE:Ljava/lang/String; = "com.google.glass.ACTION_READ_MORE"
 
-.field public static final EXTRA_READ_MORE:Ljava/lang/String; = "read_more"
+.field public static final EXTRA_IS_NOTIFICATION:Ljava/lang/String; = "is_notification"
 
 .field public static final EXTRA_TIMELINE_BUNDLE_ITEM_ID:Ljava/lang/String; = "bundle_item_id"
 
@@ -41,19 +41,26 @@
 
 .field public static final NON_DATABASE_ITEM_ID_PREFIX:Ljava/lang/String; = "com.google.glass.non-database-item-id-prefix"
 
+.field public static final SEARCH_HTML_MIME_TYPE:Ljava/lang/String; = "application/glass+html"
+
 .field public static final SEARCH_PROTO_MIME_TYPE:Ljava/lang/String; = "proto/search"
 
 .field private static final SOURCE_REDACTED:Ljava/lang/String; = "***"
 
 .field private static final SPEAKABLE_TEXT_DISPLAY_TIME_PATTERN:Ljava/util/regex/Pattern; = null
 
-.field private static final SPEAKABLE_TEXT_MAX_LENGTH:I = 0xf9f
+.field static final SPEAKABLE_TEXT_MAX_LENGTH:I = 0xf9f
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
 
 .field private static final SPEAKABLE_TEXT_TIME_FORMAT:Ljava/text/SimpleDateFormat; = null
 
 .field public static final STREAM_URL_CONTENT_TYPE:Ljava/lang/String; = "video/vnd.google-glass.stream-url"
 
 .field public static final SUPPORTED_IMAGE_MIME_TYPES:[Ljava/lang/String;
+
+.field public static final SUPPORTED_MEDIA_MIME_TYPES:[Ljava/lang/String;
 
 .field public static final SUPPORTED_VIDEO_MIME_TYPES:[Ljava/lang/String;
 
@@ -73,7 +80,7 @@
 
     const/4 v2, 0x0
 
-    .line 70
+    .line 73
     const-class v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -82,14 +89,14 @@
 
     sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
-    .line 85
+    .line 91
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->UPDATE_LOCK:Ljava/lang/Object;
 
-    .line 99
+    .line 105
     const-string v0, "$DISPLAY_TIME"
 
     const/16 v1, 0x10
@@ -100,7 +107,7 @@
 
     sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->SPEAKABLE_TEXT_DISPLAY_TIME_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 103
+    .line 109
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v1, "h:mm a"
@@ -109,7 +116,7 @@
 
     sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->SPEAKABLE_TEXT_TIME_FORMAT:Ljava/text/SimpleDateFormat;
 
-    .line 156
+    .line 163
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "image/jpeg"
@@ -122,7 +129,7 @@
 
     sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_IMAGE_MIME_TYPES:[Ljava/lang/String;
 
-    .line 159
+    .line 166
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "video/mp4"
@@ -135,6 +142,13 @@
 
     sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_VIDEO_MIME_TYPES:[Ljava/lang/String;
 
+    .line 172
+    invoke-static {}, Lcom/google/glass/timeline/TimelineHelper;->combineSupportedTypes()[Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_MEDIA_MIME_TYPES:[Ljava/lang/String;
+
     return-void
 .end method
 
@@ -142,10 +156,10 @@
     .locals 0
 
     .prologue
-    .line 68
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 630
+    .line 643
     return-void
 .end method
 
@@ -153,7 +167,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 71
     sget-object v0, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -164,23 +178,23 @@
     .parameter "update"
 
     .prologue
-    .line 527
+    .line 540
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->UPDATE_LOCK:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 528
+    .line 541
     :try_start_0
     #calls: Lcom/google/glass/timeline/TimelineHelper$Update;->execute()V
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper$Update;->access$100(Lcom/google/glass/timeline/TimelineHelper$Update;)V
 
-    .line 529
+    .line 542
     monitor-exit v1
 
-    .line 530
+    .line 543
     return-void
 
-    .line 529
+    .line 542
     :catchall_0
     move-exception v0
 
@@ -196,14 +210,14 @@
     .parameter "update"
 
     .prologue
-    .line 536
+    .line 549
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper$5;
 
     invoke-direct {v0, p0}, Lcom/google/glass/timeline/TimelineHelper$5;-><init>(Lcom/google/glass/timeline/TimelineHelper$Update;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 542
+    .line 555
     return-void
 .end method
 
@@ -216,12 +230,12 @@
     .parameter "hintIndices"
 
     .prologue
-    .line 1427
+    .line 1440
     if-eqz p0, :cond_0
 
     if-nez p3, :cond_2
 
-    .line 1428
+    .line 1441
     :cond_0
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -259,19 +273,19 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1429
+    .line 1442
     const/4 v12, -0x1
 
-    .line 1502
+    .line 1515
     :cond_1
     :goto_0
     return v12
 
-    .line 1431
+    .line 1444
     :cond_2
     const/16 v17, 0x0
 
-    .line 1432
+    .line 1445
     .local v17, startIndex:I
     invoke-interface/range {p3 .. p3}, Landroid/database/Cursor;->getCount()I
 
@@ -279,7 +293,7 @@
 
     add-int/lit8 v9, v1, -0x1
 
-    .line 1434
+    .line 1447
     .local v9, endIndex:I
     const-string v1, "_id"
 
@@ -289,7 +303,7 @@
 
     move-result v11
 
-    .line 1435
+    .line 1448
     .local v11, idColumnIndex:I
     const-string v1, "display_time"
 
@@ -299,7 +313,7 @@
 
     move-result v8
 
-    .line 1436
+    .line 1449
     .local v8, displayTimeColumnIndex:I
     const-string v1, "is_deleted"
 
@@ -309,7 +323,7 @@
 
     move-result v14
 
-    .line 1438
+    .line 1451
     .local v14, isDeletedColumnIndex:I
     move-object/from16 v7, p5
 
@@ -325,7 +339,7 @@
 
     aget v12, v7, v10
 
-    .line 1440
+    .line 1453
     .local v12, index:I
     if-ltz v12, :cond_5
 
@@ -335,19 +349,19 @@
 
     if-ge v12, v1, :cond_5
 
-    .line 1441
+    .line 1454
     move-object/from16 v0, p3
 
     invoke-interface {v0, v12}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 1444
+    .line 1457
     move-object/from16 v0, p3
 
     invoke-interface {v0, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1445
+    .line 1458
     .local v4, id:Ljava/lang/String;
     move-object/from16 v0, p3
 
@@ -360,55 +374,55 @@
 
     move-wide/from16 v2, p1
 
-    .line 1447
+    .line 1460
     invoke-static/range {v1 .. v6}, Lcom/google/glass/timeline/TimelineHelper;->compare(Ljava/lang/String;JLjava/lang/String;J)I
 
     move-result v16
 
-    .line 1450
+    .line 1463
     .local v16, result:I
     if-nez p4, :cond_3
 
-    .line 1451
+    .line 1464
     move/from16 v0, v16
 
     neg-int v0, v0
 
     move/from16 v16, v0
 
-    .line 1454
+    .line 1467
     :cond_3
     if-nez v16, :cond_4
 
-    .line 1455
+    .line 1468
     move-object/from16 v0, p3
 
     invoke-interface {v0, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v13
 
-    .line 1456
+    .line 1469
     .local v13, isDeleted:I
     if-eqz v13, :cond_1
 
-    .line 1459
+    .line 1472
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Found item, but it is deleted. Ignoring the item."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1460
+    .line 1473
     const/4 v12, -0x1
 
     goto :goto_0
 
-    .line 1463
+    .line 1476
     .end local v13           #isDeleted:I
     :cond_4
     if-gez v16, :cond_6
 
-    .line 1464
+    .line 1477
     add-int/lit8 v1, v12, 0x1
 
     move/from16 v0, v17
@@ -417,7 +431,7 @@
 
     move-result v17
 
-    .line 1438
+    .line 1451
     .end local v4           #id:Ljava/lang/String;
     .end local v5           #displayTime:J
     .end local v16           #result:I
@@ -427,7 +441,7 @@
 
     goto :goto_1
 
-    .line 1466
+    .line 1479
     .restart local v4       #id:Ljava/lang/String;
     .restart local v5       #displayTime:J
     .restart local v16       #result:I
@@ -440,14 +454,14 @@
 
     goto :goto_2
 
-    .line 1495
+    .line 1508
     :cond_7
     if-gez v16, :cond_a
 
-    .line 1496
+    .line 1509
     add-int/lit8 v17, v12, 0x1
 
-    .line 1471
+    .line 1484
     .end local v4           #id:Ljava/lang/String;
     .end local v5           #displayTime:J
     .end local v12           #index:I
@@ -458,25 +472,25 @@
 
     if-gt v0, v9, :cond_b
 
-    .line 1472
+    .line 1485
     add-int v1, v17, v9
 
     shr-int/lit8 v12, v1, 0x1
 
-    .line 1473
+    .line 1486
     .restart local v12       #index:I
     move-object/from16 v0, p3
 
     invoke-interface {v0, v12}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 1476
+    .line 1489
     move-object/from16 v0, p3
 
     invoke-interface {v0, v11}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1477
+    .line 1490
     .restart local v4       #id:Ljava/lang/String;
     move-object/from16 v0, p3
 
@@ -489,57 +503,57 @@
 
     move-wide/from16 v2, p1
 
-    .line 1479
+    .line 1492
     invoke-static/range {v1 .. v6}, Lcom/google/glass/timeline/TimelineHelper;->compare(Ljava/lang/String;JLjava/lang/String;J)I
 
     move-result v16
 
-    .line 1482
+    .line 1495
     .restart local v16       #result:I
     if-nez p4, :cond_9
 
-    .line 1483
+    .line 1496
     move/from16 v0, v16
 
     neg-int v0, v0
 
     move/from16 v16, v0
 
-    .line 1486
+    .line 1499
     :cond_9
     if-nez v16, :cond_7
 
-    .line 1487
+    .line 1500
     move-object/from16 v0, p3
 
     invoke-interface {v0, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v13
 
-    .line 1488
+    .line 1501
     .restart local v13       #isDeleted:I
     if-eqz v13, :cond_1
 
-    .line 1491
+    .line 1504
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Found item, but it is deleted. Ignoring the item."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1492
+    .line 1505
     const/4 v12, -0x1
 
     goto/16 :goto_0
 
-    .line 1498
+    .line 1511
     .end local v13           #isDeleted:I
     :cond_a
     add-int/lit8 v9, v12, -0x1
 
     goto :goto_3
 
-    .line 1502
+    .line 1515
     .end local v4           #id:Ljava/lang/String;
     .end local v5           #displayTime:J
     .end local v12           #index:I
@@ -555,7 +569,7 @@
     .parameter "item"
 
     .prologue
-    .line 1638
+    .line 1651
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasCompanionSyncProtocol()Z
@@ -583,6 +597,50 @@
     goto :goto_0
 .end method
 
+.method private static combineSupportedTypes()[Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 2059
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 2060
+    .local v0, list:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_IMAGE_MIME_TYPES:[Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 2061
+    sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_VIDEO_MIME_TYPES:[Ljava/lang/String;
+
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 2062
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Ljava/lang/String;
+
+    return-object v1
+.end method
+
 .method private static compare(Ljava/lang/String;JLjava/lang/String;J)I
     .locals 2
     .parameter "targetId"
@@ -591,43 +649,43 @@
     .parameter "displayTime"
 
     .prologue
-    .line 1396
+    .line 1409
     invoke-virtual {p0, p3}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 1397
+    .line 1410
     .local v0, result:I
     if-nez v0, :cond_1
 
-    .line 1398
+    .line 1411
     const/4 v0, 0x0
 
-    .line 1408
+    .line 1421
     .end local v0           #result:I
     :cond_0
     :goto_0
     return v0
 
-    .line 1401
+    .line 1414
     .restart local v0       #result:I
     :cond_1
     cmp-long v1, p1, p4
 
     if-gez v1, :cond_2
 
-    .line 1402
+    .line 1415
     const/4 v0, -0x1
 
     goto :goto_0
 
-    .line 1404
+    .line 1417
     :cond_2
     cmp-long v1, p1, p4
 
     if-lez v1, :cond_0
 
-    .line 1405
+    .line 1418
     const/4 v0, 0x1
 
     goto :goto_0
@@ -643,29 +701,29 @@
     .parameter "pinned"
 
     .prologue
-    .line 913
+    .line 926
     invoke-static {p3, p4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 918
+    .line 931
     .local v7, maxItemTimestampString:Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 919
+    .line 932
     .local v8, select:Ljava/lang/StringBuilder;
     const-string v0, "+is_deleted=0"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 920
+    .line 933
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 921
+    .line 934
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -697,34 +755,34 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 923
+    .line 936
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 924
+    .line 937
     const-string v0, "bundle_cover_status!=1"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 926
+    .line 939
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 928
+    .line 941
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 929
+    .line 942
     const-string v0, "_id==?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 932
+    .line 945
     const/4 v0, 0x2
 
     new-array v5, v0, [Ljava/lang/String;
@@ -737,26 +795,26 @@
 
     aput-object v7, v5, v0
 
-    .line 950
+    .line 963
     .local v5, selectArgs:[Ljava/lang/String;
     :goto_1
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 951
+    .line 964
     const-string v0, "+delivery_time<=?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 955
+    .line 968
     const-string v6, ""
 
-    .line 956
+    .line 969
     .local v6, orderBy:Ljava/lang/String;
     if-eqz p6, :cond_0
 
-    .line 957
+    .line 970
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -775,7 +833,7 @@
 
     move-result-object v6
 
-    .line 958
+    .line 971
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -794,7 +852,7 @@
 
     move-result-object v6
 
-    .line 960
+    .line 973
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -835,7 +893,7 @@
 
     move-result-object v6
 
-    .line 964
+    .line 977
     new-instance v0, Landroid/content/CursorLoader;
 
     sget-object v2, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
@@ -852,7 +910,7 @@
 
     return-object v0
 
-    .line 921
+    .line 934
     .end local v5           #selectArgs:[Ljava/lang/String;
     .end local v6           #orderBy:Ljava/lang/String;
     :cond_1
@@ -860,33 +918,33 @@
 
     goto/16 :goto_0
 
-    .line 937
+    .line 950
     :cond_2
     const-string v0, "("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 938
+    .line 951
     const-string v0, "_id==?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 939
+    .line 952
     const-string v0, " OR "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 940
+    .line 953
     const-string v0, "+bundle_id==?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 941
+    .line 954
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 944
+    .line 957
     const/4 v0, 0x3
 
     new-array v5, v0, [Ljava/lang/String;
@@ -910,7 +968,7 @@
     .restart local v5       #selectArgs:[Ljava/lang/String;
     goto/16 :goto_1
 
-    .line 960
+    .line 973
     .restart local v6       #orderBy:Ljava/lang/String;
     :cond_3
     const-string v0, " "
@@ -926,7 +984,7 @@
     .parameter "minCreationTime"
 
     .prologue
-    .line 864
+    .line 877
     new-instance v9, Lcom/google/glass/util/SettingsSecure;
 
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -935,30 +993,30 @@
 
     invoke-direct {v9, v0}, Lcom/google/glass/util/SettingsSecure;-><init>(Landroid/content/ContentResolver;)V
 
-    .line 865
+    .line 878
     .local v9, settingsSecure:Lcom/google/glass/util/SettingsSecure;
     invoke-static {v9}, Lcom/google/glass/timeline/TimelineHelper;->getLocalTimelineItemSource(Lcom/google/glass/util/SettingsSecure;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 868
+    .line 881
     .local v7, localTimelineItemSource:Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 869
+    .line 882
     .local v8, select:Ljava/lang/StringBuilder;
     const-string v0, "is_deleted=0"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 870
+    .line 883
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 871
+    .line 884
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -990,52 +1048,52 @@
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 873
+    .line 886
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 874
+    .line 887
     const-string v0, "creation_time>=?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 875
+    .line 888
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 876
+    .line 889
     const-string v0, "source=?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 878
+    .line 891
     const-string v0, " AND ("
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 879
+    .line 892
     const-string v0, "bundle_cover_status!=0"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 880
+    .line 893
     const-string v0, " OR "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 881
+    .line 894
     const-string v0, "bundle_id=\"\""
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 882
+    .line 895
     const-string v0, ")"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 885
+    .line 898
     const/4 v0, 0x2
 
     new-array v5, v0, [Ljava/lang/String;
@@ -1052,7 +1110,7 @@
 
     aput-object v7, v5, v0
 
-    .line 892
+    .line 905
     .local v5, selectArgs:[Ljava/lang/String;
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1089,7 +1147,7 @@
 
     move-result-object v6
 
-    .line 896
+    .line 909
     .local v6, orderBy:Ljava/lang/String;
     new-instance v0, Landroid/content/CursorLoader;
 
@@ -1107,7 +1165,7 @@
 
     return-object v0
 
-    .line 871
+    .line 884
     .end local v5           #selectArgs:[Ljava/lang/String;
     .end local v6           #orderBy:Ljava/lang/String;
     :cond_0
@@ -1115,7 +1173,7 @@
 
     goto :goto_0
 
-    .line 892
+    .line 905
     .restart local v5       #selectArgs:[Ljava/lang/String;
     :cond_1
     const-string v0, " "
@@ -1131,23 +1189,23 @@
     .parameter "descDisplayTime"
 
     .prologue
-    .line 813
+    .line 826
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 814
+    .line 827
     .local v7, select:Ljava/lang/StringBuilder;
     const-string v0, "+is_deleted=0"
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 815
+    .line 828
     const-string v0, " AND "
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 816
+    .line 829
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1179,49 +1237,49 @@
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 818
+    .line 831
     const-string v0, " AND "
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 819
+    .line 832
     const-string v0, "+delivery_time<=?"
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 821
+    .line 834
     const-string v0, " AND ("
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 822
+    .line 835
     const-string v0, "bundle_cover_status!=0"
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 823
+    .line 836
     const-string v0, " OR "
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 824
+    .line 837
     const-string v0, "bundle_id=\"\""
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 825
+    .line 838
     const-string v0, ")"
 
     invoke-virtual {v7, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 829
+    .line 842
     const-string v6, ""
 
-    .line 830
+    .line 843
     .local v6, orderBy:Ljava/lang/String;
     if-eqz p3, :cond_0
 
-    .line 831
+    .line 844
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1240,7 +1298,7 @@
 
     move-result-object v6
 
-    .line 832
+    .line 845
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1259,7 +1317,7 @@
 
     move-result-object v6
 
-    .line 834
+    .line 847
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1300,7 +1358,7 @@
 
     move-result-object v6
 
-    .line 837
+    .line 850
     new-instance v0, Landroid/content/CursorLoader;
 
     sget-object v2, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
@@ -1321,14 +1379,14 @@
 
     return-object v0
 
-    .line 816
+    .line 829
     .end local v6           #orderBy:Ljava/lang/String;
     :cond_1
     const-string v0, "="
 
     goto/16 :goto_0
 
-    .line 834
+    .line 847
     .restart local v6       #orderBy:Ljava/lang/String;
     :cond_2
     const-string v0, " "
@@ -1341,7 +1399,7 @@
     .parameter "i"
 
     .prologue
-    .line 1829
+    .line 1896
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1371,14 +1429,14 @@
     .parameter "settingsSecure"
 
     .prologue
-    .line 219
+    .line 232
     const-string v5, "android_id"
 
     invoke-virtual {p3, v5}, Lcom/google/glass/util/SettingsSecure;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 220
+    .line 233
     .local v3, deviceId:Ljava/lang/String;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1396,23 +1454,23 @@
 
     move-result-object v4
 
-    .line 221
+    .line 234
     .local v4, source:Ljava/lang/String;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 223
+    .line 236
     .local v1, currentTime:J
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v0
 
-    .line 224
+    .line 237
     .local v0, builder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
     invoke-static {p0, v4, v0}, Lcom/google/glass/timeline/TimelineHelper;->populateLocation(Landroid/content/Context;Ljava/lang/String;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)V
 
-    .line 225
+    .line 238
     invoke-static {p3}, Lcom/google/glass/timeline/TimelineHelper;->generateUniqueId(Lcom/google/glass/util/SettingsSecure;)Ljava/lang/String;
 
     move-result-object v5
@@ -1453,10 +1511,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1346
+    .line 1359
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 1347
+    .line 1360
     sget-object v0, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
 
     invoke-virtual {p0, v0, v1, v1}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
@@ -1471,7 +1529,7 @@
     .parameter "item"
 
     .prologue
-    .line 1676
+    .line 1689
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->canSyncToCompanion(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
     move-result v0
@@ -1497,81 +1555,289 @@
     goto :goto_0
 .end method
 
-.method public static formatSpeakableText(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/String;
-    .locals 8
-    .parameter "item"
+.method public static formatAndSpeakText(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V
+    .locals 5
+    .parameter "context"
+    .parameter "text"
+    .parameter "lang"
+    .parameter "displayTime"
 
     .prologue
-    const/16 v7, 0xf9f
+    .line 1809
+    invoke-static {p1, p3}, Lcom/google/glass/timeline/TimelineHelper;->formatSpeakableText(Ljava/lang/String;Ljava/util/Date;)Ljava/lang/String;
 
-    .line 1708
-    const/4 v1, 0x0
+    move-result-object v0
 
-    .line 1709
-    .local v1, text:Ljava/lang/String;
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasSpeakableText()Z
+    .line 1810
+    .local v0, formattedTts:Ljava/lang/String;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 1710
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableText()Ljava/lang/String;
+    .line 1829
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 1815
+    :cond_1
+    if-eqz p2, :cond_2
+
+    const-string v2, "en"
+
+    invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    const-string v2, "en-us"
+
+    invoke-virtual {p2, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 1816
+    :cond_2
+    invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/google/glass/app/GlassApplication;->speakText(Ljava/lang/String;)V
+
+    goto :goto_0
+
+    .line 1818
+    :cond_3
+    sget-object v2, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Using network to read \'"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-static {v3}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const-string v4, "\' in \'"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "\'"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1819
+    invoke-static {p1, p2}, Lcom/google/glass/voice/network/translate/NetworkTts;->getNetworkTtsUri(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1716
+    .line 1820
+    .local v1, networkUri:Ljava/lang/String;
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 1821
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/google/glass/timeline/TimelineHelper$6;
+
+    invoke-direct {v3, v1}, Lcom/google/glass/timeline/TimelineHelper$6;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    goto :goto_0
+.end method
+
+.method public static formatAndSpeakText(Landroid/content/Context;Ljava/lang/String;Ljava/util/Date;)V
+    .locals 2
+    .parameter "context"
+    .parameter "text"
+    .parameter "displayTime"
+
+    .prologue
+    .line 1798
+    invoke-static {p1, p2}, Lcom/google/glass/timeline/TimelineHelper;->formatSpeakableText(Ljava/lang/String;Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1799
+    .local v0, formattedTts:Ljava/lang/String;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 1800
+    invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/google/glass/app/GlassApplication;->speakText(Ljava/lang/String;)V
+
+    .line 1802
     :cond_0
+    return-void
+.end method
+
+.method public static formatSpeakableText(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/String;
+    .locals 4
+    .parameter "item"
+
+    .prologue
+    .line 1780
+    if-nez p0, :cond_0
+
+    .line 1781
+    sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
+
+    const-string v2, "Cannot format speakable text for null timeline item"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1782
+    const/4 v1, 0x0
+
+    .line 1791
     :goto_0
-    if-nez v1, :cond_2
+    return-object v1
 
-    .line 1717
-    const/4 v3, 0x0
+    .line 1785
+    :cond_0
+    const/4 v0, 0x0
 
-    .line 1759
-    :goto_1
-    return-object v3
+    .line 1786
+    .local v0, text:Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasSpeakableText()Z
 
-    .line 1711
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 1787
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableText()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1791
     :cond_1
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasText()Z
+    :goto_1
+    new-instance v1, Ljava/util/Date;
 
-    move-result v3
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDisplayTime()J
 
-    if-eqz v3, :cond_0
+    move-result-wide v2
 
-    .line 1712
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
+    invoke-direct {v1, v2, v3}, Ljava/util/Date;-><init>(J)V
 
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/glass/timeline/TimelineHelper;->formatSpeakableText(Ljava/lang/String;Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_0
 
-    .line 1721
+    .line 1788
     :cond_2
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasText()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    .line 1789
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_1
+.end method
+
+.method public static formatSpeakableText(Ljava/lang/String;Ljava/util/Date;)Ljava/lang/String;
+    .locals 6
+    .parameter "formatString"
+    .parameter "displayTime"
+
+    .prologue
+    const/16 v5, 0xf9f
+
+    .line 1721
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 1722
+    :cond_0
+    sget-object v3, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
+
+    const-string v4, "Request to format speakable text had no text to format"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1723
+    const/4 v1, 0x0
+
+    .line 1768
+    :cond_1
+    :goto_0
+    return-object v1
+
+    .line 1727
+    :cond_2
+    invoke-static {p0}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1730
+    .local v1, text:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/timeline/TimelineHelper;->SPEAKABLE_TEXT_DISPLAY_TIME_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
-    .line 1722
+    .line 1731
     .local v0, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -1579,28 +1845,20 @@
 
     if-eqz v3, :cond_3
 
-    .line 1723
+    .line 1732
     sget-object v3, Lcom/google/glass/timeline/TimelineHelper;->SPEAKABLE_TEXT_TIME_FORMAT:Ljava/text/SimpleDateFormat;
 
-    new-instance v4, Ljava/util/Date;
-
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDisplayTime()J
-
-    move-result-wide v5
-
-    invoke-direct {v4, v5, v6}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v3, v4}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v3, p1}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1724
+    .line 1733
     .local v2, time:Ljava/lang/String;
     invoke-virtual {v0, v2}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1733
+    .line 1742
     .end local v2           #time:Ljava/lang/String;
     :cond_3
     const-string v3, "[\\[\\]]"
@@ -1611,7 +1869,7 @@
 
     move-result-object v1
 
-    .line 1743
+    .line 1752
     const-string v3, "\\(Play voice recording\\)"
 
     const-string v4, ""
@@ -1620,7 +1878,7 @@
 
     move-result-object v1
 
-    .line 1744
+    .line 1753
     const-string v3, "Sent from my Glass"
 
     const-string v4, ""
@@ -1629,28 +1887,28 @@
 
     move-result-object v1
 
-    .line 1747
+    .line 1756
     sget-object v3, Landroid/util/Patterns;->WEB_URL:Ljava/util/regex/Pattern;
 
     invoke-virtual {v3, v1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
-    .line 1748
+    .line 1757
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v3
 
     if-eqz v3, :cond_4
 
-    .line 1749
+    .line 1758
     const-string v3, " - web link - "
 
     invoke-virtual {v0, v3}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1754
+    .line 1763
     :cond_4
     const-string v3, "throughglass"
 
@@ -1660,27 +1918,21 @@
 
     move-result-object v1
 
-    .line 1756
+    .line 1765
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v3
 
-    if-le v3, v7, :cond_5
+    if-le v3, v5, :cond_1
 
-    .line 1757
+    .line 1766
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v3, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v3, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    goto :goto_1
-
-    :cond_5
-    move-object v3, v1
-
-    .line 1759
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public static fromContentValues(Landroid/content/ContentValues;)Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -1688,21 +1940,21 @@
     .parameter "values"
 
     .prologue
-    .line 749
+    .line 762
     const-string v1, "protobuf_blob"
 
     invoke-virtual {p0, v1}, Landroid/content/ContentValues;->getAsByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 751
+    .line 764
     .local v0, protoByteArray:[B
     if-nez v0, :cond_0
 
-    .line 752
+    .line 765
     const/4 v1, 0x0
 
-    .line 755
+    .line 768
     :goto_0
     return-object v1
 
@@ -1719,7 +1971,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 762
+    .line 775
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->getProtobufBlob(Landroid/database/Cursor;)[B
 
     move-result-object v0
@@ -1736,7 +1988,7 @@
     .parameter "data"
 
     .prologue
-    .line 1616
+    .line 1629
     :try_start_0
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->parseFrom([B)Lcom/google/googlex/glass/common/proto/TimelineItem;
     :try_end_0
@@ -1744,15 +1996,15 @@
 
     move-result-object v1
 
-    .line 1622
+    .line 1635
     :goto_0
     return-object v1
 
-    .line 1617
+    .line 1630
     :catch_0
     move-exception v0
 
-    .line 1618
+    .line 1631
     .local v0, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     sget-object v2, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -1760,7 +2012,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 1619
+    .line 1632
     const/4 v1, 0x0
 
     goto :goto_0
@@ -1771,7 +2023,7 @@
     .parameter "settingsSecure"
 
     .prologue
-    .line 1382
+    .line 1395
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v0
@@ -1789,7 +2041,7 @@
     .parameter "contentType"
 
     .prologue
-    .line 1897
+    .line 1964
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachmentList()Ljava/util/List;
 
     move-result-object v2
@@ -1812,7 +2064,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Attachment;
 
-    .line 1898
+    .line 1965
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->getContentType()Ljava/lang/String;
 
@@ -1824,7 +2076,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1902
+    .line 1969
     .end local v0           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     :goto_0
     return-object v0
@@ -1854,12 +2106,12 @@
     .end annotation
 
     .prologue
-    .line 1956
+    .line 2023
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1957
+    .line 2024
     .local v1, attachments:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Attachment;>;"
     const/4 v3, 0x0
 
@@ -1872,12 +2124,12 @@
     :goto_0
     if-ge v3, v5, :cond_2
 
-    .line 1958
+    .line 2025
     invoke-virtual {p0, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachment(I)Lcom/google/googlex/glass/common/proto/Attachment;
 
     move-result-object v0
 
-    .line 1959
+    .line 2026
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     const/4 v4, 0x0
 
@@ -1888,10 +2140,10 @@
     :goto_1
     if-ge v4, v6, :cond_1
 
-    .line 1960
+    .line 2027
     aget-object v2, p1, v4
 
-    .line 1961
+    .line 2028
     .local v2, contentType:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->getContentType()Ljava/lang/String;
 
@@ -1903,23 +2155,23 @@
 
     if-eqz v7, :cond_0
 
-    .line 1962
+    .line 2029
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1959
+    .line 2026
     :cond_0
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 1957
+    .line 2024
     .end local v2           #contentType:Ljava/lang/String;
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1966
+    .line 2033
     .end local v0           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     .end local v4           #ii:I
     .end local v6           #nn:I
@@ -1948,41 +2200,41 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 971
+    .line 984
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 974
+    .line 987
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 975
+    .line 988
     .local v8, select:Ljava/lang/StringBuilder;
     const-string v0, "is_deleted==0"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 976
+    .line 989
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 977
+    .line 990
     const-string v0, "bundle_id==?"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 978
+    .line 991
     const-string v0, " AND "
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 979
+    .line 992
     const-string v0, "bundle_cover_status!=0"
 
     invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 982
+    .line 995
     const/4 v0, 0x1
 
     new-array v4, v0, [Ljava/lang/String;
@@ -1995,15 +2247,15 @@
 
     aput-object v1, v4, v0
 
-    .line 987
+    .line 1000
     .local v4, selectArgs:[Ljava/lang/String;
     const-string v5, "display_time DESC"
 
-    .line 990
+    .line 1003
     .local v5, orderBy:Ljava/lang/String;
     const/4 v7, 0x0
 
-    .line 992
+    .line 1005
     .local v7, cursor:Landroid/database/Cursor;
     :try_start_0
     sget-object v1, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
@@ -2020,7 +2272,7 @@
 
     move-result-object v7
 
-    .line 994
+    .line 1007
     if-eqz v7, :cond_4
 
     invoke-interface {v7}, Landroid/database/Cursor;->moveToNext()Z
@@ -2029,12 +2281,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 995
+    .line 1008
     invoke-static {v7}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v6
 
-    .line 996
+    .line 1009
     .local v6, cover:Lcom/google/googlex/glass/common/proto/TimelineItem;
     const-string v0, "bundle_cover_status"
 
@@ -2052,30 +2304,30 @@
 
     move-result-object v9
 
-    .line 997
+    .line 1010
     .local v9, status:Ljava/lang/Integer;
     if-eqz v6, :cond_0
 
     if-nez v9, :cond_3
 
-    .line 1003
+    .line 1016
     :cond_0
     if-eqz v7, :cond_1
 
-    .line 1004
+    .line 1017
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     :cond_1
     move-object v0, v10
 
-    .line 1007
+    .line 1020
     .end local v6           #cover:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v9           #status:Ljava/lang/Integer;
     :cond_2
     :goto_0
     return-object v0
 
-    .line 1000
+    .line 1013
     .restart local v6       #cover:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .restart local v9       #status:Ljava/lang/Integer;
     :cond_3
@@ -2086,36 +2338,36 @@
 
     move-result-object v0
 
-    .line 1003
+    .line 1016
     if-eqz v7, :cond_2
 
-    .line 1004
+    .line 1017
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 1003
+    .line 1016
     .end local v6           #cover:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v9           #status:Ljava/lang/Integer;
     :cond_4
     if-eqz v7, :cond_5
 
-    .line 1004
+    .line 1017
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     :cond_5
     move-object v0, v10
 
-    .line 1007
+    .line 1020
     goto :goto_0
 
-    .line 1003
+    .line 1016
     :catchall_0
     move-exception v0
 
     if-eqz v7, :cond_6
 
-    .line 1004
+    .line 1017
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
     :cond_6
@@ -2127,7 +2379,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 786
+    .line 799
     const-string v0, "bundle_cover_status"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -2148,19 +2400,19 @@
     .prologue
     const-wide/16 v0, 0x0
 
-    .line 1355
+    .line 1368
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasNotification()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 1361
+    .line 1374
     :cond_0
     :goto_0
     return-wide v0
 
-    .line 1358
+    .line 1371
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getNotification()Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
@@ -2172,7 +2424,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1361
+    .line 1374
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getNotification()Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
     move-result-object v0
@@ -2189,13 +2441,13 @@
     .parameter "item"
 
     .prologue
-    .line 1369
+    .line 1382
     if-nez p0, :cond_0
 
-    .line 1370
+    .line 1383
     const-wide/16 v0, 0x0
 
-    .line 1372
+    .line 1385
     :goto_0
     return-wide v0
 
@@ -2225,12 +2477,12 @@
     .parameter "maxItemTimestamp"
 
     .prologue
-    .line 846
+    .line 859
     invoke-static {p0, p1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 847
+    .line 860
     .local v0, maxItemTimestampString:Ljava/lang/String;
     const/4 v1, 0x1
 
@@ -2248,10 +2500,10 @@
     .parameter "settingsSecure"
 
     .prologue
-    .line 235
+    .line 248
     const-string v1, "device:"
 
-    .line 236
+    .line 249
     .local v1, prefix:Ljava/lang/String;
     const-string v2, "android_id"
 
@@ -2259,7 +2511,7 @@
 
     move-result-object v0
 
-    .line 237
+    .line 250
     .local v0, deviceId:Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2285,7 +2537,7 @@
     .parameter "item"
 
     .prologue
-    .line 728
+    .line 741
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsPinned()Z
 
     move-result v0
@@ -2310,7 +2562,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 769
+    .line 782
     const-string v0, "protobuf_blob"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -2329,19 +2581,19 @@
     .parameter "rawSource"
 
     .prologue
-    .line 246
+    .line 259
     if-nez p0, :cond_1
 
-    .line 247
+    .line 260
     const/4 p0, 0x0
 
-    .line 258
+    .line 271
     .end local p0
     :cond_0
     :goto_0
     return-object p0
 
-    .line 250
+    .line 263
     .restart local p0
     :cond_1
     const-string v0, "device:"
@@ -2352,12 +2604,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 251
+    .line 264
     const-string p0, "device:***"
 
     goto :goto_0
 
-    .line 254
+    .line 267
     :cond_2
     const-string v0, "companion:"
 
@@ -2367,7 +2619,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 255
+    .line 268
     const-string p0, "companion:***"
 
     goto :goto_0
@@ -2378,23 +2630,23 @@
     .parameter "attachment"
 
     .prologue
-    .line 1690
+    .line 1703
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->hasId()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1691
+    .line 1704
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1695
+    .line 1708
     :goto_0
     return-object v0
 
-    .line 1692
+    .line 1705
     :cond_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->hasClientCachePath()Z
 
@@ -2402,7 +2654,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1693
+    .line 1706
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->getClientCachePath()Ljava/lang/String;
 
     move-result-object v0
@@ -2417,7 +2669,7 @@
 
     goto :goto_0
 
-    .line 1695
+    .line 1708
     :cond_1
     const/4 v0, 0x0
 
@@ -2431,13 +2683,13 @@
     .end annotation
 
     .prologue
-    .line 1326
+    .line 1339
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 1328
+    .line 1341
     const/4 v6, 0x0
 
-    .line 1330
+    .line 1343
     .local v6, cursor:Landroid/database/Cursor;
     :try_start_0
     sget-object v1, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
@@ -2456,29 +2708,29 @@
 
     move-result-object v6
 
-    .line 1331
+    .line 1344
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v0
 
-    .line 1333
+    .line 1346
     if-eqz v6, :cond_0
 
-    .line 1334
+    .line 1347
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_0
     return v0
 
-    .line 1333
+    .line 1346
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_1
 
-    .line 1334
+    .line 1347
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_1
@@ -2492,33 +2744,33 @@
     .parameter "isNotification"
 
     .prologue
-    .line 1806
+    .line 1874
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.ACTION_GO_TO_BUNDLE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1807
+    .line 1875
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1808
+    .line 1876
     const-string v1, "item_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 1809
+    .line 1877
     const-string v1, "is_notification"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 1810
+    .line 1878
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 1811
+    .line 1879
     return-void
 .end method
 
@@ -2528,25 +2780,25 @@
     .parameter "id"
 
     .prologue
-    .line 1775
+    .line 1843
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1776
+    .line 1844
     .local v0, bundle:Landroid/os/Bundle;
     if-eqz p1, :cond_0
 
-    .line 1777
+    .line 1845
     const-string v1, "item_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
 
-    .line 1779
+    .line 1847
     :cond_0
     invoke-static {p0, v0}, Lcom/google/glass/timeline/TimelineHelper;->goToTimelineWithExtras(Landroid/content/Context;Landroid/os/Bundle;)V
 
-    .line 1780
+    .line 1848
     return-void
 .end method
 
@@ -2555,12 +2807,12 @@
     .parameter "context"
 
     .prologue
-    .line 1767
+    .line 1835
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/glass/timeline/TimelineHelper;->goToTimeline(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;)V
 
-    .line 1768
+    .line 1836
     return-void
 .end method
 
@@ -2570,35 +2822,35 @@
     .parameter "bundle"
 
     .prologue
-    .line 1789
+    .line 1857
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.MAIN"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1790
+    .line 1858
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "android.intent.category.HOME"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1791
+    .line 1859
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1792
+    .line 1860
     if-eqz p1, :cond_0
 
-    .line 1793
+    .line 1861
     invoke-virtual {v0, p1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
-    .line 1795
+    .line 1863
     :cond_0
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 1796
+    .line 1864
     return-void
 .end method
 
@@ -2608,7 +2860,7 @@
     .parameter "contentTypes"
 
     .prologue
-    .line 1867
+    .line 1934
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -2620,12 +2872,12 @@
     :goto_0
     if-ge v1, v2, :cond_1
 
-    .line 1868
+    .line 1935
     invoke-virtual {p0, v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachment(I)Lcom/google/googlex/glass/common/proto/Attachment;
 
     move-result-object v0
 
-    .line 1869
+    .line 1936
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->getContentType()Ljava/lang/String;
 
@@ -2637,22 +2889,22 @@
 
     if-eqz v3, :cond_0
 
-    .line 1870
+    .line 1937
     const/4 v3, 0x1
 
-    .line 1873
+    .line 1940
     .end local v0           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     :goto_1
     return v3
 
-    .line 1867
+    .line 1934
     .restart local v0       #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1873
+    .line 1940
     .end local v0           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     :cond_1
     const/4 v3, 0x0
@@ -2665,7 +2917,7 @@
     .parameter "item"
 
     .prologue
-    .line 1971
+    .line 2038
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasBundleId()Z
@@ -2701,7 +2953,7 @@
     .parameter "menuItemActions"
 
     .prologue
-    .line 1915
+    .line 1982
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -2713,12 +2965,12 @@
     :goto_0
     if-ge v0, v4, :cond_2
 
-    .line 1916
+    .line 1983
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getMenuItem(I)Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v2
 
-    .line 1917
+    .line 1984
     .local v2, menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
     const/4 v1, 0x0
 
@@ -2729,10 +2981,10 @@
     :goto_1
     if-ge v1, v5, :cond_1
 
-    .line 1918
+    .line 1985
     aget-object v3, p1, v1
 
-    .line 1919
+    .line 1986
     .local v3, menuItemAction:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
     invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->getAction()Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
@@ -2744,10 +2996,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 1920
+    .line 1987
     const/4 v6, 0x1
 
-    .line 1924
+    .line 1991
     .end local v1           #ii:I
     .end local v2           #menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
     .end local v3           #menuItemAction:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
@@ -2755,7 +3007,7 @@
     :goto_2
     return v6
 
-    .line 1917
+    .line 1984
     .restart local v1       #ii:I
     .restart local v2       #menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
     .restart local v3       #menuItemAction:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
@@ -2765,14 +3017,14 @@
 
     goto :goto_1
 
-    .line 1915
+    .line 1982
     .end local v3           #menuItemAction:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1924
+    .line 1991
     .end local v1           #ii:I
     .end local v2           #menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
     .end local v5           #nn:I
@@ -2788,7 +3040,7 @@
     .parameter "broadcastActions"
 
     .prologue
-    .line 1936
+    .line 2003
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -2800,12 +3052,12 @@
     :goto_0
     if-ge v1, v4, :cond_2
 
-    .line 1937
+    .line 2004
     invoke-virtual {p0, v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getMenuItem(I)Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v3
 
-    .line 1938
+    .line 2005
     .local v3, menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
     const/4 v2, 0x0
 
@@ -2816,10 +3068,10 @@
     :goto_1
     if-ge v2, v5, :cond_1
 
-    .line 1939
+    .line 2006
     aget-object v0, p1, v2
 
-    .line 1940
+    .line 2007
     .local v0, broadcastAction:Ljava/lang/String;
     invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->getBroadcastAction()Ljava/lang/String;
 
@@ -2831,10 +3083,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 1941
+    .line 2008
     const/4 v6, 0x1
 
-    .line 1945
+    .line 2012
     .end local v0           #broadcastAction:Ljava/lang/String;
     .end local v2           #ii:I
     .end local v3           #menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
@@ -2842,7 +3094,7 @@
     :goto_2
     return v6
 
-    .line 1938
+    .line 2005
     .restart local v0       #broadcastAction:Ljava/lang/String;
     .restart local v2       #ii:I
     .restart local v3       #menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
@@ -2852,14 +3104,14 @@
 
     goto :goto_1
 
-    .line 1936
+    .line 2003
     .end local v0           #broadcastAction:Ljava/lang/String;
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1945
+    .line 2012
     .end local v2           #ii:I
     .end local v3           #menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
     .end local v5           #nn:I
@@ -2876,7 +3128,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1656
+    .line 1669
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasCreator()Z
@@ -2885,7 +3137,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1657
+    .line 1670
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCreator()Lcom/google/googlex/glass/common/proto/Entity;
 
     move-result-object v3
@@ -2894,16 +3146,16 @@
 
     move-result-object v1
 
-    .line 1658
+    .line 1671
     .local v1, source:Ljava/lang/String;
     if-eqz v1, :cond_0
 
-    .line 1659
+    .line 1672
     invoke-static {v1}, Lcom/google/glass/companion/CompanionUtils;->getComponentFromSource(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1660
+    .line 1673
     .local v0, component:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2911,14 +3163,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 1669
+    .line 1682
     .end local v0           #component:Ljava/lang/String;
     .end local v1           #source:Ljava/lang/String;
     :cond_0
     :goto_0
     return v2
 
-    .line 1663
+    .line 1676
     .restart local v0       #component:Ljava/lang/String;
     .restart local v1       #source:Ljava/lang/String;
     :cond_1
@@ -2957,7 +3209,7 @@
     .parameter "context"
 
     .prologue
-    .line 1855
+    .line 1922
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
@@ -2977,7 +3229,7 @@
     .parameter "supportedContentTypes"
 
     .prologue
-    .line 1881
+    .line 1948
     move-object v0, p1
 
     .local v0, arr$:[Ljava/lang/String;
@@ -2992,7 +3244,7 @@
 
     aget-object v1, v0, v2
 
-    .line 1882
+    .line 1949
     .local v1, contentType:Ljava/lang/String;
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3000,22 +3252,22 @@
 
     if-eqz v4, :cond_0
 
-    .line 1883
+    .line 1950
     const/4 v4, 0x1
 
-    .line 1886
+    .line 1953
     .end local v1           #contentType:Ljava/lang/String;
     :goto_1
     return v4
 
-    .line 1881
+    .line 1948
     .restart local v1       #contentType:Ljava/lang/String;
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1886
+    .line 1953
     .end local v1           #contentType:Ljava/lang/String;
     :cond_1
     const/4 v4, 0x0
@@ -3028,7 +3280,7 @@
     .parameter "item"
 
     .prologue
-    .line 1630
+    .line 1643
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCloudSyncStatus()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     move-result-object v0
@@ -3061,7 +3313,7 @@
     .parameter "item"
 
     .prologue
-    .line 1647
+    .line 1660
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCompanionSyncProtocol()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -3096,7 +3348,7 @@
     .parameter "attachment"
 
     .prologue
-    .line 1683
+    .line 1696
     const-string v0, "video/mp4"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->getContentType()Ljava/lang/String;
@@ -3119,12 +3371,12 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 1511
+    .line 1524
     if-eqz p0, :cond_0
 
     if-nez p1, :cond_2
 
-    .line 1512
+    .line 1525
     :cond_0
     sget-object v6, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -3160,12 +3412,12 @@
 
     move v0, v5
 
-    .line 1543
+    .line 1556
     :cond_1
     :goto_0
     return v0
 
-    .line 1517
+    .line 1530
     :cond_2
     invoke-interface {p1}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -3173,7 +3425,7 @@
 
     if-nez v6, :cond_3
 
-    .line 1518
+    .line 1531
     sget-object v6, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -3204,10 +3456,10 @@
 
     move v0, v5
 
-    .line 1519
+    .line 1532
     goto :goto_0
 
-    .line 1523
+    .line 1536
     :cond_3
     const-string v6, "_id"
 
@@ -3215,7 +3467,7 @@
 
     move-result v2
 
-    .line 1524
+    .line 1537
     .local v2, idColumnIndex:I
     const-string v6, "is_deleted"
 
@@ -3223,7 +3475,7 @@
 
     move-result v4
 
-    .line 1525
+    .line 1538
     .local v4, isDeletedColumnIndex:I
     const/4 v0, 0x0
 
@@ -3231,12 +3483,12 @@
     :goto_1
     if-ge v0, p2, :cond_5
 
-    .line 1526
+    .line 1539
     invoke-interface {p1, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1527
+    .line 1540
     .local v1, id:Ljava/lang/String;
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -3244,16 +3496,16 @@
 
     if-eqz v6, :cond_4
 
-    .line 1530
+    .line 1543
     invoke-interface {p1, v4}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
-    .line 1531
+    .line 1544
     .local v3, isDeleted:I
     if-eqz v3, :cond_1
 
-    .line 1534
+    .line 1547
     sget-object v6, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     const-string v7, "Found item, but it is deleted. Ignoring the item."
@@ -3262,10 +3514,10 @@
 
     move v0, v5
 
-    .line 1535
+    .line 1548
     goto :goto_0
 
-    .line 1539
+    .line 1552
     .end local v3           #isDeleted:I
     :cond_4
     invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
@@ -3278,10 +3530,10 @@
     :cond_5
     move v0, v5
 
-    .line 1543
+    .line 1556
     goto :goto_0
 
-    .line 1525
+    .line 1538
     .restart local v1       #id:Ljava/lang/String;
     :cond_6
     add-int/lit8 v0, v0, 0x1
@@ -3306,7 +3558,7 @@
     .end annotation
 
     .prologue
-    .line 1096
+    .line 1109
     .local p0, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     if-eqz p0, :cond_0
 
@@ -3316,16 +3568,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 1097
+    .line 1110
     :cond_0
     const/4 v0, -0x1
 
-    .line 1108
+    .line 1121
     :cond_1
     :goto_0
     return v0
 
-    .line 1101
+    .line 1114
     :cond_2
     const/4 v0, 0x0
 
@@ -3337,7 +3589,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 1102
+    .line 1115
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -3350,12 +3602,12 @@
 
     if-nez v1, :cond_1
 
-    .line 1101
+    .line 1114
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 1108
+    .line 1121
     :cond_3
     const/4 v0, 0x0
 
@@ -3371,38 +3623,38 @@
     .end annotation
 
     .prologue
-    .line 1843
+    .line 1910
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->isRunningOnCompanion(Landroid/content/Context;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1844
+    .line 1911
     sget-object v3, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     const-string v4, "Not populating location on Companion"
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1852
+    .line 1919
     :cond_0
     :goto_0
     return-void
 
-    .line 1846
+    .line 1913
     :cond_1
     invoke-static {}, Lcom/google/glass/location/LocationHelper;->getLastKnownLocation()Landroid/location/Location;
 
     move-result-object v0
 
-    .line 1847
+    .line 1914
     .local v0, location:Landroid/location/Location;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 1848
+    .line 1915
     .local v1, now:J
     if-eqz v0, :cond_0
 
@@ -3418,7 +3670,7 @@
 
     if-gtz v3, :cond_0
 
-    .line 1849
+    .line 1916
     invoke-static {v0, p1}, Lcom/google/glass/location/LocationHelper;->toLocationProto(Landroid/location/Location;Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/Location;
 
     move-result-object v3
@@ -3434,10 +3686,10 @@
     .parameter "deliveryTime"
 
     .prologue
-    .line 1252
+    .line 1265
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 1253
+    .line 1266
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -3476,10 +3728,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1262
+    .line 1275
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 1263
+    .line 1276
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -3500,40 +3752,33 @@
 .end method
 
 .method public static readMore(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;)V
-    .locals 3
+    .locals 2
     .parameter "context"
     .parameter "id"
 
     .prologue
-    .line 1821
+    .line 1889
     new-instance v0, Landroid/content/Intent;
 
-    const-string v1, "com.google.glass.ACTION_GO_TO_BUNDLE"
+    const-string v1, "com.google.glass.ACTION_READ_MORE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1822
+    .line 1890
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 1823
+    .line 1891
     const-string v1, "item_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 1824
-    const-string v1, "read_more"
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 1825
+    .line 1892
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 1826
+    .line 1893
     return-void
 .end method
 
@@ -3547,19 +3792,19 @@
 
     const/4 v5, 0x0
 
-    .line 455
+    .line 468
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Attachment;->hasClientCachePath()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 488
+    .line 501
     :cond_0
     :goto_0
     return-void
 
-    .line 460
+    .line 473
     :cond_1
     const-string v0, "image/jpeg"
 
@@ -3573,10 +3818,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 461
+    .line 474
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
-    .line 469
+    .line 482
     .local v1, contentUri:Landroid/net/Uri;
     :goto_1
     const/4 v0, 0x2
@@ -3591,15 +3836,15 @@
 
     aput-object v0, v2, v9
 
-    .line 473
+    .line 486
     .local v2, fields:[Ljava/lang/String;
     const-string v3, "_data=?"
 
-    .line 474
+    .line 487
     .local v3, select:Ljava/lang/String;
     const/4 v6, 0x0
 
-    .line 476
+    .line 489
     .local v6, cursor:Landroid/database/Cursor;
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3624,7 +3869,7 @@
 
     move-result-object v6
 
-    .line 478
+    .line 491
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
     :goto_2
@@ -3634,7 +3879,7 @@
 
     if-nez v0, :cond_4
 
-    .line 479
+    .line 492
     const-string v0, "_id"
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -3645,7 +3890,7 @@
 
     move-result v7
 
-    .line 480
+    .line 493
     .local v7, id:I
     int-to-long v4, v7
 
@@ -3653,7 +3898,7 @@
 
     move-result-object v8
 
-    .line 481
+    .line 494
     .local v8, uri:Landroid/net/Uri;
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -3665,14 +3910,14 @@
 
     invoke-virtual {v0, v8, v4, v5}, Landroid/content/ContentResolver;->delete(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 478
+    .line 491
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_2
 
-    .line 484
+    .line 497
     .end local v7           #id:I
     .end local v8           #uri:Landroid/net/Uri;
     :catchall_0
@@ -3680,13 +3925,13 @@
 
     if-eqz v6, :cond_2
 
-    .line 485
+    .line 498
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_2
     throw v0
 
-    .line 462
+    .line 475
     .end local v1           #contentUri:Landroid/net/Uri;
     .end local v2           #fields:[Ljava/lang/String;
     .end local v3           #select:Ljava/lang/String;
@@ -3704,20 +3949,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 463
+    .line 476
     sget-object v1, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
     .restart local v1       #contentUri:Landroid/net/Uri;
     goto :goto_1
 
-    .line 484
+    .line 497
     .restart local v2       #fields:[Ljava/lang/String;
     .restart local v3       #select:Ljava/lang/String;
     .restart local v6       #cursor:Landroid/database/Cursor;
     :cond_4
     if-eqz v6, :cond_0
 
-    .line 485
+    .line 498
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
@@ -3738,21 +3983,21 @@
 
     const/4 v1, 0x1
 
-    .line 1190
+    .line 1203
     if-eq p1, p2, :cond_1
 
     move v0, v1
 
-    .line 1198
+    .line 1211
     :cond_0
     :goto_0
     return v0
 
-    .line 1195
+    .line 1208
     :cond_1
     if-eqz p3, :cond_3
 
-    .line 1196
+    .line 1209
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsPinned()Z
 
     move-result v2
@@ -3772,7 +4017,7 @@
 
     goto :goto_0
 
-    .line 1198
+    .line 1211
     :cond_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsPinned()Z
 
@@ -3797,13 +4042,13 @@
     .parameter "provider"
 
     .prologue
-    .line 1978
+    .line 2045
     if-eqz p0, :cond_0
 
-    .line 1979
+    .line 2046
     invoke-virtual {p0}, Lcom/google/glass/timeline/TimelineProvider;->startSuppressNotifyChange()V
 
-    .line 1981
+    .line 2048
     :cond_0
     return-void
 .end method
@@ -3813,13 +4058,13 @@
     .parameter "provider"
 
     .prologue
-    .line 1985
+    .line 2052
     if-eqz p0, :cond_0
 
-    .line 1986
+    .line 2053
     invoke-virtual {p0}, Lcom/google/glass/timeline/TimelineProvider;->stopSuppressNotifyChange()V
 
-    .line 1988
+    .line 2055
     :cond_0
     return-void
 .end method
@@ -3833,12 +4078,12 @@
 
     const/4 v3, 0x0
 
-    .line 706
+    .line 719
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 707
+    .line 720
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "_id"
 
@@ -3848,7 +4093,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 708
+    .line 721
     const-string v1, "creation_time"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCreationTime()J
@@ -3861,7 +4106,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 709
+    .line 722
     const-string v1, "modified_time"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getModifiedTime()J
@@ -3874,7 +4119,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 710
+    .line 723
     const-string v1, "display_time"
 
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->getDisplayTime(Lcom/google/googlex/glass/common/proto/TimelineItem;)J
@@ -3887,7 +4132,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 711
+    .line 724
     const-string v1, "delivery_time"
 
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->getDeliveryTime(Lcom/google/googlex/glass/common/proto/TimelineItem;)J
@@ -3900,7 +4145,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 712
+    .line 725
     const-string v1, "pin_time"
 
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->getPinTime(Lcom/google/googlex/glass/common/proto/TimelineItem;)J
@@ -3913,7 +4158,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 713
+    .line 726
     const-string v4, "pin_score"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasPinScore()Z
@@ -3933,7 +4178,7 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 715
+    .line 728
     const-string v4, "is_deleted"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsDeleted()Z
@@ -3951,7 +4196,7 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 716
+    .line 729
     const-string v1, "sync_status"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCloudSyncStatus()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
@@ -3968,7 +4213,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 717
+    .line 730
     const-string v1, "sync_protocol"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCloudSyncProtocol()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -3985,7 +4230,7 @@
 
     invoke-virtual {v0, v1, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 718
+    .line 731
     const-string v4, "bundle_id"
 
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->hasBundleId(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
@@ -4005,7 +4250,7 @@
     :goto_2
     invoke-virtual {v0, v4, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 720
+    .line 733
     const-string v1, "bundle_cover_status"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsBundleCover()Z
@@ -4021,7 +4266,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 722
+    .line 735
     const-string v2, "source"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasSource()Z
@@ -4037,7 +4282,7 @@
     :goto_4
     invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 723
+    .line 736
     const-string v1, "protobuf_blob"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->toByteArray()[B
@@ -4046,10 +4291,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 724
+    .line 737
     return-object v0
 
-    .line 713
+    .line 726
     :cond_0
     const v1, 0x7fffffff
 
@@ -4058,10 +4303,10 @@
     :cond_1
     move v1, v3
 
-    .line 715
+    .line 728
     goto :goto_1
 
-    .line 718
+    .line 731
     :cond_2
     const-string v1, ""
 
@@ -4070,10 +4315,10 @@
     :cond_3
     move v2, v3
 
-    .line 720
+    .line 733
     goto :goto_3
 
-    .line 722
+    .line 735
     :cond_4
     const-string v1, ""
 
@@ -4086,12 +4331,12 @@
     .parameter "timelineItemId"
 
     .prologue
-    .line 736
+    .line 749
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 737
+    .line 750
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "action_type"
 
@@ -4109,19 +4354,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 738
+    .line 751
     const-string v1, "timeline_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 739
+    .line 752
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/UserAction;->hasPayload()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 740
+    .line 753
     const-string v1, "payload"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/UserAction;->getPayload()Ljava/lang/String;
@@ -4130,7 +4375,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 742
+    .line 755
     :cond_0
     return-object v0
 .end method
@@ -4144,28 +4389,28 @@
     .end annotation
 
     .prologue
-    .line 1022
+    .line 1035
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 1025
+    .line 1038
     invoke-static/range {p1 .. p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 1026
+    .line 1039
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Cannot bundle items with empty bundle ID."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1087
+    .line 1100
     :goto_0
     return-void
 
-    .line 1029
+    .line 1042
     :cond_0
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -4191,18 +4436,18 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1033
+    .line 1046
     sget-object v18, Lcom/google/glass/timeline/TimelineHelper;->UPDATE_LOCK:Ljava/lang/Object;
 
     monitor-enter v18
 
-    .line 1036
+    .line 1049
     :try_start_0
     new-instance v17, Ljava/lang/StringBuilder;
 
     invoke-direct/range {v17 .. v17}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1037
+    .line 1050
     .local v17, select:Ljava/lang/StringBuilder;
     const-string v1, "+is_deleted==0"
 
@@ -4210,21 +4455,21 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1038
+    .line 1051
     const-string v1, " AND "
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1039
+    .line 1052
     const-string v1, "bundle_id==?"
 
     move-object/from16 v0, v17
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1042
+    .line 1055
     const/4 v1, 0x1
 
     new-array v5, v1, [Ljava/lang/String;
@@ -4237,17 +4482,17 @@
 
     aput-object v2, v5, v1
 
-    .line 1047
+    .line 1060
     .local v5, selectArgs:[Ljava/lang/String;
     const-string v6, "display_time DESC"
 
-    .line 1050
+    .line 1063
     .local v6, orderBy:Ljava/lang/String;
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1051
+    .line 1064
     .local v8, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     new-instance v9, Ljava/util/ArrayList;
 
@@ -4255,19 +4500,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1052
+    .line 1065
     .local v9, currentBundleCoverStatuses:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Integer;>;"
     const/4 v11, 0x0
 
-    .line 1053
+    .line 1066
     .local v11, isBundlePinned:Z
     const-wide/16 v12, -0x1
 
-    .line 1054
+    .line 1067
     .local v12, bundlePinTime:J
     const/4 v15, 0x0
 
-    .line 1056
+    .line 1069
     .local v15, cursor:Landroid/database/Cursor;
     :try_start_1
     sget-object v2, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
@@ -4284,7 +4529,7 @@
 
     move-result-object v15
 
-    .line 1058
+    .line 1071
     if-eqz v15, :cond_1
 
     invoke-interface {v15}, Landroid/database/Cursor;->moveToNext()Z
@@ -4293,7 +4538,7 @@
 
     if-nez v1, :cond_3
 
-    .line 1061
+    .line 1074
     :cond_1
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -4327,10 +4572,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 1078
+    .line 1091
     if-eqz v15, :cond_2
 
-    .line 1079
+    .line 1092
     :try_start_2
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
 
@@ -4339,7 +4584,7 @@
 
     goto/16 :goto_0
 
-    .line 1086
+    .line 1099
     .end local v5           #selectArgs:[Ljava/lang/String;
     .end local v6           #orderBy:Ljava/lang/String;
     .end local v8           #items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
@@ -4357,7 +4602,7 @@
 
     throw v1
 
-    .line 1064
+    .line 1077
     .restart local v5       #selectArgs:[Ljava/lang/String;
     .restart local v6       #orderBy:Ljava/lang/String;
     .restart local v8       #items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
@@ -4374,20 +4619,20 @@
 
     move-result v14
 
-    .line 1066
+    .line 1079
     .local v14, bundleCoverStatusColumn:I
     :cond_4
     invoke-static {v15}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v16
 
-    .line 1067
+    .line 1080
     .local v16, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     move-object/from16 v0, v16
 
     invoke-interface {v8, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1068
+    .line 1081
     invoke-interface {v15, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v1
@@ -4398,17 +4643,17 @@
 
     invoke-interface {v9, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1072
+    .line 1085
     if-nez p2, :cond_5
 
-    .line 1073
+    .line 1086
     invoke-virtual/range {v16 .. v16}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsPinned()Z
 
     move-result v1
 
     or-int/2addr v11, v1
 
-    .line 1074
+    .line 1087
     invoke-static/range {v16 .. v16}, Lcom/google/glass/timeline/TimelineHelper;->getPinTime(Lcom/google/googlex/glass/common/proto/TimelineItem;)J
 
     move-result-wide v1
@@ -4417,7 +4662,7 @@
 
     move-result-wide v12
 
-    .line 1076
+    .line 1089
     :cond_5
     invoke-interface {v15}, Landroid/database/Cursor;->moveToNext()Z
     :try_end_3
@@ -4427,14 +4672,14 @@
 
     if-nez v1, :cond_4
 
-    .line 1078
+    .line 1091
     if-eqz v15, :cond_6
 
-    .line 1079
+    .line 1092
     :try_start_4
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
 
-    .line 1084
+    .line 1097
     :cond_6
     invoke-static {v8}, Lcom/google/glass/timeline/TimelineHelper;->pickBundleCover(Ljava/util/List;)I
 
@@ -4444,12 +4689,12 @@
 
     invoke-static/range {v7 .. v13}, Lcom/google/glass/timeline/TimelineHelper;->updateBundleCoverStatusAndPin(Landroid/content/ContentResolver;Ljava/util/List;Ljava/util/List;IZJ)V
 
-    .line 1086
+    .line 1099
     monitor-exit v18
 
     goto/16 :goto_0
 
-    .line 1078
+    .line 1091
     .end local v14           #bundleCoverStatusColumn:I
     .end local v16           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :catchall_1
@@ -4457,7 +4702,7 @@
 
     if-eqz v15, :cond_7
 
-    .line 1079
+    .line 1092
     invoke-interface {v15}, Landroid/database/Cursor;->close()V
 
     :cond_7
@@ -4479,10 +4724,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 1224
+    .line 1237
     if-eqz p3, :cond_2
 
-    .line 1225
+    .line 1238
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsPinned()Z
 
     move-result v2
@@ -4497,7 +4742,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1226
+    .line 1239
     :cond_0
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
@@ -4517,14 +4762,14 @@
 
     move-result-object p1
 
-    .line 1241
+    .line 1254
     :cond_1
     :goto_0
     invoke-static {p1}, Lcom/google/glass/timeline/TimelineHelper;->toContentValues(Lcom/google/googlex/glass/common/proto/TimelineItem;)Landroid/content/ContentValues;
 
     move-result-object v0
 
-    .line 1242
+    .line 1255
     .local v0, contentValues:Landroid/content/ContentValues;
     const-string v2, "bundle_cover_status"
 
@@ -4534,7 +4779,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 1243
+    .line 1256
     sget-object v2, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
@@ -4545,14 +4790,14 @@
 
     move-result-object v1
 
-    .line 1244
+    .line 1257
     .local v1, uri:Landroid/net/Uri;
     invoke-virtual {p0, v1, v0, v4, v4}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 1245
+    .line 1258
     return-void
 
-    .line 1232
+    .line 1245
     .end local v0           #contentValues:Landroid/content/ContentValues;
     .end local v1           #uri:Landroid/net/Uri;
     :cond_2
@@ -4568,7 +4813,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1233
+    .line 1246
     :cond_3
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
@@ -4618,7 +4863,7 @@
     .end annotation
 
     .prologue
-    .line 1126
+    .line 1139
     .local p1, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     .local p2, currentBundleCoverStatuses:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -4636,7 +4881,7 @@
     :goto_0
     invoke-static {v2}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 1128
+    .line 1141
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v2
@@ -4645,7 +4890,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 1132
+    .line 1145
     const/4 v2, 0x0
 
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4654,7 +4899,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 1133
+    .line 1146
     .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     const/4 v2, 0x0
 
@@ -4668,7 +4913,7 @@
 
     move-result v1
 
-    .line 1134
+    .line 1147
     .local v1, currentBundleCoverStatus:I
     const/4 v2, 0x3
 
@@ -4682,7 +4927,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1136
+    .line 1149
     const/4 v4, 0x3
 
     move-object v2, p0
@@ -4695,19 +4940,19 @@
 
     invoke-static/range {v2 .. v7}, Lcom/google/glass/timeline/TimelineHelper;->updateBundleCoverStatusAndPin(Landroid/content/ContentResolver;Lcom/google/googlex/glass/common/proto/TimelineItem;IZJ)V
 
-    .line 1182
+    .line 1195
     .end local v0           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v1           #currentBundleCoverStatus:I
     :cond_0
     return-void
 
-    .line 1126
+    .line 1139
     :cond_1
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1140
+    .line 1153
     :cond_2
     const/4 v8, 0x0
 
@@ -4719,14 +4964,14 @@
 
     if-ge v8, v2, :cond_0
 
-    .line 1141
+    .line 1154
     invoke-interface {p1, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 1142
+    .line 1155
     .restart local v0       #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     invoke-interface {p2, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -4738,18 +4983,18 @@
 
     move-result v1
 
-    .line 1144
+    .line 1157
     .restart local v1       #currentBundleCoverStatus:I
     if-ne v8, p3, :cond_5
 
-    .line 1147
+    .line 1160
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsBundleCover()Z
 
     move-result v2
 
     if-eqz v2, :cond_4
 
-    .line 1148
+    .line 1161
     const/4 v2, 0x1
 
     move v3, p4
@@ -4762,7 +5007,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1150
+    .line 1163
     const/4 v4, 0x1
 
     move-object v2, p0
@@ -4775,14 +5020,14 @@
 
     invoke-static/range {v2 .. v7}, Lcom/google/glass/timeline/TimelineHelper;->updateBundleCoverStatusAndPin(Landroid/content/ContentResolver;Lcom/google/googlex/glass/common/proto/TimelineItem;IZJ)V
 
-    .line 1140
+    .line 1153
     :cond_3
     :goto_2
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 1154
+    .line 1167
     :cond_4
     const/4 v2, 0x2
 
@@ -4796,7 +5041,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1156
+    .line 1169
     const/4 v4, 0x2
 
     move-object v2, p0
@@ -4811,7 +5056,7 @@
 
     goto :goto_2
 
-    .line 1163
+    .line 1176
     :cond_5
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsBundleCover()Z
 
@@ -4819,7 +5064,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 1167
+    .line 1180
     const/4 v2, 0x1
 
     move v3, p4
@@ -4832,7 +5077,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1169
+    .line 1182
     const/4 v4, 0x1
 
     move-object v2, p0
@@ -4847,7 +5092,7 @@
 
     goto :goto_2
 
-    .line 1173
+    .line 1186
     :cond_6
     const/4 v2, 0x0
 
@@ -4861,7 +5106,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1175
+    .line 1188
     const/4 v4, 0x0
 
     move-object v2, p0
@@ -4898,27 +5143,27 @@
     .local p2, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     const/4 v7, 0x0
 
-    .line 329
+    .line 342
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 331
+    .line 344
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result v9
 
     if-eqz v9, :cond_0
 
-    .line 367
+    .line 380
     :goto_0
     return v7
 
-    .line 336
+    .line 349
     :cond_0
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 338
+    .line 351
     .local v1, bundleIdsForUpdate:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     invoke-interface {p2}, Ljava/util/List;->size()I
 
@@ -4926,7 +5171,7 @@
 
     new-array v8, v9, [Landroid/content/ContentValues;
 
-    .line 339
+    .line 352
     .local v8, values:[Landroid/content/ContentValues;
     const/4 v2, 0x0
 
@@ -4938,14 +5183,14 @@
 
     if-ge v2, v9, :cond_2
 
-    .line 340
+    .line 353
     invoke-interface {p2, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 341
+    .line 354
     .local v4, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     sget-object v9, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -4973,41 +5218,41 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 342
+    .line 355
     invoke-static {v4}, Lcom/google/glass/timeline/TimelineHelper;->toContentValues(Lcom/google/googlex/glass/common/proto/TimelineItem;)Landroid/content/ContentValues;
 
     move-result-object v9
 
     aput-object v9, v8, v2
 
-    .line 345
+    .line 358
     invoke-static {v4}, Lcom/google/glass/timeline/TimelineHelper;->hasBundleId(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
     move-result v9
 
     if-eqz v9, :cond_1
 
-    .line 346
+    .line 359
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleId()Ljava/lang/String;
 
     move-result-object v9
 
     invoke-interface {v1, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 339
+    .line 352
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 352
+    .line 365
     .end local v4           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :cond_2
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v6
 
-    .line 353
+    .line 366
     .local v6, resolver:Landroid/content/ContentResolver;
     const-string v9, "com.google.glass.timeline"
 
@@ -5021,11 +5266,11 @@
 
     check-cast v5, Lcom/google/glass/timeline/TimelineProvider;
 
-    .line 355
+    .line 368
     .local v5, provider:Lcom/google/glass/timeline/TimelineProvider;
     invoke-static {v5}, Lcom/google/glass/timeline/TimelineHelper;->startSuppressNotifyChange(Lcom/google/glass/timeline/TimelineProvider;)V
 
-    .line 357
+    .line 370
     :try_start_0
     sget-object v9, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
 
@@ -5033,7 +5278,7 @@
 
     move-result v7
 
-    .line 361
+    .line 374
     .local v7, result:I
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -5053,7 +5298,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 362
+    .line 375
     .local v0, bundleId:Ljava/lang/String;
     const/4 v9, 0x0
 
@@ -5063,7 +5308,7 @@
 
     goto :goto_2
 
-    .line 367
+    .line 380
     .end local v0           #bundleId:Ljava/lang/String;
     .end local v3           #i$:Ljava/util/Iterator;
     .end local v7           #result:I
@@ -5088,7 +5333,7 @@
     .parameter "settingsSecure"
 
     .prologue
-    .line 203
+    .line 216
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->GLASS_DEVICE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     const-string v1, "device:"
@@ -5107,22 +5352,22 @@
     .parameter "maxRowId"
 
     .prologue
-    .line 691
+    .line 704
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 692
+    .line 705
     const-wide/16 v2, 0x0
 
     cmp-long v2, p3, v2
 
     if-lez v2, :cond_0
 
-    .line 693
+    .line 706
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 694
+    .line 707
     .local v1, resolver:Landroid/content/ContentResolver;
     invoke-static {p2}, Lcom/google/glass/timeline/TimelineProvider;->getPendingActionUri(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -5146,7 +5391,7 @@
 
     move-result v0
 
-    .line 696
+    .line 709
     .local v0, count:I
     sget-object v2, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -5190,7 +5435,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 699
+    .line 712
     .end local v0           #count:I
     .end local v1           #resolver:Landroid/content/ContentResolver;
     :cond_0
@@ -5203,17 +5448,17 @@
     .parameter "item"
 
     .prologue
-    .line 397
+    .line 410
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 400
+    .line 413
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsDeleted()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 401
+    .line 414
     sget-object v4, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5246,11 +5491,11 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 446
+    .line 459
     :cond_0
     return-void
 
-    .line 405
+    .line 418
     :cond_1
     sget-object v4, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -5278,7 +5523,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 408
+    .line 421
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v4
@@ -5341,7 +5586,7 @@
 
     move-result-object v3
 
-    .line 419
+    .line 432
     .local v3, tombstone:Lcom/google/googlex/glass/common/proto/TimelineItem;
     new-instance v4, Lcom/google/glass/timeline/TimelineHelper$2;
 
@@ -5349,7 +5594,7 @@
 
     invoke-static {v4}, Lcom/google/glass/timeline/TimelineHelper;->atomicUpdateTimelineItem(Lcom/google/glass/timeline/TimelineHelper$Update;)V
 
-    .line 429
+    .line 442
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachmentList()Ljava/util/List;
 
     move-result-object v4
@@ -5373,7 +5618,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Attachment;
 
-    .line 430
+    .line 443
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->hasClientCachePath()Z
 
@@ -5381,12 +5626,12 @@
 
     if-eqz v4, :cond_2
 
-    .line 435
+    .line 448
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->getClientCachePath()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 436
+    .line 449
     .local v1, clientCachePath:Ljava/lang/String;
     sget-object v4, Lcom/google/glass/app/GlassApplication;->CACHED_FILES_DIRECTORY:Ljava/lang/String;
 
@@ -5396,7 +5641,7 @@
 
     if-nez v4, :cond_2
 
-    .line 437
+    .line 450
     sget-object v4, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5419,7 +5664,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 438
+    .line 451
     new-instance v4, Ljava/io/File;
 
     invoke-direct {v4, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -5430,7 +5675,7 @@
 
     if-nez v4, :cond_3
 
-    .line 439
+    .line 452
     sget-object v4, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5455,7 +5700,7 @@
 
     goto :goto_0
 
-    .line 441
+    .line 454
     :cond_3
     invoke-static {p1, v0}, Lcom/google/glass/timeline/TimelineHelper;->removeFileFromMediaStore(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Attachment;)V
 
@@ -5468,14 +5713,14 @@
     .parameter "item"
 
     .prologue
-    .line 511
+    .line 524
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper$4;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/glass/timeline/TimelineHelper$4;-><init>(Lcom/google/glass/timeline/TimelineHelper;Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 517
+    .line 530
     return-void
 .end method
 
@@ -5485,14 +5730,14 @@
     .parameter "itemId"
 
     .prologue
-    .line 494
+    .line 507
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper$3;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/glass/timeline/TimelineHelper$3;-><init>(Lcom/google/glass/timeline/TimelineHelper;Landroid/content/Context;Ljava/lang/String;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 505
+    .line 518
     return-void
 .end method
 
@@ -5502,30 +5747,30 @@
     .parameter "timelineItemId"
 
     .prologue
-    .line 653
+    .line 666
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 654
+    .line 667
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
 
-    .line 655
+    .line 668
     .local v1, resolver:Landroid/content/ContentResolver;
     const/4 v9, 0x0
 
-    .line 657
+    .line 670
     .local v9, cursor:Landroid/database/Cursor;
     :try_start_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->builder()Lcom/google/common/collect/ImmutableList$Builder;
 
     move-result-object v8
 
-    .line 658
+    .line 671
     .local v8, builder:Lcom/google/common/collect/ImmutableList$Builder;,"Lcom/google/common/collect/ImmutableList$Builder<Lcom/google/googlex/glass/common/proto/UserAction;>;"
     const-wide/16 v10, 0x0
 
-    .line 659
+    .line 672
     .local v10, maxRowId:J
     invoke-static/range {p2 .. p2}, Lcom/google/glass/timeline/TimelineProvider;->getPendingActionUri(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -5543,7 +5788,7 @@
 
     move-result-object v9
 
-    .line 661
+    .line 674
     :goto_0
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -5551,7 +5796,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 662
+    .line 675
     const-string v2, "action_type"
 
     invoke-interface {v9, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -5566,11 +5811,11 @@
 
     move-result-object v14
 
-    .line 664
+    .line 677
     .local v14, type:Lcom/google/googlex/glass/common/proto/UserAction$Type;
     if-eqz v14, :cond_1
 
-    .line 665
+    .line 678
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction;->newBuilder()Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
     move-result-object v2
@@ -5579,7 +5824,7 @@
 
     move-result-object v7
 
-    .line 666
+    .line 679
     .local v7, action:Lcom/google/googlex/glass/common/proto/UserAction$Builder;
     const-string v2, "payload"
 
@@ -5591,14 +5836,14 @@
 
     move-result-object v12
 
-    .line 667
+    .line 680
     .local v12, payload:Ljava/lang/String;
     if-eqz v12, :cond_0
 
-    .line 668
+    .line 681
     invoke-virtual {v7, v12}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->setPayload(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
-    .line 670
+    .line 683
     :cond_0
     invoke-virtual {v7}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
 
@@ -5606,7 +5851,7 @@
 
     invoke-virtual {v8, v2}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
 
-    .line 672
+    .line 685
     .end local v7           #action:Lcom/google/googlex/glass/common/proto/UserAction$Builder;
     .end local v12           #payload:Ljava/lang/String;
     :cond_1
@@ -5620,10 +5865,10 @@
 
     move-result-wide v10
 
-    .line 673
+    .line 686
     goto :goto_0
 
-    .line 674
+    .line 687
     .end local v14           #type:Lcom/google/googlex/glass/common/proto/UserAction$Type;
     :cond_2
     new-instance v13, Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;
@@ -5636,7 +5881,7 @@
 
     invoke-direct {v13, v2, v10, v11, v3}, Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;-><init>(Ljava/util/List;JLcom/google/glass/timeline/TimelineHelper$1;)V
 
-    .line 675
+    .line 688
     .local v13, response:Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;
     sget-object v2, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -5680,16 +5925,16 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 678
+    .line 691
     if-eqz v9, :cond_3
 
-    .line 679
+    .line 692
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     :cond_3
     return-object v13
 
-    .line 678
+    .line 691
     .end local v8           #builder:Lcom/google/common/collect/ImmutableList$Builder;,"Lcom/google/common/collect/ImmutableList$Builder<Lcom/google/googlex/glass/common/proto/UserAction;>;"
     .end local v10           #maxRowId:J
     .end local v13           #response:Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;
@@ -5698,7 +5943,7 @@
 
     if-eqz v9, :cond_4
 
-    .line 679
+    .line 692
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -5726,13 +5971,13 @@
     .end annotation
 
     .prologue
-    .line 1557
+    .line 1570
     .local p2, syncProtocols:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;>;"
     invoke-static {}, Lcom/google/common/collect/Lists;->newLinkedList()Ljava/util/LinkedList;
 
     move-result-object v9
 
-    .line 1559
+    .line 1572
     .local v9, items:Ljava/util/LinkedList;,"Ljava/util/LinkedList<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     if-eqz p2, :cond_0
 
@@ -5742,7 +5987,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1560
+    .line 1573
     :cond_0
     sget-object v0, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -5750,12 +5995,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1606
+    .line 1619
     :cond_1
     :goto_0
     return-object v9
 
-    .line 1564
+    .line 1577
     :cond_2
     sget-object v0, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -5785,33 +6030,33 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1566
+    .line 1579
     const/4 v6, 0x0
 
-    .line 1570
+    .line 1583
     .local v6, cursor:Landroid/database/Cursor;
     :try_start_0
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1571
+    .line 1584
     .local v10, selection:Ljava/lang/StringBuilder;
     const-string v0, "sync_status=0"
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1572
+    .line 1585
     const-string v0, " AND "
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1573
+    .line 1586
     const-string v0, "sync_protocol IN ("
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1574
+    .line 1587
     const/4 v7, 0x0
 
     .local v7, i:I
@@ -5822,15 +6067,15 @@
 
     if-ge v7, v0, :cond_4
 
-    .line 1575
+    .line 1588
     if-lez v7, :cond_3
 
-    .line 1576
+    .line 1589
     const-string v0, ", "
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1578
+    .line 1591
     :cond_3
     invoke-interface {p2, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -5844,18 +6089,18 @@
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 1574
+    .line 1587
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_1
 
-    .line 1580
+    .line 1593
     :cond_4
     const-string v0, ")"
 
     invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1583
+    .line 1596
     sget-object v1, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
 
     const/4 v2, 0x0
@@ -5874,7 +6119,7 @@
 
     move-result-object v6
 
-    .line 1590
+    .line 1603
     :goto_2
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -5882,12 +6127,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 1591
+    .line 1604
     invoke-static {v6}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v8
 
-    .line 1592
+    .line 1605
     .local v8, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     if-eqz p3, :cond_6
 
@@ -5897,7 +6142,7 @@
 
     if-lez v0, :cond_6
 
-    .line 1593
+    .line 1606
     sget-object v0, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -5938,7 +6183,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1595
+    .line 1608
     const/4 v0, 0x0
 
     invoke-virtual {v9, v0, v8}, Ljava/util/LinkedList;->add(ILjava/lang/Object;)V
@@ -5947,7 +6192,7 @@
 
     goto :goto_2
 
-    .line 1601
+    .line 1614
     .end local v7           #i:I
     .end local v8           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v10           #selection:Ljava/lang/StringBuilder;
@@ -5956,13 +6201,13 @@
 
     if-eqz v6, :cond_5
 
-    .line 1602
+    .line 1615
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_5
     throw v0
 
-    .line 1597
+    .line 1610
     .restart local v7       #i:I
     .restart local v8       #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .restart local v10       #selection:Ljava/lang/StringBuilder;
@@ -5974,12 +6219,12 @@
 
     goto :goto_2
 
-    .line 1601
+    .line 1614
     .end local v8           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :cond_7
     if-eqz v6, :cond_1
 
-    .line 1602
+    .line 1615
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto/16 :goto_0
@@ -5993,15 +6238,15 @@
     .parameter "action"
 
     .prologue
-    .line 273
+    .line 286
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 275
+    .line 288
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
 
-    .line 280
+    .line 293
     .local v2, resolver:Landroid/content/ContentResolver;
     const-string v3, "com.google.glass.timeline"
 
@@ -6015,11 +6260,11 @@
 
     check-cast v1, Lcom/google/glass/timeline/TimelineProvider;
 
-    .line 282
+    .line 295
     .local v1, provider:Lcom/google/glass/timeline/TimelineProvider;
     invoke-static {v1}, Lcom/google/glass/timeline/TimelineHelper;->startSuppressNotifyChange(Lcom/google/glass/timeline/TimelineProvider;)V
 
-    .line 284
+    .line 297
     :try_start_0
     sget-object v3, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
 
@@ -6031,7 +6276,7 @@
 
     move-result-object v0
 
-    .line 285
+    .line 298
     .local v0, itemUri:Landroid/net/Uri;
     sget-object v4, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
@@ -6084,10 +6329,10 @@
 
     invoke-static {v4, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 289
+    .line 302
     if-eqz p4, :cond_0
 
-    .line 290
+    .line 303
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
 
     move-result-object v3
@@ -6106,7 +6351,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 296
+    .line 309
     :cond_0
     invoke-static {p2}, Lcom/google/glass/timeline/TimelineHelper;->hasBundleId(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
@@ -6114,7 +6359,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 297
+    .line 310
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleId()Ljava/lang/String;
 
     move-result-object v3
@@ -6125,11 +6370,11 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 300
+    .line 313
     :cond_1
     invoke-static {v1}, Lcom/google/glass/timeline/TimelineHelper;->stopSuppressNotifyChange(Lcom/google/glass/timeline/TimelineProvider;)V
 
-    .line 303
+    .line 316
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCloudSyncProtocol()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
     move-result-object v3
@@ -6146,12 +6391,12 @@
 
     if-eq v3, v4, :cond_2
 
-    .line 305
+    .line 318
     const-string v3, "com.google.glass.timeline"
 
     invoke-static {p1, v3}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 315
+    .line 328
     :cond_2
     new-instance v3, Lcom/google/glass/logging/UserEventHelper;
 
@@ -6165,10 +6410,10 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 317
+    .line 330
     return-object v0
 
-    .line 285
+    .line 298
     :cond_3
     :try_start_1
     new-instance v3, Ljava/lang/StringBuilder;
@@ -6197,7 +6442,7 @@
 
     goto :goto_0
 
-    .line 300
+    .line 313
     .end local v0           #itemUri:Landroid/net/Uri;
     :catchall_0
     move-exception v3
@@ -6215,7 +6460,7 @@
     .parameter "action"
 
     .prologue
-    .line 382
+    .line 395
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper$1;
 
     move-object v1, p0
@@ -6232,7 +6477,7 @@
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 388
+    .line 401
     return-void
 .end method
 
@@ -6244,10 +6489,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1301
+    .line 1314
     const/4 v6, 0x0
 
-    .line 1303
+    .line 1316
     .local v6, timelineCursor:Landroid/database/Cursor;
     const/4 v2, 0x0
 
@@ -6268,13 +6513,13 @@
 
     move-result-object v6
 
-    .line 1305
+    .line 1318
     if-nez v6, :cond_2
 
-    .line 1315
+    .line 1328
     if-eqz v6, :cond_0
 
-    .line 1316
+    .line 1329
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_0
@@ -6284,7 +6529,7 @@
     :goto_0
     return-object v0
 
-    .line 1309
+    .line 1322
     :cond_2
     :try_start_1
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
@@ -6295,10 +6540,10 @@
 
     if-nez v0, :cond_4
 
-    .line 1315
+    .line 1328
     if-eqz v6, :cond_3
 
-    .line 1316
+    .line 1329
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -6306,7 +6551,7 @@
 
     goto :goto_0
 
-    .line 1313
+    .line 1326
     :cond_4
     :try_start_2
     invoke-static {v6}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -6315,21 +6560,21 @@
 
     move-result-object v0
 
-    .line 1315
+    .line 1328
     if-eqz v6, :cond_1
 
-    .line 1316
+    .line 1329
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 1315
+    .line 1328
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_5
 
-    .line 1316
+    .line 1329
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_5
@@ -6342,17 +6587,17 @@
     .parameter "itemId"
 
     .prologue
-    .line 1274
+    .line 1287
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 1276
+    .line 1289
     const/4 v6, 0x0
 
-    .line 1277
+    .line 1290
     .local v6, cursor:Landroid/database/Cursor;
     const/4 v7, 0x0
 
-    .line 1279
+    .line 1292
     .local v7, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :try_start_0
     sget-object v1, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
@@ -6377,38 +6622,38 @@
 
     move-result-object v6
 
-    .line 1286
+    .line 1299
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1287
+    .line 1300
     invoke-static {v6}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v7
 
-    .line 1290
+    .line 1303
     :cond_0
     if-eqz v6, :cond_1
 
-    .line 1291
+    .line 1304
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 1294
+    .line 1307
     :cond_1
     return-object v7
 
-    .line 1290
+    .line 1303
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_2
 
-    .line 1291
+    .line 1304
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_2
@@ -6424,7 +6669,7 @@
     .parameter "clearPin"
 
     .prologue
-    .line 559
+    .line 572
     sget-object v9, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -6477,10 +6722,10 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 561
+    .line 574
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 563
+    .line 576
     sget-object v9, Lcom/google/glass/timeline/TimelineHelper;->UPDATE_LOCK:Ljava/lang/Object;
 
     invoke-static {v9}, Ljava/lang/Thread;->holdsLock(Ljava/lang/Object;)Z
@@ -6489,7 +6734,7 @@
 
     if-nez v9, :cond_0
 
-    .line 564
+    .line 577
     new-instance v9, Ljava/lang/IllegalStateException;
 
     const-string v10, "Cannot update without holding the UPDATE_LOCK"
@@ -6498,13 +6743,13 @@
 
     throw v9
 
-    .line 567
+    .line 580
     :cond_0
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v7
 
-    .line 570
+    .line 583
     .local v7, resolver:Landroid/content/ContentResolver;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -6518,7 +6763,7 @@
 
     move-result-object v4
 
-    .line 571
+    .line 584
     .local v4, existing:Lcom/google/googlex/glass/common/proto/TimelineItem;
     if-eqz v4, :cond_1
 
@@ -6534,7 +6779,7 @@
 
     if-nez v9, :cond_1
 
-    .line 574
+    .line 587
     sget-object v9, Lcom/google/glass/timeline/TimelineHelper;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -6567,20 +6812,20 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 575
+    .line 588
     const/4 v9, 0x0
 
-    .line 626
+    .line 639
     :goto_0
     return-object v9
 
-    .line 579
+    .line 592
     :cond_1
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    .line 582
+    .line 595
     .local v2, bundleIdsForUpdate:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
     invoke-static {v4}, Lcom/google/glass/timeline/TimelineHelper;->hasBundleId(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
@@ -6588,14 +6833,14 @@
 
     if-eqz v9, :cond_2
 
-    .line 583
+    .line 596
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleId()Ljava/lang/String;
 
     move-result-object v9
 
     invoke-interface {v2, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 589
+    .line 602
     :cond_2
     invoke-static {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
@@ -6614,7 +6859,7 @@
 
     move-result-object p2
 
-    .line 595
+    .line 608
     const-string v9, "com.google.glass.timeline"
 
     invoke-virtual {v7, v9}, Landroid/content/ContentResolver;->acquireContentProviderClient(Ljava/lang/String;)Landroid/content/ContentProviderClient;
@@ -6627,11 +6872,11 @@
 
     check-cast v6, Lcom/google/glass/timeline/TimelineProvider;
 
-    .line 597
+    .line 610
     .local v6, provider:Lcom/google/glass/timeline/TimelineProvider;
     invoke-static {v6}, Lcom/google/glass/timeline/TimelineHelper;->startSuppressNotifyChange(Lcom/google/glass/timeline/TimelineProvider;)V
 
-    .line 599
+    .line 612
     :try_start_0
     sget-object v9, Lcom/google/glass/timeline/TimelineProvider;->TIMELINE_URI:Landroid/net/Uri;
 
@@ -6643,13 +6888,13 @@
 
     move-result-object v8
 
-    .line 600
+    .line 613
     .local v8, uri:Landroid/net/Uri;
     invoke-static {p2}, Lcom/google/glass/timeline/TimelineHelper;->toContentValues(Lcom/google/googlex/glass/common/proto/TimelineItem;)Landroid/content/ContentValues;
 
     move-result-object v3
 
-    .line 601
+    .line 614
     .local v3, contentValues:Landroid/content/ContentValues;
     const/4 v9, 0x0
 
@@ -6657,10 +6902,10 @@
 
     invoke-virtual {v7, v8, v3, v9, v10}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 603
+    .line 616
     if-eqz p3, :cond_3
 
-    .line 604
+    .line 617
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
 
     move-result-object v9
@@ -6679,7 +6924,7 @@
 
     invoke-virtual {v7, v9, v10}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
-    .line 609
+    .line 622
     :cond_3
     invoke-static {p2}, Lcom/google/glass/timeline/TimelineHelper;->hasBundleId(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
@@ -6687,14 +6932,14 @@
 
     if-eqz v9, :cond_4
 
-    .line 610
+    .line 623
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleId()Ljava/lang/String;
 
     move-result-object v9
 
     invoke-interface {v2, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 614
+    .line 627
     :cond_4
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
@@ -6714,7 +6959,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 615
+    .line 628
     .local v1, bundleId:Ljava/lang/String;
     move/from16 v0, p5
 
@@ -6724,7 +6969,7 @@
 
     goto :goto_2
 
-    .line 618
+    .line 631
     .end local v1           #bundleId:Ljava/lang/String;
     .end local v3           #contentValues:Landroid/content/ContentValues;
     .end local v5           #i$:Ljava/util/Iterator;
@@ -6736,14 +6981,14 @@
 
     throw v9
 
-    .line 589
+    .line 602
     .end local v6           #provider:Lcom/google/glass/timeline/TimelineProvider;
     :cond_5
     sget-object v9, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     goto :goto_1
 
-    .line 618
+    .line 631
     .restart local v3       #contentValues:Landroid/content/ContentValues;
     .restart local v5       #i$:Ljava/util/Iterator;
     .restart local v6       #provider:Lcom/google/glass/timeline/TimelineProvider;
@@ -6751,7 +6996,7 @@
     :cond_6
     invoke-static {v6}, Lcom/google/glass/timeline/TimelineHelper;->stopSuppressNotifyChange(Lcom/google/glass/timeline/TimelineProvider;)V
 
-    .line 621
+    .line 634
     if-nez p4, :cond_7
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCloudSyncProtocol()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -6762,7 +7007,7 @@
 
     if-eq v9, v10, :cond_7
 
-    .line 622
+    .line 635
     const-string v9, "com.google.glass.timeline"
 
     invoke-static {p1, v9}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;)V
@@ -6770,6 +7015,6 @@
     :cond_7
     move-object v9, p2
 
-    .line 626
+    .line 639
     goto/16 :goto_0
 .end method

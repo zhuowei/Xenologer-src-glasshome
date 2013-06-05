@@ -2,9 +2,6 @@
 .super Lcom/google/common/collect/MapMakerInternalMap$HashIterator;
 .source "MapMakerInternalMap.java"
 
-# interfaces
-.implements Ljava/util/Iterator;
-
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -19,9 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/common/collect/MapMakerInternalMap",
-        "<TK;TV;>.HashIterator;",
-        "Ljava/util/Iterator",
-        "<",
+        "<TK;TV;>.HashIterator<",
         "Ljava/util/Map$Entry",
         "<TK;TV;>;>;"
     }
@@ -38,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 3816
+    .line 3656
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EntryIterator;,"Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.EntryIterator;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$EntryIterator;->this$0:Lcom/google/common/collect/MapMakerInternalMap;
 
@@ -53,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 3816
+    .line 3656
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EntryIterator;,"Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.EntryIterator;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$EntryIterator;->next()Ljava/util/Map$Entry;
 
@@ -73,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 3820
+    .line 3660
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EntryIterator;,"Lcom/google/common/collect/MapMakerInternalMap<TK;TV;>.EntryIterator;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$EntryIterator;->nextEntry()Lcom/google/common/collect/MapMakerInternalMap$WriteThroughEntry;
 

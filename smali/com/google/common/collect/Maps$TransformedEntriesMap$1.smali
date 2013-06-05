@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 1207
+    .line 1528
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap$1;,"Lcom/google/common/collect/Maps$TransformedEntriesMap.1;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
 
@@ -55,8 +55,10 @@
     .end annotation
 
     .prologue
-    .line 1213
+    .line 1536
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap$1;,"Lcom/google/common/collect/Maps$TransformedEntriesMap.1;"
+    new-instance v0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;
+
     iget-object v1, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
 
     iget-object v1, v1, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
@@ -67,19 +69,11 @@
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
-
-    .line 1215
-    .local v0, backingIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV1;>;>;"
-    new-instance v1, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;
-
-    invoke-direct {v1, p0}, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;-><init>(Lcom/google/common/collect/Maps$TransformedEntriesMap$1;)V
-
-    invoke-static {v0, v1}, Lcom/google/common/collect/Iterators;->transform(Ljava/util/Iterator;Lcom/google/common/base/Function;)Ljava/util/Iterator;
-
     move-result-object v1
 
-    return-object v1
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;-><init>(Lcom/google/common/collect/Maps$TransformedEntriesMap$1;Ljava/util/Iterator;)V
+
+    return-object v0
 .end method
 
 .method map()Ljava/util/Map;
@@ -93,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 1209
+    .line 1531
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap$1;,"Lcom/google/common/collect/Maps$TransformedEntriesMap.1;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
 

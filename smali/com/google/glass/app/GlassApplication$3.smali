@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 170
+    .line 157
     iput-object p1, p0, Lcom/google/glass/app/GlassApplication$3;->this$0:Lcom/google/glass/app/GlassApplication;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 173
+    .line 160
     invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
 
     move-result-object v0
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/entity/EntityHelper;->loadEntityDataCache(Landroid/content/Context;)V
 
-    .line 174
+    .line 161
     return-void
 .end method

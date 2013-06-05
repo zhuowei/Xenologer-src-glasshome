@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "Funnel.java"
 
+# interfaces
+.implements Ljava/io/Serializable;
+
 
 # annotations
 .annotation build Lcom/google/common/annotations/Beta;
@@ -12,17 +15,18 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;"
+        "Ljava/lang/Object;",
+        "Ljava/io/Serializable;"
     }
 .end annotation
 
 
 # virtual methods
-.method public abstract funnel(Ljava/lang/Object;Lcom/google/common/hash/Sink;)V
+.method public abstract funnel(Ljava/lang/Object;Lcom/google/common/hash/PrimitiveSink;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
-            "Lcom/google/common/hash/Sink;",
+            "Lcom/google/common/hash/PrimitiveSink;",
             ")V"
         }
     .end annotation

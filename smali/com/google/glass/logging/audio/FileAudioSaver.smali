@@ -161,7 +161,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
+    .line 116
     :goto_0
     return-void
 
@@ -180,50 +180,70 @@
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->saveToDiskOutputStream:Ljava/io/FileOutputStream;
 
+    if-eqz v1, :cond_1
+
+    .line 106
+    iget-object v1, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->saveToDiskOutputStream:Ljava/io/FileOutputStream;
+
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 109
+    .line 113
+    :goto_1
     iput-object v4, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->saveToDiskOutputStream:Ljava/io/FileOutputStream;
 
-    .line 110
+    .line 114
     iput-boolean v3, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->savingAudio:Z
 
     goto :goto_0
 
-    .line 106
+    .line 108
+    :cond_1
+    :try_start_1
+    sget-object v1, Lcom/google/glass/logging/audio/FileAudioSaver;->TAG:Ljava/lang/String;
+
+    const-string v2, "Output stream was not initialized before finishing."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_1
+
+    .line 110
     :catch_0
     move-exception v0
 
-    .line 107
+    .line 111
     .local v0, e:Ljava/io/IOException;
-    :try_start_1
+    :try_start_2
     sget-object v1, Lcom/google/glass/logging/audio/FileAudioSaver;->TAG:Ljava/lang/String;
 
     const-string v2, "Error closing output stream for saved audio"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 109
+    .line 113
     iput-object v4, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->saveToDiskOutputStream:Ljava/io/FileOutputStream;
 
-    .line 110
+    .line 114
     iput-boolean v3, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->savingAudio:Z
 
     goto :goto_0
 
-    .line 109
+    .line 113
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v1
 
     iput-object v4, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->saveToDiskOutputStream:Ljava/io/FileOutputStream;
 
-    .line 110
+    .line 114
     iput-boolean v3, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->savingAudio:Z
 
     throw v1
@@ -233,7 +253,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 123
     iget-object v0, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->destinationPath:Ljava/lang/String;
 
     return-object v0
@@ -263,7 +283,7 @@
     .locals 0
 
     .prologue
-    .line 116
+    .line 120
     return-void
 .end method
 
@@ -280,12 +300,12 @@
     .parameter "sensoryResult"
 
     .prologue
-    .line 130
+    .line 134
     iget-object v0, p0, Lcom/google/glass/logging/audio/FileAudioSaver;->sensoryResults:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 131
+    .line 135
     return-void
 .end method
 
@@ -411,7 +431,7 @@
     .parameter "savedAudioStorage"
 
     .prologue
-    .line 124
+    .line 128
     invoke-virtual {p0}, Lcom/google/glass/logging/audio/FileAudioSaver;->getDestinationPath()Ljava/lang/String;
 
     move-result-object v2
@@ -430,7 +450,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/google/glass/logging/audio/SavedAudioStorage;->storeAudio(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;JLjava/util/List;)V
 
-    .line 126
+    .line 130
     return-void
 .end method
 

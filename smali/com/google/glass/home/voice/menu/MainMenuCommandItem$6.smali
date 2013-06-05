@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newCallItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newCallItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,24 +14,17 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$contactEntities:Ljava/util/List;
-
-
 # direct methods
-.method varargs constructor <init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;Ljava/util/List;)V
+.method varargs constructor <init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
     .locals 7
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
     .parameter "x3"
     .parameter "x4"
-    .parameter
 
     .prologue
-    .line 277
-    iput-object p6, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;->val$contactEntities:Ljava/util/List;
-
+    .line 249
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -59,39 +52,21 @@
     .parameter "spoken"
 
     .prologue
-    .line 280
+    .line 252
     invoke-super {p0, p1, p2}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
 
-    .line 281
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->CONTACTS:Lcom/google/glass/voice/VoiceConfig;
+    .line 253
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->CONTACTS:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
+    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    .line 282
-    if-eqz p2, :cond_0
+    .line 254
+    sget-object v0, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityType;->GENERAL:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityType;
 
-    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->VOICE_PENDING:Lcom/google/glass/sound/SoundManager$SoundId;
+    sget-object v1, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityCommand;->CALL:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityCommand;
 
-    :goto_0
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)V
+    invoke-interface {p1, p0, v0, v1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->showPeopleList(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityType;Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityCommand;)V
 
-    .line 283
-    iget-object v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;->val$contactEntities:Ljava/util/List;
-
-    iget-object v1, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;->command:Lcom/google/glass/voice/VoiceCommand;
-
-    invoke-static {v0, v1}, Lcom/google/glass/home/voice/menu/EntityMenuItem;->asContactMenuItems(Ljava/util/List;Lcom/google/glass/voice/VoiceCommand;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {p1, p0, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->selectMenuItem(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Ljava/util/List;)V
-
-    .line 285
+    .line 255
     return-void
-
-    .line 282
-    :cond_0
-    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    goto :goto_0
 .end method

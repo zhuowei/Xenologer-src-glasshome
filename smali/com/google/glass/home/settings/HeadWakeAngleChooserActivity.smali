@@ -49,19 +49,19 @@
     .prologue
     const/16 v5, 0x9
 
-    .line 225
+    .line 220
     iget-object v4, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->sensorManager:Landroid/hardware/SensorManager;
 
     if-nez v4, :cond_0
 
-    .line 226
+    .line 221
     const/4 v2, 0x0
 
-    .line 240
+    .line 235
     :goto_0
     return-object v2
 
-    .line 230
+    .line 225
     :cond_0
     iget-object v4, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->sensorManager:Landroid/hardware/SensorManager;
 
@@ -87,19 +87,19 @@
 
     check-cast v2, Landroid/hardware/Sensor;
 
-    .line 231
+    .line 226
     .local v2, sensor:Landroid/hardware/Sensor;
     invoke-virtual {v2}, Landroid/hardware/Sensor;->getName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 232
+    .line 227
     .local v1, name:Ljava/lang/String;
     invoke-virtual {v2}, Landroid/hardware/Sensor;->getVendor()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 233
+    .line 228
     .local v3, vendor:Ljava/lang/String;
     const-string v4, "Invensense"
 
@@ -117,7 +117,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 234
+    .line 229
     invoke-virtual {p0}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 240
+    .line 235
     .end local v1           #name:Ljava/lang/String;
     .end local v2           #sensor:Landroid/hardware/Sensor;
     .end local v3           #vendor:Ljava/lang/String;
@@ -221,14 +221,14 @@
     .parameter "event"
 
     .prologue
-    .line 245
+    .line 240
     iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
     const/4 v5, 0x0
 
     aget v1, v4, v5
 
-    .line 246
+    .line 241
     .local v1, x:F
     iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -236,7 +236,7 @@
 
     aget v2, v4, v5
 
-    .line 247
+    .line 242
     .local v2, y:F
     iget-object v4, p1, Landroid/hardware/SensorEvent;->values:[F
 
@@ -244,7 +244,7 @@
 
     aget v3, v4, v5
 
-    .line 248
+    .line 243
     .local v3, z:F
     float-to-double v4, v3
 
@@ -268,7 +268,7 @@
 
     neg-float v0, v4
 
-    .line 249
+    .line 244
     .local v0, pitch:F
     float-to-double v4, v0
 
@@ -280,7 +280,7 @@
 
     invoke-direct {p0, v4}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->setPitch(F)V
 
-    .line 250
+    .line 245
     return-void
 .end method
 
@@ -289,7 +289,7 @@
     .parameter "angleDegs"
 
     .prologue
-    .line 197
+    .line 192
     invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
     move-result-object v1
@@ -302,11 +302,11 @@
 
     move-result-object v0
 
-    .line 200
+    .line 195
     .local v0, prefs:Landroid/content/SharedPreferences;
     if-eqz v0, :cond_0
 
-    .line 201
+    .line 196
     invoke-virtual {p0}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -343,7 +343,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 203
+    .line 198
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
@@ -356,11 +356,11 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 207
+    .line 202
     :goto_0
     return-void
 
-    .line 205
+    .line 200
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->getTag()Ljava/lang/String;
 
@@ -378,34 +378,34 @@
     .parameter "angleDegs"
 
     .prologue
-    .line 254
+    .line 249
     const/high16 v2, 0x4220
 
     cmpl-float v2, p1, v2
 
     if-lez v2, :cond_1
 
-    .line 255
+    .line 250
     const/high16 p1, 0x4220
 
-    .line 260
+    .line 255
     :cond_0
     :goto_0
     iput p1, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->currentPitch:F
 
-    .line 261
+    .line 256
     iget-object v2, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->headView:Lcom/google/glass/home/settings/HeadWakePosableHeadViewGroup;
 
     invoke-virtual {v2, p1}, Lcom/google/glass/home/settings/HeadWakePosableHeadViewGroup;->setHeadAngleDegs(F)V
 
-    .line 264
+    .line 259
     const/high16 v2, 0x3f00
 
     add-float/2addr v2, p1
 
     float-to-int v1, v2
 
-    .line 265
+    .line 260
     .local v1, roundedAngleDegs:I
     sget v2, Lcom/google/glass/home/R$string;->head_wake_angle_text_format:I
 
@@ -429,16 +429,16 @@
 
     move-result-object v0
 
-    .line 267
+    .line 262
     .local v0, formattedString:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->angleTextView:Lcom/google/glass/widget/TypophileTextView;
 
     invoke-virtual {v2, v0}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 268
+    .line 263
     return-void
 
-    .line 256
+    .line 251
     .end local v0           #formattedString:Ljava/lang/String;
     .end local v1           #roundedAngleDegs:I
     :cond_1
@@ -448,7 +448,7 @@
 
     if-gez v2, :cond_0
 
-    .line 257
+    .line 252
     const/high16 p1, 0x4120
 
     goto :goto_0
@@ -458,7 +458,7 @@
     .locals 3
 
     .prologue
-    .line 181
+    .line 176
     new-instance v0, Lcom/google/glass/widget/MessageDialog$Builder;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/MessageDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -499,7 +499,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->show()V
 
-    .line 194
+    .line 189
     return-void
 .end method
 
@@ -507,7 +507,7 @@
     .locals 3
 
     .prologue
-    .line 210
+    .line 205
     const-string v0, "sensor"
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -518,14 +518,14 @@
 
     iput-object v0, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->sensorManager:Landroid/hardware/SensorManager;
 
-    .line 211
+    .line 206
     invoke-direct {p0}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->getGravitySensor()Landroid/hardware/Sensor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->gravitySensor:Landroid/hardware/Sensor;
 
-    .line 214
+    .line 209
     iget-object v0, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->sensorManager:Landroid/hardware/SensorManager;
 
     iget-object v1, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->gravitySensor:Landroid/hardware/Sensor;
@@ -534,7 +534,7 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 218
+    .line 213
     return-void
 .end method
 
@@ -542,12 +542,12 @@
     .locals 1
 
     .prologue
-    .line 221
+    .line 216
     iget-object v0, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-    .line 222
+    .line 217
     return-void
 .end method
 
@@ -851,16 +851,6 @@
     .prologue
     .line 99
     sget v0, Lcom/google/glass/home/R$layout;->head_wake_angle_chooser_activity:I
-
-    return v0
-.end method
-
-.method protected shouldAllowVoiceInput()Z
-    .locals 1
-
-    .prologue
-    .line 176
-    const/4 v0, 0x0
 
     return v0
 .end method

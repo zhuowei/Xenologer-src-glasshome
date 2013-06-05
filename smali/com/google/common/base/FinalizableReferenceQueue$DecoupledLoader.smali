@@ -26,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 209
+    .line 225
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .end annotation
 
     .prologue
-    .line 240
+    .line 255
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -72,7 +72,7 @@
 
     move-result-object v0
 
-    .line 241
+    .line 256
     .local v0, finalizerPath:Ljava/lang/String;
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -86,24 +86,24 @@
 
     move-result-object v1
 
-    .line 242
+    .line 257
     .local v1, finalizerUrl:Ljava/net/URL;
     if-nez v1, :cond_0
 
-    .line 243
+    .line 258
     new-instance v3, Ljava/io/FileNotFoundException;
 
     invoke-direct {v3, v0}, Ljava/io/FileNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v3
 
-    .line 247
+    .line 262
     :cond_0
     invoke-virtual {v1}, Ljava/net/URL;->toString()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 248
+    .line 263
     .local v2, urlString:Ljava/lang/String;
     invoke-virtual {v2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
@@ -111,7 +111,7 @@
 
     if-nez v3, :cond_1
 
-    .line 249
+    .line 264
     new-instance v3, Ljava/io/IOException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -136,7 +136,7 @@
 
     throw v3
 
-    .line 251
+    .line 266
     :cond_1
     const/4 v3, 0x0
 
@@ -154,7 +154,7 @@
 
     move-result-object v2
 
-    .line 252
+    .line 267
     new-instance v3, Ljava/net/URL;
 
     invoke-direct {v3, v1, v2}, Ljava/net/URL;-><init>(Ljava/net/URL;Ljava/lang/String;)V
@@ -173,7 +173,7 @@
     .end annotation
 
     .prologue
-    .line 227
+    .line 242
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/base/FinalizableReferenceQueue$DecoupledLoader;->getBaseUrl()Ljava/net/URL;
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    .line 228
+    .line 243
     .local v1, finalizerLoader:Ljava/lang/ClassLoader;
     const-string v2, "com.google.common.base.internal.Finalizer"
 
@@ -193,16 +193,16 @@
 
     move-result-object v2
 
-    .line 231
+    .line 246
     .end local v1           #finalizerLoader:Ljava/lang/ClassLoader;
     :goto_0
     return-object v2
 
-    .line 229
+    .line 244
     :catch_0
     move-exception v0
 
-    .line 230
+    .line 245
     .local v0, e:Ljava/lang/Exception;
     invoke-static {}, Lcom/google/common/base/FinalizableReferenceQueue;->access$000()Ljava/util/logging/Logger;
 
@@ -214,7 +214,7 @@
 
     invoke-virtual {v2, v3, v4, v0}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 231
+    .line 246
     const/4 v2, 0x0
 
     goto :goto_0
@@ -225,7 +225,7 @@
     .parameter "base"
 
     .prologue
-    .line 257
+    .line 275
     new-instance v0, Ljava/net/URLClassLoader;
 
     const/4 v1, 0x1
@@ -236,7 +236,9 @@
 
     aput-object p1, v1, v2
 
-    invoke-direct {v0, v1}, Ljava/net/URLClassLoader;-><init>([Ljava/net/URL;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Ljava/net/URLClassLoader;-><init>([Ljava/net/URL;Ljava/lang/ClassLoader;)V
 
     return-object v0
 .end method

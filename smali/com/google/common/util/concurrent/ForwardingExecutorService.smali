@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 41
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 48
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -62,14 +62,14 @@
     .parameter "command"
 
     .prologue
-    .line 101
+    .line 97
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/concurrent/ExecutorService;->execute(Ljava/lang/Runnable;)V
 
-    .line 102
+    .line 98
     return-void
 .end method
 
@@ -82,7 +82,7 @@
             "Ljava/lang/Object;",
             ">(",
             "Ljava/util/Collection",
-            "<+",
+            "<",
             "Ljava/util/concurrent/Callable",
             "<TT;>;>;)",
             "Ljava/util/List",
@@ -99,8 +99,8 @@
     .end annotation
 
     .prologue
-    .line 56
-    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/concurrent/Callable<TT;>;>;"
+    .line 54
+    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/concurrent/Callable<TT;>;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -123,7 +123,7 @@
             "Ljava/lang/Object;",
             ">(",
             "Ljava/util/Collection",
-            "<+",
+            "<",
             "Ljava/util/concurrent/Callable",
             "<TT;>;>;J",
             "Ljava/util/concurrent/TimeUnit;",
@@ -142,8 +142,8 @@
     .end annotation
 
     .prologue
-    .line 63
-    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/concurrent/Callable<TT;>;>;"
+    .line 60
+    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/concurrent/Callable<TT;>;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -164,7 +164,7 @@
             "Ljava/lang/Object;",
             ">(",
             "Ljava/util/Collection",
-            "<+",
+            "<",
             "Ljava/util/concurrent/Callable",
             "<TT;>;>;)TT;"
         }
@@ -178,8 +178,8 @@
     .end annotation
 
     .prologue
-    .line 69
-    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/concurrent/Callable<TT;>;>;"
+    .line 66
+    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/concurrent/Callable<TT;>;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -202,7 +202,7 @@
             "Ljava/lang/Object;",
             ">(",
             "Ljava/util/Collection",
-            "<+",
+            "<",
             "Ljava/util/concurrent/Callable",
             "<TT;>;>;J",
             "Ljava/util/concurrent/TimeUnit;",
@@ -219,8 +219,8 @@
     .end annotation
 
     .prologue
-    .line 76
-    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/concurrent/Callable<TT;>;>;"
+    .line 72
+    .local p1, tasks:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/concurrent/Callable<TT;>;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -236,7 +236,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 77
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -252,7 +252,7 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 82
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -268,14 +268,14 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 87
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
 
     invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
 
-    .line 92
+    .line 88
     return-void
 .end method
 
@@ -292,7 +292,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 92
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -318,7 +318,7 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 107
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
     move-result-object v0
@@ -347,7 +347,7 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 112
     .local p2, result:Ljava/lang/Object;,"TT;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 
@@ -376,7 +376,7 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 102
     .local p1, task:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<TT;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingExecutorService;->delegate()Ljava/util/concurrent/ExecutorService;
 

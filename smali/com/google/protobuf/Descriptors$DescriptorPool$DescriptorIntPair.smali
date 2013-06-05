@@ -27,16 +27,16 @@
     .parameter "number"
 
     .prologue
-    .line 1879
+    .line 1899
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1880
+    .line 1900
     iput-object p1, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;->descriptor:Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
-    .line 1881
+    .line 1901
     iput p2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;->number:I
 
-    .line 1882
+    .line 1902
     return-void
 .end method
 
@@ -49,12 +49,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1890
+    .line 1910
     instance-of v2, p1, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
 
     if-nez v2, :cond_1
 
-    .line 1894
+    .line 1914
     :cond_0
     :goto_0
     return v1
@@ -62,10 +62,10 @@
     :cond_1
     move-object v0, p1
 
-    .line 1893
+    .line 1913
     check-cast v0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
 
-    .line 1894
+    .line 1914
     .local v0, other:Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;->descriptor:Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
@@ -88,7 +88,7 @@
     .locals 2
 
     .prologue
-    .line 1886
+    .line 1906
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;->descriptor:Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="1001" android:versionName="1.001" package="com.google.glass.home"
+<manifest android:versionCode="600" android:versionName="XE6.0" package="com.google.glass.home"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <permission android:name="com.google.glass.home.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-    <permission android:name="com.google.glass.home.permission.COMPANION_MESSAGING" android:protectionLevel="signature" />
+    <permission android:name="com.google.glass.home.permission.SETUP_WIFI" android:protectionLevel="signature" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.READ_FRAME_BUFFER" />
+    <uses-permission android:name="android.permission.REBOOT" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -31,9 +32,11 @@
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.google.glass.home.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.glass.home.permission.SETUP_WIFI" />
+    <uses-permission android:name="com.google.glass.bluetooth.permission.COMPANION" />
     <uses-permission android:name="com.google.glass.deviceadmin.REMOTE_WIPE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-    <application android:theme="@style/GlassTheme" android:label="@string/glass_home" android:icon="@drawable/ic_launcher" android:name="HomeApplication" android:largeHeap="true">
+    <application android:theme="@style/GlassTheme" android:label="@string/glass_home" android:icon="@drawable/ic_launcher" android:name="HomeApplication" android:persistent="true" android:largeHeap="true">
         <uses-library android:name="com.google.android.glass" android:required="true" />
         <receiver android:name="com.google.glass.companion.DebugConnectivityChecker" />
         <receiver android:name="com.google.android.gcm.GCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -63,13 +66,18 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:theme="@style/GlassTheme.Translucent" android:name=".settings.WifiSettingsMenuActivity" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Translucent" android:name=".settings.WifiSettingsMenuActivity" android:permission="com.google.glass.home.permission.SETUP_WIFI" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.google.glass.action.SETUP_WIFI" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:theme="@style/GlassTheme.Translucent" android:name=".settings.HeadWakeAngleChooserActivity" android:launchMode="singleTask" />
         <activity android:name=".settings.DonDoffCalibrationActivity" android:launchMode="singleTask" />
         <activity android:name=".settings.DebugActivity" android:launchMode="singleTask" />
         <activity android:name=".settings.ViewLicensesActivity" />
         <activity android:name=".settings.FactoryResetActivity" />
-        <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.TouchMainMenuActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.EntityListActivity" android:exported="true" android:launchMode="singleTask" />
         <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.VoiceMainMenuActivity" android:exported="true" android:launchMode="singleTask" />
         <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".voice.VoiceMessageActivity" android:launchMode="singleTop">
             <intent-filter>
@@ -77,16 +85,25 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".voice.VoiceAnnotationActivity">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_VOICE_ANNOTATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".search.VoiceSearchActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".search.SoundSearchActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".search.SoundSearchResultsActivity" android:exported="true" android:launchMode="singleTask" />
         <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".voice.GlasswareVoiceInputActivity" android:exported="true" android:launchMode="singleTask" />
         <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".search.VoiceNavigationActivity" android:exported="true" android:launchMode="singleTask" />
-        <activity android:theme="@style/GlassTheme.Fade" android:name=".search.VoiceSearchResultsActivity" android:launchMode="singleTask">
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".search.VoiceSearchResultsActivity" android:taskAffinity="com.google.glass.home.search.results.VoiceSearchResultsActivity" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="com.google.glass.ACTION_VIEW_VOICE_SEARCH_RESULT" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".search.VoiceSearchResultsDebugActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:name=".search.PinholePageDebugActivity" android:exported="true" android:launchMode="singleTask" />
         <activity android:theme="@style/GlassTheme.MainTimeline" android:name=".timeline.MainTimelineActivity" android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -98,6 +115,12 @@
         <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".timeline.BundleTimelineActivity" android:launchMode="standard">
             <intent-filter>
                 <action android:name="com.google.glass.ACTION_GO_TO_BUNDLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".timeline.ReadMoreTimelineActivity" android:launchMode="standard">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_READ_MORE" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -136,20 +159,15 @@
             <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/saved_audio_sync_adapter" />
         </service>
         <service android:name=".timeline.TimelineNotificationService" />
-        <service android:name=".companion.CompanionService" android:permission="com.google.glass.home.permission.COMPANION_MESSAGING" android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.glass.companion.MESSENGER" />
-            </intent-filter>
-        </service>
         <service android:name="com.google.glass.location.GpsBackgroundService" />
         <service android:name="com.google.glass.location.LocationService" android:permission="android.permission.ACCESS_FINE_LOCATION" android:exported="true" />
         <service android:name="com.google.glass.location.LocationReportingService" />
         <service android:name="com.google.glass.ongoing.OngoingActivityService" android:exported="true" />
         <service android:name=".ScreenOffService" android:exported="false" />
-        <provider android:name="com.google.glass.timeline.TimelineProvider" android:authorities="com.google.glass.timeline" />
-        <provider android:name="com.google.glass.entity.EntityProvider" android:authorities="com.google.glass.entity" />
-        <provider android:name="com.google.glass.location.LocationContentProviderStub" android:authorities="com.google.glass.location" />
-        <provider android:name="com.google.glass.logging.audio.SavedAudioContentProviderStub" android:authorities="com.google.glass.savedaudio" />
+        <provider android:label="@string/provider_label_timeline" android:name="com.google.glass.timeline.TimelineProvider" android:authorities="com.google.glass.timeline" />
+        <provider android:label="@string/provider_label_entity" android:name="com.google.glass.entity.EntityProvider" android:authorities="com.google.glass.entity" />
+        <provider android:label="@string/provider_label_location" android:name="com.google.glass.location.LocationContentProviderStub" android:authorities="com.google.glass.location" />
+        <provider android:label="@string/provider_label_audio" android:name="com.google.glass.logging.audio.SavedAudioContentProviderStub" android:authorities="com.google.glass.savedaudio" />
         <receiver android:name=".voice.MicrophoneMuteReceiver">
             <intent-filter>
                 <action android:name="com.google.glass.action.TOGGLE_MICROPHONE_MUTE" />

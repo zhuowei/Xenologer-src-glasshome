@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 382
+    .line 395
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineHelper$1;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineHelper$1;->val$context:Landroid/content/Context;
@@ -61,7 +61,7 @@
     .locals 5
 
     .prologue
-    .line 385
+    .line 398
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineHelper$1;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 
     iget-object v1, p0, Lcom/google/glass/timeline/TimelineHelper$1;->val$context:Landroid/content/Context;
@@ -74,6 +74,6 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/glass/timeline/TimelineHelper;->insertTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;Lcom/google/googlex/glass/common/proto/UserAction;)Landroid/net/Uri;
 
-    .line 386
+    .line 399
     return-void
 .end method

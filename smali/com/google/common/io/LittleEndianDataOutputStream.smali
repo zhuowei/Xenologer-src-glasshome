@@ -17,7 +17,7 @@
     .parameter "out"
 
     .prologue
-    .line 52
+    .line 51
     new-instance v1, Ljava/io/DataOutputStream;
 
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -30,7 +30,7 @@
 
     invoke-direct {p0, v1}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 53
+    .line 52
     return-void
 .end method
 

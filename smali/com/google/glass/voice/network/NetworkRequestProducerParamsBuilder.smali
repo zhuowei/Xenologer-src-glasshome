@@ -7,7 +7,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;,
-        Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$SpeechLocationHelperImpl;,
         Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$AccountHelperImpl;
     }
 .end annotation
@@ -48,25 +47,16 @@
     .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 274
+    .line 115
     return-void
 .end method
 
-.method static synthetic access$200()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 39
-    sget-object v0, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public static create(Landroid/content/Context;Lcom/google/android/speech/SpeechSettings;Lcom/google/android/speech/utils/NetworkInformation;)Lcom/google/android/speech/params/NetworkRequestProducerParams;
+.method public static create(Landroid/content/Context;Lcom/google/android/speech/SpeechSettings;Lcom/google/android/speech/utils/NetworkInformation;Lcom/google/android/speech/helper/SpeechLocationHelper;)Lcom/google/android/speech/params/NetworkRequestProducerParams;
     .locals 8
     .parameter "context"
     .parameter "speechSettings"
     .parameter "networkInfo"
+    .parameter "locationHelper"
 
     .prologue
     const/4 v3, 0x0
@@ -88,17 +78,15 @@
 
     new-instance v4, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;
 
-    invoke-direct {v4, v3}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;-><init>(Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$1;)V
-
-    new-instance v5, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$SpeechLocationHelperImpl;
-
-    invoke-direct {v5}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$SpeechLocationHelperImpl;-><init>()V
+    invoke-direct {v4, p3, v3}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;-><init>(Lcom/google/android/speech/helper/SpeechLocationHelper;Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$1;)V
 
     invoke-static {p0}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder;->getDeviceParams(Landroid/content/Context;)Lcom/google/android/speech/params/DeviceParams;
 
     move-result-object v7
 
     move-object v3, p2
+
+    move-object v5, p3
 
     move-object v6, p1
 

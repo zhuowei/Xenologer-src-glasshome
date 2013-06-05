@@ -7,9 +7,6 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/google/common/base/Equivalence;
 .end annotation
@@ -74,13 +71,13 @@
     .end annotation
 
     .prologue
-    .line 180
+    .line 179
     .local p0, this:Lcom/google/common/base/Equivalence$Wrapper;,"Lcom/google/common/base/Equivalence$Wrapper<TT;>;"
     .local p1, equivalence:Lcom/google/common/base/Equivalence;,"Lcom/google/common/base/Equivalence<-TT;>;"
     .local p2, reference:Ljava/lang/Object;,"TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 181
+    .line 180
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -89,10 +86,10 @@
 
     iput-object v0, p0, Lcom/google/common/base/Equivalence$Wrapper;->equivalence:Lcom/google/common/base/Equivalence;
 
-    .line 182
+    .line 181
     iput-object p2, p0, Lcom/google/common/base/Equivalence$Wrapper;->reference:Ljava/lang/Object;
 
-    .line 183
+    .line 182
     return-void
 .end method
 
@@ -103,7 +100,7 @@
     .parameter "x2"
 
     .prologue
-    .line 176
+    .line 174
     .local p0, this:Lcom/google/common/base/Equivalence$Wrapper;,"Lcom/google/common/base/Equivalence$Wrapper<TT;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Equivalence$Wrapper;-><init>(Lcom/google/common/base/Equivalence;Ljava/lang/Object;)V
 
@@ -125,15 +122,15 @@
 
     const/4 v3, 0x0
 
-    .line 196
+    .line 197
     if-ne p1, p0, :cond_1
 
-    .line 210
+    .line 211
     :cond_0
     :goto_0
     return v2
 
-    .line 198
+    .line 199
     :cond_1
     instance-of v4, p1, Lcom/google/common/base/Equivalence$Wrapper;
 
@@ -141,14 +138,14 @@
 
     move-object v1, p1
 
-    .line 199
+    .line 200
     check-cast v1, Lcom/google/common/base/Equivalence$Wrapper;
 
-    .line 206
+    .line 207
     .local v1, that:Lcom/google/common/base/Equivalence$Wrapper;,"Lcom/google/common/base/Equivalence$Wrapper<*>;"
     iget-object v0, p0, Lcom/google/common/base/Equivalence$Wrapper;->equivalence:Lcom/google/common/base/Equivalence;
 
-    .line 207
+    .line 208
     .local v0, equivalence:Lcom/google/common/base/Equivalence;,"Lcom/google/common/base/Equivalence<Ljava/lang/Object;>;"
     iget-object v4, v1, Lcom/google/common/base/Equivalence$Wrapper;->equivalence:Lcom/google/common/base/Equivalence;
 
@@ -178,7 +175,7 @@
     :cond_3
     move v2, v3
 
-    .line 210
+    .line 211
     goto :goto_0
 .end method
 
@@ -205,7 +202,7 @@
     .locals 2
 
     .prologue
-    .line 218
+    .line 220
     .local p0, this:Lcom/google/common/base/Equivalence$Wrapper;,"Lcom/google/common/base/Equivalence$Wrapper<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Equivalence$Wrapper;->equivalence:Lcom/google/common/base/Equivalence;
 
@@ -222,7 +219,7 @@
     .locals 2
 
     .prologue
-    .line 226
+    .line 229
     .local p0, this:Lcom/google/common/base/Equivalence$Wrapper;,"Lcom/google/common/base/Equivalence$Wrapper<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

@@ -26,22 +26,32 @@
 .end annotation
 
 
+# instance fields
+.field private unknownFields:Lcom/google/protobuf/ByteString;
+
+
 # direct methods
 .method protected constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 58
+    .line 59
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;-><init>()V
 
+    .line 103
+    sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
+
+    iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$Builder;->unknownFields:Lcom/google/protobuf/ByteString;
+
+    .line 59
     return-void
 .end method
 
 
 # virtual methods
 .method public clear()Lcom/google/protobuf/GeneratedMessageLite$Builder;
-    .locals 0
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TBuilderType;"
@@ -49,8 +59,13 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 63
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
+    sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
+
+    iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$Builder;->unknownFields:Lcom/google/protobuf/ByteString;
+
+    .line 64
     return-object p0
 .end method
 
@@ -58,7 +73,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clear()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -71,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clone()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -89,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 72
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -104,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clone()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -122,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 55
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clone()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
@@ -143,11 +158,22 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getUnknownFields()Lcom/google/protobuf/ByteString;
+    .locals 1
+
+    .prologue
+    .line 95
+    .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
+    iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$Builder;->unknownFields:Lcom/google/protobuf/ByteString;
 
     return-object v0
 .end method
@@ -160,9 +186,10 @@
     .end annotation
 .end method
 
-.method protected parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+.method protected parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
     .locals 1
     .parameter "input"
+    .parameter "unknownFieldsCodedOutput"
     .parameter "extensionRegistry"
     .parameter "tag"
     .annotation system Ldalvik/annotation/Throws;
@@ -172,11 +199,31 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 91
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
-    invoke-virtual {p1, p3}, Lcom/google/protobuf/CodedInputStream;->skipField(I)Z
+    invoke-virtual {p1, p4, p2}, Lcom/google/protobuf/CodedInputStream;->skipField(ILcom/google/protobuf/CodedOutputStream;)Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public final setUnknownFields(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/GeneratedMessageLite$Builder;
+    .locals 0
+    .parameter "unknownFields"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/protobuf/ByteString;",
+            ")TBuilderType;"
+        }
+    .end annotation
+
+    .prologue
+    .line 99
+    .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$Builder;,"Lcom/google/protobuf/GeneratedMessageLite$Builder<TMessageType;TBuilderType;>;"
+    iput-object p1, p0, Lcom/google/protobuf/GeneratedMessageLite$Builder;->unknownFields:Lcom/google/protobuf/ByteString;
+
+    .line 100
+    return-object p0
 .end method

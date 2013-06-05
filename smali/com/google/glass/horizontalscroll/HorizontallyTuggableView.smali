@@ -187,14 +187,14 @@
 
     .prologue
     .line 62
-    instance-of v0, p1, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    instance-of v0, p1, Lcom/google/glass/horizontalscroll/Card;
 
     if-nez v0, :cond_0
 
     .line 63
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "The wrapped view needs to be a HorizontalScrollItem."
+    const-string v1, "The wrapped View needs to be a Card."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

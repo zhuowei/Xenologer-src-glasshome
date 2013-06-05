@@ -18,7 +18,23 @@
 .method public abstract hashBytes([BII)Lcom/google/common/hash/HashCode;
 .end method
 
+.method public abstract hashInt(I)Lcom/google/common/hash/HashCode;
+.end method
+
 .method public abstract hashLong(J)Lcom/google/common/hash/HashCode;
+.end method
+
+.method public abstract hashObject(Ljava/lang/Object;Lcom/google/common/hash/Funnel;)Lcom/google/common/hash/HashCode;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;",
+            "Lcom/google/common/hash/Funnel",
+            "<-TT;>;)",
+            "Lcom/google/common/hash/HashCode;"
+        }
+    .end annotation
 .end method
 
 .method public abstract hashString(Ljava/lang/CharSequence;)Lcom/google/common/hash/HashCode;

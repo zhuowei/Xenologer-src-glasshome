@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 203
+    .line 214
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 203
+    .line 214
     invoke-direct {p0, p1}, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;-><init>(Lcom/google/glass/camera/SharedCameraManager;)V
 
     return-void
@@ -52,7 +52,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 210
+    .line 221
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #getter for: Lcom/google/glass/camera/SharedCameraManager;->cameraManipulationExecutorLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -66,16 +66,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 211
+    .line 222
     const-string v0, "Ignoring camera manipulation request, because the executor is locked."
 
     invoke-static {v1, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 233
+    .line 244
     :goto_0
     return-void
 
-    .line 216
+    .line 227
     :cond_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
@@ -90,14 +90,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 217
+    .line 228
     const-string v0, "Ignoring camera manipulation request, because the executor has been shut down."
 
     invoke-static {v1, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 222
+    .line 233
     :cond_1
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 

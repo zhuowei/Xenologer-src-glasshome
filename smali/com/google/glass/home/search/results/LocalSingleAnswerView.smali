@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/search/results/LocalSingleAnswerView;
-.super Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+.super Lcom/google/glass/horizontalscroll/LinearLayoutCard;
 .source "LocalSingleAnswerView.java"
 
 
@@ -24,7 +24,7 @@
 
     .prologue
     .line 53
-    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;)V
 
     .line 54
     invoke-direct {p0}, Lcom/google/glass/home/search/results/LocalSingleAnswerView;->init()V
@@ -40,7 +40,7 @@
 
     .prologue
     .line 58
-    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 59
     invoke-direct {p0}, Lcom/google/glass/home/search/results/LocalSingleAnswerView;->init()V
@@ -57,7 +57,7 @@
 
     .prologue
     .line 63
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 64
     invoke-direct {p0}, Lcom/google/glass/home/search/results/LocalSingleAnswerView;->init()V
@@ -275,7 +275,7 @@
 
     .prologue
     .line 125
-    invoke-super {p0}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;->onLoad()V
+    invoke-super {p0}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;->onLoad()V
 
     .line 126
     invoke-direct {p0}, Lcom/google/glass/home/search/results/LocalSingleAnswerView;->handleAddingAMap()V

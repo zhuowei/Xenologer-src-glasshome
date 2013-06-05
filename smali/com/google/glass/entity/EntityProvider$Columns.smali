@@ -22,6 +22,8 @@
 
 .field public static final EMAIL:Ljava/lang/String; = "email"
 
+.field public static final IMAGE_URL:Ljava/lang/String; = "image_url"
+
 .field public static final IS_COMMUNICATION_TARGET:Ljava/lang/String; = "is_communication_target"
 
 .field public static final IS_SHARE_TARGET:Ljava/lang/String; = "is_share_target"
@@ -46,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 138
+    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

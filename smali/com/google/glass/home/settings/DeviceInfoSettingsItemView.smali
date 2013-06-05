@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;
-.super Lcom/google/glass/home/settings/SettingsItemView;
+.super Lcom/google/glass/home/settings/SettingsCard;
 .source "DeviceInfoSettingsItemView.java"
 
 
@@ -106,7 +106,7 @@
 
     .prologue
     .line 78
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 62
     new-instance v0, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView$1;
@@ -185,7 +185,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 214
+    .line 223
     invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -200,7 +200,7 @@
 
     move-result v0
 
-    .line 216
+    .line 225
     .local v0, value:I
     if-eqz v0, :cond_0
 
@@ -215,7 +215,7 @@
     .parameter "value"
 
     .prologue
-    .line 220
+    .line 229
     invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -233,10 +233,10 @@
     :goto_0
     invoke-static {v1, v2, v0}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    .line 222
+    .line 231
     return-void
 
-    .line 220
+    .line 229
     :cond_0
     const/4 v0, 0x0
 
@@ -247,7 +247,7 @@
     .locals 4
 
     .prologue
-    .line 226
+    .line 235
     invoke-direct {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->isAdbEnabled()Z
 
     move-result v1
@@ -256,7 +256,7 @@
 
     const/4 v0, 0x1
 
-    .line 228
+    .line 237
     .local v0, newAdbEnabled:Z
     :goto_0
     sget-object v1, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->TAG:Ljava/lang/String;
@@ -281,10 +281,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 229
+    .line 238
     invoke-direct {p0, v0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->setAdbEnabled(Z)V
 
-    .line 231
+    .line 240
     new-instance v2, Lcom/google/glass/widget/MessageDialog$Builder;
 
     invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;
@@ -332,17 +332,17 @@
 
     invoke-virtual {v1}, Lcom/google/glass/widget/MessageDialog;->show()V
 
-    .line 238
+    .line 247
     return-void
 
-    .line 226
+    .line 235
     .end local v0           #newAdbEnabled:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 231
+    .line 240
     .restart local v0       #newAdbEnabled:Z
     :cond_1
     sget v1, Lcom/google/glass/home/R$string;->deviceinfo_adb_debug_off:I
@@ -782,12 +782,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 188
+    .line 191
     invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 189
+    .line 192
     .local v0, context:Landroid/content/Context;
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu$Item;->getItemId()I
 
@@ -795,27 +795,56 @@
 
     packed-switch v5, :pswitch_data_0
 
-    .line 210
-    invoke-super {p0, p1}, Lcom/google/glass/home/settings/SettingsItemView;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    .line 219
+    invoke-super {p0, p1}, Lcom/google/glass/home/settings/SettingsCard;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v4
 
     :goto_0
     return v4
 
-    .line 191
+    .line 194
     :pswitch_0
+    iget-object v5, p0, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->battery:Lcom/google/glass/util/BatteryHelper;
+
+    invoke-virtual {v5}, Lcom/google/glass/util/BatteryHelper;->isPowered()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    .line 196
     invoke-static {v0}, Lcom/google/glass/util/OtaUpdateHelper;->installUpdate(Landroid/content/Context;)V
 
     goto :goto_0
 
-    .line 194
+    .line 198
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/glass/app/GlassApplication;->getSoundManager()Lcom/google/glass/sound/SoundManager;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/google/glass/sound/SoundManager$SoundId;->DISALLOWED_ACTION:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {v5, v6}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+
+    goto :goto_0
+
+    .line 203
     :pswitch_1
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 195
+    .line 204
     .local v1, launcherIntent:Landroid/content/Intent;
     const-string v5, "com.android.launcher"
 
@@ -823,12 +852,12 @@
 
     invoke-virtual {v1, v5, v6}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 196
+    .line 205
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 199
+    .line 208
     .end local v1           #launcherIntent:Landroid/content/Intent;
     :pswitch_2
     new-instance v2, Landroid/content/Intent;
@@ -841,13 +870,13 @@
 
     invoke-direct {v2, v5, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 200
+    .line 209
     .local v2, licensesIntent:Landroid/content/Intent;
     invoke-virtual {v0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 203
+    .line 212
     .end local v2           #licensesIntent:Landroid/content/Intent;
     :pswitch_3
     new-instance v3, Landroid/content/Intent;
@@ -860,20 +889,20 @@
 
     invoke-direct {v3, v5, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 204
+    .line 213
     .local v3, resetIntent:Landroid/content/Intent;
     invoke-virtual {v0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 207
+    .line 216
     .end local v3           #resetIntent:Landroid/content/Intent;
     :pswitch_4
     invoke-direct {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->toggleAdbEnable()V
 
     goto :goto_0
 
-    .line 189
+    .line 192
     nop
 
     :pswitch_data_0
@@ -891,9 +920,9 @@
     .parameter "menu"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v8, 0x0
 
-    const/4 v4, 0x1
+    const/4 v7, 0x1
 
     .line 160
     invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;
@@ -902,134 +931,133 @@
 
     .line 162
     .local v1, context:Landroid/content/Context;
-    sget v6, Lcom/google/glass/home/R$string;->deviceinfo_install_update:I
+    sget v4, Lcom/google/glass/home/R$string;->deviceinfo_install_update:I
 
-    invoke-virtual {v1, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    sget v7, Lcom/google/glass/home/R$drawable;->ic_sync_medium:I
+    sget v5, Lcom/google/glass/home/R$drawable;->ic_sync_medium:I
 
-    invoke-virtual {p1, v5, v6, v7}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
+    invoke-virtual {p1, v8, v4, v5}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
     .line 164
-    sget v6, Lcom/google/glass/home/R$string;->deviceinfo_debug_launcher:I
+    sget v4, Lcom/google/glass/home/R$string;->deviceinfo_debug_launcher:I
 
-    invoke-virtual {v1, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    sget v7, Lcom/google/glass/home/R$drawable;->ic_warning_medium:I
+    sget v5, Lcom/google/glass/home/R$drawable;->ic_warning_medium:I
 
-    invoke-virtual {p1, v4, v6, v7}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
+    invoke-virtual {p1, v7, v4, v5}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
     .line 166
-    const/4 v6, 0x2
+    const/4 v4, 0x2
 
-    sget v7, Lcom/google/glass/home/R$string;->deviceinfo_menu_licenses:I
+    sget v5, Lcom/google/glass/home/R$string;->deviceinfo_menu_licenses:I
 
-    invoke-virtual {v1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    sget v8, Lcom/google/glass/home/R$drawable;->ic_document_medium:I
+    sget v6, Lcom/google/glass/home/R$drawable;->ic_document_medium:I
 
-    invoke-virtual {p1, v6, v7, v8}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
+    invoke-virtual {p1, v4, v5, v6}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
     .line 169
     invoke-direct {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->isAdbEnabled()Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_1
 
     sget v0, Lcom/google/glass/home/R$string;->deviceinfo_menu_adb_turn_off:I
 
     .line 171
     .local v0, adbStringResource:I
     :goto_0
-    const/4 v6, 0x4
+    const/4 v4, 0x4
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    sget v8, Lcom/google/glass/home/R$drawable;->ic_android_medium:I
+    sget v6, Lcom/google/glass/home/R$drawable;->ic_android_medium:I
 
-    invoke-virtual {p1, v6, v7, v8}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
+    invoke-virtual {p1, v4, v5, v6}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
     .line 173
-    const/4 v6, 0x3
+    const/4 v4, 0x3
 
-    sget v7, Lcom/google/glass/home/R$string;->deviceinfo_menu_reset:I
+    sget v5, Lcom/google/glass/home/R$string;->deviceinfo_menu_reset:I
 
-    invoke-virtual {v1, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    sget v8, Lcom/google/glass/home/R$drawable;->ic_reset_medium:I
-
-    invoke-virtual {p1, v6, v7, v8}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
-
-    .line 176
-    invoke-static {v1}, Lcom/google/glass/util/OtaUpdateHelper;->isUpdateAvailable(Landroid/content/Context;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    iget-object v6, p0, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->battery:Lcom/google/glass/util/BatteryHelper;
-
-    invoke-virtual {v6}, Lcom/google/glass/util/BatteryHelper;->isPowered()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    move v3, v4
-
-    .line 178
-    .local v3, showUpdateMenuOption:Z
-    :goto_1
-    invoke-virtual {p1, v5}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
+    invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v5, v3}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
+    sget v6, Lcom/google/glass/home/R$drawable;->ic_reset_medium:I
+
+    invoke-virtual {p1, v4, v5, v6}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
+
+    .line 176
+    invoke-virtual {p1, v8}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
+
+    move-result-object v3
+
+    .line 177
+    .local v3, updateItem:Lcom/google/glass/widget/OptionMenu$Item;
+    invoke-static {v1}, Lcom/google/glass/util/OtaUpdateHelper;->isUpdateAvailable(Landroid/content/Context;)Z
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
+
+    .line 178
+    iget-object v4, p0, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->battery:Lcom/google/glass/util/BatteryHelper;
+
+    invoke-virtual {v4}, Lcom/google/glass/util/BatteryHelper;->isPowered()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
 
     .line 180
-    sget-object v5, Lcom/google/glass/util/Labs$Feature;->DEBUG_LAUNCHER:Lcom/google/glass/util/Labs$Feature;
+    sget v4, Lcom/google/glass/home/R$string;->deviceinfo_plugin_device_tip:I
 
-    invoke-static {v5}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+    invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/google/glass/widget/OptionMenu$Item;->setDescription(Ljava/lang/String;)V
+
+    .line 183
+    :cond_0
+    sget-object v4, Lcom/google/glass/util/Labs$Feature;->DEBUG_LAUNCHER:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v4}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
     move-result v2
 
-    .line 181
+    .line 184
     .local v2, showDebugLaunchedMenuOption:Z
-    invoke-virtual {p1, v4}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
+    invoke-virtual {p1, v7}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v5, v2}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
+    invoke-virtual {v4, v2}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
 
-    .line 183
-    return v4
+    .line 186
+    return v7
 
     .line 169
     .end local v0           #adbStringResource:I
     .end local v2           #showDebugLaunchedMenuOption:Z
-    .end local v3           #showUpdateMenuOption:Z
-    :cond_0
+    .end local v3           #updateItem:Lcom/google/glass/widget/OptionMenu$Item;
+    :cond_1
     sget v0, Lcom/google/glass/home/R$string;->deviceinfo_menu_adb_turn_on:I
 
     goto :goto_0
-
-    .restart local v0       #adbStringResource:I
-    :cond_1
-    move v3, v5
-
-    .line 176
-    goto :goto_1
 .end method
 
 .method public onUnload()V
@@ -1037,7 +1065,7 @@
 
     .prologue
     .line 154
-    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsItemView;->onUnload()V
+    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsCard;->onUnload()V
 
     .line 155
     invoke-virtual {p0}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;->getContext()Landroid/content/Context;

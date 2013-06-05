@@ -17,36 +17,36 @@
 # instance fields
 .field private final allowScreenOff:Z
 
-.field private final config:Lcom/google/glass/voice/VoiceConfig;
+.field private final config:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/glass/voice/VoiceConfig;Z)V
+.method public constructor <init>(Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
     .locals 0
     .parameter "config"
     .parameter "allowScreenOff"
 
     .prologue
-    .line 356
+    .line 390
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 357
-    iput-object p1, p0, Lcom/google/glass/voice/VoiceService$VoiceConfigState;->config:Lcom/google/glass/voice/VoiceConfig;
+    .line 391
+    iput-object p1, p0, Lcom/google/glass/voice/VoiceService$VoiceConfigState;->config:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    .line 358
+    .line 392
     iput-boolean p2, p0, Lcom/google/glass/voice/VoiceService$VoiceConfigState;->allowScreenOff:Z
 
-    .line 359
+    .line 393
     return-void
 .end method
 
-.method static synthetic access$1900(Lcom/google/glass/voice/VoiceService$VoiceConfigState;)Lcom/google/glass/voice/VoiceConfig;
+.method static synthetic access$1900(Lcom/google/glass/voice/VoiceService$VoiceConfigState;)Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 352
-    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceConfigState;->config:Lcom/google/glass/voice/VoiceConfig;
+    .line 386
+    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceConfigState;->config:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
 .end method
@@ -56,7 +56,7 @@
     .parameter "x0"
 
     .prologue
-    .line 352
+    .line 386
     iget-boolean v0, p0, Lcom/google/glass/voice/VoiceService$VoiceConfigState;->allowScreenOff:Z
 
     return v0

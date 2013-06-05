@@ -32,6 +32,8 @@
 
 .field public static final enum COMPANION_API:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
+.field public static final enum COMPANION_ITEM_RECEIVED:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
+
 .field public static final enum EMAIL:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
 .field public static final enum HANGOUT:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
@@ -76,7 +78,7 @@
 
     const/4 v4, 0x0
 
-    .line 228
+    .line 244
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "PHOTO"
@@ -87,7 +89,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->PHOTO:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 229
+    .line 245
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "TIMELAPSE_PHOTO"
@@ -98,7 +100,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->TIMELAPSE_PHOTO:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 230
+    .line 246
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "VIDEO"
@@ -109,7 +111,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->VIDEO:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 231
+    .line 247
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "SMS_RECEIVED"
@@ -120,7 +122,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->SMS_RECEIVED:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 232
+    .line 248
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "CALENDAR"
@@ -131,7 +133,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->CALENDAR:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 233
+    .line 249
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "EMAIL"
@@ -144,7 +146,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->EMAIL:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 234
+    .line 250
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "PHONE_CALL"
@@ -157,7 +159,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->PHONE_CALL:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 235
+    .line 251
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "HANGOUT"
@@ -170,7 +172,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->HANGOUT:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 236
+    .line 252
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "VOICE_SEARCH"
@@ -183,7 +185,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->VOICE_SEARCH:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 237
+    .line 253
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "VOICE_MESSAGE"
@@ -196,7 +198,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->VOICE_MESSAGE:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 238
+    .line 254
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "NAVIGATION"
@@ -209,7 +211,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->NAVIGATION:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 239
+    .line 255
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "BUG_REPORT"
@@ -222,7 +224,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->BUG_REPORT:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 240
+    .line 256
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "SHARE"
@@ -235,7 +237,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->SHARE:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 241
+    .line 257
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "COMPANION_API"
@@ -248,7 +250,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->COMPANION_API:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 242
+    .line 258
     new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     const-string v1, "LAUNCH"
@@ -261,8 +263,21 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->LAUNCH:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
-    .line 227
-    const/16 v0, 0xf
+    .line 260
+    new-instance v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
+
+    const-string v1, "COMPANION_ITEM_RECEIVED"
+
+    const/16 v2, 0xf
+
+    const-string v3, "16"
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->COMPANION_ITEM_RECEIVED:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
+
+    .line 243
+    const/16 v0, 0x10
 
     new-array v0, v0, [Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
@@ -346,6 +361,12 @@
 
     aput-object v2, v0, v1
 
+    const/16 v1, 0xf
+
+    sget-object v2, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->COMPANION_ITEM_RECEIVED:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
+
+    aput-object v2, v0, v1
+
     sput-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->$VALUES:[Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     return-void
@@ -365,13 +386,13 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 265
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 248
+    .line 266
     iput-object p3, p0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->data:Ljava/lang/String;
 
-    .line 249
+    .line 267
     return-void
 .end method
 
@@ -380,7 +401,7 @@
     .parameter "name"
 
     .prologue
-    .line 227
+    .line 243
     const-class v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -396,7 +417,7 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 243
     sget-object v0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->$VALUES:[Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     invoke-virtual {v0}, [Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->clone()Ljava/lang/Object;
@@ -414,7 +435,7 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 270
     iget-object v0, p0, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->data:Ljava/lang/String;
 
     return-object v0

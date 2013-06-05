@@ -48,12 +48,12 @@
     .end annotation
 
     .prologue
-    .line 992
+    .line 1150
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     .local p1, backingList:Ljava/util/List;,"Ljava/util/List<TE;>;"
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 993
+    .line 1151
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
 
-    .line 994
+    .line 1152
     return-void
 .end method
 
@@ -79,14 +79,14 @@
     .end annotation
 
     .prologue
-    .line 997
+    .line 1156
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 998
+    .line 1157
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .end annotation
 
     .prologue
-    .line 1001
+    .line 1161
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     .local p2, c:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
@@ -120,7 +120,7 @@
     .parameter "o"
 
     .prologue
-    .line 1017
+    .line 1181
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
 
@@ -141,7 +141,7 @@
     .end annotation
 
     .prologue
-    .line 1005
+    .line 1166
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
 
@@ -162,7 +162,7 @@
     .end annotation
 
     .prologue
-    .line 1009
+    .line 1171
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
 
@@ -184,7 +184,7 @@
     .end annotation
 
     .prologue
-    .line 1013
+    .line 1176
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
@@ -200,7 +200,7 @@
     .locals 1
 
     .prologue
-    .line 1021
+    .line 1186
     .local p0, this:Lcom/google/common/collect/Lists$AbstractListWrapper;,"Lcom/google/common/collect/Lists$AbstractListWrapper<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$AbstractListWrapper;->backingList:Ljava/util/List;
 

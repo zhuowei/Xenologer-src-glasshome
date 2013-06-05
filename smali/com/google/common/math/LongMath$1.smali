@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 74
+    .line 76
     invoke-static {}, Ljava/math/RoundingMode;->values()[Ljava/math/RoundingMode;
 
     move-result-object v0

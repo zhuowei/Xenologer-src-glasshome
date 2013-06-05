@@ -62,13 +62,13 @@
     .end annotation
 
     .prologue
-    .line 270
+    .line 285
     .local p0, this:Lcom/google/common/collect/Collections2$TransformedCollection;,"Lcom/google/common/collect/Collections2$TransformedCollection<TF;TT;>;"
     .local p1, fromCollection:Ljava/util/Collection;,"Ljava/util/Collection<TF;>;"
     .local p2, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TF;+TT;>;"
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
-    .line 271
+    .line 286
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -77,7 +77,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Collections2$TransformedCollection;->fromCollection:Ljava/util/Collection;
 
-    .line 272
+    .line 287
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Collections2$TransformedCollection;->function:Lcom/google/common/base/Function;
 
-    .line 273
+    .line 288
     return-void
 .end method
 
@@ -96,13 +96,13 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 292
     .local p0, this:Lcom/google/common/collect/Collections2$TransformedCollection;,"Lcom/google/common/collect/Collections2$TransformedCollection<TF;TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Collections2$TransformedCollection;->fromCollection:Ljava/util/Collection;
 
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 277
+    .line 293
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 297
     .local p0, this:Lcom/google/common/collect/Collections2$TransformedCollection;,"Lcom/google/common/collect/Collections2$TransformedCollection<TF;TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Collections2$TransformedCollection;->fromCollection:Ljava/util/Collection;
 
@@ -132,7 +132,7 @@
     .end annotation
 
     .prologue
-    .line 284
+    .line 302
     .local p0, this:Lcom/google/common/collect/Collections2$TransformedCollection;,"Lcom/google/common/collect/Collections2$TransformedCollection<TF;TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Collections2$TransformedCollection;->fromCollection:Ljava/util/Collection;
 
@@ -153,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 288
+    .line 307
     .local p0, this:Lcom/google/common/collect/Collections2$TransformedCollection;,"Lcom/google/common/collect/Collections2$TransformedCollection<TF;TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Collections2$TransformedCollection;->fromCollection:Ljava/util/Collection;
 

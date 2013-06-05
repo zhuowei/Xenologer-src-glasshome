@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchStartRecording(Lcom/google/glass/camera/Video;)V
+    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchStopPreview()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-.field final synthetic val$video:Lcom/google/glass/camera/Video;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;)V
+.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 456
+    .line 464
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$12;->this$0:Lcom/google/glass/camera/SharedCameraClient;
-
-    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$12;->val$video:Lcom/google/glass/camera/Video;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,16 +38,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 459
+    .line 467
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$12;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$12;->val$video:Lcom/google/glass/camera/Video;
+    invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraClient;->onStopPreview()V
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onStartRecording(Lcom/google/glass/camera/Video;)V
-
-    .line 460
+    .line 468
     return-void
 .end method

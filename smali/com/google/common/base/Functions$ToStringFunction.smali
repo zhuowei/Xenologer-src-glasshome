@@ -44,7 +44,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 57
+    .line 61
     new-instance v0, Lcom/google/common/base/Functions$ToStringFunction;
 
     const-string v1, "INSTANCE"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/common/base/Functions$ToStringFunction;->INSTANCE:Lcom/google/common/base/Functions$ToStringFunction;
 
-    .line 56
+    .line 60
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/base/Functions$ToStringFunction;
@@ -78,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 60
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -89,7 +89,7 @@
     .parameter "name"
 
     .prologue
-    .line 56
+    .line 60
     const-class v0, Lcom/google/common/base/Functions$ToStringFunction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 56
+    .line 60
     sget-object v0, Lcom/google/common/base/Functions$ToStringFunction;->$VALUES:[Lcom/google/common/base/Functions$ToStringFunction;
 
     invoke-virtual {v0}, [Lcom/google/common/base/Functions$ToStringFunction;->clone()Ljava/lang/Object;
@@ -124,7 +124,7 @@
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 60
     invoke-virtual {p0, p1}, Lcom/google/common/base/Functions$ToStringFunction;->apply(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -137,10 +137,10 @@
     .parameter "o"
 
     .prologue
-    .line 61
+    .line 64
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 62
+    .line 65
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -152,7 +152,7 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 70
     const-string v0, "toString"
 
     return-object v0

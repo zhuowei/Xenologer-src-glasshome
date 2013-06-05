@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 311
+    .line 294
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$4;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "grammar"
 
     .prologue
-    .line 319
+    .line 302
     return-object p1
 .end method
 
@@ -53,6 +53,6 @@
     .parameter "grammar"
 
     .prologue
-    .line 314
+    .line 297
     return-object p1
 .end method

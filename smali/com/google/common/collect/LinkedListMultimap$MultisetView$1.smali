@@ -1,14 +1,11 @@
 .class Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/TransformedIterator;
 .source "LinkedListMultimap.java"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/LinkedListMultimap$MultisetView;->iterator()Ljava/util/Iterator;
+    value = Lcom/google/common/collect/LinkedListMultimap$MultisetView;->entryIterator()Ljava/util/Iterator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,17 +15,16 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Iterator",
-        "<TK;>;"
+        "Lcom/google/common/collect/TransformedIterator",
+        "<TK;",
+        "Lcom/google/common/collect/Multiset$Entry",
+        "<TK;>;>;"
     }
 .end annotation
 
 
 # instance fields
 .field final synthetic this$1:Lcom/google/common/collect/LinkedListMultimap$MultisetView;
-
-.field final synthetic val$nodes:Ljava/util/Iterator;
 
 
 # direct methods
@@ -38,68 +34,50 @@
     .parameter
 
     .prologue
-    .line 719
+    .line 773
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;,"Lcom/google/common/collect/LinkedListMultimap$MultisetView.1;"
+    .local p2, x0:Ljava/util/Iterator;,"Ljava/util/Iterator<+TK;>;"
     iput-object p1, p0, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;->this$1:Lcom/google/common/collect/LinkedListMultimap$MultisetView;
 
-    iput-object p2, p0, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;->val$nodes:Ljava/util/Iterator;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public hasNext()Z
+.method transform(Ljava/lang/Object;)Lcom/google/common/collect/Multiset$Entry;
     .locals 1
-
-    .prologue
-    .line 722
-    .local p0, this:Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;,"Lcom/google/common/collect/LinkedListMultimap$MultisetView.1;"
-    iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;->val$nodes:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public next()Ljava/lang/Object;
-    .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TK;"
+            "(TK;)",
+            "Lcom/google/common/collect/Multiset$Entry",
+            "<TK;>;"
         }
     .end annotation
 
     .prologue
-    .line 726
+    .line 777
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;,"Lcom/google/common/collect/LinkedListMultimap$MultisetView.1;"
-    iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;->val$nodes:Ljava/util/Iterator;
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    new-instance v0, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1$1;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/common/collect/LinkedListMultimap$Node;
-
-    iget-object v0, v0, Lcom/google/common/collect/LinkedListMultimap$Node;->key:Ljava/lang/Object;
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1$1;-><init>(Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;Ljava/lang/Object;)V
 
     return-object v0
 .end method
 
-.method public remove()V
+.method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 730
+    .line 773
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;,"Lcom/google/common/collect/LinkedListMultimap$MultisetView.1;"
-    iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;->val$nodes:Ljava/util/Iterator;
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/LinkedListMultimap$MultisetView$1;->transform(Ljava/lang/Object;)Lcom/google/common/collect/Multiset$Entry;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    move-result-object v0
 
-    .line 731
-    return-void
+    return-object v0
 .end method

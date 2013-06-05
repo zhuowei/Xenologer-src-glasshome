@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 307
+    .line 311
     iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -47,7 +47,7 @@
     .parameter "clipped"
 
     .prologue
-    .line 310
+    .line 314
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2;->this$0:Lcom/google/glass/home/timeline/TimelineItemAdapter;
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 311
+    .line 315
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2;->this$0:Lcom/google/glass/home/timeline/TimelineItemAdapter;
@@ -77,7 +77,7 @@
 
     invoke-interface {v0, v1, p1}, Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;->onRemainingText(Lcom/google/glass/timeline/TimelineItemId;Ljava/lang/String;)V
 
-    .line 313
+    .line 317
     :cond_0
     return-void
 .end method

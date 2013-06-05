@@ -101,7 +101,7 @@
 
     sget-object v2, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventPerformanceStats_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/4 v3, 0x7
+    const/16 v3, 0x8
 
     new-array v3, v3, [Ljava/lang/String;
 
@@ -117,21 +117,27 @@
 
     aput-object v4, v3, v8
 
-    const-string v4, "BatteryStateOfChargeMah"
+    const-string v4, "BatteryStateOfChargeUah"
 
     aput-object v4, v3, v9
 
-    const-string v4, "BatteryChargeWhenFullMah"
+    const-string v4, "BatteryChargeWhenFullUah"
 
     aput-object v4, v3, v10
 
     const/4 v4, 0x5
 
-    const-string v5, "BatteryTemperatureMilliCentigrade"
+    const-string v5, "ReportedSoc"
 
     aput-object v5, v3, v4
 
     const/4 v4, 0x6
+
+    const-string v5, "BatteryTemperatureMilliCentigrade"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x7
 
     const-string v5, "TotalBytesSent"
 
@@ -163,23 +169,29 @@
 
     sget-object v2, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    new-array v3, v10, [Ljava/lang/String;
+    const/4 v3, 0x5
+
+    new-array v3, v3, [Ljava/lang/String;
 
     const-string v4, "EventTimeMs"
 
     aput-object v4, v3, v6
 
-    const-string v4, "EventType"
+    const-string v4, "EventSerial"
 
     aput-object v4, v3, v7
 
-    const-string v4, "EventData"
+    const-string v4, "EventType"
 
     aput-object v4, v3, v8
 
-    const-string v4, "PerformanceStats"
+    const-string v4, "EventData"
 
     aput-object v4, v3, v9
+
+    const-string v4, "PerformanceStats"
+
+    aput-object v4, v3, v10
 
     invoke-direct {v1, v2, v3}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
 

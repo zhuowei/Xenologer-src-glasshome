@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 336
+    .line 319
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$5;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,6 +43,6 @@
     .parameter "force"
 
     .prologue
-    .line 340
+    .line 323
     return-void
 .end method

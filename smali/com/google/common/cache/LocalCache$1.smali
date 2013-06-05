@@ -33,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 679
+    .line 690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,10 +41,16 @@
 
 
 # virtual methods
-.method public copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ValueReference;
+.method public copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ValueReference;
     .locals 0
     .parameter
+    .end parameter
+    .parameter "value"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,6 +58,7 @@
             "<",
             "Ljava/lang/Object;",
             ">;",
+            "Ljava/lang/Object;",
             "Lcom/google/common/cache/LocalCache$ReferenceEntry",
             "<",
             "Ljava/lang/Object;",
@@ -66,9 +73,9 @@
     .end annotation
 
     .prologue
-    .line 698
+    .line 706
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<Ljava/lang/Object;>;"
-    .local p2, entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
+    .local p3, entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-object p0
 .end method
 
@@ -76,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 682
+    .line 693
     const/4 v0, 0x0
 
     return-object v0
@@ -96,7 +103,7 @@
     .end annotation
 
     .prologue
-    .line 692
+    .line 701
     const/4 v0, 0x0
 
     return-object v0
@@ -106,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 687
+    .line 697
     const/4 v0, 0x0
 
     return v0
@@ -116,7 +123,7 @@
     .locals 1
 
     .prologue
-    .line 708
+    .line 714
     const/4 v0, 0x0
 
     return v0
@@ -126,7 +133,7 @@
     .locals 1
 
     .prologue
-    .line 703
+    .line 710
     const/4 v0, 0x0
 
     return v0
@@ -137,7 +144,7 @@
     .parameter "newValue"
 
     .prologue
-    .line 717
+    .line 721
     return-void
 .end method
 
@@ -145,7 +152,7 @@
     .locals 1
 
     .prologue
-    .line 713
+    .line 718
     const/4 v0, 0x0
 
     return-object v0

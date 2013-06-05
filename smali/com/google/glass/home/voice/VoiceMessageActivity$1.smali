@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 114
+    .line 102
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 117
+    .line 105
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 124
+    .line 112
     :cond_0
     :goto_0
     return-void
 
-    .line 119
+    .line 107
     :pswitch_0
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
@@ -59,7 +59,7 @@
 
     if-nez v0, :cond_0
 
-    .line 120
+    .line 108
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->confirmSend()V
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 117
+    .line 105
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

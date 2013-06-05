@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 147
+    .line 161
     iput-object p1, p0, Lcom/google/common/eventbus/EventBus$3;->this$0:Lcom/google/common/eventbus/EventBus;
 
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 164
     const/4 v0, 0x0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 147
+    .line 161
     invoke-virtual {p0}, Lcom/google/common/eventbus/EventBus$3;->initialValue()Ljava/lang/Boolean;
 
     move-result-object v0

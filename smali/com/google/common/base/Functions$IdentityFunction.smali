@@ -44,7 +44,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 80
+    .line 84
     new-instance v0, Lcom/google/common/base/Functions$IdentityFunction;
 
     const-string v1, "INSTANCE"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/common/base/Functions$IdentityFunction;->INSTANCE:Lcom/google/common/base/Functions$IdentityFunction;
 
-    .line 79
+    .line 83
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/base/Functions$IdentityFunction;
@@ -78,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 79
+    .line 83
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -89,7 +89,7 @@
     .parameter "name"
 
     .prologue
-    .line 79
+    .line 83
     const-class v0, Lcom/google/common/base/Functions$IdentityFunction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 83
     sget-object v0, Lcom/google/common/base/Functions$IdentityFunction;->$VALUES:[Lcom/google/common/base/Functions$IdentityFunction;
 
     invoke-virtual {v0}, [Lcom/google/common/base/Functions$IdentityFunction;->clone()Ljava/lang/Object;
@@ -122,9 +122,14 @@
 .method public apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .parameter "o"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 
     .prologue
-    .line 84
+    .line 88
     return-object p1
 .end method
 
@@ -132,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 93
     const-string v0, "identity"
 
     return-object v0

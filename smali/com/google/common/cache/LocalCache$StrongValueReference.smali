@@ -51,29 +51,30 @@
     .end annotation
 
     .prologue
-    .line 1731
+    .line 1648
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     .local p1, referent:Ljava/lang/Object;,"TV;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1732
+    .line 1649
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$StrongValueReference;->referent:Ljava/lang/Object;
 
-    .line 1733
+    .line 1650
     return-void
 .end method
 
 
 # virtual methods
-.method public copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ValueReference;
+.method public copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/cache/LocalCache$ReferenceEntry;)Lcom/google/common/cache/LocalCache$ValueReference;
     .locals 0
+    .parameter
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/ref/ReferenceQueue",
-            "<TV;>;",
+            "<TV;>;TV;",
             "Lcom/google/common/cache/LocalCache$ReferenceEntry",
             "<TK;TV;>;)",
             "Lcom/google/common/cache/LocalCache$ValueReference",
@@ -82,10 +83,11 @@
     .end annotation
 
     .prologue
-    .line 1752
+    .line 1665
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
+    .local p3, entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     return-object p0
 .end method
 
@@ -98,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 1737
+    .line 1653
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$StrongValueReference;->referent:Ljava/lang/Object;
 
@@ -116,7 +118,7 @@
     .end annotation
 
     .prologue
-    .line 1747
+    .line 1661
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -127,7 +129,7 @@
     .locals 1
 
     .prologue
-    .line 1742
+    .line 1657
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
@@ -138,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 1762
+    .line 1673
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x1
 
@@ -149,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 1757
+    .line 1669
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -166,7 +168,7 @@
     .end annotation
 
     .prologue
-    .line 1771
+    .line 1680
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     .local p1, newValue:Ljava/lang/Object;,"TV;"
     return-void
@@ -181,7 +183,7 @@
     .end annotation
 
     .prologue
-    .line 1767
+    .line 1677
     .local p0, this:Lcom/google/common/cache/LocalCache$StrongValueReference;,"Lcom/google/common/cache/LocalCache$StrongValueReference<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$StrongValueReference;->get()Ljava/lang/Object;
 

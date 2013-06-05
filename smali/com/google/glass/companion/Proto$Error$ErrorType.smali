@@ -69,7 +69,7 @@
 
     const/4 v2, 0x0
 
-    .line 8553
+    .line 8671
     new-instance v0, Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     const-string v1, "TETHERING_ERROR_ON_GLASS"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->TETHERING_ERROR_ON_GLASS:Lcom/google/glass/companion/Proto$Error$ErrorType;
 
-    .line 8561
+    .line 8679
     new-instance v0, Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     const-string v1, "SMS_GOOGLE_VOICE_NOT_INSTALLED"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->SMS_GOOGLE_VOICE_NOT_INSTALLED:Lcom/google/glass/companion/Proto$Error$ErrorType;
 
-    .line 8569
+    .line 8687
     new-instance v0, Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     const-string v1, "SMS_GOOGLE_VOICE_NEEDS_UPDATE"
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->SMS_GOOGLE_VOICE_NEEDS_UPDATE:Lcom/google/glass/companion/Proto$Error$ErrorType;
 
-    .line 8543
+    .line 8661
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/companion/Proto$Error$ErrorType;
@@ -115,7 +115,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->$VALUES:[Lcom/google/glass/companion/Proto$Error$ErrorType;
 
-    .line 8615
+    .line 8733
     new-instance v0, Lcom/google/glass/companion/Proto$Error$ErrorType$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$Error$ErrorType$1;-><init>()V
@@ -138,13 +138,13 @@
     .end annotation
 
     .prologue
-    .line 8624
+    .line 8742
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 8625
+    .line 8743
     iput p4, p0, Lcom/google/glass/companion/Proto$Error$ErrorType;->value:I
 
-    .line 8626
+    .line 8744
     return-void
 .end method
 
@@ -161,7 +161,7 @@
     .end annotation
 
     .prologue
-    .line 8612
+    .line 8730
     sget-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -172,34 +172,34 @@
     .parameter "value"
 
     .prologue
-    .line 8602
+    .line 8720
     packed-switch p0, :pswitch_data_0
 
-    .line 8606
+    .line 8724
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 8603
+    .line 8721
     :pswitch_0
     sget-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->TETHERING_ERROR_ON_GLASS:Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     goto :goto_0
 
-    .line 8604
+    .line 8722
     :pswitch_1
     sget-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->SMS_GOOGLE_VOICE_NOT_INSTALLED:Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     goto :goto_0
 
-    .line 8605
+    .line 8723
     :pswitch_2
     sget-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->SMS_GOOGLE_VOICE_NEEDS_UPDATE:Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     goto :goto_0
 
-    .line 8602
+    .line 8720
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -213,7 +213,7 @@
     .parameter "name"
 
     .prologue
-    .line 8543
+    .line 8661
     const-class v0, Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -229,7 +229,7 @@
     .locals 1
 
     .prologue
-    .line 8543
+    .line 8661
     sget-object v0, Lcom/google/glass/companion/Proto$Error$ErrorType;->$VALUES:[Lcom/google/glass/companion/Proto$Error$ErrorType;
 
     invoke-virtual {v0}, [Lcom/google/glass/companion/Proto$Error$ErrorType;->clone()Ljava/lang/Object;
@@ -247,7 +247,7 @@
     .locals 1
 
     .prologue
-    .line 8599
+    .line 8717
     iget v0, p0, Lcom/google/glass/companion/Proto$Error$ErrorType;->value:I
 
     return v0

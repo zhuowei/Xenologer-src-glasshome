@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 733
+    .line 835
     iput-object p1, p0, Lcom/google/common/io/ByteStreams$2;->val$checksum:Ljava/util/zip/Checksum;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,20 +51,20 @@
     .locals 3
 
     .prologue
-    .line 742
+    .line 843
     iget-object v2, p0, Lcom/google/common/io/ByteStreams$2;->val$checksum:Ljava/util/zip/Checksum;
 
     invoke-interface {v2}, Ljava/util/zip/Checksum;->getValue()J
 
     move-result-wide v0
 
-    .line 743
+    .line 844
     .local v0, result:J
     iget-object v2, p0, Lcom/google/common/io/ByteStreams$2;->val$checksum:Ljava/util/zip/Checksum;
 
     invoke-interface {v2}, Ljava/util/zip/Checksum;->reset()V
 
-    .line 744
+    .line 845
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -76,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 733
+    .line 835
     invoke-virtual {p0}, Lcom/google/common/io/ByteStreams$2;->getResult()Ljava/lang/Long;
 
     move-result-object v0
@@ -91,12 +91,12 @@
     .parameter "len"
 
     .prologue
-    .line 736
+    .line 838
     iget-object v0, p0, Lcom/google/common/io/ByteStreams$2;->val$checksum:Ljava/util/zip/Checksum;
 
     invoke-interface {v0, p1, p2, p3}, Ljava/util/zip/Checksum;->update([BII)V
 
-    .line 737
+    .line 839
     const/4 v0, 0x1
 
     return v0

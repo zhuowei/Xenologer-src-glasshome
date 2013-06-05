@@ -1,14 +1,11 @@
 .class final Lcom/google/common/io/CharStreams$2;
-.super Ljava/lang/Object;
+.super Ljava/io/Reader;
 .source "CharStreams.java"
-
-# interfaces
-.implements Lcom/google/common/io/InputSupplier;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/CharStreams;->newReaderSupplier(Lcom/google/common/io/InputSupplier;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    value = Lcom/google/common/io/CharStreams;->asReader(Ljava/lang/Readable;)Ljava/io/Reader;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,70 +13,28 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/common/io/InputSupplier",
-        "<",
-        "Ljava/io/InputStreamReader;",
-        ">;"
-    }
-.end annotation
-
 
 # instance fields
-.field final synthetic val$charset:Ljava/nio/charset/Charset;
-
-.field final synthetic val$in:Lcom/google/common/io/InputSupplier;
+.field final synthetic val$readable:Ljava/lang/Readable;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/io/InputSupplier;Ljava/nio/charset/Charset;)V
+.method constructor <init>(Ljava/lang/Readable;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 88
-    iput-object p1, p0, Lcom/google/common/io/CharStreams$2;->val$in:Lcom/google/common/io/InputSupplier;
+    .line 477
+    iput-object p1, p0, Lcom/google/common/io/CharStreams$2;->val$readable:Ljava/lang/Readable;
 
-    iput-object p2, p0, Lcom/google/common/io/CharStreams$2;->val$charset:Ljava/nio/charset/Charset;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/io/Reader;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getInput()Ljava/io/InputStreamReader;
-    .locals 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 91
-    new-instance v1, Ljava/io/InputStreamReader;
-
-    iget-object v0, p0, Lcom/google/common/io/CharStreams$2;->val$in:Lcom/google/common/io/InputSupplier;
-
-    invoke-interface {v0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/io/InputStream;
-
-    iget-object v2, p0, Lcom/google/common/io/CharStreams$2;->val$charset:Ljava/nio/charset/Charset;
-
-    invoke-direct {v1, v0, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
-
-    return-object v1
-.end method
-
-.method public bridge synthetic getInput()Ljava/lang/Object;
+.method public close()V
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -88,10 +43,57 @@
     .end annotation
 
     .prologue
-    .line 88
-    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$2;->getInput()Ljava/io/InputStreamReader;
+    .line 491
+    iget-object v0, p0, Lcom/google/common/io/CharStreams$2;->val$readable:Ljava/lang/Readable;
+
+    check-cast v0, Ljava/io/Closeable;
+
+    invoke-interface {v0}, Ljava/io/Closeable;->close()V
+
+    .line 492
+    return-void
+.end method
+
+.method public read(Ljava/nio/CharBuffer;)I
+    .locals 1
+    .parameter "target"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 486
+    iget-object v0, p0, Lcom/google/common/io/CharStreams$2;->val$readable:Ljava/lang/Readable;
+
+    invoke-interface {v0, p1}, Ljava/lang/Readable;->read(Ljava/nio/CharBuffer;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public read([CII)I
+    .locals 1
+    .parameter "cbuf"
+    .parameter "off"
+    .parameter "len"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 481
+    invoke-static {p1, p2, p3}, Ljava/nio/CharBuffer;->wrap([CII)Ljava/nio/CharBuffer;
 
     move-result-object v0
 
-    return-object v0
+    invoke-virtual {p0, v0}, Lcom/google/common/io/CharStreams$2;->read(Ljava/nio/CharBuffer;)I
+
+    move-result v0
+
+    return v0
 .end method

@@ -63,7 +63,7 @@
 
     const/4 v2, 0x0
 
-    .line 10874
+    .line 11065
     new-instance v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     const-string v1, "INSERT_OR_UPDATE_TIMELINE_ITEM"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->INSERT_OR_UPDATE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 10882
+    .line 11073
     new-instance v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     const-string v1, "DELETE_TIMELINE_ITEM"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->DELETE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 10865
+    .line 11056
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->$VALUES:[Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 10918
+    .line 11109
     new-instance v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$ApiRequest$RequestType$1;-><init>()V
@@ -119,13 +119,13 @@
     .end annotation
 
     .prologue
-    .line 10927
+    .line 11118
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 10928
+    .line 11119
     iput p4, p0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->value:I
 
-    .line 10929
+    .line 11120
     return-void
 .end method
 
@@ -142,7 +142,7 @@
     .end annotation
 
     .prologue
-    .line 10915
+    .line 11106
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -153,28 +153,28 @@
     .parameter "value"
 
     .prologue
-    .line 10906
+    .line 11097
     packed-switch p0, :pswitch_data_0
 
-    .line 10909
+    .line 11100
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 10907
+    .line 11098
     :pswitch_0
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->INSERT_OR_UPDATE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     goto :goto_0
 
-    .line 10908
+    .line 11099
     :pswitch_1
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->DELETE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     goto :goto_0
 
-    .line 10906
+    .line 11097
     nop
 
     :pswitch_data_0
@@ -189,7 +189,7 @@
     .parameter "name"
 
     .prologue
-    .line 10865
+    .line 11056
     const-class v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -205,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 10865
+    .line 11056
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->$VALUES:[Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     invoke-virtual {v0}, [Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->clone()Ljava/lang/Object;
@@ -223,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 10903
+    .line 11094
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->value:I
 
     return v0

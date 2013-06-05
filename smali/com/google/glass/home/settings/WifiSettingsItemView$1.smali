@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 60
+    .line 64
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "isConnected"
 
     .prologue
-    .line 64
+    .line 68
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsItemView;->update()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$000(Lcom/google/glass/home/settings/WifiSettingsItemView;)V
 
-    .line 65
+    .line 69
     return-void
 .end method

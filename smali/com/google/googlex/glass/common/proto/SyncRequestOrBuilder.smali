@@ -85,9 +85,6 @@
 .method public abstract getSelectOrBuilder()Lcom/google/googlex/glass/common/proto/SelectOrBuilder;
 .end method
 
-.method public abstract getSupportsUserActions()Z
-.end method
-
 .method public abstract getUpdate(I)Lcom/google/googlex/glass/common/proto/Update;
 .end method
 
@@ -125,7 +122,4 @@
 .end method
 
 .method public abstract hasSelect()Z
-.end method
-
-.method public abstract hasSupportsUserActions()Z
 .end method

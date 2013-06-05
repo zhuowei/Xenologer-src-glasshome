@@ -50,13 +50,18 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     .prologue
-    .line 16
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 37
+    sget v0, Lcom/google/glass/common/R$drawable;->ic_exclamation_big:I
+
+    iput v0, p0, Lcom/google/glass/app/GlassError;->iconId:I
+
+    .line 38
     return-void
 .end method
 
@@ -65,7 +70,7 @@
     .parameter "activity"
 
     .prologue
-    .line 182
+    .line 189
     invoke-static {p1}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -87,14 +92,14 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 195
+    .line 202
     if-nez p1, :cond_0
 
-    .line 209
+    .line 216
     :goto_0
     return-object v0
 
-    .line 199
+    .line 206
     :cond_0
     sget-object v1, Lcom/google/glass/app/GlassError$3;->$SwitchMap$com$google$glass$app$GlassError$OnConfirmAction:[I
 
@@ -106,7 +111,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 208
+    .line 215
     sget-object v1, Lcom/google/glass/app/GlassError;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -131,7 +136,7 @@
 
     goto :goto_0
 
-    .line 201
+    .line 208
     :pswitch_0
     new-instance v0, Lcom/google/glass/app/GlassError$2;
 
@@ -139,7 +144,7 @@
 
     goto :goto_0
 
-    .line 199
+    .line 206
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -150,7 +155,7 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 125
     iget v0, p0, Lcom/google/glass/app/GlassError;->iconId:I
 
     return v0
@@ -160,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 108
+    .line 116
     iget-object v0, p0, Lcom/google/glass/app/GlassError;->onConfirmAction:Lcom/google/glass/app/GlassError$OnConfirmAction;
 
     return-object v0
@@ -170,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 138
     iget-object v0, p0, Lcom/google/glass/app/GlassError;->onConfirmRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -181,19 +186,19 @@
     .parameter "context"
 
     .prologue
-    .line 186
+    .line 193
     invoke-virtual {p0}, Lcom/google/glass/app/GlassError;->getOnConfirmRunnable()Ljava/lang/Runnable;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 187
+    .line 194
     invoke-virtual {p0}, Lcom/google/glass/app/GlassError;->getOnConfirmRunnable()Ljava/lang/Runnable;
 
     move-result-object v0
 
-    .line 190
+    .line 197
     :goto_0
     return-object v0
 
@@ -213,7 +218,7 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 53
     iget v0, p0, Lcom/google/glass/app/GlassError;->primaryMessageId:I
 
     return v0
@@ -223,7 +228,7 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 69
     iget v0, p0, Lcom/google/glass/app/GlassError;->secondaryMessageId:I
 
     return v0
@@ -233,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 101
     iget-boolean v0, p0, Lcom/google/glass/app/GlassError;->autoHide:Z
 
     return v0
@@ -244,10 +249,10 @@
     .parameter "autoHide"
 
     .prologue
-    .line 85
+    .line 93
     iput-boolean p1, p0, Lcom/google/glass/app/GlassError;->autoHide:Z
 
-    .line 86
+    .line 94
     return-object p0
 .end method
 
@@ -256,10 +261,10 @@
     .parameter "finishWhenDone"
 
     .prologue
-    .line 69
+    .line 77
     iput-boolean p1, p0, Lcom/google/glass/app/GlassError;->finishWhenDone:Z
 
-    .line 70
+    .line 78
     return-object p0
 .end method
 
@@ -268,10 +273,10 @@
     .parameter "iconId"
 
     .prologue
-    .line 112
+    .line 120
     iput p1, p0, Lcom/google/glass/app/GlassError;->iconId:I
 
-    .line 113
+    .line 121
     return-object p0
 .end method
 
@@ -280,10 +285,10 @@
     .parameter "onConfirmAction"
 
     .prologue
-    .line 100
+    .line 108
     iput-object p1, p0, Lcom/google/glass/app/GlassError;->onConfirmAction:Lcom/google/glass/app/GlassError$OnConfirmAction;
 
-    .line 101
+    .line 109
     return-object p0
 .end method
 
@@ -292,10 +297,10 @@
     .parameter "onConfirmRunnable"
 
     .prologue
-    .line 125
+    .line 133
     iput-object p1, p0, Lcom/google/glass/app/GlassError;->onConfirmRunnable:Ljava/lang/Runnable;
 
-    .line 126
+    .line 134
     return-object p0
 .end method
 
@@ -304,10 +309,10 @@
     .parameter "primaryMessageId"
 
     .prologue
-    .line 37
+    .line 45
     iput p1, p0, Lcom/google/glass/app/GlassError;->primaryMessageId:I
 
-    .line 38
+    .line 46
     return-object p0
 .end method
 
@@ -316,10 +321,10 @@
     .parameter "secondaryMessageId"
 
     .prologue
-    .line 53
+    .line 61
     iput p1, p0, Lcom/google/glass/app/GlassError;->secondaryMessageId:I
 
-    .line 54
+    .line 62
     return-object p0
 .end method
 
@@ -327,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 85
     iget-boolean v0, p0, Lcom/google/glass/app/GlassError;->finishWhenDone:Z
 
     return v0
@@ -340,30 +345,30 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 134
+    .line 142
     invoke-direct {p0, p1}, Lcom/google/glass/app/GlassError;->getSoundManager(Landroid/app/Activity;)Lcom/google/glass/sound/SoundManager;
 
     move-result-object v3
 
-    .line 135
+    .line 143
     .local v3, soundManager:Lcom/google/glass/sound/SoundManager;
     invoke-virtual {p0}, Lcom/google/glass/app/GlassError;->getSecondaryMessageId()I
 
     move-result v2
 
-    .line 136
+    .line 144
     .local v2, secondaryMessageId:I
     invoke-virtual {p0, p1}, Lcom/google/glass/app/GlassError;->getOnConfirmRunnable(Landroid/content/Context;)Ljava/lang/Runnable;
 
     move-result-object v1
 
-    .line 137
+    .line 145
     .local v1, onConfirmRunnable:Ljava/lang/Runnable;
     new-instance v0, Lcom/google/glass/widget/MessageDialog$Builder;
 
     invoke-direct {v0, p1}, Lcom/google/glass/widget/MessageDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 138
+    .line 146
     .local v0, builder:Lcom/google/glass/widget/MessageDialog$Builder;
     invoke-virtual {v0, v6}, Lcom/google/glass/widget/MessageDialog$Builder;->setExpanded(Z)Lcom/google/glass/widget/MessageDialog$Builder;
 
@@ -409,13 +414,13 @@
 
     invoke-virtual {v4, v5}, Lcom/google/glass/widget/MessageDialog$Builder;->setListener(Lcom/google/glass/widget/MessageDialog$Listener;)Lcom/google/glass/widget/MessageDialog$Builder;
 
-    .line 172
+    .line 180
     if-eqz v2, :cond_0
 
-    .line 173
+    .line 181
     invoke-virtual {v0, v2}, Lcom/google/glass/widget/MessageDialog$Builder;->setSecondaryMessage(I)Lcom/google/glass/widget/MessageDialog$Builder;
 
-    .line 176
+    .line 184
     :cond_0
     sget-object v4, Lcom/google/glass/app/GlassError;->TAG:Ljava/lang/String;
 
@@ -447,18 +452,13 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
+    .line 185
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog$Builder;->build()Lcom/google/glass/widget/MessageDialog;
 
     move-result-object v4
 
-    invoke-virtual {p1, v4}, Lcom/google/glass/app/GlassActivity;->showMessage(Lcom/google/glass/widget/MessageDialog;)V
+    invoke-virtual {p1, v4}, Lcom/google/glass/app/GlassActivity;->showError(Lcom/google/glass/widget/MessageDialog;)V
 
-    .line 178
-    sget-object v4, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
-
-    invoke-virtual {p1, v4}, Lcom/google/glass/app/GlassActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 179
+    .line 186
     return-void
 .end method

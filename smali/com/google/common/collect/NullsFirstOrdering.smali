@@ -82,38 +82,38 @@
     .end annotation
 
     .prologue
-    .line 35
+    .line 36
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     .local p1, left:Ljava/lang/Object;,"TT;"
     .local p2, right:Ljava/lang/Object;,"TT;"
     if-ne p1, p2, :cond_0
 
-    .line 36
+    .line 37
     const/4 v0, 0x0
 
-    .line 44
+    .line 45
     :goto_0
     return v0
 
-    .line 38
+    .line 39
     :cond_0
     if-nez p1, :cond_1
 
-    .line 39
+    .line 40
     const/4 v0, -0x1
 
     goto :goto_0
 
-    .line 41
+    .line 42
     :cond_1
     if-nez p2, :cond_2
 
-    .line 42
+    .line 43
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 44
+    .line 45
     :cond_2
     iget-object v0, p0, Lcom/google/common/collect/NullsFirstOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
@@ -132,18 +132,18 @@
     .end parameter
 
     .prologue
-    .line 62
+    .line 68
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     if-ne p1, p0, :cond_0
 
-    .line 63
+    .line 69
     const/4 v1, 0x1
 
-    .line 69
+    .line 75
     :goto_0
     return v1
 
-    .line 65
+    .line 71
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/NullsFirstOrdering;
 
@@ -151,10 +151,10 @@
 
     move-object v0, p1
 
-    .line 66
+    .line 72
     check-cast v0, Lcom/google/common/collect/NullsFirstOrdering;
 
-    .line 67
+    .line 73
     .local v0, that:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<*>;"
     iget-object v1, p0, Lcom/google/common/collect/NullsFirstOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 69
+    .line 75
     .end local v0           #that:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<*>;"
     :cond_1
     const/4 v1, 0x0
@@ -178,7 +178,7 @@
     .locals 2
 
     .prologue
-    .line 73
+    .line 80
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/NullsFirstOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
@@ -204,7 +204,7 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 58
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     return-object p0
 .end method
@@ -220,7 +220,7 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 63
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/NullsFirstOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
@@ -242,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 51
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/NullsFirstOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
@@ -261,7 +261,7 @@
     .locals 2
 
     .prologue
-    .line 77
+    .line 85
     .local p0, this:Lcom/google/common/collect/NullsFirstOrdering;,"Lcom/google/common/collect/NullsFirstOrdering<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

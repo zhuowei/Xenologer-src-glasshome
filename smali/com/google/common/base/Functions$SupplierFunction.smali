@@ -60,12 +60,12 @@
     .end annotation
 
     .prologue
-    .line 326
+    .line 341
     .local p0, this:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     .local p1, supplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 327
+    .line 342
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
-    .line 328
+    .line 343
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .parameter "x1"
 
     .prologue
-    .line 322
+    .line 337
     .local p0, this:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Functions$SupplierFunction;-><init>(Lcom/google/common/base/Supplier;)V
 
@@ -108,7 +108,7 @@
     .end annotation
 
     .prologue
-    .line 331
+    .line 346
     .local p0, this:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
@@ -127,7 +127,7 @@
     .end parameter
 
     .prologue
-    .line 335
+    .line 351
     .local p0, this:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     instance-of v1, p1, Lcom/google/common/base/Functions$SupplierFunction;
 
@@ -135,10 +135,10 @@
 
     move-object v0, p1
 
-    .line 336
+    .line 352
     check-cast v0, Lcom/google/common/base/Functions$SupplierFunction;
 
-    .line 337
+    .line 353
     .local v0, that:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<*>;"
     iget-object v1, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
@@ -148,7 +148,7 @@
 
     move-result v1
 
-    .line 339
+    .line 355
     .end local v0           #that:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<*>;"
     :goto_0
     return v1
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 343
+    .line 360
     .local p0, this:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$SupplierFunction;->supplier:Lcom/google/common/base/Supplier;
 
@@ -178,7 +178,7 @@
     .locals 2
 
     .prologue
-    .line 347
+    .line 365
     .local p0, this:Lcom/google/common/base/Functions$SupplierFunction;,"Lcom/google/common/base/Functions$SupplierFunction<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

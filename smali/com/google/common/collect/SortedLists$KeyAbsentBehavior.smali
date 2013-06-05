@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 144
+    .line 150
     new-instance v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior$1;
 
     const-string v1, "NEXT_LOWER"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_LOWER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 154
+    .line 161
     new-instance v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior$2;
 
     const-string v1, "NEXT_HIGHER"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->NEXT_HIGHER:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 172
+    .line 180
     new-instance v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior$3;
 
     const-string v1, "INVERTED_INSERTION_INDEX"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->INVERTED_INSERTION_INDEX:Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
-    .line 139
+    .line 145
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 139
+    .line 145
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -117,7 +117,7 @@
     .parameter "x2"
 
     .prologue
-    .line 139
+    .line 145
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -128,7 +128,7 @@
     .parameter "name"
 
     .prologue
-    .line 139
+    .line 145
     const-class v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -144,7 +144,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 145
     sget-object v0, Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->$VALUES:[Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/SortedLists$KeyAbsentBehavior;->clone()Ljava/lang/Object;
@@ -159,11 +159,4 @@
 
 # virtual methods
 .method abstract resultIndex(I)I
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<E:",
-            "Ljava/lang/Object;",
-            ">(I)I"
-        }
-    .end annotation
 .end method

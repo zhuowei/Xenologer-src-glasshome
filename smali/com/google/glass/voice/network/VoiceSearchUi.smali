@@ -6,20 +6,25 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;,
         Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;
     }
 .end annotation
 
 
 # virtual methods
-.method public abstract onError(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
+.method public abstract onError(Lcom/google/glass/voice/network/SpeechException;)V
+.end method
+
+.method public abstract onHtmlAnswerCardResult(Ljava/lang/String;)V
 .end method
 
 .method public abstract onMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;)V
 .end method
 
 .method public abstract onRecognitionResult(Ljava/lang/CharSequence;F)V
+.end method
+
+.method public abstract onSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
 .end method
 
 .method public abstract setSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V

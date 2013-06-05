@@ -77,35 +77,35 @@
     .parameter "context"
 
     .prologue
-    .line 226
+    .line 229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 183
+    .line 186
     new-instance v0, Lcom/google/glass/sound/SoundManager$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/sound/SoundManager$1;-><init>(Lcom/google/glass/sound/SoundManager;)V
 
     iput-object v0, p0, Lcom/google/glass/sound/SoundManager;->connection:Landroid/content/ServiceConnection;
 
-    .line 227
+    .line 230
     iput-object p1, p0, Lcom/google/glass/sound/SoundManager;->context:Landroid/content/Context;
 
-    .line 228
+    .line 231
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/sound/SoundManager;->handler:Landroid/os/Handler;
 
-    .line 229
+    .line 232
     sget-object v0, Lcom/google/glass/sound/SoundManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     iput-object v0, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
-    .line 230
+    .line 233
     invoke-virtual {p0}, Lcom/google/glass/sound/SoundManager;->bindSoundManagerServiceIfNecessary()V
 
-    .line 231
+    .line 234
     return-void
 .end method
 
@@ -139,14 +139,14 @@
     .end annotation
 
     .prologue
-    .line 350
+    .line 353
     iget-object v1, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     sget-object v2, Lcom/google/glass/sound/SoundManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     if-eq v1, v2, :cond_0
 
-    .line 351
+    .line 354
     sget-object v1, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -177,23 +177,23 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 364
+    .line 367
     :goto_0
     return-void
 
-    .line 355
+    .line 358
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 356
+    .line 359
     .local v0, intent:Landroid/content/Intent;
     sget-object v1, Lcom/google/glass/sound/SoundManager;->SOUND_MANAGER_SERVICE:Landroid/content/ComponentName;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 357
+    .line 360
     iget-object v1, p0, Lcom/google/glass/sound/SoundManager;->context:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/google/glass/sound/SoundManager;->connection:Landroid/content/ServiceConnection;
@@ -206,12 +206,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 358
+    .line 361
     sget-object v1, Lcom/google/glass/sound/SoundManager$ConnectionState;->CONNECTING:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     iput-object v1, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
-    .line 359
+    .line 362
     sget-object v1, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -238,13 +238,13 @@
 
     goto :goto_0
 
-    .line 361
+    .line 364
     :cond_1
     sget-object v1, Lcom/google/glass/sound/SoundManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     iput-object v1, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
-    .line 362
+    .line 365
     sget-object v1, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -278,10 +278,10 @@
     .end annotation
 
     .prologue
-    .line 343
+    .line 346
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
-    .line 344
+    .line 347
     iget-object v0, p0, Lcom/google/glass/sound/SoundManager;->lastSoundIdRequested:Lcom/google/glass/sound/SoundManager$SoundId;
 
     return-object v0
@@ -293,25 +293,25 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 324
+    .line 327
     iget-object v1, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     sget-object v2, Lcom/google/glass/sound/SoundManager$ConnectionState;->CONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     if-eq v1, v2, :cond_0
 
-    .line 325
+    .line 328
     sget-object v1, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     const-string v2, "SoundManagerService is not connected, returning default, unmuted."
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 335
+    .line 338
     :goto_0
     return v0
 
-    .line 330
+    .line 333
     :cond_0
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/sound/SoundManager;->soundManagerService:Lcom/google/glass/sound/ISoundManagerService;
@@ -324,7 +324,7 @@
 
     goto :goto_0
 
-    .line 331
+    .line 334
     :catch_0
     move-exception v1
 
@@ -336,7 +336,7 @@
     .parameter "soundId"
 
     .prologue
-    .line 241
+    .line 244
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;Lcom/google/glass/sound/SoundManager$OnSoundDoneListener;)I
@@ -352,13 +352,13 @@
     .parameter "listener"
 
     .prologue
-    .line 255
+    .line 258
     iput-object p1, p0, Lcom/google/glass/sound/SoundManager;->lastSoundIdRequested:Lcom/google/glass/sound/SoundManager$SoundId;
 
-    .line 257
+    .line 260
     const/4 v0, 0x0
 
-    .line 259
+    .line 262
     .local v0, streamId:I
     iget-object v2, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
@@ -366,7 +366,7 @@
 
     if-eq v2, v3, :cond_0
 
-    .line 260
+    .line 263
     sget-object v2, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -389,18 +389,18 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
+    .line 264
     invoke-virtual {p0}, Lcom/google/glass/sound/SoundManager;->bindSoundManagerServiceIfNecessary()V
 
     move v1, v0
 
-    .line 281
+    .line 284
     .end local v0           #streamId:I
     .local v1, streamId:I
     :goto_0
     return v1
 
-    .line 266
+    .line 269
     .end local v1           #streamId:I
     .restart local v0       #streamId:I
     :cond_0
@@ -417,13 +417,13 @@
 
     move-result v0
 
-    .line 271
+    .line 274
     :goto_1
     if-eqz p2, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 274
+    .line 277
     iget-object v2, p0, Lcom/google/glass/sound/SoundManager;->handler:Landroid/os/Handler;
 
     new-instance v3, Lcom/google/glass/sound/SoundManager$2;
@@ -442,12 +442,12 @@
     :cond_1
     move v1, v0
 
-    .line 281
+    .line 284
     .end local v0           #streamId:I
     .restart local v1       #streamId:I
     goto :goto_0
 
-    .line 267
+    .line 270
     .end local v1           #streamId:I
     .restart local v0       #streamId:I
     :catch_0
@@ -461,14 +461,14 @@
     .parameter "isMuted"
 
     .prologue
-    .line 309
+    .line 312
     iget-object v0, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     sget-object v1, Lcom/google/glass/sound/SoundManager$ConnectionState;->CONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     if-eq v0, v1, :cond_0
 
-    .line 310
+    .line 313
     sget-object v0, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -491,14 +491,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 311
+    .line 314
     invoke-virtual {p0}, Lcom/google/glass/sound/SoundManager;->bindSoundManagerServiceIfNecessary()V
 
-    .line 320
+    .line 323
     :goto_0
     return-void
 
-    .line 316
+    .line 319
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/sound/SoundManager;->soundManagerService:Lcom/google/glass/sound/ISoundManagerService;
@@ -509,7 +509,7 @@
 
     goto :goto_0
 
-    .line 317
+    .line 320
     :catch_0
     move-exception v0
 
@@ -521,14 +521,14 @@
     .parameter "streamId"
 
     .prologue
-    .line 294
+    .line 297
     iget-object v0, p0, Lcom/google/glass/sound/SoundManager;->connectionState:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     sget-object v1, Lcom/google/glass/sound/SoundManager$ConnectionState;->CONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     if-eq v0, v1, :cond_0
 
-    .line 295
+    .line 298
     sget-object v0, Lcom/google/glass/sound/SoundManager;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -551,14 +551,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 296
+    .line 299
     invoke-virtual {p0}, Lcom/google/glass/sound/SoundManager;->bindSoundManagerServiceIfNecessary()V
 
-    .line 305
+    .line 308
     :goto_0
     return-void
 
-    .line 301
+    .line 304
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/sound/SoundManager;->soundManagerService:Lcom/google/glass/sound/ISoundManagerService;
@@ -569,7 +569,7 @@
 
     goto :goto_0
 
-    .line 302
+    .line 305
     :catch_0
     move-exception v0
 

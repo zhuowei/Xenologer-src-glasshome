@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 76
+    .line 77
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$2;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "state"
 
     .prologue
-    .line 79
+    .line 80
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$2;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     const/4 v0, 0x2
@@ -55,16 +55,16 @@
     #setter for: Lcom/google/glass/home/timeline/active/SettingsCoverView;->isTethered:Z
     invoke-static {v1, v0}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$102(Lcom/google/glass/home/timeline/active/SettingsCoverView;Z)Z
 
-    .line 80
+    .line 81
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$2;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     #calls: Lcom/google/glass/home/timeline/active/SettingsCoverView;->updateConnectivity()V
     invoke-static {v0}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$000(Lcom/google/glass/home/timeline/active/SettingsCoverView;)V
 
-    .line 81
+    .line 82
     return-void
 
-    .line 79
+    .line 80
     :cond_0
     const/4 v0, 0x0
 

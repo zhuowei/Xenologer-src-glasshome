@@ -69,7 +69,7 @@
 
     const/4 v2, 0x0
 
-    .line 9716
+    .line 9869
     new-instance v0, Lcom/google/glass/companion/Proto$Command$CommandType;
 
     const-string v1, "UNPAIR"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->UNPAIR:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9724
+    .line 9877
     new-instance v0, Lcom/google/glass/companion/Proto$Command$CommandType;
 
     const-string v1, "START_DEBUG"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->START_DEBUG:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9728
+    .line 9881
     new-instance v0, Lcom/google/glass/companion/Proto$Command$CommandType;
 
     const-string v1, "STOP_DEBUG"
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->STOP_DEBUG:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9707
+    .line 9860
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/companion/Proto$Command$CommandType;
@@ -115,7 +115,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->$VALUES:[Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9769
+    .line 9922
     new-instance v0, Lcom/google/glass/companion/Proto$Command$CommandType$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$Command$CommandType$1;-><init>()V
@@ -138,13 +138,13 @@
     .end annotation
 
     .prologue
-    .line 9778
+    .line 9931
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 9779
+    .line 9932
     iput p4, p0, Lcom/google/glass/companion/Proto$Command$CommandType;->value:I
 
-    .line 9780
+    .line 9933
     return-void
 .end method
 
@@ -161,7 +161,7 @@
     .end annotation
 
     .prologue
-    .line 9766
+    .line 9919
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -172,34 +172,34 @@
     .parameter "value"
 
     .prologue
-    .line 9756
+    .line 9909
     packed-switch p0, :pswitch_data_0
 
-    .line 9760
+    .line 9913
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 9757
+    .line 9910
     :pswitch_0
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->UNPAIR:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     goto :goto_0
 
-    .line 9758
+    .line 9911
     :pswitch_1
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->START_DEBUG:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     goto :goto_0
 
-    .line 9759
+    .line 9912
     :pswitch_2
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->STOP_DEBUG:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     goto :goto_0
 
-    .line 9756
+    .line 9909
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -213,7 +213,7 @@
     .parameter "name"
 
     .prologue
-    .line 9707
+    .line 9860
     const-class v0, Lcom/google/glass/companion/Proto$Command$CommandType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -229,7 +229,7 @@
     .locals 1
 
     .prologue
-    .line 9707
+    .line 9860
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->$VALUES:[Lcom/google/glass/companion/Proto$Command$CommandType;
 
     invoke-virtual {v0}, [Lcom/google/glass/companion/Proto$Command$CommandType;->clone()Ljava/lang/Object;
@@ -247,7 +247,7 @@
     .locals 1
 
     .prologue
-    .line 9753
+    .line 9906
     iget v0, p0, Lcom/google/glass/companion/Proto$Command$CommandType;->value:I
 
     return v0

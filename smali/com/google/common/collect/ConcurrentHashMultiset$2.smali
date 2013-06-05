@@ -46,13 +46,13 @@
     .parameter
 
     .prologue
-    .line 485
+    .line 511
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$2;,"Lcom/google/common/collect/ConcurrentHashMultiset.2;"
     iput-object p1, p0, Lcom/google/common/collect/ConcurrentHashMultiset$2;->this$0:Lcom/google/common/collect/ConcurrentHashMultiset;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    .line 486
+    .line 512
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$2;->this$0:Lcom/google/common/collect/ConcurrentHashMultiset;
 
     #getter for: Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
@@ -86,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 490
+    .line 517
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$2;,"Lcom/google/common/collect/ConcurrentHashMultiset.2;"
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/ConcurrentHashMultiset$2;->mapEntries:Ljava/util/Iterator;
@@ -97,18 +97,18 @@
 
     if-nez v2, :cond_1
 
-    .line 491
+    .line 518
     invoke-virtual {p0}, Lcom/google/common/collect/ConcurrentHashMultiset$2;->endOfData()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 496
+    .line 523
     :goto_0
     return-object v2
 
-    .line 493
+    .line 520
     :cond_1
     iget-object v2, p0, Lcom/google/common/collect/ConcurrentHashMultiset$2;->mapEntries:Ljava/util/Iterator;
 
@@ -118,7 +118,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 494
+    .line 521
     .local v1, mapEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TE;Ljava/util/concurrent/atomic/AtomicInteger;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -130,11 +130,11 @@
 
     move-result v0
 
-    .line 495
+    .line 522
     .local v0, count:I
     if-eqz v0, :cond_0
 
-    .line 496
+    .line 523
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 485
+    .line 511
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$2;,"Lcom/google/common/collect/ConcurrentHashMultiset.2;"
     invoke-virtual {p0}, Lcom/google/common/collect/ConcurrentHashMultiset$2;->computeNext()Lcom/google/common/collect/Multiset$Entry;
 

@@ -31,7 +31,7 @@
 
 
 # virtual methods
-.method public getRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
     .locals 2
     .parameter "context"
 

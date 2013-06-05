@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 190
+    .line 199
     invoke-direct {p0}, Lcom/google/common/base/Ticker;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
     .locals 2
 
     .prologue
-    .line 193
+    .line 203
     const-wide/16 v0, 0x0
 
     return-wide v0

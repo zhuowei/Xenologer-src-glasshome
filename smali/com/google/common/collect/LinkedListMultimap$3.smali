@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 846
+    .line 840
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$3;,"Lcom/google/common/collect/LinkedListMultimap.3;"
     iput-object p1, p0, Lcom/google/common/collect/LinkedListMultimap$3;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 852
+    .line 847
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$3;,"Lcom/google/common/collect/LinkedListMultimap.3;"
     new-instance v0, Lcom/google/common/collect/LinkedListMultimap$NodeIterator;
 
@@ -62,11 +62,11 @@
 
     invoke-direct {v0, v1, p1}, Lcom/google/common/collect/LinkedListMultimap$NodeIterator;-><init>(Lcom/google/common/collect/LinkedListMultimap;I)V
 
-    .line 853
+    .line 848
     .local v0, nodes:Lcom/google/common/collect/LinkedListMultimap$NodeIterator;,"Lcom/google/common/collect/LinkedListMultimap<TK;TV;>.NodeIterator;"
     new-instance v1, Lcom/google/common/collect/LinkedListMultimap$3$1;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/LinkedListMultimap$3$1;-><init>(Lcom/google/common/collect/LinkedListMultimap$3;Lcom/google/common/collect/LinkedListMultimap$NodeIterator;)V
+    invoke-direct {v1, p0, v0, v0}, Lcom/google/common/collect/LinkedListMultimap$3$1;-><init>(Lcom/google/common/collect/LinkedListMultimap$3;Ljava/util/ListIterator;Lcom/google/common/collect/LinkedListMultimap$NodeIterator;)V
 
     return-object v1
 .end method
@@ -75,16 +75,12 @@
     .locals 1
 
     .prologue
-    .line 848
+    .line 842
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$3;,"Lcom/google/common/collect/LinkedListMultimap.3;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$3;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
-    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyCount:Lcom/google/common/collect/Multiset;
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/Multiset;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/common/collect/Multiset;->size()I
+    #getter for: Lcom/google/common/collect/LinkedListMultimap;->size:I
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$1000(Lcom/google/common/collect/LinkedListMultimap;)I
 
     move-result v0
 

@@ -3,12 +3,12 @@
 .source "RecognizerController.java"
 
 # interfaces
-.implements Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;
+.implements Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/voice/network/RecognizerController;->getSpeechException(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;
+    value = Lcom/google/glass/voice/network/RecognizerController;->attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,25 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/voice/network/RecognizerController;
 
-.field final synthetic val$ex:Ljava/lang/Exception;
-
-.field final synthetic val$type:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;Ljava/lang/Exception;)V
+.method constructor <init>(Lcom/google/glass/voice/network/RecognizerController;)V
     .locals 0
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 422
+    .line 336
     iput-object p1, p0, Lcom/google/glass/voice/network/RecognizerController$3;->this$0:Lcom/google/glass/voice/network/RecognizerController;
-
-    iput-object p2, p0, Lcom/google/glass/voice/network/RecognizerController$3;->val$type:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-
-    iput-object p3, p0, Lcom/google/glass/voice/network/RecognizerController$3;->val$ex:Ljava/lang/Exception;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,22 +37,21 @@
 
 
 # virtual methods
-.method public getException()Ljava/lang/Exception;
+.method public getSpeechLevel()I
     .locals 1
 
     .prologue
-    .line 430
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$3;->val$ex:Ljava/lang/Exception;
+    .line 339
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$3;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
-    return-object v0
-.end method
+    #getter for: Lcom/google/glass/voice/network/RecognizerController;->speechLevelSource:Lcom/google/android/speech/SpeechLevelSource;
+    invoke-static {v0}, Lcom/google/glass/voice/network/RecognizerController;->access$300(Lcom/google/glass/voice/network/RecognizerController;)Lcom/google/android/speech/SpeechLevelSource;
 
-.method public getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-    .locals 1
+    move-result-object v0
 
-    .prologue
-    .line 425
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$3;->val$type:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    invoke-virtual {v0}, Lcom/google/android/speech/SpeechLevelSource;->getSpeechLevel()I
 
-    return-object v0
+    move-result v0
+
+    return v0
 .end method

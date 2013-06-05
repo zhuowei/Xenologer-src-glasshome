@@ -53,18 +53,18 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 635
     .local p0, this:Lcom/google/common/collect/Lists$Partition;,"Lcom/google/common/collect/Lists$Partition<TT;>;"
     .local p1, list:Ljava/util/List;,"Ljava/util/List<TT;>;"
     invoke-direct {p0}, Ljava/util/AbstractList;-><init>()V
 
-    .line 496
+    .line 636
     iput-object p1, p0, Lcom/google/common/collect/Lists$Partition;->list:Ljava/util/List;
 
-    .line 497
+    .line 637
     iput p2, p0, Lcom/google/common/collect/Lists$Partition;->size:I
 
-    .line 498
+    .line 638
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .parameter "x0"
 
     .prologue
-    .line 491
+    .line 631
     .local p0, this:Lcom/google/common/collect/Lists$Partition;,"Lcom/google/common/collect/Lists$Partition<TT;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Lists$Partition;->get(I)Ljava/util/List;
 
@@ -96,22 +96,22 @@
     .end annotation
 
     .prologue
-    .line 501
+    .line 642
     .local p0, this:Lcom/google/common/collect/Lists$Partition;,"Lcom/google/common/collect/Lists$Partition<TT;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Lists$Partition;->size()I
 
     move-result v1
 
-    .line 502
+    .line 643
     .local v1, listSize:I
     invoke-static {p1, v1}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 503
+    .line 644
     iget v3, p0, Lcom/google/common/collect/Lists$Partition;->size:I
 
     mul-int v2, p1, v3
 
-    .line 504
+    .line 645
     .local v2, start:I
     iget v3, p0, Lcom/google/common/collect/Lists$Partition;->size:I
 
@@ -127,7 +127,7 @@
 
     move-result v0
 
-    .line 505
+    .line 646
     .local v0, end:I
     iget-object v3, p0, Lcom/google/common/collect/Lists$Partition;->list:Ljava/util/List;
 
@@ -142,7 +142,7 @@
     .locals 1
 
     .prologue
-    .line 518
+    .line 661
     .local p0, this:Lcom/google/common/collect/Lists$Partition;,"Lcom/google/common/collect/Lists$Partition<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Lists$Partition;->list:Ljava/util/List;
 
@@ -157,7 +157,7 @@
     .locals 3
 
     .prologue
-    .line 510
+    .line 652
     .local p0, this:Lcom/google/common/collect/Lists$Partition;,"Lcom/google/common/collect/Lists$Partition<TT;>;"
     iget-object v1, p0, Lcom/google/common/collect/Lists$Partition;->list:Ljava/util/List;
 
@@ -169,7 +169,7 @@
 
     div-int v0, v1, v2
 
-    .line 511
+    .line 653
     .local v0, result:I
     iget v1, p0, Lcom/google/common/collect/Lists$Partition;->size:I
 
@@ -183,10 +183,10 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 512
+    .line 654
     add-int/lit8 v0, v0, 0x1
 
-    .line 514
+    .line 656
     :cond_0
     return v0
 .end method

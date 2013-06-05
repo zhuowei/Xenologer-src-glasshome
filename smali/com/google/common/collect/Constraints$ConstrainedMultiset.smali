@@ -60,13 +60,13 @@
     .end annotation
 
     .prologue
-    .line 342
+    .line 376
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     .local p1, delegate:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p2, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMultiset;-><init>()V
 
-    .line 343
+    .line 377
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
-    .line 344
+    .line 378
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -84,7 +84,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->constraint:Lcom/google/common/collect/Constraint;
 
-    .line 345
+    .line 379
     return-void
 .end method
 
@@ -101,14 +101,14 @@
     .end annotation
 
     .prologue
-    .line 356
+    .line 398
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 357
+    .line 399
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
     invoke-interface {v0, p1, p2}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;I)I
@@ -128,7 +128,7 @@
     .end annotation
 
     .prologue
-    .line 350
+    .line 388
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->standardAdd(Ljava/lang/Object;)Z
@@ -150,7 +150,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 393
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     .local p1, elements:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate:Lcom/google/common/collect/Multiset;
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 347
+    .line 383
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
@@ -191,7 +191,7 @@
     .locals 1
 
     .prologue
-    .line 337
+    .line 372
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -204,7 +204,7 @@
     .locals 1
 
     .prologue
-    .line 337
+    .line 372
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -224,14 +224,14 @@
     .end annotation
 
     .prologue
-    .line 360
+    .line 404
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 361
+    .line 405
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
     invoke-interface {v0, p1, p2}, Lcom/google/common/collect/Multiset;->setCount(Ljava/lang/Object;I)I
@@ -253,14 +253,14 @@
     .end annotation
 
     .prologue
-    .line 364
+    .line 410
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedMultiset;,"Lcom/google/common/collect/Constraints$ConstrainedMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 365
+    .line 411
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/google/common/collect/Multiset;->setCount(Ljava/lang/Object;II)Z

@@ -32,7 +32,10 @@
     .end annotation
 .end method
 
-.method public abstract put(Ljava/lang/Object;Lcom/google/common/hash/Funnel;ILcom/google/common/hash/BloomFilterStrategies$BitArray;)V
+.method public abstract ordinal()I
+.end method
+
+.method public abstract put(Ljava/lang/Object;Lcom/google/common/hash/Funnel;ILcom/google/common/hash/BloomFilterStrategies$BitArray;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -41,7 +44,7 @@
             "Lcom/google/common/hash/Funnel",
             "<-TT;>;I",
             "Lcom/google/common/hash/BloomFilterStrategies$BitArray;",
-            ")V"
+            ")Z"
         }
     .end annotation
 .end method

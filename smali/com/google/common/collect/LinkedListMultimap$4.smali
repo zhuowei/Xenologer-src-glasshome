@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 898
+    .line 867
     iput-object p1, p0, Lcom/google/common/collect/LinkedListMultimap$4;->val$node:Lcom/google/common/collect/LinkedListMultimap$Node;
 
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMapEntry;-><init>()V
@@ -50,7 +50,7 @@
     .end annotation
 
     .prologue
-    .line 900
+    .line 870
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$4;->val$node:Lcom/google/common/collect/LinkedListMultimap$Node;
 
     iget-object v0, v0, Lcom/google/common/collect/LinkedListMultimap$Node;->key:Ljava/lang/Object;
@@ -67,7 +67,7 @@
     .end annotation
 
     .prologue
-    .line 903
+    .line 875
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$4;->val$node:Lcom/google/common/collect/LinkedListMultimap$Node;
 
     iget-object v0, v0, Lcom/google/common/collect/LinkedListMultimap$Node;->value:Ljava/lang/Object;
@@ -85,18 +85,18 @@
     .end annotation
 
     .prologue
-    .line 906
+    .line 880
     .local p1, value:Ljava/lang/Object;,"TV;"
     iget-object v1, p0, Lcom/google/common/collect/LinkedListMultimap$4;->val$node:Lcom/google/common/collect/LinkedListMultimap$Node;
 
     iget-object v0, v1, Lcom/google/common/collect/LinkedListMultimap$Node;->value:Ljava/lang/Object;
 
-    .line 907
+    .line 881
     .local v0, oldValue:Ljava/lang/Object;,"TV;"
     iget-object v1, p0, Lcom/google/common/collect/LinkedListMultimap$4;->val$node:Lcom/google/common/collect/LinkedListMultimap$Node;
 
     iput-object p1, v1, Lcom/google/common/collect/LinkedListMultimap$Node;->value:Ljava/lang/Object;
 
-    .line 908
+    .line 882
     return-object v0
 .end method

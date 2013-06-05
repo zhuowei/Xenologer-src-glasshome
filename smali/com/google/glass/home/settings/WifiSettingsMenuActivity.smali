@@ -2,13 +2,8 @@
 .super Lcom/google/glass/app/GlassActivity;
 .source "WifiSettingsMenuActivity.java"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/glass/home/settings/WifiSettingsMenuActivity$WifiSettingsCompanionListener;
-    }
-.end annotation
+# interfaces
+.implements Lcom/google/glass/companion/CompanionStateChangeListener;
 
 
 # static fields
@@ -26,13 +21,9 @@
 
 .field private final barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
-.field private final companionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
-
-.field private companionService:Lcom/google/glass/home/companion/CompanionService;
-
-.field private final companionServiceConnection:Landroid/content/ServiceConnection;
-
 .field private currentConnectionDialog:Lcom/google/glass/widget/MessageDialog;
+
+.field private isCompanionConnected:Z
 
 .field private scannedNetworks:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -57,10 +48,10 @@
     .locals 2
 
     .prologue
-    .line 61
+    .line 54
     invoke-direct {p0}, Lcom/google/glass/app/GlassActivity;-><init>()V
 
-    .line 82
+    .line 76
     invoke-static {}, Lcom/google/glass/barcode/BarcodeScanner;->newBuilder()Lcom/google/glass/barcode/BarcodeScanner$Builder;
 
     move-result-object v0
@@ -75,23 +66,11 @@
 
     iput-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
-    .line 111
-    new-instance v0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$WifiSettingsCompanionListener;
+    .line 102
+    const/4 v0, 0x0
 
-    const/4 v1, 0x0
+    iput-boolean v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->isCompanionConnected:Z
 
-    invoke-direct {v0, p0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$WifiSettingsCompanionListener;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;)V
-
-    iput-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
-
-    .line 114
-    new-instance v0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;
-
-    invoke-direct {v0, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
-
-    iput-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionServiceConnection:Landroid/content/ServiceConnection;
-
-    .line 127
     return-void
 .end method
 
@@ -100,7 +79,7 @@
     .parameter "x0"
 
     .prologue
-    .line 61
+    .line 54
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -114,7 +93,7 @@
     .parameter "x1"
 
     .prologue
-    .line 61
+    .line 54
     invoke-direct {p0, p1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->handleBarcode(Lcom/google/android/libraries/barhopper/Barcode;)Z
 
     move-result v0
@@ -122,88 +101,63 @@
     return v0
 .end method
 
-.method static synthetic access$1000(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
+.method static synthetic access$1000(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Landroid/view/ViewGroup;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 61
-    invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1100(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1200(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Landroid/view/View;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getContentView()Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1300(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Landroid/view/ViewGroup;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 61
+    .line 54
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     return-object v0
 .end method
 
-.method static synthetic access$302(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;Lcom/google/glass/home/companion/CompanionService;)Lcom/google/glass/home/companion/CompanionService;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 61
-    iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    return-object p1
-.end method
-
-.method static synthetic access$400(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->addCompanionListener()V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+.method static synthetic access$200(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+    .line 54
+    invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 54
+    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
+
+    return-void
+.end method
+
+.method static synthetic access$400(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 54
+    invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 54
+    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->forgetCurrentNetwork()V
+
+    return-void
 .end method
 
 .method static synthetic access$600(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
@@ -211,7 +165,7 @@
     .parameter "x0"
 
     .prologue
-    .line 61
+    .line 54
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -219,23 +173,12 @@
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
-
-    return-void
-.end method
-
-.method static synthetic access$800(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
+.method static synthetic access$700(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 61
+    .line 54
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -243,30 +186,28 @@
     return-object v0
 .end method
 
-.method static synthetic access$900(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
-    .locals 0
+.method static synthetic access$800(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+    .locals 1
     .parameter "x0"
 
     .prologue
-    .line 61
-    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->forgetCurrentNetwork()V
+    .line 54
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
-    return-void
+    return-object v0
 .end method
 
-.method private addCompanionListener()V
-    .locals 2
+.method static synthetic access$900(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Landroid/view/View;
+    .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 324
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionService:Lcom/google/glass/home/companion/CompanionService;
+    .line 54
+    invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getContentView()Landroid/view/View;
 
-    iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/companion/CompanionService;->addCompanionListener(Lcom/google/glass/home/companion/CompanionService$CompanionListener;)V
-
-    .line 325
-    return-void
+    return-object v0
 .end method
 
 .method private animate(Landroid/view/View;ZLandroid/animation/Animator$AnimatorListener;)V
@@ -276,7 +217,7 @@
     .parameter "listener"
 
     .prologue
-    .line 547
+    .line 482
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
@@ -328,35 +269,14 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 553
+    .line 488
     return-void
 
-    .line 547
+    .line 482
     :cond_0
     const/4 v0, 0x1
 
     goto :goto_0
-.end method
-
-.method private bindCompanionService()V
-    .locals 3
-
-    .prologue
-    .line 319
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/google/glass/home/companion/CompanionService;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionServiceConnection:Landroid/content/ServiceConnection;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    .line 321
-    return-void
 .end method
 
 .method private connectToConfiguredNetwork(I)V
@@ -366,15 +286,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 342
+    .line 277
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->WIFI_SCAN_RESULT_TAPPED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 343
+    .line 278
     invoke-direct {p0, p1, v1, v1, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->connectToNetwork(ILjava/lang/String;Lcom/google/glass/util/WifiHelper$Encryption;Ljava/lang/String;)V
 
-    .line 344
+    .line 279
     return-void
 .end method
 
@@ -388,7 +308,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 352
+    .line 287
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -423,7 +343,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
+    .line 289
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->currentConnectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     if-eqz v2, :cond_0
@@ -436,12 +356,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 355
+    .line 290
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->currentConnectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v2}, Lcom/google/glass/widget/MessageDialog;->dismiss()V
 
-    .line 357
+    .line 292
     :cond_0
     new-instance v2, Lcom/google/glass/widget/MessageDialog$Builder;
 
@@ -469,9 +389,9 @@
 
     move-result-object v2
 
-    new-instance v3, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;
+    new-instance v3, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;
 
-    invoke-direct {v3, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    invoke-direct {v3, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
     invoke-virtual {v2, v3}, Lcom/google/glass/widget/MessageDialog$Builder;->setListener(Lcom/google/glass/widget/MessageDialog$Listener;)Lcom/google/glass/widget/MessageDialog$Builder;
 
@@ -481,26 +401,26 @@
 
     move-result-object v1
 
-    .line 376
+    .line 311
     .local v1, connectionDialog:Lcom/google/glass/widget/MessageDialog;
     iput-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->currentConnectionDialog:Lcom/google/glass/widget/MessageDialog;
 
-    .line 377
+    .line 312
     invoke-virtual {v1}, Lcom/google/glass/widget/MessageDialog;->show()V
 
-    .line 378
+    .line 313
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getContentView()Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setKeepScreenOn(Z)V
 
-    .line 380
-    new-instance v0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$5;
+    .line 315
+    new-instance v0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$5;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;Lcom/google/glass/widget/MessageDialog;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;Lcom/google/glass/widget/MessageDialog;)V
 
-    .line 412
+    .line 347
     .local v0, callback:Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;
     if-nez p2, :cond_1
 
@@ -508,16 +428,16 @@
 
     if-nez p4, :cond_1
 
-    .line 413
+    .line 348
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiHelper:Lcom/google/glass/util/WifiHelper;
 
     invoke-virtual {v2, p1, v0}, Lcom/google/glass/util/WifiHelper;->connectToNetworkId(ILcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
-    .line 417
+    .line 352
     :goto_0
     return-void
 
-    .line 415
+    .line 350
     :cond_1
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiHelper:Lcom/google/glass/util/WifiHelper;
 
@@ -531,12 +451,12 @@
     .parameter "scanResult"
 
     .prologue
-    .line 347
+    .line 282
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->WIFI_SCAN_RESULT_TAPPED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 348
+    .line 283
     const/4 v0, -0x1
 
     iget-object v1, p1, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
@@ -547,7 +467,7 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->connectToNetwork(ILjava/lang/String;Lcom/google/glass/util/WifiHelper$Encryption;Ljava/lang/String;)V
 
-    .line 349
+    .line 284
     return-void
 .end method
 
@@ -555,7 +475,7 @@
     .locals 4
 
     .prologue
-    .line 335
+    .line 270
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;
@@ -566,18 +486,18 @@
 
     move-result v0
 
-    .line 336
+    .line 271
     .local v0, currentId:I
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1, v0}, Landroid/net/wifi/WifiManager;->removeNetwork(I)Z
 
-    .line 337
+    .line 272
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->saveConfiguration()Z
 
-    .line 338
+    .line 273
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -602,7 +522,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 339
+    .line 274
     return-void
 .end method
 
@@ -611,32 +531,32 @@
     .parameter "barcode"
 
     .prologue
-    .line 632
+    .line 567
     iget-object v0, p0, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
     iget v0, v0, Lcom/google/android/libraries/barhopper/Barcode$WiFi;->encryptionType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 639
+    .line 574
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->NONE:Lcom/google/glass/util/WifiHelper$Encryption;
 
     :goto_0
     return-object v0
 
-    .line 634
+    .line 569
     :pswitch_0
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WEP:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_0
 
-    .line 636
+    .line 571
     :pswitch_1
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WPA:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_0
 
-    .line 632
+    .line 567
     :pswitch_data_0
     .packed-switch 0x2
         :pswitch_1
@@ -648,7 +568,7 @@
     .locals 1
 
     .prologue
-    .line 543
+    .line 478
     const v0, 0x10a0006
 
     invoke-static {p0, v0}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
@@ -662,7 +582,7 @@
     .locals 2
 
     .prologue
-    .line 420
+    .line 355
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
@@ -671,10 +591,10 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SettingsHelper;->goToSettings(I)V
 
-    .line 423
+    .line 358
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->finish()V
 
-    .line 424
+    .line 359
     return-void
 .end method
 
@@ -685,7 +605,7 @@
     .prologue
     const/16 v2, 0x9
 
-    .line 611
+    .line 546
     iget v1, p1, Lcom/google/android/libraries/barhopper/Barcode;->format:I
 
     if-ne v2, v1, :cond_0
@@ -694,7 +614,7 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 612
+    .line 547
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
@@ -720,14 +640,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 613
+    .line 548
     const/4 v1, 0x0
 
-    .line 628
+    .line 563
     :goto_0
     return v1
 
-    .line 616
+    .line 551
     :cond_1
     new-instance v0, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
 
@@ -745,23 +665,23 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;-><init>(Ljava/lang/String;Lcom/google/glass/util/WifiHelper$Encryption;Ljava/lang/String;)V
 
-    .line 620
+    .line 555
     .local v0, wifiSetupInfo:Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->WIFI_BARCODE_SCANNED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 622
+    .line 557
     invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->hideBarcodeViewfinder()V
 
-    .line 623
+    .line 558
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
 
-    .line 626
+    .line 561
     const/4 v1, -0x1
 
     iget-object v2, v0, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;->ssid:Ljava/lang/String;
@@ -772,7 +692,7 @@
 
     invoke-direct {p0, v1, v2, v3, v4}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->connectToNetwork(ILjava/lang/String;Lcom/google/glass/util/WifiHelper$Encryption;Ljava/lang/String;)V
 
-    .line 628
+    .line 563
     const/4 v1, 0x1
 
     goto :goto_0
@@ -784,35 +704,35 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 570
+    .line 505
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v0, v2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
 
-    .line 571
+    .line 506
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v2, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->animate(Landroid/view/View;ZLandroid/animation/Animator$AnimatorListener;)V
 
-    .line 573
+    .line 508
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 574
+    .line 509
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
-    new-instance v1, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$7;
+    new-instance v1, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;
 
-    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$7;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
     invoke-direct {p0, v0, v2, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->animate(Landroid/view/View;ZLandroid/animation/Animator$AnimatorListener;)V
 
-    .line 580
+    .line 515
     return-void
 .end method
 
@@ -833,14 +753,14 @@
     .local p1, scanResults:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     const/16 v11, 0x22
 
-    .line 485
+    .line 420
     iget-object v8, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v8}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
 
     move-result-object v2
 
-    .line 488
+    .line 423
     .local v2, configuredNetworks:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     new-instance v8, Ljava/util/LinkedList;
 
@@ -848,12 +768,12 @@
 
     iput-object v8, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->scannedNetworks:Ljava/util/List;
 
-    .line 489
+    .line 424
     sget-object v8, Lcom/google/glass/util/WifiHelper;->SCAN_RESULT_COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {p1, v8}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 492
+    .line 427
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -871,7 +791,7 @@
 
     check-cast v7, Landroid/net/wifi/ScanResult;
 
-    .line 493
+    .line 428
     .local v7, scanResult:Landroid/net/wifi/ScanResult;
     iget-object v8, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->scannedNetworks:Ljava/util/List;
 
@@ -893,7 +813,7 @@
 
     check-cast v4, Landroid/net/wifi/ScanResult;
 
-    .line 494
+    .line 429
     .local v4, existingResult:Landroid/net/wifi/ScanResult;
     iget-object v8, v4, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
@@ -905,7 +825,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 495
+    .line 430
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v8
@@ -934,7 +854,7 @@
 
     goto :goto_0
 
-    .line 501
+    .line 436
     .end local v4           #existingResult:Landroid/net/wifi/ScanResult;
     :cond_1
     iget-object v8, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
@@ -943,7 +863,7 @@
 
     move-result-object v3
 
-    .line 502
+    .line 437
     .local v3, current:Landroid/net/wifi/WifiInfo;
     if-eqz v3, :cond_2
 
@@ -969,7 +889,7 @@
 
     if-eqz v8, :cond_2
 
-    .line 504
+    .line 439
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v8
@@ -998,7 +918,7 @@
 
     goto :goto_0
 
-    .line 509
+    .line 444
     :cond_2
     iget-object v8, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiHelper:Lcom/google/glass/util/WifiHelper;
 
@@ -1010,10 +930,10 @@
 
     if-eq v8, v9, :cond_5
 
-    .line 510
+    .line 445
     const/4 v1, 0x0
 
-    .line 511
+    .line 446
     .local v1, configuredNetwork:Z
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -1033,7 +953,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    .line 512
+    .line 447
     .local v0, config:Landroid/net/wifi/WifiConfiguration;
     iget-object v8, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
@@ -1065,7 +985,7 @@
 
     if-eqz v8, :cond_3
 
-    .line 513
+    .line 448
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v8
@@ -1092,17 +1012,17 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 514
+    .line 449
     const/4 v1, 0x1
 
     goto :goto_1
 
-    .line 518
+    .line 453
     .end local v0           #config:Landroid/net/wifi/WifiConfiguration;
     :cond_4
     if-nez v1, :cond_5
 
-    .line 519
+    .line 454
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v8
@@ -1131,7 +1051,7 @@
 
     goto/16 :goto_0
 
-    .line 524
+    .line 459
     .end local v1           #configuredNetwork:Z
     :cond_5
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
@@ -1172,14 +1092,14 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 525
+    .line 460
     iget-object v8, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->scannedNetworks:Ljava/util/List;
 
     invoke-interface {v8, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_0
 
-    .line 527
+    .line 462
     .end local v3           #current:Landroid/net/wifi/WifiInfo;
     .end local v6           #i$:Ljava/util/Iterator;
     .end local v7           #scanResult:Landroid/net/wifi/ScanResult;
@@ -1193,16 +1113,16 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 556
+    .line 491
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
-    new-instance v1, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;
+    new-instance v1, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$5;
 
-    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$5;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
     invoke-direct {p0, v0, v2, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->animate(Landroid/view/View;ZLandroid/animation/Animator$AnimatorListener;)V
 
-    .line 563
+    .line 498
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
@@ -1215,26 +1135,26 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 564
+    .line 499
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 565
+    .line 500
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v2, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->animate(Landroid/view/View;ZLandroid/animation/Animator$AnimatorListener;)V
 
-    .line 566
+    .line 501
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-virtual {v0}, Lcom/google/glass/barcode/BarcodeScanner;->startScanning()V
 
-    .line 567
+    .line 502
     return-void
 .end method
 
@@ -1242,7 +1162,7 @@
     .locals 3
 
     .prologue
-    .line 531
+    .line 466
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -1255,67 +1175,41 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 533
+    .line 468
     .local v0, result:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     if-nez v0, :cond_0
 
-    .line 534
+    .line 469
     new-instance v0, Ljava/util/ArrayList;
 
     .end local v0           #result:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 536
+    .line 471
     .restart local v0       #result:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     :cond_0
     invoke-direct {p0, v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->setWifiScanResults(Ljava/util/List;)V
 
-    .line 537
+    .line 472
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->scannedNetworks:Ljava/util/List;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setNetworks(Ljava/util/List;)V
 
-    .line 538
+    .line 473
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->show()V
 
-    .line 539
+    .line 474
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setSelection(I)V
 
-    .line 540
-    return-void
-.end method
-
-.method private unbindCompanionService()V
-    .locals 2
-
-    .prologue
-    .line 328
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    if-eqz v0, :cond_0
-
-    .line 329
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/companion/CompanionService;->removeCompanionListener(Lcom/google/glass/home/companion/CompanionService$CompanionListener;)V
-
-    .line 331
-    :cond_0
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->companionServiceConnection:Landroid/content/ServiceConnection;
-
-    invoke-virtual {p0, v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->unbindService(Landroid/content/ServiceConnection;)V
-
-    .line 332
+    .line 475
     return-void
 .end method
 
@@ -1327,7 +1221,7 @@
     .end annotation
 
     .prologue
-    .line 188
+    .line 139
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
@@ -1355,7 +1249,7 @@
 
     const/4 v3, 0x0
 
-    .line 447
+    .line 382
     iget-object v4, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getVisibility()I
@@ -1364,7 +1258,7 @@
 
     if-nez v4, :cond_0
 
-    .line 448
+    .line 383
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v4
@@ -1373,11 +1267,11 @@
 
     invoke-virtual {v4, v5}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 481
+    .line 416
     :goto_0
     return v3
 
-    .line 452
+    .line 387
     :cond_0
     iget-object v4, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
@@ -1387,7 +1281,7 @@
 
     if-nez v4, :cond_6
 
-    .line 454
+    .line 389
     iget-object v4, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v4}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->getSelectedItem()Ljava/lang/Object;
@@ -1398,22 +1292,12 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 455
-    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/glass/home/HomeApplication;->getCompanionState()Lcom/google/glass/home/companion/CompanionState;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/glass/home/companion/CompanionState;->isConnected()Z
-
-    move-result v4
+    .line 390
+    iget-boolean v4, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->isCompanionConnected:Z
 
     if-eqz v4, :cond_1
 
-    .line 456
+    .line 391
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -1422,7 +1306,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 457
+    .line 392
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v4
@@ -1433,11 +1317,11 @@
 
     goto :goto_0
 
-    .line 460
+    .line 395
     :cond_1
     invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->showBarcodeViewfinder()V
 
-    .line 477
+    .line 412
     :cond_2
     :goto_1
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -1448,12 +1332,12 @@
 
     invoke-virtual {v3, v4}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 478
+    .line 413
     const/4 v3, 0x1
 
     goto :goto_0
 
-    .line 462
+    .line 397
     :cond_3
     iget-object v3, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
@@ -1463,7 +1347,7 @@
 
     check-cast v2, Landroid/net/wifi/ScanResult;
 
-    .line 463
+    .line 398
     .local v2, result:Landroid/net/wifi/ScanResult;
     iget-object v3, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiHelper:Lcom/google/glass/util/WifiHelper;
 
@@ -1475,7 +1359,7 @@
 
     if-eq v3, v4, :cond_5
 
-    .line 467
+    .line 402
     iget-object v3, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v3}, Landroid/net/wifi/WifiManager;->getConfiguredNetworks()Ljava/util/List;
@@ -1501,7 +1385,7 @@
 
     check-cast v0, Landroid/net/wifi/WifiConfiguration;
 
-    .line 468
+    .line 403
     .local v0, config:Landroid/net/wifi/WifiConfiguration;
     iget-object v3, v0, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
@@ -1533,7 +1417,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 469
+    .line 404
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v3
@@ -1560,14 +1444,14 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
+    .line 405
     iget v3, v0, Landroid/net/wifi/WifiConfiguration;->networkId:I
 
     invoke-direct {p0, v3}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->connectToConfiguredNetwork(I)V
 
     goto :goto_2
 
-    .line 474
+    .line 409
     .end local v0           #config:Landroid/net/wifi/WifiConfiguration;
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_5
@@ -1575,7 +1459,7 @@
 
     goto :goto_1
 
-    .line 481
+    .line 416
     .end local v2           #result:Landroid/net/wifi/ScanResult;
     :cond_6
     invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onConfirm()Z
@@ -1590,10 +1474,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 239
+    .line 190
     invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 241
+    .line 192
     const-string v0, "wifi"
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -1604,14 +1488,14 @@
 
     iput-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiManager:Landroid/net/wifi/WifiManager;
 
-    .line 242
+    .line 193
     new-instance v0, Lcom/google/glass/util/WifiHelper;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/WifiHelper;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiHelper:Lcom/google/glass/util/WifiHelper;
 
-    .line 244
+    .line 195
     sget v0, Lcom/google/glass/home/R$id;->wifi_aps:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->findViewById(I)Landroid/view/View;
@@ -1622,7 +1506,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
-    .line 245
+    .line 196
     return-void
 .end method
 
@@ -1635,17 +1519,17 @@
 
     const/4 v4, 0x1
 
-    .line 160
+    .line 111
     sget v5, Lcom/google/glass/home/R$menu;->wifi_settings_menu:I
 
     invoke-virtual {p1, v5}, Lcom/google/glass/widget/OptionMenu;->inflateFrom(I)V
 
-    .line 162
+    .line 113
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
-    .line 163
+    .line 114
     .local v1, intent:Landroid/content/Intent;
     const-string v5, "join"
 
@@ -1655,7 +1539,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 164
+    .line 115
     sget v5, Lcom/google/glass/home/R$id;->wifi_menu_join:I
 
     invoke-virtual {p1, v5}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
@@ -1664,7 +1548,7 @@
 
     invoke-virtual {v5, v4}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
 
-    .line 165
+    .line 116
     sget v5, Lcom/google/glass/home/R$id;->wifi_menu_switch:I
 
     invoke-virtual {p1, v5}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
@@ -1673,7 +1557,7 @@
 
     invoke-virtual {v5, v3}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
 
-    .line 171
+    .line 122
     :goto_0
     const-string v5, "connectivity"
 
@@ -1683,13 +1567,13 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 173
+    .line 124
     .local v0, connManager:Landroid/net/ConnectivityManager;
     invoke-virtual {v0, v4}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
 
     move-result-object v2
 
-    .line 174
+    .line 125
     .local v2, netInfo:Landroid/net/NetworkInfo;
     sget v5, Lcom/google/glass/home/R$id;->wifi_menu_forget_network:I
 
@@ -1710,10 +1594,10 @@
     :cond_0
     invoke-virtual {v5, v3}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
 
-    .line 177
+    .line 128
     return v4
 
-    .line 167
+    .line 118
     .end local v0           #connManager:Landroid/net/ConnectivityManager;
     .end local v2           #netInfo:Landroid/net/NetworkInfo;
     :cond_1
@@ -1725,7 +1609,7 @@
 
     invoke-virtual {v5, v3}, Lcom/google/glass/widget/OptionMenu$Item;->setVisible(Z)V
 
-    .line 168
+    .line 119
     sget v5, Lcom/google/glass/home/R$id;->wifi_menu_switch:I
 
     invoke-virtual {p1, v5}, Lcom/google/glass/widget/OptionMenu;->findItem(I)Lcom/google/glass/widget/OptionMenu$Item;
@@ -1741,15 +1625,15 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 200
     invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onDestroy()V
 
-    .line 251
+    .line 202
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wifiHelper:Lcom/google/glass/util/WifiHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/util/WifiHelper;->release()V
 
-    .line 252
+    .line 203
     return-void
 .end method
 
@@ -1760,7 +1644,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 428
+    .line 363
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getVisibility()I
@@ -1769,19 +1653,19 @@
 
     if-nez v1, :cond_0
 
-    .line 429
+    .line 364
     invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->hideBarcodeViewfinder()V
 
-    .line 430
+    .line 365
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-virtual {v1}, Lcom/google/glass/barcode/BarcodeScanner;->stopScanning()V
 
-    .line 442
+    .line 377
     :goto_0
     return v0
 
-    .line 434
+    .line 369
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
@@ -1791,12 +1675,12 @@
 
     if-nez v1, :cond_1
 
-    .line 436
+    .line 371
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->hide()V
 
-    .line 437
+    .line 372
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v1
@@ -1805,12 +1689,12 @@
 
     invoke-virtual {v1, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 438
+    .line 373
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->openOptionsMenu()V
 
     goto :goto_0
 
-    .line 442
+    .line 377
     :cond_1
     const/4 v0, 0x0
 
@@ -1823,7 +1707,7 @@
     .parameter "wentDown"
 
     .prologue
-    .line 602
+    .line 537
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->onFingerCountChanged(IZ)Z
@@ -1838,13 +1722,13 @@
     .parameter "intent"
 
     .prologue
-    .line 256
+    .line 207
     invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 257
+    .line 208
     invoke-virtual {p0, p1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->setIntent(Landroid/content/Intent;)V
 
-    .line 258
+    .line 209
     return-void
 .end method
 
@@ -1857,7 +1741,7 @@
 
     const/4 v1, 0x1
 
-    .line 193
+    .line 144
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v3
@@ -1890,15 +1774,15 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 194
+    .line 145
     iput-boolean v1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wasMenuOptionSelected:Z
 
-    .line 195
+    .line 146
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu$Item;->getItemId()I
 
     move-result v0
 
-    .line 196
+    .line 147
     .local v0, selectedId:I
     sget v3, Lcom/google/glass/home/R$id;->wifi_menu_join:I
 
@@ -1908,21 +1792,21 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 198
+    .line 149
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->showScannedNetworks()V
 
-    .line 227
+    .line 178
     :goto_0
     return v1
 
-    .line 200
+    .line 151
     :cond_1
     sget v3, Lcom/google/glass/home/R$id;->wifi_menu_forget_network:I
 
     if-ne v0, v3, :cond_2
 
-    .line 201
+    .line 152
     new-instance v3, Lcom/google/glass/widget/MessageDialog$Builder;
 
     invoke-direct {v3, p0}, Lcom/google/glass/widget/MessageDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -1965,9 +1849,9 @@
 
     move-result-object v2
 
-    new-instance v3, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;
+    new-instance v3, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;
 
-    invoke-direct {v3, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    invoke-direct {v3, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
     invoke-virtual {v2, v3}, Lcom/google/glass/widget/MessageDialog$Builder;->setListener(Lcom/google/glass/widget/MessageDialog$Listener;)Lcom/google/glass/widget/MessageDialog$Builder;
 
@@ -1984,7 +1868,7 @@
     :cond_2
     move v1, v2
 
-    .line 227
+    .line 178
     goto :goto_0
 .end method
 
@@ -1993,15 +1877,15 @@
     .parameter "menu"
 
     .prologue
-    .line 232
+    .line 183
     iget-boolean v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wasMenuOptionSelected:Z
 
     if-nez v0, :cond_0
 
-    .line 233
+    .line 184
     invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
 
-    .line 235
+    .line 186
     :cond_0
     return-void
 .end method
@@ -2010,10 +1894,10 @@
     .locals 2
 
     .prologue
-    .line 262
+    .line 213
     invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onPause()V
 
-    .line 264
+    .line 215
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->currentConnectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     if-eqz v0, :cond_0
@@ -2026,12 +1910,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 265
+    .line 216
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->currentConnectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->dismiss()V
 
-    .line 268
+    .line 219
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->isShowingViewfinder()Z
 
@@ -2039,36 +1923,44 @@
 
     if-eqz v0, :cond_1
 
-    .line 269
+    .line 220
     invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->hideBarcodeViewfinder()V
 
-    .line 272
+    .line 223
     :cond_1
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-virtual {v0}, Lcom/google/glass/barcode/BarcodeScanner;->stopScanning()V
 
-    .line 273
+    .line 224
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-virtual {v0, p0}, Lcom/google/glass/barcode/BarcodeScanner;->unbindCamera(Landroid/content/Context;)V
 
-    .line 275
+    .line 226
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
 
-    .line 276
+    .line 227
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->deactivate()V
 
-    .line 278
-    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->unbindCompanionService()V
+    .line 229
+    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
 
-    .line 279
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcom/google/glass/companion/RemoteCompanionProxy;->removeListener(Lcom/google/glass/companion/CompanionStateChangeListener;)V
+
+    .line 230
     return-void
 .end method
 
@@ -2077,12 +1969,12 @@
     .parameter "menu"
 
     .prologue
-    .line 182
+    .line 133
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wasMenuOptionSelected:Z
 
-    .line 183
+    .line 134
     const/4 v0, 0x1
 
     return v0
@@ -2099,7 +1991,7 @@
     .parameter "numSwipesY"
 
     .prologue
-    .line 585
+    .line 520
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     move v1, p1
@@ -2118,7 +2010,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->onPrepareSwipe(IFFFFII)Z
 
-    .line 587
+    .line 522
     const/4 v0, 0x0
 
     return v0
@@ -2128,27 +2020,27 @@
     .locals 6
 
     .prologue
-    .line 283
+    .line 234
     invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onResume()V
 
-    .line 287
+    .line 238
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-virtual {v2, p0}, Lcom/google/glass/barcode/BarcodeScanner;->bindCamera(Landroid/content/Context;)V
 
-    .line 289
+    .line 240
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     invoke-virtual {v2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->activate()V
 
-    .line 290
+    .line 241
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
 
-    .line 292
+    .line 243
     sget v2, Lcom/google/glass/home/R$id;->qr_scan:I
 
     invoke-virtual {p0, v2}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->findViewById(I)Landroid/view/View;
@@ -2159,7 +2051,7 @@
 
     iput-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
 
-    .line 293
+    .line 244
     iget-object v3, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanner:Lcom/google/glass/barcode/BarcodeScanner;
 
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
@@ -2174,15 +2066,15 @@
 
     invoke-virtual {v3, v2}, Lcom/google/glass/barcode/BarcodeScanner;->setViewfinder(Landroid/view/TextureView;)V
 
-    .line 295
+    .line 246
     iget-boolean v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->wasMenuOptionSelected:Z
 
     if-nez v2, :cond_0
 
-    .line 296
+    .line 247
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->openOptionsMenu()V
 
-    .line 301
+    .line 252
     :goto_0
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getIntent()Landroid/content/Intent;
 
@@ -2194,11 +2086,11 @@
 
     move-result-object v0
 
-    .line 302
+    .line 253
     .local v0, companionSetupString:Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 303
+    .line 254
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v2
@@ -2207,16 +2099,16 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
 
-    .line 304
+    .line 255
     invoke-static {v0}, Lcom/google/glass/util/SetupHelper;->getWifiSetupInfo(Ljava/lang/String;)Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
 
     move-result-object v1
 
-    .line 305
+    .line 256
     .local v1, wifiSetupInfo:Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
     if-nez v1, :cond_1
 
-    .line 306
+    .line 257
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -2225,12 +2117,12 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 316
+    .line 267
     .end local v1           #wifiSetupInfo:Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
     :goto_1
     return-void
 
-    .line 298
+    .line 249
     .end local v0           #companionSetupString:Ljava/lang/String;
     :cond_0
     iget-object v2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
@@ -2241,7 +2133,7 @@
 
     goto :goto_0
 
-    .line 310
+    .line 261
     .restart local v0       #companionSetupString:Ljava/lang/String;
     .restart local v1       #wifiSetupInfo:Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
     :cond_1
@@ -2249,7 +2141,7 @@
 
     invoke-virtual {p0, v2}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 311
+    .line 262
     const/4 v2, -0x1
 
     iget-object v3, v1, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;->ssid:Ljava/lang/String;
@@ -2260,12 +2152,39 @@
 
     invoke-direct {p0, v2, v3, v4, v5}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->connectToNetwork(ILjava/lang/String;Lcom/google/glass/util/WifiHelper$Encryption;Ljava/lang/String;)V
 
-    .line 315
+    .line 266
     .end local v1           #wifiSetupInfo:Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
     :cond_2
-    invoke-direct {p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->bindCompanionService()V
+    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p0}, Lcom/google/glass/companion/RemoteCompanionProxy;->addListener(Lcom/google/glass/companion/CompanionStateChangeListener;)V
 
     goto :goto_1
+.end method
+
+.method public onStateChange(ZII)V
+    .locals 1
+    .parameter "isConnected"
+    .parameter "remoteVersion"
+    .parameter "localVersion"
+
+    .prologue
+    .line 580
+    iput-boolean p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->isCompanionConnected:Z
+
+    .line 581
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+
+    invoke-virtual {v0, p1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->onCompanionConnectionStatusChanged(Z)V
+
+    .line 582
+    return-void
 .end method
 
 .method public onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
@@ -2276,22 +2195,22 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 592
+    .line 527
     invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 597
+    .line 532
     :goto_0
     return v1
 
-    .line 596
+    .line 531
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
     goto :goto_0
 .end method
@@ -2300,7 +2219,7 @@
     .locals 1
 
     .prologue
-    .line 155
+    .line 106
     sget v0, Lcom/google/glass/home/R$layout;->wifi_menu_activity:I
 
     return v0

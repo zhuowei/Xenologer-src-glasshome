@@ -42,15 +42,15 @@
     .parameter "toSplit"
 
     .prologue
-    .line 488
+    .line 516
     invoke-direct {p0}, Lcom/google/common/base/AbstractIterator;-><init>()V
 
-    .line 485
+    .line 513
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    .line 489
+    .line 517
     #getter for: Lcom/google/common/base/Splitter;->trimmer:Lcom/google/common/base/CharMatcher;
     invoke-static {p1}, Lcom/google/common/base/Splitter;->access$200(Lcom/google/common/base/Splitter;)Lcom/google/common/base/CharMatcher;
 
@@ -58,7 +58,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
 
-    .line 490
+    .line 518
     #getter for: Lcom/google/common/base/Splitter;->omitEmptyStrings:Z
     invoke-static {p1}, Lcom/google/common/base/Splitter;->access$300(Lcom/google/common/base/Splitter;)Z
 
@@ -66,7 +66,7 @@
 
     iput-boolean v0, p0, Lcom/google/common/base/Splitter$SplittingIterator;->omitEmptyStrings:Z
 
-    .line 491
+    .line 519
     #getter for: Lcom/google/common/base/Splitter;->limit:I
     invoke-static {p1}, Lcom/google/common/base/Splitter;->access$400(Lcom/google/common/base/Splitter;)I
 
@@ -74,10 +74,10 @@
 
     iput v0, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
 
-    .line 492
+    .line 520
     iput-object p2, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
 
-    .line 493
+    .line 521
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .locals 1
 
     .prologue
-    .line 466
+    .line 495
     invoke-virtual {p0}, Lcom/google/common/base/Splitter$SplittingIterator;->computeNext()Ljava/lang/String;
 
     move-result-object v0
@@ -96,193 +96,234 @@
 .end method
 
 .method protected computeNext()Ljava/lang/String;
-    .locals 7
+    .locals 8
 
     .prologue
-    const/4 v6, -0x1
+    const/4 v7, -0x1
 
-    .line 496
+    .line 531
+    iget v1, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+
+    .line 532
+    .local v1, nextStart:I
     :cond_0
-    iget v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+    :goto_0
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    if-eq v3, v6, :cond_7
+    if-eq v4, v7, :cond_8
 
-    .line 497
-    iget v2, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+    .line 533
+    move v3, v1
 
-    .line 500
-    .local v2, start:I
-    iget v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+    .line 536
+    .local v3, start:I
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    invoke-virtual {p0, v3}, Lcom/google/common/base/Splitter$SplittingIterator;->separatorStart(I)I
+    invoke-virtual {p0, v4}, Lcom/google/common/base/Splitter$SplittingIterator;->separatorStart(I)I
 
-    move-result v1
+    move-result v2
 
-    .line 501
-    .local v1, separatorPosition:I
-    if-ne v1, v6, :cond_1
+    .line 537
+    .local v2, separatorPosition:I
+    if-ne v2, v7, :cond_1
 
-    .line 502
-    iget-object v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
+    .line 538
+    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
 
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    .line 503
+    .line 539
     .local v0, end:I
-    iput v6, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+    iput v7, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    .line 509
-    :goto_0
-    if-ge v2, v0, :cond_2
+    .line 544
+    :goto_1
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    iget-object v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
+    if-ne v4, v1, :cond_2
 
-    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
+    .line 552
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    invoke-interface {v4, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    add-int/lit8 v4, v4, 0x1
 
-    move-result v4
+    iput v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    invoke-virtual {v3, v4}, Lcom/google/common/base/CharMatcher;->matches(C)Z
+    .line 553
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
-    move-result v3
+    iget-object v5, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
 
-    if-eqz v3, :cond_2
+    invoke-interface {v5}, Ljava/lang/CharSequence;->length()I
 
-    .line 510
-    add-int/lit8 v2, v2, 0x1
+    move-result v5
+
+    if-lt v4, v5, :cond_0
+
+    .line 554
+    iput v7, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
     goto :goto_0
 
-    .line 505
+    .line 541
     .end local v0           #end:I
     :cond_1
-    move v0, v1
+    move v0, v2
 
-    .line 506
+    .line 542
     .restart local v0       #end:I
-    invoke-virtual {p0, v1}, Lcom/google/common/base/Splitter$SplittingIterator;->separatorEnd(I)I
-
-    move-result v3
-
-    iput v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
-
-    goto :goto_0
-
-    .line 512
-    :cond_2
-    :goto_1
-    if-le v0, v2, :cond_3
-
-    iget-object v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
-
-    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
-
-    add-int/lit8 v5, v0, -0x1
-
-    invoke-interface {v4, v5}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-virtual {p0, v2}, Lcom/google/common/base/Splitter$SplittingIterator;->separatorEnd(I)I
 
     move-result v4
 
-    invoke-virtual {v3, v4}, Lcom/google/common/base/CharMatcher;->matches(C)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    .line 513
-    add-int/lit8 v0, v0, -0x1
+    iput v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
 
     goto :goto_1
 
-    .line 516
-    :cond_3
-    iget-boolean v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->omitEmptyStrings:Z
-
-    if-eqz v3, :cond_4
-
-    if-eq v2, v0, :cond_0
-
-    .line 520
-    :cond_4
-    iget v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
-
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_5
-
-    .line 524
-    iget-object v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
-
-    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
-
-    move-result v0
-
-    .line 525
-    iput v6, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
-
-    .line 527
+    .line 559
+    :cond_2
     :goto_2
-    if-le v0, v2, :cond_6
+    if-ge v3, v0, :cond_3
 
-    iget-object v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
+    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
 
-    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
+    iget-object v5, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
 
-    add-int/lit8 v5, v0, -0x1
+    invoke-interface {v5, v3}, Ljava/lang/CharSequence;->charAt(I)C
 
-    invoke-interface {v4, v5}, Ljava/lang/CharSequence;->charAt(I)C
+    move-result v5
+
+    invoke-virtual {v4, v5}, Lcom/google/common/base/CharMatcher;->matches(C)Z
 
     move-result v4
 
-    invoke-virtual {v3, v4}, Lcom/google/common/base/CharMatcher;->matches(C)Z
+    if-eqz v4, :cond_3
 
-    move-result v3
-
-    if-eqz v3, :cond_6
-
-    .line 528
-    add-int/lit8 v0, v0, -0x1
+    .line 560
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 531
-    :cond_5
-    iget v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
-
-    add-int/lit8 v3, v3, -0x1
-
-    iput v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
-
-    .line 534
-    :cond_6
-    iget-object v3, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
-
-    invoke-interface {v3, v2, v0}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 536
-    .end local v0           #end:I
-    .end local v1           #separatorPosition:I
-    .end local v2           #start:I
+    .line 562
+    :cond_3
     :goto_3
-    return-object v3
+    if-le v0, v3, :cond_4
 
-    :cond_7
-    invoke-virtual {p0}, Lcom/google/common/base/Splitter$SplittingIterator;->endOfData()Ljava/lang/Object;
+    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
 
-    move-result-object v3
+    iget-object v5, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
 
-    check-cast v3, Ljava/lang/String;
+    add-int/lit8 v6, v0, -0x1
+
+    invoke-interface {v5, v6}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Lcom/google/common/base/CharMatcher;->matches(C)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 563
+    add-int/lit8 v0, v0, -0x1
 
     goto :goto_3
+
+    .line 566
+    :cond_4
+    iget-boolean v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->omitEmptyStrings:Z
+
+    if-eqz v4, :cond_5
+
+    if-ne v3, v0, :cond_5
+
+    .line 568
+    iget v1, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+
+    .line 569
+    goto :goto_0
+
+    .line 572
+    :cond_5
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
+
+    const/4 v5, 0x1
+
+    if-ne v4, v5, :cond_6
+
+    .line 576
+    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
+
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    .line 577
+    iput v7, p0, Lcom/google/common/base/Splitter$SplittingIterator;->offset:I
+
+    .line 579
+    :goto_4
+    if-le v0, v3, :cond_7
+
+    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->trimmer:Lcom/google/common/base/CharMatcher;
+
+    iget-object v5, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
+
+    add-int/lit8 v6, v0, -0x1
+
+    invoke-interface {v5, v6}, Ljava/lang/CharSequence;->charAt(I)C
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Lcom/google/common/base/CharMatcher;->matches(C)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_7
+
+    .line 580
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_4
+
+    .line 583
+    :cond_6
+    iget v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
+
+    add-int/lit8 v4, v4, -0x1
+
+    iput v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->limit:I
+
+    .line 586
+    :cond_7
+    iget-object v4, p0, Lcom/google/common/base/Splitter$SplittingIterator;->toSplit:Ljava/lang/CharSequence;
+
+    invoke-interface {v4, v3, v0}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 588
+    .end local v0           #end:I
+    .end local v2           #separatorPosition:I
+    .end local v3           #start:I
+    :goto_5
+    return-object v4
+
+    :cond_8
+    invoke-virtual {p0}, Lcom/google/common/base/Splitter$SplittingIterator;->endOfData()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    goto :goto_5
 .end method
 
 .method abstract separatorEnd(I)I

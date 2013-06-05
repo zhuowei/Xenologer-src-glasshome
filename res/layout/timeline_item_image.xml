@@ -5,10 +5,7 @@
     <ImageView android:id="@id/image" android:background="@color/background_dark_gray" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
     <ImageView android:id="@id/overlay" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/overlay_medium" />
     <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:background="@*android:color/transparent" android:layout_height="wrap_content" style="@style/AdjustedCardFooter">
-        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="70.0px" android:layout_weight="0.0">
-            <ImageView android:id="@id/icon" android:background="@color/background_dark_gray" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0px" android:src="@drawable/ic_anon_small_background" />
-            <com.google.glass.widget.DynamicSizeTextView android:id="@id/text" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/OverlayText" />
-        </LinearLayout>
+        <com.google.glass.widget.DynamicSizeTextView android:gravity="bottom" android:id="@id/text" android:layout_width="fill_parent" android:layout_height="70.0px" android:layout_weight="0.0" style="@style/OverlayText" />
         <include layout="@layout/timeline_item_footer" />
     </LinearLayout>
 </FrameLayout>

@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 143
+    .line 137
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap$Builder;-><init>()V
 
@@ -41,7 +41,7 @@
 
 # virtual methods
 .method public build()Lcom/google/common/collect/ImmutableBiMap;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -51,42 +51,22 @@
     .end annotation
 
     .prologue
-    .line 172
+    .line 169
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
-    invoke-super {p0}, Lcom/google/common/collect/ImmutableMap$Builder;->build()Lcom/google/common/collect/ImmutableMap;
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableBiMap$Builder;->entries:Ljava/util/ArrayList;
+
+    invoke-static {v0}, Lcom/google/common/collect/ImmutableBiMap;->fromEntries(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 
-    .line 173
-    .local v0, map:Lcom/google/common/collect/ImmutableMap;,"Lcom/google/common/collect/ImmutableMap<TK;TV;>;"
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 174
-    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->of()Lcom/google/common/collect/ImmutableBiMap;
-
-    move-result-object v1
-
-    .line 176
-    :goto_0
-    return-object v1
-
-    :cond_0
-    new-instance v1, Lcom/google/common/collect/RegularImmutableBiMap;
-
-    invoke-direct {v1, v0}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public bridge synthetic build()Lcom/google/common/collect/ImmutableMap;
     .locals 1
 
     .prologue
-    .line 137
+    .line 131
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap$Builder;->build()Lcom/google/common/collect/ImmutableBiMap;
 
@@ -108,13 +88,13 @@
     .end annotation
 
     .prologue
-    .line 150
+    .line 145
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    .line 151
+    .line 146
     return-object p0
 .end method
 
@@ -124,7 +104,7 @@
     .parameter "x1"
 
     .prologue
-    .line 137
+    .line 131
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
 
@@ -147,12 +127,12 @@
     .end annotation
 
     .prologue
-    .line 162
+    .line 158
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableMap$Builder;->putAll(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    .line 163
+    .line 159
     return-object p0
 .end method
 
@@ -161,7 +141,7 @@
     .parameter "x0"
 
     .prologue
-    .line 137
+    .line 131
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableBiMap$Builder;->putAll(Ljava/util/Map;)Lcom/google/common/collect/ImmutableBiMap$Builder;
 

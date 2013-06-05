@@ -1,6 +1,9 @@
-.class Lcom/google/common/hash/HashCodes$LongHashCode;
+.class final Lcom/google/common/hash/HashCodes$LongHashCode;
 .super Lcom/google/common/hash/HashCode;
 .source "HashCodes.java"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # annotations
@@ -9,9 +12,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "LongHashCode"
 .end annotation
+
+
+# static fields
+.field private static final serialVersionUID:J
 
 
 # instance fields
@@ -24,13 +31,13 @@
     .parameter "hash"
 
     .prologue
-    .line 72
+    .line 91
     invoke-direct {p0}, Lcom/google/common/hash/HashCode;-><init>()V
 
-    .line 73
+    .line 92
     iput-wide p1, p0, Lcom/google/common/hash/HashCodes$LongHashCode;->hash:J
 
-    .line 74
+    .line 93
     return-void
 .end method
 
@@ -42,7 +49,7 @@
     .prologue
     const/16 v4, 0x8
 
-    .line 81
+    .line 102
     new-array v0, v4, [B
 
     const/4 v1, 0x0
@@ -158,7 +165,7 @@
     .locals 2
 
     .prologue
-    .line 93
+    .line 109
     iget-wide v0, p0, Lcom/google/common/hash/HashCodes$LongHashCode;->hash:J
 
     long-to-int v0, v0
@@ -170,7 +177,7 @@
     .locals 2
 
     .prologue
-    .line 97
+    .line 114
     iget-wide v0, p0, Lcom/google/common/hash/HashCodes$LongHashCode;->hash:J
 
     return-wide v0
@@ -180,8 +187,18 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 97
     const/16 v0, 0x40
 
     return v0
+.end method
+
+.method public padToLong()J
+    .locals 2
+
+    .prologue
+    .line 119
+    iget-wide v0, p0, Lcom/google/common/hash/HashCodes$LongHashCode;->hash:J
+
+    return-wide v0
 .end method

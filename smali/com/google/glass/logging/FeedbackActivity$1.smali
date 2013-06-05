@@ -3,7 +3,7 @@
 .source "FeedbackActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/glass/widget/MessageDialog$Listener;
 
 
 # annotations
@@ -20,45 +20,17 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/logging/FeedbackActivity;
 
-.field final synthetic val$additionalFiles:[Ljava/lang/String;
-
-.field final synthetic val$companionLogReader:Lcom/google/glass/logging/CompanionLogReader;
-
-.field final synthetic val$name:Ljava/lang/String;
-
-.field final synthetic val$recoveryAction:Lcom/google/glass/util/Feedback$RecoveryAction;
-
-.field final synthetic val$screenshot:Lcom/google/glass/util/ScreenshotUtil$Screenshot;
-
-.field final synthetic val$shouldBugreport:Z
+.field wasConfirmed:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/logging/FeedbackActivity;Ljava/lang/String;Lcom/google/glass/util/ScreenshotUtil$Screenshot;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;Lcom/google/glass/util/Feedback$RecoveryAction;)V
+.method constructor <init>(Lcom/google/glass/logging/FeedbackActivity;)V
     .locals 0
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 54
+    .line 49
     iput-object p1, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
-
-    iput-object p2, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$name:Ljava/lang/String;
-
-    iput-object p3, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$screenshot:Lcom/google/glass/util/ScreenshotUtil$Screenshot;
-
-    iput-boolean p4, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$shouldBugreport:Z
-
-    iput-object p5, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$companionLogReader:Lcom/google/glass/logging/CompanionLogReader;
-
-    iput-object p6, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$additionalFiles:[Ljava/lang/String;
-
-    iput-object p7, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$recoveryAction:Lcom/google/glass/util/Feedback$RecoveryAction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -67,64 +39,82 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 7
+.method public onConfirmed()Z
+    .locals 3
 
     .prologue
-    .line 58
-    :try_start_0
+    const/4 v2, 0x1
+
+    .line 67
+    iput-boolean v2, p0, Lcom/google/glass/logging/FeedbackActivity$1;->wasConfirmed:Z
+
+    .line 68
     iget-object v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
 
-    iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
+    #getter for: Lcom/google/glass/logging/FeedbackActivity;->annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
+    invoke-static {v0}, Lcom/google/glass/logging/FeedbackActivity;->access$100(Lcom/google/glass/logging/FeedbackActivity;)Lcom/google/glass/voice/VoiceAnnotationHelper;
 
-    #getter for: Lcom/google/glass/logging/FeedbackActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
-    invoke-static {v1}, Lcom/google/glass/logging/FeedbackActivity;->access$000(Lcom/google/glass/logging/FeedbackActivity;)Lcom/google/glass/timeline/TimelineHelper;
+    move-result-object v0
 
-    move-result-object v1
+    const/16 v1, 0xa
 
-    iget-object v2, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$name:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/VoiceAnnotationHelper;->startAnnotationForResult(I)V
 
-    iget-object v3, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$screenshot:Lcom/google/glass/util/ScreenshotUtil$Screenshot;
+    .line 69
+    iget-object v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
 
-    iget-boolean v4, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$shouldBugreport:Z
+    invoke-virtual {v0}, Lcom/google/glass/logging/FeedbackActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
-    iget-object v5, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$companionLogReader:Lcom/google/glass/logging/CompanionLogReader;
+    move-result-object v0
 
-    iget-object v6, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$additionalFiles:[Ljava/lang/String;
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
 
-    invoke-static/range {v0 .. v6}, Lcom/google/glass/logging/FeedbackBuilder;->build(Landroid/content/Context;Lcom/google/glass/timeline/TimelineHelper;Ljava/lang/String;Lcom/google/glass/util/ScreenshotUtil$Screenshot;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+
+    .line 70
+    return v2
+.end method
+
+.method public onDismissed()V
+    .locals 2
+
+    .prologue
+    .line 60
+    iget-boolean v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->wasConfirmed:Z
+
+    if-nez v0, :cond_0
 
     .line 61
     iget-object v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
 
-    iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$recoveryAction:Lcom/google/glass/util/Feedback$RecoveryAction;
+    const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lcom/google/glass/util/Feedback;->handleRecoveryAction(Landroid/content/Context;Lcom/google/glass/util/Feedback$RecoveryAction;)V
+    #calls: Lcom/google/glass/logging/FeedbackActivity;->sendFeedback(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/glass/logging/FeedbackActivity;->access$000(Lcom/google/glass/logging/FeedbackActivity;Ljava/lang/String;)V
 
-    .line 62
-    iget-object v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
-
-    invoke-virtual {v0}, Lcom/google/glass/logging/FeedbackActivity;->finish()V
-
-    .line 64
+    .line 63
+    :cond_0
     return-void
+.end method
 
-    .line 61
-    :catchall_0
-    move-exception v0
+.method public onDone()V
+    .locals 2
 
-    iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
+    .prologue
+    .line 53
+    iget-boolean v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->wasConfirmed:Z
 
-    iget-object v2, p0, Lcom/google/glass/logging/FeedbackActivity$1;->val$recoveryAction:Lcom/google/glass/util/Feedback$RecoveryAction;
+    if-nez v0, :cond_0
 
-    invoke-static {v1, v2}, Lcom/google/glass/util/Feedback;->handleRecoveryAction(Landroid/content/Context;Lcom/google/glass/util/Feedback$RecoveryAction;)V
+    .line 54
+    iget-object v0, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
 
-    .line 62
-    iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$1;->this$0:Lcom/google/glass/logging/FeedbackActivity;
+    const/4 v1, 0x0
 
-    invoke-virtual {v1}, Lcom/google/glass/logging/FeedbackActivity;->finish()V
+    #calls: Lcom/google/glass/logging/FeedbackActivity;->sendFeedback(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/glass/logging/FeedbackActivity;->access$000(Lcom/google/glass/logging/FeedbackActivity;Ljava/lang/String;)V
 
-    throw v0
+    .line 56
+    :cond_0
+    return-void
 .end method

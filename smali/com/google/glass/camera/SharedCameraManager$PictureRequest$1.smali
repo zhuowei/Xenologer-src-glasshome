@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 261
+    .line 275
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,17 +41,17 @@
     .locals 6
 
     .prologue
-    .line 266
+    .line 280
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/Picture;
-    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/Picture;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/PictureWrapper;
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/PictureWrapper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/glass/camera/Picture;->setCaptureTimeNow()V
+    invoke-virtual {v0}, Lcom/google/glass/camera/PictureWrapper;->setCaptureTimeNow()V
 
-    .line 268
+    .line 282
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -61,7 +61,7 @@
     #setter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shutterTimeMillis:J
     invoke-static {v0, v1, v2}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1102(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;J)J
 
-    .line 271
+    .line 285
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
     iget-object v0, v0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 274
+    .line 288
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
     #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 275
+    .line 289
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
     #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraClient;->dispatchCameraShutter()V
 
-    .line 278
+    .line 292
     :cond_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
@@ -150,6 +150,6 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 280
+    .line 294
     return-void
 .end method

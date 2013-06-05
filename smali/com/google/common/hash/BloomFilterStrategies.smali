@@ -37,7 +37,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 25
+    .line 42
     new-instance v0, Lcom/google/common/hash/BloomFilterStrategies$1;
 
     const-string v1, "MURMUR128_MITZ_32"
@@ -46,7 +46,7 @@
 
     sput-object v0, Lcom/google/common/hash/BloomFilterStrategies;->MURMUR128_MITZ_32:Lcom/google/common/hash/BloomFilterStrategies;
 
-    .line 19
+    .line 36
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/hash/BloomFilterStrategies;
@@ -71,10 +71,10 @@
     .end annotation
 
     .prologue
-    .line 19
+    .line 36
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 61
+    .line 77
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .parameter "x2"
 
     .prologue
-    .line 19
+    .line 36
     invoke-direct {p0, p1, p2}, Lcom/google/common/hash/BloomFilterStrategies;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -96,7 +96,7 @@
     .parameter "name"
 
     .prologue
-    .line 19
+    .line 36
     const-class v0, Lcom/google/common/hash/BloomFilterStrategies;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 19
+    .line 36
     sget-object v0, Lcom/google/common/hash/BloomFilterStrategies;->$VALUES:[Lcom/google/common/hash/BloomFilterStrategies;
 
     invoke-virtual {v0}, [Lcom/google/common/hash/BloomFilterStrategies;->clone()Ljava/lang/Object;

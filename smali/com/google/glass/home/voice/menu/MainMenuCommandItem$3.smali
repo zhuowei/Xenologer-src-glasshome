@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newRecordVideoItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newRecordVideoItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
     .parameter "x4"
 
     .prologue
-    .line 187
+    .line 180
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -54,24 +54,15 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 190
+    .line 184
     invoke-super {p0, p1, p2}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
 
-    .line 191
-    if-eqz p2, :cond_0
+    .line 188
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    .line 194
-    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->VIDEO_START:Lcom/google/glass/sound/SoundManager$SoundId;
+    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)V
-
-    .line 201
-    :goto_0
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
-
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 203
+    .line 190
     new-instance v2, Lcom/google/glass/camera/CameraHelper;
 
     invoke-interface {p1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
@@ -80,27 +71,19 @@
 
     invoke-direct {v2, v0}, Lcom/google/glass/camera/CameraHelper;-><init>(Landroid/content/Context;)V
 
-    if-nez p2, :cond_1
+    if-nez p2, :cond_0
 
     move v0, v1
 
-    :goto_1
+    :goto_0
     invoke-virtual {v2, v1, v0}, Lcom/google/glass/camera/CameraHelper;->recordVideo(ZZ)V
 
-    .line 206
+    .line 193
     return-void
 
-    .line 196
+    .line 190
     :cond_0
-    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)V
-
-    goto :goto_0
-
-    .line 203
-    :cond_1
     const/4 v0, 0x0
 
-    goto :goto_1
+    goto :goto_0
 .end method

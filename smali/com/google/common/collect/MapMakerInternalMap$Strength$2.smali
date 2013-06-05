@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 309
+    .line 306
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/MapMakerInternalMap$Strength;-><init>(Ljava/lang/String;ILcom/google/common/collect/MapMakerInternalMap$1;)V
@@ -44,8 +44,8 @@
     .end annotation
 
     .prologue
-    .line 318
-    invoke-static {}, Lcom/google/common/base/Equivalences;->identity()Lcom/google/common/base/Equivalence;
+    .line 316
+    invoke-static {}, Lcom/google/common/base/Equivalence;->identity()Lcom/google/common/base/Equivalence;
 
     move-result-object v0
 
@@ -74,7 +74,7 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 311
     .local p1, segment:Lcom/google/common/collect/MapMakerInternalMap$Segment;,"Lcom/google/common/collect/MapMakerInternalMap$Segment<TK;TV;>;"
     .local p2, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     .local p3, value:Ljava/lang/Object;,"TV;"

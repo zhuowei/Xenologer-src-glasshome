@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 872
+    .line 891
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$6;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$6;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
@@ -50,7 +50,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 877
+    .line 896
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$6;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getIsPinned()Z
@@ -61,7 +61,7 @@
 
     const/4 v5, 0x1
 
-    .line 879
+    .line 898
     .local v5, clearPin:Z
     :goto_0
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$6;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
@@ -94,7 +94,7 @@
 
     move-result-object v6
 
-    .line 881
+    .line 900
     .local v6, result:Lcom/google/googlex/glass/common/proto/TimelineItem;
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$6;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
@@ -107,7 +107,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 885
+    .line 904
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$6;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
@@ -121,7 +121,7 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/timeline/TimelineHelper;->goToTimeline(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;)V
 
-    .line 886
+    .line 905
     return-object v6
 
     .end local v5           #clearPin:Z
@@ -129,6 +129,6 @@
     :cond_0
     move v5, v4
 
-    .line 877
+    .line 896
     goto :goto_0
 .end method

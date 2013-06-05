@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item type="id" name="tag_horizontal_scroll_item_position" />
-    <item type="id" name="tag_horizontal_scroll_item_state_manager" />
+    <item type="id" name="tag_card_state_manager" />
     <item type="id" name="tag_horizontal_scroll_item" />
     <item type="id" name="tag_horizontal_scroll_item_view_type" />
     <item type="id" name="tag_horizontal_scroll_item_view_binder" />
@@ -16,6 +16,8 @@
     <item type="id" name="tag_item_crc32" />
     <item type="id" name="tag_item_read_more" />
     <item type="id" name="tag_item_time_label_text" />
+    <item type="id" name="tag_html_item_renderer" />
+    <item type="id" name="tag_html_item_footer_right_margin" />
     <item type="id" name="head_wake_settings_card">false</item>
     <item type="id" name="battery_state_image">false</item>
     <item type="id" name="battery_settings_header">false</item>
@@ -52,10 +54,10 @@
     <item type="id" name="don_doff_main_icon">false</item>
     <item type="id" name="don_doff_enable_title">false</item>
     <item type="id" name="don_doff_enable_state">false</item>
-    <item type="id" name="image">false</item>
-    <item type="id" name="label">false</item>
+    <item type="id" name="root">false</item>
+    <item type="id" name="scroll_view">false</item>
     <item type="id" name="secondary_label">false</item>
-    <item type="id" name="text">false</item>
+    <item type="id" name="image">false</item>
     <item type="id" name="attribution">false</item>
     <item type="id" name="gf_expandable_row">false</item>
     <item type="id" name="gf_label">false</item>
@@ -103,19 +105,17 @@
     <item type="id" name="time">false</item>
     <item type="id" name="clock">false</item>
     <item type="id" name="guard_phrase_hint">false</item>
+    <item type="id" name="text">false</item>
     <item type="id" name="error_icon">false</item>
     <item type="id" name="error_message">false</item>
     <item type="id" name="error_sub_message">false</item>
     <item type="id" name="ms_dialog">false</item>
+    <item type="id" name="label">false</item>
     <item type="id" name="left_panel">false</item>
     <item type="id" name="turn_icon">false</item>
     <item type="id" name="time_remaining">false</item>
     <item type="id" name="destination_name">false</item>
     <item type="id" name="message">false</item>
-    <item type="id" name="icons">false</item>
-    <item type="id" name="label_container">false</item>
-    <item type="id" name="label_current">false</item>
-    <item type="id" name="label_other">false</item>
     <item type="id" name="options">false</item>
     <item type="id" name="description">false</item>
     <item type="id" name="mosaic">false</item>
@@ -155,7 +155,8 @@
     <item type="id" name="placeholder">false</item>
     <item type="id" name="thumbnail">false</item>
     <item type="id" name="play">false</item>
-    <item type="id" name="touch_menu">false</item>
+    <item type="id" name="buffering_slider">false</item>
+    <item type="id" name="tips">false</item>
     <item type="id" name="license_switcher">false</item>
     <item type="id" name="license_message">false</item>
     <item type="id" name="license_slider">false</item>

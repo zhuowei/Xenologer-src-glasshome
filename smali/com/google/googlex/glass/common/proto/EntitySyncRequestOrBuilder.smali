@@ -16,8 +16,14 @@
 .method public abstract getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getEnabledTargetsOnly()Z
+.end method
+
 .method public abstract hasAllShareTargets()Z
 .end method
 
 .method public abstract hasDeviceId()Z
+.end method
+
+.method public abstract hasEnabledTargetsOnly()Z
 .end method

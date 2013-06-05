@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 375
+    .line 376
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory;-><init>(Ljava/lang/String;ILcom/google/common/collect/MapMakerInternalMap$1;)V
@@ -55,7 +55,7 @@
     .end annotation
 
     .prologue
-    .line 385
+    .line 387
     .local p1, segment:Lcom/google/common/collect/MapMakerInternalMap$Segment;,"Lcom/google/common/collect/MapMakerInternalMap$Segment<TK;TV;>;"
     .local p2, original:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     .local p3, newNext:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
@@ -63,11 +63,11 @@
 
     move-result-object v0
 
-    .line 386
+    .line 388
     .local v0, newEntry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-virtual {p0, p2, v0}, Lcom/google/common/collect/MapMakerInternalMap$EntryFactory$3;->copyEvictableEntry(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 387
+    .line 389
     return-object v0
 .end method
 
@@ -100,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 379
+    .line 381
     .local p1, segment:Lcom/google/common/collect/MapMakerInternalMap$Segment;,"Lcom/google/common/collect/MapMakerInternalMap$Segment<TK;TV;>;"
     .local p2, key:Ljava/lang/Object;,"TK;"
     .local p4, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"

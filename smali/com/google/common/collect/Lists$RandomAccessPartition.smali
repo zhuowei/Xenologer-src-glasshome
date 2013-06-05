@@ -42,11 +42,11 @@
     .end annotation
 
     .prologue
-    .line 525
+    .line 667
     .local p0, this:Lcom/google/common/collect/Lists$RandomAccessPartition;,"Lcom/google/common/collect/Lists$RandomAccessPartition<TT;>;"
     .local p1, list:Ljava/util/List;,"Ljava/util/List<TT;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Lists$Partition;-><init>(Ljava/util/List;I)V
 
-    .line 526
+    .line 668
     return-void
 .end method

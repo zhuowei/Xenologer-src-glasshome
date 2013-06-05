@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 471
+    .line 590
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.CellSet;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$CellSet;->this$0:Lcom/google/common/collect/ArrayTable;
 
@@ -48,7 +48,7 @@
     .parameter "x1"
 
     .prologue
-    .line 471
+    .line 590
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.CellSet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ArrayTable$CellSet;-><init>(Lcom/google/common/collect/ArrayTable;)V
 
@@ -58,29 +58,29 @@
 
 # virtual methods
 .method public contains(Ljava/lang/Object;)Z
-    .locals 6
+    .locals 7
     .parameter "obj"
 
     .prologue
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.CellSet;"
     const/4 v3, 0x0
 
-    .line 501
+    .line 624
     instance-of v4, p1, Lcom/google/common/collect/Table$Cell;
 
     if-eqz v4, :cond_0
 
     move-object v0, p1
 
-    .line 502
+    .line 625
     check-cast v0, Lcom/google/common/collect/Table$Cell;
 
-    .line 503
+    .line 626
     .local v0, cell:Lcom/google/common/collect/Table$Cell;,"Lcom/google/common/collect/Table$Cell<***>;"
     iget-object v4, p0, Lcom/google/common/collect/ArrayTable$CellSet;->this$0:Lcom/google/common/collect/ArrayTable;
 
     #getter for: Lcom/google/common/collect/ArrayTable;->rowKeyToIndex:Lcom/google/common/collect/ImmutableMap;
-    invoke-static {v4}, Lcom/google/common/collect/ArrayTable;->access$400(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableMap;
+    invoke-static {v4}, Lcom/google/common/collect/ArrayTable;->access$300(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v4
 
@@ -94,12 +94,12 @@
 
     check-cast v2, Ljava/lang/Integer;
 
-    .line 504
+    .line 627
     .local v2, rowIndex:Ljava/lang/Integer;
     iget-object v4, p0, Lcom/google/common/collect/ArrayTable$CellSet;->this$0:Lcom/google/common/collect/ArrayTable;
 
     #getter for: Lcom/google/common/collect/ArrayTable;->columnKeyToIndex:Lcom/google/common/collect/ImmutableMap;
-    invoke-static {v4}, Lcom/google/common/collect/ArrayTable;->access$500(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableMap;
+    invoke-static {v4}, Lcom/google/common/collect/ArrayTable;->access$400(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v4
 
@@ -113,7 +113,7 @@
 
     check-cast v1, Ljava/lang/Integer;
 
-    .line 505
+    .line 628
     .local v1, columnIndex:Ljava/lang/Integer;
     if-eqz v2, :cond_0
 
@@ -121,22 +121,17 @@
 
     iget-object v4, p0, Lcom/google/common/collect/ArrayTable$CellSet;->this$0:Lcom/google/common/collect/ArrayTable;
 
-    #getter for: Lcom/google/common/collect/ArrayTable;->array:[[Ljava/lang/Object;
-    invoke-static {v4}, Lcom/google/common/collect/ArrayTable;->access$300(Lcom/google/common/collect/ArrayTable;)[[Ljava/lang/Object;
-
-    move-result-object v4
-
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result v5
 
-    aget-object v4, v4, v5
-
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v5
+    move-result v6
 
-    aget-object v4, v4, v5
+    invoke-virtual {v4, v5, v6}, Lcom/google/common/collect/ArrayTable;->at(II)Ljava/lang/Object;
+
+    move-result-object v4
 
     invoke-interface {v0}, Lcom/google/common/collect/Table$Cell;->getValue()Ljava/lang/Object;
 
@@ -150,7 +145,7 @@
 
     const/4 v3, 0x1
 
-    .line 509
+    .line 631
     .end local v0           #cell:Lcom/google/common/collect/Table$Cell;,"Lcom/google/common/collect/Table$Cell<***>;"
     .end local v1           #columnIndex:Ljava/lang/Integer;
     .end local v2           #rowIndex:Ljava/lang/Integer;
@@ -171,7 +166,7 @@
     .end annotation
 
     .prologue
-    .line 474
+    .line 594
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.CellSet;"
     new-instance v0, Lcom/google/common/collect/ArrayTable$CellSet$1;
 
@@ -188,7 +183,7 @@
     .locals 1
 
     .prologue
-    .line 497
+    .line 619
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.CellSet;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$CellSet;->this$0:Lcom/google/common/collect/ArrayTable;
 

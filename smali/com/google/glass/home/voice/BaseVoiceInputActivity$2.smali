@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 235
+    .line 261
     iput-object p1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +37,17 @@
 
 
 # virtual methods
-.method public onError(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
+.method public onError(Lcom/google/glass/voice/network/SpeechException;)V
     .locals 2
     .parameter "exception"
 
     .prologue
-    .line 285
+    .line 322
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
-    const/16 v1, 0x9
+    const/16 v1, 0xa
 
     invoke-static {v0, v1, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
 
@@ -55,7 +55,29 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 286
+    .line 323
+    return-void
+.end method
+
+.method public onHtmlAnswerCardResult(Ljava/lang/String;)V
+    .locals 2
+    .parameter "response"
+
+    .prologue
+    .line 311
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+
+    iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
+
+    const/16 v1, 0xc
+
+    invoke-static {v0, v1, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 313
     return-void
 .end method
 
@@ -64,7 +86,7 @@
     .parameter "response"
 
     .prologue
-    .line 280
+    .line 306
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -77,7 +99,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 281
+    .line 307
     return-void
 .end method
 
@@ -87,7 +109,7 @@
     .parameter "confidence"
 
     .prologue
-    .line 274
+    .line 300
     const/4 v1, 0x2
 
     new-array v0, v1, [Ljava/lang/Object;
@@ -104,7 +126,7 @@
 
     aput-object v2, v0, v1
 
-    .line 275
+    .line 301
     .local v0, args:[Ljava/lang/Object;
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -118,7 +140,29 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 276
+    .line 302
+    return-void
+.end method
+
+.method public onSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+    .locals 2
+    .parameter "response"
+
+    .prologue
+    .line 317
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+
+    iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
+
+    const/16 v1, 0x9
+
+    invoke-static {v0, v1, p1}, Landroid/os/Message;->obtain(Landroid/os/Handler;ILjava/lang/Object;)Landroid/os/Message;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+
+    .line 318
     return-void
 .end method
 
@@ -127,7 +171,7 @@
     .parameter "source"
 
     .prologue
-    .line 263
+    .line 289
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -140,7 +184,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 264
+    .line 290
     return-void
 .end method
 
@@ -148,7 +192,7 @@
     .locals 2
 
     .prologue
-    .line 258
+    .line 284
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -161,7 +205,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 259
+    .line 285
     return-void
 .end method
 
@@ -169,7 +213,7 @@
     .locals 2
 
     .prologue
-    .line 238
+    .line 264
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -182,7 +226,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 239
+    .line 265
     return-void
 .end method
 
@@ -190,7 +234,7 @@
     .locals 2
 
     .prologue
-    .line 253
+    .line 279
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -203,7 +247,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 254
+    .line 280
     return-void
 .end method
 
@@ -211,7 +255,7 @@
     .locals 2
 
     .prologue
-    .line 248
+    .line 274
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -224,7 +268,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 249
+    .line 275
     return-void
 .end method
 
@@ -232,7 +276,7 @@
     .locals 2
 
     .prologue
-    .line 243
+    .line 269
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
@@ -245,7 +289,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 244
+    .line 270
     return-void
 .end method
 
@@ -255,7 +299,7 @@
     .parameter "pendingText"
 
     .prologue
-    .line 268
+    .line 294
     const/4 v1, 0x2
 
     new-array v0, v1, [Ljava/lang/Object;
@@ -268,7 +312,7 @@
 
     aput-object p2, v0, v1
 
-    .line 269
+    .line 295
     .local v0, args:[Ljava/lang/Object;
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
@@ -282,6 +326,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 270
+    .line 296
     return-void
 .end method

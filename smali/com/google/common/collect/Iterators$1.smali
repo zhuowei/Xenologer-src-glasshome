@@ -1,5 +1,5 @@
 .class final Lcom/google/common/collect/Iterators$1;
-.super Lcom/google/common/collect/UnmodifiableIterator;
+.super Lcom/google/common/collect/UnmodifiableListIterator;
 .source "Iterators.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/common/collect/UnmodifiableIterator",
+        "Lcom/google/common/collect/UnmodifiableListIterator",
         "<",
         "Ljava/lang/Object;",
         ">;"
@@ -28,8 +28,8 @@
     .locals 0
 
     .prologue
-    .line 64
-    invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
+    .line 69
+    invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableListIterator;-><init>()V
 
     return-void
 .end method
@@ -40,7 +40,17 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 72
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public hasPrevious()Z
+    .locals 1
+
+    .prologue
+    .line 80
     const/4 v0, 0x0
 
     return v0
@@ -50,10 +60,42 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 76
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
+.end method
+
+.method public nextIndex()I
+    .locals 1
+
+    .prologue
+    .line 88
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public previous()Ljava/lang/Object;
+    .locals 1
+
+    .prologue
+    .line 84
+    new-instance v0, Ljava/util/NoSuchElementException;
+
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
+
+    throw v0
+.end method
+
+.method public previousIndex()I
+    .locals 1
+
+    .prologue
+    .line 92
+    const/4 v0, -0x1
+
+    return v0
 .end method

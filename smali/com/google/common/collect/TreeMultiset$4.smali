@@ -1,9 +1,6 @@
-.class final Lcom/google/common/collect/TreeMultiset$4;
+.class synthetic Lcom/google/common/collect/TreeMultiset$4;
 .super Ljava/lang/Object;
 .source "TreeMultiset.java"
-
-# interfaces
-.implements Lcom/google/common/collect/BstAggregate;
 
 
 # annotations
@@ -12,114 +9,72 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x1008
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/common/collect/BstAggregate",
-        "<",
-        "Lcom/google/common/collect/TreeMultiset$Node",
-        "<",
-        "Ljava/lang/Object;",
-        ">;>;"
-    }
-.end annotation
+
+# static fields
+.field static final synthetic $SwitchMap$com$google$common$collect$BoundType:[I
 
 
 # direct methods
-.method constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 431
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 180
+    invoke-static {}, Lcom/google/common/collect/BoundType;->values()[Lcom/google/common/collect/BoundType;
 
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/common/collect/TreeMultiset$4;->$SwitchMap$com$google$common$collect$BoundType:[I
+
+    :try_start_0
+    sget-object v0, Lcom/google/common/collect/TreeMultiset$4;->$SwitchMap$com$google$common$collect$BoundType:[I
+
+    sget-object v1, Lcom/google/common/collect/BoundType;->OPEN:Lcom/google/common/collect/BoundType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BoundType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
+
+    :goto_0
+    :try_start_1
+    sget-object v0, Lcom/google/common/collect/TreeMultiset$4;->$SwitchMap$com$google$common$collect$BoundType:[I
+
+    sget-object v1, Lcom/google/common/collect/BoundType;->CLOSED:Lcom/google/common/collect/BoundType;
+
+    invoke-virtual {v1}, Lcom/google/common/collect/BoundType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
     return-void
-.end method
 
+    :catch_0
+    move-exception v0
 
-# virtual methods
-.method public bridge synthetic entryValue(Lcom/google/common/collect/BstNode;)I
-    .locals 1
-    .parameter "x0"
+    goto :goto_1
 
-    .prologue
-    .line 431
-    check-cast p1, Lcom/google/common/collect/TreeMultiset$Node;
+    :catch_1
+    move-exception v0
 
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/TreeMultiset$4;->entryValue(Lcom/google/common/collect/TreeMultiset$Node;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public entryValue(Lcom/google/common/collect/TreeMultiset$Node;)I
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/common/collect/TreeMultiset$Node",
-            "<",
-            "Ljava/lang/Object;",
-            ">;)I"
-        }
-    .end annotation
-
-    .prologue
-    .line 434
-    .local p1, entry:Lcom/google/common/collect/TreeMultiset$Node;,"Lcom/google/common/collect/TreeMultiset$Node<Ljava/lang/Object;>;"
-    invoke-virtual {p1}, Lcom/google/common/collect/TreeMultiset$Node;->elemCount()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public bridge synthetic treeValue(Lcom/google/common/collect/BstNode;)J
-    .locals 2
-    .parameter "x0"
-
-    .prologue
-    .line 431
-    check-cast p1, Lcom/google/common/collect/TreeMultiset$Node;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/TreeMultiset$4;->treeValue(Lcom/google/common/collect/TreeMultiset$Node;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public treeValue(Lcom/google/common/collect/TreeMultiset$Node;)J
-    .locals 2
-    .parameter
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/common/collect/TreeMultiset$Node",
-            "<",
-            "Ljava/lang/Object;",
-            ">;)J"
-        }
-    .end annotation
-
-    .prologue
-    .line 439
-    .local p1, tree:Lcom/google/common/collect/TreeMultiset$Node;,"Lcom/google/common/collect/TreeMultiset$Node<Ljava/lang/Object;>;"
-    #calls: Lcom/google/common/collect/TreeMultiset;->sizeOrZero(Lcom/google/common/collect/TreeMultiset$Node;)J
-    invoke-static {p1}, Lcom/google/common/collect/TreeMultiset;->access$700(Lcom/google/common/collect/TreeMultiset$Node;)J
-
-    move-result-wide v0
-
-    return-wide v0
+    goto :goto_0
 .end method

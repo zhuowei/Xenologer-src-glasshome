@@ -84,13 +84,13 @@
     .end annotation
 
     .prologue
-    .line 1164
+    .line 1480
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     .local p1, fromMap:Ljava/util/Map;,"Ljava/util/Map<TK;TV1;>;"
     .local p2, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<-TK;-TV1;TV2;>;"
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
-    .line 1165
+    .line 1481
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -99,7 +99,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
-    .line 1166
+    .line 1482
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -108,7 +108,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->transformer:Lcom/google/common/collect/Maps$EntryTransformer;
 
-    .line 1167
+    .line 1483
     return-void
 .end method
 
@@ -118,13 +118,13 @@
     .locals 1
 
     .prologue
-    .line 1195
+    .line 1514
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 1196
+    .line 1515
     return-void
 .end method
 
@@ -133,7 +133,7 @@
     .parameter "key"
 
     .prologue
-    .line 1174
+    .line 1492
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
@@ -157,15 +157,15 @@
     .end annotation
 
     .prologue
-    .line 1205
+    .line 1526
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->entrySet:Ljava/util/Set;
 
-    .line 1206
+    .line 1527
     .local v0, result:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV2;>;>;"
     if-nez v0, :cond_0
 
-    .line 1207
+    .line 1528
     new-instance v0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;
 
     .end local v0           #result:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV2;>;>;"
@@ -174,7 +174,7 @@
     .restart local v0       #result:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV2;>;>;"
     iput-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->entrySet:Ljava/util/Set;
 
-    .line 1227
+    .line 1558
     :cond_0
     return-object v0
 .end method
@@ -191,7 +191,7 @@
     .end annotation
 
     .prologue
-    .line 1180
+    .line 1499
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v1, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
@@ -199,7 +199,7 @@
 
     move-result-object v0
 
-    .line 1181
+    .line 1500
     .local v0, value:Ljava/lang/Object;,"TV1;"
     if-nez v0, :cond_0
 
@@ -238,7 +238,7 @@
     .end annotation
 
     .prologue
-    .line 1199
+    .line 1519
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
@@ -261,7 +261,7 @@
     .end annotation
 
     .prologue
-    .line 1189
+    .line 1508
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
@@ -296,7 +296,7 @@
     .locals 1
 
     .prologue
-    .line 1170
+    .line 1487
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->fromMap:Ljava/util/Map;
 
@@ -318,15 +318,15 @@
     .end annotation
 
     .prologue
-    .line 1233
+    .line 1565
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap;,"Lcom/google/common/collect/Maps$TransformedEntriesMap<TK;TV1;TV2;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->values:Ljava/util/Collection;
 
-    .line 1234
+    .line 1566
     .local v0, result:Ljava/util/Collection;,"Ljava/util/Collection<TV2;>;"
     if-nez v0, :cond_0
 
-    .line 1235
+    .line 1567
     new-instance v0, Lcom/google/common/collect/Maps$TransformedEntriesMap$2;
 
     .end local v0           #result:Ljava/util/Collection;,"Ljava/util/Collection<TV2;>;"
@@ -334,7 +334,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap;->values:Ljava/util/Collection;
 
-    .line 1241
+    .line 1574
     :cond_0
     return-object v0
 .end method

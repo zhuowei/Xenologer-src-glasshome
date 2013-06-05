@@ -11,7 +11,7 @@
     .locals 0
 
     .prologue
-    .line 9
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,24 +19,11 @@
 
 
 # virtual methods
-.method public onAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 80
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public onCameraButtonPressed()Z
     .locals 1
 
     .prologue
-    .line 50
+    .line 49
     const/4 v0, 0x0
 
     return v0
@@ -46,7 +33,7 @@
     .locals 1
 
     .prologue
-    .line 13
+    .line 12
     const/4 v0, 0x0
 
     return v0
@@ -57,7 +44,7 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 23
+    .line 22
     const/4 v0, 0x0
 
     return v0
@@ -67,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 18
+    .line 17
     const/4 v0, 0x0
 
     return v0
@@ -79,7 +66,7 @@
     .parameter "wentDown"
 
     .prologue
-    .line 28
+    .line 27
     const/4 v0, 0x0
 
     return v0
@@ -96,20 +83,7 @@
     .parameter "numSwipesY"
 
     .prologue
-    .line 40
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onResampledAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 85
+    .line 39
     const/4 v0, 0x0
 
     return v0
@@ -121,7 +95,7 @@
     .parameter "direction"
 
     .prologue
-    .line 33
+    .line 32
     const/4 v0, 0x0
 
     return v0
@@ -132,7 +106,7 @@
     .parameter "fingerCount"
 
     .prologue
-    .line 45
+    .line 44
     const/4 v0, 0x0
 
     return v0
@@ -144,46 +118,8 @@
     .parameter "velocity"
 
     .prologue
-    .line 55
+    .line 54
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public onVoiceAmplitudeChanged(D)Z
-    .locals 1
-    .parameter "amplitude"
-
-    .prologue
-    .line 75
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-    .locals 1
-    .parameter "command"
-
-    .prologue
-    .line 70
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceServiceConnected()V
-    .locals 0
-
-    .prologue
-    .line 61
-    return-void
-.end method
-
-.method public onVoiceServiceDisconnected()V
-    .locals 0
-
-    .prologue
-    .line 66
-    return-void
 .end method

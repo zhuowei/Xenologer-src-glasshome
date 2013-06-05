@@ -48,14 +48,14 @@
     .parameter "expectedSize"
 
     .prologue
-    .line 58
+    .line 60
     .local p0, this:Lcom/google/common/collect/HashBasedTable$Factory;,"Lcom/google/common/collect/HashBasedTable$Factory<TC;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 61
     iput p1, p0, Lcom/google/common/collect/HashBasedTable$Factory;->expectedSize:I
 
-    .line 60
+    .line 62
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 57
     .local p0, this:Lcom/google/common/collect/HashBasedTable$Factory;,"Lcom/google/common/collect/HashBasedTable$Factory<TC;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/HashBasedTable$Factory;->get()Ljava/util/Map;
 
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 65
     .local p0, this:Lcom/google/common/collect/HashBasedTable$Factory;,"Lcom/google/common/collect/HashBasedTable$Factory<TC;TV;>;"
     iget v0, p0, Lcom/google/common/collect/HashBasedTable$Factory;->expectedSize:I
 

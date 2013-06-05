@@ -432,7 +432,7 @@
     .end annotation
 
     .prologue
-    .line 298
+    .line 311
     sget-object v0, Ljava/io/File;->separator:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
@@ -465,12 +465,12 @@
     .end annotation
 
     .prologue
-    .line 286
+    .line 299
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 287
+    .line 300
     .local v0, defaultHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v1, "Accept-Charset"
 
@@ -478,138 +478,148 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 288
+    .line 301
     const-string v1, "Accept-Encoding"
 
     const-string v2, "gzip"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 289
+    .line 302
     return-object v0
 .end method
 
 .method public static getNetworkTtsUri(Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;)Ljava/lang/String;
-    .locals 7
+    .locals 3
     .parameter "result"
 
     .prologue
-    .line 263
+    .line 282
     invoke-virtual {p0}, Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;->getTranslatedTextLanguageDisplay()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 283
+    .local v0, displayLanguage:Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/glass/voice/network/translate/Languages;->getLanguageShortName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 264
-    .local v1, displayLanguage:Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/voice/network/translate/Languages;->getLanguageShortName(Ljava/lang/String;)Ljava/lang/String;
+    .line 284
+    .local v1, targetLanguageCode:Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;->getTranslatedText()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 265
-    .local v2, targetLanguageCode:Ljava/lang/String;
-    if-eqz v2, :cond_0
+    invoke-static {v2, v1}, Lcom/google/glass/voice/network/translate/NetworkTts;->getNetworkTtsUri(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    sget-object v4, Lcom/google/glass/voice/network/translate/NetworkTts;->networkTtsSupportedLanguages:Ljava/util/HashSet;
+    move-result-object v2
 
-    invoke-virtual {v4, v2}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+    return-object v2
+.end method
 
-    move-result v4
+.method public static getNetworkTtsUri(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+    .parameter "text"
+    .parameter "languageCode"
 
-    if-nez v4, :cond_1
+    .prologue
+    .line 263
+    if-eqz p1, :cond_0
 
-    .line 266
+    invoke-static {p1}, Lcom/google/glass/voice/network/translate/NetworkTts;->isLanguageSupported(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    .line 264
     :cond_0
-    sget-object v4, Lcom/google/glass/voice/network/translate/NetworkTts;->TAG:Ljava/lang/String;
+    sget-object v1, Lcom/google/glass/voice/network/translate/NetworkTts;->TAG:Ljava/lang/String;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Network TTS not supported for \""
+    const-string v3, "Network TTS not supported for \""
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    const-string v6, "\""
+    const-string v3, "\""
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 267
-    const/4 v4, 0x0
+    .line 265
+    const/4 v1, 0x0
 
-    .line 278
+    .line 275
     :goto_0
-    return-object v4
+    return-object v1
 
-    .line 269
+    .line 268
     :cond_1
-    invoke-virtual {p0}, Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;->getTranslatedText()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 271
-    .local v3, text:Ljava/lang/String;
     new-instance v0, Landroid/net/Uri$Builder;
 
     invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
 
-    .line 272
+    .line 269
     .local v0, builder:Landroid/net/Uri$Builder;
-    const-string v4, "http"
+    const-string v1, "http"
 
-    invoke-virtual {v0, v4}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, "translate.google.com"
+    const-string v2, "translate.google.com"
 
-    invoke-virtual {v4, v5}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, "/translate_tts"
+    const-string v2, "/translate_tts"
 
-    invoke-virtual {v4, v5}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->path(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, "ie=utf-8&client=android-translate&glass=1"
+    const-string v2, "ie=utf-8&client=android-translate&glass=1"
 
-    invoke-virtual {v4, v5}, Landroid/net/Uri$Builder;->encodedQuery(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1, v2}, Landroid/net/Uri$Builder;->encodedQuery(Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, "text"
+    const-string v2, "text"
 
-    invoke-virtual {v4, v5, v3}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1, v2, p0}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string v5, "tl"
+    const-string v2, "tl"
 
-    invoke-virtual {v4, v5, v2}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {v1, v2, p1}, Landroid/net/Uri$Builder;->appendQueryParameter(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri$Builder;
 
-    .line 278
+    .line 275
     invoke-virtual {v0}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
     goto :goto_0
 .end method
@@ -635,6 +645,21 @@
     sget-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->sharedInstance:Lcom/google/glass/voice/network/translate/NetworkTts;
 
     return-object v0
+.end method
+
+.method public static isLanguageSupported(Ljava/lang/String;)Z
+    .locals 1
+    .parameter "languageCode"
+
+    .prologue
+    .line 291
+    sget-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->networkTtsSupportedLanguages:Ljava/util/HashSet;
+
+    invoke-virtual {v0, p0}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static isTtsPlaying()Z
@@ -676,15 +701,15 @@
     .parameter "mediaPlayer"
 
     .prologue
-    .line 307
+    .line 320
     invoke-virtual {p1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 308
+    .line 321
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->player:Landroid/media/MediaPlayer;
 
-    .line 309
+    .line 322
     return-void
 .end method
 
@@ -740,14 +765,14 @@
     .locals 1
 
     .prologue
-    .line 315
+    .line 328
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->isOnSerialInstanceThread()Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 317
+    .line 330
     sget-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->player:Landroid/media/MediaPlayer;
 
     if-eqz v0, :cond_0
@@ -760,22 +785,22 @@
 
     if-eqz v0, :cond_0
 
-    .line 318
+    .line 331
     sget-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->player:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 319
+    .line 332
     sget-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->player:Landroid/media/MediaPlayer;
 
     invoke-virtual {v0}, Landroid/media/MediaPlayer;->release()V
 
-    .line 320
+    .line 333
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/glass/voice/network/translate/NetworkTts;->player:Landroid/media/MediaPlayer;
 
-    .line 322
+    .line 335
     :cond_0
     return-void
 .end method

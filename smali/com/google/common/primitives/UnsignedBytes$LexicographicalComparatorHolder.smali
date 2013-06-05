@@ -42,7 +42,7 @@
     .locals 2
 
     .prologue
-    .line 211
+    .line 289
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,7 +69,7 @@
 
     sput-object v0, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder;->UNSAFE_COMPARATOR_NAME:Ljava/lang/String;
 
-    .line 214
+    .line 292
     invoke-static {}, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder;->getBestComparator()Ljava/util/Comparator;
 
     move-result-object v0
@@ -83,10 +83,10 @@
     .locals 0
 
     .prologue
-    .line 210
+    .line 288
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 328
+    .line 419
     return-void
 .end method
 
@@ -101,7 +101,7 @@
     .end annotation
 
     .prologue
-    .line 349
+    .line 440
     :try_start_0
     sget-object v3, Lcom/google/common/primitives/UnsignedBytes$LexicographicalComparatorHolder;->UNSAFE_COMPARATOR_NAME:Ljava/lang/String;
 
@@ -109,7 +109,7 @@
 
     move-result-object v2
 
-    .line 353
+    .line 444
     .local v2, theClass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {v2}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
 
@@ -123,15 +123,15 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 357
+    .line 447
     :goto_0
     return-object v0
 
-    .line 356
+    .line 446
     :catch_0
     move-exception v1
 
-    .line 357
+    .line 447
     .local v1, t:Ljava/lang/Throwable;
     invoke-static {}, Lcom/google/common/primitives/UnsignedBytes;->lexicographicalComparatorJavaImpl()Ljava/util/Comparator;
 

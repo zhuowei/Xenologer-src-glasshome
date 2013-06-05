@@ -63,29 +63,29 @@
     .end annotation
 
     .prologue
-    .line 370
+    .line 385
     .local p2, formattedPhoneNumbers:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 371
+    .line 386
     iput-object p1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 372
+    .line 387
     iput-object p2, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->formattedPhoneNumbers:Ljava/util/List;
 
-    .line 373
+    .line 388
     iput-object p3, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->sanitizedEmail:Ljava/lang/String;
 
-    .line 374
+    .line 389
     iput-wide p4, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
 
-    .line 375
+    .line 390
     iput p6, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
 
-    .line 376
+    .line 391
     iput p7, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->priority:I
 
-    .line 377
+    .line 392
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .parameter "x2"
 
     .prologue
-    .line 361
+    .line 376
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/entity/EntityHelper$EntityData;->update(JI)V
 
     return-void
@@ -108,12 +108,12 @@
     .parameter "shareCount"
 
     .prologue
-    .line 380
+    .line 395
     iput-wide p1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
 
-    .line 381
+    .line 396
     iput p3, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
 
-    .line 382
+    .line 397
     return-void
 .end method

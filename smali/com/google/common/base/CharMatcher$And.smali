@@ -15,80 +15,99 @@
 
 
 # instance fields
-.field components:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/common/base/CharMatcher;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field final first:Lcom/google/common/base/CharMatcher;
+
+.field final second:Lcom/google/common/base/CharMatcher;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/List;)V
-    .locals 0
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/common/base/CharMatcher;",
-            ">;)V"
-        }
-    .end annotation
+.method constructor <init>(Lcom/google/common/base/CharMatcher;Lcom/google/common/base/CharMatcher;)V
+    .locals 2
+    .parameter "a"
+    .parameter "b"
 
     .prologue
-    .line 591
-    .local p1, components:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/base/CharMatcher;>;"
-    invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
+    .line 720
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 592
-    iput-object p1, p0, Lcom/google/common/base/CharMatcher$And;->components:Ljava/util/List;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 593
+    const-string v1, "CharMatcher.and("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/google/common/base/CharMatcher$And;-><init>(Lcom/google/common/base/CharMatcher;Lcom/google/common/base/CharMatcher;Ljava/lang/String;)V
+
+    .line 721
+    return-void
+.end method
+
+.method constructor <init>(Lcom/google/common/base/CharMatcher;Lcom/google/common/base/CharMatcher;Ljava/lang/String;)V
+    .locals 1
+    .parameter "a"
+    .parameter "b"
+    .parameter "description"
+
+    .prologue
+    .line 724
+    invoke-direct {p0, p3}, Lcom/google/common/base/CharMatcher;-><init>(Ljava/lang/String;)V
+
+    .line 725
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/base/CharMatcher;
+
+    iput-object v0, p0, Lcom/google/common/base/CharMatcher$And;->first:Lcom/google/common/base/CharMatcher;
+
+    .line 726
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/base/CharMatcher;
+
+    iput-object v0, p0, Lcom/google/common/base/CharMatcher$And;->second:Lcom/google/common/base/CharMatcher;
+
+    .line 727
     return-void
 .end method
 
 
 # virtual methods
-.method public and(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .locals 2
-    .parameter "other"
-
-    .prologue
-    .line 605
-    new-instance v0, Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcom/google/common/base/CharMatcher$And;->components:Ljava/util/List;
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    .line 606
-    .local v0, newComponents:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/base/CharMatcher;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 607
-    new-instance v1, Lcom/google/common/base/CharMatcher$And;
-
-    invoke-direct {v1, v0}, Lcom/google/common/base/CharMatcher$And;-><init>(Ljava/util/List;)V
-
-    return-object v1
-.end method
-
 .method public bridge synthetic apply(Ljava/lang/Object;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 588
+    .line 715
     check-cast p1, Ljava/lang/Character;
 
     .end local p1
@@ -100,49 +119,91 @@
 .end method
 
 .method public matches(C)Z
-    .locals 3
+    .locals 1
     .parameter "c"
 
     .prologue
-    .line 596
-    iget-object v2, p0, Lcom/google/common/base/CharMatcher$And;->components:Ljava/util/List;
+    .line 731
+    iget-object v0, p0, Lcom/google/common/base/CharMatcher$And;->first:Lcom/google/common/base/CharMatcher;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0, p1}, Lcom/google/common/base/CharMatcher;->matches(C)Z
 
-    move-result-object v0
+    move-result v0
 
-    .local v0, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz v0, :cond_0
 
-    move-result v2
+    iget-object v0, p0, Lcom/google/common/base/CharMatcher$And;->second:Lcom/google/common/base/CharMatcher;
 
-    if-eqz v2, :cond_1
+    invoke-virtual {v0, p1}, Lcom/google/common/base/CharMatcher;->matches(C)Z
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v1
+    if-eqz v0, :cond_0
 
-    check-cast v1, Lcom/google/common/base/CharMatcher;
+    const/4 v0, 0x1
 
-    .line 597
-    .local v1, matcher:Lcom/google/common/base/CharMatcher;
-    invoke-virtual {v1, p1}, Lcom/google/common/base/CharMatcher;->matches(C)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 598
-    const/4 v2, 0x0
-
-    .line 601
-    .end local v1           #matcher:Lcom/google/common/base/CharMatcher;
     :goto_0
-    return v2
+    return v0
 
-    :cond_1
-    const/4 v2, 0x1
+    :cond_0
+    const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method setBits(Ljava/util/BitSet;)V
+    .locals 3
+    .parameter "table"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "java.util.BitSet"
+    .end annotation
+
+    .prologue
+    .line 737
+    new-instance v0, Ljava/util/BitSet;
+
+    invoke-direct {v0}, Ljava/util/BitSet;-><init>()V
+
+    .line 738
+    .local v0, tmp1:Ljava/util/BitSet;
+    iget-object v2, p0, Lcom/google/common/base/CharMatcher$And;->first:Lcom/google/common/base/CharMatcher;
+
+    invoke-virtual {v2, v0}, Lcom/google/common/base/CharMatcher;->setBits(Ljava/util/BitSet;)V
+
+    .line 739
+    new-instance v1, Ljava/util/BitSet;
+
+    invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
+
+    .line 740
+    .local v1, tmp2:Ljava/util/BitSet;
+    iget-object v2, p0, Lcom/google/common/base/CharMatcher$And;->second:Lcom/google/common/base/CharMatcher;
+
+    invoke-virtual {v2, v1}, Lcom/google/common/base/CharMatcher;->setBits(Ljava/util/BitSet;)V
+
+    .line 741
+    invoke-virtual {v0, v1}, Ljava/util/BitSet;->and(Ljava/util/BitSet;)V
+
+    .line 742
+    invoke-virtual {p1, v0}, Ljava/util/BitSet;->or(Ljava/util/BitSet;)V
+
+    .line 743
+    return-void
+.end method
+
+.method withToString(Ljava/lang/String;)Lcom/google/common/base/CharMatcher;
+    .locals 3
+    .parameter "description"
+
+    .prologue
+    .line 747
+    new-instance v0, Lcom/google/common/base/CharMatcher$And;
+
+    iget-object v1, p0, Lcom/google/common/base/CharMatcher$And;->first:Lcom/google/common/base/CharMatcher;
+
+    iget-object v2, p0, Lcom/google/common/base/CharMatcher$And;->second:Lcom/google/common/base/CharMatcher;
+
+    invoke-direct {v0, v1, v2, p1}, Lcom/google/common/base/CharMatcher$And;-><init>(Lcom/google/common/base/CharMatcher;Lcom/google/common/base/CharMatcher;Ljava/lang/String;)V
+
+    return-object v0
 .end method

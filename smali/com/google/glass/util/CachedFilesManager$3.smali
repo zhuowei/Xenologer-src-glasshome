@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 454
+    .line 455
     iput-object p1, p0, Lcom/google/glass/util/CachedFilesManager$3;->this$0:Lcom/google/glass/util/CachedFilesManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .parameter "o2"
 
     .prologue
-    .line 457
+    .line 458
     invoke-virtual {p1}, Ljava/io/File;->lastModified()J
 
     move-result-wide v0
@@ -66,14 +66,14 @@
 
     if-gez v0, :cond_0
 
-    .line 458
+    .line 459
     const/4 v0, -0x1
 
-    .line 462
+    .line 463
     :goto_0
     return v0
 
-    .line 459
+    .line 460
     :cond_0
     invoke-virtual {p1}, Ljava/io/File;->lastModified()J
 
@@ -87,12 +87,12 @@
 
     if-lez v0, :cond_1
 
-    .line 460
+    .line 461
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 462
+    .line 463
     :cond_1
     invoke-virtual {p1, p2}, Ljava/io/File;->compareTo(Ljava/io/File;)I
 
@@ -107,7 +107,7 @@
     .parameter "x1"
 
     .prologue
-    .line 454
+    .line 455
     check-cast p1, Ljava/io/File;
 
     .end local p1

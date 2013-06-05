@@ -51,15 +51,15 @@
     .end annotation
 
     .prologue
-    .line 1818
+    .line 1682
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     .local p1, referent:Ljava/lang/Object;,"TV;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1819
+    .line 1683
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;->referent:Ljava/lang/Object;
 
-    .line 1820
+    .line 1684
     return-void
 .end method
 
@@ -77,21 +77,22 @@
     .end annotation
 
     .prologue
-    .line 1848
+    .line 1706
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     .local p1, newValue:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$ValueReference<TK;TV;>;"
     return-void
 .end method
 
-.method public copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
+.method public copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
     .locals 0
+    .parameter
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/ref/ReferenceQueue",
-            "<TV;>;",
+            "<TV;>;TV;",
             "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry",
             "<TK;TV;>;)",
             "Lcom/google/common/collect/MapMakerInternalMap$ValueReference",
@@ -100,10 +101,11 @@
     .end annotation
 
     .prologue
-    .line 1834
+    .line 1695
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
+    .local p3, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     return-object p0
 .end method
 
@@ -116,7 +118,7 @@
     .end annotation
 
     .prologue
-    .line 1824
+    .line 1687
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;->referent:Ljava/lang/Object;
 
@@ -134,7 +136,7 @@
     .end annotation
 
     .prologue
-    .line 1829
+    .line 1691
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -145,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 1839
+    .line 1699
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -161,7 +163,7 @@
     .end annotation
 
     .prologue
-    .line 1844
+    .line 1703
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$StrongValueReference;->get()Ljava/lang/Object;
 

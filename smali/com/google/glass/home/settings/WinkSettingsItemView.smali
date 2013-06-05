@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/settings/WinkSettingsItemView;
-.super Lcom/google/glass/home/settings/SettingsItemView;
+.super Lcom/google/glass/home/settings/SettingsCard;
 .source "WinkSettingsItemView.java"
 
 
@@ -67,7 +67,7 @@
 
     .prologue
     .line 43
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/settings/WinkSettingsItemView;->getContext()Landroid/content/Context;
@@ -667,7 +667,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 88
-    invoke-super {p0, p1}, Lcom/google/glass/home/settings/SettingsItemView;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    invoke-super {p0, p1}, Lcom/google/glass/home/settings/SettingsCard;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v1
 

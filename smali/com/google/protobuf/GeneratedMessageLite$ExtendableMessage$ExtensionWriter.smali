@@ -53,13 +53,13 @@
     .parameter "messageSetWireFormat"
 
     .prologue
-    .line 288
+    .line 304
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>.ExtensionWriter;"
     iput-object p1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->this$0:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
+    .line 299
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->this$0:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;
 
     #getter for: Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
@@ -73,7 +73,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
-    .line 289
+    .line 305
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -82,7 +82,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 290
+    .line 306
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -93,11 +93,11 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
 
-    .line 292
+    .line 308
     :cond_0
     iput-boolean p2, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->messageSetWireFormat:Z
 
-    .line 293
+    .line 309
     return-void
 .end method
 
@@ -108,7 +108,7 @@
     .parameter "x2"
 
     .prologue
-    .line 279
+    .line 295
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>.ExtensionWriter;"
     invoke-direct {p0, p1, p2}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;-><init>(Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;Z)V
 
@@ -128,7 +128,7 @@
     .end annotation
 
     .prologue
-    .line 297
+    .line 313
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>.ExtensionWriter;"
     :goto_0
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
@@ -149,7 +149,7 @@
 
     if-ge v1, p1, :cond_2
 
-    .line 298
+    .line 314
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -158,7 +158,7 @@
 
     check-cast v0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 299
+    .line 315
     .local v0, extension:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
     iget-boolean v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->messageSetWireFormat:Z
 
@@ -178,7 +178,7 @@
 
     if-nez v1, :cond_0
 
-    .line 302
+    .line 318
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getNumber()I
 
     move-result v2
@@ -193,7 +193,7 @@
 
     invoke-virtual {p2, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessageSetExtension(ILcom/google/protobuf/MessageLite;)V
 
-    .line 307
+    .line 323
     :goto_1
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
@@ -203,7 +203,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 308
+    .line 324
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->iter:Ljava/util/Iterator;
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -216,7 +216,7 @@
 
     goto :goto_0
 
-    .line 305
+    .line 321
     :cond_0
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;->next:Ljava/util/Map$Entry;
 
@@ -228,7 +228,7 @@
 
     goto :goto_1
 
-    .line 310
+    .line 326
     :cond_1
     const/4 v1, 0x0
 
@@ -236,7 +236,7 @@
 
     goto :goto_0
 
-    .line 313
+    .line 329
     .end local v0           #extension:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
     :cond_2
     return-void

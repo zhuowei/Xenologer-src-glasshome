@@ -16,6 +16,10 @@
 
 .field private static final MSG_FORCED_END:I = 0x0
 
+.field private static final SAVE_RESPONSE:Z = false
+
+.field private static final SERVER_KEY:Ljava/lang/String; = "persist.search.server"
+
 .field private static final STABILITY_THRESHOLD:D = 0.8
 
 .field private static final TAG:Ljava/lang/String;
@@ -28,9 +32,19 @@
 
 .field private handlerThread:Landroid/os/HandlerThread;
 
+.field private microphoneStream:Ljava/io/InputStream;
+
+.field private pi:Ljava/io/PipedInputStream;
+
+.field private po:Ljava/io/PipedOutputStream;
+
 .field private queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
 .field private final recognizer:Lcom/google/android/speech/Recognizer;
+
+.field private resampleInputStream:Lcom/google/glass/voice/ResampleInputStream;
+
+.field private soundSearchMicrophoneInputStream:Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStream;
 
 .field private final speechLevelSource:Lcom/google/android/speech/SpeechLevelSource;
 
@@ -42,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 79
     const-class v0, Lcom/google/glass/voice/network/RecognizerController;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -55,60 +69,135 @@
 .end method
 
 .method public constructor <init>(Lcom/google/android/speech/Recognizer;Lcom/google/android/speech/SpeechLevelSource;Lcom/google/android/speech/SpeechSettings;)V
-    .locals 2
+    .locals 3
     .parameter "recognizer"
     .parameter "speechLevelSource"
     .parameter "speechSettings"
 
     .prologue
-    .line 88
+    const/4 v1, 0x0
+
+    .line 161
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
+    .line 118
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->po:Ljava/io/PipedOutputStream;
+
+    .line 123
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->pi:Ljava/io/PipedInputStream;
+
+    .line 162
     iput-object p1, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
 
-    .line 90
+    .line 163
     iput-object p2, p0, Lcom/google/glass/voice/network/RecognizerController;->speechLevelSource:Lcom/google/android/speech/SpeechLevelSource;
 
-    .line 91
+    .line 164
     iput-object p3, p0, Lcom/google/glass/voice/network/RecognizerController;->speechSettings:Lcom/google/android/speech/SpeechSettings;
 
-    .line 95
-    new-instance v0, Landroid/os/HandlerThread;
+    .line 168
+    new-instance v1, Landroid/os/HandlerThread;
 
-    const-string v1, "RecognizerController"
+    const-string v2, "RecognizerController"
 
-    invoke-direct {v0, v1}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->handlerThread:Landroid/os/HandlerThread;
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->handlerThread:Landroid/os/HandlerThread;
 
-    .line 96
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->handlerThread:Landroid/os/HandlerThread;
-
-    invoke-virtual {v0}, Landroid/os/HandlerThread;->start()V
-
-    .line 97
-    new-instance v0, Lcom/google/glass/voice/network/RecognizerController$1;
-
+    .line 169
     iget-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->handlerThread:Landroid/os/HandlerThread;
 
-    invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
+    invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
 
-    move-result-object v1
+    .line 170
+    new-instance v1, Lcom/google/glass/voice/network/RecognizerController$1;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/glass/voice/network/RecognizerController$1;-><init>(Lcom/google/glass/voice/network/RecognizerController;Landroid/os/Looper;)V
+    iget-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->handlerThread:Landroid/os/HandlerThread;
 
-    iput-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
+    invoke-virtual {v2}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    .line 118
+    move-result-object v2
+
+    invoke-direct {v1, p0, v2}, Lcom/google/glass/voice/network/RecognizerController$1;-><init>(Lcom/google/glass/voice/network/RecognizerController;Landroid/os/Looper;)V
+
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
+
+    .line 193
+    :try_start_0
+    new-instance v1, Ljava/io/PipedOutputStream;
+
+    invoke-direct {v1}, Ljava/io/PipedOutputStream;-><init>()V
+
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->po:Ljava/io/PipedOutputStream;
+
+    .line 198
+    new-instance v1, Lcom/google/glass/voice/network/RecognizerController$2;
+
+    invoke-direct {v1, p0}, Lcom/google/glass/voice/network/RecognizerController$2;-><init>(Lcom/google/glass/voice/network/RecognizerController;)V
+
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->pi:Ljava/io/PipedInputStream;
+
+    .line 214
+    iget-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->pi:Ljava/io/PipedInputStream;
+
+    iget-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->po:Ljava/io/PipedOutputStream;
+
+    invoke-virtual {v1, v2}, Ljava/io/PipedInputStream;->connect(Ljava/io/PipedOutputStream;)V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 219
+    :goto_0
+    sget-object v1, Lcom/google/glass/util/Labs$Feature;->NAV_CONTAMINATE_FIX:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 220
+    new-instance v1, Lcom/google/glass/voice/InterleavingInputStream;
+
+    iget-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->pi:Ljava/io/PipedInputStream;
+
+    invoke-direct {v1, v2}, Lcom/google/glass/voice/InterleavingInputStream;-><init>(Ljava/io/InputStream;)V
+
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->microphoneStream:Ljava/io/InputStream;
+
+    .line 224
+    :goto_1
     return-void
+
+    .line 215
+    :catch_0
+    move-exception v0
+
+    .line 216
+    .local v0, e:Ljava/io/IOException;
+    sget-object v1, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+
+    const-string v2, "Error initializing RecognizerController."
+
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_0
+
+    .line 222
+    .end local v0           #e:Ljava/io/IOException;
+    :cond_0
+    iget-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->pi:Ljava/io/PipedInputStream;
+
+    iput-object v1, p0, Lcom/google/glass/voice/network/RecognizerController;->microphoneStream:Ljava/io/InputStream;
+
+    goto :goto_1
 .end method
 
 .method static synthetic access$000()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 46
+    .line 78
     sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -119,7 +208,7 @@
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 78
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
     return-object v0
@@ -130,7 +219,7 @@
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 78
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
 
     return-object v0
@@ -141,7 +230,7 @@
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 78
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->speechLevelSource:Lcom/google/android/speech/SpeechLevelSource;
 
     return-object v0
@@ -152,35 +241,35 @@
     .parameter "x0"
 
     .prologue
-    .line 46
+    .line 78
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
 
     return-object v0
 .end method
 
-.method static synthetic access$500(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;
+.method static synthetic access$500(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/glass/voice/network/SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/SpeechException;
     .locals 1
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 46
-    invoke-direct {p0, p1, p2}, Lcom/google/glass/voice/network/RecognizerController;->getSpeechException(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;
+    .line 78
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/voice/network/RecognizerController;->getSpeechException(Lcom/google/glass/voice/network/SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/SpeechException;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/android/speech/exception/RecognizeException;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+.method static synthetic access$600(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/android/speech/exception/RecognizeException;)Lcom/google/glass/voice/network/SpeechException$Type;
     .locals 1
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 46
-    invoke-direct {p0, p1}, Lcom/google/glass/voice/network/RecognizerController;->getSpeechExceptionType(Lcom/google/android/speech/exception/RecognizeException;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    .line 78
+    invoke-direct {p0, p1}, Lcom/google/glass/voice/network/RecognizerController;->getSpeechExceptionType(Lcom/google/android/speech/exception/RecognizeException;)Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
@@ -192,7 +281,7 @@
     .parameter "mode"
 
     .prologue
-    .line 167
+    .line 322
     const/4 v0, 0x0
 
     return-object v0
@@ -203,59 +292,263 @@
     .parameter "mode"
 
     .prologue
-    .line 171
+    .line 326
     sget-object v0, Lcom/google/android/speech/embedded/Greco3Mode;->ENDPOINTER_VOICESEARCH:Lcom/google/android/speech/embedded/Greco3Mode;
 
     return-object v0
 .end method
 
-.method private static getModeForVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)Lcom/google/android/speech/params/SessionParams$Mode;
+.method public static getModeForVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)Lcom/google/android/speech/params/SessionParams$Mode;
     .locals 1
     .parameter "voiceConfig"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
     .prologue
-    .line 139
+    .line 290
     sget-object v0, Lcom/google/glass/voice/VoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
 
     if-ne p0, v0, :cond_0
 
-    .line 141
+    .line 292
     sget-object v0, Lcom/google/android/speech/params/SessionParams$Mode;->SERVICE_API:Lcom/google/android/speech/params/SessionParams$Mode;
 
-    .line 145
+    .line 299
     :goto_0
     return-object v0
 
+    .line 293
     :cond_0
+    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->SOUND_SEARCH:Lcom/google/glass/voice/VoiceConfig;
+
+    if-ne p0, v0, :cond_1
+
+    .line 295
+    sget-object v0, Lcom/google/android/speech/params/SessionParams$Mode;->SOUND_SEARCH:Lcom/google/android/speech/params/SessionParams$Mode;
+
+    goto :goto_0
+
+    .line 299
+    :cond_1
     sget-object v0, Lcom/google/android/speech/params/SessionParams$Mode;->VOICE_ACTIONS:Lcom/google/android/speech/params/SessionParams$Mode;
 
     goto :goto_0
 .end method
 
-.method private getSessionParamsBuilder(Lcom/google/android/speech/params/SessionParams$Mode;)Lcom/google/android/speech/params/SessionParams$Builder;
+.method private getSpeechException(Lcom/google/glass/voice/network/SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/SpeechException;
+    .locals 3
+    .parameter "type"
+    .parameter "ex"
+
+    .prologue
+    .line 770
+    new-instance v0, Lcom/google/glass/voice/network/SpeechException;
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, p1, v1, v2}, Lcom/google/glass/voice/network/SpeechException;-><init>(Lcom/google/glass/voice/network/SpeechException$Type;Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method private getSpeechExceptionType(Lcom/google/android/speech/exception/RecognizeException;)Lcom/google/glass/voice/network/SpeechException$Type;
+    .locals 1
+    .parameter "ex"
+
+    .prologue
+    .line 754
+    instance-of v0, p1, Lcom/google/android/speech/exception/NetworkRecognizeException;
+
+    if-eqz v0, :cond_0
+
+    .line 755
+    sget-object v0, Lcom/google/glass/voice/network/SpeechException$Type;->NETWORK_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
+
+    .line 764
+    :goto_0
+    return-object v0
+
+    .line 756
+    :cond_0
+    instance-of v0, p1, Lcom/google/android/speech/exception/NoMatchRecognizeException;
+
+    if-eqz v0, :cond_1
+
+    .line 757
+    sget-object v0, Lcom/google/glass/voice/network/SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/SpeechException$Type;
+
+    goto :goto_0
+
+    .line 758
+    :cond_1
+    instance-of v0, p1, Lcom/google/android/speech/exception/AudioRecognizeException;
+
+    if-eqz v0, :cond_2
+
+    .line 759
+    sget-object v0, Lcom/google/glass/voice/network/SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
+
+    goto :goto_0
+
+    .line 764
+    :cond_2
+    sget-object v0, Lcom/google/glass/voice/network/SpeechException$Type;->SERVER:Lcom/google/glass/voice/network/SpeechException$Type;
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
+    .locals 2
+    .parameter "voiceSearchUi"
+
+    .prologue
+    .line 330
+    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+
+    const-string v1, "attachVoiceSearchUi"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 331
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    if-eqz v0, :cond_0
+
+    .line 332
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    new-instance v1, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;-><init>(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/glass/voice/network/VoiceSearchUi;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->setListener(Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;)V
+
+    .line 336
+    :goto_0
+    new-instance v0, Lcom/google/glass/voice/network/RecognizerController$3;
+
+    invoke-direct {v0, p0}, Lcom/google/glass/voice/network/RecognizerController$3;-><init>(Lcom/google/glass/voice/network/RecognizerController;)V
+
+    invoke-interface {p1, v0}, Lcom/google/glass/voice/network/VoiceSearchUi;->setSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V
+
+    .line 342
+    return-void
+
+    .line 334
+    :cond_0
+    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+
+    const-string v1, "queueingGrecoListener was null in attachVoiceSearchUi"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+.end method
+
+.method public cancel()V
+    .locals 2
+
+    .prologue
+    .line 362
+    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+
+    const-string v1, "cancel"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 363
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
+
+    invoke-interface {v0}, Lcom/google/android/speech/Recognizer;->cancel()V
+
+    .line 364
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    if-eqz v0, :cond_0
+
+    .line 365
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    invoke-virtual {v0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->setCanceled()V
+
+    .line 367
+    :cond_0
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    .line 368
+    return-void
+.end method
+
+.method public detachVoiceSearchUi()V
+    .locals 2
+
+    .prologue
+    .line 345
+    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+
+    const-string v1, "detachVoiceSearchUi"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 346
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    if-eqz v0, :cond_0
+
+    .line 347
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    invoke-virtual {v0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->setCanceled()V
+
+    .line 349
+    :cond_0
+    return-void
+.end method
+
+.method public getSessionParamsBuilder(Lcom/google/android/speech/params/SessionParams$Mode;)Lcom/google/android/speech/params/SessionParams$Builder;
     .locals 6
     .parameter "mode"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
     .prologue
     const/4 v5, 0x1
 
     const/4 v4, 0x0
 
-    .line 150
+    .line 305
     new-instance v0, Lcom/google/android/speech/params/AudioInputParams$Builder;
 
     invoke-direct {v0}, Lcom/google/android/speech/params/AudioInputParams$Builder;-><init>()V
 
-    .line 151
+    .line 306
     .local v0, audioBuilder:Lcom/google/android/speech/params/AudioInputParams$Builder;
     invoke-virtual {v0, v4}, Lcom/google/android/speech/params/AudioInputParams$Builder;->setPlayBeepEnabled(Z)Lcom/google/android/speech/params/AudioInputParams$Builder;
 
-    .line 153
+    .line 308
     new-instance v1, Lcom/google/android/speech/params/SessionParams$Builder;
 
     invoke-direct {v1}, Lcom/google/android/speech/params/SessionParams$Builder;-><init>()V
 
-    .line 154
+    .line 309
     .local v1, builder:Lcom/google/android/speech/params/SessionParams$Builder;
     const-string v2, "en-US"
 
@@ -307,294 +600,268 @@
 
     invoke-virtual {v2, v3}, Lcom/google/android/speech/params/SessionParams$Builder;->setAudioInputParams(Lcom/google/android/speech/params/AudioInputParams;)Lcom/google/android/speech/params/SessionParams$Builder;
 
-    .line 162
+    .line 317
     invoke-virtual {v1, v5}, Lcom/google/android/speech/params/SessionParams$Builder;->setNoSpeechDetectedEnabled(Z)Lcom/google/android/speech/params/SessionParams$Builder;
 
-    .line 163
+    .line 318
     return-object v1
 .end method
 
-.method private getSpeechException(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;Ljava/lang/Exception;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;
+.method public interleave(Ljava/nio/ByteBuffer;)V
     .locals 1
-    .parameter "type"
-    .parameter "ex"
+    .parameter "lastSensoryCommandAudio"
 
     .prologue
-    .line 422
-    new-instance v0, Lcom/google/glass/voice/network/RecognizerController$3;
+    .line 240
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->microphoneStream:Ljava/io/InputStream;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/glass/voice/network/RecognizerController$3;-><init>(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;Ljava/lang/Exception;)V
+    check-cast v0, Lcom/google/glass/voice/InterleavingInputStream;
 
-    return-object v0
-.end method
+    invoke-virtual {v0, p1}, Lcom/google/glass/voice/InterleavingInputStream;->interleave(Ljava/nio/ByteBuffer;)V
 
-.method private getSpeechExceptionType(Lcom/google/android/speech/exception/RecognizeException;)Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-    .locals 1
-    .parameter "ex"
-
-    .prologue
-    .line 406
-    instance-of v0, p1, Lcom/google/android/speech/exception/NetworkRecognizeException;
-
-    if-eqz v0, :cond_0
-
-    .line 407
-    sget-object v0, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->NETWORK_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-
-    .line 416
-    :goto_0
-    return-object v0
-
-    .line 408
-    :cond_0
-    instance-of v0, p1, Lcom/google/android/speech/exception/NoMatchRecognizeException;
-
-    if-eqz v0, :cond_1
-
-    .line 409
-    sget-object v0, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-
-    goto :goto_0
-
-    .line 410
-    :cond_1
-    instance-of v0, p1, Lcom/google/android/speech/exception/AudioRecognizeException;
-
-    if-eqz v0, :cond_2
-
-    .line 411
-    sget-object v0, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-
-    goto :goto_0
-
-    .line 416
-    :cond_2
-    sget-object v0, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->SERVER:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
-
-    goto :goto_0
-.end method
-
-
-# virtual methods
-.method public attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
-    .locals 2
-    .parameter "voiceSearchUi"
-
-    .prologue
-    .line 175
-    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
-
-    const-string v1, "attachVoiceSearchUi"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 176
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    if-eqz v0, :cond_0
-
-    .line 177
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    new-instance v1, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;-><init>(Lcom/google/glass/voice/network/RecognizerController;Lcom/google/glass/voice/network/VoiceSearchUi;)V
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->setListener(Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;)V
-
-    .line 181
-    :goto_0
-    new-instance v0, Lcom/google/glass/voice/network/RecognizerController$2;
-
-    invoke-direct {v0, p0}, Lcom/google/glass/voice/network/RecognizerController$2;-><init>(Lcom/google/glass/voice/network/RecognizerController;)V
-
-    invoke-interface {p1, v0}, Lcom/google/glass/voice/network/VoiceSearchUi;->setSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V
-
-    .line 187
-    return-void
-
-    .line 179
-    :cond_0
-    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
-
-    const-string v1, "queueingGrecoListener was null in attachVoiceSearchUi"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method public cancel()V
-    .locals 2
-
-    .prologue
-    .line 207
-    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
-
-    const-string v1, "cancel"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 208
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
-
-    invoke-interface {v0}, Lcom/google/android/speech/Recognizer;->cancel()V
-
-    .line 209
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    if-eqz v0, :cond_0
-
-    .line 210
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    invoke-virtual {v0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->setCanceled()V
-
-    .line 212
-    :cond_0
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    .line 213
+    .line 241
     return-void
 .end method
 
-.method public detachVoiceSearchUi()V
-    .locals 2
-
-    .prologue
-    .line 190
-    sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
-
-    const-string v1, "detachVoiceSearchUi"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 191
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    if-eqz v0, :cond_0
-
-    .line 192
-    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    invoke-virtual {v0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->setCanceled()V
-
-    .line 194
-    :cond_0
-    return-void
-.end method
-
-.method public startListening(Lcom/google/glass/voice/VoiceConfig;Landroid/content/Context;)V
-    .locals 6
+.method public startListening(Lcom/google/glass/voice/VoiceConfig;Lcom/google/glass/voice/ResampleInputStream$ResampleInputStreamListener;)V
+    .locals 9
     .parameter "voiceConfig"
-    .parameter "context"
+    .parameter "listener"
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v8, 0x0
 
-    .line 121
-    sget-object v2, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+    .line 244
+    new-instance v4, Lcom/google/glass/voice/ResampleInputStream;
 
-    const-string v3, "startListening"
+    iget-object v5, p0, Lcom/google/glass/voice/network/RecognizerController;->microphoneStream:Ljava/io/InputStream;
 
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const/16 v6, 0x3e80
 
-    .line 122
-    new-instance v2, Lcom/google/glass/voice/network/QueueingGrecoListener;
+    const/16 v7, 0x1f40
 
-    invoke-direct {v2}, Lcom/google/glass/voice/network/QueueingGrecoListener;-><init>()V
+    invoke-direct {v4, p2, v5, v6, v7}, Lcom/google/glass/voice/ResampleInputStream;-><init>(Lcom/google/glass/voice/ResampleInputStream$ResampleInputStreamListener;Ljava/io/InputStream;II)V
 
-    iput-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+    iput-object v4, p0, Lcom/google/glass/voice/network/RecognizerController;->resampleInputStream:Lcom/google/glass/voice/ResampleInputStream;
 
-    .line 124
-    invoke-static {p1}, Lcom/google/glass/voice/network/RecognizerController;->getModeForVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)Lcom/google/android/speech/params/SessionParams$Mode;
+    .line 247
+    invoke-static {}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getContainer()Lcom/google/glass/voice/network/VoiceSearchContainer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-direct {p0, v2}, Lcom/google/glass/voice/network/RecognizerController;->getSessionParamsBuilder(Lcom/google/android/speech/params/SessionParams$Mode;)Lcom/google/android/speech/params/SessionParams$Builder;
+    .line 248
+    .local v3, vc:Lcom/google/glass/voice/network/VoiceSearchContainer;
+    sget-object v4, Lcom/google/glass/voice/VoiceConfig;->SOUND_SEARCH:Lcom/google/glass/voice/VoiceConfig;
 
-    move-result-object v2
+    if-ne p1, v4, :cond_1
 
-    invoke-virtual {v2}, Lcom/google/android/speech/params/SessionParams$Builder;->build()Lcom/google/android/speech/params/SessionParams;
+    .line 255
+    :try_start_0
+    new-instance v4, Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStreamFactory;
 
-    move-result-object v1
+    new-instance v5, Lcom/google/android/ears/s3/audio/AudioListeners;
 
-    .line 126
-    .local v1, sessionParams:Lcom/google/android/speech/params/SessionParams;
-    invoke-virtual {v1}, Lcom/google/android/speech/params/SessionParams;->getAudioInputParams()Lcom/google/android/speech/params/AudioInputParams;
+    invoke-direct {v5}, Lcom/google/android/ears/s3/audio/AudioListeners;-><init>()V
 
-    move-result-object v2
+    invoke-direct {v4, v5}, Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStreamFactory;-><init>(Lcom/google/android/ears/s3/audio/AudioListener;)V
 
-    invoke-virtual {v2}, Lcom/google/android/speech/params/AudioInputParams;->shouldStoreCompleteAudio()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-static {}, Lcom/google/common/util/concurrent/SettableFuture;->create()Lcom/google/common/util/concurrent/SettableFuture;
-
-    move-result-object v0
-
-    .line 129
-    .local v0, futureAudio:Lcom/google/common/util/concurrent/SettableFuture;,"Lcom/google/common/util/concurrent/SettableFuture<[B>;"
-    :goto_0
-    iget-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
-
-    iget-object v3, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
-
-    invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
+    invoke-virtual {v4}, Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStreamFactory;->createInputStream()Ljava/io/InputStream;
 
     move-result-object v4
 
-    invoke-interface {v2, v1, v3, v4, v0}, Lcom/google/android/speech/Recognizer;->startListening(Lcom/google/android/speech/params/SessionParams;Lcom/google/android/speech/listeners/RecognitionEventListener;Ljava/util/concurrent/Executor;Lcom/google/common/util/concurrent/SettableFuture;)V
+    check-cast v4, Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStream;
 
-    .line 132
-    iget-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
+    iput-object v4, p0, Lcom/google/glass/voice/network/RecognizerController;->soundSearchMicrophoneInputStream:Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStream;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v2, v5}, Landroid/os/Handler;->removeMessages(I)V
+    .line 262
+    :goto_0
+    invoke-virtual {v3}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getAudioInputStreamFactory()Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;
 
-    .line 133
-    sget-object v2, Lcom/google/glass/voice/VoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
+    move-result-object v4
 
-    if-eq p1, v2, :cond_0
+    iget-object v5, p0, Lcom/google/glass/voice/network/RecognizerController;->soundSearchMicrophoneInputStream:Lcom/google/android/ears/s3/audio/WrappedMicrophoneInputStream;
 
-    .line 134
-    iget-object v2, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
+    invoke-virtual {v4, v5}, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;->setInputStream(Ljava/io/InputStream;)V
 
-    const-wide/16 v3, 0x4e20
+    .line 267
+    :goto_1
+    sget-object v4, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
 
-    invoke-virtual {v2, v5, v3, v4}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+    const-string v5, "startListening"
 
-    .line 136
+    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 268
+    new-instance v4, Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    invoke-direct {v4}, Lcom/google/glass/voice/network/QueueingGrecoListener;-><init>()V
+
+    iput-object v4, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    .line 270
+    invoke-static {p1}, Lcom/google/glass/voice/network/RecognizerController;->getModeForVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)Lcom/google/android/speech/params/SessionParams$Mode;
+
+    move-result-object v4
+
+    invoke-virtual {p0, v4}, Lcom/google/glass/voice/network/RecognizerController;->getSessionParamsBuilder(Lcom/google/android/speech/params/SessionParams$Mode;)Lcom/google/android/speech/params/SessionParams$Builder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/android/speech/params/SessionParams$Builder;->build()Lcom/google/android/speech/params/SessionParams;
+
+    move-result-object v2
+
+    .line 272
+    .local v2, sessionParams:Lcom/google/android/speech/params/SessionParams;
+    invoke-virtual {v2}, Lcom/google/android/speech/params/SessionParams;->getAudioInputParams()Lcom/google/android/speech/params/AudioInputParams;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/android/speech/params/AudioInputParams;->shouldStoreCompleteAudio()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    invoke-static {}, Lcom/google/common/util/concurrent/SettableFuture;->create()Lcom/google/common/util/concurrent/SettableFuture;
+
+    move-result-object v1
+
+    .line 275
+    .local v1, futureAudio:Lcom/google/common/util/concurrent/SettableFuture;,"Lcom/google/common/util/concurrent/SettableFuture<[B>;"
+    :goto_2
+    iget-object v4, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
+
+    iget-object v5, p0, Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
+
+    invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v6
+
+    invoke-interface {v4, v2, v5, v6, v1}, Lcom/google/android/speech/Recognizer;->startListening(Lcom/google/android/speech/params/SessionParams;Lcom/google/android/speech/listeners/RecognitionEventListener;Ljava/util/concurrent/Executor;Lcom/google/common/util/concurrent/SettableFuture;)V
+
+    .line 278
+    iget-object v4, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
+
+    invoke-virtual {v4, v8}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 279
+    sget-object v4, Lcom/google/glass/voice/VoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
+
+    if-eq p1, v4, :cond_0
+
+    .line 280
+    iget-object v4, p0, Lcom/google/glass/voice/network/RecognizerController;->handler:Landroid/os/Handler;
+
+    const-wide/16 v5, 0x4e20
+
+    invoke-virtual {v4, v8, v5, v6}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    .line 286
     :cond_0
     return-void
 
-    .line 126
-    .end local v0           #futureAudio:Lcom/google/common/util/concurrent/SettableFuture;,"Lcom/google/common/util/concurrent/SettableFuture<[B>;"
-    :cond_1
-    const/4 v0, 0x0
+    .line 258
+    .end local v1           #futureAudio:Lcom/google/common/util/concurrent/SettableFuture;,"Lcom/google/common/util/concurrent/SettableFuture<[B>;"
+    .end local v2           #sessionParams:Lcom/google/android/speech/params/SessionParams;
+    :catch_0
+    move-exception v0
+
+    .line 259
+    .local v0, e:Ljava/io/IOException;
+    sget-object v4, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
+
+    const-string v5, "Error creating sound search MicrophoneInputStream"
+
+    invoke-static {v4, v5, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
+
+    .line 264
+    .end local v0           #e:Ljava/io/IOException;
+    :cond_1
+    invoke-virtual {v3}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getAudioInputStreamFactory()Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;
+
+    move-result-object v4
+
+    iget-object v5, p0, Lcom/google/glass/voice/network/RecognizerController;->resampleInputStream:Lcom/google/glass/voice/ResampleInputStream;
+
+    invoke-virtual {v4, v5}, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;->setInputStream(Ljava/io/InputStream;)V
+
+    goto :goto_1
+
+    .line 272
+    .restart local v2       #sessionParams:Lcom/google/android/speech/params/SessionParams;
+    :cond_2
+    const/4 v1, 0x0
+
+    goto :goto_2
 .end method
 
 .method public stopListening()V
     .locals 2
 
     .prologue
-    .line 198
+    .line 353
     sget-object v0, Lcom/google/glass/voice/network/RecognizerController;->TAG:Ljava/lang/String;
 
     const-string v1, "stopListening"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 199
+    .line 354
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->recognizer:Lcom/google/android/speech/Recognizer;
 
     invoke-interface {v0}, Lcom/google/android/speech/Recognizer;->stopListening()V
 
-    .line 200
+    .line 355
     return-void
+.end method
+
+.method public declared-synchronized writeAudio(Ljava/nio/ByteBuffer;)V
+    .locals 4
+    .parameter "b"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 233
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController;->po:Ljava/io/PipedOutputStream;
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v3
+
+    array-length v3, v3
+
+    invoke-virtual {v0, v1, v2, v3}, Ljava/io/PipedOutputStream;->write([BII)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 234
+    monitor-exit p0
+
+    return-void
+
+    .line 233
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
 .end method

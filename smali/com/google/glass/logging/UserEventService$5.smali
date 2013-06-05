@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 464
+    .line 523
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService$5;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iput-object p2, p0, Lcom/google/glass/logging/UserEventService$5;->val$event:Lcom/google/common/logging/GlassUserEventProto;
@@ -56,7 +56,7 @@
     .locals 2
 
     .prologue
-    .line 467
+    .line 526
     invoke-static {}, Lcom/google/glass/logging/UserEventService;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 468
+    .line 527
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$5;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iget-object v1, p0, Lcom/google/glass/logging/UserEventService$5;->val$event:Lcom/google/common/logging/GlassUserEventProto;
@@ -73,7 +73,7 @@
     #calls: Lcom/google/glass/logging/UserEventService;->addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
     invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$300(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
 
-    .line 469
+    .line 528
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .parameter "errorCode"
 
     .prologue
-    .line 474
+    .line 533
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$5;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iget-object v1, p0, Lcom/google/glass/logging/UserEventService$5;->val$event:Lcom/google/common/logging/GlassUserEventProto;
@@ -90,7 +90,7 @@
     #calls: Lcom/google/glass/logging/UserEventService;->addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
     invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$300(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
 
-    .line 475
+    .line 534
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .parameter "responseProto"
 
     .prologue
-    .line 479
+    .line 538
     return-void
 .end method
 
@@ -108,7 +108,7 @@
     .parameter "x0"
 
     .prologue
-    .line 464
+    .line 523
     check-cast p1, Lcom/google/googlex/glass/common/proto/ReportUserEventResponse;
 
     .end local p1

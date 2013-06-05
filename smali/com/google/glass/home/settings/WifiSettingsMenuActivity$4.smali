@@ -1,6 +1,9 @@
 .class Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;
-.super Lcom/google/glass/widget/MessageDialog$SimpleListener;
+.super Ljava/lang/Object;
 .source "WifiSettingsMenuActivity.java"
+
+# interfaces
+.implements Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;
 
 
 # annotations
@@ -17,71 +20,130 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
+.field final synthetic val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+.method constructor <init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;Lcom/google/glass/widget/MessageDialog;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 362
+    .line 315
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
-    invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
+    iput-object p2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-
-# virtual methods
-.method public onDismissed()V
+.method private updateDialog(II)V
     .locals 2
+    .parameter "messageId"
+    .parameter "iconId"
 
     .prologue
-    .line 365
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
+    .line 329
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
 
-    #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$1000(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->isShowing()Z
 
-    move-result-object v0
+    move-result v0
 
-    const-string v1, "connect canceled"
+    if-nez v0, :cond_0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 366
+    .line 344
+    :goto_0
     return-void
-.end method
 
-.method public onDone()V
-    .locals 2
+    .line 333
+    :cond_0
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
 
-    .prologue
-    .line 370
+    new-instance v1, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4$1;
+
+    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4$1;-><init>(Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;)V
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/widget/MessageDialog;->setListener(Lcom/google/glass/widget/MessageDialog$Listener;)V
+
+    .line 341
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
+
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/widget/MessageDialog;->updateContent(II)V
+
+    .line 342
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
+
+    invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->autoHide()V
+
+    .line 343
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
-    #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$1100(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "connect confirmed"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 372
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
-
-    #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$500(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+    #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getContentView()Landroid/view/View;
+    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$900(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Landroid/view/View;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setKeepScreenOn(Z)V
 
-    .line 373
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public onConnected()V
+    .locals 2
+
+    .prologue
+    .line 324
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
+
+    invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->SUCCESS:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+
+    .line 325
+    sget v0, Lcom/google/glass/home/R$string;->wifi_menu_connected:I
+
+    sget v1, Lcom/google/glass/home/R$drawable;->ic_done_medium:I
+
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->updateDialog(II)V
+
+    .line 326
+    return-void
+.end method
+
+.method public onConnectionFailed()V
+    .locals 2
+
+    .prologue
+    .line 318
+    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
+
+    invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->ERROR:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+
+    .line 319
+    sget v0, Lcom/google/glass/home/R$string;->wifi_menu_failed:I
+
+    sget v1, Lcom/google/glass/home/R$drawable;->ic_fail_medium:I
+
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->updateDialog(II)V
+
+    .line 320
     return-void
 .end method

@@ -63,7 +63,7 @@
 
     const/4 v2, 0x0
 
-    .line 3789
+    .line 3821
     new-instance v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     const-string v1, "START_LISTENING"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->START_LISTENING:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
-    .line 3793
+    .line 3825
     new-instance v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     const-string v1, "STOP_LISTENING"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->STOP_LISTENING:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
-    .line 3784
+    .line 3816
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
@@ -96,7 +96,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->$VALUES:[Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
-    .line 3821
+    .line 3853
     new-instance v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$LocationRequest$RequestType$1;-><init>()V
@@ -119,13 +119,13 @@
     .end annotation
 
     .prologue
-    .line 3830
+    .line 3862
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 3831
+    .line 3863
     iput p4, p0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->value:I
 
-    .line 3832
+    .line 3864
     return-void
 .end method
 
@@ -142,7 +142,7 @@
     .end annotation
 
     .prologue
-    .line 3818
+    .line 3850
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -153,28 +153,28 @@
     .parameter "value"
 
     .prologue
-    .line 3809
+    .line 3841
     packed-switch p0, :pswitch_data_0
 
-    .line 3812
+    .line 3844
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 3810
+    .line 3842
     :pswitch_0
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->START_LISTENING:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     goto :goto_0
 
-    .line 3811
+    .line 3843
     :pswitch_1
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->STOP_LISTENING:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     goto :goto_0
 
-    .line 3809
+    .line 3841
     nop
 
     :pswitch_data_0
@@ -189,7 +189,7 @@
     .parameter "name"
 
     .prologue
-    .line 3784
+    .line 3816
     const-class v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -205,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 3784
+    .line 3816
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->$VALUES:[Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     invoke-virtual {v0}, [Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->clone()Ljava/lang/Object;
@@ -223,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 3806
+    .line 3838
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->value:I
 
     return v0

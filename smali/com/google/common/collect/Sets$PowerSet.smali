@@ -67,22 +67,22 @@
     .end annotation
 
     .prologue
-    .line 1163
+    .line 1184
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     .local p1, input:Lcom/google/common/collect/ImmutableSet;,"Lcom/google/common/collect/ImmutableSet<TE;>;"
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
-    .line 1164
+    .line 1185
     iput-object p1, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableSet;
 
-    .line 1165
+    .line 1186
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableSet;->asList()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Sets$PowerSet;->inputList:Lcom/google/common/collect/ImmutableList;
 
-    .line 1166
+    .line 1187
     const/4 v0, 0x1
 
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableSet;->size()I
@@ -93,7 +93,7 @@
 
     iput v0, p0, Lcom/google/common/collect/Sets$PowerSet;->powerSetSize:I
 
-    .line 1167
+    .line 1188
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .end parameter
 
     .prologue
-    .line 1219
+    .line 1247
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     instance-of v1, p1, Ljava/util/Set;
 
@@ -115,10 +115,10 @@
 
     move-object v0, p1
 
-    .line 1220
+    .line 1248
     check-cast v0, Ljava/util/Set;
 
-    .line 1221
+    .line 1249
     .local v0, set:Ljava/util/Set;,"Ljava/util/Set<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableSet;
 
@@ -126,7 +126,7 @@
 
     move-result v1
 
-    .line 1223
+    .line 1251
     .end local v0           #set:Ljava/util/Set;,"Ljava/util/Set<*>;"
     :goto_0
     return v1
@@ -145,7 +145,7 @@
     .end parameter
 
     .prologue
-    .line 1227
+    .line 1256
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     instance-of v1, p1, Lcom/google/common/collect/Sets$PowerSet;
 
@@ -153,10 +153,10 @@
 
     move-object v0, p1
 
-    .line 1228
+    .line 1257
     check-cast v0, Lcom/google/common/collect/Sets$PowerSet;
 
-    .line 1229
+    .line 1258
     .local v0, that:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<*>;"
     iget-object v1, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableSet;
 
@@ -166,7 +166,7 @@
 
     move-result v1
 
-    .line 1231
+    .line 1260
     .end local v0           #that:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<*>;"
     :goto_0
     return v1
@@ -183,7 +183,7 @@
     .locals 2
 
     .prologue
-    .line 1240
+    .line 1270
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$PowerSet;->inputSet:Lcom/google/common/collect/ImmutableSet;
 
@@ -208,7 +208,7 @@
     .locals 1
 
     .prologue
-    .line 1174
+    .line 1197
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     const/4 v0, 0x0
 
@@ -228,7 +228,7 @@
     .end annotation
 
     .prologue
-    .line 1178
+    .line 1202
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     new-instance v0, Lcom/google/common/collect/Sets$PowerSet$1;
 
@@ -243,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 1170
+    .line 1192
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     iget v0, p0, Lcom/google/common/collect/Sets$PowerSet;->powerSetSize:I
 
@@ -254,7 +254,7 @@
     .locals 2
 
     .prologue
-    .line 1244
+    .line 1275
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet;,"Lcom/google/common/collect/Sets$PowerSet<TE;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

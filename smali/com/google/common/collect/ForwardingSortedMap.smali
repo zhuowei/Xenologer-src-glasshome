@@ -43,17 +43,17 @@
     .parameter "k2"
 
     .prologue
-    .line 97
+    .line 92
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
-    .line 98
+    .line 93
     .local v0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     if-nez v0, :cond_0
 
-    .line 99
+    .line 94
     check-cast p1, Ljava/lang/Comparable;
 
     .end local p1
@@ -61,7 +61,7 @@
 
     move-result v1
 
-    .line 101
+    .line 96
     :goto_0
     return v1
 
@@ -145,7 +145,7 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 70
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
@@ -170,7 +170,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 74
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     .local p1, toKey:Ljava/lang/Object;,"TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
@@ -193,7 +193,7 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 78
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;
 
@@ -219,10 +219,10 @@
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     const/4 v3, 0x0
 
-    .line 117
+    .line 114
     move-object v2, p0
 
-    .line 118
+    .line 115
     .local v2, self:Ljava/util/SortedMap;,"Ljava/util/SortedMap<Ljava/lang/Object;TV;>;"
     :try_start_0
     invoke-interface {v2, p1}, Ljava/util/SortedMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
@@ -233,7 +233,7 @@
 
     move-result-object v0
 
-    .line 119
+    .line 116
     .local v0, ceilingKey:Ljava/lang/Object;
     invoke-direct {p0, v0, p1}, Lcom/google/common/collect/ForwardingSortedMap;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
     :try_end_0
@@ -247,35 +247,35 @@
 
     const/4 v3, 0x1
 
-    .line 125
+    .line 122
     .end local v0           #ceilingKey:Ljava/lang/Object;
     :cond_0
     :goto_0
     return v3
 
-    .line 120
+    .line 117
     :catch_0
     move-exception v1
 
-    .line 121
+    .line 118
     .local v1, e:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 122
+    .line 119
     .end local v1           #e:Ljava/lang/ClassCastException;
     :catch_1
     move-exception v1
 
-    .line 123
+    .line 120
     .local v1, e:Ljava/util/NoSuchElementException;
     goto :goto_0
 
-    .line 124
+    .line 121
     .end local v1           #e:Ljava/util/NoSuchElementException;
     :catch_2
     move-exception v1
 
-    .line 125
+    .line 122
     .local v1, e:Ljava/lang/NullPointerException;
     goto :goto_0
 .end method
@@ -301,10 +301,10 @@
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     const/4 v5, 0x0
 
-    .line 141
+    .line 140
     move-object v3, p0
 
-    .line 142
+    .line 141
     .local v3, self:Ljava/util/SortedMap;,"Ljava/util/SortedMap<Ljava/lang/Object;TV;>;"
     :try_start_0
     invoke-interface {v3, p1}, Ljava/util/SortedMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
@@ -319,7 +319,7 @@
 
     move-result-object v2
 
-    .line 144
+    .line 142
     .local v2, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/Object;TV;>;>;"
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -327,14 +327,14 @@
 
     if-eqz v6, :cond_0
 
-    .line 145
+    .line 143
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 146
+    .line 144
     .local v0, ceilingEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Object;TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -346,36 +346,36 @@
 
     if-nez v6, :cond_0
 
-    .line 147
+    .line 145
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 148
+    .line 146
     .local v4, value:Ljava/lang/Object;,"TV;"
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 157
+    .line 155
     .end local v0           #ceilingEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Object;TV;>;"
     .end local v2           #entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/Object;TV;>;>;"
     .end local v4           #value:Ljava/lang/Object;,"TV;"
     :goto_0
     return-object v4
 
-    .line 152
+    .line 150
     :catch_0
     move-exception v1
 
     .local v1, e:Ljava/lang/ClassCastException;
     move-object v4, v5
 
-    .line 153
+    .line 151
     goto :goto_0
 
-    .line 154
+    .line 152
     .end local v1           #e:Ljava/lang/ClassCastException;
     :catch_1
     move-exception v1
@@ -383,7 +383,7 @@
     .local v1, e:Ljava/lang/NullPointerException;
     move-object v4, v5
 
-    .line 155
+    .line 153
     goto :goto_0
 
     .end local v1           #e:Ljava/lang/NullPointerException;
@@ -391,7 +391,7 @@
     :cond_0
     move-object v4, v5
 
-    .line 157
+    .line 155
     goto :goto_0
 .end method
 
@@ -411,7 +411,7 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 168
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     .local p1, fromKey:Ljava/lang/Object;,"TK;"
     .local p2, toKey:Ljava/lang/Object;,"TK;"
@@ -439,7 +439,7 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 82
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     .local p1, fromKey:Ljava/lang/Object;,"TK;"
     .local p2, toKey:Ljava/lang/Object;,"TK;"
@@ -466,7 +466,7 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 86
     .local p0, this:Lcom/google/common/collect/ForwardingSortedMap;,"Lcom/google/common/collect/ForwardingSortedMap<TK;TV;>;"
     .local p1, fromKey:Ljava/lang/Object;,"TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedMap;->delegate()Ljava/util/SortedMap;

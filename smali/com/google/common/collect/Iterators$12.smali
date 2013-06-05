@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Iterators;->forArray([Ljava/lang/Object;II)Lcom/google/common/collect/UnmodifiableIterator;
+    value = Lcom/google/common/collect/Iterators;->forArray([Ljava/lang/Object;III)Lcom/google/common/collect/UnmodifiableListIterator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,19 +28,20 @@
 
 
 # direct methods
-.method constructor <init>(I[Ljava/lang/Object;I)V
+.method constructor <init>(II[Ljava/lang/Object;I)V
     .locals 0
     .parameter "x0"
+    .parameter "x1"
     .parameter
     .parameter
 
     .prologue
-    .line 1072
-    iput-object p2, p0, Lcom/google/common/collect/Iterators$12;->val$array:[Ljava/lang/Object;
+    .line 1091
+    iput-object p3, p0, Lcom/google/common/collect/Iterators$12;->val$array:[Ljava/lang/Object;
 
-    iput p3, p0, Lcom/google/common/collect/Iterators$12;->val$offset:I
+    iput p4, p0, Lcom/google/common/collect/Iterators$12;->val$offset:I
 
-    invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractIndexedListIterator;-><init>(I)V
+    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractIndexedListIterator;-><init>(II)V
 
     return-void
 .end method
@@ -57,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 1074
+    .line 1094
     iget-object v0, p0, Lcom/google/common/collect/Iterators$12;->val$array:[Ljava/lang/Object;
 
     iget v1, p0, Lcom/google/common/collect/Iterators$12;->val$offset:I

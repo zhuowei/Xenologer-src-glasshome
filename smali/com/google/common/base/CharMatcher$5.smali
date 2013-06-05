@@ -15,12 +15,13 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .parameter "x0"
 
     .prologue
-    .line 161
-    invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
+    .line 192
+    invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -32,7 +33,7 @@
     .parameter "x0"
 
     .prologue
-    .line 161
+    .line 192
     check-cast p1, Ljava/lang/Character;
 
     .end local p1
@@ -48,8 +49,8 @@
     .parameter "c"
 
     .prologue
-    .line 163
-    invoke-static {p1}, Ljava/lang/Character;->isLowerCase(C)Z
+    .line 195
+    invoke-static {p1}, Ljava/lang/Character;->isUpperCase(C)Z
 
     move-result v0
 

@@ -317,7 +317,7 @@
     .end local p1
     iget-object v2, p1, Lcom/google/protobuf/UnknownFieldSet;->fields:Ljava/util/Map;
 
-    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
@@ -461,6 +461,7 @@
 
     add-int/2addr v2, v3
 
+    .line 178
     goto :goto_0
 
     .line 179
@@ -526,6 +527,7 @@
 
     add-int/2addr v2, v3
 
+    .line 203
     goto :goto_0
 
     .line 204
@@ -560,7 +562,7 @@
     .line 82
     iget-object v0, p0, Lcom/google/protobuf/UnknownFieldSet;->fields:Ljava/util/Map;
 
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-interface {v0}, Ljava/util/Map;->hashCode()I
 
     move-result v0
 

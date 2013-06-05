@@ -28,6 +28,8 @@
 
 .field public static final EXTRA_ROOM_ID:Ljava/lang/String; = "room_id"
 
+.field public static final EXTRA_TIMELINE_ID:Ljava/lang/String; = "timelineItemId"
+
 .field private static final HANGOUT_BASE_URL:Ljava/lang/String; = "https://plus.google.com/hangouts/_/"
 
 .field private static final TAG:Ljava/lang/String;
@@ -59,13 +61,13 @@
     .parameter "context"
 
     .prologue
-    .line 58
+    .line 61
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 62
     iput-object p1, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
-    .line 60
+    .line 63
     return-void
 .end method
 
@@ -74,7 +76,7 @@
     .parameter "roomId"
 
     .prologue
-    .line 170
+    .line 175
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -102,30 +104,30 @@
     .parameter "shouldTurnScreenOff"
 
     .prologue
-    .line 159
+    .line 164
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.HANGOUTS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 160
+    .line 165
     .local v0, hangoutIntent:Landroid/content/Intent;
     const-string v1, "_invitee"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 161
+    .line 166
     const-string v1, "should_finish_turn_screen_off"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 162
+    .line 167
     const/high16 v1, 0x1400
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 163
+    .line 168
     return-object v0
 .end method
 
@@ -135,21 +137,21 @@
     .locals 3
 
     .prologue
-    .line 69
+    .line 72
     sget-object v1, Lcom/google/glass/util/HangoutHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Bringing hangout to foreground"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
+    .line 74
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.HANGOUTS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 72
+    .line 75
     .local v0, hangoutIntent:Landroid/content/Intent;
     const-string v1, "foreground"
 
@@ -157,43 +159,51 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 73
+    .line 76
     const/high16 v1, 0x1400
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 74
+    .line 77
     iget-object v1, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 75
+    .line 78
     return-void
 .end method
 
 .method public broadcastHangoutExited()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 95
-    new-instance v0, Landroid/content/Intent;
+    .line 99
+    sget-object v0, Lcom/google/glass/util/HangoutHelper;->TAG:Ljava/lang/String;
 
-    const-string v1, "com.google.glass.action.HANGOUT_STATUS"
+    const-string v1, "Setting participating status to false."
 
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
-    .local v0, intent:Landroid/content/Intent;
-    iget-object v1, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
+    .line 100
+    iget-object v0, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->removeStickyBroadcast(Landroid/content/Intent;)V
+    new-instance v1, Landroid/content/Intent;
 
-    .line 97
-    iget-object v1, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
+    const-string v2, "com.google.glass.action.HANGOUT_STATUS"
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 98
+    const-string v2, "participating"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
+
+    .line 102
     return-void
 .end method
 
@@ -201,7 +211,14 @@
     .locals 4
 
     .prologue
-    .line 85
+    .line 88
+    sget-object v0, Lcom/google/glass/util/HangoutHelper;->TAG:Ljava/lang/String;
+
+    const-string v1, "Setting participating status to true."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 89
     iget-object v0, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
     new-instance v1, Landroid/content/Intent;
@@ -220,7 +237,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 87
+    .line 91
     return-void
 .end method
 
@@ -228,21 +245,21 @@
     .locals 3
 
     .prologue
-    .line 122
+    .line 126
     sget-object v1, Lcom/google/glass/util/HangoutHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Exiting hangout."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
+    .line 128
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.EXIT_HANGOUTS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 125
+    .line 129
     .local v0, exitIntent:Landroid/content/Intent;
     const-string v1, "foreground"
 
@@ -250,17 +267,17 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 126
+    .line 130
     const/high16 v1, 0x1400
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 127
+    .line 131
     iget-object v1, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 128
+    .line 132
     return-void
 .end method
 
@@ -270,7 +287,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 149
+    .line 154
     iget-object v2, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
@@ -289,7 +306,7 @@
 
     move-result-object v0
 
-    .line 151
+    .line 156
     .local v0, stickyIntent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
@@ -308,30 +325,41 @@
 .end method
 
 .method public joinHangout(Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;Z)V
-    .locals 1
+    .locals 6
     .parameter "roomId"
     .parameter "shareTarget"
     .parameter "shouldTurnScreenOff"
 
     .prologue
-    .line 114
-    const/4 v0, 0x0
+    .line 118
+    const/4 v4, 0x0
 
-    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/google/glass/util/HangoutHelper;->joinHangout(Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;ZZ)V
+    const/4 v5, 0x0
 
-    .line 115
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/glass/util/HangoutHelper;->joinHangout(Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;ZZLjava/lang/String;)V
+
+    .line 119
     return-void
 .end method
 
-.method public joinHangout(Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;ZZ)V
+.method public joinHangout(Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;ZZLjava/lang/String;)V
     .locals 4
     .parameter "roomId"
     .parameter "shareTarget"
     .parameter "shouldTurnScreenOff"
     .parameter "joinFromInvitation"
+    .parameter "itemId"
 
     .prologue
-    .line 135
+    .line 139
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -350,11 +378,11 @@
 
     move-result-object v1
 
-    .line 136
+    .line 140
     .local v1, logMessage:Ljava/lang/String;
     if-eqz p2, :cond_0
 
-    .line 137
+    .line 141
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -395,7 +423,7 @@
 
     move-result-object v1
 
-    .line 139
+    .line 143
     :cond_0
     const/4 v2, 0x3
 
@@ -403,28 +431,33 @@
 
     invoke-static {v2, v3, v1}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 141
+    .line 145
     invoke-direct {p0, p2, p3}, Lcom/google/glass/util/HangoutHelper;->generateIntent(Lcom/google/googlex/glass/common/proto/Entity;Z)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 142
+    .line 146
     .local v0, hangoutIntent:Landroid/content/Intent;
     const-string v2, "room_id"
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 143
+    .line 147
     const-string v2, "invited"
 
     invoke-virtual {v0, v2, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 144
+    .line 148
+    const-string v2, "timelineItemId"
+
+    invoke-virtual {v0, v2, p5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 149
     iget-object v2, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 145
+    .line 150
     return-void
 .end method
 
@@ -434,7 +467,7 @@
     .parameter "shouldTurnScreenOff"
 
     .prologue
-    .line 104
+    .line 108
     const/4 v0, 0x3
 
     sget-object v1, Lcom/google/glass/util/HangoutHelper;->TAG:Ljava/lang/String;
@@ -477,7 +510,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 107
+    .line 111
     iget-object v0, p0, Lcom/google/glass/util/HangoutHelper;->context:Landroid/content/Context;
 
     invoke-direct {p0, p1, p2}, Lcom/google/glass/util/HangoutHelper;->generateIntent(Lcom/google/googlex/glass/common/proto/Entity;Z)Landroid/content/Intent;
@@ -486,6 +519,6 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 108
+    .line 112
     return-void
 .end method

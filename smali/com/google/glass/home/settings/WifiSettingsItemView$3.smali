@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 80
+    .line 84
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 87
     .local p1, scanResults:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     invoke-static {}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$100()Ljava/lang/String;
 
@@ -84,7 +84,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 86
+    .line 90
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsItemView;->cummulativeScanResults:Ljava/util/LinkedList;
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->addAll(Ljava/util/Collection;)Z
 
-    .line 88
+    .line 92
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsItemView;->scanCount:I
@@ -106,7 +106,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 90
+    .line 94
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     iget-object v1, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
@@ -119,23 +119,23 @@
     #setter for: Lcom/google/glass/home/settings/WifiSettingsItemView;->lastCummulativeScanResults:Ljava/util/LinkedList;
     invoke-static {v0, v1}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$402(Lcom/google/glass/home/settings/WifiSettingsItemView;Ljava/util/LinkedList;)Ljava/util/LinkedList;
 
-    .line 91
+    .line 95
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsItemView;->update()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$000(Lcom/google/glass/home/settings/WifiSettingsItemView;)V
 
-    .line 97
+    .line 101
     :goto_0
     return-void
 
-    .line 94
+    .line 98
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$208(Lcom/google/glass/home/settings/WifiSettingsItemView;)I
 
-    .line 95
+    .line 99
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsItemView;->wifiHelper:Lcom/google/glass/util/WifiHelper;

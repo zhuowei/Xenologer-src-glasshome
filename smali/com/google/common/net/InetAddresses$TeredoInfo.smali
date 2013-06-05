@@ -50,10 +50,10 @@
 
     const/4 v2, 0x0
 
-    .line 691
+    .line 647
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 692
+    .line 648
     if-ltz p3, :cond_0
 
     if-gt p3, v6, :cond_0
@@ -73,7 +73,7 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 694
+    .line 650
     if-ltz p4, :cond_1
 
     if-gt p4, v6, :cond_1
@@ -93,60 +93,52 @@
 
     invoke-static {v0, v3, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 697
-    if-eqz p1, :cond_2
+    .line 653
+    invoke-static {}, Lcom/google/common/net/InetAddresses;->access$000()Ljava/net/Inet4Address;
 
-    .line 698
-    iput-object p1, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->server:Ljava/net/Inet4Address;
+    move-result-object v0
 
-    .line 703
-    :goto_2
-    if-eqz p2, :cond_3
+    invoke-static {p1, v0}, Lcom/google/common/base/Objects;->firstNonNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 704
-    iput-object p2, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->client:Ljava/net/Inet4Address;
+    move-result-object v0
 
-    .line 709
-    :goto_3
+    check-cast v0, Ljava/net/Inet4Address;
+
+    iput-object v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->server:Ljava/net/Inet4Address;
+
+    .line 654
+    invoke-static {}, Lcom/google/common/net/InetAddresses;->access$000()Ljava/net/Inet4Address;
+
+    move-result-object v0
+
+    invoke-static {p2, v0}, Lcom/google/common/base/Objects;->firstNonNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/net/Inet4Address;
+
+    iput-object v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->client:Ljava/net/Inet4Address;
+
+    .line 655
     iput p3, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->port:I
 
-    .line 710
+    .line 656
     iput p4, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->flags:I
 
-    .line 711
+    .line 657
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 692
+    .line 648
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 694
+    .line 650
     goto :goto_1
-
-    .line 700
-    :cond_2
-    invoke-static {}, Lcom/google/common/net/InetAddresses;->access$000()Ljava/net/Inet4Address;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->server:Ljava/net/Inet4Address;
-
-    goto :goto_2
-
-    .line 706
-    :cond_3
-    invoke-static {}, Lcom/google/common/net/InetAddresses;->access$000()Ljava/net/Inet4Address;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->client:Ljava/net/Inet4Address;
-
-    goto :goto_3
 .end method
 
 
@@ -155,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 718
+    .line 664
     iget-object v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->client:Ljava/net/Inet4Address;
 
     return-object v0
@@ -165,7 +157,7 @@
     .locals 1
 
     .prologue
-    .line 726
+    .line 672
     iget v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->flags:I
 
     return v0
@@ -175,7 +167,7 @@
     .locals 1
 
     .prologue
-    .line 722
+    .line 668
     iget v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->port:I
 
     return v0
@@ -185,7 +177,7 @@
     .locals 1
 
     .prologue
-    .line 714
+    .line 660
     iget-object v0, p0, Lcom/google/common/net/InetAddresses$TeredoInfo;->server:Ljava/net/Inet4Address;
 
     return-object v0

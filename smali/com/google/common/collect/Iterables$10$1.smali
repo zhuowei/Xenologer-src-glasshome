@@ -40,14 +40,14 @@
     .parameter
 
     .prologue
-    .line 901
+    .line 885
     iput-object p1, p0, Lcom/google/common/collect/Iterables$10$1;->this$0:Lcom/google/common/collect/Iterables$10;
 
     iput-object p2, p0, Lcom/google/common/collect/Iterables$10$1;->val$iterator:Ljava/util/Iterator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 902
+    .line 886
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/common/collect/Iterables$10$1;->atStart:Z
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 906
+    .line 889
     iget-object v0, p0, Lcom/google/common/collect/Iterables$10$1;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -82,21 +82,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 911
+    .line 893
     invoke-virtual {p0}, Lcom/google/common/collect/Iterables$10$1;->hasNext()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 912
+    .line 894
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 
-    .line 916
+    .line 898
     :cond_0
     :try_start_0
     iget-object v0, p0, Lcom/google/common/collect/Iterables$10$1;->val$iterator:Ljava/util/Iterator;
@@ -107,7 +107,7 @@
 
     move-result-object v0
 
-    .line 918
+    .line 900
     iput-boolean v1, p0, Lcom/google/common/collect/Iterables$10$1;->atStart:Z
 
     return-object v0
@@ -124,24 +124,24 @@
     .locals 1
 
     .prologue
-    .line 924
+    .line 905
     iget-boolean v0, p0, Lcom/google/common/collect/Iterables$10$1;->atStart:Z
 
     if-eqz v0, :cond_0
 
-    .line 925
+    .line 906
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 927
+    .line 908
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/Iterables$10$1;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 928
+    .line 909
     return-void
 .end method

@@ -1,4 +1,4 @@
-.class abstract Lcom/google/common/collect/SortedMultisets$ElementSet;
+.class Lcom/google/common/collect/SortedMultisets$ElementSet;
 .super Lcom/google/common/collect/Multisets$ElementSet;
 .source "SortedMultisets.java"
 
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x408
+    accessFlags = 0x8
     name = "ElementSet"
 .end annotation
 
@@ -29,15 +29,39 @@
 .end annotation
 
 
+# instance fields
+.field private final multiset:Lcom/google/common/collect/SortedMultiset;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/common/collect/SortedMultiset",
+            "<TE;>;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/google/common/collect/SortedMultiset;)V
     .locals 0
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/common/collect/SortedMultiset",
+            "<TE;>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 42
+    .line 45
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
+    .local p1, multiset:Lcom/google/common/collect/SortedMultiset;,"Lcom/google/common/collect/SortedMultiset<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Multisets$ElementSet;-><init>()V
 
+    .line 46
+    iput-object p1, p0, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset:Lcom/google/common/collect/SortedMultiset;
+
+    .line 47
     return-void
 .end method
 
@@ -54,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 47
+    .line 55
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
@@ -76,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 71
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
@@ -106,7 +130,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 63
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     .local p1, toElement:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
@@ -135,7 +159,7 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 75
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;
 
@@ -166,7 +190,8 @@
     return-object v0
 .end method
 
-.method abstract multiset()Lcom/google/common/collect/SortedMultiset;
+.method final multiset()Lcom/google/common/collect/SortedMultiset;
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -174,6 +199,13 @@
             "<TE;>;"
         }
     .end annotation
+
+    .prologue
+    .line 51
+    .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
+    iget-object v0, p0, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset:Lcom/google/common/collect/SortedMultiset;
+
+    return-object v0
 .end method
 
 .method public subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
@@ -189,7 +221,7 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 59
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     .local p2, toElement:Ljava/lang/Object;,"TE;"
@@ -224,7 +256,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 67
     .local p0, this:Lcom/google/common/collect/SortedMultisets$ElementSet;,"Lcom/google/common/collect/SortedMultisets$ElementSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/SortedMultisets$ElementSet;->multiset()Lcom/google/common/collect/SortedMultiset;

@@ -47,7 +47,7 @@
     .end annotation
 .end field
 
-.field transient inverse:Lcom/google/common/collect/BiMap;
+.field inverse:Lcom/google/common/collect/BiMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/common/collect/BiMap",
@@ -95,26 +95,26 @@
     .end annotation
 
     .prologue
-    .line 872
+    .line 1202
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     .local p1, delegate:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<+TK;+TV;>;"
     .local p2, inverse:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TV;TK;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMap;-><init>()V
 
-    .line 873
+    .line 1203
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->unmodifiableMap:Ljava/util/Map;
 
-    .line 874
+    .line 1204
     iput-object p1, p0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->delegate:Lcom/google/common/collect/BiMap;
 
-    .line 875
+    .line 1205
     iput-object p2, p0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->inverse:Lcom/google/common/collect/BiMap;
 
-    .line 876
+    .line 1206
     return-void
 .end method
 
@@ -124,7 +124,7 @@
     .locals 1
 
     .prologue
-    .line 864
+    .line 1195
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->delegate()Ljava/util/Map;
 
@@ -144,7 +144,7 @@
     .end annotation
 
     .prologue
-    .line 879
+    .line 1210
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->unmodifiableMap:Ljava/util/Map;
 
@@ -162,7 +162,7 @@
     .end annotation
 
     .prologue
-    .line 884
+    .line 1214
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -184,11 +184,11 @@
     .end annotation
 
     .prologue
-    .line 889
+    .line 1218
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->inverse:Lcom/google/common/collect/BiMap;
 
-    .line 890
+    .line 1219
     .local v0, result:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TV;TK;>;"
     if-nez v0, :cond_0
 
@@ -213,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 864
+    .line 1195
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->values()Ljava/util/Set;
 
@@ -233,11 +233,11 @@
     .end annotation
 
     .prologue
-    .line 896
+    .line 1225
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableBiMap;,"Lcom/google/common/collect/Maps$UnmodifiableBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;->values:Ljava/util/Set;
 
-    .line 897
+    .line 1226
     .local v0, result:Ljava/util/Set;,"Ljava/util/Set<TV;>;"
     if-nez v0, :cond_0
 

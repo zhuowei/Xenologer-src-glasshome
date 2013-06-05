@@ -33,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 46
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1}, Lcom/google/common/collect/MapConstraints;->constrainedEntrySet(Ljava/util/Set;Lcom/google/common/collect/MapConstraint;)Ljava/util/Set;
 
     move-result-object v0
@@ -59,7 +59,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1}, Lcom/google/common/collect/MapConstraints;->checkMap(Ljava/util/Map;Lcom/google/common/collect/MapConstraint;)Ljava/util/Map;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1}, Lcom/google/common/collect/MapConstraints;->constrainedAsMapEntries(Ljava/util/Set;Lcom/google/common/collect/MapConstraint;)Ljava/util/Set;
 
     move-result-object v0
@@ -87,7 +87,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1}, Lcom/google/common/collect/MapConstraints;->constrainedEntries(Ljava/util/Collection;Lcom/google/common/collect/MapConstraint;)Ljava/util/Collection;
 
     move-result-object v0
@@ -102,7 +102,7 @@
     .parameter "x2"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/MapConstraints;->checkValues(Ljava/lang/Object;Ljava/lang/Iterable;Lcom/google/common/collect/MapConstraint;)Ljava/util/Collection;
 
     move-result-object v0
@@ -116,7 +116,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1}, Lcom/google/common/collect/MapConstraints;->constrainedEntry(Ljava/util/Map$Entry;Lcom/google/common/collect/MapConstraint;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -130,7 +130,7 @@
     .parameter "x1"
 
     .prologue
-    .line 45
+    .line 46
     invoke-static {p0, p1}, Lcom/google/common/collect/MapConstraints;->constrainedAsMapEntry(Ljava/util/Map$Entry;Lcom/google/common/collect/MapConstraint;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -159,14 +159,14 @@
     .end annotation
 
     .prologue
-    .line 777
+    .line 852
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0, p0}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
 
-    .line 778
+    .line 853
     .local v0, copy:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -190,7 +190,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 779
+    .line 854
     .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -204,7 +204,7 @@
 
     goto :goto_0
 
-    .line 781
+    .line 856
     .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     :cond_0
     return-object v0
@@ -232,7 +232,7 @@
     .end annotation
 
     .prologue
-    .line 768
+    .line 843
     .local p0, key:Ljava/lang/Object;,"TK;"
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
     .local p2, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
@@ -240,7 +240,7 @@
 
     move-result-object v0
 
-    .line 769
+    .line 844
     .local v0, copy:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -258,13 +258,13 @@
 
     move-result-object v2
 
-    .line 770
+    .line 845
     .local v2, value:Ljava/lang/Object;,"TV;"
     invoke-interface {p2, p0, v2}, Lcom/google/common/collect/MapConstraint;->checkKeyValue(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 772
+    .line 847
     .end local v2           #value:Ljava/lang/Object;,"TV;"
     :cond_0
     return-object v0
@@ -299,7 +299,7 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 246
     .local p0, entries:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;
@@ -334,15 +334,15 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 210
     .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 212
+    .line 211
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 213
+    .line 212
     new-instance v0, Lcom/google/common/collect/MapConstraints$2;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MapConstraints$2;-><init>(Ljava/util/Map$Entry;Lcom/google/common/collect/MapConstraint;)V
@@ -371,7 +371,7 @@
     .end annotation
 
     .prologue
-    .line 333
+    .line 338
     .local p0, map:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedBiMap;
@@ -457,15 +457,15 @@
     .end annotation
 
     .prologue
-    .line 185
+    .line 182
     .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 186
+    .line 183
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 187
+    .line 184
     new-instance v0, Lcom/google/common/collect/MapConstraints$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/MapConstraints$1;-><init>(Ljava/util/Map$Entry;Lcom/google/common/collect/MapConstraint;)V
@@ -498,7 +498,7 @@
     .end annotation
 
     .prologue
-    .line 286
+    .line 285
     .local p0, entries:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedEntrySet;
@@ -560,7 +560,7 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 86
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedMap;
@@ -591,7 +591,7 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 107
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;
@@ -622,7 +622,7 @@
     .end annotation
 
     .prologue
-    .line 149
+    .line 148
     .local p0, multimap:Lcom/google/common/collect/SetMultimap;,"Lcom/google/common/collect/SetMultimap<TK;TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedSetMultimap;
@@ -653,7 +653,7 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 168
     .local p0, multimap:Lcom/google/common/collect/SortedSetMultimap;,"Lcom/google/common/collect/SortedSetMultimap<TK;TV;>;"
     .local p1, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     new-instance v0, Lcom/google/common/collect/MapConstraints$ConstrainedSortedSetMultimap;
@@ -677,7 +677,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 54
     sget-object v0, Lcom/google/common/collect/MapConstraints$NotNullMapConstraint;->INSTANCE:Lcom/google/common/collect/MapConstraints$NotNullMapConstraint;
 
     return-object v0

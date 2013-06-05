@@ -81,11 +81,11 @@
 
     iput-object v8, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
-    .line 76
+    .line 75
     :goto_0
     const/4 v5, 0x0
 
-    .line 77
+    .line 76
     .local v5, position:I
     invoke-static {}, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;->values()[Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;
 
@@ -107,18 +107,18 @@
 
     aget-object v3, v0, v1
 
-    .line 78
+    .line 77
     .local v3, item:Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;
     iget-boolean v8, v3, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;->pinned:Z
 
     if-ne v8, p3, :cond_3
 
-    .line 79
+    .line 78
     sget-object v8, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;->VID:Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;
 
     if-ne v8, v3, :cond_1
 
-    .line 80
+    .line 79
     add-int/lit8 v5, v6, 0x1
 
     .end local v6           #position:I
@@ -131,7 +131,7 @@
 
     invoke-direct {p0, v6, v8}, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->addView(ILandroid/view/View;)V
 
-    .line 87
+    .line 86
     :goto_2
     iget v8, v3, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;->timeResource:I
 
@@ -139,7 +139,7 @@
 
     move-result-object v7
 
-    .line 88
+    .line 87
     .local v7, timeLabelText:Ljava/lang/String;
     iget-object v8, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->views:Ljava/util/List;
 
@@ -161,7 +161,7 @@
 
     invoke-virtual {v8, v9, v7}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 77
+    .line 76
     .end local v7           #timeLabelText:Ljava/lang/String;
     :goto_3
     add-int/lit8 v1, v1, 0x1
@@ -189,24 +189,24 @@
 
     goto :goto_0
 
-    .line 82
+    .line 81
     .restart local v0       #arr$:[Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;
     .restart local v1       #i$:I
     .restart local v3       #item:Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;
     .restart local v4       #len$:I
     .restart local v6       #position:I
     :cond_1
-    new-instance v2, Lcom/google/glass/horizontalscroll/HorizontalScrollImageView;
+    new-instance v2, Lcom/google/glass/horizontalscroll/ImageViewCard;
 
-    invoke-direct {v2, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, p1}, Lcom/google/glass/horizontalscroll/ImageViewCard;-><init>(Landroid/content/Context;)V
 
-    .line 83
+    .line 82
     .local v2, imageView:Landroid/widget/ImageView;
     iget v8, v3, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;->imageResource:I
 
     invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 84
+    .line 83
     add-int/lit8 v5, v6, 0x1
 
     .end local v6           #position:I
@@ -215,7 +215,7 @@
 
     goto :goto_2
 
-    .line 91
+    .line 90
     .end local v2           #imageView:Landroid/widget/ImageView;
     .end local v3           #item:Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;
     .end local v5           #position:I
@@ -238,7 +238,7 @@
     .parameter "view"
 
     .prologue
-    .line 121
+    .line 120
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v1
@@ -257,23 +257,23 @@
 
     move-result-object v0
 
-    .line 124
+    .line 123
     .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     sget v1, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
 
     invoke-virtual {p2, v1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 125
+    .line 124
     iget-object v1, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->items:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 126
+    .line 125
     iget-object v1, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->views:Ljava/util/List;
 
     invoke-interface {v1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 127
+    .line 126
     return-void
 .end method
 
@@ -287,12 +287,12 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 98
+    .line 97
     new-instance v1, Lcom/google/glass/home/timeline/TimelineItemContainerView;
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/timeline/TimelineItemContainerView;-><init>(Landroid/content/Context;)V
 
-    .line 99
+    .line 98
     .local v1, container:Lcom/google/glass/home/timeline/TimelineItemContainerView;
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -306,14 +306,14 @@
 
     check-cast v3, Lcom/google/glass/home/timeline/VideoItemView;
 
-    .line 101
+    .line 100
     .local v3, view:Lcom/google/glass/home/timeline/VideoItemView;
     invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->addView(Landroid/view/View;)V
 
-    .line 102
-    invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setScrollItem(Lcom/google/glass/horizontalscroll/HorizontalScrollItem;)V
+    .line 101
+    invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setContainedCard(Lcom/google/glass/horizontalscroll/Card;)V
 
-    .line 104
+    .line 103
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Attachment;->newBuilder()Lcom/google/googlex/glass/common/proto/Attachment$Builder;
 
     move-result-object v4
@@ -332,11 +332,11 @@
 
     move-result-object v0
 
-    .line 110
+    .line 109
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v3, v0, p4}, Lcom/google/glass/home/timeline/VideoItemView;->setVideoAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Lcom/google/glass/util/CachedBitmapFactory;)V
 
-    .line 113
+    .line 112
     sget v4, Lcom/google/glass/home/R$id;->thumbnail:I
 
     invoke-virtual {v3, v4}, Lcom/google/glass/home/timeline/VideoItemView;->findViewById(I)Landroid/view/View;
@@ -345,16 +345,16 @@
 
     check-cast v2, Landroid/widget/ImageView;
 
-    .line 114
+    .line 113
     .local v2, thumbnailView:Landroid/widget/ImageView;
     iget v4, p2, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter$Item;->imageResource:I
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 115
+    .line 114
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 117
+    .line 116
     return-object v1
 .end method
 
@@ -363,17 +363,17 @@
     .parameter "onLoad"
 
     .prologue
-    .line 177
+    .line 176
     if-eqz p0, :cond_0
 
-    .line 178
+    .line 177
     invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
     invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 180
+    .line 179
     :cond_0
     return-void
 .end method
@@ -384,7 +384,7 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 145
     iget-object v0, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->views:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -399,7 +399,7 @@
     .parameter "position"
 
     .prologue
-    .line 151
+    .line 150
     iget-object v0, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->items:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -414,7 +414,7 @@
     .parameter "position"
 
     .prologue
-    .line 156
+    .line 155
     int-to-long v0, p1
 
     return-wide v0
@@ -425,7 +425,7 @@
     .parameter "id"
 
     .prologue
-    .line 136
+    .line 135
     iget-object v0, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
@@ -446,7 +446,7 @@
     .parameter "parent"
 
     .prologue
-    .line 161
+    .line 160
     iget-object v1, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->views:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -455,13 +455,13 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 164
+    .line 163
     .local v0, view:Landroid/view/View;
     sget v1, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item_view_recycler:I
 
     invoke-virtual {v0, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 166
+    .line 165
     return-object v0
 .end method
 
@@ -469,7 +469,7 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 140
     const/4 v0, 0x0
 
     return v0
@@ -480,7 +480,7 @@
     .parameter "id"
 
     .prologue
-    .line 131
+    .line 130
     iget-object v0, p0, Lcom/google/glass/home/timeline/guest/GuestTimelineItemAdapter;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
@@ -499,6 +499,6 @@
     .parameter "view"
 
     .prologue
-    .line 171
+    .line 170
     return-void
 .end method

@@ -6,26 +6,12 @@
 .implements Lcom/google/protobuf/MutableMessage;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<MessageType:",
-        "Lcom/google/protobuf/AbstractMutableMessage",
-        "<TMessageType;>;>",
-        "Lcom/google/protobuf/AbstractMutableMessageLite",
-        "<TMessageType;>;",
-        "Lcom/google/protobuf/MutableMessage;"
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;-><init>()V
 
     return-void
@@ -47,7 +33,7 @@
     .end annotation
 
     .prologue
-    .line 203
+    .line 201
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;>;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -71,7 +57,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 204
+    .line 202
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -79,13 +65,13 @@
 
     check-cast v1, Lcom/google/protobuf/Descriptors$FieldDescriptor;
 
-    .line 205
+    .line 203
     .local v1, field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 206
+    .line 204
     .local v4, value:Ljava/lang/Object;
     mul-int/lit8 v5, p0, 0x25
 
@@ -95,7 +81,7 @@
 
     add-int p0, v5, v6
 
-    .line 207
+    .line 205
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getType()Lcom/google/protobuf/Descriptors$FieldDescriptor$Type;
 
     move-result-object v5
@@ -104,14 +90,14 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 208
+    .line 206
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 209
+    .line 207
     mul-int/lit8 v5, p0, 0x35
 
     check-cast v4, Ljava/util/List;
@@ -125,7 +111,7 @@
 
     goto :goto_0
 
-    .line 211
+    .line 209
     .restart local v4       #value:Ljava/lang/Object;
     :cond_0
     mul-int/lit8 v5, p0, 0x35
@@ -143,7 +129,7 @@
 
     goto :goto_0
 
-    .line 213
+    .line 211
     .restart local v4       #value:Ljava/lang/Object;
     :cond_1
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getType()Lcom/google/protobuf/Descriptors$FieldDescriptor$Type;
@@ -154,7 +140,7 @@
 
     if-eq v5, v6, :cond_2
 
-    .line 214
+    .line 212
     mul-int/lit8 v5, p0, 0x35
 
     invoke-virtual {v4}, Ljava/lang/Object;->hashCode()I
@@ -165,7 +151,7 @@
 
     goto :goto_0
 
-    .line 215
+    .line 213
     :cond_2
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
@@ -175,10 +161,10 @@
 
     move-object v3, v4
 
-    .line 216
+    .line 214
     check-cast v3, Ljava/util/List;
 
-    .line 217
+    .line 215
     .local v3, list:Ljava/util/List;,"Ljava/util/List<+Lcom/google/protobuf/Internal$EnumLite;>;"
     mul-int/lit8 v5, p0, 0x35
 
@@ -188,10 +174,10 @@
 
     add-int p0, v5, v6
 
-    .line 218
+    .line 216
     goto :goto_0
 
-    .line 219
+    .line 217
     .end local v3           #list:Ljava/util/List;,"Ljava/util/List<+Lcom/google/protobuf/Internal$EnumLite;>;"
     :cond_3
     mul-int/lit8 v5, p0, 0x35
@@ -207,7 +193,7 @@
 
     goto :goto_0
 
-    .line 222
+    .line 220
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;>;"
     .end local v1           #field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     :cond_4
@@ -216,50 +202,16 @@
 
 
 # virtual methods
-.method public clone()Lcom/google/protobuf/AbstractMutableMessage;
+.method public clone()Lcom/google/protobuf/MutableMessage;
     .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TMessageType;"
-        }
-    .end annotation
 
     .prologue
-    .line 48
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 46
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->newMessageForType()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/MutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/protobuf/AbstractMutableMessage;
-
-    return-object v0
-.end method
-
-.method public bridge synthetic clone()Lcom/google/protobuf/AbstractMutableMessageLite;
-    .locals 1
-
-    .prologue
-    .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clone()Lcom/google/protobuf/AbstractMutableMessage;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic clone()Lcom/google/protobuf/MutableMessage;
-    .locals 1
-
-    .prologue
-    .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clone()Lcom/google/protobuf/AbstractMutableMessage;
 
     move-result-object v0
 
@@ -271,8 +223,7 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clone()Lcom/google/protobuf/AbstractMutableMessage;
+    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clone()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
 
@@ -289,49 +240,26 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clone()Lcom/google/protobuf/AbstractMutableMessage;
+    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clone()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/AbstractMutableMessage;
+.method public copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
     .locals 1
     .parameter "other"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/protobuf/MutableMessage;",
-            ")TMessageType;"
-        }
-    .end annotation
 
     .prologue
-    .line 136
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 134
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->assertMutable()V
 
-    .line 137
+    .line 135
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->clear()Lcom/google/protobuf/MutableMessage;
 
-    .line 138
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/AbstractMutableMessage;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/AbstractMutableMessage;
+    .line 136
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
 
@@ -343,20 +271,19 @@
     .parameter "other"
 
     .prologue
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    .line 172
+    .line 170
     if-ne p1, p0, :cond_1
 
-    .line 182
+    .line 180
     :cond_0
     :goto_0
     return v1
 
-    .line 175
+    .line 173
     :cond_1
     instance-of v3, p1, Lcom/google/protobuf/MutableMessage;
 
@@ -364,16 +291,16 @@
 
     move v1, v2
 
-    .line 176
+    .line 174
     goto :goto_0
 
     :cond_2
     move-object v0, p1
 
-    .line 178
+    .line 176
     check-cast v0, Lcom/google/protobuf/MutableMessage;
 
-    .line 179
+    .line 177
     .local v0, otherMessage:Lcom/google/protobuf/MutableMessage;
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;
 
@@ -387,10 +314,10 @@
 
     move v1, v2
 
-    .line 180
+    .line 178
     goto :goto_0
 
-    .line 182
+    .line 180
     :cond_3
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getAllFields()Ljava/util/Map;
 
@@ -439,8 +366,7 @@
     .end annotation
 
     .prologue
-    .line 146
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 144
     invoke-static {p0}, Lcom/google/protobuf/MessageReflection;->findMissingFields(Lcom/google/protobuf/MessageOrBuilder;)Ljava/util/List;
 
     move-result-object v0
@@ -453,7 +379,6 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getDefaultInstanceForType()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
@@ -466,7 +391,6 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getDefaultInstanceForType()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
@@ -481,8 +405,7 @@
     .locals 1
 
     .prologue
-    .line 150
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 148
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->findInitializationErrors()Ljava/util/List;
 
     move-result-object v0
@@ -498,15 +421,14 @@
     .locals 1
 
     .prologue
-    .line 166
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 164
     invoke-static {p0}, Lcom/google/protobuf/MessageReflection;->getSerializedSize(Lcom/google/protobuf/Message;)I
 
     move-result v0
 
     iput v0, p0, Lcom/google/protobuf/AbstractMutableMessage;->cachedSize:I
 
-    .line 167
+    .line 165
     iget v0, p0, Lcom/google/protobuf/AbstractMutableMessage;->cachedSize:I
 
     return v0
@@ -516,11 +438,10 @@
     .locals 3
 
     .prologue
-    .line 189
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 187
     const/16 v0, 0x29
 
-    .line 190
+    .line 188
     .local v0, hash:I
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;
 
@@ -532,7 +453,7 @@
 
     add-int/lit16 v0, v1, 0x30b
 
-    .line 191
+    .line 189
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getAllFields()Ljava/util/Map;
 
     move-result-object v1
@@ -541,7 +462,7 @@
 
     move-result v0
 
-    .line 192
+    .line 190
     mul-int/lit8 v1, v0, 0x1d
 
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
@@ -554,7 +475,7 @@
 
     add-int v0, v1, v2
 
-    .line 193
+    .line 191
     return v0
 .end method
 
@@ -562,8 +483,7 @@
     .locals 1
 
     .prologue
-    .line 142
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 140
     invoke-static {p0}, Lcom/google/protobuf/MessageReflection;->isInitialized(Lcom/google/protobuf/MessageOrBuilder;)Z
 
     move-result v0
@@ -571,23 +491,15 @@
     return v0
 .end method
 
-.method public mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/AbstractMutableMessage;
+.method public mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
     .locals 8
     .parameter "other"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/protobuf/MutableMessage;",
-            ")TMessageType;"
-        }
-    .end annotation
 
     .prologue
-    .line 53
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 51
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->assertMutable()V
 
-    .line 54
+    .line 52
     invoke-interface {p1}, Lcom/google/protobuf/MutableMessage;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v6
@@ -598,7 +510,7 @@
 
     if-eq v6, v7, :cond_0
 
-    .line 55
+    .line 53
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
     const-string v7, "mergeFrom(Message) can only merge messages of the same type."
@@ -607,7 +519,7 @@
 
     throw v6
 
-    .line 69
+    .line 67
     :cond_0
     invoke-interface {p1}, Lcom/google/protobuf/MutableMessage;->getAllFields()Ljava/util/Map;
 
@@ -635,7 +547,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 70
+    .line 68
     .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -643,7 +555,7 @@
 
     check-cast v3, Lcom/google/protobuf/Descriptors$FieldDescriptor;
 
-    .line 71
+    .line 69
     .local v3, field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     invoke-virtual {v3}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
@@ -651,7 +563,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 72
+    .line 70
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
@@ -674,13 +586,13 @@
 
     move-result-object v0
 
-    .line 73
+    .line 71
     .local v0, element:Ljava/lang/Object;
     invoke-virtual {p0, v3, v0}, Lcom/google/protobuf/AbstractMutableMessage;->addRepeatedField(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/MutableMessage;
 
     goto :goto_1
 
-    .line 75
+    .line 73
     .end local v0           #element:Ljava/lang/Object;
     .end local v5           #i$:Ljava/util/Iterator;
     :cond_2
@@ -692,14 +604,14 @@
 
     if-ne v6, v7, :cond_4
 
-    .line 77
+    .line 75
     invoke-virtual {p0, v3}, Lcom/google/protobuf/AbstractMutableMessage;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/protobuf/MutableMessage;
 
-    .line 78
+    .line 76
     .local v2, existingValue:Lcom/google/protobuf/MutableMessage;
     invoke-interface {v2}, Lcom/google/protobuf/MutableMessage;->getDefaultInstanceForType()Lcom/google/protobuf/MutableMessage;
 
@@ -707,7 +619,7 @@
 
     if-ne v2, v6, :cond_3
 
-    .line 79
+    .line 77
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
@@ -716,7 +628,7 @@
 
     goto :goto_0
 
-    .line 81
+    .line 79
     :cond_3
     invoke-interface {v2}, Lcom/google/protobuf/MutableMessage;->newMessageForType()Lcom/google/protobuf/MutableMessage;
 
@@ -740,7 +652,7 @@
 
     goto :goto_0
 
-    .line 87
+    .line 85
     .end local v2           #existingValue:Lcom/google/protobuf/MutableMessage;
     :cond_4
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -751,7 +663,7 @@
 
     goto :goto_0
 
-    .line 91
+    .line 89
     .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;>;"
     .end local v3           #field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     :cond_5
@@ -759,24 +671,10 @@
 
     move-result-object v6
 
-    invoke-virtual {p0, v6}, Lcom/google/protobuf/AbstractMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/AbstractMutableMessage;
+    invoke-virtual {p0, v6}, Lcom/google/protobuf/AbstractMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
 
-    .line 93
+    .line 91
     return-object p0
-.end method
-
-.method public bridge synthetic mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/AbstractMutableMessage;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
@@ -785,11 +683,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 100
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 98
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->assertMutable()V
 
-    .line 102
+    .line 100
     :try_start_0
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -799,18 +696,18 @@
 
     move-result-object v1
 
-    .line 105
+    .line 103
     .local v1, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result v5
 
-    .line 106
+    .line 104
     .local v5, tag:I
     if-nez v5, :cond_1
 
-    .line 118
+    .line 116
     :goto_0
     invoke-virtual {v1}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -818,16 +715,16 @@
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/AbstractMutableMessage;->setUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
 
-    .line 119
+    .line 117
     const/4 v0, 0x1
 
-    .line 121
+    .line 119
     .end local v1           #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     .end local v5           #tag:I
     :goto_1
     return v0
 
-    .line 110
+    .line 108
     .restart local v1       #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     .restart local v5       #tag:I
     :cond_1
@@ -853,36 +750,28 @@
 
     goto :goto_0
 
-    .line 120
+    .line 118
     .end local v1           #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     .end local v5           #tag:I
     :catch_0
     move-exception v6
 
-    .line 121
+    .line 119
     .local v6, e:Ljava/io/IOException;
     const/4 v0, 0x0
 
     goto :goto_1
 .end method
 
-.method public mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/AbstractMutableMessage;
+.method public mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
     .locals 1
     .parameter "unknownFields"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/protobuf/UnknownFieldSet;",
-            ")TMessageType;"
-        }
-    .end annotation
 
     .prologue
-    .line 127
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 125
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->assertMutable()V
 
-    .line 128
+    .line 126
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
@@ -901,30 +790,15 @@
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/AbstractMutableMessage;->setUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
 
-    .line 132
+    .line 130
     return-object p0
-.end method
-
-.method public bridge synthetic mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
-    invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/AbstractMutableMessage;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public mutableCopy()Lcom/google/protobuf/MutableMessage;
     .locals 2
 
     .prologue
-    .line 40
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 38
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "mutableCopy() is not supported in mutable messages. Use clone() if you need to make a copy of the mutable message."
@@ -939,7 +813,6 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->mutableCopy()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
@@ -951,8 +824,7 @@
     .locals 2
 
     .prologue
-    .line 34
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 32
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "newBuilderForType() is not supported in mutable messages."
@@ -967,7 +839,6 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->newBuilderForType()Lcom/google/protobuf/Message$Builder;
 
     move-result-object v0
@@ -979,8 +850,7 @@
     .locals 2
 
     .prologue
-    .line 197
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 195
     new-instance v0, Lcom/google/protobuf/UninitializedMessageException;
 
     invoke-static {p0}, Lcom/google/protobuf/MessageReflection;->findMissingFields(Lcom/google/protobuf/MessageOrBuilder;)Ljava/util/List;
@@ -996,8 +866,7 @@
     .locals 2
 
     .prologue
-    .line 28
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 26
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "toBuilder() is not supported in mutable messages."
@@ -1012,7 +881,6 @@
 
     .prologue
     .line 20
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessage;->toBuilder()Lcom/google/protobuf/Message$Builder;
 
     move-result-object v0
@@ -1024,8 +892,7 @@
     .locals 1
 
     .prologue
-    .line 155
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 153
     invoke-static {p0}, Lcom/google/protobuf/TextFormat;->printToString(Lcom/google/protobuf/MessageOrBuilder;)Ljava/lang/String;
 
     move-result-object v0
@@ -1043,10 +910,9 @@
     .end annotation
 
     .prologue
-    .line 162
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessage;,"Lcom/google/protobuf/AbstractMutableMessage<TMessageType;>;"
+    .line 160
     invoke-static {p0, p1}, Lcom/google/protobuf/MessageReflection;->writeMessageTo(Lcom/google/protobuf/Message;Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 163
+    .line 161
     return-void
 .end method

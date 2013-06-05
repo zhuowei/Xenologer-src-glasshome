@@ -1,9 +1,6 @@
 .class final Lcom/google/common/collect/Iterables$UnmodifiableIterable;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/FluentIterable;
 .source "Iterables.java"
-
-# interfaces
-.implements Ljava/lang/Iterable;
 
 
 # annotations
@@ -21,8 +18,7 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Ljava/lang/Iterable",
+        "Lcom/google/common/collect/FluentIterable",
         "<TT;>;"
     }
 .end annotation
@@ -55,7 +51,7 @@
     .line 88
     .local p0, this:Lcom/google/common/collect/Iterables$UnmodifiableIterable;,"Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TT;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/FluentIterable;-><init>()V
 
     .line 89
     iput-object p1, p0, Lcom/google/common/collect/Iterables$UnmodifiableIterable;->iterable:Ljava/lang/Iterable;
@@ -90,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 93
     .local p0, this:Lcom/google/common/collect/Iterables$UnmodifiableIterable;,"Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Iterables$UnmodifiableIterable;->iterable:Ljava/lang/Iterable;
 
@@ -109,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 99
+    .line 98
     .local p0, this:Lcom/google/common/collect/Iterables$UnmodifiableIterable;,"Lcom/google/common/collect/Iterables$UnmodifiableIterable<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/Iterables$UnmodifiableIterable;->iterable:Ljava/lang/Iterable;
 

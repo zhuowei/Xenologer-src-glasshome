@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onShareTargetConfirm(Lcom/google/googlex/glass/common/proto/Entity;)Z
+.method public abstract onShareTargetSelected(Lcom/google/googlex/glass/common/proto/Entity;)Z
 .end method

@@ -33,7 +33,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 52
     const-class v0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -54,13 +54,13 @@
     .parameter "runtime"
 
     .prologue
-    .line 55
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 56
+    .line 57
     iput-object p1, p0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;->runtime:Ljava/lang/Runtime;
 
-    .line 57
+    .line 58
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 61
+    .line 62
     sget-object v0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;->logger:Ljava/util/logging/Logger;
 
     sget-object v1, Ljava/util/logging/Level;->SEVERE:Ljava/util/logging/Level;
@@ -93,11 +93,11 @@
 
     invoke-virtual {v0, v1, v2, p2}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 62
+    .line 63
     iget-object v0, p0, Lcom/google/common/util/concurrent/UncaughtExceptionHandlers$Exiter;->runtime:Ljava/lang/Runtime;
 
     invoke-virtual {v0, v5}, Ljava/lang/Runtime;->exit(I)V
 
-    .line 63
+    .line 64
     return-void
 .end method

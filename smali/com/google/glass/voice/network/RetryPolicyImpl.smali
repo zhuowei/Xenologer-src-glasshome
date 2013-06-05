@@ -13,6 +13,8 @@
 
 
 # instance fields
+.field private final clock:Lcom/google/glass/util/Clock;
+
 .field private counter:I
 
 .field private maxRetryTimeoutMsec:I
@@ -36,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 20
+    .line 21
     const-class v0, Lcom/google/glass/voice/network/RetryPolicyImpl;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -48,31 +50,37 @@
     return-void
 .end method
 
-.method public constructor <init>(Lcom/google/common/base/Supplier;)V
+.method public constructor <init>(Lcom/google/common/base/Supplier;Lcom/google/glass/util/Clock;)V
     .locals 0
     .parameter
+    .parameter "clock"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lcom/google/common/base/Supplier",
             "<",
             "Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$NetworkRecognizer;",
-            ">;)V"
+            ">;",
+            "Lcom/google/glass/util/Clock;",
+            ")V"
         }
     .end annotation
 
     .prologue
-    .line 31
+    .line 34
     .local p1, networkRecognizer:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$NetworkRecognizer;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
+    .line 35
     iput-object p1, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->networkRecognizer:Lcom/google/common/base/Supplier;
 
-    .line 33
+    .line 36
+    iput-object p2, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->clock:Lcom/google/glass/util/Clock;
+
+    .line 37
     invoke-virtual {p0}, Lcom/google/glass/voice/network/RetryPolicyImpl;->reset()V
 
-    .line 34
+    .line 38
     return-void
 .end method
 
@@ -85,7 +93,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 65
+    .line 69
     monitor-enter p0
 
     :try_start_0
@@ -93,7 +101,7 @@
 
     if-nez v0, :cond_0
 
-    .line 66
+    .line 70
     sget-object v0, Lcom/google/glass/voice/network/RetryPolicyImpl;->TAG:Ljava/lang/String;
 
     const-string v2, "No more retries available.  Giving up"
@@ -104,13 +112,13 @@
 
     move v0, v1
 
-    .line 93
+    .line 97
     :goto_0
     monitor-exit p0
 
     return v0
 
-    .line 77
+    .line 81
     :cond_0
     :try_start_1
     iget v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->counter:I
@@ -119,7 +127,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 78
+    .line 82
     iget-object v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->networkRecognizer:Lcom/google/common/base/Supplier;
 
     invoke-interface {v0}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
@@ -134,7 +142,7 @@
 
     iput v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->counter:I
 
-    .line 79
+    .line 83
     iget-object v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->networkRecognizer:Lcom/google/common/base/Supplier;
 
     invoke-interface {v0}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;
@@ -149,7 +157,7 @@
 
     iput v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->maxRetryTimeoutMsec:I
 
-    .line 82
+    .line 86
     :cond_1
     iget-wide v2, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->recognitionStartedTimestamp:J
 
@@ -159,7 +167,9 @@
 
     add-long/2addr v2, v4
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-object v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->clock:Lcom/google/glass/util/Clock;
+
+    invoke-interface {v0}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
 
     move-result-wide v4
 
@@ -167,7 +177,7 @@
 
     if-gez v0, :cond_2
 
-    .line 83
+    .line 87
     sget-object v0, Lcom/google/glass/voice/network/RetryPolicyImpl;->TAG:Ljava/lang/String;
 
     const-string v2, "It\'s been too long.  Giving up"
@@ -176,10 +186,10 @@
 
     move v0, v1
 
-    .line 84
+    .line 88
     goto :goto_0
 
-    .line 87
+    .line 91
     :cond_2
     instance-of v0, p1, Lcom/google/android/speech/exception/NetworkRecognizeException;
 
@@ -189,7 +199,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 88
+    .line 92
     :cond_3
     sget-object v0, Lcom/google/glass/voice/network/RetryPolicyImpl;->TAG:Ljava/lang/String;
 
@@ -197,7 +207,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
+    .line 93
     iget v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->counter:I
 
     add-int/lit8 v0, v0, -0x1
@@ -206,7 +216,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 90
+    .line 94
     const/4 v0, 0x1
 
     goto :goto_0
@@ -214,10 +224,10 @@
     :cond_4
     move v0, v1
 
-    .line 93
+    .line 97
     goto :goto_0
 
-    .line 65
+    .line 69
     :catchall_0
     move-exception v0
 
@@ -231,7 +241,7 @@
     .parameter "response"
 
     .prologue
-    .line 47
+    .line 51
     monitor-enter p0
 
     :try_start_0
@@ -253,7 +263,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 49
+    .line 53
     new-instance v0, Lcom/google/android/speech/exception/AuthFailureException;
 
     invoke-virtual {p1}, Lcom/google/speech/s3/S3$S3Response;->getErrorCode()I
@@ -264,13 +274,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 59
+    .line 63
     :goto_0
     monitor-exit p0
 
     return-object v0
 
-    .line 58
+    .line 62
     :cond_0
     const/4 v0, 0x0
 
@@ -279,12 +289,12 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 59
+    .line 63
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 47
+    .line 51
     :catchall_0
     move-exception v0
 
@@ -297,7 +307,7 @@
     .locals 2
 
     .prologue
-    .line 41
+    .line 45
     monitor-enter p0
 
     const/4 v0, -0x1
@@ -305,8 +315,10 @@
     :try_start_0
     iput v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->counter:I
 
-    .line 42
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    .line 46
+    iget-object v0, p0, Lcom/google/glass/voice/network/RetryPolicyImpl;->clock:Lcom/google/glass/util/Clock;
+
+    invoke-interface {v0}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
 
     move-result-wide v0
 
@@ -314,12 +326,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 43
+    .line 47
     monitor-exit p0
 
     return-void
 
-    .line 41
+    .line 45
     :catchall_0
     move-exception v0
 

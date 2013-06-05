@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 329
+    .line 355
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$8;->this$0:Lcom/google/glass/home/HomeApplication;
 
     iput-object p2, p0, Lcom/google/glass/home/HomeApplication$8;->val$primaryAccount:Landroid/accounts/Account;
@@ -47,11 +47,11 @@
     .parameter "isConnected"
 
     .prologue
-    .line 332
+    .line 358
     if-eqz p1, :cond_0
 
-    .line 333
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
+    .line 359
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
@@ -59,12 +59,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 335
+    .line 361
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 336
+    .line 362
     .local v0, extras:Landroid/os/Bundle;
     const-string v1, "com.google.glass.sync.CONNECTIVITY_ESTABLISHED_SYNC"
 
@@ -72,21 +72,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 337
+    .line 363
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$8;->val$primaryAccount:Landroid/accounts/Account;
 
     const-string v2, "com.google.glass.timeline"
 
     invoke-static {v1, v2, v0}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 338
+    .line 364
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$8;->val$primaryAccount:Landroid/accounts/Account;
 
     const-string v2, "com.google.glass.entity"
 
     invoke-static {v1, v2, v0}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 340
+    .line 366
     .end local v0           #extras:Landroid/os/Bundle;
     :cond_0
     return-void

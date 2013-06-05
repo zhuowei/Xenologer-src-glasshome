@@ -39,26 +39,26 @@
     .locals 1
 
     .prologue
-    .line 9932
+    .line 10087
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;-><init>()V
 
-    .line 10012
+    .line 10168
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->UNPAIR:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9933
+    .line 10088
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->maybeForceBuilderInitialization()V
 
-    .line 9934
+    .line 10089
     return-void
 .end method
 
-.method static synthetic access$8400()Lcom/google/glass/companion/Proto$Command$Builder;
+.method static synthetic access$9200()Lcom/google/glass/companion/Proto$Command$Builder;
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-static {}, Lcom/google/glass/companion/Proto$Command$Builder;->create()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 9939
+    .line 10094
     new-instance v0, Lcom/google/glass/companion/Proto$Command$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$Command$Builder;-><init>()V
@@ -82,7 +82,7 @@
     .locals 0
 
     .prologue
-    .line 9937
+    .line 10092
     return-void
 .end method
 
@@ -92,12 +92,12 @@
     .locals 2
 
     .prologue
-    .line 9958
+    .line 10113
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->buildPartial()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
 
-    .line 9959
+    .line 10114
     .local v0, result:Lcom/google/glass/companion/Proto$Command;
     invoke-virtual {v0}, Lcom/google/glass/companion/Proto$Command;->isInitialized()Z
 
@@ -105,14 +105,14 @@
 
     if-nez v1, :cond_0
 
-    .line 9960
+    .line 10115
     invoke-static {v0}, Lcom/google/glass/companion/Proto$Command$Builder;->newUninitializedMessageException(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 9962
+    .line 10117
     :cond_0
     return-object v0
 .end method
@@ -121,7 +121,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->build()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
@@ -133,22 +133,22 @@
     .locals 5
 
     .prologue
-    .line 9966
+    .line 10121
     new-instance v1, Lcom/google/glass/companion/Proto$Command;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/glass/companion/Proto$Command;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;Lcom/google/glass/companion/Proto$1;)V
 
-    .line 9967
+    .line 10122
     .local v1, result:Lcom/google/glass/companion/Proto$Command;
     iget v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
-    .line 9968
+    .line 10123
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 9969
+    .line 10124
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -156,21 +156,21 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 9970
+    .line 10125
     or-int/lit8 v2, v2, 0x1
 
-    .line 9972
+    .line 10127
     :cond_0
     iget-object v3, p0, Lcom/google/glass/companion/Proto$Command$Builder;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     #setter for: Lcom/google/glass/companion/Proto$Command;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$Command;->access$8602(Lcom/google/glass/companion/Proto$Command;Lcom/google/glass/companion/Proto$Command$CommandType;)Lcom/google/glass/companion/Proto$Command$CommandType;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$Command;->access$9402(Lcom/google/glass/companion/Proto$Command;Lcom/google/glass/companion/Proto$Command$CommandType;)Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9973
+    .line 10128
     #setter for: Lcom/google/glass/companion/Proto$Command;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$Command;->access$8702(Lcom/google/glass/companion/Proto$Command;I)I
+    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$Command;->access$9502(Lcom/google/glass/companion/Proto$Command;I)I
 
-    .line 9974
+    .line 10129
     return-object v1
 .end method
 
@@ -178,7 +178,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->buildPartial()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
@@ -190,22 +190,22 @@
     .locals 1
 
     .prologue
-    .line 9943
+    .line 10098
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clear()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
-    .line 9944
+    .line 10099
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->UNPAIR:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 9945
+    .line 10100
     iget v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
-    .line 9946
+    .line 10101
     return-object p0
 .end method
 
@@ -213,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->clear()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -225,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->clear()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -237,19 +237,19 @@
     .locals 1
 
     .prologue
-    .line 10041
+    .line 10197
     iget v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
-    .line 10042
+    .line 10198
     sget-object v0, Lcom/google/glass/companion/Proto$Command$CommandType;->UNPAIR:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 10044
+    .line 10200
     return-object p0
 .end method
 
@@ -257,7 +257,7 @@
     .locals 2
 
     .prologue
-    .line 9950
+    .line 10105
     invoke-static {}, Lcom/google/glass/companion/Proto$Command$Builder;->create()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -277,7 +277,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->clone()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -289,7 +289,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->clone()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -301,7 +301,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->clone()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -318,7 +318,7 @@
     .end annotation
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->clone()Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -330,7 +330,7 @@
     .locals 1
 
     .prologue
-    .line 10023
+    .line 10179
     iget-object v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
 
     return-object v0
@@ -340,7 +340,7 @@
     .locals 1
 
     .prologue
-    .line 9954
+    .line 10109
     invoke-static {}, Lcom/google/glass/companion/Proto$Command;->getDefaultInstance()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
@@ -352,7 +352,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
@@ -364,7 +364,7 @@
     .locals 1
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
@@ -378,7 +378,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10017
+    .line 10173
     iget v1, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -398,17 +398,17 @@
     .locals 1
 
     .prologue
-    .line 9986
+    .line 10142
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->hasCommand()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 9988
+    .line 10144
     const/4 v0, 0x0
 
-    .line 9990
+    .line 10146
     :goto_0
     return v0
 
@@ -419,36 +419,52 @@
 .end method
 
 .method public mergeFrom(Lcom/google/glass/companion/Proto$Command;)Lcom/google/glass/companion/Proto$Command$Builder;
-    .locals 1
+    .locals 2
     .parameter "other"
 
     .prologue
-    .line 9978
+    .line 10133
     invoke-static {}, Lcom/google/glass/companion/Proto$Command;->getDefaultInstance()Lcom/google/glass/companion/Proto$Command;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
-    .line 9982
-    :cond_0
+    .line 10138
     :goto_0
     return-object p0
 
-    .line 9979
-    :cond_1
+    .line 10134
+    :cond_0
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$Command;->hasCommand()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 9980
+    .line 10135
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$Command;->getCommand()Lcom/google/glass/companion/Proto$Command$CommandType;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$Command$Builder;->setCommand(Lcom/google/glass/companion/Proto$Command$CommandType;)Lcom/google/glass/companion/Proto$Command$Builder;
+
+    .line 10137
+    :cond_1
+    invoke-virtual {p0}, Lcom/google/glass/companion/Proto$Command$Builder;->getUnknownFields()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    #getter for: Lcom/google/glass/companion/Proto$Command;->unknownFields:Lcom/google/protobuf/ByteString;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$Command;->access$9600(Lcom/google/glass/companion/Proto$Command;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/ByteString;->concat(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$Command$Builder;->setUnknownFields(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     goto :goto_0
 .end method
@@ -464,10 +480,10 @@
     .end annotation
 
     .prologue
-    .line 9997
+    .line 10153
     const/4 v2, 0x0
 
-    .line 9999
+    .line 10155
     .local v2, parsedMessage:Lcom/google/glass/companion/Proto$Command;
     :try_start_0
     sget-object v3, Lcom/google/glass/companion/Proto$Command;->PARSER:Lcom/google/protobuf/Parser;
@@ -485,21 +501,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 10004
+    .line 10160
     if-eqz v2, :cond_0
 
-    .line 10005
+    .line 10161
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$Command$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$Command;)Lcom/google/glass/companion/Proto$Command$Builder;
 
-    .line 10008
+    .line 10164
     :cond_0
     return-object p0
 
-    .line 10000
+    .line 10156
     :catch_0
     move-exception v1
 
-    .line 10001
+    .line 10157
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -512,19 +528,19 @@
 
     move-object v2, v0
 
-    .line 10002
+    .line 10158
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 10004
+    .line 10160
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 10005
+    .line 10161
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$Command$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$Command;)Lcom/google/glass/companion/Proto$Command$Builder;
 
     :cond_1
@@ -542,7 +558,7 @@
     .end annotation
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$Command$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -555,7 +571,7 @@
     .parameter "x0"
 
     .prologue
-    .line 9925
+    .line 10080
     check-cast p1, Lcom/google/glass/companion/Proto$Command;
 
     .end local p1
@@ -577,7 +593,7 @@
     .end annotation
 
     .prologue
-    .line 9925
+    .line 10080
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$Command$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$Command$Builder;
 
     move-result-object v0
@@ -590,17 +606,17 @@
     .parameter "value"
 
     .prologue
-    .line 10029
+    .line 10185
     if-nez p1, :cond_0
 
-    .line 10030
+    .line 10186
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10032
+    .line 10188
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
@@ -608,9 +624,9 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$Command$Builder;->bitField0_:I
 
-    .line 10033
+    .line 10189
     iput-object p1, p0, Lcom/google/glass/companion/Proto$Command$Builder;->command_:Lcom/google/glass/companion/Proto$Command$CommandType;
 
-    .line 10035
+    .line 10191
     return-object p0
 .end method

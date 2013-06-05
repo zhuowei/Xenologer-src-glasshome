@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 90
     iput-object p1, p0, Lcom/google/glass/app/GlassActivity$1;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 115
+    .line 101
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -73,11 +73,11 @@
     .parameter "intent"
 
     .prologue
-    .line 110
+    .line 96
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$1;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassActivity;->finish()V
 
-    .line 111
+    .line 97
     return-void
 .end method

@@ -909,9 +909,11 @@
 .end method
 
 .method public onConfirm()Z
-    .locals 3
+    .locals 4
 
     .prologue
+    const/4 v3, 0x1
+
     .line 413
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu;->currentItems:Ljava/util/List;
 
@@ -933,12 +935,10 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->trigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->trigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;ZZ)V
 
     .line 414
-    const/4 v0, 0x1
-
-    return v0
+    return v3
 .end method
 
 .method public onConnectivityChanged(Z)V
@@ -994,7 +994,7 @@
     .line 402
     iget-object v3, p0, Lcom/google/glass/home/voice/VoiceMenu;->voiceMenuListener:Lcom/google/glass/home/voice/VoiceMenu$VoiceMenuListener;
 
-    invoke-virtual {v1, v3, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->trigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
+    invoke-virtual {v1, v3, v2, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->trigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;ZZ)V
 
     .line 409
     .end local v1           #menuItem:Lcom/google/glass/home/voice/menu/VoiceMenuItem;

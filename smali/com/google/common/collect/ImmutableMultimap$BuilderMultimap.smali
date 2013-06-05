@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;
-.super Lcom/google/common/collect/AbstractMultimap;
+.super Lcom/google/common/collect/AbstractMapBasedMultimap;
 .source "ImmutableMultimap.java"
 
 
@@ -20,7 +20,7 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Lcom/google/common/collect/AbstractMultimap",
+        "Lcom/google/common/collect/AbstractMapBasedMultimap",
         "<TK;TV;>;"
     }
 .end annotation
@@ -35,15 +35,15 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 126
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;,"Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap<TK;TV;>;"
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMultimap;-><init>(Ljava/util/Map;)V
+    invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 125
+    .line 127
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 131
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;,"Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap<TK;TV;>;"
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 

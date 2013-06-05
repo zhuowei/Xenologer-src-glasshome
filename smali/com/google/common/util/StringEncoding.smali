@@ -333,6 +333,7 @@
 
     move v4, v5
 
+    .line 78
     .end local v5           #i:I
     .restart local v4       #i:I
     goto :goto_5

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 296
+    .line 230
     iput-object p1, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1$1;->this$1:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 233
     iget-object v0, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1$1;->this$1:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1;
 
     iget-object v0, v0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1;->this$0:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper;
@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 300
+    .line 234
     iget-object v0, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1$1;->this$1:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1;
 
     iget-object v0, v0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$1;->this$0:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper;
@@ -69,7 +69,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/companion/BluetoothAdapterWrapper;->startDiscovery()Z
 
-    .line 302
+    .line 236
     :cond_0
     return-void
 .end method

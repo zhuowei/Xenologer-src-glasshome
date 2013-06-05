@@ -30,6 +30,9 @@
             "(TF;)TT;"
         }
     .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
 .end method
 
 .method public abstract equals(Ljava/lang/Object;)Z

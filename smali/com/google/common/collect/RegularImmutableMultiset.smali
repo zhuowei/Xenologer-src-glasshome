@@ -8,6 +8,13 @@
     serializable = true
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/common/collect/RegularImmutableMultiset$1;,
+        Lcom/google/common/collect/RegularImmutableMultiset$EntrySet;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<E:",
@@ -50,19 +57,84 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 38
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     .local p1, map:Lcom/google/common/collect/ImmutableMap;,"Lcom/google/common/collect/ImmutableMap<TE;Ljava/lang/Integer;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMultiset;-><init>()V
 
-    .line 40
+    .line 39
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
 
-    .line 41
+    .line 40
     iput p2, p0, Lcom/google/common/collect/RegularImmutableMultiset;->size:I
 
-    .line 42
+    .line 41
     return-void
+.end method
+
+.method static synthetic access$100(Lcom/google/common/collect/RegularImmutableMultiset;)Lcom/google/common/collect/ImmutableMap;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 34
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Ljava/util/Map$Entry;)Lcom/google/common/collect/Multiset$Entry;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 34
+    invoke-static {p0}, Lcom/google/common/collect/RegularImmutableMultiset;->entryFromMapEntry(Ljava/util/Map$Entry;)Lcom/google/common/collect/Multiset$Entry;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static entryFromMapEntry(Ljava/util/Map$Entry;)Lcom/google/common/collect/Multiset$Entry;
+    .locals 2
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map$Entry",
+            "<TE;",
+            "Ljava/lang/Integer;",
+            ">;)",
+            "Lcom/google/common/collect/Multiset$Entry",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 67
+    .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TE;Ljava/lang/Integer;>;"
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-static {v1, v0}, Lcom/google/common/collect/Multisets;->immutableEntry(Ljava/lang/Object;I)Lcom/google/common/collect/Multiset$Entry;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
@@ -75,7 +147,7 @@
     .end parameter
 
     .prologue
-    .line 62
+    .line 59
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -94,7 +166,7 @@
     .end parameter
 
     .prologue
-    .line 51
+    .line 49
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -104,7 +176,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 52
+    .line 50
     .local v0, value:Ljava/lang/Integer;
     if-nez v0, :cond_0
 
@@ -121,19 +193,28 @@
     goto :goto_0
 .end method
 
-.method distinctElements()I
-    .locals 1
+.method createEntrySet()Lcom/google/common/collect/ImmutableSet;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableSet",
+            "<",
+            "Lcom/google/common/collect/Multiset$Entry",
+            "<TE;>;>;"
+        }
+    .end annotation
 
     .prologue
-    .line 95
+    .line 72
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
+    new-instance v0, Lcom/google/common/collect/RegularImmutableMultiset$EntrySet;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->size()I
+    const/4 v1, 0x0
 
-    move-result v0
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/RegularImmutableMultiset$EntrySet;-><init>(Lcom/google/common/collect/RegularImmutableMultiset;Lcom/google/common/collect/RegularImmutableMultiset$1;)V
 
-    return v0
+    return-object v0
 .end method
 
 .method public elementSet()Lcom/google/common/collect/ImmutableSet;
@@ -147,7 +228,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 63
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -162,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 32
+    .line 31
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMultiset;->elementSet()Lcom/google/common/collect/ImmutableSet;
 
@@ -171,45 +252,11 @@
     return-object v0
 .end method
 
-.method entryIterator()Lcom/google/common/collect/UnmodifiableIterator;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/UnmodifiableIterator",
-            "<",
-            "Lcom/google/common/collect/Multiset$Entry",
-            "<TE;>;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 72
-    .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
-
-    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableSet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
-
-    move-result-object v0
-
-    .line 74
-    .local v0, mapIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TE;Ljava/lang/Integer;>;>;"
-    new-instance v1, Lcom/google/common/collect/RegularImmutableMultiset$1;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/RegularImmutableMultiset$1;-><init>(Lcom/google/common/collect/RegularImmutableMultiset;Ljava/util/Iterator;)V
-
-    return-object v1
-.end method
-
 .method public hashCode()I
     .locals 1
 
     .prologue
-    .line 90
+    .line 105
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -224,7 +271,7 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 45
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -239,7 +286,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 54
     .local p0, this:Lcom/google/common/collect/RegularImmutableMultiset;,"Lcom/google/common/collect/RegularImmutableMultiset<TE;>;"
     iget v0, p0, Lcom/google/common/collect/RegularImmutableMultiset;->size:I
 

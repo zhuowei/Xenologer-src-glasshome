@@ -1,11 +1,14 @@
 .class Lcom/google/glass/voice/VoiceService$13;
-.super Ljava/lang/Thread;
+.super Ljava/lang/Object;
 .source "VoiceService.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/voice/VoiceService;->startReadingFromMicrophone(Ljava/io/InputStream;)V
+    value = Lcom/google/glass/voice/VoiceService;->startVoiceConfigWithRetries(Lcom/google/glass/voice/VoiceConfig;Lcom/google/glass/util/RetryStrategy;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,23 +20,32 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/voice/VoiceService;
 
-.field final synthetic val$inputStream:Ljava/io/InputStream;
+.field final synthetic val$config:Lcom/google/glass/voice/VoiceConfig;
+
+.field final synthetic val$finalAttemptsMade:I
+
+.field final synthetic val$retryStrategy:Lcom/google/glass/util/RetryStrategy;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/voice/VoiceService;Ljava/lang/String;Ljava/io/InputStream;)V
+.method constructor <init>(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfig;Lcom/google/glass/util/RetryStrategy;I)V
     .locals 0
     .parameter
-    .parameter "x0"
+    .parameter
+    .parameter
     .parameter
 
     .prologue
-    .line 1048
+    .line 1092
     iput-object p1, p0, Lcom/google/glass/voice/VoiceService$13;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    iput-object p3, p0, Lcom/google/glass/voice/VoiceService$13;->val$inputStream:Ljava/io/InputStream;
+    iput-object p2, p0, Lcom/google/glass/voice/VoiceService$13;->val$config:Lcom/google/glass/voice/VoiceConfig;
 
-    invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/String;)V
+    iput-object p3, p0, Lcom/google/glass/voice/VoiceService$13;->val$retryStrategy:Lcom/google/glass/util/RetryStrategy;
+
+    iput p4, p0, Lcom/google/glass/voice/VoiceService$13;->val$finalAttemptsMade:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -41,75 +53,48 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 4
 
     .prologue
-    const/16 v3, 0xa0
-
-    .line 1051
-    new-array v0, v3, [B
-
-    .line 1052
-    .local v0, data:[B
-    :cond_0
-    iget-object v3, p0, Lcom/google/glass/voice/VoiceService$13;->val$inputStream:Ljava/io/InputStream;
-
-    if-eqz v3, :cond_1
-
-    iget-object v3, p0, Lcom/google/glass/voice/VoiceService$13;->this$0:Lcom/google/glass/voice/VoiceService;
-
-    #getter for: Lcom/google/glass/voice/VoiceService;->isMicrophoneReadThreadRunning:Ljava/util/concurrent/atomic/AtomicBoolean;
-    invoke-static {v3}, Lcom/google/glass/voice/VoiceService;->access$2200(Lcom/google/glass/voice/VoiceService;)Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    .line 1056
-    const/4 v2, 0x0
-
-    .line 1058
-    .local v2, read:I
-    :try_start_0
-    iget-object v3, p0, Lcom/google/glass/voice/VoiceService$13;->val$inputStream:Ljava/io/InputStream;
-
-    const/4 v4, 0x0
-
-    const/16 v5, 0xa0
-
-    invoke-virtual {v3, v0, v4, v5}, Ljava/io/InputStream;->read([BII)I
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result v2
-
-    .line 1064
-    :goto_0
-    if-gez v2, :cond_0
-
-    .line 1068
-    .end local v2           #read:I
-    :cond_1
-    return-void
-
-    .line 1059
-    .restart local v2       #read:I
-    :catch_0
-    move-exception v1
-
-    .line 1062
-    .local v1, e:Ljava/io/IOException;
+    .line 1095
     invoke-static {}, Lcom/google/glass/voice/VoiceService;->access$100()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string v4, "IOException shouldn\'t happen!"
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-static {v3, v4, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto :goto_0
+    const-string v2, "Retrying starting voice config "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/glass/voice/VoiceService$13;->val$config:Lcom/google/glass/voice/VoiceConfig;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1096
+    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$13;->this$0:Lcom/google/glass/voice/VoiceService;
+
+    iget-object v1, p0, Lcom/google/glass/voice/VoiceService$13;->val$config:Lcom/google/glass/voice/VoiceConfig;
+
+    iget-object v2, p0, Lcom/google/glass/voice/VoiceService$13;->val$retryStrategy:Lcom/google/glass/util/RetryStrategy;
+
+    iget v3, p0, Lcom/google/glass/voice/VoiceService$13;->val$finalAttemptsMade:I
+
+    #calls: Lcom/google/glass/voice/VoiceService;->startVoiceConfigWithRetries(Lcom/google/glass/voice/VoiceConfig;Lcom/google/glass/util/RetryStrategy;I)V
+    invoke-static {v0, v1, v2, v3}, Lcom/google/glass/voice/VoiceService;->access$2100(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfig;Lcom/google/glass/util/RetryStrategy;I)V
+
+    .line 1097
+    return-void
 .end method

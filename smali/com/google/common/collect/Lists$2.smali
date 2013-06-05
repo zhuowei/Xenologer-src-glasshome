@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 978
+    .line 1135
     .local p1, x0:Ljava/util/List;,"Ljava/util/List<TE;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/Lists$AbstractListWrapper;-><init>(Ljava/util/List;)V
 
@@ -52,7 +52,7 @@
     .end annotation
 
     .prologue
-    .line 980
+    .line 1138
     iget-object v0, p0, Lcom/google/common/collect/Lists$2;->backingList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;

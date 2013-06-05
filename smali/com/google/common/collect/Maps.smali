@@ -16,17 +16,23 @@
         Lcom/google/common/collect/Maps$ImprovedAbstractMap;,
         Lcom/google/common/collect/Maps$FilteredEntryMap;,
         Lcom/google/common/collect/Maps$FilteredKeyMap;,
+        Lcom/google/common/collect/Maps$FilteredEntryBiMap;,
         Lcom/google/common/collect/Maps$FilteredEntrySortedMap;,
         Lcom/google/common/collect/Maps$AbstractFilteredMap;,
+        Lcom/google/common/collect/Maps$ValuePredicate;,
+        Lcom/google/common/collect/Maps$KeyPredicate;,
         Lcom/google/common/collect/Maps$TransformedEntriesSortedMap;,
         Lcom/google/common/collect/Maps$TransformedEntriesMap;,
         Lcom/google/common/collect/Maps$EntryTransformer;,
         Lcom/google/common/collect/Maps$UnmodifiableBiMap;,
         Lcom/google/common/collect/Maps$UnmodifiableEntrySet;,
         Lcom/google/common/collect/Maps$UnmodifiableEntries;,
+        Lcom/google/common/collect/Maps$SortedAsMapView;,
+        Lcom/google/common/collect/Maps$AsMapView;,
         Lcom/google/common/collect/Maps$SortedMapDifferenceImpl;,
         Lcom/google/common/collect/Maps$ValueDifferenceImpl;,
-        Lcom/google/common/collect/Maps$MapDifferenceImpl;
+        Lcom/google/common/collect/Maps$MapDifferenceImpl;,
+        Lcom/google/common/collect/Maps$EntryFunction;
     }
 .end annotation
 
@@ -40,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 1982
+    .line 2469
     sget-object v0, Lcom/google/common/collect/Collections2;->STANDARD_JOINER:Lcom/google/common/base/Joiner;
 
     const-string v1, "="
@@ -58,10 +64,205 @@
     .locals 0
 
     .prologue
-    .line 71
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method static synthetic access$100(Ljava/util/Set;)Ljava/util/Set;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 74
+    invoke-static {p0}, Lcom/google/common/collect/Maps;->removeOnlySet(Ljava/util/Set;)Ljava/util/Set;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$200(Ljava/util/Set;Lcom/google/common/base/Function;)Ljava/util/Iterator;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 74
+    invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->asSetEntryIterator(Ljava/util/Set;Lcom/google/common/base/Function;)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Ljava/util/SortedSet;)Ljava/util/SortedSet;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 74
+    invoke-static {p0}, Lcom/google/common/collect/Maps;->removeOnlySortedSet(Ljava/util/SortedSet;)Ljava/util/SortedSet;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static asEntryTransformer(Lcom/google/common/base/Function;)Lcom/google/common/collect/Maps$EntryTransformer;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V1:",
+            "Ljava/lang/Object;",
+            "V2:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/base/Function",
+            "<-TV1;TV2;>;)",
+            "Lcom/google/common/collect/Maps$EntryTransformer",
+            "<TK;TV1;TV2;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1319
+    .local p0, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV1;TV2;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1320
+    new-instance v0, Lcom/google/common/collect/Maps$5;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$5;-><init>(Lcom/google/common/base/Function;)V
+
+    return-object v0
+.end method
+
+.method public static asMap(Ljava/util/Set;Lcom/google/common/base/Function;)Ljava/util/Map;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Set",
+            "<TK;>;",
+            "Lcom/google/common/base/Function",
+            "<-TK;TV;>;)",
+            "Ljava/util/Map",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 659
+    .local p0, set:Ljava/util/Set;,"Ljava/util/Set<TK;>;"
+    .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;TV;>;"
+    instance-of v0, p0, Ljava/util/SortedSet;
+
+    if-eqz v0, :cond_0
+
+    .line 660
+    check-cast p0, Ljava/util/SortedSet;
+
+    .end local p0           #set:Ljava/util/Set;,"Ljava/util/Set<TK;>;"
+    invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->asMap(Ljava/util/SortedSet;Lcom/google/common/base/Function;)Ljava/util/SortedMap;
+
+    move-result-object v0
+
+    .line 662
+    :goto_0
+    return-object v0
+
+    .restart local p0       #set:Ljava/util/Set;,"Ljava/util/Set<TK;>;"
+    :cond_0
+    new-instance v0, Lcom/google/common/collect/Maps$AsMapView;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Maps$AsMapView;-><init>(Ljava/util/Set;Lcom/google/common/base/Function;)V
+
+    goto :goto_0
+.end method
+
+.method public static asMap(Ljava/util/SortedSet;Lcom/google/common/base/Function;)Ljava/util/SortedMap;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/SortedSet",
+            "<TK;>;",
+            "Lcom/google/common/base/Function",
+            "<-TK;TV;>;)",
+            "Ljava/util/SortedMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 694
+    .local p0, set:Ljava/util/SortedSet;,"Ljava/util/SortedSet<TK;>;"
+    .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;TV;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$SortedAsMapView;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Maps$SortedAsMapView;-><init>(Ljava/util/SortedSet;Lcom/google/common/base/Function;)V
+
+    return-object v0
+.end method
+
+.method private static asSetEntryIterator(Ljava/util/Set;Lcom/google/common/base/Function;)Ljava/util/Iterator;
+    .locals 2
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Set",
+            "<TK;>;",
+            "Lcom/google/common/base/Function",
+            "<-TK;TV;>;)",
+            "Ljava/util/Iterator",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 781
+    .local p0, set:Ljava/util/Set;,"Ljava/util/Set<TK;>;"
+    .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;TV;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$1;
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1, p1}, Lcom/google/common/collect/Maps$1;-><init>(Ljava/util/Iterator;Lcom/google/common/base/Function;)V
+
+    return-object v0
 .end method
 
 .method static capacity(I)I
@@ -69,12 +270,12 @@
     .parameter "expectedSize"
 
     .prologue
-    .line 112
+    .line 168
     const/4 v0, 0x3
 
     if-ge p0, v0, :cond_1
 
-    .line 113
+    .line 169
     if-ltz p0, :cond_0
 
     const/4 v0, 0x1
@@ -82,33 +283,33 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 114
+    .line 170
     add-int/lit8 v0, p0, 0x1
 
-    .line 119
+    .line 175
     :goto_1
     return v0
 
-    .line 113
+    .line 169
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 116
+    .line 172
     :cond_1
     const/high16 v0, 0x4000
 
     if-ge p0, v0, :cond_2
 
-    .line 117
+    .line 173
     div-int/lit8 v0, p0, 0x3
 
     add-int/2addr v0, p0
 
     goto :goto_1
 
-    .line 119
+    .line 175
     :cond_2
     const v0, 0x7fffffff
 
@@ -136,16 +337,16 @@
     .end annotation
 
     .prologue
-    .line 2023
+    .line 2530
     .local p0, c:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     if-nez v0, :cond_0
 
-    .line 2024
+    .line 2531
     const/4 v0, 0x0
 
-    .line 2026
+    .line 2533
     .end local p1
     :goto_0
     return v0
@@ -167,7 +368,7 @@
 .end method
 
 .method static containsKeyImpl(Ljava/util/Map;Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
     .parameter
     .end parameter
     .parameter "key"
@@ -185,58 +386,29 @@
     .end annotation
 
     .prologue
-    .line 2094
+    .line 2592
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<**>;"
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Map$Entry;
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
 
-    .line 2095
-    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
+    invoke-static {v0, p1}, Lcom/google/common/collect/Iterators;->contains(Ljava/util/Iterator;Ljava/lang/Object;)Z
 
-    invoke-static {v2, p1}, Lcom/google/common/base/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 2096
-    const/4 v2, 0x1
-
-    .line 2099
-    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
-    :goto_0
-    return v2
-
-    :cond_1
-    const/4 v2, 0x0
-
-    goto :goto_0
+    return v0
 .end method
 
 .method static containsValueImpl(Ljava/util/Map;Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
     .parameter
     .end parameter
     .parameter "value"
@@ -254,54 +426,25 @@
     .end annotation
 
     .prologue
-    .line 2106
+    .line 2599
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<**>;"
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    check-cast v0, Ljava/util/Map$Entry;
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->valueIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
 
-    .line 2107
-    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
+    invoke-static {v0, p1}, Lcom/google/common/collect/Iterators;->contains(Ljava/util/Iterator;Ljava/lang/Object;)Z
 
-    invoke-static {v2, p1}, Lcom/google/common/base/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v0
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 2108
-    const/4 v2, 0x1
-
-    .line 2111
-    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
-    :goto_0
-    return v2
-
-    :cond_1
-    const/4 v2, 0x0
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public static difference(Ljava/util/Map;Ljava/util/Map;)Lcom/google/common/collect/MapDifference;
@@ -325,7 +468,7 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 342
     .local p0, left:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     .local p1, right:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     instance-of v2, p0, Ljava/util/SortedMap;
@@ -334,22 +477,22 @@
 
     move-object v1, p0
 
-    .line 323
+    .line 343
     check-cast v1, Ljava/util/SortedMap;
 
-    .line 324
+    .line 344
     .local v1, sortedLeft:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;+TV;>;"
     invoke-static {v1, p1}, Lcom/google/common/collect/Maps;->difference(Ljava/util/SortedMap;Ljava/util/Map;)Lcom/google/common/collect/SortedMapDifference;
 
     move-result-object v0
 
-    .line 327
+    .line 347
     .end local v1           #sortedLeft:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;+TV;>;"
     :goto_0
     return-object v0
 
     :cond_0
-    invoke-static {}, Lcom/google/common/base/Equivalences;->equals()Lcom/google/common/base/Equivalence;
+    invoke-static {}, Lcom/google/common/base/Equivalence;->equals()Lcom/google/common/base/Equivalence;
 
     move-result-object v2
 
@@ -387,40 +530,40 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 372
     .local p0, left:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     .local p1, right:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     .local p2, valueEquivalence:Lcom/google/common/base/Equivalence;,"Lcom/google/common/base/Equivalence<-TV;>;"
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 355
+    .line 374
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v8
 
-    .line 356
+    .line 375
     .local v8, onlyOnLeft:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     new-instance v9, Ljava/util/HashMap;
 
     invoke-direct {v9, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    .line 357
+    .line 376
     .local v9, onlyOnRight:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v7
 
-    .line 358
+    .line 377
     .local v7, onBoth:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 359
+    .line 378
     .local v1, differences:Ljava/util/Map;,"Ljava/util/Map<TK;Lcom/google/common/collect/MapDifference$ValueDifference<TV;>;>;"
     const/4 v3, 0x1
 
-    .line 361
+    .line 380
     .local v3, eq:Z
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -444,19 +587,19 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 362
+    .line 381
     .local v2, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v5
 
-    .line 363
+    .line 382
     .local v5, leftKey:Ljava/lang/Object;,"TK;"
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 364
+    .line 383
     .local v6, leftValue:Ljava/lang/Object;,"TV;"
     invoke-interface {p1, v5}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -464,12 +607,12 @@
 
     if-eqz v11, :cond_1
 
-    .line 365
+    .line 384
     invoke-interface {v9, v5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v10
 
-    .line 366
+    .line 385
     .local v10, rightValue:Ljava/lang/Object;,"TV;"
     invoke-virtual {p2, v6, v10}, Lcom/google/common/base/Equivalence;->equivalent(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -477,16 +620,16 @@
 
     if-eqz v11, :cond_0
 
-    .line 367
+    .line 386
     invoke-interface {v7, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 369
+    .line 388
     :cond_0
     const/4 v3, 0x0
 
-    .line 370
+    .line 389
     invoke-static {v6, v10}, Lcom/google/common/collect/Maps$ValueDifferenceImpl;->create(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/MapDifference$ValueDifference;
 
     move-result-object v11
@@ -495,17 +638,17 @@
 
     goto :goto_0
 
-    .line 374
+    .line 392
     .end local v10           #rightValue:Ljava/lang/Object;,"TV;"
     :cond_1
     const/4 v3, 0x0
 
-    .line 375
+    .line 393
     invoke-interface {v8, v5, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 379
+    .line 397
     .end local v2           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     .end local v5           #leftKey:Ljava/lang/Object;,"TK;"
     .end local v6           #leftValue:Ljava/lang/Object;,"TV;"
@@ -520,7 +663,7 @@
 
     const/4 v0, 0x1
 
-    .line 380
+    .line 398
     .local v0, areEqual:Z
     :goto_1
     invoke-static {v0, v8, v9, v7, v1}, Lcom/google/common/collect/Maps;->mapDifference(ZLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Lcom/google/common/collect/MapDifference;
@@ -529,7 +672,7 @@
 
     return-object v11
 
-    .line 379
+    .line 397
     .end local v0           #areEqual:Z
     :cond_3
     const/4 v0, 0x0
@@ -541,9 +684,6 @@
     .locals 13
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -561,15 +701,15 @@
     .end annotation
 
     .prologue
-    .line 539
+    .line 548
     .local p0, left:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;+TV;>;"
     .local p1, right:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 540
+    .line 549
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 541
+    .line 550
     invoke-interface {p0}, Ljava/util/SortedMap;->comparator()Ljava/util/Comparator;
 
     move-result-object v12
@@ -578,38 +718,38 @@
 
     move-result-object v1
 
-    .line 542
-    .local v1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
+    .line 551
+    .local v1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<TK;>;"
     invoke-static {v1}, Lcom/google/common/collect/Maps;->newTreeMap(Ljava/util/Comparator;)Ljava/util/TreeMap;
 
     move-result-object v9
 
-    .line 543
+    .line 552
     .local v9, onlyOnLeft:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     invoke-static {v1}, Lcom/google/common/collect/Maps;->newTreeMap(Ljava/util/Comparator;)Ljava/util/TreeMap;
 
     move-result-object v10
 
-    .line 544
+    .line 553
     .local v10, onlyOnRight:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     invoke-interface {v10, p1}, Ljava/util/SortedMap;->putAll(Ljava/util/Map;)V
 
-    .line 545
+    .line 554
     invoke-static {v1}, Lcom/google/common/collect/Maps;->newTreeMap(Ljava/util/Comparator;)Ljava/util/TreeMap;
 
     move-result-object v8
 
-    .line 546
+    .line 555
     .local v8, onBoth:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     invoke-static {v1}, Lcom/google/common/collect/Maps;->newTreeMap(Ljava/util/Comparator;)Ljava/util/TreeMap;
 
     move-result-object v2
 
-    .line 548
+    .line 557
     .local v2, differences:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;Lcom/google/common/collect/MapDifference$ValueDifference<TV;>;>;"
     const/4 v4, 0x1
 
-    .line 550
+    .line 559
     .local v4, eq:Z
     invoke-interface {p0}, Ljava/util/SortedMap;->entrySet()Ljava/util/Set;
 
@@ -633,19 +773,19 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 551
+    .line 560
     .local v3, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 552
+    .line 561
     .local v6, leftKey:Ljava/lang/Object;,"TK;"
     invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 553
+    .line 562
     .local v7, leftValue:Ljava/lang/Object;,"TV;"
     invoke-interface {p1, v6}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
@@ -653,12 +793,12 @@
 
     if-eqz v12, :cond_1
 
-    .line 554
+    .line 563
     invoke-interface {v10, v6}, Ljava/util/SortedMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v11
 
-    .line 555
+    .line 564
     .local v11, rightValue:Ljava/lang/Object;,"TV;"
     invoke-static {v7, v11}, Lcom/google/common/base/Objects;->equal(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -666,16 +806,16 @@
 
     if-eqz v12, :cond_0
 
-    .line 556
+    .line 565
     invoke-interface {v8, v6, v7}, Ljava/util/SortedMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 558
+    .line 567
     :cond_0
     const/4 v4, 0x0
 
-    .line 559
+    .line 568
     invoke-static {v7, v11}, Lcom/google/common/collect/Maps$ValueDifferenceImpl;->create(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/MapDifference$ValueDifference;
 
     move-result-object v12
@@ -684,17 +824,17 @@
 
     goto :goto_0
 
-    .line 563
+    .line 571
     .end local v11           #rightValue:Ljava/lang/Object;,"TV;"
     :cond_1
     const/4 v4, 0x0
 
-    .line 564
+    .line 572
     invoke-interface {v9, v6, v7}, Ljava/util/SortedMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 568
+    .line 576
     .end local v3           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     .end local v6           #leftKey:Ljava/lang/Object;,"TK;"
     .end local v7           #leftValue:Ljava/lang/Object;,"TV;"
@@ -709,7 +849,7 @@
 
     const/4 v0, 0x1
 
-    .line 569
+    .line 577
     .local v0, areEqual:Z
     :goto_1
     invoke-static {v0, v9, v10, v8, v2}, Lcom/google/common/collect/Maps;->sortedMapDifference(ZLjava/util/SortedMap;Ljava/util/SortedMap;Ljava/util/SortedMap;Ljava/util/SortedMap;)Lcom/google/common/collect/SortedMapDifference;
@@ -718,7 +858,7 @@
 
     return-object v12
 
-    .line 568
+    .line 576
     .end local v0           #areEqual:Z
     :cond_3
     const/4 v0, 0x0
@@ -741,18 +881,18 @@
     .end annotation
 
     .prologue
-    .line 2053
+    .line 2560
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<**>;"
     if-ne p0, p1, :cond_0
 
-    .line 2054
+    .line 2561
     const/4 v1, 0x1
 
-    .line 2060
+    .line 2567
     :goto_0
     return v1
 
-    .line 2056
+    .line 2563
     :cond_0
     instance-of v1, p1, Ljava/util/Map;
 
@@ -760,10 +900,10 @@
 
     move-object v0, p1
 
-    .line 2057
+    .line 2564
     check-cast v0, Ljava/util/Map;
 
-    .line 2058
+    .line 2565
     .local v0, o:Ljava/util/Map;,"Ljava/util/Map<**>;"
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -779,10 +919,65 @@
 
     goto :goto_0
 
-    .line 2060
+    .line 2567
     .end local v0           #o:Ljava/util/Map;,"Ljava/util/Map<**>;"
     :cond_1
     const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static filterEntries(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;",
+            "Lcom/google/common/base/Predicate",
+            "<-",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;)",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1967
+    .local p0, unfiltered:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
+    .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1968
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1969
+    instance-of v0, p0, Lcom/google/common/collect/Maps$FilteredEntryBiMap;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lcom/google/common/collect/Maps$FilteredEntryBiMap;
+
+    .end local p0           #unfiltered:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
+    invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->filterFiltered(Lcom/google/common/collect/Maps$FilteredEntryBiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+
+    .restart local p0       #unfiltered:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
+    :cond_0
+    new-instance v0, Lcom/google/common/collect/Maps$FilteredEntryBiMap;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Maps$FilteredEntryBiMap;-><init>(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)V
 
     goto :goto_0
 .end method
@@ -810,14 +1005,14 @@
     .end annotation
 
     .prologue
-    .line 1497
+    .line 1888
     .local p0, unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
     instance-of v0, p0, Ljava/util/SortedMap;
 
     if-eqz v0, :cond_0
 
-    .line 1498
+    .line 1889
     check-cast p0, Ljava/util/SortedMap;
 
     .end local p0           #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
@@ -825,19 +1020,36 @@
 
     move-result-object v0
 
-    .line 1501
+    .line 1894
     :goto_0
     return-object v0
 
-    .line 1500
+    .line 1890
     .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     :cond_0
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1501
-    instance-of v0, p0, Lcom/google/common/collect/Maps$AbstractFilteredMap;
+    instance-of v0, p0, Lcom/google/common/collect/BiMap;
 
     if-eqz v0, :cond_1
+
+    .line 1891
+    check-cast p0, Lcom/google/common/collect/BiMap;
+
+    .end local p0           #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->filterEntries(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1893
+    .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    :cond_1
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1894
+    instance-of v0, p0, Lcom/google/common/collect/Maps$AbstractFilteredMap;
+
+    if-eqz v0, :cond_2
 
     check-cast p0, Lcom/google/common/collect/Maps$AbstractFilteredMap;
 
@@ -849,7 +1061,7 @@
     goto :goto_0
 
     .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
-    :cond_1
+    :cond_2
     new-instance v1, Lcom/google/common/collect/Maps$FilteredEntryMap;
 
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -869,9 +1081,6 @@
     .locals 2
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -891,12 +1100,12 @@
     .end annotation
 
     .prologue
-    .line 1541
+    .line 1932
     .local p0, unfiltered:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1542
+    .line 1933
     instance-of v0, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
     if-eqz v0, :cond_0
@@ -928,6 +1137,51 @@
     goto :goto_0
 .end method
 
+.method private static filterFiltered(Lcom/google/common/collect/Maps$FilteredEntryBiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+    .locals 3
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/Maps$FilteredEntryBiMap",
+            "<TK;TV;>;",
+            "Lcom/google/common/base/Predicate",
+            "<-",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;)",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2192
+    .local p0, map:Lcom/google/common/collect/Maps$FilteredEntryBiMap;,"Lcom/google/common/collect/Maps$FilteredEntryBiMap<TK;TV;>;"
+    .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
+    iget-object v1, p0, Lcom/google/common/collect/Maps$FilteredEntryBiMap;->predicate:Lcom/google/common/base/Predicate;
+
+    invoke-static {v1, p1}, Lcom/google/common/base/Predicates;->and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
+
+    move-result-object v0
+
+    .line 2193
+    .local v0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
+    new-instance v1, Lcom/google/common/collect/Maps$FilteredEntryBiMap;
+
+    invoke-virtual {p0}, Lcom/google/common/collect/Maps$FilteredEntryBiMap;->unfiltered()Lcom/google/common/collect/BiMap;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/Maps$FilteredEntryBiMap;-><init>(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)V
+
+    return-object v1
+.end method
+
 .method private static filterFiltered(Lcom/google/common/collect/Maps$AbstractFilteredMap;Lcom/google/common/base/Predicate;)Ljava/util/Map;
     .locals 3
     .parameter
@@ -951,7 +1205,7 @@
     .end annotation
 
     .prologue
-    .line 1553
+    .line 1980
     .local p0, map:Lcom/google/common/collect/Maps$AbstractFilteredMap;,"Lcom/google/common/collect/Maps$AbstractFilteredMap<TK;TV;>;"
     .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
     iget-object v1, p0, Lcom/google/common/collect/Maps$AbstractFilteredMap;->predicate:Lcom/google/common/base/Predicate;
@@ -960,7 +1214,7 @@
 
     move-result-object v0
 
-    .line 1555
+    .line 1981
     .local v0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v1, Lcom/google/common/collect/Maps$FilteredEntryMap;
 
@@ -994,7 +1248,7 @@
     .end annotation
 
     .prologue
-    .line 1699
+    .line 2137
     .local p0, map:Lcom/google/common/collect/Maps$FilteredEntrySortedMap;,"Lcom/google/common/collect/Maps$FilteredEntrySortedMap<TK;TV;>;"
     .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
     iget-object v1, p0, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;->predicate:Lcom/google/common/base/Predicate;
@@ -1003,7 +1257,7 @@
 
     move-result-object v0
 
-    .line 1701
+    .line 2138
     .local v0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v1, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;
 
@@ -1014,6 +1268,44 @@
     invoke-direct {v1, v2, v0}, Lcom/google/common/collect/Maps$FilteredEntrySortedMap;-><init>(Ljava/util/SortedMap;Lcom/google/common/base/Predicate;)V
 
     return-object v1
+.end method
+
+.method public static filterKeys(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;",
+            "Lcom/google/common/base/Predicate",
+            "<-TK;>;)",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1745
+    .local p0, unfiltered:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
+    .local p1, keyPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TK;>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 1746
+    new-instance v0, Lcom/google/common/collect/Maps$KeyPredicate;
+
+    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$KeyPredicate;-><init>(Lcom/google/common/base/Predicate;)V
+
+    invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->filterEntries(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static filterKeys(Ljava/util/Map;Lcom/google/common/base/Predicate;)Ljava/util/Map;
@@ -1037,14 +1329,14 @@
     .end annotation
 
     .prologue
-    .line 1314
+    .line 1669
     .local p0, unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p1, keyPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TK;>;"
     instance-of v1, p0, Ljava/util/SortedMap;
 
     if-eqz v1, :cond_0
 
-    .line 1315
+    .line 1670
     check-cast p0, Ljava/util/SortedMap;
 
     .end local p0           #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
@@ -1052,25 +1344,42 @@
 
     move-result-object v1
 
-    .line 1325
+    .line 1676
     :goto_0
     return-object v1
 
-    .line 1317
+    .line 1671
     .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     :cond_0
+    instance-of v1, p0, Lcom/google/common/collect/BiMap;
+
+    if-eqz v1, :cond_1
+
+    .line 1672
+    check-cast p0, Lcom/google/common/collect/BiMap;
+
+    .end local p0           #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->filterKeys(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    .line 1674
+    .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    :cond_1
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1318
-    new-instance v0, Lcom/google/common/collect/Maps$4;
+    .line 1675
+    new-instance v0, Lcom/google/common/collect/Maps$KeyPredicate;
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$4;-><init>(Lcom/google/common/base/Predicate;)V
+    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$KeyPredicate;-><init>(Lcom/google/common/base/Predicate;)V
 
-    .line 1325
+    .line 1676
     .local v0, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
     instance-of v1, p0, Lcom/google/common/collect/Maps$AbstractFilteredMap;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     check-cast p0, Lcom/google/common/collect/Maps$AbstractFilteredMap;
 
@@ -1082,7 +1391,7 @@
     goto :goto_0
 
     .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
-    :cond_1
+    :cond_2
     new-instance v2, Lcom/google/common/collect/Maps$FilteredKeyMap;
 
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1099,12 +1408,9 @@
 .end method
 
 .method public static filterKeys(Ljava/util/SortedMap;Lcom/google/common/base/Predicate;)Ljava/util/SortedMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -1122,27 +1428,57 @@
     .end annotation
 
     .prologue
-    .line 1366
+    .line 1715
     .local p0, unfiltered:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     .local p1, keyPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TK;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Lcom/google/common/collect/Maps$KeyPredicate;
 
-    .line 1367
-    new-instance v0, Lcom/google/common/collect/Maps$5;
+    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$KeyPredicate;-><init>(Lcom/google/common/base/Predicate;)V
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$5;-><init>(Lcom/google/common/base/Predicate;)V
-
-    .line 1373
-    .local v0, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->filterEntries(Ljava/util/SortedMap;Lcom/google/common/base/Predicate;)Ljava/util/SortedMap;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
+.end method
+
+.method public static filterValues(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;",
+            "Lcom/google/common/base/Predicate",
+            "<-TV;>;)",
+            "Lcom/google/common/collect/BiMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1854
+    .local p0, unfiltered:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
+    .local p1, valuePredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TV;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$ValuePredicate;
+
+    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$ValuePredicate;-><init>(Lcom/google/common/base/Predicate;)V
+
+    invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->filterEntries(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static filterValues(Ljava/util/Map;Lcom/google/common/base/Predicate;)Ljava/util/Map;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -1162,51 +1498,60 @@
     .end annotation
 
     .prologue
-    .line 1407
+    .line 1780
     .local p0, unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p1, valuePredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TV;>;"
-    instance-of v1, p0, Ljava/util/SortedMap;
+    instance-of v0, p0, Ljava/util/SortedMap;
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 1408
+    .line 1781
     check-cast p0, Ljava/util/SortedMap;
 
     .end local p0           #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->filterValues(Ljava/util/SortedMap;Lcom/google/common/base/Predicate;)Ljava/util/SortedMap;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 1418
+    .line 1785
     :goto_0
-    return-object v1
+    return-object v0
 
-    .line 1410
+    .line 1782
     .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     :cond_0
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    instance-of v0, p0, Lcom/google/common/collect/BiMap;
 
-    .line 1411
-    new-instance v0, Lcom/google/common/collect/Maps$6;
+    if-eqz v0, :cond_1
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$6;-><init>(Lcom/google/common/base/Predicate;)V
+    .line 1783
+    check-cast p0, Lcom/google/common/collect/BiMap;
 
-    .line 1418
-    .local v0, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
+    .end local p0           #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    invoke-static {p0, p1}, Lcom/google/common/collect/Maps;->filterValues(Lcom/google/common/collect/BiMap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/BiMap;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1785
+    .restart local p0       #unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    :cond_1
+    new-instance v0, Lcom/google/common/collect/Maps$ValuePredicate;
+
+    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$ValuePredicate;-><init>(Lcom/google/common/base/Predicate;)V
+
     invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->filterEntries(Ljava/util/Map;Lcom/google/common/base/Predicate;)Ljava/util/Map;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_0
 .end method
 
 .method public static filterValues(Ljava/util/SortedMap;Lcom/google/common/base/Predicate;)Ljava/util/SortedMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -1224,23 +1569,18 @@
     .end annotation
 
     .prologue
-    .line 1455
+    .line 1821
     .local p0, unfiltered:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     .local p1, valuePredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TV;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v0, Lcom/google/common/collect/Maps$ValuePredicate;
 
-    .line 1456
-    new-instance v0, Lcom/google/common/collect/Maps$7;
+    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$ValuePredicate;-><init>(Lcom/google/common/base/Predicate;)V
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$7;-><init>(Lcom/google/common/base/Predicate;)V
-
-    .line 1463
-    .local v0, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->filterEntries(Ljava/util/SortedMap;Lcom/google/common/base/Predicate;)Ljava/util/SortedMap;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static fromProperties(Ljava/util/Properties;)Lcom/google/common/collect/ImmutableMap;
@@ -1264,12 +1604,12 @@
     .end annotation
 
     .prologue
-    .line 700
+    .line 988
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/ImmutableMap$Builder;
 
     move-result-object v0
 
-    .line 702
+    .line 990
     .local v0, builder:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p0}, Ljava/util/Properties;->propertyNames()Ljava/util/Enumeration;
 
@@ -1283,14 +1623,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 703
+    .line 991
     invoke-interface {v1}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 704
+    .line 992
     .local v2, key:Ljava/lang/String;
     invoke-virtual {p0, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
@@ -1300,7 +1640,7 @@
 
     goto :goto_0
 
-    .line 707
+    .line 995
     .end local v2           #key:Ljava/lang/String;
     :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap$Builder;->build()Lcom/google/common/collect/ImmutableMap;
@@ -1308,31 +1648,6 @@
     move-result-object v3
 
     return-object v3
-.end method
-
-.method static hashCodeImpl(Ljava/util/Map;)I
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<**>;)I"
-        }
-    .end annotation
-
-    .prologue
-    .line 2067
-    .local p0, map:Ljava/util/Map;,"Ljava/util/Map<**>;"
-    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public static immutableEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
@@ -1362,7 +1677,7 @@
     .end annotation
 
     .prologue
-    .line 722
+    .line 1009
     .local p0, key:Ljava/lang/Object;,"TK;"
     .local p1, value:Ljava/lang/Object;,"TV;"
     new-instance v0, Lcom/google/common/collect/ImmutableEntry;
@@ -1370,6 +1685,205 @@
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/ImmutableEntry;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v0
+.end method
+
+.method public static immutableEnumMap(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
+    .locals 3
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation build Lcom/google/common/annotations/GwtCompatible;
+        serializable = true
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Enum",
+            "<TK;>;V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map",
+            "<TK;TV;>;)",
+            "Lcom/google/common/collect/ImmutableMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 117
+    .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    instance-of v2, p0, Lcom/google/common/collect/ImmutableEnumMap;
+
+    if-eqz v2, :cond_0
+
+    .line 118
+    check-cast p0, Lcom/google/common/collect/ImmutableEnumMap;
+
+    .line 126
+    .end local p0           #map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_0
+    return-object p0
+
+    .line 119
+    .end local v1           #i$:Ljava/util/Iterator;
+    .restart local p0       #map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 120
+    invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    .line 122
+    :cond_1
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .restart local v1       #i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 123
+    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 124
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_1
+
+    .line 126
+    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
+    :cond_2
+    new-instance v2, Ljava/util/EnumMap;
+
+    invoke-direct {v2, p0}, Ljava/util/EnumMap;-><init>(Ljava/util/Map;)V
+
+    invoke-static {v2}, Lcom/google/common/collect/ImmutableEnumMap;->asImmutable(Ljava/util/EnumMap;)Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object p0
+
+    goto :goto_0
+.end method
+
+.method static keyFunction()Lcom/google/common/base/Function;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lcom/google/common/base/Function",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;*>;TK;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 96
+    sget-object v0, Lcom/google/common/collect/Maps$EntryFunction;->KEY:Lcom/google/common/collect/Maps$EntryFunction;
+
+    return-object v0
+.end method
+
+.method static keyIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Iterator",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;)",
+            "Ljava/util/Iterator",
+            "<TK;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2603
+    .local p0, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$6;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$6;-><init>(Ljava/util/Iterator;)V
+
+    return-object v0
+.end method
+
+.method static keyOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;
+    .locals 1
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map$Entry",
+            "<TK;*>;)TK;"
+        }
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
+    .prologue
+    .line 2652
+    .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;*>;"
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 .method private static mapDifference(ZLjava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Lcom/google/common/collect/MapDifference;
@@ -1402,7 +1916,7 @@
     .end annotation
 
     .prologue
-    .line 387
+    .line 403
     .local p1, onlyOnLeft:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p2, onlyOnRight:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p3, onBoth:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
@@ -1447,7 +1961,7 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 240
     new-instance v0, Lcom/google/common/collect/MapMaker;
 
     invoke-direct {v0}, Lcom/google/common/collect/MapMaker;-><init>()V
@@ -1477,7 +1991,7 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 298
     .local p0, type:Ljava/lang/Class;,"Ljava/lang/Class<TK;>;"
     new-instance v1, Ljava/util/EnumMap;
 
@@ -1510,7 +2024,7 @@
     .end annotation
 
     .prologue
-    .line 259
+    .line 311
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;+TV;>;"
     new-instance v0, Ljava/util/EnumMap;
 
@@ -1534,7 +2048,7 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 142
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
@@ -1560,7 +2074,7 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 193
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     new-instance v0, Ljava/util/HashMap;
 
@@ -1585,7 +2099,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 159
     new-instance v0, Ljava/util/HashMap;
 
     invoke-static {p0}, Lcom/google/common/collect/Maps;->capacity(I)I
@@ -1612,7 +2126,7 @@
     .end annotation
 
     .prologue
-    .line 268
+    .line 320
     new-instance v0, Ljava/util/IdentityHashMap;
 
     invoke-direct {v0}, Ljava/util/IdentityHashMap;-><init>()V
@@ -1635,7 +2149,7 @@
     .end annotation
 
     .prologue
-    .line 151
+    .line 206
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -1661,7 +2175,7 @@
     .end annotation
 
     .prologue
-    .line 167
+    .line 221
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     new-instance v0, Ljava/util/LinkedHashMap;
 
@@ -1685,7 +2199,7 @@
     .end annotation
 
     .prologue
-    .line 199
+    .line 253
     new-instance v0, Ljava/util/TreeMap;
 
     invoke-direct {v0}, Ljava/util/TreeMap;-><init>()V
@@ -1714,7 +2228,7 @@
     .end annotation
 
     .prologue
-    .line 235
+    .line 288
     .local p0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<TC;>;"
     new-instance v0, Ljava/util/TreeMap;
 
@@ -1741,7 +2255,7 @@
     .end annotation
 
     .prologue
-    .line 215
+    .line 269
     .local p0, map:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;+TV;>;"
     new-instance v0, Ljava/util/TreeMap;
 
@@ -1764,16 +2278,16 @@
             "Ljava/util/Comparator",
             "<-TE;>;)",
             "Ljava/util/Comparator",
-            "<-TE;>;"
+            "<TE;>;"
         }
     .end annotation
 
     .prologue
-    .line 616
+    .line 625
     .local p0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TE;>;"
     if-eqz p0, :cond_0
 
-    .line 619
+    .line 628
     .end local p0           #comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TE;>;"
     :goto_0
     return-object p0
@@ -1806,7 +2320,7 @@
     .end annotation
 
     .prologue
-    .line 2085
+    .line 2583
     .local p0, self:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -1831,7 +2345,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 2086
+    .line 2584
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -1845,7 +2359,7 @@
 
     goto :goto_0
 
-    .line 2088
+    .line 2586
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     :cond_0
     return-void
@@ -1872,16 +2386,16 @@
     .end annotation
 
     .prologue
-    .line 2043
+    .line 2550
     .local p0, c:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     instance-of v0, p1, Ljava/util/Map$Entry;
 
     if-nez v0, :cond_0
 
-    .line 2044
+    .line 2551
     const/4 v0, 0x0
 
-    .line 2046
+    .line 2553
     .end local p1
     :goto_0
     return v0
@@ -1902,6 +2416,56 @@
     goto :goto_0
 .end method
 
+.method private static removeOnlySet(Ljava/util/Set;)Ljava/util/Set;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Set",
+            "<TE;>;)",
+            "Ljava/util/Set",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 831
+    .local p0, set:Ljava/util/Set;,"Ljava/util/Set<TE;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$2;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$2;-><init>(Ljava/util/Set;)V
+
+    return-object v0
+.end method
+
+.method private static removeOnlySortedSet(Ljava/util/SortedSet;)Ljava/util/SortedSet;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/SortedSet",
+            "<TE;>;)",
+            "Ljava/util/SortedSet",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 851
+    .local p0, set:Ljava/util/SortedSet;,"Ljava/util/SortedSet<TE;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$3;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$3;-><init>(Ljava/util/SortedSet;)V
+
+    return-object v0
+.end method
+
 .method static safeContainsKey(Ljava/util/Map;Ljava/lang/Object;)Z
     .locals 2
     .parameter
@@ -1917,27 +2481,40 @@
     .end annotation
 
     .prologue
-    .line 2003
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<**>;"
+    const/4 v1, 0x0
+
+    .line 2491
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2493
     :try_start_0
     invoke-interface {p0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result v1
 
-    .line 2005
+    .line 2497
     :goto_0
     return v1
 
-    .line 2004
+    .line 2494
     :catch_0
     move-exception v0
 
-    .line 2005
+    .line 2495
     .local v0, e:Ljava/lang/ClassCastException;
-    const/4 v1, 0x0
+    goto :goto_0
 
+    .line 2496
+    .end local v0           #e:Ljava/lang/ClassCastException;
+    :catch_1
+    move-exception v0
+
+    .line 2497
+    .local v0, e:Ljava/lang/NullPointerException;
     goto :goto_0
 .end method
 
@@ -1958,27 +2535,94 @@
     .end annotation
 
     .prologue
-    .line 1991
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<*TV;>;"
+    const/4 v1, 0x0
+
+    .line 2476
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2478
     :try_start_0
     invoke-interface {p0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
     move-result-object v1
 
-    .line 1993
+    .line 2482
     :goto_0
     return-object v1
 
-    .line 1992
+    .line 2479
     :catch_0
     move-exception v0
 
-    .line 1993
+    .line 2480
     .local v0, e:Ljava/lang/ClassCastException;
+    goto :goto_0
+
+    .line 2481
+    .end local v0           #e:Ljava/lang/ClassCastException;
+    :catch_1
+    move-exception v0
+
+    .line 2482
+    .local v0, e:Ljava/lang/NullPointerException;
+    goto :goto_0
+.end method
+
+.method static safeRemove(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+    .parameter
+    .parameter "key"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map",
+            "<*TV;>;",
+            "Ljava/lang/Object;",
+            ")TV;"
+        }
+    .end annotation
+
+    .prologue
+    .local p0, map:Ljava/util/Map;,"Ljava/util/Map<*TV;>;"
     const/4 v1, 0x0
 
+    .line 2506
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2508
+    :try_start_0
+    invoke-interface {p0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v1
+
+    .line 2512
+    :goto_0
+    return-object v1
+
+    .line 2509
+    :catch_0
+    move-exception v0
+
+    .line 2510
+    .local v0, e:Ljava/lang/ClassCastException;
+    goto :goto_0
+
+    .line 2511
+    .end local v0           #e:Ljava/lang/ClassCastException;
+    :catch_1
+    move-exception v0
+
+    .line 2512
+    .local v0, e:Ljava/lang/NullPointerException;
     goto :goto_0
 .end method
 
@@ -2012,7 +2656,7 @@
     .end annotation
 
     .prologue
-    .line 576
+    .line 583
     .local p1, onlyOnLeft:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     .local p2, onlyOnRight:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
     .local p3, onBoth:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV;>;"
@@ -2060,7 +2704,7 @@
     .end annotation
 
     .prologue
-    .line 300
+    .line 1174
     .local p0, bimap:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -2069,6 +2713,112 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static toMap(Ljava/lang/Iterable;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable",
+            "<TK;>;",
+            "Lcom/google/common/base/Function",
+            "<-TK;TV;>;)",
+            "Lcom/google/common/collect/ImmutableMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 900
+    .local p0, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TK;>;"
+    .local p1, valueFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;TV;>;"
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {v0, p1}, Lcom/google/common/collect/Maps;->toMap(Ljava/util/Iterator;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static toMap(Ljava/util/Iterator;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
+    .locals 3
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Iterator",
+            "<TK;>;",
+            "Lcom/google/common/base/Function",
+            "<-TK;TV;>;)",
+            "Lcom/google/common/collect/ImmutableMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 918
+    .local p0, keys:Ljava/util/Iterator;,"Ljava/util/Iterator<TK;>;"
+    .local p1, valueFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;TV;>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 920
+    invoke-static {}, Lcom/google/common/collect/Maps;->newLinkedHashMap()Ljava/util/LinkedHashMap;
+
+    move-result-object v0
+
+    .line 921
+    .local v0, builder:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 922
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 923
+    .local v1, key:Ljava/lang/Object;,"TK;"
+    invoke-interface {p1, v1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_0
+
+    .line 925
+    .end local v1           #key:Ljava/lang/Object;,"TK;"
+    :cond_0
+    invoke-static {v0}, Lcom/google/common/collect/ImmutableMap;->copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
+
+    move-result-object v2
+
+    return-object v2
 .end method
 
 .method static toStringImpl(Ljava/util/Map;)Ljava/lang/String;
@@ -2084,7 +2834,7 @@
     .end annotation
 
     .prologue
-    .line 2074
+    .line 2574
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<**>;"
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
@@ -2100,13 +2850,13 @@
 
     move-result-object v0
 
-    .line 2076
+    .line 2575
     .local v0, sb:Ljava/lang/StringBuilder;
     sget-object v1, Lcom/google/common/collect/Maps;->STANDARD_JOINER:Lcom/google/common/base/Joiner$MapJoiner;
 
     invoke-virtual {v1, v0, p0}, Lcom/google/common/base/Joiner$MapJoiner;->appendTo(Ljava/lang/StringBuilder;Ljava/util/Map;)Ljava/lang/StringBuilder;
 
-    .line 2077
+    .line 2576
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -2143,14 +2893,14 @@
     .end annotation
 
     .prologue
-    .line 1061
+    .line 1381
     .local p0, fromMap:Ljava/util/Map;,"Ljava/util/Map<TK;TV1;>;"
     .local p1, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<-TK;-TV1;TV2;>;"
     instance-of v0, p0, Ljava/util/SortedMap;
 
     if-eqz v0, :cond_0
 
-    .line 1062
+    .line 1382
     check-cast p0, Ljava/util/SortedMap;
 
     .end local p0           #fromMap:Ljava/util/Map;,"Ljava/util/Map<TK;TV1;>;"
@@ -2158,7 +2908,7 @@
 
     move-result-object v0
 
-    .line 1064
+    .line 1384
     :goto_0
     return-object v0
 
@@ -2175,9 +2925,6 @@
     .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -2197,7 +2944,7 @@
     .end annotation
 
     .prologue
-    .line 1123
+    .line 1441
     .local p0, fromMap:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV1;>;"
     .local p1, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<-TK;-TV1;TV2;>;"
     new-instance v0, Lcom/google/common/collect/Maps$TransformedEntriesSortedMap;
@@ -2208,7 +2955,7 @@
 .end method
 
 .method public static transformValues(Ljava/util/Map;Lcom/google/common/base/Function;)Ljava/util/Map;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -2230,32 +2977,24 @@
     .end annotation
 
     .prologue
-    .line 943
+    .line 1270
     .local p0, fromMap:Ljava/util/Map;,"Ljava/util/Map<TK;TV1;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV1;TV2;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/common/collect/Maps;->asEntryTransformer(Lcom/google/common/base/Function;)Lcom/google/common/collect/Maps$EntryTransformer;
 
-    .line 944
-    new-instance v0, Lcom/google/common/collect/Maps$2;
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$2;-><init>(Lcom/google/common/base/Function;)V
-
-    .line 951
-    .local v0, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<TK;TV1;TV2;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->transformEntries(Ljava/util/Map;Lcom/google/common/collect/Maps$EntryTransformer;)Ljava/util/Map;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static transformValues(Ljava/util/SortedMap;Lcom/google/common/base/Function;)Ljava/util/SortedMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -2275,23 +3014,18 @@
     .end annotation
 
     .prologue
-    .line 996
+    .line 1314
     .local p0, fromMap:Ljava/util/SortedMap;,"Ljava/util/SortedMap<TK;TV1;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV1;TV2;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/common/collect/Maps;->asEntryTransformer(Lcom/google/common/base/Function;)Lcom/google/common/collect/Maps$EntryTransformer;
 
-    .line 997
-    new-instance v0, Lcom/google/common/collect/Maps$3;
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Maps$3;-><init>(Lcom/google/common/base/Function;)V
-
-    .line 1004
-    .local v0, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<TK;TV1;TV2;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/Maps;->transformEntries(Ljava/util/SortedMap;Lcom/google/common/collect/Maps$EntryTransformer;)Ljava/util/SortedMap;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static uniqueIndex(Ljava/lang/Iterable;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
@@ -2315,7 +3049,7 @@
     .end annotation
 
     .prologue
-    .line 637
+    .line 944
     .local p0, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TV;>;"
     .local p1, keyFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV;TK;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -2327,55 +3061,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public static uniqueIndex(Ljava/lang/Object;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
-    .locals 2
-    .parameter
-    .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            "I:",
-            "Ljava/lang/Object;",
-            ":",
-            "Ljava/lang/Iterable",
-            "<TV;>;:",
-            "Ljava/util/Iterator",
-            "<TV;>;>(TI;",
-            "Lcom/google/common/base/Function",
-            "<-TV;TK;>;)",
-            "Lcom/google/common/collect/ImmutableMap",
-            "<TK;TV;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 654
-    .local p0, values:Ljava/lang/Object;,"TI;"
-    .local p1, keyFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV;TK;>;"
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Iterable;
-
-    .line 655
-    .local v0, valuesIterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TV;>;"
-    invoke-static {v0, p1}, Lcom/google/common/collect/Maps;->uniqueIndex(Ljava/lang/Iterable;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v1
-
-    return-object v1
 .end method
 
 .method public static uniqueIndex(Ljava/util/Iterator;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableMap;
@@ -2399,17 +3084,17 @@
     .end annotation
 
     .prologue
-    .line 675
+    .line 964
     .local p0, values:Ljava/util/Iterator;,"Ljava/util/Iterator<TV;>;"
     .local p1, keyFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV;TK;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 676
+    .line 965
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/ImmutableMap$Builder;
 
     move-result-object v0
 
-    .line 677
+    .line 966
     .local v0, builder:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<TK;TV;>;"
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -2418,12 +3103,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 678
+    .line 967
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 679
+    .line 968
     .local v1, value:Ljava/lang/Object;,"TV;"
     invoke-interface {p1, v1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2433,7 +3118,7 @@
 
     goto :goto_0
 
-    .line 681
+    .line 970
     .end local v1           #value:Ljava/lang/Object;,"TV;"
     :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap$Builder;->build()Lcom/google/common/collect/ImmutableMap;
@@ -2461,7 +3146,7 @@
     .end annotation
 
     .prologue
-    .line 860
+    .line 1191
     .local p0, bimap:Lcom/google/common/collect/BiMap;,"Lcom/google/common/collect/BiMap<+TK;+TV;>;"
     new-instance v0, Lcom/google/common/collect/Maps$UnmodifiableBiMap;
 
@@ -2490,14 +3175,14 @@
     .end annotation
 
     .prologue
-    .line 749
+    .line 1034
     .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 750
-    new-instance v0, Lcom/google/common/collect/Maps$1;
+    .line 1035
+    new-instance v0, Lcom/google/common/collect/Maps$4;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$1;-><init>(Ljava/util/Map$Entry;)V
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$4;-><init>(Ljava/util/Map$Entry;)V
 
     return-object v0
 .end method
@@ -2524,7 +3209,7 @@
     .end annotation
 
     .prologue
-    .line 735
+    .line 1021
     .local p0, entrySet:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v0, Lcom/google/common/collect/Maps$UnmodifiableEntrySet;
 
@@ -2535,4 +3220,120 @@
     invoke-direct {v0, v1}, Lcom/google/common/collect/Maps$UnmodifiableEntrySet;-><init>(Ljava/util/Set;)V
 
     return-object v0
+.end method
+
+.method static valueFunction()Lcom/google/common/base/Function;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lcom/google/common/base/Function",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<*TV;>;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 100
+    sget-object v0, Lcom/google/common/collect/Maps$EntryFunction;->VALUE:Lcom/google/common/collect/Maps$EntryFunction;
+
+    return-object v0
+.end method
+
+.method static valueIterator(Lcom/google/common/collect/UnmodifiableIterator;)Lcom/google/common/collect/UnmodifiableIterator;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/UnmodifiableIterator",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;)",
+            "Lcom/google/common/collect/UnmodifiableIterator",
+            "<TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2672
+    .local p0, entryIterator:Lcom/google/common/collect/UnmodifiableIterator;,"Lcom/google/common/collect/UnmodifiableIterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$8;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$8;-><init>(Lcom/google/common/collect/UnmodifiableIterator;)V
+
+    return-object v0
+.end method
+
+.method static valueIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Iterator",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;)",
+            "Ljava/util/Iterator",
+            "<TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2661
+    .local p0, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$7;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Maps$7;-><init>(Ljava/util/Iterator;)V
+
+    return-object v0
+.end method
+
+.method static valueOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;
+    .locals 1
+    .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map$Entry",
+            "<*TV;>;)TV;"
+        }
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/Nullable;
+    .end annotation
+
+    .prologue
+    .line 2657
+    .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<*TV;>;"
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method

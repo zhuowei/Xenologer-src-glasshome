@@ -72,13 +72,13 @@
     .end annotation
 
     .prologue
-    .line 523
+    .line 563
     .local p0, this:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<TA;TB;>;"
     .local p1, p:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TB;>;"
     .local p2, f:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<TA;+TB;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 524
+    .line 564
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -87,7 +87,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->p:Lcom/google/common/base/Predicate;
 
-    .line 525
+    .line 565
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -96,7 +96,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->f:Lcom/google/common/base/Function;
 
-    .line 526
+    .line 566
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .parameter "x2"
 
     .prologue
-    .line 518
+    .line 559
     .local p0, this:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<TA;TB;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/base/Predicates$CompositionPredicate;-><init>(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;)V
 
@@ -119,6 +119,9 @@
 .method public apply(Ljava/lang/Object;)Z
     .locals 2
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;)Z"
@@ -126,7 +129,7 @@
     .end annotation
 
     .prologue
-    .line 530
+    .line 569
     .local p0, this:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<TA;TB;>;"
     .local p1, a:Ljava/lang/Object;,"TA;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->p:Lcom/google/common/base/Predicate;
@@ -155,17 +158,17 @@
     .local p0, this:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<TA;TB;>;"
     const/4 v1, 0x0
 
-    .line 534
+    .line 574
     instance-of v2, p1, Lcom/google/common/base/Predicates$CompositionPredicate;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 535
+    .line 575
     check-cast v0, Lcom/google/common/base/Predicates$CompositionPredicate;
 
-    .line 536
+    .line 576
     .local v0, that:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<**>;"
     iget-object v2, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->f:Lcom/google/common/base/Function;
 
@@ -189,7 +192,7 @@
 
     const/4 v1, 0x1
 
-    .line 538
+    .line 578
     .end local v0           #that:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<**>;"
     :cond_0
     return v1
@@ -199,7 +202,7 @@
     .locals 2
 
     .prologue
-    .line 542
+    .line 583
     .local p0, this:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<TA;TB;>;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$CompositionPredicate;->f:Lcom/google/common/base/Function;
 
@@ -222,7 +225,7 @@
     .locals 2
 
     .prologue
-    .line 546
+    .line 588
     .local p0, this:Lcom/google/common/base/Predicates$CompositionPredicate;,"Lcom/google/common/base/Predicates$CompositionPredicate<TA;TB;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

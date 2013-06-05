@@ -65,7 +65,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 77
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     .local p1, keyType:Ljava/lang/Class;,"Ljava/lang/Class<TK;>;"
     .local p2, valueType:Ljava/lang/Class;,"Ljava/lang/Class<TV;>;"
@@ -87,13 +87,13 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/common/collect/AbstractBiMap;-><init>(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 76
+    .line 79
     iput-object p1, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
-    .line 77
+    .line 80
     iput-object p2, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
-    .line 78
+    .line 81
     return-void
 .end method
 
@@ -118,7 +118,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 57
     .local p0, keyType:Ljava/lang/Class;,"Ljava/lang/Class<TK;>;"
     .local p1, valueType:Ljava/lang/Class;,"Ljava/lang/Class<TV;>;"
     new-instance v0, Lcom/google/common/collect/EnumBiMap;
@@ -146,7 +146,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 71
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/collect/EnumBiMap;->inferKeyType(Ljava/util/Map;)Ljava/lang/Class;
 
@@ -160,11 +160,11 @@
 
     move-result-object v0
 
-    .line 69
+    .line 72
     .local v0, bimap:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-virtual {v0, p0}, Lcom/google/common/collect/EnumBiMap;->putAll(Ljava/util/Map;)V
 
-    .line 70
+    .line 73
     return-object v0
 .end method
 
@@ -184,13 +184,13 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 84
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;*>;"
     instance-of v0, p0, Lcom/google/common/collect/EnumBiMap;
 
     if-eqz v0, :cond_0
 
-    .line 82
+    .line 85
     check-cast p0, Lcom/google/common/collect/EnumBiMap;
 
     .end local p0           #map:Ljava/util/Map;,"Ljava/util/Map<TK;*>;"
@@ -198,18 +198,18 @@
 
     move-result-object v0
 
-    .line 88
+    .line 91
     .restart local p0       #map:Ljava/util/Map;,"Ljava/util/Map<TK;*>;"
     :goto_0
     return-object v0
 
-    .line 84
+    .line 87
     :cond_0
     instance-of v0, p0, Lcom/google/common/collect/EnumHashBiMap;
 
     if-eqz v0, :cond_1
 
-    .line 85
+    .line 88
     check-cast p0, Lcom/google/common/collect/EnumHashBiMap;
 
     .end local p0           #map:Ljava/util/Map;,"Ljava/util/Map<TK;*>;"
@@ -219,7 +219,7 @@
 
     goto :goto_0
 
-    .line 87
+    .line 90
     .restart local p0       #map:Ljava/util/Map;,"Ljava/util/Map<TK;*>;"
     :cond_1
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
@@ -233,7 +233,7 @@
     :goto_1
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 88
+    .line 91
     invoke-interface {p0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -254,7 +254,7 @@
 
     goto :goto_0
 
-    .line 87
+    .line 90
     :cond_2
     const/4 v0, 0x0
 
@@ -277,24 +277,24 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 95
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<*TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/EnumBiMap;
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 96
     check-cast p0, Lcom/google/common/collect/EnumBiMap;
 
     .end local p0           #map:Ljava/util/Map;,"Ljava/util/Map<*TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
-    .line 96
+    .line 99
     .restart local p0       #map:Ljava/util/Map;,"Ljava/util/Map<*TV;>;"
     :goto_0
     return-object v0
 
-    .line 95
+    .line 98
     :cond_0
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
 
@@ -307,7 +307,7 @@
     :goto_1
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 96
+    .line 99
     invoke-interface {p0}, Ljava/util/Map;->values()Ljava/util/Collection;
 
     move-result-object v0
@@ -328,7 +328,7 @@
 
     goto :goto_0
 
-    .line 95
+    .line 98
     :cond_1
     const/4 v0, 0x0
 
@@ -350,11 +350,11 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 138
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 126
+    .line 139
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -363,7 +363,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
-    .line 127
+    .line 140
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
@@ -372,7 +372,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
-    .line 128
+    .line 141
     new-instance v0, Ljava/util/EnumMap;
 
     iget-object v1, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
@@ -395,10 +395,10 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/collect/EnumBiMap;->setDelegates(Ljava/util/Map;Ljava/util/Map;)V
 
-    .line 131
+    .line 143
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->populateMap(Ljava/util/Map;Ljava/io/ObjectInputStream;)V
 
-    .line 132
+    .line 144
     return-void
 .end method
 
@@ -416,34 +416,112 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 128
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 116
+    .line 129
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 117
+    .line 130
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 118
+    .line 131
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->writeMap(Ljava/util/Map;Ljava/io/ObjectOutputStream;)V
 
-    .line 119
+    .line 132
     return-void
 .end method
 
 
 # virtual methods
+.method checkKey(Ljava/lang/Enum;)Ljava/lang/Enum;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TK;)TK;"
+        }
+    .end annotation
+
+    .prologue
+    .line 114
+    .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
+    .local p1, key:Ljava/lang/Enum;,"TK;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Enum;
+
+    return-object v0
+.end method
+
+.method bridge synthetic checkKey(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 43
+    .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
+    check-cast p1, Ljava/lang/Enum;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/EnumBiMap;->checkKey(Ljava/lang/Enum;)Ljava/lang/Enum;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method checkValue(Ljava/lang/Enum;)Ljava/lang/Enum;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TV;)TV;"
+        }
+    .end annotation
+
+    .prologue
+    .line 119
+    .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
+    .local p1, value:Ljava/lang/Enum;,"TV;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Enum;
+
+    return-object v0
+.end method
+
+.method bridge synthetic checkValue(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 43
+    .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
+    check-cast p1, Ljava/lang/Enum;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/EnumBiMap;->checkValue(Ljava/lang/Enum;)Ljava/lang/Enum;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public bridge synthetic clear()V
     .locals 0
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->clear()V
 
@@ -455,7 +533,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->containsValue(Ljava/lang/Object;)Z
 
@@ -468,7 +546,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->entrySet()Ljava/util/Set;
 
@@ -481,7 +559,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->inverse()Lcom/google/common/collect/BiMap;
 
@@ -494,7 +572,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->keySet()Ljava/util/Set;
 
@@ -514,7 +592,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 104
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->keyType:Ljava/lang/Class;
 
@@ -526,7 +604,7 @@
     .parameter "x0"
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractBiMap;->putAll(Ljava/util/Map;)V
 
@@ -544,7 +622,7 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 109
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/EnumBiMap;->valueType:Ljava/lang/Class;
 
@@ -555,7 +633,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 43
     .local p0, this:Lcom/google/common/collect/EnumBiMap;,"Lcom/google/common/collect/EnumBiMap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractBiMap;->values()Ljava/util/Set;
 

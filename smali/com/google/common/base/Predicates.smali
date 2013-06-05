@@ -34,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 326
+    .line 330
     const-string v0, ","
 
     invoke-static {v0}, Lcom/google/common/base/Joiner;->on(Ljava/lang/String;)Lcom/google/common/base/Joiner;
@@ -50,7 +50,7 @@
     .locals 0
 
     .prologue
-    .line 45
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 44
+    .line 48
     sget-object v0, Lcom/google/common/base/Predicates;->COMMA_JOINER:Lcom/google/common/base/Joiner;
 
     return-object v0
@@ -83,7 +83,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 67
     sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->ALWAYS_FALSE:Lcom/google/common/base/Predicates$ObjectPredicate;
 
     invoke-virtual {v0}, Lcom/google/common/base/Predicates$ObjectPredicate;->withNarrowedType()Lcom/google/common/base/Predicate;
@@ -110,7 +110,7 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 59
     sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->ALWAYS_TRUE:Lcom/google/common/base/Predicates$ObjectPredicate;
 
     invoke-virtual {v0}, Lcom/google/common/base/Predicates$ObjectPredicate;->withNarrowedType()Lcom/google/common/base/Predicate;
@@ -139,7 +139,7 @@
     .end annotation
 
     .prologue
-    .line 127
+    .line 129
     .local p0, first:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TT;>;"
     .local p1, second:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TT;>;"
     new-instance v2, Lcom/google/common/base/Predicates$AndPredicate;
@@ -185,7 +185,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 106
     .local p0, components:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/common/base/Predicate<-TT;>;>;"
     new-instance v0, Lcom/google/common/base/Predicates$AndPredicate;
 
@@ -216,7 +216,7 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 119
     .local p0, components:[Lcom/google/common/base/Predicate;,"[Lcom/google/common/base/Predicate<-TT;>;"
     new-instance v0, Lcom/google/common/base/Predicates$AndPredicate;
 
@@ -252,7 +252,7 @@
     .end annotation
 
     .prologue
-    .line 606
+    .line 647
     .local p0, first:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TT;>;"
     .local p1, second:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TT;>;"
     const/4 v0, 0x2
@@ -297,7 +297,7 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 206
     .local p0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     new-instance v0, Lcom/google/common/base/Predicates$AssignableFromPredicate;
 
@@ -329,7 +329,7 @@
     .end annotation
 
     .prologue
-    .line 238
+    .line 234
     .local p0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TB;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<TA;+TB;>;"
     new-instance v0, Lcom/google/common/base/Predicates$CompositionPredicate;
@@ -361,7 +361,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 261
     new-instance v0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Predicates$ContainsPatternPredicate;-><init>(Ljava/util/regex/Pattern;)V
@@ -389,7 +389,7 @@
     .end annotation
 
     .prologue
-    .line 252
+    .line 248
     new-instance v0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Predicates$ContainsPatternPredicate;-><init>(Ljava/lang/String;)V
@@ -413,13 +413,13 @@
     .end annotation
 
     .prologue
-    .line 614
+    .line 655
     .local p0, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TT;>;"
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 615
+    .line 656
     .local v2, list:Ljava/util/ArrayList;,"Ljava/util/ArrayList<TT;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -437,7 +437,7 @@
 
     move-result-object v0
 
-    .line 616
+    .line 657
     .local v0, element:Ljava/lang/Object;,"TT;"
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -447,7 +447,7 @@
 
     goto :goto_0
 
-    .line 618
+    .line 659
     .end local v0           #element:Ljava/lang/Object;,"TT;"
     :cond_0
     return-object v2
@@ -467,7 +467,7 @@
     .end annotation
 
     .prologue
-    .line 610
+    .line 651
     .local p0, array:[Ljava/lang/Object;,"[TT;"
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -497,7 +497,7 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 173
     .local p0, target:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
@@ -534,7 +534,7 @@
     .end annotation
 
     .prologue
-    .line 227
+    .line 223
     .local p0, target:Ljava/util/Collection;,"Ljava/util/Collection<+TT;>;"
     new-instance v0, Lcom/google/common/base/Predicates$InPredicate;
 
@@ -565,7 +565,7 @@
     .end annotation
 
     .prologue
-    .line 197
+    .line 193
     .local p0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     new-instance v0, Lcom/google/common/base/Predicates$InstanceOfPredicate;
 
@@ -593,7 +593,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 76
     sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->IS_NULL:Lcom/google/common/base/Predicates$ObjectPredicate;
 
     invoke-virtual {v0}, Lcom/google/common/base/Predicates$ObjectPredicate;->withNarrowedType()Lcom/google/common/base/Predicate;
@@ -619,7 +619,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 93
     .local p0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TT;>;"
     new-instance v0, Lcom/google/common/base/Predicates$NotPredicate;
 
@@ -645,7 +645,7 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 85
     sget-object v0, Lcom/google/common/base/Predicates$ObjectPredicate;->NOT_NULL:Lcom/google/common/base/Predicates$ObjectPredicate;
 
     invoke-virtual {v0}, Lcom/google/common/base/Predicates$ObjectPredicate;->withNarrowedType()Lcom/google/common/base/Predicate;
@@ -674,7 +674,7 @@
     .end annotation
 
     .prologue
-    .line 166
+    .line 165
     .local p0, first:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TT;>;"
     .local p1, second:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TT;>;"
     new-instance v2, Lcom/google/common/base/Predicates$OrPredicate;

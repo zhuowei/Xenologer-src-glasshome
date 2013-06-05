@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 263
+    .line 262
     iput-object p1, p0, Lcom/google/common/base/Joiner$1;->this$0:Lcom/google/common/base/Joiner;
 
     iput-object p3, p0, Lcom/google/common/base/Joiner$1;->val$nullText:Ljava/lang/String;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 274
+    .line 276
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "already specified useForNull"
@@ -59,6 +59,9 @@
 .method toString(Ljava/lang/Object;)Ljava/lang/CharSequence;
     .locals 1
     .parameter "part"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 265
@@ -84,10 +87,10 @@
     .parameter "nullText"
 
     .prologue
-    .line 269
+    .line 270
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 270
+    .line 271
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "already specified useForNull"

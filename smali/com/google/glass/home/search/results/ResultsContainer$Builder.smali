@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private isStartSoundSearchResult:Z
+
 .field private final resultPages:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -32,10 +34,10 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 82
+    .line 94
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,12 +53,12 @@
     .parameter "context"
 
     .prologue
-    .line 104
+    .line 122
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
 
-    .line 105
+    .line 123
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     invoke-static {p1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->getDefaultOptionMenu(Landroid/content/Context;)Lcom/google/glass/widget/OptionMenu;
 
@@ -66,7 +68,7 @@
 
     invoke-virtual {v0, p0, v1, v2}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 106
+    .line 124
     invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v1
@@ -79,7 +81,7 @@
     .parameter "context"
 
     .prologue
-    .line 110
+    .line 128
     sget-object v1, Lcom/google/glass/util/Labs$Feature;->WEB_BROWSING:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -88,16 +90,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 111
+    .line 129
     new-instance v0, Lcom/google/glass/widget/OptionMenu;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
-    .line 112
+    .line 130
     .local v0, optionMenu:Lcom/google/glass/widget/OptionMenu;
     const/16 v1, 0xd
 
-    sget v2, Lcom/google/glass/home/R$string;->voice_search_menu_view_site:I
+    sget v2, Lcom/google/glass/home/R$string;->timeline_menu_view_website:I
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -107,7 +109,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 116
+    .line 134
     .end local v0           #optionMenu:Lcom/google/glass/widget/OptionMenu;
     :goto_0
     return-object v0
@@ -124,12 +126,12 @@
     .parameter "hasPhoneNumber"
 
     .prologue
-    .line 121
+    .line 139
     new-instance v0, Lcom/google/glass/widget/OptionMenu;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
-    .line 122
+    .line 140
     .local v0, optionMenu:Lcom/google/glass/widget/OptionMenu;
     const/16 v1, 0x9
 
@@ -143,10 +145,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 124
+    .line 142
     if-eqz p1, :cond_0
 
-    .line 125
+    .line 143
     const/16 v1, 0x8
 
     sget v2, Lcom/google/glass/home/R$string;->timeline_menu_voice_call:I
@@ -159,7 +161,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 128
+    .line 146
     :cond_0
     return-object v0
 .end method
@@ -173,7 +175,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 85
+    .line 98
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
@@ -182,7 +184,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 86
+    .line 99
     return-object p0
 .end method
 
@@ -192,7 +194,7 @@
     .parameter "optionMenu"
 
     .prologue
-    .line 90
+    .line 103
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
@@ -203,7 +205,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 91
+    .line 104
     return-object p0
 .end method
 
@@ -214,7 +216,7 @@
     .parameter "bundle"
 
     .prologue
-    .line 95
+    .line 108
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
@@ -223,22 +225,36 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 96
+    .line 109
     return-object p0
 .end method
 
 .method public build()Lcom/google/glass/home/search/results/ResultsContainer;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 100
+    .line 118
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer;
 
     iget-object v1, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
-    const/4 v2, 0x0
+    iget-boolean v2, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->isStartSoundSearchResult:Z
 
-    invoke-direct {v0, v1, v2}, Lcom/google/glass/home/search/results/ResultsContainer;-><init>(Ljava/util/List;Lcom/google/glass/home/search/results/ResultsContainer$1;)V
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/home/search/results/ResultsContainer;-><init>(Ljava/util/List;ZLcom/google/glass/home/search/results/ResultsContainer$1;)V
 
     return-object v0
+.end method
+
+.method public setIsStartSoundSearchResult(Z)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
+    .locals 0
+    .parameter "isStartSoundSearchResult"
+
+    .prologue
+    .line 113
+    iput-boolean p1, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->isStartSoundSearchResult:Z
+
+    .line 114
+    return-object p0
 .end method

@@ -141,7 +141,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 51
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleRowKey:Ljava/lang/Object;
 
@@ -185,12 +185,12 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 56
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     .local p1, columnKey:Ljava/lang/Object;,"TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
+    .line 57
     invoke-virtual {p0, p1}, Lcom/google/common/collect/SingletonImmutableTable;->containsColumn(Ljava/lang/Object;)Z
 
     move-result v0
@@ -241,7 +241,7 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 63
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleColumnKey:Ljava/lang/Object;
 
@@ -278,7 +278,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 68
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleColumnKey:Ljava/lang/Object;
 
@@ -417,15 +417,15 @@
 
     const/4 v2, 0x1
 
-    .line 120
+    .line 122
     if-ne p1, p0, :cond_1
 
-    .line 131
+    .line 133
     :cond_0
     :goto_0
     return v2
 
-    .line 122
+    .line 124
     :cond_1
     instance-of v4, p1, Lcom/google/common/collect/Table;
 
@@ -433,10 +433,10 @@
 
     move-object v0, p1
 
-    .line 123
+    .line 125
     check-cast v0, Lcom/google/common/collect/Table;
 
-    .line 124
+    .line 126
     .local v0, that:Lcom/google/common/collect/Table;,"Lcom/google/common/collect/Table<***>;"
     invoke-interface {v0}, Lcom/google/common/collect/Table;->size()I
 
@@ -444,7 +444,7 @@
 
     if-ne v4, v2, :cond_3
 
-    .line 125
+    .line 127
     invoke-interface {v0}, Lcom/google/common/collect/Table;->cellSet()Ljava/util/Set;
 
     move-result-object v4
@@ -459,7 +459,7 @@
 
     check-cast v1, Lcom/google/common/collect/Table$Cell;
 
-    .line 126
+    .line 128
     .local v1, thatCell:Lcom/google/common/collect/Table$Cell;,"Lcom/google/common/collect/Table$Cell<***>;"
     iget-object v4, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleRowKey:Ljava/lang/Object;
 
@@ -507,7 +507,7 @@
     :cond_3
     move v2, v3
 
-    .line 131
+    .line 133
     goto :goto_0
 .end method
 
@@ -554,7 +554,7 @@
     .locals 3
 
     .prologue
-    .line 135
+    .line 138
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     const/4 v0, 0x3
 
@@ -608,12 +608,12 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 97
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     .local p1, rowKey:Ljava/lang/Object;,"TR;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 97
+    .line 98
     invoke-virtual {p0, p1}, Lcom/google/common/collect/SingletonImmutableTable;->containsRow(Ljava/lang/Object;)Z
 
     move-result v0
@@ -664,7 +664,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 104
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleRowKey:Ljava/lang/Object;
 
@@ -701,7 +701,7 @@
     .end annotation
 
     .prologue
-    .line 107
+    .line 109
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleRowKey:Ljava/lang/Object;
 
@@ -737,7 +737,7 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 113
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     const/4 v0, 0x1
 
@@ -748,7 +748,7 @@
     .locals 2
 
     .prologue
-    .line 139
+    .line 143
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -814,7 +814,7 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 117
     .local p0, this:Lcom/google/common/collect/SingletonImmutableTable;,"Lcom/google/common/collect/SingletonImmutableTable<TR;TC;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableTable;->singleValue:Ljava/lang/Object;
 

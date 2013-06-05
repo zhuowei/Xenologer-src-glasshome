@@ -9,8 +9,10 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/common/io/ByteStreams$LimitedInputStream;,
         Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;,
-        Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;
+        Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;,
+        Lcom/google/common/io/ByteStreams$ByteArrayByteSource;
     }
 .end annotation
 
@@ -18,20 +20,159 @@
 # static fields
 .field private static final BUF_SIZE:I = 0x1000
 
+.field private static final NULL_OUTPUT_STREAM:Ljava/io/OutputStream;
+
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 573
+    new-instance v0, Lcom/google/common/io/ByteStreams$1;
+
+    invoke-direct {v0}, Lcom/google/common/io/ByteStreams$1;-><init>()V
+
+    sput-object v0, Lcom/google/common/io/ByteStreams;->NULL_OUTPUT_STREAM:Ljava/io/OutputStream;
+
+    return-void
+.end method
+
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 51
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
+.method static asByteSink(Lcom/google/common/io/OutputSupplier;)Lcom/google/common/io/ByteSink;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/common/io/OutputSupplier",
+            "<+",
+            "Ljava/io/OutputStream;",
+            ">;)",
+            "Lcom/google/common/io/ByteSink;"
+        }
+    .end annotation
+
+    .prologue
+    .line 988
+    .local p0, supplier:Lcom/google/common/io/OutputSupplier;,"Lcom/google/common/io/OutputSupplier<+Ljava/io/OutputStream;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 989
+    new-instance v0, Lcom/google/common/io/ByteStreams$7;
+
+    invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$7;-><init>(Lcom/google/common/io/OutputSupplier;)V
+
+    return-object v0
+.end method
+
+.method static asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/common/io/InputSupplier",
+            "<+",
+            "Ljava/io/InputStream;",
+            ">;)",
+            "Lcom/google/common/io/ByteSource;"
+        }
+    .end annotation
+
+    .prologue
+    .line 977
+    .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 978
+    new-instance v0, Lcom/google/common/io/ByteStreams$6;
+
+    invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$6;-><init>(Lcom/google/common/io/InputSupplier;)V
+
+    return-object v0
+.end method
+
+.method public static asByteSource([B)Lcom/google/common/io/ByteSource;
+    .locals 2
+    .parameter "b"
+
+    .prologue
+    .line 88
+    new-instance v0, Lcom/google/common/io/ByteStreams$ByteArrayByteSource;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/io/ByteStreams$ByteArrayByteSource;-><init>([BLcom/google/common/io/ByteStreams$1;)V
+
+    return-object v0
+.end method
+
+.method static asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
+    .locals 1
+    .parameter "source"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<S:",
+            "Ljava/io/InputStream;",
+            ">(",
+            "Lcom/google/common/io/ByteSource;",
+            ")",
+            "Lcom/google/common/io/InputSupplier",
+            "<TS;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 955
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 956
+    new-instance v0, Lcom/google/common/io/ByteStreams$4;
+
+    invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$4;-><init>(Lcom/google/common/io/ByteSource;)V
+
+    return-object v0
+.end method
+
+.method static asOutputSupplier(Lcom/google/common/io/ByteSink;)Lcom/google/common/io/OutputSupplier;
+    .locals 1
+    .parameter "sink"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<S:",
+            "Ljava/io/OutputStream;",
+            ">(",
+            "Lcom/google/common/io/ByteSink;",
+            ")",
+            "Lcom/google/common/io/OutputSupplier",
+            "<TS;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 966
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 967
+    new-instance v0, Lcom/google/common/io/ByteStreams$5;
+
+    invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$5;-><init>(Lcom/google/common/io/ByteSink;)V
+
+    return-object v0
+.end method
+
 .method public static copy(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/OutputSupplier;)J
-    .locals 10
+    .locals 2
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -55,132 +196,26 @@
     .end annotation
 
     .prologue
+    .line 156
     .local p0, from:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
     .local p1, to:Lcom/google/common/io/OutputSupplier;,"Lcom/google/common/io/OutputSupplier<+Ljava/io/OutputStream;>;"
-    const/4 v9, 0x2
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
-    const/4 v6, 0x0
+    move-result-object v0
 
-    const/4 v5, 0x1
+    invoke-static {p1}, Lcom/google/common/io/ByteStreams;->asByteSink(Lcom/google/common/io/OutputSupplier;)Lcom/google/common/io/ByteSink;
 
-    .line 115
-    const/4 v4, 0x0
+    move-result-object v1
 
-    .line 116
-    .local v4, successfulOps:I
-    invoke-interface {p0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/io/InputStream;
-
-    .line 118
-    .local v2, in:Ljava/io/InputStream;
-    :try_start_0
-    invoke-interface {p1}, Lcom/google/common/io/OutputSupplier;->getOutput()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/io/OutputStream;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 120
-    .local v3, out:Ljava/io/OutputStream;
-    :try_start_1
-    invoke-static {v2, v3}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {v0, v1}, Lcom/google/common/io/ByteSource;->copyTo(Lcom/google/common/io/ByteSink;)J
 
     move-result-wide v0
 
-    .line 121
-    .local v0, count:J
-    add-int/lit8 v4, v4, 0x1
-
-    .line 124
-    if-ge v4, v5, :cond_0
-
-    move v7, v5
-
-    :goto_0
-    :try_start_2
-    invoke-static {v3, v7}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 125
-    add-int/lit8 v4, v4, 0x1
-
-    .line 128
-    if-ge v4, v9, :cond_1
-
-    :goto_1
-    invoke-static {v2, v5}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
     return-wide v0
-
-    :cond_0
-    move v7, v6
-
-    .line 124
-    goto :goto_0
-
-    :cond_1
-    move v5, v6
-
-    .line 128
-    goto :goto_1
-
-    .line 124
-    .end local v0           #count:J
-    :catchall_0
-    move-exception v8
-
-    if-ge v4, v5, :cond_2
-
-    move v7, v5
-
-    :goto_2
-    :try_start_3
-    invoke-static {v3, v7}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    .line 125
-    add-int/lit8 v4, v4, 0x1
-
-    throw v8
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    .line 128
-    .end local v3           #out:Ljava/io/OutputStream;
-    :catchall_1
-    move-exception v7
-
-    if-ge v4, v9, :cond_3
-
-    :goto_3
-    invoke-static {v2, v5}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v7
-
-    .restart local v3       #out:Ljava/io/OutputStream;
-    :cond_2
-    move v7, v6
-
-    .line 124
-    goto :goto_2
-
-    .end local v3           #out:Ljava/io/OutputStream;
-    :cond_3
-    move v5, v6
-
-    .line 128
-    goto :goto_3
 .end method
 
 .method public static copy(Lcom/google/common/io/InputSupplier;Ljava/io/OutputStream;)J
-    .locals 5
+    .locals 2
     .parameter
     .parameter "to"
     .annotation system Ldalvik/annotation/Signature;
@@ -202,47 +237,21 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 171
     .local p0, from:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    const/4 v3, 0x1
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
-    .line 145
-    .local v3, threw:Z
-    invoke-interface {p0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
-
-    check-cast v2, Ljava/io/InputStream;
-
-    .line 147
-    .local v2, in:Ljava/io/InputStream;
-    :try_start_0
-    invoke-static {v2, p1}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->copyTo(Ljava/io/OutputStream;)J
 
     move-result-wide v0
 
-    .line 148
-    .local v0, count:J
-    const/4 v3, 0x0
-
-    .line 151
-    invoke-static {v2, v3}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
     return-wide v0
-
-    .end local v0           #count:J
-    :catchall_0
-    move-exception v4
-
-    invoke-static {v2, v3}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v4
 .end method
 
 .method public static copy(Ljava/io/InputStream;Lcom/google/common/io/OutputSupplier;)J
-    .locals 5
+    .locals 2
     .parameter "from"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -263,43 +272,17 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 187
     .local p1, to:Lcom/google/common/io/OutputSupplier;,"Lcom/google/common/io/OutputSupplier<+Ljava/io/OutputStream;>;"
-    const/4 v3, 0x1
+    invoke-static {p1}, Lcom/google/common/io/ByteStreams;->asByteSink(Lcom/google/common/io/OutputSupplier;)Lcom/google/common/io/ByteSink;
 
-    .line 169
-    .local v3, threw:Z
-    invoke-interface {p1}, Lcom/google/common/io/OutputSupplier;->getOutput()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v2
-
-    check-cast v2, Ljava/io/OutputStream;
-
-    .line 171
-    .local v2, out:Ljava/io/OutputStream;
-    :try_start_0
-    invoke-static {p0, v2}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0, p0}, Lcom/google/common/io/ByteSink;->writeFrom(Ljava/io/InputStream;)J
 
     move-result-wide v0
 
-    .line 172
-    .local v0, count:J
-    const/4 v3, 0x0
-
-    .line 175
-    invoke-static {v2, v3}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
     return-wide v0
-
-    .end local v0           #count:J
-    :catchall_0
-    move-exception v4
-
-    invoke-static {v2, v3}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v4
 .end method
 
 .method public static copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
@@ -313,43 +296,49 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 200
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 201
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 202
     const/16 v4, 0x1000
 
     new-array v0, v4, [B
 
-    .line 191
+    .line 203
     .local v0, buf:[B
     const-wide/16 v2, 0x0
 
-    .line 193
+    .line 205
     .local v2, total:J
     :goto_0
     invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
 
     move-result v1
 
-    .line 194
+    .line 206
     .local v1, r:I
     const/4 v4, -0x1
 
     if-ne v1, v4, :cond_0
 
-    .line 200
+    .line 212
     return-wide v2
 
-    .line 197
+    .line 209
     :cond_0
     const/4 v4, 0x0
 
     invoke-virtual {p1, v0, v4, v1}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 198
+    .line 210
     int-to-long v4, v1
 
     add-long/2addr v2, v4
 
-    .line 199
+    .line 211
     goto :goto_0
 .end method
 
@@ -364,18 +353,24 @@
     .end annotation
 
     .prologue
-    .line 214
+    .line 225
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 226
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 227
     const/16 v3, 0x1000
 
     invoke-static {v3}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 215
+    .line 228
     .local v0, buf:Ljava/nio/ByteBuffer;
     const-wide/16 v1, 0x0
 
-    .line 216
+    .line 229
     .local v1, total:J
     :goto_0
     invoke-interface {p0, v0}, Ljava/nio/channels/ReadableByteChannel;->read(Ljava/nio/ByteBuffer;)I
@@ -386,10 +381,10 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 217
+    .line 230
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->flip()Ljava/nio/Buffer;
 
-    .line 218
+    .line 231
     :goto_1
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->hasRemaining()Z
 
@@ -397,7 +392,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 219
+    .line 232
     invoke-interface {p1, v0}, Ljava/nio/channels/WritableByteChannel;->write(Ljava/nio/ByteBuffer;)I
 
     move-result v3
@@ -408,19 +403,19 @@
 
     goto :goto_1
 
-    .line 221
+    .line 234
     :cond_0
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
     goto :goto_0
 
-    .line 223
+    .line 236
     :cond_1
     return-wide v1
 .end method
 
 .method public static equal(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/InputSupplier;)Z
-    .locals 11
+    .locals 2
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -444,134 +439,22 @@
     .end annotation
 
     .prologue
+    .line 703
     .local p0, supplier1:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
     .local p1, supplier2:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    const/4 v7, 0x0
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
-    const/16 v10, 0x1000
+    move-result-object v0
 
-    .line 603
-    new-array v0, v10, [B
+    invoke-static {p1}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
-    .line 604
-    .local v0, buf1:[B
-    new-array v1, v10, [B
+    move-result-object v1
 
-    .line 606
-    .local v1, buf2:[B
-    const/4 v6, 0x1
+    invoke-virtual {v0, v1}, Lcom/google/common/io/ByteSource;->contentEquals(Lcom/google/common/io/ByteSource;)Z
 
-    .line 607
-    .local v6, threw:Z
-    invoke-interface {p0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v2
-
-    check-cast v2, Ljava/io/InputStream;
-
-    .line 609
-    .local v2, in1:Ljava/io/InputStream;
-    :try_start_0
-    invoke-interface {p1}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/io/InputStream;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    .line 612
-    .local v3, in2:Ljava/io/InputStream;
-    :cond_0
-    const/4 v8, 0x0
-
-    const/16 v9, 0x1000
-
-    :try_start_1
-    invoke-static {v2, v0, v8, v9}, Lcom/google/common/io/ByteStreams;->read(Ljava/io/InputStream;[BII)I
-
-    move-result v4
-
-    .line 613
-    .local v4, read1:I
-    const/4 v8, 0x0
-
-    const/16 v9, 0x1000
-
-    invoke-static {v3, v1, v8, v9}, Lcom/google/common/io/ByteStreams;->read(Ljava/io/InputStream;[BII)I
-
-    move-result v5
-
-    .line 614
-    .local v5, read2:I
-    if-ne v4, v5, :cond_1
-
-    invoke-static {v0, v1}, Ljava/util/Arrays;->equals([B[B)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    move-result v8
-
-    if-nez v8, :cond_2
-
-    .line 615
-    :cond_1
-    const/4 v6, 0x0
-
-    .line 623
-    :try_start_2
-    invoke-static {v3, v6}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 626
-    invoke-static {v2, v6}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    :goto_0
-    return v7
-
-    .line 617
-    :cond_2
-    if-eq v4, v10, :cond_0
-
-    .line 618
-    const/4 v6, 0x0
-
-    .line 619
-    const/4 v7, 0x1
-
-    .line 623
-    :try_start_3
-    invoke-static {v3, v6}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    .line 626
-    invoke-static {v2, v6}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    goto :goto_0
-
-    .line 623
-    .end local v4           #read1:I
-    .end local v5           #read2:I
-    :catchall_0
-    move-exception v7
-
-    :try_start_4
-    invoke-static {v3, v6}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v7
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    .line 626
-    .end local v3           #in2:Ljava/io/InputStream;
-    :catchall_1
-    move-exception v7
-
-    invoke-static {v2, v6}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v7
+    return v0
 .end method
 
 .method public static getChecksum(Lcom/google/common/io/InputSupplier;Ljava/util/zip/Checksum;)J
@@ -596,9 +479,15 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 733
+    .line 834
     .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 835
     new-instance v0, Lcom/google/common/io/ByteStreams$2;
 
     invoke-direct {v0, p1}, Lcom/google/common/io/ByteStreams$2;-><init>(Ljava/util/zip/Checksum;)V
@@ -616,10 +505,10 @@
     return-wide v0
 .end method
 
-.method public static getDigest(Lcom/google/common/io/InputSupplier;Ljava/security/MessageDigest;)[B
+.method public static hash(Lcom/google/common/io/InputSupplier;Lcom/google/common/hash/HashFunction;)Lcom/google/common/hash/HashCode;
     .locals 1
     .parameter
-    .parameter "md"
+    .parameter "hashFunction"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -627,8 +516,9 @@
             "<+",
             "Ljava/io/InputStream;",
             ">;",
-            "Ljava/security/MessageDigest;",
-            ")[B"
+            "Lcom/google/common/hash/HashFunction;",
+            ")",
+            "Lcom/google/common/hash/HashCode;"
         }
     .end annotation
 
@@ -639,17 +529,15 @@
     .end annotation
 
     .prologue
-    .line 761
+    .line 862
     .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    new-instance v0, Lcom/google/common/io/ByteStreams$3;
-
-    invoke-direct {v0, p1}, Lcom/google/common/io/ByteStreams$3;-><init>(Ljava/security/MessageDigest;)V
-
-    invoke-static {p0, v0}, Lcom/google/common/io/ByteStreams;->readBytes(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/ByteProcessor;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    check-cast v0, [B
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->hash(Lcom/google/common/hash/HashFunction;)Lcom/google/common/hash/HashCode;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -674,11 +562,14 @@
     .end annotation
 
     .prologue
-    .line 866
+    .line 939
     .local p0, suppliers:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;>;"
-    new-instance v0, Lcom/google/common/io/ByteStreams$5;
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$5;-><init>(Ljava/lang/Iterable;)V
+    .line 940
+    new-instance v0, Lcom/google/common/io/ByteStreams$3;
+
+    invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$3;-><init>(Ljava/lang/Iterable;)V
 
     return-object v0
 .end method
@@ -701,7 +592,7 @@
     .end annotation
 
     .prologue
-    .line 876
+    .line 949
     .local p0, suppliers:[Lcom/google/common/io/InputSupplier;,"[Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -715,7 +606,7 @@
 .end method
 
 .method public static length(Lcom/google/common/io/InputSupplier;)J
-    .locals 8
+    .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -734,81 +625,31 @@
     .end annotation
 
     .prologue
-    .line 574
+    .line 693
     .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    const-wide/16 v2, 0x0
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
-    .line 575
-    .local v2, count:J
-    const/4 v5, 0x1
+    move-result-object v0
 
-    .line 576
-    .local v5, threw:Z
-    invoke-interface {p0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/io/InputStream;
-
-    .line 580
-    .local v4, in:Ljava/io/InputStream;
-    :goto_0
-    const-wide/32 v6, 0x7fffffff
-
-    :try_start_0
-    invoke-virtual {v4, v6, v7}, Ljava/io/InputStream;->skip(J)J
+    invoke-virtual {v0}, Lcom/google/common/io/ByteSource;->size()J
 
     move-result-wide v0
 
-    .line 581
-    .local v0, amt:J
-    const-wide/16 v6, 0x0
+    return-wide v0
+.end method
 
-    cmp-long v6, v0, v6
+.method public static limit(Ljava/io/InputStream;J)Ljava/io/InputStream;
+    .locals 1
+    .parameter "in"
+    .parameter "limit"
 
-    if-nez v6, :cond_1
+    .prologue
+    .line 615
+    new-instance v0, Lcom/google/common/io/ByteStreams$LimitedInputStream;
 
-    .line 582
-    invoke-virtual {v4}, Ljava/io/InputStream;->read()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-direct {v0, p0, p1, p2}, Lcom/google/common/io/ByteStreams$LimitedInputStream;-><init>(Ljava/io/InputStream;J)V
 
-    move-result v6
-
-    const/4 v7, -0x1
-
-    if-ne v6, v7, :cond_0
-
-    .line 583
-    const/4 v5, 0x0
-
-    .line 592
-    invoke-static {v4, v5}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    return-wide v2
-
-    .line 586
-    :cond_0
-    const-wide/16 v6, 0x1
-
-    add-long/2addr v2, v6
-
-    goto :goto_0
-
-    .line 588
-    :cond_1
-    add-long/2addr v2, v0
-
-    goto :goto_0
-
-    .line 592
-    .end local v0           #amt:J
-    :catchall_0
-    move-exception v6
-
-    invoke-static {v4, v5}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v6
+    return-object v0
 .end method
 
 .method public static newDataInput([B)Lcom/google/common/io/ByteArrayDataInput;
@@ -816,7 +657,7 @@
     .parameter "bytes"
 
     .prologue
-    .line 264
+    .line 269
     new-instance v0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;
 
     invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;-><init>([B)V
@@ -830,12 +671,12 @@
     .parameter "start"
 
     .prologue
-    .line 275
+    .line 280
     array-length v0, p0
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
 
-    .line 276
+    .line 281
     new-instance v0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;-><init>([BI)V
@@ -847,7 +688,7 @@
     .locals 1
 
     .prologue
-    .line 418
+    .line 422
     new-instance v0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;
 
     invoke-direct {v0}, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;-><init>()V
@@ -864,7 +705,7 @@
 
     const/4 v2, 0x0
 
-    .line 428
+    .line 432
     if-ltz p0, :cond_0
 
     move v0, v1
@@ -882,7 +723,7 @@
 
     invoke-static {v0, v3, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 429
+    .line 433
     new-instance v0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;
 
     invoke-direct {v0, p0}, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;-><init>(I)V
@@ -892,12 +733,12 @@
     :cond_0
     move v0, v2
 
-    .line 428
+    .line 432
     goto :goto_0
 .end method
 
 .method public static newInputStreamSupplier([B)Lcom/google/common/io/InputSupplier;
-    .locals 2
+    .locals 1
     .parameter "b"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -910,12 +751,12 @@
     .end annotation
 
     .prologue
-    .line 62
-    const/4 v0, 0x0
+    .line 65
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource([B)Lcom/google/common/io/ByteSource;
 
-    array-length v1, p0
+    move-result-object v0
 
-    invoke-static {p0, v0, v1}, Lcom/google/common/io/ByteStreams;->newInputStreamSupplier([BII)Lcom/google/common/io/InputSupplier;
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
 
     move-result-object v0
 
@@ -923,7 +764,7 @@
 .end method
 
 .method public static newInputStreamSupplier([BII)Lcom/google/common/io/InputSupplier;
-    .locals 1
+    .locals 5
     .parameter "b"
     .parameter "off"
     .parameter "len"
@@ -938,10 +779,32 @@
     .end annotation
 
     .prologue
-    .line 76
-    new-instance v0, Lcom/google/common/io/ByteStreams$1;
+    .line 79
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource([B)Lcom/google/common/io/ByteSource;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/google/common/io/ByteStreams$1;-><init>([BII)V
+    move-result-object v0
+
+    int-to-long v1, p1
+
+    int-to-long v3, p2
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/common/io/ByteSource;->slice(JJ)Lcom/google/common/io/ByteSource;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static nullOutputStream()Ljava/io/OutputStream;
+    .locals 1
+
+    .prologue
+    .line 602
+    sget-object v0, Lcom/google/common/io/ByteStreams;->NULL_OUTPUT_STREAM:Ljava/io/OutputStream;
 
     return-object v0
 .end method
@@ -959,10 +822,16 @@
     .end annotation
 
     .prologue
-    .line 801
+    .line 890
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 891
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 892
     if-gez p3, :cond_0
 
-    .line 802
+    .line 893
     new-instance v2, Ljava/lang/IndexOutOfBoundsException;
 
     const-string v3, "len is negative"
@@ -971,16 +840,16 @@
 
     throw v2
 
-    .line 804
+    .line 895
     :cond_0
     const/4 v1, 0x0
 
-    .line 805
+    .line 896
     .local v1, total:I
     :goto_0
     if-ge v1, p3, :cond_1
 
-    .line 806
+    .line 897
     add-int v2, p2, v1
 
     sub-int v3, p3, v1
@@ -989,28 +858,28 @@
 
     move-result v0
 
-    .line 807
+    .line 898
     .local v0, result:I
     const/4 v2, -0x1
 
     if-ne v0, v2, :cond_2
 
-    .line 812
+    .line 903
     .end local v0           #result:I
     :cond_1
     return v1
 
-    .line 810
+    .line 901
     .restart local v0       #result:I
     :cond_2
     add-int/2addr v1, v0
 
-    .line 811
+    .line 902
     goto :goto_0
 .end method
 
 .method public static readBytes(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/ByteProcessor;)Ljava/lang/Object;
-    .locals 5
+    .locals 4
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -1034,78 +903,136 @@
     .end annotation
 
     .prologue
-    .line 703
+    .line 783
     .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
     .local p1, processor:Lcom/google/common/io/ByteProcessor;,"Lcom/google/common/io/ByteProcessor<TT;>;"
-    const/16 v4, 0x1000
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-array v1, v4, [B
+    .line 784
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 704
-    .local v1, buf:[B
-    const/4 v3, 0x1
+    .line 786
+    invoke-static {}, Lcom/google/common/io/Closer;->create()Lcom/google/common/io/Closer;
 
-    .line 705
-    .local v3, threw:Z
+    move-result-object v0
+
+    .line 788
+    .local v0, closer:Lcom/google/common/io/Closer;
+    :try_start_0
     invoke-interface {p0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/io/Closeable;
+
+    invoke-virtual {v0, v3}, Lcom/google/common/io/Closer;->register(Ljava/io/Closeable;)Ljava/io/Closeable;
 
     move-result-object v2
 
     check-cast v2, Ljava/io/InputStream;
 
-    .line 709
+    .line 789
     .local v2, in:Ljava/io/InputStream;
-    :cond_0
-    :try_start_0
-    invoke-virtual {v2, v1}, Ljava/io/InputStream;->read([B)I
-
-    move-result v0
-
-    .line 710
-    .local v0, amt:I
-    const/4 v4, -0x1
-
-    if-ne v0, v4, :cond_1
-
-    .line 711
-    const/4 v3, 0x0
-
-    .line 715
-    :goto_0
-    invoke-interface {p1}, Lcom/google/common/io/ByteProcessor;->getResult()Ljava/lang/Object;
+    invoke-static {v2, p1}, Lcom/google/common/io/ByteStreams;->readBytes(Ljava/io/InputStream;Lcom/google/common/io/ByteProcessor;)Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 717
-    invoke-static {v2, v3}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
+    .line 793
+    invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
-    return-object v4
+    return-object v3
 
-    .line 714
-    :cond_1
-    const/4 v4, 0x0
+    .line 790
+    .end local v2           #in:Ljava/io/InputStream;
+    :catch_0
+    move-exception v1
 
+    .line 791
+    .local v1, e:Ljava/lang/Throwable;
     :try_start_1
-    invoke-interface {p1, v1, v4, v0}, Lcom/google/common/io/ByteProcessor;->processBytes([BII)Z
+    invoke-virtual {v0, v1}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+
+    move-result-object v3
+
+    throw v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    goto :goto_0
-
-    .line 717
-    .end local v0           #amt:I
+    .line 793
+    .end local v1           #e:Ljava/lang/Throwable;
     :catchall_0
-    move-exception v4
+    move-exception v3
 
-    invoke-static {v2, v3}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
+    invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
-    throw v4
+    throw v3
+.end method
+
+.method public static readBytes(Ljava/io/InputStream;Lcom/google/common/io/ByteProcessor;)Ljava/lang/Object;
+    .locals 3
+    .parameter "input"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/io/InputStream;",
+            "Lcom/google/common/io/ByteProcessor",
+            "<TT;>;)TT;"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 807
+    .local p1, processor:Lcom/google/common/io/ByteProcessor;,"Lcom/google/common/io/ByteProcessor<TT;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 808
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 810
+    const/16 v2, 0x1000
+
+    new-array v0, v2, [B
+
+    .line 813
+    .local v0, buf:[B
+    :cond_0
+    invoke-virtual {p0, v0}, Ljava/io/InputStream;->read([B)I
+
+    move-result v1
+
+    .line 814
+    .local v1, read:I
+    const/4 v2, -0x1
+
+    if-eq v1, v2, :cond_1
+
+    const/4 v2, 0x0
+
+    invoke-interface {p1, v0, v2, v1}, Lcom/google/common/io/ByteProcessor;->processBytes([BII)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 815
+    :cond_1
+    invoke-interface {p1}, Lcom/google/common/io/ByteProcessor;->getResult()Ljava/lang/Object;
+
+    move-result-object v2
+
+    return-object v2
 .end method
 
 .method public static readFully(Ljava/io/InputStream;[B)V
@@ -1119,19 +1046,19 @@
     .end annotation
 
     .prologue
-    .line 642
+    .line 718
     const/4 v0, 0x0
 
     array-length v1, p1
 
     invoke-static {p0, p1, v0, v1}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[BII)V
 
-    .line 643
+    .line 719
     return-void
 .end method
 
 .method public static readFully(Ljava/io/InputStream;[BII)V
-    .locals 1
+    .locals 4
     .parameter "in"
     .parameter "b"
     .parameter "off"
@@ -1143,27 +1070,63 @@
     .end annotation
 
     .prologue
-    .line 661
+    .line 736
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/io/ByteStreams;->read(Ljava/io/InputStream;[BII)I
 
     move-result v0
 
+    .line 737
+    .local v0, read:I
     if-eq v0, p3, :cond_0
 
-    .line 662
-    new-instance v0, Ljava/io/EOFException;
+    .line 738
+    new-instance v1, Ljava/io/EOFException;
 
-    invoke-direct {v0}, Ljava/io/EOFException;-><init>()V
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    throw v0
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 664
+    const-string v3, "reached end of stream after reading "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " bytes; "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " bytes expected"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v1, v2}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 741
     :cond_0
     return-void
 .end method
 
 .method public static skipFully(Ljava/io/InputStream;J)V
-    .locals 6
+    .locals 10
     .parameter "in"
     .parameter "n"
     .annotation system Ldalvik/annotation/Throws;
@@ -1173,63 +1136,106 @@
     .end annotation
 
     .prologue
-    const-wide/16 v4, 0x0
+    const-wide/16 v8, 0x0
 
-    .line 679
+    .line 756
+    move-wide v4, p1
+
+    .line 757
+    .local v4, toSkip:J
     :goto_0
-    cmp-long v2, p1, v4
+    cmp-long v6, p1, v8
 
-    if-lez v2, :cond_2
+    if-lez v6, :cond_2
 
-    .line 680
+    .line 758
     invoke-virtual {p0, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
     move-result-wide v0
 
-    .line 681
+    .line 759
     .local v0, amt:J
-    cmp-long v2, v0, v4
+    cmp-long v6, v0, v8
 
-    if-nez v2, :cond_1
+    if-nez v6, :cond_1
 
-    .line 683
+    .line 761
     invoke-virtual {p0}, Ljava/io/InputStream;->read()I
 
-    move-result v2
+    move-result v6
 
-    const/4 v3, -0x1
+    const/4 v7, -0x1
 
-    if-ne v2, v3, :cond_0
+    if-ne v6, v7, :cond_0
 
-    .line 684
-    new-instance v2, Ljava/io/EOFException;
+    .line 762
+    sub-long v2, v4, p1
 
-    invoke-direct {v2}, Ljava/io/EOFException;-><init>()V
+    .line 763
+    .local v2, skipped:J
+    new-instance v6, Ljava/io/EOFException;
 
-    throw v2
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    .line 686
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "reached end of stream after skipping "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, " bytes; "
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, " bytes expected"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
+
+    throw v6
+
+    .line 766
+    .end local v2           #skipped:J
     :cond_0
-    const-wide/16 v2, 0x1
+    const-wide/16 v6, 0x1
 
-    sub-long/2addr p1, v2
+    sub-long/2addr p1, v6
 
     goto :goto_0
 
-    .line 688
+    .line 768
     :cond_1
     sub-long/2addr p1, v0
 
     goto :goto_0
 
-    .line 691
+    .line 771
     .end local v0           #amt:J
     :cond_2
     return-void
 .end method
 
 .method public static slice(Lcom/google/common/io/InputSupplier;JJ)Lcom/google/common/io/InputSupplier;
-    .locals 6
+    .locals 1
     .parameter
     .parameter "offset"
     .parameter "length"
@@ -1248,66 +1254,25 @@
     .end annotation
 
     .prologue
+    .line 919
     .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    const-wide/16 v4, 0x0
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    invoke-virtual {v0, p1, p2, p3, p4}, Lcom/google/common/io/ByteSource;->slice(JJ)Lcom/google/common/io/ByteSource;
 
-    .line 830
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v0
 
-    .line 831
-    cmp-long v0, p1, v4
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
 
-    if-ltz v0, :cond_0
-
-    move v0, v1
-
-    :goto_0
-    const-string v3, "offset is negative"
-
-    invoke-static {v0, v3}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
-
-    .line 832
-    cmp-long v0, p3, v4
-
-    if-ltz v0, :cond_1
-
-    :goto_1
-    const-string v0, "length is negative"
-
-    invoke-static {v1, v0}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
-
-    .line 833
-    new-instance v0, Lcom/google/common/io/ByteStreams$4;
-
-    move-object v1, p0
-
-    move-wide v2, p1
-
-    move-wide v4, p3
-
-    invoke-direct/range {v0 .. v5}, Lcom/google/common/io/ByteStreams$4;-><init>(Lcom/google/common/io/InputSupplier;JJ)V
+    move-result-object v0
 
     return-object v0
-
-    :cond_0
-    move v0, v2
-
-    .line 831
-    goto :goto_0
-
-    :cond_1
-    move v1, v2
-
-    .line 832
-    goto :goto_1
 .end method
 
 .method public static toByteArray(Lcom/google/common/io/InputSupplier;)[B
-    .locals 4
+    .locals 1
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1326,43 +1291,17 @@
     .end annotation
 
     .prologue
-    .line 248
+    .line 261
     .local p0, supplier:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    const/4 v2, 0x1
-
-    .line 249
-    .local v2, threw:Z
-    invoke-interface {p0}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/InputStream;
+    invoke-virtual {v0}, Lcom/google/common/io/ByteSource;->read()[B
 
-    .line 251
-    .local v0, in:Ljava/io/InputStream;
-    :try_start_0
-    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;)[B
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    move-result-object v0
 
-    move-result-object v1
-
-    .line 252
-    .local v1, result:[B
-    const/4 v2, 0x0
-
-    .line 255
-    invoke-static {v0, v2}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    return-object v1
-
-    .end local v1           #result:[B
-    :catchall_0
-    move-exception v3
-
-    invoke-static {v0, v2}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v3
+    return-object v0
 .end method
 
 .method public static toByteArray(Ljava/io/InputStream;)[B
@@ -1375,16 +1314,16 @@
     .end annotation
 
     .prologue
-    .line 235
+    .line 248
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 236
+    .line 249
     .local v0, out:Ljava/io/ByteArrayOutputStream;
     invoke-static {p0, v0}, Lcom/google/common/io/ByteStreams;->copy(Ljava/io/InputStream;Ljava/io/OutputStream;)J
 
-    .line 237
+    .line 250
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v1
@@ -1393,7 +1332,7 @@
 .end method
 
 .method public static write([BLcom/google/common/io/OutputSupplier;)V
-    .locals 3
+    .locals 1
     .parameter "from"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -1413,42 +1352,14 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 142
     .local p1, to:Lcom/google/common/io/OutputSupplier;,"Lcom/google/common/io/OutputSupplier<+Ljava/io/OutputStream;>;"
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 94
-    const/4 v1, 0x1
-
-    .line 95
-    .local v1, threw:Z
-    invoke-interface {p1}, Lcom/google/common/io/OutputSupplier;->getOutput()Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/common/io/ByteStreams;->asByteSink(Lcom/google/common/io/OutputSupplier;)Lcom/google/common/io/ByteSink;
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/OutputStream;
+    invoke-virtual {v0, p0}, Lcom/google/common/io/ByteSink;->write([B)V
 
-    .line 97
-    .local v0, out:Ljava/io/OutputStream;
-    :try_start_0
-    invoke-virtual {v0, p0}, Ljava/io/OutputStream;->write([B)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 98
-    const/4 v1, 0x0
-
-    .line 100
-    invoke-static {v0, v1}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    .line 102
+    .line 143
     return-void
-
-    .line 100
-    :catchall_0
-    move-exception v2
-
-    invoke-static {v0, v1}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v2
 .end method

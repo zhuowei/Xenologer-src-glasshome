@@ -38,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 844
+    .line 815
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries.1;"
     iput-object p1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;->this$0:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;
 
@@ -55,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 844
+    .line 815
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;->delegate()Ljava/util/Iterator;
 
@@ -79,7 +79,7 @@
     .end annotation
 
     .prologue
-    .line 846
+    .line 818
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries.1;"
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;->val$iterator:Ljava/util/Iterator;
 
@@ -90,7 +90,7 @@
     .locals 1
 
     .prologue
-    .line 844
+    .line 815
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;->next()Ljava/util/Map$Entry;
 
@@ -112,17 +112,15 @@
     .end annotation
 
     .prologue
-    .line 850
+    .line 823
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries.1;"
-    iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1;->val$iterator:Ljava/util/Iterator;
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-super {p0}, Lcom/google/common/collect/ForwardingIterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 851
+    .line 824
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
     new-instance v1, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries$1$1;
 

@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 166
+    .line 173
     iput-boolean p1, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$shouldBugreport:Z
 
     iput-object p2, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$companionLogReader:Lcom/google/glass/logging/CompanionLogReader;
@@ -56,7 +56,7 @@
     .locals 2
 
     .prologue
-    .line 197
+    .line 204
     const-wide/32 v0, 0x400000
 
     return-wide v0
@@ -72,12 +72,12 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 176
     iget-boolean v4, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$shouldBugreport:Z
 
     if-eqz v4, :cond_0
 
-    .line 170
+    .line 177
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$000()[Ljava/lang/String;
 
     move-result-object v4
@@ -87,7 +87,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 171
+    .line 178
     iget-object v4, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$companionLogReader:Lcom/google/glass/logging/CompanionLogReader;
 
     invoke-virtual {v4}, Lcom/google/glass/logging/CompanionLogReader;->read()Ljava/lang/String;
@@ -99,7 +99,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendString(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$200(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 172
+    .line 179
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->getConnectivity()Ljava/lang/String;
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$300()Ljava/lang/String;
 
@@ -110,7 +110,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendString(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$200(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 176
+    .line 183
     :goto_0
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$500()[Ljava/lang/String;
 
@@ -121,7 +121,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 177
+    .line 184
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$600()[Ljava/lang/String;
 
     move-result-object v4
@@ -131,7 +131,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 178
+    .line 185
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$700()[Ljava/lang/String;
 
     move-result-object v4
@@ -141,7 +141,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 179
+    .line 186
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$800()[Ljava/lang/String;
 
     move-result-object v4
@@ -151,7 +151,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 180
+    .line 187
     iget-object v4, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$context:Landroid/content/Context;
 
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->getApkInfo(Landroid/content/Context;)Ljava/lang/String;
@@ -164,7 +164,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendString(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$200(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 181
+    .line 188
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -196,7 +196,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendString(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$200(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 182
+    .line 189
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$1000()[Ljava/lang/String;
 
     move-result-object v4
@@ -206,7 +206,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 183
+    .line 190
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$1100()[Ljava/lang/String;
 
     move-result-object v4
@@ -216,7 +216,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 184
+    .line 191
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$1200()[Ljava/lang/String;
 
     move-result-object v4
@@ -226,7 +226,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 185
+    .line 192
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->access$1300()[Ljava/lang/String;
 
     move-result-object v4
@@ -236,7 +236,7 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 186
+    .line 193
     iget-object v4, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$context:Landroid/content/Context;
 
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->getPinnedTimelineItemIds(Landroid/content/Context;)Ljava/lang/String;
@@ -249,12 +249,12 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendString(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v5}, Lcom/google/glass/logging/FeedbackBuilder;->access$200(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 187
+    .line 194
     iget-object v4, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$additionalFiles:[Ljava/lang/String;
 
     if-eqz v4, :cond_1
 
-    .line 188
+    .line 195
     iget-object v1, p0, Lcom/google/glass/logging/FeedbackBuilder$1;->val$additionalFiles:[Ljava/lang/String;
 
     .local v1, arr$:[Ljava/lang/String;
@@ -269,7 +269,7 @@
 
     aget-object v0, v1, v2
 
-    .line 189
+    .line 196
     .local v0, additionalFile:Ljava/lang/String;
     const/4 v4, 0x2
 
@@ -288,12 +288,12 @@
     #calls: Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
     invoke-static {p1, v4, v0}, Lcom/google/glass/logging/FeedbackBuilder;->access$100(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 188
+    .line 195
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 174
+    .line 181
     .end local v0           #additionalFile:Ljava/lang/String;
     .end local v1           #arr$:[Ljava/lang/String;
     .end local v2           #i$:I
@@ -310,7 +310,7 @@
 
     goto/16 :goto_0
 
-    .line 192
+    .line 199
     :cond_1
     return-void
 .end method

@@ -42,7 +42,7 @@
     goto :goto_0
 .end method
 
-.method public bridge synthetic putBoolean(Z)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putBoolean(Z)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
@@ -72,7 +72,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic putDouble(D)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putDouble(D)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
@@ -102,7 +102,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic putFloat(F)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putFloat(F)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
@@ -116,62 +116,68 @@
 .end method
 
 .method public putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/Hasher;
-    .locals 1
+    .locals 3
     .parameter "charSequence"
 
     .prologue
+    .line 42
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    .local v1, len:I
+    :goto_0
+    if-ge v0, v1, :cond_0
+
     .line 43
-    sget-object v0, Lcom/google/common/base/Charsets;->UTF_16LE:Ljava/nio/charset/Charset;
+    invoke-interface {p1, v0}, Ljava/lang/CharSequence;->charAt(I)C
 
-    invoke-virtual {p0, p1, v0}, Lcom/google/common/hash/AbstractHasher;->putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/Hasher;
+    move-result v2
 
-    move-result-object v0
+    invoke-virtual {p0, v2}, Lcom/google/common/hash/AbstractHasher;->putChar(C)Lcom/google/common/hash/Hasher;
 
-    return-object v0
+    .line 42
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 45
+    :cond_0
+    return-object p0
 .end method
 
 .method public putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/Hasher;
-    .locals 3
+    .locals 2
     .parameter "charSequence"
     .parameter "charset"
 
     .prologue
-    .line 48
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 49
+    invoke-static {p1}, Ljava/nio/CharBuffer;->wrap(Ljava/lang/CharSequence;)Ljava/nio/CharBuffer;
 
     move-result-object v1
 
-    invoke-virtual {p2}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
+    invoke-virtual {p2, v1}, Ljava/nio/charset/Charset;->encode(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+    .line 50
+    .local v0, bytes:Ljava/nio/ByteBuffer;
+    invoke-static {}, Lcom/google/common/hash/Funnels;->byteBufferFunnel()Lcom/google/common/hash/Funnel;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/common/hash/AbstractHasher;->putBytes([B)Lcom/google/common/hash/Hasher;
-    :try_end_0
-    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, v0, v1}, Lcom/google/common/hash/AbstractHasher;->putObject(Ljava/lang/Object;Lcom/google/common/hash/Funnel;)Lcom/google/common/hash/Hasher;
 
     move-result-object v1
 
     return-object v1
-
-    .line 49
-    :catch_0
-    move-exception v0
-
-    .line 50
-    .local v0, impossible:Ljava/io/UnsupportedEncodingException;
-    new-instance v1, Ljava/lang/AssertionError;
-
-    invoke-direct {v1, v0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v1
 .end method
 
-.method public bridge synthetic putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
@@ -184,7 +190,7 @@
     return-object v0
 .end method
 
-.method public bridge synthetic putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
     .parameter "x1"

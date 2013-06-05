@@ -30,7 +30,7 @@
     .locals 0
 
     .prologue
-    .line 71
+    .line 72
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .parameter "x0"
 
     .prologue
-    .line 71
+    .line 72
     invoke-virtual {p0, p1}, Lcom/google/glass/util/CachedFilesManager$ByteArrayLoader;->load(Ljava/lang/String;)[B
 
     move-result-object v0
@@ -58,14 +58,14 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 75
+    .line 76
     if-nez p1, :cond_0
 
-    .line 78
+    .line 79
     :goto_0
     return-object v1
 
-    .line 75
+    .line 76
     :cond_0
     :try_start_0
     new-instance v2, Ljava/io/File;
@@ -80,11 +80,11 @@
 
     goto :goto_0
 
-    .line 76
+    .line 77
     :catch_0
     move-exception v0
 
-    .line 77
+    .line 78
     .local v0, e:Ljava/io/IOException;
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->access$000()Ljava/lang/String;
 

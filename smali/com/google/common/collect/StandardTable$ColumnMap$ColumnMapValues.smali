@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1112
+    .line 1135
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
@@ -52,7 +52,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1112
+    .line 1135
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;-><init>(Lcom/google/common/collect/StandardTable$ColumnMap;)V
 
@@ -74,11 +74,19 @@
     .end annotation
 
     .prologue
-    .line 1114
+    .line 1138
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
-    invoke-static {v0}, Lcom/google/common/collect/StandardTable;->valueIteratorImpl(Ljava/util/Map;)Ljava/util/Iterator;
+    invoke-virtual {v0}, Lcom/google/common/collect/StandardTable$ColumnMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->valueIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -90,7 +98,7 @@
     .parameter "obj"
 
     .prologue
-    .line 1118
+    .line 1143
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     iget-object v2, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
@@ -116,7 +124,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 1119
+    .line 1144
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TC;Ljava/util/Map<TR;TV;>;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -130,7 +138,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1120
+    .line 1145
     iget-object v2, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
     iget-object v2, v2, Lcom/google/common/collect/StandardTable$ColumnMap;->this$0:Lcom/google/common/collect/StandardTable;
@@ -142,10 +150,10 @@
     #calls: Lcom/google/common/collect/StandardTable;->removeColumn(Ljava/lang/Object;)Ljava/util/Map;
     invoke-static {v2, v3}, Lcom/google/common/collect/StandardTable;->access$1100(Lcom/google/common/collect/StandardTable;Ljava/lang/Object;)Ljava/util/Map;
 
-    .line 1121
+    .line 1146
     const/4 v2, 0x1
 
-    .line 1124
+    .line 1149
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TC;Ljava/util/Map<TR;TV;>;>;"
     :goto_0
     return v2
@@ -168,15 +176,15 @@
     .end annotation
 
     .prologue
-    .line 1128
+    .line 1154
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1129
+    .line 1155
     const/4 v0, 0x0
 
-    .line 1130
+    .line 1156
     .local v0, changed:Z
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
@@ -211,7 +219,7 @@
 
     move-result-object v1
 
-    .line 1131
+    .line 1157
     .local v1, columnKey:Ljava/lang/Object;,"TC;"
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
@@ -227,7 +235,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1132
+    .line 1158
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
     iget-object v3, v3, Lcom/google/common/collect/StandardTable$ColumnMap;->this$0:Lcom/google/common/collect/StandardTable;
@@ -235,12 +243,12 @@
     #calls: Lcom/google/common/collect/StandardTable;->removeColumn(Ljava/lang/Object;)Ljava/util/Map;
     invoke-static {v3, v1}, Lcom/google/common/collect/StandardTable;->access$1100(Lcom/google/common/collect/StandardTable;Ljava/lang/Object;)Ljava/util/Map;
 
-    .line 1133
+    .line 1159
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1136
+    .line 1162
     .end local v1           #columnKey:Ljava/lang/Object;,"TC;"
     :cond_1
     return v0
@@ -258,15 +266,15 @@
     .end annotation
 
     .prologue
-    .line 1140
+    .line 1167
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1141
+    .line 1168
     const/4 v0, 0x0
 
-    .line 1142
+    .line 1169
     .local v0, changed:Z
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
@@ -301,7 +309,7 @@
 
     move-result-object v1
 
-    .line 1143
+    .line 1170
     .local v1, columnKey:Ljava/lang/Object;,"TC;"
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
@@ -317,7 +325,7 @@
 
     if-nez v3, :cond_0
 
-    .line 1144
+    .line 1171
     iget-object v3, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 
     iget-object v3, v3, Lcom/google/common/collect/StandardTable$ColumnMap;->this$0:Lcom/google/common/collect/StandardTable;
@@ -325,12 +333,12 @@
     #calls: Lcom/google/common/collect/StandardTable;->removeColumn(Ljava/lang/Object;)Ljava/util/Map;
     invoke-static {v3, v1}, Lcom/google/common/collect/StandardTable;->access$1100(Lcom/google/common/collect/StandardTable;Ljava/lang/Object;)Ljava/util/Map;
 
-    .line 1145
+    .line 1172
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 1148
+    .line 1175
     .end local v1           #columnKey:Ljava/lang/Object;,"TC;"
     :cond_1
     return v0
@@ -340,7 +348,7 @@
     .locals 1
 
     .prologue
-    .line 1152
+    .line 1180
     .local p0, this:Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.ColumnMap.ColumnMapValues;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$ColumnMap$ColumnMapValues;->this$1:Lcom/google/common/collect/StandardTable$ColumnMap;
 

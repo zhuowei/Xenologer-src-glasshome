@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->showBarcodeViewfinder()V
+    value = Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->hideBarcodeViewfinder()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 556
+    .line 509
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,18 +39,18 @@
     .parameter "animation"
 
     .prologue
-    .line 559
+    .line 512
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
-    #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$500(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+    #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
+    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$1000(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
     const/4 v1, 0x4
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 560
+    .line 513
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->values()Ljava/util/Collection;
+    value = Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->createValues()Ljava/util/Collection;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 1563
+    .line 1569
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$3;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.3;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$3;->this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
 
@@ -53,7 +53,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1563
+    .line 1569
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$3;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.3;"
     check-cast p1, Ljava/util/Map$Entry;
 
@@ -77,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 1566
+    .line 1571
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$3;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.3;"
     .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV1;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$3;->this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;

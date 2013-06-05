@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 237
+    .line 236
     .local p0, this:Lcom/google/common/collect/StandardTable$TableCollection;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableCollection<TT;>;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$TableCollection;->this$0:Lcom/google/common/collect/StandardTable;
 
@@ -49,7 +49,7 @@
     .parameter "x1"
 
     .prologue
-    .line 237
+    .line 236
     .local p0, this:Lcom/google/common/collect/StandardTable$TableCollection;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableCollection<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$TableCollection;-><init>(Lcom/google/common/collect/StandardTable;)V
 
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 243
+    .line 244
     .local p0, this:Lcom/google/common/collect/StandardTable$TableCollection;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.TableCollection<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$TableCollection;->this$0:Lcom/google/common/collect/StandardTable;
 
@@ -70,7 +70,7 @@
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 244
+    .line 245
     return-void
 .end method
 

@@ -1,9 +1,6 @@
 .class Lcom/google/common/collect/Multimaps$Keys$1;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/TransformedIterator;
 .source "Multimaps.java"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # annotations
@@ -18,9 +15,12 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Iterator",
+        "Lcom/google/common/collect/TransformedIterator",
         "<",
+        "Ljava/util/Map$Entry",
+        "<TK;",
+        "Ljava/util/Collection",
+        "<TV;>;>;",
         "Lcom/google/common/collect/Multiset$Entry",
         "<TK;>;>;"
     }
@@ -30,8 +30,6 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/common/collect/Multimaps$Keys;
 
-.field final synthetic val$backingIterator:Ljava/util/Iterator;
-
 
 # direct methods
 .method constructor <init>(Lcom/google/common/collect/Multimaps$Keys;Ljava/util/Iterator;)V
@@ -40,87 +38,57 @@
     .parameter
 
     .prologue
-    .line 1867
+    .line 1832
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1;,"Lcom/google/common/collect/Multimaps$Keys.1;"
+    .local p2, x0:Ljava/util/Iterator;,"Ljava/util/Iterator<+Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$Keys$1;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
-    iput-object p2, p0, Lcom/google/common/collect/Multimaps$Keys$1;->val$backingIterator:Ljava/util/Iterator;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public hasNext()Z
+.method transform(Ljava/util/Map$Entry;)Lcom/google/common/collect/Multiset$Entry;
     .locals 1
-
-    .prologue
-    .line 1869
-    .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1;,"Lcom/google/common/collect/Multimaps$Keys.1;"
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$1;->val$backingIterator:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public next()Lcom/google/common/collect/Multiset$Entry;
-    .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "(",
+            "Ljava/util/Map$Entry",
+            "<TK;",
+            "Ljava/util/Collection",
+            "<TV;>;>;)",
             "Lcom/google/common/collect/Multiset$Entry",
             "<TK;>;"
         }
     .end annotation
 
     .prologue
-    .line 1873
+    .line 1835
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1;,"Lcom/google/common/collect/Multimaps$Keys.1;"
-    iget-object v1, p0, Lcom/google/common/collect/Multimaps$Keys$1;->val$backingIterator:Ljava/util/Iterator;
+    .local p1, backingEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
+    new-instance v0, Lcom/google/common/collect/Multimaps$Keys$1$1;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    .line 1875
-    .local v0, backingEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/Multimaps$Keys$1$1;
-
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/Multimaps$Keys$1$1;-><init>(Lcom/google/common/collect/Multimaps$Keys$1;Ljava/util/Map$Entry;)V
-
-    return-object v1
-.end method
-
-.method public bridge synthetic next()Ljava/lang/Object;
-    .locals 1
-
-    .prologue
-    .line 1867
-    .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1;,"Lcom/google/common/collect/Multimaps$Keys.1;"
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$Keys$1;->next()Lcom/google/common/collect/Multiset$Entry;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multimaps$Keys$1$1;-><init>(Lcom/google/common/collect/Multimaps$Keys$1;Ljava/util/Map$Entry;)V
 
     return-object v0
 .end method
 
-.method public remove()V
+.method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 1887
+    .line 1832
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1;,"Lcom/google/common/collect/Multimaps$Keys.1;"
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$1;->val$backingIterator:Ljava/util/Iterator;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$Keys$1;->transform(Ljava/util/Map$Entry;)Lcom/google/common/collect/Multiset$Entry;
 
-    .line 1888
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

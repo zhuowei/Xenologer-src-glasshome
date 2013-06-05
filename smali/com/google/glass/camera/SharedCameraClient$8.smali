@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchPreviewFrame([BJ)V
+    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchAudioError(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,25 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-.field final synthetic val$captureTimeNanos:J
-
-.field final synthetic val$previewFrame:[B
+.field final synthetic val$message:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;[BJ)V
+.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
     .locals 0
-    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 416
+    .line 424
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$8;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$previewFrame:[B
-
-    iput-wide p3, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$captureTimeNanos:J
+    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$message:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,18 +43,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 419
+    .line 427
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$8;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$previewFrame:[B
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$message:Ljava/lang/String;
 
-    iget-wide v2, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$captureTimeNanos:J
+    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onAudioError(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/camera/SharedCameraClient;->onPreviewFrame([BJ)V
-
-    .line 420
+    .line 428
     return-void
 .end method

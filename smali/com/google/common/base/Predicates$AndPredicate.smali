@@ -62,15 +62,15 @@
     .end annotation
 
     .prologue
-    .line 332
+    .line 336
     .local p0, this:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<TT;>;"
     .local p1, components:Ljava/util/List;,"Ljava/util/List<+Lcom/google/common/base/Predicate<-TT;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 333
+    .line 337
     iput-object p1, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
-    .line 334
+    .line 338
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "x1"
 
     .prologue
-    .line 329
+    .line 333
     .local p0, this:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$AndPredicate;-><init>(Ljava/util/List;)V
 
@@ -92,6 +92,9 @@
 .method public apply(Ljava/lang/Object;)Z
     .locals 2
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -99,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 337
+    .line 342
     .local p0, this:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<TT;>;"
     .local p1, t:Ljava/lang/Object;,"TT;"
     const/4 v0, 0x0
@@ -114,7 +117,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 338
+    .line 343
     iget-object v1, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -129,20 +132,20 @@
 
     if-nez v1, :cond_0
 
-    .line 339
+    .line 344
     const/4 v1, 0x0
 
-    .line 342
+    .line 347
     :goto_1
     return v1
 
-    .line 337
+    .line 342
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 342
+    .line 347
     :cond_1
     const/4 v1, 0x1
 
@@ -157,7 +160,7 @@
     .end parameter
 
     .prologue
-    .line 349
+    .line 358
     .local p0, this:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<TT;>;"
     instance-of v1, p1, Lcom/google/common/base/Predicates$AndPredicate;
 
@@ -165,10 +168,10 @@
 
     move-object v0, p1
 
-    .line 350
+    .line 359
     check-cast v0, Lcom/google/common/base/Predicates$AndPredicate;
 
-    .line 351
+    .line 360
     .local v0, that:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<*>;"
     iget-object v1, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
@@ -178,7 +181,7 @@
 
     move-result v1
 
-    .line 353
+    .line 362
     .end local v0           #that:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<*>;"
     :goto_0
     return v1
@@ -193,7 +196,7 @@
     .locals 2
 
     .prologue
-    .line 346
+    .line 353
     .local p0, this:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$AndPredicate;->components:Ljava/util/List;
 
@@ -212,7 +215,7 @@
     .locals 3
 
     .prologue
-    .line 356
+    .line 367
     .local p0, this:Lcom/google/common/base/Predicates$AndPredicate;,"Lcom/google/common/base/Predicates$AndPredicate<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

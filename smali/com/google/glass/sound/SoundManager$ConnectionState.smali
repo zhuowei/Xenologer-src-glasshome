@@ -47,7 +47,7 @@
 
     const/4 v2, 0x0
 
-    .line 203
+    .line 206
     new-instance v0, Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     const-string v1, "DISCONNECTED"
@@ -56,7 +56,7 @@
 
     sput-object v0, Lcom/google/glass/sound/SoundManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
-    .line 204
+    .line 207
     new-instance v0, Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     const-string v1, "CONNECTING"
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/google/glass/sound/SoundManager$ConnectionState;->CONNECTING:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
-    .line 205
+    .line 208
     new-instance v0, Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     const-string v1, "CONNECTED"
@@ -74,7 +74,7 @@
 
     sput-object v0, Lcom/google/glass/sound/SoundManager$ConnectionState;->CONNECTED:Lcom/google/glass/sound/SoundManager$ConnectionState;
 
-    .line 201
+    .line 204
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/sound/SoundManager$ConnectionState;
@@ -107,7 +107,7 @@
     .end annotation
 
     .prologue
-    .line 202
+    .line 205
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -118,7 +118,7 @@
     .parameter "name"
 
     .prologue
-    .line 201
+    .line 204
     const-class v0, Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -134,7 +134,7 @@
     .locals 1
 
     .prologue
-    .line 201
+    .line 204
     sget-object v0, Lcom/google/glass/sound/SoundManager$ConnectionState;->$VALUES:[Lcom/google/glass/sound/SoundManager$ConnectionState;
 
     invoke-virtual {v0}, [Lcom/google/glass/sound/SoundManager$ConnectionState;->clone()Ljava/lang/Object;

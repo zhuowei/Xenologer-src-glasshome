@@ -662,6 +662,7 @@
 
     add-int/2addr v0, v6
 
+    .line 980
     goto :goto_0
 
     .line 981
@@ -720,6 +721,7 @@
 
     add-int/2addr v4, v6
 
+    .line 988
     goto :goto_2
 
     .line 992
@@ -2556,6 +2558,7 @@
 
     add-int/2addr v0, v6
 
+    .line 819
     goto :goto_0
 
     .line 820
@@ -3498,6 +3501,7 @@
 
     add-int/2addr v3, v4
 
+    .line 868
     goto :goto_1
 
     .line 869
@@ -3720,6 +3724,7 @@
 
     add-int/2addr v3, v4
 
+    .line 853
     goto :goto_1
 
     .line 854

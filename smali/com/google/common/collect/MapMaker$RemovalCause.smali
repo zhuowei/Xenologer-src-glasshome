@@ -52,7 +52,7 @@
 
     const/4 v2, 0x0
 
-    .line 776
+    .line 691
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$1;
 
     const-string v1, "EXPLICIT"
@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->EXPLICIT:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    .line 789
+    .line 705
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$2;
 
     const-string v1, "REPLACED"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->REPLACED:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    .line 801
+    .line 717
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$3;
 
     const-string v1, "COLLECTED"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->COLLECTED:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    .line 812
+    .line 729
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$4;
 
     const-string v1, "EXPIRED"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->EXPIRED:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    .line 823
+    .line 741
     new-instance v0, Lcom/google/common/collect/MapMaker$RemovalCause$5;
 
     const-string v1, "SIZE"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->SIZE:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    .line 771
+    .line 686
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/common/collect/MapMaker$RemovalCause;
@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 771
+    .line 686
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -151,7 +151,7 @@
     .parameter "x2"
 
     .prologue
-    .line 771
+    .line 686
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/MapMaker$RemovalCause;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -162,7 +162,7 @@
     .parameter "name"
 
     .prologue
-    .line 771
+    .line 686
     const-class v0, Lcom/google/common/collect/MapMaker$RemovalCause;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -178,7 +178,7 @@
     .locals 1
 
     .prologue
-    .line 771
+    .line 686
     sget-object v0, Lcom/google/common/collect/MapMaker$RemovalCause;->$VALUES:[Lcom/google/common/collect/MapMaker$RemovalCause;
 
     invoke-virtual {v0}, [Lcom/google/common/collect/MapMaker$RemovalCause;->clone()Ljava/lang/Object;

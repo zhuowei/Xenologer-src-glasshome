@@ -1,5 +1,5 @@
 .class public abstract Lcom/google/glass/home/timeline/TimelineActivity;
-.super Lcom/google/glass/app/GlassActivity;
+.super Lcom/google/glass/app/GlassVoiceActivity;
 .source "TimelineActivity.java"
 
 
@@ -29,9 +29,9 @@
 
     .prologue
     .line 38
-    invoke-direct {p0}, Lcom/google/glass/app/GlassActivity;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/app/GlassVoiceActivity;-><init>()V
 
-    .line 123
+    .line 130
     return-void
 .end method
 
@@ -40,12 +40,12 @@
     .parameter "outgoing"
 
     .prologue
-    .line 271
+    .line 292
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 272
+    .line 293
     .local v0, incoming:Landroid/content/Intent;
     const-string v1, "screen_turned_on"
 
@@ -59,13 +59,13 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 275
+    .line 296
     invoke-static {v0, p1}, Lcom/google/glass/util/ScreenOffGesture;->copyScreenOffGesture(Landroid/content/Intent;Landroid/content/Intent;)V
 
-    .line 276
+    .line 297
     invoke-static {v0}, Lcom/google/glass/util/ScreenOffGesture;->clearScreenOffGesture(Landroid/content/Intent;)V
 
-    .line 277
+    .line 298
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 301
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineActivity;->optionsHelper:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     return-object v0
@@ -100,12 +100,12 @@
     .parameter "intent"
 
     .prologue
-    .line 207
+    .line 231
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1
 
-    .line 208
+    .line 232
     if-eqz p3, :cond_0
 
     const-string v0, "item_id"
@@ -116,7 +116,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 209
+    .line 233
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -131,18 +131,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 221
+    .line 245
     :cond_0
     :goto_0
     return-void
 
-    .line 216
+    .line 240
     :cond_1
     const/4 v0, -0x1
 
     if-ne p2, v0, :cond_0
 
-    .line 219
+    .line 243
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->finishAndTurnScreenOff()V
 
     goto :goto_0
@@ -154,7 +154,7 @@
 
     .prologue
     .line 57
-    invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 59
     new-instance v0, Lcom/google/glass/util/IconProvider;
@@ -205,7 +205,7 @@
     .parameter "menu"
 
     .prologue
-    .line 137
+    .line 155
     const/4 v0, 0x1
 
     return v0
@@ -216,8 +216,15 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 108
-    invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
+    .line 99
+    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->stopSpeaking()V
+
+    .line 101
+    invoke-super {p0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
     move-result v0
 
@@ -225,12 +232,53 @@
 .end method
 
 .method public onFingerCountChanged(IZ)Z
-    .locals 1
+    .locals 3
     .parameter "count"
     .parameter "wentDown"
 
     .prologue
-    .line 131
+    const/4 v0, 0x1
+
+    .line 138
+    invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassVoiceActivity;->onFingerCountChanged(IZ)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 149
+    :goto_0
+    return v0
+
+    .line 142
+    :cond_0
+    sget-object v1, Lcom/google/glass/util/Labs$Feature;->PEOPLE_GRID:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1
+
+    if-eqz p2, :cond_1
+
+    const/4 v1, 0x2
+
+    if-ne p1, v1, :cond_1
+
+    .line 145
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "com.google.glass.people.PEOPLE_UI"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v1}, Lcom/google/glass/home/timeline/TimelineActivity;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_0
+
+    .line 149
+    :cond_1
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     move-result-object v0
@@ -239,7 +287,7 @@
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
 .method protected onNewIntent(Landroid/content/Intent;)V
@@ -248,7 +296,7 @@
 
     .prologue
     .line 71
-    invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onNewIntent(Landroid/content/Intent;)V
+    invoke-super {p0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->onNewIntent(Landroid/content/Intent;)V
 
     .line 72
     invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->setIntent(Landroid/content/Intent;)V
@@ -281,7 +329,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 178
+    .line 196
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     move-result-object v3
@@ -293,14 +341,14 @@
     .local v2, selectedView:Landroid/view/View;
     move-object v1, v2
 
-    .line 179
-    check-cast v1, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 197
+    check-cast v1, Lcom/google/glass/horizontalscroll/Card;
 
-    .line 180
-    .local v1, selectedHorizontalScrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 198
+    .local v1, selectedCard:Lcom/google/glass/horizontalscroll/Card;
     if-eqz v2, :cond_0
 
-    invoke-interface {v1, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    invoke-interface {v1, p1}, Lcom/google/glass/horizontalscroll/Card;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v3
 
@@ -308,11 +356,11 @@
 
     move v3, v4
 
-    .line 201
+    .line 219
     :goto_0
     return v3
 
-    .line 186
+    .line 204
     :cond_0
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu$Item;->getExtra()Ljava/lang/Object;
 
@@ -322,7 +370,7 @@
 
     if-ne v3, v5, :cond_1
 
-    .line 187
+    .line 205
     new-instance v5, Lcom/google/glass/timeline/TimelineItemId;
 
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -341,31 +389,31 @@
 
     move v3, v4
 
-    .line 189
+    .line 207
     goto :goto_0
 
-    .line 192
+    .line 210
     :cond_1
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu$Item;->getExtra()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 193
+    .line 211
     .local v0, extra:Ljava/lang/Object;
     if-nez v0, :cond_2
 
-    .line 194
+    .line 212
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 198
+    .line 216
     :cond_2
     instance-of v3, v0, Lcom/google/googlex/glass/common/proto/MenuItem;
 
     invoke-static {v3}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 201
+    .line 219
     iget-object v4, p0, Lcom/google/glass/home/timeline/TimelineActivity;->optionsHelper:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -387,6 +435,25 @@
     goto :goto_0
 .end method
 
+.method public onOptionsMenuCanceled(Lcom/google/glass/widget/OptionMenu;)V
+    .locals 1
+    .parameter "menu"
+
+    .prologue
+    .line 225
+    invoke-super {p0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->onOptionsMenuCanceled(Lcom/google/glass/widget/OptionMenu;)V
+
+    .line 226
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/TimelineActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
+
+    .line 227
+    return-void
+.end method
+
 .method protected onPause()V
     .locals 1
 
@@ -398,17 +465,10 @@
 
     invoke-virtual {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->deactivate()V
 
-    .line 94
-    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
+    .line 92
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onPause()V
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->stopSpeaking()V
-
-    .line 96
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onPause()V
-
-    .line 97
+    .line 93
     return-void
 .end method
 
@@ -421,25 +481,25 @@
 
     const/4 v5, 0x0
 
-    .line 145
+    .line 163
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->shouldStopSpeakingOnUserAction()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 146
+    .line 164
     invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
 
     move-result-object v3
 
     invoke-virtual {v3}, Lcom/google/glass/home/HomeApplication;->stopSpeaking()V
 
-    .line 150
+    .line 168
     :cond_0
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu;->clearItems()V
 
-    .line 153
+    .line 171
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     move-result-object v3
@@ -451,24 +511,24 @@
     .local v2, selectedView:Landroid/view/View;
     move-object v1, v2
 
-    .line 154
-    check-cast v1, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 172
+    check-cast v1, Lcom/google/glass/horizontalscroll/Card;
 
-    .line 155
-    .local v1, selectedHorizontalScrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 173
+    .local v1, selectedCard:Lcom/google/glass/horizontalscroll/Card;
     if-eqz v1, :cond_1
 
-    invoke-interface {v1, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onPrepareOptionsMenu(Lcom/google/glass/widget/OptionMenu;)Z
+    invoke-interface {v1, p1}, Lcom/google/glass/horizontalscroll/Card;->onPrepareOptionsMenu(Lcom/google/glass/widget/OptionMenu;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 173
+    .line 191
     :goto_0
     return v4
 
-    .line 161
+    .line 179
     :cond_1
     iget-object v6, p0, Lcom/google/glass/home/timeline/TimelineActivity;->optionsHelper:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
@@ -484,10 +544,10 @@
 
     invoke-virtual {v6, p1, v3}, Lcom/google/glass/timeline/TimelineOptionsHelper;->handlePrepareOptionsMenu(Lcom/google/glass/widget/OptionMenu;Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
-    .line 164
+    .line 182
     if-eqz v2, :cond_2
 
-    .line 165
+    .line 183
     sget v3, Lcom/google/glass/home/R$id;->tag_item_read_more:I
 
     invoke-virtual {v2, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
@@ -498,12 +558,12 @@
 
     move v0, v4
 
-    .line 166
+    .line 184
     .local v0, canReadMore:Z
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 167
+    .line 185
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu;->getItemCount()I
 
     move-result v3
@@ -518,7 +578,7 @@
 
     invoke-virtual {p1, v5, v3, v6, v7}, Lcom/google/glass/widget/OptionMenu;->insertItem(IILjava/lang/String;I)V
 
-    .line 169
+    .line 187
     invoke-virtual {p1, v5}, Lcom/google/glass/widget/OptionMenu;->getItem(I)Lcom/google/glass/widget/OptionMenu$Item;
 
     move-result-object v3
@@ -527,7 +587,7 @@
 
     invoke-virtual {v3, v6}, Lcom/google/glass/widget/OptionMenu$Item;->setExtra(Ljava/lang/Object;)V
 
-    .line 173
+    .line 191
     .end local v0           #canReadMore:Z
     :cond_2
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu;->getItemCount()I
@@ -546,13 +606,13 @@
     :cond_3
     move v0, v5
 
-    .line 165
+    .line 183
     goto :goto_1
 
     :cond_4
     move v3, v5
 
-    .line 173
+    .line 191
     goto :goto_2
 .end method
 
@@ -567,7 +627,21 @@
     .parameter "numSwipesY"
 
     .prologue
-    .line 102
+    .line 107
+    invoke-super/range {p0 .. p7}, Lcom/google/glass/app/GlassVoiceActivity;->onPrepareSwipe(IFFFFII)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 109
+    const/4 v0, 0x1
+
+    .line 111
+    :goto_0
+    return v0
+
+    :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     move-result-object v0
@@ -590,7 +664,7 @@
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
 .method protected onResume()V
@@ -598,7 +672,7 @@
 
     .prologue
     .line 81
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onResume()V
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onResume()V
 
     .line 84
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -617,7 +691,22 @@
     .parameter "direction"
 
     .prologue
-    .line 113
+    .line 117
+    invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassVoiceActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 118
+    const/4 v0, 0x1
+
+    .line 133
+    :goto_0
+    return v0
+
+    .line 120
+    :cond_0
     sget-object v0, Lcom/google/glass/home/timeline/TimelineActivity$1;->$SwitchMap$com$google$glass$input$SwipeDirection:[I
 
     invoke-virtual {p2}, Lcom/google/glass/input/SwipeDirection;->ordinal()I
@@ -628,40 +717,40 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 125
-    :cond_0
-    :goto_0
+    .line 132
+    :cond_1
+    :goto_1
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
-    .line 126
-    invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+    .line 133
+    invoke-super {p0, p1, p2}, Lcom/google/glass/app/GlassVoiceActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
     move-result v0
 
-    return v0
+    goto :goto_0
 
-    .line 116
+    .line 123
     :pswitch_0
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->shouldStopSpeakingOnUserAction()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 117
+    .line 124
     invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->stopSpeaking()V
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 113
+    .line 120
     nop
 
     :pswitch_data_0
@@ -676,33 +765,17 @@
     .parameter "command"
 
     .prologue
-    .line 225
+    .line 249
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->OK_GLASS:Lcom/google/glass/voice/VoiceCommand;
 
-    if-ne p1, v1, :cond_1
+    if-ne p1, v1, :cond_0
 
-    .line 229
-    sget-object v1, Lcom/google/glass/util/Labs$Feature;->NATIVE_APP_VOICE:Lcom/google/glass/util/Labs$Feature;
+    .line 254
+    sget-object v1, Lcom/google/glass/voice/VoiceConfigDescriptor;->MAIN_MENU:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+    invoke-virtual {p0, v1}, Lcom/google/glass/home/timeline/TimelineActivity;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 230
-    invoke-static {}, Lcom/google/glass/home/voice/NativeAppVoiceMenuHelper;->getInstance()Lcom/google/glass/home/voice/NativeAppVoiceMenuHelper;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Lcom/google/glass/home/voice/NativeAppVoiceMenuHelper;->getMainMenuConfig(Landroid/content/Context;)Lcom/google/glass/voice/VoiceConfig;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/google/glass/home/timeline/TimelineActivity;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 235
-    :goto_0
+    .line 256
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v1
@@ -711,47 +784,37 @@
 
     invoke-virtual {v1, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 236
+    .line 257
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_MENU_COMMAND_SPOKEN:Lcom/google/glass/logging/UserEventAction;
 
     const-string v2, "1"
 
     invoke-virtual {p0, v1, v2}, Lcom/google/glass/home/timeline/TimelineActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 242
+    .line 263
     new-instance v0, Landroid/content/Intent;
 
     const-class v1, Lcom/google/glass/home/voice/VoiceMainMenuActivity;
 
     invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 243
+    .line 264
     .local v0, intent:Landroid/content/Intent;
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/TimelineActivity;->transferScreenOffExtras(Landroid/content/Intent;)V
 
-    .line 244
+    .line 265
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/TimelineActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 245
+    .line 266
     const/4 v1, 0x1
 
-    .line 248
+    .line 269
     .end local v0           #intent:Landroid/content/Intent;
-    :goto_1
+    :goto_0
     return v1
 
-    .line 232
+    .line 268
     :cond_0
-    invoke-static {}, Lcom/google/glass/voice/VoiceConfig;->getMainMenuConfig()Lcom/google/glass/voice/VoiceConfig;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1}, Lcom/google/glass/home/timeline/TimelineActivity;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    goto :goto_0
-
-    .line 247
-    :cond_1
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -776,17 +839,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 248
+    .line 269
     const/4 v1, 0x0
 
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method protected shouldAllowLongPress()Z
     .locals 4
 
     .prologue
-    .line 256
+    .line 277
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getTimelineView()Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     move-result-object v0
@@ -818,7 +881,7 @@
     .locals 1
 
     .prologue
-    .line 267
+    .line 288
     const/4 v0, 0x1
 
     return v0

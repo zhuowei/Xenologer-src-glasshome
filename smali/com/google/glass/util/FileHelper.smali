@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final READ_FILE_CHUNK_SIZE:I = 0x2000
+
 .field private static final TAG:Ljava/lang/String;
 
 .field private static final TIMESTAMP_FORMAT:Ljava/lang/ThreadLocal;
@@ -23,7 +25,7 @@
     .locals 1
 
     .prologue
-    .line 22
+    .line 23
     const-class v0, Lcom/google/glass/util/FileHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -32,7 +34,7 @@
 
     sput-object v0, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
-    .line 25
+    .line 29
     new-instance v0, Lcom/google/glass/util/FileHelper$1;
 
     invoke-direct {v0}, Lcom/google/glass/util/FileHelper$1;-><init>()V
@@ -46,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 21
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -71,7 +73,7 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 56
     .local p2, resIdToFilename:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Integer;Ljava/lang/String;>;"
     new-instance v1, Ljava/io/File;
 
@@ -79,7 +81,7 @@
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 53
+    .line 57
     .local v1, basePathDir:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -87,14 +89,14 @@
 
     if-nez v13, :cond_0
 
-    .line 54
+    .line 58
     invoke-virtual {v1}, Ljava/io/File;->mkdir()Z
 
     move-result v13
 
     if-nez v13, :cond_0
 
-    .line 55
+    .line 59
     sget-object v13, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
     new-instance v14, Ljava/lang/StringBuilder;
@@ -119,17 +121,17 @@
 
     invoke-static {v13, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 59
+    .line 63
     :cond_0
     const/16 v13, 0x400
 
     new-array v2, v13, [B
 
-    .line 60
+    .line 64
     .local v2, buffer:[B
     const/4 v3, 0x0
 
-    .line 61
+    .line 65
     .local v3, bytesRead:I
     invoke-interface/range {p2 .. p2}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -154,7 +156,7 @@
 
     check-cast v6, Ljava/util/Map$Entry;
 
-    .line 62
+    .line 66
     .local v6, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     new-instance v13, Ljava/lang/StringBuilder;
 
@@ -180,7 +182,7 @@
 
     move-result-object v4
 
-    .line 64
+    .line 68
     .local v4, destinationPath:Ljava/lang/String;
     invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -192,15 +194,15 @@
 
     move-result v12
 
-    .line 65
+    .line 69
     .local v12, resId:I
     const/4 v10, 0x0
 
-    .line 66
+    .line 70
     .local v10, is:Ljava/io/BufferedInputStream;
     const/4 v7, 0x0
 
-    .line 68
+    .line 72
     .local v7, fos:Ljava/io/FileOutputStream;
     :try_start_0
     new-instance v11, Ljava/io/BufferedInputStream;
@@ -218,7 +220,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_7
 
-    .line 69
+    .line 73
     .end local v10           #is:Ljava/io/BufferedInputStream;
     .local v11, is:Ljava/io/BufferedInputStream;
     :try_start_1
@@ -229,7 +231,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_8
 
-    .line 70
+    .line 74
     .end local v7           #fos:Ljava/io/FileOutputStream;
     .local v8, fos:Ljava/io/FileOutputStream;
     :goto_1
@@ -243,27 +245,27 @@
 
     if-ltz v3, :cond_2
 
-    .line 71
+    .line 75
     const/4 v13, -0x1
 
     if-ne v3, v13, :cond_4
 
-    .line 82
+    .line 86
     :cond_2
     if-eqz v11, :cond_3
 
-    .line 84
+    .line 88
     :try_start_3
     invoke-virtual {v11}, Ljava/io/BufferedInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 90
+    .line 94
     :cond_3
     :goto_2
     if-eqz v8, :cond_1
 
-    .line 92
+    .line 96
     :try_start_4
     invoke-virtual {v8}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
@@ -271,11 +273,11 @@
 
     goto :goto_0
 
-    .line 93
+    .line 97
     :catch_0
     move-exception v5
 
-    .line 94
+    .line 98
     .local v5, e:Ljava/io/IOException;
     sget-object v13, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
@@ -283,7 +285,7 @@
 
     goto :goto_0
 
-    .line 74
+    .line 78
     .end local v5           #e:Ljava/io/IOException;
     :cond_4
     const/4 v13, 0x0
@@ -296,7 +298,7 @@
 
     goto :goto_1
 
-    .line 77
+    .line 81
     :catch_1
     move-exception v5
 
@@ -306,7 +308,7 @@
     .restart local v7       #fos:Ljava/io/FileOutputStream;
     move-object v10, v11
 
-    .line 78
+    .line 82
     .end local v11           #is:Ljava/io/BufferedInputStream;
     .restart local v5       #e:Ljava/io/IOException;
     .restart local v10       #is:Ljava/io/BufferedInputStream;
@@ -336,27 +338,27 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 82
+    .line 86
     if-eqz v10, :cond_5
 
-    .line 84
+    .line 88
     :try_start_7
     invoke-virtual {v10}, Ljava/io/BufferedInputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_3
 
-    .line 90
+    .line 94
     :cond_5
     :goto_4
     if-eqz v7, :cond_6
 
-    .line 92
+    .line 96
     :try_start_8
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
 
-    .line 99
+    .line 103
     .end local v4           #destinationPath:Ljava/lang/String;
     .end local v5           #e:Ljava/io/IOException;
     .end local v6           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
@@ -367,7 +369,7 @@
     :goto_5
     return-void
 
-    .line 85
+    .line 89
     .restart local v4       #destinationPath:Ljava/lang/String;
     .restart local v6       #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Integer;Ljava/lang/String;>;"
     .restart local v8       #fos:Ljava/io/FileOutputStream;
@@ -376,7 +378,7 @@
     :catch_2
     move-exception v5
 
-    .line 86
+    .line 90
     .restart local v5       #e:Ljava/io/IOException;
     sget-object v13, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
@@ -384,7 +386,7 @@
 
     goto :goto_2
 
-    .line 85
+    .line 89
     .end local v8           #fos:Ljava/io/FileOutputStream;
     .end local v11           #is:Ljava/io/BufferedInputStream;
     .restart local v7       #fos:Ljava/io/FileOutputStream;
@@ -392,25 +394,25 @@
     :catch_3
     move-exception v5
 
-    .line 86
+    .line 90
     sget-object v13, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
     invoke-static {v13, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_4
 
-    .line 93
+    .line 97
     :catch_4
     move-exception v5
 
-    .line 94
+    .line 98
     sget-object v13, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
     invoke-static {v13, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_5
 
-    .line 82
+    .line 86
     .end local v5           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v13
@@ -418,33 +420,33 @@
     :goto_6
     if-eqz v10, :cond_7
 
-    .line 84
+    .line 88
     :try_start_9
     invoke-virtual {v10}, Ljava/io/BufferedInputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_5
 
-    .line 90
+    .line 94
     :cond_7
     :goto_7
     if-eqz v7, :cond_8
 
-    .line 92
+    .line 96
     :try_start_a
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_a
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_a} :catch_6
 
-    .line 95
+    .line 99
     :cond_8
     :goto_8
     throw v13
 
-    .line 85
+    .line 89
     :catch_5
     move-exception v5
 
-    .line 86
+    .line 90
     .restart local v5       #e:Ljava/io/IOException;
     sget-object v14, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
@@ -452,12 +454,12 @@
 
     goto :goto_7
 
-    .line 93
+    .line 97
     .end local v5           #e:Ljava/io/IOException;
     :catch_6
     move-exception v5
 
-    .line 94
+    .line 98
     .restart local v5       #e:Ljava/io/IOException;
     sget-object v14, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
@@ -465,7 +467,7 @@
 
     goto :goto_8
 
-    .line 82
+    .line 86
     .end local v5           #e:Ljava/io/IOException;
     .end local v10           #is:Ljava/io/BufferedInputStream;
     .restart local v11       #is:Ljava/io/BufferedInputStream;
@@ -495,7 +497,7 @@
     .restart local v10       #is:Ljava/io/BufferedInputStream;
     goto :goto_6
 
-    .line 77
+    .line 81
     :catch_7
     move-exception v5
 
@@ -518,7 +520,7 @@
     .parameter "timestamp"
 
     .prologue
-    .line 34
+    .line 38
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0, p0, p1}, Ljava/util/Date;-><init>(J)V
@@ -535,7 +537,7 @@
     .parameter "date"
 
     .prologue
-    .line 38
+    .line 42
     sget-object v0, Lcom/google/glass/util/FileHelper;->TIMESTAMP_FORMAT:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -549,4 +551,105 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public static read(Ljava/io/File;[B)I
+    .locals 7
+    .parameter "file"
+    .parameter "into"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .prologue
+    .line 111
+    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
+
+    .line 112
+    new-instance v1, Ljava/io/FileInputStream;
+
+    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    .line 114
+    .local v1, fis:Ljava/io/FileInputStream;
+    const/4 v3, 0x0
+
+    .line 115
+    .local v3, read:I
+    const/4 v2, 0x0
+
+    .line 116
+    .local v2, offset:I
+    :goto_0
+    const/16 v4, 0x2000
+
+    :try_start_0
+    invoke-virtual {v1, p1, v2, v4}, Ljava/io/FileInputStream;->read([BII)I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v3
+
+    if-ltz v3, :cond_0
+
+    .line 117
+    add-int/2addr v2, v3
+
+    goto :goto_0
+
+    .line 122
+    :cond_0
+    :try_start_1
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 125
+    :goto_1
+    return v2
+
+    .line 123
+    :catch_0
+    move-exception v0
+
+    .line 124
+    .local v0, e:Ljava/io/IOException;
+    sget-object v4, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
+
+    const-string v5, "Error closing file."
+
+    invoke-static {v4, v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    .line 121
+    .end local v0           #e:Ljava/io/IOException;
+    :catchall_0
+    move-exception v4
+
+    .line 122
+    :try_start_2
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    :try_end_2
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+
+    .line 125
+    :goto_2
+    throw v4
+
+    .line 123
+    :catch_1
+    move-exception v0
+
+    .line 124
+    .restart local v0       #e:Ljava/io/IOException;
+    sget-object v5, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
+
+    const-string v6, "Error closing file."
+
+    invoke-static {v5, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_2
 .end method

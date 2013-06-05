@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final ACTION_SETUP_WIFI:Ljava/lang/String; = "com.google.glass.action.SETUP_WIFI"
+
 .field private static final CONNECT_TIMEOUT_MILLIS:J = 0x1d4c0L
 
 .field public static final HIDDEN_KEY_MGMT_WPA2_PSK:I = 0x4
@@ -67,7 +69,7 @@
 
     sput-object v0, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
-    .line 104
+    .line 107
     const-string v0, "[0-9a-fA-F]+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -76,7 +78,7 @@
 
     sput-object v0, Lcom/google/glass/util/WifiHelper;->VALID_HEX_CHARS:Ljava/util/regex/Pattern;
 
-    .line 110
+    .line 113
     new-instance v0, Lcom/google/glass/util/WifiHelper$1;
 
     invoke-direct {v0}, Lcom/google/glass/util/WifiHelper$1;-><init>()V
@@ -91,20 +93,20 @@
     .parameter "context"
 
     .prologue
-    .line 123
+    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 95
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/util/WifiHelper;->handler:Landroid/os/Handler;
 
-    .line 124
+    .line 127
     iput-object p1, p0, Lcom/google/glass/util/WifiHelper;->context:Landroid/content/Context;
 
-    .line 125
+    .line 128
     const-string v0, "wifi"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -115,7 +117,7 @@
 
     iput-object v0, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
-    .line 126
+    .line 129
     const-string v0, "connectivity"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -126,7 +128,7 @@
 
     iput-object v0, p0, Lcom/google/glass/util/WifiHelper;->connectivityManager:Landroid/net/ConnectivityManager;
 
-    .line 128
+    .line 131
     return-void
 .end method
 
@@ -191,19 +193,22 @@
     .parameter "key"
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v6, 0x2
 
-    const/4 v4, 0x2
+    const/4 v4, 0x1
 
     const/4 v5, 0x0
 
-    .line 281
+    .line 284
     new-instance v1, Landroid/net/wifi/WifiConfiguration;
 
     invoke-direct {v1}, Landroid/net/wifi/WifiConfiguration;-><init>()V
 
-    .line 282
+    .line 285
     .local v1, wifiConfiguration:Landroid/net/wifi/WifiConfiguration;
+    iput-boolean v4, v1, Landroid/net/wifi/WifiConfiguration;->hiddenSSID:Z
+
+    .line 286
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -230,13 +235,13 @@
 
     iput-object v2, v1, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
-    .line 283
-    iput v6, v1, Landroid/net/wifi/WifiConfiguration;->priority:I
-
-    .line 284
-    iput v4, v1, Landroid/net/wifi/WifiConfiguration;->status:I
-
     .line 287
+    iput v4, v1, Landroid/net/wifi/WifiConfiguration;->priority:I
+
+    .line 288
+    iput v6, v1, Landroid/net/wifi/WifiConfiguration;->status:I
+
+    .line 291
     sget-object v2, Lcom/google/glass/util/WifiHelper$6;->$SwitchMap$com$google$glass$util$WifiHelper$Encryption:[I
 
     invoke-virtual {p2}, Lcom/google/glass/util/WifiHelper$Encryption;->ordinal()I
@@ -247,31 +252,18 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 324
+    .line 328
     :goto_0
     return-object v1
 
-    .line 289
+    .line 293
     :pswitch_0
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     invoke-virtual {v2, v5}, Ljava/util/BitSet;->set(I)V
 
-    .line 290
-    iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedGroupCiphers:Ljava/util/BitSet;
-
-    invoke-virtual {v2, v4}, Ljava/util/BitSet;->set(I)V
-
-    .line 291
-    iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms:Ljava/util/BitSet;
-
-    invoke-virtual {v2, v5}, Ljava/util/BitSet;->set(I)V
-
-    goto :goto_0
-
     .line 294
-    :pswitch_1
-    iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
+    iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedGroupCiphers:Ljava/util/BitSet;
 
     invoke-virtual {v2, v6}, Ljava/util/BitSet;->set(I)V
 
@@ -280,7 +272,20 @@
 
     invoke-virtual {v2, v5}, Ljava/util/BitSet;->set(I)V
 
-    .line 296
+    goto :goto_0
+
+    .line 298
+    :pswitch_1
+    iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
+
+    invoke-virtual {v2, v4}, Ljava/util/BitSet;->set(I)V
+
+    .line 299
+    iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms:Ljava/util/BitSet;
+
+    invoke-virtual {v2, v5}, Ljava/util/BitSet;->set(I)V
+
+    .line 300
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -309,35 +314,35 @@
 
     goto :goto_0
 
-    .line 299
+    .line 303
     :pswitch_2
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     invoke-virtual {v2, v5}, Ljava/util/BitSet;->set(I)V
 
-    .line 300
+    .line 304
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms:Ljava/util/BitSet;
 
     invoke-virtual {v2, v5}, Ljava/util/BitSet;->set(I)V
 
-    .line 301
+    .line 305
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedAuthAlgorithms:Ljava/util/BitSet;
 
-    invoke-virtual {v2, v6}, Ljava/util/BitSet;->set(I)V
+    invoke-virtual {v2, v4}, Ljava/util/BitSet;->set(I)V
 
-    .line 304
+    .line 308
     const/4 v2, 0x4
 
     new-array v2, v2, [Ljava/lang/String;
 
     iput-object v2, v1, Landroid/net/wifi/WifiConfiguration;->wepKeys:[Ljava/lang/String;
 
-    .line 307
+    .line 311
     invoke-virtual {p3}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 308
+    .line 312
     .local v0, keyLength:I
     const/16 v2, 0xa
 
@@ -360,18 +365,18 @@
 
     if-eqz v2, :cond_1
 
-    .line 309
+    .line 313
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->wepKeys:[Ljava/lang/String;
 
     aput-object p3, v2, v5
 
-    .line 313
+    .line 317
     :goto_1
     iput v5, v1, Landroid/net/wifi/WifiConfiguration;->wepTxKeyIndex:I
 
     goto :goto_0
 
-    .line 311
+    .line 315
     :cond_1
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->wepKeys:[Ljava/lang/String;
 
@@ -403,26 +408,26 @@
 
     goto :goto_1
 
-    .line 316
+    .line 320
     .end local v0           #keyLength:I
     :pswitch_3
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
-    invoke-virtual {v2, v4}, Ljava/util/BitSet;->set(I)V
+    invoke-virtual {v2, v6}, Ljava/util/BitSet;->set(I)V
 
-    .line 317
+    .line 321
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedGroupCiphers:Ljava/util/BitSet;
 
-    invoke-virtual {v2, v4}, Ljava/util/BitSet;->set(I)V
+    invoke-virtual {v2, v6}, Ljava/util/BitSet;->set(I)V
 
-    .line 318
+    .line 322
     iget-object v2, v1, Landroid/net/wifi/WifiConfiguration;->allowedGroupCiphers:Ljava/util/BitSet;
 
     const/4 v3, 0x3
 
     invoke-virtual {v2, v3}, Ljava/util/BitSet;->set(I)V
 
-    .line 321
+    .line 325
     sget-object v2, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v3, "WPA EAP chosen, assuming user got EAP cert onto the device somehow."
@@ -431,7 +436,7 @@
 
     goto/16 :goto_0
 
-    .line 287
+    .line 291
     nop
 
     :pswitch_data_0
@@ -447,19 +452,19 @@
     .locals 2
 
     .prologue
-    .line 381
+    .line 385
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->connectivityReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 382
+    .line 386
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->connectivityReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 384
+    .line 388
     :cond_0
     return-void
 .end method
@@ -468,19 +473,19 @@
     .locals 2
 
     .prologue
-    .line 388
+    .line 392
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->scanReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     if-eqz v0, :cond_0
 
-    .line 389
+    .line 393
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->scanReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 391
+    .line 395
     :cond_0
     return-void
 .end method
@@ -489,26 +494,26 @@
     .locals 2
 
     .prologue
-    .line 458
+    .line 462
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->timeoutRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 459
+    .line 463
     sget-object v0, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v1, "Canceling timeout."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 460
+    .line 464
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->timeoutRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 462
+    .line 466
     :cond_0
     return-void
 .end method
@@ -518,17 +523,17 @@
     .parameter "callback"
 
     .prologue
-    .line 397
+    .line 401
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelConnectivityReceiver()V
 
-    .line 400
+    .line 404
     new-instance v0, Lcom/google/glass/util/WifiHelper$4;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/util/WifiHelper$4;-><init>(Lcom/google/glass/util/WifiHelper;Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
     iput-object v0, p0, Lcom/google/glass/util/WifiHelper;->connectivityReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 430
+    .line 434
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->connectivityReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->context:Landroid/content/Context;
@@ -545,7 +550,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 431
+    .line 435
     return-void
 .end method
 
@@ -556,30 +561,30 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 348
+    .line 352
     iget-object v4, p0, Lcom/google/glass/util/WifiHelper;->connectivityManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v4}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 349
+    .line 353
     .local v1, ni:Landroid/net/NetworkInfo;
     if-nez v1, :cond_1
 
     move v0, v3
 
-    .line 352
+    .line 356
     .local v0, isConnected:Z
     :goto_0
     if-nez v0, :cond_2
 
-    .line 362
+    .line 366
     :cond_0
     :goto_1
     return v3
 
-    .line 349
+    .line 353
     .end local v0           #isConnected:Z
     :cond_1
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -588,7 +593,7 @@
 
     goto :goto_0
 
-    .line 357
+    .line 361
     .restart local v0       #isConnected:Z
     :cond_2
     iget-object v4, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
@@ -597,7 +602,7 @@
 
     move-result-object v2
 
-    .line 358
+    .line 362
     .local v2, wifiInfo:Landroid/net/wifi/WifiInfo;
     if-eqz v2, :cond_0
 
@@ -607,7 +612,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 362
+    .line 366
     if-eqz p1, :cond_0
 
     invoke-virtual {v2}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;
@@ -630,24 +635,24 @@
     .parameter "callback"
 
     .prologue
-    .line 440
+    .line 444
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelTimeout()V
 
-    .line 443
+    .line 447
     new-instance v0, Lcom/google/glass/util/WifiHelper$5;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/util/WifiHelper$5;-><init>(Lcom/google/glass/util/WifiHelper;Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
     iput-object v0, p0, Lcom/google/glass/util/WifiHelper;->timeoutRunnable:Ljava/lang/Runnable;
 
-    .line 452
+    .line 456
     sget-object v0, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v1, "Starting timeout of 120000 ms."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 453
+    .line 457
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->timeoutRunnable:Ljava/lang/Runnable;
@@ -656,7 +661,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 454
+    .line 458
     return-void
 .end method
 
@@ -670,28 +675,28 @@
     .parameter "callback"
 
     .prologue
-    .line 217
+    .line 220
     invoke-direct {p0, p1}, Lcom/google/glass/util/WifiHelper;->isNetworkConnected(Ljava/lang/String;)Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 218
+    .line 221
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Already connected so ignoring connect request"
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
+    .line 222
     invoke-interface {p4}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnected()V
 
-    .line 278
+    .line 281
     :goto_0
     return-void
 
-    .line 222
+    .line 225
     :cond_0
     const/4 v5, 0x3
 
@@ -743,26 +748,26 @@
 
     invoke-static {v5, v6, v7}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 227
+    .line 230
     sget-object v5, Lcom/google/glass/util/WifiHelper$Encryption;->NONE:Lcom/google/glass/util/WifiHelper$Encryption;
 
     if-eq p2, v5, :cond_1
 
     if-nez p3, :cond_1
 
-    .line 228
+    .line 231
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Aborting wifi connect attempt due to absent key for an encrypted network."
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 230
+    .line 233
     invoke-interface {p4}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnectionFailed()V
 
     goto :goto_0
 
-    .line 238
+    .line 241
     :cond_1
     iget-object v5, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
@@ -770,7 +775,7 @@
 
     move-result-object v4
 
-    .line 239
+    .line 242
     .local v4, wifiConfigurations:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/WifiConfiguration;>;"
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -791,7 +796,7 @@
 
     check-cast v3, Landroid/net/wifi/WifiConfiguration;
 
-    .line 240
+    .line 243
     .local v3, wifiConfiguration:Landroid/net/wifi/WifiConfiguration;
     iget-object v5, v3, Landroid/net/wifi/WifiConfiguration;->SSID:Ljava/lang/String;
 
@@ -825,7 +830,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 241
+    .line 244
     iget-object v5, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     iget v6, v3, Landroid/net/wifi/WifiConfiguration;->networkId:I
@@ -834,7 +839,7 @@
 
     move-result v2
 
-    .line 242
+    .line 245
     .local v2, success:Z
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
@@ -866,7 +871,7 @@
 
     goto :goto_1
 
-    .line 247
+    .line 250
     .end local v2           #success:Z
     .end local v3           #wifiConfiguration:Landroid/net/wifi/WifiConfiguration;
     :cond_3
@@ -874,49 +879,49 @@
 
     move-result-object v3
 
-    .line 249
+    .line 252
     .restart local v3       #wifiConfiguration:Landroid/net/wifi/WifiConfiguration;
     invoke-direct {p0, p4}, Lcom/google/glass/util/WifiHelper;->createConnectivityReceiver(Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
-    .line 250
+    .line 253
     invoke-direct {p0, p4}, Lcom/google/glass/util/WifiHelper;->startTimeout(Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
-    .line 253
+    .line 256
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Adding network..."
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 254
+    .line 257
     iget-object v5, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v5, v3}, Landroid/net/wifi/WifiManager;->addNetwork(Landroid/net/wifi/WifiConfiguration;)I
 
     move-result v1
 
-    .line 255
+    .line 258
     .local v1, networkId:I
     const/4 v5, -0x1
 
     if-ne v1, v5, :cond_4
 
-    .line 256
+    .line 259
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Failed to add network."
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
+    .line 260
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelConnectivityReceiver()V
 
-    .line 258
+    .line 261
     invoke-interface {p4}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnectionFailed()V
 
     goto/16 :goto_0
 
-    .line 261
+    .line 264
     :cond_4
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
@@ -946,7 +951,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 262
+    .line 265
     iget-object v5, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     const/4 v6, 0x1
@@ -957,7 +962,7 @@
 
     if-nez v5, :cond_5
 
-    .line 263
+    .line 266
     sget-object v5, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -986,15 +991,15 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
+    .line 267
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelConnectivityReceiver()V
 
-    .line 265
+    .line 268
     invoke-interface {p4}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnectionFailed()V
 
     goto/16 :goto_0
 
-    .line 270
+    .line 273
     :cond_5
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
@@ -1015,13 +1020,13 @@
     .parameter "callback"
 
     .prologue
-    .line 330
+    .line 334
     invoke-direct {p0, p2}, Lcom/google/glass/util/WifiHelper;->createConnectivityReceiver(Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
-    .line 331
+    .line 335
     invoke-direct {p0, p2}, Lcom/google/glass/util/WifiHelper;->startTimeout(Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;)V
 
-    .line 333
+    .line 337
     sget-object v0, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1050,7 +1055,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
+    .line 338
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     const/4 v1, 0x1
@@ -1061,7 +1066,7 @@
 
     if-nez v0, :cond_0
 
-    .line 335
+    .line 339
     sget-object v0, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1090,10 +1095,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 336
+    .line 340
     invoke-interface {p2}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnectionFailed()V
 
-    .line 339
+    .line 343
     :cond_0
     return-void
 .end method
@@ -1103,10 +1108,10 @@
     .parameter "scanResult"
 
     .prologue
-    .line 468
+    .line 472
     iget-object v0, p1, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 469
+    .line 473
     .local v0, cap:Ljava/lang/String;
     const-string v1, "WEP"
 
@@ -1116,14 +1121,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 470
+    .line 474
     sget-object v1, Lcom/google/glass/util/WifiHelper$Encryption;->WEP:Lcom/google/glass/util/WifiHelper$Encryption;
 
-    .line 476
+    .line 480
     :goto_0
     return-object v1
 
-    .line 471
+    .line 475
     :cond_0
     const-string v1, "PSK"
 
@@ -1133,12 +1138,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 472
+    .line 476
     sget-object v1, Lcom/google/glass/util/WifiHelper$Encryption;->WPA:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_0
 
-    .line 473
+    .line 477
     :cond_1
     const-string v1, "EAP"
 
@@ -1148,12 +1153,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 474
+    .line 478
     sget-object v1, Lcom/google/glass/util/WifiHelper$Encryption;->WPA_EAP:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_0
 
-    .line 476
+    .line 480
     :cond_2
     sget-object v1, Lcom/google/glass/util/WifiHelper$Encryption;->NONE:Lcom/google/glass/util/WifiHelper$Encryption;
 
@@ -1173,7 +1178,7 @@
     .end annotation
 
     .prologue
-    .line 140
+    .line 143
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getScanResults()Ljava/util/List;
@@ -1188,7 +1193,7 @@
     .parameter "config"
 
     .prologue
-    .line 484
+    .line 488
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
     const/4 v1, 0x1
@@ -1199,14 +1204,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 485
+    .line 489
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WPA:Lcom/google/glass/util/WifiHelper$Encryption;
 
-    .line 496
+    .line 500
     :goto_0
     return-object v0
 
-    .line 487
+    .line 491
     :cond_0
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
@@ -1228,13 +1233,13 @@
 
     if-eqz v0, :cond_2
 
-    .line 489
+    .line 493
     :cond_1
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WPA_EAP:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_0
 
-    .line 492
+    .line 496
     :cond_2
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->allowedKeyManagement:Ljava/util/BitSet;
 
@@ -1246,12 +1251,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 493
+    .line 497
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WPA:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_0
 
-    .line 496
+    .line 500
     :cond_3
     iget-object v0, p1, Landroid/net/wifi/WifiConfiguration;->wepKeys:[Ljava/lang/String;
 
@@ -1275,7 +1280,7 @@
     .locals 1
 
     .prologue
-    .line 376
+    .line 380
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     return-object v0
@@ -1289,16 +1294,16 @@
 
     const/4 v2, 0x0
 
-    .line 503
+    .line 507
     iget-object v3, p0, Lcom/google/glass/util/WifiHelper;->connectivityManager:Landroid/net/ConnectivityManager;
 
     if-nez v3, :cond_0
 
-    .line 507
+    .line 511
     :goto_0
     return v2
 
-    .line 506
+    .line 510
     :cond_0
     iget-object v3, p0, Lcom/google/glass/util/WifiHelper;->connectivityManager:Landroid/net/ConnectivityManager;
 
@@ -1306,7 +1311,7 @@
 
     move-result-object v0
 
-    .line 507
+    .line 511
     .local v0, activeInfo:Landroid/net/NetworkInfo;
     if-eqz v0, :cond_1
 
@@ -1337,10 +1342,10 @@
     .locals 0
 
     .prologue
-    .line 131
+    .line 134
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelScanReceiver()V
 
-    .line 132
+    .line 135
     return-void
 .end method
 
@@ -1348,16 +1353,16 @@
     .locals 0
 
     .prologue
-    .line 370
+    .line 374
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelTimeout()V
 
-    .line 371
+    .line 375
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelConnectivityReceiver()V
 
-    .line 372
+    .line 376
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelScanReceiver()V
 
-    .line 373
+    .line 377
     return-void
 .end method
 
@@ -1366,12 +1371,12 @@
     .parameter "callback"
 
     .prologue
-    .line 150
+    .line 153
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0, p1}, Lcom/google/glass/util/WifiHelper;->startScan(ZLcom/google/glass/util/WifiHelper$WifiScanCallback;)V
 
-    .line 151
+    .line 154
     return-void
 .end method
 
@@ -1381,24 +1386,24 @@
     .parameter "callback"
 
     .prologue
-    .line 161
+    .line 164
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Initiating scan for wifi."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
+    .line 167
     invoke-direct {p0}, Lcom/google/glass/util/WifiHelper;->cancelScanReceiver()V
 
-    .line 167
+    .line 170
     new-instance v1, Lcom/google/glass/util/WifiHelper$2;
 
     invoke-direct {v1, p0, p2}, Lcom/google/glass/util/WifiHelper$2;-><init>(Lcom/google/glass/util/WifiHelper;Lcom/google/glass/util/WifiHelper$WifiScanCallback;)V
 
     iput-object v1, p0, Lcom/google/glass/util/WifiHelper;->scanReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 187
+    .line 190
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->scanReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v2, p0, Lcom/google/glass/util/WifiHelper;->context:Landroid/content/Context;
@@ -1411,10 +1416,10 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 189
+    .line 192
     if-eqz p1, :cond_0
 
-    .line 191
+    .line 194
     :try_start_0
     const-class v1, Landroid/net/wifi/WifiManager;
 
@@ -1436,7 +1441,7 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 192
+    .line 195
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Started active wifi scan."
@@ -1448,15 +1453,15 @@
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 206
+    .line 209
     :goto_0
     return-void
 
-    .line 193
+    .line 196
     :catch_0
     move-exception v0
 
-    .line 194
+    .line 197
     .local v0, e:Ljava/lang/IllegalArgumentException;
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
@@ -1466,12 +1471,12 @@
 
     goto :goto_0
 
-    .line 195
+    .line 198
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     :catch_1
     move-exception v0
 
-    .line 196
+    .line 199
     .local v0, e:Ljava/lang/IllegalAccessException;
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
@@ -1481,12 +1486,12 @@
 
     goto :goto_0
 
-    .line 197
+    .line 200
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_2
     move-exception v0
 
-    .line 198
+    .line 201
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
@@ -1496,12 +1501,12 @@
 
     goto :goto_0
 
-    .line 199
+    .line 202
     .end local v0           #e:Ljava/lang/reflect/InvocationTargetException;
     :catch_3
     move-exception v0
 
-    .line 200
+    .line 203
     .local v0, e:Ljava/lang/NoSuchMethodException;
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
@@ -1511,14 +1516,14 @@
 
     goto :goto_0
 
-    .line 203
+    .line 206
     .end local v0           #e:Ljava/lang/NoSuchMethodException;
     :cond_0
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
 
     invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->startScan()Z
 
-    .line 204
+    .line 207
     sget-object v1, Lcom/google/glass/util/WifiHelper;->TAG:Ljava/lang/String;
 
     const-string v2, "Started passive wifi scan."

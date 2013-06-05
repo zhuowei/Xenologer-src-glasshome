@@ -125,6 +125,10 @@
     .local v9, validTags:[Ljava/lang/String;
     if-eqz p4, :cond_1
 
+    array-length v0, p4
+
+    if-eqz v0, :cond_1
+
     .line 87
     invoke-static {v7, p4}, Lcom/google/glass/voice/DynamicSensoryRecognizer;->getValidTags([Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;
 

@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 494
+    .line 507
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineHelper$3;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineHelper$3;->val$context:Landroid/content/Context;
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 497
+    .line 510
     iget-object v1, p0, Lcom/google/glass/timeline/TimelineHelper$3;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 
     iget-object v2, p0, Lcom/google/glass/timeline/TimelineHelper$3;->val$context:Landroid/content/Context;
@@ -66,22 +66,22 @@
 
     move-result-object v0
 
-    .line 498
+    .line 511
     .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     if-eqz v0, :cond_0
 
-    .line 499
+    .line 512
     iget-object v1, p0, Lcom/google/glass/timeline/TimelineHelper$3;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 
     iget-object v2, p0, Lcom/google/glass/timeline/TimelineHelper$3;->val$context:Landroid/content/Context;
 
     invoke-virtual {v1, v2, v0}, Lcom/google/glass/timeline/TimelineHelper;->deleteTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    .line 503
+    .line 516
     :goto_0
     return-void
 
-    .line 501
+    .line 514
     :cond_0
     invoke-static {}, Lcom/google/glass/timeline/TimelineHelper;->access$000()Ljava/lang/String;
 

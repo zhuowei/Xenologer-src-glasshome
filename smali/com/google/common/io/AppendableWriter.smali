@@ -11,17 +11,23 @@
 
 # direct methods
 .method constructor <init>(Ljava/lang/Appendable;)V
-    .locals 0
+    .locals 1
     .parameter "target"
 
     .prologue
-    .line 42
+    .line 46
     invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
-    .line 43
-    iput-object p1, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
+    .line 47
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 44
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Appendable;
+
+    iput-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
+
+    .line 48
     return-void
 .end method
 
@@ -34,12 +40,12 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 124
     iget-boolean v0, p0, Lcom/google/common/io/AppendableWriter;->closed:Z
 
     if-eqz v0, :cond_0
 
-    .line 114
+    .line 125
     new-instance v0, Ljava/io/IOException;
 
     const-string v1, "Cannot write to a closed writer."
@@ -48,7 +54,7 @@
 
     throw v0
 
-    .line 116
+    .line 127
     :cond_0
     return-void
 .end method
@@ -65,21 +71,24 @@
     .end annotation
 
     .prologue
-    .line 94
+    .line 104
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 95
+    .line 105
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     invoke-interface {v0, p1}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
 
-    .line 96
+    .line 106
     return-object p0
 .end method
 
 .method public append(Ljava/lang/CharSequence;)Ljava/io/Writer;
     .locals 1
     .parameter "charSeq"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -87,23 +96,28 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 111
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 101
+    .line 112
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     invoke-interface {v0, p1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 102
+    .line 113
     return-object p0
 .end method
 
 .method public append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
     .locals 1
     .parameter "charSeq"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "start"
+    .end parameter
     .parameter "end"
+    .end parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -111,15 +125,15 @@
     .end annotation
 
     .prologue
-    .line 107
+    .line 118
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 108
+    .line 119
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     invoke-interface {v0, p1, p2, p3}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
 
-    .line 109
+    .line 120
     return-object p0
 .end method
 
@@ -133,7 +147,7 @@
     .end annotation
 
     .prologue
-    .line 33
+    .line 37
     invoke-virtual {p0, p1}, Lcom/google/common/io/AppendableWriter;->append(C)Ljava/io/Writer;
 
     move-result-object v0
@@ -151,7 +165,7 @@
     .end annotation
 
     .prologue
-    .line 33
+    .line 37
     invoke-virtual {p0, p1}, Lcom/google/common/io/AppendableWriter;->append(Ljava/lang/CharSequence;)Ljava/io/Writer;
 
     move-result-object v0
@@ -171,7 +185,7 @@
     .end annotation
 
     .prologue
-    .line 33
+    .line 37
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/common/io/AppendableWriter;->append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
 
     move-result-object v0
@@ -188,26 +202,26 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 72
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/common/io/AppendableWriter;->closed:Z
 
-    .line 67
+    .line 73
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     instance-of v0, v0, Ljava/io/Closeable;
 
     if-eqz v0, :cond_0
 
-    .line 68
+    .line 74
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     check-cast v0, Ljava/io/Closeable;
 
     invoke-interface {v0}, Ljava/io/Closeable;->close()V
 
-    .line 70
+    .line 76
     :cond_0
     return-void
 .end method
@@ -221,24 +235,24 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 64
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 60
+    .line 65
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     instance-of v0, v0, Ljava/io/Flushable;
 
     if-eqz v0, :cond_0
 
-    .line 61
+    .line 66
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     check-cast v0, Ljava/io/Flushable;
 
     invoke-interface {v0}, Ljava/io/Flushable;->flush()V
 
-    .line 63
+    .line 68
     :cond_0
     return-void
 .end method
@@ -253,23 +267,26 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 85
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 79
+    .line 86
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     int-to-char v1, p1
 
     invoke-interface {v0, v1}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
 
-    .line 80
+    .line 87
     return-void
 .end method
 
 .method public write(Ljava/lang/String;)V
     .locals 1
     .parameter "str"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -277,23 +294,28 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 91
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 84
+    .line 92
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     invoke-interface {v0, p1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 85
+    .line 93
     return-void
 .end method
 
 .method public write(Ljava/lang/String;II)V
     .locals 2
     .parameter "str"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "off"
+    .end parameter
     .parameter "len"
+    .end parameter
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -301,17 +323,17 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 97
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 90
+    .line 99
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     add-int v1, p2, p3
 
     invoke-interface {v0, p1, p2, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
 
-    .line 91
+    .line 100
     return-void
 .end method
 
@@ -327,10 +349,10 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 56
     invoke-direct {p0}, Lcom/google/common/io/AppendableWriter;->checkNotClosed()V
 
-    .line 55
+    .line 59
     iget-object v0, p0, Lcom/google/common/io/AppendableWriter;->target:Ljava/lang/Appendable;
 
     new-instance v1, Ljava/lang/String;
@@ -339,6 +361,6 @@
 
     invoke-interface {v0, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 56
+    .line 60
     return-void
 .end method

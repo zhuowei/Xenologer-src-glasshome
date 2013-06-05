@@ -51,7 +51,7 @@
     iget-object v1, v1, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
 
     #getter for: Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->projectId:Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$200(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$100(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -60,7 +60,7 @@
     iget-object v2, v2, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->val$currentRecognitionResult:Ljava/lang/String;
 
     #calls: Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->insertTimelineItem(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static {v0, v1, v2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$300(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$200(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 166
     return-void

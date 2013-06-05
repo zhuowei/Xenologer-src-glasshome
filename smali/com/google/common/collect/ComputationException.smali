@@ -16,11 +16,14 @@
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
     .parameter "cause"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 33
+    .line 35
     invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    .line 34
+    .line 36
     return-void
 .end method

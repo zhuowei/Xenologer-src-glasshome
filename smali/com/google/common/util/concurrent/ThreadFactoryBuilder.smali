@@ -49,22 +49,22 @@
     .parameter "builder"
 
     .prologue
-    .line 147
+    .line 149
     iget-object v2, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->nameFormat:Ljava/lang/String;
 
-    .line 148
+    .line 150
     .local v2, nameFormat:Ljava/lang/String;
     iget-object v4, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->daemon:Ljava/lang/Boolean;
 
-    .line 149
+    .line 151
     .local v4, daemon:Ljava/lang/Boolean;
     iget-object v5, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->priority:Ljava/lang/Integer;
 
-    .line 150
+    .line 152
     .local v5, priority:Ljava/lang/Integer;
     iget-object v6, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->uncaughtExceptionHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    .line 152
+    .line 153
     .local v6, uncaughtExceptionHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
     iget-object v0, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
@@ -72,7 +72,7 @@
 
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
-    .line 156
+    .line 155
     .local v1, backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
     :goto_0
     if-eqz v2, :cond_1
@@ -83,7 +83,7 @@
 
     invoke-direct {v3, v7, v8}, Ljava/util/concurrent/atomic/AtomicLong;-><init>(J)V
 
-    .line 157
+    .line 156
     .local v3, count:Ljava/util/concurrent/atomic/AtomicLong;
     :goto_1
     new-instance v0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;
@@ -92,7 +92,7 @@
 
     return-object v0
 
-    .line 152
+    .line 153
     .end local v1           #backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
     .end local v3           #count:Ljava/util/concurrent/atomic/AtomicLong;
     :cond_0
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 156
+    .line 155
     .restart local v1       #backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
     :cond_1
     const/4 v3, 0x0
@@ -116,7 +116,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 145
     invoke-static {p0}, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->build(Lcom/google/common/util/concurrent/ThreadFactoryBuilder;)Ljava/util/concurrent/ThreadFactory;
 
     move-result-object v0
@@ -129,14 +129,14 @@
     .parameter "daemon"
 
     .prologue
-    .line 81
+    .line 84
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->daemon:Ljava/lang/Boolean;
 
-    .line 82
+    .line 85
     return-object p0
 .end method
 
@@ -147,7 +147,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 68
+    .line 71
     const/4 v0, 0x1
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -160,10 +160,10 @@
 
     invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 69
+    .line 72
     iput-object p1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->nameFormat:Ljava/lang/String;
 
-    .line 70
+    .line 73
     return-object p0
 .end method
 
@@ -180,7 +180,7 @@
 
     const/4 v1, 0x1
 
-    .line 95
+    .line 98
     if-lt p1, v1, :cond_0
 
     move v0, v1
@@ -204,7 +204,7 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 97
+    .line 100
     if-gt p1, v7, :cond_1
 
     move v0, v1
@@ -228,26 +228,26 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 99
+    .line 102
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->priority:Ljava/lang/Integer;
 
-    .line 100
+    .line 103
     return-object p0
 
     :cond_0
     move v0, v2
 
-    .line 95
+    .line 98
     goto :goto_0
 
     :cond_1
     move v0, v2
 
-    .line 97
+    .line 100
     goto :goto_1
 .end method
 
@@ -256,7 +256,7 @@
     .parameter "backingThreadFactory"
 
     .prologue
-    .line 130
+    .line 132
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -265,7 +265,7 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
-    .line 131
+    .line 133
     return-object p0
 .end method
 
@@ -274,7 +274,7 @@
     .parameter "uncaughtExceptionHandler"
 
     .prologue
-    .line 113
+    .line 116
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -283,6 +283,6 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;->uncaughtExceptionHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    .line 114
+    .line 117
     return-object p0
 .end method

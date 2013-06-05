@@ -33,6 +33,8 @@
 
 .field public static final gf_shadow:I = 0x7f070001
 
+.field public static final people_grid_frame_focused:I = 0x7f07000e
+
 .field public static final person_count_text_gray:I = 0x7f070004
 
 .field public static final state_green:I = 0x7f07000a
@@ -43,7 +45,7 @@
 
 .field public static final text_gray:I = 0x7f070003
 
-.field public static final voice_command_color:I = 0x7f07000e
+.field public static final voice_command_color:I = 0x7f07000f
 
 
 # direct methods

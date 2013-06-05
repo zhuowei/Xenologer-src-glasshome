@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 117
+    .line 121
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService$1;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 128
+    .line 132
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +70,7 @@
     .parameter "intent"
 
     .prologue
-    .line 120
+    .line 124
     const-string v0, "android.intent.action.DEVICE_STORAGE_FULL"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 121
+    .line 125
     invoke-static {}, Lcom/google/glass/camera/SharedCameraService;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -92,7 +92,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
+    .line 126
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$1;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     #getter for: Lcom/google/glass/camera/SharedCameraService;->sharedCameraBinder:Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;->stopRecording(Lcom/google/glass/camera/SharedCameraClient;)V
 
-    .line 124
+    .line 128
     :cond_0
     return-void
 .end method

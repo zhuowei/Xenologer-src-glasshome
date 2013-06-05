@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 224
+    .line 226
     iput-object p1, p0, Lcom/google/glass/maps/MapHelper$4;->this$0:Lcom/google/glass/maps/MapHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -57,7 +57,7 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 226
     check-cast p1, [B
 
     .end local p1
@@ -82,12 +82,12 @@
     .end annotation
 
     .prologue
-    .line 228
+    .line 230
     invoke-static {}, Lcom/google/common/util/concurrent/SettableFuture;->create()Lcom/google/common/util/concurrent/SettableFuture;
 
     move-result-object v0
 
-    .line 229
+    .line 231
     .local v0, resultFuture:Lcom/google/common/util/concurrent/SettableFuture;,"Lcom/google/common/util/concurrent/SettableFuture<Landroid/graphics/Bitmap;>;"
     new-instance v1, Lcom/google/glass/maps/MapHelper$4$1;
 
@@ -103,6 +103,6 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/google/glass/maps/MapHelper$4$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 239
+    .line 241
     return-object v0
 .end method

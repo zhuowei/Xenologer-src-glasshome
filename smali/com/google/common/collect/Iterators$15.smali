@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 1136
+    .line 1154
     iput-object p1, p0, Lcom/google/common/collect/Iterators$15;->val$iterator:Ljava/util/Iterator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -49,7 +49,7 @@
     .locals 1
 
     .prologue
-    .line 1139
+    .line 1157
     iget-object v0, p0, Lcom/google/common/collect/Iterators$15;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 1143
+    .line 1161
     iget-object v0, p0, Lcom/google/common/collect/Iterators$15;->val$iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;

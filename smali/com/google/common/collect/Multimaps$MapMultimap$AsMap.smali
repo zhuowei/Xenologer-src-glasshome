@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1256
+    .line 1281
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
@@ -49,7 +49,7 @@
     .parameter "key"
 
     .prologue
-    .line 1264
+    .line 1291
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
@@ -77,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 1258
+    .line 1284
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     new-instance v0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries;
 
@@ -93,7 +93,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1256
+    .line 1281
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
@@ -116,7 +116,7 @@
     .end annotation
 
     .prologue
-    .line 1269
+    .line 1297
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    .line 1270
+    .line 1298
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
@@ -144,7 +144,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1256
+    .line 1281
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;->remove(Ljava/lang/Object;)Ljava/util/Collection;
 
@@ -167,7 +167,7 @@
     .end annotation
 
     .prologue
-    .line 1274
+    .line 1303
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>.AsMap;"
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
@@ -175,7 +175,7 @@
 
     move-result-object v0
 
-    .line 1275
+    .line 1304
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 

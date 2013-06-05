@@ -172,9 +172,9 @@
     :cond_2
     new-instance v0, Lcom/google/glass/camera/Size;
 
-    const/16 v1, 0xa00
+    const/16 v1, 0x9e0
 
-    const/16 v2, 0x760
+    const/16 v2, 0x740
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/camera/Size;-><init>(II)V
 

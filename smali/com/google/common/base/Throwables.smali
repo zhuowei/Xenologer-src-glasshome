@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 39
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,32 +33,32 @@
     .end annotation
 
     .prologue
-    .line 195
+    .line 200
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 196
+    .line 201
     new-instance v0, Ljava/util/ArrayList;
 
     const/4 v1, 0x4
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 197
+    .line 202
     .local v0, causes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Throwable;>;"
     :goto_0
     if-eqz p0, :cond_0
 
-    .line 198
+    .line 203
     invoke-interface {v0, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 199
+    .line 204
     invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object p0
 
     goto :goto_0
 
-    .line 201
+    .line 206
     :cond_0
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
@@ -72,7 +72,7 @@
     .parameter "throwable"
 
     .prologue
-    .line 170
+    .line 174
     :goto_0
     invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
@@ -81,12 +81,12 @@
     .local v0, cause:Ljava/lang/Throwable;
     if-eqz v0, :cond_0
 
-    .line 171
+    .line 175
     move-object p0, v0
 
     goto :goto_0
 
-    .line 173
+    .line 177
     :cond_0
     return-object p0
 .end method
@@ -96,12 +96,12 @@
     .parameter "throwable"
 
     .prologue
-    .line 212
+    .line 217
     new-instance v0, Ljava/io/StringWriter;
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
-    .line 213
+    .line 218
     .local v0, stringWriter:Ljava/io/StringWriter;
     new-instance v1, Ljava/io/PrintWriter;
 
@@ -109,7 +109,7 @@
 
     invoke-virtual {p0, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    .line 214
+    .line 219
     invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -122,7 +122,7 @@
     .parameter "throwable"
 
     .prologue
-    .line 155
+    .line 159
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -131,7 +131,7 @@
 
     invoke-static {v0}, Lcom/google/common/base/Throwables;->propagateIfPossible(Ljava/lang/Throwable;)V
 
-    .line 156
+    .line 160
     new-instance v0, Ljava/lang/RuntimeException;
 
     invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -165,7 +165,7 @@
     .end annotation
 
     .prologue
-    .line 59
+    .line 63
     .local p1, declaredType:Ljava/lang/Class;,"Ljava/lang/Class<TX;>;"
     if-eqz p0, :cond_0
 
@@ -175,7 +175,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 60
+    .line 64
     invoke-virtual {p1, p0}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -184,7 +184,7 @@
 
     throw v0
 
-    .line 62
+    .line 66
     :cond_0
     return-void
 .end method
@@ -197,17 +197,17 @@
     .end parameter
 
     .prologue
-    .line 79
+    .line 83
     const-class v0, Ljava/lang/Error;
 
     invoke-static {p0, v0}, Lcom/google/common/base/Throwables;->propagateIfInstanceOf(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    .line 80
+    .line 84
     const-class v0, Ljava/lang/RuntimeException;
 
     invoke-static {p0, v0}, Lcom/google/common/base/Throwables;->propagateIfInstanceOf(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    .line 81
+    .line 85
     return-void
 .end method
 
@@ -237,14 +237,14 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 108
     .local p1, declaredType:Ljava/lang/Class;,"Ljava/lang/Class<TX;>;"
     invoke-static {p0, p1}, Lcom/google/common/base/Throwables;->propagateIfInstanceOf(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    .line 105
+    .line 109
     invoke-static {p0}, Lcom/google/common/base/Throwables;->propagateIfPossible(Ljava/lang/Throwable;)V
 
-    .line 106
+    .line 110
     return-void
 .end method
 
@@ -281,17 +281,17 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 129
     .local p1, declaredType1:Ljava/lang/Class;,"Ljava/lang/Class<TX1;>;"
     .local p2, declaredType2:Ljava/lang/Class;,"Ljava/lang/Class<TX2;>;"
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 126
+    .line 130
     invoke-static {p0, p1}, Lcom/google/common/base/Throwables;->propagateIfInstanceOf(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    .line 127
+    .line 131
     invoke-static {p0, p2}, Lcom/google/common/base/Throwables;->propagateIfPossible(Ljava/lang/Throwable;Ljava/lang/Class;)V
 
-    .line 128
+    .line 132
     return-void
 .end method

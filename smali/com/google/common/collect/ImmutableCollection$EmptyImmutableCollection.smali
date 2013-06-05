@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 192
+    .line 196
     const/4 v0, 0x0
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -46,7 +46,7 @@
     .locals 0
 
     .prologue
-    .line 173
+    .line 175
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
     .parameter "x0"
 
     .prologue
-    .line 173
+    .line 175
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;-><init>()V
 
     return-void
@@ -73,7 +73,7 @@
     .end parameter
 
     .prologue
-    .line 185
+    .line 188
     const/4 v0, 0x0
 
     return v0
@@ -92,7 +92,7 @@
     .end annotation
 
     .prologue
-    .line 206
+    .line 213
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -104,7 +104,7 @@
     .locals 1
 
     .prologue
-    .line 181
+    .line 183
     const/4 v0, 0x1
 
     return v0
@@ -114,7 +114,7 @@
     .locals 1
 
     .prologue
-    .line 210
+    .line 218
     const/4 v0, 0x0
 
     return v0
@@ -133,8 +133,8 @@
     .end annotation
 
     .prologue
-    .line 189
-    sget-object v0, Lcom/google/common/collect/Iterators;->EMPTY_ITERATOR:Lcom/google/common/collect/UnmodifiableIterator;
+    .line 193
+    sget-object v0, Lcom/google/common/collect/Iterators;->EMPTY_LIST_ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
 
     return-object v0
 .end method
@@ -143,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 173
+    .line 175
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -155,7 +155,7 @@
     .locals 1
 
     .prologue
-    .line 177
+    .line 178
     const/4 v0, 0x0
 
     return v0
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 200
     sget-object v0, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;->EMPTY_ARRAY:[Ljava/lang/Object;
 
     return-object v0
@@ -183,20 +183,20 @@
     .end annotation
 
     .prologue
-    .line 199
+    .line 205
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     array-length v0, p1
 
     if-lez v0, :cond_0
 
-    .line 200
+    .line 206
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     aput-object v1, p1, v0
 
-    .line 202
+    .line 208
     :cond_0
     return-object p1
 .end method

@@ -45,10 +45,10 @@
     .locals 2
 
     .prologue
-    .line 208
+    .line 245
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 209
+    .line 246
     new-instance v0, Lcom/google/common/collect/MapMaker;
 
     invoke-direct {v0}, Lcom/google/common/collect/MapMaker;-><init>()V
@@ -78,46 +78,58 @@
     .parameter "right"
 
     .prologue
-    .line 221
-    if-ne p1, p2, :cond_0
+    const/4 v4, 0x1
 
-    .line 222
+    const/4 v3, -0x1
+
+    .line 259
+    if-ne p1, p2, :cond_1
+
+    .line 260
     const/4 v3, 0x0
 
-    .line 235
+    .line 277
+    :cond_0
     :goto_0
     return v3
 
-    .line 224
-    :cond_0
+    .line 261
+    :cond_1
+    if-eqz p1, :cond_0
+
+    .line 263
+    if-nez p2, :cond_2
+
+    move v3, v4
+
+    .line 264
+    goto :goto_0
+
+    .line 266
+    :cond_2
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 225
+    .line 267
     .local v0, leftCode:I
     invoke-virtual {p0, p2}, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v2
 
-    .line 226
+    .line 268
     .local v2, rightCode:I
-    if-eq v0, v2, :cond_2
+    if-eq v0, v2, :cond_3
 
-    .line 227
-    if-ge v0, v2, :cond_1
+    .line 269
+    if-lt v0, v2, :cond_0
 
-    const/4 v3, -0x1
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v3, 0x1
+    move v3, v4
 
     goto :goto_0
 
-    .line 231
-    :cond_2
+    .line 273
+    :cond_3
     iget-object v3, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering;->uids:Ljava/util/Map;
 
     invoke-interface {v3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -138,21 +150,21 @@
 
     move-result v1
 
-    .line 232
+    .line 274
     .local v1, result:I
-    if-nez v1, :cond_3
+    if-nez v1, :cond_4
 
-    .line 233
+    .line 275
     new-instance v3, Ljava/lang/AssertionError;
 
     invoke-direct {v3}, Ljava/lang/AssertionError;-><init>()V
 
     throw v3
 
-    :cond_3
+    :cond_4
     move v3, v1
 
-    .line 235
+    .line 277
     goto :goto_0
 .end method
 
@@ -161,7 +173,7 @@
     .parameter "object"
 
     .prologue
-    .line 251
+    .line 294
     invoke-static {p1}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v0
@@ -173,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 239
+    .line 282
     const-string v0, "Ordering.arbitrary()"
 
     return-object v0

@@ -13,7 +13,7 @@
     .locals 0
 
     .prologue
-    .line 92
+    .line 97
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,10 +24,10 @@
     .parameter "condition"
 
     .prologue
-    .line 81
+    .line 86
     if-nez p0, :cond_0
 
-    .line 82
+    .line 87
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "not in range"
@@ -36,7 +36,7 @@
 
     throw v0
 
-    .line 84
+    .line 89
     :cond_0
     return-void
 .end method
@@ -46,10 +46,10 @@
     .parameter "condition"
 
     .prologue
-    .line 87
+    .line 92
     if-nez p0, :cond_0
 
-    .line 88
+    .line 93
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "overflow"
@@ -58,21 +58,82 @@
 
     throw v0
 
-    .line 90
+    .line 95
     :cond_0
     return-void
+.end method
+
+.method static checkNonNegative(Ljava/lang/String;D)D
+    .locals 3
+    .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter "x"
+    .end parameter
+
+    .prologue
+    .line 73
+    const-wide/16 v0, 0x0
+
+    cmpl-double v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    .line 74
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " ("
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, ") must be >= 0"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 76
+    :cond_0
+    return-wide p1
 .end method
 
 .method static checkNonNegative(Ljava/lang/String;I)I
     .locals 3
     .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "x"
+    .end parameter
 
     .prologue
-    .line 54
+    .line 52
     if-gez p1, :cond_0
 
-    .line 55
+    .line 53
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -107,7 +168,7 @@
 
     throw v0
 
-    .line 57
+    .line 55
     :cond_0
     return p1
 .end method
@@ -115,17 +176,21 @@
 .method static checkNonNegative(Ljava/lang/String;J)J
     .locals 3
     .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "x"
+    .end parameter
 
     .prologue
-    .line 61
+    .line 59
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-gez v0, :cond_0
 
-    .line 62
+    .line 60
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -160,7 +225,7 @@
 
     throw v0
 
-    .line 64
+    .line 62
     :cond_0
     return-wide p1
 .end method
@@ -168,23 +233,21 @@
 .method static checkNonNegative(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 3
     .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "x"
+    .end parameter
 
     .prologue
-    .line 68
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/math/BigInteger;
-
-    invoke-virtual {v0}, Ljava/math/BigInteger;->signum()I
+    .line 66
+    invoke-virtual {p1}, Ljava/math/BigInteger;->signum()I
 
     move-result v0
 
     if-gez v0, :cond_0
 
-    .line 69
+    .line 67
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -219,7 +282,7 @@
 
     throw v0
 
-    .line 71
+    .line 69
     :cond_0
     return-object p1
 .end method
@@ -227,13 +290,17 @@
 .method static checkPositive(Ljava/lang/String;I)I
     .locals 3
     .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "x"
+    .end parameter
 
     .prologue
-    .line 33
+    .line 31
     if-gtz p1, :cond_0
 
-    .line 34
+    .line 32
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -268,7 +335,7 @@
 
     throw v0
 
-    .line 36
+    .line 34
     :cond_0
     return p1
 .end method
@@ -276,17 +343,21 @@
 .method static checkPositive(Ljava/lang/String;J)J
     .locals 3
     .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "x"
+    .end parameter
 
     .prologue
-    .line 40
+    .line 38
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-gtz v0, :cond_0
 
-    .line 41
+    .line 39
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -321,7 +392,7 @@
 
     throw v0
 
-    .line 43
+    .line 41
     :cond_0
     return-wide p1
 .end method
@@ -329,17 +400,21 @@
 .method static checkPositive(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 3
     .parameter "role"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "x"
+    .end parameter
 
     .prologue
-    .line 47
+    .line 45
     invoke-virtual {p1}, Ljava/math/BigInteger;->signum()I
 
     move-result v0
 
     if-gtz v0, :cond_0
 
-    .line 48
+    .line 46
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -374,7 +449,7 @@
 
     throw v0
 
-    .line 50
+    .line 48
     :cond_0
     return-object p1
 .end method
@@ -384,10 +459,10 @@
     .parameter "condition"
 
     .prologue
-    .line 75
+    .line 80
     if-nez p0, :cond_0
 
-    .line 76
+    .line 81
     new-instance v0, Ljava/lang/ArithmeticException;
 
     const-string v1, "mode was UNNECESSARY, but rounding was necessary"
@@ -396,7 +471,7 @@
 
     throw v0
 
-    .line 78
+    .line 83
     :cond_0
     return-void
 .end method

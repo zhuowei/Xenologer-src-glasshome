@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 732
+    .line 747
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$2;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$2;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -57,7 +57,7 @@
     .parameter "item"
 
     .prologue
-    .line 735
+    .line 750
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$2;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     iget-object v1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$2;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -68,6 +68,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/timeline/TimelineOptionsHelper;->notifyOnCustomMenuSelected(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/UserAction;Lcom/google/googlex/glass/common/proto/MenuItem;)V
 
-    .line 736
+    .line 751
     return-void
 .end method

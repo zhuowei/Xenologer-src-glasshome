@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .parameter "delay"
 
     .prologue
-    .line 161
+    .line 176
     new-instance v3, Lcom/google/glass/util/SettingsHelper;
 
     invoke-direct {v3, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
@@ -42,13 +42,13 @@
 
     move-result v1
 
-    .line 162
+    .line 177
     .local v1, guestMode:Z
     invoke-static {p0}, Lcom/google/glass/util/HiddenApiHelper;->isDonDoffDetectorEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 163
+    .line 178
     .local v0, don:Z
     const-string v5, "s"
 
@@ -111,16 +111,16 @@
 
     move-result-object v2
 
-    .line 169
+    .line 184
     .local v2, payload:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/logging/UserEventAction;->PRESS_TO_SEARCH_DISMISSED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v3, v2}, Lcom/google/glass/home/search/VoiceSearchActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 170
+    .line 185
     return-void
 
-    .line 163
+    .line 178
     .end local v2           #payload:Ljava/lang/String;
     :cond_0
     const-string v3, "off"
@@ -140,26 +140,26 @@
 
 
 # virtual methods
-.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 1
 
     .prologue
-    .line 84
+    .line 99
     invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->isMessageShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 85
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
+    .line 100
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    .line 90
+    .line 105
     :goto_0
     return-object v0
 
     :cond_0
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->SEARCH:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->SEARCH:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     goto :goto_0
 .end method
@@ -168,18 +168,18 @@
     .locals 1
 
     .prologue
-    .line 133
+    .line 165
     sget v0, Lcom/google/glass/home/R$string;->voice_menu_item_google:I
 
     return v0
 .end method
 
-.method protected getRetryVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method protected getRetryVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 1
 
     .prologue
-    .line 95
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->SEARCH:Lcom/google/glass/voice/VoiceConfig;
+    .line 110
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->SEARCH:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
 .end method
@@ -188,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 160
     sget v0, Lcom/google/glass/home/R$string;->voice_search_speak_now:I
 
     return v0
@@ -198,22 +198,10 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 150
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method getVoiceSearchUi()Lcom/google/glass/voice/network/VoiceSearchUi;
-    .locals 1
-    .annotation build Lcom/google/common/annotations/VisibleForTesting;
-    .end annotation
-
-    .prologue
-    .line 145
-    iget-object v0, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
-
-    return-object v0
 .end method
 
 .method hasPendingMajelResults()Z
@@ -222,28 +210,10 @@
     .end annotation
 
     .prologue
-    .line 155
+    .line 170
     iget-object v0, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->handler:Landroid/os/Handler;
 
     const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method hasPendingRecognitionResults()Z
-    .locals 2
-    .annotation build Lcom/google/common/annotations/VisibleForTesting;
-    .end annotation
-
-    .prologue
-    .line 150
-    iget-object v0, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->handler:Landroid/os/Handler;
-
-    const/4 v1, 0x7
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
 
@@ -256,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 123
+    .line 155
     const/4 v0, 0x1
 
     return v0
@@ -267,23 +237,23 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 67
+    .line 62
     iget-boolean v4, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->logFastDismiss:Z
 
     if-eqz v4, :cond_0
 
-    .line 69
+    .line 64
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 70
+    .line 65
     .local v2, now:J
     iget-wide v4, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->startTime:J
 
     sub-long v0, v2, v4
 
-    .line 71
+    .line 66
     .local v0, delay:J
     const-wide/16 v4, 0x3e8
 
@@ -291,10 +261,10 @@
 
     if-gtz v4, :cond_0
 
-    .line 72
+    .line 67
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/search/VoiceSearchActivity;->logFastDismissed(J)V
 
-    .line 75
+    .line 70
     .end local v0           #delay:J
     .end local v2           #now:J
     :cond_0
@@ -305,6 +275,64 @@
     return v4
 .end method
 
+.method protected onHtmlAnswerCardResult(Ljava/lang/String;Ljava/lang/String;JJ)V
+    .locals 3
+    .parameter "htmlResponse"
+    .parameter "recognitionResult"
+    .parameter "startTime"
+    .parameter "endOfSpeechTime"
+
+    .prologue
+    .line 135
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "com.google.glass.ACTION_VIEW_VOICE_SEARCH_RESULT"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 136
+    .local v0, answer:Landroid/content/Intent;
+    const-string v1, "recognitionResult"
+
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 137
+    const-string v1, "cardResult"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 138
+    const-string v1, "startTime"
+
+    invoke-virtual {v0, v1, p3, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
+
+    .line 139
+    const-string v1, "endofSpeech"
+
+    invoke-virtual {v0, v1, p5, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
+
+    .line 140
+    const-string v1, "trigger_method"
+
+    iget v2, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->triggerMethod:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 141
+    const v1, 0x8000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 142
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/search/VoiceSearchActivity;->startActivity(Landroid/content/Intent;)V
+
+    .line 145
+    invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->finish()V
+
+    .line 146
+    return-void
+.end method
+
 .method protected onMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;Ljava/lang/String;JJ)V
     .locals 3
     .parameter "majelResponse"
@@ -313,20 +341,20 @@
     .parameter "endOfSpeechTime"
 
     .prologue
-    .line 102
+    .line 117
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.ACTION_VIEW_VOICE_SEARCH_RESULT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 103
+    .line 118
     .local v0, answer:Landroid/content/Intent;
     const-string v1, "recognitionResult"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 104
+    .line 119
     const-string v1, "majelResponse"
 
     invoke-virtual {p1}, Lcom/google/majel/proto/MajelProtos$MajelResponse;->toByteArray()[B
@@ -335,37 +363,35 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 106
+    .line 121
     const-string v1, "startTime"
 
     invoke-virtual {v0, v1, p3, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 107
+    .line 122
     const-string v1, "endofSpeech"
 
     invoke-virtual {v0, v1, p5, p6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 108
+    .line 123
+    const-string v1, "trigger_method"
+
+    iget v2, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->triggerMethod:I
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 124
     const v1, 0x8000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 109
-    invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/google/glass/sound/SoundManager$SoundId;->SUCCESS:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    invoke-virtual {v1, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
-
-    .line 110
+    .line 125
     invoke-virtual {p0, v0}, Lcom/google/glass/home/search/VoiceSearchActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 113
+    .line 128
     invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->finish()V
 
-    .line 114
+    .line 129
     return-void
 .end method
 
@@ -377,15 +403,15 @@
 
     const/4 v3, 0x0
 
-    .line 52
+    .line 47
     invoke-super {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onStart()V
 
-    .line 54
+    .line 49
     invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 55
+    .line 50
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
@@ -397,17 +423,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 56
+    .line 51
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->startTime:J
 
-    .line 57
+    .line 52
     iput-boolean v4, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->logFastDismiss:Z
 
-    .line 58
+    .line 53
     const-string v1, "called_by_press_to_search"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -416,36 +442,86 @@
 
     iput-boolean v1, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->screenOn:Z
 
-    .line 63
+    .line 58
     :goto_0
     return-void
 
-    .line 60
+    .line 55
     :cond_0
     iput-boolean v3, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->logFastDismiss:Z
 
-    .line 61
+    .line 56
     iput-boolean v4, p0, Lcom/google/glass/home/search/VoiceSearchActivity;->screenOn:Z
 
     goto :goto_0
 .end method
 
-.method protected provideContentView()I
-    .locals 1
+.method public onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+    .locals 4
+    .parameter "fingerCount"
+    .parameter "direction"
 
     .prologue
-    .line 47
-    sget v0, Lcom/google/glass/home/R$layout;->voice_search_activity:I
+    const/4 v1, 0x1
 
-    return v0
-.end method
+    .line 75
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->SOUND_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
-.method protected shouldAllowLongPress()Z
-    .locals 1
+    invoke-static {v2}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
-    .prologue
-    .line 140
-    const/4 v0, 0x0
+    move-result v2
 
-    return v0
+    if-nez v2, :cond_0
+
+    .line 76
+    invoke-super {p0, p1, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+
+    move-result v1
+
+    .line 91
+    :goto_0
+    return v1
+
+    .line 81
+    :cond_0
+    sget-object v2, Lcom/google/glass/input/SwipeDirection;->RIGHT:Lcom/google/glass/input/SwipeDirection;
+
+    if-ne p2, v2, :cond_1
+
+    .line 82
+    new-instance v0, Landroid/content/Intent;
+
+    const-class v2, Lcom/google/glass/home/search/SoundSearchActivity;
+
+    invoke-direct {v0, p0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 83
+    .local v0, intent:Landroid/content/Intent;
+    const-string v2, "should_play_initial_sound"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 84
+    const-string v2, "trigger_method"
+
+    const/4 v3, 0x6
+
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 86
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/search/VoiceSearchActivity;->startActivity(Landroid/content/Intent;)V
+
+    .line 87
+    invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->finish()V
+
+    goto :goto_0
+
+    .line 91
+    .end local v0           #intent:Landroid/content/Intent;
+    :cond_1
+    invoke-super {p0, p1, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+
+    move-result v1
+
+    goto :goto_0
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/active/GuardPhraseView;->onLoad()V
+    value = Lcom/google/glass/home/timeline/active/GuardPhraseView;->onUnload()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 92
+    .line 87
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/GuardPhraseView$3;->this$0:Lcom/google/glass/home/timeline/active/GuardPhraseView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,21 +38,17 @@
 
 # virtual methods
 .method public run()V
-    .locals 6
+    .locals 3
 
     .prologue
-    const/4 v5, 0x1
-
-    const/4 v4, 0x0
-
-    .line 95
+    .line 90
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/GuardPhraseView$3;->this$0:Lcom/google/glass/home/timeline/active/GuardPhraseView;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/active/GuardPhraseView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 96
+    .line 91
     .local v0, context:Landroid/content/Context;
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/GuardPhraseView$3;->this$0:Lcom/google/glass/home/timeline/active/GuardPhraseView;
 
@@ -61,36 +57,20 @@
 
     move-result-object v1
 
-    const/4 v2, 0x2
+    invoke-virtual {v1, v0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    new-array v2, v2, [Ljava/lang/String;
-
-    const-string v3, "com.google.glass.action.CALL_STATE"
-
-    aput-object v3, v2, v4
-
-    const-string v3, "com.google.glass.action.CALL_SETUP_STATE"
-
-    aput-object v3, v2, v5
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 98
+    .line 92
     iget-object v1, p0, Lcom/google/glass/home/timeline/active/GuardPhraseView$3;->this$0:Lcom/google/glass/home/timeline/active/GuardPhraseView;
 
-    #getter for: Lcom/google/glass/home/timeline/active/GuardPhraseView;->companionStateChangeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/active/GuardPhraseView;->access$300(Lcom/google/glass/home/timeline/active/GuardPhraseView;)Lcom/google/glass/util/SafeBroadcastReceiver;
+    #getter for: Lcom/google/glass/home/timeline/active/GuardPhraseView;->companionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+    invoke-static {v1}, Lcom/google/glass/home/timeline/active/GuardPhraseView;->access$300(Lcom/google/glass/home/timeline/active/GuardPhraseView;)Lcom/google/glass/companion/RemoteCompanionProxy;
 
     move-result-object v1
 
-    new-array v2, v5, [Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/glass/home/timeline/active/GuardPhraseView$3;->this$0:Lcom/google/glass/home/timeline/active/GuardPhraseView;
 
-    const-string v3, "com.google.glass.action.COMPANION_APP_CONNECTIVITY_CHANGE"
+    invoke-virtual {v1, v2}, Lcom/google/glass/companion/RemoteCompanionProxy;->addListener(Lcom/google/glass/companion/CompanionStateChangeListener;)V
 
-    aput-object v3, v2, v4
-
-    invoke-virtual {v1, v0, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 100
+    .line 93
     return-void
 .end method

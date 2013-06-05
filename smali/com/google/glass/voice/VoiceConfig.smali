@@ -34,6 +34,8 @@
 
 .field public static final SEARCH:Lcom/google/glass/voice/VoiceConfig;
 
+.field public static final SOUND_SEARCH:Lcom/google/glass/voice/VoiceConfig;
+
 .field public static final VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
 
 
@@ -78,9 +80,9 @@
     .line 31
     const-string v0, "GUARD"
 
-    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery08_am.raw"
+    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery09_am.raw"
 
-    const-string v4, "google_glass_okglass_en_us_alpha_sfs_delivery08_search_10.raw"
+    const-string v4, "google_glass_okglass_en_us_alpha_sfs_delivery09_search_10.raw"
 
     invoke-static {v0, v2, v4}, Lcom/google/glass/voice/VoiceConfig;->newStaticSensoryVoiceConfig(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/glass/voice/VoiceConfig;
 
@@ -91,9 +93,9 @@
     .line 39
     const-string v0, "NOTIFICATION_GUARD"
 
-    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery08_am.raw"
+    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery09_am.raw"
 
-    const-string v4, "google_glass_okglass_en_us_alpha_sfs_delivery08_search_1.raw"
+    const-string v4, "google_glass_okglass_en_us_alpha_sfs_delivery09_search_1.raw"
 
     invoke-static {v0, v2, v4}, Lcom/google/glass/voice/VoiceConfig;->newStaticSensoryVoiceConfig(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/google/glass/voice/VoiceConfig;
 
@@ -196,7 +198,16 @@
 
     sput-object v0, Lcom/google/glass/voice/VoiceConfig;->SEARCH:Lcom/google/glass/voice/VoiceConfig;
 
-    .line 103
+    .line 104
+    const-string v0, "SOUND_SEARCH"
+
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceConfig;->newGrecoVoiceConfig(Ljava/lang/String;)Lcom/google/glass/voice/VoiceConfig;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/glass/voice/VoiceConfig;->SOUND_SEARCH:Lcom/google/glass/voice/VoiceConfig;
+
+    .line 110
     const-string v0, "NAVIGATION"
 
     invoke-static {v0}, Lcom/google/glass/voice/VoiceConfig;->newGrecoVoiceConfig(Ljava/lang/String;)Lcom/google/glass/voice/VoiceConfig;
@@ -205,7 +216,7 @@
 
     sput-object v0, Lcom/google/glass/voice/VoiceConfig;->NAVIGATION:Lcom/google/glass/voice/VoiceConfig;
 
-    .line 117
+    .line 124
     const-string v0, "VOICE_RECORD"
 
     invoke-static {v0}, Lcom/google/glass/voice/VoiceConfig;->newGrecoVoiceConfig(Ljava/lang/String;)Lcom/google/glass/voice/VoiceConfig;
@@ -231,33 +242,33 @@
 
     const/4 v1, 0x0
 
-    .line 165
+    .line 172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 166
+    .line 173
     iput-object p1, p0, Lcom/google/glass/voice/VoiceConfig;->type:Lcom/google/glass/voice/VoiceConfig$Type;
 
-    .line 167
+    .line 174
     iput-object p2, p0, Lcom/google/glass/voice/VoiceConfig;->name:Ljava/lang/String;
 
-    .line 168
+    .line 175
     iput-boolean p3, p0, Lcom/google/glass/voice/VoiceConfig;->isDynamic:Z
 
-    .line 169
+    .line 176
     iput-object p4, p0, Lcom/google/glass/voice/VoiceConfig;->recogFile:Ljava/lang/String;
 
-    .line 170
+    .line 177
     iput-object p5, p0, Lcom/google/glass/voice/VoiceConfig;->searchFile:Ljava/lang/String;
 
-    .line 171
+    .line 178
     iput-object p6, p0, Lcom/google/glass/voice/VoiceConfig;->ltsFile:Ljava/lang/String;
 
-    .line 173
+    .line 180
     sget-object v2, Lcom/google/glass/voice/VoiceConfig$Type;->SENSORY:Lcom/google/glass/voice/VoiceConfig$Type;
 
     if-ne p1, v2, :cond_0
 
-    .line 174
+    .line 181
     if-nez p5, :cond_1
 
     move v3, v0
@@ -273,14 +284,14 @@
     :goto_2
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 176
+    .line 183
     :cond_0
     return-void
 
     :cond_1
     move v3, v1
 
-    .line 174
+    .line 181
     goto :goto_0
 
     :cond_2
@@ -302,7 +313,7 @@
     .parameter "ltsFile"
 
     .prologue
-    .line 193
+    .line 200
     sget-object v1, Lcom/google/glass/voice/VoiceConfig$Type;->SENSORY:Lcom/google/glass/voice/VoiceConfig$Type;
 
     if-nez p3, :cond_0
@@ -322,10 +333,10 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/glass/voice/VoiceConfig;-><init>(Lcom/google/glass/voice/VoiceConfig$Type;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 194
+    .line 201
     return-void
 
-    .line 193
+    .line 200
     :cond_0
     const/4 v3, 0x0
 
@@ -336,7 +347,7 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 209
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->THIRD_PARTY_VOICE:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -345,10 +356,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 203
+    .line 210
     sget-object v0, Lcom/google/glass/voice/VoiceConfig;->HYBRID_MAIN_MENU:Lcom/google/glass/voice/VoiceConfig;
 
-    .line 205
+    .line 212
     :goto_0
     return-object v0
 
@@ -366,7 +377,25 @@
     .parameter "tags"
 
     .prologue
-    .line 217
+    .line 224
+    if-eqz p2, :cond_0
+
+    array-length v0, p2
+
+    if-nez v0, :cond_1
+
+    .line 225
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string v1, "Must provide phrases for custom voice configs."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 227
+    :cond_1
     new-instance v0, Lcom/google/glass/voice/VoiceConfig$4;
 
     sget-object v1, Lcom/google/glass/voice/VoiceConfig$Type;->SENSORY:Lcom/google/glass/voice/VoiceConfig$Type;
@@ -397,7 +426,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 180
+    .line 187
     new-instance v0, Lcom/google/glass/voice/VoiceConfig;
 
     sget-object v1, Lcom/google/glass/voice/VoiceConfig$Type;->GRECO:Lcom/google/glass/voice/VoiceConfig$Type;
@@ -420,12 +449,12 @@
     .parameter "configs"
 
     .prologue
-    .line 266
+    .line 276
     new-instance v11, Ljava/lang/StringBuilder;
 
     invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 267
+    .line 277
     .local v11, nameBuilder:Ljava/lang/StringBuilder;
     move-object v8, p0
 
@@ -441,7 +470,7 @@
 
     aget-object v12, v8, v9
 
-    .line 268
+    .line 278
     .local v12, voiceConfig:Lcom/google/glass/voice/VoiceConfig;
     iget-object v0, v12, Lcom/google/glass/voice/VoiceConfig;->name:Ljava/lang/String;
 
@@ -453,12 +482,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 267
+    .line 277
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 270
+    .line 280
     .end local v12           #voiceConfig:Lcom/google/glass/voice/VoiceConfig;
     :cond_0
     new-instance v0, Lcom/google/glass/voice/VoiceConfig$5;
@@ -491,7 +520,7 @@
     .parameter "searchFile"
 
     .prologue
-    .line 198
+    .line 205
     new-instance v0, Lcom/google/glass/voice/VoiceConfig;
 
     const/4 v1, 0x0
@@ -503,12 +532,12 @@
 
 
 # virtual methods
-.method public getRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
     .locals 1
     .parameter "context"
 
     .prologue
-    .line 262
+    .line 272
     invoke-static {p1, p0}, Lcom/google/glass/voice/StaticSensoryRecognizer;->newStaticSensoryRecognizer(Landroid/content/Context;Lcom/google/glass/voice/VoiceConfig;)Lcom/google/glass/voice/Sensory;
 
     move-result-object v0
@@ -524,17 +553,17 @@
 
     const/4 v0, 0x1
 
-    .line 236
+    .line 246
     sget-object v2, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
 
     if-ne p0, v2, :cond_1
 
-    .line 247
+    .line 257
     :cond_0
     :goto_0
     return v0
 
-    .line 240
+    .line 250
     :cond_1
     iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig;->type:Lcom/google/glass/voice/VoiceConfig$Type;
 
@@ -542,12 +571,12 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 241
+    .line 251
     iget-boolean v2, p0, Lcom/google/glass/voice/VoiceConfig;->isDynamic:Z
 
     if-eqz v2, :cond_3
 
-    .line 242
+    .line 252
     iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig;->recogFile:Ljava/lang/String;
 
     if-eqz v2, :cond_2
@@ -561,7 +590,7 @@
 
     goto :goto_0
 
-    .line 244
+    .line 254
     :cond_3
     iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig;->recogFile:Ljava/lang/String;
 
@@ -576,7 +605,7 @@
 
     goto :goto_0
 
-    .line 247
+    .line 257
     :cond_5
     iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig;->type:Lcom/google/glass/voice/VoiceConfig$Type;
 
@@ -591,7 +620,7 @@
     .locals 2
 
     .prologue
-    .line 253
+    .line 263
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -40,20 +40,20 @@
     .parameter "mask"
 
     .prologue
-    .line 39
+    .line 40
     .local p0, this:Lcom/google/common/collect/RegularImmutableSet;,"Lcom/google/common/collect/RegularImmutableSet<TE;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;-><init>([Ljava/lang/Object;)V
 
-    .line 40
+    .line 41
     iput-object p3, p0, Lcom/google/common/collect/RegularImmutableSet;->table:[Ljava/lang/Object;
 
-    .line 41
+    .line 42
     iput p4, p0, Lcom/google/common/collect/RegularImmutableSet;->mask:I
 
-    .line 42
+    .line 43
     iput p2, p0, Lcom/google/common/collect/RegularImmutableSet;->hashCode:I
 
-    .line 43
+    .line 44
     return-void
 .end method
 
@@ -67,15 +67,15 @@
     .local p0, this:Lcom/google/common/collect/RegularImmutableSet;,"Lcom/google/common/collect/RegularImmutableSet<TE;>;"
     const/4 v2, 0x0
 
-    .line 46
+    .line 48
     if-nez p1, :cond_1
 
-    .line 55
+    .line 57
     :cond_0
     :goto_0
     return v2
 
-    .line 49
+    .line 51
     :cond_1
     invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
 
@@ -85,7 +85,7 @@
 
     move-result v1
 
-    .line 50
+    .line 52
     .local v1, i:I
     :goto_1
     iget-object v3, p0, Lcom/google/common/collect/RegularImmutableSet;->table:[Ljava/lang/Object;
@@ -96,23 +96,23 @@
 
     aget-object v0, v3, v4
 
-    .line 51
+    .line 53
     .local v0, candidate:Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 54
+    .line 56
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 55
+    .line 57
     const/4 v2, 0x1
 
     goto :goto_0
 
-    .line 49
+    .line 51
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
@@ -123,7 +123,7 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 64
     .local p0, this:Lcom/google/common/collect/RegularImmutableSet;,"Lcom/google/common/collect/RegularImmutableSet<TE;>;"
     iget v0, p0, Lcom/google/common/collect/RegularImmutableSet;->hashCode:I
 
@@ -134,7 +134,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 69
     .local p0, this:Lcom/google/common/collect/RegularImmutableSet;,"Lcom/google/common/collect/RegularImmutableSet<TE;>;"
     const/4 v0, 0x1
 

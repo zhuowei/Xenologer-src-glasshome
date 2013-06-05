@@ -2,16 +2,13 @@
 .super Landroid/app/Fragment;
 .source "GlassFragment.java"
 
-# interfaces
-.implements Lcom/google/glass/input/InputListener;
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 18
+    .line 12
     invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     return-void
@@ -19,171 +16,61 @@
 
 
 # virtual methods
-.method public onAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 89
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onCameraButtonPressed()Z
+.method public dismiss()V
     .locals 1
 
     .prologue
-    .line 63
-    const/4 v0, 0x0
+    .line 26
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassFragment;->getActivity()Landroid/app/Activity;
 
-    return v0
-.end method
+    move-result-object v0
 
-.method public onConfirm()Z
-    .locals 1
+    invoke-virtual {v0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
 
-    .prologue
-    .line 22
-    const/4 v0, 0x0
+    move-result-object v0
 
-    return v0
-.end method
+    invoke-virtual {v0}, Landroid/app/FragmentManager;->beginTransaction()Landroid/app/FragmentTransaction;
 
-.method public onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
-    .locals 1
-    .parameter "dismissAction"
+    move-result-object v0
 
-    .prologue
-    .line 32
-    const/4 v0, 0x0
+    invoke-virtual {v0, p0}, Landroid/app/FragmentTransaction;->remove(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
-    return v0
-.end method
+    move-result-object v0
 
-.method public onDoubleTap()Z
-    .locals 1
+    invoke-virtual {v0}, Landroid/app/FragmentTransaction;->commit()I
 
-    .prologue
     .line 27
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onFingerCountChanged(IZ)Z
-    .locals 1
-    .parameter "count"
-    .parameter "wentDown"
-
-    .prologue
-    .line 37
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onPrepareSwipe(IFFFFII)Z
-    .locals 1
-    .parameter "fingerCount"
-    .parameter "accumulatorX"
-    .parameter "accumulatorY"
-    .parameter "velocityX"
-    .parameter "velocityY"
-    .parameter "numSwipesX"
-    .parameter "numSwipesY"
-
-    .prologue
-    .line 53
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onResampledAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 94
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
-    .locals 1
-    .parameter "fingerCount"
-    .parameter "direction"
-
-    .prologue
-    .line 42
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onSwipeCanceled(I)Z
-    .locals 1
-    .parameter "fingerCount"
-
-    .prologue
-    .line 58
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVerticalHeadScroll(FF)Z
-    .locals 1
-    .parameter "delta"
-    .parameter "velocity"
-
-    .prologue
-    .line 68
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceAmplitudeChanged(D)Z
-    .locals 1
-    .parameter "amplitude"
-
-    .prologue
-    .line 84
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-    .locals 1
-    .parameter "command"
-
-    .prologue
-    .line 79
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceServiceConnected()V
-    .locals 0
-
-    .prologue
-    .line 72
     return-void
 .end method
 
-.method public onVoiceServiceDisconnected()V
-    .locals 0
+.method protected getGlassApplication()Lcom/google/glass/app/GlassApplication;
+    .locals 1
 
     .prologue
-    .line 75
-    return-void
+    .line 19
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassFragment;->getActivity()Landroid/app/Activity;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getSoundManager()Lcom/google/glass/sound/SoundManager;
+    .locals 1
+
+    .prologue
+    .line 15
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassFragment;->getGlassApplication()Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/app/GlassApplication;->getSoundManager()Lcom/google/glass/sound/SoundManager;
+
+    move-result-object v0
+
+    return-object v0
 .end method

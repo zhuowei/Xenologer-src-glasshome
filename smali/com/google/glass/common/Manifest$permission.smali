@@ -17,7 +17,7 @@
 # static fields
 .field public static final C2D_MESSAGE:Ljava/lang/String; = "com.google.glass.home.permission.C2D_MESSAGE"
 
-.field public static final COMPANION_MESSAGING:Ljava/lang/String; = "com.google.glass.home.permission.COMPANION_MESSAGING"
+.field public static final SETUP_WIFI:Ljava/lang/String; = "com.google.glass.home.permission.SETUP_WIFI"
 
 
 # direct methods

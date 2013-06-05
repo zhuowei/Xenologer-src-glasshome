@@ -53,14 +53,14 @@
     .end annotation
 
     .prologue
-    .line 306
+    .line 288
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     .local p1, delegate:Ljava/util/List;,"Ljava/util/List<TE;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;-><init>(Ljava/util/Collection;Ljava/lang/Object;Lcom/google/common/collect/Synchronized$1;)V
 
-    .line 307
+    .line 289
     return-void
 .end method
 
@@ -77,14 +77,14 @@
     .end annotation
 
     .prologue
-    .line 315
+    .line 297
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 316
+    .line 298
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -92,13 +92,13 @@
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 317
+    .line 299
     monitor-exit v1
 
-    .line 318
+    .line 300
     return-void
 
-    .line 317
+    .line 299
     :catchall_0
     move-exception v0
 
@@ -122,14 +122,14 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 303
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     .local p2, c:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 323
+    .line 304
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -143,7 +143,7 @@
 
     return v0
 
-    .line 324
+    .line 305
     :catchall_0
     move-exception v0
 
@@ -158,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 303
+    .line 286
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -171,7 +171,7 @@
     .locals 1
 
     .prologue
-    .line 303
+    .line 286
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -191,7 +191,7 @@
     .end annotation
 
     .prologue
-    .line 310
+    .line 293
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/Synchronized$SynchronizedCollection;->delegate()Ljava/util/Collection;
 
@@ -207,24 +207,24 @@
     .parameter "o"
 
     .prologue
-    .line 380
+    .line 354
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     if-ne p1, p0, :cond_0
 
-    .line 381
+    .line 355
     const/4 v0, 0x1
 
-    .line 384
+    .line 358
     :goto_0
     return v0
 
-    .line 383
+    .line 357
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 384
+    .line 358
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -238,7 +238,7 @@
 
     goto :goto_0
 
-    .line 385
+    .line 359
     :catchall_0
     move-exception v0
 
@@ -259,13 +259,13 @@
     .end annotation
 
     .prologue
-    .line 329
+    .line 309
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 330
+    .line 310
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -279,7 +279,7 @@
 
     return-object v0
 
-    .line 331
+    .line 311
     :catchall_0
     move-exception v0
 
@@ -294,13 +294,13 @@
     .locals 2
 
     .prologue
-    .line 389
+    .line 364
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 390
+    .line 365
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -314,7 +314,7 @@
 
     return v0
 
-    .line 391
+    .line 366
     :catchall_0
     move-exception v0
 
@@ -330,13 +330,13 @@
     .parameter "o"
 
     .prologue
-    .line 336
+    .line 315
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 337
+    .line 316
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -350,7 +350,7 @@
 
     return v0
 
-    .line 338
+    .line 317
     :catchall_0
     move-exception v0
 
@@ -366,13 +366,13 @@
     .parameter "o"
 
     .prologue
-    .line 343
+    .line 321
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 344
+    .line 322
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -386,7 +386,7 @@
 
     return v0
 
-    .line 345
+    .line 323
     :catchall_0
     move-exception v0
 
@@ -408,7 +408,7 @@
     .end annotation
 
     .prologue
-    .line 350
+    .line 327
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -433,7 +433,7 @@
     .end annotation
 
     .prologue
-    .line 355
+    .line 331
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -456,13 +456,13 @@
     .end annotation
 
     .prologue
-    .line 360
+    .line 335
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 361
+    .line 336
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -476,7 +476,7 @@
 
     return-object v0
 
-    .line 362
+    .line 337
     :catchall_0
     move-exception v0
 
@@ -498,14 +498,14 @@
     .end annotation
 
     .prologue
-    .line 367
+    .line 341
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 368
+    .line 342
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -519,7 +519,7 @@
 
     return-object v0
 
-    .line 369
+    .line 343
     :catchall_0
     move-exception v0
 
@@ -543,13 +543,13 @@
     .end annotation
 
     .prologue
-    .line 374
+    .line 347
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedList;,"Lcom/google/common/collect/Synchronized$SynchronizedList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedList;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 375
+    .line 348
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedList;->delegate()Ljava/util/List;
 
@@ -570,7 +570,7 @@
 
     return-object v0
 
-    .line 376
+    .line 349
     :catchall_0
     move-exception v0
 

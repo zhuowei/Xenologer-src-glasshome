@@ -2,9 +2,15 @@
 .super Lcom/google/glass/app/GlassApplication;
 .source "HomeApplication.java"
 
+# interfaces
+.implements Lcom/google/glass/companion/CompanionStateChangeListener;
+
 
 # static fields
-.field private static final DEFAULT_RETRY_TIME_MS:J
+#the value of this static final field might be set in the static constructor
+.field private static final DEFAULT_RETRY_TIME_MS:J = 0x0L
+
+.field private static final MAX_BITMAP_CACHE_SIZE_KB:I = 0x8000
 
 .field private static final MAX_RETRY_DELAY_MS:J
 
@@ -12,13 +18,15 @@
 
 
 # instance fields
-.field private companionService:Lcom/google/glass/home/companion/CompanionService;
+.field private bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
-.field private companionState:Lcom/google/glass/home/companion/CompanionState;
+.field private final cameraButtonReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-.field private final locationCompanionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
+.field private companionLocationProxy:Lcom/google/glass/location/CompanionLocationProxy;
 
 .field private locationService:Lcom/google/glass/location/LocationService;
+
+.field private remoteCompanionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
 
 .field private final retryGcmRegistrationReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
@@ -34,7 +42,7 @@
     .locals 3
 
     .prologue
-    .line 62
+    .line 59
     const-class v0, Lcom/google/glass/home/HomeApplication;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -43,7 +51,7 @@
 
     sput-object v0, Lcom/google/glass/home/HomeApplication;->TAG:Ljava/lang/String;
 
-    .line 175
+    .line 189
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x5
@@ -54,7 +62,7 @@
 
     sput-wide v0, Lcom/google/glass/home/HomeApplication;->DEFAULT_RETRY_TIME_MS:J
 
-    .line 176
+    .line 190
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0xa
@@ -72,45 +80,38 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 58
     invoke-direct {p0}, Lcom/google/glass/app/GlassApplication;-><init>()V
 
-    .line 65
+    .line 85
     new-instance v0, Lcom/google/glass/home/HomeApplication$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$1;-><init>(Lcom/google/glass/home/HomeApplication;)V
 
-    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationCompanionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
+    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->serviceConnection:Landroid/content/ServiceConnection;
 
-    .line 89
-    new-instance v0, Lcom/google/glass/home/companion/CompanionState;
-
-    invoke-direct {v0}, Lcom/google/glass/home/companion/CompanionState;-><init>()V
-
-    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionState:Lcom/google/glass/home/companion/CompanionState;
-
-    .line 91
+    .line 105
     new-instance v0, Lcom/google/glass/home/HomeApplication$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$2;-><init>(Lcom/google/glass/home/HomeApplication;)V
 
-    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->serviceConnection:Landroid/content/ServiceConnection;
+    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->screenOnOffReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 117
+    .line 142
     new-instance v0, Lcom/google/glass/home/HomeApplication$3;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$3;-><init>(Lcom/google/glass/home/HomeApplication;)V
 
-    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->screenOnOffReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
+    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->setupCompleteReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 154
+    .line 174
     new-instance v0, Lcom/google/glass/home/HomeApplication$4;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$4;-><init>(Lcom/google/glass/home/HomeApplication;)V
 
-    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->setupCompleteReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
+    iput-object v0, p0, Lcom/google/glass/home/HomeApplication;->cameraButtonReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 179
+    .line 193
     new-instance v0, Lcom/google/glass/home/HomeApplication$5;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$5;-><init>(Lcom/google/glass/home/HomeApplication;)V
@@ -120,115 +121,79 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-
-    return-object v0
-.end method
-
-.method static synthetic access$002(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 61
-    iput-object p1, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-
-    return-object p1
-.end method
-
-.method static synthetic access$100()Ljava/lang/String;
+.method static synthetic access$000()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 61
+    .line 58
     sget-object v0, Lcom/google/glass/home/HomeApplication;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$1000(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
+.method static synthetic access$100(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/LocationService;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
+
+    return-object v0
+.end method
+
+.method static synthetic access$102(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 61
-    invoke-direct {p0, p1}, Lcom/google/glass/home/HomeApplication;->enableConnectivityEstablishedSync(Landroid/accounts/Account;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1100(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/util/SafeBroadcastReceiver;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->retryGcmRegistrationReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
-
-    return-object v0
-.end method
-
-.method static synthetic access$200(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/home/companion/CompanionService;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    return-object v0
-.end method
-
-.method static synthetic access$202(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/home/companion/CompanionService;)Lcom/google/glass/home/companion/CompanionService;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 61
-    iput-object p1, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
+    .line 58
+    iput-object p1, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
 
     return-object p1
 .end method
 
-.method static synthetic access$300(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/home/companion/CompanionState;
+.method static synthetic access$200(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/location/CompanionLocationProxy;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionState:Lcom/google/glass/home/companion/CompanionState;
+    .line 58
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionLocationProxy:Lcom/google/glass/location/CompanionLocationProxy;
 
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/google/glass/home/HomeApplication;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Lcom/google/glass/home/HomeApplication;->onServiceConnected()V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
+.method static synthetic access$300(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 61
+    .line 58
     invoke-direct {p0, p1}, Lcom/google/glass/home/HomeApplication;->onAccountReady(Landroid/accounts/Account;)V
+
+    return-void
+.end method
+
+.method static synthetic access$400()J
+    .locals 2
+
+    .prologue
+    .line 58
+    sget-wide v0, Lcom/google/glass/home/HomeApplication;->DEFAULT_RETRY_TIME_MS:J
+
+    return-wide v0
+.end method
+
+.method static synthetic access$500(Lcom/google/glass/home/HomeApplication;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 58
+    invoke-direct {p0}, Lcom/google/glass/home/HomeApplication;->registerGcm()V
 
     return-void
 .end method
@@ -237,50 +202,52 @@
     .locals 2
 
     .prologue
-    .line 61
-    sget-wide v0, Lcom/google/glass/home/HomeApplication;->DEFAULT_RETRY_TIME_MS:J
-
-    return-wide v0
-.end method
-
-.method static synthetic access$700(Lcom/google/glass/home/HomeApplication;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 61
-    invoke-direct {p0}, Lcom/google/glass/home/HomeApplication;->registerGcm()V
-
-    return-void
-.end method
-
-.method static synthetic access$800()J
-    .locals 2
-
-    .prologue
-    .line 61
+    .line 58
     sget-wide v0, Lcom/google/glass/home/HomeApplication;->MAX_RETRY_DELAY_MS:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$900(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
+.method static synthetic access$700(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 61
+    .line 58
     invoke-direct {p0, p1}, Lcom/google/glass/home/HomeApplication;->enablePowerConnectedSync(Landroid/accounts/Account;)V
 
     return-void
+.end method
+
+.method static synthetic access$800(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 58
+    invoke-direct {p0, p1}, Lcom/google/glass/home/HomeApplication;->enableConnectivityEstablishedSync(Landroid/accounts/Account;)V
+
+    return-void
+.end method
+
+.method static synthetic access$900(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/util/SafeBroadcastReceiver;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 58
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->retryGcmRegistrationReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
+
+    return-object v0
 .end method
 
 .method private disableLockscreen()V
     .locals 5
 
     .prologue
-    .line 386
+    .line 412
     :try_start_0
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -294,15 +261,15 @@
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 391
+    .line 417
     :goto_0
     return-void
 
-    .line 387
+    .line 413
     :catch_0
     move-exception v0
 
-    .line 389
+    .line 415
     .local v0, e:Ljava/lang/SecurityException;
     sget-object v1, Lcom/google/glass/home/HomeApplication;->TAG:Ljava/lang/String;
 
@@ -320,7 +287,7 @@
     .parameter "primaryAccount"
 
     .prologue
-    .line 329
+    .line 355
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication;->getConnectionState()Lcom/google/glass/util/InetConnectionState;
 
     move-result-object v0
@@ -331,7 +298,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/InetConnectionState;->addListener(Lcom/google/glass/util/InetConnectionState$Listener;)V
 
-    .line 342
+    .line 368
     return-void
 .end method
 
@@ -340,7 +307,7 @@
     .parameter "primaryAccount"
 
     .prologue
-    .line 309
+    .line 335
     new-instance v0, Lcom/google/glass/home/HomeApplication$7;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/home/HomeApplication$7;-><init>(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
@@ -353,7 +320,7 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/glass/home/HomeApplication;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 325
+    .line 351
     return-void
 .end method
 
@@ -362,24 +329,24 @@
     .parameter "context"
 
     .prologue
-    .line 299
+    .line 325
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 300
+    .line 326
     .local v0, applicationContext:Landroid/content/Context;
     instance-of v1, v0, Lcom/google/glass/home/HomeApplication;
 
     if-eqz v1, :cond_0
 
-    .line 301
+    .line 327
     check-cast v0, Lcom/google/glass/home/HomeApplication;
 
     .end local v0           #applicationContext:Landroid/content/Context;
     return-object v0
 
-    .line 303
+    .line 329
     .restart local v0       #applicationContext:Landroid/content/Context;
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
@@ -396,10 +363,10 @@
     .parameter "primaryAccount"
 
     .prologue
-    .line 265
+    .line 291
     invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 266
+    .line 292
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
@@ -410,39 +377,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 292
-    return-void
-.end method
-
-.method private onServiceConnected()V
-    .locals 2
-
-    .prologue
-    .line 437
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-
-    if-eqz v0, :cond_0
-
-    .line 438
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication;->locationCompanionListener:Lcom/google/glass/home/companion/CompanionService$CompanionListener;
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/companion/CompanionService;->addCompanionListener(Lcom/google/glass/home/companion/CompanionService$CompanionListener;)V
-
-    .line 439
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/location/LocationService;->setLocationProxy(Lcom/google/glass/location/LocationProxy;)V
-
-    .line 441
-    :cond_0
+    .line 318
     return-void
 .end method
 
@@ -450,35 +385,35 @@
     .locals 1
 
     .prologue
-    .line 346
+    .line 372
     new-instance v0, Lcom/google/glass/home/HomeApplication$9;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$9;-><init>(Lcom/google/glass/home/HomeApplication;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 382
+    .line 408
     return-void
 .end method
 
 
 # virtual methods
-.method public getCompanionService()Lcom/google/glass/home/companion/CompanionService;
+.method public getBitmapFactory()Lcom/google/glass/util/CachedBitmapFactory;
     .locals 1
 
     .prologue
-    .line 398
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
+    .line 432
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
     return-object v0
 .end method
 
-.method public getCompanionState()Lcom/google/glass/home/companion/CompanionState;
+.method public getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
     .locals 1
 
     .prologue
-    .line 394
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionState:Lcom/google/glass/home/companion/CompanionState;
+    .line 420
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->remoteCompanionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     return-object v0
 .end method
@@ -487,10 +422,10 @@
     .locals 1
 
     .prologue
-    .line 432
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionState:Lcom/google/glass/home/companion/CompanionState;
+    .line 425
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->remoteCompanionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/companion/CompanionState;->isConnected()Z
+    invoke-virtual {v0}, Lcom/google/glass/companion/RemoteCompanionProxy;->isConnected()Z
 
     move-result v0
 
@@ -517,52 +452,77 @@
 .end method
 
 .method public onCreate()V
-    .locals 8
+    .locals 10
 
     .prologue
-    const/4 v7, 0x1
+    const/4 v9, 0x1
 
-    .line 223
+    .line 240
     invoke-super {p0}, Lcom/google/glass/app/GlassApplication;->onCreate()V
 
-    .line 225
-    invoke-static {p0}, Lcom/google/glass/util/TimeZoneUtil;->updateTimeZone(Landroid/content/Context;)V
+    .line 243
+    new-instance v4, Lcom/google/glass/util/MemoryCachedBitmapFactory;
 
-    .line 226
+    invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v5
+
+    invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication;->getScreenWidthPixels()I
+
+    move-result v6
+
+    invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication;->getScreenHeightPixels()I
+
+    move-result v7
+
+    const v8, 0x8000
+
+    invoke-direct {v4, v5, v6, v7, v8}, Lcom/google/glass/util/MemoryCachedBitmapFactory;-><init>(Landroid/content/Context;III)V
+
+    iput-object v4, p0, Lcom/google/glass/home/HomeApplication;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
+
+    .line 246
+    new-instance v4, Lcom/google/glass/util/TimeZoneUtil;
+
+    invoke-direct {v4, p0}, Lcom/google/glass/util/TimeZoneUtil;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v4}, Lcom/google/glass/util/TimeZoneUtil;->updateTimeZone()V
+
+    .line 247
     invoke-direct {p0}, Lcom/google/glass/home/HomeApplication;->disableLockscreen()V
 
-    .line 229
+    .line 250
     new-instance v0, Lcom/google/glass/util/AuthUtils;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/AuthUtils;-><init>(Landroid/content/Context;)V
 
-    .line 230
+    .line 251
     .local v0, authUtils:Lcom/google/glass/util/AuthUtils;
     invoke-virtual {v0}, Lcom/google/glass/util/AuthUtils;->getGoogleAccount()Landroid/accounts/Account;
 
     move-result-object v1
 
-    .line 231
+    .line 252
     .local v1, primaryAccount:Landroid/accounts/Account;
     if-nez v1, :cond_1
 
-    .line 232
+    .line 253
     sget-object v4, Lcom/google/glass/home/HomeApplication;->TAG:Ljava/lang/String;
 
     const-string v5, "No Google account available. Reverting to setup, NOT rebooting."
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 233
+    .line 254
     const/4 v2, 0x0
 
-    .line 234
+    .line 255
     .local v2, reboot:Z
     const/4 v4, 0x0
 
     invoke-virtual {v0, v4}, Lcom/google/glass/util/AuthUtils;->restartSetupProcess(Z)V
 
-    .line 240
+    .line 261
     .end local v2           #reboot:Z
     :goto_0
     iget-object v4, p0, Lcom/google/glass/home/HomeApplication;->setupCompleteReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
@@ -575,7 +535,18 @@
 
     invoke-virtual {v4, p0, v5}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 243
+    .line 263
+    iget-object v4, p0, Lcom/google/glass/home/HomeApplication;->cameraButtonReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
+
+    new-instance v5, Landroid/content/IntentFilter;
+
+    const-string v6, "android.intent.action.CAMERA_BUTTON"
+
+    invoke-direct {v5, v6}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4, p0, v5}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+    .line 266
     sget-object v4, Lcom/google/glass/util/Labs$Feature;->GPS_IN_BACKGROUND:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v4}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -584,7 +555,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 244
+    .line 267
     new-instance v4, Landroid/content/Intent;
 
     const-class v5, Lcom/google/glass/location/GpsBackgroundService;
@@ -593,8 +564,29 @@
 
     invoke-virtual {p0, v4}, Lcom/google/glass/home/HomeApplication;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    .line 248
+    .line 270
     :cond_0
+    new-instance v4, Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-direct {v4, p0, v9}, Lcom/google/glass/companion/RemoteCompanionProxy;-><init>(Landroid/app/Application;Z)V
+
+    iput-object v4, p0, Lcom/google/glass/home/HomeApplication;->remoteCompanionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    .line 271
+    iget-object v4, p0, Lcom/google/glass/home/HomeApplication;->remoteCompanionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-virtual {v4, p0}, Lcom/google/glass/companion/RemoteCompanionProxy;->addListener(Lcom/google/glass/companion/CompanionStateChangeListener;)V
+
+    .line 272
+    new-instance v4, Lcom/google/glass/location/CompanionLocationProxy;
+
+    iget-object v5, p0, Lcom/google/glass/home/HomeApplication;->remoteCompanionProxy:Lcom/google/glass/companion/RemoteCompanionProxy;
+
+    invoke-direct {v4, v5}, Lcom/google/glass/location/CompanionLocationProxy;-><init>(Lcom/google/glass/companion/RemoteCompanionProxy;)V
+
+    iput-object v4, p0, Lcom/google/glass/home/HomeApplication;->companionLocationProxy:Lcom/google/glass/location/CompanionLocationProxy;
+
+    .line 275
     new-instance v4, Landroid/content/Intent;
 
     const-class v5, Lcom/google/glass/location/LocationService;
@@ -603,60 +595,49 @@
 
     iget-object v5, p0, Lcom/google/glass/home/HomeApplication;->serviceConnection:Landroid/content/ServiceConnection;
 
-    invoke-virtual {p0, v4, v5, v7}, Lcom/google/glass/home/HomeApplication;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+    invoke-virtual {p0, v4, v5, v9}, Lcom/google/glass/home/HomeApplication;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 249
-    new-instance v4, Landroid/content/Intent;
-
-    const-class v5, Lcom/google/glass/home/companion/CompanionService;
-
-    invoke-direct {v4, p0, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    iget-object v5, p0, Lcom/google/glass/home/HomeApplication;->serviceConnection:Landroid/content/ServiceConnection;
-
-    invoke-virtual {p0, v4, v5, v7}, Lcom/google/glass/home/HomeApplication;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    .line 252
+    .line 278
     new-instance v3, Landroid/content/IntentFilter;
 
     invoke-direct {v3}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 253
+    .line 279
     .local v3, screenOnOffIntentFilter:Landroid/content/IntentFilter;
     const-string v4, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {v3, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 254
+    .line 280
     const-string v4, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v3, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 255
+    .line 281
     iget-object v4, p0, Lcom/google/glass/home/HomeApplication;->screenOnOffReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v4, p0, v3}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 257
+    .line 283
     invoke-static {p0}, Lcom/google/glass/home/timeline/TimelineNotificationManager;->initialize(Lcom/google/glass/home/HomeApplication;)V
 
-    .line 258
+    .line 284
     invoke-static {p0}, Lcom/google/glass/home/ScreenOffService;->initialize(Landroid/content/Context;)V
 
-    .line 259
+    .line 285
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication;->getBitmapFactory()Lcom/google/glass/util/CachedBitmapFactory;
 
     move-result-object v4
 
-    invoke-static {p0, v4}, Lcom/google/glass/home/timeline/html/HtmlRenderer;->initialize(Landroid/content/Context;Lcom/google/glass/util/CachedBitmapFactory;)V
+    invoke-static {p0, v4}, Lcom/google/glass/html/HtmlRenderer;->initialize(Landroid/content/Context;Lcom/google/glass/util/CachedBitmapFactory;)V
 
-    .line 260
+    .line 286
     invoke-static {p0}, Lcom/google/glass/util/StorageHelper;->initializeThresholds(Landroid/content/Context;)V
 
-    .line 261
+    .line 287
     return-void
 
-    .line 236
+    .line 257
     .end local v3           #screenOnOffIntentFilter:Landroid/content/IntentFilter;
     :cond_1
     invoke-direct {p0, v1}, Lcom/google/glass/home/HomeApplication;->onAccountReady(Landroid/accounts/Account;)V
@@ -664,58 +645,47 @@
     goto :goto_0
 .end method
 
-.method public registerCompanionHandler(JLcom/google/glass/home/companion/MessageHandler;)Z
-    .locals 2
-    .parameter "replyableId"
-    .parameter "messageHandler"
+.method public onStateChange(ZII)V
+    .locals 1
+    .parameter "isConnected"
+    .parameter "remoteVersion"
+    .parameter "localVersion"
 
     .prologue
-    .line 422
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
+    .line 437
+    if-eqz p1, :cond_2
 
-    .line 423
-    .local v0, companionServiceCopy:Lcom/google/glass/home/companion/CompanionService;
+    .line 438
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
+
     if-eqz v0, :cond_0
 
-    .line 424
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/glass/home/companion/CompanionService;->registerCompanionHandler(JLcom/google/glass/home/companion/MessageHandler;)V
+    .line 439
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
 
-    .line 425
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lcom/google/glass/location/LocationService;->onCompanionConnected()V
 
-    .line 427
-    :goto_0
-    return v1
-
+    .line 441
     :cond_0
-    const/4 v1, 0x0
+    const-string v0, "com.google.glass.location"
 
-    goto :goto_0
-.end method
+    invoke-static {p0, v0}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;)V
 
-.method public sendCompanionMessage(Lcom/google/glass/companion/Proto$Envelope;)Z
-    .locals 2
-    .parameter "envelope"
-
-    .prologue
-    .line 409
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-
-    .line 410
-    .local v0, companionServiceCopy:Lcom/google/glass/home/companion/CompanionService;
-    if-eqz v0, :cond_0
-
-    .line 411
-    invoke-virtual {v0, p1}, Lcom/google/glass/home/companion/CompanionService;->sendEnvelope(Lcom/google/glass/companion/Proto$Envelope;)Z
-
-    move-result v1
-
-    .line 413
+    .line 447
+    :cond_1
     :goto_0
-    return v1
+    return-void
 
-    :cond_0
-    const/4 v1, 0x0
+    .line 443
+    :cond_2
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
+
+    if-eqz v0, :cond_1
+
+    .line 444
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
+
+    invoke-virtual {v0}, Lcom/google/glass/location/LocationService;->onCompanionDisconnected()V
 
     goto :goto_0
 .end method

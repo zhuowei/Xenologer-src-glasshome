@@ -56,50 +56,50 @@
     .locals 1
 
     .prologue
-    .line 11291
+    .line 11484
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;-><init>()V
 
-    .line 11415
+    .line 11609
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11512
+    .line 11706
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11609
+    .line 11803
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->INSERT_OR_UPDATE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 11660
+    .line 11854
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11744
+    .line 11938
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
-    .line 11292
+    .line 11485
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 11293
+    .line 11486
     return-void
 .end method
 
-.method static synthetic access$9500()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
+.method static synthetic access$10500()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-static {}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->create()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 11298
+    .line 11491
     new-instance v0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;-><init>()V
@@ -123,7 +123,7 @@
     .locals 2
 
     .prologue
-    .line 11746
+    .line 11940
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -132,7 +132,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 11747
+    .line 11941
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
@@ -141,14 +141,14 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
-    .line 11748
+    .line 11942
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11750
+    .line 11944
     :cond_0
     return-void
 .end method
@@ -157,7 +157,7 @@
     .locals 0
 
     .prologue
-    .line 11296
+    .line 11489
     return-void
 .end method
 
@@ -178,16 +178,16 @@
     .end annotation
 
     .prologue
-    .line 11830
+    .line 12024
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/protobuf/ByteString;>;"
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->ensureAttachmentContentIsMutable()V
 
-    .line 11831
+    .line 12025
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 11834
+    .line 12028
     return-object p0
 .end method
 
@@ -196,26 +196,26 @@
     .parameter "value"
 
     .prologue
-    .line 11812
+    .line 12006
     if-nez p1, :cond_0
 
-    .line 11813
+    .line 12007
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11815
+    .line 12009
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->ensureAttachmentContentIsMutable()V
 
-    .line 11816
+    .line 12010
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 11818
+    .line 12012
     return-object p0
 .end method
 
@@ -223,12 +223,12 @@
     .locals 2
 
     .prologue
-    .line 11325
+    .line 11518
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->buildPartial()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
 
-    .line 11326
+    .line 11519
     .local v0, result:Lcom/google/glass/companion/Proto$ApiRequest;
     invoke-virtual {v0}, Lcom/google/glass/companion/Proto$ApiRequest;->isInitialized()Z
 
@@ -236,14 +236,14 @@
 
     if-nez v1, :cond_0
 
-    .line 11327
+    .line 11520
     invoke-static {v0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 11329
+    .line 11522
     :cond_0
     return-object v0
 .end method
@@ -252,7 +252,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->build()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -264,22 +264,22 @@
     .locals 5
 
     .prologue
-    .line 11333
+    .line 11526
     new-instance v1, Lcom/google/glass/companion/Proto$ApiRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/glass/companion/Proto$ApiRequest;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;Lcom/google/glass/companion/Proto$1;)V
 
-    .line 11334
+    .line 11527
     .local v1, result:Lcom/google/glass/companion/Proto$ApiRequest;
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11335
+    .line 11528
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 11336
+    .line 11529
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -287,68 +287,68 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 11337
+    .line 11530
     or-int/lit8 v2, v2, 0x1
 
-    .line 11339
+    .line 11532
     :cond_0
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/glass/companion/Proto$ApiRequest;->projectId_:Ljava/lang/Object;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$9702(Lcom/google/glass/companion/Proto$ApiRequest;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10702(Lcom/google/glass/companion/Proto$ApiRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 11340
+    .line 11533
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 11341
+    .line 11534
     or-int/lit8 v2, v2, 0x2
 
-    .line 11343
+    .line 11536
     :cond_1
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
     #setter for: Lcom/google/glass/companion/Proto$ApiRequest;->token_:Ljava/lang/Object;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$9802(Lcom/google/glass/companion/Proto$ApiRequest;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10802(Lcom/google/glass/companion/Proto$ApiRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 11344
+    .line 11537
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 11345
+    .line 11538
     or-int/lit8 v2, v2, 0x4
 
-    .line 11347
+    .line 11540
     :cond_2
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     #setter for: Lcom/google/glass/companion/Proto$ApiRequest;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$9902(Lcom/google/glass/companion/Proto$ApiRequest;Lcom/google/glass/companion/Proto$ApiRequest$RequestType;)Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10902(Lcom/google/glass/companion/Proto$ApiRequest;Lcom/google/glass/companion/Proto$ApiRequest$RequestType;)Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 11348
+    .line 11541
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 11349
+    .line 11542
     or-int/lit8 v2, v2, 0x8
 
-    .line 11351
+    .line 11544
     :cond_3
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     #setter for: Lcom/google/glass/companion/Proto$ApiRequest;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10002(Lcom/google/glass/companion/Proto$ApiRequest;Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11002(Lcom/google/glass/companion/Proto$ApiRequest;Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11352
+    .line 11545
     iget v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x10
@@ -357,7 +357,7 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 11353
+    .line 11546
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -366,25 +366,25 @@
 
     iput-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
-    .line 11354
+    .line 11547
     iget v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x11
 
     iput v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11356
+    .line 11549
     :cond_4
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     #setter for: Lcom/google/glass/companion/Proto$ApiRequest;->attachmentContent_:Ljava/util/List;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10102(Lcom/google/glass/companion/Proto$ApiRequest;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11102(Lcom/google/glass/companion/Proto$ApiRequest;Ljava/util/List;)Ljava/util/List;
 
-    .line 11357
+    .line 11550
     #setter for: Lcom/google/glass/companion/Proto$ApiRequest;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10202(Lcom/google/glass/companion/Proto$ApiRequest;I)I
+    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11202(Lcom/google/glass/companion/Proto$ApiRequest;I)I
 
-    .line 11358
+    .line 11551
     return-object v1
 .end method
 
@@ -392,7 +392,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->buildPartial()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -404,74 +404,74 @@
     .locals 1
 
     .prologue
-    .line 11302
+    .line 11495
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clear()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
-    .line 11303
+    .line 11496
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11304
+    .line 11497
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11305
+    .line 11498
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11306
+    .line 11499
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11307
+    .line 11500
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->INSERT_OR_UPDATE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 11308
+    .line 11501
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11309
+    .line 11502
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11310
+    .line 11503
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11311
+    .line 11504
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
-    .line 11312
+    .line 11505
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11313
+    .line 11506
     return-object p0
 .end method
 
@@ -479,7 +479,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->clear()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -491,7 +491,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->clear()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -503,21 +503,21 @@
     .locals 1
 
     .prologue
-    .line 11845
+    .line 12039
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
-    .line 11846
+    .line 12040
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11848
+    .line 12042
     return-object p0
 .end method
 
@@ -525,14 +525,14 @@
     .locals 1
 
     .prologue
-    .line 11489
+    .line 11683
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11490
+    .line 11684
     invoke-static {}, Lcom/google/glass/companion/Proto$ApiRequest;->getDefaultInstance()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -543,7 +543,7 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11492
+    .line 11686
     return-object p0
 .end method
 
@@ -551,21 +551,21 @@
     .locals 1
 
     .prologue
-    .line 11738
+    .line 11932
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11740
+    .line 11934
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11741
+    .line 11935
     return-object p0
 .end method
 
@@ -573,14 +573,14 @@
     .locals 1
 
     .prologue
-    .line 11586
+    .line 11780
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11587
+    .line 11781
     invoke-static {}, Lcom/google/glass/companion/Proto$ApiRequest;->getDefaultInstance()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -591,7 +591,7 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11589
+    .line 11783
     return-object p0
 .end method
 
@@ -599,19 +599,19 @@
     .locals 1
 
     .prologue
-    .line 11654
+    .line 11848
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11655
+    .line 11849
     sget-object v0, Lcom/google/glass/companion/Proto$ApiRequest$RequestType;->INSERT_OR_UPDATE_TIMELINE_ITEM:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 11657
+    .line 11851
     return-object p0
 .end method
 
@@ -619,7 +619,7 @@
     .locals 2
 
     .prologue
-    .line 11317
+    .line 11510
     invoke-static {}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->create()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -639,7 +639,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->clone()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -651,7 +651,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->clone()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -663,7 +663,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->clone()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -680,7 +680,7 @@
     .end annotation
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->clone()Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -693,7 +693,7 @@
     .parameter "index"
 
     .prologue
-    .line 11783
+    .line 11977
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -709,7 +709,7 @@
     .locals 1
 
     .prologue
-    .line 11772
+    .line 11966
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -732,7 +732,7 @@
     .end annotation
 
     .prologue
-    .line 11761
+    .line 11955
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -746,7 +746,7 @@
     .locals 1
 
     .prologue
-    .line 11321
+    .line 11514
     invoke-static {}, Lcom/google/glass/companion/Proto$ApiRequest;->getDefaultInstance()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -758,7 +758,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -770,7 +770,7 @@
     .locals 1
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
@@ -782,16 +782,16 @@
     .locals 3
 
     .prologue
-    .line 11434
+    .line 11628
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11435
+    .line 11629
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 11436
+    .line 11630
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -799,11 +799,11 @@
 
     move-result-object v1
 
-    .line 11438
+    .line 11632
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11441
+    .line 11635
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -822,16 +822,16 @@
     .locals 3
 
     .prologue
-    .line 11453
+    .line 11647
     iget-object v1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11454
+    .line 11648
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 11455
+    .line 11649
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -839,11 +839,11 @@
 
     move-result-object v0
 
-    .line 11458
+    .line 11652
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11461
+    .line 11655
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -862,7 +862,7 @@
     .locals 1
 
     .prologue
-    .line 11679
+    .line 11873
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     return-object v0
@@ -872,16 +872,16 @@
     .locals 3
 
     .prologue
-    .line 11531
+    .line 11725
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11532
+    .line 11726
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 11533
+    .line 11727
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -889,11 +889,11 @@
 
     move-result-object v1
 
-    .line 11535
+    .line 11729
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11538
+    .line 11732
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -912,16 +912,16 @@
     .locals 3
 
     .prologue
-    .line 11550
+    .line 11744
     iget-object v1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11551
+    .line 11745
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 11552
+    .line 11746
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -929,11 +929,11 @@
 
     move-result-object v0
 
-    .line 11555
+    .line 11749
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11558
+    .line 11752
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -952,7 +952,7 @@
     .locals 1
 
     .prologue
-    .line 11628
+    .line 11822
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     return-object v0
@@ -964,7 +964,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 11424
+    .line 11618
     iget v1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -984,7 +984,7 @@
     .locals 2
 
     .prologue
-    .line 11669
+    .line 11863
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1008,7 +1008,7 @@
     .locals 2
 
     .prologue
-    .line 11521
+    .line 11715
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1032,7 +1032,7 @@
     .locals 2
 
     .prologue
-    .line 11618
+    .line 11812
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1056,7 +1056,7 @@
     .locals 1
 
     .prologue
-    .line 11393
+    .line 11587
     const/4 v0, 0x1
 
     return v0
@@ -1067,98 +1067,97 @@
     .parameter "other"
 
     .prologue
-    .line 11362
+    .line 11555
     invoke-static {}, Lcom/google/glass/companion/Proto$ApiRequest;->getDefaultInstance()Lcom/google/glass/companion/Proto$ApiRequest;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
-    .line 11389
-    :cond_0
+    .line 11583
     :goto_0
     return-object p0
 
-    .line 11363
-    :cond_1
+    .line 11556
+    :cond_0
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->hasProjectId()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    .line 11364
+    .line 11557
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11365
+    .line 11558
     #getter for: Lcom/google/glass/companion/Proto$ApiRequest;->projectId_:Ljava/lang/Object;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$9700(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10700(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11368
-    :cond_2
+    .line 11561
+    :cond_1
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->hasToken()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    .line 11369
+    .line 11562
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11370
+    .line 11563
     #getter for: Lcom/google/glass/companion/Proto$ApiRequest;->token_:Ljava/lang/Object;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$9800(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10800(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11373
-    :cond_3
+    .line 11566
+    :cond_2
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->hasType()Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_3
 
-    .line 11374
+    .line 11567
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->getType()Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->setType(Lcom/google/glass/companion/Proto$ApiRequest$RequestType;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
-    .line 11376
-    :cond_4
+    .line 11569
+    :cond_3
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->hasTimelineItem()Z
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
-    .line 11377
+    .line 11570
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->getTimelineItem()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->mergeTimelineItem(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
-    .line 11379
-    :cond_5
+    .line 11572
+    :cond_4
     #getter for: Lcom/google/glass/companion/Proto$ApiRequest;->attachmentContent_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10100(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11100(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/util/List;
 
     move-result-object v0
 
@@ -1166,9 +1165,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_5
 
-    .line 11380
+    .line 11573
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1177,38 +1176,56 @@
 
     if-eqz v0, :cond_6
 
-    .line 11381
+    .line 11574
     #getter for: Lcom/google/glass/companion/Proto$ApiRequest;->attachmentContent_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10100(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11100(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
-    .line 11382
+    .line 11575
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
+    .line 11582
+    :cond_5
+    :goto_1
+    invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->getUnknownFields()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    #getter for: Lcom/google/glass/companion/Proto$ApiRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11300(Lcom/google/glass/companion/Proto$ApiRequest;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/ByteString;->concat(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->setUnknownFields(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/GeneratedMessageLite$Builder;
+
     goto :goto_0
 
-    .line 11384
+    .line 11577
     :cond_6
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->ensureAttachmentContentIsMutable()V
 
-    .line 11385
+    .line 11578
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     #getter for: Lcom/google/glass/companion/Proto$ApiRequest;->attachmentContent_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$10100(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ApiRequest;->access$11100(Lcom/google/glass/companion/Proto$ApiRequest;)Ljava/util/List;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
@@ -1222,10 +1239,10 @@
     .end annotation
 
     .prologue
-    .line 11400
+    .line 11594
     const/4 v2, 0x0
 
-    .line 11402
+    .line 11596
     .local v2, parsedMessage:Lcom/google/glass/companion/Proto$ApiRequest;
     :try_start_0
     sget-object v3, Lcom/google/glass/companion/Proto$ApiRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -1243,21 +1260,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 11407
+    .line 11601
     if-eqz v2, :cond_0
 
-    .line 11408
+    .line 11602
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$ApiRequest;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
-    .line 11411
+    .line 11605
     :cond_0
     return-object p0
 
-    .line 11403
+    .line 11597
     :catch_0
     move-exception v1
 
-    .line 11404
+    .line 11598
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1270,19 +1287,19 @@
 
     move-object v2, v0
 
-    .line 11405
+    .line 11599
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 11407
+    .line 11601
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 11408
+    .line 11602
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$ApiRequest;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     :cond_1
@@ -1300,7 +1317,7 @@
     .end annotation
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -1313,7 +1330,7 @@
     .parameter "x0"
 
     .prologue
-    .line 11284
+    .line 11477
     check-cast p1, Lcom/google/glass/companion/Proto$ApiRequest;
 
     .end local p1
@@ -1335,7 +1352,7 @@
     .end annotation
 
     .prologue
-    .line 11284
+    .line 11477
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$ApiRequest$Builder;
 
     move-result-object v0
@@ -1348,7 +1365,7 @@
     .parameter "value"
 
     .prologue
-    .line 11719
+    .line 11913
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1365,7 +1382,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 11721
+    .line 11915
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
@@ -1382,7 +1399,7 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11727
+    .line 11921
     :goto_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
@@ -1390,10 +1407,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11728
+    .line 11922
     return-object p0
 
-    .line 11724
+    .line 11918
     :cond_0
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
@@ -1406,26 +1423,26 @@
     .parameter "value"
 
     .prologue
-    .line 11795
+    .line 11989
     if-nez p2, :cond_0
 
-    .line 11796
+    .line 11990
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11798
+    .line 11992
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->ensureAttachmentContentIsMutable()V
 
-    .line 11799
+    .line 11993
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->attachmentContent_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 11801
+    .line 11995
     return-object p0
 .end method
 
@@ -1434,17 +1451,17 @@
     .parameter "value"
 
     .prologue
-    .line 11473
+    .line 11667
     if-nez p1, :cond_0
 
-    .line 11474
+    .line 11668
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11476
+    .line 11670
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
@@ -1452,10 +1469,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11477
+    .line 11671
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11479
+    .line 11673
     return-object p0
 .end method
 
@@ -1464,17 +1481,17 @@
     .parameter "value"
 
     .prologue
-    .line 11503
+    .line 11697
     if-nez p1, :cond_0
 
-    .line 11504
+    .line 11698
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11506
+    .line 11700
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
@@ -1482,10 +1499,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11507
+    .line 11701
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->projectId_:Ljava/lang/Object;
 
-    .line 11509
+    .line 11703
     return-object p0
 .end method
 
@@ -1494,21 +1511,21 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 11706
+    .line 11900
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->build()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11708
+    .line 11902
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11709
+    .line 11903
     return-object p0
 .end method
 
@@ -1517,28 +1534,28 @@
     .parameter "value"
 
     .prologue
-    .line 11689
+    .line 11883
     if-nez p1, :cond_0
 
-    .line 11690
+    .line 11884
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11692
+    .line 11886
     :cond_0
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->timelineItem_:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 11694
+    .line 11888
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11695
+    .line 11889
     return-object p0
 .end method
 
@@ -1547,17 +1564,17 @@
     .parameter "value"
 
     .prologue
-    .line 11570
+    .line 11764
     if-nez p1, :cond_0
 
-    .line 11571
+    .line 11765
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11573
+    .line 11767
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
@@ -1565,10 +1582,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11574
+    .line 11768
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11576
+    .line 11770
     return-object p0
 .end method
 
@@ -1577,17 +1594,17 @@
     .parameter "value"
 
     .prologue
-    .line 11600
+    .line 11794
     if-nez p1, :cond_0
 
-    .line 11601
+    .line 11795
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11603
+    .line 11797
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
@@ -1595,10 +1612,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11604
+    .line 11798
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->token_:Ljava/lang/Object;
 
-    .line 11606
+    .line 11800
     return-object p0
 .end method
 
@@ -1607,17 +1624,17 @@
     .parameter "value"
 
     .prologue
-    .line 11638
+    .line 11832
     if-nez p1, :cond_0
 
-    .line 11639
+    .line 11833
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11641
+    .line 11835
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
@@ -1625,9 +1642,9 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->bitField0_:I
 
-    .line 11642
+    .line 11836
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ApiRequest$Builder;->type_:Lcom/google/glass/companion/Proto$ApiRequest$RequestType;
 
-    .line 11644
+    .line 11838
     return-object p0
 .end method

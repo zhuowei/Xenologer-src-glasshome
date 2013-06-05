@@ -44,11 +44,11 @@
     .locals 1
 
     .prologue
-    .line 3156
+    .line 3014
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
 
-    .line 3157
+    .line 3015
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue$1;-><init>(Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;)V
@@ -64,7 +64,7 @@
     .locals 4
 
     .prologue
-    .line 3250
+    .line 3105
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -72,29 +72,29 @@
 
     move-result-object v0
 
-    .line 3251
+    .line 3106
     .local v0, e:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     :goto_0
     iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     if-eq v0, v2, :cond_0
 
-    .line 3252
+    .line 3107
     invoke-interface {v0}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getNextEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v1
 
-    .line 3253
+    .line 3108
     .local v1, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-static {v0}, Lcom/google/common/collect/MapMakerInternalMap;->nullifyEvictable(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3254
+    .line 3109
     move-object v0, v1
 
-    .line 3255
+    .line 3110
     goto :goto_0
 
-    .line 3257
+    .line 3112
     .end local v1           #next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
@@ -103,14 +103,14 @@
 
     invoke-interface {v2, v3}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->setNextEvictable(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3258
+    .line 3113
     iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     iget-object v3, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     invoke-interface {v2, v3}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->setPreviousEvictable(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3259
+    .line 3114
     return-void
 .end method
 
@@ -119,13 +119,13 @@
     .parameter "o"
 
     .prologue
-    .line 3230
+    .line 3085
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 3231
+    .line 3086
     .local v0, e:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-interface {v0}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getNextEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -150,7 +150,7 @@
     .locals 2
 
     .prologue
-    .line 3236
+    .line 3091
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -186,7 +186,7 @@
     .end annotation
 
     .prologue
-    .line 3263
+    .line 3118
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue$2;
 
@@ -211,7 +211,7 @@
     .end annotation
 
     .prologue
-    .line 3189
+    .line 3046
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     .local p1, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getPreviousEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
@@ -224,7 +224,7 @@
 
     invoke-static {v0, v1}, Lcom/google/common/collect/MapMakerInternalMap;->connectEvictables(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3192
+    .line 3049
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     invoke-interface {v0}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getPreviousEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
@@ -233,12 +233,12 @@
 
     invoke-static {v0, p1}, Lcom/google/common/collect/MapMakerInternalMap;->connectEvictables(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3193
+    .line 3050
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     invoke-static {p1, v0}, Lcom/google/common/collect/MapMakerInternalMap;->connectEvictables(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3195
+    .line 3052
     const/4 v0, 0x1
 
     return v0
@@ -249,7 +249,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3156
+    .line 3014
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     check-cast p1, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -272,7 +272,7 @@
     .end annotation
 
     .prologue
-    .line 3200
+    .line 3056
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -280,7 +280,7 @@
 
     move-result-object v0
 
-    .line 3201
+    .line 3057
     .local v0, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -297,7 +297,7 @@
     .locals 1
 
     .prologue
-    .line 3156
+    .line 3014
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->peek()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -317,7 +317,7 @@
     .end annotation
 
     .prologue
-    .line 3206
+    .line 3061
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -325,21 +325,21 @@
 
     move-result-object v0
 
-    .line 3207
+    .line 3062
     .local v0, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     if-ne v0, v1, :cond_0
 
-    .line 3208
+    .line 3063
     const/4 v0, 0x0
 
-    .line 3212
+    .line 3067
     .end local v0           #next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     :goto_0
     return-object v0
 
-    .line 3211
+    .line 3066
     .restart local v0       #next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     :cond_0
     invoke-virtual {p0, v0}, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->remove(Ljava/lang/Object;)Z
@@ -351,7 +351,7 @@
     .locals 1
 
     .prologue
-    .line 3156
+    .line 3014
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->poll()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -365,32 +365,32 @@
     .parameter "o"
 
     .prologue
-    .line 3218
+    .line 3073
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     move-object v0, p1
 
     check-cast v0, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 3219
+    .line 3074
     .local v0, e:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-interface {v0}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getPreviousEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v2
 
-    .line 3220
+    .line 3075
     .local v2, previous:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-interface {v0}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getNextEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v1
 
-    .line 3221
+    .line 3076
     .local v1, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-static {v2, v1}, Lcom/google/common/collect/MapMakerInternalMap;->connectEvictables(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3222
+    .line 3077
     invoke-static {v0}, Lcom/google/common/collect/MapMakerInternalMap;->nullifyEvictable(Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 3224
+    .line 3079
     sget-object v3, Lcom/google/common/collect/MapMakerInternalMap$NullEntry;->INSTANCE:Lcom/google/common/collect/MapMakerInternalMap$NullEntry;
 
     if-eq v1, v3, :cond_0
@@ -410,11 +410,11 @@
     .locals 3
 
     .prologue
-    .line 3241
+    .line 3096
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;,"Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue<TK;TV;>;"
     const/4 v1, 0x0
 
-    .line 3242
+    .line 3097
     .local v1, size:I
     iget-object v2, p0, Lcom/google/common/collect/MapMakerInternalMap$EvictionQueue;->head:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -428,17 +428,17 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 3243
+    .line 3098
     add-int/lit8 v1, v1, 0x1
 
-    .line 3242
+    .line 3097
     invoke-interface {v0}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getNextEvictable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 3245
+    .line 3100
     :cond_0
     return v1
 .end method

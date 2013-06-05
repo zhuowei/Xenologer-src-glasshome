@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 757
+    .line 770
     .local p0, this:Lcom/google/common/collect/StandardTable$RowKeySet;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowKeySet;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$RowKeySet;->this$0:Lcom/google/common/collect/StandardTable;
 
@@ -49,7 +49,7 @@
     .parameter "obj"
 
     .prologue
-    .line 767
+    .line 783
     .local p0, this:Lcom/google/common/collect/StandardTable$RowKeySet;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowKeySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$RowKeySet;->this$0:Lcom/google/common/collect/StandardTable;
 
@@ -71,7 +71,7 @@
     .end annotation
 
     .prologue
-    .line 759
+    .line 773
     .local p0, this:Lcom/google/common/collect/StandardTable$RowKeySet;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowKeySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$RowKeySet;->this$0:Lcom/google/common/collect/StandardTable;
 
@@ -79,7 +79,15 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/common/collect/StandardTable;->keyIteratorImpl(Ljava/util/Map;)Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
 
     move-result-object v0
 
@@ -91,7 +99,7 @@
     .parameter "obj"
 
     .prologue
-    .line 771
+    .line 788
     .local p0, this:Lcom/google/common/collect/StandardTable$RowKeySet;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowKeySet;"
     if-eqz p1, :cond_0
 
@@ -120,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 763
+    .line 778
     .local p0, this:Lcom/google/common/collect/StandardTable$RowKeySet;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.RowKeySet;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$RowKeySet;->this$0:Lcom/google/common/collect/StandardTable;
 

@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 38
+    .line 39
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, a:Ljava/lang/Object;,"TT;"
     .local p2, b:Ljava/lang/Object;,"TT;"
@@ -103,18 +103,18 @@
     .end parameter
 
     .prologue
-    .line 85
+    .line 98
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     if-ne p1, p0, :cond_0
 
-    .line 86
+    .line 99
     const/4 v1, 0x1
 
-    .line 92
+    .line 105
     :goto_0
     return v1
 
-    .line 88
+    .line 101
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/ReverseOrdering;
 
@@ -122,10 +122,10 @@
 
     move-object v0, p1
 
-    .line 89
+    .line 102
     check-cast v0, Lcom/google/common/collect/ReverseOrdering;
 
-    .line 90
+    .line 103
     .local v0, that:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<*>;"
     iget-object v1, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
@@ -137,7 +137,7 @@
 
     goto :goto_0
 
-    .line 92
+    .line 105
     .end local v0           #that:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<*>;"
     :cond_1
     const/4 v1, 0x0
@@ -149,7 +149,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 93
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
@@ -174,7 +174,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 88
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
@@ -197,7 +197,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 73
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, a:Ljava/lang/Object;,"TE;"
     .local p2, b:Ljava/lang/Object;,"TE;"
@@ -223,7 +223,7 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 78
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, a:Ljava/lang/Object;,"TE;"
     .local p2, b:Ljava/lang/Object;,"TE;"
@@ -250,7 +250,7 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 83
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
@@ -274,7 +274,7 @@
     .end annotation
 
     .prologue
-    .line 61
+    .line 68
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
@@ -297,7 +297,7 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 53
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, a:Ljava/lang/Object;,"TE;"
     .local p2, b:Ljava/lang/Object;,"TE;"
@@ -323,7 +323,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 58
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, a:Ljava/lang/Object;,"TE;"
     .local p2, b:Ljava/lang/Object;,"TE;"
@@ -350,7 +350,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 63
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     .local p1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
@@ -373,7 +373,7 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 46
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/ReverseOrdering;->forwardOrder:Lcom/google/common/collect/Ordering;
 
@@ -384,7 +384,7 @@
     .locals 2
 
     .prologue
-    .line 96
+    .line 110
     .local p0, this:Lcom/google/common/collect/ReverseOrdering;,"Lcom/google/common/collect/ReverseOrdering<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

@@ -25,7 +25,7 @@
     .parameter
 
     .prologue
-    .line 429
+    .line 388
     iput-object p2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$9;->val$trigger:Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
 
     const/4 v0, 0x0
@@ -37,13 +37,32 @@
 
 
 # virtual methods
+.method public matches(Lcom/google/glass/voice/VoiceCommand;)Z
+    .locals 2
+    .parameter "triggeredCommand"
+
+    .prologue
+    .line 402
+    invoke-static {}, Lcom/google/glass/voice/NativeAppVoiceMenuHelper;->getInstance()Lcom/google/glass/voice/NativeAppVoiceMenuHelper;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$9;->val$trigger:Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/glass/voice/NativeAppVoiceMenuHelper;->matches(Lcom/google/glass/voice/VoiceCommand;Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
     .locals 3
     .parameter "environment"
     .parameter "spoken"
 
     .prologue
-    .line 436
+    .line 395
     invoke-interface {p1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
@@ -64,13 +83,13 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 437
+    .line 396
     invoke-interface {p1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassActivity;->finish()V
 
-    .line 438
+    .line 397
     return-void
 .end method

@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/RegularImmutableMap$EntrySet;
-.super Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;
+.super Lcom/google/common/collect/ImmutableMapEntrySet;
 .source "RegularImmutableMap.java"
 
 
@@ -9,117 +9,134 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x2
     name = "EntrySet"
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<K:",
-        "Ljava/lang/Object;",
-        "V:",
-        "Ljava/lang/Object;",
-        ">",
-        "Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet",
-        "<",
-        "Ljava/util/Map$Entry",
-        "<TK;TV;>;>;"
+        "Lcom/google/common/collect/ImmutableMapEntrySet",
+        "<TK;TV;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final transient map:Lcom/google/common/collect/RegularImmutableMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/RegularImmutableMap",
-            "<TK;TV;>;"
-        }
-    .end annotation
-.end field
+.field final synthetic this$0:Lcom/google/common/collect/RegularImmutableMap;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/RegularImmutableMap;)V
-    .locals 1
+.method private constructor <init>(Lcom/google/common/collect/RegularImmutableMap;)V
+    .locals 0
     .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/common/collect/RegularImmutableMap",
-            "<TK;TV;>;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 202
-    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap$EntrySet<TK;TV;>;"
-    .local p1, map:Lcom/google/common/collect/RegularImmutableMap;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>;"
-    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;
-    invoke-static {p1}, Lcom/google/common/collect/RegularImmutableMap;->access$000(Lcom/google/common/collect/RegularImmutableMap;)[Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;
+    .line 196
+    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
+    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableMap;
 
-    move-result-object v0
+    invoke-direct {p0}, Lcom/google/common/collect/ImmutableMapEntrySet;-><init>()V
 
-    invoke-direct {p0, v0}, Lcom/google/common/collect/ImmutableSet$ArrayImmutableSet;-><init>([Ljava/lang/Object;)V
+    return-void
+.end method
 
-    .line 203
-    iput-object p1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->map:Lcom/google/common/collect/RegularImmutableMap;
+.method synthetic constructor <init>(Lcom/google/common/collect/RegularImmutableMap;Lcom/google/common/collect/RegularImmutableMap$1;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
-    .line 204
+    .prologue
+    .line 196
+    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
+    invoke-direct {p0, p1}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;-><init>(Lcom/google/common/collect/RegularImmutableMap;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public contains(Ljava/lang/Object;)Z
-    .locals 5
-    .parameter "target"
+.method createAsList()Lcom/google/common/collect/ImmutableList;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableList",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;"
+        }
+    .end annotation
 
     .prologue
-    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap$EntrySet<TK;TV;>;"
-    const/4 v2, 0x0
-
-    .line 207
-    instance-of v3, p1, Ljava/util/Map$Entry;
-
-    if-eqz v3, :cond_0
-
-    move-object v0, p1
-
-    .line 208
-    check-cast v0, Ljava/util/Map$Entry;
-
     .line 209
-    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
-    iget-object v3, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->map:Lcom/google/common/collect/RegularImmutableMap;
+    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
+    new-instance v0, Lcom/google/common/collect/RegularImmutableAsList;
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableMap;
 
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/google/common/collect/RegularImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    #getter for: Lcom/google/common/collect/RegularImmutableMap;->entries:[Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;
+    invoke-static {v1}, Lcom/google/common/collect/RegularImmutableMap;->access$100(Lcom/google/common/collect/RegularImmutableMap;)[Lcom/google/common/collect/RegularImmutableMap$LinkedEntry;
 
     move-result-object v1
 
-    .line 210
-    .local v1, mappedValue:Ljava/lang/Object;,"TV;"
-    if-eqz v1, :cond_0
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/RegularImmutableAsList;-><init>(Lcom/google/common/collect/ImmutableCollection;[Ljava/lang/Object;)V
 
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    return-object v0
+.end method
 
-    move-result-object v3
+.method public iterator()Lcom/google/common/collect/UnmodifiableIterator;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/UnmodifiableIterator",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;"
+        }
+    .end annotation
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    .prologue
+    .line 204
+    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->asList()Lcom/google/common/collect/ImmutableList;
 
-    move-result v3
+    move-result-object v0
 
-    if-eqz v3, :cond_0
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    .line 212
-    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
-    .end local v1           #mappedValue:Ljava/lang/Object;,"TV;"
-    :cond_0
-    return v2
+    return-object v0
+.end method
+
+.method public bridge synthetic iterator()Ljava/util/Iterator;
+    .locals 1
+
+    .prologue
+    .line 194
+    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
+    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method map()Lcom/google/common/collect/ImmutableMap;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 199
+    .local p0, this:Lcom/google/common/collect/RegularImmutableMap$EntrySet;,"Lcom/google/common/collect/RegularImmutableMap<TK;TV;>.EntrySet;"
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableMap$EntrySet;->this$0:Lcom/google/common/collect/RegularImmutableMap;
+
+    return-object v0
 .end method

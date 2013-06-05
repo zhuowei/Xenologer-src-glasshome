@@ -76,7 +76,7 @@
     .parameter "method"
 
     .prologue
-    .line 179
+    .line 172
     invoke-virtual {p0}, Ljava/lang/reflect/Method;->getExceptionTypes()[Ljava/lang/Class;
 
     move-result-object v0
@@ -93,28 +93,28 @@
 
     aget-object v1, v0, v2
 
-    .line 181
+    .line 174
     .local v1, exType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     const-class v4, Ljava/lang/InterruptedException;
 
     if-ne v1, v4, :cond_0
 
-    .line 182
+    .line 175
     const/4 v4, 0x1
 
-    .line 185
+    .line 178
     .end local v1           #exType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :goto_1
     return v4
 
-    .line 179
+    .line 172
     .restart local v1       #exType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 185
+    .line 178
     .end local v1           #exType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :cond_1
     const/4 v4, 0x0
@@ -138,13 +138,13 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 162
     .local p0, interfaceType:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-static {}, Lcom/google/common/collect/Sets;->newHashSet()Ljava/util/HashSet;
 
     move-result-object v4
 
-    .line 170
+    .line 163
     .local v4, set:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/reflect/Method;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
 
@@ -162,7 +162,7 @@
 
     aget-object v3, v0, v1
 
-    .line 171
+    .line 164
     .local v3, m:Ljava/lang/reflect/Method;
     invoke-static {v3}, Lcom/google/common/util/concurrent/SimpleTimeLimiter;->declaresInterruptedEx(Ljava/lang/reflect/Method;)Z
 
@@ -170,16 +170,16 @@
 
     if-eqz v5, :cond_0
 
-    .line 172
+    .line 165
     invoke-interface {v4, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 170
+    .line 163
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 175
+    .line 168
     .end local v3           #m:Ljava/lang/reflect/Method;
     :cond_1
     return-object v4
@@ -202,7 +202,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 183
     .local p0, interfaceType:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
@@ -220,7 +220,7 @@
 
     move-result-object v0
 
-    .line 193
+    .line 185
     .local v0, object:Ljava/lang/Object;
     invoke-virtual {p0, v0}, Ljava/lang/Class;->cast(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -240,23 +240,23 @@
     .end annotation
 
     .prologue
-    .line 149
+    .line 142
     invoke-virtual {p0}, Ljava/lang/Exception;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    .line 150
+    .line 143
     .local v0, cause:Ljava/lang/Throwable;
     if-nez v0, :cond_0
 
-    .line 151
+    .line 144
     throw p0
 
-    .line 153
+    .line 146
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 154
+    .line 147
     invoke-virtual {v0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
 
     move-result-object v2
@@ -273,37 +273,37 @@
 
     check-cast v1, [Ljava/lang/StackTraceElement;
 
-    .line 156
+    .line 149
     .local v1, combined:[Ljava/lang/StackTraceElement;
     invoke-virtual {v0, v1}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
-    .line 158
+    .line 151
     .end local v1           #combined:[Ljava/lang/StackTraceElement;
     :cond_1
     instance-of v2, v0, Ljava/lang/Exception;
 
     if-eqz v2, :cond_2
 
-    .line 159
+    .line 152
     check-cast v0, Ljava/lang/Exception;
 
     .end local v0           #cause:Ljava/lang/Throwable;
     throw v0
 
-    .line 161
+    .line 154
     .restart local v0       #cause:Ljava/lang/Throwable;
     :cond_2
     instance-of v2, v0, Ljava/lang/Error;
 
     if-eqz v2, :cond_3
 
-    .line 162
+    .line 155
     check-cast v0, Ljava/lang/Error;
 
     .end local v0           #cause:Ljava/lang/Throwable;
     throw v0
 
-    .line 165
+    .line 158
     .restart local v0       #cause:Ljava/lang/Throwable;
     :cond_3
     throw p0
@@ -341,13 +341,13 @@
 
     const/4 v3, 0x1
 
-    .line 122
+    .line 118
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 123
+    .line 119
     invoke-static {p4}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 124
+    .line 120
     const-wide/16 v5, 0x0
 
     cmp-long v2, p2, v5
@@ -369,18 +369,18 @@
 
     invoke-static {v2, v5, v6}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 126
+    .line 121
     iget-object v2, p0, Lcom/google/common/util/concurrent/SimpleTimeLimiter;->executor:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v2, p1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
 
     move-result-object v1
 
-    .line 128
+    .line 123
     .local v1, future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TT;>;"
     if-eqz p5, :cond_1
 
-    .line 130
+    .line 125
     :try_start_0
     invoke-interface {v1, p2, p3, p4}, Ljava/util/concurrent/Future;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
     :try_end_0
@@ -390,7 +390,7 @@
 
     move-result-object v2
 
-    .line 136
+    .line 131
     :goto_1
     return-object v2
 
@@ -398,33 +398,33 @@
     :cond_0
     move v2, v4
 
-    .line 124
+    .line 120
     goto :goto_0
 
-    .line 131
+    .line 126
     .restart local v1       #future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TT;>;"
     :catch_0
     move-exception v0
 
-    .line 132
+    .line 127
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v2, 0x1
 
     :try_start_1
     invoke-interface {v1, v2}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    .line 133
+    .line 128
     throw v0
     :try_end_1
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_1 .. :try_end_1} :catch_1
     .catch Ljava/util/concurrent/TimeoutException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 139
+    .line 133
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catch_1
     move-exception v0
 
-    .line 140
+    .line 134
     .local v0, e:Ljava/util/concurrent/ExecutionException;
     invoke-static {v0, v3}, Lcom/google/common/util/concurrent/SimpleTimeLimiter;->throwCause(Ljava/lang/Exception;Z)Ljava/lang/Exception;
 
@@ -432,7 +432,7 @@
 
     throw v2
 
-    .line 136
+    .line 131
     .end local v0           #e:Ljava/util/concurrent/ExecutionException;
     :cond_1
     :try_start_2
@@ -445,15 +445,15 @@
 
     goto :goto_1
 
-    .line 141
+    .line 135
     :catch_2
     move-exception v0
 
-    .line 142
+    .line 136
     .local v0, e:Ljava/util/concurrent/TimeoutException;
     invoke-interface {v1, v3}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
-    .line 143
+    .line 137
     new-instance v2, Lcom/google/common/util/concurrent/UncheckedTimeoutException;
 
     invoke-direct {v2, v0}, Lcom/google/common/util/concurrent/UncheckedTimeoutException;-><init>(Ljava/lang/Throwable;)V
@@ -480,18 +480,18 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 85
     .local p1, target:Ljava/lang/Object;,"TT;"
     .local p2, interfaceType:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
+    .line 86
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 88
+    .line 87
     invoke-static {p5}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 89
+    .line 88
     const-wide/16 v1, 0x0
 
     cmp-long v1, p3, v1
@@ -521,7 +521,7 @@
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 90
+    .line 89
     invoke-virtual {p2}, Ljava/lang/Class;->isInterface()Z
 
     move-result v1
@@ -530,12 +530,12 @@
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 93
+    .line 91
     invoke-static {p2}, Lcom/google/common/util/concurrent/SimpleTimeLimiter;->findInterruptibleMethods(Ljava/lang/Class;)Ljava/util/Set;
 
     move-result-object v6
 
-    .line 96
+    .line 93
     .local v6, interruptibleMethods:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/reflect/Method;>;"
     new-instance v0, Lcom/google/common/util/concurrent/SimpleTimeLimiter$1;
 
@@ -549,7 +549,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/common/util/concurrent/SimpleTimeLimiter$1;-><init>(Lcom/google/common/util/concurrent/SimpleTimeLimiter;Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;Ljava/util/Set;)V
 
-    .line 115
+    .line 111
     .local v0, handler:Ljava/lang/reflect/InvocationHandler;
     invoke-static {p2, v0}, Lcom/google/common/util/concurrent/SimpleTimeLimiter;->newProxy(Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;
 
@@ -557,7 +557,7 @@
 
     return-object v1
 
-    .line 89
+    .line 88
     .end local v0           #handler:Ljava/lang/reflect/InvocationHandler;
     .end local v6           #interruptibleMethods:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/reflect/Method;>;"
     :cond_0

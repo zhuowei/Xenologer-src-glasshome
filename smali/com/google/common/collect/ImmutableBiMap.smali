@@ -15,7 +15,6 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/common/collect/ImmutableBiMap$SerializedForm;,
-        Lcom/google/common/collect/ImmutableBiMap$EmptyBiMap;,
         Lcom/google/common/collect/ImmutableBiMap$Builder;
     }
 .end annotation
@@ -35,54 +34,16 @@
 .end annotation
 
 
-# static fields
-.field private static final EMPTY_IMMUTABLE_BIMAP:Lcom/google/common/collect/ImmutableBiMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableBiMap",
-            "<",
-            "Ljava/lang/Object;",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .prologue
-    .line 46
-    new-instance v0, Lcom/google/common/collect/ImmutableBiMap$EmptyBiMap;
-
-    invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$EmptyBiMap;-><init>()V
-
-    sput-object v0, Lcom/google/common/collect/ImmutableBiMap;->EMPTY_IMMUTABLE_BIMAP:Lcom/google/common/collect/ImmutableBiMap;
-
-    return-void
-.end method
-
 .method constructor <init>()V
     .locals 0
 
     .prologue
-    .line 213
+    .line 215
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap;-><init>()V
 
     return-void
-.end method
-
-.method static synthetic access$000()Lcom/google/common/collect/ImmutableBiMap;
-    .locals 1
-
-    .prologue
-    .line 43
-    sget-object v0, Lcom/google/common/collect/ImmutableBiMap;->EMPTY_IMMUTABLE_BIMAP:Lcom/google/common/collect/ImmutableBiMap;
-
-    return-object v0
 .end method
 
 .method public static builder()Lcom/google/common/collect/ImmutableBiMap$Builder;
@@ -100,7 +61,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 108
     new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
@@ -109,7 +70,7 @@
 .end method
 
 .method public static copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableBiMap;
-    .locals 3
+    .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -126,58 +87,120 @@
     .end annotation
 
     .prologue
-    .line 195
+    .line 187
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
-    instance-of v2, p0, Lcom/google/common/collect/ImmutableBiMap;
+    instance-of v1, p0, Lcom/google/common/collect/ImmutableBiMap;
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
     move-object v0, p0
 
-    .line 197
+    .line 190
     check-cast v0, Lcom/google/common/collect/ImmutableBiMap;
 
-    .line 200
+    .line 193
     .local v0, bimap:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap;->isPartialView()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_0
+    if-nez v1, :cond_0
 
-    .line 210
+    .line 198
     .end local v0           #bimap:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     :goto_0
     return-object v0
 
-    .line 205
     :cond_0
-    invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result v2
+    move-result-object v1
 
-    if-eqz v2, :cond_1
+    invoke-static {v1}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
 
-    .line 206
-    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->of()Lcom/google/common/collect/ImmutableBiMap;
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/google/common/collect/ImmutableBiMap;->fromEntries(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v0
 
     goto :goto_0
+.end method
 
-    .line 209
-    :cond_1
-    invoke-static {p0}, Lcom/google/common/collect/ImmutableMap;->copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
+.method static fromEntries(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableBiMap;
+    .locals 4
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Collection",
+            "<+",
+            "Ljava/util/Map$Entry",
+            "<+TK;+TV;>;>;)",
+            "Lcom/google/common/collect/ImmutableBiMap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 203
+    .local p0, entries:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/Map$Entry<+TK;+TV;>;>;"
+    invoke-interface {p0}, Ljava/util/Collection;->size()I
+
+    move-result v1
+
+    packed-switch v1, :pswitch_data_0
+
+    .line 211
+    new-instance v1, Lcom/google/common/collect/RegularImmutableBiMap;
+
+    invoke-direct {v1, p0}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Ljava/util/Collection;)V
+
+    :goto_0
+    return-object v1
+
+    .line 205
+    :pswitch_0
+    invoke-static {}, Lcom/google/common/collect/ImmutableBiMap;->of()Lcom/google/common/collect/ImmutableBiMap;
 
     move-result-object v1
 
-    .line 210
-    .local v1, immutableMap:Lcom/google/common/collect/ImmutableMap;,"Lcom/google/common/collect/ImmutableMap<TK;TV;>;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+    goto :goto_0
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    .line 207
+    :pswitch_1
+    invoke-static {p0}, Lcom/google/common/collect/Iterables;->getOnlyElement(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 208
+    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
+    new-instance v1, Lcom/google/common/collect/SingletonImmutableBiMap;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Lcom/google/common/collect/SingletonImmutableBiMap;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_0
+
+    .line 203
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 .method public static of()Lcom/google/common/collect/ImmutableBiMap;
@@ -195,14 +218,14 @@
     .end annotation
 
     .prologue
-    .line 55
-    sget-object v0, Lcom/google/common/collect/ImmutableBiMap;->EMPTY_IMMUTABLE_BIMAP:Lcom/google/common/collect/ImmutableBiMap;
+    .line 52
+    sget-object v0, Lcom/google/common/collect/EmptyImmutableBiMap;->INSTANCE:Lcom/google/common/collect/EmptyImmutableBiMap;
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap;
-    .locals 2
+    .locals 4
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -218,22 +241,40 @@
     .end annotation
 
     .prologue
-    .line 62
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+    const/4 v3, 0x1
 
-    invoke-static {p0, p1}, Lcom/google/common/collect/ImmutableMap;->of(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap;
+    const/4 v2, 0x0
 
-    move-result-object v1
+    .line 59
+    const-string v0, "null key in entry: null=%s"
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    new-array v1, v3, [Ljava/lang/Object;
+
+    aput-object p1, v1, v2
+
+    invoke-static {p0, v0, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 60
+    const-string v0, "null value in entry: %s=null"
+
+    new-array v1, v3, [Ljava/lang/Object;
+
+    aput-object p0, v1, v2
+
+    invoke-static {p1, v0, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 61
+    new-instance v0, Lcom/google/common/collect/SingletonImmutableBiMap;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/SingletonImmutableBiMap;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
     .parameter
@@ -251,24 +292,32 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 70
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
     .local p3, v2:Ljava/lang/Object;,"TV;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+    new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-static {p0, p1, p2, p3}, Lcom/google/common/collect/ImmutableMap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap;
+    invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
 
-    move-result-object v1
+    invoke-virtual {v0, p0, p1}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    move-result-object v0
+
+    invoke-virtual {v0, p2, p3}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;->build()Lcom/google/common/collect/ImmutableBiMap;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
     .parameter
@@ -288,26 +337,38 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 79
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
     .local p3, v2:Ljava/lang/Object;,"TV;"
     .local p4, k3:Ljava/lang/Object;,"TK;"
     .local p5, v3:Ljava/lang/Object;,"TV;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+    new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-static/range {p0 .. p5}, Lcom/google/common/collect/ImmutableMap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap;
+    invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
 
-    move-result-object v1
+    invoke-virtual {v0, p0, p1}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    move-result-object v0
+
+    invoke-virtual {v0, p2, p3}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4, p5}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;->build()Lcom/google/common/collect/ImmutableBiMap;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
     .parameter
@@ -329,7 +390,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 88
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
@@ -338,19 +399,35 @@
     .local p5, v3:Ljava/lang/Object;,"TV;"
     .local p6, k4:Ljava/lang/Object;,"TK;"
     .local p7, v4:Ljava/lang/Object;,"TV;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+    new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-static/range {p0 .. p7}, Lcom/google/common/collect/ImmutableMap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap;
+    invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
 
-    move-result-object v1
+    invoke-virtual {v0, p0, p1}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    move-result-object v0
+
+    invoke-virtual {v0, p2, p3}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4, p5}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p6, p7}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;->build()Lcom/google/common/collect/ImmutableBiMap;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method public static of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
     .parameter
@@ -374,7 +451,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 98
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
@@ -385,144 +462,39 @@
     .local p7, v4:Ljava/lang/Object;,"TV;"
     .local p8, k5:Ljava/lang/Object;,"TK;"
     .local p9, v5:Ljava/lang/Object;,"TV;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableBiMap;
+    new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-static/range {p0 .. p9}, Lcom/google/common/collect/ImmutableMap;->of(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap;
+    invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
 
-    move-result-object v1
+    invoke-virtual {v0, p0, p1}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/RegularImmutableBiMap;-><init>(Lcom/google/common/collect/ImmutableMap;)V
+    move-result-object v0
+
+    invoke-virtual {v0, p2, p3}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4, p5}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p6, p7}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p8, p9}, Lcom/google/common/collect/ImmutableBiMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableBiMap$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;->build()Lcom/google/common/collect/ImmutableBiMap;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public containsKey(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "key"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 227
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public containsValue(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "value"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 231
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableBiMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method abstract delegate()Lcom/google/common/collect/ImmutableMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableMap",
-            "<TK;TV;>;"
-        }
-    .end annotation
-.end method
-
-.method public entrySet()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableSet",
-            "<",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 235
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic entrySet()Ljava/util/Set;
-    .locals 1
-
-    .prologue
-    .line 42
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public equals(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "object"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 274
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    if-eq p1, p0, :cond_0
-
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableMap;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public forcePut(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .parameter
@@ -533,8 +505,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 261
+    .line 243
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -545,56 +520,11 @@
     throw v0
 .end method
 
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "key"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            ")TV;"
-        }
-    .end annotation
-
-    .prologue
-    .line 239
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public hashCode()I
-    .locals 1
-
-    .prologue
-    .line 278
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->hashCode()I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public bridge synthetic inverse()Lcom/google/common/collect/BiMap;
     .locals 1
 
     .prologue
-    .line 42
+    .line 43
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
@@ -613,99 +543,11 @@
     .end annotation
 .end method
 
-.method public isEmpty()Z
-    .locals 1
-
-    .prologue
-    .line 265
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->isEmpty()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public keySet()Lcom/google/common/collect/ImmutableSet;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableSet",
-            "<TK;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 243
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->keySet()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic keySet()Ljava/util/Set;
-    .locals 1
-
-    .prologue
-    .line 42
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->keySet()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public size()I
-    .locals 1
-
-    .prologue
-    .line 270
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->size()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 282
-    .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->delegate()Lcom/google/common/collect/ImmutableMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public bridge synthetic values()Lcom/google/common/collect/ImmutableCollection;
     .locals 1
 
     .prologue
-    .line 42
+    .line 43
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->values()Lcom/google/common/collect/ImmutableSet;
 
@@ -725,7 +567,7 @@
     .end annotation
 
     .prologue
-    .line 251
+    .line 232
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->inverse()Lcom/google/common/collect/ImmutableBiMap;
 
@@ -742,7 +584,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 43
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->values()Lcom/google/common/collect/ImmutableSet;
 
@@ -755,7 +597,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 43
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableBiMap;->values()Lcom/google/common/collect/ImmutableSet;
 
@@ -768,7 +610,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 271
     .local p0, this:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;
 

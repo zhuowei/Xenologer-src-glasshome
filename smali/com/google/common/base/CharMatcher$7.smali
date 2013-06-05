@@ -1,5 +1,5 @@
 .class final Lcom/google/common/base/CharMatcher$7;
-.super Lcom/google/common/base/CharMatcher;
+.super Lcom/google/common/base/CharMatcher$FastMatcher;
 .source "CharMatcher.java"
 
 
@@ -15,12 +15,13 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
+    .parameter "x0"
 
     .prologue
-    .line 298
-    invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
+    .line 252
+    invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher$FastMatcher;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -28,31 +29,18 @@
 
 # virtual methods
 .method public and(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .locals 0
+    .locals 1
     .parameter "other"
 
     .prologue
-    .line 355
+    .line 326
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 356
-    return-object p0
-.end method
+    move-result-object v0
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "x0"
+    check-cast v0, Lcom/google/common/base/CharMatcher;
 
-    .prologue
-    .line 298
-    check-cast p1, Ljava/lang/Character;
-
-    .end local p1
-    invoke-super {p0, p1}, Lcom/google/common/base/CharMatcher;->apply(Ljava/lang/Character;)Z
-
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
 .method public collapseFrom(Ljava/lang/CharSequence;C)Ljava/lang/String;
@@ -61,12 +49,24 @@
     .parameter "replacement"
 
     .prologue
-    .line 342
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 310
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-string v0, ""
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-static {p2}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
 
     move-result-object v0
 
-    return-object v0
+    goto :goto_0
 .end method
 
 .method public countIn(Ljava/lang/CharSequence;)I
@@ -74,11 +74,10 @@
     .parameter "sequence"
 
     .prologue
-    .line 350
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 321
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    .line 351
-    const/4 v0, 0x0
+    move-result v0
 
     return v0
 .end method
@@ -88,34 +87,47 @@
     .parameter "sequence"
 
     .prologue
-    .line 304
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 305
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
-.method public indexIn(Ljava/lang/CharSequence;I)I
-    .locals 2
-    .parameter "sequence"
-    .parameter "start"
-
-    .prologue
-    .line 309
+    .line 260
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
-    .line 310
+    if-nez v0, :cond_0
+
+    const/4 v0, -0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public indexIn(Ljava/lang/CharSequence;I)I
+    .locals 1
+    .parameter "sequence"
+    .parameter "start"
+
+    .prologue
+    .line 265
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    .line 266
     .local v0, length:I
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
 
-    .line 311
-    const/4 v1, -0x1
+    .line 267
+    if-ne p2, v0, :cond_0
 
-    return v1
+    const/4 p2, -0x1
+
+    .end local p2
+    :cond_0
+    return p2
 .end method
 
 .method public lastIndexIn(Ljava/lang/CharSequence;)I
@@ -123,11 +135,12 @@
     .parameter "sequence"
 
     .prologue
-    .line 315
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 272
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    .line 316
-    const/4 v0, -0x1
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
 
     return v0
 .end method
@@ -137,8 +150,8 @@
     .parameter "c"
 
     .prologue
-    .line 300
-    const/4 v0, 0x0
+    .line 255
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -148,7 +161,21 @@
     .parameter "sequence"
 
     .prologue
-    .line 320
+    .line 277
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 278
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public matchesNoneOf(Ljava/lang/CharSequence;)Z
+    .locals 1
+    .parameter "sequence"
+
+    .prologue
+    .line 283
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -166,50 +193,25 @@
     goto :goto_0
 .end method
 
-.method public matchesNoneOf(Ljava/lang/CharSequence;)Z
-    .locals 1
-    .parameter "sequence"
-
-    .prologue
-    .line 324
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 325
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
 .method public negate()Lcom/google/common/base/CharMatcher;
     .locals 1
 
     .prologue
-    .line 364
-    sget-object v0, Lcom/google/common/base/CharMatcher$7;->ANY:Lcom/google/common/base/CharMatcher;
+    .line 337
+    sget-object v0, Lcom/google/common/base/CharMatcher$7;->NONE:Lcom/google/common/base/CharMatcher;
 
     return-object v0
 .end method
 
 .method public or(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
-    .locals 1
+    .locals 0
     .parameter "other"
 
     .prologue
-    .line 360
+    .line 331
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
-
-    check-cast v0, Lcom/google/common/base/CharMatcher;
-
-    return-object v0
-.end method
-
-.method public precomputed()Lcom/google/common/base/CharMatcher;
-    .locals 0
-
-    .prologue
-    .line 370
+    .line 332
     return-object p0
 .end method
 
@@ -218,52 +220,88 @@
     .parameter "sequence"
 
     .prologue
-    .line 329
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 288
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    .line 289
+    const-string v0, ""
 
     return-object v0
 .end method
 
 .method public replaceFrom(Ljava/lang/CharSequence;C)Ljava/lang/String;
-    .locals 1
+    .locals 2
     .parameter "sequence"
     .parameter "replacement"
 
     .prologue
-    .line 333
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 294
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result-object v0
+    move-result v1
 
-    return-object v0
+    new-array v0, v1, [C
+
+    .line 295
+    .local v0, array:[C
+    invoke-static {v0, p2}, Ljava/util/Arrays;->fill([CC)V
+
+    .line 296
+    new-instance v1, Ljava/lang/String;
+
+    invoke-direct {v1, v0}, Ljava/lang/String;-><init>([C)V
+
+    return-object v1
 .end method
 
 .method public replaceFrom(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-    .locals 1
+    .locals 4
     .parameter "sequence"
     .parameter "replacement"
 
     .prologue
-    .line 337
-    invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 301
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 338
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result-object v0
+    move-result v2
 
-    return-object v0
-.end method
+    invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
-.method setBits(Lcom/google/common/base/CharMatcher$LookupTable;)V
-    .locals 0
-    .parameter "table"
+    move-result v3
 
-    .prologue
-    .line 367
-    return-void
+    mul-int/2addr v2, v3
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 302
+    .local v1, retval:Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v2
+
+    if-ge v0, v2, :cond_0
+
+    .line 303
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 302
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 305
+    :cond_0
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    return-object v2
 .end method
 
 .method public trimFrom(Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -271,10 +309,11 @@
     .parameter "sequence"
 
     .prologue
-    .line 346
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 315
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    .line 316
+    const-string v0, ""
 
     return-object v0
 .end method

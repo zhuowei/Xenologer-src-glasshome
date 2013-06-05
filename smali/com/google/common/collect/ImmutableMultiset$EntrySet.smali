@@ -1,4 +1,4 @@
-.class Lcom/google/common/collect/ImmutableMultiset$EntrySet;
+.class abstract Lcom/google/common/collect/ImmutableMultiset$EntrySet;
 .super Lcom/google/common/collect/ImmutableSet;
 .source "ImmutableMultiset.java"
 
@@ -9,21 +9,12 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x400
     name = "EntrySet"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/common/collect/ImmutableMultiset$EntrySet$EntrySetSerializedForm;
-    }
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "<E:",
-        "Ljava/lang/Object;",
-        ">",
         "Lcom/google/common/collect/ImmutableSet",
         "<",
         "Lcom/google/common/collect/Multiset$Entry",
@@ -37,38 +28,21 @@
 
 
 # instance fields
-.field final transient multiset:Lcom/google/common/collect/ImmutableMultiset;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableMultiset",
-            "<TE;>;"
-        }
-    .end annotation
-.end field
+.field final synthetic this$0:Lcom/google/common/collect/ImmutableMultiset;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/common/collect/ImmutableMultiset;)V
+.method constructor <init>(Lcom/google/common/collect/ImmutableMultiset;)V
     .locals 0
     .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/common/collect/ImmutableMultiset",
-            "<TE;>;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 367
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    .local p1, multiset:Lcom/google/common/collect/ImmutableMultiset;,"Lcom/google/common/collect/ImmutableMultiset<TE;>;"
+    .line 349
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
+    iput-object p1, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->this$0:Lcom/google/common/collect/ImmutableMultiset;
+
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 368
-    iput-object p1, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
-
-    .line 369
     return-void
 .end method
 
@@ -79,20 +53,20 @@
     .parameter "o"
 
     .prologue
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
     const/4 v2, 0x0
 
-    .line 388
+    .line 358
     instance-of v3, p1, Lcom/google/common/collect/Multiset$Entry;
 
     if-eqz v3, :cond_0
 
     move-object v1, p1
 
-    .line 389
+    .line 359
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 390
+    .line 360
     .local v1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -100,16 +74,16 @@
 
     if-gtz v3, :cond_1
 
-    .line 396
+    .line 366
     .end local v1           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :cond_0
     :goto_0
     return v2
 
-    .line 393
+    .line 363
     .restart local v1       #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :cond_1
-    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
+    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->this$0:Lcom/google/common/collect/ImmutableMultiset;
 
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -119,7 +93,7 @@
 
     move-result v0
 
-    .line 394
+    .line 364
     .local v0, count:I
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -136,9 +110,9 @@
     .locals 1
 
     .prologue
-    .line 433
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
+    .line 405
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->this$0:Lcom/google/common/collect/ImmutableMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultiset;->hashCode()I
 
@@ -151,63 +125,11 @@
     .locals 1
 
     .prologue
-    .line 383
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
+    .line 353
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->this$0:Lcom/google/common/collect/ImmutableMultiset;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultiset;->isPartialView()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public iterator()Lcom/google/common/collect/UnmodifiableIterator;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/UnmodifiableIterator",
-            "<",
-            "Lcom/google/common/collect/Multiset$Entry",
-            "<TE;>;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 373
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultiset;->entryIterator()Lcom/google/common/collect/UnmodifiableIterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    .prologue
-    .line 364
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public size()I
-    .locals 1
-
-    .prologue
-    .line 378
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultiset;->distinctElements()I
 
     move-result v0
 
@@ -218,15 +140,15 @@
     .locals 2
 
     .prologue
-    .line 405
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
+    .line 376
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->size()I
 
     move-result v1
 
     new-array v0, v1, [Ljava/lang/Object;
 
-    .line 406
+    .line 377
     .local v0, newArray:[Ljava/lang/Object;
     invoke-virtual {p0, v0}, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -247,34 +169,34 @@
     .end annotation
 
     .prologue
-    .line 415
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
+    .line 387
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
     .local p1, other:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->size()I
 
     move-result v5
 
-    .line 416
+    .line 388
     .local v5, size:I
     array-length v6, p1
 
     if-ge v6, v5, :cond_1
 
-    .line 417
+    .line 389
     invoke-static {p1, v5}, Lcom/google/common/collect/ObjectArrays;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 423
+    .line 395
     :cond_0
     :goto_0
     move-object v4, p1
 
-    .line 424
+    .line 396
     .local v4, otherAsObjectArray:[Ljava/lang/Object;
     const/4 v2, 0x0
 
-    .line 425
+    .line 397
     .local v2, index:I
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->iterator()Ljava/util/Iterator;
 
@@ -294,7 +216,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 426
+    .line 398
     .local v0, element:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     add-int/lit8 v3, v2, 0x1
 
@@ -308,7 +230,7 @@
     .restart local v2       #index:I
     goto :goto_1
 
-    .line 418
+    .line 390
     .end local v0           #element:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #index:I
@@ -318,14 +240,14 @@
 
     if-le v6, v5, :cond_0
 
-    .line 419
+    .line 391
     const/4 v6, 0x0
 
     aput-object v6, p1, v5
 
     goto :goto_0
 
-    .line 428
+    .line 400
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v2       #index:I
     .restart local v4       #otherAsObjectArray:[Ljava/lang/Object;
@@ -337,13 +259,13 @@
     .locals 2
 
     .prologue
-    .line 439
-    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset$EntrySet<TE;>;"
-    new-instance v0, Lcom/google/common/collect/ImmutableMultiset$EntrySet$EntrySetSerializedForm;
+    .line 413
+    .local p0, this:Lcom/google/common/collect/ImmutableMultiset$EntrySet;,"Lcom/google/common/collect/ImmutableMultiset<TE;>.EntrySet;"
+    new-instance v0, Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm;
 
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->multiset:Lcom/google/common/collect/ImmutableMultiset;
+    iget-object v1, p0, Lcom/google/common/collect/ImmutableMultiset$EntrySet;->this$0:Lcom/google/common/collect/ImmutableMultiset;
 
-    invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableMultiset$EntrySet$EntrySetSerializedForm;-><init>(Lcom/google/common/collect/ImmutableMultiset;)V
+    invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableMultiset$EntrySetSerializedForm;-><init>(Lcom/google/common/collect/ImmutableMultiset;)V
 
     return-object v0
 .end method

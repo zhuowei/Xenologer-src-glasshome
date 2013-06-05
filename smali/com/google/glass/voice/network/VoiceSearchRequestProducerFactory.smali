@@ -7,7 +7,9 @@
 
 
 # static fields
-.field public static final SERVICE_VOICE_ACTIONS:Ljava/lang/String; = "glass-search"
+.field public static final SERVICE_VOICE_ACTIONS_GWS:Ljava/lang/String; = "glass-search-web"
+
+.field public static final SERVICE_VOICE_ACTIONS_MAJEL:Ljava/lang/String; = "glass-search"
 
 .field private static final TAG:Ljava/lang/String;
 
@@ -91,6 +93,8 @@
 
 .field private sessionParams:Lcom/google/android/speech/params/SessionParams;
 
+.field private soundSearchRequestProducerFactory:Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;
+
 .field private final speechLibLogger:Lcom/google/android/speech/logger/SpeechLibLogger;
 
 .field private final timeoutEnforcer:Lcom/google/android/speech/network/producers/TimeoutEnforcer;
@@ -101,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 44
     const-class v0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -120,19 +124,19 @@
     .parameter "speechLibLogger"
 
     .prologue
-    .line 65
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 78
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
 
-    .line 67
+    .line 79
     iput-object p2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->nrpp:Lcom/google/android/speech/params/NetworkRequestProducerParams;
 
-    .line 68
+    .line 80
     iput-object p3, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->speechLibLogger:Lcom/google/android/speech/logger/SpeechLibLogger;
 
-    .line 69
+    .line 81
     new-instance v0, Lcom/google/android/speech/network/producers/TimeoutEnforcer;
 
     const-wide/16 v1, 0x3e8
@@ -141,7 +145,26 @@
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->timeoutEnforcer:Lcom/google/android/speech/network/producers/TimeoutEnforcer;
 
-    .line 70
+    .line 82
+    new-instance v0, Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;
+
+    new-instance v1, Lcom/google/android/ears/s3/suppliers/RequestIdSupplier;
+
+    invoke-direct {v1}, Lcom/google/android/ears/s3/suppliers/RequestIdSupplier;-><init>()V
+
+    invoke-virtual {p2}, Lcom/google/android/speech/params/NetworkRequestProducerParams;->getDeviceParams()Lcom/google/android/speech/params/DeviceParams;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lcom/google/android/speech/params/DeviceParams;->getDeviceCountry()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;-><init>(Lcom/google/common/base/Supplier;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->soundSearchRequestProducerFactory:Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;
+
+    .line 84
     return-void
 .end method
 
@@ -158,7 +181,7 @@
     .end annotation
 
     .prologue
-    .line 151
+    .line 175
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/google/glass/voice/network/MajelClientInfoBuilderTask;
@@ -191,7 +214,7 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 159
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/google/android/speech/network/request/MobileUserInfoBuilderTask;
@@ -212,7 +235,7 @@
 .end method
 
 .method private createPinholeParamsFuture()Ljava/util/concurrent/Future;
-    .locals 1
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -224,24 +247,64 @@
     .end annotation
 
     .prologue
-    .line 147
-    const/4 v0, 0x0
+    .line 163
+    iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
 
-    return-object v0
+    invoke-virtual {v1}, Lcom/google/android/speech/params/SessionParams;->getMode()Lcom/google/android/speech/params/SessionParams$Mode;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/android/speech/params/SessionParams$Mode;->VOICE_ACTIONS:Lcom/google/android/speech/params/SessionParams$Mode;
+
+    if-ne v1, v2, :cond_0
+
+    .line 164
+    iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->nrpp:Lcom/google/android/speech/params/NetworkRequestProducerParams;
+
+    invoke-virtual {v1}, Lcom/google/android/speech/params/NetworkRequestProducerParams;->getPinholeParamsBuilder()Lcom/google/android/voicesearch/speechservice/s3/PinholeParamsBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->requestIdSupplier:Lcom/google/common/base/Supplier;
+
+    invoke-interface {v1, v2}, Lcom/google/android/voicesearch/speechservice/s3/PinholeParamsBuilder;->getPinholeParamsCallable(Lcom/google/common/base/Supplier;)Ljava/util/concurrent/Callable;
+
+    move-result-object v0
+
+    .line 166
+    .local v0, callable:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<Lcom/google/speech/s3/PinholeStream$PinholeParams;>;"
+    if-eqz v0, :cond_0
+
+    .line 167
+    iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
+
+    invoke-interface {v1, v0}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object v1
+
+    .line 171
+    .end local v0           #callable:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<Lcom/google/speech/s3/PinholeStream$PinholeParams;>;"
+    :goto_0
+    return-object v1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method
 
 .method private createS3AudioInfo()Lcom/google/speech/s3/Audio$S3AudioInfo;
     .locals 3
 
     .prologue
-    .line 155
+    .line 179
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
 
     invoke-virtual {v1}, Lcom/google/android/speech/params/SessionParams;->getAudioInputParams()Lcom/google/android/speech/params/AudioInputParams;
 
     move-result-object v0
 
-    .line 156
+    .line 180
     .local v0, audioInputParams:Lcom/google/android/speech/params/AudioInputParams;
     new-instance v1, Lcom/google/speech/s3/Audio$S3AudioInfo;
 
@@ -281,7 +344,7 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 185
     iget-object v6, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v0, Lcom/google/android/speech/network/request/S3ClientInfoBuilderTask;
@@ -329,7 +392,7 @@
     .locals 7
 
     .prologue
-    .line 179
+    .line 203
     new-instance v0, Lcom/google/android/speech/network/request/S3RecognizerInfoBuilderTask;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
@@ -392,7 +455,7 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 194
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->nrpp:Lcom/google/android/speech/params/NetworkRequestProducerParams;
@@ -443,72 +506,87 @@
     .parameter "sessionParams"
 
     .prologue
-    .line 75
+    .line 89
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
 
-    .line 76
-    const-string v0, "glass-search"
+    .line 90
+    sget-object v0, Lcom/google/glass/util/Labs$Feature;->SEARCH_GWS_FLOW:Lcom/google/glass/util/Labs$Feature;
 
+    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "glass-search-web"
+
+    :goto_0
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->service:Ljava/lang/String;
 
-    .line 77
+    .line 92
     invoke-virtual {p1}, Lcom/google/android/speech/params/SessionParams;->getRequestIdSupplier()Lcom/google/common/base/Supplier;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->requestIdSupplier:Lcom/google/common/base/Supplier;
 
-    .line 78
+    .line 93
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createPinholeParamsFuture()Ljava/util/concurrent/Future;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->pinholeParamsFuture:Ljava/util/concurrent/Future;
 
-    .line 79
+    .line 94
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createMajelClientInfoFuture()Ljava/util/concurrent/Future;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->majelClientInfoFuture:Ljava/util/concurrent/Future;
 
-    .line 80
+    .line 95
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createMobileUserInfoFuture()Ljava/util/concurrent/Future;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->mobileUserInfoFuture:Ljava/util/concurrent/Future;
 
-    .line 81
+    .line 96
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createS3AudioInfo()Lcom/google/speech/s3/Audio$S3AudioInfo;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->s3AudioInfo:Lcom/google/speech/s3/Audio$S3AudioInfo;
 
-    .line 82
+    .line 97
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createS3ClientInfoFuture()Ljava/util/concurrent/Future;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->s3ClientInfoFuture:Ljava/util/concurrent/Future;
 
-    .line 83
+    .line 98
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createS3UserInfoFuture()Ljava/util/concurrent/Future;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->s3UserInfoFuture:Ljava/util/concurrent/Future;
 
-    .line 84
+    .line 99
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createS3RecognizerInfo()Lcom/google/speech/speech/s3/Recognizer$S3RecognizerInfo;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->s3RecognizerInfo:Lcom/google/speech/speech/s3/Recognizer$S3RecognizerInfo;
 
-    .line 85
+    .line 100
     return-void
+
+    .line 90
+    :cond_0
+    const-string v0, "glass-search"
+
+    goto :goto_0
 .end method
 
 .method public newRequestProducer(Ljava/io/InputStream;)Lcom/google/android/speech/network/producers/S3RequestProducer;
@@ -516,12 +594,35 @@
     .parameter "audioInputStream"
 
     .prologue
-    .line 89
+    .line 104
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
 
     invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 90
+    .line 106
+    iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
+
+    invoke-virtual {v1}, Lcom/google/android/speech/params/SessionParams;->getMode()Lcom/google/android/speech/params/SessionParams$Mode;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/android/speech/params/SessionParams$Mode;->SOUND_SEARCH:Lcom/google/android/speech/params/SessionParams$Mode;
+
+    if-ne v1, v2, :cond_0
+
+    .line 107
+    iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->soundSearchRequestProducerFactory:Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;
+
+    invoke-virtual {v1, p1}, Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;->newRequestProducer(Ljava/io/InputStream;)Lcom/google/android/speech/network/producers/S3RequestProducer;
+
+    move-result-object v1
+
+    .line 122
+    :goto_0
+    return-object v1
+
+    .line 109
+    :cond_0
     new-instance v0, Lcom/google/glass/voice/network/VoiceSearchHeaderProducer;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->pinholeParamsFuture:Ljava/util/concurrent/Future;
@@ -546,7 +647,7 @@
 
     invoke-direct/range {v0 .. v10}, Lcom/google/glass/voice/network/VoiceSearchHeaderProducer;-><init>(Ljava/util/concurrent/Future;Ljava/util/concurrent/Future;Ljava/util/concurrent/Future;Ljava/util/concurrent/Future;Ljava/util/concurrent/Future;Lcom/google/speech/s3/Audio$S3AudioInfo;Lcom/google/speech/speech/s3/Recognizer$S3RecognizerInfo;Lcom/google/common/base/Supplier;Ljava/lang/String;Lcom/google/android/speech/logger/SpeechLibLogger;)V
 
-    .line 101
+    .line 120
     .local v0, header:Lcom/google/android/speech/network/producers/S3RequestProducer;
     new-instance v11, Lcom/google/android/speech/network/producers/AmrStreamProducer;
 
@@ -554,37 +655,56 @@
 
     invoke-direct {v11, p1, v1}, Lcom/google/android/speech/network/producers/AmrStreamProducer;-><init>(Ljava/io/InputStream;I)V
 
-    .line 103
+    .line 122
     .local v11, audio:Lcom/google/android/speech/network/producers/S3RequestProducer;
     new-instance v1, Lcom/google/android/speech/network/producers/Producers$CompositeProducer;
 
     invoke-direct {v1, v0, v11}, Lcom/google/android/speech/network/producers/Producers$CompositeProducer;-><init>(Lcom/google/android/speech/network/producers/S3RequestProducer;Lcom/google/android/speech/network/producers/S3RequestProducer;)V
 
-    return-object v1
+    goto :goto_0
 .end method
 
 .method public refresh()V
     .locals 4
 
     .prologue
-    .line 108
+    .line 128
     iget-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
 
     if-nez v2, :cond_0
 
-    .line 109
+    .line 129
     sget-object v2, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->TAG:Ljava/lang/String;
 
     const-string v3, "Trying to refresh before init."
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 131
+    .line 156
     :goto_0
     return-void
 
-    .line 115
+    .line 133
     :cond_0
+    iget-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->sessionParams:Lcom/google/android/speech/params/SessionParams;
+
+    invoke-virtual {v2}, Lcom/google/android/speech/params/SessionParams;->getMode()Lcom/google/android/speech/params/SessionParams$Mode;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/android/speech/params/SessionParams$Mode;->SOUND_SEARCH:Lcom/google/android/speech/params/SessionParams$Mode;
+
+    if-ne v2, v3, :cond_1
+
+    .line 134
+    iget-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->soundSearchRequestProducerFactory:Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;
+
+    invoke-virtual {v2}, Lcom/google/android/ears/s3/producers/SoundSearchRequestProducerFactory;->refresh()V
+
+    goto :goto_0
+
+    .line 140
+    :cond_1
     :try_start_0
     iget-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->timeoutEnforcer:Lcom/google/android/speech/network/producers/TimeoutEnforcer;
 
@@ -598,12 +718,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 121
+    .line 146
     .local v1, s3UserInfo:Lcom/google/speech/s3/S3$S3UserInfo;
     :goto_1
-    if-nez v1, :cond_1
+    if-nez v1, :cond_2
 
-    .line 124
+    .line 149
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->createS3UserInfoFuture()Ljava/util/concurrent/Future;
 
     move-result-object v2
@@ -612,12 +732,12 @@
 
     goto :goto_0
 
-    .line 116
+    .line 141
     .end local v1           #s3UserInfo:Lcom/google/speech/s3/S3$S3UserInfo;
     :catch_0
     move-exception v0
 
-    .line 117
+    .line 142
     .local v0, e:Ljava/io/IOException;
     sget-object v2, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->TAG:Ljava/lang/String;
 
@@ -625,15 +745,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 143
     const/4 v1, 0x0
 
     .restart local v1       #s3UserInfo:Lcom/google/speech/s3/S3$S3UserInfo;
     goto :goto_1
 
-    .line 127
+    .line 152
     .end local v0           #e:Ljava/io/IOException;
-    :cond_1
+    :cond_2
     iget-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->executor:Ljava/util/concurrent/ExecutorService;
 
     iget-object v3, p0, Lcom/google/glass/voice/network/VoiceSearchRequestProducerFactory;->nrpp:Lcom/google/android/speech/params/NetworkRequestProducerParams;

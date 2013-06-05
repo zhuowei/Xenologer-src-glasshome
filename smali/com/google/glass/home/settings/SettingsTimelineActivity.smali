@@ -22,7 +22,7 @@
 
 
 # virtual methods
-.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 1
 
     .prologue
@@ -36,14 +36,14 @@
     if-eqz v0, :cond_0
 
     .line 80
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->GUARD:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->GUARD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     .line 82
     :goto_0
     return-object v0
 
     :cond_0
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     goto :goto_0
 .end method
@@ -71,7 +71,7 @@
 .end method
 
 .method public onConfirm()Z
-    .locals 2
+    .locals 1
 
     .prologue
     .line 60
@@ -79,9 +79,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, p0, v1}, Lcom/google/glass/home/settings/SettingsTimelineView;->onConfirm(Lcom/google/glass/app/GlassActivity;Z)Z
+    invoke-virtual {v0}, Lcom/google/glass/home/settings/SettingsTimelineView;->onConfirm()Z
 
     move-result v0
 

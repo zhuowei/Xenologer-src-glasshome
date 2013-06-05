@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/protobuf/Extension$MessageType;,
         Lcom/google/protobuf/Extension$ExtensionType;
     }
 .end annotation
@@ -31,7 +32,7 @@
     .local p0, this:Lcom/google/protobuf/Extension;,"Lcom/google/protobuf/Extension<TContainingType;TType;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
+    .line 51
     return-void
 .end method
 
@@ -66,6 +67,17 @@
 .end method
 
 .method public abstract getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
+.end method
+
+.method public getMessageType()Lcom/google/protobuf/Extension$MessageType;
+    .locals 1
+
+    .prologue
+    .line 61
+    .local p0, this:Lcom/google/protobuf/Extension;,"Lcom/google/protobuf/Extension<TContainingType;TType;>;"
+    sget-object v0, Lcom/google/protobuf/Extension$MessageType;->PROTO2:Lcom/google/protobuf/Extension$MessageType;
+
+    return-object v0
 .end method
 
 .method public abstract getNumber()I

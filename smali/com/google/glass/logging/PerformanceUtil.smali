@@ -20,6 +20,8 @@
 
 .field private static final CURRENT_FILE_EVT2:Ljava/lang/String; = "/sys/class/power_supply/bq27520-0/current_now"
 
+.field private static final REPORTED_SOC_FILE_EVT2:Ljava/lang/String; = "/sys/class/power_supply/bq27520-0/capacity"
+
 .field private static final TAG:Ljava/lang/String; = null
 
 .field private static final UNKNOWN:J = -0x1L
@@ -46,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 56
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,7 +58,7 @@
     .locals 2
 
     .prologue
-    .line 62
+    .line 65
     const-string v0, "/sys/class/power_supply/bq27520-0/capacity"
 
     invoke-static {v0}, Lcom/google/glass/logging/PerformanceUtil;->readValue(Ljava/lang/String;)J
@@ -70,7 +72,7 @@
     .locals 2
 
     .prologue
-    .line 77
+    .line 87
     const-string v0, "/sys/class/power_supply/bq27520-0/charge_full"
 
     invoke-static {v0}, Lcom/google/glass/logging/PerformanceUtil;->readValue(Ljava/lang/String;)J
@@ -84,7 +86,7 @@
     .locals 2
 
     .prologue
-    .line 69
+    .line 72
     const-string v0, "/sys/class/power_supply/bq27520-0/charge_now"
 
     invoke-static {v0}, Lcom/google/glass/logging/PerformanceUtil;->readValue(Ljava/lang/String;)J
@@ -98,7 +100,7 @@
     .locals 4
 
     .prologue
-    .line 86
+    .line 96
     const-wide/16 v0, 0x64
 
     const-string v2, "/sys/class/power_supply/bq27520-0/temp"
@@ -116,7 +118,7 @@
     .locals 2
 
     .prologue
-    .line 95
+    .line 105
     const-string v0, "/sys/devices/platform/notle_pcb_sensor.0/temperature"
 
     invoke-static {v0}, Lcom/google/glass/logging/PerformanceUtil;->readValue(Ljava/lang/String;)J
@@ -141,7 +143,7 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 114
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/Long;Ljava/lang/Long;>;"
     const-string v2, "/sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state"
 
@@ -151,21 +153,21 @@
 
     if-nez v2, :cond_1
 
-    .line 105
+    .line 115
     sget-object v2, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     const-string v3, "Failed to read time spent at different cpu frequencies from file:/sys/devices/system/cpu/cpu0/cpufreq/stats/time_in_state"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
+    .line 117
     invoke-interface {p0}, Ljava/util/Map;->clear()V
 
-    .line 114
+    .line 124
     :cond_0
     return-void
 
-    .line 111
+    .line 121
     :cond_1
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -189,7 +191,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 112
+    .line 122
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Long;Ljava/lang/Long;>;"
     const-wide/16 v3, 0xa
 
@@ -214,11 +216,25 @@
     goto :goto_0
 .end method
 
+.method public static getReportedBatteryStateOfChargePercent()J
+    .locals 2
+
+    .prologue
+    .line 79
+    const-string v0, "/sys/class/power_supply/bq27520-0/capacity"
+
+    invoke-static {v0}, Lcom/google/glass/logging/PerformanceUtil;->readValue(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
 .method public static getTotalBytesSent()J
     .locals 2
 
     .prologue
-    .line 121
+    .line 131
     invoke-static {}, Landroid/net/TrafficStats;->getTotalTxBytes()J
 
     move-result-wide v0
@@ -248,12 +264,12 @@
 
     const/4 v8, 0x0
 
-    .line 143
+    .line 153
     new-instance v4, Ljava/io/File;
 
     invoke-direct {v4, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 144
+    .line 154
     .local v4, file:Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
@@ -261,7 +277,7 @@
 
     if-nez v10, :cond_1
 
-    .line 145
+    .line 155
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -284,12 +300,12 @@
 
     invoke-static {v9, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
+    .line 197
     :cond_0
     :goto_0
     return v8
 
-    .line 148
+    .line 158
     :cond_1
     invoke-virtual {v4}, Ljava/io/File;->canRead()Z
 
@@ -297,7 +313,7 @@
 
     if-nez v10, :cond_2
 
-    .line 149
+    .line 159
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -322,11 +338,11 @@
 
     goto :goto_0
 
-    .line 152
+    .line 162
     :cond_2
     const/4 v0, 0x0
 
-    .line 154
+    .line 164
     .local v0, br:Ljava/io/BufferedReader;
     :try_start_0
     new-instance v1, Ljava/io/BufferedReader;
@@ -342,7 +358,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_7
 
-    .line 156
+    .line 166
     .end local v0           #br:Ljava/io/BufferedReader;
     .local v1, br:Ljava/io/BufferedReader;
     :goto_1
@@ -354,14 +370,14 @@
     .local v6, line:Ljava/lang/String;
     if-eqz v6, :cond_5
 
-    .line 157
+    .line 167
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v10
 
     if-eqz v10, :cond_3
 
-    .line 158
+    .line 168
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -389,10 +405,10 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_b
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_a
 
-    .line 179
+    .line 189
     if-eqz v1, :cond_0
 
-    .line 181
+    .line 191
     :try_start_2
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_2
@@ -400,11 +416,11 @@
 
     goto :goto_0
 
-    .line 182
+    .line 192
     :catch_0
     move-exception v2
 
-    .line 183
+    .line 193
     .local v2, e:Ljava/io/IOException;
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -430,7 +446,7 @@
 
     goto :goto_0
 
-    .line 161
+    .line 171
     .end local v2           #e:Ljava/io/IOException;
     :cond_3
     :try_start_3
@@ -440,7 +456,7 @@
 
     move-result-object v3
 
-    .line 162
+    .line 172
     .local v3, elements:[Ljava/lang/String;
     array-length v10, v3
 
@@ -448,7 +464,7 @@
 
     if-eq v10, v11, :cond_4
 
-    .line 163
+    .line 173
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -486,10 +502,10 @@
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_b
     .catch Ljava/lang/NumberFormatException; {:try_start_3 .. :try_end_3} :catch_a
 
-    .line 179
+    .line 189
     if-eqz v1, :cond_0
 
-    .line 181
+    .line 191
     :try_start_4
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_4
@@ -497,11 +513,11 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 192
     :catch_1
     move-exception v2
 
-    .line 183
+    .line 193
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -527,7 +543,7 @@
 
     goto/16 :goto_0
 
-    .line 167
+    .line 177
     .end local v2           #e:Ljava/io/IOException;
     :cond_4
     const/4 v10, 0x0
@@ -543,7 +559,7 @@
 
     move-result-object v5
 
-    .line 168
+    .line 178
     .local v5, key:Ljava/lang/Long;
     const/4 v10, 0x1
 
@@ -557,7 +573,7 @@
 
     move-result-object v7
 
-    .line 169
+    .line 179
     .local v7, value:Ljava/lang/Long;
     invoke-interface {p1, v5, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_5
@@ -568,7 +584,7 @@
 
     goto/16 :goto_1
 
-    .line 172
+    .line 182
     .end local v3           #elements:[Ljava/lang/String;
     .end local v5           #key:Ljava/lang/Long;
     .end local v6           #line:Ljava/lang/String;
@@ -578,7 +594,7 @@
 
     move-object v0, v1
 
-    .line 173
+    .line 183
     .end local v1           #br:Ljava/io/BufferedReader;
     .restart local v0       #br:Ljava/io/BufferedReader;
     .local v2, e:Ljava/io/FileNotFoundException;
@@ -614,10 +630,10 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
 
-    .line 179
+    .line 189
     if-eqz v0, :cond_0
 
-    .line 181
+    .line 191
     :try_start_7
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_7
@@ -625,11 +641,11 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 192
     :catch_3
     move-exception v2
 
-    .line 183
+    .line 193
     .local v2, e:Ljava/io/IOException;
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -655,7 +671,7 @@
 
     goto/16 :goto_0
 
-    .line 179
+    .line 189
     .end local v0           #br:Ljava/io/BufferedReader;
     .end local v2           #e:Ljava/io/IOException;
     .restart local v1       #br:Ljava/io/BufferedReader;
@@ -663,7 +679,7 @@
     :cond_5
     if-eqz v1, :cond_6
 
-    .line 181
+    .line 191
     :try_start_8
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_8
@@ -673,14 +689,14 @@
     :goto_3
     move v8, v9
 
-    .line 184
+    .line 194
     goto/16 :goto_0
 
-    .line 182
+    .line 192
     :catch_4
     move-exception v2
 
-    .line 183
+    .line 193
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v8, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -706,7 +722,7 @@
 
     goto :goto_3
 
-    .line 174
+    .line 184
     .end local v1           #br:Ljava/io/BufferedReader;
     .end local v2           #e:Ljava/io/IOException;
     .end local v6           #line:Ljava/lang/String;
@@ -714,7 +730,7 @@
     :catch_5
     move-exception v2
 
-    .line 175
+    .line 185
     .restart local v2       #e:Ljava/io/IOException;
     :goto_4
     :try_start_9
@@ -742,10 +758,10 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 179
+    .line 189
     if-eqz v0, :cond_0
 
-    .line 181
+    .line 191
     :try_start_a
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_a
@@ -753,11 +769,11 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 192
     :catch_6
     move-exception v2
 
-    .line 183
+    .line 193
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v10, Ljava/lang/StringBuilder;
@@ -782,12 +798,12 @@
 
     goto/16 :goto_0
 
-    .line 176
+    .line 186
     .end local v2           #e:Ljava/io/IOException;
     :catch_7
     move-exception v2
 
-    .line 177
+    .line 187
     .local v2, e:Ljava/lang/NumberFormatException;
     :goto_5
     :try_start_b
@@ -815,10 +831,10 @@
     :try_end_b
     .catchall {:try_start_b .. :try_end_b} :catchall_0
 
-    .line 179
+    .line 189
     if-eqz v0, :cond_0
 
-    .line 181
+    .line 191
     :try_start_c
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_c
@@ -826,11 +842,11 @@
 
     goto/16 :goto_0
 
-    .line 182
+    .line 192
     :catch_8
     move-exception v2
 
-    .line 183
+    .line 193
     .local v2, e:Ljava/io/IOException;
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -856,7 +872,7 @@
 
     goto/16 :goto_0
 
-    .line 179
+    .line 189
     .end local v2           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v8
@@ -864,22 +880,22 @@
     :goto_6
     if-eqz v0, :cond_7
 
-    .line 181
+    .line 191
     :try_start_d
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_d
     .catch Ljava/io/IOException; {:try_start_d .. :try_end_d} :catch_9
 
-    .line 184
+    .line 194
     :cond_7
     :goto_7
     throw v8
 
-    .line 182
+    .line 192
     :catch_9
     move-exception v2
 
-    .line 183
+    .line 193
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v9, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -905,7 +921,7 @@
 
     goto :goto_7
 
-    .line 179
+    .line 189
     .end local v0           #br:Ljava/io/BufferedReader;
     .end local v2           #e:Ljava/io/IOException;
     .restart local v1       #br:Ljava/io/BufferedReader;
@@ -918,7 +934,7 @@
     .restart local v0       #br:Ljava/io/BufferedReader;
     goto :goto_6
 
-    .line 176
+    .line 186
     .end local v0           #br:Ljava/io/BufferedReader;
     .restart local v1       #br:Ljava/io/BufferedReader;
     :catch_a
@@ -930,7 +946,7 @@
     .restart local v0       #br:Ljava/io/BufferedReader;
     goto :goto_5
 
-    .line 174
+    .line 184
     .end local v0           #br:Ljava/io/BufferedReader;
     .restart local v1       #br:Ljava/io/BufferedReader;
     :catch_b
@@ -942,7 +958,7 @@
     .restart local v0       #br:Ljava/io/BufferedReader;
     goto/16 :goto_4
 
-    .line 172
+    .line 182
     :catch_c
     move-exception v2
 
@@ -956,12 +972,12 @@
     .prologue
     const-wide/16 v5, -0x1
 
-    .line 198
+    .line 208
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 199
+    .line 209
     .local v3, file:Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
@@ -969,7 +985,7 @@
 
     if-nez v7, :cond_1
 
-    .line 200
+    .line 210
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -992,12 +1008,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 232
+    .line 242
     :cond_0
     :goto_0
     return-wide v5
 
-    .line 203
+    .line 213
     :cond_1
     invoke-virtual {v3}, Ljava/io/File;->canRead()Z
 
@@ -1005,7 +1021,7 @@
 
     if-nez v7, :cond_2
 
-    .line 204
+    .line 214
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1030,11 +1046,11 @@
 
     goto :goto_0
 
-    .line 207
+    .line 217
     :cond_2
     const/4 v0, 0x0
 
-    .line 209
+    .line 219
     .local v0, br:Ljava/io/BufferedReader;
     :try_start_0
     new-instance v1, Ljava/io/BufferedReader;
@@ -1050,7 +1066,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_6
 
-    .line 210
+    .line 220
     .end local v0           #br:Ljava/io/BufferedReader;
     .local v1, br:Ljava/io/BufferedReader;
     :try_start_1
@@ -1058,7 +1074,7 @@
 
     move-result-object v4
 
-    .line 211
+    .line 221
     .local v4, line:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1066,7 +1082,7 @@
 
     if-eqz v7, :cond_3
 
-    .line 212
+    .line 222
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1094,10 +1110,10 @@
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_a
     .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_9
 
-    .line 224
+    .line 234
     if-eqz v1, :cond_0
 
-    .line 226
+    .line 236
     :try_start_2
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_2
@@ -1105,11 +1121,11 @@
 
     goto :goto_0
 
-    .line 227
+    .line 237
     :catch_0
     move-exception v2
 
-    .line 228
+    .line 238
     .local v2, e:Ljava/io/IOException;
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -1135,7 +1151,7 @@
 
     goto :goto_0
 
-    .line 215
+    .line 225
     .end local v2           #e:Ljava/io/IOException;
     :cond_3
     :try_start_3
@@ -1148,11 +1164,11 @@
 
     move-result-wide v5
 
-    .line 224
+    .line 234
     .local v5, value:J
     if-eqz v1, :cond_0
 
-    .line 226
+    .line 236
     :try_start_4
     invoke-virtual {v1}, Ljava/io/BufferedReader;->close()V
     :try_end_4
@@ -1160,11 +1176,11 @@
 
     goto :goto_0
 
-    .line 227
+    .line 237
     :catch_1
     move-exception v2
 
-    .line 228
+    .line 238
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -1190,7 +1206,7 @@
 
     goto/16 :goto_0
 
-    .line 217
+    .line 227
     .end local v1           #br:Ljava/io/BufferedReader;
     .end local v2           #e:Ljava/io/IOException;
     .end local v4           #line:Ljava/lang/String;
@@ -1199,7 +1215,7 @@
     :catch_2
     move-exception v2
 
-    .line 218
+    .line 228
     .local v2, e:Ljava/io/FileNotFoundException;
     :goto_1
     :try_start_5
@@ -1233,10 +1249,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 224
+    .line 234
     if-eqz v0, :cond_0
 
-    .line 226
+    .line 236
     :try_start_6
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_6
@@ -1244,11 +1260,11 @@
 
     goto/16 :goto_0
 
-    .line 227
+    .line 237
     :catch_3
     move-exception v2
 
-    .line 228
+    .line 238
     .local v2, e:Ljava/io/IOException;
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -1274,12 +1290,12 @@
 
     goto/16 :goto_0
 
-    .line 219
+    .line 229
     .end local v2           #e:Ljava/io/IOException;
     :catch_4
     move-exception v2
 
-    .line 220
+    .line 230
     .restart local v2       #e:Ljava/io/IOException;
     :goto_2
     :try_start_7
@@ -1307,10 +1323,10 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 224
+    .line 234
     if-eqz v0, :cond_0
 
-    .line 226
+    .line 236
     :try_start_8
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_8
@@ -1318,11 +1334,11 @@
 
     goto/16 :goto_0
 
-    .line 227
+    .line 237
     :catch_5
     move-exception v2
 
-    .line 228
+    .line 238
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1347,12 +1363,12 @@
 
     goto/16 :goto_0
 
-    .line 221
+    .line 231
     .end local v2           #e:Ljava/io/IOException;
     :catch_6
     move-exception v2
 
-    .line 222
+    .line 232
     .local v2, e:Ljava/lang/NumberFormatException;
     :goto_3
     :try_start_9
@@ -1380,10 +1396,10 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_0
 
-    .line 224
+    .line 234
     if-eqz v0, :cond_0
 
-    .line 226
+    .line 236
     :try_start_a
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_a
@@ -1391,11 +1407,11 @@
 
     goto/16 :goto_0
 
-    .line 227
+    .line 237
     :catch_7
     move-exception v2
 
-    .line 228
+    .line 238
     .local v2, e:Ljava/io/IOException;
     sget-object v7, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -1421,7 +1437,7 @@
 
     goto/16 :goto_0
 
-    .line 224
+    .line 234
     .end local v2           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v7
@@ -1429,22 +1445,22 @@
     :goto_4
     if-eqz v0, :cond_4
 
-    .line 226
+    .line 236
     :try_start_b
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
     :try_end_b
     .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_8
 
-    .line 229
+    .line 239
     :cond_4
     :goto_5
     throw v7
 
-    .line 227
+    .line 237
     :catch_8
     move-exception v2
 
-    .line 228
+    .line 238
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v8, Lcom/google/glass/logging/PerformanceUtil;->TAG:Ljava/lang/String;
 
@@ -1470,7 +1486,7 @@
 
     goto :goto_5
 
-    .line 224
+    .line 234
     .end local v0           #br:Ljava/io/BufferedReader;
     .end local v2           #e:Ljava/io/IOException;
     .restart local v1       #br:Ljava/io/BufferedReader;
@@ -1483,7 +1499,7 @@
     .restart local v0       #br:Ljava/io/BufferedReader;
     goto :goto_4
 
-    .line 221
+    .line 231
     .end local v0           #br:Ljava/io/BufferedReader;
     .restart local v1       #br:Ljava/io/BufferedReader;
     :catch_9
@@ -1495,7 +1511,7 @@
     .restart local v0       #br:Ljava/io/BufferedReader;
     goto :goto_3
 
-    .line 219
+    .line 229
     .end local v0           #br:Ljava/io/BufferedReader;
     .restart local v1       #br:Ljava/io/BufferedReader;
     :catch_a
@@ -1507,7 +1523,7 @@
     .restart local v0       #br:Ljava/io/BufferedReader;
     goto/16 :goto_2
 
-    .line 217
+    .line 227
     .end local v0           #br:Ljava/io/BufferedReader;
     .restart local v1       #br:Ljava/io/BufferedReader;
     :catch_b
@@ -1525,12 +1541,12 @@
     .parameter "location"
 
     .prologue
-    .line 129
+    .line 139
     invoke-static {p0}, Lcom/google/glass/logging/PerformanceUtil;->readSystemFile(Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 130
+    .line 140
     .local v0, value:J
     return-wide v0
 .end method

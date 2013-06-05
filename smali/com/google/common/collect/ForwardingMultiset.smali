@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 56
+    .line 55
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 65
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
@@ -73,7 +73,7 @@
     .parameter "element"
 
     .prologue
-    .line 62
+    .line 61
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -133,7 +133,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 73
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -159,7 +159,7 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 77
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -180,7 +180,7 @@
     .end parameter
 
     .prologue
-    .line 86
+    .line 82
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     if-eq p1, p0, :cond_0
 
@@ -210,7 +210,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 87
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -229,7 +229,7 @@
     .parameter "occurrences"
 
     .prologue
-    .line 72
+    .line 69
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -253,7 +253,7 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 91
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
@@ -279,7 +279,7 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 95
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->delegate()Lcom/google/common/collect/Multiset;
@@ -296,9 +296,6 @@
 .method protected standardAdd(Ljava/lang/Object;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -310,10 +307,10 @@
     .local p1, element:Ljava/lang/Object;,"TE;"
     const/4 v0, 0x1
 
-    .line 153
+    .line 147
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingMultiset;->add(Ljava/lang/Object;I)I
 
-    .line 154
+    .line 148
     return v0
 .end method
 
@@ -332,7 +329,7 @@
     .end annotation
 
     .prologue
-    .line 167
+    .line 162
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, elementsToAdd:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Multisets;->addAllImpl(Lcom/google/common/collect/Multiset;Ljava/util/Collection;)Z
@@ -343,40 +340,22 @@
 .end method
 
 .method protected standardClear()V
-    .locals 2
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
+    .locals 1
 
     .prologue
-    .line 122
+    .line 119
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->entrySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 123
-    .local v0, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Lcom/google/common/collect/Iterators;->clear(Ljava/util/Iterator;)V
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 124
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 125
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    .line 127
-    :cond_0
+    .line 120
     return-void
 .end method
 
@@ -386,11 +365,9 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 111
+    .line 107
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ForwardingMultiset;->count(Ljava/lang/Object;)I
 
@@ -419,7 +396,7 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 131
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->entrySet()Ljava/util/Set;
 
@@ -443,7 +420,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 138
+    .line 132
     .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -455,12 +432,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 139
+    .line 133
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
     move-result v2
 
-    .line 142
+    .line 136
     .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :goto_0
     return v2
@@ -477,11 +454,9 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 288
+    .line 284
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Multisets;->equalsImpl(Lcom/google/common/collect/Multiset;Ljava/lang/Object;)Z
 
@@ -492,11 +467,9 @@
 
 .method protected standardHashCode()I
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 299
+    .line 295
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->entrySet()Ljava/util/Set;
 
@@ -511,9 +484,6 @@
 
 .method protected standardIterator()Ljava/util/Iterator;
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -523,7 +493,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 261
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Multisets;->iteratorImpl(Lcom/google/common/collect/Multiset;)Ljava/util/Iterator;
 
@@ -535,14 +505,12 @@
 .method protected standardRemove(Ljava/lang/Object;)Z
     .locals 2
     .parameter "element"
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     const/4 v0, 0x1
 
-    .line 179
+    .line 175
     invoke-virtual {p0, p1, v0}, Lcom/google/common/collect/ForwardingMultiset;->remove(Ljava/lang/Object;I)I
 
     move-result v1
@@ -561,9 +529,6 @@
 .method protected standardRemoveAll(Ljava/util/Collection;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -573,7 +538,7 @@
     .end annotation
 
     .prologue
-    .line 192
+    .line 188
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, elementsToRemove:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Multisets;->removeAllImpl(Lcom/google/common/collect/Multiset;Ljava/util/Collection;)Z
@@ -586,9 +551,6 @@
 .method protected standardRetainAll(Ljava/util/Collection;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -598,7 +560,7 @@
     .end annotation
 
     .prologue
-    .line 205
+    .line 201
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, elementsToRetain:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Multisets;->retainAllImpl(Lcom/google/common/collect/Multiset;Ljava/util/Collection;)Z
@@ -612,9 +574,6 @@
     .locals 1
     .parameter
     .parameter "count"
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;I)I"
@@ -622,7 +581,7 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 214
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/Multisets;->setCountImpl(Lcom/google/common/collect/Multiset;Ljava/lang/Object;I)I
@@ -637,9 +596,6 @@
     .parameter
     .parameter "oldCount"
     .parameter "newCount"
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;II)Z"
@@ -647,7 +603,7 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 226
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/collect/Multisets;->setCountImpl(Lcom/google/common/collect/Multiset;Ljava/lang/Object;II)Z
@@ -659,11 +615,9 @@
 
 .method protected standardSize()I
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 276
+    .line 272
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Multisets;->sizeImpl(Lcom/google/common/collect/Multiset;)I
 
@@ -674,11 +628,9 @@
 
 .method protected standardToString()Ljava/lang/String;
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 310
+    .line 307
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset;,"Lcom/google/common/collect/ForwardingMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMultiset;->entrySet()Ljava/util/Set;
 

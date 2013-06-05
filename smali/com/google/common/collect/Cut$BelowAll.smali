@@ -34,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 118
     new-instance v0, Lcom/google/common/collect/Cut$BelowAll;
 
     invoke-direct {v0}, Lcom/google/common/collect/Cut$BelowAll;-><init>()V
@@ -48,12 +48,12 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 121
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/Cut;-><init>(Ljava/lang/Comparable;)V
 
-    .line 118
+    .line 122
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 113
+    .line 117
     sget-object v0, Lcom/google/common/collect/Cut$BelowAll;->INSTANCE:Lcom/google/common/collect/Cut$BelowAll;
 
     return-object v0
@@ -71,7 +71,7 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 194
     sget-object v0, Lcom/google/common/collect/Cut$BelowAll;->INSTANCE:Lcom/google/common/collect/Cut$BelowAll;
 
     return-object v0
@@ -97,7 +97,7 @@
     .end annotation
 
     .prologue
-    .line 156
+    .line 177
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<Ljava/lang/Comparable<*>;>;"
     :try_start_0
     invoke-virtual {p1}, Lcom/google/common/collect/DiscreteDomain;->minValue()Ljava/lang/Comparable;
@@ -110,17 +110,17 @@
 
     move-result-object p0
 
-    .line 158
+    .line 179
     .end local p0
     :goto_0
     return-object p0
 
-    .line 157
+    .line 178
     .restart local p0
     :catch_0
     move-exception v0
 
-    .line 158
+    .line 179
     .local v0, e:Ljava/util/NoSuchElementException;
     goto :goto_0
 .end method
@@ -139,7 +139,7 @@
     .end annotation
 
     .prologue
-    .line 162
+    .line 185
     .local p1, o:Lcom/google/common/collect/Cut;,"Lcom/google/common/collect/Cut<Ljava/lang/Comparable<*>;>;"
     if-ne p1, p0, :cond_0
 
@@ -159,7 +159,7 @@
     .parameter "x0"
 
     .prologue
-    .line 113
+    .line 117
     check-cast p1, Lcom/google/common/collect/Cut;
 
     .end local p1
@@ -175,12 +175,12 @@
     .parameter "sb"
 
     .prologue
-    .line 140
+    .line 156
     const-string v0, "(-\u221e"
 
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 141
+    .line 157
     return-void
 .end method
 
@@ -189,7 +189,7 @@
     .parameter "sb"
 
     .prologue
-    .line 143
+    .line 161
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
@@ -208,7 +208,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 126
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "range unbounded on this side"
@@ -234,7 +234,7 @@
     .end annotation
 
     .prologue
-    .line 151
+    .line 171
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<Ljava/lang/Comparable<*>;>;"
     new-instance v0, Ljava/lang/AssertionError;
 
@@ -255,7 +255,7 @@
     .end annotation
 
     .prologue
-    .line 123
+    .line 131
     .local p1, value:Ljava/lang/Comparable;,"Ljava/lang/Comparable<*>;"
     const/4 v0, 0x1
 
@@ -278,7 +278,7 @@
     .end annotation
 
     .prologue
-    .line 147
+    .line 166
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<Ljava/lang/Comparable<*>;>;"
     invoke-virtual {p1}, Lcom/google/common/collect/DiscreteDomain;->minValue()Ljava/lang/Comparable;
 
@@ -287,11 +287,21 @@
     return-object v0
 .end method
 
+.method public toString()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 190
+    const-string v0, "-\u221e"
+
+    return-object v0
+.end method
+
 .method typeAsLowerBound()Lcom/google/common/collect/BoundType;
     .locals 1
 
     .prologue
-    .line 126
+    .line 136
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
@@ -303,7 +313,7 @@
     .locals 2
 
     .prologue
-    .line 129
+    .line 141
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "this statement should be unreachable"
@@ -333,7 +343,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 146
     .local p2, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<Ljava/lang/Comparable<*>;>;"
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -362,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 151
     .local p2, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<Ljava/lang/Comparable<*>;>;"
     new-instance v0, Ljava/lang/AssertionError;
 

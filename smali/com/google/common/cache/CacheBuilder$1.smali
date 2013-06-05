@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 143
+    .line 160
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 157
+    .line 170
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .parameter "count"
 
     .prologue
-    .line 145
+    .line 162
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .parameter "loadTime"
 
     .prologue
-    .line 154
+    .line 168
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .parameter "loadTime"
 
     .prologue
-    .line 151
+    .line 166
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .parameter "count"
 
     .prologue
-    .line 148
+    .line 164
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .locals 1
 
     .prologue
-    .line 161
+    .line 173
     sget-object v0, Lcom/google/common/cache/CacheBuilder;->EMPTY_STATS:Lcom/google/common/cache/CacheStats;
 
     return-object v0

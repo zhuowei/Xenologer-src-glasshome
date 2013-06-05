@@ -1,5 +1,5 @@
 .class public abstract Lcom/google/glass/home/voice/BaseVoiceInputActivity;
-.super Lcom/google/glass/app/GlassActivity;
+.super Lcom/google/glass/app/GlassVoiceActivity;
 .source "BaseVoiceInputActivity.java"
 
 
@@ -12,9 +12,9 @@
 
 .field public static final EXTRA_SHOULD_PLAY_INITIAL_SOUND:Ljava/lang/String; = "should_play_initial_sound"
 
-.field public static final EXTRA_TRIGGER_METHOD:Ljava/lang/String; = "trigger_method"
+.field private static final MSG_ON_ERROR:I = 0xa
 
-.field private static final MSG_ON_ERROR:I = 0x9
+.field private static final MSG_ON_HTML_ANSWER_CARD_RESULT:I = 0xc
 
 .field protected static final MSG_ON_MAJEL_RESULT:I = 0x8
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
@@ -26,6 +26,8 @@
     .end annotation
 .end field
 
+.field protected static final MSG_ON_SOUND_SEARCH_RESULT:I = 0x9
+
 .field private static final MSG_SET_SPEECH_LEVEL_SOURCE:I = 0x5
 
 .field private static final MSG_SHOW_DONE:I = 0x4
@@ -34,7 +36,7 @@
 
 .field private static final MSG_SHOW_NO_SPEECH_DETECTED:I = 0x3
 
-.field private static final MSG_SHOW_PROGRESS_BAR:I = 0xa
+.field private static final MSG_SHOW_PROGRESS_BAR:I = 0xb
 
 .field private static final MSG_SHOW_RECOGNIZING:I = 0x2
 
@@ -46,15 +48,11 @@
 
 .field private static final SHOW_PROGRESS_BAR_DELAY_MILLIS:J = 0xfaL
 
-.field public static final TRIGGER_METHOD_LONG_PRESS_SCREEN_OFF:I = 0x4
+.field private static final SHOW_RESULT_DURATION_MAX_ADDITIONAL:J = 0xbb8L
 
-.field public static final TRIGGER_METHOD_LONG_PRESS_SCREEN_ON:I = 0x3
+.field private static final SHOW_RESULT_DURATION_MINIMUM:J = 0x7d0L
 
-.field public static final TRIGGER_METHOD_MENU_TOUCH:I = 0x2
-
-.field public static final TRIGGER_METHOD_MENU_VOICE:I = 0x1
-
-.field public static final TRIGGER_METHOD_UNKNOWN:I = 0x0
+.field public static final TYPE_ANNOTATION:I = 0x5
 
 .field public static final TYPE_GLASSWARE:I = 0x3
 
@@ -62,7 +60,9 @@
 
 .field public static final TYPE_NAVIGATION:I = 0x1
 
-.field public static final TYPE_SEARCH:I
+.field public static final TYPE_SEARCH:I = 0x0
+
+.field public static final TYPE_SOUND_SEARCH:I = 0x4
 
 
 # instance fields
@@ -77,9 +77,11 @@
 
 .field private hasRecognitionResults:Z
 
+.field private isRetry:Z
+
 .field private logFirstRecognizedText:Z
 
-.field private microphone:Lcom/google/glass/home/search/MicrophoneView;
+.field private microphone:Lcom/google/glass/search/MicrophoneView;
 
 .field private powerHelper:Lcom/google/glass/util/PowerHelper;
 
@@ -89,13 +91,17 @@
 
 .field private recognitionResult:Lcom/google/android/speech/alternates/CorrectableString;
 
+.field private recognitionResultsCount:I
+
+.field private recognitionUpdatesCount:I
+
 .field private final speakAgainRunnable:Ljava/lang/Runnable;
 
 .field private startTime:J
 
-.field private streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+.field private streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-.field private triggerMethod:I
+.field protected triggerMethod:I
 
 .field protected final voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
@@ -110,40 +116,43 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 44
-    invoke-direct {p0}, Lcom/google/glass/app/GlassActivity;-><init>()V
+    .line 45
+    invoke-direct {p0}, Lcom/google/glass/app/GlassVoiceActivity;-><init>()V
 
-    .line 129
+    .line 142
     iput-boolean v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasMajelResponse:Z
 
-    .line 132
+    .line 145
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResult:Lcom/google/android/speech/alternates/CorrectableString;
 
-    .line 135
+    .line 148
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logFirstRecognizedText:Z
 
-    .line 142
+    .line 155
     iput-boolean v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasRecognitionResults:Z
 
-    .line 177
+    .line 161
+    iput-boolean v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isRetry:Z
+
+    .line 197
     new-instance v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity$1;-><init>(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)V
 
     iput-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
-    .line 234
+    .line 260
     new-instance v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity$2;-><init>(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)V
 
     iput-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
 
-    .line 290
+    .line 327
     new-instance v0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$3;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity$3;-><init>(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)V
@@ -159,7 +168,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->updatePowerHelper(I)V
 
     return-void
@@ -171,7 +180,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->updateKeepScreenOn(I)V
 
     return-void
@@ -183,53 +192,101 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;)V
 
     return-void
 .end method
 
-.method static synthetic access$1100(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
+.method static synthetic access$1100(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 44
-    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnError(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
+    .line 45
+    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnHtmlAnswerCardResult(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$1200(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/widget/SliderView;
+.method static synthetic access$1200(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 45
+    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1300(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Lcom/google/glass/voice/network/SpeechException;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 45
+    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnError(Lcom/google/glass/voice/network/SpeechException;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1400(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/widget/SliderView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     return-object v0
 .end method
 
-.method static synthetic access$1300(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)V
+.method static synthetic access$1500(Lcom/google/glass/home/voice/BaseVoiceInputActivity;I)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 45
+    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logSearchStarted(I)V
+
+    return-void
+.end method
+
+.method static synthetic access$1600(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->reset()V
 
     return-void
 .end method
 
-.method static synthetic access$1400(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/home/search/MicrophoneView;
+.method static synthetic access$1702(Lcom/google/glass/home/voice/BaseVoiceInputActivity;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 45
+    iput-boolean p1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isRetry:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1800(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/search/MicrophoneView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 44
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 45
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
     return-object v0
 .end method
@@ -239,7 +296,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchShowListening()V
 
     return-void
@@ -250,7 +307,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchShowRecording()V
 
     return-void
@@ -261,7 +318,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchShowRecognizing()V
 
     return-void
@@ -272,7 +329,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchShowNoSpeechDetected()V
 
     return-void
@@ -283,7 +340,7 @@
     .parameter "x0"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchShowDone()V
 
     return-void
@@ -295,7 +352,7 @@
     .parameter "x1"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchSetSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V
 
     return-void
@@ -308,7 +365,7 @@
     .parameter "x2"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchUpdateRecognizedText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     return-void
@@ -321,7 +378,7 @@
     .parameter "x2"
 
     .prologue
-    .line 44
+    .line 45
     invoke-direct {p0, p1, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->dispatchOnRecognitionResult(Lcom/google/android/speech/alternates/CorrectableString;F)V
 
     return-void
@@ -333,7 +390,7 @@
     .parameter "postAnimationRunnable"
 
     .prologue
-    .line 758
+    .line 850
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -348,12 +405,12 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 759
+    .line 851
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 760
+    .line 852
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -384,7 +441,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 772
+    .line 864
     return-void
 .end method
 
@@ -393,7 +450,7 @@
     .parameter "view"
 
     .prologue
-    .line 776
+    .line 868
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -434,29 +491,27 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 786
+    .line 878
     return-void
 .end method
 
-.method private dispatchOnError(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)V
-    .locals 11
+.method private dispatchOnError(Lcom/google/glass/voice/network/SpeechException;)V
+    .locals 10
     .parameter "exception"
 
     .prologue
-    const/16 v10, 0xa
-
     const/16 v9, 0x8
 
     const/4 v8, 0x1
 
-    .line 684
+    .line 771
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isMessageShowing()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 685
+    .line 772
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v3
@@ -471,11 +526,11 @@
 
     move-result-object v4
 
-    invoke-interface {p1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getException()Ljava/lang/Exception;
+    invoke-virtual {p1}, Lcom/google/glass/voice/network/SpeechException;->getSimpleName()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -485,11 +540,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 714
+    .line 801
     :goto_0
     return-void
 
-    .line 691
+    .line 778
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -499,7 +554,7 @@
 
     sub-long v1, v3, v5
 
-    .line 692
+    .line 779
     .local v1, timeToError:J
     const-string v3, "id"
 
@@ -509,7 +564,9 @@
 
     move-result-object v4
 
-    new-array v5, v10, [Ljava/lang/Object;
+    const/16 v5, 0xa
+
+    new-array v5, v5, [Ljava/lang/Object;
 
     const/4 v6, 0x0
 
@@ -517,15 +574,7 @@
 
     aput-object v7, v5, v6
 
-    invoke-interface {p1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getException()Ljava/lang/Exception;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/glass/voice/network/SpeechException;->getSimpleName()Ljava/lang/String;
 
     move-result-object v6
 
@@ -539,7 +588,7 @@
 
     const/4 v6, 0x3
 
-    invoke-interface {p1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getException()Ljava/lang/Exception;
+    invoke-virtual {p1}, Lcom/google/glass/voice/network/SpeechException;->getDetail()Ljava/lang/String;
 
     move-result-object v7
 
@@ -595,43 +644,45 @@
 
     move-result-object v0
 
-    .line 699
+    .line 786
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_ERROR:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v3, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 701
-    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 788
+    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v3}, Lcom/google/glass/home/search/MicrophoneView;->showNotListening()V
+    invoke-virtual {v3}, Lcom/google/glass/search/MicrophoneView;->showNotListening()V
 
-    .line 702
-    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 789
+    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
     invoke-direct {p0, v3}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->animateOut(Landroid/view/View;)V
 
-    .line 703
+    .line 790
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
     invoke-virtual {v3, v9}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 704
+    .line 791
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
-    invoke-virtual {v3, v10}, Landroid/os/Handler;->removeMessages(I)V
+    const/16 v4, 0xb
 
-    .line 705
+    invoke-virtual {v3, v4}, Landroid/os/Handler;->removeMessages(I)V
+
+    .line 792
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v3}, Lcom/google/glass/widget/SliderView;->stopIndeterminate()V
 
-    .line 707
+    .line 794
     new-instance v3, Lcom/google/glass/app/GlassError;
 
     invoke-direct {v3}, Lcom/google/glass/app/GlassError;-><init>()V
 
-    invoke-static {p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getErrorMessageId(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)I
+    invoke-static {p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getErrorMessageId(Lcom/google/glass/voice/network/SpeechException;)I
 
     move-result v4
 
@@ -639,7 +690,7 @@
 
     move-result-object v3
 
-    invoke-static {p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getSecondaryErrorMessageId(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)I
+    invoke-static {p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getSecondaryErrorMessageId(Lcom/google/glass/voice/network/SpeechException;)I
 
     move-result v4
 
@@ -647,7 +698,7 @@
 
     move-result-object v3
 
-    invoke-static {p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getErrorIconId(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)I
+    invoke-static {p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getErrorIconId(Lcom/google/glass/voice/network/SpeechException;)I
 
     move-result v4
 
@@ -659,7 +710,7 @@
 
     move-result-object v3
 
-    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getErrorOnConfirmRunnable(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)Ljava/lang/Runnable;
+    invoke-direct {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getErrorOnConfirmRunnable(Lcom/google/glass/voice/network/SpeechException;)Ljava/lang/Runnable;
 
     move-result-object v4
 
@@ -672,24 +723,50 @@
     goto/16 :goto_0
 .end method
 
+.method private dispatchOnHtmlAnswerCardResult(Ljava/lang/String;)V
+    .locals 7
+    .parameter "htmlResponse"
+
+    .prologue
+    .line 731
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResult:Lcom/google/android/speech/alternates/CorrectableString;
+
+    invoke-virtual {v0}, Lcom/google/android/speech/alternates/CorrectableString;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-wide v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
+
+    iget-wide v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->endOfSpeechTime:J
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    invoke-virtual/range {v0 .. v6}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onHtmlAnswerCardResult(Ljava/lang/String;Ljava/lang/String;JJ)V
+
+    .line 732
+    return-void
+.end method
+
 .method private dispatchOnMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;)V
     .locals 7
     .parameter "majelResponse"
 
     .prologue
-    .line 670
+    .line 717
     invoke-virtual {p1}, Lcom/google/majel/proto/MajelProtos$MajelResponse;->getPeanutCount()I
 
     move-result v0
 
     if-lez v0, :cond_0
 
-    .line 671
+    .line 718
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasMajelResponse:Z
 
-    .line 674
+    .line 721
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResult:Lcom/google/android/speech/alternates/CorrectableString;
 
     invoke-virtual {v0}, Lcom/google/android/speech/alternates/CorrectableString;->toString()Ljava/lang/String;
@@ -706,7 +783,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;Ljava/lang/String;JJ)V
 
-    .line 676
+    .line 723
     :cond_0
     return-void
 .end method
@@ -717,47 +794,47 @@
     .parameter "confidence"
 
     .prologue
-    const/16 v11, 0xa
+    const/16 v11, 0xb
 
     const/16 v10, 0x8
 
     const/4 v9, 0x0
 
-    .line 634
+    .line 676
     iput-object p1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResult:Lcom/google/android/speech/alternates/CorrectableString;
 
-    .line 635
+    .line 677
     iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
     invoke-virtual {v5, v10}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 636
-    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 678
+    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v5, v9}, Lcom/google/glass/home/search/StreamingTextView;->setVisibility(I)V
+    invoke-virtual {v5, v9}, Lcom/google/glass/search/StreamingTextView;->setVisibility(I)V
 
-    .line 637
-    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 679
+    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
     invoke-virtual {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->cleanRecognitionResults(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Lcom/google/glass/home/search/StreamingTextView;->setFinalRecognizedText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v6}, Lcom/google/glass/search/StreamingTextView;->setFinalRecognizedText(Ljava/lang/CharSequence;)V
 
-    .line 639
+    .line 681
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->showProgressOnRecognitionResult()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 640
+    .line 682
     iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v5}, Lcom/google/glass/widget/SliderView;->startIndeterminate()V
 
-    .line 650
+    .line 692
     :goto_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -767,7 +844,7 @@
 
     sub-long v3, v5, v7
 
-    .line 651
+    .line 693
     .local v3, timeToRecognitionTotal:J
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -777,7 +854,7 @@
 
     sub-long v1, v5, v7
 
-    .line 652
+    .line 694
     .local v1, timeToRecognitionFromEndOfSpeech:J
     const-string v5, "id"
 
@@ -861,41 +938,57 @@
 
     aput-object v9, v7, v8
 
-    const-string v8, "trigger"
+    const/16 v8, 0xa
 
-    aput-object v8, v7, v11
-
-    const/16 v8, 0xb
-
-    iget v9, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
+    const-string v9, "trigger"
 
     aput-object v9, v7, v8
+
+    iget v8, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    aput-object v8, v7, v11
 
     invoke-static {v5, v6, v7}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 660
+    .line 702
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v5, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_RECOGNITION:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v5, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 662
+    .line 705
+    monitor-enter p0
+
+    .line 706
+    :try_start_0
+    iget v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResultsCount:I
+
+    add-int/lit8 v5, v5, 0x1
+
+    iput v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResultsCount:I
+
+    .line 707
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 709
     invoke-virtual {p1}, Lcom/google/android/speech/alternates/CorrectableString;->toString()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {p0, v5}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onRecognitionResult(Ljava/lang/String;)V
 
-    .line 663
+    .line 710
     return-void
 
-    .line 644
+    .line 686
     .end local v0           #eventTuple:Ljava/lang/String;
     .end local v1           #timeToRecognitionFromEndOfSpeech:J
     .end local v3           #timeToRecognitionTotal:J
@@ -904,12 +997,38 @@
 
     invoke-virtual {v5, v11}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 645
+    .line 687
     iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v5}, Lcom/google/glass/widget/SliderView;->stopIndeterminate()V
 
     goto/16 :goto_0
+
+    .line 707
+    .restart local v0       #eventTuple:Ljava/lang/String;
+    .restart local v1       #timeToRecognitionFromEndOfSpeech:J
+    .restart local v3       #timeToRecognitionTotal:J
+    :catchall_0
+    move-exception v5
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v5
+.end method
+
+.method private dispatchOnSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+    .locals 0
+    .parameter "earsResponse"
+
+    .prologue
+    .line 740
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+
+    .line 741
+    return-void
 .end method
 
 .method private dispatchSetSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V
@@ -917,12 +1036,12 @@
     .parameter "speechLevelSource"
 
     .prologue
-    .line 587
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 621
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v0, p1}, Lcom/google/glass/home/search/MicrophoneView;->setSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V
+    invoke-virtual {v0, p1}, Lcom/google/glass/search/MicrophoneView;->setSpeechLevelSource(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechLevelSource;)V
 
-    .line 588
+    .line 622
     return-void
 .end method
 
@@ -932,12 +1051,12 @@
     .prologue
     const/4 v8, 0x1
 
-    .line 557
-    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 591
+    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v3}, Lcom/google/glass/home/search/MicrophoneView;->showNotListening()V
+    invoke-virtual {v3}, Lcom/google/glass/search/MicrophoneView;->showNotListening()V
 
-    .line 560
+    .line 594
     iget-boolean v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasMajelResponse:Z
 
     if-nez v3, :cond_0
@@ -948,14 +1067,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 561
+    .line 595
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isMessageShowing()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 562
+    .line 596
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v3
@@ -964,18 +1083,18 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 584
+    .line 618
     :cond_0
     :goto_0
     return-void
 
-    .line 565
+    .line 599
     :cond_1
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v3}, Lcom/google/glass/widget/SliderView;->stopIndeterminate()V
 
-    .line 568
+    .line 602
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -984,7 +1103,7 @@
 
     sub-long v1, v3, v5
 
-    .line 569
+    .line 603
     .local v1, timeToError:J
     const-string v3, "id"
 
@@ -1060,24 +1179,24 @@
 
     move-result-object v0
 
-    .line 575
+    .line 609
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_NO_ANSWER:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v3, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 577
+    .line 611
     new-instance v3, Lcom/google/glass/app/GlassError;
 
     invoke-direct {v3}, Lcom/google/glass/app/GlassError;-><init>()V
 
-    sget v4, Lcom/google/glass/home/R$string;->voice_search_no_answer:I
+    sget v4, Lcom/google/glass/voice/R$string;->voice_search_no_answer:I
 
     invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
 
     move-result-object v3
 
-    sget v4, Lcom/google/glass/home/R$drawable;->ic_cloud_sad_big:I
+    sget v4, Lcom/google/glass/voice/R$drawable;->ic_cloud_sad_big:I
 
     invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
 
@@ -1102,24 +1221,24 @@
     .prologue
     const/16 v2, 0x8
 
-    .line 449
+    .line 483
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 450
+    .line 484
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/SliderView;->stopIndeterminate()V
 
-    .line 451
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 485
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v0, v2}, Lcom/google/glass/home/search/StreamingTextView;->setVisibility(I)V
+    invoke-virtual {v0, v2}, Lcom/google/glass/search/StreamingTextView;->setVisibility(I)V
 
-    .line 452
+    .line 486
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getPromptText()Ljava/lang/CharSequence;
@@ -1128,24 +1247,24 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 457
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 491
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/MicrophoneView;->getVisibility()I
+    invoke-virtual {v0}, Lcom/google/glass/search/MicrophoneView;->getVisibility()I
 
     move-result v0
 
     if-ne v0, v2, :cond_0
 
-    .line 458
+    .line 492
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->animateIn(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 459
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 493
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
     new-instance v1, Lcom/google/glass/home/voice/BaseVoiceInputActivity$4;
 
@@ -1153,16 +1272,16 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->animateIn(Landroid/view/View;Ljava/lang/Runnable;)V
 
-    .line 474
+    .line 508
     :goto_0
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/StreamingTextView;->reset()V
+    invoke-virtual {v0}, Lcom/google/glass/search/StreamingTextView;->reset()V
 
-    .line 475
+    .line 509
     return-void
 
-    .line 468
+    .line 502
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
@@ -1172,18 +1291,18 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 469
+    .line 503
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 471
+    .line 505
     :cond_1
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/MicrophoneView;->showListening()V
+    invoke-virtual {v0}, Lcom/google/glass/search/MicrophoneView;->showListening()V
 
     goto :goto_0
 .end method
@@ -1194,14 +1313,14 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 531
+    .line 565
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isMessageShowing()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 532
+    .line 566
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -1210,22 +1329,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 554
+    .line 588
     :goto_0
     return-void
 
-    .line 536
+    .line 570
     :cond_0
-    iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v1}, Lcom/google/glass/home/search/MicrophoneView;->showNotListening()V
+    invoke-virtual {v1}, Lcom/google/glass/search/MicrophoneView;->showNotListening()V
 
-    .line 537
+    .line 571
     iget-object v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v1}, Lcom/google/glass/widget/SliderView;->stopIndeterminate()V
 
-    .line 540
+    .line 574
     const-string v1, "id"
 
     iget-wide v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
@@ -1290,30 +1409,30 @@
 
     move-result-object v0
 
-    .line 545
+    .line 579
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_NO_SPEECH_DETECTED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v1, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 547
+    .line 581
     new-instance v1, Lcom/google/glass/app/GlassError;
 
     invoke-direct {v1}, Lcom/google/glass/app/GlassError;-><init>()V
 
-    sget v2, Lcom/google/glass/home/R$string;->error_no_speech_detected:I
+    sget v2, Lcom/google/glass/voice/R$string;->error_no_speech_detected:I
 
     invoke-virtual {v1, v2}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
 
     move-result-object v1
 
-    sget v2, Lcom/google/glass/home/R$string;->error_tap_speak_again:I
+    sget v2, Lcom/google/glass/voice/R$string;->error_tap_speak_again:I
 
     invoke-virtual {v1, v2}, Lcom/google/glass/app/GlassError;->setSecondaryMessageId(I)Lcom/google/glass/app/GlassError;
 
     move-result-object v1
 
-    sget v2, Lcom/google/glass/home/R$drawable;->ic_exclamation_big:I
+    sget v2, Lcom/google/glass/voice/R$drawable;->ic_exclamation_big:I
 
     invoke-virtual {v1, v2}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
 
@@ -1338,31 +1457,31 @@
     .locals 8
 
     .prologue
-    .line 502
+    .line 536
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
     iput-wide v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->endOfSpeechTime:J
 
-    .line 504
-    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 538
+    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v3}, Lcom/google/glass/home/search/MicrophoneView;->showNotListening()V
+    invoke-virtual {v3}, Lcom/google/glass/search/MicrophoneView;->showNotListening()V
 
-    .line 505
-    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 539
+    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
     invoke-direct {p0, v3}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->animateOut(Landroid/view/View;)V
 
-    .line 506
+    .line 540
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
     const/16 v4, 0x8
 
     invoke-virtual {v3, v4}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 507
+    .line 541
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v3
@@ -1371,16 +1490,16 @@
 
     invoke-virtual {v3, v4}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 513
+    .line 547
     iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
-    const/16 v4, 0xa
+    const/16 v4, 0xb
 
     const-wide/16 v5, 0xfa
 
     invoke-virtual {v3, v4, v5, v6}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
 
-    .line 517
+    .line 551
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -1389,7 +1508,7 @@
 
     sub-long v1, v3, v5
 
-    .line 518
+    .line 552
     .local v1, timeToEndOfSpeech:J
     const-string v3, "id"
 
@@ -1455,13 +1574,13 @@
 
     move-result-object v0
 
-    .line 523
+    .line 557
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_END_OF_SPEECH:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v3, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 524
+    .line 558
     return-void
 .end method
 
@@ -1469,17 +1588,17 @@
     .locals 1
 
     .prologue
-    .line 496
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 530
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/MicrophoneView;->showRecording()V
+    invoke-virtual {v0}, Lcom/google/glass/search/MicrophoneView;->showRecording()V
 
-    .line 497
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 531
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/StreamingTextView;->reset()V
+    invoke-virtual {v0}, Lcom/google/glass/search/StreamingTextView;->reset()V
 
-    .line 498
+    .line 532
     return-void
 .end method
 
@@ -1493,28 +1612,36 @@
 
     const/4 v9, 0x0
 
-    .line 591
+    .line 625
     iput-boolean v10, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasRecognitionResults:Z
 
-    .line 593
+    .line 627
     if-nez p1, :cond_0
 
     if-eqz p2, :cond_2
 
-    .line 594
+    .line 628
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->cleanRecognitionResults(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 595
+    .line 629
     .local v2, stableCleaned:Ljava/lang/CharSequence;
     invoke-virtual {p0, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->cleanRecognitionResults(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
-    .line 597
+    .line 631
     .local v1, pendingCleaned:Ljava/lang/CharSequence;
+    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
+
+    invoke-virtual {v5}, Lcom/google/glass/widget/TypophileTextView;->getVisibility()I
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
@@ -1527,13 +1654,13 @@
 
     if-eqz v5, :cond_1
 
-    .line 623
+    .line 665
     .end local v1           #pendingCleaned:Ljava/lang/CharSequence;
     .end local v2           #stableCleaned:Ljava/lang/CharSequence;
     :goto_0
     return-void
 
-    .line 603
+    .line 640
     .restart local v1       #pendingCleaned:Ljava/lang/CharSequence;
     .restart local v2       #stableCleaned:Ljava/lang/CharSequence;
     :cond_1
@@ -1543,17 +1670,17 @@
 
     invoke-virtual {v5, v6}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 604
-    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 641
+    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v5, v9}, Lcom/google/glass/home/search/StreamingTextView;->setVisibility(I)V
+    invoke-virtual {v5, v9}, Lcom/google/glass/search/StreamingTextView;->setVisibility(I)V
 
-    .line 605
-    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 642
+    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v5, v2, v1}, Lcom/google/glass/home/search/StreamingTextView;->updateRecognizedText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v2, v1}, Lcom/google/glass/search/StreamingTextView;->updateRecognizedText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
-    .line 609
+    .line 646
     .end local v1           #pendingCleaned:Ljava/lang/CharSequence;
     .end local v2           #stableCleaned:Ljava/lang/CharSequence;
     :cond_2
@@ -1561,10 +1688,10 @@
 
     if-eqz v5, :cond_3
 
-    .line 610
+    .line 647
     iput-boolean v9, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logFirstRecognizedText:Z
 
-    .line 612
+    .line 649
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -1573,7 +1700,7 @@
 
     sub-long v3, v5, v7
 
-    .line 613
+    .line 650
     .local v3, timeToFirstRecognition:J
     const-string v5, "id"
 
@@ -1635,157 +1762,184 @@
 
     move-result-object v0
 
-    .line 618
+    .line 655
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v5, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_FIRST_RECOGNITION:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v5, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 622
+    .line 660
     .end local v0           #eventTuple:Ljava/lang/String;
     .end local v3           #timeToFirstRecognition:J
     :cond_3
+    monitor-enter p0
+
+    .line 661
+    :try_start_0
+    iget v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionUpdatesCount:I
+
+    add-int/lit8 v5, v5, 0x1
+
+    iput v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionUpdatesCount:I
+
+    .line 662
+    monitor-exit p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 664
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onUpdateRecognizedText()V
 
     goto :goto_0
+
+    .line 662
+    :catchall_0
+    move-exception v5
+
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    throw v5
 .end method
 
-.method private static getErrorIconId(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)I
+.method private static getErrorIconId(Lcom/google/glass/voice/network/SpeechException;)I
     .locals 2
     .parameter "e"
 
     .prologue
-    .line 739
-    invoke-interface {p0}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    .line 831
+    invoke-virtual {p0}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 740
-    sget v0, Lcom/google/glass/home/R$drawable;->ic_exclamation_big:I
+    .line 832
+    sget v0, Lcom/google/glass/voice/R$drawable;->ic_exclamation_big:I
 
-    .line 742
+    .line 834
     :goto_0
     return v0
 
     :cond_0
-    sget v0, Lcom/google/glass/home/R$drawable;->ic_cloud_sad_big:I
+    sget v0, Lcom/google/glass/voice/R$drawable;->ic_cloud_sad_big:I
 
     goto :goto_0
 .end method
 
-.method private static getErrorMessageId(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)I
+.method private static getErrorMessageId(Lcom/google/glass/voice/network/SpeechException;)I
     .locals 2
     .parameter "e"
 
     .prologue
-    .line 717
-    invoke-interface {p0}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    .line 809
+    invoke-virtual {p0}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->NETWORK_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->NETWORK_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 718
-    sget v0, Lcom/google/glass/home/R$string;->voice_search_network_error:I
+    .line 810
+    sget v0, Lcom/google/glass/voice/R$string;->voice_search_network_error:I
 
-    .line 725
+    .line 817
     :goto_0
     return v0
 
-    .line 719
+    .line 811
     :cond_0
-    invoke-interface {p0}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    invoke-virtual {p0}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 720
-    sget v0, Lcom/google/glass/home/R$string;->voice_search_no_match:I
+    .line 812
+    sget v0, Lcom/google/glass/voice/R$string;->voice_search_no_match:I
 
     goto :goto_0
 
-    .line 721
+    .line 813
     :cond_1
-    invoke-interface {p0}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    invoke-virtual {p0}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 722
-    sget v0, Lcom/google/glass/home/R$string;->voice_search_audio_error:I
+    .line 814
+    sget v0, Lcom/google/glass/voice/R$string;->voice_search_audio_error:I
 
     goto :goto_0
 
-    .line 725
+    .line 817
     :cond_2
-    sget v0, Lcom/google/glass/home/R$string;->voice_search_server_error:I
+    sget v0, Lcom/google/glass/voice/R$string;->voice_search_server_error:I
 
     goto :goto_0
 .end method
 
-.method private getErrorOnConfirmRunnable(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)Ljava/lang/Runnable;
+.method private getErrorOnConfirmRunnable(Lcom/google/glass/voice/network/SpeechException;)Ljava/lang/Runnable;
     .locals 2
     .parameter "e"
 
     .prologue
-    .line 747
-    invoke-interface {p1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    .line 839
+    invoke-virtual {p1}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-interface {p1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    invoke-virtual {p1}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 749
+    .line 841
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->speakAgainRunnable:Ljava/lang/Runnable;
 
-    .line 751
+    .line 843
     :goto_0
     return-object v0
 
@@ -1797,94 +1951,196 @@
     goto :goto_0
 .end method
 
-.method private static getSecondaryErrorMessageId(Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;)I
+.method public static final getResultDuration(Ljava/lang/String;)J
+    .locals 10
+    .parameter "recognitionResult"
+
+    .prologue
+    .line 962
+    const-wide/16 v0, 0x7d0
+
+    const-wide v2, 0x40a7700000000000L
+
+    const-wide/high16 v4, 0x3ff0
+
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v6
+
+    int-to-double v6, v6
+
+    const-wide v8, 0x4061800000000000L
+
+    div-double/2addr v6, v8
+
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->min(DD)D
+
+    move-result-wide v4
+
+    mul-double/2addr v2, v4
+
+    double-to-long v2, v2
+
+    add-long/2addr v0, v2
+
+    return-wide v0
+.end method
+
+.method private static getSecondaryErrorMessageId(Lcom/google/glass/voice/network/SpeechException;)I
     .locals 2
     .parameter "e"
 
     .prologue
-    .line 730
-    invoke-interface {p0}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    .line 822
+    invoke-virtual {p0}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->NO_MATCH:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    invoke-interface {p0}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException;->getType()Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    invoke-virtual {p0}, Lcom/google/glass/voice/network/SpeechException;->getType()Lcom/google/glass/voice/network/SpeechException$Type;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;
+    sget-object v1, Lcom/google/glass/voice/network/SpeechException$Type;->AUDIO_RECOGNIZE:Lcom/google/glass/voice/network/SpeechException$Type;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/VoiceSearchUi$SpeechException$Type;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SpeechException$Type;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 732
+    .line 824
     :cond_0
-    sget v0, Lcom/google/glass/home/R$string;->error_tap_speak_again:I
+    sget v0, Lcom/google/glass/voice/R$string;->error_tap_speak_again:I
 
-    .line 734
+    .line 826
     :goto_0
     return v0
 
     :cond_1
-    sget v0, Lcom/google/glass/home/R$string;->error_tap_connection_settings:I
+    sget v0, Lcom/google/glass/voice/R$string;->error_tap_connection_settings:I
 
     goto :goto_0
 .end method
 
-.method private reset()V
-    .locals 2
+.method private logSearchStarted(I)V
+    .locals 6
+    .parameter "trigger"
 
     .prologue
-    .line 400
+    .line 370
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v1
 
-    iput-wide v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
+    iput-wide v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
 
-    .line 402
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    .line 374
+    const-string v1, "id"
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/MicrophoneView;->showNotListening()V
+    iget-wide v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
 
-    .line 403
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    const/4 v3, 0x4
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    const-string v5, "type"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getType()I
+
+    move-result v5
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x2
+
+    const-string v5, "trigger"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x3
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    invoke-static {v1, v2, v3}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 378
+    .local v0, eventTuple:Ljava/lang/String;
+    sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_STARTED:Lcom/google/glass/logging/UserEventAction;
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+
+    .line 379
+    return-void
+.end method
+
+.method private reset()V
+    .locals 3
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 435
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
+
+    invoke-virtual {v0}, Lcom/google/glass/search/MicrophoneView;->showNotListening()V
+
+    .line 436
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 404
+    .line 437
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/SliderView;->stopIndeterminate()V
 
-    .line 407
-    const/4 v0, 0x0
+    .line 440
+    iput-boolean v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isRetry:Z
 
-    iput-boolean v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasMajelResponse:Z
+    .line 441
+    iput-boolean v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasMajelResponse:Z
 
-    .line 408
+    .line 442
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResult:Lcom/google/android/speech/alternates/CorrectableString;
 
-    .line 409
+    .line 443
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logFirstRecognizedText:Z
 
-    .line 410
+    .line 444
     return-void
 .end method
 
@@ -1893,14 +2149,14 @@
     .parameter "msg"
 
     .prologue
-    .line 803
+    .line 895
     sparse-switch p1, :sswitch_data_0
 
-    .line 815
+    .line 907
     :goto_0
     return-void
 
-    .line 806
+    .line 898
     :sswitch_0
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getContentView()Landroid/view/View;
 
@@ -1912,7 +2168,7 @@
 
     goto :goto_0
 
-    .line 812
+    .line 904
     :sswitch_1
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getContentView()Landroid/view/View;
 
@@ -1924,12 +2180,12 @@
 
     goto :goto_0
 
-    .line 803
+    .line 895
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
         0x3 -> :sswitch_1
-        0x9 -> :sswitch_1
+        0xa -> :sswitch_1
     .end sparse-switch
 .end method
 
@@ -1938,29 +2194,29 @@
     .parameter "msg"
 
     .prologue
-    .line 789
+    .line 881
     packed-switch p1, :pswitch_data_0
 
-    .line 800
+    .line 892
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 795
+    .line 887
     :pswitch_1
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->powerHelper:Lcom/google/glass/util/PowerHelper;
 
     if-eqz v0, :cond_0
 
-    .line 796
+    .line 888
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->powerHelper:Lcom/google/glass/util/PowerHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/util/PowerHelper;->userActivity()V
 
     goto :goto_0
 
-    .line 789
+    .line 881
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -1980,7 +2236,7 @@
     .parameter "results"
 
     .prologue
-    .line 819
+    .line 911
     return-object p1
 .end method
 
@@ -1988,20 +2244,20 @@
     .locals 1
 
     .prologue
-    .line 832
+    .line 924
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
     return-object v0
 .end method
 
-.method public abstract getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method public abstract getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 .end method
 
 .method protected getInputTypeResId()I
     .locals 1
 
     .prologue
-    .line 845
+    .line 946
     const/4 v0, 0x0
 
     return v0
@@ -2011,16 +2267,16 @@
     .locals 3
 
     .prologue
-    .line 487
+    .line 521
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getInputTypeResId()I
 
     move-result v0
 
-    .line 488
+    .line 522
     .local v0, resId:I
     if-nez v0, :cond_0
 
-    .line 489
+    .line 523
     new-instance v1, Ljava/lang/AssertionError;
 
     const-string v2, "Must provide input type text or ID."
@@ -2029,7 +2285,7 @@
 
     throw v1
 
-    .line 492
+    .line 526
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getResources()Landroid/content/res/Resources;
 
@@ -2046,16 +2302,16 @@
     .locals 3
 
     .prologue
-    .line 478
+    .line 512
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getSpeakNowPromptResId()I
 
     move-result v0
 
-    .line 479
+    .line 513
     .local v0, resId:I
     if-nez v0, :cond_0
 
-    .line 480
+    .line 514
     new-instance v1, Ljava/lang/AssertionError;
 
     const-string v2, "Must provide prompt text or ID."
@@ -2064,7 +2320,7 @@
 
     throw v1
 
-    .line 483
+    .line 517
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getResources()Landroid/content/res/Resources;
 
@@ -2077,28 +2333,80 @@
     return-object v1
 .end method
 
+.method public declared-synchronized getRecognitionResultsCount()I
+    .locals 1
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 758
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionResultsCount:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized getRecognitionUpdatesCount()I
+    .locals 1
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 767
+    monitor-enter p0
+
+    :try_start_0
+    iget v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->recognitionUpdatesCount:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    monitor-exit p0
+
+    return v0
+
+    :catchall_0
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
 .method protected getRecognizedTextLineCount()I
     .locals 1
 
     .prologue
-    .line 630
-    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
+    .line 672
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/StreamingTextView;->getLineCount()I
+    invoke-virtual {v0}, Lcom/google/glass/search/StreamingTextView;->getLineCount()I
 
     move-result v0
 
     return v0
 .end method
 
-.method protected abstract getRetryVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method protected abstract getRetryVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 .end method
 
 .method protected getSpeakNowPromptResId()I
     .locals 1
 
     .prologue
-    .line 841
+    .line 941
     const/4 v0, 0x0
 
     return v0
@@ -2107,12 +2415,34 @@
 .method protected abstract getType()I
 .end method
 
+.method public getVoiceSearchUi()Lcom/google/glass/voice/network/VoiceSearchUi;
+    .locals 1
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 749
+    iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
+
+    return-object v0
+.end method
+
 .method protected isMajelResponseExpected()Z
     .locals 1
 
     .prologue
-    .line 824
+    .line 916
     const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method protected isRetry()Z
+    .locals 1
+
+    .prologue
+    .line 805
+    iget-boolean v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->isRetry:Z
 
     return v0
 .end method
@@ -2121,7 +2451,7 @@
     .locals 6
 
     .prologue
-    .line 416
+    .line 450
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -2130,7 +2460,7 @@
 
     sub-long v0, v2, v4
 
-    .line 417
+    .line 451
     .local v0, timeSinceStart:J
     const-wide/16 v2, 0x3e8
 
@@ -2138,7 +2468,7 @@
 
     if-lez v2, :cond_0
 
-    .line 418
+    .line 452
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -2169,13 +2499,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 419
+    .line 453
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->endpointNetworkRecognizer()V
 
-    .line 420
+    .line 454
     const/4 v2, 0x1
 
-    .line 422
+    .line 456
     :goto_0
     return v2
 
@@ -2190,7 +2520,7 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 429
+    .line 463
     const-string v1, "id"
 
     iget-wide v2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
@@ -2241,18 +2571,30 @@
 
     move-result-object v0
 
-    .line 433
+    .line 467
     .local v0, eventTuple:Ljava/lang/String;
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_DISMISS:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {p0, v1, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 435
-    invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
+    .line 469
+    invoke-super {p0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
     move-result v1
 
     return v1
+.end method
+
+.method protected onHtmlAnswerCardResult(Ljava/lang/String;Ljava/lang/String;JJ)V
+    .locals 0
+    .parameter "htmlResponse"
+    .parameter "recognitionResult"
+    .parameter "startTime"
+    .parameter "endOfSpeechTime"
+
+    .prologue
+    .line 737
+    return-void
 .end method
 
 .method protected onMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;Ljava/lang/String;JJ)V
@@ -2263,51 +2605,27 @@
     .parameter "endOfSpeechTime"
 
     .prologue
-    .line 681
+    .line 728
     return-void
 .end method
 
 .method public onPause()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 375
+    .line 417
     iget-boolean v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->hasMajelResponse:Z
 
     if-nez v0, :cond_0
 
-    .line 379
+    .line 421
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->detachVoiceSearchUi()V
 
-    .line 382
+    .line 423
     :cond_0
-    sget-object v0, Lcom/google/glass/util/Labs$Feature;->DISABLE_GAZE_ON_MIC:Lcom/google/glass/util/Labs$Feature;
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onPause()V
 
-    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 384
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Requesting re-enable of the GazeService after voice input complete..."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 385
-    const/4 v0, 0x1
-
-    invoke-static {p0, v0}, Lcom/google/glass/gesture/EyeGestureUtils;->enableGazeServiceAsync(Landroid/content/Context;Z)V
-
-    .line 388
-    :cond_1
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onPause()V
-
-    .line 389
+    .line 424
     return-void
 .end method
 
@@ -2316,292 +2634,197 @@
     .parameter "text"
 
     .prologue
-    .line 667
+    .line 714
     return-void
 .end method
 
 .method protected onResume()V
-    .locals 11
+    .locals 5
 
     .prologue
-    const/4 v9, 0x1
+    .line 383
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onResume()V
 
-    const/4 v10, 0x0
-
-    .line 320
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onResume()V
-
-    .line 322
+    .line 385
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getContentView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 323
+    .line 386
     .local v0, content:Landroid/view/View;
-    sget v5, Lcom/google/glass/home/R$id;->voice_search_selected_item:I
+    sget v3, Lcom/google/glass/voice/R$id;->voice_search_selected_item:I
 
-    invoke-virtual {p0, v5}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/google/glass/widget/TypophileTextView;
-
-    .line 325
-    .local v4, selectedItem:Lcom/google/glass/widget/TypophileTextView;
-    sget v5, Lcom/google/glass/home/R$id;->microphone_container:I
-
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/glass/home/search/MicrophoneView;
-
-    iput-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
-
-    .line 326
-    sget v5, Lcom/google/glass/home/R$id;->voice_search_prompt:I
-
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/glass/widget/TypophileTextView;
-
-    iput-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
-
-    .line 327
-    sget v5, Lcom/google/glass/home/R$id;->streaming_text:I
-
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/glass/home/search/StreamingTextView;
-
-    iput-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/home/search/StreamingTextView;
-
-    .line 328
-    sget v5, Lcom/google/glass/home/R$id;->progress_slider:I
-
-    invoke-virtual {v0, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/google/glass/widget/SliderView;
-
-    iput-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
-
-    .line 331
-    invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->reset()V
-
-    .line 333
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v3
-
-    .line 334
-    .local v3, intent:Landroid/content/Intent;
-    if-eqz v3, :cond_1
-
-    .line 335
-    const-string v5, "trigger_method"
-
-    invoke-virtual {v3, v5, v10}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v5
-
-    iput v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
-
-    .line 341
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getGlassApplication()Lcom/google/glass/app/GlassApplication;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/google/glass/app/GlassApplication;->getConnectionState()Lcom/google/glass/util/InetConnectionState;
+    invoke-virtual {p0, v3}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 342
-    .local v2, inetState:Lcom/google/glass/util/InetConnectionState;
-    invoke-virtual {v2}, Lcom/google/glass/util/InetConnectionState;->isConnected()Z
+    check-cast v2, Lcom/google/glass/widget/TypophileTextView;
 
-    move-result v5
+    .line 388
+    .local v2, selectedItem:Lcom/google/glass/widget/TypophileTextView;
+    sget v3, Lcom/google/glass/voice/R$id;->microphone_container:I
 
-    if-nez v5, :cond_2
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    .line 343
-    iget-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
+    move-result-object v3
 
-    invoke-virtual {v5}, Lcom/google/glass/home/search/MicrophoneView;->showNotListening()V
+    check-cast v3, Lcom/google/glass/search/MicrophoneView;
 
-    .line 344
-    new-instance v5, Lcom/google/glass/app/GlassError;
+    iput-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    invoke-direct {v5}, Lcom/google/glass/app/GlassError;-><init>()V
+    .line 389
+    sget v3, Lcom/google/glass/voice/R$id;->voice_search_prompt:I
 
-    sget v6, Lcom/google/glass/home/R$string;->voice_network_connectivity:I
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    invoke-virtual {v5, v6}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
+    move-result-object v3
 
-    move-result-object v5
+    check-cast v3, Lcom/google/glass/widget/TypophileTextView;
 
-    sget v6, Lcom/google/glass/home/R$string;->error_tap_connection_settings:I
+    iput-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->prompt:Lcom/google/glass/widget/TypophileTextView;
 
-    invoke-virtual {v5, v6}, Lcom/google/glass/app/GlassError;->setSecondaryMessageId(I)Lcom/google/glass/app/GlassError;
+    .line 390
+    sget v3, Lcom/google/glass/voice/R$id;->streaming_text:I
 
-    move-result-object v5
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    sget v6, Lcom/google/glass/home/R$drawable;->ic_cloud_sad_big:I
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
+    check-cast v3, Lcom/google/glass/search/StreamingTextView;
 
-    move-result-object v5
+    iput-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->streamingTextView:Lcom/google/glass/search/StreamingTextView;
 
-    invoke-virtual {v5, v9}, Lcom/google/glass/app/GlassError;->setFinishWhenDone(Z)Lcom/google/glass/app/GlassError;
+    .line 391
+    sget v3, Lcom/google/glass/voice/R$id;->progress_slider:I
 
-    move-result-object v5
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    sget-object v6, Lcom/google/glass/app/GlassError$OnConfirmAction;->GO_TO_SETTINGS:Lcom/google/glass/app/GlassError$OnConfirmAction;
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Lcom/google/glass/app/GlassError;->setOnConfirmAction(Lcom/google/glass/app/GlassError$OnConfirmAction;)Lcom/google/glass/app/GlassError;
+    check-cast v3, Lcom/google/glass/widget/SliderView;
 
-    move-result-object v5
+    iput-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->progressSlider:Lcom/google/glass/widget/SliderView;
 
-    invoke-virtual {v5, p0}, Lcom/google/glass/app/GlassError;->show(Lcom/google/glass/app/GlassActivity;)V
+    .line 394
+    invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->reset()V
 
-    .line 371
-    :cond_0
-    :goto_1
-    return-void
+    .line 397
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getGlassApplication()Lcom/google/glass/app/GlassApplication;
 
-    .line 337
-    .end local v2           #inetState:Lcom/google/glass/util/InetConnectionState;
-    :cond_1
-    iput v10, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
+    move-result-object v3
 
-    goto :goto_0
-
-    .line 354
-    .restart local v2       #inetState:Lcom/google/glass/util/InetConnectionState;
-    :cond_2
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getInputTypeText()Ljava/lang/CharSequence;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 358
-    const-string v5, "id"
-
-    iget-wide v6, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->startTime:J
-
-    invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v6
-
-    const/4 v7, 0x4
-
-    new-array v7, v7, [Ljava/lang/Object;
-
-    const-string v8, "type"
-
-    aput-object v8, v7, v10
-
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getType()I
-
-    move-result v8
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    aput-object v8, v7, v9
-
-    const/4 v8, 0x2
-
-    const-string v9, "trigger"
-
-    aput-object v9, v7, v8
-
-    const/4 v8, 0x3
-
-    iget v9, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    aput-object v9, v7, v8
-
-    invoke-static {v5, v6, v7}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/google/glass/app/GlassApplication;->getConnectionState()Lcom/google/glass/util/InetConnectionState;
 
     move-result-object v1
 
-    .line 362
-    .local v1, eventTuple:Ljava/lang/String;
-    sget-object v5, Lcom/google/glass/logging/UserEventAction;->VOICE_SEARCH_STARTED:Lcom/google/glass/logging/UserEventAction;
+    .line 398
+    .local v1, inetState:Lcom/google/glass/util/InetConnectionState;
+    invoke-virtual {v1}, Lcom/google/glass/util/InetConnectionState;->isConnected()Z
 
-    invoke-virtual {p0, v5, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+    move-result v3
 
-    .line 364
-    new-instance v5, Lcom/google/glass/util/PowerHelper;
+    if-nez v3, :cond_0
 
-    invoke-direct {v5, p0}, Lcom/google/glass/util/PowerHelper;-><init>(Landroid/content/Context;)V
+    .line 399
+    iget-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
 
-    iput-object v5, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->powerHelper:Lcom/google/glass/util/PowerHelper;
+    invoke-virtual {v3}, Lcom/google/glass/search/MicrophoneView;->showNotListening()V
 
-    .line 366
-    sget-object v5, Lcom/google/glass/util/Labs$Feature;->DISABLE_GAZE_ON_MIC:Lcom/google/glass/util/Labs$Feature;
+    .line 400
+    new-instance v3, Lcom/google/glass/app/GlassError;
 
-    invoke-static {v5}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+    invoke-direct {v3}, Lcom/google/glass/app/GlassError;-><init>()V
 
-    move-result v5
+    sget v4, Lcom/google/glass/voice/R$string;->voice_network_connectivity:I
 
-    if-eqz v5, :cond_0
+    invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
 
-    .line 368
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getTag()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v5
+    sget v4, Lcom/google/glass/voice/R$string;->error_tap_connection_settings:I
 
-    const-string v6, "Requesting disable of the GazeService during voice input..."
+    invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setSecondaryMessageId(I)Lcom/google/glass/app/GlassError;
 
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v3
 
-    .line 369
-    invoke-static {p0, v10}, Lcom/google/glass/gesture/EyeGestureUtils;->enableGazeServiceAsync(Landroid/content/Context;Z)V
+    sget v4, Lcom/google/glass/voice/R$drawable;->ic_cloud_sad_big:I
 
-    goto :goto_1
+    invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setFinishWhenDone(Z)Lcom/google/glass/app/GlassError;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/google/glass/app/GlassError$OnConfirmAction;->GO_TO_SETTINGS:Lcom/google/glass/app/GlassError$OnConfirmAction;
+
+    invoke-virtual {v3, v4}, Lcom/google/glass/app/GlassError;->setOnConfirmAction(Lcom/google/glass/app/GlassError$OnConfirmAction;)Lcom/google/glass/app/GlassError;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p0}, Lcom/google/glass/app/GlassError;->show(Lcom/google/glass/app/GlassActivity;)V
+
+    .line 413
+    :goto_0
+    return-void
+
+    .line 410
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getInputTypeText()Ljava/lang/CharSequence;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 412
+    new-instance v3, Lcom/google/glass/util/PowerHelper;
+
+    invoke-direct {v3, p0}, Lcom/google/glass/util/PowerHelper;-><init>(Landroid/content/Context;)V
+
+    iput-object v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->powerHelper:Lcom/google/glass/util/PowerHelper;
+
+    goto :goto_0
+.end method
+
+.method protected onSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
+    .locals 0
+    .parameter "earsResponse"
+
+    .prologue
+    .line 745
+    return-void
 .end method
 
 .method protected onStart()V
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 307
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onStart()V
+    const/4 v3, 0x0
 
-    .line 312
+    .line 347
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onStart()V
+
+    .line 352
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 313
+    .line 353
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
     const-string v1, "should_play_initial_sound"
 
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 314
+    .line 354
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v1
@@ -2610,22 +2833,46 @@
 
     invoke-virtual {v1, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 316
+    .line 357
     :cond_0
+    if-eqz v0, :cond_1
+
+    .line 358
+    const-string v1, "trigger_method"
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
+
+    .line 366
+    :goto_0
+    iget v1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
+
+    invoke-direct {p0, v1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->logSearchStarted(I)V
+
+    .line 367
     return-void
+
+    .line 361
+    :cond_1
+    iput v3, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->triggerMethod:I
+
+    goto :goto_0
 .end method
 
 .method protected onStop()V
     .locals 0
 
     .prologue
-    .line 394
+    .line 429
     invoke-virtual {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->finish()V
 
-    .line 396
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onStop()V
+    .line 431
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onStop()V
 
-    .line 397
+    .line 432
     return-void
 .end method
 
@@ -2633,7 +2880,7 @@
     .locals 0
 
     .prologue
-    .line 627
+    .line 669
     return-void
 .end method
 
@@ -2641,15 +2888,15 @@
     .locals 1
 
     .prologue
-    .line 440
-    invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onVoiceServiceConnected()V
+    .line 474
+    invoke-super {p0}, Lcom/google/glass/app/GlassVoiceActivity;->onVoiceServiceConnected()V
 
-    .line 445
+    .line 479
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
 
-    .line 446
+    .line 480
     return-void
 .end method
 
@@ -2657,8 +2904,8 @@
     .locals 1
 
     .prologue
-    .line 302
-    sget v0, Lcom/google/glass/home/R$layout;->voice_search_activity:I
+    .line 342
+    sget v0, Lcom/google/glass/voice/R$layout;->voice_search_activity:I
 
     return v0
 .end method
@@ -2667,7 +2914,7 @@
     .locals 2
 
     .prologue
-    .line 850
+    .line 951
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->handler:Landroid/os/Handler;
 
     const/4 v1, 0x3
@@ -2678,7 +2925,7 @@
 
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
-    .line 851
+    .line 952
     return-void
 .end method
 
@@ -2686,7 +2933,7 @@
     .locals 1
 
     .prologue
-    .line 527
+    .line 561
     const/4 v0, 0x1
 
     return v0

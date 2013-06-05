@@ -1,9 +1,6 @@
 .class final Lcom/google/common/collect/Iterators$8;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/TransformedIterator;
 .source "Iterators.java"
-
-# interfaces
-.implements Ljava/util/Iterator;
 
 
 # annotations
@@ -18,16 +15,13 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Ljava/util/Iterator",
-        "<TT;>;"
+        "Lcom/google/common/collect/TransformedIterator",
+        "<TF;TT;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$fromIterator:Ljava/util/Iterator;
-
 .field final synthetic val$function:Lcom/google/common/base/Function;
 
 
@@ -38,68 +32,34 @@
     .parameter
 
     .prologue
-    .line 804
-    iput-object p1, p0, Lcom/google/common/collect/Iterators$8;->val$fromIterator:Ljava/util/Iterator;
-
+    .line 828
+    .local p1, x0:Ljava/util/Iterator;,"Ljava/util/Iterator<+TF;>;"
     iput-object p2, p0, Lcom/google/common/collect/Iterators$8;->val$function:Lcom/google/common/base/Function;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public hasNext()Z
+.method transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-
-    .prologue
-    .line 807
-    iget-object v0, p0, Lcom/google/common/collect/Iterators$8;->val$fromIterator:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public next()Ljava/lang/Object;
-    .locals 2
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TT;"
+            "(TF;)TT;"
         }
     .end annotation
 
     .prologue
-    .line 811
-    iget-object v1, p0, Lcom/google/common/collect/Iterators$8;->val$fromIterator:Ljava/util/Iterator;
+    .line 832
+    .local p1, from:Ljava/lang/Object;,"TF;"
+    iget-object v0, p0, Lcom/google/common/collect/Iterators$8;->val$function:Lcom/google/common/base/Function;
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 812
-    .local v0, from:Ljava/lang/Object;,"TF;"
-    iget-object v1, p0, Lcom/google/common/collect/Iterators$8;->val$function:Lcom/google/common/base/Function;
-
-    invoke-interface {v1, v0}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    return-object v1
-.end method
-
-.method public remove()V
-    .locals 1
-
-    .prologue
-    .line 816
-    iget-object v0, p0, Lcom/google/common/collect/Iterators$8;->val$fromIterator:Ljava/util/Iterator;
-
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    .line 817
-    return-void
+    return-object v0
 .end method

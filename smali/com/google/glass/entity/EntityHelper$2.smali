@@ -1,4 +1,4 @@
-.class final Lcom/google/glass/entity/EntityHelper$2;
+.class Lcom/google/glass/entity/EntityHelper$2;
 .super Ljava/lang/Object;
 .source "EntityHelper.java"
 
@@ -8,11 +8,11 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/entity/EntityHelper;->sortShareTargets(Ljava/util/List;Z)V
+    value = Lcom/google/glass/entity/EntityHelper;->extractRecentlyUsedShareTargets(Ljava/util/List;)Ljava/util/List;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
@@ -28,17 +28,17 @@
 
 
 # instance fields
-.field final synthetic val$autoSynced:Z
+.field final synthetic this$0:Lcom/google/glass/entity/EntityHelper;
 
 
 # direct methods
-.method constructor <init>(Z)V
+.method constructor <init>(Lcom/google/glass/entity/EntityHelper;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 429
-    iput-boolean p1, p0, Lcom/google/glass/entity/EntityHelper$2;->val$autoSynced:Z
+    .line 447
+    iput-object p1, p0, Lcom/google/glass/entity/EntityHelper$2;->this$0:Lcom/google/glass/entity/EntityHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,76 +48,21 @@
 
 # virtual methods
 .method public compare(Lcom/google/glass/entity/EntityHelper$EntityData;Lcom/google/glass/entity/EntityHelper$EntityData;)I
-    .locals 3
+    .locals 4
     .parameter "entity1"
     .parameter "entity2"
 
     .prologue
-    .line 434
-    iget v1, p2, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
+    .line 451
+    iget-wide v0, p2, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
 
-    iget v2, p1, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
+    iget-wide v2, p1, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
 
-    invoke-static {v1, v2}, Lcom/google/common/primitives/Ints;->compare(II)I
-
-    move-result v0
-
-    .line 438
-    .local v0, result:I
-    if-nez v0, :cond_0
-
-    .line 439
-    iget-boolean v1, p0, Lcom/google/glass/entity/EntityHelper$2;->val$autoSynced:Z
-
-    if-eqz v1, :cond_1
-
-    .line 440
-    iget v1, p2, Lcom/google/glass/entity/EntityHelper$EntityData;->priority:I
-
-    iget v2, p1, Lcom/google/glass/entity/EntityHelper$EntityData;->priority:I
-
-    invoke-static {v1, v2}, Lcom/google/common/primitives/Ints;->compare(II)I
+    invoke-static {v0, v1, v2, v3}, Lcom/google/common/primitives/Longs;->compare(JJ)I
 
     move-result v0
 
-    .line 447
-    :cond_0
-    :goto_0
     return v0
-
-    .line 442
-    :cond_1
-    iget-object v1, p1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
-
-    move-result-object v1
-
-    if-nez v1, :cond_2
-
-    const/4 v0, 0x1
-
-    :goto_1
-    goto :goto_0
-
-    :cond_2
-    iget-object v1, p1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
-
-    move-result v0
-
-    goto :goto_1
 .end method
 
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
@@ -126,7 +71,7 @@
     .parameter "x1"
 
     .prologue
-    .line 429
+    .line 447
     check-cast p1, Lcom/google/glass/entity/EntityHelper$EntityData;
 
     .end local p1

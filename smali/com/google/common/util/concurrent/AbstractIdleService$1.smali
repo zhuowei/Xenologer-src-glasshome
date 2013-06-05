@@ -38,12 +38,10 @@
     .locals 2
 
     .prologue
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractIdleService$1;->this$0:Lcom/google/common/util/concurrent/AbstractIdleService;
 
-    sget-object v1, Lcom/google/common/util/concurrent/Service$State;->STARTING:Lcom/google/common/util/concurrent/Service$State;
-
-    invoke-virtual {v0, v1}, Lcom/google/common/util/concurrent/AbstractIdleService;->executor(Lcom/google/common/util/concurrent/Service$State;)Ljava/util/concurrent/Executor;
+    invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractIdleService;->executor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
@@ -53,7 +51,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 51
+    .line 52
     return-void
 .end method
 
@@ -61,12 +59,10 @@
     .locals 2
 
     .prologue
-    .line 54
+    .line 56
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractIdleService$1;->this$0:Lcom/google/common/util/concurrent/AbstractIdleService;
 
-    sget-object v1, Lcom/google/common/util/concurrent/Service$State;->STOPPING:Lcom/google/common/util/concurrent/Service$State;
-
-    invoke-virtual {v0, v1}, Lcom/google/common/util/concurrent/AbstractIdleService;->executor(Lcom/google/common/util/concurrent/Service$State;)Ljava/util/concurrent/Executor;
+    invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractIdleService;->executor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
@@ -76,6 +72,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 65
+    .line 67
     return-void
 .end method

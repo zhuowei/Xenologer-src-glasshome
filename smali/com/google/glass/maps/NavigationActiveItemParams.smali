@@ -153,7 +153,7 @@
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v5, v6}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
 
     move-result v5
 

@@ -13,7 +13,7 @@
     .locals 0
 
     .prologue
-    .line 277
+    .line 286
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -24,10 +24,10 @@
     .parameter "latch"
 
     .prologue
-    .line 51
+    .line 52
     const/4 v1, 0x0
 
-    .line 55
+    .line 56
     .local v1, interrupted:Z
     :goto_0
     :try_start_0
@@ -36,10 +36,10 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 62
+    .line 63
     if-eqz v1, :cond_0
 
-    .line 63
+    .line 64
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -49,25 +49,25 @@
     :cond_0
     return-void
 
-    .line 57
+    .line 58
     :catch_0
     move-exception v0
 
-    .line 58
+    .line 59
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v1, 0x1
 
-    .line 59
+    .line 60
     goto :goto_0
 
-    .line 62
+    .line 63
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_1
 
-    .line 63
+    .line 64
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -192,11 +192,11 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 130
     .local p0, future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     const/4 v1, 0x0
 
-    .line 132
+    .line 134
     .local v1, interrupted:Z
     :goto_0
     :try_start_0
@@ -207,10 +207,10 @@
 
     move-result-object v2
 
-    .line 138
+    .line 140
     if-eqz v1, :cond_0
 
-    .line 139
+    .line 141
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -220,25 +220,25 @@
     :cond_0
     return-object v2
 
-    .line 133
+    .line 135
     :catch_0
     move-exception v0
 
-    .line 134
+    .line 136
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v1, 0x1
 
-    .line 135
+    .line 137
     goto :goto_0
 
-    .line 138
+    .line 140
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_1
 
-    .line 139
+    .line 141
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -274,18 +274,18 @@
     .end annotation
 
     .prologue
-    .line 156
+    .line 161
     .local p0, future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     const/4 v3, 0x0
 
-    .line 158
+    .line 163
     .local v3, interrupted:Z
     :try_start_0
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
     move-result-wide v4
 
-    .line 159
+    .line 164
     .local v4, remainingNanos:J
     invoke-static {}, Ljava/lang/System;->nanoTime()J
     :try_end_0
@@ -295,7 +295,7 @@
 
     add-long v1, v6, v4
 
-    .line 164
+    .line 169
     .local v1, end:J
     :goto_0
     :try_start_1
@@ -308,10 +308,10 @@
 
     move-result-object v6
 
-    .line 171
+    .line 176
     if-eqz v3, :cond_0
 
-    .line 172
+    .line 177
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v7
@@ -321,15 +321,15 @@
     :cond_0
     return-object v6
 
-    .line 165
+    .line 170
     :catch_0
     move-exception v0
 
-    .line 166
+    .line 171
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v3, 0x1
 
-    .line 167
+    .line 172
     :try_start_2
     invoke-static {}, Ljava/lang/System;->nanoTime()J
     :try_end_2
@@ -339,10 +339,10 @@
 
     sub-long v4, v1, v6
 
-    .line 168
+    .line 173
     goto :goto_0
 
-    .line 171
+    .line 176
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #end:J
     .end local v4           #remainingNanos:J
@@ -351,7 +351,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 172
+    .line 177
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v7
@@ -428,20 +428,20 @@
     .parameter "unit"
 
     .prologue
-    .line 184
+    .line 188
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 185
+    .line 189
     const/4 v3, 0x0
 
-    .line 187
+    .line 191
     .local v3, interrupted:Z
     :try_start_0
     invoke-virtual {p3, p1, p2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
     move-result-wide v4
 
-    .line 188
+    .line 192
     .local v4, remainingNanos:J
     invoke-static {}, Ljava/lang/System;->nanoTime()J
     :try_end_0
@@ -451,7 +451,7 @@
 
     add-long v1, v6, v4
 
-    .line 192
+    .line 196
     .local v1, end:J
     :goto_0
     :try_start_1
@@ -462,10 +462,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 200
+    .line 204
     if-eqz v3, :cond_0
 
-    .line 201
+    .line 205
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v6
@@ -475,15 +475,15 @@
     :cond_0
     return-void
 
-    .line 194
+    .line 198
     :catch_0
     move-exception v0
 
-    .line 195
+    .line 199
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v3, 0x1
 
-    .line 196
+    .line 200
     :try_start_2
     invoke-static {}, Ljava/lang/System;->nanoTime()J
     :try_end_2
@@ -493,10 +493,10 @@
 
     sub-long v4, v1, v6
 
-    .line 197
+    .line 201
     goto :goto_0
 
-    .line 200
+    .line 204
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #end:J
     .end local v4           #remainingNanos:J
@@ -505,7 +505,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 201
+    .line 205
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v7
@@ -531,12 +531,12 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 240
     .local p0, queue:Ljava/util/concurrent/BlockingQueue;,"Ljava/util/concurrent/BlockingQueue<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     const/4 v1, 0x0
 
-    .line 235
+    .line 244
     .local v1, interrupted:Z
     :goto_0
     :try_start_0
@@ -545,10 +545,10 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 242
+    .line 251
     if-eqz v1, :cond_0
 
-    .line 243
+    .line 252
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -558,25 +558,25 @@
     :cond_0
     return-void
 
-    .line 237
+    .line 246
     :catch_0
     move-exception v0
 
-    .line 238
+    .line 247
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v1, 0x1
 
-    .line 239
+    .line 248
     goto :goto_0
 
-    .line 242
+    .line 251
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_1
 
-    .line 243
+    .line 252
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -593,17 +593,17 @@
     .parameter "unit"
 
     .prologue
-    .line 254
+    .line 263
     const/4 v3, 0x0
 
-    .line 256
+    .line 265
     .local v3, interrupted:Z
     :try_start_0
     invoke-virtual {p2, p0, p1}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
     move-result-wide v4
 
-    .line 257
+    .line 266
     .local v4, remainingNanos:J
     invoke-static {}, Ljava/lang/System;->nanoTime()J
     :try_end_0
@@ -613,7 +613,7 @@
 
     add-long v1, v6, v4
 
-    .line 261
+    .line 270
     .local v1, end:J
     :goto_0
     :try_start_1
@@ -624,10 +624,10 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 269
+    .line 278
     if-eqz v3, :cond_0
 
-    .line 270
+    .line 279
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v6
@@ -637,15 +637,15 @@
     :cond_0
     return-void
 
-    .line 263
+    .line 272
     :catch_0
     move-exception v0
 
-    .line 264
+    .line 273
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v3, 0x1
 
-    .line 265
+    .line 274
     :try_start_2
     invoke-static {}, Ljava/lang/System;->nanoTime()J
     :try_end_2
@@ -655,10 +655,10 @@
 
     sub-long v4, v1, v6
 
-    .line 266
+    .line 275
     goto :goto_0
 
-    .line 269
+    .line 278
     .end local v0           #e:Ljava/lang/InterruptedException;
     .end local v1           #end:J
     .end local v4           #remainingNanos:J
@@ -667,7 +667,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 270
+    .line 279
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v7
@@ -692,11 +692,11 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 214
     .local p0, queue:Ljava/util/concurrent/BlockingQueue;,"Ljava/util/concurrent/BlockingQueue<TE;>;"
     const/4 v1, 0x0
 
-    .line 214
+    .line 218
     .local v1, interrupted:Z
     :goto_0
     :try_start_0
@@ -707,10 +707,10 @@
 
     move-result-object v2
 
-    .line 220
+    .line 224
     if-eqz v1, :cond_0
 
-    .line 221
+    .line 225
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3
@@ -720,25 +720,25 @@
     :cond_0
     return-object v2
 
-    .line 215
+    .line 219
     :catch_0
     move-exception v0
 
-    .line 216
+    .line 220
     .local v0, e:Ljava/lang/InterruptedException;
     const/4 v1, 0x1
 
-    .line 217
+    .line 221
     goto :goto_0
 
-    .line 220
+    .line 224
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_1
 
-    .line 221
+    .line 225
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v3

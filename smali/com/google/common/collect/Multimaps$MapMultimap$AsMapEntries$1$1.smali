@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1;->next()Ljava/util/Map$Entry;
+    value = Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1;->transform(Ljava/lang/Object;)Ljava/util/Map$Entry;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 1211
+    .line 1236
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;,"Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1.1;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;->this$2:Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1;
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 1213
+    .line 1240
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;,"Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;->val$key:Ljava/lang/Object;
 
@@ -69,7 +69,7 @@
     .locals 1
 
     .prologue
-    .line 1211
+    .line 1236
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;,"Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;->getValue()Ljava/util/Collection;
 
@@ -89,7 +89,7 @@
     .end annotation
 
     .prologue
-    .line 1216
+    .line 1245
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;,"Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1$1;->this$2:Lcom/google/common/collect/Multimaps$MapMultimap$AsMapEntries$1;
 

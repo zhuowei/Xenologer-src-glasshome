@@ -211,24 +211,35 @@
 
     invoke-virtual {v3, v5}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 67
+    move-object v5, p2
+
+    .line 65
+    check-cast v5, Lcom/google/glass/widget/OptionMenuItemView;
+
+    invoke-virtual {v2}, Lcom/google/glass/widget/OptionMenu$Item;->shouldSuppressTapSound()Z
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Lcom/google/glass/widget/OptionMenuItemView;->setShouldSuppressSingleTapSound(Z)V
+
+    .line 69
     invoke-virtual {v2}, Lcom/google/glass/widget/OptionMenu$Item;->isEnabled()Z
 
     move-result v5
 
     if-nez v5, :cond_1
 
-    .line 68
+    .line 70
     const/high16 v4, 0x3f00
 
-    .line 69
+    .line 71
     .local v4, semiTransparent:F
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 70
+    .line 72
     invoke-virtual {v3, v4}, Lcom/google/glass/widget/TypophileTextView;->setAlpha(F)V
 
-    .line 74
+    .line 76
     .end local v4           #semiTransparent:F
     :cond_1
     sget v5, Lcom/google/glass/common/R$id;->description:I
@@ -239,7 +250,7 @@
 
     check-cast v0, Lcom/google/glass/widget/TipsView;
 
-    .line 75
+    .line 77
     .local v0, desc:Lcom/google/glass/widget/TipsView;
     invoke-virtual {v2}, Lcom/google/glass/widget/OptionMenu$Item;->getDescription()Ljava/lang/String;
 
@@ -251,19 +262,19 @@
 
     if-nez v5, :cond_2
 
-    .line 76
+    .line 78
     invoke-virtual {v2}, Lcom/google/glass/widget/OptionMenu$Item;->getDescription()Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v0, v5}, Lcom/google/glass/widget/TipsView;->setTip(Ljava/lang/String;)V
 
-    .line 77
+    .line 79
     const/4 v5, 0x0
 
     invoke-virtual {v0, v5}, Lcom/google/glass/widget/TipsView;->setVisibility(I)V
 
-    .line 83
+    .line 85
     :goto_0
     sget v5, Lcom/google/glass/common/R$id;->tag_horizontal_scroll_item:I
 
@@ -273,15 +284,15 @@
 
     invoke-virtual {p2, v5, v6}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 86
+    .line 88
     sget v5, Lcom/google/glass/common/R$id;->tag_horizontal_scroll_item_view_recycler:I
 
     invoke-virtual {p2, v5, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 88
+    .line 90
     return-object p2
 
-    .line 79
+    .line 81
     :cond_2
     const/16 v5, 0x8
 
@@ -305,6 +316,6 @@
     .parameter "view"
 
     .prologue
-    .line 93
+    .line 95
     return-void
 .end method

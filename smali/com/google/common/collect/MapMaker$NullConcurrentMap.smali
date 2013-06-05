@@ -56,23 +56,23 @@
     .parameter "mapMaker"
 
     .prologue
-    .line 845
+    .line 764
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     invoke-direct {p0}, Ljava/util/AbstractMap;-><init>()V
 
-    .line 846
+    .line 765
     invoke-virtual {p1}, Lcom/google/common/collect/MapMaker;->getRemovalListener()Lcom/google/common/collect/MapMaker$RemovalListener;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMaker$NullConcurrentMap;->removalListener:Lcom/google/common/collect/MapMaker$RemovalListener;
 
-    .line 847
+    .line 766
     iget-object v0, p1, Lcom/google/common/collect/MapMaker;->nullRemovalCause:Lcom/google/common/collect/MapMaker$RemovalCause;
 
     iput-object v0, p0, Lcom/google/common/collect/MapMaker$NullConcurrentMap;->removalCause:Lcom/google/common/collect/MapMaker$RemovalCause;
 
-    .line 848
+    .line 767
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .end parameter
 
     .prologue
-    .line 854
+    .line 773
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -101,7 +101,7 @@
     .end parameter
 
     .prologue
-    .line 859
+    .line 778
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 912
+    .line 827
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
 
@@ -145,7 +145,7 @@
     .end annotation
 
     .prologue
-    .line 864
+    .line 783
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -163,7 +163,7 @@
     .end annotation
 
     .prologue
-    .line 868
+    .line 787
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -173,13 +173,13 @@
 
     invoke-direct {v0, p1, p2, v1}, Lcom/google/common/collect/MapMaker$RemovalNotification;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lcom/google/common/collect/MapMaker$RemovalCause;)V
 
-    .line 870
+    .line 789
     .local v0, notification:Lcom/google/common/collect/MapMaker$RemovalNotification;,"Lcom/google/common/collect/MapMaker$RemovalNotification<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapMaker$NullConcurrentMap;->removalListener:Lcom/google/common/collect/MapMaker$RemovalListener;
 
     invoke-interface {v1, v0}, Lcom/google/common/collect/MapMaker$RemovalListener;->onRemoval(Lcom/google/common/collect/MapMaker$RemovalNotification;)V
 
-    .line 871
+    .line 790
     return-void
 .end method
 
@@ -194,19 +194,19 @@
     .end annotation
 
     .prologue
-    .line 875
+    .line 794
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 876
+    .line 795
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 877
+    .line 796
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/MapMaker$NullConcurrentMap;->notifyRemoval(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 878
+    .line 797
     const/4 v0, 0x0
 
     return-object v0
@@ -223,7 +223,7 @@
     .end annotation
 
     .prologue
-    .line 883
+    .line 801
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -249,7 +249,7 @@
     .end annotation
 
     .prologue
-    .line 888
+    .line 806
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -268,7 +268,7 @@
     .end parameter
 
     .prologue
-    .line 893
+    .line 810
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -286,16 +286,16 @@
     .end annotation
 
     .prologue
-    .line 898
+    .line 814
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 899
+    .line 815
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 900
+    .line 816
     const/4 v0, 0x0
 
     return-object v0
@@ -318,17 +318,17 @@
     .end annotation
 
     .prologue
-    .line 905
+    .line 820
     .local p0, this:Lcom/google/common/collect/MapMaker$NullConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullConcurrentMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, oldValue:Ljava/lang/Object;,"TV;"
     .local p3, newValue:Ljava/lang/Object;,"TV;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 906
+    .line 821
     invoke-static {p3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 907
+    .line 822
     const/4 v0, 0x0
 
     return v0

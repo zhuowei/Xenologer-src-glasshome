@@ -4,7 +4,7 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
+.annotation build Lcom/google/common/annotations/GwtCompatible;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -56,12 +56,12 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 57
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, map:Ljava/util/concurrent/ConcurrentHashMap;,"Ljava/util/concurrent/ConcurrentHashMap<TK;Ljava/util/concurrent/atomic/AtomicLong;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 44
+    .line 58
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
-    .line 45
+    .line 59
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 65
     new-instance v0, Lcom/google/common/util/concurrent/AtomicLongMap;
 
     new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
@@ -117,17 +117,17 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 72
     .local p0, m:Ljava/util/Map;,"Ljava/util/Map<+TK;+Ljava/lang/Long;>;"
     invoke-static {}, Lcom/google/common/util/concurrent/AtomicLongMap;->create()Lcom/google/common/util/concurrent/AtomicLongMap;
 
     move-result-object v0
 
-    .line 59
+    .line 73
     .local v0, result:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     invoke-virtual {v0, p0}, Lcom/google/common/util/concurrent/AtomicLongMap;->putAll(Ljava/util/Map;)V
 
-    .line 60
+    .line 74
     return-object v0
 .end method
 
@@ -144,7 +144,7 @@
     .end annotation
 
     .prologue
-    .line 276
+    .line 290
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -176,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 106
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     :cond_0
@@ -188,11 +188,11 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 93
+    .line 107
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
-    .line 94
+    .line 108
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicLong;
@@ -206,23 +206,23 @@
     .end local v0           #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 95
+    .line 109
     .restart local v0       #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
-    .line 114
+    .line 128
     .end local p2
     :goto_0
     return-wide p2
 
-    .line 102
+    .line 116
     .restart local p2
     :cond_1
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v3
 
-    .line 103
+    .line 117
     .local v3, oldValue:J
     const-wide/16 v5, 0x0
 
@@ -230,7 +230,7 @@
 
     if-nez v5, :cond_2
 
-    .line 105
+    .line 119
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicLong;
@@ -245,11 +245,11 @@
 
     goto :goto_0
 
-    .line 112
+    .line 126
     :cond_2
     add-long v1, v3, p2
 
-    .line 113
+    .line 127
     .local v1, newValue:J
     invoke-virtual {v0, v3, v4, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->compareAndSet(JJ)Z
 
@@ -259,7 +259,7 @@
 
     move-wide p2, v1
 
-    .line 114
+    .line 128
     goto :goto_0
 .end method
 
@@ -276,11 +276,11 @@
     .end annotation
 
     .prologue
-    .line 271
+    .line 285
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->asMap:Ljava/util/Map;
 
-    .line 272
+    .line 286
     .local v0, result:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/lang/Long;>;"
     if-nez v0, :cond_0
 
@@ -299,13 +299,13 @@
     .locals 1
 
     .prologue
-    .line 314
+    .line 327
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->clear()V
 
-    .line 315
+    .line 328
     return-void
 .end method
 
@@ -314,7 +314,7 @@
     .parameter "key"
 
     .prologue
-    .line 289
+    .line 302
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -335,7 +335,7 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 97
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v0, -0x1
@@ -357,7 +357,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 82
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     iget-object v1, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
@@ -368,7 +368,7 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 69
+    .line 83
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_0
 
@@ -400,7 +400,7 @@
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v5, 0x0
 
-    .line 141
+    .line 155
     :cond_0
     iget-object v7, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -410,11 +410,11 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 142
+    .line 156
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
-    .line 143
+    .line 157
     iget-object v7, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v8, Ljava/util/concurrent/atomic/AtomicLong;
@@ -428,29 +428,29 @@
     .end local v0           #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 144
+    .line 158
     .restart local v0       #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
     move-wide v3, v5
 
-    .line 163
+    .line 177
     :goto_0
     return-wide v3
 
-    .line 151
+    .line 165
     :cond_1
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v3
 
-    .line 152
+    .line 166
     .local v3, oldValue:J
     cmp-long v7, v3, v5
 
     if-nez v7, :cond_2
 
-    .line 154
+    .line 168
     iget-object v7, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v8, Ljava/util/concurrent/atomic/AtomicLong;
@@ -465,14 +465,14 @@
 
     move-wide v3, v5
 
-    .line 155
+    .line 169
     goto :goto_0
 
-    .line 161
+    .line 175
     :cond_2
     add-long v1, v3, p2
 
-    .line 162
+    .line 176
     .local v1, newValue:J
     invoke-virtual {v0, v3, v4, v1, v2}, Ljava/util/concurrent/atomic/AtomicLong;->compareAndSet(JJ)Z
 
@@ -493,7 +493,7 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 146
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v0, -0x1
@@ -515,7 +515,7 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 139
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v0, 0x1
@@ -537,7 +537,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 90
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v0, 0x1
@@ -553,7 +553,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 317
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -579,7 +579,7 @@
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v3, 0x0
 
-    .line 176
+    .line 190
     :cond_0
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -589,11 +589,11 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 177
+    .line 191
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
-    .line 178
+    .line 192
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicLong;
@@ -607,29 +607,29 @@
     .end local v0           #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 179
+    .line 193
     .restart local v0       #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
     move-wide v1, v3
 
-    .line 197
+    .line 211
     :goto_0
     return-wide v1
 
-    .line 186
+    .line 200
     :cond_1
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v1
 
-    .line 187
+    .line 201
     .local v1, oldValue:J
     cmp-long v5, v1, v3
 
     if-nez v5, :cond_2
 
-    .line 189
+    .line 203
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicLong;
@@ -644,10 +644,10 @@
 
     move-wide v1, v3
 
-    .line 190
+    .line 204
     goto :goto_0
 
-    .line 196
+    .line 210
     :cond_2
     invoke-virtual {v0, v1, v2, p2, p3}, Ljava/util/concurrent/atomic/AtomicLong;->compareAndSet(JJ)Z
 
@@ -672,7 +672,7 @@
     .end annotation
 
     .prologue
-    .line 211
+    .line 225
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     .local p1, m:Ljava/util/Map;,"Ljava/util/Map<+TK;+Ljava/lang/Long;>;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -697,7 +697,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 212
+    .line 226
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+Ljava/lang/Long;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -717,7 +717,7 @@
 
     goto :goto_0
 
-    .line 214
+    .line 228
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+Ljava/lang/Long;>;"
     :cond_0
     return-void
@@ -738,7 +738,7 @@
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v3, 0x0
 
-    .line 352
+    .line 365
     :cond_0
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -748,11 +748,11 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 353
+    .line 366
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_2
 
-    .line 354
+    .line 367
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicLong;
@@ -766,30 +766,30 @@
     .end local v0           #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 355
+    .line 368
     .restart local v0       #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_2
 
     move-wide v1, v3
 
-    .line 371
+    .line 384
     :cond_1
     :goto_0
     return-wide v1
 
-    .line 361
+    .line 374
     :cond_2
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v1
 
-    .line 362
+    .line 375
     .local v1, oldValue:J
     cmp-long v5, v1, v3
 
     if-nez v5, :cond_1
 
-    .line 364
+    .line 377
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicLong;
@@ -804,7 +804,7 @@
 
     move-wide v1, v3
 
-    .line 365
+    .line 378
     goto :goto_0
 .end method
 
@@ -822,7 +822,7 @@
     .local p1, key:Ljava/lang/Object;,"TK;"
     const-wide/16 v3, 0x0
 
-    .line 221
+    .line 235
     iget-object v5, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v5, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -831,23 +831,23 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 222
+    .line 236
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_0
 
     move-wide v1, v3
 
-    .line 232
+    .line 246
     :goto_0
     return-wide v1
 
-    .line 227
+    .line 241
     :cond_0
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v1
 
-    .line 228
+    .line 242
     .local v1, oldValue:J
     cmp-long v5, v1, v3
 
@@ -859,7 +859,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 230
+    .line 244
     :cond_1
     iget-object v3, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -885,7 +885,7 @@
 
     const/4 v3, 0x0
 
-    .line 397
+    .line 410
     iget-object v4, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v4, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -894,28 +894,28 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 398
+    .line 411
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-nez v0, :cond_1
 
-    .line 415
+    .line 428
     :cond_0
     :goto_0
     return v3
 
-    .line 402
+    .line 415
     :cond_1
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v1
 
-    .line 403
+    .line 416
     .local v1, oldValue:J
     cmp-long v4, v1, p2
 
     if-nez v4, :cond_0
 
-    .line 407
+    .line 420
     cmp-long v4, v1, v5
 
     if-eqz v4, :cond_2
@@ -926,13 +926,13 @@
 
     if-eqz v4, :cond_0
 
-    .line 409
+    .line 422
     :cond_2
     iget-object v3, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3, p1, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 411
+    .line 424
     const/4 v3, 0x1
 
     goto :goto_0
@@ -942,7 +942,7 @@
     .locals 7
 
     .prologue
-    .line 244
+    .line 258
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v3, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -967,7 +967,7 @@
 
     move-result-object v2
 
-    .line 245
+    .line 259
     .local v2, key:Ljava/lang/Object;,"TK;"
     iget-object v3, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -977,7 +977,7 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 246
+    .line 260
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-eqz v0, :cond_0
 
@@ -991,14 +991,14 @@
 
     if-nez v3, :cond_0
 
-    .line 247
+    .line 261
     iget-object v3, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3, v2, v0}, Ljava/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 250
+    .line 264
     .end local v0           #atomic:Ljava/util/concurrent/atomic/AtomicLong;
     .end local v2           #key:Ljava/lang/Object;,"TK;"
     :cond_1
@@ -1023,12 +1023,12 @@
 
     const/4 v1, 0x0
 
-    .line 384
+    .line 397
     cmp-long v2, p2, v4
 
     if-nez v2, :cond_1
 
-    .line 385
+    .line 398
     invoke-virtual {p0, p1, p4, p5}, Lcom/google/common/util/concurrent/AtomicLongMap;->putIfAbsent(Ljava/lang/Object;J)J
 
     move-result-wide v2
@@ -1039,12 +1039,12 @@
 
     const/4 v1, 0x1
 
-    .line 388
+    .line 401
     :cond_0
     :goto_0
     return v1
 
-    .line 387
+    .line 400
     :cond_1
     iget-object v2, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -1054,7 +1054,7 @@
 
     check-cast v0, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 388
+    .line 401
     .local v0, atomic:Ljava/util/concurrent/atomic/AtomicLong;
     if-eqz v0, :cond_0
 
@@ -1069,7 +1069,7 @@
     .locals 1
 
     .prologue
-    .line 297
+    .line 310
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -1084,11 +1084,11 @@
     .locals 6
 
     .prologue
-    .line 258
+    .line 272
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     const-wide/16 v1, 0x0
 
-    .line 259
+    .line 273
     .local v1, sum:J
     iget-object v4, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 
@@ -1114,7 +1114,7 @@
 
     check-cast v3, Ljava/util/concurrent/atomic/AtomicLong;
 
-    .line 260
+    .line 274
     .local v3, value:Ljava/util/concurrent/atomic/AtomicLong;
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
@@ -1124,7 +1124,7 @@
 
     goto :goto_0
 
-    .line 262
+    .line 276
     .end local v3           #value:Ljava/util/concurrent/atomic/AtomicLong;
     :cond_0
     return-wide v1
@@ -1134,7 +1134,7 @@
     .locals 1
 
     .prologue
-    .line 319
+    .line 332
     .local p0, this:Lcom/google/common/util/concurrent/AtomicLongMap;,"Lcom/google/common/util/concurrent/AtomicLongMap<TK;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AtomicLongMap;->map:Ljava/util/concurrent/ConcurrentHashMap;
 

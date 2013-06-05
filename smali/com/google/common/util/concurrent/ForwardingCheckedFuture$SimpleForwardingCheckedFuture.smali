@@ -53,12 +53,12 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 67
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture<TV;TX;>;"
     .local p1, delegate:Lcom/google/common/util/concurrent/CheckedFuture;,"Lcom/google/common/util/concurrent/CheckedFuture<TV;TX;>;"
     invoke-direct {p0}, Lcom/google/common/util/concurrent/ForwardingCheckedFuture;-><init>()V
 
-    .line 70
+    .line 68
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;->delegate:Lcom/google/common/util/concurrent/CheckedFuture;
 
-    .line 71
+    .line 69
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 73
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture<TV;TX;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;->delegate:Lcom/google/common/util/concurrent/CheckedFuture;
 
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 62
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture<TV;TX;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;->delegate()Lcom/google/common/util/concurrent/CheckedFuture;
 
@@ -108,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 62
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture<TV;TX;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;->delegate()Lcom/google/common/util/concurrent/CheckedFuture;
 
@@ -121,7 +121,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 62
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture<TV;TX;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingCheckedFuture$SimpleForwardingCheckedFuture;->delegate()Lcom/google/common/util/concurrent/CheckedFuture;
 

@@ -12,7 +12,10 @@
 
 
 # static fields
-.field private static final log:Ljava/util/logging/Logger;
+.field static final log:Ljava/util/logging/Logger;
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
 
 
 # instance fields
@@ -35,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 50
     const-class v0, Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -55,33 +58,23 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 60
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 53
     invoke-static {}, Lcom/google/common/collect/Lists;->newLinkedList()Ljava/util/LinkedList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ExecutionList;->runnables:Ljava/util/Queue;
 
-    .line 56
+    .line 57
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/common/util/concurrent/ExecutionList;->executed:Z
 
     .line 60
     return-void
-.end method
-
-.method static synthetic access$000()Ljava/util/logging/Logger;
-    .locals 1
-
-    .prologue
-    .line 45
-    sget-object v0, Lcom/google/common/util/concurrent/ExecutionList;->log:Ljava/util/logging/Logger;
-
-    return-object v0
 .end method
 
 

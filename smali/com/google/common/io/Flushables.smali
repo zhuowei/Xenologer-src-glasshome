@@ -37,7 +37,7 @@
     .locals 0
 
     .prologue
-    .line 37
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -54,25 +54,25 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 54
     :try_start_0
     invoke-interface {p0}, Ljava/io/Flushable;->flush()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 65
+    .line 62
     :goto_0
     return-void
 
-    .line 57
+    .line 55
     :catch_0
     move-exception v0
 
-    .line 58
+    .line 56
     .local v0, e:Ljava/io/IOException;
     if-eqz p1, :cond_0
 
-    .line 59
+    .line 57
     sget-object v1, Lcom/google/common/io/Flushables;->logger:Ljava/util/logging/Logger;
 
     sget-object v2, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
@@ -83,7 +83,7 @@
 
     goto :goto_0
 
-    .line 62
+    .line 59
     :cond_0
     throw v0
 .end method
@@ -93,7 +93,7 @@
     .parameter "flushable"
 
     .prologue
-    .line 75
+    .line 72
     const/4 v1, 0x1
 
     :try_start_0
@@ -101,15 +101,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 79
+    .line 76
     :goto_0
     return-void
 
-    .line 76
+    .line 73
     :catch_0
     move-exception v0
 
-    .line 77
+    .line 74
     .local v0, e:Ljava/io/IOException;
     sget-object v1, Lcom/google/common/io/Flushables;->logger:Ljava/util/logging/Logger;
 

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1178
+    .line 1221
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$9;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraManager$9;->val$client:Lcom/google/glass/camera/SharedCameraClient;
@@ -49,14 +49,14 @@
     .parameter "extra"
 
     .prologue
-    .line 1181
+    .line 1224
     packed-switch p2, :pswitch_data_0
 
-    .line 1201
+    .line 1244
     :goto_0
     return-void
 
-    .line 1183
+    .line 1226
     :pswitch_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$9;->val$client:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -64,7 +64,7 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 1184
+    .line 1227
     new-instance v0, Lcom/google/glass/camera/SharedCameraManager$9$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$9$1;-><init>(Lcom/google/glass/camera/SharedCameraManager$9;)V
@@ -73,7 +73,7 @@
 
     goto :goto_0
 
-    .line 1192
+    .line 1235
     :pswitch_1
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$9;->val$client:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 1193
+    .line 1236
     new-instance v0, Lcom/google/glass/camera/SharedCameraManager$9$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$9$2;-><init>(Lcom/google/glass/camera/SharedCameraManager$9;)V
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 1181
+    .line 1224
     :pswitch_data_0
     .packed-switch 0x320
         :pswitch_0

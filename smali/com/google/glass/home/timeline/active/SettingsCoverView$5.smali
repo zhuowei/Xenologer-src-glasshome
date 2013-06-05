@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 166
+    .line 172
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$5;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 2
 
     .prologue
-    .line 169
+    .line 175
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$5;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     #getter for: Lcom/google/glass/home/timeline/active/SettingsCoverView;->stateReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$600(Lcom/google/glass/home/timeline/active/SettingsCoverView;)Lcom/google/glass/util/SafeBroadcastReceiver;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$700(Lcom/google/glass/home/timeline/active/SettingsCoverView;)Lcom/google/glass/util/SafeBroadcastReceiver;
 
     move-result-object v0
 
@@ -57,6 +57,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 170
+    .line 176
     return-void
 .end method

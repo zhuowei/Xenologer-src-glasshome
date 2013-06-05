@@ -42,21 +42,21 @@
     .parameter "viewGroup"
 
     .prologue
-    .line 50
+    .line 106
     iput-object p1, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->this$0:Lcom/google/glass/home/timeline/database/SearchItemViewBinder;
 
     invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>()V
 
-    .line 51
+    .line 107
     iput-object p2, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
-    .line 52
+    .line 108
     iput-object p3, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->recognitionResult:Ljava/lang/String;
 
-    .line 53
+    .line 109
     iput-object p4, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->viewGroup:Landroid/view/ViewGroup;
 
-    .line 55
+    .line 111
     new-instance v0, Lcom/google/glass/timeline/AttachmentHelper;
 
     invoke-virtual {p4}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -67,7 +67,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
-    .line 56
+    .line 112
     return-void
 .end method
 
@@ -78,7 +78,7 @@
     .parameter "x0"
 
     .prologue
-    .line 42
+    .line 98
     check-cast p1, [B
 
     .end local p1
@@ -92,10 +92,10 @@
     .parameter "proto"
 
     .prologue
-    .line 75
+    .line 131
     if-nez p1, :cond_1
 
-    .line 78
+    .line 134
     invoke-static {}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->access$000()Ljava/lang/String;
 
     move-result-object v4
@@ -104,12 +104,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 98
+    .line 154
     :cond_0
     :goto_0
     return-void
 
-    .line 84
+    .line 140
     :cond_1
     :try_start_0
     invoke-static {p1}, Lcom/google/majel/proto/MajelProtos$MajelResponse;->parseFrom([B)Lcom/google/majel/proto/MajelProtos$MajelResponse;
@@ -118,11 +118,11 @@
 
     move-result-object v2
 
-    .line 90
+    .line 146
     .local v2, majelResponse:Lcom/google/majel/proto/MajelProtos$MajelResponse;
     if-eqz v2, :cond_0
 
-    .line 91
+    .line 147
     new-instance v1, Lcom/google/glass/home/search/results/MajelProcessor;
 
     iget-object v4, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->viewGroup:Landroid/view/ViewGroup;
@@ -135,7 +135,7 @@
 
     invoke-direct {v1, v4, v5}, Lcom/google/glass/home/search/results/MajelProcessor;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 93
+    .line 149
     .local v1, majelProcessor:Lcom/google/glass/home/search/results/MajelProcessor;
     const/4 v4, 0x1
 
@@ -143,7 +143,7 @@
 
     move-result-object v3
 
-    .line 94
+    .line 150
     .local v3, results:Lcom/google/glass/home/search/results/ResultsContainer;
     if-eqz v3, :cond_0
 
@@ -153,7 +153,7 @@
 
     if-lez v4, :cond_0
 
-    .line 95
+    .line 151
     iget-object v4, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->viewGroup:Landroid/view/ViewGroup;
 
     const/4 v5, 0x0
@@ -166,14 +166,14 @@
 
     goto :goto_0
 
-    .line 85
+    .line 141
     .end local v1           #majelProcessor:Lcom/google/glass/home/search/results/MajelProcessor;
     .end local v2           #majelResponse:Lcom/google/majel/proto/MajelProtos$MajelResponse;
     .end local v3           #results:Lcom/google/glass/home/search/results/ResultsContainer;
     :catch_0
     move-exception v0
 
-    .line 86
+    .line 142
     .local v0, e:Lcom/google/protobuf/micro/InvalidProtocolBufferMicroException;
     invoke-static {}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->access$000()Ljava/lang/String;
 
@@ -192,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 98
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->loadContent()[B
 
     move-result-object v0
@@ -204,7 +204,7 @@
     .locals 5
 
     .prologue
-    .line 65
+    .line 121
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
@@ -221,11 +221,11 @@
 
     move-result-object v0
 
-    .line 67
+    .line 123
     .local v0, proto:[B
     if-nez v0, :cond_0
 
-    .line 68
+    .line 124
     invoke-static {}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -234,7 +234,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 70
+    .line 126
     :cond_0
     return-object v0
 .end method
@@ -243,11 +243,11 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 116
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchProtoLoadingTask;->viewGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 61
+    .line 117
     return-void
 .end method

@@ -33,10 +33,10 @@
     .parameter "regularForm"
 
     .prologue
-    .line 495
+    .line 503
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 496
+    .line 504
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -47,14 +47,14 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessageLite$SerializedForm;->messageClassName:Ljava/lang/String;
 
-    .line 497
+    .line 505
     invoke-interface {p1}, Lcom/google/protobuf/MutableMessageLite;->toByteArray()[B
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessageLite$SerializedForm;->asBytes:[B
 
-    .line 498
+    .line 506
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 508
+    .line 516
     :try_start_0
     iget-object v4, p0, Lcom/google/protobuf/GeneratedMutableMessageLite$SerializedForm;->messageClassName:Ljava/lang/String;
 
@@ -77,7 +77,7 @@
 
     move-result-object v2
 
-    .line 509
+    .line 517
     .local v2, messageClass:Ljava/lang/Class;
     const-string v4, "newMessage"
 
@@ -89,7 +89,7 @@
 
     move-result-object v3
 
-    .line 510
+    .line 518
     .local v3, newMessage:Ljava/lang/reflect/Method;
     const/4 v4, 0x0
 
@@ -103,7 +103,7 @@
 
     check-cast v1, Lcom/google/protobuf/MutableMessageLite;
 
-    .line 512
+    .line 520
     .local v1, message:Lcom/google/protobuf/MutableMessageLite;
     iget-object v4, p0, Lcom/google/protobuf/GeneratedMutableMessageLite$SerializedForm;->asBytes:[B
 
@@ -117,7 +117,7 @@
 
     if-nez v4, :cond_0
 
-    .line 513
+    .line 521
     new-instance v4, Ljava/lang/RuntimeException;
 
     const-string v5, "Unable to understand proto buffer"
@@ -131,14 +131,14 @@
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 516
+    .line 524
     .end local v1           #message:Lcom/google/protobuf/MutableMessageLite;
     .end local v2           #messageClass:Ljava/lang/Class;
     .end local v3           #newMessage:Ljava/lang/reflect/Method;
     :catch_0
     move-exception v0
 
-    .line 517
+    .line 525
     .local v0, e:Ljava/lang/ClassNotFoundException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -148,12 +148,12 @@
 
     throw v4
 
-    .line 518
+    .line 526
     .end local v0           #e:Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v0
 
-    .line 519
+    .line 527
     .local v0, e:Ljava/lang/NoSuchMethodException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -163,12 +163,12 @@
 
     throw v4
 
-    .line 520
+    .line 528
     .end local v0           #e:Ljava/lang/NoSuchMethodException;
     :catch_2
     move-exception v0
 
-    .line 521
+    .line 529
     .local v0, e:Ljava/lang/IllegalAccessException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -178,12 +178,12 @@
 
     throw v4
 
-    .line 522
+    .line 530
     .end local v0           #e:Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v0
 
-    .line 523
+    .line 531
     .local v0, e:Ljava/lang/reflect/InvocationTargetException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -197,7 +197,7 @@
 
     throw v4
 
-    .line 515
+    .line 523
     .end local v0           #e:Ljava/lang/reflect/InvocationTargetException;
     .restart local v1       #message:Lcom/google/protobuf/MutableMessageLite;
     .restart local v2       #messageClass:Ljava/lang/Class;

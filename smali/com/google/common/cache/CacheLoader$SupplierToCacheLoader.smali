@@ -58,12 +58,12 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 172
     .local p0, this:Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader;,"Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader<TV;>;"
     .local p1, computingSupplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TV;>;"
     invoke-direct {p0}, Lcom/google/common/cache/CacheLoader;-><init>()V
 
-    .line 138
+    .line 173
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 
     iput-object v0, p0, Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader;->computingSupplier:Lcom/google/common/base/Supplier;
 
-    .line 139
+    .line 174
     return-void
 .end method
 
@@ -90,8 +90,11 @@
     .end annotation
 
     .prologue
-    .line 143
+    .line 178
     .local p0, this:Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader;,"Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader<TV;>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 179
     iget-object v0, p0, Lcom/google/common/cache/CacheLoader$SupplierToCacheLoader;->computingSupplier:Lcom/google/common/base/Supplier;
 
     invoke-interface {v0}, Lcom/google/common/base/Supplier;->get()Ljava/lang/Object;

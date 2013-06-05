@@ -3,7 +3,7 @@
 .source "InputDetector.java"
 
 # interfaces
-.implements Landroid/content/ServiceConnection;
+.implements Lcom/google/glass/input/OrientationHelper$OrientationListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 107
+    .line 58
     iput-object p1, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,97 +37,64 @@
 
 
 # virtual methods
-.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 2
-    .parameter "name"
-    .parameter "binder"
+.method public onOrientationChanged(FFFJ)V
+    .locals 3
+    .parameter "yaw"
+    .parameter "pitch"
+    .parameter "roll"
+    .parameter "timestamp"
 
     .prologue
-    .line 110
-    invoke-static {}, Lcom/google/glass/input/InputDetector;->access$000()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Voice service connected"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 111
-    iget-object v0, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
-
-    #calls: Lcom/google/glass/input/InputDetector;->releaseVoiceServiceBinder()V
-    invoke-static {v0}, Lcom/google/glass/input/InputDetector;->access$100(Lcom/google/glass/input/InputDetector;)V
-
-    .line 112
-    iget-object v0, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
-
-    check-cast p2, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
-
-    .end local p2
-    #setter for: Lcom/google/glass/input/InputDetector;->voiceServiceBinder:Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
-    invoke-static {v0, p2}, Lcom/google/glass/input/InputDetector;->access$202(Lcom/google/glass/input/InputDetector;Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;)Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
-
-    .line 113
-    iget-object v0, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
-
-    #getter for: Lcom/google/glass/input/InputDetector;->voiceServiceBinder:Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
-    invoke-static {v0}, Lcom/google/glass/input/InputDetector;->access$200(Lcom/google/glass/input/InputDetector;)Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
-
-    move-result-object v0
-
+    .line 61
     iget-object v1, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
 
-    #getter for: Lcom/google/glass/input/InputDetector;->voiceServiceListener:Lcom/google/glass/voice/VoiceServiceListener;
-    invoke-static {v1}, Lcom/google/glass/input/InputDetector;->access$300(Lcom/google/glass/input/InputDetector;)Lcom/google/glass/voice/VoiceServiceListener;
+    #getter for: Lcom/google/glass/input/InputDetector;->hasPitch:Z
+    invoke-static {v1}, Lcom/google/glass/input/InputDetector;->access$000(Lcom/google/glass/input/InputDetector;)Z
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->setListener(Lcom/google/glass/voice/VoiceServiceListener;)V
+    if-eqz v1, :cond_0
 
-    .line 114
-    iget-object v0, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
+    .line 62
+    iget-object v1, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
 
-    #getter for: Lcom/google/glass/input/InputDetector;->voiceServiceListener:Lcom/google/glass/voice/VoiceServiceListener;
-    invoke-static {v0}, Lcom/google/glass/input/InputDetector;->access$300(Lcom/google/glass/input/InputDetector;)Lcom/google/glass/voice/VoiceServiceListener;
+    #getter for: Lcom/google/glass/input/InputDetector;->lastPitch:F
+    invoke-static {v1}, Lcom/google/glass/input/InputDetector;->access$100(Lcom/google/glass/input/InputDetector;)F
 
-    move-result-object v0
+    move-result v1
 
-    invoke-interface {v0}, Lcom/google/glass/voice/VoiceServiceListener;->onVoiceServiceConnected()V
+    sub-float v0, p2, v1
 
-    .line 115
+    .line 63
+    .local v0, deltaPitch:F
+    iget-object v1, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
+
+    const/high16 v2, 0x4234
+
+    mul-float/2addr v2, v0
+
+    #calls: Lcom/google/glass/input/InputDetector;->handleHeadScroll(F)V
+    invoke-static {v1, v2}, Lcom/google/glass/input/InputDetector;->access$200(Lcom/google/glass/input/InputDetector;F)V
+
+    .line 67
+    .end local v0           #deltaPitch:F
+    :goto_0
+    iget-object v1, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
+
+    #setter for: Lcom/google/glass/input/InputDetector;->lastPitch:F
+    invoke-static {v1, p2}, Lcom/google/glass/input/InputDetector;->access$102(Lcom/google/glass/input/InputDetector;F)F
+
+    .line 68
     return-void
-.end method
 
-.method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 2
-    .parameter "name"
+    .line 65
+    :cond_0
+    iget-object v1, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
 
-    .prologue
-    .line 119
-    invoke-static {}, Lcom/google/glass/input/InputDetector;->access$000()Ljava/lang/String;
+    const/4 v2, 0x1
 
-    move-result-object v0
+    #setter for: Lcom/google/glass/input/InputDetector;->hasPitch:Z
+    invoke-static {v1, v2}, Lcom/google/glass/input/InputDetector;->access$002(Lcom/google/glass/input/InputDetector;Z)Z
 
-    const-string v1, "Voice service disconnected"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 120
-    iget-object v0, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
-
-    #calls: Lcom/google/glass/input/InputDetector;->releaseVoiceServiceBinder()V
-    invoke-static {v0}, Lcom/google/glass/input/InputDetector;->access$100(Lcom/google/glass/input/InputDetector;)V
-
-    .line 121
-    iget-object v0, p0, Lcom/google/glass/input/InputDetector$1;->this$0:Lcom/google/glass/input/InputDetector;
-
-    #getter for: Lcom/google/glass/input/InputDetector;->voiceServiceListener:Lcom/google/glass/voice/VoiceServiceListener;
-    invoke-static {v0}, Lcom/google/glass/input/InputDetector;->access$300(Lcom/google/glass/input/InputDetector;)Lcom/google/glass/voice/VoiceServiceListener;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Lcom/google/glass/voice/VoiceServiceListener;->onVoiceServiceDisconnected()V
-
-    .line 122
-    return-void
+    goto :goto_0
 .end method

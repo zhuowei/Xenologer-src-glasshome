@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 29622
+    .line 29630
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     const-string v1, "TCP"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->TCP:Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
-    .line 29626
+    .line 29634
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     const-string v1, "UDP"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->UDP:Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
-    .line 29617
+    .line 29625
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->$VALUES:[Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
-    .line 29654
+    .line 29662
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 29674
+    .line 29682
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->values()[Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 29688
+    .line 29696
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 29689
+    .line 29697
     iput p3, p0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->index:I
 
-    .line 29690
+    .line 29698
     iput p4, p0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->value:I
 
-    .line 29691
+    .line 29699
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 29671
+    .line 29679
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 29651
+    .line 29659
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 29642
+    .line 29650
     packed-switch p0, :pswitch_data_0
 
-    .line 29645
+    .line 29653
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 29643
+    .line 29651
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->TCP:Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     goto :goto_0
 
-    .line 29644
+    .line 29652
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->UDP:Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     goto :goto_0
 
-    .line 29642
+    .line 29650
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 29678
+    .line 29686
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 29679
+    .line 29687
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 29682
+    .line 29690
     :cond_0
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->VALUES:[Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 29617
+    .line 29625
     const-class v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 29617
+    .line 29625
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->$VALUES:[Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 29667
+    .line 29675
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 29639
+    .line 29647
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 29663
+    .line 29671
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$Protocol;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

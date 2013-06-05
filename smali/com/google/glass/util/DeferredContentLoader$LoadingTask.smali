@@ -226,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 331
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->task:Landroid/os/AsyncTask;
 
@@ -538,21 +538,29 @@
     .parameter "shouldPreserveLayout"
 
     .prologue
-    .line 300
+    .line 304
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
-    if-eqz p2, :cond_0
+    if-nez p1, :cond_0
 
-    .line 301
+    .line 327
+    :goto_0
+    return-void
+
+    .line 308
+    :cond_0
+    if-eqz p2, :cond_1
+
+    .line 309
     const/high16 v1, 0x3f80
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 302
+    .line 310
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 303
+    .line 311
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -563,7 +571,7 @@
 
     move-result v0
 
-    .line 305
+    .line 313
     .local v0, duration:I
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -587,14 +595,12 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 319
-    .end local v0           #duration:I
-    :goto_0
-    return-void
+    goto :goto_0
 
-    .line 317
-    :cond_0
-    if-eqz p3, :cond_1
+    .line 325
+    .end local v0           #duration:I
+    :cond_1
+    if-eqz p3, :cond_2
 
     const/4 v1, 0x4
 
@@ -603,7 +609,7 @@
 
     goto :goto_0
 
-    :cond_1
+    :cond_2
     const/16 v1, 0x8
 
     goto :goto_1
@@ -647,17 +653,25 @@
     const/high16 v3, 0x3f80
 
     .line 277
-    if-eqz p2, :cond_0
+    if-nez p1, :cond_0
 
-    .line 278
+    .line 293
+    :goto_0
+    return-void
+
+    .line 281
+    :cond_0
+    if-eqz p2, :cond_1
+
+    .line 282
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 279
+    .line 283
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 280
+    .line 284
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -668,7 +682,7 @@
 
     move-result v0
 
-    .line 282
+    .line 286
     .local v0, duration:I
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -682,16 +696,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 289
-    .end local v0           #duration:I
-    :goto_0
-    return-void
+    goto :goto_0
 
-    .line 286
-    :cond_0
+    .line 290
+    .end local v0           #duration:I
+    :cond_1
     invoke-virtual {p1, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 287
+    .line 291
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0

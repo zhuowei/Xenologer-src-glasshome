@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchPreviewFrame([BJ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,25 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-.field final synthetic val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+.field final synthetic val$captureTimeNanos:J
+
+.field final synthetic val$previewFrame:[B
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/android/libraries/barhopper/Barcode;)V
+.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;[BJ)V
     .locals 0
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 426
+    .line 434
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$9;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$previewFrame:[B
+
+    iput-wide p3, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$captureTimeNanos:J
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,16 +48,18 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 4
 
     .prologue
-    .line 429
+    .line 437
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$9;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$previewFrame:[B
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+    iget-wide v2, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$captureTimeNanos:J
 
-    .line 430
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/camera/SharedCameraClient;->onPreviewFrame([BJ)V
+
+    .line 438
     return-void
 .end method

@@ -22,10 +22,16 @@
 
 .field public static final PHONE_NUMBER_KEY:Ljava/lang/String; = "PHONE_NUMBER_KEY"
 
+.field public static final TTS_FORMAT_STRING_KEY:Ljava/lang/String; = "TTS_FORMAT_STRING_KEY"
+
+.field public static final TTS_LANGUAGE_KEY:Ljava/lang/String; = "TTS_LANGUAGE_KEY"
+
 .field public static final URL_KEY:Ljava/lang/String; = "URL_KEY"
 
 
 # instance fields
+.field private isStartSoundSearchResult:Z
+
 .field private final resultPages:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -39,39 +45,44 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/util/List;)V
+.method private constructor <init>(Ljava/util/List;Z)V
     .locals 0
     .parameter
+    .parameter "isStartSoundSearchResult"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/List",
             "<",
             "Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;",
-            ">;)V"
+            ">;Z)V"
         }
     .end annotation
 
     .prologue
-    .line 29
+    .line 32
     .local p1, resultPages:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
+    .line 33
     iput-object p1, p0, Lcom/google/glass/home/search/results/ResultsContainer;->resultPages:Ljava/util/List;
 
-    .line 31
+    .line 34
+    iput-boolean p2, p0, Lcom/google/glass/home/search/results/ResultsContainer;->isStartSoundSearchResult:Z
+
+    .line 35
     return-void
 .end method
 
-.method synthetic constructor <init>(Ljava/util/List;Lcom/google/glass/home/search/results/ResultsContainer$1;)V
+.method synthetic constructor <init>(Ljava/util/List;ZLcom/google/glass/home/search/results/ResultsContainer$1;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
+    .parameter "x2"
 
     .prologue
     .line 18
-    invoke-direct {p0, p1}, Lcom/google/glass/home/search/results/ResultsContainer;-><init>(Ljava/util/List;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/home/search/results/ResultsContainer;-><init>(Ljava/util/List;Z)V
 
     return-void
 .end method
@@ -80,10 +91,32 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 42
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static newStartSoundSearchResult()Lcom/google/glass/home/search/results/ResultsContainer;
+    .locals 2
+
+    .prologue
+    .line 38
+    new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
+
+    invoke-direct {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->setIsStartSoundSearchResult(Z)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -95,7 +128,7 @@
     .parameter "index"
 
     .prologue
-    .line 54
+    .line 62
     invoke-virtual {p0}, Lcom/google/glass/home/search/results/ResultsContainer;->getResultPages()Ljava/util/List;
 
     move-result-object v0
@@ -118,7 +151,7 @@
     .parameter "index"
 
     .prologue
-    .line 50
+    .line 58
     invoke-virtual {p0}, Lcom/google/glass/home/search/results/ResultsContainer;->getResultPages()Ljava/util/List;
 
     move-result-object v0
@@ -140,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 46
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer;->resultPages:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -163,7 +196,7 @@
     .end annotation
 
     .prologue
-    .line 42
+    .line 50
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer;->resultPages:Ljava/util/List;
 
     return-object v0
@@ -174,7 +207,7 @@
     .parameter "index"
 
     .prologue
-    .line 46
+    .line 54
     invoke-virtual {p0}, Lcom/google/glass/home/search/results/ResultsContainer;->getResultPages()Ljava/util/List;
 
     move-result-object v0
@@ -190,4 +223,14 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public isStartSoundSearchResult()Z
+    .locals 1
+
+    .prologue
+    .line 66
+    iget-boolean v0, p0, Lcom/google/glass/home/search/results/ResultsContainer;->isStartSoundSearchResult:Z
+
+    return v0
 .end method

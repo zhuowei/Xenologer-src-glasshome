@@ -1,5 +1,5 @@
 .class final Lcom/google/common/cache/LocalCache$KeySet;
-.super Ljava/util/AbstractSet;
+.super Lcom/google/common/cache/LocalCache$AbstractCacheSet;
 .source "LocalCache.java"
 
 
@@ -15,8 +15,8 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/util/AbstractSet",
-        "<TK;>;"
+        "Lcom/google/common/cache/LocalCache",
+        "<TK;TV;>.AbstractCacheSet<TK;>;"
     }
 .end annotation
 
@@ -26,61 +26,43 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/cache/LocalCache;)V
+.method constructor <init>(Lcom/google/common/cache/LocalCache;Ljava/util/concurrent/ConcurrentMap;)V
     .locals 0
     .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/concurrent/ConcurrentMap",
+            "<**>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 4464
+    .line 4393
     .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
+    .local p2, map:Ljava/util/concurrent/ConcurrentMap;,"Ljava/util/concurrent/ConcurrentMap<**>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$KeySet;->this$0:Lcom/google/common/cache/LocalCache;
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    .line 4394
+    invoke-direct {p0, p1, p2}, Lcom/google/common/cache/LocalCache$AbstractCacheSet;-><init>(Lcom/google/common/cache/LocalCache;Ljava/util/concurrent/ConcurrentMap;)V
 
+    .line 4395
     return-void
 .end method
 
 
 # virtual methods
-.method public clear()V
-    .locals 1
-
-    .prologue
-    .line 4493
-    .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
-    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->this$0:Lcom/google/common/cache/LocalCache;
-
-    invoke-virtual {v0}, Lcom/google/common/cache/LocalCache;->clear()V
-
-    .line 4494
-    return-void
-.end method
-
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
     .parameter "o"
 
     .prologue
-    .line 4483
+    .line 4404
     .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
-    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->this$0:Lcom/google/common/cache/LocalCache;
+    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->map:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isEmpty()Z
-    .locals 1
-
-    .prologue
-    .line 4478
-    .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
-    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->this$0:Lcom/google/common/cache/LocalCache;
-
-    invoke-virtual {v0}, Lcom/google/common/cache/LocalCache;->isEmpty()Z
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -98,7 +80,7 @@
     .end annotation
 
     .prologue
-    .line 4468
+    .line 4399
     .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
     new-instance v0, Lcom/google/common/cache/LocalCache$KeyIterator;
 
@@ -114,11 +96,11 @@
     .parameter "o"
 
     .prologue
-    .line 4488
+    .line 4409
     .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
-    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->this$0:Lcom/google/common/cache/LocalCache;
+    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->map:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -133,19 +115,4 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public size()I
-    .locals 1
-
-    .prologue
-    .line 4473
-    .local p0, this:Lcom/google/common/cache/LocalCache$KeySet;,"Lcom/google/common/cache/LocalCache<TK;TV;>.KeySet;"
-    iget-object v0, p0, Lcom/google/common/cache/LocalCache$KeySet;->this$0:Lcom/google/common/cache/LocalCache;
-
-    invoke-virtual {v0}, Lcom/google/common/cache/LocalCache;->size()I
-
-    move-result v0
-
-    return v0
 .end method

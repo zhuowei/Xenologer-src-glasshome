@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 190
+    .line 165
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoItemView$2$1;->this$1:Lcom/google/glass/home/timeline/VideoItemView$2;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "animation"
 
     .prologue
-    .line 193
+    .line 168
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoItemView$2$1;->this$1:Lcom/google/glass/home/timeline/VideoItemView$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/VideoItemView$2;->val$nonVideoView:Landroid/widget/FrameLayout;
@@ -48,6 +48,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 194
+    .line 169
     return-void
 .end method

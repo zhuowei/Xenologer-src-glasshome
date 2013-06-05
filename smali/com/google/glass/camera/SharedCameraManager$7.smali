@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 598
+    .line 641
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$7;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraManager$7;->val$client:Lcom/google/glass/camera/SharedCameraClient;
@@ -45,7 +45,7 @@
     .locals 2
 
     .prologue
-    .line 601
+    .line 644
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$7;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraManager$7;->val$client:Lcom/google/glass/camera/SharedCameraClient;
@@ -53,6 +53,6 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->stopRecordingSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$2200(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
-    .line 602
+    .line 645
     return-void
 .end method

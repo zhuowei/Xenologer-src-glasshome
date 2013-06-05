@@ -38,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 321
+    .line 338
     iput-object p1, p0, Lcom/google/common/collect/Collections2$1;->val$collection:Ljava/util/Collection;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .parameter "input"
 
     .prologue
-    .line 323
+    .line 340
     iget-object v0, p0, Lcom/google/common/collect/Collections2$1;->val$collection:Ljava/util/Collection;
 
     if-ne p1, v0, :cond_0

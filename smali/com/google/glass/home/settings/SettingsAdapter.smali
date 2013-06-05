@@ -27,7 +27,7 @@
         value = {
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/home/settings/SettingsItemView;",
+            "Lcom/google/glass/home/settings/SettingsCard;",
             ">;"
         }
     .end annotation
@@ -76,7 +76,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/WifiSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 40
     const/4 v0, 0x1
@@ -85,7 +85,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/BluetoothSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 43
     const/4 v0, 0x2
@@ -94,7 +94,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/DeviceInfoSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 44
     const/4 v0, 0x3
@@ -103,7 +103,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/HeadWakeSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 46
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->WINK:Lcom/google/glass/util/Labs$Feature;
@@ -121,7 +121,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/WinkSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 50
     :cond_0
@@ -131,7 +131,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/DonDoffSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 52
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->GPS_DEBUG_CARD:Lcom/google/glass/util/Labs$Feature;
@@ -149,7 +149,7 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/GpsDebugSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 56
     :cond_1
@@ -159,13 +159,13 @@
 
     invoke-direct {v1, p1}, Lcom/google/glass/home/settings/GuestSettingsItemView;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
     .line 57
     return-void
 .end method
 
-.method private addView(ILcom/google/glass/home/settings/SettingsItemView;)V
+.method private addView(ILcom/google/glass/home/settings/SettingsCard;)V
     .locals 3
     .parameter "id"
     .parameter "view"
@@ -194,7 +194,7 @@
     .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     sget v1, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
 
-    invoke-virtual {p2, v1, v0}, Lcom/google/glass/home/settings/SettingsItemView;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p2, v1, v0}, Lcom/google/glass/home/settings/SettingsCard;->setTag(ILjava/lang/Object;)V
 
     .line 68
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsAdapter;->items:Ljava/util/List;

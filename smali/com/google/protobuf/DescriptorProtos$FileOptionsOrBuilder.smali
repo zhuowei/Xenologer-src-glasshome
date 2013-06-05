@@ -64,7 +64,7 @@
 .method public abstract getJavaApiVersion()I
 .end method
 
-.method public abstract getJavaDualGenerateMutableApi()Z
+.method public abstract getJavaEnableDualGenerateMutableApi()Z
 .end method
 
 .method public abstract getJavaGenerateEqualsAndHash()Z
@@ -181,7 +181,7 @@
 .method public abstract hasJavaApiVersion()Z
 .end method
 
-.method public abstract hasJavaDualGenerateMutableApi()Z
+.method public abstract hasJavaEnableDualGenerateMutableApi()Z
 .end method
 
 .method public abstract hasJavaGenerateEqualsAndHash()Z

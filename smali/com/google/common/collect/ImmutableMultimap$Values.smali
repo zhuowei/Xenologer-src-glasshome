@@ -52,15 +52,15 @@
     .end annotation
 
     .prologue
-    .line 597
+    .line 637
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Values;,"Lcom/google/common/collect/ImmutableMultimap$Values<TV;>;"
     .local p1, multimap:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<*TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection;-><init>()V
 
-    .line 598
+    .line 638
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
 
-    .line 599
+    .line 639
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 622
+    .line 652
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Values;,"Lcom/google/common/collect/ImmutableMultimap$Values<TV;>;"
     const/4 v0, 0x1
 
@@ -78,7 +78,7 @@
 .end method
 
 .method public iterator()Lcom/google/common/collect/UnmodifiableIterator;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -88,32 +88,30 @@
     .end annotation
 
     .prologue
-    .line 602
+    .line 643
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Values;,"Lcom/google/common/collect/ImmutableMultimap$Values<TV;>;"
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
 
-    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 
-    .line 604
-    .local v0, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<+Ljava/util/Map$Entry<*TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/ImmutableMultimap$Values$1;
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ImmutableMultimap$Values$1;-><init>(Lcom/google/common/collect/ImmutableMultimap$Values;Ljava/util/Iterator;)V
+    move-result-object v0
 
-    return-object v1
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->valueIterator(Lcom/google/common/collect/UnmodifiableIterator;)Lcom/google/common/collect/UnmodifiableIterator;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .locals 1
 
     .prologue
-    .line 594
+    .line 634
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Values;,"Lcom/google/common/collect/ImmutableMultimap$Values<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap$Values;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
@@ -126,7 +124,7 @@
     .locals 1
 
     .prologue
-    .line 618
+    .line 647
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Values;,"Lcom/google/common/collect/ImmutableMultimap$Values<TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Values;->multimap:Lcom/google/common/collect/ImmutableMultimap;
 

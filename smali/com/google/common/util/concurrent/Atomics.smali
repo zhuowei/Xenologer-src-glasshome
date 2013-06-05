@@ -3,17 +3,12 @@
 .source "Atomics.java"
 
 
-# annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 35
+    .line 32
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +27,7 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 40
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
@@ -57,7 +52,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 50
     .local p0, initialValue:Ljava/lang/Object;,"TV;"
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -80,7 +75,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 60
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-direct {v0, p0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
@@ -102,7 +97,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 71
     .local p0, array:[Ljava/lang/Object;,"[TE;"
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReferenceArray;
 

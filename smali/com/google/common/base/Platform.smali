@@ -66,7 +66,7 @@
     .parameter "matcher"
 
     .prologue
-    .line 53
+    .line 54
     invoke-virtual {p0}, Lcom/google/common/base/CharMatcher;->precomputedInternal()Lcom/google/common/base/CharMatcher;
 
     move-result-object v0

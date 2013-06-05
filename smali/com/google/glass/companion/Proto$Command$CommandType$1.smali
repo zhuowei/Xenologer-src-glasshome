@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 9770
+    .line 9923
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 9772
+    .line 9925
     invoke-static {p1}, Lcom/google/glass/companion/Proto$Command$CommandType;->valueOf(I)Lcom/google/glass/companion/Proto$Command$CommandType;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 9770
+    .line 9923
     invoke-virtual {p0, p1}, Lcom/google/glass/companion/Proto$Command$CommandType$1;->findValueByNumber(I)Lcom/google/glass/companion/Proto$Command$CommandType;
 
     move-result-object v0

@@ -10,6 +10,14 @@
 .annotation build Lcom/google/common/annotations/GwtCompatible;
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;,
+        Lcom/google/common/collect/DiscreteDomain$LongDomain;,
+        Lcom/google/common/collect/DiscreteDomain$IntegerDomain;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<C::",
@@ -25,11 +33,74 @@
     .locals 0
 
     .prologue
-    .line 43
+    .line 200
     .local p0, this:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method static bigIntegers()Lcom/google/common/collect/DiscreteDomain;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/DiscreteDomain",
+            "<",
+            "Ljava/math/BigInteger;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 162
+    invoke-static {}, Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;->access$200()Lcom/google/common/collect/DiscreteDomain$BigIntegerDomain;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static integers()Lcom/google/common/collect/DiscreteDomain;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/DiscreteDomain",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 54
+    invoke-static {}, Lcom/google/common/collect/DiscreteDomain$IntegerDomain;->access$000()Lcom/google/common/collect/DiscreteDomain$IntegerDomain;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static longs()Lcom/google/common/collect/DiscreteDomain;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/DiscreteDomain",
+            "<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 105
+    invoke-static {}, Lcom/google/common/collect/DiscreteDomain$LongDomain;->access$100()Lcom/google/common/collect/DiscreteDomain$LongDomain;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 
@@ -51,7 +122,7 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 268
     .local p0, this:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -69,7 +140,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 253
     .local p0, this:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 

@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 313
+    .line 311
     iput-object p1, p0, Lcom/google/protobuf/AbstractMutableMessageLite$1;->val$defaultInstance:Lcom/google/protobuf/MutableMessageLite;
 
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
@@ -61,14 +61,14 @@
     .end annotation
 
     .prologue
-    .line 318
+    .line 316
     iget-object v1, p0, Lcom/google/protobuf/AbstractMutableMessageLite$1;->val$defaultInstance:Lcom/google/protobuf/MutableMessageLite;
 
     invoke-interface {v1}, Lcom/google/protobuf/MutableMessageLite;->newMessageForType()Lcom/google/protobuf/MutableMessageLite;
 
     move-result-object v0
 
-    .line 319
+    .line 317
     .local v0, message:Lcom/google/protobuf/MutableMessageLite;,"TT;"
     invoke-interface {v0, p1, p2}, Lcom/google/protobuf/MutableMessageLite;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -76,7 +76,7 @@
 
     if-nez v1, :cond_0
 
-    .line 320
+    .line 318
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
@@ -87,7 +87,7 @@
 
     throw v1
 
-    .line 323
+    .line 321
     :cond_0
     return-object v0
 .end method
@@ -103,7 +103,7 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 311
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MutableMessageLite;
 
     move-result-object v0

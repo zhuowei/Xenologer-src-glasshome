@@ -11,6 +11,7 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/common/collect/ImmutableEnumSet$1;,
         Lcom/google/common/collect/ImmutableEnumSet$EnumSerializedForm;
     }
 .end annotation
@@ -40,7 +41,7 @@
 
 
 # direct methods
-.method constructor <init>(Ljava/util/EnumSet;)V
+.method private constructor <init>(Ljava/util/EnumSet;)V
     .locals 0
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -52,16 +53,91 @@
     .end annotation
 
     .prologue
-    .line 44
+    .line 56
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     .local p1, delegate:Ljava/util/EnumSet;,"Ljava/util/EnumSet<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 45
+    .line 57
     iput-object p1, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
-    .line 46
+    .line 58
     return-void
+.end method
+
+.method synthetic constructor <init>(Ljava/util/EnumSet;Lcom/google/common/collect/ImmutableEnumSet$1;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 34
+    .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
+    invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableEnumSet;-><init>(Ljava/util/EnumSet;)V
+
+    return-void
+.end method
+
+.method static asImmutable(Ljava/util/EnumSet;)Lcom/google/common/collect/ImmutableSet;
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Enum",
+            "<TE;>;>(",
+            "Ljava/util/EnumSet",
+            "<TE;>;)",
+            "Lcom/google/common/collect/ImmutableSet",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 36
+    .local p0, set:Ljava/util/EnumSet;,"Ljava/util/EnumSet<TE;>;"
+    invoke-virtual {p0}, Ljava/util/EnumSet;->size()I
+
+    move-result v0
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 42
+    new-instance v0, Lcom/google/common/collect/ImmutableEnumSet;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableEnumSet;-><init>(Ljava/util/EnumSet;)V
+
+    :goto_0
+    return-object v0
+
+    .line 38
+    :pswitch_0
+    invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 40
+    :pswitch_1
+    invoke-static {p0}, Lcom/google/common/collect/Iterables;->getOnlyElement(Ljava/lang/Iterable;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/collect/ImmutableSet;->of(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 36
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
 .end method
 
 
@@ -71,7 +147,7 @@
     .parameter "object"
 
     .prologue
-    .line 62
+    .line 76
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
@@ -94,7 +170,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 81
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
@@ -111,7 +187,7 @@
     .parameter "object"
 
     .prologue
-    .line 82
+    .line 101
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     if-eq p1, p0, :cond_0
 
@@ -139,11 +215,11 @@
     .locals 2
 
     .prologue
-    .line 88
+    .line 108
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->hashCode:I
 
-    .line 89
+    .line 109
     .local v0, result:I
     if-nez v0, :cond_0
 
@@ -164,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 86
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
@@ -179,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 49
+    .line 62
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     const/4 v0, 0x0
 
@@ -197,7 +273,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 67
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
@@ -229,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 71
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
@@ -244,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 91
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
@@ -267,7 +343,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 96
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
@@ -283,7 +359,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 114
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableEnumSet;->delegate:Ljava/util/EnumSet;
 
@@ -298,7 +374,7 @@
     .locals 2
 
     .prologue
-    .line 98
+    .line 120
     .local p0, this:Lcom/google/common/collect/ImmutableEnumSet;,"Lcom/google/common/collect/ImmutableEnumSet<TE;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableEnumSet$EnumSerializedForm;
 

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 110
+    .line 116
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem$1;->this$0:Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 113
+    .line 119
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
 
     invoke-interface {v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
@@ -63,11 +63,11 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/bluetooth/BluetoothHeadset;->attemptDial(Lcom/google/glass/app/GlassActivity;Ljava/lang/String;)Z
 
-    .line 114
+    .line 120
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
 
     invoke-interface {v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->showProgressBar()V
 
-    .line 115
+    .line 121
     return-void
 .end method

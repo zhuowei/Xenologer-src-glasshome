@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 186
+    .line 200
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$5$1;->this$1:Lcom/google/glass/home/HomeApplication$5;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 203
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$5$1;->this$1:Lcom/google/glass/home/HomeApplication$5;
 
     iget-object v0, v0, Lcom/google/glass/home/HomeApplication$5;->this$0:Lcom/google/glass/home/HomeApplication;
 
     #calls: Lcom/google/glass/home/HomeApplication;->registerGcm()V
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$700(Lcom/google/glass/home/HomeApplication;)V
+    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$500(Lcom/google/glass/home/HomeApplication;)V
 
-    .line 190
+    .line 204
     return-void
 .end method

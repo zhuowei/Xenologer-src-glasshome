@@ -79,31 +79,31 @@
     .parameter "limitInCount"
 
     .prologue
-    .line 135
+    .line 136
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 136
+    .line 137
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->dir:Ljava/io/File;
 
-    .line 137
+    .line 138
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
-    .line 138
+    .line 139
     new-instance v0, Lcom/google/glass/util/FileSaver;
 
     invoke-direct {v0, p1}, Lcom/google/glass/util/FileSaver;-><init>(Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->fileSaver:Lcom/google/glass/util/FileSaver;
 
-    .line 139
+    .line 140
     iget-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->dir:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -116,40 +116,40 @@
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->dirPathLength:I
 
-    .line 141
+    .line 142
     iput-wide p2, p0, Lcom/google/glass/util/CachedFilesManager;->limitInByte:J
 
-    .line 143
+    .line 144
     const/4 v0, 0x1
 
     shr-long v0, p2, v0
 
     iput-wide v0, p0, Lcom/google/glass/util/CachedFilesManager;->targetLimitInByte:J
 
-    .line 145
+    .line 146
     iput p4, p0, Lcom/google/glass/util/CachedFilesManager;->limitInCount:I
 
-    .line 147
+    .line 148
     shr-int/lit8 v0, p4, 0x1
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->targetLimitInCount:I
 
-    .line 149
+    .line 150
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
-    .line 150
+    .line 151
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
-    .line 151
+    .line 152
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->pendingTrimmings:I
 
-    .line 155
+    .line 156
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
@@ -160,7 +160,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 161
+    .line 162
     return-void
 .end method
 
@@ -200,7 +200,7 @@
     .locals 5
 
     .prologue
-    .line 361
+    .line 362
     :try_start_0
     new-instance v0, Landroid/os/StatFs;
 
@@ -214,7 +214,7 @@
 
     invoke-direct {v0, v1}, Landroid/os/StatFs;-><init>(Ljava/lang/String;)V
 
-    .line 362
+    .line 363
     .local v0, stat:Landroid/os/StatFs;
     invoke-virtual {v0}, Landroid/os/StatFs;->getBlockSize()I
 
@@ -232,16 +232,16 @@
 
     mul-long/2addr v1, v3
 
-    .line 366
+    .line 367
     .end local v0           #stat:Landroid/os/StatFs;
     :goto_0
     return-wide v1
 
-    .line 363
+    .line 364
     :catch_0
     move-exception v1
 
-    .line 366
+    .line 367
     const-wide/16 v1, 0x0
 
     goto :goto_0
@@ -251,7 +251,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 169
     sget-object v0, Lcom/google/glass/util/CachedFilesManager;->sharedInstance:Lcom/google/glass/util/CachedFilesManager;
 
     return-object v0
@@ -262,10 +262,10 @@
     .parameter "instance"
 
     .prologue
-    .line 164
+    .line 165
     sput-object p0, Lcom/google/glass/util/CachedFilesManager;->sharedInstance:Lcom/google/glass/util/CachedFilesManager;
 
-    .line 165
+    .line 166
     return-void
 .end method
 
@@ -275,12 +275,12 @@
     .prologue
     const-wide/16 v9, 0x0
 
-    .line 373
+    .line 374
     iget-object v6, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v6
 
-    .line 374
+    .line 375
     :try_start_0
     iget v5, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
@@ -292,7 +292,7 @@
 
     if-gez v5, :cond_2
 
-    .line 375
+    .line 376
     :cond_0
     sget-object v5, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
@@ -324,28 +324,28 @@
 
     invoke-static {v5, v7}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 376
+    .line 377
     const/4 v5, 0x0
 
     iput v5, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
-    .line 377
+    .line 378
     const-wide/16 v7, 0x0
 
     iput-wide v7, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
-    .line 378
+    .line 379
     iget-object v5, p0, Lcom/google/glass/util/CachedFilesManager;->dir:Ljava/io/File;
 
     invoke-virtual {v5}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v2
 
-    .line 381
+    .line 382
     .local v2, files:[Ljava/io/File;
     if-eqz v2, :cond_2
 
-    .line 382
+    .line 383
     move-object v0, v2
 
     .local v0, arr$:[Ljava/io/File;
@@ -360,7 +360,7 @@
 
     aget-object v1, v0, v3
 
-    .line 383
+    .line 384
     .local v1, file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->isFile()Z
 
@@ -368,14 +368,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 384
+    .line 385
     iget v5, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
     add-int/lit8 v5, v5, 0x1
 
     iput v5, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
-    .line 385
+    .line 386
     iget-wide v7, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
     invoke-virtual {v1}, Ljava/io/File;->length()J
@@ -386,13 +386,13 @@
 
     iput-wide v7, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
-    .line 382
+    .line 383
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 390
+    .line 391
     .end local v0           #arr$:[Ljava/io/File;
     .end local v1           #file:Ljava/io/File;
     .end local v2           #files:[Ljava/io/File;
@@ -401,10 +401,10 @@
     :cond_2
     monitor-exit v6
 
-    .line 391
+    .line 392
     return-void
 
-    .line 390
+    .line 391
     :catchall_0
     move-exception v5
 
@@ -419,12 +419,12 @@
     .locals 6
 
     .prologue
-    .line 436
+    .line 437
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 438
+    .line 439
     :try_start_0
     iget-wide v2, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
@@ -440,7 +440,7 @@
 
     if-le v0, v2, :cond_1
 
-    .line 439
+    .line 440
     :cond_0
     iget-wide v2, p0, Lcom/google/glass/util/CachedFilesManager;->targetLimitInByte:J
 
@@ -448,7 +448,7 @@
 
     invoke-direct {p0, v2, v3, v0}, Lcom/google/glass/util/CachedFilesManager;->trimTo(JI)V
 
-    .line 441
+    .line 442
     :cond_1
     iget v0, p0, Lcom/google/glass/util/CachedFilesManager;->pendingTrimmings:I
 
@@ -456,13 +456,13 @@
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->pendingTrimmings:I
 
-    .line 442
+    .line 443
     monitor-exit v1
 
-    .line 443
+    .line 444
     return-void
 
-    .line 442
+    .line 443
     :catchall_0
     move-exception v0
 
@@ -479,7 +479,7 @@
     .parameter "targetCount"
 
     .prologue
-    .line 447
+    .line 448
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     iget-object v5, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
@@ -490,12 +490,12 @@
 
     invoke-static {v5}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 449
+    .line 450
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 451
+    .line 452
     .local v3, startTime:J
     iget-object v5, p0, Lcom/google/glass/util/CachedFilesManager;->dir:Ljava/io/File;
 
@@ -507,7 +507,7 @@
 
     move-result-object v1
 
-    .line 454
+    .line 455
     .local v1, files:Ljava/util/List;,"Ljava/util/List<Ljava/io/File;>;"
     new-instance v5, Lcom/google/glass/util/CachedFilesManager$3;
 
@@ -515,7 +515,7 @@
 
     invoke-static {v1, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 466
+    .line 467
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -535,7 +535,7 @@
 
     check-cast v0, Ljava/io/File;
 
-    .line 467
+    .line 468
     .local v0, file:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->isFile()Z
 
@@ -543,7 +543,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 471
+    .line 472
     iget-object v5, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -556,7 +556,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 472
+    .line 473
     sget-object v5, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -591,7 +591,7 @@
 
     goto :goto_0
 
-    .line 475
+    .line 476
     :cond_1
     iget-wide v5, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
@@ -603,17 +603,17 @@
 
     iput-wide v5, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
-    .line 476
+    .line 477
     iget v5, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
     add-int/lit8 v5, v5, -0x1
 
     iput v5, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
-    .line 477
+    .line 478
     invoke-virtual {v0}, Ljava/io/File;->delete()Z
 
-    .line 479
+    .line 480
     sget-object v5, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -684,7 +684,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 487
+    .line 488
     iget-wide v5, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
     cmp-long v5, v5, p1
@@ -695,13 +695,13 @@
 
     if-gt v5, p3, :cond_3
 
-    .line 503
+    .line 504
     .end local v0           #file:Ljava/io/File;
     :cond_2
     :goto_1
     return-void
 
-    .line 493
+    .line 494
     .restart local v0       #file:Ljava/io/File;
     :cond_3
     const-wide/16 v5, 0xc8
@@ -730,7 +730,7 @@
 
     if-gt v5, v6, :cond_0
 
-    .line 496
+    .line 497
     sget-object v5, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -793,12 +793,12 @@
     .parameter "trimmingsDelta"
 
     .prologue
-    .line 397
+    .line 398
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 398
+    .line 399
     :try_start_0
     iget v0, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
@@ -806,21 +806,21 @@
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
-    .line 399
+    .line 400
     iget-wide v2, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
     add-long/2addr v2, p2
 
     iput-wide v2, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
-    .line 400
+    .line 401
     iget v0, p0, Lcom/google/glass/util/CachedFilesManager;->pendingTrimmings:I
 
     add-int/2addr v0, p4
 
     iput v0, p0, Lcom/google/glass/util/CachedFilesManager;->pendingTrimmings:I
 
-    .line 403
+    .line 404
     iget v0, p0, Lcom/google/glass/util/CachedFilesManager;->numOfFiles:I
 
     if-ltz v0, :cond_0
@@ -833,7 +833,7 @@
 
     if-gez v0, :cond_1
 
-    .line 404
+    .line 405
     :cond_0
     sget-object v0, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
@@ -865,14 +865,14 @@
 
     invoke-static {v0, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
+    .line 407
     :cond_1
     monitor-exit v1
 
-    .line 407
+    .line 408
     return-void
 
-    .line 406
+    .line 407
     :catchall_0
     move-exception v0
 
@@ -893,33 +893,33 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 238
+    .line 239
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 240
+    .line 241
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/util/CachedFilesManager;->getPath(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 241
+    .line 242
     .local v1, filePath:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 254
+    .line 255
     :goto_0
     return v2
 
-    .line 246
+    .line 247
     :cond_0
     :try_start_0
     invoke-virtual {p0, v1}, Lcom/google/glass/util/CachedFilesManager;->increaseUsage(Ljava/lang/String;)V
 
-    .line 247
+    .line 248
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 248
+    .line 249
     .local v0, file:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -939,13 +939,13 @@
 
     if-nez v3, :cond_2
 
-    .line 254
+    .line 255
     :cond_1
     invoke-virtual {p0, v1}, Lcom/google/glass/util/CachedFilesManager;->releaseUsage(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 251
+    .line 252
     :cond_2
     :try_start_1
     iget-object v2, p0, Lcom/google/glass/util/CachedFilesManager;->fileSaver:Lcom/google/glass/util/FileSaver;
@@ -958,10 +958,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 252
+    .line 253
     const/4 v2, 0x1
 
-    .line 254
+    .line 255
     invoke-virtual {p0, v1}, Lcom/google/glass/util/CachedFilesManager;->releaseUsage(Ljava/lang/String;)V
 
     goto :goto_0
@@ -979,12 +979,12 @@
     .locals 1
 
     .prologue
-    .line 188
+    .line 189
     iget-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->fileSaver:Lcom/google/glass/util/FileSaver;
 
     invoke-virtual {v0}, Lcom/google/glass/util/FileSaver;->disableMockModifiedTimeForTest()V
 
-    .line 189
+    .line 190
     return-void
 .end method
 
@@ -992,12 +992,12 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 185
     iget-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->fileSaver:Lcom/google/glass/util/FileSaver;
 
     invoke-virtual {v0}, Lcom/google/glass/util/FileSaver;->enableMockModifiedTimeForTest()V
 
-    .line 185
+    .line 186
     return-void
 .end method
 
@@ -1007,10 +1007,10 @@
     .parameter "name"
 
     .prologue
-    .line 176
+    .line 177
     iget-object v0, p0, Lcom/google/glass/util/CachedFilesManager;->dir:Ljava/io/File;
 
-    .line 177
+    .line 178
     .local v0, dir:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1018,10 +1018,10 @@
 
     if-nez v1, :cond_0
 
-    .line 178
+    .line 179
     const/4 v1, 0x0
 
-    .line 180
+    .line 181
     :goto_0
     return-object v1
 
@@ -1066,7 +1066,7 @@
     .parameter "filePath"
 
     .prologue
-    .line 262
+    .line 263
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->dir:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -1079,14 +1079,14 @@
 
     if-nez v1, :cond_0
 
-    .line 263
+    .line 264
     sget-object v1, Lcom/google/glass/util/CachedFilesManager$Type;->NONE:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 266
+    .line 267
     :goto_0
     return-object v1
 
-    .line 265
+    .line 266
     :cond_0
     iget v1, p0, Lcom/google/glass/util/CachedFilesManager;->dirPathLength:I
 
@@ -1096,7 +1096,7 @@
 
     move-result-object v0
 
-    .line 266
+    .line 267
     .local v0, fileName:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/glass/util/CachedFilesManager$Type;->get(Ljava/lang/String;)Lcom/google/glass/util/CachedFilesManager$Type;
 
@@ -1110,30 +1110,30 @@
     .parameter "filePath"
 
     .prologue
-    .line 195
+    .line 196
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 197
+    .line 198
     if-nez p1, :cond_0
 
-    .line 198
+    .line 199
     sget-object v1, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     const-string v2, "increaseUsage with null filePath"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 211
+    .line 212
     :goto_0
     return-void
 
-    .line 202
+    .line 203
     :cond_0
     iget-object v2, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 203
+    .line 204
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
@@ -1143,24 +1143,24 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 204
+    .line 205
     .local v0, usageCount:Ljava/lang/Integer;
     if-nez v0, :cond_1
 
-    .line 205
+    .line 206
     const/4 v1, 0x1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
-    .line 209
+    .line 210
     :goto_1
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 210
+    .line 211
     monitor-exit v2
 
     goto :goto_0
@@ -1175,7 +1175,7 @@
 
     throw v1
 
-    .line 207
+    .line 208
     .restart local v0       #usageCount:Ljava/lang/Integer;
     :cond_1
     :try_start_1
@@ -1212,14 +1212,14 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 292
     .local p3, loader:Lcom/google/glass/util/CachedFilesManager$Loader;,"Lcom/google/glass/util/CachedFilesManager$Loader<TT;>;"
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 292
+    .line 293
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/util/CachedFilesManager;->getPath(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -1234,7 +1234,7 @@
 
     return-object v0
 
-    .line 291
+    .line 292
     :catchall_0
     move-exception v0
 
@@ -1259,39 +1259,39 @@
     .end annotation
 
     .prologue
-    .line 270
+    .line 271
     .local p2, loader:Lcom/google/glass/util/CachedFilesManager$Loader;,"Lcom/google/glass/util/CachedFilesManager$Loader<TT;>;"
     if-nez p1, :cond_0
 
-    .line 271
+    .line 272
     sget-object v1, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     const-string v2, "load with null filePath"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 272
+    .line 273
     const/4 v0, 0x0
 
-    .line 286
+    .line 287
     :goto_0
     return-object v0
 
-    .line 276
+    .line 277
     :cond_0
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/google/glass/util/CachedFilesManager;->increaseUsage(Ljava/lang/String;)V
 
-    .line 277
+    .line 278
     invoke-interface {p2, p1}, Lcom/google/glass/util/CachedFilesManager$Loader;->load(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 279
+    .line 280
     .local v0, result:Ljava/lang/Object;,"TT;"
     if-eqz v0, :cond_1
 
-    .line 280
+    .line 281
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -1306,13 +1306,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 286
+    .line 287
     :goto_1
     invoke-virtual {p0, p1}, Lcom/google/glass/util/CachedFilesManager;->releaseUsage(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 282
+    .line 283
     :cond_1
     :try_start_1
     sget-object v1, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
@@ -1347,7 +1347,7 @@
 
     goto :goto_1
 
-    .line 286
+    .line 287
     .end local v0           #result:Ljava/lang/Object;,"TT;"
     :catchall_0
     move-exception v1
@@ -1361,12 +1361,12 @@
     .locals 2
 
     .prologue
-    .line 411
+    .line 412
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 412
+    .line 413
     :try_start_0
     iget v0, p0, Lcom/google/glass/util/CachedFilesManager;->pendingTrimmings:I
 
@@ -1384,7 +1384,7 @@
 
     goto :goto_0
 
-    .line 413
+    .line 414
     :catchall_0
     move-exception v0
 
@@ -1402,30 +1402,30 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 217
+    .line 218
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 219
+    .line 220
     if-nez p1, :cond_0
 
-    .line 220
+    .line 221
     sget-object v1, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     const-string v2, "releaseUsage with null filePath"
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 235
+    .line 236
     :goto_0
     return-void
 
-    .line 224
+    .line 225
     :cond_0
     iget-object v2, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 225
+    .line 226
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
@@ -1435,7 +1435,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 226
+    .line 227
     .local v0, usageCount:Ljava/lang/Integer;
     if-eqz v0, :cond_1
 
@@ -1445,7 +1445,7 @@
 
     if-gez v1, :cond_3
 
-    .line 227
+    .line 228
     :cond_1
     sget-object v1, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
@@ -1479,12 +1479,12 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 228
+    .line 229
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 234
+    .line 235
     :cond_2
     :goto_1
     monitor-exit v2
@@ -1501,7 +1501,7 @@
 
     throw v1
 
-    .line 229
+    .line 230
     .restart local v0       #usageCount:Ljava/lang/Integer;
     :cond_3
     :try_start_1
@@ -1511,14 +1511,14 @@
 
     if-ne v1, v3, :cond_4
 
-    .line 230
+    .line 231
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 231
+    .line 232
     :cond_4
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -1526,7 +1526,7 @@
 
     if-le v1, v3, :cond_2
 
-    .line 232
+    .line 233
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1557,28 +1557,28 @@
 
     const/4 v4, 0x0
 
-    .line 306
+    .line 307
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 309
+    .line 310
     invoke-direct {p0}, Lcom/google/glass/util/CachedFilesManager;->setupFileBookkeeping()V
 
-    .line 312
+    .line 313
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/util/CachedFilesManager;->getPath(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 314
+    .line 315
     .local v3, path:Ljava/lang/String;
     :try_start_0
     invoke-virtual {p0, v3}, Lcom/google/glass/util/CachedFilesManager;->increaseUsage(Ljava/lang/String;)V
 
-    .line 315
+    .line 316
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 318
+    .line 319
     .local v0, cacheFile:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -1586,7 +1586,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 319
+    .line 320
     const/4 v6, -0x1
 
     invoke-virtual {v0}, Ljava/io/File;->length()J
@@ -1599,7 +1599,7 @@
 
     invoke-direct {p0, v6, v7, v8, v9}, Lcom/google/glass/util/CachedFilesManager;->updateFileBookkeeping(IJI)V
 
-    .line 322
+    .line 323
     :cond_0
     iget-object v6, p0, Lcom/google/glass/util/CachedFilesManager;->fileSaver:Lcom/google/glass/util/FileSaver;
 
@@ -1613,7 +1613,7 @@
 
     if-nez v6, :cond_3
 
-    .line 324
+    .line 325
     invoke-interface {p3}, Lcom/google/glass/util/FileSaver$Saver;->getEstimatedSizeBytes()J
 
     move-result-wide v6
@@ -1622,7 +1622,7 @@
 
     add-long v1, v6, v8
 
-    .line 325
+    .line 326
     .local v1, estimatedSpace:J
     invoke-direct {p0}, Lcom/google/glass/util/CachedFilesManager;->getAvailableExternalStorageSpaceInByte()J
 
@@ -1632,7 +1632,7 @@
 
     if-gez v6, :cond_2
 
-    .line 326
+    .line 327
     sget-object v6, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1665,14 +1665,14 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 329
+    .line 330
     invoke-virtual {p0, v1, v2}, Lcom/google/glass/util/CachedFilesManager;->trimBySize(J)Z
 
     move-result v6
 
     if-nez v6, :cond_1
 
-    .line 330
+    .line 331
     sget-object v5, Lcom/google/glass/util/CachedFilesManager;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1701,14 +1701,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 355
+    .line 356
     invoke-virtual {p0, v3}, Lcom/google/glass/util/CachedFilesManager;->releaseUsage(Ljava/lang/String;)V
 
     .end local v1           #estimatedSpace:J
     :goto_0
     return v4
 
-    .line 333
+    .line 334
     .restart local v1       #estimatedSpace:J
     :cond_1
     :try_start_1
@@ -1726,7 +1726,7 @@
 
     if-nez v6, :cond_3
 
-    .line 355
+    .line 356
     invoke-virtual {p0, v3}, Lcom/google/glass/util/CachedFilesManager;->releaseUsage(Ljava/lang/String;)V
 
     goto :goto_0
@@ -1736,7 +1736,7 @@
 
     goto :goto_0
 
-    .line 342
+    .line 343
     .end local v1           #estimatedSpace:J
     :cond_3
     const/4 v4, 0x1
@@ -1750,7 +1750,7 @@
 
     invoke-direct {p0, v4, v6, v7, v8}, Lcom/google/glass/util/CachedFilesManager;->updateFileBookkeeping(IJI)V
 
-    .line 346
+    .line 347
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v4
@@ -1763,7 +1763,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 355
+    .line 356
     invoke-virtual {p0, v3}, Lcom/google/glass/util/CachedFilesManager;->releaseUsage(Ljava/lang/String;)V
 
     move v4, v5
@@ -1784,12 +1784,12 @@
     .parameter "size"
 
     .prologue
-    .line 425
+    .line 426
     iget-object v1, p0, Lcom/google/glass/util/CachedFilesManager;->filePathToUsageCount:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 426
+    .line 427
     :try_start_0
     iget-wide v2, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
@@ -1797,7 +1797,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 427
+    .line 428
     iget-wide v2, p0, Lcom/google/glass/util/CachedFilesManager;->sizeInBytes:J
 
     sub-long/2addr v2, p1
@@ -1806,12 +1806,12 @@
 
     invoke-direct {p0, v2, v3, v0}, Lcom/google/glass/util/CachedFilesManager;->trimTo(JI)V
 
-    .line 428
+    .line 429
     const/4 v0, 0x1
 
     monitor-exit v1
 
-    .line 430
+    .line 431
     :goto_0
     return v0
 
@@ -1822,7 +1822,7 @@
 
     goto :goto_0
 
-    .line 431
+    .line 432
     :catchall_0
     move-exception v0
 

@@ -60,12 +60,12 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 252
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     .local p1, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 242
+    .line 253
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/Predicate;
 
-    .line 243
+    .line 254
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .parameter "x1"
 
     .prologue
-    .line 238
+    .line 249
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Functions$PredicateFunction;-><init>(Lcom/google/common/base/Predicate;)V
 
@@ -96,6 +96,9 @@
 .method public apply(Ljava/lang/Object;)Ljava/lang/Boolean;
     .locals 1
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -104,7 +107,7 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 257
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     .local p1, t:Ljava/lang/Object;,"TT;"
     iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/Predicate;
@@ -125,7 +128,7 @@
     .parameter "x0"
 
     .prologue
-    .line 238
+    .line 249
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/base/Functions$PredicateFunction;->apply(Ljava/lang/Object;)Ljava/lang/Boolean;
 
@@ -142,7 +145,7 @@
     .end parameter
 
     .prologue
-    .line 251
+    .line 262
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     instance-of v1, p1, Lcom/google/common/base/Functions$PredicateFunction;
 
@@ -150,10 +153,10 @@
 
     move-object v0, p1
 
-    .line 252
+    .line 263
     check-cast v0, Lcom/google/common/base/Functions$PredicateFunction;
 
-    .line 253
+    .line 264
     .local v0, that:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<*>;"
     iget-object v1, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/Predicate;
 
@@ -163,7 +166,7 @@
 
     move-result v1
 
-    .line 255
+    .line 266
     .end local v0           #that:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<*>;"
     :goto_0
     return v1
@@ -178,7 +181,7 @@
     .locals 1
 
     .prologue
-    .line 259
+    .line 271
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$PredicateFunction;->predicate:Lcom/google/common/base/Predicate;
 
@@ -193,7 +196,7 @@
     .locals 2
 
     .prologue
-    .line 263
+    .line 276
     .local p0, this:Lcom/google/common/base/Functions$PredicateFunction;,"Lcom/google/common/base/Functions$PredicateFunction<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

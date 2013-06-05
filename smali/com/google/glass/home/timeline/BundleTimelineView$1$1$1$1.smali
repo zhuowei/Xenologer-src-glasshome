@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 196
+    .line 136
     iput-object p1, p0, Lcom/google/glass/home/timeline/BundleTimelineView$1$1$1$1;->this$3:Lcom/google/glass/home/timeline/BundleTimelineView$1$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "remaining"
 
     .prologue
-    .line 199
+    .line 139
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$1$1$1$1;->this$3:Lcom/google/glass/home/timeline/BundleTimelineView$1$1$1;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/BundleTimelineView$1$1$1;->this$2:Lcom/google/glass/home/timeline/BundleTimelineView$1$1;
@@ -53,8 +53,8 @@
     iget-object v0, v0, Lcom/google/glass/home/timeline/BundleTimelineView$1;->this$0:Lcom/google/glass/home/timeline/BundleTimelineView;
 
     #calls: Lcom/google/glass/home/timeline/BundleTimelineView;->markItemAsReadMore(Lcom/google/glass/timeline/TimelineItemId;)V
-    invoke-static {v0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->access$600(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/timeline/TimelineItemId;)V
+    invoke-static {v0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->access$400(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/timeline/TimelineItemId;)V
 
-    .line 200
+    .line 140
     return-void
 .end method

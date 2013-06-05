@@ -82,14 +82,14 @@
     .end annotation
 
     .prologue
-    .line 376
+    .line 422
     .local p0, elements:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Lists;->newArrayList(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 377
+    .line 423
     .local v0, copy:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
     invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -107,13 +107,13 @@
 
     move-result-object v1
 
-    .line 378
+    .line 424
     .local v1, element:Ljava/lang/Object;,"TE;"
     invoke-interface {p1, v1}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 380
+    .line 426
     .end local v1           #element:Ljava/lang/Object;,"TE;"
     :cond_0
     return-object v0
@@ -167,7 +167,7 @@
     .end annotation
 
     .prologue
-    .line 209
+    .line 228
     .local p0, list:Ljava/util/List;,"Ljava/util/List<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     instance-of v0, p0, Ljava/util/RandomAccess;
@@ -208,7 +208,7 @@
     .end annotation
 
     .prologue
-    .line 279
+    .line 310
     .local p0, listIterator:Ljava/util/ListIterator;,"Ljava/util/ListIterator<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     new-instance v0, Lcom/google/common/collect/Constraints$ConstrainedListIterator;
@@ -237,7 +237,7 @@
     .end annotation
 
     .prologue
-    .line 333
+    .line 368
     .local p0, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     new-instance v0, Lcom/google/common/collect/Constraints$ConstrainedMultiset;
@@ -266,7 +266,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 125
     .local p0, set:Ljava/util/Set;,"Ljava/util/Set<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     new-instance v0, Lcom/google/common/collect/Constraints$ConstrainedSet;
@@ -295,7 +295,7 @@
     .end annotation
 
     .prologue
-    .line 159
+    .line 169
     .local p0, sortedSet:Ljava/util/SortedSet;,"Ljava/util/SortedSet<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     new-instance v0, Lcom/google/common/collect/Constraints$ConstrainedSortedSet;
@@ -324,14 +324,14 @@
     .end annotation
 
     .prologue
-    .line 308
+    .line 343
     .local p0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
     .local p1, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<TE;>;"
     instance-of v0, p0, Ljava/util/SortedSet;
 
     if-eqz v0, :cond_0
 
-    .line 309
+    .line 344
     check-cast p0, Ljava/util/SortedSet;
 
     .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
@@ -339,18 +339,18 @@
 
     move-result-object v0
 
-    .line 315
+    .line 350
     :goto_0
     return-object v0
 
-    .line 310
+    .line 345
     .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
     :cond_0
     instance-of v0, p0, Ljava/util/Set;
 
     if-eqz v0, :cond_1
 
-    .line 311
+    .line 346
     check-cast p0, Ljava/util/Set;
 
     .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
@@ -360,14 +360,14 @@
 
     goto :goto_0
 
-    .line 312
+    .line 347
     .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
     :cond_1
     instance-of v0, p0, Ljava/util/List;
 
     if-eqz v0, :cond_2
 
-    .line 313
+    .line 348
     check-cast p0, Ljava/util/List;
 
     .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
@@ -377,7 +377,7 @@
 
     goto :goto_0
 
-    .line 315
+    .line 350
     .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<TE;>;"
     :cond_2
     invoke-static {p0, p1}, Lcom/google/common/collect/Constraints;->constrainedCollection(Ljava/util/Collection;Lcom/google/common/collect/Constraint;)Ljava/util/Collection;

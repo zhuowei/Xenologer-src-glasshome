@@ -60,15 +60,15 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 295
     .local p0, this:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<TE;>;"
     .local p1, value:Ljava/lang/Object;,"TE;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
+    .line 296
     iput-object p1, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
-    .line 284
+    .line 297
     return-void
 .end method
 
@@ -89,7 +89,7 @@
     .end annotation
 
     .prologue
-    .line 288
+    .line 300
     .local p0, this:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<TE;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
@@ -104,7 +104,7 @@
     .end parameter
 
     .prologue
-    .line 292
+    .line 305
     .local p0, this:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<TE;>;"
     instance-of v1, p1, Lcom/google/common/base/Functions$ConstantFunction;
 
@@ -112,10 +112,10 @@
 
     move-object v0, p1
 
-    .line 293
+    .line 306
     check-cast v0, Lcom/google/common/base/Functions$ConstantFunction;
 
-    .line 294
+    .line 307
     .local v0, that:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<*>;"
     iget-object v1, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
@@ -125,7 +125,7 @@
 
     move-result v1
 
-    .line 296
+    .line 309
     .end local v0           #that:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<*>;"
     :goto_0
     return v1
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 300
+    .line 314
     .local p0, this:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<TE;>;"
     iget-object v0, p0, Lcom/google/common/base/Functions$ConstantFunction;->value:Ljava/lang/Object;
 
@@ -165,7 +165,7 @@
     .locals 2
 
     .prologue
-    .line 304
+    .line 319
     .local p0, this:Lcom/google/common/base/Functions$ConstantFunction;,"Lcom/google/common/base/Functions$ConstantFunction<TE;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

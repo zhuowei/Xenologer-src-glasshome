@@ -3,6 +3,14 @@
 .source "PhoneNumberUtils.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/glass/util/PhoneNumberUtils$Destination;
+    }
+.end annotation
+
+
 # static fields
 .field private static final REGION_US:Ljava/lang/String; = "US"
 
@@ -18,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 20
+    .line 21
     const-class v0, Lcom/google/glass/util/PhoneNumberUtils;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -27,7 +35,7 @@
 
     sput-object v0, Lcom/google/glass/util/PhoneNumberUtils;->TAG:Ljava/lang/String;
 
-    .line 29
+    .line 30
     invoke-static {}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getInstance()Lcom/google/i18n/phonenumbers/PhoneNumberUtil;
 
     move-result-object v0
@@ -41,9 +49,10 @@
     .locals 0
 
     .prologue
-    .line 19
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 33
     return-void
 .end method
 
@@ -52,20 +61,20 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 51
+    .line 57
     invoke-static {p0}, Landroid/telephony/PhoneNumberUtils;->isEmergencyNumber(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 65
+    .line 71
     .end local p0
     :cond_0
     :goto_0
     return-object p0
 
-    .line 55
+    .line 61
     .restart local p0
     :cond_1
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -86,17 +95,17 @@
 
     if-nez v1, :cond_0
 
-    .line 61
+    .line 67
     :cond_2
     invoke-static {p0}, Lcom/google/glass/util/PhoneNumberUtils;->parseNumber(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     move-result-object v0
 
-    .line 62
+    .line 68
     .local v0, number:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     if-eqz v0, :cond_0
 
-    .line 63
+    .line 69
     sget-object v1, Lcom/google/glass/util/PhoneNumberUtils;->phoneNumberUtil:Lcom/google/i18n/phonenumbers/PhoneNumberUtil;
 
     invoke-static {}, Lcom/google/glass/util/PhoneNumberUtils;->getRegion()Ljava/lang/String;
@@ -117,19 +126,19 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 41
+    .line 47
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 42
+    .line 48
     invoke-static {p0}, Lcom/google/glass/util/PhoneNumberUtils;->parseNumber(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     move-result-object v0
 
-    .line 43
+    .line 49
     .local v0, numberToFormat:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     if-eqz v0, :cond_0
 
-    .line 44
+    .line 50
     sget-object v1, Lcom/google/glass/util/PhoneNumberUtils;->phoneNumberUtil:Lcom/google/i18n/phonenumbers/PhoneNumberUtil;
 
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
@@ -138,7 +147,7 @@
 
     move-result-object p0
 
-    .line 46
+    .line 52
     .end local p0
     :cond_0
     return-object p0
@@ -162,7 +171,7 @@
     .end annotation
 
     .prologue
-    .line 32
+    .line 38
     .local p0, phoneNumbers:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
@@ -172,7 +181,7 @@
 
     move-result-object v2
 
-    .line 33
+    .line 39
     .local v2, ret:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -192,7 +201,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 34
+    .line 40
     .local v1, phoneNumber:Ljava/lang/String;
     invoke-static {v1}, Lcom/google/glass/util/PhoneNumberUtils;->formatPhoneNumberForDisplay(Ljava/lang/String;)Ljava/lang/String;
 
@@ -202,17 +211,96 @@
 
     goto :goto_0
 
-    .line 36
+    .line 42
     .end local v1           #phoneNumber:Ljava/lang/String;
     :cond_0
     return-object v2
 .end method
 
-.method private static getRegion()Ljava/lang/String;
-    .locals 2
+.method public static getDestination(Ljava/lang/String;)Lcom/google/glass/util/PhoneNumberUtils$Destination;
+    .locals 5
+    .parameter "phoneNumber"
 
     .prologue
-    .line 75
+    .line 82
+    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
+
+    .line 84
+    invoke-static {p0}, Lcom/google/glass/util/PhoneNumberUtils;->parseNumber(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
+
+    move-result-object v1
+
+    .line 85
+    .local v1, number:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
+    if-nez v1, :cond_0
+
+    .line 86
+    sget-object v2, Lcom/google/glass/util/PhoneNumberUtils$Destination;->UNKNOWN:Lcom/google/glass/util/PhoneNumberUtils$Destination;
+
+    .line 92
+    :goto_0
+    return-object v2
+
+    .line 89
+    :cond_0
+    sget-object v2, Lcom/google/glass/util/PhoneNumberUtils;->TAG:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "number: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 90
+    sget-object v2, Lcom/google/glass/util/PhoneNumberUtils;->phoneNumberUtil:Lcom/google/i18n/phonenumbers/PhoneNumberUtil;
+
+    invoke-static {}, Lcom/google/glass/util/PhoneNumberUtils;->getRegion()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getCountryCodeForRegion(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 92
+    .local v0, countryCode:I
+    invoke-virtual {v1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
+
+    move-result v2
+
+    if-ne v0, v2, :cond_1
+
+    sget-object v2, Lcom/google/glass/util/PhoneNumberUtils$Destination;->NATIONAL:Lcom/google/glass/util/PhoneNumberUtils$Destination;
+
+    goto :goto_0
+
+    :cond_1
+    sget-object v2, Lcom/google/glass/util/PhoneNumberUtils$Destination;->INTERNATIONAL:Lcom/google/glass/util/PhoneNumberUtils$Destination;
+
+    goto :goto_0
+.end method
+
+.method static getRegion()Ljava/lang/String;
+    .locals 2
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 104
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v1
@@ -221,7 +309,7 @@
 
     move-result-object v0
 
-    .line 76
+    .line 105
     .local v0, region:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -229,10 +317,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 77
+    .line 106
     const-string v0, "US"
 
-    .line 79
+    .line 108
     .end local v0           #region:Ljava/lang/String;
     :cond_0
     return-object v0
@@ -245,18 +333,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 84
+    .line 113
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 91
+    .line 120
     :goto_0
     return-object v1
 
-    .line 88
+    .line 117
     :cond_0
     :try_start_0
     sget-object v2, Lcom/google/glass/util/PhoneNumberUtils;->phoneNumberUtil:Lcom/google/i18n/phonenumbers/PhoneNumberUtil;
@@ -273,11 +361,11 @@
 
     goto :goto_0
 
-    .line 89
+    .line 118
     :catch_0
     move-exception v0
 
-    .line 90
+    .line 119
     .local v0, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     sget-object v2, Lcom/google/glass/util/PhoneNumberUtils;->TAG:Ljava/lang/String;
 

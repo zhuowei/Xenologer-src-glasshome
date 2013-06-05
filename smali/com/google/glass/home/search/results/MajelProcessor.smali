@@ -67,7 +67,7 @@
     .prologue
     const/high16 v6, 0x4270
 
-    .line 861
+    .line 866
     if-eqz p0, :cond_1
 
     const-string v5, "GMT+"
@@ -95,7 +95,7 @@
 
     if-lez v5, :cond_1
 
-    .line 865
+    .line 870
     const/4 v5, 0x3
 
     :try_start_0
@@ -103,7 +103,7 @@
 
     move-result v4
 
-    .line 866
+    .line 871
     .local v4, sign:C
     const/4 v5, 0x4
 
@@ -119,16 +119,16 @@
 
     move-result v3
 
-    .line 868
+    .line 873
     .local v3, offset:F
     const/high16 v5, 0x41c0
 
     rem-float/2addr v3, v5
 
-    .line 869
+    .line 874
     float-to-int v1, v3
 
-    .line 870
+    .line 875
     .local v1, hours:I
     mul-float v5, v3, v6
 
@@ -136,7 +136,7 @@
 
     float-to-int v2, v5
 
-    .line 871
+    .line 876
     .local v2, minutes:I
     const-string v5, "GMT%c%d:%d"
 
@@ -174,7 +174,7 @@
 
     move-result-object p0
 
-    .line 877
+    .line 882
     .end local v1           #hours:I
     .end local v2           #minutes:I
     .end local v3           #offset:F
@@ -183,11 +183,11 @@
     :goto_0
     return-object p0
 
-    .line 872
+    .line 877
     :catch_0
     move-exception v0
 
-    .line 874
+    .line 879
     .local v0, exception:Ljava/lang/NumberFormatException;
     sget-object v5, Lcom/google/glass/home/search/results/MajelProcessor;->TAG:Ljava/lang/String;
 
@@ -219,7 +219,7 @@
     .parameter "intervals"
 
     .prologue
-    .line 904
+    .line 913
     const-string v0, "\u2013"
 
     const-string v1, "-"
@@ -228,7 +228,7 @@
 
     move-result-object p0
 
-    .line 906
+    .line 915
     const-string v0, ":00"
 
     const-string v1, ""
@@ -237,7 +237,7 @@
 
     move-result-object p0
 
-    .line 908
+    .line 917
     const-string v0, " am"
 
     const-string v1, "<sup><small><small>AM</small></small></sup>"
@@ -246,7 +246,7 @@
 
     move-result-object p0
 
-    .line 909
+    .line 918
     const-string v0, " pm"
 
     const-string v1, "<sup><small><small>PM</small></small></sup>"
@@ -255,7 +255,7 @@
 
     move-result-object p0
 
-    .line 910
+    .line 919
     invoke-static {p0}, Landroid/text/Html;->fromHtml(Ljava/lang/String;)Landroid/text/Spanned;
 
     move-result-object v0
@@ -431,7 +431,7 @@
 
     move-result-object v2
 
-    .line 383
+    .line 388
     .end local v1           #view:Lcom/google/glass/home/search/results/LocalSingleAnswerView;
     .end local v15           #builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     .end local v16           #bundle:Landroid/os/Bundle;
@@ -440,7 +440,23 @@
     :goto_0
     return-object v2
 
+    .line 381
     :cond_0
+    invoke-virtual {v14}, Lcom/google/majel/proto/ActionV2Protos$ActionV2;->hasSoundSearchActionExtension()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 385
+    invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newStartSoundSearchResult()Lcom/google/glass/home/search/results/ResultsContainer;
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 388
+    :cond_1
     const/4 v2, 0x0
 
     goto :goto_0
@@ -451,7 +467,7 @@
     .parameter "peanut"
 
     .prologue
-    .line 791
+    .line 796
     invoke-virtual {p1}, Lcom/google/majel/proto/PeanutProtos$Peanut;->hasTextResponse()Z
 
     move-result v0
@@ -468,13 +484,13 @@
 
     if-nez v0, :cond_1
 
-    .line 792
+    .line 797
     :cond_0
     new-instance v0, Lcom/google/majel/proto/AttributionProtos$Attribution;
 
     invoke-direct {v0}, Lcom/google/majel/proto/AttributionProtos$Attribution;-><init>()V
 
-    .line 794
+    .line 799
     :goto_0
     return-object v0
 
@@ -508,7 +524,7 @@
     .end annotation
 
     .prologue
-    .line 798
+    .line 803
     invoke-virtual {p1}, Lcom/google/majel/proto/PeanutProtos$Peanut;->hasTextResponse()Z
 
     move-result v1
@@ -525,7 +541,7 @@
 
     if-nez v1, :cond_1
 
-    .line 799
+    .line 804
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -533,7 +549,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 800
+    .line 805
     .local v0, attributions:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/AttributionProtos$Attribution;>;"
     new-instance v1, Lcom/google/majel/proto/AttributionProtos$Attribution;
 
@@ -541,7 +557,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 803
+    .line 808
     .end local v0           #attributions:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/AttributionProtos$Attribution;>;"
     :goto_0
     return-object v0
@@ -563,19 +579,19 @@
     .parameter "peanut"
 
     .prologue
-    .line 807
+    .line 812
     invoke-virtual {p1}, Lcom/google/majel/proto/PeanutProtos$Peanut;->getImageResponseCount()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 808
+    .line 813
     new-instance v0, Lcom/google/majel/proto/PeanutProtos$Image;
 
     invoke-direct {v0}, Lcom/google/majel/proto/PeanutProtos$Image;-><init>()V
 
-    .line 810
+    .line 815
     :goto_0
     return-object v0
 
@@ -596,7 +612,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 814
+    .line 819
     invoke-virtual {p1}, Lcom/google/majel/proto/PeanutProtos$Peanut;->getImageResponseCount()I
 
     move-result v0
@@ -613,13 +629,13 @@
 
     if-nez v0, :cond_1
 
-    .line 816
+    .line 821
     :cond_0
     new-instance v0, Lcom/google/majel/proto/AttributionProtos$Attribution;
 
     invoke-direct {v0}, Lcom/google/majel/proto/AttributionProtos$Attribution;-><init>()V
 
-    .line 818
+    .line 823
     :goto_0
     return-object v0
 
@@ -760,13 +776,13 @@
     if-ge v0, v1, :cond_1
 
     .line 221
-    new-instance v5, Lcom/google/glass/horizontalscroll/HorizontalScrollImageView;
+    new-instance v5, Lcom/google/glass/horizontalscroll/ImageViewCard;
 
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
-    invoke-direct {v5, v4}, Lcom/google/glass/horizontalscroll/HorizontalScrollImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v4}, Lcom/google/glass/horizontalscroll/ImageViewCard;-><init>(Landroid/content/Context;)V
 
     .line 222
     .local v5, gridImageView:Landroid/widget/ImageView;
@@ -1036,18 +1052,18 @@
     .parameter "isFromTimeline"
 
     .prologue
-    .line 387
+    .line 392
     invoke-virtual {p1}, Lcom/google/majel/proto/PeanutProtos$Peanut;->getStructuredResponse()Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;
 
     move-result-object v8
 
-    .line 389
+    .line 394
     .local v8, sr:Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;
     invoke-direct {p0, p1}, Lcom/google/glass/home/search/results/MajelProcessor;->getAttribution(Lcom/google/majel/proto/PeanutProtos$Peanut;)Lcom/google/majel/proto/AttributionProtos$Attribution;
 
     move-result-object v6
 
-    .line 390
+    .line 395
     .local v6, attribution:Lcom/google/majel/proto/AttributionProtos$Attribution;
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasCalculatorResultExtension()Z
 
@@ -1055,7 +1071,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 391
+    .line 396
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getCalculatorResultExtension()Lcom/google/majel/proto/CommonStructuredResponse$CalculatorResult;
 
     move-result-object v0
@@ -1064,11 +1080,11 @@
 
     move-result-object v0
 
-    .line 415
+    .line 420
     :goto_0
     return-object v0
 
-    .line 393
+    .line 398
     :cond_0
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasFlightResultExtension()Z
 
@@ -1076,12 +1092,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 394
+    .line 399
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getFlightResultExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$FlightResult;
 
     move-result-object v7
 
-    .line 395
+    .line 400
     .local v7, result:Lcom/google/majel/proto/EcoutezStructuredResponse$FlightResult;
     invoke-direct {p0, v7}, Lcom/google/glass/home/search/results/MajelProcessor;->processFlightResult(Lcom/google/majel/proto/EcoutezStructuredResponse$FlightResult;)Lcom/google/glass/home/search/results/ResultsContainer;
 
@@ -1089,7 +1105,7 @@
 
     goto :goto_0
 
-    .line 396
+    .line 401
     .end local v7           #result:Lcom/google/majel/proto/EcoutezStructuredResponse$FlightResult;
     :cond_1
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasDictionaryResultExtension()Z
@@ -1098,7 +1114,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 397
+    .line 402
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getDictionaryResultExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$DictionaryResult;
 
     move-result-object v0
@@ -1109,7 +1125,7 @@
 
     goto :goto_0
 
-    .line 398
+    .line 403
     :cond_2
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasWeatherResultExtension()Z
 
@@ -1117,7 +1133,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 399
+    .line 404
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getWeatherResultExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$WeatherResult;
 
     move-result-object v0
@@ -1128,7 +1144,7 @@
 
     goto :goto_0
 
-    .line 400
+    .line 405
     :cond_3
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasSportsResultExtension()Z
 
@@ -1136,7 +1152,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 401
+    .line 406
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getSportsResultExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;
 
     move-result-object v0
@@ -1147,7 +1163,7 @@
 
     goto :goto_0
 
-    .line 402
+    .line 407
     :cond_4
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasEcoutezLocalResultsExtension()Z
 
@@ -1155,7 +1171,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 403
+    .line 408
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getEcoutezLocalResultsExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResults;
 
     move-result-object v0
@@ -1166,7 +1182,7 @@
 
     goto :goto_0
 
-    .line 404
+    .line 409
     :cond_5
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasFinanceResultExtension()Z
 
@@ -1174,7 +1190,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 405
+    .line 410
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getFinanceResultExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$FinanceResult;
 
     move-result-object v0
@@ -1185,7 +1201,7 @@
 
     goto :goto_0
 
-    .line 406
+    .line 411
     :cond_6
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasKnowledgeResultExtension()Z
 
@@ -1193,7 +1209,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 407
+    .line 412
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getKnowledgeResultExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$KnowledgeResult;
 
     move-result-object v1
@@ -1220,7 +1236,7 @@
 
     goto :goto_0
 
-    .line 409
+    .line 414
     :cond_7
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasSnippetResultsExtension()Z
 
@@ -1228,7 +1244,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 410
+    .line 415
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getSnippetResultsExtension()Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResults;
 
     move-result-object v0
@@ -1239,7 +1255,7 @@
 
     goto/16 :goto_0
 
-    .line 411
+    .line 416
     :cond_8
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->hasTranslationResultExtension()Z
 
@@ -1247,7 +1263,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 412
+    .line 417
     invoke-virtual {v8}, Lcom/google/majel/proto/CommonStructuredResponse$StructuredResponse;->getTranslationResultExtension()Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;
 
     move-result-object v0
@@ -1258,7 +1274,7 @@
 
     goto/16 :goto_0
 
-    .line 415
+    .line 420
     :cond_9
     const/4 v0, 0x0
 
@@ -1509,7 +1525,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 828
+    .line 833
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v7
@@ -1518,18 +1534,18 @@
 
     move-object v4, v6
 
-    .line 851
+    .line 856
     :goto_0
     return-object v4
 
-    .line 832
+    .line 837
     :cond_0
     :try_start_0
     new-instance v0, Landroid/text/format/Time;
 
     invoke-direct {v0}, Landroid/text/format/Time;-><init>()V
 
-    .line 833
+    .line 838
     .local v0, androidTime:Landroid/text/format/Time;
     invoke-virtual {v0, p0}, Landroid/text/format/Time;->parse3339(Ljava/lang/String;)Z
 
@@ -1537,12 +1553,12 @@
 
     if-nez v7, :cond_1
 
-    .line 835
+    .line 840
     const-string v7, "UTC"
 
     invoke-virtual {v0, v7}, Landroid/text/format/Time;->switchTimezone(Ljava/lang/String;)V
 
-    .line 837
+    .line 842
     :cond_1
     const/4 v7, 0x1
 
@@ -1550,28 +1566,28 @@
 
     move-result-wide v2
 
-    .line 839
+    .line 844
     .local v2, millis:J
     if-eqz p1, :cond_2
 
-    .line 840
+    .line 845
     invoke-static {p1}, Lcom/google/glass/home/search/results/MajelProcessor;->fixTimeZone(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 845
+    .line 850
     :goto_1
     invoke-static {p1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v5
 
-    .line 846
+    .line 851
     .local v5, zone:Ljava/util/TimeZone;
     new-instance v4, Ljava/util/GregorianCalendar;
 
     invoke-direct {v4, v5}, Ljava/util/GregorianCalendar;-><init>(Ljava/util/TimeZone;)V
 
-    .line 847
+    .line 852
     .local v4, time:Ljava/util/Calendar;
     new-instance v7, Ljava/util/Date;
 
@@ -1583,7 +1599,7 @@
 
     goto :goto_0
 
-    .line 849
+    .line 854
     .end local v0           #androidTime:Landroid/text/format/Time;
     .end local v2           #millis:J
     .end local v4           #time:Ljava/util/Calendar;
@@ -1591,7 +1607,7 @@
     :catch_0
     move-exception v1
 
-    .line 850
+    .line 855
     .local v1, e:Landroid/util/TimeFormatException;
     sget-object v7, Lcom/google/glass/home/search/results/MajelProcessor;->TAG:Ljava/lang/String;
 
@@ -1623,10 +1639,10 @@
 
     move-object v4, v6
 
-    .line 851
+    .line 856
     goto :goto_0
 
-    .line 842
+    .line 847
     .end local v1           #e:Landroid/util/TimeFormatException;
     .restart local v0       #androidTime:Landroid/text/format/Time;
     .restart local v2       #millis:J
@@ -1644,7 +1660,7 @@
     .parameter "result"
 
     .prologue
-    .line 607
+    .line 612
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getHours()Lcom/google/majel/proto/EcoutezStructuredResponse$Hours;
 
     move-result-object v0
@@ -1737,14 +1753,14 @@
     .parameter "text"
 
     .prologue
-    .line 888
+    .line 893
     const-string v3, " "
 
     invoke-static {p0, v3}, Landroid/text/TextUtils;->split(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v2
 
-    .line 889
+    .line 894
     .local v2, parts:[Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -1754,10 +1770,10 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 890
+    .line 895
     aget-object v1, v2, v0
 
-    .line 891
+    .line 896
     .local v1, part:Ljava/lang/String;
     const-string v3, "[+-]?\\d*(\\.\\d+)?"
 
@@ -1767,7 +1783,8 @@
 
     if-eqz v3, :cond_0
 
-    .line 892
+    .line 898
+    :try_start_0
     const-string v3, "%.2f"
 
     const/4 v4, 0x1
@@ -1787,14 +1804,17 @@
     move-result-object v3
 
     aput-object v3, v2, v0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 889
+    .line 894
     :cond_0
+    :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 895
+    .line 904
     .end local v1           #part:Ljava/lang/String;
     :cond_1
     const-string v3, " "
@@ -1808,6 +1828,13 @@
     move-result-object v3
 
     return-object v3
+
+    .line 899
+    .restart local v1       #part:Ljava/lang/String;
+    :catch_0
+    move-exception v3
+
+    goto :goto_1
 .end method
 
 .method private processCalculatorResult(Lcom/google/majel/proto/CommonStructuredResponse$CalculatorResult;Lcom/google/majel/proto/AttributionProtos$Attribution;Z)Lcom/google/glass/home/search/results/ResultsContainer;
@@ -1817,7 +1844,7 @@
     .parameter "isFromTimeline"
 
     .prologue
-    .line 461
+    .line 466
     invoke-virtual {p1}, Lcom/google/majel/proto/CommonStructuredResponse$CalculatorResult;->hasLeft()Z
 
     move-result v3
@@ -1830,21 +1857,21 @@
 
     if-nez v3, :cond_1
 
-    .line 462
+    .line 467
     :cond_0
     const/4 v3, 0x0
 
-    .line 483
+    .line 488
     :goto_0
     return-object v3
 
-    .line 464
+    .line 469
     :cond_1
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v7
 
-    .line 465
+    .line 470
     .local v7, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     iget-object v3, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
@@ -1852,27 +1879,27 @@
 
     move-result-object v8
 
-    .line 467
+    .line 472
     .local v8, optionMenu:Lcom/google/glass/widget/OptionMenu;
     if-eqz p3, :cond_2
 
-    .line 471
+    .line 476
     new-instance v9, Lcom/google/glass/home/search/results/SnippetsCoverView;
 
     iget-object v3, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v9, v3}, Lcom/google/glass/home/search/results/SnippetsCoverView;-><init>(Landroid/content/Context;)V
 
-    .line 472
+    .line 477
     .local v9, snippetCoverView:Lcom/google/glass/home/search/results/SnippetsCoverView;
     iget-object v3, p0, Lcom/google/glass/home/search/results/MajelProcessor;->recognitionResult:Ljava/lang/String;
 
     invoke-virtual {v9, v3}, Lcom/google/glass/home/search/results/SnippetsCoverView;->setQuery(Ljava/lang/String;)V
 
-    .line 473
+    .line 478
     invoke-virtual {v7, v9, v8}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 475
+    .line 480
     .end local v9           #snippetCoverView:Lcom/google/glass/home/search/results/SnippetsCoverView;
     :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1893,7 +1920,7 @@
 
     move-result-object v1
 
-    .line 476
+    .line 481
     .local v1, answerText:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/majel/proto/CommonStructuredResponse$CalculatorResult;->getRight()Ljava/lang/String;
 
@@ -1903,7 +1930,7 @@
 
     move-result-object v2
 
-    .line 478
+    .line 483
     .local v2, description:Ljava/lang/String;
     new-instance v0, Lcom/google/glass/home/search/results/AnswerData;
 
@@ -1921,7 +1948,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/glass/home/search/results/AnswerData;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/google/majel/proto/AttributionProtos$Attribution;Lcom/google/majel/proto/PeanutProtos$Image;Lcom/google/majel/proto/AttributionProtos$Attribution;Ljava/lang/String;)V
 
-    .line 480
+    .line 485
     .local v0, answerData:Lcom/google/glass/home/search/results/AnswerData;
     new-instance v10, Lcom/google/glass/home/search/results/TextResponseAnswerView;
 
@@ -1929,16 +1956,16 @@
 
     invoke-direct {v10, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 481
+    .line 486
     .local v10, view:Lcom/google/glass/home/search/results/TextResponseAnswerView;
     const/4 v3, 0x1
 
     invoke-virtual {v10, v0, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;->setAnswerData(Lcom/google/glass/home/search/results/AnswerData;Z)V
 
-    .line 482
+    .line 487
     invoke-virtual {v7, v10, v8}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 483
+    .line 488
     invoke-virtual {v7}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v3
@@ -1951,12 +1978,12 @@
     .parameter "result"
 
     .prologue
-    .line 488
+    .line 493
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
 
-    .line 490
+    .line 495
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
@@ -1964,7 +1991,7 @@
 
     move-result-object v3
 
-    .line 492
+    .line 497
     .local v3, optionMenu:Lcom/google/glass/widget/OptionMenu;
     new-instance v4, Lcom/google/glass/home/search/results/DictionaryAnswerView;
 
@@ -1972,34 +1999,34 @@
 
     invoke-direct {v4, v7}, Lcom/google/glass/home/search/results/DictionaryAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 493
+    .line 498
     .local v4, primary:Lcom/google/glass/home/search/results/DictionaryAnswerView;
     invoke-virtual {v4, p1}, Lcom/google/glass/home/search/results/DictionaryAnswerView;->setDictionaryResultPrimary(Lcom/google/majel/proto/EcoutezStructuredResponse$DictionaryResult;)Z
 
-    .line 494
+    .line 499
     invoke-virtual {v0, v4, v3}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 496
+    .line 501
     new-instance v5, Lcom/google/glass/home/search/results/DictionaryAnswerView;
 
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v5, v7}, Lcom/google/glass/home/search/results/DictionaryAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 497
+    .line 502
     .local v5, secondary:Lcom/google/glass/home/search/results/DictionaryAnswerView;
     invoke-virtual {v5, p1}, Lcom/google/glass/home/search/results/DictionaryAnswerView;->setDictionaryResultSecondary(Lcom/google/majel/proto/EcoutezStructuredResponse$DictionaryResult;)Z
 
     move-result v1
 
-    .line 498
+    .line 503
     .local v1, hasSecondary:Z
     if-eqz v1, :cond_0
 
-    .line 499
+    .line 504
     invoke-virtual {v0, v5, v3}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 502
+    .line 507
     :cond_0
     new-instance v6, Lcom/google/glass/home/search/results/DictionaryAnswerView;
 
@@ -2007,20 +2034,20 @@
 
     invoke-direct {v6, v7}, Lcom/google/glass/home/search/results/DictionaryAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 503
+    .line 508
     .local v6, synonyms:Lcom/google/glass/home/search/results/DictionaryAnswerView;
     invoke-virtual {v6, p1}, Lcom/google/glass/home/search/results/DictionaryAnswerView;->settDictionaryResultSynonyms(Lcom/google/majel/proto/EcoutezStructuredResponse$DictionaryResult;)Z
 
     move-result v2
 
-    .line 504
+    .line 509
     .local v2, hasSynonyms:Z
     if-eqz v2, :cond_1
 
-    .line 505
+    .line 510
     invoke-virtual {v0, v6, v3}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 508
+    .line 513
     :cond_1
     invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
@@ -2034,12 +2061,12 @@
     .parameter "result"
 
     .prologue
-    .line 670
+    .line 675
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v0
 
-    .line 671
+    .line 676
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     iget-object v4, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
@@ -2047,7 +2074,7 @@
 
     move-result-object v2
 
-    .line 673
+    .line 678
     .local v2, optionMenu:Lcom/google/glass/widget/OptionMenu;
     new-instance v3, Lcom/google/glass/home/search/results/FinanceAnswerView;
 
@@ -2055,21 +2082,21 @@
 
     invoke-direct {v3, v4}, Lcom/google/glass/home/search/results/FinanceAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 674
+    .line 679
     .local v3, view:Lcom/google/glass/home/search/results/FinanceAnswerView;
     invoke-virtual {v3, p1}, Lcom/google/glass/home/search/results/FinanceAnswerView;->setFinanceResult(Lcom/google/majel/proto/EcoutezStructuredResponse$FinanceResult;)V
 
-    .line 675
+    .line 680
     invoke-virtual {v0, v3, v2}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 680
+    .line 685
     new-instance v1, Lcom/google/glass/home/search/results/FinanceDetailView;
 
     iget-object v4, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v1, v4}, Lcom/google/glass/home/search/results/FinanceDetailView;-><init>(Landroid/content/Context;)V
 
-    .line 681
+    .line 686
     .local v1, detailView:Lcom/google/glass/home/search/results/FinanceDetailView;
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$FinanceResult;->getStockResult()Lcom/google/majel/proto/EcoutezStructuredResponse$StockResult;
 
@@ -2077,10 +2104,10 @@
 
     invoke-virtual {v1, v4}, Lcom/google/glass/home/search/results/FinanceDetailView;->setFinanceResult(Lcom/google/majel/proto/EcoutezStructuredResponse$StockResult;)V
 
-    .line 682
+    .line 687
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 684
+    .line 689
     invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v4
@@ -2093,12 +2120,12 @@
     .parameter "result"
 
     .prologue
-    .line 512
+    .line 517
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     invoke-direct {v1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
 
-    .line 514
+    .line 519
     .local v1, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
@@ -2106,7 +2133,7 @@
 
     move-result-object v5
 
-    .line 517
+    .line 522
     .local v5, optionMenu:Lcom/google/glass/widget/OptionMenu;
     new-instance v6, Lcom/google/glass/home/search/results/FlightAnswerView;
 
@@ -2114,14 +2141,14 @@
 
     invoke-direct {v6, v7}, Lcom/google/glass/home/search/results/FlightAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 518
+    .line 523
     .local v6, view:Lcom/google/glass/home/search/results/FlightAnswerView;
     invoke-virtual {v6, p1}, Lcom/google/glass/home/search/results/FlightAnswerView;->setFlightResult(Lcom/google/majel/proto/EcoutezStructuredResponse$FlightResult;)V
 
-    .line 519
+    .line 524
     invoke-virtual {v1, v6, v5}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 522
+    .line 527
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$FlightResult;->getFlightList()Ljava/util/List;
 
     move-result-object v7
@@ -2144,7 +2171,7 @@
 
     check-cast v3, Lcom/google/majel/proto/EcoutezStructuredResponse$FlightData;
 
-    .line 523
+    .line 528
     .local v3, flightData:Lcom/google/majel/proto/EcoutezStructuredResponse$FlightData;
     new-instance v2, Lcom/google/glass/home/search/results/FlightDetailView;
 
@@ -2152,34 +2179,34 @@
 
     invoke-direct {v2, v7}, Lcom/google/glass/home/search/results/FlightDetailView;-><init>(Landroid/content/Context;)V
 
-    .line 524
+    .line 529
     .local v2, departureCard:Lcom/google/glass/home/search/results/FlightDetailView;
     const/4 v7, 0x1
 
     invoke-virtual {v2, v3, v7}, Lcom/google/glass/home/search/results/FlightDetailView;->setFlightResult(Lcom/google/majel/proto/EcoutezStructuredResponse$FlightData;Z)V
 
-    .line 525
+    .line 530
     invoke-virtual {v1, v2, v5}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 527
+    .line 532
     new-instance v0, Lcom/google/glass/home/search/results/FlightDetailView;
 
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v0, v7}, Lcom/google/glass/home/search/results/FlightDetailView;-><init>(Landroid/content/Context;)V
 
-    .line 528
+    .line 533
     .local v0, arrivalCard:Lcom/google/glass/home/search/results/FlightDetailView;
     const/4 v7, 0x0
 
     invoke-virtual {v0, v3, v7}, Lcom/google/glass/home/search/results/FlightDetailView;->setFlightResult(Lcom/google/majel/proto/EcoutezStructuredResponse$FlightData;Z)V
 
-    .line 529
+    .line 534
     invoke-virtual {v1, v0, v5}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     goto :goto_0
 
-    .line 532
+    .line 537
     .end local v0           #arrivalCard:Lcom/google/glass/home/search/results/FlightDetailView;
     .end local v2           #departureCard:Lcom/google/glass/home/search/results/FlightDetailView;
     .end local v3           #flightData:Lcom/google/majel/proto/EcoutezStructuredResponse$FlightData;
@@ -2200,12 +2227,12 @@
     .parameter "isFromTimeline"
 
     .prologue
-    .line 690
+    .line 695
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v13
 
-    .line 691
+    .line 696
     .local v13, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     move-object/from16 v0, p0
 
@@ -2215,7 +2242,7 @@
 
     move-result-object v21
 
-    .line 695
+    .line 700
     .local v21, optionMenu:Lcom/google/glass/widget/OptionMenu;
     invoke-virtual/range {p1 .. p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$KnowledgeResult;->hasDescriptionAttribution()Z
 
@@ -2241,12 +2268,12 @@
 
     move-result-object v24
 
-    .line 698
+    .line 703
     .local v24, websiteUrl:Ljava/lang/String;
     :goto_0
     const/4 v14, 0x0
 
-    .line 699
+    .line 704
     .local v14, bundle:Landroid/os/Bundle;
     invoke-static/range {v24 .. v24}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -2254,13 +2281,13 @@
 
     if-nez v3, :cond_0
 
-    .line 700
+    .line 705
     new-instance v14, Landroid/os/Bundle;
 
     .end local v14           #bundle:Landroid/os/Bundle;
     invoke-direct {v14}, Landroid/os/Bundle;-><init>()V
 
-    .line 701
+    .line 706
     .restart local v14       #bundle:Landroid/os/Bundle;
     const-string v3, "URL_KEY"
 
@@ -2268,11 +2295,11 @@
 
     invoke-virtual {v14, v3, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 704
+    .line 709
     :cond_0
     if-eqz p5, :cond_1
 
-    .line 705
+    .line 710
     new-instance v22, Lcom/google/glass/home/search/results/SnippetsCoverView;
 
     move-object/from16 v0, p0
@@ -2283,7 +2310,7 @@
 
     invoke-direct {v0, v3}, Lcom/google/glass/home/search/results/SnippetsCoverView;-><init>(Landroid/content/Context;)V
 
-    .line 706
+    .line 711
     .local v22, snippetCoverView:Lcom/google/glass/home/search/results/SnippetsCoverView;
     move-object/from16 v0, p0
 
@@ -2293,47 +2320,47 @@
 
     invoke-virtual {v0, v3}, Lcom/google/glass/home/search/results/SnippetsCoverView;->setQuery(Ljava/lang/String;)V
 
-    .line 707
+    .line 712
     move-object/from16 v0, v22
 
     move-object/from16 v1, p3
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/search/results/SnippetsCoverView;->setImage(Lcom/google/majel/proto/PeanutProtos$Image;)V
 
-    .line 708
+    .line 713
     move-object/from16 v0, v22
 
     move-object/from16 v1, v21
 
     invoke-virtual {v13, v0, v1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 715
+    .line 720
     .end local v22           #snippetCoverView:Lcom/google/glass/home/search/results/SnippetsCoverView;
     :cond_1
     const/16 v18, 0x0
 
-    .line 716
+    .line 721
     .local v18, hasCoverCard:Z
     const/16 v20, 0x0
 
-    .line 717
+    .line 722
     .local v20, mainText:Ljava/lang/String;
     if-eqz p2, :cond_4
 
-    .line 718
+    .line 723
     const/16 v18, 0x1
 
-    .line 719
+    .line 724
     invoke-virtual/range {p2 .. p2}, Lcom/google/majel/proto/PeanutProtos$Text;->getDisplay()Ljava/lang/String;
 
     move-result-object v20
 
-    .line 722
+    .line 727
     invoke-virtual/range {p2 .. p2}, Lcom/google/majel/proto/PeanutProtos$Text;->getAttributionList()Ljava/util/List;
 
     move-result-object v5
 
-    .line 723
+    .line 728
     .local v5, attributions:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/AttributionProtos$Attribution;>;"
     if-eqz v5, :cond_2
 
@@ -2358,14 +2385,14 @@
 
     if-eqz v3, :cond_3
 
-    .line 725
+    .line 730
     invoke-virtual/range {p1 .. p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$KnowledgeResult;->hasDescriptionAttribution()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 726
+    .line 731
     const/4 v3, 0x1
 
     new-array v3, v3, [Lcom/google/majel/proto/AttributionProtos$Attribution;
@@ -2382,7 +2409,7 @@
 
     move-result-object v5
 
-    .line 729
+    .line 734
     :cond_3
     new-instance v2, Lcom/google/glass/home/search/results/AnswerData;
 
@@ -2406,7 +2433,7 @@
 
     invoke-direct/range {v2 .. v9}, Lcom/google/glass/home/search/results/AnswerData;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lcom/google/majel/proto/PeanutProtos$Image;Lcom/google/majel/proto/AttributionProtos$Attribution;Ljava/lang/String;Z)V
 
-    .line 732
+    .line 737
     .local v2, answerData:Lcom/google/glass/home/search/results/AnswerData;
     new-instance v15, Lcom/google/glass/home/search/results/TextResponseAnswerView;
 
@@ -2416,18 +2443,18 @@
 
     invoke-direct {v15, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 733
+    .line 738
     .local v15, cover:Lcom/google/glass/home/search/results/TextResponseAnswerView;
     const/4 v3, 0x0
 
     invoke-virtual {v15, v2, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;->setAnswerData(Lcom/google/glass/home/search/results/AnswerData;Z)V
 
-    .line 734
+    .line 739
     move-object/from16 v0, v21
 
     invoke-virtual {v13, v15, v0, v14}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 738
+    .line 743
     .end local v2           #answerData:Lcom/google/glass/home/search/results/AnswerData;
     .end local v5           #attributions:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/AttributionProtos$Attribution;>;"
     .end local v15           #cover:Lcom/google/glass/home/search/results/TextResponseAnswerView;
@@ -2446,7 +2473,7 @@
 
     if-nez v3, :cond_6
 
-    .line 740
+    .line 745
     :cond_5
     if-eqz v18, :cond_8
 
@@ -2474,7 +2501,7 @@
 
     move-object v2, v6
 
-    .line 745
+    .line 750
     .restart local v2       #answerData:Lcom/google/glass/home/search/results/AnswerData;
     :goto_1
     new-instance v23, Lcom/google/glass/home/search/results/TextResponseAnswerView;
@@ -2487,7 +2514,7 @@
 
     invoke-direct {v0, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 746
+    .line 751
     .local v23, view:Lcom/google/glass/home/search/results/TextResponseAnswerView;
     const/4 v3, 0x1
 
@@ -2495,14 +2522,14 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;->setAnswerData(Lcom/google/glass/home/search/results/AnswerData;Z)V
 
-    .line 747
+    .line 752
     move-object/from16 v0, v23
 
     move-object/from16 v1, v21
 
     invoke-virtual {v13, v0, v1, v14}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 751
+    .line 756
     .end local v2           #answerData:Lcom/google/glass/home/search/results/AnswerData;
     .end local v23           #view:Lcom/google/glass/home/search/results/TextResponseAnswerView;
     :cond_6
@@ -2512,7 +2539,7 @@
 
     if-lez v3, :cond_9
 
-    .line 752
+    .line 757
     invoke-virtual/range {p1 .. p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$KnowledgeResult;->getFactList()Ljava/util/List;
 
     move-result-object v3
@@ -2535,7 +2562,7 @@
 
     check-cast v16, Lcom/google/majel/proto/EcoutezStructuredResponse$Fact;
 
-    .line 753
+    .line 758
     .local v16, fact:Lcom/google/majel/proto/EcoutezStructuredResponse$Fact;
     new-instance v17, Lcom/google/glass/home/search/results/TextResponseAnswerView;
 
@@ -2547,7 +2574,7 @@
 
     invoke-direct {v0, v3}, Lcom/google/glass/home/search/results/TextResponseAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 754
+    .line 759
     .local v17, factView:Lcom/google/glass/home/search/results/TextResponseAnswerView;
     new-instance v3, Lcom/google/glass/home/search/results/AnswerData;
 
@@ -2567,7 +2594,7 @@
 
     invoke-virtual {v0, v3, v4}, Lcom/google/glass/home/search/results/TextResponseAnswerView;->setAnswerData(Lcom/google/glass/home/search/results/AnswerData;Z)V
 
-    .line 756
+    .line 761
     move-object/from16 v0, v17
 
     move-object/from16 v1, v21
@@ -2576,7 +2603,7 @@
 
     goto :goto_2
 
-    .line 695
+    .line 700
     .end local v14           #bundle:Landroid/os/Bundle;
     .end local v16           #fact:Lcom/google/majel/proto/EcoutezStructuredResponse$Fact;
     .end local v17           #factView:Lcom/google/glass/home/search/results/TextResponseAnswerView;
@@ -2589,7 +2616,7 @@
 
     goto/16 :goto_0
 
-    .line 740
+    .line 745
     .restart local v14       #bundle:Landroid/os/Bundle;
     .restart local v18       #hasCoverCard:Z
     .restart local v20       #mainText:Ljava/lang/String;
@@ -2621,7 +2648,7 @@
 
     goto :goto_1
 
-    .line 760
+    .line 765
     :cond_9
     invoke-virtual {v13}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
@@ -2636,12 +2663,12 @@
     .parameter "isFromTimeline"
 
     .prologue
-    .line 613
+    .line 618
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v15
 
-    .line 617
+    .line 622
     .local v15, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     if-eqz p2, :cond_0
 
@@ -2653,7 +2680,7 @@
 
     if-le v3, v4, :cond_0
 
-    .line 618
+    .line 623
     new-instance v17, Lcom/google/glass/home/search/results/LocalCoverView;
 
     move-object/from16 v0, p0
@@ -2664,7 +2691,7 @@
 
     invoke-direct {v0, v3}, Lcom/google/glass/home/search/results/LocalCoverView;-><init>(Landroid/content/Context;)V
 
-    .line 619
+    .line 624
     .local v17, cover:Lcom/google/glass/home/search/results/LocalCoverView;
     move-object/from16 v0, v17
 
@@ -2672,7 +2699,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/search/results/LocalCoverView;->setLocalResults(Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResults;)V
 
-    .line 620
+    .line 625
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/glass/home/search/results/MajelProcessor;->recognitionResult:Ljava/lang/String;
@@ -2681,7 +2708,7 @@
 
     invoke-virtual {v0, v3}, Lcom/google/glass/home/search/results/LocalCoverView;->setQuery(Ljava/lang/String;)V
 
-    .line 621
+    .line 626
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
@@ -2694,7 +2721,7 @@
 
     invoke-virtual {v15, v0, v3}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 626
+    .line 631
     .end local v17           #cover:Lcom/google/glass/home/search/results/LocalCoverView;
     :cond_0
     invoke-virtual/range {p1 .. p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResults;->getLocalResultList()Ljava/util/List;
@@ -2719,7 +2746,7 @@
 
     check-cast v20, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;
 
-    .line 630
+    .line 635
     .local v20, result:Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;
     invoke-virtual/range {p1 .. p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResults;->getLocalResultCount()I
 
@@ -2739,7 +2766,7 @@
 
     if-eqz v3, :cond_4
 
-    .line 631
+    .line 636
     :cond_1
     new-instance v2, Lcom/google/glass/home/search/results/LocalSingleAnswerView;
 
@@ -2749,12 +2776,12 @@
 
     invoke-direct {v2, v3}, Lcom/google/glass/home/search/results/LocalSingleAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 632
+    .line 637
     .local v2, localView:Lcom/google/glass/home/search/results/LocalSingleAnswerView;
     move-object/from16 v21, v2
 
-    .line 634
-    .local v21, view:Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+    .line 639
+    .local v21, view:Lcom/google/glass/horizontalscroll/LinearLayoutCard;
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->hasLatSpanDegrees()Z
 
     move-result v3
@@ -2767,7 +2794,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 635
+    .line 640
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getTitle()Ljava/lang/String;
 
     move-result-object v3
@@ -2800,14 +2827,14 @@
 
     invoke-virtual/range {v2 .. v14}, Lcom/google/glass/home/search/results/LocalSingleAnswerView;->setLocalResult(Ljava/lang/String;Ljava/lang/String;Lcom/google/majel/proto/EcoutezStructuredResponse$Hours;DDFDD)V
 
-    .line 652
+    .line 657
     .end local v2           #localView:Lcom/google/glass/home/search/results/LocalSingleAnswerView;
     :goto_1
     new-instance v16, Landroid/os/Bundle;
 
     invoke-direct/range {v16 .. v16}, Landroid/os/Bundle;-><init>()V
 
-    .line 653
+    .line 658
     .local v16, bundle:Landroid/os/Bundle;
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getPhoneNumber()Ljava/lang/String;
 
@@ -2821,12 +2848,12 @@
 
     const/16 v18, 0x1
 
-    .line 654
+    .line 659
     .local v18, hasPhoneNumber:Z
     :goto_2
     if-eqz v18, :cond_2
 
-    .line 655
+    .line 660
     const-string v3, "PHONE_NUMBER_KEY"
 
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getPhoneNumber()Ljava/lang/String;
@@ -2837,7 +2864,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 657
+    .line 662
     :cond_2
     const-string v3, "LOCATION_COORDINATES_KEY"
 
@@ -2865,7 +2892,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putDoubleArray(Ljava/lang/String;[D)V
 
-    .line 659
+    .line 664
     const-string v3, "LOCATION_NAME_KEY"
 
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getTitle()Ljava/lang/String;
@@ -2876,7 +2903,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 660
+    .line 665
     const-string v3, "LOCATION_ADDRESS_KEY"
 
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getAddress()Ljava/lang/String;
@@ -2887,7 +2914,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 661
+    .line 666
     const-string v3, "URL_KEY"
 
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getMapsUrl()Ljava/lang/String;
@@ -2898,7 +2925,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 662
+    .line 667
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
@@ -2917,14 +2944,14 @@
 
     goto/16 :goto_0
 
-    .line 640
+    .line 645
     .end local v16           #bundle:Landroid/os/Bundle;
     .end local v18           #hasPhoneNumber:Z
     .restart local v2       #localView:Lcom/google/glass/home/search/results/LocalSingleAnswerView;
     :cond_3
     const/high16 v10, 0x4180
 
-    .line 641
+    .line 646
     .local v10, defaultMapZoom:F
     invoke-virtual/range {v20 .. v20}, Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;->getTitle()Ljava/lang/String;
 
@@ -2954,10 +2981,10 @@
 
     goto/16 :goto_1
 
-    .line 647
+    .line 652
     .end local v2           #localView:Lcom/google/glass/home/search/results/LocalSingleAnswerView;
     .end local v10           #defaultMapZoom:F
-    .end local v21           #view:Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+    .end local v21           #view:Lcom/google/glass/horizontalscroll/LinearLayoutCard;
     :cond_4
     new-instance v17, Lcom/google/glass/home/search/results/LocalCoverView;
 
@@ -2969,12 +2996,12 @@
 
     invoke-direct {v0, v3}, Lcom/google/glass/home/search/results/LocalCoverView;-><init>(Landroid/content/Context;)V
 
-    .line 648
+    .line 653
     .restart local v17       #cover:Lcom/google/glass/home/search/results/LocalCoverView;
     move-object/from16 v21, v17
 
-    .line 649
-    .restart local v21       #view:Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+    .line 654
+    .restart local v21       #view:Lcom/google/glass/horizontalscroll/LinearLayoutCard;
     move-object/from16 v0, v17
 
     move-object/from16 v1, p1
@@ -2983,7 +3010,7 @@
 
     goto/16 :goto_1
 
-    .line 653
+    .line 658
     .end local v17           #cover:Lcom/google/glass/home/search/results/LocalCoverView;
     .restart local v16       #bundle:Landroid/os/Bundle;
     :cond_5
@@ -2991,10 +3018,10 @@
 
     goto/16 :goto_2
 
-    .line 666
+    .line 671
     .end local v16           #bundle:Landroid/os/Bundle;
     .end local v20           #result:Lcom/google/majel/proto/EcoutezStructuredResponse$EcoutezLocalResult;
-    .end local v21           #view:Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+    .end local v21           #view:Lcom/google/glass/horizontalscroll/LinearLayoutCard;
     :cond_6
     invoke-virtual {v15}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
@@ -3095,27 +3122,27 @@
     .parameter "isFromTimeline"
 
     .prologue
-    .line 765
+    .line 770
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResults;->getResultCount()I
 
     move-result v7
 
     if-nez v7, :cond_0
 
-    .line 766
+    .line 771
     const/4 v7, 0x0
 
-    .line 787
+    .line 792
     :goto_0
     return-object v7
 
-    .line 769
+    .line 774
     :cond_0
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v0
 
-    .line 770
+    .line 775
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
@@ -3123,27 +3150,27 @@
 
     move-result-object v3
 
-    .line 772
+    .line 777
     .local v3, optionMenu:Lcom/google/glass/widget/OptionMenu;
     if-eqz p2, :cond_1
 
-    .line 774
+    .line 779
     new-instance v6, Lcom/google/glass/home/search/results/SnippetsCoverView;
 
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v6, v7}, Lcom/google/glass/home/search/results/SnippetsCoverView;-><init>(Landroid/content/Context;)V
 
-    .line 775
+    .line 780
     .local v6, snippetCoverView:Lcom/google/glass/home/search/results/SnippetsCoverView;
     iget-object v7, p0, Lcom/google/glass/home/search/results/MajelProcessor;->recognitionResult:Ljava/lang/String;
 
     invoke-virtual {v6, v7}, Lcom/google/glass/home/search/results/SnippetsCoverView;->setQuery(Ljava/lang/String;)V
 
-    .line 776
+    .line 781
     invoke-virtual {v0, v6, v3}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 780
+    .line 785
     .end local v6           #snippetCoverView:Lcom/google/glass/home/search/results/SnippetsCoverView;
     :cond_1
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResults;->getResultList()Ljava/util/List;
@@ -3168,7 +3195,7 @@
 
     check-cast v4, Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResult;
 
-    .line 781
+    .line 786
     .local v4, snippet:Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResult;
     new-instance v5, Lcom/google/glass/home/search/results/SnippetAnswerView;
 
@@ -3176,16 +3203,16 @@
 
     invoke-direct {v5, v7}, Lcom/google/glass/home/search/results/SnippetAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 782
+    .line 787
     .local v5, snippetAnswerView:Lcom/google/glass/home/search/results/SnippetAnswerView;
     invoke-virtual {v5, v4}, Lcom/google/glass/home/search/results/SnippetAnswerView;->setSnippet(Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResult;)V
 
-    .line 783
+    .line 788
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 784
+    .line 789
     .local v1, bundle:Landroid/os/Bundle;
     const-string v7, "URL_KEY"
 
@@ -3195,12 +3222,12 @@
 
     invoke-virtual {v1, v7, v8}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 785
+    .line 790
     invoke-virtual {v0, v5, v3, v1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     goto :goto_1
 
-    .line 787
+    .line 792
     .end local v1           #bundle:Landroid/os/Bundle;
     .end local v4           #snippet:Lcom/google/majel/proto/EcoutezStructuredResponse$SnippetResult;
     .end local v5           #snippetAnswerView:Lcom/google/glass/home/search/results/SnippetAnswerView;
@@ -3217,17 +3244,17 @@
     .parameter "result"
 
     .prologue
-    .line 568
+    .line 573
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->hasTeamData()Z
 
     move-result v6
 
     if-eqz v6, :cond_3
 
-    .line 569
+    .line 574
     const/4 v2, 0x0
 
-    .line 570
+    .line 575
     .local v2, match:Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getTeamData()Lcom/google/majel/proto/EcoutezStructuredResponse$TeamData;
 
@@ -3239,7 +3266,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 571
+    .line 576
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getTeamData()Lcom/google/majel/proto/EcoutezStructuredResponse$TeamData;
 
     move-result-object v6
@@ -3248,36 +3275,36 @@
 
     move-result-object v2
 
-    .line 578
+    .line 583
     :cond_0
     :goto_0
     if-eqz v2, :cond_5
 
-    .line 579
+    .line 584
     new-instance v5, Lcom/google/glass/home/search/results/SportsAnswerView;
 
     iget-object v6, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v5, v6}, Lcom/google/glass/home/search/results/SportsAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 580
+    .line 585
     .local v5, view:Lcom/google/glass/home/search/results/SportsAnswerView;
     invoke-virtual {v5, p1, v2}, Lcom/google/glass/home/search/results/SportsAnswerView;->setSportsResult(Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;Lcom/google/majel/proto/EcoutezStructuredResponse$Match;)V
 
-    .line 581
+    .line 586
     iget-object v6, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-static {v5, v6}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->fromView(Landroid/view/View;Landroid/content/Context;)Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v6
 
-    .line 599
+    .line 604
     .end local v2           #match:Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
     .end local v5           #view:Lcom/google/glass/home/search/results/SportsAnswerView;
     :goto_1
     return-object v6
 
-    .line 572
+    .line 577
     .restart local v2       #match:Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
     :cond_1
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getTeamData()Lcom/google/majel/proto/EcoutezStructuredResponse$TeamData;
@@ -3290,7 +3317,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 573
+    .line 578
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getTeamData()Lcom/google/majel/proto/EcoutezStructuredResponse$TeamData;
 
     move-result-object v6
@@ -3301,7 +3328,7 @@
 
     goto :goto_0
 
-    .line 574
+    .line 579
     :cond_2
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getTeamData()Lcom/google/majel/proto/EcoutezStructuredResponse$TeamData;
 
@@ -3313,7 +3340,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 575
+    .line 580
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getTeamData()Lcom/google/majel/proto/EcoutezStructuredResponse$TeamData;
 
     move-result-object v6
@@ -3324,7 +3351,7 @@
 
     goto :goto_0
 
-    .line 583
+    .line 588
     .end local v2           #match:Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
     :cond_3
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->hasAssociationData()Z
@@ -3343,12 +3370,12 @@
 
     if-eqz v6, :cond_5
 
-    .line 585
+    .line 590
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v0
 
-    .line 586
+    .line 591
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;->getAssociationData()Lcom/google/majel/proto/EcoutezStructuredResponse$AssociationData;
 
@@ -3358,13 +3385,13 @@
 
     move-result-object v3
 
-    .line 587
+    .line 592
     .local v3, matchList:Lcom/google/majel/proto/EcoutezStructuredResponse$MatchList;
     invoke-virtual {v3}, Lcom/google/majel/proto/EcoutezStructuredResponse$MatchList;->getMatchList()Ljava/util/List;
 
     move-result-object v4
 
-    .line 589
+    .line 594
     .local v4, matches:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/EcoutezStructuredResponse$Match;>;"
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -3376,14 +3403,14 @@
     :goto_2
     if-ltz v1, :cond_4
 
-    .line 590
+    .line 595
     invoke-interface {v4, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
 
-    .line 591
+    .line 596
     .restart local v2       #match:Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
     new-instance v5, Lcom/google/glass/home/search/results/SportsAnswerView;
 
@@ -3391,11 +3418,11 @@
 
     invoke-direct {v5, v6}, Lcom/google/glass/home/search/results/SportsAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 592
+    .line 597
     .restart local v5       #view:Lcom/google/glass/home/search/results/SportsAnswerView;
     invoke-virtual {v5, p1, v2}, Lcom/google/glass/home/search/results/SportsAnswerView;->setSportsResult(Lcom/google/majel/proto/EcoutezStructuredResponse$SportsResult;Lcom/google/majel/proto/EcoutezStructuredResponse$Match;)V
 
-    .line 593
+    .line 598
     iget-object v6, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-static {v6}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->getDefaultOptionMenu(Landroid/content/Context;)Lcom/google/glass/widget/OptionMenu;
@@ -3404,12 +3431,12 @@
 
     invoke-virtual {v0, v5, v6}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 589
+    .line 594
     add-int/lit8 v1, v1, -0x1
 
     goto :goto_2
 
-    .line 595
+    .line 600
     .end local v2           #match:Lcom/google/majel/proto/EcoutezStructuredResponse$Match;
     .end local v5           #view:Lcom/google/glass/home/search/results/SportsAnswerView;
     :cond_4
@@ -3419,7 +3446,7 @@
 
     goto :goto_1
 
-    .line 599
+    .line 604
     .end local v0           #builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     .end local v1           #i:I
     .end local v3           #matchList:Lcom/google/majel/proto/EcoutezStructuredResponse$MatchList;
@@ -3436,12 +3463,12 @@
     .parameter "isFromTimeline"
 
     .prologue
-    .line 420
+    .line 425
     invoke-static {p1}, Lcom/google/glass/voice/network/translate/NetworkTts;->getNetworkTtsUri(Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 424
+    .line 429
     .local v3, networkUri:Ljava/lang/String;
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -3451,14 +3478,14 @@
 
     const/4 v2, 0x1
 
-    .line 428
+    .line 433
     .local v2, canRequestTts:Z
     :goto_0
     if-nez p2, :cond_0
 
     if-eqz v2, :cond_0
 
-    .line 429
+    .line 434
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v6
@@ -3469,7 +3496,7 @@
 
     invoke-interface {v6, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 437
+    .line 442
     :cond_0
     new-instance v5, Lcom/google/glass/home/search/results/TranslationAnswerView;
 
@@ -3477,31 +3504,31 @@
 
     invoke-direct {v5, v6}, Lcom/google/glass/home/search/results/TranslationAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 438
+    .line 443
     .local v5, view:Lcom/google/glass/home/search/results/TranslationAnswerView;
     invoke-virtual {v5, p1}, Lcom/google/glass/home/search/results/TranslationAnswerView;->setTranslationResult(Lcom/google/majel/proto/CommonStructuredResponse$TranslationResult;)V
 
-    .line 439
+    .line 444
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
 
-    .line 442
+    .line 447
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     const/4 v1, 0x0
 
-    .line 445
+    .line 450
     .local v1, bundle:Landroid/os/Bundle;
     if-eqz v2, :cond_2
 
-    .line 446
+    .line 451
     new-instance v4, Lcom/google/glass/widget/OptionMenu;
 
     iget-object v6, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-direct {v4, v6}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
-    .line 447
+    .line 452
     .local v4, optionMenu:Lcom/google/glass/widget/OptionMenu;
     const/4 v6, 0x5
 
@@ -3517,30 +3544,30 @@
 
     invoke-virtual {v4, v6, v7, v8}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 449
+    .line 454
     new-instance v1, Landroid/os/Bundle;
 
     .end local v1           #bundle:Landroid/os/Bundle;
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 450
+    .line 455
     .restart local v1       #bundle:Landroid/os/Bundle;
     const-string v6, "URL_KEY"
 
     invoke-virtual {v1, v6, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 454
+    .line 459
     :goto_1
     invoke-virtual {v0, v5, v4, v1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 455
+    .line 460
     invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v6
 
     return-object v6
 
-    .line 424
+    .line 429
     .end local v0           #builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     .end local v1           #bundle:Landroid/os/Bundle;
     .end local v2           #canRequestTts:Z
@@ -3551,7 +3578,7 @@
 
     goto :goto_0
 
-    .line 452
+    .line 457
     .restart local v0       #builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     .restart local v1       #bundle:Landroid/os/Bundle;
     .restart local v2       #canRequestTts:Z
@@ -3572,20 +3599,20 @@
     .parameter "result"
 
     .prologue
-    .line 536
+    .line 541
     iget-object v11, p0, Lcom/google/glass/home/search/results/MajelProcessor;->context:Landroid/content/Context;
 
     invoke-static {v11}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->getDefaultOptionMenu(Landroid/content/Context;)Lcom/google/glass/widget/OptionMenu;
 
     move-result-object v6
 
-    .line 538
+    .line 543
     .local v6, optionMenu:Lcom/google/glass/widget/OptionMenu;
     invoke-static {}, Lcom/google/glass/home/search/results/ResultsContainer;->newBuilder()Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     move-result-object v0
 
-    .line 539
+    .line 544
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     new-instance v1, Lcom/google/glass/home/search/results/WeatherAnswerView;
 
@@ -3593,42 +3620,42 @@
 
     invoke-direct {v1, v11}, Lcom/google/glass/home/search/results/WeatherAnswerView;-><init>(Landroid/content/Context;)V
 
-    .line 540
+    .line 545
     .local v1, coverView:Lcom/google/glass/home/search/results/WeatherAnswerView;
     invoke-virtual {v1, p1}, Lcom/google/glass/home/search/results/WeatherAnswerView;->setWeatherResult(Lcom/google/majel/proto/EcoutezStructuredResponse$WeatherResult;)V
 
-    .line 541
+    .line 546
     invoke-virtual {v0, v1, v6}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 545
+    .line 550
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$WeatherResult;->getDailyForecastList()Ljava/util/List;
 
     move-result-object v5
 
-    .line 546
+    .line 551
     .local v5, fullList:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/EcoutezStructuredResponse$DailyForecast;>;"
     invoke-virtual {p1}, Lcom/google/majel/proto/EcoutezStructuredResponse$WeatherResult;->getDailyForecastCount()I
 
     move-result v10
 
-    .line 547
+    .line 552
     .local v10, totalNumDailyForecast:I
     if-lez v10, :cond_0
 
-    .line 548
+    .line 553
     invoke-static {p1}, Lcom/google/glass/home/search/results/WeatherForecastView;->getForecastStartDate(Lcom/google/majel/proto/EcoutezStructuredResponse$WeatherResult;)Ljava/util/Date;
 
     move-result-object v2
 
-    .line 550
+    .line 555
     .local v2, forecastStartDate:Ljava/util/Date;
     const/4 v4, 0x3
 
-    .line 551
+    .line 556
     .local v4, forecastsPerCard:I
     const/4 v9, 0x1
 
-    .line 552
+    .line 557
     .local v9, subListStartIndex:I
     const/4 v11, 0x4
 
@@ -3636,17 +3663,17 @@
 
     move-result v8
 
-    .line 553
+    .line 558
     .local v8, subListEndIndex:I
     :goto_0
     if-ge v9, v8, :cond_0
 
-    .line 554
+    .line 559
     invoke-interface {v5, v9, v8}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object v7
 
-    .line 556
+    .line 561
     .local v7, subList:Ljava/util/List;,"Ljava/util/List<Lcom/google/majel/proto/EcoutezStructuredResponse$DailyForecast;>;"
     new-instance v3, Lcom/google/glass/home/search/results/WeatherForecastView;
 
@@ -3654,27 +3681,27 @@
 
     invoke-direct {v3, v11}, Lcom/google/glass/home/search/results/WeatherForecastView;-><init>(Landroid/content/Context;)V
 
-    .line 557
+    .line 562
     .local v3, forecastView:Lcom/google/glass/home/search/results/WeatherForecastView;
     invoke-virtual {v3, v7, v2, v9}, Lcom/google/glass/home/search/results/WeatherForecastView;->setDailyForecast(Ljava/util/List;Ljava/util/Date;I)V
 
-    .line 558
+    .line 563
     invoke-virtual {v0, v3, v6}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 560
+    .line 565
     move v9, v8
 
-    .line 561
+    .line 566
     add-int v11, v8, v4
 
     invoke-static {v11, v10}, Ljava/lang/Math;->min(II)I
 
     move-result v8
 
-    .line 562
+    .line 567
     goto :goto_0
 
-    .line 564
+    .line 569
     .end local v2           #forecastStartDate:Ljava/util/Date;
     .end local v3           #forecastView:Lcom/google/glass/home/search/results/WeatherForecastView;
     .end local v4           #forecastsPerCard:I

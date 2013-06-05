@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 361
+    .line 295
     iput-object p1, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$2;->this$0:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper;
 
     iput-object p2, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$2;->val$context:Landroid/content/Context;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 364
+    .line 298
     iget-object v0, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$2;->this$0:Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper;
 
     iget-object v1, p0, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper$2;->val$context:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/BluetoothHelper$IntervalDiscoveringKeeper;->start(Landroid/content/Context;)V
 
-    .line 365
+    .line 299
     return-void
 .end method

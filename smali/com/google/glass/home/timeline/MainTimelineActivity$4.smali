@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 423
+    .line 430
     iput-object p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->val$bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
@@ -53,23 +53,23 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 428
+    .line 435
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->val$bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
 
     if-nez v1, :cond_0
 
-    .line 429
+    .line 436
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->showTimeline()V
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$700(Lcom/google/glass/home/timeline/MainTimelineActivity;)V
+    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$800(Lcom/google/glass/home/timeline/MainTimelineActivity;)V
 
-    .line 433
+    .line 440
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$800(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$900(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -95,7 +95,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 434
+    .line 441
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #getter for: Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -109,15 +109,15 @@
 
     move-result v0
 
-    .line 437
+    .line 444
     .local v0, foundItem:Z
     if-eqz v0, :cond_2
 
-    .line 438
+    .line 445
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$900(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$1000(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -125,17 +125,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 445
+    .line 452
     :goto_0
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->val$bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
 
     if-eqz v1, :cond_1
 
-    .line 446
+    .line 453
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$1100(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$1200(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -161,7 +161,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 447
+    .line 454
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     iget-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->val$bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
@@ -175,16 +175,16 @@
 
     invoke-static {v1, v2, v3}, Lcom/google/glass/timeline/TimelineHelper;->goToBundle(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;Z)V
 
-    .line 450
+    .line 457
     :cond_1
     return-void
 
-    .line 440
+    .line 447
     :cond_2
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$1000(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$1100(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -192,7 +192,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 441
+    .line 448
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$4;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #getter for: Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;

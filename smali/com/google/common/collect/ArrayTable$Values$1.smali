@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/ArrayTable$Values$1;
-.super Lcom/google/common/collect/AbstractIndexedListIterator;
+.super Lcom/google/common/collect/TransformedIterator;
 .source "ArrayTable.java"
 
 
@@ -15,8 +15,10 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/common/collect/AbstractIndexedListIterator",
-        "<TV;>;"
+        "Lcom/google/common/collect/TransformedIterator",
+        "<",
+        "Lcom/google/common/collect/Table$Cell",
+        "<TR;TC;TV;>;TV;>;"
     }
 .end annotation
 
@@ -26,81 +28,59 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/ArrayTable$Values;I)V
+.method constructor <init>(Lcom/google/common/collect/ArrayTable$Values;Ljava/util/Iterator;)V
     .locals 0
     .parameter
-    .parameter "x0"
+    .parameter
 
     .prologue
-    .line 823
+    .line 830
     .local p0, this:Lcom/google/common/collect/ArrayTable$Values$1;,"Lcom/google/common/collect/ArrayTable$Values.1;"
+    .local p2, x0:Ljava/util/Iterator;,"Ljava/util/Iterator<+Lcom/google/common/collect/Table$Cell<TR;TC;TV;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$Values$1;->this$1:Lcom/google/common/collect/ArrayTable$Values;
 
-    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractIndexedListIterator;-><init>(I)V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected get(I)Ljava/lang/Object;
-    .locals 3
-    .parameter "index"
+.method transform(Lcom/google/common/collect/Table$Cell;)Ljava/lang/Object;
+    .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I)TV;"
+            "(",
+            "Lcom/google/common/collect/Table$Cell",
+            "<TR;TC;TV;>;)TV;"
         }
     .end annotation
 
     .prologue
-    .line 825
+    .line 834
     .local p0, this:Lcom/google/common/collect/ArrayTable$Values$1;,"Lcom/google/common/collect/ArrayTable$Values.1;"
-    iget-object v2, p0, Lcom/google/common/collect/ArrayTable$Values$1;->this$1:Lcom/google/common/collect/ArrayTable$Values;
+    .local p1, cell:Lcom/google/common/collect/Table$Cell;,"Lcom/google/common/collect/Table$Cell<TR;TC;TV;>;"
+    invoke-interface {p1}, Lcom/google/common/collect/Table$Cell;->getValue()Ljava/lang/Object;
 
-    iget-object v2, v2, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
+    move-result-object v0
 
-    #getter for: Lcom/google/common/collect/ArrayTable;->columnList:Lcom/google/common/collect/ImmutableList;
-    invoke-static {v2}, Lcom/google/common/collect/ArrayTable;->access$100(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableList;
+    return-object v0
+.end method
 
-    move-result-object v2
+.method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
 
-    invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList;->size()I
+    .prologue
+    .line 830
+    .local p0, this:Lcom/google/common/collect/ArrayTable$Values$1;,"Lcom/google/common/collect/ArrayTable$Values.1;"
+    check-cast p1, Lcom/google/common/collect/Table$Cell;
 
-    move-result v2
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/ArrayTable$Values$1;->transform(Lcom/google/common/collect/Table$Cell;)Ljava/lang/Object;
 
-    div-int v1, p1, v2
+    move-result-object v0
 
-    .line 826
-    .local v1, rowIndex:I
-    iget-object v2, p0, Lcom/google/common/collect/ArrayTable$Values$1;->this$1:Lcom/google/common/collect/ArrayTable$Values;
-
-    iget-object v2, v2, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
-
-    #getter for: Lcom/google/common/collect/ArrayTable;->columnList:Lcom/google/common/collect/ImmutableList;
-    invoke-static {v2}, Lcom/google/common/collect/ArrayTable;->access$100(Lcom/google/common/collect/ArrayTable;)Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/common/collect/ImmutableList;->size()I
-
-    move-result v2
-
-    rem-int v0, p1, v2
-
-    .line 827
-    .local v0, columnIndex:I
-    iget-object v2, p0, Lcom/google/common/collect/ArrayTable$Values$1;->this$1:Lcom/google/common/collect/ArrayTable$Values;
-
-    iget-object v2, v2, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
-
-    #getter for: Lcom/google/common/collect/ArrayTable;->array:[[Ljava/lang/Object;
-    invoke-static {v2}, Lcom/google/common/collect/ArrayTable;->access$300(Lcom/google/common/collect/ArrayTable;)[[Ljava/lang/Object;
-
-    move-result-object v2
-
-    aget-object v2, v2, v1
-
-    aget-object v2, v2, v0
-
-    return-object v2
+    return-object v0
 .end method

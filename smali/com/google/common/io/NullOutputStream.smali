@@ -7,13 +7,16 @@
 .annotation build Lcom/google/common/annotations/Beta;
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 30
+    .line 35
     invoke-direct {p0}, Ljava/io/OutputStream;-><init>()V
 
     return-void
@@ -26,7 +29,7 @@
     .parameter "b"
 
     .prologue
-    .line 33
+    .line 38
     return-void
 .end method
 
@@ -37,6 +40,9 @@
     .parameter "len"
 
     .prologue
-    .line 37
+    .line 43
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 44
     return-void
 .end method

@@ -3,7 +3,7 @@
 .source "Hasher.java"
 
 # interfaces
-.implements Lcom/google/common/hash/Sink;
+.implements Lcom/google/common/hash/PrimitiveSink;
 
 
 # annotations

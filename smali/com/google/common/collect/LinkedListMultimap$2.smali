@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/LinkedListMultimap$2;
-.super Ljava/util/AbstractSet;
+.super Lcom/google/common/collect/Sets$ImprovedAbstractSet;
 .source "LinkedListMultimap.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/util/AbstractSet",
+        "Lcom/google/common/collect/Sets$ImprovedAbstractSet",
         "<TK;>;"
     }
 .end annotation
@@ -31,11 +31,11 @@
     .parameter
 
     .prologue
-    .line 680
+    .line 724
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$2;,"Lcom/google/common/collect/LinkedListMultimap.2;"
     iput-object p1, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
 
     return-void
 .end method
@@ -47,16 +47,11 @@
     .parameter "key"
 
     .prologue
-    .line 688
+    .line 736
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$2;,"Lcom/google/common/collect/LinkedListMultimap.2;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
-    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyCount:Lcom/google/common/collect/Multiset;
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/Multiset;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/google/common/collect/Multiset;->contains(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -74,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 685
+    .line 731
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$2;,"Lcom/google/common/collect/LinkedListMultimap.2;"
     new-instance v0, Lcom/google/common/collect/LinkedListMultimap$DistinctKeyIterator;
 
@@ -87,49 +82,50 @@
     return-object v0
 .end method
 
-.method public removeAll(Ljava/util/Collection;)Z
+.method public remove(Ljava/lang/Object;)Z
     .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Collection",
-            "<*>;)Z"
-        }
-    .end annotation
+    .parameter "o"
 
     .prologue
-    .line 691
+    .line 741
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$2;,"Lcom/google/common/collect/LinkedListMultimap.2;"
-    .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
-    .line 692
-    invoke-super {p0, p1}, Ljava/util/AbstractSet;->removeAll(Ljava/util/Collection;)Z
+    invoke-virtual {v0, p1}, Lcom/google/common/collect/LinkedListMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public size()I
     .locals 1
 
     .prologue
-    .line 682
+    .line 726
     .local p0, this:Lcom/google/common/collect/LinkedListMultimap$2;,"Lcom/google/common/collect/LinkedListMultimap.2;"
     iget-object v0, p0, Lcom/google/common/collect/LinkedListMultimap$2;->this$0:Lcom/google/common/collect/LinkedListMultimap;
 
-    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyCount:Lcom/google/common/collect/Multiset;
-    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Lcom/google/common/collect/Multiset;
+    #getter for: Lcom/google/common/collect/LinkedListMultimap;->keyToKeyList:Ljava/util/Map;
+    invoke-static {v0}, Lcom/google/common/collect/LinkedListMultimap;->access$600(Lcom/google/common/collect/LinkedListMultimap;)Ljava/util/Map;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/common/collect/Multiset;->elementSet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->size()I
+    invoke-interface {v0}, Ljava/util/Map;->size()I
 
     move-result v0
 

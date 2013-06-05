@@ -1,5 +1,5 @@
-.class synthetic Lcom/google/common/base/CaseFormat$1;
-.super Ljava/lang/Object;
+.class final enum Lcom/google/common/base/CaseFormat$1;
+.super Lcom/google/common/base/CaseFormat;
 .source "CaseFormat.java"
 
 
@@ -9,135 +9,99 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x4008
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$google$common$base$CaseFormat:[I
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;)V
+    .locals 6
+    .parameter
+    .parameter
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 82
-    invoke-static {}, Lcom/google/common/base/CaseFormat;->values()[Lcom/google/common/base/CaseFormat;
+    .line 34
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/common/base/CaseFormat;-><init>(Ljava/lang/String;ILcom/google/common/base/CharMatcher;Ljava/lang/String;Lcom/google/common/base/CaseFormat$1;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method convert(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .parameter "format"
+    .parameter "s"
+
+    .prologue
+    const/16 v2, 0x5f
+
+    const/16 v1, 0x2d
+
+    .line 42
+    sget-object v0, Lcom/google/common/base/CaseFormat$1;->LOWER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
+
+    if-ne p1, v0, :cond_0
+
+    .line 43
+    invoke-virtual {p2, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v0
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/common/base/CaseFormat$1;->$SwitchMap$com$google$common$base$CaseFormat:[I
-
-    :try_start_0
-    sget-object v0, Lcom/google/common/base/CaseFormat$1;->$SwitchMap$com$google$common$base$CaseFormat:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->LOWER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_4
-
+    .line 48
     :goto_0
-    :try_start_1
-    sget-object v0, Lcom/google/common/base/CaseFormat$1;->$SwitchMap$com$google$common$base$CaseFormat:[I
+    return-object v0
 
-    sget-object v1, Lcom/google/common/base/CaseFormat;->UPPER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
+    .line 45
+    :cond_0
+    sget-object v0, Lcom/google/common/base/CaseFormat$1;->UPPER_UNDERSCORE:Lcom/google/common/base/CaseFormat;
 
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
+    if-ne p1, v0, :cond_1
 
-    move-result v1
+    .line 46
+    invoke-virtual {p2, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
-    const/4 v2, 0x2
+    move-result-object v0
 
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_3
+    invoke-static {v0}, Lcom/google/common/base/Ascii;->toUpperCase(Ljava/lang/String;)Ljava/lang/String;
 
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/google/common/base/CaseFormat$1;->$SwitchMap$com$google$common$base$CaseFormat:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->LOWER_HYPHEN:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/google/common/base/CaseFormat$1;->$SwitchMap$com$google$common$base$CaseFormat:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->LOWER_CAMEL:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_1
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Lcom/google/common/base/CaseFormat$1;->$SwitchMap$com$google$common$base$CaseFormat:[I
-
-    sget-object v1, Lcom/google/common/base/CaseFormat;->UPPER_CAMEL:Lcom/google/common/base/CaseFormat;
-
-    invoke-virtual {v1}, Lcom/google/common/base/CaseFormat;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_0
-
-    :goto_4
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_4
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_3
-
-    :catch_2
-    move-exception v0
-
-    goto :goto_2
-
-    :catch_3
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_4
-    move-exception v0
+    move-result-object v0
 
     goto :goto_0
+
+    .line 48
+    :cond_1
+    invoke-super {p0, p1, p2}, Lcom/google/common/base/CaseFormat;->convert(Lcom/google/common/base/CaseFormat;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method normalizeWord(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "word"
+
+    .prologue
+    .line 37
+    invoke-static {p1}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

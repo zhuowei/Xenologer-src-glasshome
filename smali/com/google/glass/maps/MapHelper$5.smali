@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 257
+    .line 259
     iput-object p1, p0, Lcom/google/glass/maps/MapHelper$5;->this$0:Lcom/google/glass/maps/MapHelper;
 
     iput-object p2, p0, Lcom/google/glass/maps/MapHelper$5;->val$listener:Lcom/google/glass/maps/MapHelper$OnMapRenderedListener;
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 261
+    .line 263
     :try_start_0
     iget-object v2, p0, Lcom/google/glass/maps/MapHelper$5;->val$listener:Lcom/google/glass/maps/MapHelper$OnMapRenderedListener;
 
@@ -68,15 +68,15 @@
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 270
+    .line 272
     :goto_0
     return-void
 
-    .line 262
+    .line 264
     :catch_0
     move-exception v0
 
-    .line 263
+    .line 265
     .local v0, e:Ljava/lang/InterruptedException;
     invoke-static {}, Lcom/google/glass/maps/MapHelper;->access$400()Ljava/lang/String;
 
@@ -86,26 +86,26 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
+    .line 266
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/lang/Thread;->interrupt()V
 
-    .line 265
+    .line 267
     iget-object v1, p0, Lcom/google/glass/maps/MapHelper$5;->val$listener:Lcom/google/glass/maps/MapHelper$OnMapRenderedListener;
 
     invoke-interface {v1}, Lcom/google/glass/maps/MapHelper$OnMapRenderedListener;->onMapFailed()V
 
     goto :goto_0
 
-    .line 266
+    .line 268
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catch_1
     move-exception v0
 
-    .line 267
+    .line 269
     .local v0, e:Ljava/util/concurrent/ExecutionException;
     invoke-static {}, Lcom/google/glass/maps/MapHelper;->access$400()Ljava/lang/String;
 
@@ -119,7 +119,7 @@
 
     invoke-static {v1, v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 268
+    .line 270
     iget-object v1, p0, Lcom/google/glass/maps/MapHelper$5;->val$listener:Lcom/google/glass/maps/MapHelper$OnMapRenderedListener;
 
     invoke-interface {v1}, Lcom/google/glass/maps/MapHelper$OnMapRenderedListener;->onMapFailed()V

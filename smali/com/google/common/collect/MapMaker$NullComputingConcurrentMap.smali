@@ -56,12 +56,12 @@
     .end annotation
 
     .prologue
-    .line 924
+    .line 838
     .local p0, this:Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap<TK;TV;>;"
     .local p2, computingFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TK;+TV;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/MapMaker$NullConcurrentMap;-><init>(Lcom/google/common/collect/MapMaker;)V
 
-    .line 925
+    .line 839
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;->computingFunction:Lcom/google/common/base/Function;
 
-    .line 926
+    .line 840
     return-void
 .end method
 
@@ -84,12 +84,12 @@
     .end annotation
 
     .prologue
-    .line 939
+    .line 854
     .local p0, this:Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 941
+    .line 856
     :try_start_0
     iget-object v2, p0, Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;->computingFunction:Lcom/google/common/base/Function;
 
@@ -102,20 +102,20 @@
 
     return-object v2
 
-    .line 942
+    .line 857
     :catch_0
     move-exception v0
 
-    .line 943
+    .line 858
     .local v0, e:Lcom/google/common/collect/ComputationException;
     throw v0
 
-    .line 944
+    .line 859
     .end local v0           #e:Lcom/google/common/collect/ComputationException;
     :catch_1
     move-exception v1
 
-    .line 945
+    .line 860
     .local v1, t:Ljava/lang/Throwable;
     new-instance v2, Lcom/google/common/collect/ComputationException;
 
@@ -138,17 +138,17 @@
     .end annotation
 
     .prologue
-    .line 931
+    .line 846
     .local p0, this:Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;,"Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap<TK;TV;>;"
     move-object v0, p1
 
-    .line 932
+    .line 847
     .local v0, key:Ljava/lang/Object;,"TK;"
     invoke-direct {p0, v0}, Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;->compute(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 933
+    .line 848
     .local v1, value:Ljava/lang/Object;,"TV;"
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -182,9 +182,9 @@
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 934
+    .line 849
     invoke-virtual {p0, v0, v1}, Lcom/google/common/collect/MapMaker$NullComputingConcurrentMap;->notifyRemoval(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 935
+    .line 850
     return-object v1
 .end method

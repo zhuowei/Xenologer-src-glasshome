@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 287
+    .line 283
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/base/Predicates$ObjectPredicate;-><init>(Ljava/lang/String;ILcom/google/common/base/Predicates$1;)V
@@ -39,7 +39,7 @@
     .end parameter
 
     .prologue
-    .line 289
+    .line 285
     if-eqz p1, :cond_0
 
     const/4 v0, 0x1

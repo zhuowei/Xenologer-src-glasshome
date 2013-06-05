@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 157
+    .line 156
     iput-object p1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
     iput-object p2, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$nameFormat:Ljava/lang/String;
@@ -67,20 +67,20 @@
     .parameter "runnable"
 
     .prologue
-    .line 159
+    .line 158
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$backingThreadFactory:Ljava/util/concurrent/ThreadFactory;
 
     invoke-interface {v1, p1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
 
     move-result-object v0
 
-    .line 160
+    .line 159
     .local v0, thread:Ljava/lang/Thread;
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$nameFormat:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 161
+    .line 160
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$nameFormat:Ljava/lang/String;
 
     const/4 v2, 0x1
@@ -107,13 +107,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
 
-    .line 163
+    .line 162
     :cond_0
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$daemon:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_1
 
-    .line 164
+    .line 163
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$daemon:Ljava/lang/Boolean;
 
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -122,13 +122,13 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setDaemon(Z)V
 
-    .line 166
+    .line 165
     :cond_1
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$priority:Ljava/lang/Integer;
 
     if-eqz v1, :cond_2
 
-    .line 167
+    .line 166
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$priority:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
@@ -137,18 +137,18 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 169
+    .line 168
     :cond_2
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$uncaughtExceptionHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     if-eqz v1, :cond_3
 
-    .line 170
+    .line 169
     iget-object v1, p0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder$1;->val$uncaughtExceptionHandler:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     invoke-virtual {v0, v1}, Ljava/lang/Thread;->setUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
 
-    .line 172
+    .line 171
     :cond_3
     return-object v0
 .end method

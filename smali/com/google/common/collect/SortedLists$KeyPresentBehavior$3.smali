@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 90
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/collect/SortedLists$KeyPresentBehavior;-><init>(Ljava/lang/String;ILcom/google/common/collect/SortedLists$1;)V
@@ -50,27 +50,27 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 97
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TE;>;"
     .local p2, key:Ljava/lang/Object;,"TE;"
     .local p3, list:Ljava/util/List;,"Ljava/util/List<+TE;>;"
     const/4 v1, 0x0
 
-    .line 94
+    .line 98
     .local v1, lower:I
     move v3, p4
 
-    .line 97
+    .line 101
     .local v3, upper:I
     :goto_0
     if-ge v1, v3, :cond_1
 
-    .line 98
+    .line 102
     add-int v4, v1, v3
 
     ushr-int/lit8 v2, v4, 0x1
 
-    .line 99
+    .line 103
     .local v2, middle:I
     invoke-interface {p3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -80,22 +80,22 @@
 
     move-result v0
 
-    .line 100
+    .line 104
     .local v0, c:I
     if-gez v0, :cond_0
 
-    .line 101
+    .line 105
     add-int/lit8 v1, v2, 0x1
 
     goto :goto_0
 
-    .line 103
+    .line 107
     :cond_0
     move v3, v2
 
     goto :goto_0
 
-    .line 106
+    .line 110
     .end local v0           #c:I
     .end local v2           #middle:I
     :cond_1

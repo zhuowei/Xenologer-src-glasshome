@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 780
+    .line 872
     iput-object p1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$6;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$6;->val$view:Landroid/view/View;
@@ -44,13 +44,13 @@
     .parameter "animation"
 
     .prologue
-    .line 783
+    .line 875
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$6;->val$view:Landroid/view/View;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 784
+    .line 876
     return-void
 .end method

@@ -6,7 +6,6 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/glass/widget/OptionMenu$1;,
         Lcom/google/glass/widget/OptionMenu$Item;,
         Lcom/google/glass/widget/OptionMenu$ItemStateListener;,
         Lcom/google/glass/widget/OptionMenu$ItemState;
@@ -45,34 +44,20 @@
     .parameter "context"
 
     .prologue
-    .line 258
+    .line 270
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 255
+    .line 267
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
-    .line 259
+    .line 271
     iput-object p1, p0, Lcom/google/glass/widget/OptionMenu;->context:Landroid/content/Context;
 
-    .line 260
-    return-void
-.end method
-
-.method private addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
-    .locals 1
-    .parameter "item"
-
-    .prologue
-    .line 311
-    iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 312
+    .line 272
     return-void
 .end method
 
@@ -82,7 +67,7 @@
     .parameter "menuResId"
 
     .prologue
-    .line 462
+    .line 474
     new-instance v0, Lcom/google/glass/widget/OptionMenu;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
@@ -100,10 +85,10 @@
     .parameter "menuResId"
 
     .prologue
-    .line 474
+    .line 486
     const/4 v2, 0x0
 
-    .line 476
+    .line 488
     .local v2, parser:Landroid/content/res/XmlResourceParser;
     :try_start_0
     iget-object v3, p0, Lcom/google/glass/widget/OptionMenu;->context:Landroid/content/Context;
@@ -116,12 +101,12 @@
 
     move-result-object v2
 
-    .line 477
+    .line 489
     invoke-static {v2}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
 
     move-result-object v0
 
-    .line 478
+    .line 490
     .local v0, attrs:Landroid/util/AttributeSet;
     invoke-static {p0, v2, v0}, Lcom/google/glass/widget/OptionMenu;->parseMenu(Lcom/google/glass/widget/OptionMenu;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Lcom/google/glass/widget/OptionMenu;
     :try_end_0
@@ -131,21 +116,21 @@
 
     move-result-object v3
 
-    .line 484
+    .line 496
     if-eqz v2, :cond_0
 
-    .line 485
+    .line 497
     invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_0
     return-object v3
 
-    .line 479
+    .line 491
     .end local v0           #attrs:Landroid/util/AttributeSet;
     :catch_0
     move-exception v1
 
-    .line 480
+    .line 492
     .local v1, e:Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_1
     new-instance v3, Landroid/view/InflateException;
@@ -158,24 +143,24 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 484
+    .line 496
     .end local v1           #e:Lorg/xmlpull/v1/XmlPullParserException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 485
+    .line 497
     invoke-interface {v2}, Landroid/content/res/XmlResourceParser;->close()V
 
     :cond_1
     throw v3
 
-    .line 481
+    .line 493
     :catch_1
     move-exception v1
 
-    .line 482
+    .line 494
     .local v1, e:Ljava/io/IOException;
     :try_start_2
     new-instance v3, Landroid/view/InflateException;
@@ -195,12 +180,12 @@
     .parameter "item"
 
     .prologue
-    .line 340
+    .line 352
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 341
+    .line 353
     return-void
 .end method
 
@@ -215,14 +200,14 @@
 
     const/4 v6, 0x0
 
-    .line 538
+    .line 550
     sget-object v5, Lcom/google/glass/common/R$styleable;->OptionMenuItem:[I
 
     invoke-virtual {p0, p2, v5}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v4
 
-    .line 539
+    .line 551
     .local v4, params:Landroid/content/res/TypedArray;
     const/4 v5, -0x1
 
@@ -230,13 +215,13 @@
 
     move-result v0
 
-    .line 540
+    .line 552
     .local v0, id:I
     invoke-virtual {v4, v7}, Landroid/content/res/TypedArray;->getText(I)Ljava/lang/CharSequence;
 
     move-result-object v3
 
-    .line 541
+    .line 553
     .local v3, name:Ljava/lang/CharSequence;
     const/4 v5, 0x2
 
@@ -244,18 +229,16 @@
 
     move-result-object v1
 
-    .line 542
+    .line 554
     .local v1, image:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 544
+    .line 556
     new-instance v2, Lcom/google/glass/widget/OptionMenu$Item;
 
-    const/4 v5, 0x0
+    invoke-direct {v2, v0, v3, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
-    invoke-direct {v2, v0, v3, v1, v5}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/widget/OptionMenu$1;)V
-
-    .line 545
+    .line 557
     .local v2, item:Lcom/google/glass/widget/OptionMenu$Item;
     const/4 v5, 0x3
 
@@ -265,10 +248,10 @@
 
     if-eqz v5, :cond_0
 
-    .line 546
+    .line 558
     invoke-virtual {v2, v7}, Lcom/google/glass/widget/OptionMenu$Item;->setDefault(Z)V
 
-    .line 548
+    .line 560
     :cond_0
     return-object v2
 .end method
@@ -286,10 +269,10 @@
     .end annotation
 
     .prologue
-    .line 508
+    .line 520
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->context:Landroid/content/Context;
 
-    .line 509
+    .line 521
     .local v0, context:Landroid/content/Context;
     const-string v2, "menu"
 
@@ -299,7 +282,7 @@
 
     if-nez v2, :cond_0
 
-    .line 510
+    .line 522
     new-instance v2, Landroid/view/InflateException;
 
     const-string v3, "<menu> tag not found!"
@@ -308,7 +291,7 @@
 
     throw v2
 
-    .line 514
+    .line 526
     :cond_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -320,7 +303,7 @@
 
     if-eq v1, v2, :cond_5
 
-    .line 515
+    .line 527
     const/4 v2, 0x3
 
     if-ne v1, v2, :cond_1
@@ -337,16 +320,16 @@
 
     if-eqz v2, :cond_1
 
-    .line 517
+    .line 529
     return-object p0
 
-    .line 519
+    .line 531
     :cond_1
     const/4 v2, 0x2
 
     if-ne v1, v2, :cond_2
 
-    .line 520
+    .line 532
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -359,14 +342,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 521
+    .line 533
     invoke-static {v0, p1, p2}, Lcom/google/glass/widget/OptionMenu;->parseItem(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Lcom/google/glass/widget/OptionMenu$Item;
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+    invoke-virtual {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
 
-    .line 514
+    .line 526
     :cond_2
     :goto_1
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -375,7 +358,7 @@
 
     goto :goto_0
 
-    .line 522
+    .line 534
     :cond_3
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
@@ -389,22 +372,22 @@
 
     if-eqz v2, :cond_4
 
-    .line 523
+    .line 535
     invoke-static {v0, p1, p2}, Lcom/google/glass/widget/OptionMenu;->parseStateItem(Landroid/content/Context;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;)Lcom/google/glass/widget/OptionMenu$Item;
 
     move-result-object v2
 
-    invoke-direct {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+    invoke-virtual {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
 
     goto :goto_1
 
-    .line 526
+    .line 538
     :cond_4
     invoke-static {p1}, Lcom/google/glass/widget/OptionMenu;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)Z
 
     goto :goto_1
 
-    .line 530
+    .line 542
     :cond_5
     new-instance v2, Landroid/view/InflateException;
 
@@ -428,14 +411,14 @@
     .end annotation
 
     .prologue
-    .line 557
+    .line 569
     sget-object v8, Lcom/google/glass/common/R$styleable;->OptionMenuItem:[I
 
     invoke-virtual {p0, p2, v8}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v5
 
-    .line 558
+    .line 570
     .local v5, params:Landroid/content/res/TypedArray;
     const/4 v8, 0x0
 
@@ -445,18 +428,16 @@
 
     move-result v1
 
-    .line 559
+    .line 571
     .local v1, id:I
     invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 561
+    .line 573
     new-instance v3, Lcom/google/glass/widget/OptionMenu$Item;
 
-    const/4 v8, 0x0
+    invoke-direct {v3, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(I)V
 
-    invoke-direct {v3, v1, v8}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILcom/google/glass/widget/OptionMenu$1;)V
-
-    .line 562
+    .line 574
     .local v3, item:Lcom/google/glass/widget/OptionMenu$Item;
     const/4 v8, 0x3
 
@@ -468,12 +449,12 @@
 
     if-eqz v8, :cond_0
 
-    .line 563
+    .line 575
     const/4 v8, 0x1
 
     invoke-virtual {v3, v8}, Lcom/google/glass/widget/OptionMenu$Item;->setDefault(Z)V
 
-    .line 566
+    .line 578
     :cond_0
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -485,7 +466,7 @@
 
     if-eq v0, v8, :cond_4
 
-    .line 567
+    .line 579
     const/4 v8, 0x3
 
     if-ne v0, v8, :cond_1
@@ -502,16 +483,16 @@
 
     if-eqz v8, :cond_1
 
-    .line 568
+    .line 580
     return-object v3
 
-    .line 571
+    .line 583
     :cond_1
     const/4 v8, 0x2
 
     if-ne v0, v8, :cond_2
 
-    .line 572
+    .line 584
     invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v8
@@ -524,14 +505,14 @@
 
     if-eqz v8, :cond_3
 
-    .line 574
+    .line 586
     sget-object v8, Lcom/google/glass/common/R$styleable;->OptionMenuItem:[I
 
     invoke-virtual {p0, p2, v8}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v7
 
-    .line 576
+    .line 588
     .local v7, stateParams:Landroid/content/res/TypedArray;
     const/4 v8, 0x0
 
@@ -541,7 +522,7 @@
 
     move-result v6
 
-    .line 577
+    .line 589
     .local v6, stateId:I
     const/4 v8, 0x1
 
@@ -549,7 +530,7 @@
 
     move-result-object v4
 
-    .line 578
+    .line 590
     .local v4, name:Ljava/lang/CharSequence;
     const/4 v8, 0x2
 
@@ -557,18 +538,18 @@
 
     move-result-object v2
 
-    .line 579
+    .line 591
     .local v2, image:Landroid/graphics/drawable/Drawable;
     invoke-virtual {v7}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 581
+    .line 593
     new-instance v8, Lcom/google/glass/widget/OptionMenu$ItemState;
 
     invoke-direct {v8, v6, v4, v2}, Lcom/google/glass/widget/OptionMenu$ItemState;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
     invoke-virtual {v3, v8}, Lcom/google/glass/widget/OptionMenu$Item;->addState(Lcom/google/glass/widget/OptionMenu$ItemState;)V
 
-    .line 566
+    .line 578
     .end local v2           #image:Landroid/graphics/drawable/Drawable;
     .end local v4           #name:Ljava/lang/CharSequence;
     .end local v6           #stateId:I
@@ -581,13 +562,13 @@
 
     goto :goto_0
 
-    .line 584
+    .line 596
     :cond_3
     invoke-static {p1}, Lcom/google/glass/widget/OptionMenu;->skipCurrentTag(Lorg/xmlpull/v1/XmlPullParser;)Z
 
     goto :goto_1
 
-    .line 589
+    .line 601
     :cond_4
     new-instance v8, Landroid/view/InflateException;
 
@@ -611,18 +592,18 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 597
+    .line 609
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 598
+    .line 610
     .local v2, name:Ljava/lang/String;
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
 
     move-result v0
 
-    .line 600
+    .line 612
     .local v0, depth:I
     :goto_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
@@ -632,7 +613,7 @@
     .local v1, event:I
     if-eq v1, v3, :cond_1
 
-    .line 601
+    .line 613
     const/4 v4, 0x3
 
     if-ne v1, v4, :cond_0
@@ -653,17 +634,17 @@
 
     if-ne v4, v0, :cond_0
 
-    .line 607
+    .line 619
     :goto_1
     return v3
 
-    .line 605
+    .line 617
     :cond_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     goto :goto_0
 
-    .line 607
+    .line 619
     :cond_1
     const/4 v3, 0x0
 
@@ -684,7 +665,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 617
+    .line 629
     :goto_0
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
@@ -693,7 +674,7 @@
     .local v0, event:I
     if-eq v0, v2, :cond_0
 
-    .line 618
+    .line 630
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
@@ -708,11 +689,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 623
+    .line 635
     :cond_0
     return v2
 
-    .line 621
+    .line 633
     :cond_1
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -735,13 +716,13 @@
     .end annotation
 
     .prologue
-    .line 322
+    .line 334
     .local p1, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/widget/OptionMenu$Item;>;"
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 323
+    .line 335
     return-void
 .end method
 
@@ -751,44 +732,42 @@
     .parameter "itemName"
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 269
+    .line 281
     new-instance v0, Lcom/google/glass/widget/OptionMenu$Item;
 
-    invoke-direct {v0, p1, p2, v1, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/widget/OptionMenu$1;)V
+    const/4 v1, 0x0
 
-    invoke-direct {p0, v0}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+    invoke-direct {v0, p1, p2, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
-    .line 270
+    invoke-virtual {p0, v0}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+
+    .line 282
     return-void
 .end method
 
 .method public addItem(ILjava/lang/String;I)V
-    .locals 3
+    .locals 2
     .parameter "id"
     .parameter "itemName"
     .parameter "imageResId"
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 280
-    new-instance v2, Lcom/google/glass/widget/OptionMenu$Item;
+    .line 292
+    new-instance v1, Lcom/google/glass/widget/OptionMenu$Item;
 
     if-nez p3, :cond_0
 
-    move-object v0, v1
+    const/4 v0, 0x0
 
     :goto_0
-    invoke-direct {v2, p1, p2, v0, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/widget/OptionMenu$1;)V
+    invoke-direct {v1, p1, p2, v0}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
-    invoke-direct {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+    invoke-virtual {p0, v1}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
 
-    .line 282
+    .line 294
     return-void
 
-    .line 280
+    .line 292
     :cond_0
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->context:Landroid/content/Context;
 
@@ -804,43 +783,39 @@
 .end method
 
 .method public addItem(ILjava/lang/String;Landroid/graphics/Bitmap;)V
-    .locals 3
+    .locals 2
     .parameter "id"
     .parameter "itemName"
     .parameter "bitmap"
 
     .prologue
-    .line 292
+    .line 304
     new-instance v0, Lcom/google/glass/widget/OptionMenu$Item;
 
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v1, p3}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
-    const/4 v2, 0x0
+    invoke-direct {v0, p1, p2, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
-    invoke-direct {v0, p1, p2, v1, v2}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/widget/OptionMenu$1;)V
+    invoke-virtual {p0, v0}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
 
-    invoke-direct {p0, v0}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
-
-    .line 293
+    .line 305
     return-void
 .end method
 
 .method public varargs addItem(I[Lcom/google/glass/widget/OptionMenu$ItemState;)V
-    .locals 6
+    .locals 5
     .parameter "id"
     .parameter "states"
 
     .prologue
-    .line 302
+    .line 314
     new-instance v2, Lcom/google/glass/widget/OptionMenu$Item;
 
-    const/4 v5, 0x0
+    invoke-direct {v2, p1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(I)V
 
-    invoke-direct {v2, p1, v5}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILcom/google/glass/widget/OptionMenu$1;)V
-
-    .line 303
+    .line 315
     .local v2, item:Lcom/google/glass/widget/OptionMenu$Item;
     move-object v0, p2
 
@@ -856,21 +831,35 @@
 
     aget-object v4, v0, v1
 
-    .line 304
+    .line 316
     .local v4, state:Lcom/google/glass/widget/OptionMenu$ItemState;
     invoke-virtual {v2, v4}, Lcom/google/glass/widget/OptionMenu$Item;->addState(Lcom/google/glass/widget/OptionMenu$ItemState;)V
 
-    .line 303
+    .line 315
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 306
+    .line 318
     .end local v4           #state:Lcom/google/glass/widget/OptionMenu$ItemState;
     :cond_0
-    invoke-direct {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+    invoke-virtual {p0, v2}, Lcom/google/glass/widget/OptionMenu;->addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
 
-    .line 307
+    .line 319
+    return-void
+.end method
+
+.method public addItem(Lcom/google/glass/widget/OptionMenu$Item;)V
+    .locals 1
+    .parameter "item"
+
+    .prologue
+    .line 323
+    iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 324
     return-void
 .end method
 
@@ -878,12 +867,12 @@
     .locals 1
 
     .prologue
-    .line 355
+    .line 367
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 356
+    .line 368
     return-void
 .end method
 
@@ -892,7 +881,7 @@
     .parameter "id"
 
     .prologue
-    .line 431
+    .line 443
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -905,7 +894,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 432
+    .line 444
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -915,13 +904,13 @@
     check-cast v1, Lcom/google/glass/widget/OptionMenu$Item;
 
     #getter for: Lcom/google/glass/widget/OptionMenu$Item;->itemId:I
-    invoke-static {v1}, Lcom/google/glass/widget/OptionMenu$Item;->access$400(Lcom/google/glass/widget/OptionMenu$Item;)I
+    invoke-static {v1}, Lcom/google/glass/widget/OptionMenu$Item;->access$200(Lcom/google/glass/widget/OptionMenu$Item;)I
 
     move-result v1
 
     if-ne v1, p1, :cond_0
 
-    .line 433
+    .line 445
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -930,17 +919,17 @@
 
     check-cast v1, Lcom/google/glass/widget/OptionMenu$Item;
 
-    .line 436
+    .line 448
     :goto_1
     return-object v1
 
-    .line 431
+    .line 443
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 436
+    .line 448
     :cond_1
     const/4 v1, 0x0
 
@@ -952,7 +941,7 @@
     .parameter "pos"
 
     .prologue
-    .line 402
+    .line 414
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -965,7 +954,7 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 403
+    .line 415
     iget-object v3, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -974,7 +963,7 @@
 
     check-cast v1, Lcom/google/glass/widget/OptionMenu$Item;
 
-    .line 404
+    .line 416
     .local v1, item:Lcom/google/glass/widget/OptionMenu$Item;
     invoke-virtual {v1}, Lcom/google/glass/widget/OptionMenu$Item;->isEnabled()Z
 
@@ -988,13 +977,13 @@
     .local v2, pos:I
     if-nez p1, :cond_0
 
-    .line 405
+    .line 417
     return-object v1
 
     :cond_0
     move p1, v2
 
-    .line 402
+    .line 414
     .end local v2           #pos:I
     .restart local p1
     :cond_1
@@ -1002,7 +991,7 @@
 
     goto :goto_0
 
-    .line 408
+    .line 420
     .end local v1           #item:Lcom/google/glass/widget/OptionMenu$Item;
     :cond_2
     new-instance v3, Ljava/lang/ArrayIndexOutOfBoundsException;
@@ -1048,10 +1037,10 @@
     .locals 3
 
     .prologue
-    .line 375
+    .line 387
     const/4 v0, 0x0
 
-    .line 376
+    .line 388
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1065,7 +1054,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 377
+    .line 389
     iget-object v2, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1075,22 +1064,22 @@
     check-cast v2, Lcom/google/glass/widget/OptionMenu$Item;
 
     #getter for: Lcom/google/glass/widget/OptionMenu$Item;->isEnabled:Z
-    invoke-static {v2}, Lcom/google/glass/widget/OptionMenu$Item;->access$200(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    invoke-static {v2}, Lcom/google/glass/widget/OptionMenu$Item;->access$000(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 378
+    .line 390
     add-int/lit8 v0, v0, 0x1
 
-    .line 376
+    .line 388
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 381
+    .line 393
     :cond_1
     return v0
 .end method
@@ -1100,7 +1089,7 @@
     .parameter "pos"
 
     .prologue
-    .line 365
+    .line 377
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1116,7 +1105,7 @@
     .locals 1
 
     .prologue
-    .line 360
+    .line 372
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1139,7 +1128,7 @@
     .end annotation
 
     .prologue
-    .line 370
+    .line 382
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     return-object v0
@@ -1150,7 +1139,7 @@
     .parameter "pos"
 
     .prologue
-    .line 419
+    .line 431
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1163,7 +1152,7 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 420
+    .line 432
     iget-object v3, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1172,7 +1161,7 @@
 
     check-cast v1, Lcom/google/glass/widget/OptionMenu$Item;
 
-    .line 421
+    .line 433
     .local v1, item:Lcom/google/glass/widget/OptionMenu$Item;
     invoke-virtual {v1}, Lcom/google/glass/widget/OptionMenu$Item;->isVisible()Z
 
@@ -1186,13 +1175,13 @@
     .local v2, pos:I
     if-nez p1, :cond_0
 
-    .line 422
+    .line 434
     return-object v1
 
     :cond_0
     move p1, v2
 
-    .line 419
+    .line 431
     .end local v2           #pos:I
     .restart local p1
     :cond_1
@@ -1200,7 +1189,7 @@
 
     goto :goto_0
 
-    .line 425
+    .line 437
     .end local v1           #item:Lcom/google/glass/widget/OptionMenu$Item;
     :cond_2
     new-instance v3, Ljava/lang/ArrayIndexOutOfBoundsException;
@@ -1246,10 +1235,10 @@
     .locals 3
 
     .prologue
-    .line 386
+    .line 398
     const/4 v0, 0x0
 
-    .line 387
+    .line 399
     .local v0, count:I
     const/4 v1, 0x0
 
@@ -1263,7 +1252,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 388
+    .line 400
     iget-object v2, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1273,22 +1262,22 @@
     check-cast v2, Lcom/google/glass/widget/OptionMenu$Item;
 
     #getter for: Lcom/google/glass/widget/OptionMenu$Item;->isVisible:Z
-    invoke-static {v2}, Lcom/google/glass/widget/OptionMenu$Item;->access$300(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    invoke-static {v2}, Lcom/google/glass/widget/OptionMenu$Item;->access$100(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 389
+    .line 401
     add-int/lit8 v0, v0, 0x1
 
-    .line 387
+    .line 399
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 392
+    .line 404
     :cond_1
     return v0
 .end method
@@ -1298,22 +1287,22 @@
     .parameter "menuResId"
 
     .prologue
-    .line 496
+    .line 508
     invoke-static {p0, p1}, Lcom/google/glass/widget/OptionMenu;->inflateFrom(Lcom/google/glass/widget/OptionMenu;I)Lcom/google/glass/widget/OptionMenu;
 
-    .line 497
+    .line 509
     return-void
 .end method
 
 .method public insertItem(IILjava/lang/String;I)V
-    .locals 3
+    .locals 2
     .parameter "insertPosition"
     .parameter "id"
     .parameter "itemName"
     .parameter "imageResId"
 
     .prologue
-    .line 334
+    .line 346
     new-instance v0, Lcom/google/glass/widget/OptionMenu$Item;
 
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenu;->context:Landroid/content/Context;
@@ -1326,13 +1315,11 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p2, p3, v1, v2}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/widget/OptionMenu$1;)V
+    invoke-direct {v0, p2, p3, v1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/widget/OptionMenu;->insertItem(ILcom/google/glass/widget/OptionMenu$Item;)V
 
-    .line 336
+    .line 348
     return-void
 .end method
 
@@ -1341,11 +1328,11 @@
     .parameter "item"
 
     .prologue
-    .line 348
+    .line 360
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 349
+    .line 361
     return-void
 .end method

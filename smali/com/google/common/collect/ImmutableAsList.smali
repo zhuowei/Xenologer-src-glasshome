@@ -1,5 +1,5 @@
-.class final Lcom/google/common/collect/ImmutableAsList;
-.super Lcom/google/common/collect/RegularImmutableList;
+.class abstract Lcom/google/common/collect/ImmutableAsList;
+.super Lcom/google/common/collect/ImmutableList;
 .source "ImmutableAsList.java"
 
 
@@ -20,57 +20,32 @@
         "<E:",
         "Ljava/lang/Object;",
         ">",
-        "Lcom/google/common/collect/RegularImmutableList",
+        "Lcom/google/common/collect/ImmutableList",
         "<TE;>;"
     }
 .end annotation
 
 
-# instance fields
-.field private final transient collection:Lcom/google/common/collect/ImmutableCollection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableCollection",
-            "<TE;>;"
-        }
-    .end annotation
-.end field
-
-
 # direct methods
-.method constructor <init>([Ljava/lang/Object;Lcom/google/common/collect/ImmutableCollection;)V
-    .locals 2
-    .parameter "array"
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "([",
-            "Ljava/lang/Object;",
-            "Lcom/google/common/collect/ImmutableCollection",
-            "<TE;>;)V"
-        }
-    .end annotation
+.method constructor <init>()V
+    .locals 0
 
     .prologue
-    .line 37
+    .line 35
     .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
-    .local p2, collection:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
-    const/4 v0, 0x0
+    invoke-direct {p0}, Lcom/google/common/collect/ImmutableList;-><init>()V
 
-    array-length v1, p1
-
-    invoke-direct {p0, p1, v0, v1}, Lcom/google/common/collect/RegularImmutableList;-><init>([Ljava/lang/Object;II)V
-
-    .line 38
-    iput-object p2, p0, Lcom/google/common/collect/ImmutableAsList;->collection:Lcom/google/common/collect/ImmutableCollection;
-
-    .line 39
+    .line 62
     return-void
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .locals 2
     .parameter "stream"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "serialization"
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/InvalidObjectException;
@@ -78,7 +53,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 79
     .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
     new-instance v0, Ljava/io/InvalidObjectException;
 
@@ -96,9 +71,11 @@
     .parameter "target"
 
     .prologue
-    .line 44
+    .line 42
     .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableAsList;->collection:Lcom/google/common/collect/ImmutableCollection;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableAsList;->delegateCollection()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableCollection;->contains(Ljava/lang/Object;)Z
 
@@ -107,15 +84,81 @@
     return v0
 .end method
 
-.method writeReplace()Ljava/lang/Object;
-    .locals 2
+.method abstract delegateCollection()Lcom/google/common/collect/ImmutableCollection;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableCollection",
+            "<TE;>;"
+        }
+    .end annotation
+.end method
+
+.method public isEmpty()Z
+    .locals 1
 
     .prologue
-    .line 67
+    .line 51
+    .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableAsList;->delegateCollection()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->isEmpty()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method isPartialView()Z
+    .locals 1
+
+    .prologue
+    .line 56
+    .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableAsList;->delegateCollection()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->isPartialView()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public size()I
+    .locals 1
+
+    .prologue
+    .line 46
+    .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableAsList;->delegateCollection()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method writeReplace()Ljava/lang/Object;
+    .locals 2
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "serialization"
+    .end annotation
+
+    .prologue
+    .line 85
     .local p0, this:Lcom/google/common/collect/ImmutableAsList;,"Lcom/google/common/collect/ImmutableAsList<TE;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableAsList$SerializedForm;
 
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableAsList;->collection:Lcom/google/common/collect/ImmutableCollection;
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableAsList;->delegateCollection()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/google/common/collect/ImmutableAsList$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableCollection;)V
 

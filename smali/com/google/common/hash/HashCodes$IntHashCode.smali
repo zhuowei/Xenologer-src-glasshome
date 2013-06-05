@@ -1,6 +1,9 @@
-.class Lcom/google/common/hash/HashCodes$IntHashCode;
+.class final Lcom/google/common/hash/HashCodes$IntHashCode;
 .super Lcom/google/common/hash/HashCode;
 .source "HashCodes.java"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # annotations
@@ -9,9 +12,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x1a
     name = "IntHashCode"
 .end annotation
+
+
+# static fields
+.field private static final serialVersionUID:J
 
 
 # instance fields
@@ -24,13 +31,13 @@
     .parameter "hash"
 
     .prologue
-    .line 36
+    .line 48
     invoke-direct {p0}, Lcom/google/common/hash/HashCode;-><init>()V
 
-    .line 37
+    .line 49
     iput p1, p0, Lcom/google/common/hash/HashCodes$IntHashCode;->hash:I
 
-    .line 38
+    .line 50
     return-void
 .end method
 
@@ -40,7 +47,7 @@
     .locals 3
 
     .prologue
-    .line 45
+    .line 59
     const/4 v0, 0x4
 
     new-array v0, v0, [B
@@ -90,7 +97,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 64
     iget v0, p0, Lcom/google/common/hash/HashCodes$IntHashCode;->hash:I
 
     return v0
@@ -100,7 +107,7 @@
     .locals 2
 
     .prologue
-    .line 57
+    .line 69
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "this HashCode only has 32 bits; cannot create a long"
@@ -114,8 +121,22 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 54
     const/16 v0, 0x20
 
     return v0
+.end method
+
+.method public padToLong()J
+    .locals 2
+
+    .prologue
+    .line 74
+    iget v0, p0, Lcom/google/common/hash/HashCodes$IntHashCode;->hash:I
+
+    invoke-static {v0}, Lcom/google/common/primitives/UnsignedInts;->toLong(I)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method

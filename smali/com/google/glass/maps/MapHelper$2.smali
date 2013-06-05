@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 145
+    .line 147
     iput-object p1, p0, Lcom/google/glass/maps/MapHelper$2;->this$0:Lcom/google/glass/maps/MapHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .parameter "service"
 
     .prologue
-    .line 152
+    .line 154
     iget-object v0, p0, Lcom/google/glass/maps/MapHelper$2;->this$0:Lcom/google/glass/maps/MapHelper;
 
     #calls: Lcom/google/glass/maps/MapHelper;->handleConnection(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     invoke-static {v0, p1, p2}, Lcom/google/glass/maps/MapHelper;->access$300(Lcom/google/glass/maps/MapHelper;Landroid/content/ComponentName;Landroid/os/IBinder;)V
 
-    .line 153
+    .line 155
     return-void
 .end method
 
@@ -58,12 +58,12 @@
     .parameter "name"
 
     .prologue
-    .line 148
+    .line 150
     iget-object v0, p0, Lcom/google/glass/maps/MapHelper$2;->this$0:Lcom/google/glass/maps/MapHelper;
 
     #calls: Lcom/google/glass/maps/MapHelper;->handleDisconnection()V
     invoke-static {v0}, Lcom/google/glass/maps/MapHelper;->access$200(Lcom/google/glass/maps/MapHelper;)V
 
-    .line 149
+    .line 151
     return-void
 .end method

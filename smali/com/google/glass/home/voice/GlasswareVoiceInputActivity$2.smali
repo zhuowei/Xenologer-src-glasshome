@@ -50,8 +50,7 @@
 
     const-string v2, "c"
 
-    #calls: Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
-    invoke-static {v0, v1, v2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$100(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
     .line 157
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
@@ -77,7 +76,7 @@
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
 
     #calls: Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->finishAndTurnScreenOffIfRequested()V
-    invoke-static {v0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$400(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)V
+    invoke-static {v0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$300(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)V
 
     .line 169
     return-void

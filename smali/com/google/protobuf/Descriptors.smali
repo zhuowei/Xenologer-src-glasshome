@@ -29,7 +29,7 @@
     .line 34
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1612
+    .line 1632
     return-void
 .end method
 
@@ -57,10 +57,10 @@
     .prologue
     const/16 v2, 0x2e
 
-    .line 1525
+    .line 1545
     if-eqz p1, :cond_1
 
-    .line 1526
+    .line 1546
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -85,13 +85,13 @@
 
     move-result-object p2
 
-    .line 1530
+    .line 1550
     .end local p2
     :cond_0
     :goto_0
     return-object p2
 
-    .line 1527
+    .line 1547
     .restart local p2
     :cond_1
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getPackage()Ljava/lang/String;
@@ -104,7 +104,7 @@
 
     if-lez v0, :cond_0
 
-    .line 1528
+    .line 1548
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

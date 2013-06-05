@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 222
+    .line 233
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 225
+    .line 236
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;
 
     iget-object v0, v0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -49,7 +49,7 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->lockCamera()V
     invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager;->access$700(Lcom/google/glass/camera/SharedCameraManager;)V
 
-    .line 227
+    .line 238
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;
 
@@ -57,7 +57,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 229
+    .line 240
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;
 
     iget-object v0, v0, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -65,10 +65,10 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->unlockCamera()V
     invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager;->access$800(Lcom/google/glass/camera/SharedCameraManager;)V
 
-    .line 231
+    .line 242
     return-void
 
-    .line 229
+    .line 240
     :catchall_0
     move-exception v0
 

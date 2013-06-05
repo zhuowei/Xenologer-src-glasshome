@@ -137,14 +137,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 101
+    .line 103
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
 
     invoke-virtual {v4, v1}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 103
+    .line 105
     :goto_0
     return-void
 
@@ -176,7 +176,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 101
+    .line 103
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
@@ -306,7 +306,16 @@
 
     iput-wide v4, p5, Landroid/content/SyncResult;->delayUntil:J
 
-    .line 85
+    .line 87
+    iget-object v4, p0, Lcom/google/glass/home/sync/EntitySyncAdapter;->handler:Lcom/google/glass/home/sync/EntitySyncHandler;
+
+    invoke-virtual {v4}, Lcom/google/glass/home/sync/EntitySyncHandler;->hasServerFailures()Z
+
+    move-result v4
+
+    invoke-static {p3, v4}, Lcom/google/glass/sync/SyncHelper;->updateBackoffSyncMode(Ljava/lang/String;Z)V
+
+    .line 89
     sget-object v4, Lcom/google/glass/home/sync/EntitySyncAdapter;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -369,7 +378,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 101
+    .line 103
     .end local v0           #lock:Landroid/net/wifi/WifiManager$WifiLock;
     .end local v3           #wifiManager:Landroid/net/wifi/WifiManager;
     :goto_1
@@ -402,7 +411,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 101
+    .line 103
     .end local v0           #lock:Landroid/net/wifi/WifiManager$WifiLock;
     .end local v2           #userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     .end local v3           #wifiManager:Landroid/net/wifi/WifiManager;
@@ -417,7 +426,7 @@
 
     throw v4
 
-    .line 89
+    .line 93
     .restart local v0       #lock:Landroid/net/wifi/WifiManager$WifiLock;
     .restart local v2       #userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     .restart local v3       #wifiManager:Landroid/net/wifi/WifiManager;
@@ -427,14 +436,14 @@
 
     invoke-static {v4, p3}, Lcom/google/glass/sync/SyncHelper;->updateLastSyncTime(Lcom/google/glass/util/Clock;Ljava/lang/String;)V
 
-    .line 92
-    iget-object v4, p5, Landroid/content/SyncResult;->stats:Landroid/content/SyncStats;
+    .line 94
+    const/4 v4, 0x0
 
-    invoke-virtual {v4}, Landroid/content/SyncStats;->clear()V
+    invoke-static {p3, v4}, Lcom/google/glass/sync/SyncHelper;->updateBackoffSyncMode(Ljava/lang/String;Z)V
 
     goto :goto_1
 
-    .line 96
+    .line 98
     .end local v0           #lock:Landroid/net/wifi/WifiManager$WifiLock;
     .end local v3           #wifiManager:Landroid/net/wifi/WifiManager;
     :cond_5
@@ -444,7 +453,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 97
+    .line 99
     sget-object v4, Lcom/google/glass/logging/UserEventAction;->ENTITY_SYNC_BACKOFF:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {v2, v4}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V

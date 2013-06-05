@@ -2,9 +2,14 @@
 .super Ljava/lang/Object;
 .source "VoiceSearchResultsHelper.java"
 
+# interfaces
+.implements Lcom/google/glass/voice/VoiceInputActivityHelper;
+
 
 # static fields
 .field public static final ACTION_VOICE_SEARCH_RESULT:Ljava/lang/String; = "com.google.glass.ACTION_VIEW_VOICE_SEARCH_RESULT"
+
+.field public static final EXTRA_CARD_RESULT:Ljava/lang/String; = "cardResult"
 
 .field public static final EXTRA_END_OF_SPEECH_TIME:Ljava/lang/String; = "endofSpeech"
 
@@ -24,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 7
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -79,7 +79,7 @@
 
     const/4 v2, 0x0
 
-    .line 29704
+    .line 29712
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     const-string v1, "NONE"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->NONE:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
-    .line 29708
+    .line 29716
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     const-string v1, "INTEGRITY"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->INTEGRITY:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
-    .line 29712
+    .line 29720
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     const-string v1, "PRIVACY_AND_INTEGRITY"
@@ -106,7 +106,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->PRIVACY_AND_INTEGRITY:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
-    .line 29716
+    .line 29724
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     const-string v1, "STRONG_PRIVACY_AND_INTEGRITY"
@@ -115,7 +115,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->STRONG_PRIVACY_AND_INTEGRITY:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
-    .line 29699
+    .line 29707
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
@@ -138,14 +138,14 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->$VALUES:[Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
-    .line 29754
+    .line 29762
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 29774
+    .line 29782
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->values()[Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     move-result-object v0
@@ -168,16 +168,16 @@
     .end annotation
 
     .prologue
-    .line 29788
+    .line 29796
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 29789
+    .line 29797
     iput p3, p0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->index:I
 
-    .line 29790
+    .line 29798
     iput p4, p0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->value:I
 
-    .line 29791
+    .line 29799
     return-void
 .end method
 
@@ -185,7 +185,7 @@
     .locals 2
 
     .prologue
-    .line 29771
+    .line 29779
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -218,7 +218,7 @@
     .end annotation
 
     .prologue
-    .line 29751
+    .line 29759
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -229,40 +229,40 @@
     .parameter "value"
 
     .prologue
-    .line 29740
+    .line 29748
     packed-switch p0, :pswitch_data_0
 
-    .line 29745
+    .line 29753
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 29741
+    .line 29749
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->NONE:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     goto :goto_0
 
-    .line 29742
+    .line 29750
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->INTEGRITY:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     goto :goto_0
 
-    .line 29743
+    .line 29751
     :pswitch_2
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->PRIVACY_AND_INTEGRITY:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     goto :goto_0
 
-    .line 29744
+    .line 29752
     :pswitch_3
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->STRONG_PRIVACY_AND_INTEGRITY:Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     goto :goto_0
 
-    .line 29740
+    .line 29748
     nop
 
     :pswitch_data_0
@@ -279,7 +279,7 @@
     .parameter "desc"
 
     .prologue
-    .line 29778
+    .line 29786
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -290,7 +290,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 29779
+    .line 29787
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -299,7 +299,7 @@
 
     throw v0
 
-    .line 29782
+    .line 29790
     :cond_0
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->VALUES:[Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
@@ -317,7 +317,7 @@
     .parameter "name"
 
     .prologue
-    .line 29699
+    .line 29707
     const-class v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -333,7 +333,7 @@
     .locals 1
 
     .prologue
-    .line 29699
+    .line 29707
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->$VALUES:[Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->clone()Ljava/lang/Object;
@@ -351,7 +351,7 @@
     .locals 1
 
     .prologue
-    .line 29767
+    .line 29775
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -363,7 +363,7 @@
     .locals 1
 
     .prologue
-    .line 29737
+    .line 29745
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->value:I
 
     return v0
@@ -373,7 +373,7 @@
     .locals 2
 
     .prologue
-    .line 29763
+    .line 29771
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

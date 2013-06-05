@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 227
+    .line 248
     iput-object p1, p0, Lcom/google/glass/entity/EntityHelper$1;->this$0:Lcom/google/glass/entity/EntityHelper;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 244
+    .line 265
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +70,7 @@
     .parameter "intent"
 
     .prologue
-    .line 230
+    .line 251
     const-string v0, "com.google.glass.action.ENTITY_SYNC_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 232
+    .line 253
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
@@ -94,7 +94,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 240
+    .line 261
     :cond_0
     return-void
 .end method

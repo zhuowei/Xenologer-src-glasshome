@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 39
     const-class v0, Lcom/google/glass/home/camera/QrCodeHandler;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -52,13 +52,13 @@
     .parameter "context"
 
     .prologue
-    .line 91
+    .line 93
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 92
+    .line 94
     iput-object p1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
-    .line 93
+    .line 95
     invoke-static {p1}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -69,21 +69,21 @@
 
     iput-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler;->userEventHelper:Lcom/google/glass/logging/UserEventHelper;
 
-    .line 94
+    .line 96
     new-instance v0, Lcom/google/glass/util/HangoutHelper;
 
     invoke-direct {v0, p1}, Lcom/google/glass/util/HangoutHelper;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler;->hangoutHelper:Lcom/google/glass/util/HangoutHelper;
 
-    .line 95
+    .line 97
     new-instance v0, Lcom/google/glass/util/GuideHelper;
 
     invoke-direct {v0, p1}, Lcom/google/glass/util/GuideHelper;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler;->guideHelper:Lcom/google/glass/util/GuideHelper;
 
-    .line 96
+    .line 98
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->QUICK_QR_CODE:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -92,7 +92,7 @@
 
     iput-boolean v0, p0, Lcom/google/glass/home/camera/QrCodeHandler;->qrLabEnabled:Z
 
-    .line 97
+    .line 99
     return-void
 .end method
 
@@ -103,37 +103,44 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 249
+    .line 251
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
     const-string v2, "Would initiate email here"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 250
+    .line 252
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.ACTION_SEND_VOICE_MESSAGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 251
+    .line 253
     .local v0, emailIntent:Landroid/content/Intent;
+    const-string v1, "trigger_method"
+
+    const/16 v2, 0x9
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 255
     const-string v1, "TO_ID"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 252
+    .line 256
     const-string v1, "MESSAGE_TYPE"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 254
+    .line 258
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 255
+    .line 259
     return v3
 .end method
 
@@ -144,7 +151,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 153
+    .line 155
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
@@ -157,12 +164,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 154
+    .line 156
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-static {p1, v1, v0}, Lcom/google/glass/maps/NavigationLauncher;->navigate(Ljava/lang/String;Landroid/content/Context;Z)Z
 
-    .line 157
+    .line 159
     :goto_0
     return v0
 
@@ -187,7 +194,7 @@
 
     const/4 v3, 0x2
 
-    .line 210
+    .line 212
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -278,7 +285,7 @@
 
     move-result-object p1
 
-    .line 216
+    .line 218
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v1
@@ -289,48 +296,50 @@
 
     iput-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->companionDeviceToPair:Landroid/bluetooth/BluetoothDevice;
 
-    .line 220
+    .line 222
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
     const-string v2, "Setting up companion device to start pairing & screencast."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 221
+    .line 224
+    iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->companionDeviceToPair:Landroid/bluetooth/BluetoothDevice;
+
+    invoke-static {v1}, Lcom/google/glass/companion/CompanionMessagingUtil;->createBundle(Landroid/bluetooth/BluetoothDevice;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    .line 225
+    .local v0, bundle:Landroid/os/Bundle;
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->getCompanionService()Lcom/google/glass/home/companion/CompanionService;
+    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 222
-    .local v0, service:Lcom/google/glass/home/companion/CompanionService;
-    if-eqz v0, :cond_0
+    invoke-virtual {v1, v0}, Lcom/google/glass/companion/RemoteCompanionProxy;->sendMessageToCompanionService(Landroid/os/Bundle;)Z
 
-    .line 223
-    iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->companionDeviceToPair:Landroid/bluetooth/BluetoothDevice;
+    move-result v1
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/companion/CompanionService;->setupScreencastAndPair(Landroid/bluetooth/BluetoothDevice;)V
+    if-nez v1, :cond_0
 
     .line 227
-    :goto_0
-    const/4 v1, 0x1
-
-    return v1
-
-    .line 225
-    :cond_0
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
     const-string v2, "Wasn\'t able to get a valid CompanionService reference."
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    goto :goto_0
+    .line 229
+    :cond_0
+    const/4 v1, 0x1
+
+    return v1
 .end method
 
 .method private handleGuide(Ljava/lang/String;)Z
@@ -338,14 +347,14 @@
     .parameter "encryptedText"
 
     .prologue
-    .line 275
+    .line 281
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
     const-string v2, "Sending intent to guide"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 277
+    .line 283
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->guideHelper:Lcom/google/glass/util/GuideHelper;
 
@@ -353,17 +362,17 @@
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 282
+    .line 288
     const/4 v1, 0x1
 
     :goto_0
     return v1
 
-    .line 278
+    .line 284
     :catch_0
     move-exception v0
 
-    .line 279
+    .line 285
     .local v0, e:Landroid/content/ActivityNotFoundException;
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
@@ -371,7 +380,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 280
+    .line 286
     const/4 v1, 0x0
 
     goto :goto_0
@@ -382,7 +391,7 @@
     .parameter "roomId"
 
     .prologue
-    .line 198
+    .line 200
     iget-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler;->hangoutHelper:Lcom/google/glass/util/HangoutHelper;
 
     const/4 v1, 0x0
@@ -391,7 +400,7 @@
 
     invoke-virtual {v0, p1, v1, v2}, Lcom/google/glass/util/HangoutHelper;->joinHangout(Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;Z)V
 
-    .line 199
+    .line 201
     const/4 v0, 0x1
 
     return v0
@@ -402,7 +411,7 @@
     .parameter "link"
 
     .prologue
-    .line 185
+    .line 187
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.VIEW"
@@ -413,13 +422,13 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 186
+    .line 188
     .local v0, browserIntent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 187
+    .line 189
     const/4 v1, 0x1
 
     return v1
@@ -430,19 +439,19 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 237
+    .line 239
     sget-object v0, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
     const-string v1, "Initiating phone call"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 240
     iget-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-static {v0, p1}, Lcom/google/glass/bluetooth/BluetoothHeadset;->broadcastDial(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 239
+    .line 241
     const/4 v0, 0x1
 
     return v0
@@ -453,39 +462,46 @@
     .parameter "smsAddress"
 
     .prologue
-    .line 265
+    .line 269
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
     const-string v2, "Would initiate sms here"
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 266
+    .line 270
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.ACTION_SEND_VOICE_MESSAGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 267
+    .line 271
     .local v0, smsIntent:Landroid/content/Intent;
+    const-string v1, "trigger_method"
+
+    const/16 v2, 0x9
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 273
     const-string v1, "TO_ID"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 268
+    .line 274
     const-string v1, "MESSAGE_TYPE"
 
     const/4 v2, 0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 270
+    .line 276
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 271
+    .line 277
     const/4 v1, 0x1
 
     return v1
@@ -496,7 +512,7 @@
     .parameter "text"
 
     .prologue
-    .line 169
+    .line 171
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/home/camera/QrCodeHandler;->context:Landroid/content/Context;
 
@@ -510,18 +526,18 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 170
+    .line 172
     const/4 v1, 0x1
 
-    .line 174
+    .line 176
     :goto_0
     return v1
 
-    .line 171
+    .line 173
     :catch_0
     move-exception v0
 
-    .line 173
+    .line 175
     .local v0, e:Ljava/lang/Exception;
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
@@ -529,7 +545,7 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 174
+    .line 176
     const/4 v1, 0x0
 
     goto :goto_0
@@ -544,7 +560,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 106
+    .line 108
     const/4 v1, 0x3
 
     sget-object v3, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
@@ -571,22 +587,22 @@
 
     invoke-static {v1, v3, v4}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 107
+    .line 109
     invoke-static {p1}, Lcom/google/glass/home/camera/QrCodeHandler$Type;->match(Lcom/google/android/libraries/barhopper/Barcode;)Landroid/util/Pair;
 
     move-result-object v0
 
-    .line 109
+    .line 111
     .local v0, tuple:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/glass/home/camera/QrCodeHandler$Type;Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
     move v1, v2
 
-    .line 143
+    .line 145
     :goto_0
     return v1
 
-    .line 113
+    .line 115
     :cond_0
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -605,10 +621,10 @@
 
     move v1, v2
 
-    .line 114
+    .line 116
     goto :goto_0
 
-    .line 117
+    .line 119
     :cond_1
     sget-object v1, Lcom/google/glass/home/camera/QrCodeHandler;->TAG:Ljava/lang/String;
 
@@ -634,7 +650,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 118
+    .line 120
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Lcom/google/glass/home/camera/QrCodeHandler$Type;
@@ -646,7 +662,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 119
+    .line 121
     iget-object v3, p0, Lcom/google/glass/home/camera/QrCodeHandler;->userEventHelper:Lcom/google/glass/logging/UserEventHelper;
 
     sget-object v4, Lcom/google/glass/logging/UserEventAction;->BARCODE_PICTURE_SCAN:Lcom/google/glass/logging/UserEventAction;
@@ -662,7 +678,7 @@
 
     invoke-virtual {v3, v4, v1}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 122
+    .line 124
     :cond_2
     sget-object v3, Lcom/google/glass/home/camera/QrCodeHandler$1;->$SwitchMap$com$google$glass$home$camera$QrCodeHandler$Type:[I
 
@@ -680,10 +696,10 @@
 
     move v1, v2
 
-    .line 143
+    .line 145
     goto :goto_0
 
-    .line 124
+    .line 126
     :pswitch_0
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -695,7 +711,7 @@
 
     goto :goto_0
 
-    .line 126
+    .line 128
     :pswitch_1
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -707,7 +723,7 @@
 
     goto :goto_0
 
-    .line 128
+    .line 130
     :pswitch_2
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -719,7 +735,7 @@
 
     goto :goto_0
 
-    .line 130
+    .line 132
     :pswitch_3
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -731,7 +747,7 @@
 
     goto :goto_0
 
-    .line 132
+    .line 134
     :pswitch_4
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -743,7 +759,7 @@
 
     goto/16 :goto_0
 
-    .line 134
+    .line 136
     :pswitch_5
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -755,7 +771,7 @@
 
     goto/16 :goto_0
 
-    .line 136
+    .line 138
     :pswitch_6
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -767,7 +783,7 @@
 
     goto/16 :goto_0
 
-    .line 138
+    .line 140
     :pswitch_7
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -779,7 +795,7 @@
 
     goto/16 :goto_0
 
-    .line 140
+    .line 142
     :pswitch_8
     iget-object v1, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -791,7 +807,7 @@
 
     goto/16 :goto_0
 
-    .line 122
+    .line 124
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

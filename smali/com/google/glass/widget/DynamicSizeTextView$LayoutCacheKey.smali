@@ -39,28 +39,28 @@
     .parameter "textViewIncludeFontPadding"
 
     .prologue
-    .line 101
+    .line 108
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 102
+    .line 109
     iput p1, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->width:I
 
-    .line 103
+    .line 110
     iput p2, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textSizePx:F
 
-    .line 104
+    .line 111
     iput-object p3, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->alignment:Landroid/text/Layout$Alignment;
 
-    .line 105
+    .line 112
     iput p4, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textViewLineSpacingMultiplier:F
 
-    .line 106
+    .line 113
     iput p5, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textViewLineSpacingExtra:F
 
-    .line 107
+    .line 114
     iput-boolean p6, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textViewIncludeFontPadding:Z
 
-    .line 108
+    .line 115
     return-void
 .end method
 
@@ -73,17 +73,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 123
+    .line 130
     instance-of v2, p1, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 124
+    .line 131
     check-cast v0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
 
-    .line 125
+    .line 132
     .local v0, lk:Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
     iget v2, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->width:I
 
@@ -129,7 +129,7 @@
 
     const/4 v1, 0x1
 
-    .line 132
+    .line 139
     .end local v0           #lk:Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
     :cond_0
     return v1
@@ -139,10 +139,10 @@
     .locals 3
 
     .prologue
-    .line 112
+    .line 119
     iget v0, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->width:I
 
-    .line 113
+    .line 120
     .local v0, h:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -154,7 +154,7 @@
 
     xor-int v0, v1, v2
 
-    .line 114
+    .line 121
     mul-int/lit8 v1, v0, 0x1f
 
     iget-object v2, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->alignment:Landroid/text/Layout$Alignment;
@@ -165,7 +165,7 @@
 
     xor-int v0, v1, v2
 
-    .line 115
+    .line 122
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textViewLineSpacingMultiplier:F
@@ -176,7 +176,7 @@
 
     xor-int v0, v1, v2
 
-    .line 116
+    .line 123
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textViewLineSpacingExtra:F
@@ -187,7 +187,7 @@
 
     xor-int v0, v1, v2
 
-    .line 117
+    .line 124
     mul-int/lit8 v2, v0, 0x1f
 
     iget-boolean v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textViewIncludeFontPadding:Z
@@ -199,10 +199,10 @@
     :goto_0
     xor-int v0, v2, v1
 
-    .line 118
+    .line 125
     return v0
 
-    .line 117
+    .line 124
     :cond_0
     const/4 v1, 0x0
 

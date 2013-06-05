@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 159
+    .line 175
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,16 +41,16 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 58
     .local p0, future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     instance-of v0, p0, Lcom/google/common/util/concurrent/ListenableFuture;
 
     if-eqz v0, :cond_0
 
-    .line 61
+    .line 59
     check-cast p0, Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 63
+    .line 61
     .end local p0           #future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     :goto_0
     return-object p0
@@ -66,13 +66,10 @@
     goto :goto_0
 .end method
 
-.method static listenInPoolThread(Ljava/util/concurrent/Future;Ljava/util/concurrent/Executor;)Lcom/google/common/util/concurrent/ListenableFuture;
+.method public static listenInPoolThread(Ljava/util/concurrent/Future;Ljava/util/concurrent/Executor;)Lcom/google/common/util/concurrent/ListenableFuture;
     .locals 1
     .parameter
     .parameter "executor"
-    .annotation build Lcom/google/common/annotations/VisibleForTesting;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<V:",
@@ -88,19 +85,19 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 89
     .local p0, future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 70
+    .line 90
     instance-of v0, p0, Lcom/google/common/util/concurrent/ListenableFuture;
 
     if-eqz v0, :cond_0
 
-    .line 71
+    .line 91
     check-cast p0, Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 73
+    .line 93
     .end local p0           #future:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     :goto_0
     return-object p0

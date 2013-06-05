@@ -80,12 +80,12 @@
     .end annotation
 
     .prologue
-    .line 1157
+    .line 1135
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMap;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMap<TK;TV;>;"
     .local p1, delegate:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Synchronized$SynchronizedMap;-><init>(Ljava/util/Map;Ljava/lang/Object;)V
 
-    .line 1158
+    .line 1136
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .parameter "o"
 
     .prologue
-    .line 1190
+    .line 1169
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMap;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->values()Ljava/util/Collection;
 
@@ -124,19 +124,19 @@
     .end annotation
 
     .prologue
-    .line 1169
+    .line 1148
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMap;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMap<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1170
+    .line 1149
     :try_start_0
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->asMapEntrySet:Ljava/util/Set;
 
     if-nez v0, :cond_0
 
-    .line 1171
+    .line 1150
     new-instance v0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapEntries;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->delegate()Ljava/util/Map;
@@ -153,7 +153,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->asMapEntrySet:Ljava/util/Set;
 
-    .line 1174
+    .line 1152
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->asMapEntrySet:Ljava/util/Set;
 
@@ -161,7 +161,7 @@
 
     return-object v0
 
-    .line 1175
+    .line 1153
     :catchall_0
     move-exception v0
 
@@ -177,7 +177,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1151
+    .line 1130
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMap;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
@@ -200,13 +200,13 @@
     .end annotation
 
     .prologue
-    .line 1161
+    .line 1140
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMap;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMap<TK;TV;>;"
     iget-object v2, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->mutex:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 1162
+    .line 1141
     :try_start_0
     invoke-super {p0, p1}, Lcom/google/common/collect/Synchronized$SynchronizedMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -214,7 +214,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 1163
+    .line 1142
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     if-nez v0, :cond_0
 
@@ -235,7 +235,7 @@
 
     goto :goto_0
 
-    .line 1165
+    .line 1143
     .end local v0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     :catchall_0
     move-exception v1
@@ -260,19 +260,19 @@
     .end annotation
 
     .prologue
-    .line 1179
+    .line 1158
     .local p0, this:Lcom/google/common/collect/Synchronized$SynchronizedAsMap;,"Lcom/google/common/collect/Synchronized$SynchronizedAsMap<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->mutex:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1180
+    .line 1159
     :try_start_0
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->asMapValues:Ljava/util/Collection;
 
     if-nez v0, :cond_0
 
-    .line 1181
+    .line 1160
     new-instance v0, Lcom/google/common/collect/Synchronized$SynchronizedAsMapValues;
 
     invoke-virtual {p0}, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->delegate()Ljava/util/Map;
@@ -289,7 +289,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->asMapValues:Ljava/util/Collection;
 
-    .line 1184
+    .line 1162
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/Synchronized$SynchronizedAsMap;->asMapValues:Ljava/util/Collection;
 
@@ -297,7 +297,7 @@
 
     return-object v0
 
-    .line 1185
+    .line 1163
     :catchall_0
     move-exception v0
 

@@ -38,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 545
+    .line 560
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     iput-boolean p2, p0, Lcom/google/glass/camera/SharedCameraService$5;->val$shouldRestartSharedCamera:Z
@@ -55,7 +55,7 @@
     .parameter "x0"
 
     .prologue
-    .line 545
+    .line 560
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -73,18 +73,18 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 556
+    .line 571
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraService$5;->isCancelled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 563
+    .line 578
     :goto_0
     return-object v2
 
-    .line 560
+    .line 575
     :cond_0
     invoke-static {}, Lcom/google/glass/camera/SharedCameraService;->access$100()Ljava/lang/String;
 
@@ -94,7 +94,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 561
+    .line 576
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     #getter for: Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
@@ -112,7 +112,7 @@
     .parameter "x0"
 
     .prologue
-    .line 545
+    .line 560
     check-cast p1, Ljava/lang/Void;
 
     .end local p1
@@ -126,7 +126,7 @@
     .parameter "result"
 
     .prologue
-    .line 568
+    .line 583
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     const/4 v1, 0x0
@@ -134,25 +134,25 @@
     #setter for: Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraService;->access$302(Lcom/google/glass/camera/SharedCameraService;Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/SharedCameraManager;
 
-    .line 571
+    .line 586
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     const/4 v1, 0x0
 
     #calls: Lcom/google/glass/camera/SharedCameraService;->sendLockIntent(Z)V
-    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraService;->access$900(Lcom/google/glass/camera/SharedCameraService;Z)V
+    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraService;->access$1000(Lcom/google/glass/camera/SharedCameraService;Z)V
 
-    .line 574
+    .line 589
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraService;->stopSelf()V
 
-    .line 576
+    .line 591
     iget-boolean v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->val$shouldRestartSharedCamera:Z
 
     if-eqz v0, :cond_0
 
-    .line 578
+    .line 593
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     new-instance v1, Landroid/content/Intent;
@@ -163,7 +163,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraService;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 580
+    .line 595
     :cond_0
     return-void
 .end method
@@ -172,7 +172,7 @@
     .locals 2
 
     .prologue
-    .line 548
+    .line 563
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$5;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     #getter for: Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
@@ -182,7 +182,7 @@
 
     if-nez v0, :cond_0
 
-    .line 549
+    .line 564
     invoke-static {}, Lcom/google/glass/camera/SharedCameraService;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -191,12 +191,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 550
+    .line 565
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/google/glass/camera/SharedCameraService$5;->cancel(Z)Z
 
-    .line 552
+    .line 567
     :cond_0
     return-void
 .end method

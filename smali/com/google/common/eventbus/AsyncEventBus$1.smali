@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 90
+    .line 97
     iput-object p1, p0, Lcom/google/common/eventbus/AsyncEventBus$1;->this$0:Lcom/google/common/eventbus/AsyncEventBus;
 
     iput-object p2, p0, Lcom/google/common/eventbus/AsyncEventBus$1;->val$event:Ljava/lang/Object;
@@ -51,7 +51,7 @@
     .locals 3
 
     .prologue
-    .line 94
+    .line 100
     iget-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus$1;->this$0:Lcom/google/common/eventbus/AsyncEventBus;
 
     iget-object v1, p0, Lcom/google/common/eventbus/AsyncEventBus$1;->val$event:Ljava/lang/Object;
@@ -61,6 +61,6 @@
     #calls: Lcom/google/common/eventbus/EventBus;->dispatch(Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
     invoke-static {v0, v1, v2}, Lcom/google/common/eventbus/AsyncEventBus;->access$001(Lcom/google/common/eventbus/AsyncEventBus;Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
 
-    .line 95
+    .line 101
     return-void
 .end method

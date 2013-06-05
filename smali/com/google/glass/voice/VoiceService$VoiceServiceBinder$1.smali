@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 290
+    .line 324
     iput-object p1, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$1;->this$1:Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 327
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$1;->this$1:Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
 
     iget-object v0, v0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
@@ -49,6 +49,6 @@
     #calls: Lcom/google/glass/voice/VoiceService;->updateConfigs()V
     invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$600(Lcom/google/glass/voice/VoiceService;)V
 
-    .line 294
+    .line 328
     return-void
 .end method

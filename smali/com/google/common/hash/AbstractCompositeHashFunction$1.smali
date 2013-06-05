@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 35
+    .line 53
     iput-object p1, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->this$0:Lcom/google/common/hash/AbstractCompositeHashFunction;
 
     iput-object p2, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 128
+    .line 146
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->this$0:Lcom/google/common/hash/AbstractCompositeHashFunction;
 
     iget-object v1, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
@@ -63,7 +63,7 @@
     .parameter "b"
 
     .prologue
-    .line 93
+    .line 111
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -78,27 +78,27 @@
 
     aget-object v1, v0, v2
 
-    .line 94
+    .line 112
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putBoolean(Z)Lcom/google/common/hash/Hasher;
 
-    .line 93
+    .line 111
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 96
+    .line 114
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putBoolean(Z)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putBoolean(Z)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putBoolean(Z)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -111,7 +111,7 @@
     .parameter "b"
 
     .prologue
-    .line 37
+    .line 55
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -126,27 +126,27 @@
 
     aget-object v1, v0, v2
 
-    .line 38
+    .line 56
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putByte(B)Lcom/google/common/hash/Hasher;
 
-    .line 37
+    .line 55
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 40
+    .line 58
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putByte(B)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putByte(B)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putByte(B)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -159,7 +159,7 @@
     .parameter "bytes"
 
     .prologue
-    .line 44
+    .line 62
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -174,16 +174,16 @@
 
     aget-object v1, v0, v2
 
-    .line 45
+    .line 63
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putBytes([B)Lcom/google/common/hash/Hasher;
 
-    .line 44
+    .line 62
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 47
+    .line 65
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
@@ -196,7 +196,7 @@
     .parameter "len"
 
     .prologue
-    .line 51
+    .line 69
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -211,27 +211,27 @@
 
     aget-object v1, v0, v2
 
-    .line 52
+    .line 70
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1, p2, p3}, Lcom/google/common/hash/Hasher;->putBytes([BII)Lcom/google/common/hash/Hasher;
 
-    .line 51
+    .line 69
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 54
+    .line 72
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putBytes([B)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putBytes([B)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putBytes([B)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -239,14 +239,14 @@
     return-object v0
 .end method
 
-.method public bridge synthetic putBytes([BII)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putBytes([BII)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putBytes([BII)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -259,7 +259,7 @@
     .parameter "c"
 
     .prologue
-    .line 100
+    .line 118
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -274,27 +274,27 @@
 
     aget-object v1, v0, v2
 
-    .line 101
+    .line 119
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putChar(C)Lcom/google/common/hash/Hasher;
 
-    .line 100
+    .line 118
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 103
+    .line 121
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putChar(C)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putChar(C)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putChar(C)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -307,7 +307,7 @@
     .parameter "d"
 
     .prologue
-    .line 86
+    .line 104
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -322,27 +322,27 @@
 
     aget-object v1, v0, v2
 
-    .line 87
+    .line 105
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1, p2}, Lcom/google/common/hash/Hasher;->putDouble(D)Lcom/google/common/hash/Hasher;
 
-    .line 86
+    .line 104
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 89
+    .line 107
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putDouble(D)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putDouble(D)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putDouble(D)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -355,7 +355,7 @@
     .parameter "f"
 
     .prologue
-    .line 79
+    .line 97
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -370,27 +370,27 @@
 
     aget-object v1, v0, v2
 
-    .line 80
+    .line 98
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putFloat(F)Lcom/google/common/hash/Hasher;
 
-    .line 79
+    .line 97
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 82
+    .line 100
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putFloat(F)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putFloat(F)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putFloat(F)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -403,7 +403,7 @@
     .parameter "i"
 
     .prologue
-    .line 65
+    .line 83
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -418,27 +418,27 @@
 
     aget-object v1, v0, v2
 
-    .line 66
+    .line 84
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putInt(I)Lcom/google/common/hash/Hasher;
 
-    .line 65
+    .line 83
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 68
+    .line 86
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putInt(I)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putInt(I)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putInt(I)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -451,7 +451,7 @@
     .parameter "l"
 
     .prologue
-    .line 72
+    .line 90
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -466,27 +466,27 @@
 
     aget-object v1, v0, v2
 
-    .line 73
+    .line 91
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1, p2}, Lcom/google/common/hash/Hasher;->putLong(J)Lcom/google/common/hash/Hasher;
 
-    .line 72
+    .line 90
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 75
+    .line 93
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putLong(J)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putLong(J)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putLong(J)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -510,7 +510,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 139
     .local p1, instance:Ljava/lang/Object;,"TT;"
     .local p2, funnel:Lcom/google/common/hash/Funnel;,"Lcom/google/common/hash/Funnel<-TT;>;"
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
@@ -527,16 +527,16 @@
 
     aget-object v1, v0, v2
 
-    .line 122
+    .line 140
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1, p2}, Lcom/google/common/hash/Hasher;->putObject(Ljava/lang/Object;Lcom/google/common/hash/Funnel;)Lcom/google/common/hash/Hasher;
 
-    .line 121
+    .line 139
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 124
+    .line 142
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
@@ -547,7 +547,7 @@
     .parameter "s"
 
     .prologue
-    .line 58
+    .line 76
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -562,27 +562,27 @@
 
     aget-object v1, v0, v2
 
-    .line 59
+    .line 77
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putShort(S)Lcom/google/common/hash/Hasher;
 
-    .line 58
+    .line 76
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 61
+    .line 79
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putShort(S)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putShort(S)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putShort(S)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -595,7 +595,7 @@
     .parameter "chars"
 
     .prologue
-    .line 107
+    .line 125
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -610,16 +610,16 @@
 
     aget-object v1, v0, v2
 
-    .line 108
+    .line 126
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1}, Lcom/google/common/hash/Hasher;->putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/Hasher;
 
-    .line 107
+    .line 125
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 110
+    .line 128
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
@@ -631,7 +631,7 @@
     .parameter "charset"
 
     .prologue
-    .line 114
+    .line 132
     iget-object v0, p0, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->val$hashers:[Lcom/google/common/hash/Hasher;
 
     .local v0, arr$:[Lcom/google/common/hash/Hasher;
@@ -646,27 +646,27 @@
 
     aget-object v1, v0, v2
 
-    .line 115
+    .line 133
     .local v1, hasher:Lcom/google/common/hash/Hasher;
     invoke-interface {v1, p1, p2}, Lcom/google/common/hash/Hasher;->putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/Hasher;
 
-    .line 114
+    .line 132
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 117
+    .line 135
     .end local v1           #hasher:Lcom/google/common/hash/Hasher;
     :cond_0
     return-object p0
 .end method
 
-.method public bridge synthetic putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/Hasher;
 
     move-result-object v0
@@ -674,13 +674,13 @@
     return-object v0
 .end method
 
-.method public bridge synthetic putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/Sink;
+.method public bridge synthetic putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/PrimitiveSink;
     .locals 1
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 35
+    .line 53
     invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/AbstractCompositeHashFunction$1;->putString(Ljava/lang/CharSequence;Ljava/nio/charset/Charset;)Lcom/google/common/hash/Hasher;
 
     move-result-object v0

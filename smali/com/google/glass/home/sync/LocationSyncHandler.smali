@@ -411,12 +411,13 @@
     return-object v0
 .end method
 
-.method public bridge synthetic handleFail()V
+.method public bridge synthetic handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
     .locals 0
+    .parameter "x0"
 
     .prologue
     .line 35
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleFail()V
+    invoke-super {p0, p1}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
     return-void
 .end method
@@ -437,6 +438,18 @@
     .prologue
     .line 35
     invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->hasFailures()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public bridge synthetic hasServerFailures()Z
+    .locals 1
+
+    .prologue
+    .line 35
+    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->hasServerFailures()Z
 
     move-result v0
 
@@ -487,7 +500,7 @@
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 69
-    invoke-virtual {p0}, Lcom/google/glass/home/sync/LocationSyncHandler;->handleFail()V
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/sync/LocationSyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
     .line 70
     return-void

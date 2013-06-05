@@ -33,19 +33,19 @@
     .parameter "file"
 
     .prologue
-    .line 1833
+    .line 1853
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1834
+    .line 1854
     iput-object p3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 1835
+    .line 1855
     iput-object p2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->fullName:Ljava/lang/String;
 
-    .line 1836
+    .line 1856
     iput-object p1, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->name:Ljava/lang/String;
 
-    .line 1837
+    .line 1857
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 1830
+    .line 1850
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     return-object v0
@@ -65,7 +65,7 @@
     .locals 1
 
     .prologue
-    .line 1829
+    .line 1849
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->fullName:Ljava/lang/String;
 
     return-object v0
@@ -75,7 +75,7 @@
     .locals 1
 
     .prologue
-    .line 1828
+    .line 1848
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->name:Ljava/lang/String;
 
     return-object v0
@@ -85,7 +85,7 @@
     .locals 1
 
     .prologue
-    .line 1827
+    .line 1847
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->toProto()Lcom/google/protobuf/DescriptorProtos$FileDescriptorProto;

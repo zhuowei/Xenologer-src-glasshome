@@ -43,7 +43,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 56
+    .line 61
     new-instance v0, Lcom/google/common/hash/Funnels$StringFunnel;
 
     const-string v1, "INSTANCE"
@@ -52,7 +52,7 @@
 
     sput-object v0, Lcom/google/common/hash/Funnels$StringFunnel;->INSTANCE:Lcom/google/common/hash/Funnels$StringFunnel;
 
-    .line 55
+    .line 60
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/hash/Funnels$StringFunnel;
@@ -77,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 60
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -88,7 +88,7 @@
     .parameter "name"
 
     .prologue
-    .line 55
+    .line 60
     const-class v0, Lcom/google/common/hash/Funnels$StringFunnel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -104,7 +104,7 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 60
     sget-object v0, Lcom/google/common/hash/Funnels$StringFunnel;->$VALUES:[Lcom/google/common/hash/Funnels$StringFunnel;
 
     invoke-virtual {v0}, [Lcom/google/common/hash/Funnels$StringFunnel;->clone()Ljava/lang/Object;
@@ -118,30 +118,30 @@
 
 
 # virtual methods
-.method public funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/Sink;)V
+.method public funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 0
     .parameter "from"
     .parameter "into"
 
     .prologue
-    .line 59
-    invoke-interface {p2, p1}, Lcom/google/common/hash/Sink;->putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/Sink;
+    .line 64
+    invoke-interface {p2, p1}, Lcom/google/common/hash/PrimitiveSink;->putString(Ljava/lang/CharSequence;)Lcom/google/common/hash/PrimitiveSink;
 
-    .line 60
+    .line 65
     return-void
 .end method
 
-.method public bridge synthetic funnel(Ljava/lang/Object;Lcom/google/common/hash/Sink;)V
+.method public bridge synthetic funnel(Ljava/lang/Object;Lcom/google/common/hash/PrimitiveSink;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 55
+    .line 60
     check-cast p1, Ljava/lang/CharSequence;
 
     .end local p1
-    invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/Funnels$StringFunnel;->funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/Sink;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/common/hash/Funnels$StringFunnel;->funnel(Ljava/lang/CharSequence;Lcom/google/common/hash/PrimitiveSink;)V
 
     return-void
 .end method
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 63
+    .line 69
     const-string v0, "Funnels.stringFunnel()"
 
     return-object v0

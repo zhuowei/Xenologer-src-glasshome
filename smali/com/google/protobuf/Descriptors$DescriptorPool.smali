@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 1612
+    .line 1632
     const-class v0, Lcom/google/protobuf/Descriptors;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -107,38 +107,38 @@
     .parameter "dependencies"
 
     .prologue
-    .line 1620
+    .line 1640
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1651
+    .line 1671
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     iput-object v4, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->descriptorsByName:Ljava/util/Map;
 
-    .line 1653
+    .line 1673
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     iput-object v4, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->fieldsByNumber:Ljava/util/Map;
 
-    .line 1655
+    .line 1675
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     iput-object v4, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->enumValuesByNumber:Ljava/util/Map;
 
-    .line 1621
+    .line 1641
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
     iput-object v4, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->dependencies:Ljava/util/Set;
 
-    .line 1623
+    .line 1643
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -147,24 +147,24 @@
 
     if-ge v2, v4, :cond_0
 
-    .line 1624
+    .line 1644
     iget-object v4, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->dependencies:Ljava/util/Set;
 
     aget-object v5, p1, v2
 
     invoke-interface {v4, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 1625
+    .line 1645
     aget-object v4, p1, v2
 
     invoke-direct {p0, v4}, Lcom/google/protobuf/Descriptors$DescriptorPool;->importPublicDependencies(Lcom/google/protobuf/Descriptors$FileDescriptor;)V
 
-    .line 1623
+    .line 1643
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1628
+    .line 1648
     :cond_0
     iget-object v4, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->dependencies:Ljava/util/Set;
 
@@ -187,7 +187,7 @@
 
     check-cast v0, Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 1630
+    .line 1650
     .local v0, dependency:Lcom/google/protobuf/Descriptors$FileDescriptor;
     :try_start_0
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getPackage()Ljava/lang/String;
@@ -200,11 +200,11 @@
 
     goto :goto_1
 
-    .line 1631
+    .line 1651
     :catch_0
     move-exception v1
 
-    .line 1635
+    .line 1655
     .local v1, e:Lcom/google/protobuf/Descriptors$DescriptorValidationException;
     sget-boolean v4, Lcom/google/protobuf/Descriptors$DescriptorPool;->$assertionsDisabled:Z
 
@@ -216,7 +216,7 @@
 
     throw v4
 
-    .line 1638
+    .line 1658
     .end local v0           #dependency:Lcom/google/protobuf/Descriptors$FileDescriptor;
     .end local v1           #e:Lcom/google/protobuf/Descriptors$DescriptorValidationException;
     :cond_2
@@ -228,7 +228,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1612
+    .line 1632
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->fieldsByNumber:Ljava/util/Map;
 
     return-object v0
@@ -239,7 +239,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1612
+    .line 1632
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->enumValuesByNumber:Ljava/util/Map;
 
     return-object v0
@@ -250,7 +250,7 @@
     .parameter "file"
 
     .prologue
-    .line 1642
+    .line 1662
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getPublicDependencies()Ljava/util/List;
 
     move-result-object v2
@@ -274,7 +274,7 @@
 
     check-cast v0, Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 1643
+    .line 1663
     .local v0, dependency:Lcom/google/protobuf/Descriptors$FileDescriptor;
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->dependencies:Ljava/util/Set;
 
@@ -284,12 +284,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 1644
+    .line 1664
     invoke-direct {p0, v0}, Lcom/google/protobuf/Descriptors$DescriptorPool;->importPublicDependencies(Lcom/google/protobuf/Descriptors$FileDescriptor;)V
 
     goto :goto_0
 
-    .line 1647
+    .line 1667
     .end local v0           #dependency:Lcom/google/protobuf/Descriptors$FileDescriptor;
     :cond_1
     return-void
@@ -307,12 +307,12 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 1939
+    .line 1959
     invoke-interface {p0}, Lcom/google/protobuf/Descriptors$GenericDescriptor;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1940
+    .line 1960
     .local v2, name:Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -320,7 +320,7 @@
 
     if-nez v4, :cond_0
 
-    .line 1941
+    .line 1961
     new-instance v4, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     const-string v5, "Missing name."
@@ -329,11 +329,11 @@
 
     throw v4
 
-    .line 1943
+    .line 1963
     :cond_0
     const/4 v3, 0x1
 
-    .line 1944
+    .line 1964
     .local v3, valid:Z
     const/4 v1, 0x0
 
@@ -345,21 +345,21 @@
 
     if-ge v1, v4, :cond_4
 
-    .line 1945
+    .line 1965
     invoke-virtual {v2, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 1948
+    .line 1968
     .local v0, c:C
     const/16 v4, 0x80
 
     if-lt v0, v4, :cond_1
 
-    .line 1949
+    .line 1969
     const/4 v3, 0x0
 
-    .line 1953
+    .line 1973
     :cond_1
     invoke-static {v0}, Ljava/lang/Character;->isLetter(C)Z
 
@@ -379,25 +379,25 @@
 
     if-lez v1, :cond_3
 
-    .line 1944
+    .line 1964
     :cond_2
     :goto_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 1957
+    .line 1977
     :cond_3
     const/4 v3, 0x0
 
     goto :goto_1
 
-    .line 1960
+    .line 1980
     .end local v0           #c:C
     :cond_4
     if-nez v3, :cond_5
 
-    .line 1961
+    .line 1981
     new-instance v4, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -428,7 +428,7 @@
 
     throw v4
 
-    .line 1965
+    .line 1985
     :cond_5
     return-void
 .end method
@@ -440,7 +440,7 @@
     .parameter "value"
 
     .prologue
-    .line 1923
+    .line 1943
     new-instance v0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
 
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
@@ -453,7 +453,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;-><init>(Lcom/google/protobuf/Descriptors$GenericDescriptor;I)V
 
-    .line 1925
+    .line 1945
     .local v0, key:Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->enumValuesByNumber:Ljava/util/Map;
 
@@ -463,16 +463,16 @@
 
     check-cast v1, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
-    .line 1926
+    .line 1946
     .local v1, old:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
     if-eqz v1, :cond_0
 
-    .line 1927
+    .line 1947
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->enumValuesByNumber:Ljava/util/Map;
 
     invoke-interface {v2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1931
+    .line 1951
     :cond_0
     return-void
 .end method
@@ -487,7 +487,7 @@
     .end annotation
 
     .prologue
-    .line 1904
+    .line 1924
     new-instance v0, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
 
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getContainingType()Lcom/google/protobuf/Descriptors$Descriptor;
@@ -500,7 +500,7 @@
 
     invoke-direct {v0, v2, v3}, Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;-><init>(Lcom/google/protobuf/Descriptors$GenericDescriptor;I)V
 
-    .line 1906
+    .line 1926
     .local v0, key:Lcom/google/protobuf/Descriptors$DescriptorPool$DescriptorIntPair;
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->fieldsByNumber:Ljava/util/Map;
 
@@ -510,16 +510,16 @@
 
     check-cast v1, Lcom/google/protobuf/Descriptors$FieldDescriptor;
 
-    .line 1907
+    .line 1927
     .local v1, old:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     if-eqz v1, :cond_0
 
-    .line 1908
+    .line 1928
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->fieldsByNumber:Ljava/util/Map;
 
     invoke-interface {v2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1909
+    .line 1929
     new-instance v2, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -588,7 +588,7 @@
 
     throw v2
 
-    .line 1915
+    .line 1935
     :cond_0
     return-void
 .end method
@@ -604,23 +604,23 @@
     .end annotation
 
     .prologue
-    .line 1852
+    .line 1872
     const/16 v3, 0x2e
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v0
 
-    .line 1854
+    .line 1874
     .local v0, dotpos:I
     const/4 v3, -0x1
 
     if-ne v0, v3, :cond_0
 
-    .line 1855
+    .line 1875
     move-object v1, p1
 
-    .line 1861
+    .line 1881
     .local v1, name:Ljava/lang/String;
     :goto_0
     iget-object v3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->descriptorsByName:Ljava/util/Map;
@@ -635,21 +635,21 @@
 
     check-cast v2, Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
-    .line 1864
+    .line 1884
     .local v2, old:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     if-eqz v2, :cond_1
 
-    .line 1865
+    .line 1885
     iget-object v3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->descriptorsByName:Ljava/util/Map;
 
     invoke-interface {v3, p1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1866
+    .line 1886
     instance-of v3, v2, Lcom/google/protobuf/Descriptors$DescriptorPool$PackageDescriptor;
 
     if-nez v3, :cond_1
 
-    .line 1867
+    .line 1887
     new-instance v3, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -706,7 +706,7 @@
 
     throw v3
 
-    .line 1857
+    .line 1877
     .end local v1           #name:Ljava/lang/String;
     .end local v2           #old:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     :cond_0
@@ -718,7 +718,7 @@
 
     invoke-virtual {p0, v3, p2}, Lcom/google/protobuf/Descriptors$DescriptorPool;->addPackage(Ljava/lang/String;Lcom/google/protobuf/Descriptors$FileDescriptor;)V
 
-    .line 1858
+    .line 1878
     add-int/lit8 v3, v0, 0x1
 
     invoke-virtual {p1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -728,7 +728,7 @@
     .restart local v1       #name:Ljava/lang/String;
     goto :goto_0
 
-    .line 1872
+    .line 1892
     .restart local v2       #old:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     :cond_1
     return-void
@@ -748,15 +748,15 @@
 
     const/16 v5, 0x22
 
-    .line 1794
+    .line 1814
     invoke-static {p1}, Lcom/google/protobuf/Descriptors$DescriptorPool;->validateSymbolName(Lcom/google/protobuf/Descriptors$GenericDescriptor;)V
 
-    .line 1796
+    .line 1816
     invoke-interface {p1}, Lcom/google/protobuf/Descriptors$GenericDescriptor;->getFullName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1797
+    .line 1817
     .local v1, fullName:Ljava/lang/String;
     const/16 v3, 0x2e
 
@@ -764,7 +764,7 @@
 
     move-result v0
 
-    .line 1799
+    .line 1819
     .local v0, dotpos:I
     iget-object v3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->descriptorsByName:Ljava/util/Map;
 
@@ -774,16 +774,16 @@
 
     check-cast v2, Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
-    .line 1800
+    .line 1820
     .local v2, old:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     if-eqz v2, :cond_2
 
-    .line 1801
+    .line 1821
     iget-object v3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->descriptorsByName:Ljava/util/Map;
 
     invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1803
+    .line 1823
     invoke-interface {p1}, Lcom/google/protobuf/Descriptors$GenericDescriptor;->getFile()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v3
@@ -794,12 +794,12 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1804
+    .line 1824
     const/4 v3, -0x1
 
     if-ne v0, v3, :cond_0
 
-    .line 1805
+    .line 1825
     new-instance v3, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -828,7 +828,7 @@
 
     throw v3
 
-    .line 1808
+    .line 1828
     :cond_0
     new-instance v3, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
@@ -880,7 +880,7 @@
 
     throw v3
 
-    .line 1814
+    .line 1834
     :cond_1
     new-instance v3, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
@@ -928,7 +928,7 @@
 
     throw v3
 
-    .line 1819
+    .line 1839
     :cond_2
     return-void
 .end method
@@ -938,7 +938,7 @@
     .parameter "fullName"
 
     .prologue
-    .line 1660
+    .line 1680
     sget-object v0, Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;->ALL_SYMBOLS:Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;
 
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/Descriptors$DescriptorPool;->findSymbol(Ljava/lang/String;Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;)Lcom/google/protobuf/Descriptors$GenericDescriptor;
@@ -954,7 +954,7 @@
     .parameter "filter"
 
     .prologue
-    .line 1668
+    .line 1688
     iget-object v3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->descriptorsByName:Ljava/util/Map;
 
     invoke-interface {v3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -963,11 +963,11 @@
 
     check-cast v2, Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
-    .line 1669
+    .line 1689
     .local v2, result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     if-eqz v2, :cond_2
 
-    .line 1670
+    .line 1690
     sget-object v3, Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;->ALL_SYMBOLS:Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;
 
     if-eq p2, v3, :cond_1
@@ -996,11 +996,11 @@
     :cond_1
     move-object v3, v2
 
-    .line 1688
+    .line 1708
     :goto_0
     return-object v3
 
-    .line 1677
+    .line 1697
     :cond_2
     iget-object v3, p0, Lcom/google/protobuf/Descriptors$DescriptorPool;->dependencies:Ljava/util/Set;
 
@@ -1022,7 +1022,7 @@
 
     check-cast v0, Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 1678
+    .line 1698
     .local v0, dependency:Lcom/google/protobuf/Descriptors$FileDescriptor;
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
     invoke-static {v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
@@ -1038,11 +1038,11 @@
     .end local v2           #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     check-cast v2, Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
-    .line 1679
+    .line 1699
     .restart local v2       #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     if-eqz v2, :cond_3
 
-    .line 1680
+    .line 1700
     sget-object v3, Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;->ALL_SYMBOLS:Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;
 
     if-eq p2, v3, :cond_5
@@ -1071,10 +1071,10 @@
     :cond_5
     move-object v3, v2
 
-    .line 1683
+    .line 1703
     goto :goto_0
 
-    .line 1688
+    .line 1708
     .end local v0           #dependency:Lcom/google/protobuf/Descriptors$FileDescriptor;
     :cond_6
     const/4 v3, 0x0
@@ -1087,7 +1087,7 @@
     .parameter "descriptor"
 
     .prologue
-    .line 1699
+    .line 1719
     instance-of v0, p1, Lcom/google/protobuf/Descriptors$Descriptor;
 
     if-nez v0, :cond_0
@@ -1121,7 +1121,7 @@
     .parameter "descriptor"
 
     .prologue
-    .line 1693
+    .line 1713
     instance-of v0, p1, Lcom/google/protobuf/Descriptors$Descriptor;
 
     if-nez v0, :cond_0
@@ -1156,7 +1156,7 @@
     .prologue
     const/4 v7, -0x1
 
-    .line 1718
+    .line 1738
     const-string v5, "."
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -1165,7 +1165,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 1720
+    .line 1740
     const/4 v5, 0x1
 
     invoke-virtual {p1, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -1176,13 +1176,13 @@
 
     move-result-object v3
 
-    .line 1780
+    .line 1800
     .local v3, result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     :cond_0
     :goto_0
     if-nez v3, :cond_5
 
-    .line 1781
+    .line 1801
     new-instance v5, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1215,7 +1215,7 @@
 
     throw v5
 
-    .line 1735
+    .line 1755
     .end local v3           #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     :cond_1
     const/16 v5, 0x2e
@@ -1224,14 +1224,14 @@
 
     move-result v2
 
-    .line 1737
+    .line 1757
     .local v2, firstPartLength:I
     if-ne v2, v7, :cond_2
 
-    .line 1738
+    .line 1758
     move-object v1, p1
 
-    .line 1745
+    .line 1765
     .local v1, firstPart:Ljava/lang/String;
     :goto_1
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1242,7 +1242,7 @@
 
     invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1750
+    .line 1770
     .local v4, scopeToTry:Ljava/lang/StringBuilder;
     :goto_2
     const-string v5, "."
@@ -1251,20 +1251,20 @@
 
     move-result v0
 
-    .line 1751
+    .line 1771
     .local v0, dotpos:I
     if-ne v0, v7, :cond_3
 
-    .line 1752
+    .line 1772
     invoke-virtual {p0, p1, p3}, Lcom/google/protobuf/Descriptors$DescriptorPool;->findSymbol(Ljava/lang/String;Lcom/google/protobuf/Descriptors$DescriptorPool$SearchFilter;)Lcom/google/protobuf/Descriptors$GenericDescriptor;
 
     move-result-object v3
 
-    .line 1753
+    .line 1773
     .restart local v3       #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     goto :goto_0
 
-    .line 1740
+    .line 1760
     .end local v0           #dotpos:I
     .end local v1           #firstPart:Ljava/lang/String;
     .end local v3           #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
@@ -1279,7 +1279,7 @@
     .restart local v1       #firstPart:Ljava/lang/String;
     goto :goto_1
 
-    .line 1755
+    .line 1775
     .restart local v0       #dotpos:I
     .restart local v4       #scopeToTry:Ljava/lang/StringBuilder;
     :cond_3
@@ -1287,10 +1287,10 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 1758
+    .line 1778
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1759
+    .line 1779
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -1301,22 +1301,22 @@
 
     move-result-object v3
 
-    .line 1762
+    .line 1782
     .restart local v3       #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     if-eqz v3, :cond_4
 
-    .line 1763
+    .line 1783
     if-eq v2, v7, :cond_0
 
-    .line 1767
+    .line 1787
     add-int/lit8 v5, v0, 0x1
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 1768
+    .line 1788
     invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1769
+    .line 1789
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
@@ -1327,13 +1327,13 @@
 
     goto :goto_0
 
-    .line 1775
+    .line 1795
     :cond_4
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->setLength(I)V
 
     goto :goto_2
 
-    .line 1784
+    .line 1804
     .end local v0           #dotpos:I
     .end local v1           #firstPart:Ljava/lang/String;
     .end local v2           #firstPartLength:I

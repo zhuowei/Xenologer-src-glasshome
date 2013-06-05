@@ -43,19 +43,19 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 47
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 47
+    .line 48
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
-    .line 48
+    .line 49
     return-void
 .end method
 
@@ -70,18 +70,18 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 51
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet;-><init>()V
 
-    .line 52
+    .line 53
     iput-object p1, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
-    .line 53
+    .line 54
     iput p2, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
-    .line 54
+    .line 55
     return-void
 .end method
 
@@ -92,7 +92,7 @@
     .parameter "target"
 
     .prologue
-    .line 66
+    .line 68
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
@@ -116,15 +116,15 @@
 
     const/4 v1, 0x1
 
-    .line 94
+    .line 101
     if-ne p1, p0, :cond_1
 
-    .line 101
+    .line 108
     :cond_0
     :goto_0
     return v1
 
-    .line 97
+    .line 104
     :cond_1
     instance-of v3, p1, Ljava/util/Set;
 
@@ -132,10 +132,10 @@
 
     move-object v0, p1
 
-    .line 98
+    .line 105
     check-cast v0, Ljava/util/Set;
 
-    .line 99
+    .line 106
     .local v0, that:Ljava/util/Set;,"Ljava/util/Set<*>;"
     invoke-interface {v0}, Ljava/util/Set;->size()I
 
@@ -168,7 +168,7 @@
     :cond_3
     move v1, v2
 
-    .line 101
+    .line 108
     goto :goto_0
 .end method
 
@@ -176,15 +176,15 @@
     .locals 2
 
     .prologue
-    .line 106
+    .line 114
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
-    .line 107
+    .line 115
     .local v0, code:I
     if-nez v0, :cond_0
 
-    .line 108
+    .line 116
     iget-object v1, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
@@ -193,7 +193,7 @@
 
     iput v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
-    .line 110
+    .line 118
     :cond_0
     return v0
 .end method
@@ -202,7 +202,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 63
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     const/4 v0, 0x0
 
@@ -213,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 114
+    .line 123
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     iget v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->cachedHashCode:I
 
@@ -234,7 +234,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 78
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     const/4 v0, 0x0
 
@@ -252,7 +252,7 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 73
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
@@ -291,7 +291,7 @@
     .locals 3
 
     .prologue
-    .line 78
+    .line 83
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     const/4 v0, 0x1
 
@@ -322,22 +322,22 @@
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     const/4 v2, 0x1
 
-    .line 82
+    .line 88
     array-length v1, p1
 
     if-nez v1, :cond_1
 
-    .line 83
+    .line 89
     invoke-static {p1, v2}, Lcom/google/common/collect/ObjectArrays;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 88
+    .line 94
     :cond_0
     :goto_0
     move-object v0, p1
 
-    .line 89
+    .line 95
     .local v0, objectArray:[Ljava/lang/Object;
     const/4 v1, 0x0
 
@@ -345,17 +345,17 @@
 
     aput-object v2, v0, v1
 
-    .line 90
+    .line 96
     return-object p1
 
-    .line 84
+    .line 90
     .end local v0           #objectArray:[Ljava/lang/Object;
     :cond_1
     array-length v1, p1
 
     if-le v1, v2, :cond_0
 
-    .line 85
+    .line 91
     const/4 v1, 0x0
 
     aput-object v1, p1, v2
@@ -367,7 +367,7 @@
     .locals 3
 
     .prologue
-    .line 118
+    .line 128
     .local p0, this:Lcom/google/common/collect/SingletonImmutableSet;,"Lcom/google/common/collect/SingletonImmutableSet<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/SingletonImmutableSet;->element:Ljava/lang/Object;
 
@@ -375,7 +375,7 @@
 
     move-result-object v0
 
-    .line 119
+    .line 129
     .local v0, elementToString:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 

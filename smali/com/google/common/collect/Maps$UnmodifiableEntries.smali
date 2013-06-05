@@ -56,15 +56,15 @@
     .end annotation
 
     .prologue
-    .line 766
+    .line 1052
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     .local p1, entries:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
-    .line 767
+    .line 1053
     iput-object p1, p0, Lcom/google/common/collect/Maps$UnmodifiableEntries;->entries:Ljava/util/Collection;
 
-    .line 768
+    .line 1054
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .parameter "x0"
 
     .prologue
-    .line 762
+    .line 1049
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     check-cast p1, Ljava/util/Map$Entry;
 
@@ -99,7 +99,7 @@
     .end annotation
 
     .prologue
-    .line 794
+    .line 1086
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     .local p1, element:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -123,7 +123,7 @@
     .end annotation
 
     .prologue
-    .line 799
+    .line 1091
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -137,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 803
+    .line 1096
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 762
+    .line 1049
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableEntries;->delegate()Ljava/util/Collection;
 
@@ -172,7 +172,7 @@
     .end annotation
 
     .prologue
-    .line 771
+    .line 1058
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableEntries;->entries:Ljava/util/Collection;
 
@@ -192,13 +192,13 @@
     .end annotation
 
     .prologue
-    .line 775
+    .line 1063
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 776
+    .line 1064
     .local v0, delegate:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
     new-instance v1, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;
 
@@ -212,7 +212,7 @@
     .parameter "object"
 
     .prologue
-    .line 807
+    .line 1101
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -233,7 +233,7 @@
     .end annotation
 
     .prologue
-    .line 811
+    .line 1106
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -255,7 +255,7 @@
     .end annotation
 
     .prologue
-    .line 815
+    .line 1111
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -269,7 +269,7 @@
     .locals 1
 
     .prologue
-    .line 819
+    .line 1116
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableEntries;->standardToArray()[Ljava/lang/Object;
 
@@ -290,7 +290,7 @@
     .end annotation
 
     .prologue
-    .line 823
+    .line 1121
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries;,"Lcom/google/common/collect/Maps$UnmodifiableEntries<TK;TV;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$UnmodifiableEntries;->standardToArray([Ljava/lang/Object;)[Ljava/lang/Object;

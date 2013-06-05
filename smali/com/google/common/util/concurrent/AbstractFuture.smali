@@ -39,11 +39,11 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method protected constructor <init>()V
     .locals 1
 
     .prologue
-    .line 65
+    .line 76
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -61,8 +61,33 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
-    .line 215
+    .line 76
     return-void
+.end method
+
+.method static final cancellationExceptionWithCause(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/util/concurrent/CancellationException;
+    .locals 1
+    .parameter "message"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+    .parameter "cause"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
+
+    .prologue
+    .line 393
+    new-instance v0, Ljava/util/concurrent/CancellationException;
+
+    invoke-direct {v0, p0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+    .line 394
+    .local v0, exception:Ljava/util/concurrent/CancellationException;
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/CancellationException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    .line 395
+    return-object v0
 .end method
 
 
@@ -73,13 +98,13 @@
     .parameter "exec"
 
     .prologue
-    .line 155
+    .line 166
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/util/concurrent/ExecutionList;->add(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    .line 156
+    .line 167
     return-void
 .end method
 
@@ -88,36 +113,36 @@
     .parameter "mayInterruptIfRunning"
 
     .prologue
-    .line 126
+    .line 128
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
 
-    invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->cancel()Z
+    invoke-virtual {v0, p1}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->cancel(Z)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 127
+    .line 129
     const/4 v0, 0x0
 
-    .line 133
+    .line 135
     :goto_0
     return v0
 
-    .line 129
+    .line 131
     :cond_0
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/ExecutionList;->execute()V
 
-    .line 130
+    .line 132
     if-eqz p1, :cond_1
 
-    .line 131
+    .line 133
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AbstractFuture;->interruptTask()V
 
-    .line 133
+    .line 135
     :cond_1
     const/4 v0, 0x1
 
@@ -140,7 +165,7 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 116
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
 
@@ -172,7 +197,7 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 96
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
 
@@ -191,7 +216,7 @@
     .locals 0
 
     .prologue
-    .line 146
+    .line 147
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     return-void
 .end method
@@ -200,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 124
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
 
@@ -215,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 120
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
 
@@ -239,7 +264,7 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 179
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     .local p1, value:Ljava/lang/Object;,"TV;"
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
@@ -248,16 +273,16 @@
 
     move-result v0
 
-    .line 169
+    .line 180
     .local v0, result:Z
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 181
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractFuture;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v1}, Lcom/google/common/util/concurrent/ExecutionList;->execute()V
 
-    .line 172
+    .line 183
     :cond_0
     return v0
 .end method
@@ -267,7 +292,7 @@
     .parameter "throwable"
 
     .prologue
-    .line 186
+    .line 197
     .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
     iget-object v2, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
 
@@ -281,29 +306,44 @@
 
     move-result v0
 
-    .line 187
+    .line 198
     .local v0, result:Z
     if-eqz v0, :cond_0
 
-    .line 188
+    .line 199
     iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractFuture;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v1}, Lcom/google/common/util/concurrent/ExecutionList;->execute()V
 
-    .line 193
+    .line 204
     :cond_0
     instance-of v1, p1, Ljava/lang/Error;
 
     if-eqz v1, :cond_1
 
-    .line 194
+    .line 205
     check-cast p1, Ljava/lang/Error;
 
     .end local p1
     throw p1
 
-    .line 196
+    .line 207
     .restart local p1
     :cond_1
+    return v0
+.end method
+
+.method protected final wasInterrupted()Z
+    .locals 1
+
+    .prologue
+    .line 156
+    .local p0, this:Lcom/google/common/util/concurrent/AbstractFuture;,"Lcom/google/common/util/concurrent/AbstractFuture<TV;>;"
+    iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractFuture;->sync:Lcom/google/common/util/concurrent/AbstractFuture$Sync;
+
+    invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractFuture$Sync;->wasInterrupted()Z
+
+    move-result v0
+
     return v0
 .end method

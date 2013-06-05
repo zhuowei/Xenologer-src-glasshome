@@ -13,9 +13,8 @@
         Lcom/google/common/collect/Multisets$EntrySet;,
         Lcom/google/common/collect/Multisets$ElementSet;,
         Lcom/google/common/collect/Multisets$AbstractEntry;,
-        Lcom/google/common/collect/Multisets$SetMultiset;,
+        Lcom/google/common/collect/Multisets$FilteredMultiset;,
         Lcom/google/common/collect/Multisets$ImmutableEntry;,
-        Lcom/google/common/collect/Multisets$UnmodifiableSortedMultiset;,
         Lcom/google/common/collect/Multisets$UnmodifiableMultiset;
     }
 .end annotation
@@ -39,10 +38,10 @@
     .locals 1
 
     .prologue
-    .line 953
-    new-instance v0, Lcom/google/common/collect/Multisets$2;
+    .line 1082
+    new-instance v0, Lcom/google/common/collect/Multisets$5;
 
-    invoke-direct {v0}, Lcom/google/common/collect/Multisets$2;-><init>()V
+    invoke-direct {v0}, Lcom/google/common/collect/Multisets$5;-><init>()V
 
     sput-object v0, Lcom/google/common/collect/Multisets;->DECREASING_COUNT_ORDERING:Lcom/google/common/collect/Ordering;
 
@@ -53,7 +52,7 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -76,7 +75,7 @@
     .end annotation
 
     .prologue
-    .line 733
+    .line 847
     .local p0, self:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, elements:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
@@ -85,25 +84,25 @@
 
     if-eqz v3, :cond_0
 
-    .line 734
+    .line 848
     const/4 v3, 0x0
 
-    .line 744
+    .line 858
     :goto_0
     return v3
 
-    .line 736
+    .line 850
     :cond_0
     instance-of v3, p1, Lcom/google/common/collect/Multiset;
 
     if-eqz v3, :cond_1
 
-    .line 737
+    .line 851
     invoke-static {p1}, Lcom/google/common/collect/Multisets;->cast(Ljava/lang/Iterable;)Lcom/google/common/collect/Multiset;
 
     move-result-object v2
 
-    .line 738
+    .line 852
     .local v2, that:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
     invoke-interface {v2}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
@@ -127,7 +126,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 739
+    .line 853
     .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<+TE;>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -141,7 +140,7 @@
 
     goto :goto_1
 
-    .line 742
+    .line 856
     .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<+TE;>;"
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #that:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
@@ -152,7 +151,7 @@
 
     invoke-static {p0, v3}, Lcom/google/common/collect/Iterators;->addAll(Ljava/util/Collection;Ljava/util/Iterator;)Z
 
-    .line 744
+    .line 858
     :cond_2
     const/4 v3, 0x1
 
@@ -175,7 +174,7 @@
     .end annotation
 
     .prologue
-    .line 950
+    .line 1079
     .local p0, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TT;>;"
     check-cast p0, Lcom/google/common/collect/Multiset;
 
@@ -193,7 +192,7 @@
 
     const/4 v2, 0x0
 
-    .line 943
+    .line 1072
     if-ltz p0, :cond_0
 
     move v0, v1
@@ -215,13 +214,13 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 944
+    .line 1073
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 943
+    .line 1072
     goto :goto_0
 .end method
 
@@ -229,9 +228,6 @@
     .locals 4
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -243,15 +239,15 @@
     .end annotation
 
     .prologue
-    .line 546
+    .line 660
     .local p0, superMultiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     .local p1, subMultiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 547
+    .line 661
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 548
+    .line 662
     invoke-interface {p1}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
     move-result-object v3
@@ -274,7 +270,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 549
+    .line 663
     .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -284,7 +280,7 @@
 
     move-result v2
 
-    .line 550
+    .line 664
     .local v2, superCount:I
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -292,10 +288,10 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 551
+    .line 665
     const/4 v3, 0x0
 
-    .line 554
+    .line 668
     .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     .end local v2           #superCount:I
     :goto_0
@@ -326,7 +322,7 @@
     .end annotation
 
     .prologue
-    .line 968
+    .line 1098
     .local p0, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     sget-object v1, Lcom/google/common/collect/Multisets;->DECREASING_COUNT_ORDERING:Lcom/google/common/collect/Ordering;
 
@@ -338,13 +334,51 @@
 
     move-result-object v0
 
-    .line 970
+    .line 1100
     .local v0, sortedEntries:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     invoke-static {v0}, Lcom/google/common/collect/ImmutableMultiset;->copyFromEntries(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableMultiset;
 
     move-result-object v1
 
     return-object v1
+.end method
+
+.method public static difference(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)Lcom/google/common/collect/Multiset;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/Multiset",
+            "<TE;>;",
+            "Lcom/google/common/collect/Multiset",
+            "<*>;)",
+            "Lcom/google/common/collect/Multiset",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 615
+    .local p0, multiset1:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
+    .local p1, multiset2:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 616
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 618
+    new-instance v0, Lcom/google/common/collect/Multisets$4;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multisets$4;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)V
+
+    return-object v0
 .end method
 
 .method static equalsImpl(Lcom/google/common/collect/Multiset;Ljava/lang/Object;)Z
@@ -371,15 +405,15 @@
 
     const/4 v4, 0x0
 
-    .line 703
+    .line 819
     if-ne p1, p0, :cond_1
 
-    .line 725
+    .line 840
     :cond_0
     :goto_0
     return v3
 
-    .line 706
+    .line 822
     :cond_1
     instance-of v5, p1, Lcom/google/common/collect/Multiset;
 
@@ -387,10 +421,10 @@
 
     move-object v2, p1
 
-    .line 707
+    .line 823
     check-cast v2, Lcom/google/common/collect/Multiset;
 
-    .line 714
+    .line 830
     .local v2, that:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-interface {p0}, Lcom/google/common/collect/Multiset;->size()I
 
@@ -423,10 +457,10 @@
     :cond_2
     move v3, v4
 
-    .line 716
+    .line 831
     goto :goto_0
 
-    .line 718
+    .line 833
     :cond_3
     invoke-interface {v2}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
@@ -450,7 +484,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 719
+    .line 834
     .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -468,7 +502,7 @@
 
     move v3, v4
 
-    .line 720
+    .line 835
     goto :goto_0
 
     .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
@@ -477,33 +511,72 @@
     :cond_5
     move v3, v4
 
-    .line 725
+    .line 840
     goto :goto_0
 .end method
 
-.method static forSet(Ljava/util/Set;)Lcom/google/common/collect/Multiset;
-    .locals 1
+.method public static filter(Lcom/google/common/collect/Multiset;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multiset;
+    .locals 4
     .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
             "Ljava/lang/Object;",
             ">(",
-            "Ljava/util/Set",
-            "<TE;>;)",
+            "Lcom/google/common/collect/Multiset",
+            "<TE;>;",
+            "Lcom/google/common/base/Predicate",
+            "<-TE;>;)",
             "Lcom/google/common/collect/Multiset",
             "<TE;>;"
         }
     .end annotation
 
     .prologue
-    .line 336
-    .local p0, set:Ljava/util/Set;,"Ljava/util/Set<TE;>;"
-    new-instance v0, Lcom/google/common/collect/Multisets$SetMultiset;
+    .line 275
+    .local p0, unfiltered:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
+    .local p1, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TE;>;"
+    instance-of v2, p0, Lcom/google/common/collect/Multisets$FilteredMultiset;
 
-    invoke-direct {v0, p0}, Lcom/google/common/collect/Multisets$SetMultiset;-><init>(Ljava/util/Set;)V
+    if-eqz v2, :cond_0
 
-    return-object v0
+    move-object v1, p0
+
+    .line 278
+    check-cast v1, Lcom/google/common/collect/Multisets$FilteredMultiset;
+
+    .line 279
+    .local v1, filtered:Lcom/google/common/collect/Multisets$FilteredMultiset;,"Lcom/google/common/collect/Multisets$FilteredMultiset<TE;>;"
+    iget-object v2, v1, Lcom/google/common/collect/Multisets$FilteredMultiset;->predicate:Lcom/google/common/base/Predicate;
+
+    invoke-static {v2, p1}, Lcom/google/common/base/Predicates;->and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
+
+    move-result-object v0
+
+    .line 280
+    .local v0, combinedPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TE;>;"
+    new-instance v2, Lcom/google/common/collect/Multisets$FilteredMultiset;
+
+    iget-object v3, v1, Lcom/google/common/collect/Multisets$FilteredMultiset;->unfiltered:Lcom/google/common/collect/Multiset;
+
+    invoke-direct {v2, v3, v0}, Lcom/google/common/collect/Multisets$FilteredMultiset;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/base/Predicate;)V
+
+    .line 282
+    .end local v0           #combinedPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TE;>;"
+    .end local v1           #filtered:Lcom/google/common/collect/Multisets$FilteredMultiset;,"Lcom/google/common/collect/Multisets$FilteredMultiset<TE;>;"
+    :goto_0
+    return-object v2
+
+    :cond_0
+    new-instance v2, Lcom/google/common/collect/Multisets$FilteredMultiset;
+
+    invoke-direct {v2, p0, p1}, Lcom/google/common/collect/Multisets$FilteredMultiset;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/base/Predicate;)V
+
+    goto :goto_0
 .end method
 
 .method public static immutableEntry(Ljava/lang/Object;I)Lcom/google/common/collect/Multiset$Entry;
@@ -525,7 +598,7 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 219
     .local p0, e:Ljava/lang/Object;,"TE;"
     new-instance v0, Lcom/google/common/collect/Multisets$ImmutableEntry;
 
@@ -546,13 +619,13 @@
     .end annotation
 
     .prologue
-    .line 474
+    .line 376
     .local p0, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     instance-of v0, p0, Lcom/google/common/collect/Multiset;
 
     if-eqz v0, :cond_0
 
-    .line 475
+    .line 377
     check-cast p0, Lcom/google/common/collect/Multiset;
 
     .end local p0           #elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
@@ -564,7 +637,7 @@
 
     move-result v0
 
-    .line 477
+    .line 379
     :goto_0
     return v0
 
@@ -594,18 +667,18 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 474
     .local p0, multiset1:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, multiset2:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 496
+    .line 475
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 498
-    new-instance v0, Lcom/google/common/collect/Multisets$1;
+    .line 477
+    new-instance v0, Lcom/google/common/collect/Multisets$2;
 
-    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multisets$1;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)V
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multisets$2;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)V
 
     return-object v0
 .end method
@@ -626,7 +699,7 @@
     .end annotation
 
     .prologue
-    .line 878
+    .line 1013
     .local p0, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/Multisets$MultisetIteratorImpl;
 
@@ -658,7 +731,7 @@
     .end annotation
 
     .prologue
-    .line 752
+    .line 865
     .local p0, self:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     .local p1, elementsToRemove:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     instance-of v1, p1, Lcom/google/common/collect/Multiset;
@@ -672,7 +745,7 @@
 
     move-result-object v0
 
-    .line 755
+    .line 868
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     :goto_0
     invoke-interface {p0}, Lcom/google/common/collect/Multiset;->elementSet()Ljava/util/Set;
@@ -690,7 +763,7 @@
     :cond_0
     move-object v0, p1
 
-    .line 752
+    .line 865
     goto :goto_0
 .end method
 
@@ -698,9 +771,6 @@
     .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -712,7 +782,7 @@
     .end annotation
 
     .prologue
-    .line 630
+    .line 743
     .local p0, multisetToModify:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     .local p1, occurrencesToRemove:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Multisets;->removeOccurrencesImpl(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)Z
@@ -739,18 +809,18 @@
     .end annotation
 
     .prologue
-    .line 639
+    .line 752
     .local p0, multisetToModify:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, occurrencesToRemove:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 640
+    .line 753
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 642
+    .line 755
     const/4 v0, 0x0
 
-    .line 643
+    .line 756
     .local v0, changed:Z
     invoke-interface {p0}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
@@ -760,7 +830,7 @@
 
     move-result-object v2
 
-    .line 644
+    .line 757
     .local v2, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     :cond_0
     :goto_0
@@ -770,14 +840,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 645
+    .line 758
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 646
+    .line 759
     .local v1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -787,7 +857,7 @@
 
     move-result v3
 
-    .line 647
+    .line 760
     .local v3, removeCount:I
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -795,31 +865,31 @@
 
     if-lt v3, v4, :cond_1
 
-    .line 648
+    .line 761
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
-    .line 649
+    .line 762
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 650
+    .line 763
     :cond_1
     if-lez v3, :cond_0
 
-    .line 651
+    .line 764
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v4
 
     invoke-interface {p0, v4, v3}, Lcom/google/common/collect/Multiset;->remove(Ljava/lang/Object;I)I
 
-    .line 652
+    .line 765
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 655
+    .line 768
     .end local v1           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     .end local v3           #removeCount:I
     :cond_2
@@ -841,9 +911,12 @@
     .end annotation
 
     .prologue
-    .line 763
+    .line 875
     .local p0, self:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     .local p1, elementsToRetain:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 876
     instance-of v1, p1, Lcom/google/common/collect/Multiset;
 
     if-eqz v1, :cond_0
@@ -855,7 +928,7 @@
 
     move-result-object v0
 
-    .line 766
+    .line 879
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     :goto_0
     invoke-interface {p0}, Lcom/google/common/collect/Multiset;->elementSet()Ljava/util/Set;
@@ -873,7 +946,7 @@
     :cond_0
     move-object v0, p1
 
-    .line 763
+    .line 876
     goto :goto_0
 .end method
 
@@ -881,9 +954,6 @@
     .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -895,7 +965,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 691
     .local p0, multisetToModify:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     .local p1, multisetToRetain:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Multisets;->retainOccurrencesImpl(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)Z
@@ -922,15 +992,15 @@
     .end annotation
 
     .prologue
-    .line 586
+    .line 699
     .local p0, multisetToModify:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, occurrencesToRetain:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 587
+    .line 700
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 589
+    .line 702
     invoke-interface {p0}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
     move-result-object v4
@@ -939,11 +1009,11 @@
 
     move-result-object v2
 
-    .line 590
+    .line 703
     .local v2, entryIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     const/4 v0, 0x0
 
-    .line 591
+    .line 704
     .local v0, changed:Z
     :cond_0
     :goto_0
@@ -953,14 +1023,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 592
+    .line 705
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 593
+    .line 706
     .local v1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -970,19 +1040,19 @@
 
     move-result v3
 
-    .line 594
+    .line 707
     .local v3, retainCount:I
     if-nez v3, :cond_1
 
-    .line 595
+    .line 708
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
-    .line 596
+    .line 709
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 597
+    .line 710
     :cond_1
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -990,19 +1060,19 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 598
+    .line 711
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v4
 
     invoke-interface {p0, v4, v3}, Lcom/google/common/collect/Multiset;->setCount(Ljava/lang/Object;I)I
 
-    .line 599
+    .line 712
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 602
+    .line 715
     .end local v1           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     .end local v3           #retainCount:I
     :cond_2
@@ -1025,39 +1095,39 @@
     .end annotation
 
     .prologue
-    .line 773
+    .line 886
     .local p0, self:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     const-string v2, "count"
 
     invoke-static {p2, v2}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 775
+    .line 888
     invoke-interface {p0, p1}, Lcom/google/common/collect/Multiset;->count(Ljava/lang/Object;)I
 
     move-result v1
 
-    .line 777
+    .line 890
     .local v1, oldCount:I
     sub-int v0, p2, v1
 
-    .line 778
+    .line 891
     .local v0, delta:I
     if-lez v0, :cond_1
 
-    .line 779
+    .line 892
     invoke-interface {p0, p1, v0}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;I)I
 
-    .line 784
+    .line 897
     :cond_0
     :goto_0
     return v1
 
-    .line 780
+    .line 893
     :cond_1
     if-gez v0, :cond_0
 
-    .line 781
+    .line 894
     neg-int v2, v0
 
     invoke-interface {p0, p1, v2}, Lcom/google/common/collect/Multiset;->remove(Ljava/lang/Object;I)I
@@ -1082,32 +1152,32 @@
     .end annotation
 
     .prologue
-    .line 792
+    .line 904
     .local p0, self:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     const-string v0, "oldCount"
 
     invoke-static {p2, v0}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 793
+    .line 905
     const-string v0, "newCount"
 
     invoke-static {p3, v0}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 795
+    .line 907
     invoke-interface {p0, p1}, Lcom/google/common/collect/Multiset;->count(Ljava/lang/Object;)I
 
     move-result v0
 
     if-ne v0, p2, :cond_0
 
-    .line 796
+    .line 908
     invoke-interface {p0, p1, p3}, Lcom/google/common/collect/Multiset;->setCount(Ljava/lang/Object;I)I
 
-    .line 797
+    .line 909
     const/4 v0, 0x1
 
-    .line 799
+    .line 911
     :goto_0
     return v0
 
@@ -1129,11 +1199,11 @@
     .end annotation
 
     .prologue
-    .line 935
+    .line 1064
     .local p0, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<*>;"
     const-wide/16 v2, 0x0
 
-    .line 936
+    .line 1065
     .local v2, size:J
     invoke-interface {p0}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
@@ -1157,7 +1227,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 937
+    .line 1066
     .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -1169,7 +1239,7 @@
 
     goto :goto_0
 
-    .line 939
+    .line 1068
     .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :cond_0
     invoke-static {v2, v3}, Lcom/google/common/primitives/Ints;->saturatedCast(J)I
@@ -1177,6 +1247,82 @@
     move-result v4
 
     return v4
+.end method
+
+.method public static sum(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)Lcom/google/common/collect/Multiset;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/Multiset",
+            "<+TE;>;",
+            "Lcom/google/common/collect/Multiset",
+            "<+TE;>;)",
+            "Lcom/google/common/collect/Multiset",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 535
+    .local p0, multiset1:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
+    .local p1, multiset2:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 536
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 538
+    new-instance v0, Lcom/google/common/collect/Multisets$3;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multisets$3;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)V
+
+    return-object v0
+.end method
+
+.method public static union(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)Lcom/google/common/collect/Multiset;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/common/collect/Multiset",
+            "<+TE;>;",
+            "Lcom/google/common/collect/Multiset",
+            "<+TE;>;)",
+            "Lcom/google/common/collect/Multiset",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 400
+    .local p0, multiset1:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
+    .local p1, multiset2:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 401
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 403
+    new-instance v0, Lcom/google/common/collect/Multisets$1;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multisets$1;-><init>(Lcom/google/common/collect/Multiset;Lcom/google/common/collect/Multiset;)V
+
+    return-object v0
 .end method
 
 .method public static unmodifiableMultiset(Lcom/google/common/collect/ImmutableMultiset;)Lcom/google/common/collect/Multiset;
@@ -1198,7 +1344,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 88
     .local p0, multiset:Lcom/google/common/collect/ImmutableMultiset;,"Lcom/google/common/collect/ImmutableMultiset<TE;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1235,11 +1381,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 75
+    .line 74
     :cond_0
     move-object v0, p0
 
-    .line 78
+    .line 77
     :goto_0
     return-object v0
 
@@ -1258,7 +1404,7 @@
 .end method
 
 .method public static unmodifiableSortedMultiset(Lcom/google/common/collect/SortedMultiset;)Lcom/google/common/collect/SortedMultiset;
-    .locals 3
+    .locals 2
     .parameter
     .annotation build Lcom/google/common/annotations/Beta;
     .end annotation
@@ -1276,9 +1422,9 @@
     .end annotation
 
     .prologue
-    .line 196
+    .line 207
     .local p0, sortedMultiset:Lcom/google/common/collect/SortedMultiset;,"Lcom/google/common/collect/SortedMultiset<TE;>;"
-    new-instance v1, Lcom/google/common/collect/Multisets$UnmodifiableSortedMultiset;
+    new-instance v1, Lcom/google/common/collect/UnmodifiableSortedMultiset;
 
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1286,9 +1432,7 @@
 
     check-cast v0, Lcom/google/common/collect/SortedMultiset;
 
-    const/4 v2, 0x0
-
-    invoke-direct {v1, v0, v2}, Lcom/google/common/collect/Multisets$UnmodifiableSortedMultiset;-><init>(Lcom/google/common/collect/SortedMultiset;Lcom/google/common/collect/Multisets$1;)V
+    invoke-direct {v1, v0}, Lcom/google/common/collect/UnmodifiableSortedMultiset;-><init>(Lcom/google/common/collect/SortedMultiset;)V
 
     return-object v1
 .end method

@@ -159,7 +159,7 @@
     iget-object v1, v1, Lcom/google/common/collect/AbstractBiMap$EntrySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
     #calls: Lcom/google/common/collect/AbstractBiMap;->removeFromInverseMap(Ljava/lang/Object;)V
-    invoke-static {v1, v0}, Lcom/google/common/collect/AbstractBiMap;->access$400(Lcom/google/common/collect/AbstractBiMap;Ljava/lang/Object;)V
+    invoke-static {v1, v0}, Lcom/google/common/collect/AbstractBiMap;->access$700(Lcom/google/common/collect/AbstractBiMap;Ljava/lang/Object;)V
 
     .line 345
     return-void

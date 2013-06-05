@@ -15,9 +15,9 @@
 
 
 # static fields
-.field public static final BATTERY_CHARGE_WHEN_FULL_MAH_FIELD_NUMBER:I = 0x5
+.field public static final BATTERY_CHARGE_WHEN_FULL_UAH_FIELD_NUMBER:I = 0x5
 
-.field public static final BATTERY_STATE_OF_CHARGE_MAH_FIELD_NUMBER:I = 0x4
+.field public static final BATTERY_STATE_OF_CHARGE_UAH_FIELD_NUMBER:I = 0x4
 
 .field public static final BATTERY_TEMPERATURE_MILLI_CENTIGRADE_FIELD_NUMBER:I = 0x6
 
@@ -36,6 +36,8 @@
     .end annotation
 .end field
 
+.field public static final REPORTED_SOC_FIELD_NUMBER:I = 0x8
+
 .field public static final TOTAL_BYTES_SENT_FIELD_NUMBER:I = 0x7
 
 .field public static final TOTAL_KERNEL_MS_FIELD_NUMBER:I = 0x2
@@ -48,9 +50,9 @@
 
 
 # instance fields
-.field private batteryChargeWhenFullMah_:I
+.field private batteryChargeWhenFullUah_:I
 
-.field private batteryStateOfChargeMah_:I
+.field private batteryStateOfChargeUah_:I
 
 .field private batteryTemperatureMilliCentigrade_:I
 
@@ -73,6 +75,8 @@
 
 .field private memoizedSerializedSize:I
 
+.field private reportedSoc_:I
+
 .field private totalBytesSent_:J
 
 .field private totalKernelMs_:J
@@ -85,19 +89,19 @@
     .locals 2
 
     .prologue
-    .line 127
+    .line 132
     new-instance v0, Lcom/google/common/logging/GlassUserEventPerformanceStats$1;
 
     invoke-direct {v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats$1;-><init>()V
 
     sput-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 436
+    .line 480
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 1335
+    .line 1452
     new-instance v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     const/4 v1, 0x1
@@ -106,12 +110,12 @@
 
     sput-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->defaultInstance:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1336
+    .line 1453
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->defaultInstance:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     invoke-direct {v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->initFields()V
 
-    .line 1337
+    .line 1454
     return-void
 .end method
 
@@ -133,10 +137,10 @@
     .line 42
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 347
+    .line 384
     iput-byte v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedIsInitialized:B
 
-    .line 389
+    .line 429
     iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedSerializedSize:I
 
     .line 43
@@ -224,12 +228,12 @@
 
     goto :goto_0
 
-    .line 102
+    .line 107
     .end local v3           #tag:I
     :catch_0
     move-exception v1
 
-    .line 103
+    .line 108
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -240,7 +244,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 108
+    .line 113
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v5
@@ -249,7 +253,7 @@
 
     if-ne v6, v7, :cond_2
 
-    .line 109
+    .line 114
     iget-object v6, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-static {v6}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -258,7 +262,7 @@
 
     iput-object v6, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
-    .line 111
+    .line 116
     :cond_2
     invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -266,7 +270,7 @@
 
     iput-object v6, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 112
+    .line 117
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->makeExtensionsImmutable()V
 
     throw v5
@@ -294,12 +298,12 @@
 
     goto :goto_0
 
-    .line 104
+    .line 109
     .end local v3           #tag:I
     :catch_1
     move-exception v1
 
-    .line 105
+    .line 110
     .local v1, e:Ljava/io/IOException;
     :try_start_3
     new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -351,7 +355,7 @@
 
     move-result v5
 
-    iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeMah_:I
+    iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeUah_:I
 
     goto :goto_0
 
@@ -368,7 +372,7 @@
 
     move-result v5
 
-    iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullMah_:I
+    iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullUah_:I
 
     goto/16 :goto_0
 
@@ -376,7 +380,7 @@
     :sswitch_6
     iget v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
-    or-int/lit8 v5, v5, 0x10
+    or-int/lit8 v5, v5, 0x20
 
     iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -393,7 +397,7 @@
     :sswitch_7
     iget v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
-    or-int/lit8 v5, v5, 0x20
+    or-int/lit8 v5, v5, 0x40
 
     iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -403,6 +407,23 @@
     move-result-wide v5
 
     iput-wide v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalBytesSent_:J
+
+    goto/16 :goto_0
+
+    .line 101
+    :sswitch_8
+    iget v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
+
+    or-int/lit8 v5, v5, 0x10
+
+    iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
+
+    .line 102
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
+
+    move-result v5
+
+    iput v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->reportedSoc_:I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
@@ -410,14 +431,14 @@
 
     goto/16 :goto_0
 
-    .line 108
+    .line 113
     .end local v3           #tag:I
     :cond_3
     and-int/lit8 v5, v2, 0x1
 
     if-ne v5, v7, :cond_4
 
-    .line 109
+    .line 114
     iget-object v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-static {v5}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -426,7 +447,7 @@
 
     iput-object v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
-    .line 111
+    .line 116
     :cond_4
     invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -434,10 +455,10 @@
 
     iput-object v5, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 112
+    .line 117
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->makeExtensionsImmutable()V
 
-    .line 114
+    .line 119
     return-void
 
     .line 51
@@ -453,6 +474,7 @@
         0x28 -> :sswitch_5
         0x30 -> :sswitch_6
         0x38 -> :sswitch_7
+        0x40 -> :sswitch_8
     .end sparse-switch
 .end method
 
@@ -492,10 +514,10 @@
     .line 19
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 347
+    .line 384
     iput-byte v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedIsInitialized:B
 
-    .line 389
+    .line 429
     iput v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedSerializedSize:I
 
     .line 20
@@ -531,10 +553,10 @@
     .line 22
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 347
+    .line 384
     iput-byte v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedIsInitialized:B
 
-    .line 389
+    .line 429
     iput v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedSerializedSize:I
 
     .line 22
@@ -554,12 +576,24 @@
 
     .prologue
     .line 13
+    iput p1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->reportedSoc_:I
+
+    return p1
+.end method
+
+.method static synthetic access$1102(Lcom/google/common/logging/GlassUserEventPerformanceStats;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 13
     iput p1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryTemperatureMilliCentigrade_:I
 
     return p1
 .end method
 
-.method static synthetic access$1102(Lcom/google/common/logging/GlassUserEventPerformanceStats;J)J
+.method static synthetic access$1202(Lcom/google/common/logging/GlassUserEventPerformanceStats;J)J
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -571,7 +605,7 @@
     return-wide p1
 .end method
 
-.method static synthetic access$1202(Lcom/google/common/logging/GlassUserEventPerformanceStats;I)I
+.method static synthetic access$1302(Lcom/google/common/logging/GlassUserEventPerformanceStats;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -583,7 +617,7 @@
     return p1
 .end method
 
-.method static synthetic access$1300()Z
+.method static synthetic access$1400()Z
     .locals 1
 
     .prologue
@@ -657,7 +691,7 @@
 
     .prologue
     .line 13
-    iput p1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeMah_:I
+    iput p1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeUah_:I
 
     return p1
 .end method
@@ -669,7 +703,7 @@
 
     .prologue
     .line 13
-    iput p1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullMah_:I
+    iput p1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullUah_:I
 
     return p1
 .end method
@@ -688,7 +722,7 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 122
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventPerformanceStats_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -702,32 +736,35 @@
 
     const/4 v1, 0x0
 
-    .line 339
+    .line 375
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
-    .line 340
+    .line 376
     iput-wide v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalKernelMs_:J
 
-    .line 341
+    .line 377
     iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->boardTemperatureMilliCentigrade_:I
 
-    .line 342
-    iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeMah_:I
+    .line 378
+    iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeUah_:I
 
-    .line 343
-    iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullMah_:I
+    .line 379
+    iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullUah_:I
 
-    .line 344
+    .line 380
+    iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->reportedSoc_:I
+
+    .line 381
     iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryTemperatureMilliCentigrade_:I
 
-    .line 345
+    .line 382
     iput-wide v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalBytesSent_:J
 
-    .line 346
+    .line 383
     return-void
 .end method
 
@@ -735,7 +772,7 @@
     .locals 1
 
     .prologue
-    .line 498
+    .line 542
     #calls: Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->create()Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->access$100()Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
@@ -749,7 +786,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 501
+    .line 545
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->newBuilder()Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     move-result-object v0
@@ -771,7 +808,7 @@
     .end annotation
 
     .prologue
-    .line 478
+    .line 522
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -794,7 +831,7 @@
     .end annotation
 
     .prologue
-    .line 484
+    .line 528
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -816,7 +853,7 @@
     .end annotation
 
     .prologue
-    .line 448
+    .line 492
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -839,7 +876,7 @@
     .end annotation
 
     .prologue
-    .line 454
+    .line 498
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -861,7 +898,7 @@
     .end annotation
 
     .prologue
-    .line 489
+    .line 533
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -884,7 +921,7 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 539
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -906,7 +943,7 @@
     .end annotation
 
     .prologue
-    .line 468
+    .line 512
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -929,7 +966,7 @@
     .end annotation
 
     .prologue
-    .line 474
+    .line 518
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -951,7 +988,7 @@
     .end annotation
 
     .prologue
-    .line 458
+    .line 502
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -974,7 +1011,7 @@
     .end annotation
 
     .prologue
-    .line 464
+    .line 508
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -988,22 +1025,22 @@
 
 
 # virtual methods
-.method public getBatteryChargeWhenFullMah()I
+.method public getBatteryChargeWhenFullUah()I
     .locals 1
 
     .prologue
-    .line 289
-    iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullMah_:I
+    .line 294
+    iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullUah_:I
 
     return v0
 .end method
 
-.method public getBatteryStateOfChargeMah()I
+.method public getBatteryStateOfChargeUah()I
     .locals 1
 
     .prologue
-    .line 266
-    iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeMah_:I
+    .line 271
+    iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeUah_:I
 
     return v0
 .end method
@@ -1012,7 +1049,7 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 348
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryTemperatureMilliCentigrade_:I
 
     return v0
@@ -1022,7 +1059,7 @@
     .locals 1
 
     .prologue
-    .line 243
+    .line 248
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->boardTemperatureMilliCentigrade_:I
 
     return v0
@@ -1067,7 +1104,7 @@
     .parameter "index"
 
     .prologue
-    .line 184
+    .line 189
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1083,7 +1120,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 179
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1106,7 +1143,7 @@
     .end annotation
 
     .prologue
-    .line 153
+    .line 158
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     return-object v0
@@ -1117,7 +1154,7 @@
     .parameter "index"
 
     .prologue
-    .line 195
+    .line 200
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1142,7 +1179,7 @@
     .end annotation
 
     .prologue
-    .line 164
+    .line 169
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     return-object v0
@@ -1161,26 +1198,38 @@
     .end annotation
 
     .prologue
-    .line 139
+    .line 144
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
 .end method
 
-.method public getSerializedSize()I
-    .locals 7
+.method public getReportedSoc()I
+    .locals 1
 
     .prologue
+    .line 325
+    iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->reportedSoc_:I
+
+    return v0
+.end method
+
+.method public getSerializedSize()I
+    .locals 8
+
+    .prologue
+    const/16 v7, 0x8
+
     const/4 v6, 0x4
 
     const/4 v5, 0x2
 
     const/4 v4, 0x1
 
-    .line 391
+    .line 431
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedSerializedSize:I
 
-    .line 392
+    .line 432
     .local v1, size:I
     const/4 v3, -0x1
 
@@ -1188,19 +1237,19 @@
 
     move v2, v1
 
-    .line 425
+    .line 469
     .end local v1           #size:I
     .local v2, size:I
     :goto_0
     return v2
 
-    .line 394
+    .line 434
     .end local v2           #size:I
     .restart local v1       #size:I
     :cond_0
     const/4 v1, 0x0
 
-    .line 395
+    .line 435
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1213,7 +1262,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 396
+    .line 436
     iget-object v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1228,12 +1277,12 @@
 
     add-int/2addr v1, v3
 
-    .line 395
+    .line 435
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 399
+    .line 439
     :cond_1
     iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -1241,7 +1290,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 400
+    .line 440
     iget-wide v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalKernelMs_:J
 
     invoke-static {v5, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->computeInt64Size(IJ)I
@@ -1250,7 +1299,7 @@
 
     add-int/2addr v1, v3
 
-    .line 403
+    .line 443
     :cond_2
     iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -1258,7 +1307,7 @@
 
     if-ne v3, v5, :cond_3
 
-    .line 404
+    .line 444
     const/4 v3, 0x3
 
     iget v4, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->boardTemperatureMilliCentigrade_:I
@@ -1269,7 +1318,7 @@
 
     add-int/2addr v1, v3
 
-    .line 407
+    .line 447
     :cond_3
     iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -1277,8 +1326,8 @@
 
     if-ne v3, v6, :cond_4
 
-    .line 408
-    iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeMah_:I
+    .line 448
+    iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeUah_:I
 
     invoke-static {v6, v3}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
 
@@ -1286,20 +1335,18 @@
 
     add-int/2addr v1, v3
 
-    .line 411
+    .line 451
     :cond_4
     iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x8
 
-    const/16 v4, 0x8
+    if-ne v3, v7, :cond_5
 
-    if-ne v3, v4, :cond_5
-
-    .line 412
+    .line 452
     const/4 v3, 0x5
 
-    iget v4, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullMah_:I
+    iget v4, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullUah_:I
 
     invoke-static {v3, v4}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
 
@@ -1307,17 +1354,17 @@
 
     add-int/2addr v1, v3
 
-    .line 415
+    .line 455
     :cond_5
     iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
-    and-int/lit8 v3, v3, 0x10
+    and-int/lit8 v3, v3, 0x20
 
-    const/16 v4, 0x10
+    const/16 v4, 0x20
 
     if-ne v3, v4, :cond_6
 
-    .line 416
+    .line 456
     const/4 v3, 0x6
 
     iget v4, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryTemperatureMilliCentigrade_:I
@@ -1328,17 +1375,17 @@
 
     add-int/2addr v1, v3
 
-    .line 419
+    .line 459
     :cond_6
     iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
-    and-int/lit8 v3, v3, 0x20
+    and-int/lit8 v3, v3, 0x40
 
-    const/16 v4, 0x20
+    const/16 v4, 0x40
 
     if-ne v3, v4, :cond_7
 
-    .line 420
+    .line 460
     const/4 v3, 0x7
 
     iget-wide v4, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalBytesSent_:J
@@ -1349,8 +1396,27 @@
 
     add-int/2addr v1, v3
 
-    .line 423
+    .line 463
     :cond_7
+    iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
+
+    and-int/lit8 v3, v3, 0x10
+
+    const/16 v4, 0x10
+
+    if-ne v3, v4, :cond_8
+
+    .line 464
+    iget v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->reportedSoc_:I
+
+    invoke-static {v7, v3}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+
+    move-result v3
+
+    add-int/2addr v1, v3
+
+    .line 467
+    :cond_8
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v3
@@ -1361,22 +1427,22 @@
 
     add-int/2addr v1, v3
 
-    .line 424
+    .line 468
     iput v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedSerializedSize:I
 
     move v2, v1
 
-    .line 425
+    .line 469
     .end local v1           #size:I
     .restart local v2       #size:I
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public getTotalBytesSent()J
     .locals 2
 
     .prologue
-    .line 335
+    .line 371
     iget-wide v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalBytesSent_:J
 
     return-wide v0
@@ -1386,7 +1452,7 @@
     .locals 2
 
     .prologue
-    .line 220
+    .line 225
     iget-wide v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalKernelMs_:J
 
     return-wide v0
@@ -1402,11 +1468,11 @@
     return-object v0
 .end method
 
-.method public hasBatteryChargeWhenFullMah()Z
+.method public hasBatteryChargeWhenFullUah()Z
     .locals 2
 
     .prologue
-    .line 279
+    .line 284
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1426,11 +1492,11 @@
     goto :goto_0
 .end method
 
-.method public hasBatteryStateOfChargeMah()Z
+.method public hasBatteryStateOfChargeUah()Z
     .locals 2
 
     .prologue
-    .line 256
+    .line 261
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1454,12 +1520,12 @@
     .locals 2
 
     .prologue
-    .line 302
+    .line 338
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
-    and-int/lit8 v0, v0, 0x10
+    and-int/lit8 v0, v0, 0x20
 
-    const/16 v1, 0x10
+    const/16 v1, 0x20
 
     if-ne v0, v1, :cond_0
 
@@ -1478,7 +1544,7 @@
     .locals 2
 
     .prologue
-    .line 233
+    .line 238
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1498,16 +1564,40 @@
     goto :goto_0
 .end method
 
+.method public hasReportedSoc()Z
+    .locals 2
+
+    .prologue
+    .line 311
+    iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x10
+
+    const/16 v1, 0x10
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public hasTotalBytesSent()Z
     .locals 2
 
     .prologue
-    .line 325
+    .line 361
     iget v0, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
-    and-int/lit8 v0, v0, 0x20
+    and-int/lit8 v0, v0, 0x40
 
-    const/16 v1, 0x20
+    const/16 v1, 0x40
 
     if-ne v0, v1, :cond_0
 
@@ -1528,7 +1618,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 209
+    .line 214
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1548,7 +1638,7 @@
     .locals 3
 
     .prologue
-    .line 122
+    .line 127
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventPerformanceStats_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/common/logging/GlassUserEventPerformanceStats;
@@ -1566,12 +1656,12 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 483
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 440
+    .line 484
     const-string v0, "com.google.common.logging.MutableGlassExtensions$GlassUserEventPerformanceStats"
 
     invoke-static {v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1580,7 +1670,7 @@
 
     sput-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 442
+    .line 486
     :cond_0
     sget-object v0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1595,10 +1685,10 @@
 
     const/4 v2, 0x1
 
-    .line 349
+    .line 386
     iget-byte v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedIsInitialized:B
 
-    .line 350
+    .line 387
     .local v1, isInitialized:B
     const/4 v4, -0x1
 
@@ -1606,17 +1696,17 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 359
+    .line 396
     :goto_0
     return v2
 
     :cond_0
     move v2, v3
 
-    .line 350
+    .line 387
     goto :goto_0
 
-    .line 352
+    .line 389
     :cond_1
     const/4 v0, 0x0
 
@@ -1628,7 +1718,7 @@
 
     if-ge v0, v4, :cond_3
 
-    .line 353
+    .line 390
     invoke-virtual {p0, v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getFrequencyStat(I)Lcom/google/common/logging/GlassUserEventFrequencyStat;
 
     move-result-object v4
@@ -1639,21 +1729,21 @@
 
     if-nez v4, :cond_2
 
-    .line 354
+    .line 391
     iput-byte v3, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedIsInitialized:B
 
     move v2, v3
 
-    .line 355
+    .line 392
     goto :goto_0
 
-    .line 352
+    .line 389
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 358
+    .line 395
     :cond_3
     iput-byte v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->memoizedIsInitialized:B
 
@@ -1664,7 +1754,7 @@
     .locals 1
 
     .prologue
-    .line 499
+    .line 543
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->newBuilder()Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     move-result-object v0
@@ -1677,14 +1767,14 @@
     .parameter "parent"
 
     .prologue
-    .line 508
+    .line 552
     new-instance v0, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/common/logging/GlassUserEventPerformanceStats$1;)V
 
-    .line 509
+    .line 553
     .local v0, builder:Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
     return-object v0
 .end method
@@ -1730,7 +1820,7 @@
     .locals 1
 
     .prologue
-    .line 503
+    .line 547
     invoke-static {p0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->newBuilder(Lcom/google/common/logging/GlassUserEventPerformanceStats;)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     move-result-object v0
@@ -1771,7 +1861,7 @@
     .end annotation
 
     .prologue
-    .line 432
+    .line 476
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1780,7 +1870,7 @@
 .end method
 
 .method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
-    .locals 5
+    .locals 6
     .parameter "output"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1789,16 +1879,18 @@
     .end annotation
 
     .prologue
+    const/16 v5, 0x8
+
     const/4 v4, 0x4
 
     const/4 v3, 0x2
 
     const/4 v2, 0x1
 
-    .line 364
+    .line 401
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getSerializedSize()I
 
-    .line 365
+    .line 402
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1811,7 +1903,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 366
+    .line 403
     iget-object v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->frequencyStat_:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1822,12 +1914,12 @@
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 365
+    .line 402
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 368
+    .line 405
     :cond_0
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -1835,12 +1927,12 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 369
+    .line 406
     iget-wide v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalKernelMs_:J
 
     invoke-virtual {p1, v3, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt64(IJ)V
 
-    .line 371
+    .line 408
     :cond_1
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -1848,14 +1940,14 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 372
+    .line 409
     const/4 v1, 0x3
 
     iget v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->boardTemperatureMilliCentigrade_:I
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 374
+    .line 411
     :cond_2
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
@@ -1863,70 +1955,83 @@
 
     if-ne v1, v4, :cond_3
 
-    .line 375
-    iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeMah_:I
+    .line 412
+    iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryStateOfChargeUah_:I
 
     invoke-virtual {p1, v4, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 377
+    .line 414
     :cond_3
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x8
 
-    const/16 v2, 0x8
+    if-ne v1, v5, :cond_4
 
-    if-ne v1, v2, :cond_4
-
-    .line 378
+    .line 415
     const/4 v1, 0x5
 
-    iget v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullMah_:I
+    iget v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryChargeWhenFullUah_:I
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 380
+    .line 417
     :cond_4
-    iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
-
-    and-int/lit8 v1, v1, 0x10
-
-    const/16 v2, 0x10
-
-    if-ne v1, v2, :cond_5
-
-    .line 381
-    const/4 v1, 0x6
-
-    iget v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryTemperatureMilliCentigrade_:I
-
-    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
-
-    .line 383
-    :cond_5
     iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x20
 
     const/16 v2, 0x20
 
+    if-ne v1, v2, :cond_5
+
+    .line 418
+    const/4 v1, 0x6
+
+    iget v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->batteryTemperatureMilliCentigrade_:I
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    .line 420
+    :cond_5
+    iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
+
+    and-int/lit8 v1, v1, 0x40
+
+    const/16 v2, 0x40
+
     if-ne v1, v2, :cond_6
 
-    .line 384
+    .line 421
     const/4 v1, 0x7
 
     iget-wide v2, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->totalBytesSent_:J
 
     invoke-virtual {p1, v1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeInt64(IJ)V
 
-    .line 386
+    .line 423
     :cond_6
+    iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->bitField0_:I
+
+    and-int/lit8 v1, v1, 0x10
+
+    const/16 v2, 0x10
+
+    if-ne v1, v2, :cond_7
+
+    .line 424
+    iget v1, p0, Lcom/google/common/logging/GlassUserEventPerformanceStats;->reportedSoc_:I
+
+    invoke-virtual {p1, v5, v1}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    .line 426
+    :cond_7
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 387
+    .line 427
     return-void
 .end method

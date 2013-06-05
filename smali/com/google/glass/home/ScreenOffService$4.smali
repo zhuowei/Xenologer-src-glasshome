@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 239
+    .line 249
     iput-object p1, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 293
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -72,7 +72,7 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 242
+    .line 252
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-virtual {v3}, Lcom/google/glass/home/ScreenOffService;->getApplicationContext()Landroid/content/Context;
@@ -85,7 +85,7 @@
 
     if-nez v3, :cond_0
 
-    .line 243
+    .line 253
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v3
@@ -94,11 +94,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 279
+    .line 289
     :goto_0
     return-void
 
-    .line 248
+    .line 258
     :cond_0
     new-instance v3, Lcom/google/glass/util/SettingsHelper;
 
@@ -110,7 +110,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 249
+    .line 259
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v3
@@ -121,7 +121,7 @@
 
     goto :goto_0
 
-    .line 253
+    .line 263
     :cond_1
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
@@ -142,7 +142,7 @@
 
     if-gez v3, :cond_2
 
-    .line 255
+    .line 265
     const-string v3, "numNotifications"
 
     invoke-virtual {p2, v3, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -151,7 +151,7 @@
 
     if-le v3, v7, :cond_3
 
-    .line 256
+    .line 266
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v3
@@ -160,10 +160,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
+    .line 267
     sget-object v2, Lcom/google/glass/sound/SoundManager$SoundId;->NOTIFICATION_MULTIPLE:Lcom/google/glass/sound/SoundManager$SoundId;
 
-    .line 262
+    .line 272
     .local v2, sound:Lcom/google/glass/sound/SoundManager$SoundId;
     :goto_1
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
@@ -175,7 +175,7 @@
 
     invoke-virtual {v3, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 263
+    .line 273
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -185,7 +185,7 @@
     #setter for: Lcom/google/glass/home/ScreenOffService;->lastNotifyingSoundTime:J
     invoke-static {v3, v4, v5}, Lcom/google/glass/home/ScreenOffService;->access$602(Lcom/google/glass/home/ScreenOffService;J)J
 
-    .line 265
+    .line 275
     .end local v2           #sound:Lcom/google/glass/sound/SoundManager$SoundId;
     :cond_2
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
@@ -201,7 +201,7 @@
 
     if-nez v3, :cond_4
 
-    .line 266
+    .line 276
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v3
@@ -210,7 +210,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 267
+    .line 277
     const-string v3, "item_id"
 
     invoke-virtual {p2, v3}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -219,7 +219,7 @@
 
     check-cast v1, Lcom/google/glass/timeline/TimelineItemId;
 
-    .line 269
+    .line 279
     .local v1, itemId:Lcom/google/glass/timeline/TimelineItemId;
     const-string v3, "bundle_item_id"
 
@@ -229,7 +229,7 @@
 
     check-cast v0, Lcom/google/glass/timeline/TimelineItemId;
 
-    .line 271
+    .line 281
     .local v0, bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
@@ -238,7 +238,7 @@
 
     goto :goto_0
 
-    .line 259
+    .line 269
     .end local v0           #bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
     .end local v1           #itemId:Lcom/google/glass/timeline/TimelineItemId;
     :cond_3
@@ -250,13 +250,13 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 260
+    .line 270
     sget-object v2, Lcom/google/glass/sound/SoundManager$SoundId;->NOTIFICATION:Lcom/google/glass/sound/SoundManager$SoundId;
 
     .restart local v2       #sound:Lcom/google/glass/sound/SoundManager$SoundId;
     goto :goto_1
 
-    .line 273
+    .line 283
     .end local v2           #sound:Lcom/google/glass/sound/SoundManager$SoundId;
     :cond_4
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
@@ -267,7 +267,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 274
+    .line 284
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-wide/16 v4, 0x0
@@ -275,7 +275,7 @@
     #setter for: Lcom/google/glass/home/ScreenOffService;->timelineItemNotifyTime:J
     invoke-static {v3, v4, v5}, Lcom/google/glass/home/ScreenOffService;->access$902(Lcom/google/glass/home/ScreenOffService;J)J
 
-    .line 277
+    .line 287
     iget-object v3, p0, Lcom/google/glass/home/ScreenOffService$4;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     new-instance v4, Landroid/content/Intent;

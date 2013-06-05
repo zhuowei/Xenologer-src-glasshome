@@ -25,12 +25,12 @@
     .parameter "x0"
 
     .prologue
-    .line 151
+    .line 169
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService$1;->this$0:Lcom/google/glass/logging/UserEventService;
 
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 152
+    .line 170
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

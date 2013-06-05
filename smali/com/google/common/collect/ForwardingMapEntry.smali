@@ -29,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 60
+    .line 59
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
@@ -69,7 +69,7 @@
     .end parameter
 
     .prologue
-    .line 80
+    .line 78
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->delegate()Ljava/util/Map$Entry;
 
@@ -91,7 +91,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 65
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->delegate()Ljava/util/Map$Entry;
 
@@ -113,7 +113,7 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 69
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->delegate()Ljava/util/Map$Entry;
 
@@ -130,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 83
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->delegate()Ljava/util/Map$Entry;
 
@@ -153,7 +153,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 73
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     .local p1, value:Ljava/lang/Object;,"TV;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->delegate()Ljava/util/Map$Entry;
@@ -173,24 +173,22 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     const/4 v1, 0x0
 
-    .line 96
+    .line 95
     instance-of v2, p1, Ljava/util/Map$Entry;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 97
+    .line 96
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 98
+    .line 97
     .local v0, that:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->getKey()Ljava/lang/Object;
 
@@ -222,7 +220,7 @@
 
     const/4 v1, 0x1
 
-    .line 101
+    .line 100
     .end local v0           #that:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<**>;"
     :cond_0
     return v1
@@ -230,25 +228,23 @@
 
 .method protected standardHashCode()I
     .locals 4
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
     .local p0, this:Lcom/google/common/collect/ForwardingMapEntry;,"Lcom/google/common/collect/ForwardingMapEntry<TK;TV;>;"
     const/4 v2, 0x0
 
-    .line 112
+    .line 111
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 113
+    .line 112
     .local v0, k:Ljava/lang/Object;,"TK;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingMapEntry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 114
+    .line 113
     .local v1, v:Ljava/lang/Object;,"TV;"
     if-nez v0, :cond_0
 

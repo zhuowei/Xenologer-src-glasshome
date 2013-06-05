@@ -6,18 +6,6 @@
 .implements Lcom/google/protobuf/MutableMessageLite;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "<MessageType:",
-        "Lcom/google/protobuf/AbstractMutableMessageLite",
-        "<TMessageType;>;>",
-        "Ljava/lang/Object;",
-        "Lcom/google/protobuf/MutableMessageLite;"
-    }
-.end annotation
-
-
 # instance fields
 .field protected cachedSize:I
 
@@ -30,15 +18,14 @@
 
     .prologue
     .line 18
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 25
+    .line 23
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/protobuf/AbstractMutableMessageLite;->isMutable:Z
 
-    .line 117
+    .line 115
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/protobuf/AbstractMutableMessageLite;->cachedSize:I
@@ -63,12 +50,12 @@
     .end annotation
 
     .prologue
-    .line 337
+    .line 335
     .local p0, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TT;>;"
     .local p1, list:Ljava/util/Collection;,"Ljava/util/Collection<-TT;>;"
     invoke-static {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 338
+    .line 336
     return-void
 .end method
 
@@ -86,7 +73,7 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 311
     .local p0, defaultInstance:Lcom/google/protobuf/MutableMessageLite;,"TT;"
     new-instance v0, Lcom/google/protobuf/AbstractMutableMessageLite$1;
 
@@ -100,7 +87,7 @@
     .parameter "message"
 
     .prologue
-    .line 308
+    .line 306
     new-instance v0, Lcom/google/protobuf/UninitializedMessageException;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/UninitializedMessageException;-><init>(Lcom/google/protobuf/MessageLite;)V
@@ -114,13 +101,12 @@
     .locals 2
 
     .prologue
-    .line 32
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 30
     iget-boolean v0, p0, Lcom/google/protobuf/AbstractMutableMessageLite;->isMutable:Z
 
     if-nez v0, :cond_0
 
-    .line 33
+    .line 31
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Try to modify an immutable message."
@@ -129,22 +115,16 @@
 
     throw v0
 
-    .line 35
+    .line 33
     :cond_0
     return-void
 .end method
 
-.method public clone()Lcom/google/protobuf/AbstractMutableMessageLite;
+.method public clone()Lcom/google/protobuf/MutableMessageLite;
     .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TMessageType;"
-        }
-    .end annotation
 
     .prologue
-    .line 58
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 56
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "clone() should be implemented by subclasses."
@@ -152,19 +132,6 @@
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
-
-.method public bridge synthetic clone()Lcom/google/protobuf/MutableMessageLite;
-    .locals 1
-
-    .prologue
-    .line 17
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
-    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clone()Lcom/google/protobuf/AbstractMutableMessageLite;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public bridge synthetic clone()Ljava/lang/Object;
@@ -177,8 +144,7 @@
 
     .prologue
     .line 17
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
-    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clone()Lcom/google/protobuf/AbstractMutableMessageLite;
+    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clone()Lcom/google/protobuf/MutableMessageLite;
 
     move-result-object v0
 
@@ -189,8 +155,7 @@
     .locals 1
 
     .prologue
-    .line 119
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 117
     iget v0, p0, Lcom/google/protobuf/AbstractMutableMessageLite;->cachedSize:I
 
     return v0
@@ -200,13 +165,12 @@
     .locals 1
 
     .prologue
-    .line 28
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 26
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/protobuf/AbstractMutableMessageLite;->isMutable:Z
 
-    .line 29
+    .line 27
     return-void
 .end method
 
@@ -215,8 +179,7 @@
     .parameter "input"
 
     .prologue
-    .line 193
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 191
     invoke-static {}, Lcom/google/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Lcom/google/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
@@ -234,40 +197,39 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
     const/4 v4, 0x0
 
-    .line 200
+    .line 198
     :try_start_0
     invoke-virtual {p1}, Ljava/io/InputStream;->read()I
 
     move-result v1
 
-    .line 201
+    .line 199
     .local v1, firstByte:I
     const/4 v5, -0x1
 
     if-ne v1, v5, :cond_0
 
-    .line 209
+    .line 207
     .end local v1           #firstByte:I
     :goto_0
     return v4
 
-    .line 204
+    .line 202
     .restart local v1       #firstByte:I
     :cond_0
     invoke-static {v1, p1}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32(ILjava/io/InputStream;)I
 
     move-result v3
 
-    .line 205
+    .line 203
     .local v3, size:I
     new-instance v2, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;
 
     invoke-direct {v2, p1, v3}, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;-><init>(Ljava/io/InputStream;I)V
 
-    .line 207
+    .line 205
     .local v2, limitedInput:Ljava/io/InputStream;
     invoke-virtual {p0, v2, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
     :try_end_0
@@ -277,14 +239,14 @@
 
     goto :goto_0
 
-    .line 208
+    .line 206
     .end local v1           #firstByte:I
     .end local v2           #limitedInput:Ljava/io/InputStream;
     .end local v3           #size:I
     :catch_0
     move-exception v0
 
-    .line 209
+    .line 207
     .local v0, e:Ljava/io/IOException;
     goto :goto_0
 .end method
@@ -294,13 +256,12 @@
     .parameter "data"
 
     .prologue
-    .line 148
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 146
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->newCodedInput()Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 149
+    .line 147
     .local v0, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
@@ -331,13 +292,12 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 154
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 152
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->newCodedInput()Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 155
+    .line 153
     .local v0, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -367,8 +327,7 @@
     .parameter "input"
 
     .prologue
-    .line 136
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 134
     invoke-static {}, Lcom/google/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Lcom/google/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
@@ -386,18 +345,17 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 129
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 127
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 130
+    .line 128
     const/4 v0, 0x0
 
-    .line 132
+    .line 130
     :goto_0
     return v0
 
@@ -414,13 +372,12 @@
     .parameter "input"
 
     .prologue
-    .line 181
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 179
     invoke-static {p1}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 182
+    .line 180
     .local v0, codedInput:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Ljava/io/InputStream;)Z
 
@@ -451,13 +408,12 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 187
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 185
     invoke-static {p1}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 188
+    .line 186
     .local v0, codedInput:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -487,8 +443,7 @@
     .parameter "data"
 
     .prologue
-    .line 159
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 157
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -507,13 +462,12 @@
     .parameter "len"
 
     .prologue
-    .line 163
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 161
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/CodedInputStream;->newInstance([BII)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 165
+    .line 163
     .local v0, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
@@ -546,13 +500,12 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 175
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 173
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/CodedInputStream;->newInstance([BII)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 177
+    .line 175
     .local v0, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0, p4}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -583,8 +536,7 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 170
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 168
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -601,8 +553,7 @@
     .parameter "input"
 
     .prologue
-    .line 140
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 138
     invoke-static {}, Lcom/google/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Lcom/google/protobuf/ExtensionRegistryLite;
 
     move-result-object v0
@@ -621,8 +572,7 @@
     .locals 2
 
     .prologue
-    .line 51
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 49
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "mutableCopy() is not supported in mutable messages. Use clone() if you need to make a copy of the mutable message."
@@ -636,8 +586,7 @@
     .locals 2
 
     .prologue
-    .line 45
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 43
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "newBuilderForType() is not supported in mutable messages."
@@ -651,8 +600,7 @@
     .locals 1
 
     .prologue
-    .line 114
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 112
     new-instance v0, Lcom/google/protobuf/UninitializedMessageException;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/UninitializedMessageException;-><init>(Lcom/google/protobuf/MessageLite;)V
@@ -665,11 +613,10 @@
     .parameter "input"
 
     .prologue
-    .line 294
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 292
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 295
+    .line 293
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeDelimitedFrom(Ljava/io/InputStream;)Z
 
     move-result v0
@@ -683,11 +630,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 301
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 299
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 302
+    .line 300
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
@@ -700,11 +646,10 @@
     .parameter "data"
 
     .prologue
-    .line 242
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 240
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 243
+    .line 241
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/ByteString;)Z
 
     move-result v0
@@ -718,11 +663,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 249
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 247
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 250
+    .line 248
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
@@ -735,11 +679,10 @@
     .parameter "input"
 
     .prologue
-    .line 216
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 214
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 217
+    .line 215
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
     move-result v0
@@ -753,11 +696,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 222
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 220
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 223
+    .line 221
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
@@ -770,11 +712,10 @@
     .parameter "input"
 
     .prologue
-    .line 281
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 279
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 282
+    .line 280
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Ljava/io/InputStream;)Z
 
     move-result v0
@@ -788,11 +729,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 288
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 286
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 289
+    .line 287
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
@@ -805,11 +745,10 @@
     .parameter "data"
 
     .prologue
-    .line 255
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 253
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 256
+    .line 254
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -828,11 +767,10 @@
     .parameter "len"
 
     .prologue
-    .line 261
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 259
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 262
+    .line 260
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom([BII)Z
 
     move-result v0
@@ -848,11 +786,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 275
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 273
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 276
+    .line 274
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergeFrom([BIILcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
@@ -866,11 +803,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 268
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 266
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 269
+    .line 267
     const/4 v0, 0x0
 
     array-length v1, p1
@@ -887,11 +823,10 @@
     .parameter "input"
 
     .prologue
-    .line 228
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 226
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 229
+    .line 227
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
     move-result v0
@@ -905,11 +840,10 @@
     .parameter "extensionRegistry"
 
     .prologue
-    .line 236
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 234
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->clear()Lcom/google/protobuf/MutableMessageLite;
 
-    .line 237
+    .line 235
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMutableMessageLite;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
     move-result v0
@@ -921,8 +855,7 @@
     .locals 2
 
     .prologue
-    .line 39
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 37
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "toBuilder() is not supported in mutable messages."
@@ -936,8 +869,7 @@
     .locals 5
 
     .prologue
-    .line 77
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 75
     :try_start_0
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->getSerializedSize()I
 
@@ -945,31 +877,31 @@
 
     new-array v2, v3, [B
 
-    .line 78
+    .line 76
     .local v2, result:[B
     invoke-static {v2}, Lcom/google/protobuf/CodedOutputStream;->newInstance([B)Lcom/google/protobuf/CodedOutputStream;
 
     move-result-object v1
 
-    .line 79
+    .line 77
     .local v1, output:Lcom/google/protobuf/CodedOutputStream;
     invoke-virtual {p0, v1}, Lcom/google/protobuf/AbstractMutableMessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 80
+    .line 78
     invoke-virtual {v1}, Lcom/google/protobuf/CodedOutputStream;->checkNoSpaceLeft()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 81
+    .line 79
     return-object v2
 
-    .line 82
+    .line 80
     .end local v1           #output:Lcom/google/protobuf/CodedOutputStream;
     .end local v2           #result:[B
     :catch_0
     move-exception v0
 
-    .line 83
+    .line 81
     .local v0, e:Ljava/io/IOException;
     new-instance v3, Ljava/lang/RuntimeException;
 
@@ -984,8 +916,7 @@
     .locals 4
 
     .prologue
-    .line 64
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 62
     :try_start_0
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->getSerializedSize()I
 
@@ -995,7 +926,7 @@
 
     move-result-object v1
 
-    .line 66
+    .line 64
     .local v1, out:Lcom/google/protobuf/ByteString$CodedBuilder;
     invoke-virtual {v1}, Lcom/google/protobuf/ByteString$CodedBuilder;->getCodedOutput()Lcom/google/protobuf/CodedOutputStream;
 
@@ -1003,7 +934,7 @@
 
     invoke-virtual {p0, v2}, Lcom/google/protobuf/AbstractMutableMessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 67
+    .line 65
     invoke-virtual {v1}, Lcom/google/protobuf/ByteString$CodedBuilder;->build()Lcom/google/protobuf/ByteString;
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -1012,12 +943,12 @@
 
     return-object v2
 
-    .line 68
+    .line 66
     .end local v1           #out:Lcom/google/protobuf/ByteString$CodedBuilder;
     :catch_0
     move-exception v0
 
-    .line 69
+    .line 67
     .local v0, e:Ljava/io/IOException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -1038,13 +969,12 @@
     .end annotation
 
     .prologue
-    .line 99
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 97
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->getSerializedSize()I
 
     move-result v2
 
-    .line 100
+    .line 98
     .local v2, serialized:I
     invoke-static {v2}, Lcom/google/protobuf/CodedOutputStream;->computeRawVarint32Size(I)I
 
@@ -1056,23 +986,23 @@
 
     move-result v0
 
-    .line 102
+    .line 100
     .local v0, bufferSize:I
     invoke-static {p1, v0}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;I)Lcom/google/protobuf/CodedOutputStream;
 
     move-result-object v1
 
-    .line 104
+    .line 102
     .local v1, codedOutput:Lcom/google/protobuf/CodedOutputStream;
     invoke-virtual {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
 
-    .line 105
+    .line 103
     invoke-virtual {p0, v1}, Lcom/google/protobuf/AbstractMutableMessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 106
+    .line 104
     invoke-virtual {v1}, Lcom/google/protobuf/CodedOutputStream;->flush()V
 
-    .line 107
+    .line 105
     return-void
 .end method
 
@@ -1086,14 +1016,13 @@
     .end annotation
 
     .prologue
-    .line 123
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 121
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->getSerializedSize()I
 
-    .line 124
+    .line 122
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMutableMessageLite;->writeToWithCachedSizes(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 125
+    .line 123
     return-void
 .end method
 
@@ -1107,8 +1036,7 @@
     .end annotation
 
     .prologue
-    .line 90
-    .local p0, this:Lcom/google/protobuf/AbstractMutableMessageLite;,"Lcom/google/protobuf/AbstractMutableMessageLite<TMessageType;>;"
+    .line 88
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->getSerializedSize()I
 
     move-result v2
@@ -1117,19 +1045,19 @@
 
     move-result v0
 
-    .line 92
+    .line 90
     .local v0, bufferSize:I
     invoke-static {p1, v0}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;I)Lcom/google/protobuf/CodedOutputStream;
 
     move-result-object v1
 
-    .line 94
+    .line 92
     .local v1, codedOutput:Lcom/google/protobuf/CodedOutputStream;
     invoke-virtual {p0, v1}, Lcom/google/protobuf/AbstractMutableMessageLite;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 95
+    .line 93
     invoke-virtual {v1}, Lcom/google/protobuf/CodedOutputStream;->flush()V
 
-    .line 96
+    .line 94
     return-void
 .end method

@@ -33,26 +33,26 @@
     .parameter "isForcedToSmallestSize"
 
     .prologue
-    .line 156
+    .line 163
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 166
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->text:Ljava/lang/String;
 
-    .line 160
+    .line 167
     iput p2, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->width:I
 
-    .line 161
+    .line 168
     iput p3, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->height:I
 
-    .line 162
+    .line 169
     iput-boolean p4, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->isForcedToSmallestSize:Z
 
-    .line 163
+    .line 170
     return-void
 .end method
 
@@ -65,17 +65,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 176
+    .line 183
     instance-of v2, p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 177
+    .line 184
     check-cast v0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
 
-    .line 178
+    .line 185
     .local v0, ck:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
     iget-object v2, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->text:Ljava/lang/String;
 
@@ -107,7 +107,7 @@
 
     const/4 v1, 0x1
 
-    .line 183
+    .line 190
     .end local v0           #ck:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
     :cond_0
     return v1
@@ -117,14 +117,14 @@
     .locals 3
 
     .prologue
-    .line 167
+    .line 174
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->text:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
-    .line 168
+    .line 175
     .local v0, h:I
     mul-int/lit8 v1, v0, 0x1f
 
@@ -132,14 +132,14 @@
 
     xor-int v0, v1, v2
 
-    .line 169
+    .line 176
     mul-int/lit8 v1, v0, 0x1f
 
     iget v2, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->height:I
 
     xor-int v0, v1, v2
 
-    .line 170
+    .line 177
     mul-int/lit8 v2, v0, 0x1f
 
     iget-boolean v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;->isForcedToSmallestSize:Z
@@ -151,10 +151,10 @@
     :goto_0
     xor-int v0, v2, v1
 
-    .line 171
+    .line 178
     return v0
 
-    .line 170
+    .line 177
     :cond_0
     const/4 v1, 0x0
 

@@ -33,7 +33,7 @@
     .parameter "strategy"
 
     .prologue
-    .line 105
+    .line 108
     const/4 v0, 0x0
 
     sget-object v1, Lcom/google/common/base/CharMatcher;->NONE:Lcom/google/common/base/CharMatcher;
@@ -42,7 +42,7 @@
 
     invoke-direct {p0, p1, v0, v1, v2}, Lcom/google/common/base/Splitter;-><init>(Lcom/google/common/base/Splitter$Strategy;ZLcom/google/common/base/CharMatcher;I)V
 
-    .line 106
+    .line 109
     return-void
 .end method
 
@@ -54,22 +54,22 @@
     .parameter "limit"
 
     .prologue
-    .line 109
+    .line 111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 110
+    .line 112
     iput-object p1, p0, Lcom/google/common/base/Splitter;->strategy:Lcom/google/common/base/Splitter$Strategy;
 
-    .line 111
+    .line 113
     iput-boolean p2, p0, Lcom/google/common/base/Splitter;->omitEmptyStrings:Z
 
-    .line 112
+    .line 114
     iput-object p3, p0, Lcom/google/common/base/Splitter;->trimmer:Lcom/google/common/base/CharMatcher;
 
-    .line 113
+    .line 115
     iput p4, p0, Lcom/google/common/base/Splitter;->limit:I
 
-    .line 114
+    .line 116
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .parameter "x1"
 
     .prologue
-    .line 98
+    .line 101
     invoke-direct {p0, p1}, Lcom/google/common/base/Splitter;->spliterator(Ljava/lang/CharSequence;)Ljava/util/Iterator;
 
     move-result-object v0
@@ -92,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 98
+    .line 101
     iget-object v0, p0, Lcom/google/common/base/Splitter;->trimmer:Lcom/google/common/base/CharMatcher;
 
     return-object v0
@@ -103,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 98
+    .line 101
     iget-boolean v0, p0, Lcom/google/common/base/Splitter;->omitEmptyStrings:Z
 
     return v0
@@ -114,7 +114,7 @@
     .parameter "x0"
 
     .prologue
-    .line 98
+    .line 101
     iget v0, p0, Lcom/google/common/base/Splitter;->limit:I
 
     return v0
@@ -125,7 +125,7 @@
     .parameter "length"
 
     .prologue
-    .line 263
+    .line 274
     if-lez p0, :cond_0
 
     const/4 v0, 0x1
@@ -135,7 +135,7 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 265
+    .line 276
     new-instance v0, Lcom/google/common/base/Splitter;
 
     new-instance v1, Lcom/google/common/base/Splitter$4;
@@ -146,7 +146,7 @@
 
     return-object v0
 
-    .line 263
+    .line 274
     :cond_0
     const/4 v0, 0x0
 
@@ -158,7 +158,7 @@
     .parameter "separator"
 
     .prologue
-    .line 125
+    .line 127
     invoke-static {p0}, Lcom/google/common/base/CharMatcher;->is(C)Lcom/google/common/base/CharMatcher;
 
     move-result-object v0
@@ -175,10 +175,10 @@
     .parameter "separatorMatcher"
 
     .prologue
-    .line 139
+    .line 141
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 141
+    .line 143
     new-instance v0, Lcom/google/common/base/Splitter;
 
     new-instance v1, Lcom/google/common/base/Splitter$1;
@@ -195,7 +195,7 @@
     .parameter "separator"
 
     .prologue
-    .line 166
+    .line 169
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -209,7 +209,7 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 169
+    .line 171
     new-instance v0, Lcom/google/common/base/Splitter;
 
     new-instance v1, Lcom/google/common/base/Splitter$2;
@@ -220,7 +220,7 @@
 
     return-object v0
 
-    .line 166
+    .line 169
     :cond_0
     const/4 v0, 0x0
 
@@ -239,10 +239,10 @@
 
     const/4 v2, 0x0
 
-    .line 211
+    .line 212
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 212
+    .line 213
     const-string v0, ""
 
     invoke-virtual {p0, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -266,7 +266,7 @@
 
     invoke-static {v0, v3, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 215
+    .line 216
     new-instance v0, Lcom/google/common/base/Splitter;
 
     new-instance v1, Lcom/google/common/base/Splitter$3;
@@ -280,7 +280,7 @@
     :cond_0
     move v0, v2
 
-    .line 212
+    .line 213
     goto :goto_0
 .end method
 
@@ -292,7 +292,7 @@
     .end annotation
 
     .prologue
-    .line 249
+    .line 251
     invoke-static {p0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
@@ -320,7 +320,7 @@
     .end annotation
 
     .prologue
-    .line 381
+    .line 399
     iget-object v0, p0, Lcom/google/common/base/Splitter;->strategy:Lcom/google/common/base/Splitter$Strategy;
 
     invoke-interface {v0, p0, p1}, Lcom/google/common/base/Splitter$Strategy;->iterator(Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;)Ljava/util/Iterator;
@@ -343,7 +343,7 @@
 
     const/4 v2, 0x0
 
-    .line 326
+    .line 338
     if-lez p1, :cond_0
 
     move v0, v1
@@ -361,7 +361,7 @@
 
     invoke-static {v0, v3, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 327
+    .line 339
     new-instance v0, Lcom/google/common/base/Splitter;
 
     iget-object v1, p0, Lcom/google/common/base/Splitter;->strategy:Lcom/google/common/base/Splitter$Strategy;
@@ -377,7 +377,7 @@
     :cond_0
     move v0, v2
 
-    .line 326
+    .line 338
     goto :goto_0
 .end method
 
@@ -387,7 +387,7 @@
     .end annotation
 
     .prologue
-    .line 302
+    .line 314
     new-instance v0, Lcom/google/common/base/Splitter;
 
     iget-object v1, p0, Lcom/google/common/base/Splitter;->strategy:Lcom/google/common/base/Splitter$Strategy;
@@ -419,10 +419,10 @@
     .end annotation
 
     .prologue
-    .line 371
+    .line 383
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 373
+    .line 385
     new-instance v0, Lcom/google/common/base/Splitter$5;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/base/Splitter$5;-><init>(Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;)V
@@ -436,7 +436,7 @@
     .end annotation
 
     .prologue
-    .line 342
+    .line 354
     sget-object v0, Lcom/google/common/base/CharMatcher;->WHITESPACE:Lcom/google/common/base/CharMatcher;
 
     invoke-virtual {p0, v0}, Lcom/google/common/base/Splitter;->trimResults(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/Splitter;
@@ -453,10 +453,10 @@
     .end annotation
 
     .prologue
-    .line 359
+    .line 371
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 360
+    .line 372
     new-instance v0, Lcom/google/common/base/Splitter;
 
     iget-object v1, p0, Lcom/google/common/base/Splitter;->strategy:Lcom/google/common/base/Splitter$Strategy;
@@ -466,6 +466,28 @@
     iget v3, p0, Lcom/google/common/base/Splitter;->limit:I
 
     invoke-direct {v0, v1, v2, p1, v3}, Lcom/google/common/base/Splitter;-><init>(Lcom/google/common/base/Splitter$Strategy;ZLcom/google/common/base/CharMatcher;I)V
+
+    return-object v0
+.end method
+
+.method public withKeyValueSeparator(C)Lcom/google/common/base/Splitter$MapSplitter;
+    .locals 1
+    .parameter "separator"
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
+    .annotation runtime Ljavax/annotation/CheckReturnValue;
+    .end annotation
+
+    .prologue
+    .line 423
+    invoke-static {p1}, Lcom/google/common/base/Splitter;->on(C)Lcom/google/common/base/Splitter;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/common/base/Splitter;->withKeyValueSeparator(Lcom/google/common/base/Splitter;)Lcom/google/common/base/Splitter$MapSplitter;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -480,7 +502,7 @@
     .end annotation
 
     .prologue
-    .line 406
+    .line 436
     new-instance v0, Lcom/google/common/base/Splitter$MapSplitter;
 
     const/4 v1, 0x0
@@ -500,7 +522,7 @@
     .end annotation
 
     .prologue
-    .line 393
+    .line 411
     invoke-static {p1}, Lcom/google/common/base/Splitter;->on(Ljava/lang/String;)Lcom/google/common/base/Splitter;
 
     move-result-object v0

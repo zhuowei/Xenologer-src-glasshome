@@ -49,7 +49,7 @@
     .locals 0
 
     .prologue
-    .line 56
+    .line 55
     .local p0, this:Lcom/google/common/collect/GenericMapMaker;,"Lcom/google/common/collect/GenericMapMaker<TK0;TV0;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -65,21 +65,6 @@
             "Lcom/google/common/collect/GenericMapMaker",
             "<TK0;TV0;>;"
         }
-    .end annotation
-.end method
-
-.method public abstract expiration(JLjava/util/concurrent/TimeUnit;)Lcom/google/common/collect/GenericMapMaker;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J",
-            "Ljava/util/concurrent/TimeUnit;",
-            ")",
-            "Lcom/google/common/collect/GenericMapMaker",
-            "<TK0;TV0;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
@@ -126,7 +111,7 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 116
     .local p0, this:Lcom/google/common/collect/GenericMapMaker;,"Lcom/google/common/collect/GenericMapMaker<TK0;TV0;>;"
     iget-object v0, p0, Lcom/google/common/collect/GenericMapMaker;->removalListener:Lcom/google/common/collect/MapMaker$RemovalListener;
 
@@ -222,23 +207,6 @@
     .end annotation
 .end method
 
-.method public abstract softKeys()Lcom/google/common/collect/GenericMapMaker;
-    .annotation build Lcom/google/common/annotations/GwtIncompatible;
-        value = "java.lang.ref.SoftReference"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/GenericMapMaker",
-            "<TK0;TV0;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
 .method public abstract softValues()Lcom/google/common/collect/GenericMapMaker;
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "java.lang.ref.SoftReference"
@@ -247,44 +215,6 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lcom/google/common/collect/GenericMapMaker",
-            "<TK0;TV0;>;"
-        }
-    .end annotation
-.end method
-
-.method abstract strongKeys()Lcom/google/common/collect/GenericMapMaker;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/GenericMapMaker",
-            "<TK0;TV0;>;"
-        }
-    .end annotation
-.end method
-
-.method abstract strongValues()Lcom/google/common/collect/GenericMapMaker;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/GenericMapMaker",
-            "<TK0;TV0;>;"
-        }
-    .end annotation
-.end method
-
-.method abstract valueEquivalence(Lcom/google/common/base/Equivalence;)Lcom/google/common/collect/GenericMapMaker;
-    .annotation build Lcom/google/common/annotations/GwtIncompatible;
-        value = "To be supported"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/common/base/Equivalence",
-            "<",
-            "Ljava/lang/Object;",
-            ">;)",
             "Lcom/google/common/collect/GenericMapMaker",
             "<TK0;TV0;>;"
         }

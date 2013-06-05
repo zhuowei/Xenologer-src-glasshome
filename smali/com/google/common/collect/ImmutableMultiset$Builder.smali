@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 525
+    .line 499
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     invoke-static {}, Lcom/google/common/collect/LinkedHashMultiset;->create()Lcom/google/common/collect/LinkedHashMultiset;
 
@@ -48,7 +48,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/ImmutableMultiset$Builder;-><init>(Lcom/google/common/collect/Multiset;)V
 
-    .line 526
+    .line 500
     return-void
 .end method
 
@@ -64,15 +64,15 @@
     .end annotation
 
     .prologue
-    .line 528
+    .line 502
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, contents:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableCollection$Builder;-><init>()V
 
-    .line 529
+    .line 503
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
 
-    .line 530
+    .line 504
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .parameter "x0"
 
     .prologue
-    .line 517
+    .line 491
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultiset$Builder;
 
@@ -97,7 +97,7 @@
     .parameter "x0"
 
     .prologue
-    .line 517
+    .line 491
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultiset$Builder;
 
@@ -118,7 +118,7 @@
     .end annotation
 
     .prologue
-    .line 540
+    .line 515
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
@@ -129,7 +129,7 @@
 
     invoke-interface {v0, v1}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;)Z
 
-    .line 541
+    .line 516
     return-object p0
 .end method
 
@@ -145,12 +145,12 @@
     .end annotation
 
     .prologue
-    .line 586
+    .line 562
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, elements:[Ljava/lang/Object;,"[TE;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableCollection$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection$Builder;
 
-    .line 587
+    .line 563
     return-object p0
 .end method
 
@@ -159,7 +159,7 @@
     .parameter "x0"
 
     .prologue
-    .line 517
+    .line 491
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMultiset$Builder;
 
@@ -173,7 +173,7 @@
     .parameter "x0"
 
     .prologue
-    .line 517
+    .line 491
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultiset$Builder;->addAll(Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableMultiset$Builder;
 
@@ -196,19 +196,19 @@
     .end annotation
 
     .prologue
-    .line 600
+    .line 577
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TE;>;"
     instance-of v3, p1, Lcom/google/common/collect/Multiset;
 
     if-eqz v3, :cond_0
 
-    .line 601
+    .line 578
     invoke-static {p1}, Lcom/google/common/collect/Multisets;->cast(Ljava/lang/Iterable;)Lcom/google/common/collect/Multiset;
 
     move-result-object v2
 
-    .line 602
+    .line 579
     .local v2, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
     invoke-interface {v2}, Lcom/google/common/collect/Multiset;->entrySet()Ljava/util/Set;
 
@@ -232,7 +232,7 @@
 
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 603
+    .line 580
     .local v0, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<+TE;>;"
     invoke-interface {v0}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
@@ -246,14 +246,14 @@
 
     goto :goto_0
 
-    .line 606
+    .line 583
     .end local v0           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<+TE;>;"
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
     :cond_0
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableCollection$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableCollection$Builder;
 
-    .line 608
+    .line 585
     :cond_1
     return-object p0
 .end method
@@ -272,12 +272,12 @@
     .end annotation
 
     .prologue
-    .line 620
+    .line 598
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, elements:Ljava/util/Iterator;,"Ljava/util/Iterator<+TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableCollection$Builder;->addAll(Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableCollection$Builder;
 
-    .line 621
+    .line 599
     return-object p0
 .end method
 
@@ -294,7 +294,7 @@
     .end annotation
 
     .prologue
-    .line 558
+    .line 533
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
@@ -305,7 +305,7 @@
 
     invoke-interface {v0, v1, p2}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;I)I
 
-    .line 559
+    .line 534
     return-object p0
 .end method
 
@@ -313,7 +313,7 @@
     .locals 1
 
     .prologue
-    .line 517
+    .line 491
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultiset$Builder;->build()Lcom/google/common/collect/ImmutableMultiset;
 
@@ -333,7 +333,7 @@
     .end annotation
 
     .prologue
-    .line 629
+    .line 608
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
 
@@ -357,7 +357,7 @@
     .end annotation
 
     .prologue
-    .line 573
+    .line 548
     .local p0, this:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultiset$Builder;->contents:Lcom/google/common/collect/Multiset;
@@ -368,6 +368,6 @@
 
     invoke-interface {v0, v1, p2}, Lcom/google/common/collect/Multiset;->setCount(Ljava/lang/Object;I)I
 
-    .line 574
+    .line 549
     return-object p0
 .end method

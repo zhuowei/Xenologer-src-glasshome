@@ -61,11 +61,11 @@
     .end annotation
 
     .prologue
-    .line 428
+    .line 453
     .local p1, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 429
+    .line 454
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
-    .line 430
+    .line 455
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .parameter "x1"
 
     .prologue
-    .line 424
+    .line 450
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InstanceOfPredicate;-><init>(Ljava/lang/Class;)V
 
     return-void
@@ -100,7 +100,7 @@
     .end parameter
 
     .prologue
-    .line 433
+    .line 458
     iget-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
@@ -120,17 +120,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 439
+    .line 468
     instance-of v2, p1, Lcom/google/common/base/Predicates$InstanceOfPredicate;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 440
+    .line 469
     check-cast v0, Lcom/google/common/base/Predicates$InstanceOfPredicate;
 
-    .line 441
+    .line 470
     .local v0, that:Lcom/google/common/base/Predicates$InstanceOfPredicate;
     iget-object v2, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
@@ -140,7 +140,7 @@
 
     const/4 v1, 0x1
 
-    .line 443
+    .line 472
     .end local v0           #that:Lcom/google/common/base/Predicates$InstanceOfPredicate;
     :cond_0
     return v1
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 436
+    .line 463
     iget-object v0, p0, Lcom/google/common/base/Predicates$InstanceOfPredicate;->clazz:Ljava/lang/Class;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
@@ -164,7 +164,7 @@
     .locals 2
 
     .prologue
-    .line 446
+    .line 477
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

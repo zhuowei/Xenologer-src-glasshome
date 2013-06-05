@@ -47,7 +47,7 @@
     .locals 0
 
     .prologue
-    .line 89
+    .line 100
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 92
     sget-object v0, Lcom/google/common/collect/ReverseNaturalOrdering;->INSTANCE:Lcom/google/common/collect/ReverseNaturalOrdering;
 
     return-object v0
@@ -71,16 +71,16 @@
     .parameter "right"
 
     .prologue
-    .line 34
+    .line 35
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 35
+    .line 36
     if-ne p1, p2, :cond_0
 
-    .line 36
+    .line 37
     const/4 v0, 0x0
 
-    .line 39
+    .line 40
     :goto_0
     return v0
 
@@ -125,7 +125,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 72
     .local p1, a:Ljava/lang/Comparable;,"TE;"
     .local p2, b:Ljava/lang/Comparable;,"TE;"
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
@@ -154,7 +154,7 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 77
     .local p1, a:Ljava/lang/Comparable;,"TE;"
     .local p2, b:Ljava/lang/Comparable;,"TE;"
     .local p3, c:Ljava/lang/Comparable;,"TE;"
@@ -184,7 +184,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 87
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
@@ -211,7 +211,7 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 82
     .local p1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
@@ -311,7 +311,7 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 52
     .local p1, a:Ljava/lang/Comparable;,"TE;"
     .local p2, b:Ljava/lang/Comparable;,"TE;"
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
@@ -340,7 +340,7 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 57
     .local p1, a:Ljava/lang/Comparable;,"TE;"
     .local p2, b:Ljava/lang/Comparable;,"TE;"
     .local p3, c:Ljava/lang/Comparable;,"TE;"
@@ -370,7 +370,7 @@
     .end annotation
 
     .prologue
-    .line 61
+    .line 67
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
@@ -397,7 +397,7 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 62
     .local p1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
@@ -497,7 +497,7 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 45
     invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
 
     move-result-object v0
@@ -509,7 +509,7 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 97
     const-string v0, "Ordering.natural().reverse()"
 
     return-object v0

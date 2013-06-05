@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 397
+    .line 355
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8$1;->this$0:Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
@@ -55,14 +55,14 @@
 
     const/4 v5, 0x0
 
-    .line 400
+    .line 358
     iget-object v2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
 
     invoke-interface {v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
 
-    .line 401
+    .line 359
     .local v0, context:Landroid/app/Activity;
     new-instance v1, Landroid/content/Intent;
 
@@ -70,7 +70,7 @@
 
     invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 403
+    .line 361
     .local v1, voiceInputIntent:Landroid/content/Intent;
     const-string v4, "trigger_method"
 
@@ -83,12 +83,12 @@
     :goto_0
     invoke-virtual {v1, v4, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 406
+    .line 364
     const-string v2, "should_finish_turn_screen_off"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 407
+    .line 365
     const-string v2, "input_type_text"
 
     iget-object v3, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8$1;->this$0:Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8;
@@ -101,35 +101,35 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 411
+    .line 369
     const-string v2, "project_id"
 
     const-string v3, "960371078599"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 413
+    .line 371
     const-string v2, "prompt_text"
 
     const-string v3, "Speak your note"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 416
+    .line 374
     iget-object v2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
 
     invoke-interface {v2, v5}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setAnimateOnNextPause(Z)V
 
-    .line 419
+    .line 377
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 420
+    .line 378
     invoke-virtual {v0, v5, v5}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    .line 421
+    .line 379
     return-void
 
-    .line 403
+    .line 361
     :cond_0
     const/4 v2, 0x2
 

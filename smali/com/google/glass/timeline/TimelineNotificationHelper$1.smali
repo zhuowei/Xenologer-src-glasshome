@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 47
+    .line 66
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
@@ -48,75 +48,25 @@
 
 # virtual methods
 .method public run()V
-    .locals 8
+    .locals 9
 
     .prologue
-    .line 55
-    iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .line 74
+    iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasBundleId()Z
+    invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasBundleId()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_4
 
-    iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsBundleCover()Z
+    invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsBundleCover()Z
 
-    move-result v4
+    move-result v5
 
-    if-nez v4, :cond_3
-
-    iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
-
-    invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_3
-
-    .line 59
-    invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Item is in a bundle, we must make sure we notify for the bundle cover: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
-
-    iget-object v7, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
-
-    invoke-direct {v6, v7}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 61
-    iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
-
-    invoke-virtual {v4}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v4
+    if-nez v5, :cond_4
 
     iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
@@ -124,226 +74,299 @@
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/google/glass/timeline/TimelineHelper;->getBundleCover(Landroid/content/ContentResolver;Ljava/lang/String;)Landroid/util/Pair;
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result-object v1
+    move-result v5
 
-    .line 65
-    .local v1, cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
-    if-nez v1, :cond_0
+    if-nez v5, :cond_4
 
-    .line 66
+    .line 78
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
 
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Not able to find bundle cover for: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v5
 
-    new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    iget-object v7, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v6, v7}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+    const-string v7, "Item is in a bundle, we must make sure we notify for the bundle cover: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 95
-    .end local v1           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
-    :goto_0
-    return-void
-
-    .line 72
-    .restart local v1       #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
-    :cond_0
-    iget-object v3, v1, Landroid/util/Pair;->first:Ljava/lang/Object;
-
-    check-cast v3, Lcom/google/googlex/glass/common/proto/TimelineItem;
-
-    .line 73
-    .local v3, mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    iget-object v4, v1, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v4, Ljava/lang/Integer;
-
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    const/4 v5, 0x3
-
-    if-eq v4, v5, :cond_2
-
-    .line 74
-    iget-object v0, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
-
-    .line 85
-    .end local v1           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
-    .local v0, bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    :goto_1
-    invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Notifying user of main timeline item: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v7, Lcom/google/glass/timeline/TimelineItemId;
+
+    iget-object v8, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+
+    invoke-direct {v7, v8}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 80
+    iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
+
+    invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v6, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    move-result-object v5
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleId()Ljava/lang/String;
 
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v6
 
-    .line 86
-    new-instance v4, Landroid/content/Intent;
-
-    invoke-direct {v4}, Landroid/content/Intent;-><init>()V
-
-    const-string v5, "com.google.glass.action.NOTIFY_TIMELINE_ITEM"
-
-    invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v5, v6}, Lcom/google/glass/timeline/TimelineHelper;->getBundleCover(Landroid/content/ContentResolver;Ljava/lang/String;)Landroid/util/Pair;
 
     move-result-object v2
 
-    .line 87
-    .local v2, intent:Landroid/content/Intent;
-    const-string v4, "item_id"
+    .line 84
+    .local v2, cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
+    if-nez v2, :cond_0
 
-    new-instance v5, Lcom/google/glass/timeline/TimelineItemId;
-
-    invoke-direct {v5, v3}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
-
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
-
-    .line 88
-    if-eqz v0, :cond_1
-
-    .line 89
+    .line 85
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "... and bundle timeline item: "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v5
 
-    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Not able to find bundle cover for: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v7, Lcom/google/glass/timeline/TimelineItemId;
 
-    move-result-object v5
+    iget-object v8, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v7, v8}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    move-result-object v5
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v6
 
-    .line 90
-    const-string v4, "bundle_item_id"
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v5, Lcom/google/glass/timeline/TimelineItemId;
+    move-result-object v6
 
-    invoke-direct {v5, v0}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    .line 122
+    .end local v2           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
+    :goto_0
+    return-void
+
+    .line 91
+    .restart local v2       #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
+    :cond_0
+    iget-object v4, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
+
+    check-cast v4, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     .line 92
-    :cond_1
-    const-string v4, "numNotifications"
+    .local v4, mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    iget-object v5, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    iget v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$numNotifications:I
+    check-cast v5, Ljava/lang/Integer;
 
-    invoke-virtual {v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    const/4 v6, 0x3
+
+    if-eq v5, v6, :cond_3
 
     .line 93
-    iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    .line 105
+    .end local v2           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
+    .local v1, bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    :goto_1
+    iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {v5}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/glass/app/GlassApplication;->getBitmapFactory()Lcom/google/glass/util/CachedBitmapFactory;
+
+    move-result-object v0
+
+    .line 106
+    .local v0, bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
+    invoke-static {v0, v4}, Lcom/google/glass/timeline/TimelineNotificationHelper;->preloadAttachments(Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+
+    .line 107
+    if-eqz v1, :cond_1
+
+    .line 108
+    invoke-static {v0, v1}, Lcom/google/glass/timeline/TimelineNotificationHelper;->preloadAttachments(Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+
+    .line 112
+    :cond_1
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v7, "Notifying user of main timeline item: "
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v6
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 113
+    new-instance v5, Landroid/content/Intent;
+
+    invoke-direct {v5}, Landroid/content/Intent;-><init>()V
+
+    const-string v6, "com.google.glass.action.NOTIFY_TIMELINE_ITEM"
+
+    invoke-virtual {v5, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v3
+
+    .line 114
+    .local v3, intent:Landroid/content/Intent;
+    const-string v5, "item_id"
+
+    new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
+
+    invoke-direct {v6, v4}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+
+    invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 115
+    if-eqz v1, :cond_2
+
+    .line 116
+    invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v6, "_BroadcastWakeLock"
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v5
+    const-string v7, "... and bundle timeline item: "
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-static {v4, v2, v5}, Lcom/google/glass/util/BroadcastUnderWakeLock;->sendBroadcastUnderWakeLock(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V
+    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 117
+    const-string v5, "bundle_item_id"
+
+    new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
+
+    invoke-direct {v6, v1}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+
+    invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 119
+    :cond_2
+    const-string v5, "numNotifications"
+
+    iget v6, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$numNotifications:I
+
+    invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 120
+    iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    const-string v7, "_BroadcastWakeLock"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-static {v5, v3, v6}, Lcom/google/glass/util/BroadcastUnderWakeLock;->sendBroadcastUnderWakeLock(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 76
-    .end local v0           #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    .end local v2           #intent:Landroid/content/Intent;
-    .restart local v1       #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
-    :cond_2
-    const/4 v0, 0x0
+    .line 95
+    .end local v0           #bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
+    .end local v1           #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .end local v3           #intent:Landroid/content/Intent;
+    .restart local v2       #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
+    :cond_3
+    const/4 v1, 0x0
 
-    .restart local v0       #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .restart local v1       #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     goto/16 :goto_1
 
-    .line 81
-    .end local v0           #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    .end local v1           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
-    .end local v3           #mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    :cond_3
-    iget-object v3, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .line 100
+    .end local v1           #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .end local v2           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
+    .end local v4           #mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    :cond_4
+    iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 82
-    .restart local v3       #mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    const/4 v0, 0x0
+    .line 101
+    .restart local v4       #mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    const/4 v1, 0x0
 
-    .restart local v0       #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .restart local v1       #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     goto/16 :goto_1
 .end method

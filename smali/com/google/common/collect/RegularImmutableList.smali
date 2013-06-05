@@ -34,7 +34,7 @@
     .parameter "array"
 
     .prologue
-    .line 45
+    .line 46
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     const/4 v0, 0x0
 
@@ -42,7 +42,7 @@
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/common/collect/RegularImmutableList;-><init>([Ljava/lang/Object;II)V
 
-    .line 46
+    .line 47
     return-void
 .end method
 
@@ -53,76 +53,25 @@
     .parameter "size"
 
     .prologue
-    .line 38
+    .line 39
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableList;-><init>()V
 
-    .line 39
+    .line 40
     iput p2, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
 
-    .line 40
+    .line 41
     iput p3, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
 
-    .line 41
+    .line 42
     iput-object p1, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 
-    .line 42
+    .line 43
     return-void
-.end method
-
-.method static synthetic access$000(Lcom/google/common/collect/RegularImmutableList;)[Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 33
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Lcom/google/common/collect/RegularImmutableList;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 33
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    return v0
 .end method
 
 
 # virtual methods
-.method public contains(Ljava/lang/Object;)Z
-    .locals 2
-    .parameter "target"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 62
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/RegularImmutableList;->indexOf(Ljava/lang/Object;)I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    if-eq v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .locals 11
     .parameter "object"
@@ -136,15 +85,15 @@
 
     const/4 v8, 0x0
 
-    .line 137
+    .line 104
     if-ne p1, p0, :cond_1
 
-    .line 164
+    .line 131
     :cond_0
     :goto_0
     return v7
 
-    .line 140
+    .line 107
     :cond_1
     instance-of v9, p1, Ljava/util/List;
 
@@ -152,16 +101,16 @@
 
     move v7, v8
 
-    .line 141
+    .line 108
     goto :goto_0
 
     :cond_2
     move-object v6, p1
 
-    .line 144
+    .line 111
     check-cast v6, Ljava/util/List;
 
-    .line 145
+    .line 112
     .local v6, that:Ljava/util/List;,"Ljava/util/List<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableList;->size()I
 
@@ -175,14 +124,14 @@
 
     move v7, v8
 
-    .line 146
+    .line 113
     goto :goto_0
 
-    .line 149
+    .line 116
     :cond_3
     iget v3, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
 
-    .line 150
+    .line 117
     .local v3, index:I
     instance-of v9, p1, Lcom/google/common/collect/RegularImmutableList;
 
@@ -190,10 +139,10 @@
 
     move-object v5, p1
 
-    .line 151
+    .line 118
     check-cast v5, Lcom/google/common/collect/RegularImmutableList;
 
-    .line 152
+    .line 119
     .local v5, other:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<*>;"
     iget v1, v5, Lcom/google/common/collect/RegularImmutableList;->offset:I
 
@@ -207,7 +156,7 @@
 
     if-ge v1, v9, :cond_0
 
-    .line 153
+    .line 120
     iget-object v9, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 
     add-int/lit8 v4, v3, 0x1
@@ -228,10 +177,10 @@
 
     move v7, v8
 
-    .line 154
+    .line 121
     goto :goto_0
 
-    .line 152
+    .line 119
     :cond_4
     add-int/lit8 v1, v1, 0x1
 
@@ -241,7 +190,7 @@
     .restart local v3       #index:I
     goto :goto_1
 
-    .line 158
+    .line 125
     .end local v1           #i:I
     .end local v5           #other:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<*>;"
     :cond_5
@@ -261,7 +210,7 @@
 
     move-result-object v0
 
-    .line 159
+    .line 126
     .local v0, element:Ljava/lang/Object;
     iget-object v9, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 
@@ -279,7 +228,7 @@
 
     move v7, v8
 
-    .line 160
+    .line 127
     goto :goto_0
 
     :cond_6
@@ -300,13 +249,13 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 85
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 92
+    .line 86
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 
     iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
@@ -318,117 +267,11 @@
     return-object v0
 .end method
 
-.method public hashCode()I
-    .locals 4
-
-    .prologue
-    .line 170
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    const/4 v0, 0x1
-
-    .line 171
-    .local v0, hashCode:I
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    .local v1, i:I
-    :goto_0
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    iget v3, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
-
-    add-int/2addr v2, v3
-
-    if-ge v1, v2, :cond_0
-
-    .line 172
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v3, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
-
-    aget-object v3, v3, v1
-
-    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
-
-    move-result v3
-
-    add-int v0, v2, v3
-
-    .line 171
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 174
-    :cond_0
-    return v0
-.end method
-
-.method public indexOf(Ljava/lang/Object;)I
-    .locals 3
-    .parameter "target"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 96
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    if-eqz p1, :cond_1
-
-    .line 97
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    .local v0, i:I
-    :goto_0
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
-
-    add-int/2addr v1, v2
-
-    if-ge v0, v1, :cond_1
-
-    .line 98
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
-
-    aget-object v1, v1, v0
-
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 99
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    sub-int v1, v0, v1
-
-    .line 103
-    .end local v0           #i:I
-    :goto_1
-    return v1
-
-    .line 97
-    .restart local v0       #i:I
-    :cond_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 103
-    .end local v0           #i:I
-    :cond_1
-    const/4 v1, -0x1
-
-    goto :goto_1
-.end method
-
 .method public isEmpty()Z
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     const/4 v0, 0x0
 
@@ -439,7 +282,7 @@
     .locals 2
 
     .prologue
-    .line 58
+    .line 60
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
 
@@ -465,111 +308,9 @@
     goto :goto_0
 .end method
 
-.method public iterator()Lcom/google/common/collect/UnmodifiableIterator;
-    .locals 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/UnmodifiableIterator",
-            "<TE;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 68
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
-
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
-
-    invoke-static {v0, v1, v2}, Lcom/google/common/collect/Iterators;->forArray([Ljava/lang/Object;II)Lcom/google/common/collect/UnmodifiableIterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic iterator()Ljava/util/Iterator;
-    .locals 1
-
-    .prologue
-    .line 31
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public lastIndexOf(Ljava/lang/Object;)I
-    .locals 3
-    .parameter "target"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-
-    .prologue
-    .line 107
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    if-eqz p1, :cond_1
-
-    .line 108
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    iget v2, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
-
-    add-int/2addr v1, v2
-
-    add-int/lit8 v0, v1, -0x1
-
-    .local v0, i:I
-    :goto_0
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    if-lt v0, v1, :cond_1
-
-    .line 109
-    iget-object v1, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
-
-    aget-object v1, v1, v0
-
-    invoke-virtual {v1, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 110
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
-
-    sub-int v1, v0, v1
-
-    .line 114
-    .end local v0           #i:I
-    :goto_1
-    return v1
-
-    .line 108
-    .restart local v0       #i:I
-    :cond_0
-    add-int/lit8 v0, v0, -0x1
-
-    goto :goto_0
-
-    .line 114
-    .end local v0           #i:I
-    :cond_1
-    const/4 v1, -0x1
-
-    goto :goto_1
-.end method
-
 .method public listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
-    .locals 2
-    .parameter "start"
+    .locals 3
+    .parameter "index"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -579,13 +320,17 @@
     .end annotation
 
     .prologue
-    .line 126
+    .line 99
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    new-instance v0, Lcom/google/common/collect/RegularImmutableList$1;
+    iget-object v0, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 
-    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
+    iget v1, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
 
-    invoke-direct {v0, p0, v1, p1}, Lcom/google/common/collect/RegularImmutableList$1;-><init>(Lcom/google/common/collect/RegularImmutableList;II)V
+    iget v2, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
+
+    invoke-static {v0, v1, v2, p1}, Lcom/google/common/collect/Iterators;->forArray([Ljava/lang/Object;III)Lcom/google/common/collect/UnmodifiableListIterator;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -615,7 +360,7 @@
     return v0
 .end method
 
-.method public subList(II)Lcom/google/common/collect/ImmutableList;
+.method subListUnchecked(II)Lcom/google/common/collect/ImmutableList;
     .locals 4
     .parameter "fromIndex"
     .parameter "toIndex"
@@ -628,23 +373,8 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 91
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
-
-    invoke-static {p1, p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
-
-    .line 119
-    if-ne p1, p2, :cond_0
-
-    invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v0
-
-    :goto_0
-    return-object v0
-
-    :cond_0
     new-instance v0, Lcom/google/common/collect/RegularImmutableList;
 
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
@@ -657,21 +387,6 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/common/collect/RegularImmutableList;-><init>([Ljava/lang/Object;II)V
 
-    goto :goto_0
-.end method
-
-.method public bridge synthetic subList(II)Ljava/util/List;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 31
-    .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
-    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/RegularImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v0
-
     return-object v0
 .end method
 
@@ -679,7 +394,7 @@
     .locals 5
 
     .prologue
-    .line 72
+    .line 65
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableList;->size()I
 
@@ -687,7 +402,7 @@
 
     new-array v0, v1, [Ljava/lang/Object;
 
-    .line 73
+    .line 66
     .local v0, newArray:[Ljava/lang/Object;
     iget-object v1, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
 
@@ -699,7 +414,7 @@
 
     invoke-static {v1, v2, v0, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 74
+    .line 67
     return-object v0
 .end method
 
@@ -715,7 +430,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 72
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     .local p1, other:[Ljava/lang/Object;,"[TT;"
     array-length v0, p1
@@ -724,14 +439,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 79
+    .line 73
     iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
 
     invoke-static {p1, v0}, Lcom/google/common/collect/ObjectArrays;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 83
+    .line 77
     :cond_0
     :goto_0
     iget-object v0, p0, Lcom/google/common/collect/RegularImmutableList;->array:[Ljava/lang/Object;
@@ -744,10 +459,10 @@
 
     invoke-static {v0, v1, p1, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 84
+    .line 78
     return-object p1
 
-    .line 80
+    .line 74
     :cond_1
     array-length v0, p1
 
@@ -755,7 +470,7 @@
 
     if-le v0, v1, :cond_0
 
-    .line 81
+    .line 75
     iget v0, p0, Lcom/google/common/collect/RegularImmutableList;->size:I
 
     const/4 v1, 0x0
@@ -769,7 +484,7 @@
     .locals 5
 
     .prologue
-    .line 178
+    .line 136
     .local p0, this:Lcom/google/common/collect/RegularImmutableList;,"Lcom/google/common/collect/RegularImmutableList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/RegularImmutableList;->size()I
 
@@ -795,7 +510,7 @@
 
     move-result-object v1
 
-    .line 180
+    .line 138
     .local v1, sb:Ljava/lang/StringBuilder;
     iget v2, p0, Lcom/google/common/collect/RegularImmutableList;->offset:I
 
@@ -811,7 +526,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 181
+    .line 139
     const-string v2, ", "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -824,12 +539,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 180
+    .line 138
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 183
+    .line 141
     :cond_0
     const/16 v2, 0x5d
 

@@ -72,6 +72,21 @@
     <string name="gf_receiver_path">/tools/feedback/android/__submit</string>
     <string name="capturing_bugreport">Capturing bugreport…</string>
     <string name="bugreport_captured">Bugreport captured</string>
+    <string name="app_name">Glass Voice</string>
+    <string name="guard_phrase_menu_item">ok glass,</string>
+    <string name="voice_message_swipe_down_to_cancel">Swipe down to cancel</string>
+    <string name="voice_search_speak_now">Ask a question</string>
+    <string name="voice_navigation_speak_now">Speak a destination</string>
+    <string name="voice_search_streaming_text_recognizing">Working…</string>
+    <string name="voice_search_no_match">"Didn't catch that"</string>
+    <string name="voice_search_network_error">"Can't reach Google right now"</string>
+    <string name="voice_search_server_error">"Can't reach Google right now"</string>
+    <string name="voice_search_audio_error">"Didn't catch that"</string>
+    <string name="voice_network_connectivity">No network connectivity</string>
+    <string name="voice_search_no_answer">No answer for this search</string>
+    <string name="voice_search_med_confidence_answer_source">According to %s</string>
+    <string name="error_tap_speak_again">Tap to speak again</string>
+    <string name="error_no_speech_detected">No speech detected</string>
     <string name="time_format_pattern_12h">hmm</string>
     <string name="time_format_pattern_12h_am_pm">hmm aaa</string>
     <string name="time_format_pattern_24h">kmm</string>
@@ -114,6 +129,7 @@
     <string name="sharing_no_share_targets">Visit google.com/myglass to add friends</string>
     <string name="sharing_menu_share_confirming">Sharing</string>
     <string name="sharing_menu_share_confirmed">Shared</string>
+    <string name="sharing_menu_tap_to_annotate">Tap to add caption</string>
     <string name="qr_scan_tips">Point towards the QR code on your screen</string>
     <string name="low_storage_dialog_message">Low storage</string>
     <string name="full_storage_dialog_message">Storage is full</string>
@@ -139,10 +155,13 @@
     <string name="timeline_menu_unpin">Unpin</string>
     <string name="timeline_menu_read_more">Read more</string>
     <string name="timeline_menu_new_search">New search</string>
+    <string name="timeline_menu_view_website">View website</string>
     <string name="timeline_menu_error_in_a_call_no_hangout">End call to start a Hangout</string>
     <string name="timeline_menu_error_in_a_hangout_no_call">End Hangout to place a call</string>
     <string name="timeline_menu_error_in_a_hangout_no_hangout">Already in a Hangout</string>
     <string name="timeline_menu_error_in_a_call_no_call">Already in a call</string>
+    <string name="timeline_sms_signature_format" formatted="false">%s%s</string>
+    <string name="timeline_sms_signature">" | Sent through Glass"</string>
     <string name="voice_message_send_retrying">Retrying</string>
     <string name="glass_home">Glass Home</string>
     <string name="home_error_battery_low">Low battery. Connect charger.</string>
@@ -152,12 +171,11 @@
     <string name="timeline_simple_text" formatted="false">%s: %s</string>
     <string name="timeline_simple_text_reply_to_prefix" formatted="false">Reply to %s%s</string>
     <string name="timeline_simple_text_message_to_prefix">Message to %s</string>
-    <string name="timeline_sms_signature_format" formatted="false">%s%s</string>
-    <string name="timeline_sms_signature">" | Sent through Glass"</string>
-    <string name="timeline_sms_failed_companion">Poor or missing Bluetooth connection</string>
     <string name="timeline_fail_to_load_image">Failed to load</string>
     <string name="timeline_time_from_to" formatted="false">%s - %s</string>
     <string name="timeline_overlay_failed_to_send_message">Failed to send message</string>
+    <string name="timeline_video_buffering">Loading…</string>
+    <string name="timeline_video_not_available">Video not available</string>
     <string name="timeline_overlay_label_now">now</string>
     <string name="guest_timeline_time_flight">in 12 hours</string>
     <string name="guest_timeline_time_map">now</string>
@@ -172,8 +190,8 @@
     <string name="guest_timeline_time_email">10 hours ago</string>
     <string name="settings">Settings</string>
     <string name="settings_cover_connection_data">%s data</string>
-    <string name="settings_cover_connection_issue">%s issue</string>
-    <string name="settings_cover_connection_no_data">No data</string>
+    <string name="settings_cover_connection_issue">%s, no data</string>
+    <string name="settings_cover_connection_no_data">No network</string>
     <string name="settings_cover_battery_percent">%s%% battery</string>
     <string name="settings_cover_battery_percent_charging">%s%% - Charging</string>
     <string name="settings_cover_battery_charged">Battery charged</string>
@@ -214,6 +232,7 @@
     <string name="deviceinfo_version_update_available">%s available</string>
     <string name="deviceinfo_unknown">unknown</string>
     <string name="deviceinfo_install_update">Install update</string>
+    <string name="deviceinfo_plugin_device_tip">Plug in your device.</string>
     <string name="deviceinfo_debug_launcher">Start launcher</string>
     <string name="deviceinfo_storage_space">%s free</string>
     <string name="deviceinfo_menu_licenses">View licenses</string>
@@ -291,7 +310,6 @@
     <string name="bluetooth_companion_old">Update MyGlass</string>
     <string name="bluetooth_unpaired">Unpaired</string>
     <string name="guard_phrase_hint"> ok glass </string>
-    <string name="guard_phrase_menu_item">ok glass,</string>
     <string name="voice_menu_item_google">google…</string>
     <string name="voice_menu_item_take_photo">take a picture</string>
     <string name="voice_menu_item_record_video">record a video</string>
@@ -309,6 +327,9 @@
     <string name="voice_menu_context_item_send_message">Message</string>
     <string name="voice_menu_context_item_call">Call</string>
     <string name="voice_menu_context_item_hangout">Hangout</string>
+    <string name="voice_annotation_speak_your_message">Speak your message</string>
+    <string name="voice_annotation_adding">Adding</string>
+    <string name="voice_annotation_added">Added</string>
     <string name="voice_message_send_message">send a message to</string>
     <string name="voice_message_speak_message">Speak your message</string>
     <string name="voice_message_send_confirming">Sending</string>
@@ -317,27 +338,14 @@
     <string name="voice_message_send_email_confirmed">Sent email</string>
     <string name="voice_message_send_sms_confirming">Sending text</string>
     <string name="voice_message_send_sms_confirmed">Sent text</string>
-    <string name="voice_message_swipe_down_to_cancel">Swipe down to cancel</string>
     <string name="error_no_contacts">No contacts found</string>
     <string name="error_no_email">No email address available</string>
     <string name="error_no_phone_or_email">No phone number or email address</string>
-    <string name="error_no_speech_detected">No speech detected</string>
     <string name="error_no_plus_share_targets">No Google+ contacts found</string>
     <string name="error_hangout_network_connectivity">No network connectivity</string>
     <string name="hangout_waiting">Waiting for participants to join</string>
     <string name="hangout_menu_resume">Resume</string>
     <string name="hangout_menu_leave">Leave</string>
-    <string name="voice_search_speak_now">Ask a question</string>
-    <string name="voice_navigation_speak_now">Speak a destination</string>
-    <string name="voice_search_streaming_text_recognizing">Working…</string>
-    <string name="voice_search_no_match">"Didn't catch that"</string>
-    <string name="voice_search_network_error">"Can't reach Google right now"</string>
-    <string name="voice_search_server_error">"Can't reach Google right now"</string>
-    <string name="voice_search_audio_error">"Didn't catch that"</string>
-    <string name="voice_network_connectivity">No network connectivity</string>
-    <string name="voice_search_no_answer">No answer for this search</string>
-    <string name="error_tap_speak_again">Tap to speak again</string>
-    <string name="voice_search_med_confidence_answer_source">According to %s</string>
     <string name="voice_navigation_directions_not_available">Directions not available</string>
     <string name="error_get_my_glass_for_location">Connect to MyGlass for Android for GPS service</string>
     <string name="voice_search_flight_info">Flight %s</string>
@@ -380,13 +388,13 @@
     <string name="voice_search_finance_change" formatted="false">"%s
 (%s%%)"</string>
     <string name="voice_search_finance_after_hours">After hours, %s</string>
-    <string name="voice_search_menu_new_search">New search</string>
-    <string name="voice_search_menu_view_site">View website</string>
     <string name="voice_search_snippet_recognition_result">Web results for %s</string>
     <string name="screen_off_swipe_no_notification">"It's: %s."</string>
-    <string name="version_mismatch_require_glass_ota">Please update your Glass</string>
-    <string name="error_google_voice_out_of_date">Google Voice out of date</string>
-    <string name="error_google_voice_out_of_date_tip">Update it from Google Play</string>
-    <string name="error_google_voice_not_installed">Google Voice not installed</string>
-    <string name="error_google_voice_not_installed_tip">Install it from Google Play</string>
+    <string name="sound_search_input_type">sound search prototype...</string>
+    <string name="sound_search_prompt">Listening for music</string>
+    <string name="sound_search_album_footer">Album: %s</string>
+    <string name="provider_label_timeline">Glass Timeline</string>
+    <string name="provider_label_entity">Glass Contacts</string>
+    <string name="provider_label_location">Glass Location</string>
+    <string name="provider_label_audio">Glass Audio</string>
 </resources>

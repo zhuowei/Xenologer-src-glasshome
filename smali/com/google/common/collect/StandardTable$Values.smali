@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 911
+    .line 935
     .local p0, this:Lcom/google/common/collect/StandardTable$Values;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Values;"
     iput-object p1, p0, Lcom/google/common/collect/StandardTable$Values;->this$0:Lcom/google/common/collect/StandardTable;
 
@@ -48,7 +48,7 @@
     .parameter "x1"
 
     .prologue
-    .line 911
+    .line 935
     .local p0, this:Lcom/google/common/collect/StandardTable$Values;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Values;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/StandardTable$Values;-><init>(Lcom/google/common/collect/StandardTable;)V
 
@@ -68,8 +68,10 @@
     .end annotation
 
     .prologue
-    .line 913
+    .line 938
     .local p0, this:Lcom/google/common/collect/StandardTable$Values;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Values;"
+    new-instance v0, Lcom/google/common/collect/StandardTable$Values$1;
+
     iget-object v1, p0, Lcom/google/common/collect/StandardTable$Values;->this$0:Lcom/google/common/collect/StandardTable;
 
     invoke-virtual {v1}, Lcom/google/common/collect/StandardTable;->cellSet()Ljava/util/Set;
@@ -78,22 +80,18 @@
 
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object v1
 
-    .line 914
-    .local v0, cellIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/common/collect/Table$Cell<TR;TC;TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/StandardTable$Values$1;
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/StandardTable$Values$1;-><init>(Lcom/google/common/collect/StandardTable$Values;Ljava/util/Iterator;)V
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/StandardTable$Values$1;-><init>(Lcom/google/common/collect/StandardTable$Values;Ljava/util/Iterator;)V
-
-    return-object v1
+    return-object v0
 .end method
 
 .method public size()I
     .locals 1
 
     .prologue
-    .line 928
+    .line 949
     .local p0, this:Lcom/google/common/collect/StandardTable$Values;,"Lcom/google/common/collect/StandardTable<TR;TC;TV;>.Values;"
     iget-object v0, p0, Lcom/google/common/collect/StandardTable$Values;->this$0:Lcom/google/common/collect/StandardTable;
 

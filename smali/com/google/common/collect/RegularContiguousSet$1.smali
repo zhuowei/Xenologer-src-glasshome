@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/RegularContiguousSet$1;
-.super Lcom/google/common/collect/AbstractLinkedIterator;
+.super Lcom/google/common/collect/AbstractSequentialIterator;
 .source "RegularContiguousSet.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/common/collect/AbstractLinkedIterator",
+        "Lcom/google/common/collect/AbstractSequentialIterator",
         "<TC;>;"
     }
 .end annotation
@@ -40,14 +40,14 @@
     .parameter
 
     .prologue
-    .line 69
+    .line 78
     .local p0, this:Lcom/google/common/collect/RegularContiguousSet$1;,"Lcom/google/common/collect/RegularContiguousSet.1;"
     .local p2, x0:Ljava/lang/Comparable;,"TC;"
     iput-object p1, p0, Lcom/google/common/collect/RegularContiguousSet$1;->this$0:Lcom/google/common/collect/RegularContiguousSet;
 
-    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractLinkedIterator;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractSequentialIterator;-><init>(Ljava/lang/Object;)V
 
-    .line 70
+    .line 79
     iget-object v0, p0, Lcom/google/common/collect/RegularContiguousSet$1;->this$0:Lcom/google/common/collect/RegularContiguousSet;
 
     invoke-virtual {v0}, Lcom/google/common/collect/RegularContiguousSet;->last()Ljava/lang/Comparable;
@@ -71,7 +71,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 83
     .local p0, this:Lcom/google/common/collect/RegularContiguousSet$1;,"Lcom/google/common/collect/RegularContiguousSet.1;"
     .local p1, previous:Ljava/lang/Comparable;,"TC;"
     iget-object v0, p0, Lcom/google/common/collect/RegularContiguousSet$1;->last:Ljava/lang/Comparable;
@@ -105,7 +105,7 @@
     .parameter "x0"
 
     .prologue
-    .line 69
+    .line 78
     .local p0, this:Lcom/google/common/collect/RegularContiguousSet$1;,"Lcom/google/common/collect/RegularContiguousSet.1;"
     check-cast p1, Ljava/lang/Comparable;
 

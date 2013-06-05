@@ -1,4 +1,4 @@
-.class Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;
+.class public Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;
 .super Ljava/lang/Object;
 .source "VoiceSearchContainer.java"
 
@@ -7,12 +7,15 @@
 
 
 # annotations
+.annotation build Lcom/google/common/annotations/VisibleForTesting;
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/google/glass/voice/network/VoiceSearchContainer;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x9
     name = "SpeechSettingsImpl"
 .end annotation
 
@@ -24,25 +27,26 @@
 # instance fields
 .field private final config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
-.field final synthetic this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
+.field private final context:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/glass/voice/network/VoiceSearchContainer;Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;)V
+.method public constructor <init>(Landroid/content/Context;Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;)V
     .locals 0
-    .parameter
+    .parameter "context"
     .parameter "config"
 
     .prologue
-    .line 538
-    iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
-
+    .line 527
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 539
+    .line 528
+    iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->context:Landroid/content/Context;
+
+    .line 529
     iput-object p2, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
-    .line 540
+    .line 530
     return-void
 .end method
 
@@ -50,7 +54,7 @@
     .locals 3
 
     .prologue
-    .line 585
+    .line 575
     monitor-enter p0
 
     :try_start_0
@@ -62,7 +66,7 @@
 
     move-result-object v0
 
-    .line 586
+    .line 576
     .local v0, installId:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->getSharedPreferences()Landroid/content/SharedPreferences;
 
@@ -82,12 +86,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 587
+    .line 577
     monitor-exit p0
 
     return-object v0
 
-    .line 585
+    .line 575
     .end local v0           #installId:Ljava/lang/String;
     :catchall_0
     move-exception v1
@@ -103,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 592
+    .line 582
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
     return-object v0
@@ -113,7 +117,7 @@
     .locals 4
 
     .prologue
-    .line 577
+    .line 567
     invoke-virtual {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->getSharedPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -126,28 +130,32 @@
 
     move-result-object v0
 
-    .line 578
+    .line 568
     .local v0, installId:Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 579
+    .line 569
     invoke-direct {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->createInstallId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 581
+    .line 571
     :cond_0
     return-object v0
 .end method
 
 .method public getSharedPreferences()Landroid/content/SharedPreferences;
-    .locals 1
+    .locals 3
 
     .prologue
-    .line 572
-    iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
+    .line 562
+    iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;->context:Landroid/content/Context;
 
-    invoke-virtual {v0}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getSharedPreferences()Landroid/content/SharedPreferences;
+    const-string v1, "search_prefs"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -158,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 568
+    .line 558
     const-string v0, "en-US"
 
     return-object v0
@@ -168,7 +176,7 @@
     .locals 1
 
     .prologue
-    .line 544
+    .line 534
     const/4 v0, 0x0
 
     return v0
@@ -178,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 563
+    .line 553
     const/4 v0, 0x0
 
     return v0
@@ -188,7 +196,7 @@
     .locals 1
 
     .prologue
-    .line 558
+    .line 548
     const/4 v0, 0x1
 
     return v0
@@ -198,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 549
+    .line 539
     const/4 v0, 0x0
 
     return v0
@@ -210,6 +218,6 @@
     .parameter "b"
 
     .prologue
-    .line 554
+    .line 544
     return-void
 .end method

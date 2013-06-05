@@ -13,7 +13,7 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,10 +32,10 @@
 
     const/4 v2, 0x0
 
-    .line 307
+    .line 302
     if-gez p0, :cond_0
 
-    .line 308
+    .line 303
     const-string v0, "%s (%s) must not be negative"
 
     new-array v1, v4, [Ljava/lang/Object;
@@ -52,15 +52,15 @@
 
     move-result-object v0
 
-    .line 312
+    .line 307
     :goto_0
     return-object v0
 
-    .line 309
+    .line 304
     :cond_0
     if-gez p1, :cond_1
 
-    .line 310
+    .line 305
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -85,7 +85,7 @@
 
     throw v0
 
-    .line 312
+    .line 307
     :cond_1
     const-string v0, "%s (%s) must be less than size (%s)"
 
@@ -127,10 +127,10 @@
 
     const/4 v2, 0x0
 
-    .line 357
+    .line 351
     if-gez p0, :cond_0
 
-    .line 358
+    .line 352
     const-string v0, "%s (%s) must not be negative"
 
     new-array v1, v4, [Ljava/lang/Object;
@@ -147,15 +147,15 @@
 
     move-result-object v0
 
-    .line 362
+    .line 356
     :goto_0
     return-object v0
 
-    .line 359
+    .line 353
     :cond_0
     if-gez p1, :cond_1
 
-    .line 360
+    .line 354
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -180,7 +180,7 @@
 
     throw v0
 
-    .line 362
+    .line 356
     :cond_1
     const-string v0, "%s (%s) must not be greater than size (%s)"
 
@@ -216,12 +216,12 @@
     .parameter "size"
 
     .prologue
-    .line 389
+    .line 382
     if-ltz p0, :cond_0
 
     if-le p0, p2, :cond_1
 
-    .line 390
+    .line 383
     :cond_0
     const-string v0, "start index"
 
@@ -229,17 +229,17 @@
 
     move-result-object v0
 
-    .line 396
+    .line 389
     :goto_0
     return-object v0
 
-    .line 392
+    .line 385
     :cond_1
     if-ltz p1, :cond_2
 
     if-le p1, p2, :cond_3
 
-    .line 393
+    .line 386
     :cond_2
     const-string v0, "end index"
 
@@ -249,7 +249,7 @@
 
     goto :goto_0
 
-    .line 396
+    .line 389
     :cond_3
     const-string v0, "end index (%s) must not be less than start index (%s)"
 
@@ -285,17 +285,17 @@
     .parameter "expression"
 
     .prologue
-    .line 71
+    .line 75
     if-nez p0, :cond_0
 
-    .line 72
+    .line 76
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 74
+    .line 78
     :cond_0
     return-void
 .end method
@@ -310,10 +310,10 @@
     .end parameter
 
     .prologue
-    .line 87
+    .line 90
     if-nez p0, :cond_0
 
-    .line 88
+    .line 91
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -324,7 +324,7 @@
 
     throw v0
 
-    .line 90
+    .line 93
     :cond_0
     return-void
 .end method
@@ -343,10 +343,10 @@
     .end parameter
 
     .prologue
-    .line 114
+    .line 116
     if-nez p0, :cond_0
 
-    .line 115
+    .line 117
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -357,7 +357,7 @@
 
     throw v0
 
-    .line 118
+    .line 119
     :cond_0
     return-void
 .end method
@@ -368,7 +368,7 @@
     .parameter "size"
 
     .prologue
-    .line 280
+    .line 276
     const-string v0, "index"
 
     invoke-static {p0, p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(IILjava/lang/String;)I
@@ -390,12 +390,12 @@
     .end parameter
 
     .prologue
-    .line 300
+    .line 295
     if-ltz p0, :cond_0
 
     if-lt p0, p1, :cond_1
 
-    .line 301
+    .line 296
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -407,7 +407,7 @@
 
     throw v0
 
-    .line 303
+    .line 298
     :cond_1
     return p0
 .end method
@@ -424,18 +424,18 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 184
     .local p0, reference:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
-    .line 187
+    .line 185
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 189
+    .line 187
     :cond_0
     return-object p0
 .end method
@@ -459,11 +459,11 @@
     .end annotation
 
     .prologue
-    .line 203
+    .line 201
     .local p0, reference:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
-    .line 204
+    .line 202
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
@@ -474,7 +474,7 @@
 
     throw v0
 
-    .line 206
+    .line 204
     :cond_0
     return-object p0
 .end method
@@ -504,11 +504,11 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 226
     .local p0, reference:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
-    .line 231
+    .line 228
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -519,7 +519,7 @@
 
     throw v0
 
-    .line 234
+    .line 230
     :cond_0
     return-object p0
 .end method
@@ -530,7 +530,7 @@
     .parameter "size"
 
     .prologue
-    .line 330
+    .line 325
     const-string v0, "index"
 
     invoke-static {p0, p1, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndex(IILjava/lang/String;)I
@@ -552,12 +552,12 @@
     .end parameter
 
     .prologue
-    .line 350
+    .line 344
     if-ltz p0, :cond_0
 
     if-le p0, p1, :cond_1
 
-    .line 351
+    .line 345
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -569,7 +569,7 @@
 
     throw v0
 
-    .line 353
+    .line 347
     :cond_1
     return p0
 .end method
@@ -581,14 +581,14 @@
     .parameter "size"
 
     .prologue
-    .line 383
+    .line 376
     if-ltz p0, :cond_0
 
     if-lt p1, p0, :cond_0
 
     if-le p1, p2, :cond_1
 
-    .line 384
+    .line 377
     :cond_0
     new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
@@ -600,7 +600,7 @@
 
     throw v0
 
-    .line 386
+    .line 379
     :cond_1
     return-void
 .end method
@@ -610,17 +610,17 @@
     .parameter "expression"
 
     .prologue
-    .line 128
+    .line 129
     if-nez p0, :cond_0
 
-    .line 129
+    .line 130
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
     throw v0
 
-    .line 131
+    .line 132
     :cond_0
     return-void
 .end method
@@ -668,10 +668,10 @@
     .end parameter
 
     .prologue
-    .line 171
+    .line 170
     if-nez p0, :cond_0
 
-    .line 172
+    .line 171
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -682,7 +682,7 @@
 
     throw v0
 
-    .line 175
+    .line 173
     :cond_0
     return-void
 .end method
@@ -699,12 +699,12 @@
     .end annotation
 
     .prologue
-    .line 414
+    .line 406
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 417
+    .line 409
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
@@ -719,35 +719,35 @@
 
     invoke-direct {v0, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 419
+    .line 410
     .local v0, builder:Ljava/lang/StringBuilder;
     const/4 v4, 0x0
 
-    .line 420
+    .line 411
     .local v4, templateStart:I
     const/4 v1, 0x0
 
-    .line 421
+    .line 412
     .local v1, i:I
     :goto_0
     array-length v5, p1
 
     if-ge v1, v5, :cond_0
 
-    .line 422
+    .line 413
     const-string v5, "%s"
 
     invoke-virtual {p0, v5, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
     move-result v3
 
-    .line 423
+    .line 414
     .local v3, placeholderStart:I
     const/4 v5, -0x1
 
     if-ne v3, v5, :cond_1
 
-    .line 430
+    .line 421
     .end local v3           #placeholderStart:I
     :cond_0
     invoke-virtual {p0, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -756,17 +756,17 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 433
+    .line 424
     array-length v5, p1
 
     if-ge v1, v5, :cond_3
 
-    .line 434
+    .line 425
     const-string v5, " ["
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 435
+    .line 426
     add-int/lit8 v2, v1, 0x1
 
     .end local v1           #i:I
@@ -777,7 +777,7 @@
 
     move v1, v2
 
-    .line 436
+    .line 427
     .end local v2           #i:I
     .restart local v1       #i:I
     :goto_1
@@ -785,12 +785,12 @@
 
     if-ge v1, v5, :cond_2
 
-    .line 437
+    .line 428
     const-string v5, ", "
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 438
+    .line 429
     add-int/lit8 v2, v1, 0x1
 
     .end local v1           #i:I
@@ -805,7 +805,7 @@
     .restart local v1       #i:I
     goto :goto_1
 
-    .line 426
+    .line 417
     .restart local v3       #placeholderStart:I
     :cond_1
     invoke-virtual {p0, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
@@ -814,7 +814,7 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 427
+    .line 418
     add-int/lit8 v2, v1, 0x1
 
     .end local v1           #i:I
@@ -823,24 +823,24 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 428
+    .line 419
     add-int/lit8 v4, v3, 0x2
 
     move v1, v2
 
-    .line 429
+    .line 420
     .end local v2           #i:I
     .restart local v1       #i:I
     goto :goto_0
 
-    .line 440
+    .line 431
     .end local v3           #placeholderStart:I
     :cond_2
     const/16 v5, 0x5d
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 443
+    .line 434
     :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

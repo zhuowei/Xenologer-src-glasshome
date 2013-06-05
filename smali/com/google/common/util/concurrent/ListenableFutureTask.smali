@@ -1,4 +1,4 @@
-.class public final Lcom/google/common/util/concurrent/ListenableFutureTask;
+.class public Lcom/google/common/util/concurrent/ListenableFutureTask;
 .super Ljava/util/concurrent/FutureTask;
 .source "ListenableFutureTask.java"
 
@@ -25,7 +25,7 @@
 
 
 # direct methods
-.method private constructor <init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
+.method constructor <init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
     .locals 1
     .parameter "runnable"
     .end parameter
@@ -42,23 +42,23 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 76
     .local p0, this:Lcom/google/common/util/concurrent/ListenableFutureTask;,"Lcom/google/common/util/concurrent/ListenableFutureTask<TV;>;"
     .local p2, result:Ljava/lang/Object;,"TV;"
     invoke-direct {p0, p1, p2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 38
+    .line 42
     new-instance v0, Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/ExecutionList;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ListenableFutureTask;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
-    .line 74
+    .line 77
     return-void
 .end method
 
-.method private constructor <init>(Ljava/util/concurrent/Callable;)V
+.method constructor <init>(Ljava/util/concurrent/Callable;)V
     .locals 1
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -70,19 +70,19 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 72
     .local p0, this:Lcom/google/common/util/concurrent/ListenableFutureTask;,"Lcom/google/common/util/concurrent/ListenableFutureTask<TV;>;"
     .local p1, callable:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<TV;>;"
     invoke-direct {p0, p1}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
-    .line 38
+    .line 42
     new-instance v0, Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/ExecutionList;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/ListenableFutureTask;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
-    .line 70
+    .line 73
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 68
     .local p1, result:Ljava/lang/Object;,"TV;"
     new-instance v0, Lcom/google/common/util/concurrent/ListenableFutureTask;
 
@@ -132,7 +132,7 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 52
     .local p0, callable:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<TV;>;"
     new-instance v0, Lcom/google/common/util/concurrent/ListenableFutureTask;
 
@@ -149,13 +149,13 @@
     .parameter "exec"
 
     .prologue
-    .line 78
+    .line 80
     .local p0, this:Lcom/google/common/util/concurrent/ListenableFutureTask;,"Lcom/google/common/util/concurrent/ListenableFutureTask<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/ListenableFutureTask;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/util/concurrent/ExecutionList;->add(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    .line 79
+    .line 81
     return-void
 .end method
 
@@ -163,12 +163,12 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 89
     .local p0, this:Lcom/google/common/util/concurrent/ListenableFutureTask;,"Lcom/google/common/util/concurrent/ListenableFutureTask<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/ListenableFutureTask;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/ExecutionList;->execute()V
 
-    .line 87
+    .line 90
     return-void
 .end method

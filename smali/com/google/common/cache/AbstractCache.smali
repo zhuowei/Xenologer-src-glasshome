@@ -39,7 +39,7 @@
     .locals 0
 
     .prologue
-    .line 49
+    .line 48
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,29 +48,6 @@
 
 
 # virtual methods
-.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 132
-    .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    invoke-virtual {p0, p1}, Lcom/google/common/cache/AbstractCache;->getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public asMap()Ljava/util/concurrent/ConcurrentMap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -82,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 127
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -95,7 +72,7 @@
     .locals 0
 
     .prologue
-    .line 82
+    .line 98
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     return-void
 .end method
@@ -119,7 +96,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 55
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, valueLoader:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<+TV;>;"
@@ -131,112 +108,75 @@
 .end method
 
 .method public getAllPresent(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMap;
-    .locals 4
+    .locals 5
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/Iterable",
-            "<+TK;>;)",
+            "<*>;)",
             "Lcom/google/common/collect/ImmutableMap",
             "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
-    .line 64
+    .line 69
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
-    .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TK;>;"
+    .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-static {}, Lcom/google/common/collect/Maps;->newLinkedHashMap()Ljava/util/LinkedHashMap;
-
-    move-result-object v2
-
-    .line 65
-    .local v2, result:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 66
-    .local v1, key:Ljava/lang/Object;,"TK;"
-    invoke-interface {v2, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 67
-    invoke-virtual {p0, v1}, Lcom/google/common/cache/AbstractCache;->getIfPresent(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-interface {v2, v1, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 70
+    .local v3, result:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    .line 71
+    .local v2, key:Ljava/lang/Object;
+    invoke-interface {v3, v2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    .line 73
+    move-object v0, v2
+
+    .line 74
+    .local v0, castKey:Ljava/lang/Object;,"TK;"
+    invoke-virtual {p0, v2}, Lcom/google/common/cache/AbstractCache;->getIfPresent(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-interface {v3, v0, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 70
-    .end local v1           #key:Ljava/lang/Object;,"TK;"
+    .line 77
+    .end local v0           #castKey:Ljava/lang/Object;,"TK;"
+    .end local v2           #key:Ljava/lang/Object;
     :cond_1
-    invoke-static {v2}, Lcom/google/common/collect/ImmutableMap;->copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
+    invoke-static {v3}, Lcom/google/common/collect/ImmutableMap;->copyOf(Ljava/util/Map;)Lcom/google/common/collect/ImmutableMap;
 
-    move-result-object v3
+    move-result-object v4
 
-    return-object v3
-.end method
-
-.method public getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 123
-    .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    :try_start_0
-    invoke-virtual {p0, p1}, Lcom/google/common/cache/AbstractCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    return-object v1
-
-    .line 124
-    :catch_0
-    move-exception v0
-
-    .line 125
-    .local v0, e:Ljava/util/concurrent/ExecutionException;
-    new-instance v1, Lcom/google/common/util/concurrent/UncheckedExecutionException;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lcom/google/common/util/concurrent/UncheckedExecutionException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
+    return-object v4
 .end method
 
 .method public invalidate(Ljava/lang/Object;)V
@@ -244,7 +184,7 @@
     .parameter "key"
 
     .prologue
-    .line 91
+    .line 105
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -257,7 +197,7 @@
     .locals 1
 
     .prologue
-    .line 106
+    .line 119
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -278,7 +218,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 113
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -297,13 +237,13 @@
 
     move-result-object v1
 
-    .line 100
+    .line 114
     .local v1, key:Ljava/lang/Object;
     invoke-virtual {p0, v1}, Lcom/google/common/cache/AbstractCache;->invalidate(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 102
+    .line 116
     .end local v1           #key:Ljava/lang/Object;
     :cond_0
     return-void
@@ -320,7 +260,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 85
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -331,11 +271,68 @@
     throw v0
 .end method
 
+.method public putAll(Ljava/util/Map;)V
+    .locals 4
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<+TK;+TV;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 93
+    .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
+    .local p1, m:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 94
+    .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v2, v3}, Lcom/google/common/cache/AbstractCache;->put(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 96
+    .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
+    :cond_0
+    return-void
+.end method
+
 .method public size()J
     .locals 1
 
     .prologue
-    .line 86
+    .line 101
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -348,7 +345,7 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 123
     .local p0, this:Lcom/google/common/cache/AbstractCache;,"Lcom/google/common/cache/AbstractCache<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 138
+    .line 140
     iput-object p1, p0, Lcom/google/glass/maps/MapHelper$1;->this$0:Lcom/google/glass/maps/MapHelper;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "msg"
 
     .prologue
-    .line 141
+    .line 143
     iget-object v0, p0, Lcom/google/glass/maps/MapHelper$1;->this$0:Lcom/google/glass/maps/MapHelper;
 
     #calls: Lcom/google/glass/maps/MapHelper;->handleIncomingMessage(Landroid/os/Message;)V
     invoke-static {v0, p1}, Lcom/google/glass/maps/MapHelper;->access$100(Lcom/google/glass/maps/MapHelper;Landroid/os/Message;)V
 
-    .line 142
+    .line 144
     return-void
 .end method

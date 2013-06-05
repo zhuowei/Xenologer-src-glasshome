@@ -38,7 +38,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 120
     :try_start_0
     invoke-static {p0}, Lcom/google/common/net/HostSpecifier;->fromValid(Ljava/lang/String;)Lcom/google/common/net/HostSpecifier;
     :try_end_0
@@ -48,11 +48,11 @@
 
     return-object v2
 
-    .line 122
+    .line 121
     :catch_0
     move-exception v0
 
-    .line 127
+    .line 126
     .local v0, e:Ljava/lang/IllegalArgumentException;
     new-instance v1, Ljava/text/ParseException;
 
@@ -78,11 +78,11 @@
 
     invoke-direct {v1, v2, v3}, Ljava/text/ParseException;-><init>(Ljava/lang/String;I)V
 
-    .line 129
+    .line 127
     .local v1, parseException:Ljava/text/ParseException;
     invoke-virtual {v1, v0}, Ljava/text/ParseException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    .line 130
+    .line 128
     throw v1
 .end method
 
@@ -218,24 +218,24 @@
     .parameter "specifier"
 
     .prologue
-    .line 141
+    .line 139
     :try_start_0
     invoke-static {p0}, Lcom/google/common/net/HostSpecifier;->fromValid(Ljava/lang/String;)Lcom/google/common/net/HostSpecifier;
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 142
+    .line 140
     const/4 v1, 0x1
 
-    .line 144
+    .line 142
     :goto_0
     return v1
 
-    .line 143
+    .line 141
     :catch_0
     move-exception v0
 
-    .line 144
+    .line 142
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const/4 v1, 0x0
 
@@ -252,17 +252,17 @@
     .end parameter
 
     .prologue
-    .line 150
+    .line 148
     if-ne p0, p1, :cond_0
 
-    .line 151
+    .line 149
     const/4 v1, 0x1
 
-    .line 159
+    .line 157
     :goto_0
     return v1
 
-    .line 154
+    .line 152
     :cond_0
     instance-of v1, p1, Lcom/google/common/net/HostSpecifier;
 
@@ -270,10 +270,10 @@
 
     move-object v0, p1
 
-    .line 155
+    .line 153
     check-cast v0, Lcom/google/common/net/HostSpecifier;
 
-    .line 156
+    .line 154
     .local v0, that:Lcom/google/common/net/HostSpecifier;
     iget-object v1, p0, Lcom/google/common/net/HostSpecifier;->canonicalForm:Ljava/lang/String;
 
@@ -285,7 +285,7 @@
 
     goto :goto_0
 
-    .line 159
+    .line 157
     .end local v0           #that:Lcom/google/common/net/HostSpecifier;
     :cond_1
     const/4 v1, 0x0
@@ -297,7 +297,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 162
     iget-object v0, p0, Lcom/google/common/net/HostSpecifier;->canonicalForm:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 175
     iget-object v0, p0, Lcom/google/common/net/HostSpecifier;->canonicalForm:Ljava/lang/String;
 
     return-object v0

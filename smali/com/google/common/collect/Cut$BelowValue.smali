@@ -39,7 +39,7 @@
     .end annotation
 
     .prologue
-    .line 234
+    .line 289
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     .local p1, endpoint:Ljava/lang/Comparable;,"TC;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -50,7 +50,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/Cut;-><init>(Ljava/lang/Comparable;)V
 
-    .line 235
+    .line 290
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .parameter "x0"
 
     .prologue
-    .line 232
+    .line 287
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     check-cast p1, Lcom/google/common/collect/Cut;
 
@@ -78,7 +78,7 @@
     .parameter "sb"
 
     .prologue
-    .line 269
+    .line 337
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     const/16 v0, 0x5b
 
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 270
+    .line 338
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .parameter "sb"
 
     .prologue
-    .line 272
+    .line 342
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
 
@@ -111,7 +111,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 273
+    .line 343
     return-void
 .end method
 
@@ -127,7 +127,7 @@
     .end annotation
 
     .prologue
-    .line 278
+    .line 352
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
@@ -143,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 357
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
 
@@ -164,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 238
+    .line 294
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     .local p1, value:Ljava/lang/Comparable;,"TC;"
     iget-object v0, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
@@ -198,10 +198,45 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 347
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     iget-object v0, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 362
+    .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "\\"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -210,7 +245,7 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 299
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     sget-object v0, Lcom/google/common/collect/BoundType;->CLOSED:Lcom/google/common/collect/BoundType;
 
@@ -221,7 +256,7 @@
     .locals 1
 
     .prologue
-    .line 244
+    .line 304
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     sget-object v0, Lcom/google/common/collect/BoundType;->OPEN:Lcom/google/common/collect/BoundType;
 
@@ -244,7 +279,7 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 309
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     .local p2, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     sget-object v1, Lcom/google/common/collect/Cut$1;->$SwitchMap$com$google$common$collect$BoundType:[I
@@ -257,14 +292,14 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 254
+    .line 317
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1}, Ljava/lang/AssertionError;-><init>()V
 
     throw v1
 
-    .line 251
+    .line 314
     :pswitch_0
     iget-object v1, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
 
@@ -272,7 +307,7 @@
 
     move-result-object v0
 
-    .line 252
+    .line 315
     .local v0, previous:Ljava/lang/Comparable;,"TC;"
     if-nez v0, :cond_0
 
@@ -297,7 +332,7 @@
 
     goto :goto_0
 
-    .line 247
+    .line 309
     nop
 
     :pswitch_data_0
@@ -323,7 +358,7 @@
     .end annotation
 
     .prologue
-    .line 258
+    .line 323
     .local p0, this:Lcom/google/common/collect/Cut$BelowValue;,"Lcom/google/common/collect/Cut$BelowValue<TC;>;"
     .local p2, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     sget-object v1, Lcom/google/common/collect/Cut$1;->$SwitchMap$com$google$common$collect$BoundType:[I
@@ -336,14 +371,14 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 265
+    .line 331
     new-instance v1, Ljava/lang/AssertionError;
 
     invoke-direct {v1}, Ljava/lang/AssertionError;-><init>()V
 
     throw v1
 
-    .line 260
+    .line 326
     :pswitch_0
     iget-object v1, p0, Lcom/google/common/collect/Cut$BelowValue;->endpoint:Ljava/lang/Comparable;
 
@@ -351,7 +386,7 @@
 
     move-result-object v0
 
-    .line 261
+    .line 327
     .local v0, previous:Ljava/lang/Comparable;,"TC;"
     if-nez v0, :cond_0
 
@@ -359,12 +394,12 @@
 
     move-result-object v1
 
-    .line 263
+    .line 329
     .end local v0           #previous:Ljava/lang/Comparable;,"TC;"
     :goto_0
     return-object v1
 
-    .line 261
+    .line 327
     .restart local v0       #previous:Ljava/lang/Comparable;,"TC;"
     :cond_0
     new-instance v1, Lcom/google/common/collect/Cut$AboveValue;
@@ -377,10 +412,10 @@
     :pswitch_1
     move-object v1, p0
 
-    .line 263
+    .line 329
     goto :goto_0
 
-    .line 258
+    .line 323
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

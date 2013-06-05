@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 346
+    .line 372
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,26 +41,26 @@
     .locals 5
 
     .prologue
-    .line 349
+    .line 375
     iget-object v2, p0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 350
+    .line 376
     .local v0, context:Landroid/content/Context;
     invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->checkDevice(Landroid/content/Context;)V
 
-    .line 351
+    .line 377
     invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->checkManifest(Landroid/content/Context;)V
 
-    .line 352
+    .line 378
     invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->getRegistrationId(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 353
+    .line 379
     .local v1, registrationId:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -68,8 +68,8 @@
 
     if-eqz v2, :cond_0
 
-    .line 354
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
+    .line 380
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v2
 
@@ -77,7 +77,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 355
+    .line 381
     const/4 v2, 0x1
 
     new-array v2, v2, [Ljava/lang/String;
@@ -90,13 +90,13 @@
 
     invoke-static {v0, v2}, Lcom/google/android/gcm/GCMRegistrar;->register(Landroid/content/Context;[Ljava/lang/String;)V
 
-    .line 380
+    .line 406
     :goto_0
     return-void
 
-    .line 357
+    .line 383
     :cond_0
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v2
 
@@ -104,7 +104,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 360
+    .line 386
     iget-object v2, p0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getRequestDispatcher()Lcom/google/glass/net/ProtoRequestDispatcher;

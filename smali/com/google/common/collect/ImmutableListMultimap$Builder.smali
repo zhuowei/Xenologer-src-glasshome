@@ -31,7 +31,7 @@
     .locals 0
 
     .prologue
-    .line 161
+    .line 155
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMultimap$Builder;-><init>()V
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->build()Lcom/google/common/collect/ImmutableListMultimap;
 
@@ -78,9 +78,6 @@
 .method public orderKeysBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
     .locals 0
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,12 +89,12 @@
     .end annotation
 
     .prologue
-    .line 202
+    .line 200
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, keyComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableMultimap$Builder;->orderKeysBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 203
+    .line 201
     return-object p0
 .end method
 
@@ -106,7 +103,7 @@
     .parameter "x0"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->orderKeysBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
@@ -118,9 +115,6 @@
 .method public orderValuesBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
     .locals 0
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,12 +126,12 @@
     .end annotation
 
     .prologue
-    .line 213
+    .line 212
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, valueComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableMultimap$Builder;->orderValuesBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 214
+    .line 213
     return-object p0
 .end method
 
@@ -146,7 +140,7 @@
     .parameter "x0"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->orderValuesBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
@@ -168,13 +162,13 @@
     .end annotation
 
     .prologue
-    .line 164
+    .line 159
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/ImmutableMultimap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 165
+    .line 160
     return-object p0
 .end method
 
@@ -192,12 +186,12 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 170
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableMultimap$Builder;->put(Ljava/util/Map$Entry;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 176
+    .line 171
     return-object p0
 .end method
 
@@ -207,7 +201,7 @@
     .parameter "x1"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
@@ -221,7 +215,7 @@
     .parameter "x0"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->put(Ljava/util/Map$Entry;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
@@ -244,12 +238,12 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 188
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableMultimap$Builder;->putAll(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 192
+    .line 189
     return-object p0
 .end method
 
@@ -268,13 +262,13 @@
     .end annotation
 
     .prologue
-    .line 180
+    .line 176
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/ImmutableMultimap$Builder;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 181
+    .line 177
     return-object p0
 .end method
 
@@ -291,13 +285,13 @@
     .end annotation
 
     .prologue
-    .line 185
+    .line 182
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:[Ljava/lang/Object;,"[TV;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/ImmutableMultimap$Builder;->putAll(Ljava/lang/Object;[Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMultimap$Builder;
 
-    .line 186
+    .line 183
     return-object p0
 .end method
 
@@ -306,7 +300,7 @@
     .parameter "x0"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->putAll(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
@@ -321,7 +315,7 @@
     .parameter "x1"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
@@ -336,7 +330,7 @@
     .parameter "x1"
 
     .prologue
-    .line 155
+    .line 150
     .local p0, this:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->putAll(Ljava/lang/Object;[Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap$Builder;
 

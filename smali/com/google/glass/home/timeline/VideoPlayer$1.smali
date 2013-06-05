@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 101
+    .line 119
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +44,10 @@
     .parameter "height"
 
     .prologue
-    .line 135
+    .line 154
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 136
+    .line 155
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -56,31 +56,31 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 138
+    .line 157
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->shouldStartPlayback:Z
-    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$500(Lcom/google/glass/home/timeline/VideoPlayer;)Z
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$600(Lcom/google/glass/home/timeline/VideoPlayer;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 158
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #calls: Lcom/google/glass/home/timeline/VideoPlayer;->playInternal()V
-    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$600(Lcom/google/glass/home/timeline/VideoPlayer;)V
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$700(Lcom/google/glass/home/timeline/VideoPlayer;)V
 
-    .line 140
+    .line 159
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     const/4 v1, 0x0
 
     #setter for: Lcom/google/glass/home/timeline/VideoPlayer;->shouldStartPlayback:Z
-    invoke-static {v0, v1}, Lcom/google/glass/home/timeline/VideoPlayer;->access$502(Lcom/google/glass/home/timeline/VideoPlayer;Z)Z
+    invoke-static {v0, v1}, Lcom/google/glass/home/timeline/VideoPlayer;->access$602(Lcom/google/glass/home/timeline/VideoPlayer;Z)Z
 
-    .line 142
+    .line 161
     :cond_0
     return-void
 .end method
@@ -92,10 +92,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 120
+    .line 139
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 121
+    .line 140
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -104,27 +104,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
+    .line 143
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->destroyedSurfaces:Ljava/util/Set;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$300(Lcom/google/glass/home/timeline/VideoPlayer;)Ljava/util/Set;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$400(Lcom/google/glass/home/timeline/VideoPlayer;)Ljava/util/Set;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 127
+    .line 146
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoView:Landroid/view/TextureView;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$400(Lcom/google/glass/home/timeline/VideoPlayer;)Landroid/view/TextureView;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$500(Lcom/google/glass/home/timeline/VideoPlayer;)Landroid/view/TextureView;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/view/TextureView;->setKeepScreenOn(Z)V
 
-    .line 130
+    .line 149
     return v2
 .end method
 
@@ -135,7 +135,7 @@
     .parameter "height"
 
     .prologue
-    .line 116
+    .line 135
     return-void
 .end method
 
@@ -144,10 +144,10 @@
     .parameter "surface"
 
     .prologue
-    .line 104
+    .line 122
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 106
+    .line 124
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->shouldCallStartCallback:Z
@@ -157,7 +157,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 107
+    .line 125
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     const/4 v1, 0x0
@@ -165,7 +165,7 @@
     #setter for: Lcom/google/glass/home/timeline/VideoPlayer;->shouldCallStartCallback:Z
     invoke-static {v0, v1}, Lcom/google/glass/home/timeline/VideoPlayer;->access$002(Lcom/google/glass/home/timeline/VideoPlayer;Z)Z
 
-    .line 109
+    .line 127
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -174,7 +174,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
+    .line 128
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->listener:Lcom/google/glass/home/timeline/VideoPlayerListener;
@@ -184,7 +184,17 @@
 
     invoke-interface {v0}, Lcom/google/glass/home/timeline/VideoPlayerListener;->onVideoPlaybackStarted()V
 
-    .line 112
+    .line 129
+    iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$1;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
+
+    #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->eventLogger:Lcom/google/glass/home/timeline/VideoEventLogger;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$300(Lcom/google/glass/home/timeline/VideoPlayer;)Lcom/google/glass/home/timeline/VideoEventLogger;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/home/timeline/VideoEventLogger;->onPlaybackStarted()V
+
+    .line 131
     :cond_0
     return-void
 .end method

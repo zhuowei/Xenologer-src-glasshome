@@ -17,7 +17,7 @@
     value = {
         "Ljava/lang/ThreadLocal",
         "<",
-        "Ljava/util/concurrent/ConcurrentLinkedQueue",
+        "Ljava/util/Queue",
         "<",
         "Lcom/google/common/eventbus/EventBus$EventWithHandler;",
         ">;>;"
@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 139
+    .line 153
     iput-object p1, p0, Lcom/google/common/eventbus/EventBus$2;->this$0:Lcom/google/common/eventbus/EventBus;
 
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -49,20 +49,20 @@
     .locals 1
 
     .prologue
-    .line 139
-    invoke-virtual {p0}, Lcom/google/common/eventbus/EventBus$2;->initialValue()Ljava/util/concurrent/ConcurrentLinkedQueue;
+    .line 153
+    invoke-virtual {p0}, Lcom/google/common/eventbus/EventBus$2;->initialValue()Ljava/util/Queue;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected initialValue()Ljava/util/concurrent/ConcurrentLinkedQueue;
+.method protected initialValue()Ljava/util/Queue;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Ljava/util/concurrent/ConcurrentLinkedQueue",
+            "Ljava/util/Queue",
             "<",
             "Lcom/google/common/eventbus/EventBus$EventWithHandler;",
             ">;"
@@ -70,10 +70,10 @@
     .end annotation
 
     .prologue
-    .line 141
-    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
+    .line 156
+    new-instance v0, Ljava/util/LinkedList;
 
-    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
     return-object v0
 .end method

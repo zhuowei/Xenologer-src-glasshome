@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 197
+    .line 204
     iput-object p1, p0, Lcom/google/glass/voice/VoiceService$1;->this$0:Lcom/google/glass/voice/VoiceService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 200
+    .line 207
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 215
+    .line 222
     :cond_0
     :goto_0
     return-void
 
-    .line 202
+    .line 209
     :pswitch_0
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$1;->this$0:Lcom/google/glass/voice/VoiceService;
 
@@ -64,7 +64,7 @@
 
     if-nez v0, :cond_1
 
-    .line 203
+    .line 210
     invoke-static {}, Lcom/google/glass/voice/VoiceService;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -73,19 +73,19 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
+    .line 211
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$1;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    sget-object v1, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v1, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     const/4 v2, 0x0
 
-    #calls: Lcom/google/glass/voice/VoiceService;->setConfigAsync(Lcom/google/glass/voice/VoiceConfig;Z)V
-    invoke-static {v0, v1, v2}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfig;Z)V
+    #calls: Lcom/google/glass/voice/VoiceService;->setConfigAsync(Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
+    invoke-static {v0, v1, v2}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
 
     goto :goto_0
 
-    .line 206
+    .line 213
     :cond_1
     invoke-static {}, Lcom/google/glass/voice/VoiceService;->access$100()Ljava/lang/String;
 
@@ -97,7 +97,7 @@
 
     goto :goto_0
 
-    .line 210
+    .line 217
     :pswitch_1
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$1;->this$0:Lcom/google/glass/voice/VoiceService;
 
@@ -108,7 +108,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 211
+    .line 218
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$1;->this$0:Lcom/google/glass/voice/VoiceService;
 
     #getter for: Lcom/google/glass/voice/VoiceService;->listener:Lcom/google/glass/voice/VoiceServiceListener;
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 207
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

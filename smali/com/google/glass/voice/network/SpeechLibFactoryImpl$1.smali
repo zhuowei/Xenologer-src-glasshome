@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 47
+    .line 48
     iput-object p1, p0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl$1;->this$0:Lcom/google/glass/voice/network/SpeechLibFactoryImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,12 +52,12 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 50
+    .line 51
     invoke-static {v2}, Lcom/google/common/collect/Lists;->newArrayListWithExpectedSize(I)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 51
+    .line 52
     .local v0, engines:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Integer;>;"
     const/4 v1, 0x1
 
@@ -67,14 +67,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 54
+    .line 55
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 55
+    .line 56
     return-object v0
 .end method
 
@@ -82,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 61
     const/4 v0, 0x2
 
     return v0
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 66
     const/4 v0, 0x1
 
     return v0

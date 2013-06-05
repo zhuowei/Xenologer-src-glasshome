@@ -4,7 +4,8 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
+.annotation build Lcom/google/common/annotations/GwtCompatible;
+    emulated = true
 .end annotation
 
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -15,6 +16,12 @@
 
 
 # static fields
+#the value of this static final field might be set in the static constructor
+.field private static final LN_10:D = 0.0
+
+#the value of this static final field might be set in the static constructor
+.field private static final LN_2:D = 0.0
+
 .field static final SQRT2_PRECOMPUTED_BITS:Ljava/math/BigInteger; = null
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
     .end annotation
@@ -31,7 +38,7 @@
     .locals 3
 
     .prologue
-    .line 115
+    .line 120
     new-instance v0, Ljava/math/BigInteger;
 
     const-string v1, "16a09e667f3bcc908b2fb1366ea957d3e3adec17512775099da2f590b0667322a"
@@ -42,6 +49,24 @@
 
     sput-object v0, Lcom/google/common/math/BigIntegerMath;->SQRT2_PRECOMPUTED_BITS:Ljava/math/BigInteger;
 
+    .line 198
+    const-wide/high16 v0, 0x4024
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/google/common/math/BigIntegerMath;->LN_10:D
+
+    .line 199
+    const-wide/high16 v0, 0x4000
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/google/common/math/BigIntegerMath;->LN_2:D
+
     return-void
 .end method
 
@@ -49,139 +74,235 @@
     .locals 0
 
     .prologue
-    .line 391
+    .line 450
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static binomial(II)Ljava/math/BigInteger;
-    .locals 8
+    .locals 17
     .parameter "n"
     .parameter "k"
 
     .prologue
-    const/4 v3, 0x1
+    .line 400
+    const-string v12, "n"
 
-    const/4 v4, 0x0
+    move/from16 v0, p0
 
-    .line 369
-    const-string v2, "n"
+    invoke-static {v12, v0}, Lcom/google/common/math/MathPreconditions;->checkNonNegative(Ljava/lang/String;I)I
 
-    invoke-static {v2, p0}, Lcom/google/common/math/MathPreconditions;->checkNonNegative(Ljava/lang/String;I)I
+    .line 401
+    const-string v12, "k"
 
-    .line 370
-    const-string v2, "k"
+    move/from16 v0, p1
 
-    invoke-static {v2, p1}, Lcom/google/common/math/MathPreconditions;->checkNonNegative(Ljava/lang/String;I)I
+    invoke-static {v12, v0}, Lcom/google/common/math/MathPreconditions;->checkNonNegative(Ljava/lang/String;I)I
 
-    .line 371
-    if-gt p1, p0, :cond_2
+    .line 402
+    move/from16 v0, p1
 
-    move v2, v3
+    move/from16 v1, p0
+
+    if-gt v0, v1, :cond_1
+
+    const/4 v12, 0x1
 
     :goto_0
-    const-string v5, "k (%s) > n (%s)"
+    const-string v13, "k (%s) > n (%s)"
 
-    const/4 v6, 0x2
+    const/4 v14, 0x2
 
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v14, v14, [Ljava/lang/Object;
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const/4 v15, 0x0
 
-    move-result-object v7
+    invoke-static/range {p1 .. p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object v7, v6, v4
+    move-result-object v16
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    aput-object v16, v14, v15
 
-    move-result-object v4
+    const/4 v15, 0x1
 
-    aput-object v4, v6, v3
+    invoke-static/range {p0 .. p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v2, v5, v6}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
+    move-result-object v16
 
-    .line 372
-    shr-int/lit8 v2, p0, 0x1
+    aput-object v16, v14, v15
 
-    if-le p1, v2, :cond_0
+    invoke-static {v12, v13, v14}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 373
+    .line 403
+    shr-int/lit8 v12, p0, 0x1
+
+    move/from16 v0, p1
+
+    if-le v0, v12, :cond_0
+
+    .line 404
     sub-int p1, p0, p1
 
-    .line 375
+    .line 406
     :cond_0
-    sget-object v2, Lcom/google/common/math/LongMath;->BIGGEST_BINOMIALS:[I
+    sget-object v12, Lcom/google/common/math/LongMath;->biggestBinomials:[I
 
-    array-length v2, v2
+    array-length v12, v12
 
-    if-ge p1, v2, :cond_3
+    move/from16 v0, p1
 
-    sget-object v2, Lcom/google/common/math/LongMath;->BIGGEST_BINOMIALS:[I
+    if-ge v0, v12, :cond_2
 
-    aget v2, v2, p1
+    sget-object v12, Lcom/google/common/math/LongMath;->biggestBinomials:[I
 
-    if-gt p0, v2, :cond_3
+    aget v12, v12, p1
 
-    .line 376
-    invoke-static {p0, p1}, Lcom/google/common/math/LongMath;->binomial(II)J
+    move/from16 v0, p0
 
-    move-result-wide v2
+    if-gt v0, v12, :cond_2
 
-    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    .line 407
+    invoke-static/range {p0 .. p1}, Lcom/google/common/math/LongMath;->binomial(II)J
 
-    move-result-object v1
+    move-result-wide v12
 
-    .line 383
+    invoke-static {v12, v13}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v12
+
+    .line 440
+    :goto_1
+    return-object v12
+
+    .line 402
     :cond_1
-    return-object v1
+    const/4 v12, 0x0
 
-    :cond_2
-    move v2, v4
-
-    .line 371
     goto :goto_0
 
-    .line 378
+    .line 410
+    :cond_2
+    sget-object v2, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
+
+    .line 412
+    .local v2, accum:Ljava/math/BigInteger;
+    move/from16 v0, p0
+
+    int-to-long v7, v0
+
+    .line 413
+    .local v7, numeratorAccum:J
+    const-wide/16 v4, 0x1
+
+    .line 415
+    .local v4, denominatorAccum:J
+    move/from16 v0, p0
+
+    int-to-long v12, v0
+
+    sget-object v14, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
+
+    invoke-static {v12, v13, v14}, Lcom/google/common/math/LongMath;->log2(JLjava/math/RoundingMode;)I
+
+    move-result v3
+
+    .line 417
+    .local v3, bits:I
+    move v9, v3
+
+    .line 419
+    .local v9, numeratorBits:I
+    const/4 v6, 0x1
+
+    .local v6, i:I
+    :goto_2
+    move/from16 v0, p1
+
+    if-ge v6, v0, :cond_4
+
+    .line 420
+    sub-int v10, p0, v6
+
+    .line 421
+    .local v10, p:I
+    add-int/lit8 v11, v6, 0x1
+
+    .line 425
+    .local v11, q:I
+    add-int v12, v9, v3
+
+    const/16 v13, 0x3f
+
+    if-lt v12, v13, :cond_3
+
+    .line 428
+    invoke-static {v7, v8}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v12
+
+    invoke-virtual {v2, v12}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v12
+
+    invoke-static {v4, v5}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+
+    move-result-object v13
+
+    invoke-virtual {v12, v13}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v2
+
+    .line 430
+    int-to-long v7, v10
+
+    .line 431
+    int-to-long v4, v11
+
+    .line 432
+    move v9, v3
+
+    .line 419
+    :goto_3
+    add-int/lit8 v6, v6, 0x1
+
+    goto :goto_2
+
+    .line 435
     :cond_3
-    sget-object v1, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
+    int-to-long v12, v10
 
-    .line 379
-    .local v1, result:Ljava/math/BigInteger;
-    const/4 v0, 0x0
+    mul-long/2addr v7, v12
 
-    .local v0, i:I
-    :goto_1
-    if-ge v0, p1, :cond_1
+    .line 436
+    int-to-long v12, v11
 
-    .line 380
-    sub-int v2, p0, v0
+    mul-long/2addr v4, v12
 
-    int-to-long v2, v2
+    .line 437
+    add-int/2addr v9, v3
 
-    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    goto :goto_3
 
-    move-result-object v2
+    .line 440
+    .end local v10           #p:I
+    .end local v11           #q:I
+    :cond_4
+    invoke-static {v7, v8}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    invoke-virtual {v1, v2}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    move-result-object v12
 
-    move-result-object v1
+    invoke-virtual {v2, v12}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    .line 381
-    add-int/lit8 v2, v0, 0x1
+    move-result-object v12
 
-    int-to-long v2, v2
+    invoke-static {v4, v5}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
-    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    move-result-object v13
 
-    move-result-object v2
+    invoke-virtual {v12, v13}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    invoke-virtual {v1, v2}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-
-    move-result-object v1
-
-    .line 379
-    add-int/lit8 v0, v0, 0x1
+    move-result-object v12
 
     goto :goto_1
 .end method
@@ -191,20 +312,23 @@
     .parameter "p"
     .parameter "q"
     .parameter "mode"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "TODO"
+    .end annotation
 
     .prologue
-    .line 267
+    .line 298
     new-instance v0, Ljava/math/BigDecimal;
 
     invoke-direct {v0, p0}, Ljava/math/BigDecimal;-><init>(Ljava/math/BigInteger;)V
 
-    .line 268
+    .line 299
     .local v0, pDec:Ljava/math/BigDecimal;
     new-instance v1, Ljava/math/BigDecimal;
 
     invoke-direct {v1, p1}, Ljava/math/BigDecimal;-><init>(Ljava/math/BigInteger;)V
 
-    .line 269
+    .line 300
     .local v1, qDec:Ljava/math/BigDecimal;
     const/4 v2, 0x0
 
@@ -224,7 +348,7 @@
     .parameter "n"
 
     .prologue
-    .line 285
+    .line 316
     const-string v17, "n"
 
     move-object/from16 v0, v17
@@ -233,8 +357,8 @@
 
     invoke-static {v0, v1}, Lcom/google/common/math/MathPreconditions;->checkNonNegative(Ljava/lang/String;I)I
 
-    .line 288
-    sget-object v17, Lcom/google/common/math/LongMath;->FACTORIALS:[J
+    .line 319
+    sget-object v17, Lcom/google/common/math/LongMath;->factorials:[J
 
     move-object/from16 v0, v17
 
@@ -248,8 +372,8 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 289
-    sget-object v17, Lcom/google/common/math/LongMath;->FACTORIALS:[J
+    .line 320
+    sget-object v17, Lcom/google/common/math/LongMath;->factorials:[J
 
     aget-wide v17, v17, p0
 
@@ -257,11 +381,11 @@
 
     move-result-object v17
 
-    .line 336
+    .line 367
     :goto_0
     return-object v17
 
-    .line 293
+    .line 324
     :cond_0
     sget-object v17, Ljava/math/RoundingMode;->CEILING:Ljava/math/RoundingMode;
 
@@ -283,39 +407,39 @@
 
     move-result v2
 
-    .line 294
+    .line 325
     .local v2, approxSize:I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 297
+    .line 328
     .local v3, bignums:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/math/BigInteger;>;"
-    sget-object v17, Lcom/google/common/math/LongMath;->FACTORIALS:[J
+    sget-object v17, Lcom/google/common/math/LongMath;->factorials:[J
 
     move-object/from16 v0, v17
 
     array-length v15, v0
 
-    .line 298
+    .line 329
     .local v15, startingNumber:I
-    sget-object v17, Lcom/google/common/math/LongMath;->FACTORIALS:[J
+    sget-object v17, Lcom/google/common/math/LongMath;->factorials:[J
 
     add-int/lit8 v18, v15, -0x1
 
     aget-wide v11, v17, v18
 
-    .line 300
+    .line 331
     .local v11, product:J
     invoke-static {v11, v12}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
 
     move-result v14
 
-    .line 301
+    .line 332
     .local v14, shift:I
     shr-long/2addr v11, v14
 
-    .line 304
+    .line 335
     sget-object v17, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
 
     move-object/from16 v0, v17
@@ -326,7 +450,7 @@
 
     add-int/lit8 v13, v17, 0x1
 
-    .line 305
+    .line 336
     .local v13, productBits:I
     int-to-long v0, v15
 
@@ -340,7 +464,7 @@
 
     add-int/lit8 v4, v17, 0x1
 
-    .line 307
+    .line 338
     .local v4, bits:I
     const/16 v17, 0x1
 
@@ -348,7 +472,7 @@
 
     shl-int v5, v17, v18
 
-    .line 310
+    .line 341
     .local v5, nextPowerOfTwo:I
     int-to-long v9, v15
 
@@ -364,7 +488,7 @@
 
     if-gtz v17, :cond_3
 
-    .line 312
+    .line 343
     int-to-long v0, v5
 
     move-wide/from16 v17, v0
@@ -377,30 +501,30 @@
 
     if-eqz v17, :cond_1
 
-    .line 313
+    .line 344
     shl-int/lit8 v5, v5, 0x1
 
-    .line 314
+    .line 345
     add-int/lit8 v4, v4, 0x1
 
-    .line 317
+    .line 348
     :cond_1
     invoke-static {v9, v10}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
 
     move-result v16
 
-    .line 318
+    .line 349
     .local v16, tz:I
     shr-long v7, v9, v16
 
-    .line 319
+    .line 350
     .local v7, normalizedNum:J
     add-int v14, v14, v16
 
-    .line 321
+    .line 352
     sub-int v6, v4, v16
 
-    .line 323
+    .line 354
     .local v6, normalizedBits:I
     add-int v17, v6, v13
 
@@ -412,7 +536,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 324
+    .line 355
     invoke-static {v11, v12}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v17
@@ -421,17 +545,17 @@
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 325
+    .line 356
     const-wide/16 v11, 0x1
 
-    .line 326
+    .line 357
     const/4 v13, 0x0
 
-    .line 328
+    .line 359
     :cond_2
     mul-long/2addr v11, v7
 
-    .line 329
+    .line 360
     sget-object v17, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
 
     move-object/from16 v0, v17
@@ -442,14 +566,14 @@
 
     add-int/lit8 v13, v17, 0x1
 
-    .line 310
+    .line 341
     const-wide/16 v17, 0x1
 
     add-long v9, v9, v17
 
     goto :goto_1
 
-    .line 332
+    .line 363
     .end local v6           #normalizedBits:I
     .end local v7           #normalizedNum:J
     .end local v16           #tz:I
@@ -460,7 +584,7 @@
 
     if-lez v17, :cond_4
 
-    .line 333
+    .line 364
     invoke-static {v11, v12}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v17
@@ -469,7 +593,7 @@
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 336
+    .line 367
     :cond_4
     invoke-static {v3}, Lcom/google/common/math/BigIntegerMath;->listProduct(Ljava/util/List;)Ljava/math/BigInteger;
 
@@ -487,9 +611,12 @@
 .method static fitsInLong(Ljava/math/BigInteger;)Z
     .locals 2
     .parameter "x"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "TODO"
+    .end annotation
 
     .prologue
-    .line 388
+    .line 447
     invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
 
     move-result v0
@@ -514,10 +641,10 @@
     .parameter "x"
 
     .prologue
-    .line 55
+    .line 57
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
+    .line 58
     invoke-virtual {p0}, Ljava/math/BigInteger;->signum()I
 
     move-result v0
@@ -562,7 +689,7 @@
     .end annotation
 
     .prologue
-    .line 340
+    .line 371
     .local p0, nums:Ljava/util/List;,"Ljava/util/List<Ljava/math/BigInteger;>;"
     const/4 v0, 0x0
 
@@ -594,18 +721,18 @@
     .end annotation
 
     .prologue
-    .line 344
+    .line 375
     .local p0, nums:Ljava/util/List;,"Ljava/util/List<Ljava/math/BigInteger;>;"
     sub-int v1, p2, p1
 
     packed-switch v1, :pswitch_data_0
 
-    .line 355
+    .line 386
     add-int v1, p2, p1
 
     ushr-int/lit8 v0, v1, 0x1
 
-    .line 356
+    .line 387
     .local v0, m:I
     invoke-static {p0, p1, v0}, Lcom/google/common/math/BigIntegerMath;->listProduct(Ljava/util/List;II)Ljava/math/BigInteger;
 
@@ -623,13 +750,13 @@
     :goto_0
     return-object v1
 
-    .line 346
+    .line 377
     :pswitch_0
     sget-object v1, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
 
     goto :goto_0
 
-    .line 348
+    .line 379
     :pswitch_1
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -639,7 +766,7 @@
 
     goto :goto_0
 
-    .line 350
+    .line 381
     :pswitch_2
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -661,7 +788,7 @@
 
     goto :goto_0
 
-    .line 352
+    .line 383
     :pswitch_3
     invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -695,7 +822,7 @@
 
     goto :goto_0
 
-    .line 344
+    .line 375
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -706,201 +833,244 @@
 .end method
 
 .method public static log10(Ljava/math/BigInteger;Ljava/math/RoundingMode;)I
-    .locals 12
+    .locals 14
     .parameter "x"
     .parameter "mode"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "TODO"
+    .end annotation
 
     .prologue
-    const/4 v11, 0x2
-
-    .line 127
-    const-string v9, "x"
-
-    invoke-static {v9, p0}, Lcom/google/common/math/MathPreconditions;->checkPositive(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
-
-    .line 128
-    invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->fitsInLong(Ljava/math/BigInteger;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    .line 129
-    invoke-virtual {p0}, Ljava/math/BigInteger;->longValue()J
-
-    move-result-wide v9
-
-    invoke-static {v9, v10, p1}, Lcom/google/common/math/LongMath;->log10(JLjava/math/RoundingMode;)I
-
-    move-result v0
-
-    .line 168
-    :cond_0
-    :goto_0
-    :pswitch_0
-    return v0
-
     .line 133
-    :cond_1
-    new-instance v6, Ljava/util/ArrayList;
+    const-string v10, "x"
 
-    const/16 v9, 0xa
-
-    invoke-direct {v6, v9}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-static {v10, p0}, Lcom/google/common/math/MathPreconditions;->checkPositive(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     .line 134
-    .local v6, powersOf10:Ljava/util/List;,"Ljava/util/List<Ljava/math/BigInteger;>;"
-    sget-object v5, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
-
-    .line 135
-    .local v5, powerOf10:Ljava/math/BigInteger;
-    :goto_1
-    invoke-virtual {p0, v5}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
-
-    move-result v9
-
-    if-ltz v9, :cond_2
-
-    .line 136
-    invoke-interface {v6, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 137
-    invoke-virtual {v5, v11}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
-
-    move-result-object v5
-
-    goto :goto_1
-
-    .line 139
-    :cond_2
-    sget-object v1, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
-
-    .line 140
-    .local v1, floorPow:Ljava/math/BigInteger;
-    const/4 v0, 0x0
-
-    .line 141
-    .local v0, floorLog:I
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v9
-
-    add-int/lit8 v3, v9, -0x1
-
-    .local v3, i:I
-    :goto_2
-    if-ltz v3, :cond_4
-
-    .line 142
-    invoke-interface {v6, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/math/BigInteger;
-
-    .line 143
-    .local v4, powOf10:Ljava/math/BigInteger;
-    mul-int/lit8 v0, v0, 0x2
-
-    .line 144
-    invoke-virtual {v4, v1}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
-
-    move-result-object v7
-
-    .line 145
-    .local v7, tenPow:Ljava/math/BigInteger;
-    invoke-virtual {p0, v7}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
-
-    move-result v9
-
-    if-ltz v9, :cond_3
-
-    .line 146
-    move-object v1, v7
-
-    .line 147
-    add-int/lit8 v0, v0, 0x1
-
-    .line 141
-    :cond_3
-    add-int/lit8 v3, v3, -0x1
-
-    goto :goto_2
-
-    .line 150
-    .end local v4           #powOf10:Ljava/math/BigInteger;
-    .end local v7           #tenPow:Ljava/math/BigInteger;
-    :cond_4
-    sget-object v9, Lcom/google/common/math/BigIntegerMath$1;->$SwitchMap$java$math$RoundingMode:[I
-
-    invoke-virtual {p1}, Ljava/math/RoundingMode;->ordinal()I
+    invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->fitsInLong(Ljava/math/BigInteger;)Z
 
     move-result v10
 
-    aget v9, v9, v10
+    if-eqz v10, :cond_1
 
-    packed-switch v9, :pswitch_data_0
+    .line 135
+    invoke-virtual {p0}, Ljava/math/BigInteger;->longValue()J
 
-    .line 170
-    new-instance v9, Ljava/lang/AssertionError;
+    move-result-wide v10
 
-    invoke-direct {v9}, Ljava/lang/AssertionError;-><init>()V
+    invoke-static {v10, v11, p1}, Lcom/google/common/math/LongMath;->log10(JLjava/math/RoundingMode;)I
 
-    throw v9
+    move-result v4
 
-    .line 152
-    :pswitch_1
-    invoke-virtual {v1, p0}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+    .line 192
+    :cond_0
+    :goto_0
+    :pswitch_0
+    return v4
 
-    move-result v9
+    .line 138
+    :cond_1
+    sget-object v10, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
 
-    invoke-static {v9}, Lcom/google/common/math/MathPreconditions;->checkRoundingUnnecessary(Z)V
+    invoke-static {p0, v10}, Lcom/google/common/math/BigIntegerMath;->log2(Ljava/math/BigInteger;Ljava/math/RoundingMode;)I
 
-    goto :goto_0
+    move-result v10
 
-    .line 160
-    :pswitch_2
-    invoke-virtual {v1, p0}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+    int-to-double v10, v10
 
-    move-result v9
+    sget-wide v12, Lcom/google/common/math/BigIntegerMath;->LN_2:D
 
-    if-nez v9, :cond_0
+    mul-double/2addr v10, v12
 
-    add-int/lit8 v0, v0, 0x1
+    sget-wide v12, Lcom/google/common/math/BigIntegerMath;->LN_10:D
 
-    goto :goto_0
+    div-double/2addr v10, v12
 
-    .line 166
-    :pswitch_3
-    invoke-virtual {p0, v11}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
+    double-to-int v1, v10
 
-    move-result-object v8
-
-    .line 167
-    .local v8, x2:Ljava/math/BigInteger;
-    invoke-virtual {v1, v11}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
-
-    move-result-object v9
-
+    .line 139
+    .local v1, approxLog10:I
     sget-object v10, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
 
-    invoke-virtual {v9, v10}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    invoke-virtual {v10, v1}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
 
     move-result-object v2
 
-    .line 168
-    .local v2, halfPowerSquared:Ljava/math/BigInteger;
-    invoke-virtual {v8, v2}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+    .line 140
+    .local v2, approxPow:Ljava/math/BigInteger;
+    invoke-virtual {v2, p0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
-    move-result v9
+    move-result v0
 
-    if-lez v9, :cond_0
+    .line 147
+    .local v0, approxCmp:I
+    if-lez v0, :cond_4
 
-    add-int/lit8 v0, v0, 0x1
+    .line 154
+    :cond_2
+    add-int/lit8 v1, v1, -0x1
+
+    .line 155
+    sget-object v10, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
+
+    invoke-virtual {v2, v10}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v2
+
+    .line 156
+    invoke-virtual {v2, p0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v0
+
+    .line 157
+    if-gtz v0, :cond_2
+
+    .line 170
+    :cond_3
+    move v4, v1
+
+    .line 171
+    .local v4, floorLog:I
+    move-object v5, v2
+
+    .line 172
+    .local v5, floorPow:Ljava/math/BigInteger;
+    move v3, v0
+
+    .line 174
+    .local v3, floorCmp:I
+    sget-object v10, Lcom/google/common/math/BigIntegerMath$1;->$SwitchMap$java$math$RoundingMode:[I
+
+    invoke-virtual {p1}, Ljava/math/RoundingMode;->ordinal()I
+
+    move-result v11
+
+    aget v10, v10, v11
+
+    packed-switch v10, :pswitch_data_0
+
+    .line 194
+    new-instance v10, Ljava/lang/AssertionError;
+
+    invoke-direct {v10}, Ljava/lang/AssertionError;-><init>()V
+
+    throw v10
+
+    .line 159
+    .end local v3           #floorCmp:I
+    .end local v4           #floorLog:I
+    .end local v5           #floorPow:Ljava/math/BigInteger;
+    :cond_4
+    sget-object v10, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
+
+    invoke-virtual {v10, v2}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v8
+
+    .line 160
+    .local v8, nextPow:Ljava/math/BigInteger;
+    invoke-virtual {v8, p0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v7
+
+    .line 161
+    .local v7, nextCmp:I
+    :goto_1
+    if-gtz v7, :cond_3
+
+    .line 162
+    add-int/lit8 v1, v1, 0x1
+
+    .line 163
+    move-object v2, v8
+
+    .line 164
+    move v0, v7
+
+    .line 165
+    sget-object v10, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
+
+    invoke-virtual {v10, v2}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v8
+
+    .line 166
+    invoke-virtual {v8, p0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v7
+
+    goto :goto_1
+
+    .line 176
+    .end local v7           #nextCmp:I
+    .end local v8           #nextPow:Ljava/math/BigInteger;
+    .restart local v3       #floorCmp:I
+    .restart local v4       #floorLog:I
+    .restart local v5       #floorPow:Ljava/math/BigInteger;
+    :pswitch_1
+    if-nez v3, :cond_5
+
+    const/4 v10, 0x1
+
+    :goto_2
+    invoke-static {v10}, Lcom/google/common/math/MathPreconditions;->checkRoundingUnnecessary(Z)V
 
     goto :goto_0
 
-    .line 150
+    :cond_5
+    const/4 v10, 0x0
+
+    goto :goto_2
+
+    .line 184
+    :pswitch_2
+    invoke-virtual {v5, p0}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_0
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_0
+
+    .line 190
+    :pswitch_3
+    const/4 v10, 0x2
+
+    invoke-virtual {p0, v10}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
+
+    move-result-object v9
+
+    .line 191
+    .local v9, x2:Ljava/math/BigInteger;
+    const/4 v10, 0x2
+
+    invoke-virtual {v5, v10}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
+
+    move-result-object v10
+
+    sget-object v11, Ljava/math/BigInteger;->TEN:Ljava/math/BigInteger;
+
+    invoke-virtual {v10, v11}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
+
+    move-result-object v6
+
+    .line 192
+    .local v6, halfPowerSquared:Ljava/math/BigInteger;
+    invoke-virtual {v9, v6}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+
+    move-result v10
+
+    if-lez v10, :cond_0
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto/16 :goto_0
+
+    .line 174
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -920,7 +1090,7 @@
     .parameter "mode"
 
     .prologue
-    .line 68
+    .line 71
     const-string v5, "x"
 
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -931,14 +1101,14 @@
 
     invoke-static {v5, v4}, Lcom/google/common/math/MathPreconditions;->checkPositive(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    .line 69
+    .line 72
     invoke-virtual {p0}, Ljava/math/BigInteger;->bitLength()I
 
     move-result v4
 
     add-int/lit8 v1, v4, -0x1
 
-    .line 70
+    .line 73
     .local v1, logFloor:I
     sget-object v4, Lcom/google/common/math/BigIntegerMath$1;->$SwitchMap$java$math$RoundingMode:[I
 
@@ -950,14 +1120,14 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 104
+    .line 107
     new-instance v4, Ljava/lang/AssertionError;
 
     invoke-direct {v4}, Ljava/lang/AssertionError;-><init>()V
 
     throw v4
 
-    .line 72
+    .line 75
     :pswitch_0
     invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->isPowerOfTwo(Ljava/math/BigInteger;)Z
 
@@ -965,14 +1135,14 @@
 
     invoke-static {v4}, Lcom/google/common/math/MathPreconditions;->checkRoundingUnnecessary(Z)V
 
-    .line 101
+    .line 104
     .end local v1           #logFloor:I
     :cond_0
     :goto_0
     :pswitch_1
     return v1
 
-    .line 79
+    .line 82
     .restart local v1       #logFloor:I
     :pswitch_2
     invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->isPowerOfTwo(Ljava/math/BigInteger;)Z
@@ -985,13 +1155,13 @@
 
     goto :goto_0
 
-    .line 84
+    .line 87
     :pswitch_3
     const/16 v4, 0x100
 
     if-ge v1, v4, :cond_1
 
-    .line 85
+    .line 88
     sget-object v4, Lcom/google/common/math/BigIntegerMath;->SQRT2_PRECOMPUTED_BITS:Ljava/math/BigInteger;
 
     rsub-int v5, v1, 0x100
@@ -1000,7 +1170,7 @@
 
     move-result-object v0
 
-    .line 87
+    .line 90
     .local v0, halfPower:Ljava/math/BigInteger;
     invoke-virtual {p0, v0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
@@ -1008,12 +1178,12 @@
 
     if-lez v4, :cond_0
 
-    .line 90
+    .line 93
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 99
+    .line 102
     .end local v0           #halfPower:Ljava/math/BigInteger;
     :cond_1
     const/4 v4, 0x2
@@ -1022,7 +1192,7 @@
 
     move-result-object v3
 
-    .line 100
+    .line 103
     .local v3, x2:Ljava/math/BigInteger;
     invoke-virtual {v3}, Ljava/math/BigInteger;->bitLength()I
 
@@ -1030,7 +1200,7 @@
 
     add-int/lit8 v2, v4, -0x1
 
-    .line 101
+    .line 104
     .local v2, logX2Floor:I
     mul-int/lit8 v4, v1, 0x2
 
@@ -1042,7 +1212,7 @@
 
     goto :goto_0
 
-    .line 70
+    .line 73
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -1060,23 +1230,26 @@
     .locals 5
     .parameter "x"
     .parameter "mode"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "TODO"
+    .end annotation
 
     .prologue
     const/4 v4, 0x2
 
-    .line 183
+    .line 211
     const-string v2, "x"
 
     invoke-static {v2, p0}, Lcom/google/common/math/MathPreconditions;->checkNonNegative(Ljava/lang/String;Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
-    .line 184
+    .line 212
     invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->fitsInLong(Ljava/math/BigInteger;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 185
+    .line 213
     invoke-virtual {p0}, Ljava/math/BigInteger;->longValue()J
 
     move-result-wide v2
@@ -1089,19 +1262,19 @@
 
     move-result-object v1
 
-    .line 206
+    .line 234
     :cond_0
     :goto_0
     :pswitch_0
     return-object v1
 
-    .line 187
+    .line 215
     :cond_1
     invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->sqrtFloor(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     move-result-object v1
 
-    .line 188
+    .line 216
     .local v1, sqrtFloor:Ljava/math/BigInteger;
     sget-object v2, Lcom/google/common/math/BigIntegerMath$1;->$SwitchMap$java$math$RoundingMode:[I
 
@@ -1113,14 +1286,14 @@
 
     packed-switch v2, :pswitch_data_0
 
-    .line 208
+    .line 236
     new-instance v2, Ljava/lang/AssertionError;
 
     invoke-direct {v2}, Ljava/lang/AssertionError;-><init>()V
 
     throw v2
 
-    .line 190
+    .line 218
     :pswitch_1
     invoke-virtual {v1, v4}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
 
@@ -1134,7 +1307,7 @@
 
     goto :goto_0
 
-    .line 196
+    .line 224
     :pswitch_2
     invoke-virtual {v1, v4}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
 
@@ -1154,7 +1327,7 @@
 
     goto :goto_0
 
-    .line 200
+    .line 228
     :pswitch_3
     invoke-virtual {v1, v4}, Ljava/math/BigInteger;->pow(I)Ljava/math/BigInteger;
 
@@ -1164,7 +1337,7 @@
 
     move-result-object v0
 
-    .line 206
+    .line 234
     .local v0, halfSquare:Ljava/math/BigInteger;
     invoke-virtual {v0, p0}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
@@ -1180,7 +1353,7 @@
 
     goto :goto_0
 
-    .line 188
+    .line 216
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -1197,9 +1370,12 @@
 .method private static sqrtApproxWithDoubles(Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 3
     .parameter "x"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "TODO"
+    .end annotation
 
     .prologue
-    .line 256
+    .line 286
     invoke-static {p0}, Lcom/google/common/math/DoubleUtils;->bigToDouble(Ljava/math/BigInteger;)D
 
     move-result-wide v0
@@ -1220,29 +1396,32 @@
 .method private static sqrtFloor(Ljava/math/BigInteger;)Ljava/math/BigInteger;
     .locals 8
     .parameter "x"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "TODO"
+    .end annotation
 
     .prologue
     const/4 v7, 0x1
 
-    .line 233
+    .line 262
     sget-object v5, Ljava/math/RoundingMode;->FLOOR:Ljava/math/RoundingMode;
 
     invoke-static {p0, v5}, Lcom/google/common/math/BigIntegerMath;->log2(Ljava/math/BigInteger;Ljava/math/RoundingMode;)I
 
     move-result v0
 
-    .line 234
+    .line 263
     .local v0, log2:I
     const/16 v5, 0x3ff
 
     if-ge v0, v5, :cond_0
 
-    .line 235
+    .line 264
     invoke-static {p0}, Lcom/google/common/math/BigIntegerMath;->sqrtApproxWithDoubles(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     move-result-object v2
 
-    .line 244
+    .line 273
     .local v2, sqrt0:Ljava/math/BigInteger;
     :goto_0
     invoke-virtual {p0, v2}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -1257,7 +1436,7 @@
 
     move-result-object v4
 
-    .line 245
+    .line 274
     .local v4, sqrt1:Ljava/math/BigInteger;
     invoke-virtual {v2, v4}, Ljava/math/BigInteger;->equals(Ljava/lang/Object;)Z
 
@@ -1267,13 +1446,13 @@
 
     move-object v3, v2
 
-    .line 252
+    .line 281
     .end local v2           #sqrt0:Ljava/math/BigInteger;
     .local v3, sqrt0:Ljava/math/BigInteger;
     :goto_1
     return-object v3
 
-    .line 237
+    .line 266
     .end local v3           #sqrt0:Ljava/math/BigInteger;
     .end local v4           #sqrt1:Ljava/math/BigInteger;
     :cond_0
@@ -1281,7 +1460,7 @@
 
     and-int/lit8 v1, v5, -0x2
 
-    .line 242
+    .line 271
     .local v1, shift:I
     invoke-virtual {p0, v1}, Ljava/math/BigInteger;->shiftRight(I)Ljava/math/BigInteger;
 
@@ -1300,13 +1479,13 @@
     .restart local v2       #sqrt0:Ljava/math/BigInteger;
     goto :goto_0
 
-    .line 249
+    .line 278
     .end local v1           #shift:I
     .restart local v4       #sqrt1:Ljava/math/BigInteger;
     :cond_1
     move-object v2, v4
 
-    .line 250
+    .line 279
     invoke-virtual {p0, v2}, Ljava/math/BigInteger;->divide(Ljava/math/BigInteger;)Ljava/math/BigInteger;
 
     move-result-object v5
@@ -1319,7 +1498,7 @@
 
     move-result-object v4
 
-    .line 251
+    .line 280
     invoke-virtual {v4, v2}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
     move-result v5
@@ -1328,7 +1507,7 @@
 
     move-object v3, v2
 
-    .line 252
+    .line 281
     .end local v2           #sqrt0:Ljava/math/BigInteger;
     .restart local v3       #sqrt0:Ljava/math/BigInteger;
     goto :goto_1

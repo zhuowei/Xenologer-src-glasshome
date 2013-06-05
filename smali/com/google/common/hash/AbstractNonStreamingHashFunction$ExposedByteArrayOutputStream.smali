@@ -20,10 +20,10 @@
     .parameter "expectedInputSize"
 
     .prologue
-    .line 109
+    .line 146
     invoke-direct {p0, p1}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
-    .line 110
+    .line 147
     return-void
 .end method
 
@@ -33,7 +33,7 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 150
     iget-object v0, p0, Lcom/google/common/hash/AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream;->buf:[B
 
     return-object v0
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 154
     iget v0, p0, Lcom/google/common/hash/AbstractNonStreamingHashFunction$ExposedByteArrayOutputStream;->count:I
 
     return v0

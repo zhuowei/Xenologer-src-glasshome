@@ -4,16 +4,25 @@
 
 
 # static fields
-.field private static final ACTION_SHOW_MESSAGE:Ljava/lang/String; = "com.google.glass.action.MESSAGE"
+.field public static final ACTION_SHOW_MESSAGE:Ljava/lang/String; = "com.google.glass.action.MESSAGE"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
 
 #the value of this static final field might be set in the static constructor
 .field public static final DEFAULT_ICON:I = 0x0
 
 .field private static final EXTRA_ICON:Ljava/lang/String; = "ICON"
 
-.field private static final EXTRA_MESSAGE:Ljava/lang/String; = "MESSAGE"
+.field public static final EXTRA_MESSAGE:Ljava/lang/String; = "MESSAGE"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
 
-.field private static final EXTRA_SUB_MESSAGE:Ljava/lang/String; = "SUB_MESSAGE"
+.field public static final EXTRA_SUB_MESSAGE:Ljava/lang/String; = "SUB_MESSAGE"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
 
 .field private static final EXTRA_TURN_SCREEN_ON:Ljava/lang/String; = "TURN_SCREEN_ON"
 
@@ -27,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 37
     sget v0, Lcom/google/glass/common/R$drawable;->ic_exclamation_big:I
 
     sput v0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->DEFAULT_ICON:I
@@ -40,17 +49,17 @@
     .parameter "context"
 
     .prologue
-    .line 38
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 42
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->context:Landroid/content/Context;
 
-    .line 40
+    .line 43
     return-void
 .end method
 
@@ -58,7 +67,7 @@
     .locals 3
 
     .prologue
-    .line 136
+    .line 139
     iget-object v1, p0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -73,7 +82,7 @@
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 138
+    .line 141
     .local v0, drawable:Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -91,15 +100,15 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 131
     sget v1, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->DEFAULT_ICON:I
 
     if-ne v1, p1, :cond_0
 
-    .line 129
+    .line 132
     sget p1, Lcom/google/glass/common/R$drawable;->ic_exclamation_big:I
 
-    .line 131
+    .line 134
     :cond_0
     iget-object v1, p0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->context:Landroid/content/Context;
 
@@ -113,7 +122,7 @@
 
     check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 132
+    .line 135
     .local v0, drawable:Landroid/graphics/drawable/BitmapDrawable;
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -127,20 +136,20 @@
     .parameter "intent"
 
     .prologue
-    .line 104
+    .line 107
     if-nez p1, :cond_1
 
-    .line 105
+    .line 108
     invoke-direct {p0}, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->getDefaultIcon()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 111
+    .line 114
     :cond_0
     :goto_0
     return-object v0
 
-    .line 107
+    .line 110
     :cond_1
     const-string v1, "ICON"
 
@@ -150,11 +159,11 @@
 
     check-cast v0, Landroid/graphics/Bitmap;
 
-    .line 108
+    .line 111
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-nez v0, :cond_0
 
-    .line 111
+    .line 114
     invoke-direct {p0}, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->getDefaultIcon()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -167,13 +176,13 @@
     .parameter "intent"
 
     .prologue
-    .line 83
+    .line 86
     if-nez p1, :cond_0
 
-    .line 84
+    .line 87
     const/4 v0, 0x0
 
-    .line 86
+    .line 89
     :goto_0
     return-object v0
 
@@ -192,13 +201,13 @@
     .parameter "intent"
 
     .prologue
-    .line 91
+    .line 94
     if-nez p1, :cond_0
 
-    .line 92
+    .line 95
     const/4 v0, 0x0
 
-    .line 94
+    .line 97
     :goto_0
     return-object v0
 
@@ -219,10 +228,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 119
+    .line 122
     if-nez p1, :cond_0
 
-    .line 122
+    .line 125
     :goto_0
     return v0
 
@@ -241,14 +250,14 @@
     .parameter "message"
 
     .prologue
-    .line 44
+    .line 47
     sget v0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->DEFAULT_ICON:I
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, v0, v1}, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->showFullScreenMessage(Ljava/lang/String;IZ)V
 
-    .line 45
+    .line 48
     return-void
 .end method
 
@@ -258,12 +267,12 @@
     .parameter "icon"
 
     .prologue
-    .line 54
+    .line 57
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->showFullScreenMessage(Ljava/lang/String;IZ)V
 
-    .line 55
+    .line 58
     return-void
 .end method
 
@@ -274,12 +283,12 @@
     .parameter "turnScreenOn"
 
     .prologue
-    .line 62
+    .line 65
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0, p2, p3}, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->showFullScreenMessage(Ljava/lang/String;Ljava/lang/String;IZ)V
 
-    .line 63
+    .line 66
     return-void
 .end method
 
@@ -289,14 +298,14 @@
     .parameter "subMessage"
 
     .prologue
-    .line 49
+    .line 52
     sget v0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->DEFAULT_ICON:I
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, p1, p2, v0, v1}, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->showFullScreenMessage(Ljava/lang/String;Ljava/lang/String;IZ)V
 
-    .line 50
+    .line 53
     return-void
 .end method
 
@@ -308,37 +317,37 @@
     .parameter "turnScreenOn"
 
     .prologue
-    .line 70
+    .line 73
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.MESSAGE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 71
+    .line 74
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 72
+    .line 75
     const-string v1, "MESSAGE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 73
+    .line 76
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 74
+    .line 77
     const-string v1, "SUB_MESSAGE"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 76
+    .line 79
     :cond_0
     const-string v1, "ICON"
 
@@ -348,16 +357,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 77
+    .line 80
     const-string v1, "TURN_SCREEN_ON"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 78
+    .line 81
     iget-object v1, p0, Lcom/google/glass/util/FullScreenMessagingDialogHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 79
+    .line 82
     return-void
 .end method

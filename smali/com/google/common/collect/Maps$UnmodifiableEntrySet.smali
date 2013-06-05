@@ -48,12 +48,12 @@
     .end annotation
 
     .prologue
-    .line 831
+    .line 1129
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntrySet;,"Lcom/google/common/collect/Maps$UnmodifiableEntrySet<TK;TV;>;"
     .local p1, entries:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/Maps$UnmodifiableEntries;-><init>(Ljava/util/Collection;)V
 
-    .line 832
+    .line 1130
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .end parameter
 
     .prologue
-    .line 837
+    .line 1136
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntrySet;,"Lcom/google/common/collect/Maps$UnmodifiableEntrySet<TK;TV;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Sets;->equalsImpl(Ljava/util/Set;Ljava/lang/Object;)Z
 
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 841
+    .line 1141
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntrySet;,"Lcom/google/common/collect/Maps$UnmodifiableEntrySet<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
 

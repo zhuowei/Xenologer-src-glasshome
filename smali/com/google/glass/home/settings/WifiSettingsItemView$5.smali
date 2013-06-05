@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/settings/WifiSettingsItemView;->onUnload()V
+    value = Lcom/google/glass/home/settings/WifiSettingsItemView;->onLoad()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 306
+    .line 309
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$5;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 309
+    .line 312
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$5;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsItemView;->statusReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$700(Lcom/google/glass/home/settings/WifiSettingsItemView;)Lcom/google/glass/util/SafeBroadcastReceiver;
+    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$900(Lcom/google/glass/home/settings/WifiSettingsItemView;)Lcom/google/glass/util/SafeBroadcastReceiver;
 
     move-result-object v0
 
@@ -55,8 +55,12 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
+    invoke-static {}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$800()[Ljava/lang/String;
 
-    .line 310
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 313
     return-void
 .end method

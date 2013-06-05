@@ -10,7 +10,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/common/collect/Interners$InternerFunction;,
-        Lcom/google/common/collect/Interners$CustomInterner;
+        Lcom/google/common/collect/Interners$WeakInterner;
     }
 .end annotation
 
@@ -42,7 +42,7 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 108
     .local p0, interner:Lcom/google/common/collect/Interner;,"Lcom/google/common/collect/Interner<TE;>;"
     new-instance v1, Lcom/google/common/collect/Interners$InternerFunction;
 
@@ -105,18 +105,12 @@
     .end annotation
 
     .prologue
-    .line 103
-    new-instance v0, Lcom/google/common/collect/Interners$CustomInterner;
+    .line 63
+    new-instance v0, Lcom/google/common/collect/Interners$WeakInterner;
 
-    new-instance v1, Lcom/google/common/collect/MapMaker;
+    const/4 v1, 0x0
 
-    invoke-direct {v1}, Lcom/google/common/collect/MapMaker;-><init>()V
-
-    invoke-virtual {v1}, Lcom/google/common/collect/MapMaker;->weakKeys()Lcom/google/common/collect/MapMaker;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/common/collect/Interners$CustomInterner;-><init>(Lcom/google/common/collect/GenericMapMaker;)V
+    invoke-direct {v0, v1}, Lcom/google/common/collect/Interners$WeakInterner;-><init>(Lcom/google/common/collect/Interners$1;)V
 
     return-object v0
 .end method

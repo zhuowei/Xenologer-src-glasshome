@@ -33,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 662
+    .line 775
     .local p0, this:Lcom/google/common/collect/Multisets$AbstractEntry;,"Lcom/google/common/collect/Multisets$AbstractEntry<TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,17 +53,17 @@
     .local p0, this:Lcom/google/common/collect/Multisets$AbstractEntry;,"Lcom/google/common/collect/Multisets$AbstractEntry<TE;>;"
     const/4 v1, 0x0
 
-    .line 668
+    .line 782
     instance-of v2, p1, Lcom/google/common/collect/Multiset$Entry;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 669
+    .line 783
     check-cast v0, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 670
+    .line 784
     .local v0, that:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$AbstractEntry;->getCount()I
 
@@ -91,7 +91,7 @@
 
     const/4 v1, 0x1
 
-    .line 673
+    .line 787
     .end local v0           #that:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :cond_0
     return v1
@@ -101,13 +101,13 @@
     .locals 3
 
     .prologue
-    .line 681
+    .line 796
     .local p0, this:Lcom/google/common/collect/Multisets$AbstractEntry;,"Lcom/google/common/collect/Multisets$AbstractEntry<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$AbstractEntry;->getElement()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 682
+    .line 797
     .local v0, e:Ljava/lang/Object;,"TE;"
     if-nez v0, :cond_0
 
@@ -134,7 +134,7 @@
     .locals 4
 
     .prologue
-    .line 693
+    .line 809
     .local p0, this:Lcom/google/common/collect/Multisets$AbstractEntry;,"Lcom/google/common/collect/Multisets$AbstractEntry<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$AbstractEntry;->getElement()Ljava/lang/Object;
 
@@ -144,13 +144,13 @@
 
     move-result-object v1
 
-    .line 694
+    .line 810
     .local v1, text:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$AbstractEntry;->getCount()I
 
     move-result v0
 
-    .line 695
+    .line 811
     .local v0, n:I
     const/4 v2, 0x1
 

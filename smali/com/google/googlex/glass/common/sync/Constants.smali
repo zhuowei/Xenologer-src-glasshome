@@ -26,6 +26,8 @@
 
 .field public static final HEADER_LAST_MODIFIED:Ljava/lang/String; = "X-Goog-Last-Modified"
 
+.field public static final HEADER_UPLOAD_CONTENT_TYPE:Ljava/lang/String; = "X-Goog-Upload-Content-Type"
+
 .field public static final HEADER_UPLOAD_FILE_NAME:Ljava/lang/String; = "X-Goog-Upload-File-Name"
 
 .field public static final PLUS_GLASSWARE_PROJECT_ID:Ljava/lang/String; = "442840586513"
@@ -36,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 65
+    .line 71
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

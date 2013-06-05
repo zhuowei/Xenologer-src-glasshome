@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 422
+    .line 482
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService$4;->this$0:Lcom/google/glass/logging/UserEventService;
 
     invoke-direct {p0}, Lcom/google/glass/net/SimpleProtoResponseHandler;-><init>()V
@@ -48,7 +48,7 @@
     .parameter "responseProto"
 
     .prologue
-    .line 425
+    .line 485
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$4;->this$0:Lcom/google/glass/logging/UserEventService;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->getSessionId()Ljava/lang/String;
@@ -58,18 +58,11 @@
     #setter for: Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
     invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$502(Lcom/google/glass/logging/UserEventService;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 426
+    .line 486
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$4;->this$0:Lcom/google/glass/logging/UserEventService;
 
-    invoke-virtual {v0}, Lcom/google/glass/logging/UserEventService;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string v1, "UserEventPrefs"
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    #getter for: Lcom/google/glass/logging/UserEventService;->sharedPreferences:Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lcom/google/glass/logging/UserEventService;->access$600(Lcom/google/glass/logging/UserEventService;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -92,7 +85,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 430
+    .line 490
     return-void
 .end method
 
@@ -101,7 +94,7 @@
     .parameter "x0"
 
     .prologue
-    .line 422
+    .line 482
     check-cast p1, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     .end local p1

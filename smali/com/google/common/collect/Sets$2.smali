@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 647
+    .line 716
     iput-object p1, p0, Lcom/google/common/collect/Sets$2;->val$set1:Ljava/util/Set;
 
     iput-object p2, p0, Lcom/google/common/collect/Sets$2;->val$inSet2:Lcom/google/common/base/Predicate;
@@ -58,7 +58,7 @@
     .parameter "object"
 
     .prologue
-    .line 658
+    .line 734
     iget-object v0, p0, Lcom/google/common/collect/Sets$2;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -98,7 +98,7 @@
     .end annotation
 
     .prologue
-    .line 661
+    .line 739
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$2;->val$set1:Ljava/util/Set;
 
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 655
+    .line 729
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$2;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -164,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 649
+    .line 719
     iget-object v0, p0, Lcom/google/common/collect/Sets$2;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 652
+    .line 724
     invoke-virtual {p0}, Lcom/google/common/collect/Sets$2;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

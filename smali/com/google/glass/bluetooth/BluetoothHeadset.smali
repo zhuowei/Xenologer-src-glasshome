@@ -118,7 +118,7 @@
     .locals 1
 
     .prologue
-    .line 25
+    .line 24
     const-class v0, Lcom/google/glass/bluetooth/BluetoothHeadset;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -134,21 +134,21 @@
     .locals 0
 
     .prologue
-    .line 24
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static attemptDial(Lcom/google/glass/app/GlassActivity;Ljava/lang/String;)Z
-    .locals 4
+    .locals 3
     .parameter "context"
     .parameter "phoneNumber"
 
     .prologue
     const/4 v1, 0x1
 
-    .line 235
+    .line 234
     sget-object v2, Lcom/google/glass/util/Labs$Feature;->BLUETOOTH_HEADSET:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v2}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -157,18 +157,12 @@
 
     if-eqz v2, :cond_0
 
+    .line 235
+    new-instance v0, Lcom/google/glass/app/GlassError;
+
+    invoke-direct {v0}, Lcom/google/glass/app/GlassError;-><init>()V
+
     .line 236
-    new-instance v2, Lcom/google/glass/app/GlassError;
-
-    invoke-direct {v2}, Lcom/google/glass/app/GlassError;-><init>()V
-
-    sget v3, Lcom/google/glass/common/R$drawable;->ic_exclamation_big:I
-
-    invoke-virtual {v2, v3}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
-
-    move-result-object v0
-
-    .line 237
     .local v0, error:Lcom/google/glass/app/GlassError;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -176,7 +170,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 238
+    .line 237
     sget v1, Lcom/google/glass/common/R$string;->error_no_phone_number:I
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
@@ -199,7 +193,7 @@
     :goto_1
     return v1
 
-    .line 240
+    .line 239
     .restart local v0       #error:Lcom/google/glass/app/GlassError;
     :cond_1
     invoke-static {p0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getHeadsetState(Landroid/content/Context;)I
@@ -208,7 +202,7 @@
 
     if-eq v2, v1, :cond_2
 
-    .line 242
+    .line 241
     sget v1, Lcom/google/glass/common/R$string;->error_bluetooth_headset_not_active:I
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
@@ -224,6 +218,12 @@
     sget-object v2, Lcom/google/glass/app/GlassError$OnConfirmAction;->GO_TO_SETTINGS:Lcom/google/glass/app/GlassError$OnConfirmAction;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/app/GlassError;->setOnConfirmAction(Lcom/google/glass/app/GlassError$OnConfirmAction;)Lcom/google/glass/app/GlassError;
+
+    move-result-object v1
+
+    sget v2, Lcom/google/glass/common/R$drawable;->ic_cloud_sad_big:I
+
+    invoke-virtual {v1, v2}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
 
     goto :goto_0
 
@@ -258,21 +258,21 @@
     .parameter "context"
 
     .prologue
-    .line 275
+    .line 274
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 276
+    .line 275
     .local v0, broadcast:Landroid/content/Intent;
     const-string v1, "com.google.glass.action.ACCEPT_CALL"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 277
+    .line 276
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 278
+    .line 277
     return-void
 .end method
 
@@ -283,42 +283,42 @@
     .parameter "localRingtone"
 
     .prologue
-    .line 311
+    .line 310
     invoke-static {p0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getCallSetupState(Landroid/content/Context;)I
 
     move-result v1
 
-    .line 312
+    .line 311
     .local v1, previousState:I
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 313
+    .line 312
     .local v0, broadcast:Landroid/content/Intent;
     const-string v2, "com.google.glass.extra.STATE"
 
     invoke-virtual {v0, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 314
+    .line 313
     const-string v2, "com.google.glass.extra.PREVIOUS_STATE"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 315
+    .line 314
     const-string v2, "com.google.glass.extra.LOCAL_RINGTONE"
 
     invoke-virtual {v0, v2, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 316
+    .line 315
     const-string v2, "com.google.glass.action.CALL_SETUP_STATE"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 317
+    .line 316
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 318
+    .line 317
     return-void
 .end method
 
@@ -329,32 +329,32 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 295
+    .line 294
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 296
+    .line 295
     .local v0, broadcast:Landroid/content/Intent;
     if-eqz p2, :cond_0
 
-    .line 297
+    .line 296
     const-string v3, "com.google.glass.extra.PHONE_NUMBER"
 
     invoke-virtual {v0, v3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 299
+    .line 298
     :cond_0
     const/4 v3, 0x1
 
     if-ne p1, v3, :cond_1
 
-    .line 301
+    .line 300
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 302
+    .line 301
     .local v1, startTime:J
     sget-object v3, Lcom/google/glass/bluetooth/BluetoothHeadset;->TAG:Ljava/lang/String;
 
@@ -378,27 +378,27 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 303
+    .line 302
     const-string v3, "com.google.glass.extra.CALL_START_TIME"
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 305
+    .line 304
     .end local v1           #startTime:J
     :cond_1
     const-string v3, "com.google.glass.extra.STATE"
 
     invoke-virtual {v0, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 306
+    .line 305
     const-string v3, "com.google.glass.action.CALL_STATE"
 
     invoke-virtual {v0, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 307
+    .line 306
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 308
+    .line 307
     return-void
 .end method
 
@@ -408,31 +408,31 @@
     .parameter "callerId"
 
     .prologue
-    .line 321
+    .line 320
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 322
+    .line 321
     .local v0, broadcast:Landroid/content/Intent;
     const-string v1, "com.google.glass.extra.PHONE_NUMBER"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 323
+    .line 322
     const-string v1, "com.google.glass.action.CALLER_IDENTITY"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 324
+    .line 323
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 325
+    .line 324
     return-void
 .end method
 
 .method public static broadcastDial(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 3
+    .locals 2
     .parameter "context"
     .parameter "phoneNumber"
 
@@ -446,21 +446,17 @@
     .local v0, broadcast:Landroid/content/Intent;
     const-string v1, "com.google.glass.extra.PHONE_NUMBER"
 
-    invoke-static {p1}, Lcom/google/glass/util/PhoneNumberUtils;->formatPhoneNumberForDial(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 264
+    .line 263
     const-string v1, "com.google.glass.action.CALL_DIAL"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 265
+    .line 264
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 266
+    .line 265
     return-void
 .end method
 
@@ -470,23 +466,23 @@
     .parameter "errorCode"
 
     .prologue
-    .line 340
+    .line 339
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.CALL_ERROR"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 341
+    .line 340
     .local v0, broadcast:Landroid/content/Intent;
     const-string v1, "com.google.glass.extra.CALL_ERROR"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 342
+    .line 341
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 343
+    .line 342
     return-void
 .end method
 
@@ -497,31 +493,54 @@
     .parameter "device"
 
     .prologue
-    .line 287
+    .line 286
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 288
+    .line 287
     .local v0, broadcast:Landroid/content/Intent;
     const-string v1, "com.google.glass.extra.STATE"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 289
+    .line 288
     const-string v1, "android.bluetooth.device.extra.DEVICE"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 290
+    .line 289
     const-string v1, "com.google.glass.action.HEADSET_STATE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 291
+    .line 290
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 292
+    .line 291
+    return-void
+.end method
+
+.method public static broadcastRedial(Landroid/content/Context;)V
+    .locals 2
+    .parameter "context"
+
+    .prologue
+    .line 268
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    .line 269
+    .local v0, broadcast:Landroid/content/Intent;
+    const-string v1, "com.google.glass.action.CALL_REDIAL"
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 270
+    invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 271
     return-void
 .end method
 
@@ -530,21 +549,21 @@
     .parameter "context"
 
     .prologue
-    .line 281
+    .line 280
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 282
+    .line 281
     .local v0, broadcast:Landroid/content/Intent;
     const-string v1, "com.google.glass.action.REJECT_CALL"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 283
+    .line 282
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 284
+    .line 283
     return-void
 .end method
 
@@ -553,41 +572,18 @@
     .parameter "context"
 
     .prologue
-    .line 334
+    .line 333
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.CALL_RING"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
+    .line 334
+    .local v0, broadcast:Landroid/content/Intent;
+    invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
     .line 335
-    .local v0, broadcast:Landroid/content/Intent;
-    invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    .line 336
-    return-void
-.end method
-
-.method public static brodcastRedial(Landroid/content/Context;)V
-    .locals 2
-    .parameter "context"
-
-    .prologue
-    .line 269
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 270
-    .local v0, broadcast:Landroid/content/Intent;
-    const-string v1, "com.google.glass.action.CALL_REDIAL"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 271
-    invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    .line 272
     return-void
 .end method
 
@@ -596,7 +592,7 @@
     .parameter "context"
 
     .prologue
-    .line 329
+    .line 328
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.CALLER_IDENTITY"
@@ -605,7 +601,7 @@
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->removeStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 330
+    .line 329
     return-void
 .end method
 
@@ -614,7 +610,7 @@
     .parameter "context"
 
     .prologue
-    .line 117
+    .line 116
     const-string v0, "com.google.glass.action.CALL_SETUP_STATE"
 
     invoke-static {p0, v0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
@@ -635,10 +631,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 109
+    .line 108
     if-nez p0, :cond_0
 
-    .line 112
+    .line 111
     :goto_0
     return v0
 
@@ -657,14 +653,14 @@
     .parameter "context"
 
     .prologue
-    .line 198
+    .line 197
     const-string v1, "com.google.glass.action.CALL_STATE"
 
     invoke-static {p0, v1}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 199
+    .line 198
     .local v0, callState:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
@@ -680,7 +676,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 201
+    .line 200
     const-string v1, "com.google.glass.extra.CALL_START_TIME"
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -691,7 +687,7 @@
 
     move-result-wide v1
 
-    .line 203
+    .line 202
     :goto_0
     return-wide v1
 
@@ -708,14 +704,14 @@
     .parameter "context"
 
     .prologue
-    .line 212
+    .line 211
     const-string v1, "com.google.glass.action.CALLER_IDENTITY"
 
     invoke-static {p0, v1}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 213
+    .line 212
     .local v0, intent:Landroid/content/Intent;
     invoke-static {v0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getCallerId(Landroid/content/Intent;)Ljava/lang/String;
 
@@ -729,7 +725,7 @@
     .parameter "intent"
 
     .prologue
-    .line 222
+    .line 221
     if-eqz p0, :cond_0
 
     const-string v0, "com.google.glass.extra.PHONE_NUMBER"
@@ -740,14 +736,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 223
+    .line 222
     const-string v0, "com.google.glass.extra.PHONE_NUMBER"
 
     invoke-virtual {p0, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 225
+    .line 224
     :goto_0
     return-object v0
 
@@ -762,7 +758,7 @@
     .parameter "context"
 
     .prologue
-    .line 97
+    .line 96
     const-string v0, "com.google.glass.action.HEADSET_STATE"
 
     invoke-static {p0, v0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
@@ -783,10 +779,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 101
+    .line 100
     if-nez p0, :cond_0
 
-    .line 104
+    .line 103
     :goto_0
     return v0
 
@@ -806,12 +802,12 @@
     .parameter "action"
 
     .prologue
-    .line 348
+    .line 347
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 349
+    .line 348
     .local v0, appContext:Landroid/content/Context;
     const/4 v1, 0x0
 
@@ -831,7 +827,7 @@
     .parameter "context"
 
     .prologue
-    .line 131
+    .line 130
     const-string v0, "com.google.glass.action.CALL_SETUP_STATE"
 
     invoke-static {p0, v0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
@@ -852,10 +848,10 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 122
+    .line 121
     if-nez p0, :cond_0
 
-    .line 125
+    .line 124
     :goto_0
     return v0
 
@@ -876,18 +872,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 136
+    .line 135
     const-string v2, "com.google.glass.action.CALL_SETUP_STATE"
 
     invoke-static {p0, v2}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 137
+    .line 136
     .local v0, setupState:Landroid/content/Intent;
     if-nez v0, :cond_0
 
-    .line 140
+    .line 139
     :goto_0
     return v1
 
@@ -906,7 +902,7 @@
     .parameter "context"
 
     .prologue
-    .line 163
+    .line 162
     const-string v0, "com.google.glass.action.CALL_STATE"
 
     invoke-static {p0, v0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getIntentFromStickyBroadcast(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
@@ -929,10 +925,10 @@
 
     const/4 v1, 0x0
 
-    .line 178
+    .line 177
     if-nez p0, :cond_0
 
-    .line 181
+    .line 180
     :goto_0
     return v1
 
@@ -961,7 +957,7 @@
     .parameter "context"
 
     .prologue
-    .line 191
+    .line 190
     invoke-static {p0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getCallSetupState(Landroid/content/Context;)I
 
     move-result v0
@@ -991,12 +987,12 @@
     .parameter "context"
 
     .prologue
-    .line 146
+    .line 145
     invoke-static {p0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->getPreviousCallSetupState(Landroid/content/Context;)I
 
     move-result v0
 
-    .line 147
+    .line 146
     .local v0, previousCallSetupState:I
     const/4 v1, 0x2
 

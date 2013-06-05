@@ -65,13 +65,13 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 38
     .local p0, this:Lcom/google/common/collect/ByFunctionOrdering;,"Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<TF;+TT;>;"
     .local p2, ordering:Lcom/google/common/collect/Ordering;,"Lcom/google/common/collect/Ordering<TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 41
+    .line 39
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -80,7 +80,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->function:Lcom/google/common/base/Function;
 
-    .line 42
+    .line 40
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -89,7 +89,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ByFunctionOrdering;->ordering:Lcom/google/common/collect/Ordering;
 
-    .line 43
+    .line 41
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 45
     .local p0, this:Lcom/google/common/collect/ByFunctionOrdering;,"Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
     .local p1, left:Ljava/lang/Object;,"TF;"
     .local p2, right:Ljava/lang/Object;,"TF;"
@@ -147,7 +147,7 @@
     .line 50
     if-ne p1, p0, :cond_1
 
-    .line 58
+    .line 57
     :cond_0
     :goto_0
     return v1
@@ -194,7 +194,7 @@
     :cond_3
     move v1, v2
 
-    .line 58
+    .line 57
     goto :goto_0
 .end method
 
@@ -231,7 +231,7 @@
     .locals 2
 
     .prologue
-    .line 66
+    .line 67
     .local p0, this:Lcom/google/common/collect/ByFunctionOrdering;,"Lcom/google/common/collect/ByFunctionOrdering<TF;TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

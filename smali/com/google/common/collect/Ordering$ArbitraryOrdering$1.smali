@@ -40,12 +40,12 @@
     .parameter
 
     .prologue
-    .line 212
+    .line 249
     iput-object p1, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering$1;->this$0:Lcom/google/common/collect/Ordering$ArbitraryOrdering;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 213
+    .line 250
     new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
     const/4 v1, 0x0
@@ -64,7 +64,7 @@
     .parameter "from"
 
     .prologue
-    .line 216
+    .line 253
     iget-object v0, p0, Lcom/google/common/collect/Ordering$ArbitraryOrdering$1;->counter:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
@@ -83,7 +83,7 @@
     .parameter "x0"
 
     .prologue
-    .line 212
+    .line 249
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Ordering$ArbitraryOrdering$1;->apply(Ljava/lang/Object;)Ljava/lang/Integer;
 
     move-result-object v0

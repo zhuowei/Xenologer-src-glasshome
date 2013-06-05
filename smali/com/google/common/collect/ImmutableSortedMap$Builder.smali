@@ -50,12 +50,12 @@
     .end annotation
 
     .prologue
-    .line 358
+    .line 353
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableMap$Builder;-><init>()V
 
-    .line 359
+    .line 354
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -64,7 +64,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->comparator:Ljava/util/Comparator;
 
-    .line 360
+    .line 355
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 351
+    .line 346
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedMap$Builder;->build()Lcom/google/common/collect/ImmutableSortedMap;
 
@@ -84,7 +84,7 @@
 .end method
 
 .method public build()Lcom/google/common/collect/ImmutableSortedMap;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -94,7 +94,7 @@
     .end annotation
 
     .prologue
-    .line 406
+    .line 405
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->entries:Ljava/util/ArrayList;
 
@@ -103,7 +103,7 @@
     #calls: Lcom/google/common/collect/ImmutableSortedMap;->sortEntries(Ljava/util/List;Ljava/util/Comparator;)V
     invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableSortedMap;->access$000(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 407
+    .line 406
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->entries:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->comparator:Ljava/util/Comparator;
@@ -111,18 +111,14 @@
     #calls: Lcom/google/common/collect/ImmutableSortedMap;->validateEntries(Ljava/util/List;Ljava/util/Comparator;)V
     invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableSortedMap;->access$100(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 408
-    new-instance v0, Lcom/google/common/collect/ImmutableSortedMap;
+    .line 407
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->comparator:Ljava/util/Comparator;
 
     iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->entries:Ljava/util/ArrayList;
 
-    invoke-static {v1}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/util/Collection;)Lcom/google/common/collect/ImmutableList;
+    invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableSortedMap;->fromSortedEntries(Ljava/util/Comparator;Ljava/util/Collection;)Lcom/google/common/collect/ImmutableSortedMap;
 
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedMap$Builder;->comparator:Ljava/util/Comparator;
-
-    invoke-direct {v0, v1, v2}, Lcom/google/common/collect/ImmutableSortedMap;-><init>(Lcom/google/common/collect/ImmutableList;Ljava/util/Comparator;)V
+    move-result-object v0
 
     return-object v0
 .end method
@@ -133,7 +129,7 @@
     .parameter "x1"
 
     .prologue
-    .line 351
+    .line 346
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableSortedMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedMap$Builder;
 
@@ -147,7 +143,7 @@
     .parameter "x0"
 
     .prologue
-    .line 351
+    .line 346
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap$Builder;->put(Ljava/util/Map$Entry;)Lcom/google/common/collect/ImmutableSortedMap$Builder;
 
@@ -169,7 +165,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 364
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -181,7 +177,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 369
+    .line 365
     return-object p0
 .end method
 
@@ -199,12 +195,12 @@
     .end annotation
 
     .prologue
-    .line 381
+    .line 378
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/util/Map$Entry;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    .line 382
+    .line 379
     return-object p0
 .end method
 
@@ -213,7 +209,7 @@
     .parameter "x0"
 
     .prologue
-    .line 351
+    .line 346
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedMap$Builder;->putAll(Ljava/util/Map;)Lcom/google/common/collect/ImmutableSortedMap$Builder;
 
@@ -236,7 +232,7 @@
     .end annotation
 
     .prologue
-    .line 393
+    .line 391
     .local p0, this:Lcom/google/common/collect/ImmutableSortedMap$Builder;,"Lcom/google/common/collect/ImmutableSortedMap$Builder<TK;TV;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -261,7 +257,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 394
+    .line 392
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -275,7 +271,7 @@
 
     goto :goto_0
 
-    .line 396
+    .line 394
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     :cond_0
     return-object p0

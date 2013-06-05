@@ -214,7 +214,7 @@
     .line 83
     :cond_0
     :goto_0
-    invoke-static {v1, v0}, Lcom/google/glass/camera/Video;->createThumbnail(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Bitmap;
+    invoke-static {v1, v0}, Lcom/google/glass/camera/VideoWrapper;->createThumbnail(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 

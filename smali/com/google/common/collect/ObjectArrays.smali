@@ -9,12 +9,30 @@
 .end annotation
 
 
+# static fields
+.field static final EMPTY_ARRAY:[Ljava/lang/Object;
+
+
 # direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    .prologue
+    .line 35
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    sput-object v0, Lcom/google/common/collect/ObjectArrays;->EMPTY_ARRAY:[Ljava/lang/Object;
+
+    return-void
+.end method
+
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 34
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,12 +54,12 @@
     .local p0, original:[Ljava/lang/Object;,"[TT;"
     const/4 v2, 0x0
 
-    .line 106
+    .line 110
     invoke-static {p0, p1}, Lcom/google/common/collect/ObjectArrays;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 107
+    .line 111
     .local v0, copy:[Ljava/lang/Object;,"[TT;"
     array-length v1, p0
 
@@ -49,10 +67,49 @@
 
     move-result v1
 
-    invoke-static {p0, v2, v0, v2, v1}, Lcom/google/common/collect/Platform;->unsafeArrayCopy([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+    invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 109
+    .line 112
     return-object v0
+.end method
+
+.method static checkElementNotNull(Ljava/lang/Object;I)Ljava/lang/Object;
+    .locals 3
+    .parameter "element"
+    .parameter "index"
+
+    .prologue
+    .line 189
+    if-nez p0, :cond_0
+
+    .line 190
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "at index "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 192
+    :cond_0
+    return-object p0
 .end method
 
 .method public static concat(Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
@@ -76,7 +133,7 @@
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     const/4 v3, 0x0
 
-    .line 83
+    .line 87
     array-length v1, p1
 
     add-int/lit8 v1, v1, 0x1
@@ -85,18 +142,18 @@
 
     move-result-object v0
 
-    .line 84
+    .line 88
     .local v0, result:[Ljava/lang/Object;,"[TT;"
     aput-object p0, v0, v3
 
-    .line 85
+    .line 89
     const/4 v1, 0x1
 
     array-length v2, p1
 
-    invoke-static {p1, v3, v0, v1, v2}, Lcom/google/common/collect/Platform;->unsafeArrayCopy([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+    invoke-static {p1, v3, v0, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 86
+    .line 90
     return-object v0
 .end method
 
@@ -117,7 +174,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 103
     .local p0, array:[Ljava/lang/Object;,"[TT;"
     .local p1, element:Ljava/lang/Object;,"TT;"
     array-length v1, p0
@@ -128,13 +185,13 @@
 
     move-result-object v0
 
-    .line 100
+    .line 104
     .local v0, result:[Ljava/lang/Object;,"[TT;"
     array-length v1, p0
 
     aput-object p1, v0, v1
 
-    .line 101
+    .line 105
     return-object v0
 .end method
 
@@ -163,7 +220,7 @@
     .local p2, type:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     const/4 v3, 0x0
 
-    .line 67
+    .line 71
     array-length v1, p0
 
     array-length v2, p1
@@ -174,20 +231,20 @@
 
     move-result-object v0
 
-    .line 68
+    .line 72
     .local v0, result:[Ljava/lang/Object;,"[TT;"
     array-length v1, p0
 
-    invoke-static {p0, v3, v0, v3, v1}, Lcom/google/common/collect/Platform;->unsafeArrayCopy([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+    invoke-static {p0, v3, v0, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 69
+    .line 73
     array-length v1, p0
 
     array-length v2, p1
 
-    invoke-static {p1, v3, v0, v1, v2}, Lcom/google/common/collect/Platform;->unsafeArrayCopy([Ljava/lang/Object;I[Ljava/lang/Object;II)V
+    invoke-static {p1, v3, v0, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 70
+    .line 74
     return-object v0
 .end method
 
@@ -207,11 +264,11 @@
     .end annotation
 
     .prologue
-    .line 167
+    .line 170
     .local p0, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     const/4 v1, 0x0
 
-    .line 168
+    .line 171
     .local v1, i:I
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -229,7 +286,7 @@
 
     move-result-object v0
 
-    .line 169
+    .line 172
     .local v0, element:Ljava/lang/Object;
     add-int/lit8 v2, v1, 0x1
 
@@ -243,7 +300,7 @@
     .restart local v1       #i:I
     goto :goto_0
 
-    .line 171
+    .line 174
     .end local v0           #element:Ljava/lang/Object;
     :cond_0
     return-object p1
@@ -268,11 +325,15 @@
     .end annotation
 
     .prologue
-    .line 44
+    .line 48
     .local p0, type:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
-    invoke-static {p0, p1}, Lcom/google/common/collect/Platform;->newArray(Ljava/lang/Class;I)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
     move-result-object v0
+
+    check-cast v0, [Ljava/lang/Object;
+
+    check-cast v0, [Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -290,7 +351,7 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 59
     .local p0, reference:[Ljava/lang/Object;,"[TT;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Platform;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
@@ -306,19 +367,19 @@
     .parameter "j"
 
     .prologue
-    .line 178
+    .line 181
     aget-object v0, p0, p1
 
-    .line 179
+    .line 182
     .local v0, temp:Ljava/lang/Object;
     aget-object v1, p0, p2
 
     aput-object v1, p0, p1
 
-    .line 180
+    .line 183
     aput-object v0, p0, p2
 
-    .line 181
+    .line 184
     return-void
 .end method
 
@@ -335,7 +396,7 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 166
     .local p0, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
@@ -365,39 +426,39 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 140
     .local p0, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     move-result v0
 
-    .line 138
+    .line 141
     .local v0, size:I
     array-length v1, p1
 
     if-ge v1, v0, :cond_0
 
-    .line 139
+    .line 142
     invoke-static {p1, v0}, Lcom/google/common/collect/ObjectArrays;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 141
+    .line 144
     :cond_0
     invoke-static {p0, p1}, Lcom/google/common/collect/ObjectArrays;->fillArray(Ljava/lang/Iterable;[Ljava/lang/Object;)[Ljava/lang/Object;
 
-    .line 142
+    .line 145
     array-length v1, p1
 
     if-le v1, v0, :cond_1
 
-    .line 143
+    .line 146
     const/4 v1, 0x0
 
     aput-object v1, p1, v0
 
-    .line 145
+    .line 148
     :cond_1
     return-object p1
 .end method

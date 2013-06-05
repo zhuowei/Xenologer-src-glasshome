@@ -42,16 +42,18 @@
     .end annotation
 .end field
 
+.field private suppressTapSound:Z
+
 
 # direct methods
-.method private constructor <init>(I)V
+.method public constructor <init>(I)V
     .locals 1
     .parameter "itemId"
 
     .prologue
     const/4 v0, 0x1
 
-    .line 130
+    .line 131
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 112
@@ -65,48 +67,36 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->extra:Ljava/lang/Object;
 
-    .line 121
+    .line 122
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
 
-    .line 131
+    .line 132
     iput p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->itemId:I
 
-    .line 132
+    .line 133
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
 
-    .line 133
+    .line 134
     return-void
 .end method
 
-.method synthetic constructor <init>(ILcom/google/glass/widget/OptionMenu$1;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 109
-    invoke-direct {p0, p1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(I)V
-
-    return-void
-.end method
-
-.method private constructor <init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
+.method public constructor <init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
     .locals 2
     .parameter "itemId"
     .parameter "name"
     .parameter "image"
 
     .prologue
-    .line 143
+    .line 144
     invoke-direct {p0, p1}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(I)V
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
 
     new-instance v1, Lcom/google/glass/widget/OptionMenu$ItemState;
@@ -115,28 +105,14 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 149
+    .line 150
     iput p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
 
-    .line 150
+    .line 151
     return-void
 .end method
 
-.method synthetic constructor <init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/widget/OptionMenu$1;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    .line 109
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/widget/OptionMenu$Item;-><init>(ILjava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lcom/google/glass/widget/OptionMenu$Item;)Z
+.method static synthetic access$000(Lcom/google/glass/widget/OptionMenu$Item;)Z
     .locals 1
     .parameter "x0"
 
@@ -147,7 +123,7 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/google/glass/widget/OptionMenu$Item;)Z
+.method static synthetic access$100(Lcom/google/glass/widget/OptionMenu$Item;)Z
     .locals 1
     .parameter "x0"
 
@@ -158,7 +134,7 @@
     return v0
 .end method
 
-.method static synthetic access$400(Lcom/google/glass/widget/OptionMenu$Item;)I
+.method static synthetic access$200(Lcom/google/glass/widget/OptionMenu$Item;)I
     .locals 1
     .parameter "x0"
 
@@ -176,7 +152,7 @@
     .parameter "state"
 
     .prologue
-    .line 219
+    .line 220
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu$ItemState;->getId()I
@@ -185,21 +161,21 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 220
+    .line 221
     iget v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 221
+    .line 222
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu$ItemState;->getId()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
 
-    .line 223
+    .line 224
     :cond_0
     return-void
 .end method
@@ -208,7 +184,7 @@
     .locals 2
 
     .prologue
-    .line 227
+    .line 228
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
 
     iget v1, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
@@ -226,7 +202,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 184
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->description:Ljava/lang/String;
 
     return-object v0
@@ -236,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 191
+    .line 192
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->extra:Ljava/lang/Object;
 
     return-object v0
@@ -246,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 154
+    .line 155
     iget v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->itemId:I
 
     return v0
@@ -256,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 159
+    .line 160
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->size()I
@@ -271,7 +247,7 @@
     .parameter "stateId"
 
     .prologue
-    .line 214
+    .line 215
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -287,7 +263,7 @@
     .locals 1
 
     .prologue
-    .line 204
+    .line 205
     iget-boolean v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->isDefault:Z
 
     return v0
@@ -297,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 164
+    .line 165
     iget-boolean v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->isEnabled:Z
 
     return v0
@@ -307,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 175
     iget-boolean v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->isVisible:Z
 
     return v0
@@ -318,12 +294,12 @@
     .parameter "key"
 
     .prologue
-    .line 232
+    .line 233
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/google/glass/widget/OptionMenu$Item;->setCurrentState(IZ)V
 
-    .line 233
+    .line 234
     return-void
 .end method
 
@@ -333,7 +309,7 @@
     .parameter "shouldAnimate"
 
     .prologue
-    .line 241
+    .line 242
     const-string v0, "Can not set current state to a non-existent state."
 
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenu$Item;->states:Landroid/util/SparseArray;
@@ -344,20 +320,20 @@
 
     invoke-static {v0, v1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 242
-    iput p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
-
     .line 243
-    iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->stateListener:Lcom/google/glass/widget/OptionMenu$ItemStateListener;
-
-    if-eqz v0, :cond_0
+    iput p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->currentStateKey:I
 
     .line 244
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->stateListener:Lcom/google/glass/widget/OptionMenu$ItemStateListener;
 
+    if-eqz v0, :cond_0
+
+    .line 245
+    iget-object v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->stateListener:Lcom/google/glass/widget/OptionMenu$ItemStateListener;
+
     invoke-interface {v0, p1, p2}, Lcom/google/glass/widget/OptionMenu$ItemStateListener;->onStateChanged(IZ)V
 
-    .line 246
+    .line 247
     :cond_0
     return-void
 .end method
@@ -367,10 +343,10 @@
     .parameter "isDefault"
 
     .prologue
-    .line 209
+    .line 210
     iput-boolean p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->isDefault:Z
 
-    .line 210
+    .line 211
     return-void
 .end method
 
@@ -379,10 +355,10 @@
     .parameter "description"
 
     .prologue
-    .line 187
+    .line 188
     iput-object p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->description:Ljava/lang/String;
 
-    .line 188
+    .line 189
     return-void
 .end method
 
@@ -391,10 +367,10 @@
     .parameter "isEnabled"
 
     .prologue
-    .line 169
+    .line 170
     iput-boolean p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->isEnabled:Z
 
-    .line 170
+    .line 171
     return-void
 .end method
 
@@ -403,10 +379,10 @@
     .parameter "extra"
 
     .prologue
-    .line 199
+    .line 200
     iput-object p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->extra:Ljava/lang/Object;
 
-    .line 200
+    .line 201
     return-void
 .end method
 
@@ -415,10 +391,22 @@
     .parameter "listener"
 
     .prologue
-    .line 250
+    .line 251
     iput-object p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->stateListener:Lcom/google/glass/widget/OptionMenu$ItemStateListener;
 
-    .line 251
+    .line 252
+    return-void
+.end method
+
+.method public setSuppressTapSound(Z)V
+    .locals 0
+    .parameter "suppressTapSound"
+
+    .prologue
+    .line 262
+    iput-boolean p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->suppressTapSound:Z
+
+    .line 263
     return-void
 .end method
 
@@ -427,9 +415,19 @@
     .parameter "isVisible"
 
     .prologue
-    .line 179
+    .line 180
     iput-boolean p1, p0, Lcom/google/glass/widget/OptionMenu$Item;->isVisible:Z
 
-    .line 180
+    .line 181
     return-void
+.end method
+
+.method public shouldSuppressTapSound()Z
+    .locals 1
+
+    .prologue
+    .line 255
+    iget-boolean v0, p0, Lcom/google/glass/widget/OptionMenu$Item;->suppressTapSound:Z
+
+    return v0
 .end method

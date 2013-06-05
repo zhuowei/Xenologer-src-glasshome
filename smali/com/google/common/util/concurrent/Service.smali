@@ -9,12 +9,19 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/common/util/concurrent/Service$Listener;,
         Lcom/google/common/util/concurrent/Service$State;
     }
 .end annotation
 
 
 # virtual methods
+.method public abstract addListener(Lcom/google/common/util/concurrent/Service$Listener;Ljava/util/concurrent/Executor;)V
+.end method
+
+.method public abstract failureCause()Ljava/lang/Throwable;
+.end method
+
 .method public abstract isRunning()Z
 .end method
 

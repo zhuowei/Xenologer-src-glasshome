@@ -20,7 +20,7 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 38
     const-class v0, Lcom/google/common/io/Closeables;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -61,14 +61,14 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 73
     if-nez p0, :cond_0
 
-    .line 89
+    .line 85
     :goto_0
     return-void
 
-    .line 80
+    .line 77
     :cond_0
     :try_start_0
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
@@ -77,15 +77,15 @@
 
     goto :goto_0
 
-    .line 81
+    .line 78
     :catch_0
     move-exception v0
 
-    .line 82
+    .line 79
     .local v0, e:Ljava/io/IOException;
     if-eqz p1, :cond_1
 
-    .line 83
+    .line 80
     sget-object v1, Lcom/google/common/io/Closeables;->logger:Ljava/util/logging/Logger;
 
     sget-object v2, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 86
+    .line 82
     :cond_1
     throw v0
 .end method
@@ -107,9 +107,11 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 99
+    .line 107
     const/4 v1, 0x1
 
     :try_start_0
@@ -117,15 +119,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 103
+    .line 111
     :goto_0
     return-void
 
-    .line 100
+    .line 108
     :catch_0
     move-exception v0
 
-    .line 101
+    .line 109
     .local v0, e:Ljava/io/IOException;
     sget-object v1, Lcom/google/common/io/Closeables;->logger:Ljava/util/logging/Logger;
 

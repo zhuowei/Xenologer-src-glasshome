@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 61
     .local p0, this:Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder;,"Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder<TB;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 62
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->builder()Lcom/google/common/collect/ImmutableMap$Builder;
 
     move-result-object v0
@@ -70,7 +70,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 91
     .local p0, type:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     .local p1, value:Ljava/lang/Object;,"TB;"
     invoke-static {p0}, Lcom/google/common/primitives/Primitives;->wrap(Ljava/lang/Class;)Ljava/lang/Class;
@@ -97,7 +97,7 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 101
     .local p0, this:Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder;,"Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder<TB;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableClassToInstanceMap;
 
@@ -129,7 +129,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 69
     .local p0, this:Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder;,"Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder<TB;>;"
     .local p1, key:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     .local p2, value:Ljava/lang/Object;,"TT;"
@@ -137,7 +137,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/ImmutableMap$Builder;->put(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableMap$Builder;
 
-    .line 67
+    .line 70
     return-object p0
 .end method
 
@@ -157,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 82
     .local p0, this:Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder;,"Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder<TB;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<+Ljava/lang/Class<+TT;>;+TT;>;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -182,7 +182,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 82
+    .line 83
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+Ljava/lang/Class<+TT;>;+TT;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -190,13 +190,13 @@
 
     check-cast v2, Ljava/lang/Class;
 
-    .line 83
+    .line 84
     .local v2, type:Ljava/lang/Class;,"Ljava/lang/Class<+TT;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 84
+    .line 85
     .local v3, value:Ljava/lang/Object;,"TT;"
     iget-object v4, p0, Lcom/google/common/collect/ImmutableClassToInstanceMap$Builder;->mapBuilder:Lcom/google/common/collect/ImmutableMap$Builder;
 
@@ -208,7 +208,7 @@
 
     goto :goto_0
 
-    .line 86
+    .line 87
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+Ljava/lang/Class<+TT;>;+TT;>;"
     .end local v2           #type:Ljava/lang/Class;,"Ljava/lang/Class<+TT;>;"
     .end local v3           #value:Ljava/lang/Object;,"TT;"

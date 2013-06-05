@@ -13,7 +13,6 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedElementSet;,
         Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;
     }
 .end annotation
@@ -68,12 +67,12 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 60
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     .local p1, backingMap:Ljava/util/Map;,"Ljava/util/Map<TE;Lcom/google/common/collect/Count;>;"
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMultiset;-><init>()V
 
-    .line 63
+    .line 61
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -82,7 +81,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
-    .line 64
+    .line 62
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->size()I
 
     move-result v0
@@ -91,7 +90,7 @@
 
     iput-wide v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
-    .line 65
+    .line 63
     return-void
 .end method
 
@@ -100,7 +99,7 @@
     .parameter "x0"
 
     .prologue
-    .line 49
+    .line 48
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
     return-object v0
@@ -111,7 +110,7 @@
     .parameter "x0"
 
     .prologue
-    .line 49
+    .line 48
     iget-wide v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
     const-wide/16 v2, 0x1
@@ -129,7 +128,7 @@
     .parameter "x1"
 
     .prologue
-    .line 49
+    .line 48
     iget-wide v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
     sub-long/2addr v0, p1
@@ -139,34 +138,19 @@
     return-wide v0
 .end method
 
-.method static synthetic access$200(Lcom/google/common/collect/AbstractMapBasedMultiset;Ljava/lang/Object;Ljava/util/Map;)I
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 49
-    invoke-direct {p0, p1, p2}, Lcom/google/common/collect/AbstractMapBasedMultiset;->removeAllOccurrences(Ljava/lang/Object;Ljava/util/Map;)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method private static getAndSet(Lcom/google/common/collect/Count;I)I
     .locals 1
     .parameter "i"
     .parameter "count"
 
     .prologue
-    .line 298
+    .line 280
     if-nez p0, :cond_0
 
-    .line 299
+    .line 281
     const/4 v0, 0x0
 
-    .line 302
+    .line 284
     :goto_0
     return v0
 
@@ -191,7 +175,7 @@
     .end annotation
 
     .prologue
-    .line 401
+    .line 292
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     new-instance v0, Ljava/io/InvalidObjectException;
 
@@ -200,64 +184,6 @@
     invoke-direct {v0, v1}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
 
     throw v0
-.end method
-
-.method private removeAllOccurrences(Ljava/lang/Object;Ljava/util/Map;)I
-    .locals 6
-    .parameter "element"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-    .parameter
-    .end parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Object;",
-            "Ljava/util/Map",
-            "<TE;",
-            "Lcom/google/common/collect/Count;",
-            ">;)I"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
-    .local p2, map:Ljava/util/Map;,"Ljava/util/Map<TE;Lcom/google/common/collect/Count;>;"
-    const/4 v1, 0x0
-
-    .line 307
-    invoke-interface {p2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/common/collect/Count;
-
-    .line 308
-    .local v0, frequency:Lcom/google/common/collect/Count;
-    if-nez v0, :cond_0
-
-    .line 313
-    :goto_0
-    return v1
-
-    .line 311
-    :cond_0
-    invoke-virtual {v0, v1}, Lcom/google/common/collect/Count;->getAndSet(I)I
-
-    move-result v1
-
-    .line 312
-    .local v1, numberRemoved:I
-    iget-wide v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
-
-    int-to-long v4, v1
-
-    sub-long/2addr v2, v4
-
-    iput-wide v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
-
-    goto :goto_0
 .end method
 
 
@@ -283,19 +209,19 @@
 
     const/4 v6, 0x0
 
-    .line 228
+    .line 211
     if-nez p2, :cond_0
 
-    .line 229
+    .line 212
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->count(Ljava/lang/Object;)I
 
     move-result v3
 
-    .line 246
+    .line 227
     :goto_0
     return v3
 
-    .line 231
+    .line 214
     :cond_0
     if-lez p2, :cond_1
 
@@ -314,7 +240,7 @@
 
     invoke-static {v4, v7, v8}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 233
+    .line 215
     iget-object v4, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
     invoke-interface {v4, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -323,14 +249,14 @@
 
     check-cast v0, Lcom/google/common/collect/Count;
 
-    .line 235
+    .line 217
     .local v0, frequency:Lcom/google/common/collect/Count;
     if-nez v0, :cond_2
 
-    .line 236
+    .line 218
     const/4 v3, 0x0
 
-    .line 237
+    .line 219
     .local v3, oldCount:I
     iget-object v4, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
@@ -340,7 +266,7 @@
 
     invoke-interface {v4, p1, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 245
+    .line 226
     :goto_2
     iget-wide v4, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
@@ -357,17 +283,17 @@
     :cond_1
     move v4, v6
 
-    .line 231
+    .line 214
     goto :goto_1
 
-    .line 239
+    .line 221
     .restart local v0       #frequency:Lcom/google/common/collect/Count;
     :cond_2
     invoke-virtual {v0}, Lcom/google/common/collect/Count;->get()I
 
     move-result v3
 
-    .line 240
+    .line 222
     .restart local v3       #oldCount:I
     int-to-long v7, v3
 
@@ -375,7 +301,7 @@
 
     add-long v1, v7, v9
 
-    .line 241
+    .line 223
     .local v1, newCount:J
     const-wide/32 v7, 0x7fffffff
 
@@ -398,7 +324,7 @@
 
     invoke-static {v4, v7, v5}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 243
+    .line 224
     invoke-virtual {v0, p2}, Lcom/google/common/collect/Count;->getAndAdd(I)I
 
     goto :goto_2
@@ -406,35 +332,15 @@
     :cond_3
     move v4, v6
 
-    .line 241
+    .line 223
     goto :goto_3
-.end method
-
-.method backingMap()Ljava/util/Map;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<TE;",
-            "Lcom/google/common/collect/Count;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 68
-    .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
-
-    return-object v0
 .end method
 
 .method public clear()V
     .locals 4
 
     .prologue
-    .line 138
+    .line 128
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
@@ -460,7 +366,7 @@
 
     check-cast v0, Lcom/google/common/collect/Count;
 
-    .line 139
+    .line 129
     .local v0, frequency:Lcom/google/common/collect/Count;
     const/4 v2, 0x0
 
@@ -468,110 +374,62 @@
 
     goto :goto_0
 
-    .line 141
+    .line 131
     .end local v0           #frequency:Lcom/google/common/collect/Count;
     :cond_0
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->clear()V
 
-    .line 142
+    .line 132
     const-wide/16 v2, 0x0
 
     iput-wide v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
-    .line 143
+    .line 133
     return-void
 .end method
 
 .method public count(Ljava/lang/Object;)I
-    .locals 4
+    .locals 2
     .parameter "element"
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
 
     .prologue
+    .line 196
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
-    const/4 v2, 0x0
-
-    .line 209
-    :try_start_0
-    iget-object v3, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
-
-    invoke-interface {v3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/common/collect/Count;
-
-    .line 210
-    .local v1, frequency:Lcom/google/common/collect/Count;
-    if-nez v1, :cond_0
-
-    .line 214
-    .end local v1           #frequency:Lcom/google/common/collect/Count;
-    :goto_0
-    return v2
-
-    .line 210
-    .restart local v1       #frequency:Lcom/google/common/collect/Count;
-    :cond_0
-    invoke-virtual {v1}, Lcom/google/common/collect/Count;->get()I
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result v2
-
-    goto :goto_0
-
-    .line 211
-    .end local v1           #frequency:Lcom/google/common/collect/Count;
-    :catch_0
-    move-exception v0
-
-    .line 212
-    .local v0, e:Ljava/lang/NullPointerException;
-    goto :goto_0
-
-    .line 213
-    .end local v0           #e:Ljava/lang/NullPointerException;
-    :catch_1
-    move-exception v0
-
-    .line 214
-    .local v0, e:Ljava/lang/ClassCastException;
-    goto :goto_0
-.end method
-
-.method createElementSet()Ljava/util/Set;
-    .locals 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set",
-            "<TE;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 319
-    .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
-    new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedElementSet;
-
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedElementSet;-><init>(Lcom/google/common/collect/AbstractMapBasedMultiset;Ljava/util/Map;)V
+    invoke-static {v1, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
-    return-object v0
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/collect/Count;
+
+    .line 197
+    .local v0, frequency:Lcom/google/common/collect/Count;
+    if-nez v0, :cond_0
+
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
+
+    :cond_0
+    invoke-virtual {v0}, Lcom/google/common/collect/Count;->get()I
+
+    move-result v1
+
+    goto :goto_0
 .end method
 
 .method distinctElements()I
     .locals 1
 
     .prologue
-    .line 147
+    .line 137
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
@@ -595,7 +453,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 87
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
@@ -607,7 +465,7 @@
 
     move-result-object v0
 
-    .line 94
+    .line 88
     .local v0, backingEntries:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TE;Lcom/google/common/collect/Count;>;>;"
     new-instance v1, Lcom/google/common/collect/AbstractMapBasedMultiset$1;
 
@@ -629,7 +487,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 82
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->entrySet()Ljava/util/Set;
 
@@ -649,7 +507,7 @@
     .end annotation
 
     .prologue
-    .line 157
+    .line 149
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;
 
@@ -673,20 +531,20 @@
 
     const/4 v5, 0x0
 
-    .line 250
+    .line 232
     if-nez p2, :cond_1
 
-    .line 251
+    .line 233
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->count(Ljava/lang/Object;)I
 
     move-result v5
 
-    .line 272
+    .line 253
     :cond_0
     :goto_0
     return v5
 
-    .line 253
+    .line 235
     :cond_1
     if-lez p2, :cond_2
 
@@ -705,7 +563,7 @@
 
     invoke-static {v3, v6, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 255
+    .line 236
     iget-object v3, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
     invoke-interface {v3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -714,30 +572,30 @@
 
     check-cast v0, Lcom/google/common/collect/Count;
 
-    .line 256
+    .line 237
     .local v0, frequency:Lcom/google/common/collect/Count;
     if-eqz v0, :cond_0
 
-    .line 260
+    .line 241
     invoke-virtual {v0}, Lcom/google/common/collect/Count;->get()I
 
     move-result v2
 
-    .line 263
+    .line 244
     .local v2, oldCount:I
     if-le v2, p2, :cond_3
 
-    .line 264
+    .line 245
     move v1, p2
 
-    .line 270
+    .line 251
     .local v1, numberRemoved:I
     :goto_2
     neg-int v3, v1
 
     invoke-virtual {v0, v3}, Lcom/google/common/collect/Count;->addAndGet(I)I
 
-    .line 271
+    .line 252
     iget-wide v3, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
     int-to-long v5, v1
@@ -748,7 +606,7 @@
 
     move v5, v2
 
-    .line 272
+    .line 253
     goto :goto_0
 
     .end local v0           #frequency:Lcom/google/common/collect/Count;
@@ -757,16 +615,16 @@
     :cond_2
     move v3, v5
 
-    .line 253
+    .line 235
     goto :goto_1
 
-    .line 266
+    .line 247
     .restart local v0       #frequency:Lcom/google/common/collect/Count;
     .restart local v2       #oldCount:I
     :cond_3
     move v1, v2
 
-    .line 267
+    .line 248
     .restart local v1       #numberRemoved:I
     iget-object v3, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
@@ -789,19 +647,23 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 67
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     .local p1, backingMap:Ljava/util/Map;,"Ljava/util/Map<TE;Lcom/google/common/collect/Count;>;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
-    .line 74
+    .line 68
     return-void
 .end method
 
 .method public setCount(Ljava/lang/Object;I)I
     .locals 6
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "count"
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;I)I"
@@ -809,17 +671,17 @@
     .end annotation
 
     .prologue
-    .line 277
+    .line 259
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     const-string v2, "count"
 
     invoke-static {p2, v2}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 281
+    .line 263
     if-nez p2, :cond_1
 
-    .line 282
+    .line 264
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
     invoke-interface {v2, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -828,13 +690,13 @@
 
     check-cast v0, Lcom/google/common/collect/Count;
 
-    .line 283
+    .line 265
     .local v0, existingCounter:Lcom/google/common/collect/Count;
     invoke-static {v0, p2}, Lcom/google/common/collect/AbstractMapBasedMultiset;->getAndSet(Lcom/google/common/collect/Count;I)I
 
     move-result v1
 
-    .line 293
+    .line 275
     .local v1, oldCount:I
     :cond_0
     :goto_0
@@ -848,10 +710,10 @@
 
     iput-wide v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 
-    .line 294
+    .line 276
     return v1
 
-    .line 285
+    .line 267
     .end local v0           #existingCounter:Lcom/google/common/collect/Count;
     .end local v1           #oldCount:I
     :cond_1
@@ -863,17 +725,17 @@
 
     check-cast v0, Lcom/google/common/collect/Count;
 
-    .line 286
+    .line 268
     .restart local v0       #existingCounter:Lcom/google/common/collect/Count;
     invoke-static {v0, p2}, Lcom/google/common/collect/AbstractMapBasedMultiset;->getAndSet(Lcom/google/common/collect/Count;I)I
 
     move-result v1
 
-    .line 288
+    .line 270
     .restart local v1       #oldCount:I
     if-nez v0, :cond_0
 
-    .line 289
+    .line 271
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
 
     new-instance v3, Lcom/google/common/collect/Count;
@@ -889,7 +751,7 @@
     .locals 2
 
     .prologue
-    .line 153
+    .line 144
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>;"
     iget-wide v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset;->size:J
 

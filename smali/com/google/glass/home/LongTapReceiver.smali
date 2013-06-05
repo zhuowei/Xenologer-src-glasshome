@@ -12,7 +12,7 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 20
     const-class v0, Lcom/google/glass/home/LongTapReceiver;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -35,44 +35,26 @@
 .end method
 
 .method public static maySearchOnLongTap(Landroid/content/Context;)Z
-    .locals 3
+    .locals 1
     .parameter "context"
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 65
-    invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
-
-    move-result-object v0
-
-    .line 66
-    .local v0, glassApp:Lcom/google/glass/app/GlassApplication;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassApplication;->getConnectionState()Lcom/google/glass/util/InetConnectionState;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/glass/util/InetConnectionState;->isConnected()Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 75
-    :cond_0
-    :goto_0
-    return v1
-
-    .line 71
-    :cond_1
+    .line 69
     invoke-static {p0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->isInCallOrCallSetup(Landroid/content/Context;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 75
-    const/4 v1, 0x1
+    .line 70
+    const/4 v0, 0x0
+
+    .line 73
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
@@ -87,7 +69,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 25
+    .line 24
     sget-object v1, Lcom/google/glass/home/LongTapReceiver;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -110,7 +92,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 28
+    .line 27
     const-string v1, "com.google.glass.action.LONG_TAP"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -123,7 +105,14 @@
 
     if-nez v1, :cond_1
 
-    .line 57
+    .line 28
+    sget-object v1, Lcom/google/glass/home/LongTapReceiver;->TAG:Ljava/lang/String;
+
+    const-string v2, "rejected: unexpected action"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 62
     :cond_0
     :goto_0
     return-void
@@ -136,16 +125,43 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_2
 
-    .line 38
+    .line 34
+    sget-object v1, Lcom/google/glass/home/LongTapReceiver;->TAG:Ljava/lang/String;
+
+    const-string v2, "rejected: Lab is disabled"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 39
+    :cond_2
     invoke-static {p1}, Lcom/google/glass/home/LongTapReceiver;->maySearchOnLongTap(Landroid/content/Context;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_3
 
-    .line 44
+    .line 40
+    sget-object v1, Lcom/google/glass/home/LongTapReceiver;->TAG:Ljava/lang/String;
+
+    const-string v2, "rejected: may not search"
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_0
+
+    .line 45
+    :cond_3
+    invoke-static {p1}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->stopSpeaking()V
+
+    .line 49
     new-instance v1, Landroid/content/Intent;
 
     const-class v2, Lcom/google/glass/home/search/VoiceSearchActivity;
@@ -178,23 +194,23 @@
 
     move-result-object v0
 
-    .line 50
+    .line 55
     .local v0, voiceSearchIntent:Landroid/content/Intent;
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 53
+    .line 58
     invoke-virtual {p0}, Lcom/google/glass/home/LongTapReceiver;->isOrderedBroadcast()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 54
+    .line 59
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1}, Lcom/google/glass/home/LongTapReceiver;->setResultCode(I)V
 
-    .line 55
+    .line 60
     invoke-virtual {p0}, Lcom/google/glass/home/LongTapReceiver;->abortBroadcast()V
 
     goto :goto_0

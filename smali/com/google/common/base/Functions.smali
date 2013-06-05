@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 41
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 200
     .local p0, g:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<TB;TC;>;"
     .local p1, f:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<TA;+TB;>;"
     new-instance v0, Lcom/google/common/base/Functions$FunctionComposition;
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 276
+    .line 289
     .local p0, value:Ljava/lang/Object;,"TE;"
     new-instance v0, Lcom/google/common/base/Functions$ConstantFunction;
 
@@ -112,7 +112,7 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 102
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     new-instance v0, Lcom/google/common/base/Functions$FunctionForMapNoDefault;
 
@@ -144,7 +144,7 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 151
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;+TV;>;"
     .local p1, defaultValue:Ljava/lang/Object;,"TV;"
     new-instance v0, Lcom/google/common/base/Functions$ForMapWithDefault;
@@ -172,7 +172,7 @@
     .end annotation
 
     .prologue
-    .line 234
+    .line 245
     .local p0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<TT;>;"
     new-instance v0, Lcom/google/common/base/Functions$PredicateFunction;
 
@@ -204,7 +204,7 @@
     .end annotation
 
     .prologue
-    .line 318
+    .line 333
     .local p0, supplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TT;>;"
     new-instance v0, Lcom/google/common/base/Functions$SupplierFunction;
 
@@ -228,7 +228,7 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 79
     sget-object v0, Lcom/google/common/base/Functions$IdentityFunction;->INSTANCE:Lcom/google/common/base/Functions$IdentityFunction;
 
     return-object v0
@@ -248,7 +248,7 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 56
     sget-object v0, Lcom/google/common/base/Functions$ToStringFunction;->INSTANCE:Lcom/google/common/base/Functions$ToStringFunction;
 
     return-object v0

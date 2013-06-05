@@ -7,10 +7,10 @@
 
 
 # virtual methods
-.method public abstract getBatteryChargeWhenFullMah()I
+.method public abstract getBatteryChargeWhenFullUah()I
 .end method
 
-.method public abstract getBatteryStateOfChargeMah()I
+.method public abstract getBatteryStateOfChargeUah()I
 .end method
 
 .method public abstract getBatteryTemperatureMilliCentigrade()I
@@ -52,22 +52,28 @@
     .end annotation
 .end method
 
+.method public abstract getReportedSoc()I
+.end method
+
 .method public abstract getTotalBytesSent()J
 .end method
 
 .method public abstract getTotalKernelMs()J
 .end method
 
-.method public abstract hasBatteryChargeWhenFullMah()Z
+.method public abstract hasBatteryChargeWhenFullUah()Z
 .end method
 
-.method public abstract hasBatteryStateOfChargeMah()Z
+.method public abstract hasBatteryStateOfChargeUah()Z
 .end method
 
 .method public abstract hasBatteryTemperatureMilliCentigrade()Z
 .end method
 
 .method public abstract hasBoardTemperatureMilliCentigrade()Z
+.end method
+
+.method public abstract hasReportedSoc()Z
 .end method
 
 .method public abstract hasTotalBytesSent()Z

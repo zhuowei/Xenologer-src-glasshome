@@ -30,20 +30,26 @@
     .parameter "executor"
 
     .prologue
-    .line 48
+    .line 50
     invoke-direct {p0, p1}, Lcom/google/common/eventbus/EventBus;-><init>(Ljava/lang/String;)V
 
-    .line 35
+    .line 38
     new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus;->eventsToDispatch:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    .line 49
-    iput-object p2, p0, Lcom/google/common/eventbus/AsyncEventBus;->executor:Ljava/util/concurrent/Executor;
+    .line 51
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 50
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iput-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus;->executor:Ljava/util/concurrent/Executor;
+
+    .line 52
     return-void
 .end method
 
@@ -52,20 +58,26 @@
     .parameter "executor"
 
     .prologue
-    .line 60
+    .line 62
     invoke-direct {p0}, Lcom/google/common/eventbus/EventBus;-><init>()V
 
-    .line 35
+    .line 38
     new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus;->eventsToDispatch:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    .line 61
-    iput-object p1, p0, Lcom/google/common/eventbus/AsyncEventBus;->executor:Ljava/util/concurrent/Executor;
+    .line 63
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 62
+    move-result-object v0
+
+    check-cast v0, Ljava/util/concurrent/Executor;
+
+    iput-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus;->executor:Ljava/util/concurrent/Executor;
+
+    .line 64
     return-void
 .end method
 
@@ -76,7 +88,7 @@
     .parameter "x2"
 
     .prologue
-    .line 31
+    .line 34
     invoke-super {p0, p1, p2}, Lcom/google/common/eventbus/EventBus;->dispatch(Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
 
     return-void
@@ -84,13 +96,19 @@
 
 
 # virtual methods
-.method protected dispatch(Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
+.method dispatch(Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
     .locals 2
     .parameter "event"
     .parameter "handler"
 
     .prologue
-    .line 90
+    .line 95
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 96
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 97
     iget-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus;->executor:Ljava/util/concurrent/Executor;
 
     new-instance v1, Lcom/google/common/eventbus/AsyncEventBus$1;
@@ -99,7 +117,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 97
+    .line 103
     return-void
 .end method
 
@@ -107,7 +125,7 @@
     .locals 3
 
     .prologue
-    .line 76
+    .line 80
     :goto_0
     iget-object v1, p0, Lcom/google/common/eventbus/AsyncEventBus;->eventsToDispatch:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
@@ -117,14 +135,14 @@
 
     check-cast v0, Lcom/google/common/eventbus/EventBus$EventWithHandler;
 
-    .line 77
+    .line 81
     .local v0, eventWithHandler:Lcom/google/common/eventbus/EventBus$EventWithHandler;
     if-nez v0, :cond_0
 
-    .line 83
+    .line 87
     return-void
 
-    .line 81
+    .line 85
     :cond_0
     iget-object v1, v0, Lcom/google/common/eventbus/EventBus$EventWithHandler;->event:Ljava/lang/Object;
 
@@ -135,13 +153,13 @@
     goto :goto_0
 .end method
 
-.method protected enqueueEvent(Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
+.method enqueueEvent(Ljava/lang/Object;Lcom/google/common/eventbus/EventHandler;)V
     .locals 2
     .parameter "event"
     .parameter "handler"
 
     .prologue
-    .line 66
+    .line 68
     iget-object v0, p0, Lcom/google/common/eventbus/AsyncEventBus;->eventsToDispatch:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     new-instance v1, Lcom/google/common/eventbus/EventBus$EventWithHandler;
@@ -150,6 +168,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;->offer(Ljava/lang/Object;)Z
 
-    .line 67
+    .line 69
     return-void
 .end method

@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<I:",

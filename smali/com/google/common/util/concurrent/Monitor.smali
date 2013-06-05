@@ -600,49 +600,49 @@
     .end annotation
 
     .prologue
-    .line 902
+    .line 901
     invoke-virtual {p1}, Lcom/google/common/util/concurrent/Monitor$Guard;->isSatisfied()Z
 
     move-result v8
 
     if-nez v8, :cond_4
 
-    .line 903
+    .line 902
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v5
 
-    .line 904
+    .line 903
     .local v5, startNanos:J
     if-eqz p4, :cond_0
 
-    .line 905
+    .line 904
     const/4 v8, 0x0
 
     invoke-direct {p0, v8}, Lcom/google/common/util/concurrent/Monitor;->signalConditionsOfSatisfiedGuards(Lcom/google/common/util/concurrent/Monitor$Guard;)V
 
-    .line 907
+    .line 906
     :cond_0
     const/4 v2, 0x0
 
-    .line 909
+    .line 908
     .local v2, interruptIgnored:Z
     :try_start_0
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/Monitor;->incrementWaiters(Lcom/google/common/util/concurrent/Monitor$Guard;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 911
+    .line 910
     :try_start_1
     iget-object v0, p1, Lcom/google/common/util/concurrent/Monitor$Guard;->condition:Ljava/util/concurrent/locks/Condition;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 912
+    .line 911
     .local v0, condition:Ljava/util/concurrent/locks/Condition;
     move-wide v3, p2
 
-    .line 914
+    .line 913
     .local v3, remainingNanos:J
     :cond_1
     const-wide/16 v8, 0x0
@@ -651,26 +651,26 @@
 
     if-gtz v8, :cond_3
 
-    .line 915
+    .line 914
     const/4 v8, 0x0
 
-    .line 931
+    .line 930
     :try_start_2
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/Monitor;->decrementWaiters(Lcom/google/common/util/concurrent/Monitor$Guard;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 934
+    .line 933
     if-eqz v2, :cond_2
 
-    .line 935
+    .line 934
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v9
 
     invoke-virtual {v9}, Ljava/lang/Thread;->interrupt()V
 
-    .line 939
+    .line 938
     .end local v0           #condition:Ljava/util/concurrent/locks/Condition;
     .end local v2           #interruptIgnored:Z
     .end local v3           #remainingNanos:J
@@ -679,7 +679,7 @@
     :goto_0
     return v8
 
-    .line 918
+    .line 917
     .restart local v0       #condition:Ljava/util/concurrent/locks/Condition;
     .restart local v2       #interruptIgnored:Z
     .restart local v3       #remainingNanos:J
@@ -693,7 +693,7 @@
 
     move-result-wide v3
 
-    .line 929
+    .line 928
     :goto_1
     :try_start_4
     invoke-virtual {p1}, Lcom/google/common/util/concurrent/Monitor$Guard;->isSatisfied()Z
@@ -704,23 +704,23 @@
 
     if-eqz v8, :cond_1
 
-    .line 931
+    .line 930
     :try_start_5
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/Monitor;->decrementWaiters(Lcom/google/common/util/concurrent/Monitor$Guard;)V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 934
+    .line 933
     if-eqz v2, :cond_4
 
-    .line 935
+    .line 934
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v8
 
     invoke-virtual {v8}, Ljava/lang/Thread;->interrupt()V
 
-    .line 939
+    .line 938
     .end local v0           #condition:Ljava/util/concurrent/locks/Condition;
     .end local v2           #interruptIgnored:Z
     .end local v3           #remainingNanos:J
@@ -730,7 +730,7 @@
 
     goto :goto_0
 
-    .line 919
+    .line 918
     .restart local v0       #condition:Ljava/util/concurrent/locks/Condition;
     .restart local v2       #interruptIgnored:Z
     .restart local v3       #remainingNanos:J
@@ -738,7 +738,7 @@
     :catch_0
     move-exception v1
 
-    .line 921
+    .line 920
     .local v1, ignored:Ljava/lang/InterruptedException;
     :try_start_6
     invoke-direct {p0, p1}, Lcom/google/common/util/concurrent/Monitor;->signalConditionsOfSatisfiedGuards(Lcom/google/common/util/concurrent/Monitor$Guard;)V
@@ -746,10 +746,10 @@
     .catchall {:try_start_6 .. :try_end_6} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_6 .. :try_end_6} :catch_1
 
-    .line 926
+    .line 925
     const/4 v2, 0x1
 
-    .line 927
+    .line 926
     :try_start_7
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -761,11 +761,11 @@
 
     goto :goto_1
 
-    .line 922
+    .line 921
     :catch_1
     move-exception v7
 
-    .line 923
+    .line 922
     .local v7, throwable:Ljava/lang/Throwable;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -773,7 +773,7 @@
 
     invoke-virtual {v8}, Ljava/lang/Thread;->interrupt()V
 
-    .line 924
+    .line 923
     invoke-static {v7}, Lcom/google/common/base/Throwables;->propagate(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
 
     move-result-object v8
@@ -782,7 +782,7 @@
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 931
+    .line 930
     .end local v0           #condition:Ljava/util/concurrent/locks/Condition;
     .end local v1           #ignored:Ljava/lang/InterruptedException;
     .end local v3           #remainingNanos:J
@@ -797,13 +797,13 @@
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
-    .line 934
+    .line 933
     :catchall_1
     move-exception v8
 
     if-eqz v2, :cond_5
 
-    .line 935
+    .line 934
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v9

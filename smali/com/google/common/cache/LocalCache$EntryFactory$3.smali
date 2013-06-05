@@ -21,7 +21,7 @@
     .parameter
 
     .prologue
-    .line 460
+    .line 465
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/common/cache/LocalCache$EntryFactory;-><init>(Ljava/lang/String;ILcom/google/common/cache/LocalCache$1;)V
@@ -55,7 +55,7 @@
     .end annotation
 
     .prologue
-    .line 470
+    .line 476
     .local p1, segment:Lcom/google/common/cache/LocalCache$Segment;,"Lcom/google/common/cache/LocalCache$Segment<TK;TV;>;"
     .local p2, original:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     .local p3, newNext:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
@@ -63,11 +63,11 @@
 
     move-result-object v0
 
-    .line 471
+    .line 477
     .local v0, newEntry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-virtual {p0, p2, v0}, Lcom/google/common/cache/LocalCache$EntryFactory$3;->copyWriteEntry(Lcom/google/common/cache/LocalCache$ReferenceEntry;Lcom/google/common/cache/LocalCache$ReferenceEntry;)V
 
-    .line 472
+    .line 478
     return-object v0
 .end method
 
@@ -100,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 464
+    .line 470
     .local p1, segment:Lcom/google/common/cache/LocalCache$Segment;,"Lcom/google/common/cache/LocalCache$Segment<TK;TV;>;"
     .local p2, key:Ljava/lang/Object;,"TK;"
     .local p4, next:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"

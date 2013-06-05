@@ -56,7 +56,7 @@
 
     iget-object v4, p0, Lcom/google/glass/logging/CompanionLogReader$1;->this$0:Lcom/google/glass/logging/CompanionLogReader;
 
-    #getter for: Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    #getter for: Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
     invoke-static {v4}, Lcom/google/glass/logging/CompanionLogReader;->access$100(Lcom/google/glass/logging/CompanionLogReader;)J
 
     move-result-wide v4
@@ -72,7 +72,7 @@
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 29
-    invoke-static {p1}, Lcom/google/glass/companion/CompanionMessagingUtil;->parseResponseMessage(Landroid/os/Message;)Lcom/google/glass/companion/Proto$Envelope;
+    invoke-static {p1}, Lcom/google/glass/companion/CompanionMessagingUtil;->getEnvelope(Landroid/os/Message;)Lcom/google/glass/companion/Proto$Envelope;
 
     move-result-object v1
 
@@ -99,7 +99,7 @@
 
     iget-object v4, p0, Lcom/google/glass/logging/CompanionLogReader$1;->this$0:Lcom/google/glass/logging/CompanionLogReader;
 
-    #getter for: Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    #getter for: Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
     invoke-static {v4}, Lcom/google/glass/logging/CompanionLogReader;->access$100(Lcom/google/glass/logging/CompanionLogReader;)J
 
     move-result-wide v4
@@ -161,7 +161,7 @@
 
     iget-object v4, p0, Lcom/google/glass/logging/CompanionLogReader$1;->this$0:Lcom/google/glass/logging/CompanionLogReader;
 
-    #getter for: Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    #getter for: Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
     invoke-static {v4}, Lcom/google/glass/logging/CompanionLogReader;->access$100(Lcom/google/glass/logging/CompanionLogReader;)J
 
     move-result-wide v4
@@ -211,7 +211,7 @@
 
     iget-object v4, p0, Lcom/google/glass/logging/CompanionLogReader$1;->this$0:Lcom/google/glass/logging/CompanionLogReader;
 
-    #getter for: Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    #getter for: Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
     invoke-static {v4}, Lcom/google/glass/logging/CompanionLogReader;->access$100(Lcom/google/glass/logging/CompanionLogReader;)J
 
     move-result-wide v4

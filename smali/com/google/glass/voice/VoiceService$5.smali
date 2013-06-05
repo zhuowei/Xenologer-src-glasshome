@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 264
+    .line 271
     iput-object p1, p0, Lcom/google/glass/voice/VoiceService$5;->this$0:Lcom/google/glass/voice/VoiceService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 274
+    .line 281
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +70,7 @@
     .parameter "intent"
 
     .prologue
-    .line 267
+    .line 274
     const-string v0, "com.google.glass.ACTION_GUEST_MODE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,14 +83,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 268
+    .line 275
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$5;->this$0:Lcom/google/glass/voice/VoiceService;
 
     const-string v1, "Guest mode changed, recompiling grammar."
 
     invoke-virtual {v0, v1}, Lcom/google/glass/voice/VoiceService;->invalidateGrammars(Ljava/lang/String;)V
 
-    .line 270
+    .line 277
     :cond_0
     return-void
 .end method

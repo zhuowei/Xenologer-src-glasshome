@@ -84,13 +84,13 @@
     .end annotation
 
     .prologue
-    .line 1797
+    .line 2283
     .local p0, this:Lcom/google/common/collect/Maps$FilteredEntryMap;,"Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>;"
     .local p1, unfiltered:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     .local p2, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Maps$AbstractFilteredMap;-><init>(Ljava/util/Map;Lcom/google/common/base/Predicate;)V
 
-    .line 1798
+    .line 2284
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v0
@@ -103,12 +103,34 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap;->filteredEntrySet:Ljava/util/Set;
 
-    .line 1799
+    .line 2285
     return-void
 .end method
 
 
 # virtual methods
+.method createKeySet()Ljava/util/Set;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Set",
+            "<TK;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2338
+    .local p0, this:Lcom/google/common/collect/Maps$FilteredEntryMap;,"Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>;"
+    new-instance v0, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;-><init>(Lcom/google/common/collect/Maps$FilteredEntryMap;Lcom/google/common/collect/Maps$1;)V
+
+    return-object v0
+.end method
+
 .method public entrySet()Ljava/util/Set;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -122,11 +144,11 @@
     .end annotation
 
     .prologue
-    .line 1804
+    .line 2291
     .local p0, this:Lcom/google/common/collect/Maps$FilteredEntryMap;,"Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap;->entrySet:Ljava/util/Set;
 
-    .line 1805
+    .line 2292
     .local v0, result:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
     if-nez v0, :cond_0
 
@@ -144,7 +166,7 @@
 .end method
 
 .method public keySet()Ljava/util/Set;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -154,21 +176,19 @@
     .end annotation
 
     .prologue
-    .line 1842
+    .line 2333
     .local p0, this:Lcom/google/common/collect/Maps$FilteredEntryMap;,"Lcom/google/common/collect/Maps$FilteredEntryMap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap;->keySet:Ljava/util/Set;
 
-    .line 1843
+    .line 2334
     .local v0, result:Ljava/util/Set;,"Ljava/util/Set<TK;>;"
     if-nez v0, :cond_0
 
-    new-instance v0, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;
+    invoke-virtual {p0}, Lcom/google/common/collect/Maps$FilteredEntryMap;->createKeySet()Ljava/util/Set;
+
+    move-result-object v0
 
     .end local v0           #result:Ljava/util/Set;,"Ljava/util/Set<TK;>;"
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/Maps$FilteredEntryMap$KeySet;-><init>(Lcom/google/common/collect/Maps$FilteredEntryMap;Lcom/google/common/collect/Maps$1;)V
-
     iput-object v0, p0, Lcom/google/common/collect/Maps$FilteredEntryMap;->keySet:Ljava/util/Set;
 
     :cond_0

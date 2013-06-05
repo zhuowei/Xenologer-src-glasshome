@@ -100,7 +100,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 47
     .local p0, this:Lcom/google/common/collect/ForwardingListIterator;,"Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 51
     .local p0, this:Lcom/google/common/collect/ForwardingListIterator;,"Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
@@ -139,7 +139,7 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 55
     .local p0, this:Lcom/google/common/collect/ForwardingListIterator;,"Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
@@ -156,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 63
+    .line 59
     .local p0, this:Lcom/google/common/collect/ForwardingListIterator;,"Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
 
@@ -179,7 +179,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 63
     .local p0, this:Lcom/google/common/collect/ForwardingListIterator;,"Lcom/google/common/collect/ForwardingListIterator<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingListIterator;->delegate()Ljava/util/ListIterator;
@@ -188,6 +188,6 @@
 
     invoke-interface {v0, p1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V
 
-    .line 69
+    .line 64
     return-void
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 203
+    .line 213
     iput-object p1, p0, Lcom/google/glass/home/ScreenOffService$3;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 220
+    .line 230
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,12 +70,12 @@
     .parameter "intent"
 
     .prologue
-    .line 206
+    .line 216
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 207
+    .line 217
     .local v0, action:Ljava/lang/String;
     const-string v2, "com.google.glass.action.DON_STATE"
 
@@ -85,12 +85,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 208
+    .line 218
     invoke-static {p2}, Lcom/google/glass/hidden/DonState;->isDonned(Landroid/content/Intent;)Z
 
     move-result v1
 
-    .line 209
+    .line 219
     .local v1, donned:Z
     if-nez v1, :cond_0
 
@@ -103,7 +103,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 210
+    .line 220
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v2
@@ -112,7 +112,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 211
+    .line 221
     iget-object v2, p0, Lcom/google/glass/home/ScreenOffService$3;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const/4 v3, 0x1
@@ -120,13 +120,13 @@
     #calls: Lcom/google/glass/home/ScreenOffService;->closeNotificationWindow(Z)V
     invoke-static {v2, v3}, Lcom/google/glass/home/ScreenOffService;->access$100(Lcom/google/glass/home/ScreenOffService;Z)V
 
-    .line 216
+    .line 226
     .end local v1           #donned:Z
     :cond_0
     :goto_0
     return-void
 
-    .line 214
+    .line 224
     :cond_1
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 

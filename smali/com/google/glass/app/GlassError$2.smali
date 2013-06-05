@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 201
+    .line 208
     iput-object p1, p0, Lcom/google/glass/app/GlassError$2;->this$0:Lcom/google/glass/app/GlassError;
 
     iput-object p2, p0, Lcom/google/glass/app/GlassError$2;->val$context:Landroid/content/Context;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 204
+    .line 211
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
 
     iget-object v1, p0, Lcom/google/glass/app/GlassError$2;->val$context:Landroid/content/Context;
@@ -55,6 +55,6 @@
 
     invoke-virtual {v0}, Lcom/google/glass/util/SettingsHelper;->goToSettingsCover()V
 
-    .line 205
+    .line 212
     return-void
 .end method

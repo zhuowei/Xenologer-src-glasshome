@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/Multimaps$MapMultimap$1;
-.super Ljava/util/AbstractSet;
+.super Lcom/google/common/collect/Sets$ImprovedAbstractSet;
 .source "Multimaps.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/util/AbstractSet",
+        "Lcom/google/common/collect/Sets$ImprovedAbstractSet",
         "<TV;>;"
     }
 .end annotation
@@ -34,13 +34,13 @@
     .parameter
 
     .prologue
-    .line 1063
+    .line 1103
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$1;,"Lcom/google/common/collect/Multimaps$MapMultimap.1;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$MapMultimap$1;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 
     iput-object p2, p0, Lcom/google/common/collect/Multimaps$MapMultimap$1;->val$key:Ljava/lang/Object;
 
-    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/Sets$ImprovedAbstractSet;-><init>()V
 
     return-void
 .end method
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 1065
+    .line 1106
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$1;,"Lcom/google/common/collect/Multimaps$MapMultimap.1;"
     new-instance v0, Lcom/google/common/collect/Multimaps$MapMultimap$1$1;
 
@@ -71,7 +71,7 @@
     .locals 2
 
     .prologue
-    .line 1092
+    .line 1131
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap$1;,"Lcom/google/common/collect/Multimaps$MapMultimap.1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap$1;->this$0:Lcom/google/common/collect/Multimaps$MapMultimap;
 

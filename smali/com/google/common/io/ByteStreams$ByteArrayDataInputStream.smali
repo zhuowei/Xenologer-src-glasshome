@@ -27,10 +27,10 @@
     .parameter "bytes"
 
     .prologue
-    .line 282
+    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 283
+    .line 288
     new-instance v0, Ljava/io/DataInputStream;
 
     new-instance v1, Ljava/io/ByteArrayInputStream;
@@ -41,7 +41,7 @@
 
     iput-object v0, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
-    .line 284
+    .line 289
     return-void
 .end method
 
@@ -51,10 +51,10 @@
     .parameter "start"
 
     .prologue
-    .line 286
+    .line 291
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 287
+    .line 292
     new-instance v0, Ljava/io/DataInputStream;
 
     new-instance v1, Ljava/io/ByteArrayInputStream;
@@ -69,7 +69,7 @@
 
     iput-object v0, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
-    .line 289
+    .line 293
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .locals 2
 
     .prologue
-    .line 317
+    .line 321
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -91,11 +91,11 @@
 
     return v1
 
-    .line 318
+    .line 322
     :catch_0
     move-exception v0
 
-    .line 319
+    .line 323
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -108,7 +108,7 @@
     .locals 3
 
     .prologue
-    .line 325
+    .line 329
     :try_start_0
     iget-object v2, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -121,11 +121,11 @@
 
     return v2
 
-    .line 326
+    .line 330
     :catch_0
     move-exception v0
 
-    .line 327
+    .line 331
     .local v0, e:Ljava/io/EOFException;
     new-instance v2, Ljava/lang/IllegalStateException;
 
@@ -133,12 +133,12 @@
 
     throw v2
 
-    .line 328
+    .line 332
     .end local v0           #e:Ljava/io/EOFException;
     :catch_1
     move-exception v1
 
-    .line 329
+    .line 333
     .local v1, impossible:Ljava/io/IOException;
     new-instance v2, Ljava/lang/AssertionError;
 
@@ -151,7 +151,7 @@
     .locals 2
 
     .prologue
-    .line 359
+    .line 363
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -163,11 +163,11 @@
 
     return v1
 
-    .line 360
+    .line 364
     :catch_0
     move-exception v0
 
-    .line 361
+    .line 365
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -180,7 +180,7 @@
     .locals 3
 
     .prologue
-    .line 391
+    .line 395
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -192,11 +192,11 @@
 
     return-wide v1
 
-    .line 392
+    .line 396
     :catch_0
     move-exception v0
 
-    .line 393
+    .line 397
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -209,7 +209,7 @@
     .locals 2
 
     .prologue
-    .line 383
+    .line 387
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -221,11 +221,11 @@
 
     return v1
 
-    .line 384
+    .line 388
     :catch_0
     move-exception v0
 
-    .line 385
+    .line 389
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -239,7 +239,7 @@
     .parameter "b"
 
     .prologue
-    .line 293
+    .line 297
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -247,14 +247,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 297
+    .line 301
     return-void
 
-    .line 294
+    .line 298
     :catch_0
     move-exception v0
 
-    .line 295
+    .line 299
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -270,7 +270,7 @@
     .parameter "len"
 
     .prologue
-    .line 301
+    .line 305
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -278,14 +278,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 305
+    .line 309
     return-void
 
-    .line 302
+    .line 306
     :catch_0
     move-exception v0
 
-    .line 303
+    .line 307
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -298,7 +298,7 @@
     .locals 2
 
     .prologue
-    .line 367
+    .line 371
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -310,11 +310,11 @@
 
     return v1
 
-    .line 368
+    .line 372
     :catch_0
     move-exception v0
 
-    .line 369
+    .line 373
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -327,7 +327,7 @@
     .locals 2
 
     .prologue
-    .line 399
+    .line 403
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -339,11 +339,11 @@
 
     return-object v1
 
-    .line 400
+    .line 404
     :catch_0
     move-exception v0
 
-    .line 401
+    .line 405
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -356,7 +356,7 @@
     .locals 3
 
     .prologue
-    .line 375
+    .line 379
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -368,11 +368,11 @@
 
     return-wide v1
 
-    .line 376
+    .line 380
     :catch_0
     move-exception v0
 
-    .line 377
+    .line 381
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -385,7 +385,7 @@
     .locals 2
 
     .prologue
-    .line 343
+    .line 347
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -397,11 +397,11 @@
 
     return v1
 
-    .line 344
+    .line 348
     :catch_0
     move-exception v0
 
-    .line 345
+    .line 349
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -414,7 +414,7 @@
     .locals 2
 
     .prologue
-    .line 407
+    .line 411
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -426,11 +426,11 @@
 
     return-object v1
 
-    .line 408
+    .line 412
     :catch_0
     move-exception v0
 
-    .line 409
+    .line 413
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -443,7 +443,7 @@
     .locals 2
 
     .prologue
-    .line 335
+    .line 339
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -455,11 +455,11 @@
 
     return v1
 
-    .line 336
+    .line 340
     :catch_0
     move-exception v0
 
-    .line 337
+    .line 341
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -472,7 +472,7 @@
     .locals 2
 
     .prologue
-    .line 351
+    .line 355
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -484,11 +484,11 @@
 
     return v1
 
-    .line 352
+    .line 356
     :catch_0
     move-exception v0
 
-    .line 353
+    .line 357
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 
@@ -502,7 +502,7 @@
     .parameter "n"
 
     .prologue
-    .line 309
+    .line 313
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataInputStream;->input:Ljava/io/DataInput;
 
@@ -514,11 +514,11 @@
 
     return v1
 
-    .line 310
+    .line 314
     :catch_0
     move-exception v0
 
-    .line 311
+    .line 315
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Ljava/lang/IllegalStateException;
 

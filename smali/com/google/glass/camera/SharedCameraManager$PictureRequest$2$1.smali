@@ -41,7 +41,7 @@
     .parameter
 
     .prologue
-    .line 294
+    .line 308
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->val$data:[B
@@ -60,7 +60,7 @@
     .parameter "x0"
 
     .prologue
-    .line 294
+    .line 308
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -76,13 +76,13 @@
     .parameter "params"
 
     .prologue
-    .line 299
+    .line 313
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/Picture;
-    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/Picture;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/PictureWrapper;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/PictureWrapper;
 
     move-result-object v3
 
@@ -96,9 +96,9 @@
 
     iget v6, v6, Lcom/google/glass/camera/Size;->height:I
 
-    invoke-virtual {v3, v4, v5, v6}, Lcom/google/glass/camera/Picture;->saveThumbnail([BII)V
+    invoke-virtual {v3, v4, v5, v6}, Lcom/google/glass/camera/PictureWrapper;->saveThumbnail([BII)V
 
-    .line 302
+    .line 316
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
@@ -110,7 +110,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 303
+    .line 317
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
@@ -124,15 +124,52 @@
 
     iget-object v4, v4, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/Picture;
-    invoke-static {v4}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/Picture;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/PictureWrapper;
+    invoke-static {v4}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/PictureWrapper;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Lcom/google/glass/camera/SharedCameraClient;->dispatchPictureTaken(Lcom/google/glass/camera/Picture;)V
 
-    .line 306
+    .line 321
     :cond_0
+    iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
+
+    iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
+
+    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureTakenDispatched:Ljava/util/concurrent/CountDownLatch;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1600(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Ljava/util/concurrent/CountDownLatch;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/concurrent/CountDownLatch;->getCount()J
+
+    move-result-wide v3
+
+    const-wide/16 v5, 0x1
+
+    cmp-long v3, v3, v5
+
+    if-nez v3, :cond_2
+
+    const/4 v3, 0x1
+
+    :goto_0
+    invoke-static {v3}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
+
+    .line 322
+    iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
+
+    iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
+
+    #getter for: Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureTakenDispatched:Ljava/util/concurrent/CountDownLatch;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->access$1600(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Ljava/util/concurrent/CountDownLatch;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/util/concurrent/CountDownLatch;->countDown()V
+
+    .line 324
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
@@ -183,12 +220,12 @@
 
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 312
+    .line 330
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 313
+    .line 331
     .local v1, scanBarcodeTimeMillis:J
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
@@ -197,7 +234,7 @@
     iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->getBarcodeRecognizer()Lcom/google/glass/barcode/BarcodeRecognizer;
-    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$1600(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/barcode/BarcodeRecognizer;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$1700(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/barcode/BarcodeRecognizer;
 
     move-result-object v3
 
@@ -215,7 +252,7 @@
 
     move-result-object v0
 
-    .line 315
+    .line 333
     .local v0, barcode:Lcom/google/android/libraries/barhopper/Barcode;
     if-eqz v0, :cond_1
 
@@ -230,7 +267,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 316
+    .line 334
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     iget-object v3, v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
@@ -242,7 +279,7 @@
 
     invoke-virtual {v3, v0}, Lcom/google/glass/camera/SharedCameraClient;->dispatchBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
 
-    .line 318
+    .line 336
     :cond_1
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->this$2:Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
@@ -285,8 +322,16 @@
 
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 321
+    .line 339
     const/4 v3, 0x0
 
     return-object v3
+
+    .line 321
+    .end local v0           #barcode:Lcom/google/android/libraries/barhopper/Barcode;
+    .end local v1           #scanBarcodeTimeMillis:J
+    :cond_2
+    const/4 v3, 0x0
+
+    goto/16 :goto_0
 .end method

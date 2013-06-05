@@ -45,7 +45,7 @@
     .parameter
 
     .prologue
-    .line 502
+    .line 529
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$3;,"Lcom/google/common/collect/ConcurrentHashMultiset.3;"
     iput-object p1, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->this$0:Lcom/google/common/collect/ConcurrentHashMultiset;
 
@@ -62,7 +62,7 @@
     .locals 1
 
     .prologue
-    .line 502
+    .line 529
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$3;,"Lcom/google/common/collect/ConcurrentHashMultiset.3;"
     invoke-virtual {p0}, Lcom/google/common/collect/ConcurrentHashMultiset$3;->delegate()Ljava/util/Iterator;
 
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 506
+    .line 534
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$3;,"Lcom/google/common/collect/ConcurrentHashMultiset.3;"
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->val$readOnlyIterator:Ljava/util/Iterator;
 
@@ -102,7 +102,7 @@
     .end annotation
 
     .prologue
-    .line 510
+    .line 539
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$3;,"Lcom/google/common/collect/ConcurrentHashMultiset.3;"
     invoke-super {p0}, Lcom/google/common/collect/ForwardingIterator;->next()Ljava/lang/Object;
 
@@ -112,7 +112,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->last:Lcom/google/common/collect/Multiset$Entry;
 
-    .line 511
+    .line 540
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->last:Lcom/google/common/collect/Multiset$Entry;
 
     return-object v0
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 502
+    .line 529
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$3;,"Lcom/google/common/collect/ConcurrentHashMultiset.3;"
     invoke-virtual {p0}, Lcom/google/common/collect/ConcurrentHashMultiset$3;->next()Lcom/google/common/collect/Multiset$Entry;
 
@@ -138,7 +138,7 @@
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset$3;,"Lcom/google/common/collect/ConcurrentHashMultiset.3;"
     const/4 v1, 0x0
 
-    .line 515
+    .line 545
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->last:Lcom/google/common/collect/Multiset$Entry;
 
     if-eqz v0, :cond_0
@@ -148,7 +148,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkState(Z)V
 
-    .line 516
+    .line 546
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->this$0:Lcom/google/common/collect/ConcurrentHashMultiset;
 
     iget-object v2, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->last:Lcom/google/common/collect/Multiset$Entry;
@@ -159,17 +159,17 @@
 
     invoke-virtual {v0, v2, v1}, Lcom/google/common/collect/ConcurrentHashMultiset;->setCount(Ljava/lang/Object;I)I
 
-    .line 517
+    .line 547
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset$3;->last:Lcom/google/common/collect/Multiset$Entry;
 
-    .line 518
+    .line 548
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 515
+    .line 545
     goto :goto_0
 .end method

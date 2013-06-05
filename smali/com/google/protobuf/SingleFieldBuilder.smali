@@ -179,6 +179,8 @@
     :goto_0
     check-cast v0, Lcom/google/protobuf/GeneratedMessage;
 
+    check-cast v0, Lcom/google/protobuf/GeneratedMessage;
+
     iput-object v0, p0, Lcom/google/protobuf/SingleFieldBuilder;->message:Lcom/google/protobuf/GeneratedMessage;
 
     .line 183

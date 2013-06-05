@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/util/concurrent/Futures;->chain(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/base/Function;Ljava/util/concurrent/Executor;)Lcom/google/common/util/concurrent/ListenableFuture;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/common/util/concurrent/Futures;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,24 +20,23 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/common/util/concurrent/AsyncFunction",
-        "<TI;TO;>;"
+        "<",
+        "Lcom/google/common/util/concurrent/ListenableFuture",
+        "<",
+        "Ljava/lang/Object;",
+        ">;",
+        "Ljava/lang/Object;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field final synthetic val$function:Lcom/google/common/base/Function;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/common/base/Function;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
 
     .prologue
-    .line 271
-    iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$3;->val$function:Lcom/google/common/base/Function;
-
+    .line 913
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,27 +44,46 @@
 
 
 # virtual methods
-.method public apply(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
-    .locals 1
+.method public apply(Lcom/google/common/util/concurrent/ListenableFuture;)Lcom/google/common/util/concurrent/ListenableFuture;
+    .locals 0
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TI;)",
+            "(",
             "Lcom/google/common/util/concurrent/ListenableFuture",
-            "<TO;>;"
+            "<",
+            "Ljava/lang/Object;",
+            ">;)",
+            "Lcom/google/common/util/concurrent/ListenableFuture",
+            "<",
+            "Ljava/lang/Object;",
+            ">;"
         }
     .end annotation
 
     .prologue
-    .line 279
-    .local p1, input:Ljava/lang/Object;,"TI;"
-    iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$3;->val$function:Lcom/google/common/base/Function;
+    .line 915
+    .local p1, input:Lcom/google/common/util/concurrent/ListenableFuture;,"Lcom/google/common/util/concurrent/ListenableFuture<Ljava/lang/Object;>;"
+    return-object p1
+.end method
 
-    invoke-interface {v0, p1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic apply(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
+    .locals 1
+    .parameter "x0"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+
+    .prologue
+    .line 913
+    check-cast p1, Lcom/google/common/util/concurrent/ListenableFuture;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/Futures$3;->apply(Lcom/google/common/util/concurrent/ListenableFuture;)Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
-
-    check-cast v0, Lcom/google/common/util/concurrent/ListenableFuture;
 
     return-object v0
 .end method

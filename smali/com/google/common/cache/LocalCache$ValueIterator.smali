@@ -2,9 +2,6 @@
 .super Lcom/google/common/cache/LocalCache$HashIterator;
 .source "LocalCache.java"
 
-# interfaces
-.implements Ljava/util/Iterator;
-
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -19,9 +16,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/common/cache/LocalCache",
-        "<TK;TV;>.HashIterator;",
-        "Ljava/util/Iterator",
-        "<TV;>;"
+        "<TK;TV;>.HashIterator<TV;>;"
     }
 .end annotation
 
@@ -36,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 4396
+    .line 4302
     .local p0, this:Lcom/google/common/cache/LocalCache$ValueIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.ValueIterator;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$ValueIterator;->this$0:Lcom/google/common/cache/LocalCache;
 
@@ -56,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 4400
+    .line 4306
     .local p0, this:Lcom/google/common/cache/LocalCache$ValueIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.ValueIterator;"
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$ValueIterator;->nextEntry()Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 

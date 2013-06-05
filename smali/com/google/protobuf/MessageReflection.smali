@@ -348,6 +348,7 @@
 
     move v3, v4
 
+    .line 160
     .end local v4           #i:I
     .restart local v3       #i:I
     goto :goto_2

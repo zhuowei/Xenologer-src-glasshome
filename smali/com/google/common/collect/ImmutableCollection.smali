@@ -64,7 +64,7 @@
     .locals 2
 
     .prologue
-    .line 44
+    .line 45
     new-instance v0, Lcom/google/common/collect/ImmutableCollection$EmptyImmutableCollection;
 
     const/4 v1, 0x0
@@ -98,8 +98,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 91
+    .line 88
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     .local p1, e:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -120,8 +123,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 111
+    .line 110
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     .local p1, newElements:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -142,11 +148,11 @@
     .end annotation
 
     .prologue
-    .line 156
+    .line 158
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableCollection;->asList:Lcom/google/common/collect/ImmutableList;
 
-    .line 157
+    .line 159
     .local v0, list:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<TE;>;"
     if-nez v0, :cond_0
 
@@ -163,9 +169,11 @@
 
 .method public final clear()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 141
+    .line 143
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -182,7 +190,7 @@
     .end parameter
 
     .prologue
-    .line 67
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     if-eqz p1, :cond_0
 
@@ -219,7 +227,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 68
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     .local p1, targets:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Collections2;->containsAllImpl(Ljava/util/Collection;Ljava/util/Collection;)Z
@@ -240,7 +248,7 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 163
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->size()I
 
@@ -248,19 +256,19 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 167
-    new-instance v0, Lcom/google/common/collect/ImmutableAsList;
+    .line 169
+    new-instance v0, Lcom/google/common/collect/RegularImmutableAsList;
 
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->toArray()[Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-direct {v0, v1, p0}, Lcom/google/common/collect/ImmutableAsList;-><init>([Ljava/lang/Object;Lcom/google/common/collect/ImmutableCollection;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/RegularImmutableAsList;-><init>(Lcom/google/common/collect/ImmutableCollection;[Ljava/lang/Object;)V
 
     :goto_0
     return-object v0
 
-    .line 163
+    .line 165
     :pswitch_0
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
 
@@ -268,7 +276,7 @@
 
     goto :goto_0
 
-    .line 165
+    .line 167
     :pswitch_1
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
@@ -284,7 +292,7 @@
 
     goto :goto_0
 
-    .line 161
+    .line 163
     nop
 
     :pswitch_data_0
@@ -298,7 +306,7 @@
     .locals 1
 
     .prologue
-    .line 77
+    .line 72
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->size()I
 
@@ -334,7 +342,7 @@
     .locals 1
 
     .prologue
-    .line 40
+    .line 41
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableCollection;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
@@ -346,9 +354,11 @@
 .method public final remove(Ljava/lang/Object;)Z
     .locals 1
     .parameter "object"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 101
+    .line 99
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -366,6 +376,9 @@
             "Ljava/util/Collection",
             "<*>;)Z"
         }
+    .end annotation
+
+    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
@@ -390,8 +403,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 131
+    .line 132
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     .local p1, elementsToKeep:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -405,7 +421,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 56
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/ObjectArrays;->toArrayImpl(Ljava/util/Collection;)[Ljava/lang/Object;
 
@@ -426,7 +442,7 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 60
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     .local p1, other:[Ljava/lang/Object;,"[TT;"
     invoke-static {p0, p1}, Lcom/google/common/collect/ObjectArrays;->toArrayImpl(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
@@ -440,7 +456,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 77
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Collections2;->toStringImpl(Ljava/util/Collection;)Ljava/lang/String;
 
@@ -453,7 +469,7 @@
     .locals 2
 
     .prologue
-    .line 266
+    .line 278
     .local p0, this:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TE;>;"
     new-instance v0, Lcom/google/common/collect/ImmutableCollection$SerializedForm;
 

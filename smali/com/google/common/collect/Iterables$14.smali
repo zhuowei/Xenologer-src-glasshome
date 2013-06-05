@@ -1,9 +1,6 @@
 .class final Lcom/google/common/collect/Iterables$14;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/FluentIterable;
 .source "Iterables.java"
-
-# interfaces
-.implements Ljava/lang/Iterable;
 
 
 # annotations
@@ -18,8 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Ljava/lang/Iterable",
+        "Lcom/google/common/collect/FluentIterable",
         "<TT;>;"
     }
 .end annotation
@@ -38,12 +34,12 @@
     .parameter
 
     .prologue
-    .line 1110
+    .line 1030
     iput-object p1, p0, Lcom/google/common/collect/Iterables$14;->val$iterables:Ljava/lang/Iterable;
 
     iput-object p2, p0, Lcom/google/common/collect/Iterables$14;->val$comparator:Ljava/util/Comparator;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/FluentIterable;-><init>()V
 
     return-void
 .end method
@@ -61,7 +57,7 @@
     .end annotation
 
     .prologue
-    .line 1113
+    .line 1033
     iget-object v0, p0, Lcom/google/common/collect/Iterables$14;->val$iterables:Ljava/lang/Iterable;
 
     #calls: Lcom/google/common/collect/Iterables;->toIterator()Lcom/google/common/base/Function;

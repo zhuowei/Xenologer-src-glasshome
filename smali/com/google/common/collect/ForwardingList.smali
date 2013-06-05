@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 60
+    .line 59
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
@@ -48,7 +48,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 65
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
@@ -57,7 +57,7 @@
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 67
+    .line 66
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 69
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     .local p2, elements:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
@@ -132,7 +132,7 @@
     .end parameter
 
     .prologue
-    .line 115
+    .line 106
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     if-eq p1, p0, :cond_0
 
@@ -168,7 +168,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 73
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -185,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 111
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -203,7 +203,7 @@
     .parameter "element"
 
     .prologue
-    .line 81
+    .line 77
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -221,7 +221,7 @@
     .parameter "element"
 
     .prologue
-    .line 86
+    .line 81
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -245,7 +245,7 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 85
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -270,7 +270,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 89
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -293,7 +293,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 93
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 
@@ -317,7 +317,7 @@
     .end annotation
 
     .prologue
-    .line 106
+    .line 97
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
@@ -334,9 +334,6 @@
 .method protected standardAdd(Ljava/lang/Object;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -344,7 +341,7 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 123
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->size()I
@@ -353,7 +350,7 @@
 
     invoke-virtual {p0, v0, p1}, Lcom/google/common/collect/ForwardingList;->add(ILjava/lang/Object;)V
 
-    .line 132
+    .line 124
     const/4 v0, 0x1
 
     return v0
@@ -363,9 +360,6 @@
     .locals 1
     .parameter "index"
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I",
@@ -375,7 +369,7 @@
     .end annotation
 
     .prologue
-    .line 145
+    .line 136
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     .local p2, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TE;>;"
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/Lists;->addAllImpl(Ljava/util/List;ILjava/lang/Iterable;)Z
@@ -395,7 +389,7 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 220
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->equalsImpl(Ljava/util/List;Ljava/lang/Object;)Z
 
@@ -410,7 +404,7 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 232
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Lists;->hashCodeImpl(Ljava/util/List;)I
 
@@ -425,11 +419,9 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 156
+    .line 147
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->indexOfImpl(Ljava/util/List;Ljava/lang/Object;)I
 
@@ -440,9 +432,6 @@
 
 .method protected standardIterator()Ljava/util/Iterator;
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -452,7 +441,7 @@
     .end annotation
 
     .prologue
-    .line 179
+    .line 170
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->listIterator()Ljava/util/ListIterator;
 
@@ -467,11 +456,9 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 168
+    .line 159
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->lastIndexOfImpl(Ljava/util/List;Ljava/lang/Object;)I
 
@@ -482,9 +469,6 @@
 
 .method protected standardListIterator()Ljava/util/ListIterator;
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -494,7 +478,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 182
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     const/4 v0, 0x0
 
@@ -520,7 +504,7 @@
     .end annotation
 
     .prologue
-    .line 203
+    .line 196
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Lists;->listIteratorImpl(Ljava/util/List;I)Ljava/util/ListIterator;
 
@@ -545,7 +529,7 @@
     .end annotation
 
     .prologue
-    .line 214
+    .line 208
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-static {p0, p1, p2}, Lcom/google/common/collect/Lists;->subListImpl(Ljava/util/List;II)Ljava/util/List;
 
@@ -567,7 +551,7 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 101
     .local p0, this:Lcom/google/common/collect/ForwardingList;,"Lcom/google/common/collect/ForwardingList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingList;->delegate()Ljava/util/List;
 

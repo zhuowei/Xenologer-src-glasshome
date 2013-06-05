@@ -1,5 +1,5 @@
 .class Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue$2;
-.super Lcom/google/common/collect/AbstractLinkedIterator;
+.super Lcom/google/common/collect/AbstractSequentialIterator;
 .source "MapMakerInternalMap.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/common/collect/AbstractLinkedIterator",
+        "Lcom/google/common/collect/AbstractSequentialIterator",
         "<",
         "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry",
         "<TK;TV;>;>;"
@@ -34,12 +34,12 @@
     .parameter
 
     .prologue
-    .line 3399
+    .line 3252
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue$2;,"Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue.2;"
     .local p2, x0:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue$2;->this$0:Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue;
 
-    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractLinkedIterator;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractSequentialIterator;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -60,14 +60,14 @@
     .end annotation
 
     .prologue
-    .line 3402
+    .line 3256
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue$2;,"Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue.2;"
     .local p1, previous:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;->getNextExpirable()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v0
 
-    .line 3403
+    .line 3257
     .local v0, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue$2;->this$0:Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue;
 
@@ -87,7 +87,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3399
+    .line 3252
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue$2;,"Lcom/google/common/collect/MapMakerInternalMap$ExpirationQueue.2;"
     check-cast p1, Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 

@@ -35,13 +35,13 @@
     .parameter "target"
 
     .prologue
-    .line 95
+    .line 94
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
-    .line 96
+    .line 95
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;->target:Landroid/widget/ImageView;
 
-    .line 97
+    .line 96
     return-void
 .end method
 
@@ -52,10 +52,10 @@
     .parameter "params"
 
     .prologue
-    .line 101
+    .line 100
     const/4 v1, 0x0
 
-    .line 103
+    .line 102
     .local v1, in:Ljava/io/InputStream;
     :try_start_0
     iget-object v2, p0, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;->target:Landroid/widget/ImageView;
@@ -80,7 +80,7 @@
 
     move-result-object v1
 
-    .line 104
+    .line 103
     invoke-static {v1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -88,25 +88,25 @@
 
     move-result-object v2
 
-    .line 109
+    .line 108
     if-eqz v1, :cond_0
 
-    .line 111
+    .line 110
     :try_start_1
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 114
+    .line 113
     :cond_0
     :goto_0
     return-object v2
 
-    .line 105
+    .line 104
     :catch_0
     move-exception v0
 
-    .line 106
+    .line 105
     .local v0, e:Ljava/io/IOException;
     :try_start_2
     invoke-static {}, Lcom/google/glass/home/timeline/active/NavigationItemView;->access$000()Ljava/lang/String;
@@ -119,13 +119,13 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 107
+    .line 106
     const/4 v2, 0x0
 
-    .line 109
+    .line 108
     if-eqz v1, :cond_0
 
-    .line 111
+    .line 110
     :try_start_3
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_3
@@ -133,31 +133,31 @@
 
     goto :goto_0
 
-    .line 112
+    .line 111
     :catch_1
     move-exception v3
 
     goto :goto_0
 
-    .line 109
+    .line 108
     .end local v0           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v2
 
     if-eqz v1, :cond_1
 
-    .line 111
+    .line 110
     :try_start_4
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 114
+    .line 113
     :cond_1
     :goto_1
     throw v2
 
-    .line 112
+    .line 111
     :catch_2
     move-exception v3
 
@@ -174,7 +174,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 91
     check-cast p1, [Ljava/lang/String;
 
     .end local p1
@@ -190,22 +190,22 @@
     .parameter "result"
 
     .prologue
-    .line 121
+    .line 120
     if-eqz p1, :cond_0
 
-    .line 122
+    .line 121
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;->target:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 123
+    .line 122
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/NavigationItemView$IconLoader;->target:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 125
+    .line 124
     :cond_0
     return-void
 .end method
@@ -215,7 +215,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 91
     check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1

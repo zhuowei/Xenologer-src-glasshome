@@ -38,9 +38,11 @@
 # virtual methods
 .method public final remove()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 41
+    .line 42
     .local p0, this:Lcom/google/common/collect/UnmodifiableIterator;,"Lcom/google/common/collect/UnmodifiableIterator<TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

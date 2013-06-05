@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 614
+    .line 657
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$8;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     const/4 v0, 0x0
@@ -42,12 +42,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 617
+    .line 660
     const-string v0, "About to prepare the camera."
 
     invoke-static {v1, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 619
+    .line 662
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$8;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->isRecording()Z
@@ -57,23 +57,23 @@
 
     if-eqz v0, :cond_0
 
-    .line 620
+    .line 663
     const-string v0, "Not preparing the camera, because video is being recorded."
 
     invoke-static {v1, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 634
+    .line 677
     :goto_0
     return-void
 
-    .line 625
+    .line 668
     :cond_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$8;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->acquireCameraSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$2300(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
-    .line 626
+    .line 669
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->GCAM:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -82,13 +82,13 @@
 
     if-eqz v0, :cond_2
 
-    .line 627
+    .line 670
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$8;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->startMeteringSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$2400(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
-    .line 633
+    .line 676
     :cond_1
     :goto_1
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$8;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 628
+    .line 671
     :cond_2
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->CLIPLET:Lcom/google/glass/util/Labs$Feature;
 
@@ -108,11 +108,11 @@
 
     if-nez v0, :cond_1
 
-    .line 629
+    .line 672
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$8;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->startPreviewSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
-    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$2700(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
+    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$2800(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
     goto :goto_1
 .end method

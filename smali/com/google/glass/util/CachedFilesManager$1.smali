@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 155
+    .line 156
     iput-object p1, p0, Lcom/google/glass/util/CachedFilesManager$1;->this$0:Lcom/google/glass/util/CachedFilesManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 159
     iget-object v0, p0, Lcom/google/glass/util/CachedFilesManager$1;->this$0:Lcom/google/glass/util/CachedFilesManager;
 
     #calls: Lcom/google/glass/util/CachedFilesManager;->setupFileBookkeeping()V
     invoke-static {v0}, Lcom/google/glass/util/CachedFilesManager;->access$100(Lcom/google/glass/util/CachedFilesManager;)V
 
-    .line 159
+    .line 160
     return-void
 .end method

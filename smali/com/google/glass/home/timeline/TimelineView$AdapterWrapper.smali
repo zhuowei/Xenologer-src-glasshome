@@ -47,15 +47,15 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 38
     .local p0, this:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<TT;>;"
     .local p1, adapter:Landroid/widget/Adapter;,"TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 41
+    .line 39
     iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->adapter:Landroid/widget/Adapter;
 
-    .line 42
+    .line 40
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .end annotation
 
     .prologue
-    .line 45
+    .line 43
     .local p0, this:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<TT;>;"
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->adapter:Landroid/widget/Adapter;
 
@@ -89,7 +89,7 @@
     .parameter "view"
 
     .prologue
-    .line 62
+    .line 60
     .local p0, this:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<TT;>;"
     return-void
 .end method
@@ -98,7 +98,7 @@
     .locals 0
 
     .prologue
-    .line 57
+    .line 55
     .local p0, this:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<TT;>;"
     return-void
 .end method
@@ -108,10 +108,10 @@
     .parameter "onLoad"
 
     .prologue
-    .line 71
+    .line 69
     .local p0, this:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<TT;>;"
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 72
+    .line 70
     return-void
 .end method

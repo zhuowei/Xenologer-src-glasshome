@@ -59,17 +59,17 @@
     .end annotation
 
     .prologue
-    .line 1782
+    .line 1651
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference<TK;TV;>;"
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TV;>;"
     .local p2, referent:Ljava/lang/Object;,"TV;"
     .local p3, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-direct {p0, p2, p1}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V
 
-    .line 1783
+    .line 1652
     iput-object p3, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;->entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1784
+    .line 1653
     return-void
 .end method
 
@@ -87,24 +87,25 @@
     .end annotation
 
     .prologue
-    .line 1793
+    .line 1660
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference<TK;TV;>;"
     .local p1, newValue:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$ValueReference<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;->clear()V
 
-    .line 1794
+    .line 1661
     return-void
 .end method
 
-.method public copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
-    .locals 2
+.method public copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
+    .locals 1
+    .parameter
     .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/ref/ReferenceQueue",
-            "<TV;>;",
+            "<TV;>;TV;",
             "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry",
             "<TK;TV;>;)",
             "Lcom/google/common/collect/MapMakerInternalMap$ValueReference",
@@ -113,17 +114,14 @@
     .end annotation
 
     .prologue
-    .line 1798
+    .line 1664
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference<TK;TV;>;"
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TV;>;"
-    .local p2, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
+    .local p2, value:Ljava/lang/Object;,"TV;"
+    .local p3, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-direct {v0, p1, v1, p2}, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;-><init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
+    invoke-direct {v0, p1, p2, p3}, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;-><init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
     return-object v0
 .end method
@@ -139,7 +137,7 @@
     .end annotation
 
     .prologue
-    .line 1788
+    .line 1656
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;->entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -150,7 +148,7 @@
     .locals 1
 
     .prologue
-    .line 1803
+    .line 1668
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -166,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 1808
+    .line 1672
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapMakerInternalMap$SoftValueReference;->get()Ljava/lang/Object;
 

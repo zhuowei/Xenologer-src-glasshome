@@ -1,5 +1,5 @@
 .class final Lcom/google/common/collect/Iterables$7;
-.super Lcom/google/common/collect/Iterables$IterableWithToString;
+.super Lcom/google/common/collect/FluentIterable;
 .source "Iterables.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/common/collect/Iterables$IterableWithToString",
+        "Lcom/google/common/collect/FluentIterable",
         "<TT;>;"
     }
 .end annotation
@@ -34,12 +34,12 @@
     .parameter
 
     .prologue
-    .line 606
+    .line 592
     iput-object p1, p0, Lcom/google/common/collect/Iterables$7;->val$unfiltered:Ljava/lang/Iterable;
 
     iput-object p2, p0, Lcom/google/common/collect/Iterables$7;->val$type:Ljava/lang/Class;
 
-    invoke-direct {p0}, Lcom/google/common/collect/Iterables$IterableWithToString;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/FluentIterable;-><init>()V
 
     return-void
 .end method
@@ -57,7 +57,7 @@
     .end annotation
 
     .prologue
-    .line 609
+    .line 595
     iget-object v0, p0, Lcom/google/common/collect/Iterables$7;->val$unfiltered:Ljava/lang/Iterable;
 
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;

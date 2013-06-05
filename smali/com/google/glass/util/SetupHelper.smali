@@ -48,13 +48,13 @@
 
 .field public static final EXTRA_USERNAME:Ljava/lang/String; = "username"
 
-.field private static final NONE_STRING:Ljava/lang/String; = "NONE"
+.field public static final NONE_STRING:Ljava/lang/String; = "NONE"
 
 .field public static final SETUP_COMPONENT_NAME:Landroid/content/ComponentName; = null
 
 .field private static final TAG:Ljava/lang/String; = null
 
-.field private static final WEP_STRING:Ljava/lang/String; = "WEP"
+.field public static final WEP_STRING:Ljava/lang/String; = "WEP"
 
 .field public static final WIFI_SETUP_PATTERN:Ljava/util/regex/Pattern; = null
 

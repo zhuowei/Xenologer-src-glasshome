@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 388
+    .line 428
     new-instance v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
     const-string v1, "INSTANCE"
@@ -50,7 +50,7 @@
 
     sput-object v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;->INSTANCE:Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
-    .line 387
+    .line 427
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/common/primitives/Longs$LexicographicalComparator;
@@ -75,7 +75,7 @@
     .end annotation
 
     .prologue
-    .line 387
+    .line 427
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -86,7 +86,7 @@
     .parameter "name"
 
     .prologue
-    .line 387
+    .line 427
     const-class v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -102,7 +102,7 @@
     .locals 1
 
     .prologue
-    .line 387
+    .line 427
     sget-object v0, Lcom/google/common/primitives/Longs$LexicographicalComparator;->$VALUES:[Lcom/google/common/primitives/Longs$LexicographicalComparator;
 
     invoke-virtual {v0}, [Lcom/google/common/primitives/Longs$LexicographicalComparator;->clone()Ljava/lang/Object;
@@ -122,7 +122,7 @@
     .parameter "x1"
 
     .prologue
-    .line 387
+    .line 427
     check-cast p1, [J
 
     .end local p1
@@ -142,7 +142,7 @@
     .parameter "right"
 
     .prologue
-    .line 392
+    .line 431
     array-length v3, p1
 
     array-length v4, p2
@@ -151,7 +151,7 @@
 
     move-result v1
 
-    .line 393
+    .line 432
     .local v1, minLength:I
     const/4 v0, 0x0
 
@@ -159,7 +159,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 394
+    .line 433
     aget-wide v3, p1, v0
 
     aget-wide v5, p2, v0
@@ -168,23 +168,23 @@
 
     move-result v2
 
-    .line 395
+    .line 434
     .local v2, result:I
     if-eqz v2, :cond_0
 
-    .line 399
+    .line 438
     .end local v2           #result:I
     :goto_1
     return v2
 
-    .line 393
+    .line 432
     .restart local v2       #result:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 399
+    .line 438
     .end local v2           #result:I
     :cond_1
     array-length v3, p1

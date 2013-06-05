@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 123
+    .line 136
     iput-object p1, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$2;->this$0:Lcom/google/common/util/concurrent/AbstractExecutionThreadService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,23 +38,23 @@
 
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
-    .locals 2
+    .locals 1
     .parameter "command"
 
     .prologue
-    .line 126
-    new-instance v0, Ljava/lang/Thread;
+    .line 139
+    iget-object v0, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$2;->this$0:Lcom/google/common/util/concurrent/AbstractExecutionThreadService;
 
-    iget-object v1, p0, Lcom/google/common/util/concurrent/AbstractExecutionThreadService$2;->this$0:Lcom/google/common/util/concurrent/AbstractExecutionThreadService;
+    invoke-virtual {v0}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService;->serviceName()Ljava/lang/String;
 
-    invoke-virtual {v1}, Lcom/google/common/util/concurrent/AbstractExecutionThreadService;->getServiceName()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    invoke-static {v0, p1}, Lcom/google/common/util/concurrent/MoreExecutors;->newThread(Ljava/lang/String;Ljava/lang/Runnable;)Ljava/lang/Thread;
 
-    invoke-direct {v0, p1, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    move-result-object v0
 
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
-    .line 127
+    .line 140
     return-void
 .end method

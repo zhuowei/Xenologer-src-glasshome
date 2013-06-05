@@ -11,4 +11,6 @@
     <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0px" android:layout_marginTop="40.0px" android:layout_marginRight="40.0px" android:layout_marginBottom="24.0px">
         <include layout="@layout/timeline_item_footer" />
     </LinearLayout>
+    <com.google.glass.widget.SliderView android:layout_gravity="bottom" android:id="@id/buffering_slider" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.google.glass.widget.TipsView android:layout_gravity="bottom|center" android:id="@id/tips" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="76.0px" style="@style/TipsViewText" />
 </com.google.glass.home.timeline.VideoItemView>

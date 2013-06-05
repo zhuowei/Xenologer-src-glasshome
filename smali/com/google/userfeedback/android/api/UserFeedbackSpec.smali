@@ -337,9 +337,14 @@
     .line 414
     iget-object v1, p0, Lcom/google/userfeedback/android/api/UserFeedbackSpec;->mCurrentView:Landroid/view/View;
 
+    if-eqz v1, :cond_3
+
+    .line 415
+    iget-object v1, p0, Lcom/google/userfeedback/android/api/UserFeedbackSpec;->mCurrentView:Landroid/view/View;
+
     invoke-virtual {v1}, Landroid/view/View;->destroyDrawingCache()V
 
-    .line 416
+    .line 418
     :cond_3
     invoke-virtual {p0}, Lcom/google/userfeedback/android/api/UserFeedbackSpec;->getProductSpecificBinaryData()Ljava/util/List;
 
@@ -363,7 +368,7 @@
 
     check-cast v8, Lcom/google/userfeedback/android/api/ProductSpecificBinaryDataHolder;
 
-    .line 417
+    .line 419
     .local v8, psd:Lcom/google/userfeedback/android/api/ProductSpecificBinaryDataHolder;
     invoke-virtual {v8}, Lcom/google/userfeedback/android/api/ProductSpecificBinaryDataHolder;->getName()Ljava/lang/String;
 
@@ -381,7 +386,7 @@
 
     goto :goto_0
 
-    .line 419
+    .line 421
     .end local v8           #psd:Lcom/google/userfeedback/android/api/ProductSpecificBinaryDataHolder;
     :cond_4
     return-object v0

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 83
+    .line 77
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "barcode"
 
     .prologue
-    .line 97
+    .line 91
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->handleBarcode(Lcom/google/android/libraries/barhopper/Barcode;)Z
@@ -58,35 +58,35 @@
     .parameter "barcodeError"
 
     .prologue
-    .line 86
+    .line 80
     sget-object v0, Lcom/google/glass/barcode/BarcodeScanner$BarcodeError;->CAMERA:Lcom/google/glass/barcode/BarcodeScanner$BarcodeError;
 
     if-ne p1, v0, :cond_0
 
-    .line 87
+    .line 81
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     sget-object v1, Lcom/google/glass/logging/GlassError;->CAMERA_ERROR:Lcom/google/glass/logging/GlassError;
 
     invoke-static {v0, v1}, Lcom/google/glass/logging/GlassError;->report(Landroid/content/Context;Lcom/google/glass/logging/GlassError;)V
 
-    .line 88
+    .line 82
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->setResult(I)V
 
-    .line 89
+    .line 83
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->finish()V
 
-    .line 93
+    .line 87
     :goto_0
     return-void
 
-    .line 91
+    .line 85
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$1;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 

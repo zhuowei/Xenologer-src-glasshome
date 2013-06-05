@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 1900
+    .line 1858
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
@@ -53,23 +53,21 @@
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     const/4 v2, 0x0
 
-    .line 1918
+    .line 1880
     instance-of v3, p1, Lcom/google/common/collect/Multiset$Entry;
 
     if-eqz v3, :cond_0
 
     move-object v1, p1
 
-    .line 1919
+    .line 1881
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 1920
+    .line 1882
     .local v1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     iget-object v3, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
-    invoke-virtual {v3}, Lcom/google/common/collect/Multimaps$Keys;->multimap()Lcom/google/common/collect/Multimap;
-
-    move-result-object v3
+    iget-object v3, v3, Lcom/google/common/collect/Multimaps$Keys;->multimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v3}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
@@ -85,7 +83,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 1921
+    .line 1883
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     if-eqz v0, :cond_0
 
@@ -101,7 +99,7 @@
 
     const/4 v2, 0x1
 
-    .line 1923
+    .line 1885
     .end local v0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     .end local v1           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :cond_0
@@ -112,13 +110,11 @@
     .locals 1
 
     .prologue
-    .line 1914
+    .line 1875
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
-    invoke-virtual {v0}, Lcom/google/common/collect/Multimaps$Keys;->multimap()Lcom/google/common/collect/Multimap;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/common/collect/Multimaps$Keys;->multimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0}, Lcom/google/common/collect/Multimap;->isEmpty()Z
 
@@ -140,7 +136,7 @@
     .end annotation
 
     .prologue
-    .line 1906
+    .line 1866
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
@@ -162,7 +158,7 @@
     .end annotation
 
     .prologue
-    .line 1902
+    .line 1861
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
@@ -177,7 +173,7 @@
     .end parameter
 
     .prologue
-    .line 1927
+    .line 1890
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     instance-of v2, p1, Lcom/google/common/collect/Multiset$Entry;
 
@@ -185,16 +181,14 @@
 
     move-object v1, p1
 
-    .line 1928
+    .line 1891
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 1929
+    .line 1892
     .local v1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     iget-object v2, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 
-    invoke-virtual {v2}, Lcom/google/common/collect/Multimaps$Keys;->multimap()Lcom/google/common/collect/Multimap;
-
-    move-result-object v2
+    iget-object v2, v2, Lcom/google/common/collect/Multimaps$Keys;->multimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v2}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
@@ -210,7 +204,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 1930
+    .line 1893
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     if-eqz v0, :cond_0
 
@@ -224,13 +218,13 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 1931
+    .line 1894
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 1932
+    .line 1895
     const/4 v2, 0x1
 
-    .line 1935
+    .line 1898
     .end local v0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     .end local v1           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<*>;"
     :goto_0
@@ -246,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 1910
+    .line 1871
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;,"Lcom/google/common/collect/Multimaps$Keys<TK;TV;>.KeysEntrySet;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$KeysEntrySet;->this$0:Lcom/google/common/collect/Multimaps$Keys;
 

@@ -62,37 +62,37 @@
     .locals 1
 
     .prologue
-    .line 37748
+    .line 37756
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 37894
+    .line 37902
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 38142
+    .line 38150
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 38264
+    .line 38272
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38559
+    .line 38567
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 37749
+    .line 37757
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->maybeForceBuilderInitialization()V
 
-    .line 37750
+    .line 37758
     return-void
 .end method
 
@@ -101,37 +101,37 @@
     .parameter "parent"
 
     .prologue
-    .line 37754
+    .line 37762
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 37894
+    .line 37902
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 38142
+    .line 38150
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 38264
+    .line 38272
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38559
+    .line 38567
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 37755
+    .line 37763
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->maybeForceBuilderInitialization()V
 
-    .line 37756
+    .line 37764
     return-void
 .end method
 
@@ -141,7 +141,7 @@
     .parameter "x1"
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-direct {p0, p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -151,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->create()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 37762
+    .line 37770
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;-><init>()V
@@ -175,7 +175,7 @@
     .locals 2
 
     .prologue
-    .line 37896
+    .line 37904
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -184,7 +184,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 37897
+    .line 37905
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
@@ -193,14 +193,14 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 37898
+    .line 37906
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37900
+    .line 37908
     :cond_0
     return-void
 .end method
@@ -209,7 +209,7 @@
     .locals 2
 
     .prologue
-    .line 38144
+    .line 38152
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -218,7 +218,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 38145
+    .line 38153
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
@@ -227,14 +227,14 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 38146
+    .line 38154
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38148
+    .line 38156
     :cond_0
     return-void
 .end method
@@ -243,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 37737
+    .line 37745
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$28100()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -255,12 +255,12 @@
     .locals 1
 
     .prologue
-    .line 37758
+    .line 37766
     sget-boolean v0, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
 
     if-eqz v0, :cond_0
 
-    .line 37760
+    .line 37768
     :cond_0
     return-void
 .end method
@@ -282,19 +282,19 @@
     .end annotation
 
     .prologue
-    .line 38100
+    .line 38108
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Ljava/lang/Integer;>;"
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensurePathIsMutable()V
 
-    .line 38101
+    .line 38109
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 38103
+    .line 38111
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38104
+    .line 38112
     return-object p0
 .end method
 
@@ -313,19 +313,19 @@
     .end annotation
 
     .prologue
-    .line 38240
+    .line 38248
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Ljava/lang/Integer;>;"
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensureSpanIsMutable()V
 
-    .line 38241
+    .line 38249
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 38243
+    .line 38251
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38244
+    .line 38252
     return-object p0
 .end method
 
@@ -334,10 +334,10 @@
     .parameter "value"
 
     .prologue
-    .line 38064
+    .line 38072
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensurePathIsMutable()V
 
-    .line 38065
+    .line 38073
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -346,10 +346,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 38066
+    .line 38074
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38067
+    .line 38075
     return-object p0
 .end method
 
@@ -358,10 +358,10 @@
     .parameter "value"
 
     .prologue
-    .line 38222
+    .line 38230
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensureSpanIsMutable()V
 
-    .line 38223
+    .line 38231
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -370,10 +370,10 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 38224
+    .line 38232
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38225
+    .line 38233
     return-object p0
 .end method
 
@@ -381,12 +381,12 @@
     .locals 2
 
     .prologue
-    .line 37792
+    .line 37800
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
 
-    .line 37793
+    .line 37801
     .local v0, result:Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->isInitialized()Z
 
@@ -394,14 +394,14 @@
 
     if-nez v1, :cond_0
 
-    .line 37794
+    .line 37802
     invoke-static {v0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 37796
+    .line 37804
     :cond_0
     return-object v0
 .end method
@@ -410,7 +410,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -422,7 +422,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -434,22 +434,22 @@
     .locals 5
 
     .prologue
-    .line 37800
+    .line 37808
     new-instance v1, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/protobuf/DescriptorProtos$1;)V
 
-    .line 37801
+    .line 37809
     .local v1, result:Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37802
+    .line 37810
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 37803
+    .line 37811
     .local v2, to_bitField0_:I
     iget v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
@@ -459,7 +459,7 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 37804
+    .line 37812
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -468,21 +468,21 @@
 
     iput-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 37805
+    .line 37813
     iget v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x2
 
     iput v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37807
+    .line 37815
     :cond_0
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->path_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28702(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;Ljava/util/List;)Ljava/util/List;
 
-    .line 37808
+    .line 37816
     iget v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x2
@@ -491,7 +491,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 37809
+    .line 37817
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -500,62 +500,62 @@
 
     iput-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 37810
+    .line 37818
     iget v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x3
 
     iput v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37812
+    .line 37820
     :cond_1
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->span_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28802(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;Ljava/util/List;)Ljava/util/List;
 
-    .line 37813
+    .line 37821
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 37814
+    .line 37822
     or-int/lit8 v2, v2, 0x1
 
-    .line 37816
+    .line 37824
     :cond_2
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->leadingComments_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28902(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 37817
+    .line 37825
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 37818
+    .line 37826
     or-int/lit8 v2, v2, 0x2
 
-    .line 37820
+    .line 37828
     :cond_3
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->trailingComments_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$29002(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 37821
+    .line 37829
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$29102(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;I)I
 
-    .line 37822
+    .line 37830
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onBuilt()V
 
-    .line 37823
+    .line 37831
     return-object v1
 .end method
 
@@ -563,7 +563,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -575,7 +575,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -587,7 +587,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -599,62 +599,62 @@
     .locals 1
 
     .prologue
-    .line 37766
+    .line 37774
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 37767
+    .line 37775
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 37768
+    .line 37776
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37769
+    .line 37777
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 37770
+    .line 37778
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37771
+    .line 37779
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 37772
+    .line 37780
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37773
+    .line 37781
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 37774
+    .line 37782
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37775
+    .line 37783
     return-object p0
 .end method
 
@@ -662,7 +662,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -674,7 +674,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -686,7 +686,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -698,14 +698,14 @@
     .locals 1
 
     .prologue
-    .line 38503
+    .line 38511
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38504
+    .line 38512
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -716,10 +716,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38505
+    .line 38513
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38506
+    .line 38514
     return-object p0
 .end method
 
@@ -727,24 +727,24 @@
     .locals 1
 
     .prologue
-    .line 38136
+    .line 38144
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 38137
+    .line 38145
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38138
+    .line 38146
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38139
+    .line 38147
     return-object p0
 .end method
 
@@ -752,24 +752,24 @@
     .locals 1
 
     .prologue
-    .line 38258
+    .line 38266
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 38259
+    .line 38267
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38260
+    .line 38268
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38261
+    .line 38269
     return-object p0
 .end method
 
@@ -777,14 +777,14 @@
     .locals 1
 
     .prologue
-    .line 38613
+    .line 38621
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38614
+    .line 38622
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -795,10 +795,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38615
+    .line 38623
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38616
+    .line 38624
     return-object p0
 .end method
 
@@ -806,7 +806,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -818,7 +818,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -830,7 +830,7 @@
     .locals 2
 
     .prologue
-    .line 37779
+    .line 37787
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->create()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -850,7 +850,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -862,7 +862,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -874,7 +874,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -891,7 +891,7 @@
     .end annotation
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -903,7 +903,7 @@
     .locals 1
 
     .prologue
-    .line 37788
+    .line 37796
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -915,7 +915,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -927,7 +927,7 @@
     .locals 1
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
@@ -939,7 +939,7 @@
     .locals 1
 
     .prologue
-    .line 37784
+    .line 37792
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$28100()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -951,16 +951,16 @@
     .locals 3
 
     .prologue
-    .line 38349
+    .line 38357
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38350
+    .line 38358
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 38351
+    .line 38359
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -968,11 +968,11 @@
 
     move-result-object v1
 
-    .line 38353
+    .line 38361
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38356
+    .line 38364
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -991,16 +991,16 @@
     .locals 3
 
     .prologue
-    .line 38401
+    .line 38409
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38402
+    .line 38410
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 38403
+    .line 38411
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1008,11 +1008,11 @@
 
     move-result-object v0
 
-    .line 38406
+    .line 38414
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38409
+    .line 38417
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1032,7 +1032,7 @@
     .parameter "index"
 
     .prologue
-    .line 37996
+    .line 38004
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1052,7 +1052,7 @@
     .locals 1
 
     .prologue
-    .line 37964
+    .line 37972
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1075,7 +1075,7 @@
     .end annotation
 
     .prologue
-    .line 37932
+    .line 37940
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1090,7 +1090,7 @@
     .parameter "index"
 
     .prologue
-    .line 38190
+    .line 38198
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1110,7 +1110,7 @@
     .locals 1
 
     .prologue
-    .line 38176
+    .line 38184
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1133,7 +1133,7 @@
     .end annotation
 
     .prologue
-    .line 38162
+    .line 38170
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1147,16 +1147,16 @@
     .locals 3
 
     .prologue
-    .line 38570
+    .line 38578
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38571
+    .line 38579
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 38572
+    .line 38580
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -1164,11 +1164,11 @@
 
     move-result-object v1
 
-    .line 38574
+    .line 38582
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38577
+    .line 38585
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -1187,16 +1187,16 @@
     .locals 3
 
     .prologue
-    .line 38585
+    .line 38593
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38586
+    .line 38594
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 38587
+    .line 38595
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1204,11 +1204,11 @@
 
     move-result-object v0
 
-    .line 38590
+    .line 38598
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38593
+    .line 38601
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1227,7 +1227,7 @@
     .locals 2
 
     .prologue
-    .line 38306
+    .line 38314
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1251,7 +1251,7 @@
     .locals 2
 
     .prologue
-    .line 38564
+    .line 38572
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1275,7 +1275,7 @@
     .locals 3
 
     .prologue
-    .line 37742
+    .line 37750
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$28200()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -1295,7 +1295,7 @@
     .locals 1
 
     .prologue
-    .line 37872
+    .line 37880
     const/4 v0, 0x1
 
     return v0
@@ -1312,7 +1312,7 @@
     .end annotation
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -1325,7 +1325,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -1344,7 +1344,7 @@
     .end annotation
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -1363,10 +1363,10 @@
     .end annotation
 
     .prologue
-    .line 37879
+    .line 37887
     const/4 v2, 0x0
 
-    .line 37881
+    .line 37889
     .local v2, parsedMessage:Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
     :try_start_0
     sget-object v3, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->PARSER:Lcom/google/protobuf/Parser;
@@ -1384,21 +1384,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 37886
+    .line 37894
     if-eqz v2, :cond_0
 
-    .line 37887
+    .line 37895
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
-    .line 37890
+    .line 37898
     :cond_0
     return-object p0
 
-    .line 37882
+    .line 37890
     :catch_0
     move-exception v1
 
-    .line 37883
+    .line 37891
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1411,19 +1411,19 @@
 
     move-object v2, v0
 
-    .line 37884
+    .line 37892
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 37886
+    .line 37894
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 37887
+    .line 37895
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     :cond_1
@@ -1435,18 +1435,18 @@
     .parameter "other"
 
     .prologue
-    .line 37836
+    .line 37844
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 37868
+    .line 37876
     :goto_0
     return-object p0
 
-    .line 37837
+    .line 37845
     :cond_0
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->path_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28700(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Ljava/util/List;
@@ -1459,7 +1459,7 @@
 
     if-nez v0, :cond_1
 
-    .line 37838
+    .line 37846
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1468,7 +1468,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 37839
+    .line 37847
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->path_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28700(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Ljava/util/List;
 
@@ -1476,18 +1476,18 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
-    .line 37840
+    .line 37848
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37845
+    .line 37853
     :goto_1
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 37847
+    .line 37855
     :cond_1
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->span_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Ljava/util/List;
@@ -1500,7 +1500,7 @@
 
     if-nez v0, :cond_2
 
-    .line 37848
+    .line 37856
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1509,7 +1509,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 37849
+    .line 37857
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->span_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Ljava/util/List;
 
@@ -1517,18 +1517,18 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
-    .line 37850
+    .line 37858
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37855
+    .line 37863
     :goto_2
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 37857
+    .line 37865
     :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->hasLeadingComments()Z
 
@@ -1536,14 +1536,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 37858
+    .line 37866
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37859
+    .line 37867
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->leadingComments_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$28900(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Ljava/lang/Object;
 
@@ -1551,10 +1551,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 37860
+    .line 37868
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 37862
+    .line 37870
     :cond_3
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->hasTrailingComments()Z
 
@@ -1562,14 +1562,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 37863
+    .line 37871
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 37864
+    .line 37872
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->trailingComments_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->access$29000(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;)Ljava/lang/Object;
 
@@ -1577,10 +1577,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 37865
+    .line 37873
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 37867
+    .line 37875
     :cond_4
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1590,11 +1590,11 @@
 
     goto :goto_0
 
-    .line 37842
+    .line 37850
     :cond_5
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensurePathIsMutable()V
 
-    .line 37843
+    .line 37851
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->path_:Ljava/util/List;
@@ -1606,11 +1606,11 @@
 
     goto :goto_1
 
-    .line 37852
+    .line 37860
     :cond_6
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensureSpanIsMutable()V
 
-    .line 37853
+    .line 37861
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;->span_:Ljava/util/List;
@@ -1628,12 +1628,12 @@
     .parameter "other"
 
     .prologue
-    .line 37827
+    .line 37835
     instance-of v0, p1, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     if-eqz v0, :cond_0
 
-    .line 37828
+    .line 37836
     check-cast p1, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
     .end local p1
@@ -1641,12 +1641,12 @@
 
     move-result-object p0
 
-    .line 37831
+    .line 37839
     .end local p0
     :goto_0
     return-object p0
 
-    .line 37830
+    .line 37838
     .restart local p0
     .restart local p1
     :cond_0
@@ -1666,7 +1666,7 @@
     .end annotation
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -1679,7 +1679,7 @@
     .parameter "x0"
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -1698,7 +1698,7 @@
     .end annotation
 
     .prologue
-    .line 37731
+    .line 37739
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;
 
     move-result-object v0
@@ -1711,17 +1711,17 @@
     .parameter "value"
 
     .prologue
-    .line 38454
+    .line 38462
     if-nez p1, :cond_0
 
-    .line 38455
+    .line 38463
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 38457
+    .line 38465
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
@@ -1729,13 +1729,13 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38458
+    .line 38466
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38459
+    .line 38467
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38460
+    .line 38468
     return-object p0
 .end method
 
@@ -1744,17 +1744,17 @@
     .parameter "value"
 
     .prologue
-    .line 38550
+    .line 38558
     if-nez p1, :cond_0
 
-    .line 38551
+    .line 38559
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 38553
+    .line 38561
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
@@ -1762,13 +1762,13 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38554
+    .line 38562
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->leadingComments_:Ljava/lang/Object;
 
-    .line 38555
+    .line 38563
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38556
+    .line 38564
     return-object p0
 .end method
 
@@ -1778,10 +1778,10 @@
     .parameter "value"
 
     .prologue
-    .line 38029
+    .line 38037
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensurePathIsMutable()V
 
-    .line 38030
+    .line 38038
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->path_:Ljava/util/List;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1790,10 +1790,10 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 38031
+    .line 38039
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38032
+    .line 38040
     return-object p0
 .end method
 
@@ -1803,10 +1803,10 @@
     .parameter "value"
 
     .prologue
-    .line 38205
+    .line 38213
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->ensureSpanIsMutable()V
 
-    .line 38206
+    .line 38214
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->span_:Ljava/util/List;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1815,10 +1815,10 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 38207
+    .line 38215
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38208
+    .line 38216
     return-object p0
 .end method
 
@@ -1827,17 +1827,17 @@
     .parameter "value"
 
     .prologue
-    .line 38601
+    .line 38609
     if-nez p1, :cond_0
 
-    .line 38602
+    .line 38610
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 38604
+    .line 38612
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
@@ -1845,13 +1845,13 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38605
+    .line 38613
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38606
+    .line 38614
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38607
+    .line 38615
     return-object p0
 .end method
 
@@ -1860,17 +1860,17 @@
     .parameter "value"
 
     .prologue
-    .line 38623
+    .line 38631
     if-nez p1, :cond_0
 
-    .line 38624
+    .line 38632
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 38626
+    .line 38634
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
@@ -1878,12 +1878,12 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->bitField0_:I
 
-    .line 38627
+    .line 38635
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->trailingComments_:Ljava/lang/Object;
 
-    .line 38628
+    .line 38636
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->onChanged()V
 
-    .line 38629
+    .line 38637
     return-object p0
 .end method

@@ -97,7 +97,7 @@
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_SyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/4 v2, 0x6
+    const/4 v2, 0x5
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -120,12 +120,6 @@
     const-string v3, "DeviceId"
 
     aput-object v3, v2, v9
-
-    const/4 v3, 0x5
-
-    const-string v4, "SupportsUserActions"
-
-    aput-object v4, v2, v3
 
     invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
 

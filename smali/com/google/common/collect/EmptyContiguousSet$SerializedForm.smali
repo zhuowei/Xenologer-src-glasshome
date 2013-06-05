@@ -59,15 +59,15 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 137
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet$SerializedForm;,"Lcom/google/common/collect/EmptyContiguousSet$SerializedForm<TC;>;"
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 116
+    .line 138
     iput-object p1, p0, Lcom/google/common/collect/EmptyContiguousSet$SerializedForm;->domain:Lcom/google/common/collect/DiscreteDomain;
 
-    .line 117
+    .line 139
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .parameter "x1"
 
     .prologue
-    .line 112
+    .line 134
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet$SerializedForm;,"Lcom/google/common/collect/EmptyContiguousSet$SerializedForm<TC;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/EmptyContiguousSet$SerializedForm;-><init>(Lcom/google/common/collect/DiscreteDomain;)V
 
@@ -88,7 +88,7 @@
     .locals 2
 
     .prologue
-    .line 120
+    .line 142
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet$SerializedForm;,"Lcom/google/common/collect/EmptyContiguousSet$SerializedForm<TC;>;"
     new-instance v0, Lcom/google/common/collect/EmptyContiguousSet;
 

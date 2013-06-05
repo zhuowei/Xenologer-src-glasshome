@@ -67,7 +67,7 @@
     .end parameter
 
     .prologue
-    .line 117
+    .line 81
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableList;->element:Ljava/lang/Object;
 
@@ -81,6 +81,9 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 5
     .parameter "object"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
@@ -88,15 +91,15 @@
 
     const/4 v2, 0x0
 
-    .line 121
+    .line 86
     if-ne p1, p0, :cond_1
 
-    .line 128
+    .line 93
     :cond_0
     :goto_0
     return v1
 
-    .line 124
+    .line 89
     :cond_1
     instance-of v3, p1, Ljava/util/List;
 
@@ -104,10 +107,10 @@
 
     move-object v0, p1
 
-    .line 125
+    .line 90
     check-cast v0, Ljava/util/List;
 
-    .line 126
+    .line 91
     .local v0, that:Ljava/util/List;,"Ljava/util/List<*>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -136,7 +139,7 @@
     :cond_3
     move v1, v2
 
-    .line 128
+    .line 93
     goto :goto_0
 .end method
 
@@ -150,13 +153,13 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 45
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     const/4 v0, 0x1
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 47
+    .line 46
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableList;->element:Ljava/lang/Object;
 
     return-object v0
@@ -166,7 +169,7 @@
     .locals 1
 
     .prologue
-    .line 134
+    .line 100
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableList;->element:Ljava/lang/Object;
 
@@ -212,7 +215,7 @@
     .locals 1
 
     .prologue
-    .line 147
+    .line 112
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     const/4 v0, 0x0
 
@@ -223,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 151
+    .line 117
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     const/4 v0, 0x0
 
@@ -241,7 +244,7 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 56
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableList;->element:Ljava/lang/Object;
 
@@ -256,7 +259,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 33
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/SingletonImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
@@ -273,65 +276,13 @@
     .end parameter
 
     .prologue
-    .line 59
+    .line 61
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/SingletonImmutableList;->element:Ljava/lang/Object;
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/SingletonImmutableList;->indexOf(Ljava/lang/Object;)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, -0x1
-
-    goto :goto_0
-.end method
-
-.method public listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
-    .locals 1
-    .parameter "start"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I)",
-            "Lcom/google/common/collect/UnmodifiableListIterator",
-            "<TE;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 63
-    .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
-
-    .line 64
-    new-instance v0, Lcom/google/common/collect/SingletonImmutableList$1;
-
-    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/SingletonImmutableList$1;-><init>(Lcom/google/common/collect/SingletonImmutableList;I)V
-
-    return-object v0
-.end method
-
-.method public bridge synthetic listIterator(I)Ljava/util/ListIterator;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 34
-    .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/SingletonImmutableList;->listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public reverse()Lcom/google/common/collect/ImmutableList;
@@ -345,7 +296,7 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 76
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     return-object p0
 .end method
@@ -354,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 104
+    .line 65
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     const/4 v0, 0x1
 
@@ -374,13 +325,13 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 70
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     const/4 v0, 0x1
 
     invoke-static {p1, p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
 
-    .line 109
+    .line 71
     if-ne p1, p2, :cond_0
 
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
@@ -398,7 +349,7 @@
     .parameter "x1"
 
     .prologue
-    .line 34
+    .line 33
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/SingletonImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
 
@@ -411,7 +362,7 @@
     .locals 3
 
     .prologue
-    .line 155
+    .line 122
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     const/4 v0, 0x1
 
@@ -442,22 +393,22 @@
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     const/4 v2, 0x1
 
-    .line 159
+    .line 127
     array-length v1, p1
 
     if-nez v1, :cond_1
 
-    .line 160
+    .line 128
     invoke-static {p1, v2}, Lcom/google/common/collect/ObjectArrays;->newArray([Ljava/lang/Object;I)[Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 165
+    .line 133
     :cond_0
     :goto_0
     move-object v0, p1
 
-    .line 166
+    .line 134
     .local v0, objectArray:[Ljava/lang/Object;
     const/4 v1, 0x0
 
@@ -465,17 +416,17 @@
 
     aput-object v2, v0, v1
 
-    .line 167
+    .line 135
     return-object p1
 
-    .line 161
+    .line 129
     .end local v0           #objectArray:[Ljava/lang/Object;
     :cond_1
     array-length v1, p1
 
     if-le v1, v2, :cond_0
 
-    .line 162
+    .line 130
     const/4 v1, 0x0
 
     aput-object v1, p1, v2
@@ -487,7 +438,7 @@
     .locals 3
 
     .prologue
-    .line 138
+    .line 105
     .local p0, this:Lcom/google/common/collect/SingletonImmutableList;,"Lcom/google/common/collect/SingletonImmutableList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/SingletonImmutableList;->element:Ljava/lang/Object;
 
@@ -495,7 +446,7 @@
 
     move-result-object v0
 
-    .line 139
+    .line 106
     .local v0, elementToString:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 

@@ -107,7 +107,7 @@
 
     packed-switch v13, :pswitch_data_0
 
-    .line 153
+    .line 161
     :cond_0
     :goto_0
     return v7
@@ -213,7 +213,7 @@
     .local v8, pointerIndex:I
     const/4 v13, -0x1
 
-    if-eq v8, v13, :cond_2
+    if-eq v8, v13, :cond_3
 
     .line 104
     move-object/from16 v0, p1
@@ -235,11 +235,37 @@
     :goto_1
     move-object/from16 v0, p0
 
+    iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->currentDownEvent:Landroid/view/MotionEvent;
+
+    if-nez v13, :cond_2
+
+    .line 119
+    invoke-static/range {p1 .. p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
+
+    move-result-object v13
+
+    move-object/from16 v0, p0
+
+    iput-object v13, v0, Lcom/google/glass/input/GestureDetector;->currentDownEvent:Landroid/view/MotionEvent;
+
+    .line 120
+    move-object/from16 v0, p0
+
+    iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->currentDownEvent:Landroid/view/MotionEvent;
+
+    const/4 v14, 0x0
+
+    invoke-virtual {v13, v14}, Landroid/view/MotionEvent;->setAction(I)V
+
+    .line 123
+    :cond_2
+    move-object/from16 v0, p0
+
     iget v13, v0, Lcom/google/glass/input/GestureDetector;->lastMotionX:F
 
     sub-float v9, v13, v11
 
-    .line 116
+    .line 124
     .local v9, scrollX:F
     move-object/from16 v0, p0
 
@@ -247,15 +273,15 @@
 
     sub-float v10, v13, v12
 
-    .line 118
+    .line 126
     .local v10, scrollY:F
     move-object/from16 v0, p0
 
     iget-boolean v13, v0, Lcom/google/glass/input/GestureDetector;->stillInTapRegion:Z
 
-    if-eqz v13, :cond_3
+    if-eqz v13, :cond_4
 
-    .line 119
+    .line 127
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->currentDownEvent:Landroid/view/MotionEvent;
@@ -270,7 +296,7 @@
 
     float-to-int v2, v13
 
-    .line 120
+    .line 128
     .local v2, deltaX:I
     move-object/from16 v0, p0
 
@@ -286,7 +312,7 @@
 
     float-to-int v3, v13
 
-    .line 121
+    .line 129
     .local v3, deltaY:I
     mul-int v13, v2, v2
 
@@ -294,7 +320,7 @@
 
     add-int v4, v13, v14
 
-    .line 123
+    .line 131
     .local v4, distance:I
     move-object/from16 v0, p0
 
@@ -302,7 +328,7 @@
 
     if-le v4, v13, :cond_0
 
-    .line 124
+    .line 132
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->gestureListener:Lcom/google/glass/input/TouchDetector$ExtendedOnGestureListener;
@@ -317,17 +343,17 @@
 
     move-result v7
 
-    .line 125
+    .line 133
     move-object/from16 v0, p0
 
     iput v11, v0, Lcom/google/glass/input/GestureDetector;->lastMotionX:F
 
-    .line 126
+    .line 134
     move-object/from16 v0, p0
 
     iput v12, v0, Lcom/google/glass/input/GestureDetector;->lastMotionY:F
 
-    .line 127
+    .line 135
     const/4 v13, 0x0
 
     move-object/from16 v0, p0
@@ -344,7 +370,7 @@
     .end local v10           #scrollY:F
     .end local v11           #x:F
     .end local v12           #y:F
-    :cond_2
+    :cond_3
     const/4 v13, 0x0
 
     move-object/from16 v0, p1
@@ -387,12 +413,12 @@
 
     iput v13, v0, Lcom/google/glass/input/GestureDetector;->lastPointerId:I
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 129
+    .line 137
     .restart local v9       #scrollX:F
     .restart local v10       #scrollY:F
-    :cond_3
+    :cond_4
     invoke-static {v9}, Ljava/lang/Math;->abs(F)F
 
     move-result v13
@@ -401,7 +427,7 @@
 
     cmpl-float v13, v13, v14
 
-    if-gez v13, :cond_4
+    if-gez v13, :cond_5
 
     invoke-static {v10}, Ljava/lang/Math;->abs(F)F
 
@@ -413,8 +439,8 @@
 
     if-ltz v13, :cond_0
 
-    .line 130
-    :cond_4
+    .line 138
+    :cond_5
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->gestureListener:Lcom/google/glass/input/TouchDetector$ExtendedOnGestureListener;
@@ -429,19 +455,19 @@
 
     move-result v7
 
-    .line 131
+    .line 139
     move-object/from16 v0, p0
 
     iput v11, v0, Lcom/google/glass/input/GestureDetector;->lastMotionX:F
 
-    .line 132
+    .line 140
     move-object/from16 v0, p0
 
     iput v12, v0, Lcom/google/glass/input/GestureDetector;->lastMotionY:F
 
     goto/16 :goto_0
 
-    .line 139
+    .line 147
     .end local v8           #pointerIndex:I
     .end local v9           #scrollX:F
     .end local v10           #scrollY:F
@@ -452,7 +478,7 @@
 
     move-result-wide v5
 
-    .line 140
+    .line 148
     .local v5, eventTime:J
     move-object/from16 v0, p0
 
@@ -478,7 +504,7 @@
 
     if-gez v13, :cond_0
 
-    .line 142
+    .line 150
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->gestureListener:Lcom/google/glass/input/TouchDetector$ExtendedOnGestureListener;
@@ -487,7 +513,7 @@
 
     invoke-virtual {v13, v0}, Lcom/google/glass/input/TouchDetector$ExtendedOnGestureListener;->onSingleTapUp(Landroid/view/MotionEvent;)Z
 
-    .line 145
+    .line 153
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->currentDownEvent:Landroid/view/MotionEvent;
@@ -506,9 +532,9 @@
 
     cmp-long v13, v13, v15
 
-    if-gez v13, :cond_5
+    if-gez v13, :cond_6
 
-    .line 146
+    .line 154
     move-object/from16 v0, p0
 
     iget-object v13, v0, Lcom/google/glass/input/GestureDetector;->gestureListener:Lcom/google/glass/input/TouchDetector$ExtendedOnGestureListener;
@@ -517,8 +543,8 @@
 
     invoke-virtual {v13, v0}, Lcom/google/glass/input/TouchDetector$ExtendedOnGestureListener;->onDoubleTapUp(Landroid/view/MotionEvent;)Z
 
-    .line 149
-    :cond_5
+    .line 157
+    :cond_6
     move-object/from16 v0, p0
 
     iput-wide v5, v0, Lcom/google/glass/input/GestureDetector;->lastTapTime:J
@@ -526,8 +552,6 @@
     goto/16 :goto_0
 
     .line 84
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

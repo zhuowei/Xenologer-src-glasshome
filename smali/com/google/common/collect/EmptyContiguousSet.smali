@@ -39,12 +39,12 @@
     .end annotation
 
     .prologue
-    .line 34
+    .line 35
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     .local p1, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ContiguousSet;-><init>(Lcom/google/common/collect/DiscreteDomain;)V
 
-    .line 35
+    .line 36
     return-void
 .end method
 
@@ -61,9 +61,65 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 111
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     invoke-static {}, Lcom/google/common/collect/ImmutableList;->of()Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method createDescendingSet()Lcom/google/common/collect/ImmutableSortedSet;
+    .locals 2
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "NavigableSet"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableSortedSet",
+            "<TC;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 157
+    .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
+    new-instance v0, Lcom/google/common/collect/EmptyImmutableSortedSet;
+
+    invoke-static {}, Lcom/google/common/collect/Ordering;->natural()Lcom/google/common/collect/Ordering;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/common/collect/Ordering;->reverse()Lcom/google/common/collect/Ordering;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/common/collect/EmptyImmutableSortedSet;-><init>(Ljava/util/Comparator;)V
+
+    return-object v0
+.end method
+
+.method public descendingIterator()Lcom/google/common/collect/UnmodifiableIterator;
+    .locals 1
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "NavigableSet"
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/UnmodifiableIterator",
+            "<TC;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 96
+    .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
+    invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
 
@@ -78,7 +134,7 @@
     .end parameter
 
     .prologue
-    .line 100
+    .line 121
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     instance-of v1, p1, Ljava/util/Set;
 
@@ -86,16 +142,16 @@
 
     move-object v0, p1
 
-    .line 101
+    .line 122
     check-cast v0, Ljava/util/Set;
 
-    .line 102
+    .line 123
     .local v0, that:Ljava/util/Set;,"Ljava/util/Set<*>;"
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
 
     move-result v1
 
-    .line 104
+    .line 125
     .end local v0           #that:Ljava/util/Set;,"Ljava/util/Set<*>;"
     :goto_0
     return v1
@@ -115,7 +171,7 @@
     .end annotation
 
     .prologue
-    .line 38
+    .line 40
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -141,7 +197,7 @@
     .locals 1
 
     .prologue
-    .line 108
+    .line 130
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     const/4 v0, 0x0
 
@@ -161,7 +217,7 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 69
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     .local p1, toElement:Ljava/lang/Comparable;,"TC;"
     return-object p0
@@ -188,9 +244,12 @@
 .method indexOf(Ljava/lang/Object;)I
     .locals 1
     .parameter "target"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "not used by GWT emulation"
+    .end annotation
 
     .prologue
-    .line 76
+    .line 85
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     const/4 v0, -0x1
 
@@ -211,7 +270,7 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 54
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     .local p1, other:Lcom/google/common/collect/ContiguousSet;,"Lcom/google/common/collect/ContiguousSet<TC;>;"
     return-object p0
@@ -221,7 +280,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 106
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     const/4 v0, 0x1
 
@@ -232,7 +291,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 101
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     const/4 v0, 0x0
 
@@ -250,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 90
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
@@ -281,7 +340,7 @@
     .end annotation
 
     .prologue
-    .line 42
+    .line 45
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -314,7 +373,7 @@
     .end annotation
 
     .prologue
-    .line 54
+    .line 59
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -339,7 +398,7 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 64
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -352,7 +411,7 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 49
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     const/4 v0, 0x0
 
@@ -374,7 +433,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 74
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     .local p1, fromElement:Ljava/lang/Comparable;,"TC;"
     .local p3, toElement:Ljava/lang/Comparable;,"TC;"
@@ -417,7 +476,7 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 79
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     .local p1, fromElement:Ljava/lang/Comparable;,"TC;"
     return-object p0
@@ -445,7 +504,7 @@
     .locals 1
 
     .prologue
-    .line 96
+    .line 116
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     const-string v0, "[]"
 
@@ -459,7 +518,7 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 151
     .local p0, this:Lcom/google/common/collect/EmptyContiguousSet;,"Lcom/google/common/collect/EmptyContiguousSet<TC;>;"
     new-instance v0, Lcom/google/common/collect/EmptyContiguousSet$SerializedForm;
 

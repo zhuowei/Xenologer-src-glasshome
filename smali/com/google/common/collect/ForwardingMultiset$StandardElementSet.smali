@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 249
+    .line 245
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset$StandardElementSet;,"Lcom/google/common/collect/ForwardingMultiset<TE;>.StandardElementSet;"
     iput-object p1, p0, Lcom/google/common/collect/ForwardingMultiset$StandardElementSet;->this$0:Lcom/google/common/collect/ForwardingMultiset;
 
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 253
+    .line 249
     .local p0, this:Lcom/google/common/collect/ForwardingMultiset$StandardElementSet;,"Lcom/google/common/collect/ForwardingMultiset<TE;>.StandardElementSet;"
     iget-object v0, p0, Lcom/google/common/collect/ForwardingMultiset$StandardElementSet;->this$0:Lcom/google/common/collect/ForwardingMultiset;
 

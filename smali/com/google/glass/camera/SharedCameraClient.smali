@@ -164,44 +164,62 @@
     .parameter "shouldShow"
 
     .prologue
-    .line 521
+    .line 539
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->getViewfinder()Landroid/view/TextureView;
 
     move-result-object v0
 
-    .line 522
+    .line 540
     .local v0, viewfinder:Landroid/view/TextureView;
     if-eqz v0, :cond_0
 
-    .line 523
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$15;
+    .line 541
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$16;
 
-    invoke-direct {v1, p0, v0, p1}, Lcom/google/glass/camera/SharedCameraClient$15;-><init>(Lcom/google/glass/camera/SharedCameraClient;Landroid/view/TextureView;Z)V
+    invoke-direct {v1, p0, v0, p1}, Lcom/google/glass/camera/SharedCameraClient$16;-><init>(Lcom/google/glass/camera/SharedCameraClient;Landroid/view/TextureView;Z)V
 
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->post(Ljava/lang/Runnable;)Z
 
-    .line 533
+    .line 551
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
+.method dispatchAudioError(Ljava/lang/String;)V
+    .locals 2
+    .parameter "message"
+
+    .prologue
+    .line 424
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$8;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$8;-><init>(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 430
+    return-void
+.end method
+
 .method dispatchBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
     .locals 2
     .parameter "barcode"
 
     .prologue
-    .line 426
+    .line 444
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$9;
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$10;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$9;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/android/libraries/barhopper/Barcode;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$10;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/android/libraries/barhopper/Barcode;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 432
+    .line 450
     return-void
 .end method
 
@@ -209,7 +227,7 @@
     .locals 2
 
     .prologue
-    .line 376
+    .line 384
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$4;
@@ -218,7 +236,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 382
+    .line 390
     return-void
 .end method
 
@@ -227,7 +245,7 @@
     .parameter "message"
 
     .prologue
-    .line 406
+    .line 414
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$7;
@@ -236,7 +254,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 412
+    .line 420
     return-void
 .end method
 
@@ -244,7 +262,7 @@
     .locals 2
 
     .prologue
-    .line 386
+    .line 394
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$5;
@@ -253,7 +271,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 392
+    .line 400
     return-void
 .end method
 
@@ -261,7 +279,7 @@
     .locals 2
 
     .prologue
-    .line 396
+    .line 404
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$6;
@@ -270,7 +288,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 402
+    .line 410
     return-void
 .end method
 
@@ -279,16 +297,16 @@
     .parameter "video"
 
     .prologue
-    .line 477
+    .line 495
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$14;
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$15;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$14;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$15;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 483
+    .line 501
     return-void
 .end method
 
@@ -297,7 +315,7 @@
     .parameter "picture"
 
     .prologue
-    .line 366
+    .line 374
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$3;
@@ -306,7 +324,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 372
+    .line 380
     return-void
 .end method
 
@@ -315,7 +333,7 @@
     .parameter "picture"
 
     .prologue
-    .line 356
+    .line 364
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$2;
@@ -324,7 +342,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 362
+    .line 370
     return-void
 .end method
 
@@ -334,16 +352,16 @@
     .parameter "captureTimeNanos"
 
     .prologue
-    .line 416
+    .line 434
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$8;
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$9;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/glass/camera/SharedCameraClient$8;-><init>(Lcom/google/glass/camera/SharedCameraClient;[BJ)V
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/glass/camera/SharedCameraClient$9;-><init>(Lcom/google/glass/camera/SharedCameraClient;[BJ)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 422
+    .line 440
     return-void
 .end method
 
@@ -351,42 +369,7 @@
     .locals 2
 
     .prologue
-    .line 436
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$10;
-
-    invoke-direct {v1, p0}, Lcom/google/glass/camera/SharedCameraClient$10;-><init>(Lcom/google/glass/camera/SharedCameraClient;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 442
-    return-void
-.end method
-
-.method dispatchStartRecording(Lcom/google/glass/camera/Video;)V
-    .locals 2
-    .parameter "video"
-
-    .prologue
-    .line 456
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$12;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$12;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 462
-    return-void
-.end method
-
-.method dispatchStopPreview()V
-    .locals 2
-
-    .prologue
-    .line 446
+    .line 454
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$11;
@@ -395,7 +378,42 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 452
+    .line 460
+    return-void
+.end method
+
+.method dispatchStartRecording(Lcom/google/glass/camera/Video;)V
+    .locals 2
+    .parameter "video"
+
+    .prologue
+    .line 474
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$13;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$13;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 480
+    return-void
+.end method
+
+.method dispatchStopPreview()V
+    .locals 2
+
+    .prologue
+    .line 464
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
+
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$12;
+
+    invoke-direct {v1, p0}, Lcom/google/glass/camera/SharedCameraClient$12;-><init>(Lcom/google/glass/camera/SharedCameraClient;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 470
     return-void
 .end method
 
@@ -406,16 +424,16 @@
     .parameter "storageFull"
 
     .prologue
-    .line 467
+    .line 485
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$13;
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$14;
 
-    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/glass/camera/SharedCameraClient$13;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;ZZ)V
+    invoke-direct {v1, p0, p1, p2, p3}, Lcom/google/glass/camera/SharedCameraClient$14;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;ZZ)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 473
+    .line 491
     return-void
 .end method
 
@@ -424,25 +442,25 @@
     .parameter "o"
 
     .prologue
-    .line 497
+    .line 515
     instance-of v1, p1, Lcom/google/glass/camera/SharedCameraClient;
 
     if-nez v1, :cond_0
 
-    .line 498
+    .line 516
     const/4 v1, 0x0
 
-    .line 501
+    .line 519
     :goto_0
     return v1
 
     :cond_0
     move-object v0, p1
 
-    .line 500
+    .line 518
     check-cast v0, Lcom/google/glass/camera/SharedCameraClient;
 
-    .line 501
+    .line 519
     .local v0, c:Lcom/google/glass/camera/SharedCameraClient;
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraClient;->getTag()Ljava/lang/String;
 
@@ -468,19 +486,19 @@
     .end annotation
 
     .prologue
-    .line 509
+    .line 527
     :try_start_0
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->releaseDestroyedPreviewSurfaces()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 511
+    .line 529
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 513
+    .line 531
     return-void
 
-    .line 511
+    .line 529
     :catchall_0
     move-exception v0
 
@@ -528,7 +546,7 @@
     .locals 1
 
     .prologue
-    .line 492
+    .line 510
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -572,12 +590,21 @@
     throw v0
 .end method
 
+.method protected onAudioError(Ljava/lang/String;)V
+    .locals 0
+    .parameter "message"
+
+    .prologue
+    .line 300
+    return-void
+.end method
+
 .method protected onBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
     .locals 0
     .parameter "barcode"
 
     .prologue
-    .line 352
+    .line 360
     return-void
 .end method
 
@@ -619,7 +646,7 @@
     .parameter "video"
 
     .prologue
-    .line 331
+    .line 339
     return-void
 .end method
 
@@ -647,7 +674,7 @@
     .parameter "captureTimeNanos"
 
     .prologue
-    .line 344
+    .line 352
     return-void
 .end method
 
@@ -655,12 +682,12 @@
     .locals 1
 
     .prologue
-    .line 296
+    .line 304
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 297
+    .line 305
     return-void
 .end method
 
@@ -669,12 +696,12 @@
     .parameter "video"
 
     .prologue
-    .line 310
+    .line 318
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 311
+    .line 319
     return-void
 .end method
 
@@ -682,12 +709,12 @@
     .locals 1
 
     .prologue
-    .line 301
+    .line 309
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 302
+    .line 310
     return-void
 .end method
 
@@ -698,12 +725,12 @@
     .parameter "storageFull"
 
     .prologue
-    .line 322
+    .line 330
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 323
+    .line 331
     return-void
 .end method
 
@@ -911,7 +938,7 @@
     .locals 1
 
     .prologue
-    .line 487
+    .line 505
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -1024,10 +1051,15 @@
 
     goto :goto_0
 
-    .line 155
+    .line 154
     .end local v1           #timeRemainingNanos:J
     :cond_3
+    const/4 v5, 0x1
+
     :try_start_3
+    iput-boolean v5, p0, Lcom/google/glass/camera/SharedCameraClient;->isPreviewSurfaceValid:Z
+
+    .line 155
     const-string v5, "Preview surface became available."
 
     invoke-static {p0, v5}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V

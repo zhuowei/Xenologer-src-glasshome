@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 48
+    .line 49
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
     .parameter "environment"
 
     .prologue
-    .line 56
+    .line 57
     new-instance v0, Lcom/google/glass/app/GlassError;
 
     invoke-direct {v0}, Lcom/google/glass/app/GlassError;-><init>()V
@@ -66,7 +66,7 @@
     .parameter "environment"
 
     .prologue
-    .line 51
+    .line 52
     invoke-interface {p1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0

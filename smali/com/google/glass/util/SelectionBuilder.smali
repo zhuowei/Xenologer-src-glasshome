@@ -65,18 +65,18 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 47
+    .line 53
     iget-object v1, p1, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     array-length v1, v1
 
     if-nez v1, :cond_0
 
-    .line 65
+    .line 71
     :goto_0
     return-void
 
-    .line 50
+    .line 56
     :cond_0
     iget-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
@@ -88,12 +88,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 51
+    .line 57
     iget-object v1, p1, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
     iput-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
-    .line 52
+    .line 58
     invoke-virtual {p1}, Lcom/google/glass/util/SelectionBuilder;->getArguments()[Ljava/lang/String;
 
     move-result-object v1
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 54
+    .line 60
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -150,7 +150,7 @@
 
     iput-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
-    .line 60
+    .line 66
     iget-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     array-length v1, v1
@@ -163,7 +163,7 @@
 
     new-array v0, v1, [Ljava/lang/String;
 
-    .line 61
+    .line 67
     .local v0, newArgs:[Ljava/lang/String;
     iget-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
@@ -173,7 +173,7 @@
 
     invoke-static {v1, v4, v0, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 62
+    .line 68
     iget-object v1, p1, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     iget-object v2, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
@@ -186,7 +186,7 @@
 
     invoke-static {v1, v4, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 63
+    .line 69
     iput-object v0, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     goto :goto_0
@@ -209,12 +209,26 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_2
 
     .line 26
     iput-object p1, p0, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
     .line 27
+    if-nez p2, :cond_1
+
+    .line 28
+    new-array v1, v3, [Ljava/lang/String;
+
+    iput-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
+
+    .line 46
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 30
+    :cond_1
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/String;
@@ -223,12 +237,10 @@
 
     iput-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
-    .line 40
-    :goto_0
-    return-void
+    goto :goto_0
 
-    .line 29
-    :cond_0
+    .line 33
+    :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -267,7 +279,10 @@
 
     iput-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
-    .line 35
+    .line 39
+    if-eqz p2, :cond_0
+
+    .line 40
     iget-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     array-length v1, v1
@@ -276,7 +291,7 @@
 
     new-array v0, v1, [Ljava/lang/String;
 
-    .line 36
+    .line 41
     .local v0, newArgs:[Ljava/lang/String;
     iget-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
@@ -286,14 +301,14 @@
 
     invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 37
+    .line 42
     iget-object v1, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     array-length v1, v1
 
     aput-object p2, v0, v1
 
-    .line 38
+    .line 43
     iput-object v0, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     goto :goto_0
@@ -303,7 +318,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 78
     iget-object v0, p0, Lcom/google/glass/util/SelectionBuilder;->args:[Ljava/lang/String;
 
     return-object v0
@@ -313,7 +328,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 74
     iget-object v0, p0, Lcom/google/glass/util/SelectionBuilder;->selection:Ljava/lang/String;
 
     return-object v0

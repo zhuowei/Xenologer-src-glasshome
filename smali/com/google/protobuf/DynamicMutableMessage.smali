@@ -3,17 +3,6 @@
 .source "DynamicMutableMessage.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lcom/google/protobuf/AbstractMutableMessage",
-        "<",
-        "Lcom/google/protobuf/DynamicMutableMessage;",
-        ">;"
-    }
-.end annotation
-
-
 # instance fields
 .field private final fields:Lcom/google/protobuf/FieldSet;
     .annotation system Ldalvik/annotation/Signature;
@@ -37,27 +26,27 @@
     .parameter "type"
 
     .prologue
-    .line 35
+    .line 34
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMutableMessage;-><init>()V
 
-    .line 36
+    .line 35
     iput-object p1, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 37
+    .line 36
     invoke-static {}, Lcom/google/protobuf/FieldSet;->newFieldSet()Lcom/google/protobuf/FieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
-    .line 38
+    .line 37
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 39
+    .line 38
     return-void
 .end method
 
@@ -80,20 +69,20 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 48
     .local p2, fields:Lcom/google/protobuf/FieldSet;,"Lcom/google/protobuf/FieldSet<Lcom/google/protobuf/Descriptors$FieldDescriptor;>;"
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMutableMessage;-><init>()V
 
-    .line 50
+    .line 49
     iput-object p1, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 51
+    .line 50
     iput-object p2, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
-    .line 52
+    .line 51
     iput-object p3, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 53
+    .line 52
     return-void
 .end method
 
@@ -103,30 +92,30 @@
     .parameter "dummy"
 
     .prologue
-    .line 27
+    .line 26
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMutableMessage;-><init>()V
 
-    .line 28
+    .line 27
     iput-object p1, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 29
+    .line 28
     invoke-static {}, Lcom/google/protobuf/FieldSet;->emptySet()Lcom/google/protobuf/FieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
-    .line 30
+    .line 29
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 31
+    .line 30
     invoke-super {p0}, Lcom/google/protobuf/AbstractMutableMessage;->makeImmutable()V
 
-    .line 32
+    .line 31
     return-void
 .end method
 
@@ -135,7 +124,7 @@
     .parameter "type"
 
     .prologue
-    .line 156
+    .line 155
     new-instance v0, Lcom/google/protobuf/DynamicMutableMessage;
 
     const/4 v1, 0x1
@@ -150,7 +139,7 @@
     .parameter "type"
 
     .prologue
-    .line 160
+    .line 159
     new-instance v0, Lcom/google/protobuf/DynamicMutableMessage;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/DynamicMutableMessage;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;)V
@@ -169,12 +158,12 @@
     .end annotation
 
     .prologue
-    .line 91
+    .line 90
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 92
+    .line 91
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Lcom/google/protobuf/ByteString;)Z
 
@@ -182,14 +171,14 @@
 
     if-nez v1, :cond_0
 
-    .line 93
+    .line 92
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 95
+    .line 94
     :cond_0
     return-object v0
 .end method
@@ -206,12 +195,12 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 102
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 104
+    .line 103
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -219,14 +208,14 @@
 
     if-nez v1, :cond_0
 
-    .line 105
+    .line 104
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 107
+    .line 106
     :cond_0
     return-object v0
 .end method
@@ -242,12 +231,12 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 65
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 67
+    .line 66
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
@@ -255,14 +244,14 @@
 
     if-nez v1, :cond_0
 
-    .line 68
+    .line 67
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 70
+    .line 69
     :cond_0
     return-object v0
 .end method
@@ -279,12 +268,12 @@
     .end annotation
 
     .prologue
-    .line 79
+    .line 78
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 80
+    .line 79
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -292,14 +281,14 @@
 
     if-nez v1, :cond_0
 
-    .line 81
+    .line 80
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 83
+    .line 82
     :cond_0
     return-object v0
 .end method
@@ -315,12 +304,12 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 134
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 136
+    .line 135
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Ljava/io/InputStream;)Z
 
@@ -328,14 +317,14 @@
 
     if-nez v1, :cond_0
 
-    .line 137
+    .line 136
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 139
+    .line 138
     :cond_0
     return-object v0
 .end method
@@ -352,12 +341,12 @@
     .end annotation
 
     .prologue
-    .line 147
+    .line 146
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 148
+    .line 147
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -365,14 +354,14 @@
 
     if-nez v1, :cond_0
 
-    .line 149
+    .line 148
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 151
+    .line 150
     :cond_0
     return-object v0
 .end method
@@ -388,12 +377,12 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 112
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 114
+    .line 113
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom([B)Z
 
@@ -401,14 +390,14 @@
 
     if-nez v1, :cond_0
 
-    .line 115
+    .line 114
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 117
+    .line 116
     :cond_0
     return-object v0
 .end method
@@ -425,12 +414,12 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 123
     invoke-static {p0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 125
+    .line 124
     .local v0, message:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -438,14 +427,14 @@
 
     if-nez v1, :cond_0
 
-    .line 126
+    .line 125
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v1
 
     throw v1
 
-    .line 128
+    .line 127
     :cond_0
     return-object v0
 .end method
@@ -455,7 +444,7 @@
     .parameter "field"
 
     .prologue
-    .line 316
+    .line 330
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getContainingType()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -464,7 +453,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 317
+    .line 331
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "FieldDescriptor does not match message type."
@@ -473,7 +462,7 @@
 
     throw v0
 
-    .line 320
+    .line 334
     :cond_0
     return-void
 .end method
@@ -486,18 +475,18 @@
     .parameter "value"
 
     .prologue
-    .line 280
+    .line 294
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 281
+    .line 295
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 282
+    .line 296
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/FieldSet;->addRepeatedField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    .line 283
+    .line 297
     return-object p0
 .end method
 
@@ -519,22 +508,22 @@
     .locals 1
 
     .prologue
-    .line 308
+    .line 322
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 309
+    .line 323
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0}, Lcom/google/protobuf/FieldSet;->clear()V
 
-    .line 310
+    .line 324
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 311
+    .line 325
     return-object p0
 .end method
 
@@ -567,18 +556,18 @@
     .parameter "field"
 
     .prologue
-    .line 264
+    .line 278
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 265
+    .line 279
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 266
+    .line 280
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/FieldSet;->clearField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;)V
 
-    .line 267
+    .line 281
     return-object p0
 .end method
 
@@ -595,42 +584,18 @@
     return-object v0
 .end method
 
-.method public bridge synthetic clone()Lcom/google/protobuf/AbstractMutableMessage;
-    .locals 1
-
-    .prologue
-    .line 20
-    invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->clone()Lcom/google/protobuf/DynamicMutableMessage;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public bridge synthetic clone()Lcom/google/protobuf/AbstractMutableMessageLite;
-    .locals 1
-
-    .prologue
-    .line 20
-    invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->clone()Lcom/google/protobuf/DynamicMutableMessage;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public clone()Lcom/google/protobuf/DynamicMutableMessage;
     .locals 3
 
     .prologue
-    .line 165
+    .line 164
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-static {v1}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
 
     move-result-object v0
 
-    .line 166
+    .line 165
     .local v0, newMessage:Lcom/google/protobuf/DynamicMutableMessage;
     iget-object v1, v0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
@@ -638,12 +603,12 @@
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/FieldSet;->mergeFrom(Lcom/google/protobuf/FieldSet;)V
 
-    .line 167
+    .line 166
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    invoke-virtual {v0, v1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/AbstractMutableMessage;
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/DynamicMutableMessage;
 
-    .line 168
+    .line 167
     return-object v0
 .end method
 
@@ -688,6 +653,34 @@
     return-object v0
 .end method
 
+.method public copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/DynamicMutableMessage;
+    .locals 1
+    .parameter "other"
+
+    .prologue
+    .line 182
+    invoke-super {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/DynamicMutableMessage;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 20
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->copyFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/DynamicMutableMessage;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public getAllFields()Ljava/util/Map;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -702,7 +695,7 @@
     .end annotation
 
     .prologue
-    .line 184
+    .line 198
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0}, Lcom/google/protobuf/FieldSet;->getAllFields()Ljava/util/Map;
@@ -716,7 +709,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 318
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-static {v0}, Lcom/google/protobuf/DynamicMutableMessage;->getDefaultInstance(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
@@ -766,7 +759,7 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 189
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -777,33 +770,33 @@
     .parameter "field"
 
     .prologue
-    .line 194
+    .line 208
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 195
+    .line 209
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v1, p1}, Lcom/google/protobuf/FieldSet;->getField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 196
+    .line 210
     .local v0, result:Ljava/lang/Object;
     if-nez v0, :cond_0
 
-    .line 197
+    .line 211
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 198
+    .line 212
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 208
+    .line 222
     .end local v0           #result:Ljava/lang/Object;
     :cond_0
     :goto_0
@@ -811,18 +804,18 @@
 
     if-eqz v1, :cond_1
 
-    .line 209
+    .line 223
     check-cast v0, Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 211
+    .line 225
     :cond_1
     return-object v0
 
-    .line 199
+    .line 213
     .restart local v0       #result:Ljava/lang/Object;
     :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getJavaType()Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
@@ -833,7 +826,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 200
+    .line 214
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getMessageType()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v1
@@ -845,7 +838,7 @@
     .local v0, result:Lcom/google/protobuf/DynamicMutableMessage;
     goto :goto_0
 
-    .line 201
+    .line 215
     .local v0, result:Ljava/lang/Object;
     :cond_3
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getJavaType()Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
@@ -856,7 +849,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 202
+    .line 216
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getDefaultValue()Ljava/lang/Object;
 
     move-result-object v1
@@ -870,7 +863,7 @@
     .local v0, result:[B
     goto :goto_0
 
-    .line 204
+    .line 218
     .local v0, result:Ljava/lang/Object;
     :cond_4
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getDefaultValue()Ljava/lang/Object;
@@ -885,13 +878,13 @@
     .parameter "field"
 
     .prologue
-    .line 215
+    .line 229
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 216
+    .line 230
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 217
+    .line 231
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getJavaType()Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
 
     move-result-object v1
@@ -900,7 +893,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 218
+    .line 232
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     const-string v2, "getMutable() called on a non-Message type."
@@ -909,7 +902,7 @@
 
     throw v1
 
-    .line 221
+    .line 235
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
@@ -917,7 +910,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 222
+    .line 236
     new-instance v1, Ljava/lang/UnsupportedOperationException;
 
     const-string v2, "getMutable() called on a repeated type."
@@ -926,7 +919,7 @@
 
     throw v1
 
-    .line 225
+    .line 239
     :cond_1
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
@@ -934,11 +927,11 @@
 
     move-result-object v0
 
-    .line 226
+    .line 240
     .local v0, result:Ljava/lang/Object;
     if-nez v0, :cond_2
 
-    .line 227
+    .line 241
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getMessageType()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v1
@@ -947,11 +940,11 @@
 
     move-result-object v0
 
-    .line 228
+    .line 242
     .local v0, result:Lcom/google/protobuf/DynamicMutableMessage;
     invoke-virtual {p0, p1, v0}, Lcom/google/protobuf/DynamicMutableMessage;->setField(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/DynamicMutableMessage;
 
-    .line 230
+    .line 244
     .end local v0           #result:Lcom/google/protobuf/DynamicMutableMessage;
     :cond_2
     return-object v0
@@ -970,7 +963,7 @@
     .end annotation
 
     .prologue
-    .line 248
+    .line 262
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-static {v0}, Lcom/google/protobuf/DynamicMutableMessage;->getDefaultInstance(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
@@ -990,10 +983,10 @@
     .parameter "index"
 
     .prologue
-    .line 239
+    .line 253
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 240
+    .line 254
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/FieldSet;->getRepeatedField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;I)Ljava/lang/Object;
@@ -1008,10 +1001,10 @@
     .parameter "field"
 
     .prologue
-    .line 234
+    .line 248
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 235
+    .line 249
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/FieldSet;->getRepeatedFieldCount(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;)I
@@ -1025,7 +1018,7 @@
     .locals 2
 
     .prologue
-    .line 325
+    .line 339
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$Descriptor;->getOptions()Lcom/google/protobuf/DescriptorProtos$MessageOptions;
@@ -1038,14 +1031,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 326
+    .line 340
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v1}, Lcom/google/protobuf/FieldSet;->getMessageSetSerializedSize()I
 
     move-result v0
 
-    .line 327
+    .line 341
     .local v0, size:I
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1055,11 +1048,11 @@
 
     add-int/2addr v0, v1
 
-    .line 333
+    .line 347
     :goto_0
     return v0
 
-    .line 329
+    .line 343
     .end local v0           #size:I
     :cond_0
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
@@ -1068,7 +1061,7 @@
 
     move-result v0
 
-    .line 330
+    .line 344
     .restart local v0       #size:I
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1085,7 +1078,7 @@
     .locals 1
 
     .prologue
-    .line 244
+    .line 258
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
     return-object v0
@@ -1096,10 +1089,10 @@
     .parameter "field"
 
     .prologue
-    .line 188
+    .line 202
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 189
+    .line 203
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/FieldSet;->hasField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;)Z
@@ -1113,7 +1106,7 @@
     .locals 4
 
     .prologue
-    .line 57
+    .line 56
     new-instance v0, Lcom/google/protobuf/DynamicMessage;
 
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1159,7 +1152,7 @@
     .locals 2
 
     .prologue
-    .line 180
+    .line 194
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     iget-object v1, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
@@ -1171,15 +1164,71 @@
     return v0
 .end method
 
+.method public mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/DynamicMutableMessage;
+    .locals 1
+    .parameter "other"
+
+    .prologue
+    .line 174
+    invoke-super {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/DynamicMutableMessage;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 20
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/DynamicMutableMessage;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/DynamicMutableMessage;
+    .locals 1
+    .parameter "unknownFields"
+
+    .prologue
+    .line 178
+    invoke-super {p0, p1}, Lcom/google/protobuf/AbstractMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/DynamicMutableMessage;
+
+    return-object v0
+.end method
+
+.method public bridge synthetic mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/MutableMessage;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 20
+    invoke-virtual {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->mergeUnknownFields(Lcom/google/protobuf/UnknownFieldSet;)Lcom/google/protobuf/DynamicMutableMessage;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public newMessageForField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/google/protobuf/DynamicMutableMessage;
     .locals 2
     .parameter "field"
 
     .prologue
-    .line 294
+    .line 308
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 295
+    .line 309
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getJavaType()Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
 
     move-result-object v0
@@ -1188,7 +1237,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 296
+    .line 310
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "newMessageForField is only valid for fields with message type."
@@ -1197,7 +1246,7 @@
 
     throw v0
 
-    .line 299
+    .line 313
     :cond_0
     new-instance v0, Lcom/google/protobuf/DynamicMutableMessage;
 
@@ -1227,7 +1276,7 @@
     .locals 1
 
     .prologue
-    .line 252
+    .line 266
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-static {v0}, Lcom/google/protobuf/DynamicMutableMessage;->newMessage(Lcom/google/protobuf/Descriptors$Descriptor;)Lcom/google/protobuf/DynamicMutableMessage;
@@ -1267,18 +1316,18 @@
     .parameter "value"
 
     .prologue
-    .line 257
+    .line 271
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 258
+    .line 272
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 259
+    .line 273
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/protobuf/FieldSet;->setField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;Ljava/lang/Object;)V
 
-    .line 260
+    .line 274
     return-object p0
 .end method
 
@@ -1303,18 +1352,18 @@
     .parameter "value"
 
     .prologue
-    .line 272
+    .line 286
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 273
+    .line 287
     invoke-direct {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->verifyContainingType(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 274
+    .line 288
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/protobuf/FieldSet;->setRepeatedField(Lcom/google/protobuf/FieldSet$FieldDescriptorLite;ILjava/lang/Object;)V
 
-    .line 275
+    .line 289
     return-object p0
 .end method
 
@@ -1338,13 +1387,13 @@
     .parameter "unknownFields"
 
     .prologue
-    .line 288
+    .line 302
     invoke-virtual {p0}, Lcom/google/protobuf/DynamicMutableMessage;->assertMutable()V
 
-    .line 289
+    .line 303
     iput-object p1, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 290
+    .line 304
     return-object p0
 .end method
 
@@ -1371,7 +1420,7 @@
     .end annotation
 
     .prologue
-    .line 344
+    .line 358
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->type:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getOptions()Lcom/google/protobuf/DescriptorProtos$MessageOptions;
@@ -1384,27 +1433,27 @@
 
     if-eqz v0, :cond_0
 
-    .line 345
+    .line 359
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/FieldSet;->writeMessageSetTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 346
+    .line 360
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeAsMessageSetTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 351
+    .line 365
     :goto_0
     return-void
 
-    .line 348
+    .line 362
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->fields:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/FieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 349
+    .line 363
     iget-object v0, p0, Lcom/google/protobuf/DynamicMutableMessage;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
@@ -1422,9 +1471,9 @@
     .end annotation
 
     .prologue
-    .line 339
+    .line 353
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DynamicMutableMessage;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 340
+    .line 354
     return-void
 .end method

@@ -17,8 +17,6 @@
 
 .field private final longPressInterceptor:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-.field private shouldKeepVoiceOn:Z
-
 .field private touchDetector:Lcom/google/glass/input/TouchDetector;
 
 
@@ -27,10 +25,10 @@
     .locals 1
 
     .prologue
-    .line 33
+    .line 27
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 58
+    .line 43
     new-instance v0, Lcom/google/glass/input/InputDetectingActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/input/InputDetectingActivity$1;-><init>(Lcom/google/glass/input/InputDetectingActivity;)V
@@ -40,45 +38,29 @@
     return-void
 .end method
 
-.method private identityHashCode()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 418
-    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method private setLongPress()V
     .locals 2
 
     .prologue
-    .line 407
+    .line 264
     new-instance v0, Landroid/content/IntentFilter;
 
     const-string v1, "com.google.glass.action.LONG_TAP"
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    .line 408
+    .line 265
     .local v0, intent:Landroid/content/IntentFilter;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->setPriority(I)V
 
-    .line 409
+    .line 266
     iget-object v1, p0, Lcom/google/glass/input/InputDetectingActivity;->longPressInterceptor:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v1, p0, v0}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 410
+    .line 267
     return-void
 .end method
 
@@ -86,76 +68,28 @@
     .locals 1
 
     .prologue
-    .line 414
+    .line 271
     iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->longPressInterceptor:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v0, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 415
+    .line 272
     return-void
 .end method
 
 
 # virtual methods
-.method public attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
-    .locals 1
-    .parameter "voiceSearchUi"
-
-    .prologue
-    .line 270
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0, p1}, Lcom/google/glass/input/InputDetector;->attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
-
-    .line 271
-    return-void
-.end method
-
-.method public bindVoiceService()V
-    .locals 1
-
-    .prologue
-    .line 341
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->shouldAllowVoiceInput()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 342
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->bindVoiceService()V
-
-    .line 344
-    :cond_0
-    return-void
-.end method
-
-.method public detachVoiceSearchUi()V
-    .locals 1
-
-    .prologue
-    .line 275
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->detachVoiceSearchUi()V
-
-    .line 276
-    return-void
-.end method
-
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
     .parameter "event"
 
     .prologue
-    .line 156
+    .line 131
     invoke-virtual {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 157
+    .line 132
     .local v0, handled:Z
     if-nez v0, :cond_0
 
@@ -177,48 +111,11 @@
     goto :goto_0
 .end method
 
-.method public endpointNetworkRecognizer()V
-    .locals 1
-
-    .prologue
-    .line 280
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->endpointNetworkRecognizer()V
-
-    .line 281
-    return-void
-.end method
-
-.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
-    .locals 1
-
-    .prologue
-    .line 355
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
-
-    return-object v0
-.end method
-
-.method public getMockMicrophone()Lcom/google/glass/voice/MockMicrophoneInputStream;
-    .locals 1
-
-    .prologue
-    .line 378
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->getMockMicrophone()Lcom/google/glass/voice/MockMicrophoneInputStream;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method protected getTag()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 76
+    .line 61
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -230,43 +127,32 @@
     return-object v0
 .end method
 
-.method public getVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method protected identityHashCode()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 370
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
+    .line 276
+    invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->getVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public onAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 285
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public onBackPressed()V
     .locals 1
 
     .prologue
-    .line 193
+    .line 168
     sget-object v0, Lcom/google/glass/input/InputListener$DismissAction;->SWIPE_DOWN:Lcom/google/glass/input/InputListener$DismissAction;
 
     invoke-virtual {p0, v0}, Lcom/google/glass/input/InputDetectingActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
-    .line 194
+    .line 169
     return-void
 .end method
 
@@ -274,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 211
     const/4 v0, 0x0
 
     return v0
@@ -284,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 173
     const/4 v0, 0x0
 
     return v0
@@ -295,10 +181,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 81
+    .line 66
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 82
+    .line 67
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -323,7 +209,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -337,28 +223,28 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 83
+    .line 68
     new-instance v0, Lcom/google/glass/input/InputDetector;
 
     invoke-direct {v0, p0, p0}, Lcom/google/glass/input/InputDetector;-><init>(Landroid/content/Context;Lcom/google/glass/input/InputListener;)V
 
     iput-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
 
-    .line 84
+    .line 69
     new-instance v0, Lcom/google/glass/input/TouchDetector;
 
     invoke-direct {v0, p0, p0}, Lcom/google/glass/input/TouchDetector;-><init>(Landroid/content/Context;Lcom/google/glass/input/InputListener;)V
 
     iput-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->touchDetector:Lcom/google/glass/input/TouchDetector;
 
-    .line 85
+    .line 70
     new-instance v0, Lcom/google/glass/input/KeyDetector;
 
     invoke-direct {v0, p0, p0}, Lcom/google/glass/input/KeyDetector;-><init>(Landroid/content/Context;Lcom/google/glass/input/InputListener;)V
 
     iput-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->keyDetector:Lcom/google/glass/input/KeyDetector;
 
-    .line 86
+    .line 71
     return-void
 .end method
 
@@ -366,10 +252,10 @@
     .locals 3
 
     .prologue
-    .line 126
+    .line 101
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 127
+    .line 102
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -384,7 +270,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -398,7 +284,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 128
+    .line 103
     return-void
 .end method
 
@@ -406,7 +292,7 @@
     .locals 0
 
     .prologue
-    .line 337
+    .line 247
     return-void
 .end method
 
@@ -415,7 +301,7 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 208
+    .line 183
     const/4 v0, 0x0
 
     return v0
@@ -425,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 178
     const/4 v0, 0x0
 
     return v0
@@ -437,7 +323,7 @@
     .parameter "wentDown"
 
     .prologue
-    .line 213
+    .line 188
     const/4 v0, 0x0
 
     return v0
@@ -448,17 +334,17 @@
     .parameter "event"
 
     .prologue
-    .line 138
+    .line 113
     iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->touchDetector:Lcom/google/glass/input/TouchDetector;
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 114
     iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->touchDetector:Lcom/google/glass/input/TouchDetector;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/input/TouchDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 142
+    .line 117
     :cond_0
     const/4 v0, 0x1
 
@@ -473,7 +359,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 166
+    .line 141
     const/16 v1, 0x1b
 
     if-ne p1, v1, :cond_2
@@ -484,32 +370,32 @@
 
     if-nez v1, :cond_2
 
-    .line 167
+    .line 142
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->shouldAllowCameraButton()Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 170
+    .line 145
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->onCameraButtonPressed()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 183
+    .line 158
     :cond_0
     :goto_0
     return v0
 
-    .line 176
+    .line 151
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->onDisallowedInput()V
 
     goto :goto_0
 
-    .line 183
+    .line 158
     :cond_2
     iget-object v1, p0, Lcom/google/glass/input/InputDetectingActivity;->keyDetector:Lcom/google/glass/input/KeyDetector;
 
@@ -536,7 +422,7 @@
     .parameter "event"
 
     .prologue
-    .line 188
+    .line 163
     iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->keyDetector:Lcom/google/glass/input/KeyDetector;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/input/KeyDetector;->onKeyUp(ILandroid/view/KeyEvent;)Z
@@ -568,10 +454,10 @@
     .parameter "intent"
 
     .prologue
-    .line 132
+    .line 107
     invoke-super {p0, p1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 133
+    .line 108
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -596,7 +482,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -610,7 +496,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 134
+    .line 109
     return-void
 .end method
 
@@ -618,10 +504,10 @@
     .locals 3
 
     .prologue
-    .line 106
+    .line 88
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
-    .line 107
+    .line 89
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -636,7 +522,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -650,24 +536,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
-    iget-boolean v0, p0, Lcom/google/glass/input/InputDetectingActivity;->shouldKeepVoiceOn:Z
-
-    if-nez v0, :cond_0
-
-    .line 111
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
-
-    invoke-virtual {p0, v0}, Lcom/google/glass/input/InputDetectingActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 114
-    :cond_0
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->unbindVoiceService()V
-
-    .line 115
+    .line 90
     invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->unsetLongPress()V
 
-    .line 116
+    .line 91
     return-void
 .end method
 
@@ -682,20 +554,7 @@
     .parameter "numSwipeY"
 
     .prologue
-    .line 226
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onResampledAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 290
+    .line 201
     const/4 v0, 0x0
 
     return v0
@@ -705,10 +564,10 @@
     .locals 3
 
     .prologue
-    .line 96
+    .line 81
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
-    .line 97
+    .line 82
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -723,7 +582,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -737,18 +596,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/glass/input/InputDetectingActivity;->shouldKeepVoiceOn:Z
-
-    .line 100
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->bindVoiceService()V
-
-    .line 101
+    .line 83
     invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->setLongPress()V
 
-    .line 102
+    .line 84
     return-void
 .end method
 
@@ -756,10 +607,10 @@
     .locals 3
 
     .prologue
-    .line 90
+    .line 75
     invoke-super {p0}, Landroid/app/Activity;->onStart()V
 
-    .line 91
+    .line 76
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -774,7 +625,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -788,7 +639,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
+    .line 77
     return-void
 .end method
 
@@ -796,10 +647,10 @@
     .locals 3
 
     .prologue
-    .line 120
+    .line 95
     invoke-super {p0}, Landroid/app/Activity;->onStop()V
 
-    .line 121
+    .line 96
     invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -814,7 +665,7 @@
 
     move-result-object v1
 
-    invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->identityHashCode()Ljava/lang/String;
 
     move-result-object v2
 
@@ -828,7 +679,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
+    .line 97
     return-void
 .end method
 
@@ -838,7 +689,7 @@
     .parameter "direction"
 
     .prologue
-    .line 218
+    .line 193
     const/4 v0, 0x0
 
     return v0
@@ -849,7 +700,7 @@
     .parameter "fingerCount"
 
     .prologue
-    .line 231
+    .line 206
     const/4 v0, 0x0
 
     return v0
@@ -860,7 +711,7 @@
     .parameter "event"
 
     .prologue
-    .line 147
+    .line 122
     invoke-virtual {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -874,121 +725,17 @@
     .parameter "velocity"
 
     .prologue
-    .line 241
+    .line 216
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public onVoiceAmplitudeChanged(D)Z
-    .locals 1
-    .parameter "amplitude"
-
-    .prologue
-    .line 295
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-    .locals 1
-    .parameter "command"
-
-    .prologue
-    .line 260
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceServiceConnected()V
-    .locals 2
-
-    .prologue
-    .line 246
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Voice Service Connected"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 248
-    invoke-static {}, Lcom/google/glass/net/NetworkUtil;->checkNetwork()V
-
-    .line 249
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->updateVoiceConfigs()V
-
-    .line 250
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0}, Lcom/google/glass/input/InputDetectingActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 251
-    return-void
-.end method
-
-.method public onVoiceServiceDisconnected()V
-    .locals 0
-
-    .prologue
-    .line 256
-    return-void
-.end method
-
-.method public preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-    .locals 1
-    .parameter "config"
-
-    .prologue
-    .line 388
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/glass/input/InputDetectingActivity;->shouldKeepVoiceOn:Z
-
-    .line 389
-    invoke-virtual {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 390
-    return-void
-.end method
-
-.method public refeedLastVoiceCommand()V
-    .locals 1
-
-    .prologue
-    .line 374
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->refeedLastVoiceCommand()V
-
-    .line 375
-    return-void
-.end method
-
-.method public setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-    .locals 1
-    .parameter "config"
-
-    .prologue
-    .line 365
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0, p1}, Lcom/google/glass/input/InputDetector;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 366
-    return-void
 .end method
 
 .method protected shouldAllowCameraButton()Z
     .locals 1
 
     .prologue
-    .line 316
+    .line 226
     const/4 v0, 0x1
 
     return v0
@@ -998,18 +745,8 @@
     .locals 1
 
     .prologue
-    .line 328
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method protected shouldAllowVoiceInput()Z
-    .locals 1
-
-    .prologue
-    .line 306
-    const/4 v0, 0x1
+    .line 238
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -1018,12 +755,12 @@
     .locals 1
 
     .prologue
-    .line 397
+    .line 254
     iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
 
     invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->startOrientationSensors()V
 
-    .line 398
+    .line 255
     return-void
 .end method
 
@@ -1031,45 +768,11 @@
     .locals 1
 
     .prologue
-    .line 402
+    .line 259
     iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
 
     invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->stopOrientationSensors()V
 
-    .line 403
-    return-void
-.end method
-
-.method public unbindVoiceService()V
-    .locals 1
-
-    .prologue
-    .line 348
-    invoke-virtual {p0}, Lcom/google/glass/input/InputDetectingActivity;->shouldAllowVoiceInput()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 349
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->unbindVoiceService()V
-
-    .line 351
-    :cond_0
-    return-void
-.end method
-
-.method public updateVoiceConfigs()V
-    .locals 1
-
-    .prologue
-    .line 360
-    iget-object v0, p0, Lcom/google/glass/input/InputDetectingActivity;->inputDetector:Lcom/google/glass/input/InputDetector;
-
-    invoke-virtual {v0}, Lcom/google/glass/input/InputDetector;->updateVoiceConfigs()V
-
-    .line 361
+    .line 260
     return-void
 .end method

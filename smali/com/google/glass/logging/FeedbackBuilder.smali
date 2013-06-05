@@ -70,7 +70,7 @@
 
     const/4 v2, 0x0
 
-    .line 42
+    .line 43
     const-class v0, Lcom/google/glass/logging/FeedbackBuilder;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
-    .line 48
+    .line 49
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "dmesg"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->DMESG_COMMAND:[Ljava/lang/String;
 
-    .line 49
+    .line 50
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "bugreport"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->BUGREPORT_COMMAND:[Ljava/lang/String;
 
-    .line 54
+    .line 55
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TRACE_0_COMMAND:[Ljava/lang/String;
 
-    .line 55
+    .line 56
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -123,7 +123,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TRACE_1_COMMAND:[Ljava/lang/String;
 
-    .line 56
+    .line 57
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -136,7 +136,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TRACE_LAST_COMMAND:[Ljava/lang/String;
 
-    .line 59
+    .line 60
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -149,7 +149,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->FPGA_REVISION_COMMAND:[Ljava/lang/String;
 
-    .line 60
+    .line 61
     new-array v0, v3, [Ljava/lang/String;
 
     const-string v1, "df"
@@ -158,7 +158,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->DISK_FREE_COMMAND:[Ljava/lang/String;
 
-    .line 64
+    .line 65
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -171,7 +171,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PERSISTENT_LOG_COMMAND_0:[Ljava/lang/String;
 
-    .line 65
+    .line 66
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -184,7 +184,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PERSISTENT_LOG_COMMAND_1:[Ljava/lang/String;
 
-    .line 66
+    .line 67
     new-array v0, v4, [Ljava/lang/String;
 
     const-string v1, "cat"
@@ -197,7 +197,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PERSISTENT_LOG_COMMAND_2:[Ljava/lang/String;
 
-    .line 69
+    .line 70
     new-array v0, v6, [Ljava/lang/String;
 
     const-string v1, "ping"
@@ -218,7 +218,7 @@
 
     sput-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PING_IP_COMMAND:[Ljava/lang/String;
 
-    .line 71
+    .line 72
     new-array v0, v6, [Ljava/lang/String;
 
     const-string v1, "ping"
@@ -246,10 +246,10 @@
     .locals 0
 
     .prologue
-    .line 337
+    .line 344
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 339
+    .line 346
     return-void
 .end method
 
@@ -257,7 +257,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->BUGREPORT_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -275,7 +275,7 @@
     .end annotation
 
     .prologue
-    .line 41
+    .line 42
     invoke-static {p0, p1, p2}, Lcom/google/glass/logging/FeedbackBuilder;->appendOutput(Ljava/io/OutputStream;[Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -285,7 +285,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->DISK_FREE_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -295,7 +295,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PERSISTENT_LOG_COMMAND_0:[Ljava/lang/String;
 
     return-object v0
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PERSISTENT_LOG_COMMAND_1:[Ljava/lang/String;
 
     return-object v0
@@ -315,7 +315,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->PERSISTENT_LOG_COMMAND_2:[Ljava/lang/String;
 
     return-object v0
@@ -326,7 +326,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 42
     invoke-static {p0}, Lcom/google/glass/logging/FeedbackBuilder;->getPinnedTimelineItemIds(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -346,7 +346,7 @@
     .end annotation
 
     .prologue
-    .line 41
+    .line 42
     invoke-static {p0, p1, p2}, Lcom/google/glass/logging/FeedbackBuilder;->appendString(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->getConnectivity()Ljava/lang/String;
 
     move-result-object v0
@@ -368,7 +368,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->DMESG_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -378,7 +378,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TRACE_0_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -388,7 +388,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TRACE_1_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -398,7 +398,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TRACE_LAST_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -408,7 +408,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 42
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->FPGA_REVISION_COMMAND:[Ljava/lang/String;
 
     return-object v0
@@ -419,7 +419,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 42
     invoke-static {p0}, Lcom/google/glass/logging/FeedbackBuilder;->getApkInfo(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
@@ -443,12 +443,12 @@
 
     const/4 v3, 0x0
 
-    .line 231
+    .line 238
     invoke-static {p1}, Lcom/google/glass/util/CommandOutputCollector;->collectOutput([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 232
+    .line 239
     .local v0, output:[Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -480,7 +480,7 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 233
+    .line 240
     const-string v1, "\n\nSTDOUT\n\n"
 
     invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
@@ -489,12 +489,12 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 234
+    .line 241
     aget-object v1, v0, v3
 
     if-eqz v1, :cond_0
 
-    .line 235
+    .line 242
     aget-object v1, v0, v3
 
     invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
@@ -503,7 +503,7 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 237
+    .line 244
     :cond_0
     const-string v1, "\n\nSTDERR\n\n"
 
@@ -513,12 +513,12 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 238
+    .line 245
     aget-object v1, v0, v4
 
     if-eqz v1, :cond_1
 
-    .line 239
+    .line 246
     aget-object v1, v0, v4
 
     invoke-virtual {v1}, Ljava/lang/String;->getBytes()[B
@@ -527,7 +527,7 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 241
+    .line 248
     :cond_1
     const-string v1, "\n\n"
 
@@ -537,7 +537,7 @@
 
     invoke-virtual {p0, v1}, Ljava/io/OutputStream;->write([B)V
 
-    .line 242
+    .line 249
     return-void
 .end method
 
@@ -553,7 +553,7 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 232
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -584,7 +584,7 @@
 
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 226
+    .line 233
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -615,15 +615,16 @@
 
     invoke-virtual {p0, v0}, Ljava/io/OutputStream;->write([B)V
 
-    .line 227
+    .line 234
     return-void
 .end method
 
-.method public static build(Landroid/content/Context;Lcom/google/glass/timeline/TimelineHelper;Ljava/lang/String;Lcom/google/glass/util/ScreenshotUtil$Screenshot;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;)Z
+.method public static build(Landroid/content/Context;Lcom/google/glass/timeline/TimelineHelper;Ljava/lang/String;Ljava/lang/String;Lcom/google/glass/util/ScreenshotUtil$Screenshot;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;)Z
     .locals 8
     .parameter "context"
     .parameter "timelineHelper"
-    .parameter "name"
+    .parameter "title"
+    .parameter "description"
     .parameter "screenshot"
     .parameter "shouldBugreport"
     .parameter "companionLogReader"
@@ -632,17 +633,17 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 106
+    .line 108
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 107
+    .line 109
     sget-object v3, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
     const-string v4, "Capturing bugreport..."
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
+    .line 110
     sget-object v3, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -669,7 +670,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 109
+    .line 111
     sget-object v3, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->getLabSettings()Ljava/lang/String;
@@ -678,12 +679,12 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
+    .line 113
     invoke-static {}, Lcom/google/glass/logging/FeedbackBuilder;->getBugId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 114
+    .line 116
     .local v0, bugId:Ljava/lang/String;
     new-instance v3, Lcom/google/glass/util/SettingsSecure;
 
@@ -697,7 +698,7 @@
 
     move-result-object v2
 
-    .line 116
+    .line 118
     .local v2, timelineItemBuilder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity;->newBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
 
@@ -715,41 +716,66 @@
 
     invoke-virtual {v2, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addShareTarget(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 120
-    if-nez p2, :cond_0
+    .line 122
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 121
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 123
     sget v3, Lcom/google/glass/logging/R$string;->bugreport_captured:I
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+    invoke-virtual {v2, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setTitle(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 126
+    .line 127
     :goto_0
-    invoke-static {p0, v0, p4, p5, p6}, Lcom/google/glass/logging/FeedbackBuilder;->captureAndAttachBugreport(Landroid/content/Context;Ljava/lang/String;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;)Z
+    invoke-static {p3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_1
+    if-eqz v3, :cond_1
 
     .line 128
+    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getTitle()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    .line 133
+    :goto_1
+    invoke-static {p0, v0, p5, p6, p7}, Lcom/google/glass/logging/FeedbackBuilder;->captureAndAttachBugreport(Landroid/content/Context;Ljava/lang/String;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    .line 135
     const/4 v3, 0x0
 
-    .line 158
-    :goto_1
+    .line 165
+    :goto_2
     return v3
 
-    .line 123
+    .line 125
     :cond_0
-    invoke-virtual {v2, p2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+    invoke-virtual {v2, p2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setTitle(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     goto :goto_0
 
-    .line 132
+    .line 130
     :cond_1
+    invoke-virtual {v2, p3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    goto :goto_1
+
+    .line 139
+    :cond_2
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Attachment;->newBuilder()Lcom/google/googlex/glass/common/proto/Attachment$Builder;
 
     move-result-object v3
@@ -784,14 +810,14 @@
 
     invoke-virtual {v2, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addAttachment(Lcom/google/googlex/glass/common/proto/Attachment;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 138
-    invoke-static {p3, v0}, Lcom/google/glass/logging/FeedbackBuilder;->saveAndAttachScreenshot(Lcom/google/glass/util/ScreenshotUtil$Screenshot;Ljava/lang/String;)Z
+    .line 145
+    invoke-static {p4, v0}, Lcom/google/glass/logging/FeedbackBuilder;->saveAndAttachScreenshot(Lcom/google/glass/util/ScreenshotUtil$Screenshot;Ljava/lang/String;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_3
 
-    .line 141
+    .line 148
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Attachment;->newBuilder()Lcom/google/googlex/glass/common/proto/Attachment$Builder;
 
     move-result-object v3
@@ -802,7 +828,7 @@
 
     sget-object v5, Lcom/google/glass/util/CachedFilesManager$Type;->BUG_REPORT:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    iget-object v6, p3, Lcom/google/glass/util/ScreenshotUtil$Screenshot;->fileExtension:Ljava/lang/String;
+    iget-object v6, p4, Lcom/google/glass/util/ScreenshotUtil$Screenshot;->fileExtension:Ljava/lang/String;
 
     invoke-static {v0, v6}, Lcom/google/glass/logging/FeedbackBuilder;->getScreenshotFileName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -828,8 +854,8 @@
 
     invoke-virtual {v2, v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addAttachment(Lcom/google/googlex/glass/common/proto/Attachment;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 149
-    :cond_2
+    .line 156
+    :cond_3
     new-instance v3, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v3}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
@@ -842,34 +868,34 @@
 
     invoke-virtual {v3, p0, v4, v5, v7}, Lcom/google/glass/timeline/TimelineHelper;->insertTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;Lcom/google/googlex/glass/common/proto/UserAction;)Landroid/net/Uri;
 
-    .line 152
+    .line 159
     const-string v3, "ro.serialno"
 
     invoke-static {v3, v7}, Lcom/google/glass/util/HiddenApiHelper;->getSystemProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 153
+    .line 160
     .local v1, serialNumber:Ljava/lang/String;
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
-    .line 154
+    .line 161
     invoke-virtual {v1}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 157
-    :cond_3
+    .line 164
+    :cond_4
     sget-object v3, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
     const-string v4, "Captured bugreport."
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
+    .line 165
     const/4 v3, 0x1
 
-    goto :goto_1
+    goto :goto_2
 .end method
 
 .method private static captureAndAttachBugreport(Landroid/content/Context;Ljava/lang/String;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;)Z
@@ -881,7 +907,7 @@
     .parameter "additionalFiles"
 
     .prologue
-    .line 164
+    .line 171
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
 
     move-result-object v0
@@ -908,19 +934,19 @@
     .parameter "context"
 
     .prologue
-    .line 258
+    .line 265
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 259
+    .line 266
     .local v1, builder:Ljava/lang/StringBuilder;
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v5
 
-    .line 260
+    .line 267
     .local v5, packageManager:Landroid/content/pm/PackageManager;
     const/4 v6, 0x0
 
@@ -947,7 +973,7 @@
 
     check-cast v4, Landroid/content/pm/PackageInfo;
 
-    .line 261
+    .line 268
     .local v4, packageInfo:Landroid/content/pm/PackageInfo;
     iget-object v6, v4, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
@@ -959,7 +985,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 264
+    .line 271
     iget-object v6, v4, Landroid/content/pm/PackageInfo;->packageName:Ljava/lang/String;
 
     const/4 v7, 0x0
@@ -968,7 +994,7 @@
 
     move-result-object v0
 
-    .line 266
+    .line 273
     .local v0, applicationInfo:Landroid/content/pm/ApplicationInfo;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -998,7 +1024,7 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 267
+    .line 274
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1039,7 +1065,7 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 269
+    .line 276
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1072,7 +1098,7 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 270
+    .line 277
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1105,7 +1131,7 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 271
+    .line 278
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1134,7 +1160,7 @@
 
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 272
+    .line 279
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1167,7 +1193,7 @@
 
     goto/16 :goto_0
 
-    .line 275
+    .line 282
     .end local v0           #applicationInfo:Landroid/content/pm/ApplicationInfo;
     .end local v1           #builder:Ljava/lang/StringBuilder;
     .end local v3           #i$:Ljava/util/Iterator;
@@ -1176,7 +1202,7 @@
     :catch_0
     move-exception v2
 
-    .line 276
+    .line 283
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-object v6, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
@@ -1184,14 +1210,14 @@
 
     invoke-static {v6, v7, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 277
+    .line 284
     const-string v6, ""
 
     .end local v2           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :goto_1
     return-object v6
 
-    .line 274
+    .line 281
     .restart local v1       #builder:Ljava/lang/StringBuilder;
     .restart local v3       #i$:Ljava/util/Iterator;
     .restart local v5       #packageManager:Landroid/content/pm/PackageManager;
@@ -1210,7 +1236,7 @@
     .locals 2
 
     .prologue
-    .line 245
+    .line 252
     new-instance v0, Ljava/util/Date;
 
     invoke-direct {v0}, Ljava/util/Date;-><init>()V
@@ -1231,7 +1257,7 @@
     .parameter "bugId"
 
     .prologue
-    .line 249
+    .line 256
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1257,7 +1283,7 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 290
     new-instance v0, Ljava/lang/StringBuilder;
 
     sget-object v1, Lcom/google/glass/logging/FeedbackBuilder;->PING_IP_COMMAND:[Ljava/lang/String;
@@ -1272,13 +1298,13 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 285
+    .line 292
     .local v0, sb:Ljava/lang/StringBuilder;
     const/16 v1, 0xa
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 286
+    .line 293
     sget-object v1, Lcom/google/glass/logging/FeedbackBuilder;->PING_DOMAIN_COMMAND:[Ljava/lang/String;
 
     invoke-static {v1}, Lcom/google/glass/util/CommandOutputCollector;->collectOutput([Ljava/lang/String;)[Ljava/lang/String;
@@ -1291,7 +1317,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 287
+    .line 294
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1304,14 +1330,14 @@
     .parameter "context"
 
     .prologue
-    .line 87
+    .line 88
     sget-object v1, Lcom/google/glass/logging/FeedbackBuilder;->DMESG_COMMAND:[Ljava/lang/String;
 
     invoke-static {v1}, Lcom/google/glass/util/CommandOutputCollector;->collectOutput([Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 88
+    .line 89
     .local v0, output:[Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -1319,12 +1345,12 @@
 
     if-lez v1, :cond_0
 
-    .line 89
+    .line 90
     const/4 v1, 0x0
 
     aget-object v1, v0, v1
 
-    .line 91
+    .line 92
     :goto_0
     return-object v1
 
@@ -1338,14 +1364,14 @@
     .locals 8
 
     .prologue
-    .line 294
+    .line 301
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v7, "Lab settings {\n"
 
     invoke-direct {v5, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 295
+    .line 302
     .local v5, labSettings:Ljava/lang/StringBuilder;
     invoke-static {}, Lcom/google/glass/util/Labs$Feature;->values()[Lcom/google/glass/util/Labs$Feature;
 
@@ -1363,71 +1389,71 @@
 
     aget-object v2, v0, v3
 
-    .line 296
+    .line 303
     .local v2, feature:Lcom/google/glass/util/Labs$Feature;
     invoke-static {v2}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
     move-result v4
 
-    .line 297
+    .line 304
     .local v4, isEnabled:Z
     const-string v7, "\t"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 298
+    .line 305
     invoke-virtual {v2}, Lcom/google/glass/util/Labs$Feature;->name()Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 299
+    .line 306
     const-string v7, ":"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 300
+    .line 307
     if-eqz v4, :cond_1
 
     const-string v1, "on"
 
-    .line 301
+    .line 308
     .local v1, enabled:Ljava/lang/String;
     :goto_1
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 302
+    .line 309
     invoke-virtual {v2}, Lcom/google/glass/util/Labs$Feature;->getDefaultValue()Z
 
     move-result v7
 
     if-eq v4, v7, :cond_0
 
-    .line 303
+    .line 310
     const-string v7, " (changed from default)"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 305
+    .line 312
     :cond_0
     const-string v7, "\n"
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 295
+    .line 302
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 300
+    .line 307
     .end local v1           #enabled:Ljava/lang/String;
     :cond_1
     const-string v1, "off"
 
     goto :goto_1
 
-    .line 307
+    .line 314
     .end local v2           #feature:Lcom/google/glass/util/Labs$Feature;
     .end local v4           #isEnabled:Z
     :cond_2
@@ -1435,7 +1461,7 @@
 
     invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 308
+    .line 315
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
@@ -1448,12 +1474,12 @@
     .parameter "context"
 
     .prologue
-    .line 316
+    .line 323
     invoke-static {p0}, Lcom/google/glass/timeline/TimelineHelper;->queryPinnedItems(Landroid/content/Context;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 318
+    .line 325
     .local v0, cursor:Landroid/database/Cursor;
     if-eqz v0, :cond_3
 
@@ -1464,19 +1490,19 @@
 
     if-eqz v3, :cond_3
 
-    .line 319
+    .line 326
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 321
+    .line 328
     .local v2, sb:Ljava/lang/StringBuilder;
     :cond_0
     invoke-static {v0}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v1
 
-    .line 322
+    .line 329
     .local v1, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
 
@@ -1484,12 +1510,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 323
+    .line 330
     const-string v3, ","
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 324
+    .line 331
     invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsDeleted()Z
 
     move-result v3
@@ -1501,39 +1527,39 @@
     :goto_0
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 325
+    .line 332
     const-string v3, ";"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 326
+    .line 333
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v3
 
     if-nez v3, :cond_0
 
-    .line 327
+    .line 334
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v3
 
-    .line 330
+    .line 337
     if-eqz v0, :cond_1
 
-    .line 331
+    .line 338
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 334
+    .line 341
     .end local v1           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v2           #sb:Ljava/lang/StringBuilder;
     :cond_1
     :goto_1
     return-object v3
 
-    .line 324
+    .line 331
     .restart local v1       #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .restart local v2       #sb:Ljava/lang/StringBuilder;
     :cond_2
@@ -1544,28 +1570,28 @@
 
     goto :goto_0
 
-    .line 330
+    .line 337
     .end local v1           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v2           #sb:Ljava/lang/StringBuilder;
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 331
+    .line 338
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 334
+    .line 341
     :cond_4
     const-string v3, "no items"
 
     goto :goto_1
 
-    .line 330
+    .line 337
     :catchall_0
     move-exception v3
 
     if-eqz v0, :cond_5
 
-    .line 331
+    .line 338
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
     :cond_5
@@ -1578,7 +1604,7 @@
     .parameter "fileExtension"
 
     .prologue
-    .line 253
+    .line 260
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1604,20 +1630,20 @@
     .parameter "bugId"
 
     .prologue
-    .line 203
+    .line 210
     if-nez p0, :cond_0
 
-    .line 204
+    .line 211
     sget-object v0, Lcom/google/glass/logging/FeedbackBuilder;->TAG:Ljava/lang/String;
 
     const-string v1, "No screenshot found."
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 205
+    .line 212
     const/4 v0, 0x0
 
-    .line 208
+    .line 215
     :goto_0
     return v0
 

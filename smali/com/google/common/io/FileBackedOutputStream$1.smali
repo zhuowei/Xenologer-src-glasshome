@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 97
+    .line 98
     iput-object p1, p0, Lcom/google/common/io/FileBackedOutputStream$1;->this$0:Lcom/google/common/io/FileBackedOutputStream;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .locals 2
 
     .prologue
-    .line 105
+    .line 107
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/FileBackedOutputStream$1;->this$0:Lcom/google/common/io/FileBackedOutputStream;
 
@@ -59,15 +59,15 @@
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 109
+    .line 111
     :goto_0
     return-void
 
-    .line 106
+    .line 108
     :catch_0
     move-exception v0
 
-    .line 107
+    .line 109
     .local v0, t:Ljava/lang/Throwable;
     sget-object v1, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
@@ -85,7 +85,7 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/google/common/io/FileBackedOutputStream$1;->this$0:Lcom/google/common/io/FileBackedOutputStream;
 
     #calls: Lcom/google/common/io/FileBackedOutputStream;->openStream()Ljava/io/InputStream;
@@ -105,7 +105,7 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 98
     invoke-virtual {p0}, Lcom/google/common/io/FileBackedOutputStream$1;->getInput()Ljava/io/InputStream;
 
     move-result-object v0

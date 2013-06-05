@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newTakePhotoItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newTakePhotoItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
     .parameter "x4"
 
     .prologue
-    .line 161
+    .line 160
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -62,27 +62,18 @@
 
     move-result-object v0
 
-    .line 166
+    .line 167
     .local v0, context:Landroid/content/Context;
-    if-eqz p2, :cond_0
+    sget-object v2, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    .line 169
-    sget-object v2, Lcom/google/glass/sound/SoundManager$SoundId;->PHOTO_READY:Lcom/google/glass/sound/SoundManager$SoundId;
+    invoke-interface {p1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    invoke-interface {p1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)V
-
-    .line 174
-    :goto_0
-    sget-object v2, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
-
-    invoke-interface {p1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 175
+    .line 168
     new-instance v1, Lcom/google/glass/util/PowerHelper;
 
     invoke-direct {v1, v0}, Lcom/google/glass/util/PowerHelper;-><init>(Landroid/content/Context;)V
 
-    .line 176
+    .line 169
     .local v1, powerHelper:Lcom/google/glass/util/PowerHelper;
     new-instance v4, Lcom/google/glass/camera/CameraHelper;
 
@@ -92,29 +83,19 @@
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_0
 
     move v2, v3
 
-    :goto_1
+    :goto_0
     invoke-virtual {v4, v2, v3, p2}, Lcom/google/glass/camera/CameraHelper;->takePicture(ZZZ)V
 
-    .line 180
+    .line 173
     return-void
 
-    .line 171
-    .end local v1           #powerHelper:Lcom/google/glass/util/PowerHelper;
+    .line 169
     :cond_0
-    sget-object v2, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    invoke-interface {p1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)V
-
-    goto :goto_0
-
-    .line 176
-    .restart local v1       #powerHelper:Lcom/google/glass/util/PowerHelper;
-    :cond_1
     const/4 v2, 0x0
 
-    goto :goto_1
+    goto :goto_0
 .end method

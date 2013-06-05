@@ -67,19 +67,19 @@
     .end annotation
 
     .prologue
-    .line 176
+    .line 208
     .local p0, this:Lcom/google/common/collect/RegularContiguousSet$SerializedForm;,"Lcom/google/common/collect/RegularContiguousSet$SerializedForm<TC;>;"
     .local p1, range:Lcom/google/common/collect/Range;,"Lcom/google/common/collect/Range<TC;>;"
     .local p2, domain:Lcom/google/common/collect/DiscreteDomain;,"Lcom/google/common/collect/DiscreteDomain<TC;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 177
+    .line 209
     iput-object p1, p0, Lcom/google/common/collect/RegularContiguousSet$SerializedForm;->range:Lcom/google/common/collect/Range;
 
-    .line 178
+    .line 210
     iput-object p2, p0, Lcom/google/common/collect/RegularContiguousSet$SerializedForm;->domain:Lcom/google/common/collect/DiscreteDomain;
 
-    .line 179
+    .line 211
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .parameter "x2"
 
     .prologue
-    .line 172
+    .line 204
     .local p0, this:Lcom/google/common/collect/RegularContiguousSet$SerializedForm;,"Lcom/google/common/collect/RegularContiguousSet$SerializedForm<TC;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/RegularContiguousSet$SerializedForm;-><init>(Lcom/google/common/collect/Range;Lcom/google/common/collect/DiscreteDomain;)V
 
@@ -101,7 +101,7 @@
     .locals 3
 
     .prologue
-    .line 182
+    .line 214
     .local p0, this:Lcom/google/common/collect/RegularContiguousSet$SerializedForm;,"Lcom/google/common/collect/RegularContiguousSet$SerializedForm<TC;>;"
     new-instance v0, Lcom/google/common/collect/RegularContiguousSet;
 

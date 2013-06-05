@@ -76,15 +76,15 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 94
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, delegate:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<+TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMultiset;-><init>()V
 
-    .line 97
+    .line 95
     iput-object p1, p0, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
-    .line 98
+    .line 96
     return-void
 .end method
 
@@ -101,7 +101,7 @@
     .end annotation
 
     .prologue
-    .line 141
+    .line 144
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 139
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -143,7 +143,7 @@
     .end annotation
 
     .prologue
-    .line 145
+    .line 149
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, elementsToAdd:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -157,7 +157,7 @@
     .locals 1
 
     .prologue
-    .line 165
+    .line 174
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -177,7 +177,7 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 108
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
@@ -203,7 +203,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 102
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
@@ -214,7 +214,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 91
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -227,7 +227,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 91
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->delegate()Lcom/google/common/collect/Multiset;
 
@@ -247,11 +247,11 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 113
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->elementSet:Ljava/util/Set;
 
-    .line 115
+    .line 114
     .local v0, es:Ljava/util/Set;,"Ljava/util/Set<TE;>;"
     if-nez v0, :cond_0
 
@@ -315,7 +315,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 134
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multisets$UnmodifiableMultiset;->delegate:Lcom/google/common/collect/Multiset;
 
@@ -336,7 +336,7 @@
     .parameter "occurrences"
 
     .prologue
-    .line 153
+    .line 159
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -350,7 +350,7 @@
     .parameter "element"
 
     .prologue
-    .line 149
+    .line 154
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -371,7 +371,7 @@
     .end annotation
 
     .prologue
-    .line 157
+    .line 164
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, elementsToRemove:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -393,7 +393,7 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 169
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, elementsToRetain:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -414,7 +414,7 @@
     .end annotation
 
     .prologue
-    .line 169
+    .line 179
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -436,7 +436,7 @@
     .end annotation
 
     .prologue
-    .line 173
+    .line 184
     .local p0, this:Lcom/google/common/collect/Multisets$UnmodifiableMultiset;,"Lcom/google/common/collect/Multisets$UnmodifiableMultiset<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;

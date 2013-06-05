@@ -20,20 +20,7 @@
 
 
 # static fields
-.field private static final EMPTY_ARRAY:[Ljava/lang/Object;
-
 .field static final INSTANCE:Lcom/google/common/collect/EmptyImmutableList;
-
-.field static final ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/UnmodifiableListIterator",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
 
 .field private static final serialVersionUID:J
 
@@ -43,26 +30,12 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 37
     new-instance v0, Lcom/google/common/collect/EmptyImmutableList;
 
     invoke-direct {v0}, Lcom/google/common/collect/EmptyImmutableList;-><init>()V
 
     sput-object v0, Lcom/google/common/collect/EmptyImmutableList;->INSTANCE:Lcom/google/common/collect/EmptyImmutableList;
-
-    .line 39
-    new-instance v0, Lcom/google/common/collect/EmptyImmutableList$1;
-
-    invoke-direct {v0}, Lcom/google/common/collect/EmptyImmutableList$1;-><init>()V
-
-    sput-object v0, Lcom/google/common/collect/EmptyImmutableList;->ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
-
-    .line 90
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    sput-object v0, Lcom/google/common/collect/EmptyImmutableList;->EMPTY_ARRAY:[Ljava/lang/Object;
 
     return-void
 .end method
@@ -71,7 +44,7 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 39
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableList;-><init>()V
 
     return-void
@@ -82,9 +55,12 @@
 .method public contains(Ljava/lang/Object;)Z
     .locals 1
     .parameter "target"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 83
+    .line 57
     const/4 v0, 0x0
 
     return v0
@@ -102,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 62
     .local p1, targets:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
@@ -119,23 +95,23 @@
     .end parameter
 
     .prologue
-    .line 141
+    .line 123
     instance-of v1, p1, Ljava/util/List;
 
     if-eqz v1, :cond_0
 
     move-object v0, p1
 
-    .line 142
+    .line 124
     check-cast v0, Ljava/util/List;
 
-    .line 143
+    .line 125
     .local v0, that:Ljava/util/List;,"Ljava/util/List<*>;"
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v1
 
-    .line 145
+    .line 127
     .end local v0           #that:Ljava/util/List;,"Ljava/util/List<*>;"
     :goto_0
     return v1
@@ -151,12 +127,12 @@
     .parameter "index"
 
     .prologue
-    .line 106
+    .line 85
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 107
+    .line 86
     new-instance v0, Ljava/lang/AssertionError;
 
     const-string v1, "unreachable"
@@ -170,7 +146,7 @@
     .locals 1
 
     .prologue
-    .line 149
+    .line 132
     const/4 v0, 0x1
 
     return v0
@@ -184,7 +160,7 @@
     .end parameter
 
     .prologue
-    .line 111
+    .line 91
     const/4 v0, -0x1
 
     return v0
@@ -194,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 47
     const/4 v0, 0x1
 
     return v0
@@ -204,7 +180,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 52
     const/4 v0, 0x0
 
     return v0
@@ -223,8 +199,8 @@
     .end annotation
 
     .prologue
-    .line 87
-    invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
+    .line 67
+    invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableList;->listIterator()Lcom/google/common/collect/UnmodifiableListIterator;
 
     move-result-object v0
 
@@ -235,7 +211,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 35
     invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -251,7 +227,7 @@
     .end parameter
 
     .prologue
-    .line 115
+    .line 96
     const/4 v0, -0x1
 
     return v0
@@ -270,8 +246,8 @@
     .end annotation
 
     .prologue
-    .line 128
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableList;->ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
+    .line 112
+    sget-object v0, Lcom/google/common/collect/Iterators;->EMPTY_LIST_ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
 
     return-object v0
 .end method
@@ -290,13 +266,13 @@
     .end annotation
 
     .prologue
-    .line 132
+    .line 117
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
 
-    .line 133
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableList;->ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
+    .line 118
+    sget-object v0, Lcom/google/common/collect/Iterators;->EMPTY_LIST_ITERATOR:Lcom/google/common/collect/UnmodifiableListIterator;
 
     return-object v0
 .end method
@@ -305,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 35
     invoke-virtual {p0}, Lcom/google/common/collect/EmptyImmutableList;->listIterator()Lcom/google/common/collect/UnmodifiableListIterator;
 
     move-result-object v0
@@ -318,7 +294,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 35
     invoke-virtual {p0, p1}, Lcom/google/common/collect/EmptyImmutableList;->listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
 
     move-result-object v0
@@ -330,7 +306,7 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 141
     sget-object v0, Lcom/google/common/collect/EmptyImmutableList;->INSTANCE:Lcom/google/common/collect/EmptyImmutableList;
 
     return-object v0
@@ -349,7 +325,7 @@
     .end annotation
 
     .prologue
-    .line 124
+    .line 107
     return-object p0
 .end method
 
@@ -357,7 +333,7 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 42
     const/4 v0, 0x0
 
     return v0
@@ -378,12 +354,12 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 101
     const/4 v0, 0x0
 
     invoke-static {p1, p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
 
-    .line 120
+    .line 102
     return-object p0
 .end method
 
@@ -393,7 +369,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 35
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/EmptyImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
@@ -405,8 +381,8 @@
     .locals 1
 
     .prologue
-    .line 93
-    sget-object v0, Lcom/google/common/collect/EmptyImmutableList;->EMPTY_ARRAY:[Ljava/lang/Object;
+    .line 72
+    sget-object v0, Lcom/google/common/collect/ObjectArrays;->EMPTY_ARRAY:[Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -423,20 +399,20 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 77
     .local p1, a:[Ljava/lang/Object;,"[TT;"
     array-length v0, p1
 
     if-lez v0, :cond_0
 
-    .line 98
+    .line 78
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     aput-object v1, p1, v0
 
-    .line 100
+    .line 80
     :cond_0
     return-object p1
 .end method
@@ -445,7 +421,7 @@
     .locals 1
 
     .prologue
-    .line 153
+    .line 137
     const-string v0, "[]"
 
     return-object v0

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/util/concurrent/MoreExecutors;->addDelayedShutdownHook(Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
+    value = Lcom/google/common/util/concurrent/MoreExecutors;->submitAndAddQueueListener(Lcom/google/common/util/concurrent/ListeningExecutorService;Ljava/util/concurrent/Callable;Ljava/util/concurrent/BlockingQueue;)Lcom/google/common/util/concurrent/ListenableFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,27 +18,22 @@
 
 
 # instance fields
-.field final synthetic val$service:Ljava/util/concurrent/ExecutorService;
+.field final synthetic val$future:Lcom/google/common/util/concurrent/ListenableFuture;
 
-.field final synthetic val$terminationTimeout:J
-
-.field final synthetic val$timeUnit:Ljava/util/concurrent/TimeUnit;
+.field final synthetic val$queue:Ljava/util/concurrent/BlockingQueue;
 
 
 # direct methods
-.method constructor <init>(Ljava/util/concurrent/ExecutorService;JLjava/util/concurrent/TimeUnit;)V
+.method constructor <init>(Ljava/util/concurrent/BlockingQueue;Lcom/google/common/util/concurrent/ListenableFuture;)V
     .locals 0
-    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 130
-    iput-object p1, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$service:Ljava/util/concurrent/ExecutorService;
+    .line 585
+    iput-object p1, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$queue:Ljava/util/concurrent/BlockingQueue;
 
-    iput-wide p2, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$terminationTimeout:J
-
-    iput-object p4, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$timeUnit:Ljava/util/concurrent/TimeUnit;
+    iput-object p2, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$future:Lcom/google/common/util/concurrent/ListenableFuture;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,33 +43,16 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 2
 
     .prologue
-    .line 139
-    :try_start_0
-    iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$service:Ljava/util/concurrent/ExecutorService;
+    .line 587
+    iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$queue:Ljava/util/concurrent/BlockingQueue;
 
-    invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
+    iget-object v1, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$future:Lcom/google/common/util/concurrent/ListenableFuture;
 
-    .line 140
-    iget-object v0, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$service:Ljava/util/concurrent/ExecutorService;
+    invoke-interface {v0, v1}, Ljava/util/concurrent/BlockingQueue;->add(Ljava/lang/Object;)Z
 
-    iget-wide v1, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$terminationTimeout:J
-
-    iget-object v3, p0, Lcom/google/common/util/concurrent/MoreExecutors$1;->val$timeUnit:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, v1, v2, v3}, Ljava/util/concurrent/ExecutorService;->awaitTermination(JLjava/util/concurrent/TimeUnit;)Z
-    :try_end_0
-    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 144
-    :goto_0
+    .line 588
     return-void
-
-    .line 141
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
 .end method

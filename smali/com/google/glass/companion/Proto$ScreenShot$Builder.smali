@@ -43,26 +43,26 @@
     .locals 1
 
     .prologue
-    .line 9306
+    .line 9442
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;-><init>()V
 
-    .line 9498
+    .line 9635
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9307
+    .line 9443
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->maybeForceBuilderInitialization()V
 
-    .line 9308
+    .line 9444
     return-void
 .end method
 
-.method static synthetic access$7700()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
+.method static synthetic access$8400()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-static {}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->create()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -74,7 +74,7 @@
     .locals 1
 
     .prologue
-    .line 9313
+    .line 9449
     new-instance v0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;-><init>()V
@@ -86,7 +86,7 @@
     .locals 0
 
     .prologue
-    .line 9311
+    .line 9447
     return-void
 .end method
 
@@ -96,12 +96,12 @@
     .locals 2
 
     .prologue
-    .line 9336
+    .line 9472
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->buildPartial()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
 
-    .line 9337
+    .line 9473
     .local v0, result:Lcom/google/glass/companion/Proto$ScreenShot;
     invoke-virtual {v0}, Lcom/google/glass/companion/Proto$ScreenShot;->isInitialized()Z
 
@@ -109,14 +109,14 @@
 
     if-nez v1, :cond_0
 
-    .line 9338
+    .line 9474
     invoke-static {v0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->newUninitializedMessageException(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 9340
+    .line 9476
     :cond_0
     return-object v0
 .end method
@@ -125,7 +125,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->build()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
@@ -137,22 +137,22 @@
     .locals 5
 
     .prologue
-    .line 9344
+    .line 9480
     new-instance v1, Lcom/google/glass/companion/Proto$ScreenShot;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/glass/companion/Proto$ScreenShot;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;Lcom/google/glass/companion/Proto$1;)V
 
-    .line 9345
+    .line 9481
     .local v1, result:Lcom/google/glass/companion/Proto$ScreenShot;
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9346
+    .line 9482
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 9347
+    .line 9483
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -160,55 +160,55 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 9348
+    .line 9484
     or-int/lit8 v2, v2, 0x1
 
-    .line 9350
+    .line 9486
     :cond_0
     iget-boolean v3, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->startScreenshotRequestC2G_:Z
 
     #setter for: Lcom/google/glass/companion/Proto$ScreenShot;->startScreenshotRequestC2G_:Z
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ScreenShot;->access$7902(Lcom/google/glass/companion/Proto$ScreenShot;Z)Z
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8602(Lcom/google/glass/companion/Proto$ScreenShot;Z)Z
 
-    .line 9351
+    .line 9487
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 9352
+    .line 9488
     or-int/lit8 v2, v2, 0x2
 
-    .line 9354
+    .line 9490
     :cond_1
     iget-boolean v3, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->stopScreenshotRequestC2G_:Z
 
     #setter for: Lcom/google/glass/companion/Proto$ScreenShot;->stopScreenshotRequestC2G_:Z
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8002(Lcom/google/glass/companion/Proto$ScreenShot;Z)Z
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8702(Lcom/google/glass/companion/Proto$ScreenShot;Z)Z
 
-    .line 9355
+    .line 9491
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 9356
+    .line 9492
     or-int/lit8 v2, v2, 0x4
 
-    .line 9358
+    .line 9494
     :cond_2
     iget-object v3, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
     #setter for: Lcom/google/glass/companion/Proto$ScreenShot;->screenshotBytesG2C_:Ljava/lang/Object;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8102(Lcom/google/glass/companion/Proto$ScreenShot;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8802(Lcom/google/glass/companion/Proto$ScreenShot;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 9359
+    .line 9495
     #setter for: Lcom/google/glass/companion/Proto$ScreenShot;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8202(Lcom/google/glass/companion/Proto$ScreenShot;I)I
+    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8902(Lcom/google/glass/companion/Proto$ScreenShot;I)I
 
-    .line 9360
+    .line 9496
     return-object v1
 .end method
 
@@ -216,7 +216,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->buildPartial()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
@@ -230,42 +230,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 9317
+    .line 9453
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clear()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
-    .line 9318
+    .line 9454
     iput-boolean v1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->startScreenshotRequestC2G_:Z
 
-    .line 9319
+    .line 9455
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9320
+    .line 9456
     iput-boolean v1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->stopScreenshotRequestC2G_:Z
 
-    .line 9321
+    .line 9457
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9322
+    .line 9458
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9323
+    .line 9459
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9324
+    .line 9460
     return-object p0
 .end method
 
@@ -273,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->clear()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -285,7 +285,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->clear()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -297,14 +297,14 @@
     .locals 1
 
     .prologue
-    .line 9572
+    .line 9709
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9573
+    .line 9710
     invoke-static {}, Lcom/google/glass/companion/Proto$ScreenShot;->getDefaultInstance()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
@@ -315,7 +315,7 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9575
+    .line 9712
     return-object p0
 .end method
 
@@ -323,19 +323,19 @@
     .locals 1
 
     .prologue
-    .line 9444
+    .line 9581
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9445
+    .line 9582
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->startScreenshotRequestC2G_:Z
 
-    .line 9447
+    .line 9584
     return-object p0
 .end method
 
@@ -343,19 +343,19 @@
     .locals 1
 
     .prologue
-    .line 9492
+    .line 9629
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9493
+    .line 9630
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->stopScreenshotRequestC2G_:Z
 
-    .line 9495
+    .line 9632
     return-object p0
 .end method
 
@@ -363,7 +363,7 @@
     .locals 2
 
     .prologue
-    .line 9328
+    .line 9464
     invoke-static {}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->create()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -383,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->clone()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -395,7 +395,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->clone()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -407,7 +407,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->clone()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -424,7 +424,7 @@
     .end annotation
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->clone()Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -436,7 +436,7 @@
     .locals 1
 
     .prologue
-    .line 9332
+    .line 9468
     invoke-static {}, Lcom/google/glass/companion/Proto$ScreenShot;->getDefaultInstance()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
@@ -448,7 +448,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
@@ -460,7 +460,7 @@
     .locals 1
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
@@ -472,16 +472,16 @@
     .locals 3
 
     .prologue
-    .line 9517
+    .line 9654
     iget-object v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9518
+    .line 9655
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 9519
+    .line 9656
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -489,11 +489,11 @@
 
     move-result-object v1
 
-    .line 9521
+    .line 9658
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9524
+    .line 9661
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -512,16 +512,16 @@
     .locals 3
 
     .prologue
-    .line 9536
+    .line 9673
     iget-object v1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9537
+    .line 9674
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 9538
+    .line 9675
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -529,11 +529,11 @@
 
     move-result-object v0
 
-    .line 9541
+    .line 9678
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9544
+    .line 9681
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -552,7 +552,7 @@
     .locals 1
 
     .prologue
-    .line 9421
+    .line 9558
     iget-boolean v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->startScreenshotRequestC2G_:Z
 
     return v0
@@ -562,7 +562,7 @@
     .locals 1
 
     .prologue
-    .line 9469
+    .line 9606
     iget-boolean v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->stopScreenshotRequestC2G_:Z
 
     return v0
@@ -572,7 +572,7 @@
     .locals 2
 
     .prologue
-    .line 9507
+    .line 9644
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -598,7 +598,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 9411
+    .line 9548
     iget v1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -618,7 +618,7 @@
     .locals 2
 
     .prologue
-    .line 9459
+    .line 9596
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -642,81 +642,97 @@
     .locals 1
 
     .prologue
-    .line 9380
+    .line 9517
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public mergeFrom(Lcom/google/glass/companion/Proto$ScreenShot;)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
-    .locals 1
+    .locals 2
     .parameter "other"
 
     .prologue
-    .line 9364
+    .line 9500
     invoke-static {}, Lcom/google/glass/companion/Proto$ScreenShot;->getDefaultInstance()Lcom/google/glass/companion/Proto$ScreenShot;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
-    .line 9376
-    :cond_0
+    .line 9513
     :goto_0
     return-object p0
 
-    .line 9365
-    :cond_1
+    .line 9501
+    :cond_0
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->hasStartScreenshotRequestC2G()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    .line 9366
+    .line 9502
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->getStartScreenshotRequestC2G()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->setStartScreenshotRequestC2G(Z)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
-    .line 9368
-    :cond_2
+    .line 9504
+    :cond_1
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->hasStopScreenshotRequestC2G()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    .line 9369
+    .line 9505
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->getStopScreenshotRequestC2G()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->setStopScreenshotRequestC2G(Z)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
-    .line 9371
-    :cond_3
+    .line 9507
+    :cond_2
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->hasScreenshotBytesG2C()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_3
 
-    .line 9372
+    .line 9508
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9373
+    .line 9509
     #getter for: Lcom/google/glass/companion/Proto$ScreenShot;->screenshotBytesG2C_:Ljava/lang/Object;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8100(Lcom/google/glass/companion/Proto$ScreenShot;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->access$8800(Lcom/google/glass/companion/Proto$ScreenShot;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
+
+    .line 9512
+    :cond_3
+    invoke-virtual {p0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->getUnknownFields()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    #getter for: Lcom/google/glass/companion/Proto$ScreenShot;->unknownFields:Lcom/google/protobuf/ByteString;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$ScreenShot;->access$9000(Lcom/google/glass/companion/Proto$ScreenShot;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/ByteString;->concat(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->setUnknownFields(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     goto :goto_0
 .end method
@@ -732,10 +748,10 @@
     .end annotation
 
     .prologue
-    .line 9387
+    .line 9524
     const/4 v2, 0x0
 
-    .line 9389
+    .line 9526
     .local v2, parsedMessage:Lcom/google/glass/companion/Proto$ScreenShot;
     :try_start_0
     sget-object v3, Lcom/google/glass/companion/Proto$ScreenShot;->PARSER:Lcom/google/protobuf/Parser;
@@ -753,21 +769,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 9394
+    .line 9531
     if-eqz v2, :cond_0
 
-    .line 9395
+    .line 9532
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$ScreenShot;)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
-    .line 9398
+    .line 9535
     :cond_0
     return-object p0
 
-    .line 9390
+    .line 9527
     :catch_0
     move-exception v1
 
-    .line 9391
+    .line 9528
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -780,19 +796,19 @@
 
     move-object v2, v0
 
-    .line 9392
+    .line 9529
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9394
+    .line 9531
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 9395
+    .line 9532
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$ScreenShot;)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     :cond_1
@@ -810,7 +826,7 @@
     .end annotation
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -823,7 +839,7 @@
     .parameter "x0"
 
     .prologue
-    .line 9299
+    .line 9435
     check-cast p1, Lcom/google/glass/companion/Proto$ScreenShot;
 
     .end local p1
@@ -845,7 +861,7 @@
     .end annotation
 
     .prologue
-    .line 9299
+    .line 9435
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$ScreenShot$Builder;
 
     move-result-object v0
@@ -858,17 +874,17 @@
     .parameter "value"
 
     .prologue
-    .line 9556
+    .line 9693
     if-nez p1, :cond_0
 
-    .line 9557
+    .line 9694
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 9559
+    .line 9696
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
@@ -876,10 +892,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9560
+    .line 9697
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9562
+    .line 9699
     return-object p0
 .end method
 
@@ -888,17 +904,17 @@
     .parameter "value"
 
     .prologue
-    .line 9586
+    .line 9723
     if-nez p1, :cond_0
 
-    .line 9587
+    .line 9724
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 9589
+    .line 9726
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
@@ -906,10 +922,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9590
+    .line 9727
     iput-object p1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->screenshotBytesG2C_:Ljava/lang/Object;
 
-    .line 9592
+    .line 9729
     return-object p0
 .end method
 
@@ -918,17 +934,17 @@
     .parameter "value"
 
     .prologue
-    .line 9431
+    .line 9568
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9432
+    .line 9569
     iput-boolean p1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->startScreenshotRequestC2G_:Z
 
-    .line 9434
+    .line 9571
     return-object p0
 .end method
 
@@ -937,16 +953,16 @@
     .parameter "value"
 
     .prologue
-    .line 9479
+    .line 9616
     iget v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->bitField0_:I
 
-    .line 9480
+    .line 9617
     iput-boolean p1, p0, Lcom/google/glass/companion/Proto$ScreenShot$Builder;->stopScreenshotRequestC2G_:Z
 
-    .line 9482
+    .line 9619
     return-object p0
 .end method

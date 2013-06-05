@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 145
+    .line 153
     iput-object p1, p0, Lcom/google/glass/app/GlassError$1;->this$0:Lcom/google/glass/app/GlassError;
 
     iput-object p2, p0, Lcom/google/glass/app/GlassError$1;->val$activity:Lcom/google/glass/app/GlassActivity;
@@ -53,31 +53,31 @@
     .locals 2
 
     .prologue
-    .line 161
+    .line 169
     iget-object v0, p0, Lcom/google/glass/app/GlassError$1;->val$onConfirmRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 162
+    .line 170
     iget-object v0, p0, Lcom/google/glass/app/GlassError$1;->val$soundManager:Lcom/google/glass/sound/SoundManager;
 
     sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 163
+    .line 171
     iget-object v0, p0, Lcom/google/glass/app/GlassError$1;->val$onConfirmRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 164
+    .line 172
     const/4 v0, 0x1
 
-    .line 168
+    .line 176
     :goto_0
     return v0
 
-    .line 167
+    .line 175
     :cond_0
     iget-object v0, p0, Lcom/google/glass/app/GlassError$1;->val$soundManager:Lcom/google/glass/sound/SoundManager;
 
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 168
+    .line 176
     const/4 v0, 0x0
 
     goto :goto_0
@@ -95,10 +95,10 @@
     .locals 0
 
     .prologue
-    .line 149
+    .line 157
     invoke-virtual {p0}, Lcom/google/glass/app/GlassError$1;->onDone()V
 
-    .line 150
+    .line 158
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .locals 1
 
     .prologue
-    .line 154
+    .line 162
     iget-object v0, p0, Lcom/google/glass/app/GlassError$1;->this$0:Lcom/google/glass/app/GlassError;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassError;->shouldFinishWhenDone()Z
@@ -115,12 +115,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 155
+    .line 163
     iget-object v0, p0, Lcom/google/glass/app/GlassError$1;->val$activity:Lcom/google/glass/app/GlassActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassActivity;->finish()V
 
-    .line 157
+    .line 165
     :cond_0
     return-void
 .end method

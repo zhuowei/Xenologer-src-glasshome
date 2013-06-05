@@ -49,7 +49,7 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/common/cache/CacheBuilder;)V
-    .locals 1
+    .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -60,71 +60,60 @@
     .end annotation
 
     .prologue
-    .line 4745
+    .line 4619
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     .local p1, builder:Lcom/google/common/cache/CacheBuilder;,"Lcom/google/common/cache/CacheBuilder<-TK;-TV;>;"
-    const/4 v0, 0x0
+    new-instance v0, Lcom/google/common/cache/LocalCache;
 
-    invoke-direct {p0, p1, v0}, Lcom/google/common/cache/LocalCache$LocalManualCache;-><init>(Lcom/google/common/cache/CacheBuilder;Lcom/google/common/cache/CacheLoader;)V
+    const/4 v1, 0x0
 
-    .line 4746
+    invoke-direct {v0, p1, v1}, Lcom/google/common/cache/LocalCache;-><init>(Lcom/google/common/cache/CacheBuilder;Lcom/google/common/cache/CacheLoader;)V
+
+    invoke-direct {p0, v0}, Lcom/google/common/cache/LocalCache$LocalManualCache;-><init>(Lcom/google/common/cache/LocalCache;)V
+
+    .line 4620
     return-void
 .end method
 
-.method protected constructor <init>(Lcom/google/common/cache/CacheBuilder;Lcom/google/common/cache/CacheLoader;)V
-    .locals 1
-    .parameter
+.method private constructor <init>(Lcom/google/common/cache/LocalCache;)V
+    .locals 0
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/common/cache/CacheBuilder",
-            "<-TK;-TV;>;",
-            "Lcom/google/common/cache/CacheLoader",
-            "<-TK;TV;>;)V"
+            "Lcom/google/common/cache/LocalCache",
+            "<TK;TV;>;)V"
         }
     .end annotation
 
     .prologue
-    .line 4749
+    .line 4622
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
-    .local p1, builder:Lcom/google/common/cache/CacheBuilder;,"Lcom/google/common/cache/CacheBuilder<-TK;-TV;>;"
-    .local p2, loader:Lcom/google/common/cache/CacheLoader;,"Lcom/google/common/cache/CacheLoader<-TK;TV;>;"
+    .local p1, localCache:Lcom/google/common/cache/LocalCache;,"Lcom/google/common/cache/LocalCache<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4750
-    new-instance v0, Lcom/google/common/cache/LocalCache;
+    .line 4623
+    iput-object p1, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
-    invoke-direct {v0, p1, p2}, Lcom/google/common/cache/LocalCache;-><init>(Lcom/google/common/cache/CacheBuilder;Lcom/google/common/cache/CacheLoader;)V
+    .line 4624
+    return-void
+.end method
 
-    iput-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
+.method synthetic constructor <init>(Lcom/google/common/cache/LocalCache;Lcom/google/common/cache/LocalCache$1;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
-    .line 4751
+    .prologue
+    .line 4615
+    .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
+    invoke-direct {p0, p1}, Lcom/google/common/cache/LocalCache$LocalManualCache;-><init>(Lcom/google/common/cache/LocalCache;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .prologue
-    .line 4841
-    .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    invoke-virtual {p0, p1}, Lcom/google/common/cache/LocalCache$LocalManualCache;->getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public asMap()Ljava/util/concurrent/ConcurrentMap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -136,7 +125,7 @@
     .end annotation
 
     .prologue
-    .line 4805
+    .line 4674
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
@@ -147,42 +136,14 @@
     .locals 1
 
     .prologue
-    .line 4820
+    .line 4687
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     invoke-virtual {v0}, Lcom/google/common/cache/LocalCache;->cleanUp()V
 
-    .line 4821
+    .line 4688
     return-void
-.end method
-
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/util/concurrent/ExecutionException;
-        }
-    .end annotation
-
-    .prologue
-    .line 4829
-    .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
-
-    invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->getOrLoad(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method public get(Ljava/lang/Object;Ljava/util/concurrent/Callable;)Ljava/lang/Object;
@@ -204,13 +165,13 @@
     .end annotation
 
     .prologue
-    .line 4763
+    .line 4634
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, valueLoader:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<+TV;>;"
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4764
+    .line 4635
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     new-instance v1, Lcom/google/common/cache/LocalCache$LocalManualCache$1;
@@ -231,16 +192,16 @@
         value = {
             "(",
             "Ljava/lang/Iterable",
-            "<+TK;>;)",
+            "<*>;)",
             "Lcom/google/common/collect/ImmutableMap",
             "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
-    .line 4774
+    .line 4645
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
-    .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TK;>;"
+    .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->getAllPresent(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableMap;
@@ -252,10 +213,12 @@
 
 .method public getIfPresent(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .parameter
+    .parameter "key"
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TK;)TV;"
+            "(",
+            "Ljava/lang/Object;",
+            ")TV;"
         }
     .end annotation
 
@@ -263,9 +226,8 @@
     .end annotation
 
     .prologue
-    .line 4758
+    .line 4630
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->getIfPresent(Ljava/lang/Object;)Ljava/lang/Object;
@@ -275,60 +237,21 @@
     return-object v0
 .end method
 
-.method public getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .prologue
-    .line 4834
-    .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    :try_start_0
-    invoke-virtual {p0, p1}, Lcom/google/common/cache/LocalCache$LocalManualCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    return-object v1
-
-    .line 4835
-    :catch_0
-    move-exception v0
-
-    .line 4836
-    .local v0, e:Ljava/util/concurrent/ExecutionException;
-    new-instance v1, Lcom/google/common/util/concurrent/UncheckedExecutionException;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lcom/google/common/util/concurrent/UncheckedExecutionException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
 .method public invalidate(Ljava/lang/Object;)V
     .locals 1
     .parameter "key"
 
     .prologue
-    .line 4784
+    .line 4657
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4785
+    .line 4658
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4786
+    .line 4659
     return-void
 .end method
 
@@ -336,13 +259,13 @@
     .locals 1
 
     .prologue
-    .line 4795
+    .line 4666
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     invoke-virtual {v0}, Lcom/google/common/cache/LocalCache;->clear()V
 
-    .line 4796
+    .line 4667
     return-void
 .end method
 
@@ -358,14 +281,14 @@
     .end annotation
 
     .prologue
-    .line 4790
+    .line 4662
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->invalidateAll(Ljava/lang/Iterable;)V
 
-    .line 4791
+    .line 4663
     return-void
 .end method
 
@@ -380,7 +303,7 @@
     .end annotation
 
     .prologue
-    .line 4779
+    .line 4649
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -388,7 +311,30 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/cache/LocalCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4780
+    .line 4650
+    return-void
+.end method
+
+.method public putAll(Ljava/util/Map;)V
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<+TK;+TV;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 4653
+    .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
+    .local p1, m:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
+    iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
+
+    invoke-virtual {v0, p1}, Lcom/google/common/cache/LocalCache;->putAll(Ljava/util/Map;)V
+
+    .line 4654
     return-void
 .end method
 
@@ -396,7 +342,7 @@
     .locals 2
 
     .prologue
-    .line 4800
+    .line 4670
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
@@ -411,13 +357,13 @@
     .locals 6
 
     .prologue
-    .line 4810
+    .line 4678
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     new-instance v0, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;
 
     invoke-direct {v0}, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;-><init>()V
 
-    .line 4811
+    .line 4679
     .local v0, aggregator:Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;
     iget-object v5, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
@@ -425,7 +371,7 @@
 
     invoke-virtual {v0, v5}, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;->incrementBy(Lcom/google/common/cache/AbstractCache$StatsCounter;)V
 
-    .line 4812
+    .line 4680
     iget-object v5, p0, Lcom/google/common/cache/LocalCache$LocalManualCache;->localCache:Lcom/google/common/cache/LocalCache;
 
     iget-object v1, v5, Lcom/google/common/cache/LocalCache;->segments:[Lcom/google/common/cache/LocalCache$Segment;
@@ -442,18 +388,18 @@
 
     aget-object v4, v1, v2
 
-    .line 4813
+    .line 4681
     .local v4, segment:Lcom/google/common/cache/LocalCache$Segment;,"Lcom/google/common/cache/LocalCache$Segment<TK;TV;>;"
     iget-object v5, v4, Lcom/google/common/cache/LocalCache$Segment;->statsCounter:Lcom/google/common/cache/AbstractCache$StatsCounter;
 
     invoke-virtual {v0, v5}, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;->incrementBy(Lcom/google/common/cache/AbstractCache$StatsCounter;)V
 
-    .line 4812
+    .line 4680
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 4815
+    .line 4683
     .end local v4           #segment:Lcom/google/common/cache/LocalCache$Segment;,"Lcom/google/common/cache/LocalCache$Segment<TK;TV;>;"
     :cond_0
     invoke-virtual {v0}, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;->snapshot()Lcom/google/common/cache/CacheStats;
@@ -467,7 +413,7 @@
     .locals 2
 
     .prologue
-    .line 4849
+    .line 4695
     .local p0, this:Lcom/google/common/cache/LocalCache$LocalManualCache;,"Lcom/google/common/cache/LocalCache$LocalManualCache<TK;TV;>;"
     new-instance v0, Lcom/google/common/cache/LocalCache$ManualSerializationProxy;
 

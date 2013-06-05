@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 106
+    .line 98
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;,"Lcom/google/common/collect/AbstractMapBasedMultiset$1.1;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->this$1:Lcom/google/common/collect/AbstractMapBasedMultiset$1;
 
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 113
+    .line 105
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;,"Lcom/google/common/collect/AbstractMapBasedMultiset$1.1;"
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->val$mapEntry:Ljava/util/Map$Entry;
 
@@ -65,11 +65,11 @@
 
     move-result v0
 
-    .line 114
+    .line 106
     .local v0, count:I
     if-nez v0, :cond_0
 
-    .line 115
+    .line 107
     iget-object v2, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->this$1:Lcom/google/common/collect/AbstractMapBasedMultiset$1;
 
     iget-object v2, v2, Lcom/google/common/collect/AbstractMapBasedMultiset$1;->this$0:Lcom/google/common/collect/AbstractMapBasedMultiset;
@@ -89,16 +89,16 @@
 
     check-cast v1, Lcom/google/common/collect/Count;
 
-    .line 116
+    .line 108
     .local v1, frequency:Lcom/google/common/collect/Count;
     if-eqz v1, :cond_0
 
-    .line 117
+    .line 109
     invoke-virtual {v1}, Lcom/google/common/collect/Count;->get()I
 
     move-result v0
 
-    .line 120
+    .line 112
     .end local v1           #frequency:Lcom/google/common/collect/Count;
     :cond_0
     return v0
@@ -113,7 +113,7 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 101
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;,"Lcom/google/common/collect/AbstractMapBasedMultiset$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$1$1;->val$mapEntry:Ljava/util/Map$Entry;
 

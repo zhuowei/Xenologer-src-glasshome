@@ -1,9 +1,8 @@
 .class public abstract Lcom/google/common/collect/ImmutableMultimap;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/AbstractMultimap;
 .source "ImmutableMultimap.java"
 
 # interfaces
-.implements Lcom/google/common/collect/Multimap;
 .implements Ljava/io/Serializable;
 
 
@@ -15,10 +14,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/google/common/collect/ImmutableMultimap$Values;,
+        Lcom/google/common/collect/ImmutableMultimap$Keys;,
         Lcom/google/common/collect/ImmutableMultimap$EntryCollection;,
         Lcom/google/common/collect/ImmutableMultimap$FieldSettersHolder;,
         Lcom/google/common/collect/ImmutableMultimap$Builder;,
-        Lcom/google/common/collect/ImmutableMultimap$SortedKeyBuilderMultimap;,
         Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;
     }
 .end annotation
@@ -30,8 +29,7 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/common/collect/Multimap",
+        "Lcom/google/common/collect/AbstractMultimap",
         "<TK;TV;>;",
         "Ljava/io/Serializable;"
     }
@@ -43,26 +41,6 @@
 
 
 # instance fields
-.field private transient entries:Lcom/google/common/collect/ImmutableCollection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableCollection",
-            "<",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;>;"
-        }
-    .end annotation
-.end field
-
-.field private transient keys:Lcom/google/common/collect/ImmutableMultiset;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableMultiset",
-            "<TK;>;"
-        }
-    .end annotation
-.end field
-
 .field final transient map:Lcom/google/common/collect/ImmutableMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -75,15 +53,6 @@
 .end field
 
 .field final transient size:I
-
-.field private transient values:Lcom/google/common/collect/ImmutableCollection;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/google/common/collect/ImmutableCollection",
-            "<TV;>;"
-        }
-    .end annotation
-.end field
 
 
 # direct methods
@@ -102,18 +71,18 @@
     .end annotation
 
     .prologue
-    .line 317
+    .line 314
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     .local p1, map:Lcom/google/common/collect/ImmutableMap;,"Lcom/google/common/collect/ImmutableMap<TK;+Lcom/google/common/collect/ImmutableCollection<TV;>;>;"
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/AbstractMultimap;-><init>()V
 
-    .line 318
+    .line 315
     iput-object p1, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
-    .line 319
+    .line 316
     iput p2, p0, Lcom/google/common/collect/ImmutableMultimap;->size:I
 
-    .line 320
+    .line 317
     return-void
 .end method
 
@@ -132,7 +101,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 116
     new-instance v0, Lcom/google/common/collect/ImmutableMultimap$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableMultimap$Builder;-><init>()V
@@ -166,7 +135,7 @@
 
     move-object v0, p0
 
-    .line 291
+    .line 292
     check-cast v0, Lcom/google/common/collect/ImmutableMultimap;
 
     .line 293
@@ -190,79 +159,6 @@
     goto :goto_0
 .end method
 
-.method private createKeys()Lcom/google/common/collect/ImmutableMultiset;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/ImmutableMultiset",
-            "<TK;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 573
-    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    invoke-static {}, Lcom/google/common/collect/ImmutableMultiset;->builder()Lcom/google/common/collect/ImmutableMultiset$Builder;
-
-    move-result-object v0
-
-    .line 575
-    .local v0, builder:Lcom/google/common/collect/ImmutableMultiset$Builder;,"Lcom/google/common/collect/ImmutableMultiset$Builder<TK;>;"
-    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
-
-    invoke-virtual {v3}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/common/collect/ImmutableSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .local v2, i$:Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/Map$Entry;
-
-    .line 576
-    .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;+Lcom/google/common/collect/ImmutableCollection<TV;>;>;"
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/common/collect/ImmutableCollection;
-
-    invoke-virtual {v3}, Lcom/google/common/collect/ImmutableCollection;->size()I
-
-    move-result v3
-
-    invoke-virtual {v0, v4, v3}, Lcom/google/common/collect/ImmutableMultiset$Builder;->addCopies(Ljava/lang/Object;I)Lcom/google/common/collect/ImmutableMultiset$Builder;
-
-    goto :goto_0
-
-    .line 578
-    .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;+Lcom/google/common/collect/ImmutableCollection<TV;>;>;"
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMultiset$Builder;->build()Lcom/google/common/collect/ImmutableMultiset;
-
-    move-result-object v3
-
-    return-object v3
-.end method
-
 .method public static of()Lcom/google/common/collect/ImmutableMultimap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -278,7 +174,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 70
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->of()Lcom/google/common/collect/ImmutableListMultimap;
 
     move-result-object v0
@@ -303,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 77
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     invoke-static {p0, p1}, Lcom/google/common/collect/ImmutableListMultimap;->of(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableListMultimap;
@@ -332,7 +228,7 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 84
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
@@ -365,7 +261,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 91
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
@@ -402,7 +298,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 98
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
@@ -443,7 +339,7 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 106
     .local p0, k1:Ljava/lang/Object;,"TK;"
     .local p1, v1:Ljava/lang/Object;,"TV;"
     .local p2, k2:Ljava/lang/Object;,"TK;"
@@ -476,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 486
+    .line 457
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -487,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->asMap()Lcom/google/common/collect/ImmutableMap;
 
@@ -498,6 +394,8 @@
 
 .method public clear()V
     .locals 1
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
     .line 352
@@ -509,47 +407,19 @@
     throw v0
 .end method
 
-.method public containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 2
-    .parameter "key"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
-    .parameter "value"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
+.method public bridge synthetic containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 422
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
+    invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMultimap;->containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-virtual {v1, p1}, Lcom/google/common/collect/ImmutableMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Collection;
-
-    .line 423
-    .local v0, values:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p2}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
-
-    :goto_0
-    return v1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    goto :goto_0
+    return v0
 .end method
 
 .method public containsKey(Ljava/lang/Object;)Z
@@ -571,60 +441,143 @@
     return v0
 .end method
 
-.method public containsValue(Ljava/lang/Object;)Z
-    .locals 3
-    .parameter "value"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
+.method public bridge synthetic containsValue(Ljava/lang/Object;)Z
+    .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 433
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
+    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->containsValue(Ljava/lang/Object;)Z
 
-    invoke-virtual {v2}, Lcom/google/common/collect/ImmutableMap;->values()Lcom/google/common/collect/ImmutableCollection;
+    move-result v0
 
-    move-result-object v2
+    return v0
+.end method
 
-    invoke-virtual {v2}, Lcom/google/common/collect/ImmutableCollection;->iterator()Ljava/util/Iterator;
+.method createAsMap()Ljava/util/Map;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<TK;",
+            "Ljava/util/Collection",
+            "<TV;>;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 462
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    new-instance v0, Ljava/lang/AssertionError;
+
+    const-string v1, "should never be called"
+
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method createEntries()Lcom/google/common/collect/ImmutableCollection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableCollection",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 478
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    new-instance v0, Lcom/google/common/collect/ImmutableMultimap$EntryCollection;
+
+    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$EntryCollection;-><init>(Lcom/google/common/collect/ImmutableMultimap;)V
+
+    return-object v0
+.end method
+
+.method bridge synthetic createEntries()Ljava/util/Collection;
+    .locals 1
+
+    .prologue
+    .line 64
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->createEntries()Lcom/google/common/collect/ImmutableCollection;
 
     move-result-object v0
 
-    .local v0, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    return-object v0
+.end method
 
-    move-result v2
+.method createKeys()Lcom/google/common/collect/ImmutableMultiset;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableMultiset",
+            "<TK;>;"
+        }
+    .end annotation
 
-    if-eqz v2, :cond_1
+    .prologue
+    .line 552
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    new-instance v0, Lcom/google/common/collect/ImmutableMultimap$Keys;
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$Keys;-><init>(Lcom/google/common/collect/ImmutableMultimap;)V
 
-    move-result-object v1
+    return-object v0
+.end method
 
-    check-cast v1, Lcom/google/common/collect/ImmutableCollection;
+.method bridge synthetic createKeys()Lcom/google/common/collect/Multiset;
+    .locals 1
 
-    .line 434
-    .local v1, valueCollection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
-    invoke-interface {v1, p1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+    .prologue
+    .line 64
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->createKeys()Lcom/google/common/collect/ImmutableMultiset;
 
-    move-result v2
+    move-result-object v0
 
-    if-eqz v2, :cond_0
+    return-object v0
+.end method
 
-    .line 435
-    const/4 v2, 0x1
+.method createValues()Lcom/google/common/collect/ImmutableCollection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/ImmutableCollection",
+            "<TV;>;"
+        }
+    .end annotation
 
-    .line 438
-    .end local v1           #valueCollection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
-    :goto_0
-    return v2
+    .prologue
+    .line 631
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    new-instance v0, Lcom/google/common/collect/ImmutableMultimap$Values;
 
-    :cond_1
-    const/4 v2, 0x0
+    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$Values;-><init>(Lcom/google/common/collect/ImmutableMultimap;)V
 
-    goto :goto_0
+    return-object v0
+.end method
+
+.method bridge synthetic createValues()Ljava/util/Collection;
+    .locals 1
+
+    .prologue
+    .line 64
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->createValues()Lcom/google/common/collect/ImmutableCollection;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public entries()Lcom/google/common/collect/ImmutableCollection;
@@ -640,22 +593,14 @@
     .end annotation
 
     .prologue
-    .line 498
+    .line 473
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->entries:Lcom/google/common/collect/ImmutableCollection;
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->entries()Ljava/util/Collection;
 
-    .line 499
-    .local v0, result:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<Ljava/util/Map$Entry<TK;TV;>;>;"
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    new-instance v0, Lcom/google/common/collect/ImmutableMultimap$EntryCollection;
+    check-cast v0, Lcom/google/common/collect/ImmutableCollection;
 
-    .end local v0           #result:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<Ljava/util/Map$Entry<TK;TV;>;>;"
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$EntryCollection;-><init>(Lcom/google/common/collect/ImmutableMultimap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->entries:Lcom/google/common/collect/ImmutableCollection;
-
-    :cond_0
     return-object v0
 .end method
 
@@ -663,7 +608,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->entries()Lcom/google/common/collect/ImmutableCollection;
 
@@ -672,46 +617,65 @@
     return-object v0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
-    .locals 3
-    .parameter "object"
-        .annotation runtime Ljavax/annotation/Nullable;
-        .end annotation
-    .end parameter
+.method entryIterator()Lcom/google/common/collect/UnmodifiableIterator;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/common/collect/UnmodifiableIterator",
+            "<",
+            "Ljava/util/Map$Entry",
+            "<TK;TV;>;>;"
+        }
+    .end annotation
 
     .prologue
-    .line 452
+    .line 516
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    instance-of v1, p1, Lcom/google/common/collect/Multimap;
-
-    if-eqz v1, :cond_0
-
-    move-object v0, p1
-
-    .line 453
-    check-cast v0, Lcom/google/common/collect/Multimap;
-
-    .line 454
-    .local v0, that:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<**>;"
     iget-object v1, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
-    invoke-interface {v0}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
+    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableMap;->entrySet()Lcom/google/common/collect/ImmutableSet;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Lcom/google/common/collect/ImmutableMap;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableSet;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
-    move-result v1
+    move-result-object v0
 
-    .line 456
-    .end local v0           #that:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<**>;"
-    :goto_0
-    return v1
+    .line 519
+    .local v0, mapIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<+Ljava/util/Map$Entry<TK;+Lcom/google/common/collect/ImmutableCollection<TV;>;>;>;"
+    new-instance v1, Lcom/google/common/collect/ImmutableMultimap$1;
 
-    :cond_0
-    const/4 v1, 0x0
+    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/ImmutableMultimap$1;-><init>(Lcom/google/common/collect/ImmutableMultimap;Ljava/util/Iterator;)V
 
-    goto :goto_0
+    return-object v1
+.end method
+
+.method bridge synthetic entryIterator()Ljava/util/Iterator;
+    .locals 1
+
+    .prologue
+    .line 64
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->entryIterator()Lcom/google/common/collect/UnmodifiableIterator;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public bridge synthetic equals(Ljava/lang/Object;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 64
+    .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
+    invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultimap;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public abstract get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection;
@@ -729,7 +693,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultimap;->get(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection;
 
@@ -738,15 +702,13 @@
     return-object v0
 .end method
 
-.method public hashCode()I
+.method public bridge synthetic hashCode()I
     .locals 1
 
     .prologue
-    .line 460
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->hashCode()I
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->hashCode()I
 
     move-result v0
 
@@ -754,9 +716,6 @@
 .end method
 
 .method public abstract inverse()Lcom/google/common/collect/ImmutableMultimap;
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -766,32 +725,24 @@
     .end annotation
 .end method
 
-.method public isEmpty()Z
+.method public bridge synthetic isEmpty()Z
     .locals 1
 
     .prologue
-    .line 443
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget v0, p0, Lcom/google/common/collect/ImmutableMultimap;->size:I
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->isEmpty()Z
 
-    if-nez v0, :cond_0
+    move-result v0
 
-    const/4 v0, 0x1
-
-    :goto_0
     return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method isPartialView()Z
     .locals 1
 
     .prologue
-    .line 415
+    .line 422
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -813,7 +764,7 @@
     .end annotation
 
     .prologue
-    .line 476
+    .line 445
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
 
@@ -828,7 +779,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->keySet()Lcom/google/common/collect/ImmutableSet;
 
@@ -848,22 +799,14 @@
     .end annotation
 
     .prologue
-    .line 568
+    .line 547
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->keys:Lcom/google/common/collect/ImmutableMultiset;
-
-    .line 569
-    .local v0, result:Lcom/google/common/collect/ImmutableMultiset;,"Lcom/google/common/collect/ImmutableMultiset<TK;>;"
-    if-nez v0, :cond_0
-
-    invoke-direct {p0}, Lcom/google/common/collect/ImmutableMultimap;->createKeys()Lcom/google/common/collect/ImmutableMultiset;
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->keys()Lcom/google/common/collect/Multiset;
 
     move-result-object v0
 
-    .end local v0           #result:Lcom/google/common/collect/ImmutableMultiset;,"Lcom/google/common/collect/ImmutableMultiset<TK;>;"
-    iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->keys:Lcom/google/common/collect/ImmutableMultiset;
+    check-cast v0, Lcom/google/common/collect/ImmutableMultiset;
 
-    :cond_0
     return-object v0
 .end method
 
@@ -871,7 +814,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->keys()Lcom/google/common/collect/ImmutableMultiset;
 
@@ -890,8 +833,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 381
+    .line 382
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -913,8 +859,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 401
+    .line 406
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -936,8 +885,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 391
+    .line 394
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
@@ -952,9 +904,11 @@
     .locals 1
     .parameter "key"
     .parameter "value"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 411
+    .line 418
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -976,8 +930,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 331
+    .line 329
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
@@ -991,7 +948,7 @@
     .parameter "x0"
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableMultimap;->removeAll(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableCollection;
 
@@ -1014,8 +971,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 342
+    .line 341
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
@@ -1032,7 +992,7 @@
     .parameter "x1"
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableCollection;
 
@@ -1045,22 +1005,20 @@
     .locals 1
 
     .prologue
-    .line 448
+    .line 432
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableMultimap;->size:I
 
     return v0
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public bridge synthetic toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 464
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->map:Lcom/google/common/collect/ImmutableMap;
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableMap;->toString()Ljava/lang/String;
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1078,22 +1036,14 @@
     .end annotation
 
     .prologue
-    .line 590
+    .line 626
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->values:Lcom/google/common/collect/ImmutableCollection;
+    invoke-super {p0}, Lcom/google/common/collect/AbstractMultimap;->values()Ljava/util/Collection;
 
-    .line 591
-    .local v0, result:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TV;>;"
-    if-nez v0, :cond_0
+    move-result-object v0
 
-    new-instance v0, Lcom/google/common/collect/ImmutableMultimap$Values;
+    check-cast v0, Lcom/google/common/collect/ImmutableCollection;
 
-    .end local v0           #result:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<TV;>;"
-    invoke-direct {v0, p0}, Lcom/google/common/collect/ImmutableMultimap$Values;-><init>(Lcom/google/common/collect/ImmutableMultimap;)V
-
-    iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap;->values:Lcom/google/common/collect/ImmutableCollection;
-
-    :cond_0
     return-object v0
 .end method
 
@@ -1101,7 +1051,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 64
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableMultimap;->values()Lcom/google/common/collect/ImmutableCollection;
 

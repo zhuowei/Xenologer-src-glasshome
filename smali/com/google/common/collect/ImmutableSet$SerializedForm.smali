@@ -31,13 +31,13 @@
     .parameter "elements"
 
     .prologue
-    .line 514
+    .line 492
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 515
+    .line 493
     iput-object p1, p0, Lcom/google/common/collect/ImmutableSet$SerializedForm;->elements:[Ljava/lang/Object;
 
-    .line 516
+    .line 494
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 518
+    .line 497
     iget-object v0, p0, Lcom/google/common/collect/ImmutableSet$SerializedForm;->elements:[Ljava/lang/Object;
 
     invoke-static {v0}, Lcom/google/common/collect/ImmutableSet;->copyOf([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet;

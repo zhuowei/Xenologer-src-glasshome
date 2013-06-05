@@ -34,6 +34,8 @@
 
 .field public static final enum GLASSWARE_ICON:Lcom/google/glass/util/CachedFilesManager$Type;
 
+.field public static final enum HTML:Lcom/google/glass/util/CachedFilesManager$Type;
+
 .field public static final enum ICON:Lcom/google/glass/util/CachedFilesManager$Type;
 
 .field public static final enum NONE:Lcom/google/glass/util/CachedFilesManager$Type;
@@ -129,9 +131,22 @@
     .line 40
     new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
 
-    const-string v1, "ICON"
+    const-string v1, "HTML"
 
     const/4 v2, 0x5
+
+    const-string v3, "h_"
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/CachedFilesManager$Type;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->HTML:Lcom/google/glass/util/CachedFilesManager$Type;
+
+    .line 41
+    new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
+
+    const-string v1, "ICON"
+
+    const/4 v2, 0x6
 
     const-string v3, "i_"
 
@@ -139,12 +154,12 @@
 
     sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->ICON:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 41
+    .line 42
     new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
 
     const-string v1, "PICTURE"
 
-    const/4 v2, 0x6
+    const/4 v2, 0x7
 
     const-string v3, "p_"
 
@@ -152,12 +167,12 @@
 
     sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->PICTURE:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 42
+    .line 43
     new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
 
     const-string v1, "PROTO_BUFFER"
 
-    const/4 v2, 0x7
+    const/16 v2, 0x8
 
     const-string v3, "pb_"
 
@@ -165,12 +180,12 @@
 
     sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->PROTO_BUFFER:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 43
+    .line 44
     new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
 
     const-string v1, "SHARE"
 
-    const/16 v2, 0x8
+    const/16 v2, 0x9
 
     const-string v3, "s_"
 
@@ -178,12 +193,12 @@
 
     sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->SHARE:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 44
+    .line 45
     new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
 
     const-string v1, "THUMBNAIL"
 
-    const/16 v2, 0x9
+    const/16 v2, 0xa
 
     const-string v3, "t_"
 
@@ -191,12 +206,12 @@
 
     sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->THUMBNAIL:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 45
+    .line 46
     new-instance v0, Lcom/google/glass/util/CachedFilesManager$Type;
 
     const-string v1, "VIDEO"
 
-    const/16 v2, 0xa
+    const/16 v2, 0xb
 
     const-string v3, "v_"
 
@@ -205,7 +220,7 @@
     sput-object v0, Lcom/google/glass/util/CachedFilesManager$Type;->VIDEO:Lcom/google/glass/util/CachedFilesManager$Type;
 
     .line 34
-    const/16 v0, 0xb
+    const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/google/glass/util/CachedFilesManager$Type;
 
@@ -231,35 +246,41 @@
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->ICON:Lcom/google/glass/util/CachedFilesManager$Type;
+    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->HTML:Lcom/google/glass/util/CachedFilesManager$Type;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->PICTURE:Lcom/google/glass/util/CachedFilesManager$Type;
+    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->ICON:Lcom/google/glass/util/CachedFilesManager$Type;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->PROTO_BUFFER:Lcom/google/glass/util/CachedFilesManager$Type;
+    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->PICTURE:Lcom/google/glass/util/CachedFilesManager$Type;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->SHARE:Lcom/google/glass/util/CachedFilesManager$Type;
+    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->PROTO_BUFFER:Lcom/google/glass/util/CachedFilesManager$Type;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->THUMBNAIL:Lcom/google/glass/util/CachedFilesManager$Type;
+    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->SHARE:Lcom/google/glass/util/CachedFilesManager$Type;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
+
+    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->THUMBNAIL:Lcom/google/glass/util/CachedFilesManager$Type;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
 
     sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->VIDEO:Lcom/google/glass/util/CachedFilesManager$Type;
 
@@ -284,13 +305,13 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 51
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 51
+    .line 52
     iput-object p3, p0, Lcom/google/glass/util/CachedFilesManager$Type;->prefix:Ljava/lang/String;
 
-    .line 52
+    .line 53
     return-void
 .end method
 
@@ -299,7 +320,7 @@
     .parameter "fileName"
 
     .prologue
-    .line 55
+    .line 56
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager$Type;->values()[Lcom/google/glass/util/CachedFilesManager$Type;
 
     move-result-object v0
@@ -316,11 +337,11 @@
 
     aget-object v4, v0, v1
 
-    .line 56
+    .line 57
     .local v4, type:Lcom/google/glass/util/CachedFilesManager$Type;
     iget-object v3, v4, Lcom/google/glass/util/CachedFilesManager$Type;->prefix:Ljava/lang/String;
 
-    .line 57
+    .line 58
     .local v3, prefix:Ljava/lang/String;
     if-eqz v3, :cond_0
 
@@ -330,13 +351,13 @@
 
     if-eqz v5, :cond_0
 
-    .line 61
+    .line 62
     .end local v3           #prefix:Ljava/lang/String;
     .end local v4           #type:Lcom/google/glass/util/CachedFilesManager$Type;
     :goto_1
     return-object v4
 
-    .line 55
+    .line 56
     .restart local v3       #prefix:Ljava/lang/String;
     .restart local v4       #type:Lcom/google/glass/util/CachedFilesManager$Type;
     :cond_0
@@ -344,7 +365,7 @@
 
     goto :goto_0
 
-    .line 61
+    .line 62
     .end local v3           #prefix:Ljava/lang/String;
     .end local v4           #type:Lcom/google/glass/util/CachedFilesManager$Type;
     :cond_1

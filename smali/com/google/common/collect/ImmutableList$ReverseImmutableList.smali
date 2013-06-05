@@ -50,22 +50,22 @@
     .end annotation
 
     .prologue
-    .line 408
+    .line 485
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     .local p1, backingList:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableList;-><init>()V
 
-    .line 409
+    .line 486
     iput-object p1, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
-    .line 410
+    .line 487
     invoke-virtual {p1}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
-    .line 411
+    .line 488
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .parameter "x1"
 
     .prologue
-    .line 404
+    .line 481
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->reverseIndex(I)I
 
     move-result v0
@@ -88,7 +88,7 @@
     .parameter "index"
 
     .prologue
-    .line 414
+    .line 491
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
@@ -104,7 +104,7 @@
     .parameter "index"
 
     .prologue
-    .line 418
+    .line 495
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
@@ -123,7 +123,7 @@
     .end parameter
 
     .prologue
-    .line 426
+    .line 505
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
@@ -146,7 +146,7 @@
     .end annotation
 
     .prologue
-    .line 430
+    .line 510
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     .local p1, targets:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
@@ -168,13 +168,13 @@
     .end annotation
 
     .prologue
-    .line 450
+    .line 532
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkElementIndex(II)I
 
-    .line 451
+    .line 533
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->reverseIndex(I)I
@@ -196,7 +196,7 @@
     .end parameter
 
     .prologue
-    .line 434
+    .line 515
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
@@ -204,7 +204,7 @@
 
     move-result v0
 
-    .line 435
+    .line 516
     .local v0, index:I
     if-ltz v0, :cond_0
 
@@ -225,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 573
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
@@ -240,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 494
+    .line 578
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
@@ -255,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 481
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/ImmutableList;->iterator()Lcom/google/common/collect/UnmodifiableIterator;
 
@@ -272,7 +272,7 @@
     .end parameter
 
     .prologue
-    .line 439
+    .line 521
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
@@ -280,7 +280,7 @@
 
     move-result v0
 
-    .line 440
+    .line 522
     .local v0, index:I
     if-ltz v0, :cond_0
 
@@ -309,13 +309,13 @@
     .end annotation
 
     .prologue
-    .line 455
+    .line 538
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget v1, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
     invoke-static {p1, v1}, Lcom/google/common/base/Preconditions;->checkPositionIndex(II)I
 
-    .line 456
+    .line 539
     iget-object v1, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->reversePosition(I)I
@@ -326,7 +326,7 @@
 
     move-result-object v0
 
-    .line 458
+    .line 540
     .local v0, forward:Lcom/google/common/collect/UnmodifiableListIterator;,"Lcom/google/common/collect/UnmodifiableListIterator<TE;>;"
     new-instance v1, Lcom/google/common/collect/ImmutableList$ReverseImmutableList$1;
 
@@ -339,7 +339,7 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 481
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/ImmutableList;->listIterator()Lcom/google/common/collect/UnmodifiableListIterator;
 
@@ -353,7 +353,7 @@
     .parameter "x0"
 
     .prologue
-    .line 404
+    .line 481
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->listIterator(I)Lcom/google/common/collect/UnmodifiableListIterator;
 
@@ -373,7 +373,7 @@
     .end annotation
 
     .prologue
-    .line 422
+    .line 500
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
@@ -384,7 +384,7 @@
     .locals 1
 
     .prologue
-    .line 486
+    .line 568
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
@@ -404,13 +404,13 @@
     .end annotation
 
     .prologue
-    .line 444
+    .line 527
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     iget v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->size:I
 
     invoke-static {p1, p2, v0}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
 
-    .line 445
+    .line 528
     iget-object v0, p0, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->forwardList:Lcom/google/common/collect/ImmutableList;
 
     invoke-direct {p0, p2}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->reversePosition(I)I
@@ -438,7 +438,7 @@
     .parameter "x1"
 
     .prologue
-    .line 404
+    .line 481
     .local p0, this:Lcom/google/common/collect/ImmutableList$ReverseImmutableList;,"Lcom/google/common/collect/ImmutableList$ReverseImmutableList<TE;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ImmutableList$ReverseImmutableList;->subList(II)Lcom/google/common/collect/ImmutableList;
 

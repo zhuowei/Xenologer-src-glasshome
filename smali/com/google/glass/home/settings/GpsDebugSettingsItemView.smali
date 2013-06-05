@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/settings/GpsDebugSettingsItemView;
-.super Lcom/google/glass/home/settings/SettingsItemView;
+.super Lcom/google/glass/home/settings/SettingsCard;
 .source "GpsDebugSettingsItemView.java"
 
 
@@ -69,7 +69,7 @@
 
     .prologue
     .line 50
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 21
     new-instance v0, Lcom/google/glass/home/settings/GpsDebugSettingsItemView$1;
@@ -152,7 +152,7 @@
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
     .line 66
-    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsItemView;->onUnload()V
+    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsCard;->onUnload()V
 
     .line 67
     return-void

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/BundleTimelineView;->splitItems(Ljava/util/List;Ljava/util/Map;Z)Landroid/util/Pair;
+    value = Lcom/google/glass/home/timeline/BundleTimelineView;->createLoader(Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineItemLoader;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/timeline/BundleTimelineView;
 
-.field final synthetic val$allSplit:Ljava/util/List;
+.field final synthetic val$items:Ljava/util/List;
 
 
 # direct methods
@@ -30,10 +30,10 @@
     .parameter
 
     .prologue
-    .line 288
+    .line 198
     iput-object p1, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->this$0:Lcom/google/glass/home/timeline/BundleTimelineView;
 
-    iput-object p2, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$allSplit:Ljava/util/List;
+    iput-object p2, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$items:Ljava/util/List;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,10 +48,10 @@
     .parameter "callback"
 
     .prologue
-    .line 310
+    .line 220
     new-instance v1, Lcom/google/glass/home/timeline/TimelineItemLoader$ReadResult;
 
-    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$allSplit:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$items:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -67,7 +67,7 @@
 
     invoke-virtual {p2, v1}, Lcom/google/glass/home/timeline/TimelineItemLoader$ReadCallback;->onItemRead(Lcom/google/glass/home/timeline/TimelineItemLoader$ReadResult;)V
 
-    .line 312
+    .line 222
     return-void
 .end method
 
@@ -76,17 +76,17 @@
     .parameter "id"
 
     .prologue
-    .line 296
+    .line 206
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 297
+    .line 207
     .local v2, target:Ljava/lang/String;
     const/4 v0, 0x0
 
     .local v0, i:I
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$allSplit:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$items:Ljava/util/List;
 
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -96,8 +96,8 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 298
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$allSplit:Ljava/util/List;
+    .line 208
+    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$items:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -115,19 +115,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 302
+    .line 212
     .end local v0           #i:I
     :goto_1
     return v0
 
-    .line 297
+    .line 207
     .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 302
+    .line 212
     :cond_1
     const/4 v0, -0x1
 
@@ -138,8 +138,8 @@
     .locals 1
 
     .prologue
-    .line 291
-    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$allSplit:Ljava/util/List;
+    .line 201
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$2;->val$items:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 

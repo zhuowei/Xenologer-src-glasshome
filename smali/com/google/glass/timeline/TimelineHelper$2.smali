@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 419
+    .line 432
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineHelper$2;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineHelper$2;->val$context:Landroid/content/Context;
@@ -50,7 +50,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 422
+    .line 435
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction;->newBuilder()Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     move-result-object v3
 
-    .line 423
+    .line 436
     .local v3, action:Lcom/google/googlex/glass/common/proto/UserAction;
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineHelper$2;->this$0:Lcom/google/glass/timeline/TimelineHelper;
 

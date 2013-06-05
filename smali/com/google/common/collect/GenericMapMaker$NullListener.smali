@@ -138,7 +138,7 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 47
     .local p1, notification:Lcom/google/common/collect/MapMaker$RemovalNotification;,"Lcom/google/common/collect/MapMaker$RemovalNotification<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method

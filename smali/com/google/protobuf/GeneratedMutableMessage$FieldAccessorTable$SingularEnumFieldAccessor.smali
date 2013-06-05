@@ -42,10 +42,10 @@
     .local p3, messageClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMutableMessage;>;"
     const/4 v4, 0x0
 
-    .line 290
+    .line 336
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;-><init>(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 291
+    .line 337
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularEnumFieldAccessor;->type:Ljava/lang/Class;
 
     const-string v1, "valueOf"
@@ -65,7 +65,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularEnumFieldAccessor;->valueOfMethod:Ljava/lang/reflect/Method;
 
-    .line 293
+    .line 339
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularEnumFieldAccessor;->type:Ljava/lang/Class;
 
     const-string v1, "getValueDescriptor"
@@ -79,7 +79,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularEnumFieldAccessor;->getValueDescriptorMethod:Ljava/lang/reflect/Method;
 
-    .line 295
+    .line 341
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .parameter "message"
 
     .prologue
-    .line 302
+    .line 348
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularEnumFieldAccessor;->getValueDescriptorMethod:Ljava/lang/reflect/Method;
 
     invoke-super {p0, p1}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->get(Lcom/google/protobuf/GeneratedMutableMessage;)Ljava/lang/Object;
@@ -115,7 +115,7 @@
     .parameter "value"
 
     .prologue
-    .line 306
+    .line 352
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularEnumFieldAccessor;->valueOfMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -135,6 +135,6 @@
 
     invoke-super {p0, p1, v0}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->set(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
 
-    .line 307
+    .line 353
     return-void
 .end method

@@ -51,7 +51,7 @@
 
 .field private javaApiVersion_:I
 
-.field private javaDualGenerateMutableApi_:Z
+.field private javaEnableDualGenerateMutableApi_:Z
 
 .field private javaGenerateEqualsAndHash_:Z
 
@@ -155,7 +155,7 @@
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaAltApiPackage_:Ljava/lang/Object;
 
     .line 18540
-    iput-boolean v1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iput-boolean v1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
     .line 18652
     const-string v0, ""
@@ -243,7 +243,7 @@
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaAltApiPackage_:Ljava/lang/Object;
 
     .line 18540
-    iput-boolean v1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iput-boolean v1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
     .line 18652
     const-string v0, ""
@@ -1031,9 +1031,9 @@
 
     .line 17480
     :cond_d
-    iget-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iget-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
-    #setter for: Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    #setter for: Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->access$13502(Lcom/google/protobuf/DescriptorProtos$FileOptions;Z)Z
 
     .line 17481
@@ -1485,7 +1485,7 @@
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->bitField0_:I
 
     .line 17367
-    iput-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iput-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
     .line 17368
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->bitField0_:I
@@ -1962,7 +1962,7 @@
     return-object p0
 .end method
 
-.method public clearJavaDualGenerateMutableApi()Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;
+.method public clearJavaEnableDualGenerateMutableApi()Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;
     .locals 1
 
     .prologue
@@ -1976,7 +1976,7 @@
     .line 18647
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iput-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
     .line 18648
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->onChanged()V
@@ -2777,12 +2777,12 @@
     return v0
 .end method
 
-.method public getJavaDualGenerateMutableApi()Z
+.method public getJavaEnableDualGenerateMutableApi()Z
     .locals 1
 
     .prologue
     .line 18591
-    iget-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
     return v0
 .end method
@@ -3597,7 +3597,7 @@
     goto :goto_0
 .end method
 
-.method public hasJavaDualGenerateMutableApi()Z
+.method public hasJavaEnableDualGenerateMutableApi()Z
     .locals 2
 
     .prologue
@@ -4398,18 +4398,18 @@
 
     .line 17593
     :cond_d
-    invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->hasJavaDualGenerateMutableApi()Z
+    invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->hasJavaEnableDualGenerateMutableApi()Z
 
     move-result v1
 
     if-eqz v1, :cond_e
 
     .line 17594
-    invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->getJavaDualGenerateMutableApi()Z
+    invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->getJavaEnableDualGenerateMutableApi()Z
 
     move-result v1
 
-    invoke-virtual {p0, v1}, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->setJavaDualGenerateMutableApi(Z)Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;
+    invoke-virtual {p0, v1}, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->setJavaEnableDualGenerateMutableApi(Z)Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;
 
     .line 17596
     :cond_e
@@ -5206,7 +5206,7 @@
     return-object p0
 .end method
 
-.method public setJavaDualGenerateMutableApi(Z)Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;
+.method public setJavaEnableDualGenerateMutableApi(Z)Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;
     .locals 1
     .parameter "value"
 
@@ -5219,7 +5219,7 @@
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->bitField0_:I
 
     .line 18618
-    iput-boolean p1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaDualGenerateMutableApi_:Z
+    iput-boolean p1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->javaEnableDualGenerateMutableApi_:Z
 
     .line 18619
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FileOptions$Builder;->onChanged()V

@@ -22,7 +22,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 37
     const-class v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 55
+    .line 54
     new-array v5, v2, [Lcom/google/glass/home/voice/menu/Requirement;
 
     move-object v0, p0
@@ -54,7 +54,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    .line 56
+    .line 55
     return-void
 .end method
 
@@ -67,26 +67,26 @@
     .parameter "requirements"
 
     .prologue
-    .line 47
+    .line 46
     invoke-static {p5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;-><init>(Ljava/util/List;)V
 
-    .line 48
+    .line 47
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
-    .line 49
+    .line 48
     iput p2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->stringId:I
 
-    .line 50
+    .line 49
     iput p3, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->contextMenuStringId:I
 
-    .line 51
+    .line 50
     iput p4, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->iconId:I
 
-    .line 52
+    .line 51
     return-void
 .end method
 
@@ -100,7 +100,7 @@
     .parameter "x5"
 
     .prologue
-    .line 36
+    .line 35
     invoke-direct/range {p0 .. p5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
     return-void
@@ -112,14 +112,14 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 35
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;-><init>(Lcom/google/glass/voice/VoiceCommand;)V
 
     return-void
 .end method
 
 .method public static getMainMenuItems(Landroid/content/Context;)Ljava/util/List;
-    .locals 9
+    .locals 6
     .parameter "context"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -134,236 +134,192 @@
     .end annotation
 
     .prologue
-    .line 338
+    .line 308
+    new-instance v3, Lcom/google/glass/util/SettingsHelper;
+
+    invoke-direct {v3, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
+
+    .line 310
+    .local v3, settingsHelper:Lcom/google/glass/util/SettingsHelper;
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v1
-
-    .line 339
-    .local v1, contactEntities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
-    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v4
-
-    .line 342
-    .local v4, plusShareTargetEntities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
-    invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Lcom/google/glass/entity/EntityHelper;->getSpeakableCommunicationTargets()Ljava/util/Map;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v7
-
-    invoke-interface {v1, v7}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 346
-    invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
-
-    move-result-object v7
-
-    const/4 v8, 0x0
-
-    invoke-virtual {v7, v8}, Lcom/google/glass/entity/EntityHelper;->getSpeakablePlusShareTargets(Ljava/lang/String;)Ljava/util/Map;
-
-    move-result-object v7
-
-    invoke-interface {v7}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v7
-
-    invoke-interface {v4, v7}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 349
-    new-instance v5, Lcom/google/glass/util/SettingsHelper;
-
-    invoke-direct {v5, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
-
-    .line 351
-    .local v5, settingsHelper:Lcom/google/glass/util/SettingsHelper;
-    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v3
-
-    .line 352
-    .local v3, mainMenuItems:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/home/voice/menu/VoiceMenuItem;>;"
-    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newGoogleItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 353
-    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newTakePhotoItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 354
-    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newRecordVideoItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 355
-    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newNavigationItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 356
-    invoke-static {v1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newSendMessageItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 358
-    sget-object v7, Lcom/google/glass/util/Labs$Feature;->BLUETOOTH_HEADSET:Lcom/google/glass/util/Labs$Feature;
-
-    invoke-static {v7}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_0
-
-    invoke-virtual {v5}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
-
-    move-result v7
-
-    if-nez v7, :cond_0
-
-    .line 360
-    invoke-static {v1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newCallItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 362
-    :cond_0
-    invoke-virtual {v5}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
-
-    move-result v7
-
-    if-nez v7, :cond_1
-
-    .line 363
-    invoke-static {v4}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newHangOutWithItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-
-    move-result-object v7
-
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 366
-    :cond_1
-    invoke-virtual {v5}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
-
-    move-result v7
-
-    if-nez v7, :cond_3
-
-    .line 367
-    sget-object v7, Lcom/google/glass/util/Labs$Feature;->THIRD_PARTY_VOICE:Lcom/google/glass/util/Labs$Feature;
-
-    invoke-static {v7}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    .line 368
-    sget-object v7, Lcom/google/glass/voice/VoiceCommand;->additionalCommands:Ljava/util/List;
-
-    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, i$:Ljava/util/Iterator;
+    .line 311
+    .local v2, mainMenuItems:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/home/voice/menu/VoiceMenuItem;>;"
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newGoogleItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 312
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newTakePhotoItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 313
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newRecordVideoItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 314
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newNavigationItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 315
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newSendMessageItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 317
+    sget-object v5, Lcom/google/glass/util/Labs$Feature;->BLUETOOTH_HEADSET:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v5}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    invoke-virtual {v3}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    .line 319
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newCallItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 321
+    :cond_0
+    invoke-virtual {v3}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
+    .line 322
+    invoke-static {}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newHangOutWithItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v5
+
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 325
+    :cond_1
+    invoke-virtual {v3}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
+
+    move-result v5
+
+    if-nez v5, :cond_3
+
+    .line 326
+    sget-object v5, Lcom/google/glass/util/Labs$Feature;->THIRD_PARTY_VOICE:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v5}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
+    .line 327
+    sget-object v5, Lcom/google/glass/voice/VoiceCommand;->additionalCommands:Ljava/util/List;
+
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v5
 
-    if-eqz v7, :cond_2
+    if-eqz v5, :cond_2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/glass/voice/VoiceCommand;
 
-    .line 369
+    .line 328
     .local v0, additionalCommand:Lcom/google/glass/voice/VoiceCommand;
-    invoke-static {v0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newAdditionalCommandItem(Lcom/google/glass/voice/VoiceCommand;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+    invoke-static {v0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newAdditionalCommandItem(Lcom/google/glass/voice/VoiceCommand;)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 373
+    .line 332
     .end local v0           #additionalCommand:Lcom/google/glass/voice/VoiceCommand;
-    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v1           #i$:Ljava/util/Iterator;
     :cond_2
-    sget-object v7, Lcom/google/glass/util/Labs$Feature;->NATIVE_APP_VOICE:Lcom/google/glass/util/Labs$Feature;
+    sget-object v5, Lcom/google/glass/util/Labs$Feature;->NATIVE_APP_VOICE:Lcom/google/glass/util/Labs$Feature;
 
-    invoke-static {v7}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+    invoke-static {v5}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
-    move-result v7
+    move-result v5
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
-    .line 374
-    invoke-static {}, Lcom/google/glass/home/voice/NativeAppVoiceMenuHelper;->getInstance()Lcom/google/glass/home/voice/NativeAppVoiceMenuHelper;
+    .line 333
+    invoke-static {}, Lcom/google/glass/voice/NativeAppVoiceMenuHelper;->getInstance()Lcom/google/glass/voice/NativeAppVoiceMenuHelper;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7, p0}, Lcom/google/glass/home/voice/NativeAppVoiceMenuHelper;->getTriggers(Landroid/content/Context;)Ljava/util/List;
+    invoke-virtual {v5, p0}, Lcom/google/glass/voice/NativeAppVoiceMenuHelper;->getTriggers(Landroid/content/Context;)Ljava/util/List;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
-    .restart local v2       #i$:Ljava/util/Iterator;
+    .restart local v1       #i$:Ljava/util/Iterator;
     :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v5
 
-    if-eqz v7, :cond_3
+    if-eqz v5, :cond_3
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v4
 
-    check-cast v6, Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
+    check-cast v4, Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
 
-    .line 375
-    .local v6, trigger:Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
-    invoke-static {v6}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newNativeAppCommandItem(Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+    .line 334
+    .local v4, trigger:Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
+    invoke-static {v4}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newNativeAppCommandItem(Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 379
-    .end local v2           #i$:Ljava/util/Iterator;
-    .end local v6           #trigger:Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
+    .line 338
+    .end local v1           #i$:Ljava/util/Iterator;
+    .end local v4           #trigger:Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;
     :cond_3
-    return-object v3
+    return-object v2
 .end method
 
 .method private static getUserEventDataId(Lcom/google/glass/voice/VoiceCommand;)Ljava/lang/String;
@@ -371,85 +327,85 @@
     .parameter "command"
 
     .prologue
-    .line 318
+    .line 288
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->GOOGLE:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_0
 
-    .line 319
+    .line 289
     const-string v0, "2"
 
-    .line 333
+    .line 303
     :goto_0
     return-object v0
 
-    .line 320
+    .line 290
     :cond_0
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->TAKE_PHOTO:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_1
 
-    .line 321
+    .line 291
     const-string v0, "3"
 
     goto :goto_0
 
-    .line 322
+    .line 292
     :cond_1
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->RECORD_VIDEO:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_2
 
-    .line 323
+    .line 293
     const-string v0, "4"
 
     goto :goto_0
 
-    .line 324
+    .line 294
     :cond_2
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->HANGOUT_WITH:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_3
 
-    .line 325
+    .line 295
     const-string v0, "8"
 
     goto :goto_0
 
-    .line 326
+    .line 296
     :cond_3
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->NAVIGATION:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_4
 
-    .line 327
+    .line 297
     const-string v0, "5"
 
     goto :goto_0
 
-    .line 328
+    .line 298
     :cond_4
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->CALL:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_5
 
-    .line 329
+    .line 299
     const-string v0, "7"
 
     goto :goto_0
 
-    .line 330
+    .line 300
     :cond_5
     sget-object v0, Lcom/google/glass/voice/VoiceCommand;->SEND_MESSAGE_TO:Lcom/google/glass/voice/VoiceCommand;
 
     if-ne p0, v0, :cond_6
 
-    .line 331
+    .line 301
     const-string v0, "6"
 
     goto :goto_0
 
-    .line 333
+    .line 303
     :cond_6
     const-string v0, ""
 
@@ -463,12 +419,12 @@
     .parameter "environment"
 
     .prologue
-    .line 307
+    .line 277
     invoke-static {p0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->getUserEventDataId(Lcom/google/glass/voice/VoiceCommand;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 308
+    .line 278
     .local v0, userEventDataId:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -476,7 +432,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 309
+    .line 279
     sget-object v1, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -505,11 +461,11 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 315
+    .line 285
     :goto_0
     return-void
 
-    .line 313
+    .line 283
     :cond_0
     if-eqz p1, :cond_1
 
@@ -526,36 +482,32 @@
     goto :goto_1
 .end method
 
-.method private static newAdditionalCommandItem(Lcom/google/glass/voice/VoiceCommand;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 1
+.method private static newAdditionalCommandItem(Lcom/google/glass/voice/VoiceCommand;)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+    .locals 2
     .parameter "additionalCommand"
 
     .prologue
-    .line 384
+    .line 343
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8;-><init>(Lcom/google/glass/voice/VoiceCommand;)V
 
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$8;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
-.method public static newCallItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 8
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/Entity;",
-            ">;)",
-            "Lcom/google/glass/home/voice/menu/MainMenuCommandItem;"
-        }
-    .end annotation
+.method public static newCallItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+    .locals 9
 
     .prologue
-    .line 272
-    .local p0, contactEntities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    const/4 v8, 0x1
+
+    .line 244
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->CALL:Lcom/google/glass/voice/VoiceCommand;
@@ -576,11 +528,9 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x1
+    sget-object v6, Lcom/google/glass/home/voice/menu/Requirements;->IS_HEADSET_CONNECTED:Lcom/google/glass/home/voice/menu/Requirement;
 
-    sget-object v7, Lcom/google/glass/home/voice/menu/Requirements;->IS_HEADSET_CONNECTED:Lcom/google/glass/home/voice/menu/Requirement;
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v8
 
     const/4 v6, 0x2
 
@@ -588,18 +538,26 @@
 
     aput-object v7, v5, v6
 
-    move-object v6, p0
+    invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;Ljava/util/List;)V
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$6;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->setHasSubMenu(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static newGoogleItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 8
+.method public static newGoogleItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+    .locals 9
 
     .prologue
-    .line 132
+    const/4 v8, 0x1
+
+    .line 131
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$1;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->GOOGLE:Lcom/google/glass/voice/VoiceCommand;
@@ -610,9 +568,7 @@
 
     sget v4, Lcom/google/glass/home/R$drawable;->ic_search_small:I
 
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Lcom/google/glass/home/voice/menu/Requirement;
+    new-array v5, v8, [Lcom/google/glass/home/voice/menu/Requirement;
 
     const/4 v6, 0x0
 
@@ -622,26 +578,20 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$1;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$1;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
-.method public static newHangOutWithItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 8
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/Entity;",
-            ">;)",
-            "Lcom/google/glass/home/voice/menu/MainMenuCommandItem;"
-        }
-    .end annotation
+.method public static newHangOutWithItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+    .locals 9
 
     .prologue
-    .line 290
-    .local p0, plusShareTargets:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    const/4 v8, 0x1
+
+    .line 261
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$7;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->HANGOUT_WITH:Lcom/google/glass/voice/VoiceCommand;
@@ -662,45 +612,53 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x1
+    sget-object v6, Lcom/google/glass/home/voice/menu/Requirements;->HAS_PLUS_SHARE_TARGETS:Lcom/google/glass/home/voice/menu/Requirement;
 
-    sget-object v7, Lcom/google/glass/home/voice/menu/Requirements;->HAS_PLUS_SHARE_TARGETS:Lcom/google/glass/home/voice/menu/Requirement;
+    aput-object v6, v5, v8
 
-    aput-object v7, v5, v6
+    invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$7;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    move-object v6, p0
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$7;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$7;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;Ljava/util/List;)V
+    move-result-object v0
+
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->setHasSubMenu(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
 .method private static newNativeAppCommandItem(Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 3
+    .locals 2
     .parameter "trigger"
 
     .prologue
-    .line 429
-    new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$9;
+    .line 387
+    invoke-static {}, Lcom/google/glass/voice/NativeAppVoiceMenuHelper;->getInstance()Lcom/google/glass/voice/NativeAppVoiceMenuHelper;
 
-    new-instance v1, Lcom/google/glass/voice/VoiceCommand;
+    move-result-object v1
 
-    invoke-virtual {p0}, Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;->getKeyword()Ljava/lang/String;
+    invoke-virtual {v1, p0}, Lcom/google/glass/voice/NativeAppVoiceMenuHelper;->newVoiceCommand(Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)Lcom/google/glass/voice/VoiceCommand;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Lcom/google/glass/voice/VoiceCommand;-><init>(Ljava/lang/String;)V
+    .line 388
+    .local v0, command:Lcom/google/glass/voice/VoiceCommand;
+    new-instance v1, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$9;
 
-    invoke-direct {v0, v1, p0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$9;-><init>(Lcom/google/glass/voice/VoiceCommand;Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)V
+    invoke-direct {v1, v0, p0}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$9;-><init>(Lcom/google/glass/voice/VoiceCommand;Lcom/google/android/glass/app/VoiceTriggerManager$Trigger;)V
 
-    return-object v0
+    return-object v1
 .end method
 
-.method public static newNavigationItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 8
+.method public static newNavigationItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+    .locals 9
 
     .prologue
-    .line 211
+    const/4 v8, 0x1
+
+    .line 198
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->NAVIGATION:Lcom/google/glass/voice/VoiceCommand;
@@ -721,22 +679,24 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x1
+    sget-object v6, Lcom/google/glass/home/voice/menu/Requirements;->IS_NAVIGATION_ALLOWED:Lcom/google/glass/home/voice/menu/Requirement;
 
-    sget-object v7, Lcom/google/glass/home/voice/menu/Requirements;->IS_NAVIGATION_ALLOWED:Lcom/google/glass/home/voice/menu/Requirement;
-
-    aput-object v7, v5, v6
+    aput-object v6, v5, v8
 
     invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
+
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static newRecordVideoItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+.method public static newRecordVideoItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
     .locals 6
 
     .prologue
-    .line 185
+    .line 178
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$3;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->RECORD_VIDEO:Lcom/google/glass/voice/VoiceCommand;
@@ -753,26 +713,22 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$3;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->VIDEO_START:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$3;->setCustomTriggerSound(Lcom/google/glass/sound/SoundManager$SoundId;)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
-.method public static newSendMessageItem(Ljava/util/List;)Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
-    .locals 8
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/Entity;",
-            ">;)",
-            "Lcom/google/glass/home/voice/menu/MainMenuCommandItem;"
-        }
-    .end annotation
+.method public static newSendMessageItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+    .locals 9
 
     .prologue
-    .line 242
-    .local p0, contactEntities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    const/4 v8, 0x1
+
+    .line 228
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$5;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->SEND_MESSAGE_TO:Lcom/google/glass/voice/VoiceCommand;
@@ -793,24 +749,28 @@
 
     aput-object v7, v5, v6
 
-    const/4 v6, 0x1
+    sget-object v6, Lcom/google/glass/home/voice/menu/Requirements;->HAS_CONTACTS:Lcom/google/glass/home/voice/menu/Requirement;
 
-    sget-object v7, Lcom/google/glass/home/voice/menu/Requirements;->HAS_CONTACTS:Lcom/google/glass/home/voice/menu/Requirement;
+    aput-object v6, v5, v8
 
-    aput-object v7, v5, v6
+    invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$5;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    move-object v6, p0
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$5;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 
-    invoke-direct/range {v0 .. v6}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$5;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;Ljava/util/List;)V
+    move-result-object v0
+
+    invoke-virtual {v0, v8}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->setHasSubMenu(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public static newTakePhotoItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+.method public static newTakePhotoItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
     .locals 6
 
     .prologue
-    .line 160
+    .line 159
     new-instance v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$2;
 
     sget-object v1, Lcom/google/glass/voice/VoiceCommand;->TAKE_PHOTO:Lcom/google/glass/voice/VoiceCommand;
@@ -827,6 +787,12 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$2;-><init>(Lcom/google/glass/voice/VoiceCommand;III[Lcom/google/glass/home/voice/menu/Requirement;)V
 
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->PHOTO_READY:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$2;->setCustomTriggerSound(Lcom/google/glass/sound/SoundManager$SoundId;)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
@@ -841,24 +807,24 @@
 
     const/4 v2, 0x0
 
-    .line 108
+    .line 107
     if-ne p0, p1, :cond_1
 
-    .line 128
+    .line 127
     :cond_0
     :goto_0
     return v1
 
-    .line 111
+    .line 110
     :cond_1
     if-nez p1, :cond_2
 
     move v1, v2
 
-    .line 112
+    .line 111
     goto :goto_0
 
-    .line 114
+    .line 113
     :cond_2
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -872,32 +838,32 @@
 
     move v1, v2
 
-    .line 115
+    .line 114
     goto :goto_0
 
     :cond_3
     move-object v0, p1
 
-    .line 117
+    .line 116
     check-cast v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
 
-    .line 118
+    .line 117
     .local v0, other:Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
     iget-object v3, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
     if-nez v3, :cond_4
 
-    .line 119
+    .line 118
     iget-object v3, v0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
     if-eqz v3, :cond_5
 
     move v1, v2
 
-    .line 120
+    .line 119
     goto :goto_0
 
-    .line 122
+    .line 121
     :cond_4
     iget-object v3, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
@@ -911,10 +877,10 @@
 
     move v1, v2
 
-    .line 123
+    .line 122
     goto :goto_0
 
-    .line 125
+    .line 124
     :cond_5
     iget v3, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->stringId:I
 
@@ -924,7 +890,7 @@
 
     move v1, v2
 
-    .line 126
+    .line 125
     goto :goto_0
 .end method
 
@@ -932,7 +898,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 77
     iget v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->iconId:I
 
     return v0
@@ -943,19 +909,19 @@
     .parameter "context"
 
     .prologue
-    .line 70
+    .line 69
     iget v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->contextMenuStringId:I
 
     if-nez v0, :cond_0
 
-    .line 71
+    .line 70
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
     invoke-virtual {v0}, Lcom/google/glass/voice/VoiceCommand;->getLiteral()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 73
+    .line 72
     :goto_0
     return-object v0
 
@@ -974,19 +940,19 @@
     .parameter "context"
 
     .prologue
-    .line 60
+    .line 59
     iget v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->stringId:I
 
     if-nez v0, :cond_0
 
-    .line 62
+    .line 61
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
     invoke-virtual {v0}, Lcom/google/glass/voice/VoiceCommand;->getLiteral()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 65
+    .line 64
     :goto_0
     return-object v0
 
@@ -1004,14 +970,14 @@
     .locals 4
 
     .prologue
-    .line 99
+    .line 98
     const/16 v0, 0x1f
 
-    .line 100
+    .line 99
     .local v0, prime:I
     const/4 v1, 0x1
 
-    .line 101
+    .line 100
     .local v1, result:I
     iget-object v2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
@@ -1022,17 +988,17 @@
     :goto_0
     add-int/lit8 v1, v2, 0x1f
 
-    .line 102
+    .line 101
     mul-int/lit8 v2, v1, 0x1f
 
     iget v3, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->stringId:I
 
     add-int v1, v2, v3
 
-    .line 103
+    .line 102
     return v1
 
-    .line 101
+    .line 100
     :cond_0
     iget-object v2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
@@ -1043,12 +1009,12 @@
     goto :goto_0
 .end method
 
-.method public final matches(Lcom/google/glass/voice/VoiceCommand;)Z
+.method public matches(Lcom/google/glass/voice/VoiceCommand;)Z
     .locals 1
     .parameter "voiceCommand"
 
     .prologue
-    .line 83
+    .line 82
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/voice/VoiceCommand;->equals(Ljava/lang/Object;)Z
@@ -1058,25 +1024,25 @@
     return v0
 .end method
 
-.method public onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
+.method protected onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
     .locals 1
     .parameter "environment"
     .parameter "spoken"
 
     .prologue
-    .line 88
+    .line 87
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->command:Lcom/google/glass/voice/VoiceCommand;
 
     invoke-static {v0, p2, p1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->logMainMenuCommandEvent(Lcom/google/glass/voice/VoiceCommand;ZLcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)V
 
-    .line 89
+    .line 88
     const/4 v0, 0x0
 
     check-cast v0, Ljava/lang/Runnable;
 
     invoke-interface {p1, p0, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->selectMenuItem(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Ljava/lang/Runnable;)V
 
-    .line 90
+    .line 89
     return-void
 .end method
 
@@ -1084,7 +1050,7 @@
     .locals 2
 
     .prologue
-    .line 94
+    .line 93
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

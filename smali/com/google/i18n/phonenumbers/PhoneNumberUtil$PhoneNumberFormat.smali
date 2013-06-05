@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 392
+    .line 358
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     const-string v1, "E164"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->E164:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
-    .line 393
+    .line 359
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     const-string v1, "INTERNATIONAL"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
-    .line 394
+    .line 360
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     const-string v1, "NATIONAL"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
-    .line 395
+    .line 361
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     const-string v1, "RFC3966"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->RFC3966:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
-    .line 391
+    .line 357
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 391
+    .line 357
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +132,7 @@
     .parameter "name"
 
     .prologue
-    .line 391
+    .line 357
     const-class v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +148,7 @@
     .locals 1
 
     .prologue
-    .line 391
+    .line 357
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->$VALUES:[Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-virtual {v0}, [Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->clone()Ljava/lang/Object;

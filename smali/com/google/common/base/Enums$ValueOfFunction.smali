@@ -60,12 +60,12 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 82
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     .local p1, enumClass:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 63
+    .line 83
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -74,7 +74,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Enums$ValueOfFunction;->enumClass:Ljava/lang/Class;
 
-    .line 64
+    .line 84
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .parameter "x1"
 
     .prologue
-    .line 57
+    .line 77
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Enums$ValueOfFunction;-><init>(Ljava/lang/Class;)V
 
@@ -105,7 +105,7 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 88
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     :try_start_0
     iget-object v1, p0, Lcom/google/common/base/Enums$ValueOfFunction;->enumClass:Ljava/lang/Class;
@@ -116,15 +116,15 @@
 
     move-result-object v1
 
-    .line 71
+    .line 90
     :goto_0
     return-object v1
 
-    .line 70
+    .line 89
     :catch_0
     move-exception v0
 
-    .line 71
+    .line 90
     .local v0, e:Ljava/lang/IllegalArgumentException;
     const/4 v1, 0x0
 
@@ -136,7 +136,7 @@
     .parameter "x0"
 
     .prologue
-    .line 57
+    .line 77
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     check-cast p1, Ljava/lang/String;
 
@@ -156,7 +156,7 @@
     .end parameter
 
     .prologue
-    .line 76
+    .line 96
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     instance-of v0, p1, Lcom/google/common/base/Enums$ValueOfFunction;
 
@@ -190,7 +190,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 101
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Enums$ValueOfFunction;->enumClass:Ljava/lang/Class;
 
@@ -205,7 +205,7 @@
     .locals 2
 
     .prologue
-    .line 85
+    .line 106
     .local p0, this:Lcom/google/common/base/Enums$ValueOfFunction;,"Lcom/google/common/base/Enums$ValueOfFunction<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

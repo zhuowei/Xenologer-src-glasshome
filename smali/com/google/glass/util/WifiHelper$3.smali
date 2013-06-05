@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 270
+    .line 273
     iput-object p1, p0, Lcom/google/glass/util/WifiHelper$3;->this$0:Lcom/google/glass/util/WifiHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 273
+    .line 276
     invoke-static {}, Lcom/google/glass/util/WifiHelper;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -50,7 +50,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 274
+    .line 277
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper$3;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #getter for: Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->saveConfiguration()Z
 
-    .line 275
+    .line 278
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper$3;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #getter for: Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
@@ -70,6 +70,6 @@
 
     invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->reconnect()Z
 
-    .line 276
+    .line 279
     return-void
 .end method

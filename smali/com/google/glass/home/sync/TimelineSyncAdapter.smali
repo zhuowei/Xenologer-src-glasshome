@@ -73,12 +73,12 @@
     .locals 1
 
     .prologue
-    .line 117
+    .line 119
     iget-object v0, p0, Lcom/google/glass/home/sync/TimelineSyncAdapter;->syncHandler:Lcom/google/glass/home/sync/TimelineSyncHandler;
 
     invoke-virtual {v0}, Lcom/google/glass/home/sync/TimelineSyncHandler;->cancelOpportunisticUpload()V
 
-    .line 118
+    .line 120
     return-void
 .end method
 
@@ -150,14 +150,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 108
+    .line 110
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
 
     invoke-virtual {v4, v2}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 110
+    .line 112
     :goto_0
     return-void
 
@@ -189,7 +189,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 108
+    .line 110
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
@@ -226,7 +226,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 108
+    .line 110
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v4
@@ -315,7 +315,16 @@
 
     iput-wide v4, p5, Landroid/content/SyncResult;->delayUntil:J
 
-    .line 96
+    .line 98
+    iget-object v4, p0, Lcom/google/glass/home/sync/TimelineSyncAdapter;->syncHandler:Lcom/google/glass/home/sync/TimelineSyncHandler;
+
+    invoke-virtual {v4}, Lcom/google/glass/home/sync/TimelineSyncHandler;->hasServerFailures()Z
+
+    move-result v4
+
+    invoke-static {p3, v4}, Lcom/google/glass/sync/SyncHelper;->updateBackoffSyncMode(Ljava/lang/String;Z)V
+
+    .line 100
     sget-object v4, Lcom/google/glass/home/sync/TimelineSyncAdapter;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -378,7 +387,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 108
+    .line 110
     :goto_1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -407,7 +416,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 108
+    .line 110
     .end local v0           #application:Lcom/google/glass/home/HomeApplication;
     .end local v1           #lock:Landroid/net/wifi/WifiManager$WifiLock;
     .end local v3           #wifiManager:Landroid/net/wifi/WifiManager;
@@ -422,7 +431,7 @@
 
     throw v4
 
-    .line 100
+    .line 104
     .restart local v0       #application:Lcom/google/glass/home/HomeApplication;
     .restart local v1       #lock:Landroid/net/wifi/WifiManager$WifiLock;
     .restart local v3       #wifiManager:Landroid/net/wifi/WifiManager;
@@ -432,10 +441,10 @@
 
     invoke-static {v4, p3}, Lcom/google/glass/sync/SyncHelper;->updateLastSyncTime(Lcom/google/glass/util/Clock;Ljava/lang/String;)V
 
-    .line 103
-    iget-object v4, p5, Landroid/content/SyncResult;->stats:Landroid/content/SyncStats;
+    .line 105
+    const/4 v4, 0x0
 
-    invoke-virtual {v4}, Landroid/content/SyncStats;->clear()V
+    invoke-static {p3, v4}, Lcom/google/glass/sync/SyncHelper;->updateBackoffSyncMode(Ljava/lang/String;Z)V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_1
 

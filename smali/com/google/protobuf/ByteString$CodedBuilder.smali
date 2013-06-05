@@ -26,15 +26,15 @@
     .parameter "size"
 
     .prologue
-    .line 887
+    .line 889
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 888
+    .line 890
     new-array v0, p1, [B
 
     iput-object v0, p0, Lcom/google/protobuf/ByteString$CodedBuilder;->buffer:[B
 
-    .line 889
+    .line 891
     iget-object v0, p0, Lcom/google/protobuf/ByteString$CodedBuilder;->buffer:[B
 
     invoke-static {v0}, Lcom/google/protobuf/CodedOutputStream;->newInstance([B)Lcom/google/protobuf/CodedOutputStream;
@@ -43,7 +43,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/ByteString$CodedBuilder;->output:Lcom/google/protobuf/CodedOutputStream;
 
-    .line 890
+    .line 892
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .parameter "x1"
 
     .prologue
-    .line 883
+    .line 885
     invoke-direct {p0, p1}, Lcom/google/protobuf/ByteString$CodedBuilder;-><init>(I)V
 
     return-void
@@ -65,12 +65,12 @@
     .locals 2
 
     .prologue
-    .line 893
+    .line 895
     iget-object v0, p0, Lcom/google/protobuf/ByteString$CodedBuilder;->output:Lcom/google/protobuf/CodedOutputStream;
 
     invoke-virtual {v0}, Lcom/google/protobuf/CodedOutputStream;->checkNoSpaceLeft()V
 
-    .line 898
+    .line 900
     new-instance v0, Lcom/google/protobuf/LiteralByteString;
 
     iget-object v1, p0, Lcom/google/protobuf/ByteString$CodedBuilder;->buffer:[B
@@ -84,7 +84,7 @@
     .locals 1
 
     .prologue
-    .line 902
+    .line 904
     iget-object v0, p0, Lcom/google/protobuf/ByteString$CodedBuilder;->output:Lcom/google/protobuf/CodedOutputStream;
 
     return-object v0

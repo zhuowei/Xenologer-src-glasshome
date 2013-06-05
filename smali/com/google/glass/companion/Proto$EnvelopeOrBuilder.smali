@@ -19,9 +19,13 @@
 
 # virtual methods
 .method public abstract getApiRequestC2G()Lcom/google/glass/companion/Proto$ApiRequest;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract getApiResponseG2C()Lcom/google/glass/companion/Proto$ApiResponse;
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract getCommand()Lcom/google/glass/companion/Proto$Command;
@@ -118,9 +122,13 @@
 .end method
 
 .method public abstract hasApiRequestC2G()Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract hasApiResponseG2C()Z
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract hasCommand()Z

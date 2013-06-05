@@ -1812,7 +1812,7 @@
     const/16 v10, 0x27
 
     .line 1752
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v7
 

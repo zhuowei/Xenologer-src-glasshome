@@ -3,10 +3,6 @@
 .source "HtmlItemViewBinder.java"
 
 
-# instance fields
-.field private renderer:Lcom/google/glass/home/timeline/html/HtmlRenderer;
-
-
 # direct methods
 .method public constructor <init>()V
     .locals 0
@@ -23,12 +19,12 @@
     .parameter "context"
 
     .prologue
-    .line 61
+    .line 70
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    .line 62
+    .line 71
     .local v0, res:Landroid/content/res/Resources;
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->getTimestampWidth()I
 
@@ -61,47 +57,20 @@
     return v1
 .end method
 
-.method private releaseRenderer()V
-    .locals 1
-
-    .prologue
-    .line 79
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
-
-    .line 80
-    iget-object v0, p0, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->renderer:Lcom/google/glass/home/timeline/html/HtmlRenderer;
-
-    if-eqz v0, :cond_0
-
-    .line 81
-    iget-object v0, p0, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->renderer:Lcom/google/glass/home/timeline/html/HtmlRenderer;
-
-    invoke-virtual {v0}, Lcom/google/glass/home/timeline/html/HtmlRenderer;->release()V
-
-    .line 82
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->renderer:Lcom/google/glass/home/timeline/html/HtmlRenderer;
-
-    .line 84
-    :cond_0
-    return-void
-.end method
-
 
 # virtual methods
 .method public getLayout()I
     .locals 1
 
     .prologue
-    .line 27
+    .line 26
     sget v0, Lcom/google/glass/home/R$layout;->timeline_item_html:I
 
     return v0
 .end method
 
 .method protected onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
-    .locals 4
+    .locals 5
     .parameter "context"
     .parameter "item"
     .parameter "inBundle"
@@ -112,86 +81,157 @@
 
     .prologue
     .line 35
-    invoke-direct {p0}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->releaseRenderer()V
+    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->getFooterRightMargin(Landroid/content/Context;)I
 
-    .line 37
-    sget v1, Lcom/google/glass/home/R$id;->rendered_html:I
+    move-result v0
 
-    invoke-virtual {p5, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    .line 36
+    .local v0, footerRightMargin:I
+    sget v3, Lcom/google/glass/home/R$id;->rendered_html:I
 
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    .line 38
-    .local v0, imageView:Landroid/widget/ImageView;
-    invoke-static {}, Lcom/google/glass/home/timeline/html/HtmlRenderer;->obtain()Lcom/google/glass/home/timeline/html/HtmlRenderer;
+    invoke-virtual {p5, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    iput-object v1, p0, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->renderer:Lcom/google/glass/home/timeline/html/HtmlRenderer;
+    check-cast v1, Landroid/widget/ImageView;
 
-    .line 39
-    iget-object v1, p0, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->renderer:Lcom/google/glass/home/timeline/html/HtmlRenderer;
+    .line 37
+    .local v1, imageView:Landroid/widget/ImageView;
+    invoke-static {}, Lcom/google/glass/html/HtmlRenderer;->obtain()Lcom/google/glass/html/HtmlRenderer;
 
-    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->getFooterRightMargin(Landroid/content/Context;)I
+    move-result-object v2
 
-    move-result v2
-
+    .line 38
+    .local v2, renderer:Lcom/google/glass/html/HtmlRenderer;
     new-instance v3, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder$1;
 
-    invoke-direct {v3, p0, v0}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder$1;-><init>(Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;Landroid/widget/ImageView;)V
+    invoke-direct {v3, p0, p5, v1}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder$1;-><init>(Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;Landroid/view/View;Landroid/widget/ImageView;)V
 
-    invoke-virtual {v1, p2, v2, v3}, Lcom/google/glass/home/timeline/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;ILcom/google/glass/home/timeline/html/HtmlRenderer$OnRenderListener;)V
+    invoke-virtual {v2, p2, v0, v3}, Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;ILcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
 
-    .line 47
+    .line 48
+    sget v3, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
+
+    invoke-virtual {p5, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/google/glass/util/Assert;->assertNull(Ljava/lang/Object;)V
+
+    .line 49
+    sget v3, Lcom/google/glass/home/R$id;->tag_html_item_renderer:I
+
+    invoke-virtual {p5, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/google/glass/util/Assert;->assertNull(Ljava/lang/Object;)V
+
+    .line 50
+    sget v3, Lcom/google/glass/home/R$id;->tag_html_item_footer_right_margin:I
+
+    invoke-virtual {p5, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/google/glass/util/Assert;->assertNull(Ljava/lang/Object;)V
+
+    .line 51
+    sget v3, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
+
+    invoke-virtual {p5, v3, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 52
+    sget v3, Lcom/google/glass/home/R$id;->tag_html_item_renderer:I
+
+    invoke-virtual {p5, v3, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 53
+    sget v3, Lcom/google/glass/home/R$id;->tag_html_item_footer_right_margin:I
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-virtual {p5, v3, v4}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 56
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtmlPageCount()I
 
-    move-result v1
+    move-result v3
 
-    if-lez v1, :cond_0
+    if-lez v3, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
     :goto_0
-    return v1
+    return v3
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v3, 0x0
 
     goto :goto_0
 .end method
 
 .method protected onClear(Landroid/view/View;Z)V
-    .locals 2
+    .locals 4
     .parameter "view"
     .parameter "willBindSameItem"
 
     .prologue
-    .line 71
+    const/4 v3, 0x0
+
+    .line 80
     if-nez p2, :cond_0
 
-    .line 72
-    sget v1, Lcom/google/glass/home/R$id;->rendered_html:I
+    .line 81
+    sget v2, Lcom/google/glass/home/R$id;->rendered_html:I
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 73
+    .line 82
     .local v0, imageView:Landroid/widget/ImageView;
-    const/4 v1, 0x0
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 75
+    .line 86
     .end local v0           #imageView:Landroid/widget/ImageView;
     :cond_0
-    invoke-direct {p0}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->releaseRenderer()V
+    sget v2, Lcom/google/glass/home/R$id;->tag_html_item_renderer:I
 
-    .line 76
+    invoke-virtual {p1, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/glass/html/HtmlRenderer;
+
+    .line 87
+    .local v1, renderer:Lcom/google/glass/html/HtmlRenderer;
+    if-eqz v1, :cond_1
+
+    .line 88
+    invoke-virtual {v1}, Lcom/google/glass/html/HtmlRenderer;->release()V
+
+    .line 92
+    :cond_1
+    sget v2, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
+
+    invoke-virtual {p1, v2, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 93
+    sget v2, Lcom/google/glass/home/R$id;->tag_html_item_renderer:I
+
+    invoke-virtual {p1, v2, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 94
+    sget v2, Lcom/google/glass/home/R$id;->tag_html_item_footer_right_margin:I
+
+    invoke-virtual {p1, v2, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 95
     return-void
 .end method
 
@@ -200,7 +240,7 @@
     .parameter "item"
 
     .prologue
-    .line 53
+    .line 62
     invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->getBundleItemIndex(Lcom/google/googlex/glass/common/proto/TimelineItem;)I
 
     move-result v0
@@ -234,7 +274,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 99
     .local p2, split:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     sget-object v2, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->HTML:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
@@ -248,21 +288,21 @@
 
     invoke-static {v2}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 91
+    .line 102
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtmlPageCount()I
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 94
+    .line 105
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 110
+    .line 121
     :cond_0
     return-void
 
-    .line 96
+    .line 107
     :cond_1
     const/4 v1, 0x0
 
@@ -274,35 +314,35 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 97
+    .line 108
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v0
 
-    .line 100
+    .line 111
     .local v0, builder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->clearHtml()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 101
+    .line 112
     invoke-virtual {p1, v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtmlPage(I)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setHtml(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 106
+    .line 117
     add-int/lit8 v2, v1, 0x1
 
     invoke-virtual {p0, v0, v2, p1}, Lcom/google/glass/home/timeline/database/HtmlItemViewBinder;->adjustBundleItemIndex(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;ILcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    .line 107
+    .line 118
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->build()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v2
 
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 96
+    .line 107
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0

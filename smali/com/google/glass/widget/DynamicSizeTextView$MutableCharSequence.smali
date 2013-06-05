@@ -32,15 +32,15 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 59
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 60
+    .line 67
     const-string v0, ""
 
     invoke-virtual {p0, v0, v1, v1}, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->changeText(Ljava/lang/CharSequence;II)V
 
-    .line 61
+    .line 68
     return-void
 .end method
 
@@ -51,13 +51,13 @@
     .parameter "end"
 
     .prologue
-    .line 63
+    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 64
+    .line 71
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->changeText(Ljava/lang/CharSequence;II)V
 
-    .line 65
+    .line 72
     return-void
 .end method
 
@@ -70,16 +70,16 @@
     .parameter "end"
 
     .prologue
-    .line 68
+    .line 75
     iput-object p1, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->str:Ljava/lang/CharSequence;
 
-    .line 69
+    .line 76
     iput p2, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->start:I
 
-    .line 70
+    .line 77
     iput p3, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->end:I
 
-    .line 71
+    .line 78
     return-void
 .end method
 
@@ -88,7 +88,7 @@
     .parameter "index"
 
     .prologue
-    .line 75
+    .line 82
     iget-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->str:Ljava/lang/CharSequence;
 
     iget v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->start:I
@@ -106,7 +106,7 @@
     .locals 2
 
     .prologue
-    .line 80
+    .line 87
     iget v0, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->end:I
 
     iget v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->start:I
@@ -122,7 +122,7 @@
     .parameter "end"
 
     .prologue
-    .line 85
+    .line 92
     new-instance v0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;
 
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->str:Ljava/lang/CharSequence;

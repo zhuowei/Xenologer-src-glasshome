@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 285
+    .line 287
     iput-object p1, p0, Lcom/google/common/base/Joiner$2;->this$0:Lcom/google/common/base/Joiner;
 
     const/4 v0, 0x0
@@ -58,19 +58,19 @@
     .end annotation
 
     .prologue
-    .line 288
+    .line 290
     .local p1, appendable:Ljava/lang/Appendable;,"TA;"
     .local p2, parts:Ljava/util/Iterator;,"Ljava/util/Iterator<*>;"
     const-string v1, "appendable"
 
     invoke-static {p1, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 289
+    .line 291
     const-string v1, "parts"
 
     invoke-static {p2, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 290
+    .line 292
     :cond_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -78,16 +78,16 @@
 
     if-eqz v1, :cond_1
 
-    .line 291
+    .line 293
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 292
+    .line 294
     .local v0, part:Ljava/lang/Object;
     if-eqz v0, :cond_0
 
-    .line 293
+    .line 295
     iget-object v1, p0, Lcom/google/common/base/Joiner$2;->this$0:Lcom/google/common/base/Joiner;
 
     invoke-virtual {v1, v0}, Lcom/google/common/base/Joiner;->toString(Ljava/lang/Object;)Ljava/lang/CharSequence;
@@ -96,7 +96,7 @@
 
     invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 297
+    .line 299
     .end local v0           #part:Ljava/lang/Object;
     :cond_1
     :goto_0
@@ -106,16 +106,16 @@
 
     if-eqz v1, :cond_2
 
-    .line 298
+    .line 300
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 299
+    .line 301
     .restart local v0       #part:Ljava/lang/Object;
     if-eqz v0, :cond_1
 
-    .line 300
+    .line 302
     iget-object v1, p0, Lcom/google/common/base/Joiner$2;->this$0:Lcom/google/common/base/Joiner;
 
     #getter for: Lcom/google/common/base/Joiner;->separator:Ljava/lang/String;
@@ -125,7 +125,7 @@
 
     invoke-interface {p1, v1}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 301
+    .line 303
     iget-object v1, p0, Lcom/google/common/base/Joiner$2;->this$0:Lcom/google/common/base/Joiner;
 
     invoke-virtual {v1, v0}, Lcom/google/common/base/Joiner;->toString(Ljava/lang/Object;)Ljava/lang/CharSequence;
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 304
+    .line 306
     .end local v0           #part:Ljava/lang/Object;
     :cond_2
     return-object p1
@@ -147,10 +147,10 @@
     .parameter "nullText"
 
     .prologue
-    .line 308
+    .line 311
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 309
+    .line 312
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "already specified skipNulls"
@@ -165,10 +165,10 @@
     .parameter "kvs"
 
     .prologue
-    .line 313
+    .line 317
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 314
+    .line 318
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "can\'t use .skipNulls() with maps"

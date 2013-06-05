@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "LocalCache.java"
 
+# interfaces
+.implements Ljava/util/Iterator;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -11,6 +14,17 @@
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x400
     name = "HashIterator"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<T:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;",
+        "Ljava/util/Iterator",
+        "<TT;>;"
+    }
 .end annotation
 
 
@@ -75,13 +89,13 @@
     .parameter
 
     .prologue
-    .line 4290
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4194
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$HashIterator;->this$0:Lcom/google/common/cache/LocalCache;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4291
+    .line 4195
     iget-object v0, p1, Lcom/google/common/cache/LocalCache;->segments:[Lcom/google/common/cache/LocalCache$Segment;
 
     array-length v0, v0
@@ -90,15 +104,15 @@
 
     iput v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextSegmentIndex:I
 
-    .line 4292
+    .line 4196
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextTableIndex:I
 
-    .line 4293
+    .line 4197
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$HashIterator;->advance()V
 
-    .line 4294
+    .line 4198
     return-void
 .end method
 
@@ -108,25 +122,25 @@
     .locals 3
 
     .prologue
-    .line 4297
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4203
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextExternal:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
-    .line 4299
+    .line 4205
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$HashIterator;->nextInChain()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 4317
+    .line 4223
     :cond_0
     :goto_0
     return-void
 
-    .line 4303
+    .line 4209
     :cond_1
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$HashIterator;->nextInTable()Z
 
@@ -134,13 +148,13 @@
 
     if-nez v0, :cond_0
 
-    .line 4307
+    .line 4213
     :cond_2
     iget v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextSegmentIndex:I
 
     if-ltz v0, :cond_0
 
-    .line 4308
+    .line 4214
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->this$0:Lcom/google/common/cache/LocalCache;
 
     iget-object v0, v0, Lcom/google/common/cache/LocalCache;->segments:[Lcom/google/common/cache/LocalCache$Segment;
@@ -155,21 +169,21 @@
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentSegment:Lcom/google/common/cache/LocalCache$Segment;
 
-    .line 4309
+    .line 4215
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentSegment:Lcom/google/common/cache/LocalCache$Segment;
 
     iget v0, v0, Lcom/google/common/cache/LocalCache$Segment;->count:I
 
     if-eqz v0, :cond_2
 
-    .line 4310
+    .line 4216
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentSegment:Lcom/google/common/cache/LocalCache$Segment;
 
     iget-object v0, v0, Lcom/google/common/cache/LocalCache$Segment;->table:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentTable:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
-    .line 4311
+    .line 4217
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentTable:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->length()I
@@ -180,7 +194,7 @@
 
     iput v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextTableIndex:I
 
-    .line 4312
+    .line 4218
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$HashIterator;->nextInTable()Z
 
     move-result v0
@@ -202,8 +216,8 @@
     .end annotation
 
     .prologue
-    .line 4353
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4259
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     .local p1, entry:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     :try_start_0
     iget-object v4, p0, Lcom/google/common/cache/LocalCache$HashIterator;->this$0:Lcom/google/common/cache/LocalCache;
@@ -214,13 +228,13 @@
 
     move-result-wide v1
 
-    .line 4354
+    .line 4260
     .local v1, now:J
     invoke-interface {p1}, Lcom/google/common/cache/LocalCache$ReferenceEntry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 4355
+    .line 4261
     .local v0, key:Ljava/lang/Object;,"TK;"
     iget-object v4, p0, Lcom/google/common/cache/LocalCache$HashIterator;->this$0:Lcom/google/common/cache/LocalCache;
 
@@ -228,11 +242,11 @@
 
     move-result-object v3
 
-    .line 4356
+    .line 4262
     .local v3, value:Ljava/lang/Object;,"TV;"
     if-eqz v3, :cond_0
 
-    .line 4357
+    .line 4263
     new-instance v4, Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     iget-object v5, p0, Lcom/google/common/cache/LocalCache$HashIterator;->this$0:Lcom/google/common/cache/LocalCache;
@@ -243,10 +257,10 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4358
+    .line 4264
     const/4 v4, 0x1
 
-    .line 4364
+    .line 4270
     iget-object v5, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentSegment:Lcom/google/common/cache/LocalCache$Segment;
 
     invoke-virtual {v5}, Lcom/google/common/cache/LocalCache$Segment;->postReadCleanup()V
@@ -254,11 +268,11 @@
     :goto_0
     return v4
 
-    .line 4361
+    .line 4267
     :cond_0
     const/4 v4, 0x0
 
-    .line 4364
+    .line 4270
     iget-object v5, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentSegment:Lcom/google/common/cache/LocalCache$Segment;
 
     invoke-virtual {v5}, Lcom/google/common/cache/LocalCache$Segment;->postReadCleanup()V
@@ -282,8 +296,8 @@
     .locals 1
 
     .prologue
-    .line 4369
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4275
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextExternal:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     if-eqz v0, :cond_0
@@ -297,6 +311,14 @@
     const/4 v0, 0x0
 
     goto :goto_0
+.end method
+
+.method public abstract next()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 .end method
 
 .method nextEntry()Lcom/google/common/cache/LocalCache$WriteThroughEntry;
@@ -310,29 +332,29 @@
     .end annotation
 
     .prologue
-    .line 4373
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4279
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextExternal:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     if-nez v0, :cond_0
 
-    .line 4374
+    .line 4280
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 
-    .line 4376
+    .line 4282
     :cond_0
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextExternal:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->lastReturned:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
-    .line 4377
+    .line 4283
     invoke-virtual {p0}, Lcom/google/common/cache/LocalCache$HashIterator;->advance()V
 
-    .line 4378
+    .line 4284
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->lastReturned:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     return-object v0
@@ -342,13 +364,13 @@
     .locals 1
 
     .prologue
-    .line 4323
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4229
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextEntry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     if-eqz v0, :cond_1
 
-    .line 4324
+    .line 4230
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextEntry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     invoke-interface {v0}, Lcom/google/common/cache/LocalCache$ReferenceEntry;->getNext()Lcom/google/common/cache/LocalCache$ReferenceEntry;
@@ -362,7 +384,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 4325
+    .line 4231
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextEntry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     invoke-virtual {p0, v0}, Lcom/google/common/cache/LocalCache$HashIterator;->advanceTo(Lcom/google/common/cache/LocalCache$ReferenceEntry;)Z
@@ -371,14 +393,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 4326
+    .line 4232
     const/4 v0, 0x1
 
-    .line 4330
+    .line 4236
     :goto_1
     return v0
 
-    .line 4324
+    .line 4230
     :cond_0
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextEntry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
@@ -390,7 +412,7 @@
 
     goto :goto_0
 
-    .line 4330
+    .line 4236
     :cond_1
     const/4 v0, 0x0
 
@@ -401,14 +423,14 @@
     .locals 3
 
     .prologue
-    .line 4337
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4243
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     :cond_0
     iget v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextTableIndex:I
 
     if-ltz v0, :cond_2
 
-    .line 4338
+    .line 4244
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->currentTable:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     iget v1, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextTableIndex:I
@@ -427,7 +449,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4339
+    .line 4245
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->nextEntry:Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     invoke-virtual {p0, v0}, Lcom/google/common/cache/LocalCache$HashIterator;->advanceTo(Lcom/google/common/cache/LocalCache$ReferenceEntry;)Z
@@ -442,11 +464,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 4340
+    .line 4246
     :cond_1
     const/4 v0, 0x1
 
-    .line 4344
+    .line 4250
     :goto_0
     return v0
 
@@ -460,8 +482,8 @@
     .locals 2
 
     .prologue
-    .line 4382
-    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator;"
+    .line 4288
+    .local p0, this:Lcom/google/common/cache/LocalCache$HashIterator;,"Lcom/google/common/cache/LocalCache<TK;TV;>.HashIterator<TT;>;"
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->lastReturned:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
     if-eqz v0, :cond_0
@@ -471,7 +493,7 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkState(Z)V
 
-    .line 4383
+    .line 4289
     iget-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->this$0:Lcom/google/common/cache/LocalCache;
 
     iget-object v1, p0, Lcom/google/common/cache/LocalCache$HashIterator;->lastReturned:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
@@ -482,15 +504,15 @@
 
     invoke-virtual {v0, v1}, Lcom/google/common/cache/LocalCache;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 4384
+    .line 4290
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/cache/LocalCache$HashIterator;->lastReturned:Lcom/google/common/cache/LocalCache$WriteThroughEntry;
 
-    .line 4385
+    .line 4291
     return-void
 
-    .line 4382
+    .line 4288
     :cond_0
     const/4 v0, 0x0
 

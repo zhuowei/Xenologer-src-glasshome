@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 158
+    .line 176
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService$2;->this$0:Lcom/google/glass/logging/UserEventService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 161
+    .line 179
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$2;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iget-object v1, p0, Lcom/google/glass/logging/UserEventService$2;->this$0:Lcom/google/glass/logging/UserEventService;
@@ -60,6 +60,6 @@
     #setter for: Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
     invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$102(Lcom/google/glass/logging/UserEventService;Ljava/util/List;)Ljava/util/List;
 
-    .line 162
+    .line 180
     return-void
 .end method

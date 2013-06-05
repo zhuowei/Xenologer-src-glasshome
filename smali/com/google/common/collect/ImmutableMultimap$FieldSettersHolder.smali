@@ -47,7 +47,7 @@
     .locals 2
 
     .prologue
-    .line 309
+    .line 308
     const-class v0, Lcom/google/common/collect/ImmutableMultimap;
 
     const-string v1, "map"
@@ -58,7 +58,7 @@
 
     sput-object v0, Lcom/google/common/collect/ImmutableMultimap$FieldSettersHolder;->MAP_FIELD_SETTER:Lcom/google/common/collect/Serialization$FieldSetter;
 
-    .line 312
+    .line 310
     const-class v0, Lcom/google/common/collect/ImmutableMultimap;
 
     const-string v1, "size"

@@ -75,7 +75,7 @@
 
     const/4 v2, 0x0
 
-    .line 4706
+    .line 4757
     new-instance v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     const-string v1, "LOCATION_CHANGED"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->LOCATION_CHANGED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
-    .line 4710
+    .line 4761
     new-instance v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     const-string v1, "PROVIDER_DISABLED"
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->PROVIDER_DISABLED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
-    .line 4714
+    .line 4765
     new-instance v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     const-string v1, "PROVIDER_ENABLED"
@@ -102,7 +102,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->PROVIDER_ENABLED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
-    .line 4718
+    .line 4769
     new-instance v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     const-string v1, "STATUS_CHANGED"
@@ -111,7 +111,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->STATUS_CHANGED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
-    .line 4701
+    .line 4752
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
@@ -134,7 +134,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->$VALUES:[Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
-    .line 4756
+    .line 4807
     new-instance v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$LocationMessage$MessageType$1;-><init>()V
@@ -157,13 +157,13 @@
     .end annotation
 
     .prologue
-    .line 4765
+    .line 4816
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 4766
+    .line 4817
     iput p4, p0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->value:I
 
-    .line 4767
+    .line 4818
     return-void
 .end method
 
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 4753
+    .line 4804
     sget-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,40 +191,40 @@
     .parameter "value"
 
     .prologue
-    .line 4742
+    .line 4793
     packed-switch p0, :pswitch_data_0
 
-    .line 4747
+    .line 4798
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 4743
+    .line 4794
     :pswitch_0
     sget-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->LOCATION_CHANGED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     goto :goto_0
 
-    .line 4744
+    .line 4795
     :pswitch_1
     sget-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->PROVIDER_DISABLED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     goto :goto_0
 
-    .line 4745
+    .line 4796
     :pswitch_2
     sget-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->PROVIDER_ENABLED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     goto :goto_0
 
-    .line 4746
+    .line 4797
     :pswitch_3
     sget-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->STATUS_CHANGED:Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     goto :goto_0
 
-    .line 4742
+    .line 4793
     nop
 
     :pswitch_data_0
@@ -241,7 +241,7 @@
     .parameter "name"
 
     .prologue
-    .line 4701
+    .line 4752
     const-class v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -257,7 +257,7 @@
     .locals 1
 
     .prologue
-    .line 4701
+    .line 4752
     sget-object v0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->$VALUES:[Lcom/google/glass/companion/Proto$LocationMessage$MessageType;
 
     invoke-virtual {v0}, [Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->clone()Ljava/lang/Object;
@@ -275,7 +275,7 @@
     .locals 1
 
     .prologue
-    .line 4739
+    .line 4790
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationMessage$MessageType;->value:I
 
     return v0

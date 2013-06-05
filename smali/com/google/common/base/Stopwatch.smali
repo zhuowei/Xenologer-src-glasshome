@@ -53,7 +53,9 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 92
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "ticker"
+
+    invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -70,7 +72,7 @@
     .parameter "unit"
 
     .prologue
-    .line 210
+    .line 236
     sget-object v0, Lcom/google/common/base/Stopwatch$1;->$SwitchMap$java$util$concurrent$TimeUnit:[I
 
     invoke-virtual {p0}, Ljava/util/concurrent/TimeUnit;->ordinal()I
@@ -81,40 +83,40 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 220
+    .line 246
     new-instance v0, Ljava/lang/AssertionError;
 
     invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
     throw v0
 
-    .line 212
+    .line 238
     :pswitch_0
     const-string v0, "ns"
 
-    .line 218
+    .line 244
     :goto_0
     return-object v0
 
-    .line 214
+    .line 240
     :pswitch_1
     const-string v0, "\u03bcs"
 
     goto :goto_0
 
-    .line 216
+    .line 242
     :pswitch_2
     const-string v0, "ms"
 
     goto :goto_0
 
-    .line 218
+    .line 244
     :pswitch_3
     const-string v0, "s"
 
     goto :goto_0
 
-    .line 210
+    .line 236
     nop
 
     :pswitch_data_0
@@ -133,7 +135,7 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 197
+    .line 223
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
@@ -146,14 +148,14 @@
 
     if-lez v0, :cond_0
 
-    .line 198
+    .line 224
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    .line 206
+    .line 232
     :goto_0
     return-object v0
 
-    .line 200
+    .line 226
     :cond_0
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -167,12 +169,12 @@
 
     if-lez v0, :cond_1
 
-    .line 201
+    .line 227
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     goto :goto_0
 
-    .line 203
+    .line 229
     :cond_1
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -186,12 +188,12 @@
 
     if-lez v0, :cond_2
 
-    .line 204
+    .line 230
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MICROSECONDS:Ljava/util/concurrent/TimeUnit;
 
     goto :goto_0
 
-    .line 206
+    .line 232
     :cond_2
     sget-object v0, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -202,7 +204,7 @@
     .locals 4
 
     .prologue
-    .line 145
+    .line 146
     iget-boolean v0, p0, Lcom/google/common/base/Stopwatch;->isRunning:Z
 
     if-eqz v0, :cond_0
@@ -232,26 +234,12 @@
 
 
 # virtual methods
-.method public elapsedMillis()J
-    .locals 2
-
-    .prologue
-    .line 166
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-virtual {p0, v0}, Lcom/google/common/base/Stopwatch;->elapsedTime(Ljava/util/concurrent/TimeUnit;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public elapsedTime(Ljava/util/concurrent/TimeUnit;)J
+.method public elapsed(Ljava/util/concurrent/TimeUnit;)J
     .locals 3
     .parameter "desiredUnit"
 
     .prologue
-    .line 157
+    .line 160
     invoke-direct {p0}, Lcom/google/common/base/Stopwatch;->elapsedNanos()J
 
     move-result-wide v0
@@ -259,6 +247,37 @@
     sget-object v2, Ljava/util/concurrent/TimeUnit;->NANOSECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {p1, v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->convert(JLjava/util/concurrent/TimeUnit;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public elapsedMillis()J
+    .locals 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 189
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {p0, v0}, Lcom/google/common/base/Stopwatch;->elapsed(Ljava/util/concurrent/TimeUnit;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public elapsedTime(Ljava/util/concurrent/TimeUnit;)J
+    .locals 2
+    .parameter "desiredUnit"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 176
+    invoke-virtual {p0, p1}, Lcom/google/common/base/Stopwatch;->elapsed(Ljava/util/concurrent/TimeUnit;)J
 
     move-result-wide v0
 
@@ -279,22 +298,22 @@
     .locals 2
 
     .prologue
-    .line 139
+    .line 140
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/common/base/Stopwatch;->elapsedNanos:J
 
-    .line 140
+    .line 141
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/common/base/Stopwatch;->isRunning:Z
 
-    .line 141
+    .line 142
     return-object p0
 .end method
 
 .method public start()Lcom/google/common/base/Stopwatch;
-    .locals 2
+    .locals 3
 
     .prologue
     const/4 v1, 0x1
@@ -307,12 +326,14 @@
     move v0, v1
 
     :goto_0
-    invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkState(Z)V
+    const-string v2, "This stopwatch is already running; it cannot be started more than once."
 
-    .line 112
-    iput-boolean v1, p0, Lcom/google/common/base/Stopwatch;->isRunning:Z
+    invoke-static {v0, v2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
     .line 113
+    iput-boolean v1, p0, Lcom/google/common/base/Stopwatch;->isRunning:Z
+
+    .line 114
     iget-object v0, p0, Lcom/google/common/base/Stopwatch;->ticker:Lcom/google/common/base/Ticker;
 
     invoke-virtual {v0}, Lcom/google/common/base/Ticker;->read()J
@@ -321,7 +342,7 @@
 
     iput-wide v0, p0, Lcom/google/common/base/Stopwatch;->startTick:J
 
-    .line 114
+    .line 115
     return-object p0
 
     .line 111
@@ -335,25 +356,27 @@
     .locals 6
 
     .prologue
-    .line 125
+    .line 126
     iget-object v2, p0, Lcom/google/common/base/Stopwatch;->ticker:Lcom/google/common/base/Ticker;
 
     invoke-virtual {v2}, Lcom/google/common/base/Ticker;->read()J
 
     move-result-wide v0
 
-    .line 126
+    .line 127
     .local v0, tick:J
     iget-boolean v2, p0, Lcom/google/common/base/Stopwatch;->isRunning:Z
 
-    invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkState(Z)V
+    const-string v3, "This stopwatch is already stopped; it cannot be stopped more than once."
 
-    .line 127
+    invoke-static {v2, v3}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
+
+    .line 128
     const/4 v2, 0x0
 
     iput-boolean v2, p0, Lcom/google/common/base/Stopwatch;->isRunning:Z
 
-    .line 128
+    .line 129
     iget-wide v2, p0, Lcom/google/common/base/Stopwatch;->elapsedNanos:J
 
     iget-wide v4, p0, Lcom/google/common/base/Stopwatch;->startTick:J
@@ -364,7 +387,7 @@
 
     iput-wide v2, p0, Lcom/google/common/base/Stopwatch;->elapsedNanos:J
 
-    .line 129
+    .line 130
     return-object p0
 .end method
 
@@ -375,7 +398,7 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 198
     const/4 v0, 0x4
 
     invoke-virtual {p0, v0}, Lcom/google/common/base/Stopwatch;->toString(I)Ljava/lang/String;
@@ -392,19 +415,22 @@
         value = "String.format()"
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 186
+    .line 213
     invoke-direct {p0}, Lcom/google/common/base/Stopwatch;->elapsedNanos()J
 
     move-result-wide v0
 
-    .line 188
+    .line 215
     .local v0, nanos:J
     invoke-static {v0, v1}, Lcom/google/common/base/Stopwatch;->chooseUnit(J)Ljava/util/concurrent/TimeUnit;
 
     move-result-object v2
 
-    .line 189
+    .line 216
     .local v2, unit:Ljava/util/concurrent/TimeUnit;
     long-to-double v5, v0
 
@@ -420,7 +446,7 @@
 
     div-double v3, v5, v7
 
-    .line 192
+    .line 219
     .local v3, value:D
     new-instance v5, Ljava/lang/StringBuilder;
 

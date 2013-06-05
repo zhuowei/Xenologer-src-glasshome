@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 776
+    .line 1064
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries$1;,"Lcom/google/common/collect/Maps$UnmodifiableEntries.1;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;->this$0:Lcom/google/common/collect/Maps$UnmodifiableEntries;
 
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 776
+    .line 1064
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries$1;,"Lcom/google/common/collect/Maps$UnmodifiableEntries.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;->delegate()Ljava/util/Iterator;
 
@@ -75,7 +75,7 @@
     .end annotation
 
     .prologue
-    .line 786
+    .line 1077
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries$1;,"Lcom/google/common/collect/Maps$UnmodifiableEntries.1;"
     iget-object v0, p0, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;->val$delegate:Ljava/util/Iterator;
 
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 776
+    .line 1064
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries$1;,"Lcom/google/common/collect/Maps$UnmodifiableEntries.1;"
     invoke-virtual {p0}, Lcom/google/common/collect/Maps$UnmodifiableEntries$1;->next()Ljava/util/Map$Entry;
 
@@ -106,7 +106,7 @@
     .end annotation
 
     .prologue
-    .line 778
+    .line 1067
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries$1;,"Lcom/google/common/collect/Maps$UnmodifiableEntries.1;"
     invoke-super {p0}, Lcom/google/common/collect/ForwardingIterator;->next()Ljava/lang/Object;
 
@@ -125,7 +125,7 @@
     .locals 1
 
     .prologue
-    .line 782
+    .line 1072
     .local p0, this:Lcom/google/common/collect/Maps$UnmodifiableEntries$1;,"Lcom/google/common/collect/Maps$UnmodifiableEntries.1;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 

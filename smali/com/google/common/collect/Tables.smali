@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation build Lcom/google/common/annotations/GwtCompatible;
 .end annotation
 
@@ -42,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 740
+    .line 733
     new-instance v0, Lcom/google/common/collect/Tables$1;
 
     invoke-direct {v0}, Lcom/google/common/collect/Tables$1;-><init>()V
@@ -56,7 +53,7 @@
     .locals 0
 
     .prologue
-    .line 50
+    .line 53
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -66,7 +63,7 @@
     .locals 1
 
     .prologue
-    .line 49
+    .line 52
     invoke-static {}, Lcom/google/common/collect/Tables;->unmodifiableWrapper()Lcom/google/common/base/Function;
 
     move-result-object v0
@@ -103,7 +100,7 @@
     .end annotation
 
     .prologue
-    .line 64
+    .line 67
     .local p0, rowKey:Ljava/lang/Object;,"TR;"
     .local p1, columnKey:Ljava/lang/Object;,"TC;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -118,6 +115,9 @@
     .locals 1
     .parameter
     .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -141,7 +141,7 @@
     .end annotation
 
     .prologue
-    .line 366
+    .line 354
     .local p0, backingMap:Ljava/util/Map;,"Ljava/util/Map<TR;Ljava/util/Map<TC;TV;>;>;"
     .local p1, factory:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<+Ljava/util/Map<TC;TV;>;>;"
     invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
@@ -150,10 +150,10 @@
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 367
+    .line 355
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 369
+    .line 357
     new-instance v0, Lcom/google/common/collect/StandardTable;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/StandardTable;-><init>(Ljava/util/Map;Lcom/google/common/base/Supplier;)V
@@ -165,6 +165,9 @@
     .locals 1
     .parameter
     .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -186,7 +189,7 @@
     .end annotation
 
     .prologue
-    .line 400
+    .line 389
     .local p0, fromTable:Lcom/google/common/collect/Table;,"Lcom/google/common/collect/Table<TR;TC;TV1;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV1;TV2;>;"
     new-instance v0, Lcom/google/common/collect/Tables$TransformedTable;
@@ -216,7 +219,7 @@
     .end annotation
 
     .prologue
-    .line 137
+    .line 140
     .local p0, table:Lcom/google/common/collect/Table;,"Lcom/google/common/collect/Table<TR;TC;TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/Tables$TransposeTable;
 
@@ -242,6 +245,9 @@
 .method public static unmodifiableRowSortedTable(Lcom/google/common/collect/RowSortedTable;)Lcom/google/common/collect/RowSortedTable;
     .locals 1
     .parameter
+    .annotation build Lcom/google/common/annotations/Beta;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
@@ -259,7 +265,7 @@
     .end annotation
 
     .prologue
-    .line 706
+    .line 699
     .local p0, table:Lcom/google/common/collect/RowSortedTable;,"Lcom/google/common/collect/RowSortedTable<TR;+TC;+TV;>;"
     new-instance v0, Lcom/google/common/collect/Tables$UnmodifiableRowSortedMap;
 
@@ -288,7 +294,7 @@
     .end annotation
 
     .prologue
-    .line 605
+    .line 596
     .local p0, table:Lcom/google/common/collect/Table;,"Lcom/google/common/collect/Table<+TR;+TC;+TV;>;"
     new-instance v0, Lcom/google/common/collect/Tables$UnmodifiableTable;
 
@@ -316,7 +322,7 @@
     .end annotation
 
     .prologue
-    .line 737
+    .line 730
     sget-object v0, Lcom/google/common/collect/Tables;->UNMODIFIABLE_WRAPPER:Lcom/google/common/base/Function;
 
     return-object v0

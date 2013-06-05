@@ -17,7 +17,7 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 134
     const-string v0, "0123456789abcdef"
 
     invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
@@ -33,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 33
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,19 +56,22 @@
 .method public equals(Ljava/lang/Object;)Z
     .locals 3
     .parameter "object"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 78
+    .line 92
     instance-of v1, p1, Lcom/google/common/hash/HashCode;
 
     if-eqz v1, :cond_0
 
     move-object v0, p1
 
-    .line 79
+    .line 93
     check-cast v0, Lcom/google/common/hash/HashCode;
 
-    .line 82
+    .line 96
     .local v0, that:Lcom/google/common/hash/HashCode;
     invoke-virtual {p0}, Lcom/google/common/hash/HashCode;->asBytes()[B
 
@@ -82,7 +85,7 @@
 
     move-result v1
 
-    .line 84
+    .line 98
     .end local v0           #that:Lcom/google/common/hash/HashCode;
     :goto_0
     return v1
@@ -97,7 +100,7 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 112
     invoke-virtual {p0}, Lcom/google/common/hash/HashCode;->asInt()I
 
     move-result v0
@@ -105,16 +108,19 @@
     return v0
 .end method
 
+.method public abstract padToLong()J
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 9
 
     .prologue
-    .line 110
+    .line 126
     invoke-virtual {p0}, Lcom/google/common/hash/HashCode;->asBytes()[B
 
     move-result-object v2
 
-    .line 112
+    .line 127
     .local v2, bytes:[B
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -124,7 +130,7 @@
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 113
+    .line 128
     .local v5, sb:Ljava/lang/StringBuilder;
     move-object v0, v2
 
@@ -140,7 +146,7 @@
 
     aget-byte v1, v0, v3
 
-    .line 114
+    .line 129
     .local v1, b:B
     sget-object v6, Lcom/google/common/hash/HashCode;->hexDigits:[C
 
@@ -162,12 +168,12 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 113
+    .line 128
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 116
+    .line 131
     .end local v1           #b:B
     :cond_0
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -186,12 +192,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 65
+    .line 78
     invoke-virtual {p0}, Lcom/google/common/hash/HashCode;->asBytes()[B
 
     move-result-object v0
 
-    .line 66
+    .line 79
     .local v0, hash:[B
     const/4 v1, 0x2
 
@@ -209,16 +215,16 @@
 
     move-result p3
 
-    .line 67
+    .line 80
     add-int v1, p2, p3
 
     array-length v2, p1
 
     invoke-static {p2, v1, v2}, Lcom/google/common/base/Preconditions;->checkPositionIndexes(III)V
 
-    .line 68
+    .line 81
     invoke-static {v0, v4, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 69
+    .line 82
     return p3
 .end method

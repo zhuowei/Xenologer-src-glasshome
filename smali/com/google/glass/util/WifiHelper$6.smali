@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 287
+    .line 291
     invoke-static {}, Lcom/google/glass/util/WifiHelper$Encryption;->values()[Lcom/google/glass/util/WifiHelper$Encryption;
 
     move-result-object v0

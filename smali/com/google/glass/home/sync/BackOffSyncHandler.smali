@@ -15,7 +15,9 @@
 # instance fields
 .field private nextSyncTime:J
 
-.field private numRetries:I
+.field private numFailures:I
+
+.field private numServerFailures:I
 
 .field private final retryStrategy:Lcom/google/glass/util/RetryStrategy;
 
@@ -25,7 +27,7 @@
     .locals 4
 
     .prologue
-    .line 28
+    .line 37
     const/16 v0, 0x3e8
 
     const-wide/high16 v1, 0x4000
@@ -38,7 +40,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/sync/BackOffSyncHandler;-><init>(Lcom/google/glass/util/RetryStrategy;)V
 
-    .line 30
+    .line 39
     return-void
 .end method
 
@@ -47,13 +49,13 @@
     .parameter "retryStrategy"
 
     .prologue
-    .line 32
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 33
+    .line 42
     iput-object p1, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->retryStrategy:Lcom/google/glass/util/RetryStrategy;
 
-    .line 34
+    .line 43
     return-void
 .end method
 
@@ -63,12 +65,12 @@
     .locals 5
 
     .prologue
-    .line 72
+    .line 94
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 73
+    .line 95
     .local v0, uptime:J
     iget-wide v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->nextSyncTime:J
 
@@ -76,10 +78,10 @@
 
     if-ltz v2, :cond_0
 
-    .line 74
+    .line 96
     const-wide/16 v2, 0x0
 
-    .line 76
+    .line 98
     :goto_0
     return-wide v2
 
@@ -100,21 +102,35 @@
 .method protected abstract getTag()Ljava/lang/String;
 .end method
 
-.method public handleFail()V
+.method public handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
     .locals 5
+    .parameter "errorCode"
 
     .prologue
-    .line 43
-    iget v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numRetries:I
+    .line 53
+    iget v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numFailures:I
 
     add-int/lit8 v2, v2, 0x1
 
-    iput v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numRetries:I
+    iput v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numFailures:I
 
-    .line 44
+    .line 54
+    sget-object v2, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->NETWORK_ERROR:Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
+
+    if-eq v2, p1, :cond_0
+
+    .line 55
+    iget v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numServerFailures:I
+
+    add-int/lit8 v2, v2, 0x1
+
+    iput v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numServerFailures:I
+
+    .line 57
+    :cond_0
     iget-object v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->retryStrategy:Lcom/google/glass/util/RetryStrategy;
 
-    iget v3, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numRetries:I
+    iget v3, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numFailures:I
 
     invoke-virtual {v2, v3}, Lcom/google/glass/util/RetryStrategy;->getDelayMillis(I)I
 
@@ -122,15 +138,15 @@
 
     int-to-long v0, v2
 
-    .line 45
+    .line 58
     .local v0, backOffDelay:J
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
-    if-ltz v2, :cond_0
+    if-ltz v2, :cond_1
 
-    .line 46
+    .line 59
     sget-object v2, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v3, 0x3c
@@ -143,7 +159,7 @@
 
     move-result-wide v0
 
-    .line 47
+    .line 60
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -152,11 +168,66 @@
 
     iput-wide v2, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->nextSyncTime:J
 
-    .line 51
+    .line 65
+    invoke-virtual {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->getTag()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Sync failed [errorCode="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", numFailures="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numFailures:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, ", numServerFailures="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget v4, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numServerFailures:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "]."
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 67
     return-void
 
-    .line 49
-    :cond_0
+    .line 62
+    :cond_1
     new-instance v2, Ljava/lang/AssertionError;
 
     const-string v3, "We should never stop trying when we use RetryStrategy.NO_MAX"
@@ -170,12 +241,15 @@
     .locals 1
 
     .prologue
-    .line 38
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numRetries:I
+    .line 47
+    iput v0, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numFailures:I
 
-    .line 39
+    .line 48
+    iput v0, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numServerFailures:I
+
+    .line 49
     return-void
 .end method
 
@@ -183,8 +257,28 @@
     .locals 1
 
     .prologue
-    .line 67
-    iget v0, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numRetries:I
+    .line 84
+    iget v0, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numFailures:I
+
+    if-lez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public hasServerFailures()Z
+    .locals 1
+
+    .prologue
+    .line 89
+    iget v0, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numServerFailures:I
 
     if-lez v0, :cond_0
 
@@ -203,7 +297,7 @@
     .locals 7
 
     .prologue
-    .line 55
+    .line 71
     iget-wide v3, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->nextSyncTime:J
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -212,11 +306,11 @@
 
     sub-long v0, v3, v5
 
-    .line 56
+    .line 72
     .local v0, remainingBackOffDelay:J
     iget-object v3, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->retryStrategy:Lcom/google/glass/util/RetryStrategy;
 
-    iget v4, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numRetries:I
+    iget v4, p0, Lcom/google/glass/home/sync/BackOffSyncHandler;->numServerFailures:I
 
     invoke-virtual {v3, v4}, Lcom/google/glass/util/RetryStrategy;->tryAgain(I)Z
 
@@ -232,12 +326,12 @@
 
     const/4 v2, 0x1
 
-    .line 58
+    .line 75
     .local v2, shouldRetry:Z
     :goto_0
     if-nez v2, :cond_0
 
-    .line 59
+    .line 76
     invoke-virtual {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->getTag()Ljava/lang/String;
 
     move-result-object v3
@@ -268,11 +362,11 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 62
+    .line 79
     :cond_0
     return v2
 
-    .line 56
+    .line 72
     .end local v2           #shouldRetry:Z
     :cond_1
     const/4 v2, 0x0

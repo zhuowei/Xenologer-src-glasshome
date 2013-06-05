@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 95
+    .line 65
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,43 +32,11 @@
     .end annotation
 
     .prologue
-    .line 36
+    .line 35
     .local p0, array:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0}, [Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     move-result-object v0
-
-    check-cast v0, [Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method static newArray(Ljava/lang/Class;I)[Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .parameter "length"
-    .annotation build Lcom/google/common/annotations/GwtIncompatible;
-        value = "Array.newInstance(Class, int)"
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/lang/Class",
-            "<TT;>;I)[TT;"
-        }
-    .end annotation
-
-    .prologue
-    .line 65
-    .local p0, type:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
-    invoke-static {p0, p1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, [Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
@@ -88,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 46
     .local p0, reference:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -98,7 +66,7 @@
 
     move-result-object v1
 
-    .line 81
+    .line 51
     .local v1, type:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-static {v1, p1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
@@ -110,7 +78,7 @@
 
     check-cast v0, [Ljava/lang/Object;
 
-    .line 82
+    .line 52
     .local v0, result:[Ljava/lang/Object;,"[TT;"
     return-object v0
 .end method
@@ -120,26 +88,10 @@
     .parameter "mapMaker"
 
     .prologue
-    .line 92
+    .line 62
     invoke-virtual {p0}, Lcom/google/common/collect/MapMaker;->weakKeys()Lcom/google/common/collect/MapMaker;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method static unsafeArrayCopy([Ljava/lang/Object;I[Ljava/lang/Object;II)V
-    .locals 0
-    .parameter "src"
-    .parameter "srcPos"
-    .parameter "dest"
-    .parameter "destPos"
-    .parameter "length"
-
-    .prologue
-    .line 53
-    invoke-static {p0, p1, p2, p3, p4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 54
-    return-void
 .end method

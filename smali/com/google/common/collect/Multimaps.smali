@@ -10,7 +10,6 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/common/collect/Multimaps$FilteredMultimap;,
         Lcom/google/common/collect/Multimaps$AsMap;,
         Lcom/google/common/collect/Multimaps$EntrySet;,
         Lcom/google/common/collect/Multimaps$Entries;,
@@ -18,6 +17,7 @@
         Lcom/google/common/collect/Multimaps$Keys;,
         Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;,
         Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;,
+        Lcom/google/common/collect/Multimaps$ValueFunction;,
         Lcom/google/common/collect/Multimaps$MapMultimap;,
         Lcom/google/common/collect/Multimaps$UnmodifiableAsMapEntries;,
         Lcom/google/common/collect/Multimaps$UnmodifiableSortedSetMultimap;,
@@ -38,7 +38,7 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
     .parameter "x0"
 
     .prologue
-    .line 66
+    .line 67
     invoke-static {p0}, Lcom/google/common/collect/Multimaps;->unmodifiableAsMapEntries(Ljava/util/Set;)Ljava/util/Set;
 
     move-result-object v0
@@ -62,7 +62,7 @@
     .parameter "x0"
 
     .prologue
-    .line 66
+    .line 67
     invoke-static {p0}, Lcom/google/common/collect/Multimaps;->unmodifiableValueCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
@@ -75,7 +75,7 @@
     .parameter "x0"
 
     .prologue
-    .line 66
+    .line 67
     invoke-static {p0}, Lcom/google/common/collect/Multimaps;->unmodifiableEntries(Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
@@ -88,7 +88,7 @@
     .parameter "x0"
 
     .prologue
-    .line 66
+    .line 67
     invoke-static {p0}, Lcom/google/common/collect/Multimaps;->unmodifiableAsMapEntry(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -100,9 +100,6 @@
     .locals 2
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "untested"
     .end annotation
@@ -126,20 +123,20 @@
     .end annotation
 
     .prologue
-    .line 2273
+    .line 2212
     .local p0, unfiltered:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2274
-    instance-of v0, p0, Lcom/google/common/collect/Multimaps$FilteredMultimap;
+    .line 2213
+    instance-of v0, p0, Lcom/google/common/collect/FilteredMultimap;
 
     if-eqz v0, :cond_0
 
-    check-cast p0, Lcom/google/common/collect/Multimaps$FilteredMultimap;
+    check-cast p0, Lcom/google/common/collect/FilteredMultimap;
 
     .end local p0           #unfiltered:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
-    invoke-static {p0, p1}, Lcom/google/common/collect/Multimaps;->filterFiltered(Lcom/google/common/collect/Multimaps$FilteredMultimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
+    invoke-static {p0, p1}, Lcom/google/common/collect/Multimaps;->filterFiltered(Lcom/google/common/collect/FilteredMultimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
 
     move-result-object v0
 
@@ -148,7 +145,7 @@
 
     .restart local p0       #unfiltered:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     :cond_0
-    new-instance v1, Lcom/google/common/collect/Multimaps$FilteredMultimap;
+    new-instance v1, Lcom/google/common/collect/FilteredEntryMultimap;
 
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -156,14 +153,14 @@
 
     check-cast v0, Lcom/google/common/collect/Multimap;
 
-    invoke-direct {v1, v0, p1}, Lcom/google/common/collect/Multimaps$FilteredMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
+    invoke-direct {v1, v0, p1}, Lcom/google/common/collect/FilteredEntryMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
 
     move-object v0, v1
 
     goto :goto_0
 .end method
 
-.method private static filterFiltered(Lcom/google/common/collect/Multimaps$FilteredMultimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
+.method private static filterFiltered(Lcom/google/common/collect/FilteredMultimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
     .locals 3
     .parameter
     .parameter
@@ -174,7 +171,7 @@
             "V:",
             "Ljava/lang/Object;",
             ">(",
-            "Lcom/google/common/collect/Multimaps$FilteredMultimap",
+            "Lcom/google/common/collect/FilteredMultimap",
             "<TK;TV;>;",
             "Lcom/google/common/base/Predicate",
             "<-",
@@ -186,33 +183,32 @@
     .end annotation
 
     .prologue
-    .line 2288
-    .local p0, map:Lcom/google/common/collect/Multimaps$FilteredMultimap;,"Lcom/google/common/collect/Multimaps$FilteredMultimap<TK;TV;>;"
+    .line 2227
+    .local p0, multimap:Lcom/google/common/collect/FilteredMultimap;,"Lcom/google/common/collect/FilteredMultimap<TK;TV;>;"
     .local p1, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-Ljava/util/Map$Entry<TK;TV;>;>;"
-    iget-object v1, p0, Lcom/google/common/collect/Multimaps$FilteredMultimap;->predicate:Lcom/google/common/base/Predicate;
+    invoke-virtual {p0}, Lcom/google/common/collect/FilteredMultimap;->entryPredicate()Lcom/google/common/base/Predicate;
+
+    move-result-object v1
 
     invoke-static {v1, p1}, Lcom/google/common/base/Predicates;->and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
 
     move-result-object v0
 
-    .line 2290
+    .line 2228
     .local v0, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/Multimaps$FilteredMultimap;
+    new-instance v1, Lcom/google/common/collect/FilteredEntryMultimap;
 
-    iget-object v2, p0, Lcom/google/common/collect/Multimaps$FilteredMultimap;->unfiltered:Lcom/google/common/collect/Multimap;
+    iget-object v2, p0, Lcom/google/common/collect/FilteredMultimap;->unfiltered:Lcom/google/common/collect/Multimap;
 
-    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/Multimaps$FilteredMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
+    invoke-direct {v1, v2, v0}, Lcom/google/common/collect/FilteredEntryMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
 
     return-object v1
 .end method
 
 .method public static filterKeys(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
-    .locals 2
+    .locals 7
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "untested"
     .end annotation
@@ -234,32 +230,107 @@
     .end annotation
 
     .prologue
-    .line 2185
+    .line 2131
     .local p0, unfiltered:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     .local p1, keyPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TK;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    instance-of v3, p0, Lcom/google/common/collect/FilteredKeyMultimap;
 
-    .line 2186
-    new-instance v0, Lcom/google/common/collect/Multimaps$4;
+    if-eqz v3, :cond_0
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Multimaps$4;-><init>(Lcom/google/common/base/Predicate;)V
+    move-object v1, p0
 
-    .line 2193
-    .local v0, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
-    invoke-static {p0, v0}, Lcom/google/common/collect/Multimaps;->filterEntries(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
+    .line 2132
+    check-cast v1, Lcom/google/common/collect/FilteredKeyMultimap;
 
-    move-result-object v1
+    .line 2133
+    .local v1, prev:Lcom/google/common/collect/FilteredKeyMultimap;,"Lcom/google/common/collect/FilteredKeyMultimap<TK;TV;>;"
+    const/4 v3, 0x2
 
-    return-object v1
+    new-array v3, v3, [Lcom/google/common/base/Predicate;
+
+    const/4 v4, 0x0
+
+    iget-object v5, v1, Lcom/google/common/collect/FilteredKeyMultimap;->keyPredicate:Lcom/google/common/base/Predicate;
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    aput-object p1, v3, v4
+
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    .line 2135
+    .local v0, predicateList:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/base/Predicate<TK;>;>;"
+    new-instance v3, Lcom/google/common/collect/FilteredKeyMultimap;
+
+    iget-object v4, v1, Lcom/google/common/collect/FilteredKeyMultimap;->unfiltered:Lcom/google/common/collect/Multimap;
+
+    invoke-static {v0}, Lcom/google/common/base/Predicates;->and(Ljava/lang/Iterable;)Lcom/google/common/base/Predicate;
+
+    move-result-object v5
+
+    invoke-direct {v3, v4, v5}, Lcom/google/common/collect/FilteredKeyMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
+
+    .line 2141
+    .end local v0           #predicateList:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/base/Predicate<TK;>;>;"
+    .end local v1           #prev:Lcom/google/common/collect/FilteredKeyMultimap;,"Lcom/google/common/collect/FilteredKeyMultimap<TK;TV;>;"
+    :goto_0
+    return-object v3
+
+    .line 2136
+    :cond_0
+    instance-of v3, p0, Lcom/google/common/collect/FilteredMultimap;
+
+    if-eqz v3, :cond_1
+
+    move-object v2, p0
+
+    .line 2137
+    check-cast v2, Lcom/google/common/collect/FilteredMultimap;
+
+    .line 2138
+    .local v2, prev:Lcom/google/common/collect/FilteredMultimap;,"Lcom/google/common/collect/FilteredMultimap<TK;TV;>;"
+    new-instance v3, Lcom/google/common/collect/FilteredEntryMultimap;
+
+    iget-object v4, v2, Lcom/google/common/collect/FilteredMultimap;->unfiltered:Lcom/google/common/collect/Multimap;
+
+    invoke-virtual {v2}, Lcom/google/common/collect/FilteredMultimap;->entryPredicate()Lcom/google/common/base/Predicate;
+
+    move-result-object v5
+
+    invoke-static {}, Lcom/google/common/collect/Maps;->keyFunction()Lcom/google/common/base/Function;
+
+    move-result-object v6
+
+    invoke-static {p1, v6}, Lcom/google/common/base/Predicates;->compose(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;)Lcom/google/common/base/Predicate;
+
+    move-result-object v6
+
+    invoke-static {v5, v6}, Lcom/google/common/base/Predicates;->and(Lcom/google/common/base/Predicate;Lcom/google/common/base/Predicate;)Lcom/google/common/base/Predicate;
+
+    move-result-object v5
+
+    invoke-direct {v3, v4, v5}, Lcom/google/common/collect/FilteredEntryMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
+
+    goto :goto_0
+
+    .line 2141
+    .end local v2           #prev:Lcom/google/common/collect/FilteredMultimap;,"Lcom/google/common/collect/FilteredMultimap<TK;TV;>;"
+    :cond_1
+    new-instance v3, Lcom/google/common/collect/FilteredKeyMultimap;
+
+    invoke-direct {v3, p0, p1}, Lcom/google/common/collect/FilteredKeyMultimap;-><init>(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)V
+
+    goto :goto_0
 .end method
 
 .method public static filterValues(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
-    .locals 2
+    .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
         value = "untested"
     .end annotation
@@ -281,23 +352,22 @@
     .end annotation
 
     .prologue
-    .line 2230
+    .line 2178
     .local p0, unfiltered:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     .local p1, valuePredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TV;>;"
-    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {}, Lcom/google/common/collect/Maps;->valueFunction()Lcom/google/common/base/Function;
 
-    .line 2231
-    new-instance v0, Lcom/google/common/collect/Multimaps$5;
+    move-result-object v0
 
-    invoke-direct {v0, p1}, Lcom/google/common/collect/Multimaps$5;-><init>(Lcom/google/common/base/Predicate;)V
+    invoke-static {p1, v0}, Lcom/google/common/base/Predicates;->compose(Lcom/google/common/base/Predicate;Lcom/google/common/base/Function;)Lcom/google/common/base/Predicate;
 
-    .line 2238
-    .local v0, entryPredicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<Ljava/util/Map$Entry<TK;TV;>;>;"
+    move-result-object v0
+
     invoke-static {p0, v0}, Lcom/google/common/collect/Multimaps;->filterEntries(Lcom/google/common/collect/Multimap;Lcom/google/common/base/Predicate;)Lcom/google/common/collect/Multimap;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static forMap(Ljava/util/Map;)Lcom/google/common/collect/SetMultimap;
@@ -318,7 +388,7 @@
     .end annotation
 
     .prologue
-    .line 1023
+    .line 1070
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$MapMultimap;
 
@@ -348,7 +418,7 @@
     .end annotation
 
     .prologue
-    .line 1784
+    .line 1765
     .local p0, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TV;>;"
     .local p1, keyFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV;TK;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -360,55 +430,6 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public static index(Ljava/lang/Object;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableListMultimap;
-    .locals 2
-    .parameter
-    .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<K:",
-            "Ljava/lang/Object;",
-            "V:",
-            "Ljava/lang/Object;",
-            "I:",
-            "Ljava/lang/Object;",
-            ":",
-            "Ljava/lang/Iterable",
-            "<TV;>;:",
-            "Ljava/util/Iterator",
-            "<TV;>;>(TI;",
-            "Lcom/google/common/base/Function",
-            "<-TV;TK;>;)",
-            "Lcom/google/common/collect/ImmutableListMultimap",
-            "<TK;TV;>;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 1801
-    .local p0, values:Ljava/lang/Object;,"TI;"
-    .local p1, keyFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV;TK;>;"
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Iterable;
-
-    .line 1802
-    .local v0, valuesIterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TV;>;"
-    invoke-static {v0, p1}, Lcom/google/common/collect/Multimaps;->index(Ljava/lang/Iterable;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableListMultimap;
-
-    move-result-object v1
-
-    return-object v1
 .end method
 
 .method public static index(Ljava/util/Iterator;Lcom/google/common/base/Function;)Lcom/google/common/collect/ImmutableListMultimap;
@@ -432,17 +453,17 @@
     .end annotation
 
     .prologue
-    .line 1850
+    .line 1813
     .local p0, values:Ljava/util/Iterator;,"Ljava/util/Iterator<TV;>;"
     .local p1, keyFunction:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV;TK;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1851
+    .line 1814
     invoke-static {}, Lcom/google/common/collect/ImmutableListMultimap;->builder()Lcom/google/common/collect/ImmutableListMultimap$Builder;
 
     move-result-object v0
 
-    .line 1853
+    .line 1815
     .local v0, builder:Lcom/google/common/collect/ImmutableListMultimap$Builder;,"Lcom/google/common/collect/ImmutableListMultimap$Builder<TK;TV;>;"
     :goto_0
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -451,16 +472,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 1854
+    .line 1816
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 1855
+    .line 1817
     .local v1, value:Ljava/lang/Object;,"TV;"
     invoke-static {v1, p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1856
+    .line 1818
     invoke-interface {p1, v1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -469,7 +490,7 @@
 
     goto :goto_0
 
-    .line 1858
+    .line 1820
     .end local v1           #value:Ljava/lang/Object;,"TV;"
     :cond_0
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableListMultimap$Builder;->build()Lcom/google/common/collect/ImmutableListMultimap;
@@ -498,12 +519,12 @@
     .end annotation
 
     .prologue
-    .line 405
+    .line 407
     .local p0, source:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TV;+TK;>;"
     .local p1, dest:Lcom/google/common/collect/Multimap;,"TM;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 406
+    .line 408
     invoke-interface {p0}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
 
     move-result-object v2
@@ -526,7 +547,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 407
+    .line 409
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TV;+TK;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -540,7 +561,7 @@
 
     goto :goto_0
 
-    .line 409
+    .line 411
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TV;+TK;>;"
     :cond_0
     return-object p1
@@ -571,7 +592,7 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 196
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     .local p1, factory:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<+Ljava/util/List<TV;>;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$CustomListMultimap;
@@ -606,7 +627,7 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 115
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     .local p1, factory:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<+Ljava/util/Collection<TV;>;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$CustomMultimap;
@@ -641,7 +662,7 @@
     .end annotation
 
     .prologue
-    .line 268
+    .line 273
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     .local p1, factory:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<+Ljava/util/Set<TV;>;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$CustomSetMultimap;
@@ -676,7 +697,7 @@
     .end annotation
 
     .prologue
-    .line 346
+    .line 349
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     .local p1, factory:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<+Ljava/util/SortedSet<TV;>;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$CustomSortedSetMultimap;
@@ -704,7 +725,7 @@
     .end annotation
 
     .prologue
-    .line 840
+    .line 880
     .local p0, multimap:Lcom/google/common/collect/ListMultimap;,"Lcom/google/common/collect/ListMultimap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -733,7 +754,7 @@
     .end annotation
 
     .prologue
-    .line 447
+    .line 448
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -762,7 +783,7 @@
     .end annotation
 
     .prologue
-    .line 745
+    .line 788
     .local p0, multimap:Lcom/google/common/collect/SetMultimap;,"Lcom/google/common/collect/SetMultimap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -791,7 +812,7 @@
     .end annotation
 
     .prologue
-    .line 800
+    .line 841
     .local p0, multimap:Lcom/google/common/collect/SortedSetMultimap;,"Lcom/google/common/collect/SortedSetMultimap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -806,9 +827,6 @@
     .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -828,7 +846,7 @@
     .end annotation
 
     .prologue
-    .line 1705
+    .line 1684
     .local p0, fromMap:Lcom/google/common/collect/ListMultimap;,"Lcom/google/common/collect/ListMultimap<TK;TV1;>;"
     .local p1, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<-TK;-TV1;TV2;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$TransformedEntriesListMultimap;
@@ -842,9 +860,6 @@
     .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -864,7 +879,7 @@
     .end annotation
 
     .prologue
-    .line 1398
+    .line 1424
     .local p0, fromMap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV1;>;"
     .local p1, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<-TK;-TV1;TV2;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
@@ -878,9 +893,6 @@
     .locals 2
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -900,17 +912,17 @@
     .end annotation
 
     .prologue
-    .line 1638
+    .line 1620
     .local p0, fromMultimap:Lcom/google/common/collect/ListMultimap;,"Lcom/google/common/collect/ListMultimap<TK;TV1;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV1;TV2;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1639
+    .line 1621
     new-instance v0, Lcom/google/common/collect/Multimaps$3;
 
     invoke-direct {v0, p1}, Lcom/google/common/collect/Multimaps$3;-><init>(Lcom/google/common/base/Function;)V
 
-    .line 1646
+    .line 1627
     .local v0, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<TK;TV1;TV2;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/Multimaps;->transformEntries(Lcom/google/common/collect/ListMultimap;Lcom/google/common/collect/Maps$EntryTransformer;)Lcom/google/common/collect/ListMultimap;
 
@@ -923,9 +935,6 @@
     .locals 2
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<K:",
@@ -945,17 +954,17 @@
     .end annotation
 
     .prologue
-    .line 1328
+    .line 1357
     .local p0, fromMultimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV1;>;"
     .local p1, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TV1;TV2;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1329
+    .line 1358
     new-instance v0, Lcom/google/common/collect/Multimaps$2;
 
     invoke-direct {v0, p1}, Lcom/google/common/collect/Multimaps$2;-><init>(Lcom/google/common/base/Function;)V
 
-    .line 1336
+    .line 1364
     .local v0, transformer:Lcom/google/common/collect/Maps$EntryTransformer;,"Lcom/google/common/collect/Maps$EntryTransformer<TK;TV1;TV2;>;"
     invoke-static {p0, v0}, Lcom/google/common/collect/Multimaps;->transformEntries(Lcom/google/common/collect/Multimap;Lcom/google/common/collect/Maps$EntryTransformer;)Lcom/google/common/collect/Multimap;
 
@@ -990,7 +999,7 @@
     .end annotation
 
     .prologue
-    .line 956
+    .line 994
     .local p0, asMapEntries:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     new-instance v0, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapEntries;
 
@@ -1025,11 +1034,11 @@
     .end annotation
 
     .prologue
-    .line 914
+    .line 952
     .local p0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 915
+    .line 953
     new-instance v0, Lcom/google/common/collect/Multimaps$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Multimaps$1;-><init>(Ljava/util/Map$Entry;)V
@@ -1059,13 +1068,13 @@
     .end annotation
 
     .prologue
-    .line 937
+    .line 976
     .local p0, entries:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     instance-of v0, p0, Ljava/util/Set;
 
     if-eqz v0, :cond_0
 
-    .line 938
+    .line 977
     check-cast p0, Ljava/util/Set;
 
     .end local p0           #entries:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
@@ -1073,7 +1082,7 @@
 
     move-result-object v0
 
-    .line 940
+    .line 979
     .restart local p0       #entries:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     :goto_0
     return-object v0
@@ -1111,7 +1120,7 @@
     .end annotation
 
     .prologue
-    .line 878
+    .line 917
     .local p0, delegate:Lcom/google/common/collect/ImmutableListMultimap;,"Lcom/google/common/collect/ImmutableListMultimap<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1140,7 +1149,7 @@
     .end annotation
 
     .prologue
-    .line 863
+    .line 902
     .local p0, delegate:Lcom/google/common/collect/ListMultimap;,"Lcom/google/common/collect/ListMultimap<TK;TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableListMultimap;
 
@@ -1150,7 +1159,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 867
+    .line 905
     .end local p0           #delegate:Lcom/google/common/collect/ListMultimap;,"Lcom/google/common/collect/ListMultimap<TK;TV;>;"
     :cond_0
     :goto_0
@@ -1188,7 +1197,7 @@
     .end annotation
 
     .prologue
-    .line 484
+    .line 483
     .local p0, delegate:Lcom/google/common/collect/ImmutableMultimap;,"Lcom/google/common/collect/ImmutableMultimap<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1227,7 +1236,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 473
+    .line 472
     .end local p0           #delegate:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     :cond_0
     :goto_0
@@ -1265,7 +1274,7 @@
     .end annotation
 
     .prologue
-    .line 783
+    .line 824
     .local p0, delegate:Lcom/google/common/collect/ImmutableSetMultimap;,"Lcom/google/common/collect/ImmutableSetMultimap<TK;TV;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1294,7 +1303,7 @@
     .end annotation
 
     .prologue
-    .line 768
+    .line 810
     .local p0, delegate:Lcom/google/common/collect/SetMultimap;,"Lcom/google/common/collect/SetMultimap<TK;TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableSetMultimap;
 
@@ -1304,7 +1313,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 772
+    .line 813
     .end local p0           #delegate:Lcom/google/common/collect/SetMultimap;,"Lcom/google/common/collect/SetMultimap<TK;TV;>;"
     :cond_0
     :goto_0
@@ -1339,13 +1348,13 @@
     .end annotation
 
     .prologue
-    .line 823
+    .line 864
     .local p0, delegate:Lcom/google/common/collect/SortedSetMultimap;,"Lcom/google/common/collect/SortedSetMultimap<TK;TV;>;"
     instance-of v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableSortedSetMultimap;
 
     if-eqz v0, :cond_0
 
-    .line 826
+    .line 867
     .end local p0           #delegate:Lcom/google/common/collect/SortedSetMultimap;,"Lcom/google/common/collect/SortedSetMultimap<TK;TV;>;"
     :goto_0
     return-object p0
@@ -1377,13 +1386,13 @@
     .end annotation
 
     .prologue
-    .line 891
+    .line 929
     .local p0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     instance-of v0, p0, Ljava/util/SortedSet;
 
     if-eqz v0, :cond_0
 
-    .line 892
+    .line 930
     check-cast p0, Ljava/util/SortedSet;
 
     .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
@@ -1391,18 +1400,18 @@
 
     move-result-object v0
 
-    .line 898
+    .line 936
     .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     :goto_0
     return-object v0
 
-    .line 893
+    .line 931
     :cond_0
     instance-of v0, p0, Ljava/util/Set;
 
     if-eqz v0, :cond_1
 
-    .line 894
+    .line 932
     check-cast p0, Ljava/util/Set;
 
     .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
@@ -1412,14 +1421,14 @@
 
     goto :goto_0
 
-    .line 895
+    .line 933
     .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     :cond_1
     instance-of v0, p0, Ljava/util/List;
 
     if-eqz v0, :cond_2
 
-    .line 896
+    .line 934
     check-cast p0, Ljava/util/List;
 
     .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
@@ -1429,7 +1438,7 @@
 
     goto :goto_0
 
-    .line 898
+    .line 936
     .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     :cond_2
     invoke-static {p0}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;

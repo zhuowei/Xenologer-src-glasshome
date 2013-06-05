@@ -7,6 +7,10 @@
 
 
 # annotations
+.annotation build Lcom/google/common/annotations/GwtIncompatible;
+    value = "serialization"
+.end annotation
+
 .annotation system Ldalvik/annotation/EnclosingClass;
     value = Lcom/google/common/collect/ImmutableAsList;
 .end annotation
@@ -45,14 +49,14 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 66
     .local p1, collection:Lcom/google/common/collect/ImmutableCollection;,"Lcom/google/common/collect/ImmutableCollection<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 53
+    .line 67
     iput-object p1, p0, Lcom/google/common/collect/ImmutableAsList$SerializedForm;->collection:Lcom/google/common/collect/ImmutableCollection;
 
-    .line 54
+    .line 68
     return-void
 .end method
 
@@ -62,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 56
+    .line 71
     iget-object v0, p0, Lcom/google/common/collect/ImmutableAsList$SerializedForm;->collection:Lcom/google/common/collect/ImmutableCollection;
 
     invoke-virtual {v0}, Lcom/google/common/collect/ImmutableCollection;->asList()Lcom/google/common/collect/ImmutableList;

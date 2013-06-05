@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 49
     const/16 v0, 0x400
 
     new-array v0, v0, [C

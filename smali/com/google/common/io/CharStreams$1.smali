@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/CharStreams;->newReaderSupplier(Ljava/lang/String;)Lcom/google/common/io/InputSupplier;
+    value = Lcom/google/common/io/CharStreams;->join(Ljava/lang/Iterable;)Lcom/google/common/io/InputSupplier;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -21,24 +21,24 @@
         "Ljava/lang/Object;",
         "Lcom/google/common/io/InputSupplier",
         "<",
-        "Ljava/io/StringReader;",
+        "Ljava/io/Reader;",
         ">;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$value:Ljava/lang/String;
+.field final synthetic val$suppliers:Ljava/lang/Iterable;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/Iterable;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 68
-    iput-object p1, p0, Lcom/google/common/io/CharStreams$1;->val$value:Ljava/lang/String;
+    .line 414
+    iput-object p1, p0, Lcom/google/common/io/CharStreams$1;->val$suppliers:Ljava/lang/Iterable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,16 +47,25 @@
 
 
 # virtual methods
-.method public getInput()Ljava/io/StringReader;
+.method public getInput()Ljava/io/Reader;
     .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .prologue
-    .line 71
-    new-instance v0, Ljava/io/StringReader;
+    .line 416
+    new-instance v0, Lcom/google/common/io/MultiReader;
 
-    iget-object v1, p0, Lcom/google/common/io/CharStreams$1;->val$value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/common/io/CharStreams$1;->val$suppliers:Ljava/lang/Iterable;
 
-    invoke-direct {v0, v1}, Ljava/io/StringReader;-><init>(Ljava/lang/String;)V
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/common/io/MultiReader;-><init>(Ljava/util/Iterator;)V
 
     return-object v0
 .end method
@@ -70,8 +79,8 @@
     .end annotation
 
     .prologue
-    .line 68
-    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$1;->getInput()Ljava/io/StringReader;
+    .line 414
+    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$1;->getInput()Ljava/io/Reader;
 
     move-result-object v0
 

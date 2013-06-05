@@ -1,5 +1,5 @@
 .class Lcom/google/common/cache/LocalCache$WriteQueue$2;
-.super Lcom/google/common/collect/AbstractLinkedIterator;
+.super Lcom/google/common/collect/AbstractSequentialIterator;
 .source "LocalCache.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/common/collect/AbstractLinkedIterator",
+        "Lcom/google/common/collect/AbstractSequentialIterator",
         "<",
         "Lcom/google/common/cache/LocalCache$ReferenceEntry",
         "<TK;TV;>;>;"
@@ -34,12 +34,12 @@
     .parameter
 
     .prologue
-    .line 3738
+    .line 3650
     .local p0, this:Lcom/google/common/cache/LocalCache$WriteQueue$2;,"Lcom/google/common/cache/LocalCache$WriteQueue.2;"
     .local p2, x0:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/cache/LocalCache$WriteQueue$2;->this$0:Lcom/google/common/cache/LocalCache$WriteQueue;
 
-    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractLinkedIterator;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/AbstractSequentialIterator;-><init>(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -60,14 +60,14 @@
     .end annotation
 
     .prologue
-    .line 3741
+    .line 3654
     .local p0, this:Lcom/google/common/cache/LocalCache$WriteQueue$2;,"Lcom/google/common/cache/LocalCache$WriteQueue.2;"
     .local p1, previous:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     invoke-interface {p1}, Lcom/google/common/cache/LocalCache$ReferenceEntry;->getNextInWriteQueue()Lcom/google/common/cache/LocalCache$ReferenceEntry;
 
     move-result-object v0
 
-    .line 3742
+    .line 3655
     .local v0, next:Lcom/google/common/cache/LocalCache$ReferenceEntry;,"Lcom/google/common/cache/LocalCache$ReferenceEntry<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/cache/LocalCache$WriteQueue$2;->this$0:Lcom/google/common/cache/LocalCache$WriteQueue;
 
@@ -87,7 +87,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3738
+    .line 3650
     .local p0, this:Lcom/google/common/cache/LocalCache$WriteQueue$2;,"Lcom/google/common/cache/LocalCache$WriteQueue.2;"
     check-cast p1, Lcom/google/common/cache/LocalCache$ReferenceEntry;
 

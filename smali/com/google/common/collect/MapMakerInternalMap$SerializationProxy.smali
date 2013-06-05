@@ -64,7 +64,7 @@
     .end annotation
 
     .prologue
-    .line 4042
+    .line 3879
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;,"Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy<TK;TV;>;"
     .local p3, keyEquivalence:Lcom/google/common/base/Equivalence;,"Lcom/google/common/base/Equivalence<Ljava/lang/Object;>;"
     .local p4, valueEquivalence:Lcom/google/common/base/Equivalence;,"Lcom/google/common/base/Equivalence<Ljava/lang/Object;>;"
@@ -72,7 +72,7 @@
     .local p12, delegate:Ljava/util/concurrent/ConcurrentMap;,"Ljava/util/concurrent/ConcurrentMap<TK;TV;>;"
     invoke-direct/range {p0 .. p12}, Lcom/google/common/collect/MapMakerInternalMap$AbstractSerializationProxy;-><init>(Lcom/google/common/collect/MapMakerInternalMap$Strength;Lcom/google/common/collect/MapMakerInternalMap$Strength;Lcom/google/common/base/Equivalence;Lcom/google/common/base/Equivalence;JJIILcom/google/common/collect/MapMaker$RemovalListener;Ljava/util/concurrent/ConcurrentMap;)V
 
-    .line 4044
+    .line 3881
     return-void
 .end method
 
@@ -87,16 +87,16 @@
     .end annotation
 
     .prologue
-    .line 4052
+    .line 3889
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;,"Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 4053
+    .line 3890
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;->readMapMaker(Ljava/io/ObjectInputStream;)Lcom/google/common/collect/MapMaker;
 
     move-result-object v0
 
-    .line 4054
+    .line 3891
     .local v0, mapMaker:Lcom/google/common/collect/MapMaker;
     invoke-virtual {v0}, Lcom/google/common/collect/MapMaker;->makeMap()Ljava/util/concurrent/ConcurrentMap;
 
@@ -104,10 +104,10 @@
 
     iput-object v1, p0, Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;->delegate:Ljava/util/concurrent/ConcurrentMap;
 
-    .line 4055
+    .line 3892
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;->readEntries(Ljava/io/ObjectInputStream;)V
 
-    .line 4056
+    .line 3893
     return-void
 .end method
 
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 4059
+    .line 3896
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;,"Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;->delegate:Ljava/util/concurrent/ConcurrentMap;
 
@@ -132,13 +132,13 @@
     .end annotation
 
     .prologue
-    .line 4047
+    .line 3884
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;,"Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 4048
+    .line 3885
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapMakerInternalMap$SerializationProxy;->writeMapTo(Ljava/io/ObjectOutputStream;)V
 
-    .line 4049
+    .line 3886
     return-void
 .end method

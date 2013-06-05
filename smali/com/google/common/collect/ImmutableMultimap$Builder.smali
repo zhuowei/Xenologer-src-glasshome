@@ -35,6 +35,15 @@
     .end annotation
 .end field
 
+.field keyComparator:Ljava/util/Comparator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Comparator",
+            "<-TK;>;"
+        }
+    .end annotation
+.end field
+
 .field valueComparator:Ljava/util/Comparator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,25 +59,25 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 164
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 168
+    .line 156
     new-instance v0, Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
 
-    .line 175
+    .line 164
     return-void
 .end method
 
 
 # virtual methods
 .method public build()Lcom/google/common/collect/ImmutableMultimap;
-    .locals 4
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -78,75 +87,160 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 250
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
-    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->valueComparator:Ljava/util/Comparator;
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->valueComparator:Ljava/util/Comparator;
 
-    if-eqz v3, :cond_0
+    if-eqz v6, :cond_0
 
-    .line 266
-    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
+    .line 251
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
 
-    invoke-interface {v3}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
+    invoke-interface {v6}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-interface {v3}, Ljava/util/Map;->values()Ljava/util/Collection;
+    invoke-interface {v6}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v6}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/Collection;
+    .local v2, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .local v2, values:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
-    move-object v1, v2
+    move-result v6
 
-    .line 267
-    check-cast v1, Ljava/util/List;
+    if-eqz v6, :cond_0
 
-    .line 268
-    .local v1, list:Ljava/util/List;,"Ljava/util/List<TV;>;"
-    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->valueComparator:Ljava/util/Comparator;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-static {v1, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    move-result-object v5
+
+    check-cast v5, Ljava/util/Collection;
+
+    .local v5, values:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
+    move-object v3, v5
+
+    .line 252
+    check-cast v3, Ljava/util/List;
+
+    .line 253
+    .local v3, list:Ljava/util/List;,"Ljava/util/List<TV;>;"
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->valueComparator:Ljava/util/Comparator;
+
+    invoke-static {v3, v6}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
     goto :goto_0
 
-    .line 271
-    .end local v0           #i$:Ljava/util/Iterator;
-    .end local v1           #list:Ljava/util/List;,"Ljava/util/List<TV;>;"
-    .end local v2           #values:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
+    .line 256
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v3           #list:Ljava/util/List;,"Ljava/util/List<TV;>;"
+    .end local v5           #values:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     :cond_0
-    iget-object v3, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->keyComparator:Ljava/util/Comparator;
 
-    invoke-static {v3}, Lcom/google/common/collect/ImmutableMultimap;->copyOf(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/ImmutableMultimap;
+    if-eqz v6, :cond_2
 
-    move-result-object v3
+    .line 257
+    new-instance v4, Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;
 
-    return-object v3
+    invoke-direct {v4}, Lcom/google/common/collect/ImmutableMultimap$BuilderMultimap;-><init>()V
+
+    .line 258
+    .local v4, sortedCopy:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
+
+    invoke-interface {v6}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
+
+    move-result-object v6
+
+    invoke-interface {v6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v6
+
+    invoke-static {v6}, Lcom/google/common/collect/Lists;->newArrayList(Ljava/lang/Iterable;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    .line 260
+    .local v0, entries:Ljava/util/List;,"Ljava/util/List<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->keyComparator:Ljava/util/Comparator;
+
+    invoke-static {v6}, Lcom/google/common/collect/Ordering;->from(Ljava/util/Comparator;)Lcom/google/common/collect/Ordering;
+
+    move-result-object v6
+
+    new-instance v7, Lcom/google/common/collect/ImmutableMultimap$Builder$1;
+
+    invoke-direct {v7, p0}, Lcom/google/common/collect/ImmutableMultimap$Builder$1;-><init>(Lcom/google/common/collect/ImmutableMultimap$Builder;)V
+
+    invoke-virtual {v6, v7}, Lcom/google/common/collect/Ordering;->onResultOf(Lcom/google/common/base/Function;)Lcom/google/common/collect/Ordering;
+
+    move-result-object v6
+
+    invoke-static {v0, v6}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    .line 267
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .restart local v2       #i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_1
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    .line 268
+    .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v7
+
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Iterable;
+
+    invoke-interface {v4, v7, v6}, Lcom/google/common/collect/Multimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
+
+    goto :goto_1
+
+    .line 270
+    .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
+    :cond_1
+    iput-object v4, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
+
+    .line 272
+    .end local v0           #entries:Ljava/util/List;,"Ljava/util/List<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
+    .end local v2           #i$:Ljava/util/Iterator;
+    .end local v4           #sortedCopy:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
+    :cond_2
+    iget-object v6, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
+
+    invoke-static {v6}, Lcom/google/common/collect/ImmutableMultimap;->copyOf(Lcom/google/common/collect/Multimap;)Lcom/google/common/collect/ImmutableMultimap;
+
+    move-result-object v6
+
+    return-object v6
 .end method
 
 .method public orderKeysBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableMultimap$Builder;
-    .locals 3
+    .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -158,33 +252,24 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 232
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, keyComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TK;>;"
-    new-instance v1, Lcom/google/common/collect/ImmutableMultimap$SortedKeyBuilderMultimap;
-
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Comparator;
 
-    iget-object v2, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
+    iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->keyComparator:Ljava/util/Comparator;
 
-    invoke-direct {v1, v0, v2}, Lcom/google/common/collect/ImmutableMultimap$SortedKeyBuilderMultimap;-><init>(Ljava/util/Comparator;Lcom/google/common/collect/Multimap;)V
-
-    iput-object v1, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
-
-    .line 247
+    .line 233
     return-object p0
 .end method
 
 .method public orderValuesBy(Ljava/util/Comparator;)Lcom/google/common/collect/ImmutableMultimap$Builder;
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -196,7 +281,7 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 242
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, valueComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TV;>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -207,7 +292,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->valueComparator:Ljava/util/Comparator;
 
-    .line 258
+    .line 243
     return-object p0
 .end method
 
@@ -224,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 181
+    .line 170
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -240,7 +325,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/google/common/collect/Multimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 182
+    .line 171
     return-object p0
 .end method
 
@@ -258,7 +343,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 180
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMultimap$Builder;->builderMultimap:Lcom/google/common/collect/Multimap;
@@ -281,7 +366,7 @@
 
     invoke-interface {v0, v1, v2}, Lcom/google/common/collect/Multimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 193
+    .line 181
     return-object p0
 .end method
 
@@ -299,7 +384,7 @@
     .end annotation
 
     .prologue
-    .line 232
+    .line 219
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
@@ -328,7 +413,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 233
+    .line 221
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+Ljava/util/Collection<+TV;>;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -344,7 +429,7 @@
 
     goto :goto_0
 
-    .line 235
+    .line 223
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+Ljava/util/Collection<+TV;>;>;"
     :cond_0
     return-object p0
@@ -365,7 +450,7 @@
     .end annotation
 
     .prologue
-    .line 204
+    .line 192
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
@@ -379,7 +464,7 @@
 
     move-result-object v2
 
-    .line 205
+    .line 193
     .local v2, valueList:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -397,7 +482,7 @@
 
     move-result-object v1
 
-    .line 206
+    .line 194
     .local v1, value:Ljava/lang/Object;,"TV;"
     invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -407,7 +492,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 196
     .end local v1           #value:Ljava/lang/Object;,"TV;"
     :cond_0
     return-object p0
@@ -426,7 +511,7 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 206
     .local p0, this:Lcom/google/common/collect/ImmutableMultimap$Builder;,"Lcom/google/common/collect/ImmutableMultimap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:[Ljava/lang/Object;,"[TV;"

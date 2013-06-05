@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 181
+    .line 192
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$2;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .parameter "camera"
 
     .prologue
-    .line 184
+    .line 195
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 
-    .line 185
+    .line 196
     .local v0, captureTimeNanos:J
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$2;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
@@ -59,7 +59,7 @@
 
     monitor-enter v5
 
-    .line 186
+    .line 197
     :try_start_0
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$2;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
@@ -86,13 +86,13 @@
 
     check-cast v2, Lcom/google/glass/camera/SharedCameraClient;
 
-    .line 187
+    .line 198
     .local v2, client:Lcom/google/glass/camera/SharedCameraClient;
     invoke-virtual {v2, p1, v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->dispatchPreviewFrame([BJ)V
 
     goto :goto_0
 
-    .line 189
+    .line 200
     .end local v2           #client:Lcom/google/glass/camera/SharedCameraClient;
     .end local v3           #i$:Ljava/util/Iterator;
     :catchall_0
@@ -111,9 +111,9 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 192
+    .line 203
     invoke-virtual {p2, p1}, Landroid/hardware/Camera;->addCallbackBuffer([B)V
 
-    .line 193
+    .line 204
     return-void
 .end method

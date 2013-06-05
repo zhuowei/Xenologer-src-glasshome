@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "Cache.java"
 
-# interfaces
-.implements Lcom/google/common/base/Function;
-
 
 # annotations
 .annotation build Lcom/google/common/annotations/Beta;
@@ -20,25 +17,12 @@
         "V:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Lcom/google/common/base/Function",
-        "<TK;TV;>;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
 # virtual methods
-.method public abstract apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
 .method public abstract asMap()Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,23 +34,6 @@
 .end method
 
 .method public abstract cleanUp()V
-.end method
-
-.method public abstract get(Ljava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/util/concurrent/ExecutionException;
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
 .end method
 
 .method public abstract get(Ljava/lang/Object;Ljava/util/concurrent/Callable;)Ljava/lang/Object;
@@ -90,7 +57,7 @@
         value = {
             "(",
             "Ljava/lang/Iterable",
-            "<+TK;>;)",
+            "<*>;)",
             "Lcom/google/common/collect/ImmutableMap",
             "<TK;TV;>;"
         }
@@ -100,22 +67,13 @@
 .method public abstract getIfPresent(Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TK;)TV;"
+            "(",
+            "Ljava/lang/Object;",
+            ")TV;"
         }
     .end annotation
 
     .annotation runtime Ljavax/annotation/Nullable;
-    .end annotation
-.end method
-
-.method public abstract getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
@@ -139,6 +97,16 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;TV;)V"
+        }
+    .end annotation
+.end method
+
+.method public abstract putAll(Ljava/util/Map;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<+TK;+TV;>;)V"
         }
     .end annotation
 .end method

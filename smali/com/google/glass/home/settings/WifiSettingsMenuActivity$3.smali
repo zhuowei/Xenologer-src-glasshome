@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    value = Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->connectToNetwork(ILjava/lang/String;Lcom/google/glass/util/WifiHelper$Encryption;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 208
+    .line 297
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 212
+    .line 300
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
@@ -46,17 +46,11 @@
 
     move-result-object v0
 
-    const-string v1, "forget canceled"
+    const-string v1, "connect canceled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 213
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
-
-    #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$700(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
-
-    .line 214
+    .line 301
     return-void
 .end method
 
@@ -64,30 +58,30 @@
     .locals 2
 
     .prologue
-    .line 218
+    .line 305
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$800(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$700(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v1, "forget confirmed"
+    const-string v1, "connect confirmed"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 219
+    .line 307
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
-    #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->forgetCurrentNetwork()V
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$900(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
+    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$800(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)Lcom/google/glass/home/settings/WifiHorizontalScrollView;
 
-    .line 220
-    iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
+    move-result-object v0
 
-    #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
-    invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$700(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
+    const/4 v1, 0x0
 
-    .line 221
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
+
+    .line 308
     return-void
 .end method

@@ -40,19 +40,16 @@
     .parameter
 
     .prologue
-    .line 229
+    .line 235
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractBiMap$ValueSet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingSet;-><init>()V
 
-    .line 230
+    .line 236
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$ValueSet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
-    #getter for: Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
-    invoke-static {v0}, Lcom/google/common/collect/AbstractBiMap;->access$600(Lcom/google/common/collect/AbstractBiMap;)Lcom/google/common/collect/AbstractBiMap;
-
-    move-result-object v0
+    iget-object v0, v0, Lcom/google/common/collect/AbstractBiMap;->inverse:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/AbstractBiMap;->keySet()Ljava/util/Set;
 
@@ -69,7 +66,7 @@
     .parameter "x1"
 
     .prologue
-    .line 229
+    .line 235
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractBiMap$ValueSet;-><init>(Lcom/google/common/collect/AbstractBiMap;)V
 
@@ -82,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 235
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$ValueSet;->delegate()Ljava/util/Set;
 
@@ -95,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 235
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$ValueSet;->delegate()Ljava/util/Set;
 
@@ -115,7 +112,7 @@
     .end annotation
 
     .prologue
-    .line 233
+    .line 240
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$ValueSet;->valuesDelegate:Ljava/util/Set;
 
@@ -123,7 +120,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -133,37 +130,30 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 245
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
-    iget-object v1, p0, Lcom/google/common/collect/AbstractBiMap$ValueSet;->this$0:Lcom/google/common/collect/AbstractBiMap;
+    iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$ValueSet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
-    #getter for: Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
-    invoke-static {v1}, Lcom/google/common/collect/AbstractBiMap;->access$200(Lcom/google/common/collect/AbstractBiMap;)Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Map;->values()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lcom/google/common/collect/AbstractBiMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    .line 238
-    .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TV;>;"
-    new-instance v1, Lcom/google/common/collect/AbstractBiMap$ValueSet$1;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/AbstractBiMap$ValueSet$1;-><init>(Lcom/google/common/collect/AbstractBiMap$ValueSet;Ljava/util/Iterator;)V
+    move-result-object v0
 
-    return-object v1
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->valueIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public toArray()[Ljava/lang/Object;
     .locals 1
 
     .prologue
-    .line 257
+    .line 250
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$ValueSet;->standardToArray()[Ljava/lang/Object;
 
@@ -184,7 +174,7 @@
     .end annotation
 
     .prologue
-    .line 261
+    .line 255
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap$ValueSet;->standardToArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -198,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 265
+    .line 260
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$ValueSet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.ValueSet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$ValueSet;->standardToString()Ljava/lang/String;
 

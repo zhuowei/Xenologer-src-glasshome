@@ -28,10 +28,10 @@
     .locals 0
 
     .prologue
-    .line 284
+    .line 309
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 286
+    .line 311
     return-void
 .end method
 
@@ -40,23 +40,23 @@
     .parameter "feature"
 
     .prologue
-    .line 264
+    .line 289
     invoke-virtual {p0}, Lcom/google/glass/util/Labs$Feature;->isSetByTest()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 265
+    .line 290
     invoke-virtual {p0}, Lcom/google/glass/util/Labs$Feature;->getValueForTest()Z
 
     move-result v0
 
-    .line 274
+    .line 299
     :goto_0
     return v0
 
-    .line 269
+    .line 294
     :cond_0
     invoke-static {}, Lcom/google/glass/util/BuildHelper;->isUser()Z
 
@@ -64,14 +64,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 270
+    .line 295
     invoke-virtual {p0}, Lcom/google/glass/util/Labs$Feature;->getDefaultValue()Z
 
     move-result v0
 
     goto :goto_0
 
-    .line 274
+    .line 299
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/util/Labs$Feature;->getPropertyKey()Ljava/lang/String;
 
@@ -96,12 +96,12 @@
     .end annotation
 
     .prologue
-    .line 280
+    .line 305
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 281
+    .line 306
     invoke-virtual {p0, p1}, Lcom/google/glass/util/Labs$Feature;->setTestValue(Z)V
 
-    .line 282
+    .line 307
     return-void
 .end method

@@ -45,13 +45,13 @@
     .end annotation
 
     .prologue
-    .line 770
+    .line 847
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSet;,"Lcom/google/common/collect/Sets$FilteredSet<TE;>;"
     .local p1, unfiltered:Ljava/util/Set;,"Ljava/util/Set<TE;>;"
     .local p2, predicate:Lcom/google/common/base/Predicate;,"Lcom/google/common/base/Predicate<-TE;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/Collections2$FilteredCollection;-><init>(Ljava/util/Collection;Lcom/google/common/base/Predicate;)V
 
-    .line 771
+    .line 848
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .end parameter
 
     .prologue
-    .line 774
+    .line 852
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSet;,"Lcom/google/common/collect/Sets$FilteredSet<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Sets;->equalsImpl(Ljava/util/Set;Ljava/lang/Object;)Z
 
@@ -78,7 +78,7 @@
     .locals 1
 
     .prologue
-    .line 778
+    .line 857
     .local p0, this:Lcom/google/common/collect/Sets$FilteredSet;,"Lcom/google/common/collect/Sets$FilteredSet<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
 

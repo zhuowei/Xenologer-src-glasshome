@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 39
+    .line 43
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,12 +38,12 @@
 
     const/4 v3, 0x0
 
-    .line 57
+    .line 61
     long-to-int v1, p0
 
     int-to-byte v0, v1
 
-    .line 58
+    .line 62
     .local v0, result:B
     int-to-long v4, v0
 
@@ -66,13 +66,13 @@
 
     invoke-static {v1, v4, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 59
+    .line 63
     return v0
 
     :cond_0
     move v1, v3
 
-    .line 58
+    .line 62
     goto :goto_0
 .end method
 
@@ -82,7 +82,7 @@
     .parameter "b"
 
     .prologue
-    .line 90
+    .line 94
     sub-int v0, p0, p1
 
     return v0
@@ -94,22 +94,22 @@
     .parameter "array"
 
     .prologue
-    .line 141
+    .line 145
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 142
+    .line 146
     array-length v2, p1
 
     if-nez v2, :cond_0
 
-    .line 143
+    .line 147
     const-string v2, ""
 
-    .line 152
+    .line 156
     :goto_0
     return-object v2
 
-    .line 147
+    .line 151
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -119,7 +119,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 148
+    .line 152
     .local v0, builder:Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 149
+    .line 153
     const/4 v1, 0x1
 
     .local v1, i:I
@@ -136,7 +136,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 150
+    .line 154
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
@@ -145,12 +145,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 149
+    .line 153
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 152
+    .line 156
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -170,7 +170,7 @@
     .end annotation
 
     .prologue
-    .line 172
+    .line 176
     sget-object v0, Lcom/google/common/primitives/SignedBytes$LexicographicalComparator;->INSTANCE:Lcom/google/common/primitives/SignedBytes$LexicographicalComparator;
 
     return-object v0
@@ -183,7 +183,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 121
+    .line 125
     array-length v2, p0
 
     if-lez v2, :cond_1
@@ -193,10 +193,10 @@
     :goto_0
     invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 122
+    .line 126
     aget-byte v1, p0, v3
 
-    .line 123
+    .line 127
     .local v1, max:B
     const/4 v0, 0x1
 
@@ -206,15 +206,15 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 124
+    .line 128
     aget-byte v2, p0, v0
 
     if-le v2, v1, :cond_0
 
-    .line 125
+    .line 129
     aget-byte v1, p0, v0
 
-    .line 123
+    .line 127
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -225,10 +225,10 @@
     :cond_1
     move v2, v3
 
-    .line 121
+    .line 125
     goto :goto_0
 
-    .line 128
+    .line 132
     .restart local v0       #i:I
     .restart local v1       #max:B
     :cond_2
@@ -242,7 +242,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 102
+    .line 106
     array-length v2, p0
 
     if-lez v2, :cond_1
@@ -252,10 +252,10 @@
     :goto_0
     invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 103
+    .line 107
     aget-byte v1, p0, v3
 
-    .line 104
+    .line 108
     .local v1, min:B
     const/4 v0, 0x1
 
@@ -265,15 +265,15 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 105
+    .line 109
     aget-byte v2, p0, v0
 
     if-ge v2, v1, :cond_0
 
-    .line 106
+    .line 110
     aget-byte v1, p0, v0
 
-    .line 104
+    .line 108
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
@@ -284,10 +284,10 @@
     :cond_1
     move v2, v3
 
-    .line 102
+    .line 106
     goto :goto_0
 
-    .line 109
+    .line 113
     .restart local v0       #i:I
     .restart local v1       #min:B
     :cond_2
@@ -299,21 +299,21 @@
     .parameter "value"
 
     .prologue
-    .line 71
+    .line 75
     const-wide/16 v0, 0x7f
 
     cmp-long v0, p0, v0
 
     if-lez v0, :cond_0
 
-    .line 72
+    .line 76
     const/16 v0, 0x7f
 
-    .line 77
+    .line 81
     :goto_0
     return v0
 
-    .line 74
+    .line 78
     :cond_0
     const-wide/16 v0, -0x80
 
@@ -321,12 +321,12 @@
 
     if-gez v0, :cond_1
 
-    .line 75
+    .line 79
     const/16 v0, -0x80
 
     goto :goto_0
 
-    .line 77
+    .line 81
     :cond_1
     long-to-int v0, p0
 

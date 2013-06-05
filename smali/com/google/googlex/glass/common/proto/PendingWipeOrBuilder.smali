@@ -13,6 +13,9 @@
 .method public abstract getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getRetryCount()I
+.end method
+
 .method public abstract getTimestamp()J
 .end method
 
@@ -20,6 +23,9 @@
 .end method
 
 .method public abstract hasDeviceId()Z
+.end method
+
+.method public abstract hasRetryCount()Z
 .end method
 
 .method public abstract hasTimestamp()Z

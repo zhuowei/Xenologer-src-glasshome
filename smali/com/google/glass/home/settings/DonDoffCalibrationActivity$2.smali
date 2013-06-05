@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 68
+    .line 70
     iput-object p1, p0, Lcom/google/glass/home/settings/DonDoffCalibrationActivity$2;->this$0:Lcom/google/glass/home/settings/DonDoffCalibrationActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "mp"
 
     .prologue
-    .line 71
+    .line 73
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/media/MediaPlayer;->setLooping(Z)V
 
-    .line 72
+    .line 74
     return-void
 .end method

@@ -57,7 +57,7 @@
     .locals 2
 
     .prologue
-    .line 89
+    .line 109
     new-instance v0, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/ThreadFactoryBuilder;-><init>()V
@@ -80,7 +80,7 @@
 
     sput-object v0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->threadFactory:Ljava/util/concurrent/ThreadFactory;
 
-    .line 94
+    .line 111
     sget-object v0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->threadFactory:Ljava/util/concurrent/ThreadFactory;
 
     invoke-static {v0}, Ljava/util/concurrent/Executors;->newCachedThreadPool(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
@@ -104,14 +104,14 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 127
     .local p0, this:Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;,"Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter<TV;>;"
     .local p1, delegate:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     sget-object v0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->defaultAdapterExecutor:Ljava/util/concurrent/Executor;
 
     invoke-direct {p0, p1, v0}, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;-><init>(Ljava/util/concurrent/Future;Ljava/util/concurrent/Executor;)V
 
-    .line 111
+    .line 128
     return-void
 .end method
 
@@ -130,19 +130,19 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 130
     .local p0, this:Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;,"Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter<TV;>;"
     .local p1, delegate:Ljava/util/concurrent/Future;,"Ljava/util/concurrent/Future<TV;>;"
     invoke-direct {p0}, Lcom/google/common/util/concurrent/ForwardingFuture;-><init>()V
 
-    .line 100
+    .line 117
     new-instance v0, Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-direct {v0}, Lcom/google/common/util/concurrent/ExecutionList;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
-    .line 104
+    .line 121
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -151,7 +151,7 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->hasListeners:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    .line 114
+    .line 131
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->delegate:Ljava/util/concurrent/Future;
 
-    .line 115
+    .line 132
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -169,7 +169,7 @@
 
     iput-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->adapterExecutor:Ljava/util/concurrent/Executor;
 
-    .line 116
+    .line 133
     return-void
 .end method
 
@@ -178,7 +178,7 @@
     .parameter "x0"
 
     .prologue
-    .line 86
+    .line 106
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->delegate:Ljava/util/concurrent/Future;
 
     return-object v0
@@ -189,7 +189,7 @@
     .parameter "x0"
 
     .prologue
-    .line 86
+    .line 106
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     return-object v0
@@ -203,13 +203,13 @@
     .parameter "exec"
 
     .prologue
-    .line 125
+    .line 141
     .local p0, this:Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;,"Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/common/util/concurrent/ExecutionList;->add(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V
 
-    .line 129
+    .line 145
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->hasListeners:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     const/4 v1, 0x0
@@ -222,7 +222,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 130
+    .line 146
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->delegate:Ljava/util/concurrent/Future;
 
     invoke-interface {v0}, Ljava/util/concurrent/Future;->isDone()Z
@@ -231,17 +231,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 133
+    .line 149
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->executionList:Lcom/google/common/util/concurrent/ExecutionList;
 
     invoke-virtual {v0}, Lcom/google/common/util/concurrent/ExecutionList;->execute()V
 
-    .line 156
+    .line 172
     :cond_0
     :goto_0
     return-void
 
-    .line 137
+    .line 153
     :cond_1
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->adapterExecutor:Ljava/util/concurrent/Executor;
 
@@ -258,7 +258,7 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 106
     .local p0, this:Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;,"Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->delegate()Ljava/util/concurrent/Future;
 
@@ -278,7 +278,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 137
     .local p0, this:Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;,"Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter<TV;>;"
     iget-object v0, p0, Lcom/google/common/util/concurrent/JdkFutureAdapters$ListenableFutureAdapter;->delegate:Ljava/util/concurrent/Future;
 

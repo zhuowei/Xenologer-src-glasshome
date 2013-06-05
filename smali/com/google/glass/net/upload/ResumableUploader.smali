@@ -56,6 +56,8 @@
 
 .field private lastAttachmentId:Ljava/lang/String;
 
+.field private final obfuscatedIdentifier:Ljava/lang/String;
+
 .field private sessionUri:Ljava/net/URI;
 
 
@@ -64,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 38
     const-class v0, Lcom/google/glass/net/upload/ResumableUploader;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -77,7 +79,7 @@
 .end method
 
 .method public constructor <init>(Lcom/google/glass/net/HttpRequestDispatcher;Ljava/net/URI;Ljava/io/File;Ljava/lang/String;Landroid/content/Context;Ljava/net/URI;)V
-    .locals 1
+    .locals 2
     .parameter "dispatcher"
     .parameter "baseUploadUri"
     .parameter "fileToUpload"
@@ -86,35 +88,50 @@
     .parameter "sessionUri"
 
     .prologue
-    .line 202
+    .line 209
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 203
+    .line 210
     iput-object p2, p0, Lcom/google/glass/net/upload/ResumableUploader;->baseUploadUri:Ljava/net/URI;
 
-    .line 204
+    .line 211
     iput-object p3, p0, Lcom/google/glass/net/upload/ResumableUploader;->fileToUpload:Ljava/io/File;
 
-    .line 205
+    .line 212
     iput-object p4, p0, Lcom/google/glass/net/upload/ResumableUploader;->fileMimeType:Ljava/lang/String;
 
-    .line 206
+    .line 213
     iput-object p6, p0, Lcom/google/glass/net/upload/ResumableUploader;->sessionUri:Ljava/net/URI;
 
-    .line 207
+    .line 214
     iput-object p5, p0, Lcom/google/glass/net/upload/ResumableUploader;->context:Landroid/content/Context;
 
-    .line 208
+    .line 215
     iput-object p1, p0, Lcom/google/glass/net/upload/ResumableUploader;->dispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
-    .line 210
+    .line 216
+    invoke-virtual {p3}, Ljava/io/File;->lastModified()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p5, v0}, Lcom/google/glass/util/HashUtil;->hashPiiField(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->obfuscatedIdentifier:Ljava/lang/String;
+
+    .line 219
     new-instance v0, Lcom/google/glass/util/AuthUtils;
 
     invoke-direct {v0, p5}, Lcom/google/glass/util/AuthUtils;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {p0, v0}, Lcom/google/glass/net/upload/ResumableUploader;->setAuthUtils(Lcom/google/glass/util/AuthUtils;)V
 
-    .line 211
+    .line 220
     return-void
 .end method
 
@@ -141,7 +158,7 @@
     .end annotation
 
     .prologue
-    .line 584
+    .line 606
     .local p1, authHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
@@ -153,11 +170,11 @@
 
     move-result-object v0
 
-    .line 586
+    .line 608
     .local v0, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 587
+    .line 609
     const-string v1, "X-Goog-Upload-Command"
 
     invoke-virtual {p2}, Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;->toCommandString()Ljava/lang/String;
@@ -166,7 +183,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 591
+    .line 613
     const-string v1, "X-Goog-Last-Modified"
 
     iget-object v2, p0, Lcom/google/glass/net/upload/ResumableUploader;->fileToUpload:Ljava/io/File;
@@ -181,7 +198,7 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 592
+    .line 614
     const-string v1, "X-Goog-Upload-File-Name"
 
     iget-object v2, p0, Lcom/google/glass/net/upload/ResumableUploader;->fileToUpload:Ljava/io/File;
@@ -192,26 +209,26 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 594
+    .line 616
     sget-object v1, Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;->START:Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;
 
     if-ne p2, v1, :cond_0
 
-    .line 595
+    .line 617
     const-string v1, "X-Goog-Upload-Protocol"
 
     const-string v2, "resumable"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 596
+    .line 618
     const-string v1, "X-Goog-Upload-Content-Type"
 
     iget-object v2, p0, Lcom/google/glass/net/upload/ResumableUploader;->fileMimeType:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 599
+    .line 621
     :cond_0
     return-object v0
 .end method
@@ -228,10 +245,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 613
+    .line 635
     const/4 v2, 0x0
 
-    .line 616
+    .line 638
     .local v2, headerValue:Ljava/lang/String;
     :try_start_0
     iget-object v3, p1, Lcom/google/glass/net/SimplifiedHttpResponse;->headers:Lcom/google/common/collect/ImmutableMap;
@@ -248,10 +265,10 @@
 
     move-object v2, v0
 
-    .line 617
+    .line 639
     if-nez v2, :cond_0
 
-    .line 618
+    .line 640
     sget-object v3, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     const-string v5, "Upload server didn\'t give us an upload status!"
@@ -262,15 +279,15 @@
 
     move-object v3, v4
 
-    .line 627
+    .line 649
     :goto_0
     return-object v3
 
-    .line 621
+    .line 643
     :catch_0
     move-exception v1
 
-    .line 622
+    .line 644
     .local v1, e:Ljava/lang/IllegalArgumentException;
     sget-object v3, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -296,10 +313,10 @@
 
     move-object v3, v4
 
-    .line 624
+    .line 646
     goto :goto_0
 
-    .line 627
+    .line 649
     .end local v1           #e:Ljava/lang/IllegalArgumentException;
     :cond_0
     const-class v3, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
@@ -323,17 +340,17 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 245
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->currentRequest:Lcom/google/glass/net/PendingHttpRequest;
 
     if-eqz v0, :cond_0
 
-    .line 237
+    .line 246
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->currentRequest:Lcom/google/glass/net/PendingHttpRequest;
 
     invoke-virtual {v0}, Lcom/google/glass/net/PendingHttpRequest;->cancel()V
 
-    .line 239
+    .line 248
     :cond_0
     return-void
 .end method
@@ -366,7 +383,7 @@
     .end annotation
 
     .prologue
-    .line 529
+    .line 551
     .local p1, authHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -392,14 +409,14 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 531
+    .line 553
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;->UPLOAD:Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/net/upload/ResumableUploader;->createHeaders(Ljava/util/Map;Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;)Ljava/util/Map;
 
     move-result-object v2
 
-    .line 532
+    .line 554
     .local v2, requestHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v0, "X-Goog-Upload-Offset"
 
@@ -409,7 +426,7 @@
 
     invoke-interface {v2, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 534
+    .line 556
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->dispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
     iget-object v1, p0, Lcom/google/glass/net/upload/ResumableUploader;->sessionUri:Ljava/net/URI;
@@ -438,14 +455,14 @@
 
     iput-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->currentRequest:Lcom/google/glass/net/PendingHttpRequest;
 
-    .line 536
+    .line 558
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->currentRequest:Lcom/google/glass/net/PendingHttpRequest;
 
     invoke-virtual {v0}, Lcom/google/glass/net/PendingHttpRequest;->execute()Lcom/google/glass/net/SimplifiedHttpResponse;
 
     move-result-object v10
 
-    .line 538
+    .line 560
     .local v10, response:Lcom/google/glass/net/SimplifiedHttpResponse;
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->currentRequest:Lcom/google/glass/net/PendingHttpRequest;
 
@@ -455,7 +472,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 539
+    .line 561
     new-instance v0, Lorg/apache/http/client/ClientProtocolException;
 
     const-string v1, "Upload was cancelled."
@@ -464,11 +481,11 @@
 
     throw v0
 
-    .line 542
+    .line 564
     :cond_0
     if-nez v10, :cond_1
 
-    .line 543
+    .line 565
     new-instance v0, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
     const-string v1, "Connection failed or no response received from server!"
@@ -477,11 +494,11 @@
 
     throw v0
 
-    .line 546
+    .line 568
     :cond_1
     iget v9, v10, Lcom/google/glass/net/SimplifiedHttpResponse;->statusCode:I
 
-    .line 547
+    .line 569
     .local v9, httpStatusCode:I
     const/16 v0, 0x190
 
@@ -491,7 +508,7 @@
 
     if-ge v9, v0, :cond_4
 
-    .line 548
+    .line 570
     const/16 v0, 0x193
 
     if-eq v9, v0, :cond_2
@@ -500,7 +517,7 @@
 
     if-ne v9, v0, :cond_3
 
-    .line 550
+    .line 572
     :cond_2
     new-instance v0, Lorg/apache/http/auth/InvalidCredentialsException;
 
@@ -526,7 +543,7 @@
 
     throw v0
 
-    .line 554
+    .line 576
     :cond_3
     new-instance v0, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
@@ -568,13 +585,13 @@
 
     throw v0
 
-    .line 558
+    .line 580
     :cond_4
     invoke-direct {p0, v10}, Lcom/google/glass/net/upload/ResumableUploader;->getUploadStatus(Lcom/google/glass/net/SimplifiedHttpResponse;)Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     move-result-object v11
 
-    .line 560
+    .line 582
     .local v11, status:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->FINAL:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
@@ -586,7 +603,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 561
+    .line 583
     new-instance v0, Ljava/lang/String;
 
     iget-object v1, v10, Lcom/google/glass/net/SimplifiedHttpResponse;->body:[B
@@ -595,21 +612,21 @@
 
     iput-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->lastAttachmentId:Ljava/lang/String;
 
-    .line 562
+    .line 584
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     const-string v1, "Upload completed successfully."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 563
+    .line 585
     const/4 v0, 0x1
 
-    .line 570
+    .line 592
     :goto_0
     return v0
 
-    .line 566
+    .line 588
     :cond_5
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->ACTIVE:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
@@ -619,14 +636,14 @@
 
     if-ne v0, v9, :cond_6
 
-    .line 567
+    .line 589
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     const-string v1, "Upload did not complete, but uploaded bytes were received -- returning false."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 570
+    .line 592
     :cond_6
     const/4 v0, 0x0
 
@@ -637,7 +654,7 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 238
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->lastAttachmentId:Ljava/lang/String;
 
     return-object v0
@@ -647,7 +664,7 @@
     .locals 1
 
     .prologue
-    .line 224
+    .line 233
     iget-object v0, p0, Lcom/google/glass/net/upload/ResumableUploader;->sessionUri:Ljava/net/URI;
 
     return-object v0
@@ -683,7 +700,7 @@
     .local p1, authHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const-wide/16 v0, -0x1
 
-    .line 365
+    .line 380
     iget-object v7, p0, Lcom/google/glass/net/upload/ResumableUploader;->sessionUri:Ljava/net/URI;
 
     if-eqz v7, :cond_0
@@ -698,12 +715,12 @@
 
     if-eqz v7, :cond_1
 
-    .line 431
+    .line 453
     :cond_0
     :goto_0
     return-wide v0
 
-    .line 369
+    .line 384
     :cond_1
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;->QUERY:Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;
 
@@ -711,7 +728,7 @@
 
     move-result-object v4
 
-    .line 371
+    .line 386
     .local v4, requestHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v7, p0, Lcom/google/glass/net/upload/ResumableUploader;->dispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
@@ -725,11 +742,11 @@
 
     move-result-object v5
 
-    .line 373
+    .line 388
     .local v5, response:Lcom/google/glass/net/SimplifiedHttpResponse;
     if-nez v5, :cond_2
 
-    .line 374
+    .line 389
     new-instance v7, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
     const-string v8, "Connection failed or no response received from server!"
@@ -738,11 +755,11 @@
 
     throw v7
 
-    .line 377
+    .line 392
     :cond_2
     iget v3, v5, Lcom/google/glass/net/SimplifiedHttpResponse;->statusCode:I
 
-    .line 378
+    .line 393
     .local v3, httpStatusCode:I
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -768,12 +785,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 380
+    .line 395
     invoke-direct {p0, v5}, Lcom/google/glass/net/upload/ResumableUploader;->getUploadStatus(Lcom/google/glass/net/SimplifiedHttpResponse;)Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     move-result-object v6
 
-    .line 381
+    .line 396
     .local v6, status:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -797,7 +814,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 386
+    .line 401
     const/16 v7, 0x190
 
     if-lt v3, v7, :cond_6
@@ -806,12 +823,12 @@
 
     if-ge v3, v7, :cond_6
 
-    .line 387
+    .line 402
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->FINAL:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     if-ne v6, v7, :cond_3
 
-    .line 388
+    .line 403
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     const-string v8, "Received \'final\' and a 400 series error when querying for session status."
@@ -820,7 +837,7 @@
 
     goto :goto_0
 
-    .line 392
+    .line 407
     :cond_3
     const/16 v7, 0x193
 
@@ -830,7 +847,7 @@
 
     if-ne v3, v7, :cond_5
 
-    .line 394
+    .line 409
     :cond_4
     new-instance v7, Lorg/apache/http/auth/InvalidCredentialsException;
 
@@ -840,7 +857,7 @@
 
     throw v7
 
-    .line 397
+    .line 412
     :cond_5
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -868,16 +885,16 @@
 
     goto/16 :goto_0
 
-    .line 402
+    .line 417
     :cond_6
     const/16 v7, 0xc8
 
     if-ne v3, v7, :cond_b
 
-    .line 405
+    .line 420
     if-nez v6, :cond_7
 
-    .line 406
+    .line 421
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -916,13 +933,13 @@
 
     goto/16 :goto_0
 
-    .line 411
+    .line 426
     :cond_7
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->CANCELLED:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     if-ne v6, v7, :cond_8
 
-    .line 412
+    .line 427
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -955,7 +972,7 @@
 
     goto/16 :goto_0
 
-    .line 416
+    .line 431
     :cond_8
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->FINAL:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
@@ -967,7 +984,7 @@
 
     if-eqz v7, :cond_9
 
-    .line 417
+    .line 432
     new-instance v7, Ljava/lang/String;
 
     iget-object v8, v5, Lcom/google/glass/net/SimplifiedHttpResponse;->body:[B
@@ -976,7 +993,7 @@
 
     iput-object v7, p0, Lcom/google/glass/net/upload/ResumableUploader;->lastAttachmentId:Ljava/lang/String;
 
-    .line 418
+    .line 433
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1001,12 +1018,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 419
+    .line 434
     const-wide/16 v0, -0x2
 
     goto/16 :goto_0
 
-    .line 422
+    .line 437
     :cond_9
     iget-object v7, v5, Lcom/google/glass/net/SimplifiedHttpResponse;->headers:Lcom/google/common/collect/ImmutableMap;
 
@@ -1018,7 +1035,7 @@
 
     if-eqz v7, :cond_a
 
-    .line 423
+    .line 438
     iget-object v7, v5, Lcom/google/glass/net/SimplifiedHttpResponse;->headers:Lcom/google/common/collect/ImmutableMap;
 
     const-string v8, "X-Goog-Upload-Size-Received"
@@ -1029,13 +1046,13 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 424
+    .line 439
     .local v2, headerValue:Ljava/lang/String;
     invoke-static {v2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 426
+    .line 441
     .local v0, bytesReceived:J
     sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -1067,7 +1084,7 @@
 
     goto/16 :goto_0
 
-    .line 430
+    .line 445
     .end local v0           #bytesReceived:J
     .end local v2           #headerValue:Ljava/lang/String;
     :cond_a
@@ -1077,13 +1094,33 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 431
+    .line 446
     const-wide/16 v0, 0x0
 
     goto/16 :goto_0
 
-    .line 434
+    .line 451
     :cond_b
+    sget-object v7, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->FINAL:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
+
+    if-eq v6, v7, :cond_c
+
+    sget-object v7, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->CANCELLED:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
+
+    if-ne v6, v7, :cond_d
+
+    .line 452
+    :cond_c
+    sget-object v7, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
+
+    const-string v8, "Session is finalized or cancelled -- we\'ll have to establish a new one."
+
+    invoke-static {v7, v8}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_0
+
+    .line 456
+    :cond_d
     new-instance v7, Ljava/io/IOException;
 
     const-string v8, "Couldn\'t get session offset"
@@ -1100,10 +1137,10 @@
     .end annotation
 
     .prologue
-    .line 215
+    .line 224
     iput-object p1, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
 
-    .line 216
+    .line 225
     return-void
 .end method
 
@@ -1114,10 +1151,10 @@
     .end annotation
 
     .prologue
-    .line 220
+    .line 229
     iput-object p1, p0, Lcom/google/glass/net/upload/ResumableUploader;->deviceId:Ljava/lang/String;
 
-    .line 221
+    .line 230
     return-void
 .end method
 
@@ -1149,7 +1186,7 @@
     .end annotation
 
     .prologue
-    .line 456
+    .line 478
     .local p1, authHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     sget-object v6, Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;->START:Lcom/google/glass/net/upload/ResumableUploader$UploadCommand;
 
@@ -1157,7 +1194,7 @@
 
     move-result-object v2
 
-    .line 457
+    .line 479
     .local v2, requestHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v6, "X-Goog-Upload-Content-Length"
 
@@ -1173,7 +1210,7 @@
 
     invoke-interface {v2, v6, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 459
+    .line 481
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
@@ -1204,7 +1241,7 @@
 
     move-result-object v4
 
-    .line 460
+    .line 482
     .local v4, startUri:Ljava/lang/String;
     iget-object v6, p0, Lcom/google/glass/net/upload/ResumableUploader;->dispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
@@ -1214,11 +1251,11 @@
 
     move-result-object v3
 
-    .line 462
+    .line 484
     .local v3, response:Lcom/google/glass/net/SimplifiedHttpResponse;
     if-nez v3, :cond_0
 
-    .line 463
+    .line 485
     new-instance v6, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
     const-string v7, "Connection failed or no response received from server!"
@@ -1227,17 +1264,17 @@
 
     throw v6
 
-    .line 466
+    .line 488
     :cond_0
     iget v1, v3, Lcom/google/glass/net/SimplifiedHttpResponse;->statusCode:I
 
-    .line 467
+    .line 489
     .local v1, httpStatusCode:I
     invoke-direct {p0, v3}, Lcom/google/glass/net/upload/ResumableUploader;->getUploadStatus(Lcom/google/glass/net/SimplifiedHttpResponse;)Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     move-result-object v5
 
-    .line 469
+    .line 491
     .local v5, status:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
     sget-object v6, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -1263,12 +1300,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
+    .line 493
     sget-object v6, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->FINAL:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     if-ne v5, v6, :cond_1
 
-    .line 473
+    .line 495
     new-instance v6, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -1299,7 +1336,7 @@
 
     throw v6
 
-    .line 477
+    .line 499
     :cond_1
     sget-object v6, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->ACTIVE:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
@@ -1309,7 +1346,7 @@
 
     if-ne v1, v6, :cond_3
 
-    .line 479
+    .line 501
     iget-object v6, v3, Lcom/google/glass/net/SimplifiedHttpResponse;->headers:Lcom/google/common/collect/ImmutableMap;
 
     const-string v7, "X-Goog-Upload-URL"
@@ -1320,7 +1357,7 @@
 
     if-nez v6, :cond_2
 
-    .line 480
+    .line 502
     new-instance v6, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
     const-string v7, "No X-Goog-Upload-URL present in successful session start response!"
@@ -1329,7 +1366,7 @@
 
     throw v6
 
-    .line 485
+    .line 507
     :cond_2
     :try_start_0
     new-instance v7, Ljava/net/URI;
@@ -1350,16 +1387,16 @@
     :try_end_0
     .catch Ljava/net/URISyntaxException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 490
+    .line 512
     iget-object v6, p0, Lcom/google/glass/net/upload/ResumableUploader;->sessionUri:Ljava/net/URI;
 
     return-object v6
 
-    .line 486
+    .line 508
     :catch_0
     move-exception v0
 
-    .line 487
+    .line 509
     .local v0, e:Ljava/net/URISyntaxException;
     new-instance v7, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
@@ -1395,7 +1432,7 @@
 
     throw v7
 
-    .line 493
+    .line 515
     .end local v0           #e:Ljava/net/URISyntaxException;
     :cond_3
     const/16 v6, 0x190
@@ -1406,7 +1443,7 @@
 
     if-ge v1, v6, :cond_6
 
-    .line 494
+    .line 516
     const/16 v6, 0x193
 
     if-eq v1, v6, :cond_4
@@ -1415,7 +1452,7 @@
 
     if-ne v1, v6, :cond_5
 
-    .line 496
+    .line 518
     :cond_4
     new-instance v6, Lorg/apache/http/auth/InvalidCredentialsException;
 
@@ -1425,7 +1462,7 @@
 
     throw v6
 
-    .line 499
+    .line 521
     :cond_5
     new-instance v6, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
@@ -1463,7 +1500,7 @@
 
     throw v6
 
-    .line 503
+    .line 525
     :cond_6
     new-instance v6, Ljava/io/IOException;
 
@@ -1475,7 +1512,7 @@
 .end method
 
 .method public upload()J
-    .locals 14
+    .locals 12
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/apache/http/client/ClientProtocolException;,
@@ -1486,50 +1523,46 @@
     .end annotation
 
     .prologue
-    const-wide/16 v12, -0x1
-
-    const-wide/16 v8, -0x2
-
-    .line 281
+    .line 290
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 284
-    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->deviceId:Ljava/lang/String;
+    .line 293
+    iget-object v8, p0, Lcom/google/glass/net/upload/ResumableUploader;->deviceId:Ljava/lang/String;
 
-    if-nez v10, :cond_0
+    if-nez v8, :cond_0
 
-    .line 285
-    new-instance v10, Lcom/google/glass/util/SettingsSecure;
+    .line 294
+    new-instance v8, Lcom/google/glass/util/SettingsSecure;
 
-    iget-object v11, p0, Lcom/google/glass/net/upload/ResumableUploader;->context:Landroid/content/Context;
+    iget-object v9, p0, Lcom/google/glass/net/upload/ResumableUploader;->context:Landroid/content/Context;
 
-    invoke-virtual {v11}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-direct {v10, v11}, Lcom/google/glass/util/SettingsSecure;-><init>(Landroid/content/ContentResolver;)V
+    invoke-direct {v8, v9}, Lcom/google/glass/util/SettingsSecure;-><init>(Landroid/content/ContentResolver;)V
 
-    const-string v11, "android_id"
+    const-string v9, "android_id"
 
-    invoke-virtual {v10, v11}, Lcom/google/glass/util/SettingsSecure;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lcom/google/glass/util/SettingsSecure;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {p0, v10}, Lcom/google/glass/net/upload/ResumableUploader;->setDeviceId(Ljava/lang/String;)V
+    invoke-virtual {p0, v8}, Lcom/google/glass/net/upload/ResumableUploader;->setDeviceId(Ljava/lang/String;)V
 
-    .line 288
+    .line 297
     :cond_0
-    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
+    iget-object v8, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
 
-    invoke-virtual {v10}, Lcom/google/glass/util/AuthUtils;->createAuthHeaders()Ljava/util/Map;
+    invoke-virtual {v8}, Lcom/google/glass/util/AuthUtils;->createAuthHeaders()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 290
+    .line 299
     .local v0, authHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-nez v0, :cond_1
 
-    .line 291
+    .line 300
     new-instance v8, Lorg/apache/http/auth/InvalidCredentialsException;
 
     const-string v9, "Unable to create auth headers."
@@ -1538,72 +1571,100 @@
 
     throw v8
 
-    .line 294
+    .line 303
     :cond_1
-    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->context:Landroid/content/Context;
+    iget-object v8, p0, Lcom/google/glass/net/upload/ResumableUploader;->context:Landroid/content/Context;
 
-    invoke-static {v10}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+    invoke-static {v8}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
-    move-result-object v10
+    move-result-object v8
 
-    invoke-virtual {v10}, Lcom/google/glass/app/GlassApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
+    invoke-virtual {v8}, Lcom/google/glass/app/GlassApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
 
     move-result-object v7
 
-    .line 295
+    .line 304
     .local v7, userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     invoke-virtual {p0, v0}, Lcom/google/glass/net/upload/ResumableUploader;->queryForSessionOffset(Ljava/util/Map;)J
 
     move-result-wide v4
 
-    .line 296
+    .line 305
     .local v4, offset:J
-    cmp-long v10, v4, v12
+    const-wide/16 v8, -0x1
 
-    if-nez v10, :cond_3
+    cmp-long v8, v4, v8
 
-    .line 300
+    if-nez v8, :cond_3
+
+    .line 309
     const-wide/16 v4, 0x0
 
-    .line 303
+    .line 312
     :try_start_0
     invoke-virtual {p0, v0}, Lcom/google/glass/net/upload/ResumableUploader;->startNewSession(Ljava/util/Map;)Ljava/net/URI;
     :try_end_0
     .catch Lorg/apache/http/auth/InvalidCredentialsException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 313
+    .line 322
     :goto_0
-    sget-object v10, Lcom/google/glass/logging/UserEventAction;->RESUMABLE_UPLOADER_UPLOAD_STARTED:Lcom/google/glass/logging/UserEventAction;
+    sget-object v8, Lcom/google/glass/logging/UserEventAction;->RESUMABLE_UPLOADER_UPLOAD_STARTED:Lcom/google/glass/logging/UserEventAction;
 
-    invoke-virtual {v7, v10}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
+    const-string v9, "m"
 
-    .line 323
+    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->obfuscatedIdentifier:Ljava/lang/String;
+
+    const/4 v11, 0x0
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    invoke-static {v9, v10, v11}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v7, v8, v9}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+
+    .line 336
     :goto_1
     invoke-virtual {p0, v0, v4, v5}, Lcom/google/glass/net/upload/ResumableUploader;->doUpload(Ljava/util/Map;J)Z
 
     move-result v6
 
-    .line 324
+    .line 337
     .local v6, uploadFinalized:Z
     invoke-virtual {p0, v0}, Lcom/google/glass/net/upload/ResumableUploader;->queryForSessionOffset(Ljava/util/Map;)J
 
     move-result-wide v2
 
-    .line 326
+    .line 339
     .local v2, newOffset:J
     if-nez v6, :cond_2
+
+    const-wide/16 v8, -0x2
 
     cmp-long v8, v8, v2
 
     if-nez v8, :cond_5
 
-    .line 327
+    .line 340
     :cond_2
     sget-object v8, Lcom/google/glass/logging/UserEventAction;->RESUMABLE_UPLOADER_UPLOAD_FINISHED:Lcom/google/glass/logging/UserEventAction;
 
-    invoke-virtual {v7, v8}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
+    const-string v9, "m"
 
-    .line 328
+    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->obfuscatedIdentifier:Ljava/lang/String;
+
+    const/4 v11, 0x0
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    invoke-static {v9, v10, v11}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v7, v8, v9}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+
+    .line 343
     sget-object v8, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1644,77 +1705,93 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 329
+    .line 344
     .end local v2           #newOffset:J
     .end local v6           #uploadFinalized:Z
     :goto_2
     return-wide v2
 
-    .line 304
+    .line 313
     :catch_0
     move-exception v1
 
-    .line 305
+    .line 314
     .local v1, e:Lorg/apache/http/auth/InvalidCredentialsException;
-    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
+    iget-object v8, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
 
-    invoke-virtual {v10}, Lcom/google/glass/util/AuthUtils;->invalidateAuthToken()V
+    invoke-virtual {v8}, Lcom/google/glass/util/AuthUtils;->invalidateAuthToken()V
 
-    .line 306
-    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
+    .line 315
+    iget-object v8, p0, Lcom/google/glass/net/upload/ResumableUploader;->authUtils:Lcom/google/glass/util/AuthUtils;
 
-    invoke-virtual {v10}, Lcom/google/glass/util/AuthUtils;->createAuthHeaders()Ljava/util/Map;
+    invoke-virtual {v8}, Lcom/google/glass/util/AuthUtils;->createAuthHeaders()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 310
+    .line 319
     invoke-virtual {p0, v0}, Lcom/google/glass/net/upload/ResumableUploader;->startNewSession(Ljava/util/Map;)Ljava/net/URI;
 
     goto :goto_0
 
-    .line 314
+    .line 325
     .end local v1           #e:Lorg/apache/http/auth/InvalidCredentialsException;
     :cond_3
-    cmp-long v10, v4, v8
+    const-wide/16 v8, -0x2
 
-    if-nez v10, :cond_4
+    cmp-long v8, v4, v8
 
-    .line 317
-    sget-object v10, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
+    if-nez v8, :cond_4
 
-    const-string v11, "Trying to resume a finalize session"
+    .line 328
+    sget-object v8, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
-    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v9, "Trying to resume a finalize session"
 
-    move-wide v2, v8
+    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 318
+    .line 329
+    const-wide/16 v2, -0x2
+
     goto :goto_2
 
-    .line 320
+    .line 331
     :cond_4
-    sget-object v10, Lcom/google/glass/logging/UserEventAction;->RESUMABLE_UPLOADER_UPLOAD_RESUMED:Lcom/google/glass/logging/UserEventAction;
+    sget-object v8, Lcom/google/glass/logging/UserEventAction;->RESUMABLE_UPLOADER_UPLOAD_RESUMED:Lcom/google/glass/logging/UserEventAction;
 
-    invoke-virtual {v7, v10}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
+    const-string v9, "m"
+
+    iget-object v10, p0, Lcom/google/glass/net/upload/ResumableUploader;->obfuscatedIdentifier:Ljava/lang/String;
+
+    const/4 v11, 0x0
+
+    new-array v11, v11, [Ljava/lang/Object;
+
+    invoke-static {v9, v10, v11}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v7, v8, v9}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 332
+    .line 347
     .restart local v2       #newOffset:J
     .restart local v6       #uploadFinalized:Z
     :cond_5
-    cmp-long v8, v2, v12
+    const-wide/16 v8, -0x1
+
+    cmp-long v8, v2, v8
 
     if-nez v8, :cond_6
 
-    .line 333
+    .line 348
     sget-object v8, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     const-string v9, "Upload session went invalid in the middle of an upload!"
 
     invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
+    .line 349
     new-instance v8, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;
 
     const-string v9, "Upload session invalidated in the middle of upload!"
@@ -1723,7 +1800,7 @@
 
     throw v8
 
-    .line 337
+    .line 352
     :cond_6
     sget-object v8, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
@@ -1747,12 +1824,12 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 339
+    .line 354
     cmp-long v8, v4, v2
 
     if-nez v8, :cond_7
 
-    .line 340
+    .line 355
     sget-object v8, Lcom/google/glass/net/upload/ResumableUploader;->TAG:Ljava/lang/String;
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -1775,7 +1852,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 343
+    .line 358
     :cond_7
     new-instance v8, Ljava/io/IOException;
 

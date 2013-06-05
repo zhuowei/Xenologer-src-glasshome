@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 239
+    .line 251
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$1;->val$entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "environment"
 
     .prologue
-    .line 247
+    .line 259
     new-instance v0, Lcom/google/glass/app/GlassError;
 
     invoke-direct {v0}, Lcom/google/glass/app/GlassError;-><init>()V
@@ -73,7 +73,7 @@
     .parameter "environment"
 
     .prologue
-    .line 242
+    .line 254
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$1;->val$entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->hasPhoneNumber()Z

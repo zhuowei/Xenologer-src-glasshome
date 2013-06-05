@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "VoiceMessageHelper.java"
 
+# interfaces
+.implements Lcom/google/glass/voice/VoiceInputActivityHelper;
+
 
 # static fields
 .field public static final ACTION_SEND_VOICE_MESSAGE:Ljava/lang/String; = "com.google.glass.ACTION_SEND_VOICE_MESSAGE"
@@ -26,7 +29,7 @@
     .locals 0
 
     .prologue
-    .line 7
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -3,7 +3,7 @@
 .source "SortedMultiset.java"
 
 # interfaces
-.implements Lcom/google/common/collect/Multiset;
+.implements Lcom/google/common/collect/SortedMultisetBridge;
 .implements Lcom/google/common/collect/SortedIterable;
 
 
@@ -12,6 +12,7 @@
 .end annotation
 
 .annotation build Lcom/google/common/annotations/GwtCompatible;
+    emulated = true
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -20,7 +21,7 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Lcom/google/common/collect/Multiset",
+        "Lcom/google/common/collect/SortedMultisetBridge",
         "<TE;>;",
         "Lcom/google/common/collect/SortedIterable",
         "<TE;>;"

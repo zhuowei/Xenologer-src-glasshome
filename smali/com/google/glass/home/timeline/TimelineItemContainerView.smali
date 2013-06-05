@@ -3,7 +3,7 @@
 .source "TimelineItemContainerView.java"
 
 # interfaces
-.implements Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+.implements Lcom/google/glass/horizontalscroll/Card;
 
 
 # annotations
@@ -15,11 +15,13 @@
 
 
 # instance fields
-.field private bundleId:Lcom/google/glass/timeline/TimelineItemId;
+.field private bundleEntryPoint:Lcom/google/glass/timeline/TimelineItemId;
 
-.field private scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+.field private card:Lcom/google/glass/horizontalscroll/Card;
 
-.field private state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+.field private readMoreEntryPoint:Lcom/google/glass/timeline/TimelineItemId;
+
+.field private state:Lcom/google/glass/horizontalscroll/Card$State;
 
 
 # direct methods
@@ -28,12 +30,12 @@
     .parameter "context"
 
     .prologue
-    .line 35
+    .line 40
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/home/timeline/TimelineItemContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 36
+    .line 41
     return-void
 .end method
 
@@ -43,12 +45,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 39
+    .line 44
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/glass/home/timeline/TimelineItemContainerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 40
+    .line 45
     return-void
 .end method
 
@@ -59,48 +61,57 @@
     .parameter "defStyle"
 
     .prologue
-    .line 43
+    .line 48
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 44
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->UNLOADED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 49
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->UNLOADED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 45
+    .line 50
     return-void
 .end method
 
 
 # virtual methods
-.method public getBundleId()Lcom/google/glass/timeline/TimelineItemId;
+.method public getBundleEntryPoint()Lcom/google/glass/timeline/TimelineItemId;
     .locals 1
 
     .prologue
-    .line 195
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->bundleId:Lcom/google/glass/timeline/TimelineItemId;
+    .line 200
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->bundleEntryPoint:Lcom/google/glass/timeline/TimelineItemId;
 
     return-object v0
 .end method
 
-.method public onConfirm(Lcom/google/glass/app/GlassActivity;)Z
+.method public getReadMoreEntryPoint()Lcom/google/glass/timeline/TimelineItemId;
     .locals 1
-    .parameter "activity"
 
     .prologue
-    .line 150
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 210
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->readMoreEntryPoint:Lcom/google/glass/timeline/TimelineItemId;
+
+    return-object v0
+.end method
+
+.method public onConfirm()Z
+    .locals 1
+
+    .prologue
+    .line 155
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 151
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 156
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onConfirm(Lcom/google/glass/app/GlassActivity;)Z
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onConfirm()Z
 
     move-result v0
 
-    .line 153
+    .line 158
     :goto_0
     return v0
 
@@ -110,24 +121,23 @@
     goto :goto_0
 .end method
 
-.method public onDoubleTap(Lcom/google/glass/app/GlassActivity;)Z
+.method public onDoubleTap()Z
     .locals 1
-    .parameter "activity"
 
     .prologue
-    .line 158
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 163
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 159
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 164
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onDoubleTap(Lcom/google/glass/app/GlassActivity;)Z
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onDoubleTap()Z
 
     move-result v0
 
-    .line 161
+    .line 166
     :goto_0
     return v0
 
@@ -141,22 +151,22 @@
     .locals 1
 
     .prologue
-    .line 118
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->FOCUSED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 123
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->FOCUSED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 119
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 124
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 120
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 125
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onFocus()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onFocus()V
 
-    .line 122
+    .line 127
     :cond_0
     return-void
 .end method
@@ -165,22 +175,22 @@
     .locals 1
 
     .prologue
-    .line 102
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->LOADED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 107
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->LOADED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 103
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 108
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 104
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 109
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onLoad()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onLoad()V
 
-    .line 106
+    .line 111
     :cond_0
     return-void
 .end method
@@ -190,19 +200,19 @@
     .parameter "item"
 
     .prologue
-    .line 182
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 187
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 183
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 188
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    invoke-interface {v0, p1}, Lcom/google/glass/horizontalscroll/Card;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v0
 
-    .line 185
+    .line 190
     :goto_0
     return v0
 
@@ -217,19 +227,19 @@
     .parameter "menu"
 
     .prologue
-    .line 174
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 179
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 175
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 180
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onPrepareOptionsMenu(Lcom/google/glass/widget/OptionMenu;)Z
+    invoke-interface {v0, p1}, Lcom/google/glass/horizontalscroll/Card;->onPrepareOptionsMenu(Lcom/google/glass/widget/OptionMenu;)Z
 
     move-result v0
 
-    .line 177
+    .line 182
     :goto_0
     return v0
 
@@ -243,22 +253,22 @@
     .locals 1
 
     .prologue
-    .line 134
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->SETTLED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 139
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->SETTLED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 135
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 140
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 136
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 141
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onSettled()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onSettled()V
 
-    .line 138
+    .line 143
     :cond_0
     return-void
 .end method
@@ -267,22 +277,22 @@
     .locals 1
 
     .prologue
-    .line 126
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->LOADED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 131
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->LOADED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 127
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 132
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 128
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 133
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnfocus()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnfocus()V
 
-    .line 130
+    .line 135
     :cond_0
     return-void
 .end method
@@ -291,22 +301,22 @@
     .locals 1
 
     .prologue
-    .line 110
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->UNLOADED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 115
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->UNLOADED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 111
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 116
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 112
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 117
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnload()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnload()V
 
-    .line 114
+    .line 119
     :cond_0
     return-void
 .end method
@@ -315,72 +325,72 @@
     .locals 1
 
     .prologue
-    .line 142
-    sget-object v0, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->FOCUSED:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    .line 147
+    sget-object v0, Lcom/google/glass/horizontalscroll/Card$State;->FOCUSED:Lcom/google/glass/horizontalscroll/Card$State;
 
-    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iput-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    .line 143
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 148
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 144
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 149
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnsettled()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnsettled()V
 
-    .line 146
+    .line 151
     :cond_0
     return-void
 .end method
 
-.method public removeScrollItem()V
+.method public removeContainedCard()V
     .locals 1
 
     .prologue
-    .line 49
+    .line 54
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setScrollItem(Lcom/google/glass/horizontalscroll/HorizontalScrollItem;)V
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setContainedCard(Lcom/google/glass/horizontalscroll/Card;)V
 
-    .line 50
+    .line 55
     return-void
 .end method
 
-.method public setBundleId(Lcom/google/glass/timeline/TimelineItemId;)V
+.method public setBundleEntryPoint(Lcom/google/glass/timeline/TimelineItemId;)V
     .locals 0
-    .parameter "bundleId"
+    .parameter "bundleEntryPoint"
 
     .prologue
-    .line 190
-    iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->bundleId:Lcom/google/glass/timeline/TimelineItemId;
+    .line 195
+    iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->bundleEntryPoint:Lcom/google/glass/timeline/TimelineItemId;
 
-    .line 191
+    .line 196
     return-void
 .end method
 
-.method public setScrollItem(Lcom/google/glass/horizontalscroll/HorizontalScrollItem;)V
+.method public setContainedCard(Lcom/google/glass/horizontalscroll/Card;)V
     .locals 2
     .parameter "scrollItem"
 
     .prologue
-    .line 54
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 59
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eq v0, p1, :cond_2
 
-    .line 57
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 62
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 58
-    sget-object v0, Lcom/google/glass/home/timeline/TimelineItemContainerView$1;->$SwitchMap$com$google$glass$horizontalscroll$HorizontalScrollItem$State:[I
+    .line 63
+    sget-object v0, Lcom/google/glass/home/timeline/TimelineItemContainerView$1;->$SwitchMap$com$google$glass$horizontalscroll$Card$State:[I
 
-    iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/Card$State;->ordinal()I
 
     move-result v1
 
@@ -388,18 +398,18 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 77
+    .line 82
     :cond_0
     :goto_0
     :pswitch_0
     if-eqz p1, :cond_1
 
-    .line 78
-    sget-object v0, Lcom/google/glass/home/timeline/TimelineItemContainerView$1;->$SwitchMap$com$google$glass$horizontalscroll$HorizontalScrollItem$State:[I
+    .line 83
+    sget-object v0, Lcom/google/glass/home/timeline/TimelineItemContainerView$1;->$SwitchMap$com$google$glass$horizontalscroll$Card$State:[I
 
-    iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;
+    iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->state:Lcom/google/glass/horizontalscroll/Card$State;
 
-    invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem$State;->ordinal()I
+    invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/Card$State;->ordinal()I
 
     move-result v1
 
@@ -407,83 +417,83 @@
 
     packed-switch v0, :pswitch_data_1
 
-    .line 96
+    .line 101
     :cond_1
     :goto_1
     :pswitch_1
-    iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    .line 98
+    .line 103
     :cond_2
     return-void
 
-    .line 62
+    .line 67
     :pswitch_2
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnload()V
-
-    goto :goto_0
-
-    .line 65
-    :pswitch_3
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
-
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnfocus()V
-
-    .line 66
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
-
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnload()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnload()V
 
     goto :goto_0
-
-    .line 69
-    :pswitch_4
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
-
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnsettled()V
 
     .line 70
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    :pswitch_3
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnfocus()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnfocus()V
 
     .line 71
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onUnload()V
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnload()V
 
     goto :goto_0
 
-    .line 82
+    .line 74
+    :pswitch_4
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
+
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnsettled()V
+
+    .line 75
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
+
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnfocus()V
+
+    .line 76
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
+
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->onUnload()V
+
+    goto :goto_0
+
+    .line 87
     :pswitch_5
-    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onLoad()V
+    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/Card;->onLoad()V
 
     goto :goto_1
-
-    .line 85
-    :pswitch_6
-    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onLoad()V
-
-    .line 86
-    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onFocus()V
-
-    goto :goto_1
-
-    .line 89
-    :pswitch_7
-    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onLoad()V
 
     .line 90
-    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onFocus()V
+    :pswitch_6
+    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/Card;->onLoad()V
 
     .line 91
-    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->onSettled()V
+    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/Card;->onFocus()V
 
     goto :goto_1
 
-    .line 58
+    .line 94
+    :pswitch_7
+    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/Card;->onLoad()V
+
+    .line 95
+    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/Card;->onFocus()V
+
+    .line 96
+    invoke-interface {p1}, Lcom/google/glass/horizontalscroll/Card;->onSettled()V
+
+    goto :goto_1
+
+    .line 63
     nop
 
     :pswitch_data_0
@@ -494,7 +504,7 @@
         :pswitch_4
     .end packed-switch
 
-    .line 78
+    .line 83
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_1
@@ -504,23 +514,35 @@
     .end packed-switch
 .end method
 
+.method public setReadMoreEntryPoint(Lcom/google/glass/timeline/TimelineItemId;)V
+    .locals 0
+    .parameter "readMoreEntryPoint"
+
+    .prologue
+    .line 205
+    iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->readMoreEntryPoint:Lcom/google/glass/timeline/TimelineItemId;
+
+    .line 206
+    return-void
+.end method
+
 .method public shouldSuppressSingleTapSound()Z
     .locals 1
 
     .prologue
-    .line 166
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 171
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
     if-eqz v0, :cond_0
 
-    .line 167
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->scrollItem:Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
+    .line 172
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemContainerView;->card:Lcom/google/glass/horizontalscroll/Card;
 
-    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/HorizontalScrollItem;->shouldSuppressSingleTapSound()Z
+    invoke-interface {v0}, Lcom/google/glass/horizontalscroll/Card;->shouldSuppressSingleTapSound()Z
 
     move-result v0
 
-    .line 169
+    .line 174
     :goto_0
     return v0
 

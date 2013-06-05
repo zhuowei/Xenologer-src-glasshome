@@ -3,12 +3,12 @@
 .source "CharStreams.java"
 
 # interfaces
-.implements Lcom/google/common/io/OutputSupplier;
+.implements Lcom/google/common/io/InputSupplier;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/CharStreams;->newWriterSupplier(Lcom/google/common/io/OutputSupplier;Ljava/nio/charset/Charset;)Lcom/google/common/io/OutputSupplier;
+    value = Lcom/google/common/io/CharStreams;->asInputSupplier(Lcom/google/common/io/CharSource;)Lcom/google/common/io/InputSupplier;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,31 +19,24 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/io/OutputSupplier",
-        "<",
-        "Ljava/io/OutputStreamWriter;",
-        ">;"
+        "Lcom/google/common/io/InputSupplier",
+        "<TR;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$charset:Ljava/nio/charset/Charset;
-
-.field final synthetic val$out:Lcom/google/common/io/OutputSupplier;
+.field final synthetic val$source:Lcom/google/common/io/CharSource;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/io/OutputSupplier;Ljava/nio/charset/Charset;)V
+.method constructor <init>(Lcom/google/common/io/CharSource;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 108
-    iput-object p1, p0, Lcom/google/common/io/CharStreams$3;->val$out:Lcom/google/common/io/OutputSupplier;
-
-    iput-object p2, p0, Lcom/google/common/io/CharStreams$3;->val$charset:Ljava/nio/charset/Charset;
+    .line 498
+    iput-object p1, p0, Lcom/google/common/io/CharStreams$3;->val$source:Lcom/google/common/io/CharSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -52,8 +45,14 @@
 
 
 # virtual methods
-.method public getOutput()Ljava/io/OutputStreamWriter;
-    .locals 3
+.method public getInput()Ljava/io/Reader;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TR;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -61,25 +60,17 @@
     .end annotation
 
     .prologue
-    .line 111
-    new-instance v1, Ljava/io/OutputStreamWriter;
+    .line 501
+    iget-object v0, p0, Lcom/google/common/io/CharStreams$3;->val$source:Lcom/google/common/io/CharSource;
 
-    iget-object v0, p0, Lcom/google/common/io/CharStreams$3;->val$out:Lcom/google/common/io/OutputSupplier;
-
-    invoke-interface {v0}, Lcom/google/common/io/OutputSupplier;->getOutput()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/common/io/CharSource;->openStream()Ljava/io/Reader;
 
     move-result-object v0
 
-    check-cast v0, Ljava/io/OutputStream;
-
-    iget-object v2, p0, Lcom/google/common/io/CharStreams$3;->val$charset:Ljava/nio/charset/Charset;
-
-    invoke-direct {v1, v0, v2}, Ljava/io/OutputStreamWriter;-><init>(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V
-
-    return-object v1
+    return-object v0
 .end method
 
-.method public bridge synthetic getOutput()Ljava/lang/Object;
+.method public bridge synthetic getInput()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -88,8 +79,8 @@
     .end annotation
 
     .prologue
-    .line 108
-    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$3;->getOutput()Ljava/io/OutputStreamWriter;
+    .line 498
+    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$3;->getInput()Ljava/io/Reader;
 
     move-result-object v0
 

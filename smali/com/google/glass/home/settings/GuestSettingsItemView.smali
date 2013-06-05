@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/settings/GuestSettingsItemView;
-.super Lcom/google/glass/home/settings/SettingsItemView;
+.super Lcom/google/glass/home/settings/SettingsCard;
 .source "GuestSettingsItemView.java"
 
 
@@ -77,7 +77,7 @@
 
     .prologue
     .line 66
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 43
     new-instance v0, Lcom/google/glass/home/settings/GuestSettingsItemView$1;
@@ -490,7 +490,7 @@
 
     .prologue
     .line 78
-    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsItemView;->onLoad()V
+    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsCard;->onLoad()V
 
     .line 81
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
@@ -553,7 +553,7 @@
     return v1
 
     :cond_0
-    invoke-super {p0, p1}, Lcom/google/glass/home/settings/SettingsItemView;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
+    invoke-super {p0, p1}, Lcom/google/glass/home/settings/SettingsCard;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
     move-result v1
 

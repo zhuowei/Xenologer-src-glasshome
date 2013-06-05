@@ -47,7 +47,7 @@
     .locals 0
 
     .prologue
-    .line 71
+    .line 74
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 66
     sget-object v0, Lcom/google/common/collect/NaturalOrdering;->INSTANCE:Lcom/google/common/collect/NaturalOrdering;
 
     return-object v0
@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 53
     .local p1, sortedList:Ljava/util/List;,"Ljava/util/List<+Ljava/lang/Comparable;>;"
     invoke-static {p1, p2}, Ljava/util/Collections;->binarySearch(Ljava/util/List;Ljava/lang/Object;)I
 
@@ -114,19 +114,19 @@
     .parameter "right"
 
     .prologue
-    .line 35
+    .line 36
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 36
+    .line 37
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 37
+    .line 38
     if-ne p1, p2, :cond_0
 
-    .line 38
+    .line 39
     const/4 v0, 0x0
 
-    .line 41
+    .line 42
     :goto_0
     return v0
 
@@ -171,7 +171,7 @@
     .end annotation
 
     .prologue
-    .line 45
+    .line 47
     sget-object v0, Lcom/google/common/collect/ReverseNaturalOrdering;->INSTANCE:Lcom/google/common/collect/ReverseNaturalOrdering;
 
     return-object v0
@@ -193,17 +193,17 @@
     .end annotation
 
     .prologue
-    .line 57
+    .line 59
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     invoke-static {p1}, Lcom/google/common/collect/Lists;->newArrayList(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 58
+    .line 60
     .local v0, list:Ljava/util/List;,"Ljava/util/List<TE;>;"
     invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 59
+    .line 61
     return-object v0
 .end method
 
@@ -211,7 +211,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 71
     const-string v0, "Ordering.natural()"
 
     return-object v0

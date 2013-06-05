@@ -65,19 +65,19 @@
     .locals 2
 
     .prologue
-    .line 22239
+    .line 22241
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 22391
+    .line 22393
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 22754
+    .line 22756
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
     const/4 v1, 0x1
@@ -86,12 +86,12 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->defaultInstance:Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
-    .line 22755
+    .line 22757
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->defaultInstance:Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->initFields()V
 
-    .line 22756
+    .line 22758
     return-void
 .end method
 
@@ -108,67 +108,67 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 22185
+    .line 22187
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 22343
+    .line 22345
     iput-byte v5, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedIsInitialized:B
 
-    .line 22364
+    .line 22366
     iput v5, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedSerializedSize:I
 
-    .line 22186
+    .line 22188
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->initFields()V
 
-    .line 22187
+    .line 22189
     const/4 v2, 0x0
 
-    .line 22188
+    .line 22190
     .local v2, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
     move-result-object v4
 
-    .line 22191
+    .line 22193
     .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     const/4 v0, 0x0
 
-    .line 22192
+    .line 22194
     .local v0, done:Z
     :cond_0
     :goto_0
     if-nez v0, :cond_1
 
-    .line 22193
+    .line 22195
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result v3
 
-    .line 22194
+    .line 22196
     .local v3, tag:I
     sparse-switch v3, :sswitch_data_0
 
-    .line 22199
+    .line 22201
     invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 22201
+    .line 22203
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 22196
+    .line 22198
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 22197
+    .line 22199
     goto :goto_0
 
-    .line 22206
+    .line 22208
     :sswitch_1
     iget v5, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
@@ -176,7 +176,7 @@
 
     iput v5, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
-    .line 22207
+    .line 22209
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v5
@@ -189,12 +189,12 @@
 
     goto :goto_0
 
-    .line 22217
+    .line 22219
     .end local v3           #tag:I
     :catch_0
     move-exception v1
 
-    .line 22218
+    .line 22220
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -205,7 +205,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 22223
+    .line 22225
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v5
@@ -216,12 +216,12 @@
 
     iput-object v6, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 22224
+    .line 22226
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->makeExtensionsImmutable()V
 
     throw v5
 
-    .line 22211
+    .line 22213
     .restart local v3       #tag:I
     :sswitch_2
     :try_start_2
@@ -231,7 +231,7 @@
 
     iput v5, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
-    .line 22212
+    .line 22214
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v5
@@ -244,12 +244,12 @@
 
     goto :goto_0
 
-    .line 22219
+    .line 22221
     .end local v3           #tag:I
     :catch_1
     move-exception v1
 
-    .line 22220
+    .line 22222
     .local v1, e:Ljava/io/IOException;
     :try_start_3
     new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -268,7 +268,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 22223
+    .line 22225
     .end local v1           #e:Ljava/io/IOException;
     :cond_1
     invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
@@ -277,13 +277,13 @@
 
     iput-object v5, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 22224
+    .line 22226
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->makeExtensionsImmutable()V
 
-    .line 22226
+    .line 22228
     return-void
 
-    .line 22194
+    .line 22196
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -304,7 +304,7 @@
     .end annotation
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-direct {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;-><init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
     return-void
@@ -325,23 +325,23 @@
     .local p1, builder:Lcom/google/protobuf/GeneratedMessage$Builder;,"Lcom/google/protobuf/GeneratedMessage$Builder<*>;"
     const/4 v0, -0x1
 
-    .line 22162
+    .line 22164
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 22343
+    .line 22345
     iput-byte v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedIsInitialized:B
 
-    .line 22364
+    .line 22366
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedSerializedSize:I
 
-    .line 22163
+    .line 22165
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessage$Builder;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 22164
+    .line 22166
     return-void
 .end method
 
@@ -351,7 +351,7 @@
     .parameter "x1"
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-direct {p0, p1}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
     return-void
@@ -364,16 +364,16 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 22165
+    .line 22167
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 22343
+    .line 22345
     iput-byte v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedIsInitialized:B
 
-    .line 22364
+    .line 22366
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedSerializedSize:I
 
-    .line 22165
+    .line 22167
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
@@ -388,7 +388,7 @@
     .parameter "x0"
 
     .prologue
-    .line 22156
+    .line 22158
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
     return-object v0
@@ -400,7 +400,7 @@
     .parameter "x1"
 
     .prologue
-    .line 22156
+    .line 22158
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
     return-object p1
@@ -411,7 +411,7 @@
     .parameter "x0"
 
     .prologue
-    .line 22156
+    .line 22158
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
     return-object v0
@@ -423,7 +423,7 @@
     .parameter "x1"
 
     .prologue
-    .line 22156
+    .line 22158
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
     return-object p1
@@ -435,7 +435,7 @@
     .parameter "x1"
 
     .prologue
-    .line 22156
+    .line 22158
     iput p1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
     return p1
@@ -445,7 +445,7 @@
     .locals 1
 
     .prologue
-    .line 22169
+    .line 22171
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->defaultInstance:Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
     return-object v0
@@ -455,7 +455,7 @@
     .locals 1
 
     .prologue
-    .line 22229
+    .line 22231
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$16300()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -467,17 +467,17 @@
     .locals 1
 
     .prologue
-    .line 22340
+    .line 22342
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
-    .line 22341
+    .line 22343
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
-    .line 22342
+    .line 22344
     return-void
 .end method
 
@@ -485,7 +485,7 @@
     .locals 1
 
     .prologue
-    .line 22453
+    .line 22455
     #calls: Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;->create()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;->access$16600()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
@@ -499,7 +499,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 22456
+    .line 22458
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->newBuilder()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -521,7 +521,7 @@
     .end annotation
 
     .prologue
-    .line 22433
+    .line 22435
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -544,7 +544,7 @@
     .end annotation
 
     .prologue
-    .line 22439
+    .line 22441
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -566,7 +566,7 @@
     .end annotation
 
     .prologue
-    .line 22403
+    .line 22405
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -589,7 +589,7 @@
     .end annotation
 
     .prologue
-    .line 22409
+    .line 22411
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -611,7 +611,7 @@
     .end annotation
 
     .prologue
-    .line 22444
+    .line 22446
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -634,7 +634,7 @@
     .end annotation
 
     .prologue
-    .line 22450
+    .line 22452
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -656,7 +656,7 @@
     .end annotation
 
     .prologue
-    .line 22423
+    .line 22425
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -679,7 +679,7 @@
     .end annotation
 
     .prologue
-    .line 22429
+    .line 22431
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -701,7 +701,7 @@
     .end annotation
 
     .prologue
-    .line 22413
+    .line 22415
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -724,7 +724,7 @@
     .end annotation
 
     .prologue
-    .line 22419
+    .line 22421
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -742,7 +742,7 @@
     .locals 1
 
     .prologue
-    .line 22173
+    .line 22175
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->defaultInstance:Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
     return-object v0
@@ -752,7 +752,7 @@
     .locals 1
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
     move-result-object v0
@@ -764,7 +764,7 @@
     .locals 1
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;
 
     move-result-object v0
@@ -776,19 +776,19 @@
     .locals 4
 
     .prologue
-    .line 22267
+    .line 22269
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
-    .line 22268
+    .line 22270
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 22269
+    .line 22271
     check-cast v1, Ljava/lang/String;
 
-    .line 22277
+    .line 22279
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -797,16 +797,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 22271
+    .line 22273
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 22273
+    .line 22275
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 22274
+    .line 22276
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -814,13 +814,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 22275
+    .line 22277
     iput-object v2, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 22277
+    .line 22279
     goto :goto_0
 .end method
 
@@ -828,16 +828,16 @@
     .locals 3
 
     .prologue
-    .line 22285
+    .line 22287
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
-    .line 22286
+    .line 22288
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 22287
+    .line 22289
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -845,11 +845,11 @@
 
     move-result-object v0
 
-    .line 22290
+    .line 22292
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->name_:Ljava/lang/Object;
 
-    .line 22293
+    .line 22295
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -877,7 +877,7 @@
     .end annotation
 
     .prologue
-    .line 22251
+    .line 22253
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -891,10 +891,10 @@
 
     const/4 v3, 0x1
 
-    .line 22366
+    .line 22368
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedSerializedSize:I
 
-    .line 22367
+    .line 22369
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -902,26 +902,26 @@
 
     move v1, v0
 
-    .line 22380
+    .line 22382
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 22369
+    .line 22371
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 22370
+    .line 22372
     iget v2, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 22371
+    .line 22373
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getNameBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -932,7 +932,7 @@
 
     add-int/2addr v0, v2
 
-    .line 22374
+    .line 22376
     :cond_1
     iget v2, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
@@ -940,7 +940,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 22375
+    .line 22377
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getValueBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -951,7 +951,7 @@
 
     add-int/2addr v0, v2
 
-    .line 22378
+    .line 22380
     :cond_2
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -963,12 +963,12 @@
 
     add-int/2addr v0, v2
 
-    .line 22379
+    .line 22381
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 22380
+    .line 22382
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -978,7 +978,7 @@
     .locals 1
 
     .prologue
-    .line 22180
+    .line 22182
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
     return-object v0
@@ -988,19 +988,19 @@
     .locals 4
 
     .prologue
-    .line 22309
+    .line 22311
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
-    .line 22310
+    .line 22312
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 22311
+    .line 22313
     check-cast v1, Ljava/lang/String;
 
-    .line 22319
+    .line 22321
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1009,16 +1009,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 22313
+    .line 22315
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 22315
+    .line 22317
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 22316
+    .line 22318
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1026,13 +1026,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 22317
+    .line 22319
     iput-object v2, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 22319
+    .line 22321
     goto :goto_0
 .end method
 
@@ -1040,16 +1040,16 @@
     .locals 3
 
     .prologue
-    .line 22327
+    .line 22329
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
-    .line 22328
+    .line 22330
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 22329
+    .line 22331
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1057,11 +1057,11 @@
 
     move-result-object v0
 
-    .line 22332
+    .line 22334
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->value_:Ljava/lang/Object;
 
-    .line 22335
+    .line 22337
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1082,7 +1082,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 22261
+    .line 22263
     iget v1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1102,7 +1102,7 @@
     .locals 2
 
     .prologue
-    .line 22303
+    .line 22305
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1126,7 +1126,7 @@
     .locals 3
 
     .prologue
-    .line 22234
+    .line 22236
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$16400()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -1146,12 +1146,12 @@
     .locals 1
 
     .prologue
-    .line 22394
+    .line 22396
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 22395
+    .line 22397
     const-string v0, "com.google.protobuf.MutableDescriptorProtos$FieldOptions$UpgradedOption"
 
     invoke-static {v0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1160,7 +1160,7 @@
 
     sput-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 22397
+    .line 22399
     :cond_0
     sget-object v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1173,10 +1173,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 22345
+    .line 22347
     iget-byte v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedIsInitialized:B
 
-    .line 22346
+    .line 22348
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -1184,17 +1184,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 22349
+    .line 22351
     :goto_0
     return v1
 
-    .line 22346
+    .line 22348
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 22348
+    .line 22350
     :cond_1
     iput-byte v1, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->memoizedIsInitialized:B
 
@@ -1205,7 +1205,7 @@
     .locals 1
 
     .prologue
-    .line 22454
+    .line 22456
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->newBuilder()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1218,14 +1218,14 @@
     .parameter "parent"
 
     .prologue
-    .line 22463
+    .line 22465
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/protobuf/DescriptorProtos$1;)V
 
-    .line 22464
+    .line 22466
     .local v0, builder:Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
     return-object v0
 .end method
@@ -1234,7 +1234,7 @@
     .locals 1
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->newBuilderForType()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1247,7 +1247,7 @@
     .parameter "x0"
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->newBuilderForType(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1259,7 +1259,7 @@
     .locals 1
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->newBuilderForType()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1271,7 +1271,7 @@
     .locals 1
 
     .prologue
-    .line 22458
+    .line 22460
     invoke-static {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->newBuilder(Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;)Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1283,7 +1283,7 @@
     .locals 1
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->toBuilder()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1295,7 +1295,7 @@
     .locals 1
 
     .prologue
-    .line 22156
+    .line 22158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->toBuilder()Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption$Builder;
 
     move-result-object v0
@@ -1312,7 +1312,7 @@
     .end annotation
 
     .prologue
-    .line 22387
+    .line 22389
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1334,24 +1334,24 @@
 
     const/4 v1, 0x1
 
-    .line 22354
+    .line 22356
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getSerializedSize()I
 
-    .line 22355
+    .line 22357
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 22356
+    .line 22358
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getNameBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 22358
+    .line 22360
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->bitField0_:I
 
@@ -1359,14 +1359,14 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 22359
+    .line 22361
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getValueBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 22361
+    .line 22363
     :cond_1
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$FieldOptions$UpgradedOption;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1374,6 +1374,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 22362
+    .line 22364
     return-void
 .end method

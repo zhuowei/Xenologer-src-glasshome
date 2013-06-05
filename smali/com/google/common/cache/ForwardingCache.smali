@@ -35,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 43
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
@@ -44,33 +44,6 @@
 
 
 # virtual methods
-.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 133
-    .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/google/common/cache/Cache;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public asMap()Ljava/util/concurrent/ConcurrentMap;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -82,7 +55,7 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 114
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
@@ -99,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 118
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
@@ -107,7 +80,7 @@
 
     invoke-interface {v0}, Lcom/google/common/cache/Cache;->cleanUp()V
 
-    .line 116
+    .line 119
     return-void
 .end method
 
@@ -125,42 +98,9 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 39
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/util/concurrent/ExecutionException;
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 121
-    .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/google/common/cache/Cache;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -186,7 +126,7 @@
     .end annotation
 
     .prologue
-    .line 61
+    .line 62
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, valueLoader:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<+TV;>;"
@@ -208,16 +148,16 @@
         value = {
             "(",
             "Ljava/lang/Iterable",
-            "<+TK;>;)",
+            "<*>;)",
             "Lcom/google/common/collect/ImmutableMap",
             "<TK;TV;>;"
         }
     .end annotation
 
     .prologue
-    .line 69
+    .line 70
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
-    .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TK;>;"
+    .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
     move-result-object v0
@@ -231,10 +171,12 @@
 
 .method public getIfPresent(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .parameter
+    .parameter "key"
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TK;)TV;"
+            "(",
+            "Ljava/lang/Object;",
+            ")TV;"
         }
     .end annotation
 
@@ -242,9 +184,8 @@
     .end annotation
 
     .prologue
-    .line 53
+    .line 54
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
     move-result-object v0
@@ -256,39 +197,12 @@
     return-object v0
 .end method
 
-.method public getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TK;)TV;"
-        }
-    .end annotation
-
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 127
-    .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/google/common/cache/Cache;->getUnchecked(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
 .method public invalidate(Ljava/lang/Object;)V
     .locals 1
     .parameter "key"
 
     .prologue
-    .line 82
+    .line 90
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
@@ -296,7 +210,7 @@
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/Cache;->invalidate(Ljava/lang/Object;)V
 
-    .line 83
+    .line 91
     return-void
 .end method
 
@@ -304,7 +218,7 @@
     .locals 1
 
     .prologue
-    .line 95
+    .line 102
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
@@ -312,7 +226,7 @@
 
     invoke-interface {v0}, Lcom/google/common/cache/Cache;->invalidateAll()V
 
-    .line 96
+    .line 103
     return-void
 .end method
 
@@ -328,7 +242,7 @@
     .end annotation
 
     .prologue
-    .line 90
+    .line 98
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     .local p1, keys:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
@@ -337,7 +251,7 @@
 
     invoke-interface {v0, p1}, Lcom/google/common/cache/Cache;->invalidateAll(Ljava/lang/Iterable;)V
 
-    .line 91
+    .line 99
     return-void
 .end method
 
@@ -352,7 +266,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 78
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -362,7 +276,32 @@
 
     invoke-interface {v0, p1, p2}, Lcom/google/common/cache/Cache;->put(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 78
+    .line 79
+    return-void
+.end method
+
+.method public putAll(Ljava/util/Map;)V
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<+TK;+TV;>;)V"
+        }
+    .end annotation
+
+    .prologue
+    .line 86
+    .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
+    .local p1, m:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
+    invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1}, Lcom/google/common/cache/Cache;->putAll(Ljava/util/Map;)V
+
+    .line 87
     return-void
 .end method
 
@@ -370,7 +309,7 @@
     .locals 2
 
     .prologue
-    .line 100
+    .line 106
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 
@@ -387,7 +326,7 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 110
     .local p0, this:Lcom/google/common/cache/ForwardingCache;,"Lcom/google/common/cache/ForwardingCache<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/cache/ForwardingCache;->delegate()Lcom/google/common/cache/Cache;
 

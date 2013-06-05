@@ -7,6 +7,14 @@
 .annotation build Lcom/google/common/annotations/Beta;
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/common/io/Files$1;,
+        Lcom/google/common/io/Files$FileByteSink;,
+        Lcom/google/common/io/Files$FileByteSource;
+    }
+.end annotation
+
 
 # static fields
 .field private static final TEMP_DIR_ATTEMPTS:I = 0x2710
@@ -17,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 62
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,17 +43,85 @@
     .end annotation
 
     .prologue
-    .line 328
+    .line 464
     const/4 v0, 0x1
 
     invoke-static {p0, p1, p2, v0}, Lcom/google/common/io/Files;->write(Ljava/lang/CharSequence;Ljava/io/File;Ljava/nio/charset/Charset;Z)V
 
-    .line 329
+    .line 465
     return-void
 .end method
 
-.method public static copy(Lcom/google/common/io/InputSupplier;Ljava/io/File;)V
+.method public static varargs asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
+    .locals 2
+    .parameter "file"
+    .parameter "modes"
+
+    .prologue
+    .line 202
+    new-instance v0, Lcom/google/common/io/Files$FileByteSink;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, p1, v1}, Lcom/google/common/io/Files$FileByteSink;-><init>(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;Lcom/google/common/io/Files$1;)V
+
+    return-object v0
+.end method
+
+.method public static asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
+    .locals 2
+    .parameter "file"
+
+    .prologue
+    .line 106
+    new-instance v0, Lcom/google/common/io/Files$FileByteSource;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/io/Files$FileByteSource;-><init>(Ljava/io/File;Lcom/google/common/io/Files$1;)V
+
+    return-object v0
+.end method
+
+.method public static varargs asCharSink(Ljava/io/File;Ljava/nio/charset/Charset;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/CharSink;
     .locals 1
+    .parameter "file"
+    .parameter "charset"
+    .parameter "modes"
+
+    .prologue
+    .line 247
+    invoke-static {p0, p2}, Lcom/google/common/io/Files;->asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSink;->asCharSink(Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSink;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
+    .locals 1
+    .parameter "file"
+    .parameter "charset"
+
+    .prologue
+    .line 233
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->asCharSource(Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static copy(Lcom/google/common/io/InputSupplier;Ljava/io/File;)V
+    .locals 2
     .parameter
     .parameter "to"
     .annotation system Ldalvik/annotation/Signature;
@@ -67,20 +143,28 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 368
     .local p0, from:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<+Ljava/io/InputStream;>;"
-    invoke-static {p1}, Lcom/google/common/io/Files;->newOutputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/OutputSupplier;
+    invoke-static {p0}, Lcom/google/common/io/ByteStreams;->asByteSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/common/io/ByteStreams;->copy(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/OutputSupplier;)J
+    const/4 v1, 0x0
 
-    .line 237
+    new-array v1, v1, [Lcom/google/common/io/FileWriteMode;
+
+    invoke-static {p1, v1}, Lcom/google/common/io/Files;->asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/common/io/ByteSource;->copyTo(Lcom/google/common/io/ByteSink;)J
+
+    .line 369
     return-void
 .end method
 
 .method public static copy(Lcom/google/common/io/InputSupplier;Ljava/io/File;Ljava/nio/charset/Charset;)V
-    .locals 1
+    .locals 2
     .parameter
     .parameter "to"
     .parameter "charset"
@@ -106,20 +190,28 @@
     .end annotation
 
     .prologue
-    .line 300
+    .line 436
     .local p0, from:Lcom/google/common/io/InputSupplier;,"Lcom/google/common/io/InputSupplier<TR;>;"
-    invoke-static {p1, p2}, Lcom/google/common/io/Files;->newWriterSupplier(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/OutputSupplier;
+    invoke-static {p0}, Lcom/google/common/io/CharStreams;->asCharSource(Lcom/google/common/io/InputSupplier;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/common/io/CharStreams;->copy(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/OutputSupplier;)J
+    const/4 v1, 0x0
 
-    .line 301
+    new-array v1, v1, [Lcom/google/common/io/FileWriteMode;
+
+    invoke-static {p1, p2, v1}, Lcom/google/common/io/Files;->asCharSink(Ljava/io/File;Ljava/nio/charset/Charset;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/CharSink;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/common/io/CharSource;->copyTo(Lcom/google/common/io/CharSink;)J
+
+    .line 437
     return-void
 .end method
 
 .method public static copy(Ljava/io/File;Lcom/google/common/io/OutputSupplier;)V
-    .locals 1
+    .locals 2
     .parameter "from"
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -140,15 +232,19 @@
     .end annotation
 
     .prologue
-    .line 260
+    .line 391
     .local p1, to:Lcom/google/common/io/OutputSupplier;,"Lcom/google/common/io/OutputSupplier<+Ljava/io/OutputStream;>;"
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/ByteStreams;->copy(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/OutputSupplier;)J
+    invoke-static {p1}, Lcom/google/common/io/ByteStreams;->asByteSink(Lcom/google/common/io/OutputSupplier;)Lcom/google/common/io/ByteSink;
 
-    .line 261
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/common/io/ByteSource;->copyTo(Lcom/google/common/io/ByteSink;)J
+
+    .line 392
     return-void
 .end method
 
@@ -167,7 +263,7 @@
 
     const/4 v2, 0x0
 
-    .line 283
+    .line 419
     invoke-virtual {p0, p1}, Ljava/io/File;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -189,20 +285,26 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 285
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    .line 420
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/Files;->copy(Lcom/google/common/io/InputSupplier;Ljava/io/File;)V
+    new-array v1, v2, [Lcom/google/common/io/FileWriteMode;
 
-    .line 286
+    invoke-static {p1, v1}, Lcom/google/common/io/Files;->asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/common/io/ByteSource;->copyTo(Lcom/google/common/io/ByteSink;)J
+
+    .line 421
     return-void
 
     :cond_0
     move v0, v2
 
-    .line 283
+    .line 419
     goto :goto_0
 .end method
 
@@ -217,19 +319,19 @@
     .end annotation
 
     .prologue
-    .line 271
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    .line 402
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/ByteStreams;->copy(Lcom/google/common/io/InputSupplier;Ljava/io/OutputStream;)J
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->copyTo(Ljava/io/OutputStream;)J
 
-    .line 272
+    .line 403
     return-void
 .end method
 
 .method public static copy(Ljava/io/File;Ljava/nio/charset/Charset;Lcom/google/common/io/OutputSupplier;)V
-    .locals 1
+    .locals 2
     .parameter "from"
     .parameter "charset"
     .parameter
@@ -254,15 +356,19 @@
     .end annotation
 
     .prologue
-    .line 358
+    .line 496
     .local p2, to:Lcom/google/common/io/OutputSupplier;,"Lcom/google/common/io/OutputSupplier<TW;>;"
-    invoke-static {p0, p1}, Lcom/google/common/io/Files;->newReaderSupplier(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    invoke-static {p0, p1}, Lcom/google/common/io/Files;->asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/google/common/io/CharStreams;->copy(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/OutputSupplier;)J
+    invoke-static {p2}, Lcom/google/common/io/CharStreams;->asCharSink(Lcom/google/common/io/OutputSupplier;)Lcom/google/common/io/CharSink;
 
-    .line 359
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/common/io/CharSource;->copyTo(Lcom/google/common/io/CharSink;)J
+
+    .line 497
     return-void
 .end method
 
@@ -278,14 +384,14 @@
     .end annotation
 
     .prologue
-    .line 372
-    invoke-static {p0, p1}, Lcom/google/common/io/Files;->newReaderSupplier(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    .line 510
+    invoke-static {p0, p1}, Lcom/google/common/io/Files;->asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {v0, p2}, Lcom/google/common/io/CharStreams;->copy(Lcom/google/common/io/InputSupplier;Ljava/lang/Appendable;)J
+    invoke-virtual {v0, p2}, Lcom/google/common/io/CharSource;->copyTo(Ljava/lang/Appendable;)J
 
-    .line 373
+    .line 511
     return-void
 .end method
 
@@ -299,7 +405,10 @@
     .end annotation
 
     .prologue
-    .line 458
+    .line 596
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 597
     invoke-virtual {p0}, Ljava/io/File;->getCanonicalFile()Ljava/io/File;
 
     move-result-object v1
@@ -308,26 +417,26 @@
 
     move-result-object v0
 
-    .line 459
+    .line 598
     .local v0, parent:Ljava/io/File;
     if-nez v0, :cond_1
 
-    .line 473
+    .line 612
     :cond_0
     return-void
 
-    .line 469
+    .line 608
     :cond_1
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 470
+    .line 609
     invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 471
+    .line 610
     new-instance v1, Ljava/io/IOException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -357,7 +466,7 @@
     .locals 7
 
     .prologue
-    .line 419
+    .line 558
     new-instance v0, Ljava/io/File;
 
     const-string v4, "java.io.tmpdir"
@@ -368,7 +477,7 @@
 
     invoke-direct {v0, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 420
+    .line 559
     .local v0, baseDir:Ljava/io/File;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -392,7 +501,7 @@
 
     move-result-object v1
 
-    .line 422
+    .line 561
     .local v1, baseName:Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -402,7 +511,7 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 423
+    .line 562
     new-instance v3, Ljava/io/File;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -423,7 +532,7 @@
 
     invoke-direct {v3, v0, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 424
+    .line 563
     .local v3, tempDir:Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->mkdir()Z
 
@@ -431,16 +540,16 @@
 
     if-eqz v4, :cond_0
 
-    .line 425
+    .line 564
     return-object v3
 
-    .line 422
+    .line 561
     :cond_0
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 428
+    .line 567
     .end local v3           #tempDir:Ljava/io/File;
     :cond_1
     new-instance v4, Ljava/lang/IllegalStateException;
@@ -503,7 +612,13 @@
     .prologue
     const-wide/16 v5, 0x0
 
-    .line 381
+    .line 519
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 520
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 521
     if-eq p0, p1, :cond_0
 
     invoke-virtual {p0, p1}, Ljava/io/File;->equals(Ljava/lang/Object;)Z
@@ -512,27 +627,27 @@
 
     if-eqz v4, :cond_1
 
-    .line 382
+    .line 522
     :cond_0
     const/4 v4, 0x1
 
-    .line 395
+    .line 535
     :goto_0
     return v4
 
-    .line 390
+    .line 530
     :cond_1
     invoke-virtual {p0}, Ljava/io/File;->length()J
 
     move-result-wide v0
 
-    .line 391
+    .line 531
     .local v0, len1:J
     invoke-virtual {p1}, Ljava/io/File;->length()J
 
     move-result-wide v2
 
-    .line 392
+    .line 532
     .local v2, len2:J
     cmp-long v4, v0, v5
 
@@ -546,22 +661,22 @@
 
     if-eqz v4, :cond_2
 
-    .line 393
+    .line 533
     const/4 v4, 0x0
 
     goto :goto_0
 
-    .line 395
+    .line 535
     :cond_2
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v4
 
-    invoke-static {p1}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    invoke-static {p1}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v5
 
-    invoke-static {v4, v5}, Lcom/google/common/io/ByteStreams;->equal(Lcom/google/common/io/InputSupplier;Lcom/google/common/io/InputSupplier;)Z
+    invoke-virtual {v4, v5}, Lcom/google/common/io/ByteSource;->contentEquals(Lcom/google/common/io/ByteSource;)Z
 
     move-result v4
 
@@ -578,8 +693,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 574
+    .line 715
     invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
 
     move-result-object v0
@@ -591,10 +709,102 @@
     return-wide v0
 .end method
 
-.method public static getDigest(Ljava/io/File;Ljava/security/MessageDigest;)[B
+.method public static getFileExtension(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .parameter "fullName"
+
+    .prologue
+    .line 902
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 903
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 904
+    .local v1, fileName:Ljava/lang/String;
+    const/16 v2, 0x2e
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v0
+
+    .line 905
+    .local v0, dotIndex:I
+    const/4 v2, -0x1
+
+    if-ne v0, v2, :cond_0
+
+    const-string v2, ""
+
+    :goto_0
+    return-object v2
+
+    :cond_0
+    add-int/lit8 v2, v0, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    goto :goto_0
+.end method
+
+.method public static getNameWithoutExtension(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+    .parameter "file"
+
+    .prologue
+    .line 919
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 920
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 921
+    .local v1, fileName:Ljava/lang/String;
+    const/16 v2, 0x2e
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v0
+
+    .line 922
+    .local v0, dotIndex:I
+    const/4 v2, -0x1
+
+    if-ne v0, v2, :cond_0
+
+    .end local v1           #fileName:Ljava/lang/String;
+    :goto_0
+    return-object v1
+
+    .restart local v1       #fileName:Ljava/lang/String;
+    :cond_0
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v2, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
+.end method
+
+.method public static hash(Ljava/io/File;Lcom/google/common/hash/HashFunction;)Lcom/google/common/hash/HashCode;
     .locals 1
     .parameter "file"
-    .parameter "md"
+    .parameter "hashFunction"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -602,52 +812,16 @@
     .end annotation
 
     .prologue
-    .line 589
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    .line 728
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/ByteStreams;->getDigest(Lcom/google/common/io/InputSupplier;Ljava/security/MessageDigest;)[B
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->hash(Lcom/google/common/hash/HashFunction;)Lcom/google/common/hash/HashCode;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public static getFileExtension(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
-    .parameter "fileName"
-
-    .prologue
-    .line 760
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 761
-    const/16 v1, 0x2e
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v0
-
-    .line 762
-    .local v0, dotIndex:I
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_0
-
-    const-string v1, ""
-
-    :goto_0
-    return-object v1
-
-    :cond_0
-    add-int/lit8 v1, v0, 0x1
-
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    goto :goto_0
 .end method
 
 .method public static map(Ljava/io/File;)Ljava/nio/MappedByteBuffer;
@@ -660,7 +834,10 @@
     .end annotation
 
     .prologue
-    .line 609
+    .line 748
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 749
     sget-object v0, Ljava/nio/channels/FileChannel$MapMode;->READ_ONLY:Ljava/nio/channels/FileChannel$MapMode;
 
     invoke-static {p0, v0}, Lcom/google/common/io/Files;->map(Ljava/io/File;Ljava/nio/channels/FileChannel$MapMode;)Ljava/nio/MappedByteBuffer;
@@ -681,14 +858,20 @@
     .end annotation
 
     .prologue
-    .line 632
+    .line 771
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 772
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 773
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 633
+    .line 774
     new-instance v0, Ljava/io/FileNotFoundException;
 
     invoke-virtual {p0}, Ljava/io/File;->toString()Ljava/lang/String;
@@ -699,7 +882,7 @@
 
     throw v0
 
-    .line 635
+    .line 776
     :cond_0
     invoke-virtual {p0}, Ljava/io/File;->length()J
 
@@ -713,7 +896,7 @@
 .end method
 
 .method public static map(Ljava/io/File;Ljava/nio/channels/FileChannel$MapMode;J)Ljava/nio/MappedByteBuffer;
-    .locals 4
+    .locals 5
     .parameter "file"
     .parameter "mode"
     .parameter "size"
@@ -725,8 +908,21 @@
     .end annotation
 
     .prologue
-    .line 661
-    new-instance v1, Ljava/io/RandomAccessFile;
+    .line 802
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 803
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 805
+    invoke-static {}, Lcom/google/common/io/Closer;->create()Lcom/google/common/io/Closer;
+
+    move-result-object v0
+
+    .line 807
+    .local v0, closer:Lcom/google/common/io/Closer;
+    :try_start_0
+    new-instance v4, Ljava/io/RandomAccessFile;
 
     sget-object v3, Ljava/nio/channels/FileChannel$MapMode;->READ_ONLY:Ljava/nio/channels/FileChannel$MapMode;
 
@@ -735,46 +931,60 @@
     const-string v3, "r"
 
     :goto_0
-    invoke-direct {v1, p0, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v4, p0, v3}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 664
-    .local v1, raf:Ljava/io/RandomAccessFile;
-    const/4 v2, 0x1
+    invoke-virtual {v0, v4}, Lcom/google/common/io/Closer;->register(Ljava/io/Closeable;)Ljava/io/Closeable;
 
-    .line 666
-    .local v2, threw:Z
-    :try_start_0
-    invoke-static {v1, p1, p2, p3}, Lcom/google/common/io/Files;->map(Ljava/io/RandomAccessFile;Ljava/nio/channels/FileChannel$MapMode;J)Ljava/nio/MappedByteBuffer;
+    move-result-object v2
+
+    check-cast v2, Ljava/io/RandomAccessFile;
+
+    .line 809
+    .local v2, raf:Ljava/io/RandomAccessFile;
+    invoke-static {v2, p1, p2, p3}, Lcom/google/common/io/Files;->map(Ljava/io/RandomAccessFile;Ljava/nio/channels/FileChannel$MapMode;J)Ljava/nio/MappedByteBuffer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v0
+    move-result-object v3
 
-    .line 667
-    .local v0, mbb:Ljava/nio/MappedByteBuffer;
-    const/4 v2, 0x0
+    .line 813
+    invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
-    .line 670
-    invoke-static {v1, v2}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
+    return-object v3
 
-    return-object v0
-
-    .line 661
-    .end local v0           #mbb:Ljava/nio/MappedByteBuffer;
-    .end local v1           #raf:Ljava/io/RandomAccessFile;
-    .end local v2           #threw:Z
+    .line 807
+    .end local v2           #raf:Ljava/io/RandomAccessFile;
     :cond_0
+    :try_start_1
     const-string v3, "rw"
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
     goto :goto_0
 
-    .line 670
-    .restart local v1       #raf:Ljava/io/RandomAccessFile;
-    .restart local v2       #threw:Z
+    .line 810
+    :catch_0
+    move-exception v1
+
+    .line 811
+    .local v1, e:Ljava/lang/Throwable;
+    :try_start_2
+    invoke-virtual {v0, v1}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+
+    move-result-object v3
+
+    throw v3
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 813
+    .end local v1           #e:Ljava/lang/Throwable;
     :catchall_0
     move-exception v3
 
-    invoke-static {v1, v2}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
+    invoke-virtual {v0}, Lcom/google/common/io/Closer;->close()V
 
     throw v3
 .end method
@@ -791,46 +1001,95 @@
     .end annotation
 
     .prologue
-    .line 676
+    .line 819
+    invoke-static {}, Lcom/google/common/io/Closer;->create()Lcom/google/common/io/Closer;
+
+    move-result-object v6
+
+    .line 821
+    .local v6, closer:Lcom/google/common/io/Closer;
+    :try_start_0
     invoke-virtual {p0}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
+
+    move-result-object v1
+
+    invoke-virtual {v6, v1}, Lcom/google/common/io/Closer;->register(Ljava/io/Closeable;)Ljava/io/Closeable;
 
     move-result-object v0
 
-    .line 678
-    .local v0, channel:Ljava/nio/channels/FileChannel;
-    const/4 v7, 0x1
+    check-cast v0, Ljava/nio/channels/FileChannel;
 
-    .line 680
-    .local v7, threw:Z
+    .line 822
+    .local v0, channel:Ljava/nio/channels/FileChannel;
     const-wide/16 v2, 0x0
 
     move-object v1, p1
 
     move-wide v4, p2
 
-    :try_start_0
     invoke-virtual/range {v0 .. v5}, Ljava/nio/channels/FileChannel;->map(Ljava/nio/channels/FileChannel$MapMode;JJ)Ljava/nio/MappedByteBuffer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v6
+    move-result-object v1
 
-    .line 681
-    .local v6, mbb:Ljava/nio/MappedByteBuffer;
-    const/4 v7, 0x0
+    .line 826
+    invoke-virtual {v6}, Lcom/google/common/io/Closer;->close()V
 
-    .line 684
-    invoke-static {v0, v7}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
+    return-object v1
 
-    return-object v6
+    .line 823
+    .end local v0           #channel:Ljava/nio/channels/FileChannel;
+    :catch_0
+    move-exception v7
 
-    .end local v6           #mbb:Ljava/nio/MappedByteBuffer;
+    .line 824
+    .local v7, e:Ljava/lang/Throwable;
+    :try_start_1
+    invoke-virtual {v6, v7}, Lcom/google/common/io/Closer;->rethrow(Ljava/lang/Throwable;)Ljava/lang/RuntimeException;
+
+    move-result-object v1
+
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 826
+    .end local v7           #e:Ljava/lang/Throwable;
     :catchall_0
     move-exception v1
 
-    invoke-static {v0, v7}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
+    invoke-virtual {v6}, Lcom/google/common/io/Closer;->close()V
 
     throw v1
+.end method
+
+.method private static modes(Z)[Lcom/google/common/io/FileWriteMode;
+    .locals 3
+    .parameter "append"
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 287
+    if-eqz p0, :cond_0
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Lcom/google/common/io/FileWriteMode;
+
+    sget-object v1, Lcom/google/common/io/FileWriteMode;->APPEND:Lcom/google/common/io/FileWriteMode;
+
+    aput-object v1, v0, v2
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    new-array v0, v2, [Lcom/google/common/io/FileWriteMode;
+
+    goto :goto_0
 .end method
 
 .method public static move(Ljava/io/File;Ljava/io/File;)V
@@ -848,10 +1107,13 @@
 
     const/4 v2, 0x0
 
-    .line 485
+    .line 624
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 625
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 486
+    .line 626
     invoke-virtual {p0, p1}, Ljava/io/File;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -873,31 +1135,31 @@
 
     invoke-static {v0, v3, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 489
+    .line 628
     invoke-virtual {p0, p1}, Ljava/io/File;->renameTo(Ljava/io/File;)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 490
+    .line 629
     invoke-static {p0, p1}, Lcom/google/common/io/Files;->copy(Ljava/io/File;Ljava/io/File;)V
 
-    .line 491
+    .line 630
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 492
+    .line 631
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 493
+    .line 632
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -925,10 +1187,10 @@
     :cond_0
     move v0, v2
 
-    .line 486
+    .line 626
     goto :goto_0
 
-    .line 495
+    .line 634
     :cond_1
     new-instance v0, Ljava/io/IOException;
 
@@ -954,7 +1216,7 @@
 
     throw v0
 
-    .line 498
+    .line 637
     :cond_2
     return-void
 .end method
@@ -975,13 +1237,14 @@
     .end annotation
 
     .prologue
-    .line 101
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 258
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
-    .line 102
-    new-instance v0, Lcom/google/common/io/Files$1;
+    move-result-object v0
 
-    invoke-direct {v0, p0}, Lcom/google/common/io/Files$1;-><init>(Ljava/io/File;)V
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -1002,7 +1265,7 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 269
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/google/common/io/Files;->newOutputStreamSupplier(Ljava/io/File;Z)Lcom/google/common/io/OutputSupplier;
@@ -1029,13 +1292,18 @@
     .end annotation
 
     .prologue
-    .line 133
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 283
+    invoke-static {p1}, Lcom/google/common/io/Files;->modes(Z)[Lcom/google/common/io/FileWriteMode;
 
-    .line 134
-    new-instance v0, Lcom/google/common/io/Files$2;
+    move-result-object v0
 
-    invoke-direct {v0, p0, p1}, Lcom/google/common/io/Files$2;-><init>(Ljava/io/File;Z)V
+    invoke-static {p0, v0}, Lcom/google/common/io/Files;->asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->asOutputSupplier(Lcom/google/common/io/ByteSink;)Lcom/google/common/io/OutputSupplier;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -1051,7 +1319,13 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 80
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 81
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 82
     new-instance v0, Ljava/io/BufferedReader;
 
     new-instance v1, Ljava/io/InputStreamReader;
@@ -1085,12 +1359,12 @@
     .end annotation
 
     .prologue
-    .line 152
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
+    .line 300
+    invoke-static {p0, p1}, Lcom/google/common/io/Files;->asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/CharStreams;->newReaderSupplier(Lcom/google/common/io/InputSupplier;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    invoke-static {v0}, Lcom/google/common/io/CharStreams;->asInputSupplier(Lcom/google/common/io/CharSource;)Lcom/google/common/io/InputSupplier;
 
     move-result-object v0
 
@@ -1108,7 +1382,13 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 95
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 96
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 97
     new-instance v0, Ljava/io/BufferedWriter;
 
     new-instance v1, Ljava/io/OutputStreamWriter;
@@ -1142,7 +1422,7 @@
     .end annotation
 
     .prologue
-    .line 165
+    .line 313
     const/4 v0, 0x0
 
     invoke-static {p0, p1, v0}, Lcom/google/common/io/Files;->newWriterSupplier(Ljava/io/File;Ljava/nio/charset/Charset;Z)Lcom/google/common/io/OutputSupplier;
@@ -1171,12 +1451,16 @@
     .end annotation
 
     .prologue
-    .line 180
-    invoke-static {p0, p2}, Lcom/google/common/io/Files;->newOutputStreamSupplier(Ljava/io/File;Z)Lcom/google/common/io/OutputSupplier;
+    .line 329
+    invoke-static {p2}, Lcom/google/common/io/Files;->modes(Z)[Lcom/google/common/io/FileWriteMode;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/CharStreams;->newWriterSupplier(Lcom/google/common/io/OutputSupplier;Ljava/nio/charset/Charset;)Lcom/google/common/io/OutputSupplier;
+    invoke-static {p0, p1, v0}, Lcom/google/common/io/Files;->asCharSink(Ljava/io/File;Ljava/nio/charset/Charset;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/CharSink;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/io/CharStreams;->asOutputSupplier(Lcom/google/common/io/CharSink;)Lcom/google/common/io/OutputSupplier;
 
     move-result-object v0
 
@@ -1205,7 +1489,7 @@
     .end annotation
 
     .prologue
-    .line 559
+    .line 697
     .local p1, processor:Lcom/google/common/io/ByteProcessor;,"Lcom/google/common/io/ByteProcessor<TT;>;"
     invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
 
@@ -1229,12 +1513,12 @@
     .end annotation
 
     .prologue
-    .line 512
-    invoke-static {p0, p1}, Lcom/google/common/io/Files;->newReaderSupplier(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    .line 651
+    invoke-static {p0, p1}, Lcom/google/common/io/Files;->asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/common/io/CharStreams;->readFirstLine(Lcom/google/common/io/InputSupplier;)Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/common/io/CharSource;->readFirstLine()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1265,7 +1549,7 @@
     .end annotation
 
     .prologue
-    .line 542
+    .line 682
     .local p2, callback:Lcom/google/common/io/LineProcessor;,"Lcom/google/common/io/LineProcessor<TT;>;"
     invoke-static {p0, p1}, Lcom/google/common/io/Files;->newReaderSupplier(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
 
@@ -1302,7 +1586,7 @@
     .end annotation
 
     .prologue
-    .line 527
+    .line 666
     invoke-static {p0, p1}, Lcom/google/common/io/Files;->newReaderSupplier(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
 
     move-result-object v0
@@ -1321,22 +1605,25 @@
     .prologue
     const/16 v7, 0x2f
 
-    .line 710
+    .line 852
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 853
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v5
 
     if-nez v5, :cond_1
 
-    .line 711
+    .line 854
     const-string v4, "."
 
-    .line 749
+    .line 891
     :cond_0
     :goto_0
     return-object v4
 
-    .line 715
+    .line 858
     :cond_1
     invoke-static {v7}, Lcom/google/common/base/Splitter;->on(C)Lcom/google/common/base/Splitter;
 
@@ -1350,13 +1637,13 @@
 
     move-result-object v1
 
-    .line 717
+    .line 859
     .local v1, components:Ljava/lang/Iterable;,"Ljava/lang/Iterable<Ljava/lang/String;>;"
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 720
+    .line 862
     .local v3, path:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1377,7 +1664,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 721
+    .line 863
     .local v0, component:Ljava/lang/String;
     const-string v5, "."
 
@@ -1387,7 +1674,7 @@
 
     if-nez v5, :cond_2
 
-    .line 723
+    .line 865
     const-string v5, ".."
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1396,7 +1683,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 724
+    .line 866
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
@@ -1423,7 +1710,7 @@
 
     if-nez v5, :cond_3
 
-    .line 725
+    .line 867
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
@@ -1434,7 +1721,7 @@
 
     goto :goto_1
 
-    .line 727
+    .line 869
     :cond_3
     const-string v5, ".."
 
@@ -1442,13 +1729,13 @@
 
     goto :goto_1
 
-    .line 730
+    .line 872
     :cond_4
     invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 735
+    .line 877
     .end local v0           #component:Ljava/lang/String;
     :cond_5
     invoke-static {v7}, Lcom/google/common/base/Joiner;->on(C)Lcom/google/common/base/Joiner;
@@ -1459,7 +1746,7 @@
 
     move-result-object v4
 
-    .line 736
+    .line 878
     .local v4, result:Ljava/lang/String;
     const/4 v5, 0x0
 
@@ -1469,7 +1756,7 @@
 
     if-ne v5, v7, :cond_6
 
-    .line 737
+    .line 879
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -1488,7 +1775,7 @@
 
     move-result-object v4
 
-    .line 740
+    .line 882
     :cond_6
     :goto_2
     const-string v5, "/../"
@@ -1499,7 +1786,7 @@
 
     if-eqz v5, :cond_7
 
-    .line 741
+    .line 883
     const/4 v5, 0x3
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -1508,7 +1795,7 @@
 
     goto :goto_2
 
-    .line 743
+    .line 885
     :cond_7
     const-string v5, "/.."
 
@@ -1518,12 +1805,12 @@
 
     if-eqz v5, :cond_8
 
-    .line 744
+    .line 886
     const-string v4, "/"
 
     goto/16 :goto_0
 
-    .line 745
+    .line 887
     :cond_8
     const-string v5, ""
 
@@ -1533,14 +1820,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 746
+    .line 888
     const-string v4, "."
 
     goto/16 :goto_0
 .end method
 
 .method public static toByteArray(Ljava/io/File;)[B
-    .locals 7
+    .locals 1
     .parameter "file"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -1549,97 +1836,20 @@
     .end annotation
 
     .prologue
-    .line 194
-    invoke-virtual {p0}, Ljava/io/File;->length()J
-
-    move-result-wide v3
-
-    const-wide/32 v5, 0x7fffffff
-
-    cmp-long v3, v3, v5
-
-    if-gtz v3, :cond_0
-
-    const/4 v3, 0x1
-
-    :goto_0
-    invoke-static {v3}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
-
-    .line 195
-    invoke-virtual {p0}, Ljava/io/File;->length()J
-
-    move-result-wide v3
-
-    const-wide/16 v5, 0x0
-
-    cmp-long v3, v3, v5
-
-    if-nez v3, :cond_1
-
-    .line 197
-    invoke-static {p0}, Lcom/google/common/io/Files;->newInputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/InputSupplier;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/google/common/io/ByteStreams;->toByteArray(Lcom/google/common/io/InputSupplier;)[B
+    .line 342
+    invoke-static {p0}, Lcom/google/common/io/Files;->asByteSource(Ljava/io/File;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    .line 209
-    :goto_1
+    invoke-virtual {v0}, Lcom/google/common/io/ByteSource;->read()[B
+
+    move-result-object v0
+
     return-object v0
-
-    .line 194
-    :cond_0
-    const/4 v3, 0x0
-
-    goto :goto_0
-
-    .line 200
-    :cond_1
-    invoke-virtual {p0}, Ljava/io/File;->length()J
-
-    move-result-wide v3
-
-    long-to-int v3, v3
-
-    new-array v0, v3, [B
-
-    .line 201
-    .local v0, b:[B
-    const/4 v2, 0x1
-
-    .line 202
-    .local v2, threw:Z
-    new-instance v1, Ljava/io/FileInputStream;
-
-    invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-
-    .line 204
-    .local v1, in:Ljava/io/InputStream;
-    :try_start_0
-    invoke-static {v1, v0}, Lcom/google/common/io/ByteStreams;->readFully(Ljava/io/InputStream;[B)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 205
-    const/4 v2, 0x0
-
-    .line 207
-    invoke-static {v1, v2}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    goto :goto_1
-
-    :catchall_0
-    move-exception v3
-
-    invoke-static {v1, v2}, Lcom/google/common/io/Closeables;->close(Ljava/io/Closeable;Z)V
-
-    throw v3
 .end method
 
 .method public static toString(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .locals 3
+    .locals 1
     .parameter "file"
     .parameter "charset"
     .annotation system Ldalvik/annotation/Throws;
@@ -1649,18 +1859,14 @@
     .end annotation
 
     .prologue
-    .line 223
-    new-instance v0, Ljava/lang/String;
+    .line 356
+    invoke-static {p0, p1}, Lcom/google/common/io/Files;->asCharSource(Ljava/io/File;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
-    invoke-static {p0}, Lcom/google/common/io/Files;->toByteArray(Ljava/io/File;)[B
+    move-result-object v0
 
-    move-result-object v1
+    invoke-virtual {v0}, Lcom/google/common/io/CharSource;->read()Ljava/lang/String;
 
-    invoke-virtual {p1}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
+    move-result-object v0
 
     return-object v0
 .end method
@@ -1675,7 +1881,10 @@
     .end annotation
 
     .prologue
-    .line 441
+    .line 579
+    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 580
     invoke-virtual {p0}, Ljava/io/File;->createNewFile()Z
 
     move-result v0
@@ -1692,7 +1901,7 @@
 
     if-nez v0, :cond_0
 
-    .line 443
+    .line 581
     new-instance v0, Ljava/io/IOException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1717,7 +1926,7 @@
 
     throw v0
 
-    .line 445
+    .line 583
     :cond_0
     return-void
 .end method
@@ -1734,12 +1943,18 @@
     .end annotation
 
     .prologue
-    .line 314
+    .line 450
     const/4 v0, 0x0
 
-    invoke-static {p0, p1, p2, v0}, Lcom/google/common/io/Files;->write(Ljava/lang/CharSequence;Ljava/io/File;Ljava/nio/charset/Charset;Z)V
+    new-array v0, v0, [Lcom/google/common/io/FileWriteMode;
 
-    .line 315
+    invoke-static {p1, p2, v0}, Lcom/google/common/io/Files;->asCharSink(Ljava/io/File;Ljava/nio/charset/Charset;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/CharSink;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcom/google/common/io/CharSink;->write(Ljava/lang/CharSequence;)V
+
+    .line 451
     return-void
 .end method
 
@@ -1756,14 +1971,18 @@
     .end annotation
 
     .prologue
-    .line 343
-    invoke-static {p1, p2, p3}, Lcom/google/common/io/Files;->newWriterSupplier(Ljava/io/File;Ljava/nio/charset/Charset;Z)Lcom/google/common/io/OutputSupplier;
+    .line 480
+    invoke-static {p3}, Lcom/google/common/io/Files;->modes(Z)[Lcom/google/common/io/FileWriteMode;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/common/io/CharStreams;->write(Ljava/lang/CharSequence;Lcom/google/common/io/OutputSupplier;)V
+    invoke-static {p1, p2, v0}, Lcom/google/common/io/Files;->asCharSink(Ljava/io/File;Ljava/nio/charset/Charset;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/CharSink;
 
-    .line 344
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Lcom/google/common/io/CharSink;->write(Ljava/lang/CharSequence;)V
+
+    .line 481
     return-void
 .end method
 
@@ -1778,13 +1997,17 @@
     .end annotation
 
     .prologue
-    .line 247
-    invoke-static {p1}, Lcom/google/common/io/Files;->newOutputStreamSupplier(Ljava/io/File;)Lcom/google/common/io/OutputSupplier;
+    .line 379
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Lcom/google/common/io/FileWriteMode;
+
+    invoke-static {p1, v0}, Lcom/google/common/io/Files;->asByteSink(Ljava/io/File;[Lcom/google/common/io/FileWriteMode;)Lcom/google/common/io/ByteSink;
 
     move-result-object v0
 
-    invoke-static {p0, v0}, Lcom/google/common/io/ByteStreams;->write([BLcom/google/common/io/OutputSupplier;)V
+    invoke-virtual {v0, p0}, Lcom/google/common/io/ByteSink;->write([B)V
 
-    .line 248
+    .line 380
     return-void
 .end method

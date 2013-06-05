@@ -45,7 +45,7 @@
     .parameter
 
     .prologue
-    .line 324
+    .line 305
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentReplyToId:Ljava/lang/String;
@@ -71,20 +71,20 @@
     .locals 5
 
     .prologue
-    .line 328
+    .line 309
     const/4 v0, 0x0
 
-    .line 329
+    .line 310
     .local v0, sourceItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentReplyToId:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 330
+    .line 311
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     #getter for: Lcom/google/glass/home/voice/VoiceMessageActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
-    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$300(Lcom/google/glass/home/voice/VoiceMessageActivity;)Lcom/google/glass/timeline/TimelineHelper;
+    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$200(Lcom/google/glass/home/voice/VoiceMessageActivity;)Lcom/google/glass/timeline/TimelineHelper;
 
     move-result-object v1
 
@@ -100,20 +100,20 @@
 
     move-result-object v0
 
-    .line 333
+    .line 314
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentToId:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 334
+    .line 315
     iget v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentMessageType:I
 
     const/4 v2, 0x1
 
     if-ne v1, v2, :cond_1
 
-    .line 335
+    .line 316
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     iget-object v2, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentToId:Ljava/lang/String;
@@ -123,13 +123,13 @@
     iget-object v4, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$recognitionResult:Ljava/lang/String;
 
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->sendViaGmail(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static {v1, v2, v3, v4}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$400(Lcom/google/glass/home/voice/VoiceMessageActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2, v3, v4}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$300(Lcom/google/glass/home/voice/VoiceMessageActivity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 355
+    .line 336
     :goto_0
     return-void
 
-    .line 336
+    .line 317
     :cond_1
     iget v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentMessageType:I
 
@@ -137,24 +137,23 @@
 
     if-ne v1, v2, :cond_2
 
-    .line 337
+    .line 318
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     iget-object v2, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentToId:Ljava/lang/String;
 
     iget-object v3, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$recognitionResult:Ljava/lang/String;
 
-    #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->sendViaSms(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static {v1, v2, v3}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$500(Lcom/google/glass/home/voice/VoiceMessageActivity;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2, v3}, Lcom/google/glass/home/voice/VoiceMessageActivity;->sendViaSms(Lcom/google/glass/home/voice/VoiceMessageActivity;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 339
+    .line 320
     :cond_2
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$600(Lcom/google/glass/home/voice/VoiceMessageActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$400(Lcom/google/glass/home/voice/VoiceMessageActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -182,20 +181,20 @@
 
     goto :goto_0
 
-    .line 341
+    .line 322
     :cond_3
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$currentReplyToId:Ljava/lang/String;
 
     if-eqz v1, :cond_6
 
-    .line 342
+    .line 323
     if-nez v0, :cond_4
 
-    .line 343
+    .line 324
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$700(Lcom/google/glass/home/voice/VoiceMessageActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$500(Lcom/google/glass/home/voice/VoiceMessageActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -223,7 +222,7 @@
 
     goto :goto_0
 
-    .line 345
+    .line 326
     :cond_4
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceType()Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
@@ -233,17 +232,16 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 346
+    .line 327
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     iget-object v2, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$recognitionResult:Ljava/lang/String;
 
-    #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->replyCompanionTimelineItem(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/String;)V
-    invoke-static {v1, v0, v2}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$800(Lcom/google/glass/home/voice/VoiceMessageActivity;Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/String;)V
+    invoke-static {v1, v0, v2}, Lcom/google/glass/home/voice/VoiceMessageActivity;->replyCompanionTimelineItem(Lcom/google/glass/home/voice/VoiceMessageActivity;Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 348
+    .line 329
     :cond_5
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
@@ -252,16 +250,16 @@
     iget-object v3, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->val$recognitionResult:Ljava/lang/String;
 
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->replyCloudTimelineItem(Lcom/google/googlex/glass/common/proto/TimelineItem;ZLjava/lang/String;)V
-    invoke-static {v1, v0, v2, v3}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$900(Lcom/google/glass/home/voice/VoiceMessageActivity;Lcom/google/googlex/glass/common/proto/TimelineItem;ZLjava/lang/String;)V
+    invoke-static {v1, v0, v2, v3}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$600(Lcom/google/glass/home/voice/VoiceMessageActivity;Lcom/google/googlex/glass/common/proto/TimelineItem;ZLjava/lang/String;)V
 
     goto :goto_0
 
-    .line 351
+    .line 332
     :cond_6
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$3;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$1000(Lcom/google/glass/home/voice/VoiceMessageActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$700(Lcom/google/glass/home/voice/VoiceMessageActivity;)Ljava/lang/String;
 
     move-result-object v1
 

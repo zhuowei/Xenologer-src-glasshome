@@ -18,8 +18,5 @@
 .method public abstract onAmplitudeChanged(D)V
 .end method
 
-.method public abstract onAudioData([BII)V
-.end method
-
 .method public abstract onTimestampedAudioData(J[BII)V
 .end method

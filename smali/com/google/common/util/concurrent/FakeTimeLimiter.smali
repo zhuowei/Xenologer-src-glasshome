@@ -16,7 +16,7 @@
     .locals 0
 
     .prologue
-    .line 35
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,8 +49,11 @@
     .end annotation
 
     .prologue
-    .line 45
+    .line 48
     .local p1, callable:Ljava/util/concurrent/Callable;,"Ljava/util/concurrent/Callable<TT;>;"
+    invoke-static {p4}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
     invoke-interface {p1}, Ljava/util/concurrent/Callable;->call()Ljava/lang/Object;
 
     move-result-object v0
@@ -77,8 +80,17 @@
     .end annotation
 
     .prologue
-    .line 39
+    .line 40
     .local p1, target:Ljava/lang/Object;,"TT;"
     .local p2, interfaceType:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 41
+    invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 42
+    invoke-static {p5}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 43
     return-object p1
 .end method

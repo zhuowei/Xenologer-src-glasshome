@@ -6,11 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J
 
@@ -35,7 +30,7 @@
     .locals 2
 
     .prologue
-    .line 62
+    .line 60
     const-class v0, Lcom/google/common/util/concurrent/AtomicDouble;
 
     const-string v1, "value"
@@ -53,10 +48,10 @@
     .locals 0
 
     .prologue
-    .line 77
+    .line 75
     invoke-direct {p0}, Ljava/lang/Number;-><init>()V
 
-    .line 79
+    .line 77
     return-void
 .end method
 
@@ -65,17 +60,17 @@
     .parameter "initialValue"
 
     .prologue
-    .line 70
+    .line 68
     invoke-direct {p0}, Ljava/lang/Number;-><init>()V
 
-    .line 71
+    .line 69
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/common/util/concurrent/AtomicDouble;->value:J
 
-    .line 72
+    .line 70
     return-void
 .end method
 
@@ -90,17 +85,17 @@
     .end annotation
 
     .prologue
-    .line 252
+    .line 251
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 254
+    .line 253
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readDouble()D
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/util/concurrent/AtomicDouble;->set(D)V
 
-    .line 255
+    .line 254
     return-void
 .end method
 
@@ -114,17 +109,17 @@
     .end annotation
 
     .prologue
-    .line 242
+    .line 241
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 244
+    .line 243
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AtomicDouble;->get()D
 
     move-result-wide v0
 
     invoke-virtual {p1, v0, v1}, Ljava/io/ObjectOutputStream;->writeDouble(D)V
 
-    .line 245
+    .line 244
     return-void
 .end method
 
@@ -135,27 +130,27 @@
     .parameter "delta"
 
     .prologue
-    .line 186
+    .line 181
     :cond_0
     iget-wide v2, p0, Lcom/google/common/util/concurrent/AtomicDouble;->value:J
 
-    .line 187
+    .line 182
     .local v2, current:J
     invoke-static {v2, v3}, Ljava/lang/Double;->longBitsToDouble(J)D
 
     move-result-wide v6
 
-    .line 188
+    .line 183
     .local v6, currentVal:D
     add-double v8, v6, p1
 
-    .line 189
+    .line 184
     .local v8, nextVal:D
     invoke-static {v8, v9}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide v4
 
-    .line 190
+    .line 185
     .local v4, next:J
     sget-object v0, Lcom/google/common/util/concurrent/AtomicDouble;->updater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
@@ -167,7 +162,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 191
+    .line 186
     return-wide v8
 .end method
 
@@ -177,7 +172,7 @@
     .parameter "update"
 
     .prologue
-    .line 134
+    .line 132
     sget-object v0, Lcom/google/common/util/concurrent/AtomicDouble;->updater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
@@ -213,7 +208,7 @@
     .locals 2
 
     .prologue
-    .line 225
+    .line 224
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AtomicDouble;->get()D
 
     move-result-wide v0
@@ -227,7 +222,7 @@
     .locals 2
 
     .prologue
-    .line 87
+    .line 85
     iget-wide v0, p0, Lcom/google/common/util/concurrent/AtomicDouble;->value:J
 
     invoke-static {v0, v1}, Ljava/lang/Double;->longBitsToDouble(J)D
@@ -242,27 +237,27 @@
     .parameter "delta"
 
     .prologue
-    .line 168
+    .line 163
     :cond_0
     iget-wide v2, p0, Lcom/google/common/util/concurrent/AtomicDouble;->value:J
 
-    .line 169
+    .line 164
     .local v2, current:J
     invoke-static {v2, v3}, Ljava/lang/Double;->longBitsToDouble(J)D
 
     move-result-wide v6
 
-    .line 170
+    .line 165
     .local v6, currentVal:D
     add-double v8, v6, p1
 
-    .line 171
+    .line 166
     .local v8, nextVal:D
     invoke-static {v8, v9}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide v4
 
-    .line 172
+    .line 167
     .local v4, next:J
     sget-object v0, Lcom/google/common/util/concurrent/AtomicDouble;->updater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
@@ -274,7 +269,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 173
+    .line 168
     return-wide v6
 .end method
 
@@ -283,12 +278,12 @@
     .parameter "newValue"
 
     .prologue
-    .line 119
+    .line 117
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide v0
 
-    .line 120
+    .line 118
     .local v0, next:J
     sget-object v2, Lcom/google/common/util/concurrent/AtomicDouble;->updater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
@@ -307,7 +302,7 @@
     .locals 2
 
     .prologue
-    .line 209
+    .line 206
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AtomicDouble;->get()D
 
     move-result-wide v0
@@ -322,10 +317,10 @@
     .parameter "newValue"
 
     .prologue
-    .line 106
+    .line 104
     invoke-virtual {p0, p1, p2}, Lcom/google/common/util/concurrent/AtomicDouble;->set(D)V
 
-    .line 110
+    .line 108
     return-void
 .end method
 
@@ -333,7 +328,7 @@
     .locals 2
 
     .prologue
-    .line 217
+    .line 215
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AtomicDouble;->get()D
 
     move-result-wide v0
@@ -348,16 +343,16 @@
     .parameter "newValue"
 
     .prologue
-    .line 96
+    .line 94
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J
 
     move-result-wide v0
 
-    .line 97
+    .line 95
     .local v0, next:J
     iput-wide v0, p0, Lcom/google/common/util/concurrent/AtomicDouble;->value:J
 
-    .line 98
+    .line 96
     return-void
 .end method
 
@@ -365,7 +360,7 @@
     .locals 2
 
     .prologue
-    .line 201
+    .line 197
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/AtomicDouble;->get()D
 
     move-result-wide v0
@@ -383,7 +378,7 @@
     .parameter "update"
 
     .prologue
-    .line 155
+    .line 151
     sget-object v0, Lcom/google/common/util/concurrent/AtomicDouble;->updater:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     invoke-static {p1, p2}, Ljava/lang/Double;->doubleToRawLongBits(D)J

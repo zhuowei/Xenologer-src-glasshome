@@ -40,7 +40,7 @@
     .parameter "end"
 
     .prologue
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/google/common/io/LineReader$1;->this$0:Lcom/google/common/io/LineReader;
 
     #getter for: Lcom/google/common/io/LineReader;->lines:Ljava/util/Queue;
@@ -50,6 +50,6 @@
 
     invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 47
+    .line 48
     return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 407
+    .line 461
     iput-object p1, p0, Lcom/google/glass/share/ShareActivity$2$1;->this$1:Lcom/google/glass/share/ShareActivity$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,10 +38,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 410
+    .line 464
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$2$1;->this$1:Lcom/google/glass/share/ShareActivity$2;
 
     iget-object v0, v0, Lcom/google/glass/share/ShareActivity$2;->this$0:Lcom/google/glass/share/ShareActivity;
@@ -56,13 +56,17 @@
 
     iget-object v3, p0, Lcom/google/glass/share/ShareActivity$2$1;->this$1:Lcom/google/glass/share/ShareActivity$2;
 
-    iget v3, v3, Lcom/google/glass/share/ShareActivity$2;->val$attemptNumber:I
+    iget-object v3, v3, Lcom/google/glass/share/ShareActivity$2;->val$annotation:Ljava/lang/String;
 
-    add-int/lit8 v3, v3, 0x1
+    iget-object v4, p0, Lcom/google/glass/share/ShareActivity$2$1;->this$1:Lcom/google/glass/share/ShareActivity$2;
 
-    #calls: Lcom/google/glass/share/ShareActivity;->shareItem(Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;I)V
-    invoke-static {v0, v1, v2, v3}, Lcom/google/glass/share/ShareActivity;->access$300(Lcom/google/glass/share/ShareActivity;Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;I)V
+    iget v4, v4, Lcom/google/glass/share/ShareActivity$2;->val$attemptNumber:I
 
-    .line 411
+    add-int/lit8 v4, v4, 0x1
+
+    #calls: Lcom/google/glass/share/ShareActivity;->shareItem(Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;Ljava/lang/String;I)V
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/glass/share/ShareActivity;->access$500(Lcom/google/glass/share/ShareActivity;Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;Ljava/lang/String;I)V
+
+    .line 465
     return-void
 .end method

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/ByteStreams;->slice(Lcom/google/common/io/InputSupplier;JJ)Lcom/google/common/io/InputSupplier;
+    value = Lcom/google/common/io/ByteStreams;->asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,35 +20,23 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/google/common/io/InputSupplier",
-        "<",
-        "Ljava/io/InputStream;",
-        ">;"
+        "<TS;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$length:J
-
-.field final synthetic val$offset:J
-
-.field final synthetic val$supplier:Lcom/google/common/io/InputSupplier;
+.field final synthetic val$source:Lcom/google/common/io/ByteSource;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/io/InputSupplier;JJ)V
+.method constructor <init>(Lcom/google/common/io/ByteSource;)V
     .locals 0
-    .parameter
-    .parameter
     .parameter
 
     .prologue
-    .line 833
-    iput-object p1, p0, Lcom/google/common/io/ByteStreams$4;->val$supplier:Lcom/google/common/io/InputSupplier;
-
-    iput-wide p2, p0, Lcom/google/common/io/ByteStreams$4;->val$offset:J
-
-    iput-wide p4, p0, Lcom/google/common/io/ByteStreams$4;->val$length:J
+    .line 956
+    iput-object p1, p0, Lcom/google/common/io/ByteStreams$4;->val$source:Lcom/google/common/io/ByteSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,7 +46,13 @@
 
 # virtual methods
 .method public getInput()Ljava/io/InputStream;
-    .locals 6
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TS;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -66,53 +60,14 @@
     .end annotation
 
     .prologue
-    .line 835
-    iget-object v2, p0, Lcom/google/common/io/ByteStreams$4;->val$supplier:Lcom/google/common/io/InputSupplier;
+    .line 960
+    iget-object v0, p0, Lcom/google/common/io/ByteStreams$4;->val$source:Lcom/google/common/io/ByteSource;
 
-    invoke-interface {v2}, Lcom/google/common/io/InputSupplier;->getInput()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/common/io/ByteSource;->openStream()Ljava/io/InputStream;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/io/InputStream;
-
-    .line 836
-    .local v1, in:Ljava/io/InputStream;
-    iget-wide v2, p0, Lcom/google/common/io/ByteStreams$4;->val$offset:J
-
-    const-wide/16 v4, 0x0
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_0
-
-    .line 838
-    :try_start_0
-    iget-wide v2, p0, Lcom/google/common/io/ByteStreams$4;->val$offset:J
-
-    invoke-static {v1, v2, v3}, Lcom/google/common/io/ByteStreams;->skipFully(Ljava/io/InputStream;J)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 844
-    :cond_0
-    new-instance v2, Lcom/google/common/io/LimitInputStream;
-
-    iget-wide v3, p0, Lcom/google/common/io/ByteStreams$4;->val$length:J
-
-    invoke-direct {v2, v1, v3, v4}, Lcom/google/common/io/LimitInputStream;-><init>(Ljava/io/InputStream;J)V
-
-    return-object v2
-
-    .line 839
-    :catch_0
-    move-exception v0
-
-    .line 840
-    .local v0, e:Ljava/io/IOException;
-    invoke-static {v1}, Lcom/google/common/io/Closeables;->closeQuietly(Ljava/io/Closeable;)V
-
-    .line 841
-    throw v0
+    return-object v0
 .end method
 
 .method public bridge synthetic getInput()Ljava/lang/Object;
@@ -124,7 +79,7 @@
     .end annotation
 
     .prologue
-    .line 833
+    .line 956
     invoke-virtual {p0}, Lcom/google/common/io/ByteStreams$4;->getInput()Ljava/io/InputStream;
 
     move-result-object v0

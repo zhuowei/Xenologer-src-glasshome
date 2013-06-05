@@ -42,14 +42,14 @@
     .end annotation
 
     .prologue
-    .line 199
+    .line 197
     .local p0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<TT;>;"
     :try_start_0
     invoke-virtual {p0, p1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v1
 
-    .line 200
+    .line 198
     .local v1, field:Ljava/lang/reflect/Field;
     new-instance v2, Lcom/google/common/collect/Serialization$FieldSetter;
 
@@ -61,12 +61,12 @@
 
     return-object v2
 
-    .line 201
+    .line 199
     .end local v1           #field:Ljava/lang/reflect/Field;
     :catch_0
     move-exception v0
 
-    .line 202
+    .line 200
     .local v0, e:Ljava/lang/NoSuchFieldException;
     new-instance v2, Ljava/lang/AssertionError;
 
@@ -101,17 +101,17 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 75
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 77
+    .line 76
     .local v0, size:I
     invoke-static {p0, p1, v0}, Lcom/google/common/collect/Serialization;->populateMap(Ljava/util/Map;Ljava/io/ObjectInputStream;I)V
 
-    .line 78
+    .line 77
     return-void
 .end method
 
@@ -142,7 +142,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 86
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -155,22 +155,22 @@
 
     move-result-object v1
 
-    .line 91
+    .line 92
     .local v1, key:Ljava/lang/Object;,"TK;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 92
+    .line 93
     .local v2, value:Ljava/lang/Object;,"TV;"
     invoke-interface {p0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 87
+    .line 86
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 94
+    .line 95
     .end local v1           #key:Ljava/lang/Object;,"TK;"
     .end local v2           #value:Ljava/lang/Object;,"TV;"
     :cond_0
@@ -203,17 +203,17 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 168
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 171
+    .line 169
     .local v0, distinctKeys:I
     invoke-static {p0, p1, v0}, Lcom/google/common/collect/Serialization;->populateMultimap(Lcom/google/common/collect/Multimap;Ljava/io/ObjectInputStream;I)V
 
-    .line 172
+    .line 170
     return-void
 .end method
 
@@ -244,7 +244,7 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 179
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     const/4 v0, 0x0
 
@@ -252,24 +252,24 @@
     :goto_0
     if-ge v0, p2, :cond_1
 
-    .line 184
+    .line 182
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 185
+    .line 183
     .local v2, key:Ljava/lang/Object;,"TK;"
     invoke-interface {p0, v2}, Lcom/google/common/collect/Multimap;->get(Ljava/lang/Object;)Ljava/util/Collection;
 
     move-result-object v5
 
-    .line 186
+    .line 184
     .local v5, values:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v4
 
-    .line 187
+    .line 185
     .local v4, valueCount:I
     const/4 v1, 0x0
 
@@ -277,28 +277,28 @@
     :goto_1
     if-ge v1, v4, :cond_0
 
-    .line 189
+    .line 188
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 190
+    .line 189
     .local v3, value:Ljava/lang/Object;,"TV;"
     invoke-interface {v5, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
-    .line 187
+    .line 185
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 182
+    .line 179
     .end local v3           #value:Ljava/lang/Object;,"TV;"
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 193
+    .line 192
     .end local v1           #j:I
     .end local v2           #key:Ljava/lang/Object;,"TK;"
     .end local v4           #valueCount:I
@@ -331,17 +331,17 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 120
     .local p0, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 122
+    .line 121
     .local v0, distinctElements:I
     invoke-static {p0, p1, v0}, Lcom/google/common/collect/Serialization;->populateMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectInputStream;I)V
 
-    .line 123
+    .line 122
     return-void
 .end method
 
@@ -370,7 +370,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 131
     .local p0, multiset:Lcom/google/common/collect/Multiset;,"Lcom/google/common/collect/Multiset<TE;>;"
     const/4 v2, 0x0
 
@@ -378,27 +378,27 @@
     :goto_0
     if-ge v2, p2, :cond_0
 
-    .line 135
+    .line 134
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 136
+    .line 135
     .local v1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
 
-    .line 137
+    .line 136
     .local v0, count:I
     invoke-interface {p0, v1, v0}, Lcom/google/common/collect/Multiset;->add(Ljava/lang/Object;I)I
 
-    .line 133
+    .line 131
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 139
+    .line 138
     .end local v0           #count:I
     .end local v1           #element:Ljava/lang/Object;,"TE;"
     :cond_0
@@ -448,7 +448,7 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 62
     .local p0, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-interface {p0}, Ljava/util/Map;->size()I
 
@@ -456,7 +456,7 @@
 
     invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 64
+    .line 63
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -479,7 +479,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 65
+    .line 64
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -487,7 +487,7 @@
 
     invoke-virtual {p1, v2}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 66
+    .line 65
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -496,7 +496,7 @@
 
     goto :goto_0
 
-    .line 68
+    .line 67
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     :cond_0
     return-void
@@ -527,7 +527,7 @@
     .end annotation
 
     .prologue
-    .line 153
+    .line 152
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     invoke-interface {p0}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
@@ -539,7 +539,7 @@
 
     invoke-virtual {p1, v4}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 154
+    .line 153
     invoke-interface {p0}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
     move-result-object v4
@@ -565,7 +565,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 155
+    .line 154
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -573,7 +573,7 @@
 
     invoke-virtual {p1, v4}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 156
+    .line 155
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -586,7 +586,7 @@
 
     invoke-virtual {p1, v4}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 157
+    .line 156
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -609,13 +609,13 @@
 
     move-result-object v3
 
-    .line 158
+    .line 157
     .local v3, value:Ljava/lang/Object;,"TV;"
     invoke-virtual {p1, v3}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 161
+    .line 160
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;"
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #value:Ljava/lang/Object;,"TV;"

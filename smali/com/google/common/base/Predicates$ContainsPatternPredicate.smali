@@ -47,14 +47,14 @@
     .parameter "patternStr"
 
     .prologue
-    .line 566
+    .line 607
     invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/common/base/Predicates$ContainsPatternPredicate;-><init>(Ljava/util/regex/Pattern;)V
 
-    .line 567
+    .line 608
     return-void
 .end method
 
@@ -63,10 +63,10 @@
     .parameter "pattern"
 
     .prologue
-    .line 561
+    .line 602
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 562
+    .line 603
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;->pattern:Ljava/util/regex/Pattern;
 
-    .line 563
+    .line 604
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .parameter "t"
 
     .prologue
-    .line 571
+    .line 611
     iget-object v0, p0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;->pattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -105,7 +105,7 @@
     .parameter "x0"
 
     .prologue
-    .line 556
+    .line 598
     check-cast p1, Ljava/lang/CharSequence;
 
     .end local p1
@@ -126,17 +126,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 582
+    .line 624
     instance-of v2, p1, Lcom/google/common/base/Predicates$ContainsPatternPredicate;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 583
+    .line 625
     check-cast v0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;
 
-    .line 587
+    .line 629
     .local v0, that:Lcom/google/common/base/Predicates$ContainsPatternPredicate;
     iget-object v2, p0, Lcom/google/common/base/Predicates$ContainsPatternPredicate;->pattern:Ljava/util/regex/Pattern;
 
@@ -184,7 +184,7 @@
 
     const/4 v1, 0x1
 
-    .line 590
+    .line 632
     .end local v0           #that:Lcom/google/common/base/Predicates$ContainsPatternPredicate;
     :cond_0
     return v1
@@ -194,7 +194,7 @@
     .locals 3
 
     .prologue
-    .line 578
+    .line 619
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -234,7 +234,7 @@
     .locals 3
 
     .prologue
-    .line 594
+    .line 637
     invoke-static {p0}, Lcom/google/common/base/Objects;->toStringHelper(Ljava/lang/Object;)Lcom/google/common/base/Objects$ToStringHelper;
 
     move-result-object v0

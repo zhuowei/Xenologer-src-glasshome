@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 358
+    .line 362
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService$2;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 368
+    .line 372
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +70,7 @@
     .parameter "intent"
 
     .prologue
-    .line 361
+    .line 365
     const-string v0, "com.google.glass.action.SHUTDOWN_CAMERA"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,12 +83,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 362
+    .line 366
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$2;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraService;->stopSelf()V
 
-    .line 364
+    .line 368
     :cond_0
     return-void
 .end method

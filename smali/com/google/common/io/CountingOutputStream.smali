@@ -16,12 +16,15 @@
 .method public constructor <init>(Ljava/io/OutputStream;)V
     .locals 0
     .parameter "out"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
-    .line 42
+    .line 44
     invoke-direct {p0, p1}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 43
+    .line 45
     return-void
 .end method
 
@@ -31,7 +34,7 @@
     .locals 2
 
     .prologue
-    .line 47
+    .line 49
     iget-wide v0, p0, Lcom/google/common/io/CountingOutputStream;->count:J
 
     return-wide v0
@@ -47,12 +50,12 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 60
     iget-object v0, p0, Lcom/google/common/io/CountingOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write(I)V
 
-    .line 57
+    .line 61
     iget-wide v0, p0, Lcom/google/common/io/CountingOutputStream;->count:J
 
     const-wide/16 v2, 0x1
@@ -61,7 +64,7 @@
 
     iput-wide v0, p0, Lcom/google/common/io/CountingOutputStream;->count:J
 
-    .line 58
+    .line 62
     return-void
 .end method
 
@@ -77,12 +80,12 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 54
     iget-object v0, p0, Lcom/google/common/io/CountingOutputStream;->out:Ljava/io/OutputStream;
 
     invoke-virtual {v0, p1, p2, p3}, Ljava/io/OutputStream;->write([BII)V
 
-    .line 52
+    .line 55
     iget-wide v0, p0, Lcom/google/common/io/CountingOutputStream;->count:J
 
     int-to-long v2, p3
@@ -91,6 +94,6 @@
 
     iput-wide v0, p0, Lcom/google/common/io/CountingOutputStream;->count:J
 
-    .line 53
+    .line 56
     return-void
 .end method

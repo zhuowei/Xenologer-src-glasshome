@@ -19,7 +19,7 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 68
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/ComparisonChain;-><init>(Lcom/google/common/collect/ComparisonChain$1;)V
@@ -34,7 +34,7 @@
     .parameter "result"
 
     .prologue
-    .line 90
+    .line 111
     if-gez p1, :cond_0
 
     invoke-static {}, Lcom/google/common/collect/ComparisonChain;->access$100()Lcom/google/common/collect/ComparisonChain;
@@ -67,7 +67,7 @@
     .parameter "right"
 
     .prologue
-    .line 84
+    .line 97
     invoke-static {p1, p2, p3, p4}, Ljava/lang/Double;->compare(DD)I
 
     move-result v0
@@ -85,7 +85,7 @@
     .parameter "right"
 
     .prologue
-    .line 81
+    .line 92
     invoke-static {p1, p2}, Ljava/lang/Float;->compare(FF)I
 
     move-result v0
@@ -103,7 +103,7 @@
     .parameter "right"
 
     .prologue
-    .line 75
+    .line 82
     invoke-static {p1, p2}, Lcom/google/common/primitives/Ints;->compare(II)I
 
     move-result v0
@@ -121,7 +121,7 @@
     .parameter "right"
 
     .prologue
-    .line 78
+    .line 87
     invoke-static {p1, p2, p3, p4}, Lcom/google/common/primitives/Longs;->compare(JJ)I
 
     move-result v0
@@ -139,7 +139,7 @@
     .parameter "right"
 
     .prologue
-    .line 68
+    .line 72
     invoke-interface {p1, p2}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
 
     move-result v0
@@ -175,7 +175,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 77
     .local p1, left:Ljava/lang/Object;,"TT;"
     .local p2, right:Ljava/lang/Object;,"TT;"
     .local p3, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<TT;>;"
@@ -190,14 +190,32 @@
     return-object v0
 .end method
 
-.method public compare(ZZ)Lcom/google/common/collect/ComparisonChain;
+.method public compareFalseFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
     .locals 1
     .parameter "left"
     .parameter "right"
 
     .prologue
-    .line 87
+    .line 107
     invoke-static {p1, p2}, Lcom/google/common/primitives/Booleans;->compare(ZZ)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/google/common/collect/ComparisonChain$1;->classify(I)Lcom/google/common/collect/ComparisonChain;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public compareTrueFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
+    .locals 1
+    .parameter "left"
+    .parameter "right"
+
+    .prologue
+    .line 102
+    invoke-static {p2, p1}, Lcom/google/common/primitives/Booleans;->compare(ZZ)I
 
     move-result v0
 
@@ -212,7 +230,7 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 116
     const/4 v0, 0x0
 
     return v0

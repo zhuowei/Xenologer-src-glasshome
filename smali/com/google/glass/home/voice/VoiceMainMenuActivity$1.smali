@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 48
+    .line 54
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMainMenuActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceMainMenuActivity;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 58
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -73,14 +73,14 @@
     .parameter "intent"
 
     .prologue
-    .line 52
+    .line 58
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMainMenuActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceMainMenuActivity;
 
     invoke-virtual {v1}, Lcom/google/glass/home/voice/VoiceMainMenuActivity;->isConnected()Z
 
     move-result v0
 
-    .line 53
+    .line 59
     .local v0, enabled:Z
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMainMenuActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceMainMenuActivity;
 
@@ -91,6 +91,6 @@
 
     invoke-virtual {v1, v0}, Lcom/google/glass/home/voice/VoiceMenu;->onConnectivityChanged(Z)V
 
-    .line 54
+    .line 60
     return-void
 .end method

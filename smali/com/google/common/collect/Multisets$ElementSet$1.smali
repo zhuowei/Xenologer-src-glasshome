@@ -1,9 +1,6 @@
 .class Lcom/google/common/collect/Multisets$ElementSet$1;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/TransformedIterator;
 .source "Multisets.java"
-
-# interfaces
-.implements Lcom/google/common/base/Function;
 
 
 # annotations
@@ -18,8 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/common/base/Function",
+        "Lcom/google/common/collect/TransformedIterator",
         "<",
         "Lcom/google/common/collect/Multiset$Entry",
         "<TE;>;TE;>;"
@@ -32,23 +28,25 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Multisets$ElementSet;)V
+.method constructor <init>(Lcom/google/common/collect/Multisets$ElementSet;Ljava/util/Iterator;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 824
+    .line 940
     .local p0, this:Lcom/google/common/collect/Multisets$ElementSet$1;,"Lcom/google/common/collect/Multisets$ElementSet.1;"
+    .local p2, x0:Ljava/util/Iterator;,"Ljava/util/Iterator<+Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/Multisets$ElementSet$1;->this$0:Lcom/google/common/collect/Multisets$ElementSet;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public apply(Lcom/google/common/collect/Multiset$Entry;)Ljava/lang/Object;
+.method transform(Lcom/google/common/collect/Multiset$Entry;)Ljava/lang/Object;
     .locals 1
     .parameter
     .annotation system Ldalvik/annotation/Signature;
@@ -60,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 826
+    .line 944
     .local p0, this:Lcom/google/common/collect/Multisets$ElementSet$1;,"Lcom/google/common/collect/Multisets$ElementSet.1;"
     .local p1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     invoke-interface {p1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
@@ -70,17 +68,17 @@
     return-object v0
 .end method
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 824
+    .line 940
     .local p0, this:Lcom/google/common/collect/Multisets$ElementSet$1;,"Lcom/google/common/collect/Multisets$ElementSet.1;"
     check-cast p1, Lcom/google/common/collect/Multiset$Entry;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/Multisets$ElementSet$1;->apply(Lcom/google/common/collect/Multiset$Entry;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/Multisets$ElementSet$1;->transform(Lcom/google/common/collect/Multiset$Entry;)Ljava/lang/Object;
 
     move-result-object v0
 

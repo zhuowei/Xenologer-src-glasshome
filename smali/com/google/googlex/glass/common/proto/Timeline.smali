@@ -10,6 +10,10 @@
 
 .field static internal_static_googlex_glass_common_proto_Attachment_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
+.field static internal_static_googlex_glass_common_proto_Entity_Command_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+.field static internal_static_googlex_glass_common_proto_Entity_Command_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
+
 .field static internal_static_googlex_glass_common_proto_Entity_Priority_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
 .field static internal_static_googlex_glass_common_proto_Entity_Priority_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
@@ -58,12 +62,12 @@
 
     const/4 v5, 0x0
 
-    .line 64
+    .line 69
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 65
+    .line 70
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -80,7 +84,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_TimelineItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 67
+    .line 72
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_TimelineItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -281,7 +285,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_TimelineItem_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 71
+    .line 76
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -298,7 +302,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Location_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 73
+    .line 78
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Location_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -361,7 +365,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Location_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 77
+    .line 82
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -378,7 +382,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Attachment_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 79
+    .line 84
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Attachment_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -423,7 +427,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Attachment_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 83
+    .line 88
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -440,12 +444,12 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 85
+    .line 90
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/16 v2, 0xd
+    const/16 v2, 0xf
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -517,11 +521,23 @@
 
     aput-object v4, v2, v3
 
+    const/16 v3, 0xd
+
+    const-string v4, "AcceptCommand"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xe
+
+    const-string v4, "SpeakableName"
+
+    aput-object v4, v2, v3
+
     invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 89
+    .line 94
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
@@ -536,7 +552,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Priority_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 91
+    .line 96
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Priority_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -551,7 +567,41 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Priority_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 95
+    .line 100
+    sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+    invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/Descriptors$Descriptor;
+
+    sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Command_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+    .line 102
+    new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
+
+    sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Command_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+    new-array v2, v7, [Ljava/lang/String;
+
+    const-string v3, "Type"
+
+    aput-object v3, v2, v5
+
+    const-string v3, "IsVoiceEnabled"
+
+    aput-object v3, v2, v6
+
+    invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Command_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
+
+    .line 106
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -568,7 +618,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 97
+    .line 108
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -601,7 +651,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuItem_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 101
+    .line 112
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -620,7 +670,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuValue_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 103
+    .line 114
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuValue_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -643,7 +693,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuValue_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 107
+    .line 118
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -662,7 +712,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_NotificationConfig_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 109
+    .line 120
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_NotificationConfig_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -681,7 +731,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_NotificationConfig_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 113
+    .line 124
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Timeline;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -700,7 +750,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_UserAction_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 115
+    .line 126
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_UserAction_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -719,7 +769,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_UserAction_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 119
+    .line 130
     return-void
 .end method
 
@@ -737,7 +787,7 @@
     .locals 1
 
     .prologue
-    .line 59
+    .line 64
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     return-object v0

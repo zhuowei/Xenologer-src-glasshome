@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 26
+    .line 30
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .locals 1
 
     .prologue
-    .line 26
+    .line 30
     invoke-virtual {p0}, Lcom/google/glass/util/FileHelper$1;->initialValue()Ljava/text/SimpleDateFormat;
 
     move-result-object v0
@@ -52,7 +52,7 @@
     .locals 2
 
     .prologue
-    .line 29
+    .line 33
     new-instance v0, Ljava/text/SimpleDateFormat;
 
     const-string v1, "yyyyMMdd_HHmmss_SSS"

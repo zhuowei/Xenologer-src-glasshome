@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation build Lcom/google/common/annotations/GwtCompatible;
 .end annotation
 
@@ -29,6 +26,9 @@
 .method public constructor <init>(Ljava/lang/Error;)V
     .locals 0
     .parameter "cause"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 60
@@ -41,6 +41,9 @@
 .method protected constructor <init>(Ljava/lang/String;)V
     .locals 0
     .parameter "message"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 46
@@ -53,7 +56,13 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Error;)V
     .locals 0
     .parameter "message"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter "cause"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
 
     .prologue
     .line 53

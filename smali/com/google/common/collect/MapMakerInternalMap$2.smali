@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 920
+    .line 844
     invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
     .end annotation
 
     .prologue
-    .line 943
+    .line 865
     invoke-static {}, Lcom/google/common/collect/Iterators;->emptyIterator()Lcom/google/common/collect/UnmodifiableIterator;
 
     move-result-object v0
@@ -62,7 +62,7 @@
     .parameter "o"
 
     .prologue
-    .line 923
+    .line 847
     const/4 v0, 0x1
 
     return v0
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 928
+    .line 851
     const/4 v0, 0x0
 
     return-object v0
@@ -82,7 +82,7 @@
     .locals 1
 
     .prologue
-    .line 933
+    .line 855
     const/4 v0, 0x0
 
     return-object v0
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 938
+    .line 860
     const/4 v0, 0x0
 
     return v0

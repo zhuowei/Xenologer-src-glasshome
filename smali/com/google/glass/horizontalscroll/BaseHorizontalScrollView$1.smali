@@ -1,9 +1,6 @@
 .class Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;
-.super Ljava/lang/Object;
+.super Landroid/database/DataSetObserver;
 .source "BaseHorizontalScrollView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,34 +24,45 @@
     .parameter
 
     .prologue
-    .line 176
+    .line 177
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.1;"
     iput-object p1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public onChanged()V
     .locals 2
 
     .prologue
-    .line 179
+    .line 180
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.1;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->soundManager:Lcom/google/glass/sound/SoundManager;
-    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$000(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/sound/SoundManager;
+    const/4 v1, 0x1
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->updateViews(Z)V
 
-    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->FOCUS:Lcom/google/glass/sound/SoundManager$SoundId;
+    .line 181
+    return-void
+.end method
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+.method public onInvalidated()V
+    .locals 2
 
-    .line 180
+    .prologue
+    .line 185
+    .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.1;"
+    iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->updateViews(Z)V
+
+    .line 186
     return-void
 .end method

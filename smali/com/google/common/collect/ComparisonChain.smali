@@ -27,14 +27,14 @@
     .locals 2
 
     .prologue
-    .line 64
+    .line 68
     new-instance v0, Lcom/google/common/collect/ComparisonChain$1;
 
     invoke-direct {v0}, Lcom/google/common/collect/ComparisonChain$1;-><init>()V
 
     sput-object v0, Lcom/google/common/collect/ComparisonChain;->ACTIVE:Lcom/google/common/collect/ComparisonChain;
 
-    .line 97
+    .line 120
     new-instance v0, Lcom/google/common/collect/ComparisonChain$InactiveComparisonChain;
 
     const/4 v1, -0x1
@@ -43,7 +43,7 @@
 
     sput-object v0, Lcom/google/common/collect/ComparisonChain;->LESS:Lcom/google/common/collect/ComparisonChain;
 
-    .line 99
+    .line 122
     new-instance v0, Lcom/google/common/collect/ComparisonChain$InactiveComparisonChain;
 
     const/4 v1, 0x1
@@ -59,7 +59,7 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -70,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 57
     invoke-direct {p0}, Lcom/google/common/collect/ComparisonChain;-><init>()V
 
     return-void
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 57
     sget-object v0, Lcom/google/common/collect/ComparisonChain;->LESS:Lcom/google/common/collect/ComparisonChain;
 
     return-object v0
@@ -90,7 +90,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 57
     sget-object v0, Lcom/google/common/collect/ComparisonChain;->GREATER:Lcom/google/common/collect/ComparisonChain;
 
     return-object v0
@@ -100,7 +100,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 57
     sget-object v0, Lcom/google/common/collect/ComparisonChain;->ACTIVE:Lcom/google/common/collect/ComparisonChain;
 
     return-object v0
@@ -110,7 +110,7 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 65
     sget-object v0, Lcom/google/common/collect/ComparisonChain;->ACTIVE:Lcom/google/common/collect/ComparisonChain;
 
     return-object v0
@@ -166,7 +166,26 @@
     .end annotation
 .end method
 
-.method public abstract compare(ZZ)Lcom/google/common/collect/ComparisonChain;
+.method public final compare(ZZ)Lcom/google/common/collect/ComparisonChain;
+    .locals 1
+    .parameter "left"
+    .parameter "right"
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    .prologue
+    .line 248
+    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/ComparisonChain;->compareFalseFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public abstract compareFalseFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
+.end method
+
+.method public abstract compareTrueFirst(ZZ)Lcom/google/common/collect/ComparisonChain;
 .end method
 
 .method public abstract result()I

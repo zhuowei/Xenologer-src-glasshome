@@ -28,14 +28,14 @@
     .locals 1
 
     .prologue
-    .line 440
+    .line 444
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
     invoke-direct {p0, v0}, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;-><init>(Ljava/io/ByteArrayOutputStream;)V
 
-    .line 441
+    .line 445
     return-void
 .end method
 
@@ -44,14 +44,14 @@
     .parameter "size"
 
     .prologue
-    .line 444
+    .line 448
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0, p1}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
     invoke-direct {p0, v0}, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;-><init>(Ljava/io/ByteArrayOutputStream;)V
 
-    .line 445
+    .line 449
     return-void
 .end method
 
@@ -60,20 +60,20 @@
     .parameter "byteArrayOutputSteam"
 
     .prologue
-    .line 447
+    .line 451
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 448
+    .line 452
     iput-object p1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->byteArrayOutputSteam:Ljava/io/ByteArrayOutputStream;
 
-    .line 449
+    .line 453
     new-instance v0, Ljava/io/DataOutputStream;
 
     invoke-direct {v0, p1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
     iput-object v0, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
-    .line 450
+    .line 454
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .locals 1
 
     .prologue
-    .line 565
+    .line 569
     iget-object v0, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->byteArrayOutputSteam:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -98,7 +98,7 @@
     .parameter "b"
 
     .prologue
-    .line 454
+    .line 458
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -106,14 +106,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 458
+    .line 462
     return-void
 
-    .line 455
+    .line 459
     :catch_0
     move-exception v0
 
-    .line 456
+    .line 460
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -127,7 +127,7 @@
     .parameter "b"
 
     .prologue
-    .line 462
+    .line 466
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -135,14 +135,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 466
+    .line 470
     return-void
 
-    .line 463
+    .line 467
     :catch_0
     move-exception v0
 
-    .line 464
+    .line 468
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -158,7 +158,7 @@
     .parameter "len"
 
     .prologue
-    .line 470
+    .line 474
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -166,14 +166,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 474
+    .line 478
     return-void
 
-    .line 471
+    .line 475
     :catch_0
     move-exception v0
 
-    .line 472
+    .line 476
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -187,7 +187,7 @@
     .parameter "v"
 
     .prologue
-    .line 478
+    .line 482
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -195,14 +195,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 482
+    .line 486
     return-void
 
-    .line 479
+    .line 483
     :catch_0
     move-exception v0
 
-    .line 480
+    .line 484
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -216,7 +216,7 @@
     .parameter "v"
 
     .prologue
-    .line 486
+    .line 490
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -224,14 +224,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 490
+    .line 494
     return-void
 
-    .line 487
+    .line 491
     :catch_0
     move-exception v0
 
-    .line 488
+    .line 492
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -245,7 +245,7 @@
     .parameter "s"
 
     .prologue
-    .line 494
+    .line 498
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -253,14 +253,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 498
+    .line 502
     return-void
 
-    .line 495
+    .line 499
     :catch_0
     move-exception v0
 
-    .line 496
+    .line 500
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -274,7 +274,7 @@
     .parameter "v"
 
     .prologue
-    .line 502
+    .line 506
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -282,14 +282,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 506
+    .line 510
     return-void
 
-    .line 503
+    .line 507
     :catch_0
     move-exception v0
 
-    .line 504
+    .line 508
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -303,7 +303,7 @@
     .parameter "s"
 
     .prologue
-    .line 510
+    .line 514
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -311,14 +311,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 514
+    .line 518
     return-void
 
-    .line 511
+    .line 515
     :catch_0
     move-exception v0
 
-    .line 512
+    .line 516
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -332,7 +332,7 @@
     .parameter "v"
 
     .prologue
-    .line 518
+    .line 522
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -340,14 +340,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 522
+    .line 526
     return-void
 
-    .line 519
+    .line 523
     :catch_0
     move-exception v0
 
-    .line 520
+    .line 524
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -361,7 +361,7 @@
     .parameter "v"
 
     .prologue
-    .line 526
+    .line 530
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -369,14 +369,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 530
+    .line 534
     return-void
 
-    .line 527
+    .line 531
     :catch_0
     move-exception v0
 
-    .line 528
+    .line 532
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -390,7 +390,7 @@
     .parameter "v"
 
     .prologue
-    .line 534
+    .line 538
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -398,14 +398,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 538
+    .line 542
     return-void
 
-    .line 535
+    .line 539
     :catch_0
     move-exception v0
 
-    .line 536
+    .line 540
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -419,7 +419,7 @@
     .parameter "v"
 
     .prologue
-    .line 542
+    .line 546
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -427,14 +427,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 546
+    .line 550
     return-void
 
-    .line 543
+    .line 547
     :catch_0
     move-exception v0
 
-    .line 544
+    .line 548
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -448,7 +448,7 @@
     .parameter "v"
 
     .prologue
-    .line 550
+    .line 554
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -456,14 +456,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 554
+    .line 558
     return-void
 
-    .line 551
+    .line 555
     :catch_0
     move-exception v0
 
-    .line 552
+    .line 556
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 
@@ -477,7 +477,7 @@
     .parameter "s"
 
     .prologue
-    .line 558
+    .line 562
     :try_start_0
     iget-object v1, p0, Lcom/google/common/io/ByteStreams$ByteArrayDataOutputStream;->output:Ljava/io/DataOutput;
 
@@ -485,14 +485,14 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 562
+    .line 566
     return-void
 
-    .line 559
+    .line 563
     :catch_0
     move-exception v0
 
-    .line 560
+    .line 564
     .local v0, impossible:Ljava/io/IOException;
     new-instance v1, Ljava/lang/AssertionError;
 

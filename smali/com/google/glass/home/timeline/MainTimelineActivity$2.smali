@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 104
+    .line 102
     iput-object p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 118
+    .line 116
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -73,7 +73,7 @@
     .parameter "intent"
 
     .prologue
-    .line 107
+    .line 105
     const-string v0, "com.google.glass.ACTION_NOTIFICATION_RECEIVED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -86,7 +86,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 109
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -95,7 +95,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
+    .line 110
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #getter for: Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -105,7 +105,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/MainTimelineView;->updateQueryParameters()V
 
-    .line 114
+    .line 112
     :cond_0
     return-void
 .end method

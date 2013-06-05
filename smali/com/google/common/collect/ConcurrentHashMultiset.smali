@@ -70,22 +70,22 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 141
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     .local p1, countMap:Ljava/util/concurrent/ConcurrentMap;,"Ljava/util/concurrent/ConcurrentMap<TE;Ljava/util/concurrent/atomic/AtomicInteger;>;"
     invoke-direct {p0}, Lcom/google/common/collect/AbstractMultiset;-><init>()V
 
-    .line 135
+    .line 142
     invoke-interface {p1}, Ljava/util/concurrent/ConcurrentMap;->isEmpty()Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 136
+    .line 143
     iput-object p1, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
-    .line 137
+    .line 144
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     return-object v0
@@ -113,7 +113,7 @@
     .end annotation
 
     .prologue
-    .line 81
+    .line 87
     new-instance v0, Lcom/google/common/collect/ConcurrentHashMultiset;
 
     new-instance v1, Ljava/util/concurrent/ConcurrentHashMap;
@@ -146,7 +146,7 @@
     .end annotation
 
     .prologue
-    .line 121
+    .line 127
     .local p0, mapMaker:Lcom/google/common/collect/GenericMapMaker;,"Lcom/google/common/collect/GenericMapMaker<-TE;-Ljava/lang/Number;>;"
     new-instance v0, Lcom/google/common/collect/ConcurrentHashMultiset;
 
@@ -175,17 +175,17 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 99
     .local p0, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TE;>;"
     invoke-static {}, Lcom/google/common/collect/ConcurrentHashMultiset;->create()Lcom/google/common/collect/ConcurrentHashMultiset;
 
     move-result-object v0
 
-    .line 94
+    .line 100
     .local v0, multiset:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-static {v0, p0}, Lcom/google/common/collect/Iterables;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    .line 95
+    .line 101
     return-object v0
 .end method
 
@@ -200,72 +200,25 @@
     .end annotation
 
     .prologue
-    .line 576
+    .line 595
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 578
+    .line 598
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/concurrent/ConcurrentMap;
 
-    .line 580
+    .line 600
     .local v0, deserializedCountMap:Ljava/util/concurrent/ConcurrentMap;,"Ljava/util/concurrent/ConcurrentMap<TE;Ljava/lang/Integer;>;"
     sget-object v1, Lcom/google/common/collect/ConcurrentHashMultiset$FieldSettersHolder;->COUNT_MAP_FIELD_SETTER:Lcom/google/common/collect/Serialization$FieldSetter;
 
     invoke-virtual {v1, p0, v0}, Lcom/google/common/collect/Serialization$FieldSetter;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 581
+    .line 601
     return-void
-.end method
-
-.method private safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
-    .locals 3
-    .parameter "element"
-
-    .prologue
-    .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
-    const/4 v2, 0x0
-
-    .line 159
-    :try_start_0
-    iget-object v1, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-interface {v1, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/util/concurrent/atomic/AtomicInteger;
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_1
-
-    .line 163
-    :goto_0
-    return-object v1
-
-    .line 160
-    :catch_0
-    move-exception v0
-
-    .local v0, e:Ljava/lang/NullPointerException;
-    move-object v1, v2
-
-    .line 161
-    goto :goto_0
-
-    .line 162
-    .end local v0           #e:Ljava/lang/NullPointerException;
-    :catch_1
-    move-exception v0
-
-    .local v0, e:Ljava/lang/ClassCastException;
-    move-object v1, v2
-
-    .line 163
-    goto :goto_0
 .end method
 
 .method private snapshot()Ljava/util/List;
@@ -279,7 +232,7 @@
     .end annotation
 
     .prologue
-    .line 199
+    .line 194
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ConcurrentHashMultiset;->size()I
 
@@ -289,7 +242,7 @@
 
     move-result-object v4
 
-    .line 200
+    .line 195
     .local v4, list:Ljava/util/List;,"Ljava/util/List<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ConcurrentHashMultiset;->entrySet()Ljava/util/Set;
 
@@ -313,13 +266,13 @@
 
     check-cast v1, Lcom/google/common/collect/Multiset$Entry;
 
-    .line 201
+    .line 196
     .local v1, entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getElement()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 202
+    .line 197
     .local v0, element:Ljava/lang/Object;,"TE;"
     invoke-interface {v1}, Lcom/google/common/collect/Multiset$Entry;->getCount()I
 
@@ -329,15 +282,15 @@
     :goto_0
     if-lez v2, :cond_0
 
-    .line 203
+    .line 198
     invoke-interface {v4, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 202
+    .line 197
     add-int/lit8 v2, v2, -0x1
 
     goto :goto_0
 
-    .line 206
+    .line 201
     .end local v0           #element:Ljava/lang/Object;,"TE;"
     .end local v1           #entry:Lcom/google/common/collect/Multiset$Entry;,"Lcom/google/common/collect/Multiset$Entry<TE;>;"
     .end local v2           #i:I
@@ -355,16 +308,16 @@
     .end annotation
 
     .prologue
-    .line 571
+    .line 590
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 572
+    .line 591
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 573
+    .line 592
     return-void
 .end method
 
@@ -387,20 +340,23 @@
 
     const/4 v7, 0x0
 
-    .line 221
+    .line 217
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 218
     if-nez p2, :cond_1
 
-    .line 222
+    .line 219
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->count(Ljava/lang/Object;)I
 
     move-result v7
 
-    .line 256
+    .line 253
     :cond_0
     :goto_0
     return v7
 
-    .line 224
+    .line 221
     :cond_1
     if-lez p2, :cond_4
 
@@ -419,17 +375,21 @@
 
     invoke-static {v5, v8, v6}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 227
+    .line 224
     :cond_2
-    invoke-direct {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v5, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v5, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 228
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 225
     .local v0, existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-nez v0, :cond_3
 
-    .line 229
+    .line 226
     iget-object v5, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicInteger;
@@ -443,27 +403,27 @@
     .end local v0           #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 230
+    .line 227
     .restart local v0       #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-eqz v0, :cond_0
 
-    .line 237
+    .line 234
     :cond_3
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v3
 
-    .line 238
+    .line 235
     .local v3, oldValue:I
     if-eqz v3, :cond_5
 
-    .line 240
+    .line 237
     :try_start_0
     invoke-static {v3, p2}, Lcom/google/common/math/IntMath;->checkedAdd(II)I
 
     move-result v2
 
-    .line 241
+    .line 238
     .local v2, newValue:I
     invoke-virtual {v0, v3, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
     :try_end_0
@@ -475,7 +435,7 @@
 
     move v7, v3
 
-    .line 243
+    .line 240
     goto :goto_0
 
     .end local v0           #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -484,16 +444,16 @@
     :cond_4
     move v5, v7
 
-    .line 224
+    .line 221
     goto :goto_1
 
-    .line 245
+    .line 242
     .restart local v0       #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     .restart local v3       #oldValue:I
     :catch_0
     move-exception v4
 
-    .line 246
+    .line 243
     .local v4, overflow:Ljava/lang/ArithmeticException;
     new-instance v5, Ljava/lang/IllegalArgumentException;
 
@@ -529,14 +489,14 @@
 
     throw v5
 
-    .line 253
+    .line 250
     .end local v4           #overflow:Ljava/lang/ArithmeticException;
     :cond_5
     new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 254
+    .line 251
     .local v1, newCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     iget-object v5, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -562,7 +522,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->add(Ljava/lang/Object;)Z
 
@@ -576,7 +536,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->addAll(Ljava/util/Collection;)Z
 
@@ -589,13 +549,13 @@
     .locals 1
 
     .prologue
-    .line 523
+    .line 554
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v0}, Ljava/util/concurrent/ConcurrentMap;->clear()V
 
-    .line 524
+    .line 555
     return-void
 .end method
 
@@ -604,7 +564,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->contains(Ljava/lang/Object;)Z
 
@@ -621,13 +581,17 @@
     .end parameter
 
     .prologue
-    .line 148
+    .line 155
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
-    invoke-direct {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v1, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v1, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 149
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 156
     .local v0, existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-nez v0, :cond_0
 
@@ -655,7 +619,7 @@
     .end annotation
 
     .prologue
-    .line 446
+    .line 458
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -663,7 +627,7 @@
 
     move-result-object v0
 
-    .line 447
+    .line 459
     .local v0, delegate:Ljava/util/Set;,"Ljava/util/Set<TE;>;"
     new-instance v1, Lcom/google/common/collect/ConcurrentHashMultiset$1;
 
@@ -676,7 +640,7 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 499
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -691,7 +655,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->elementSet()Ljava/util/Set;
 
@@ -713,13 +677,13 @@
     .end annotation
 
     .prologue
-    .line 484
+    .line 511
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     new-instance v0, Lcom/google/common/collect/ConcurrentHashMultiset$2;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/ConcurrentHashMultiset$2;-><init>(Lcom/google/common/collect/ConcurrentHashMultiset;)V
 
-    .line 502
+    .line 529
     .local v0, readOnlyIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/common/collect/Multiset$Entry<TE;>;>;"
     new-instance v1, Lcom/google/common/collect/ConcurrentHashMultiset$3;
 
@@ -741,15 +705,15 @@
     .end annotation
 
     .prologue
-    .line 466
+    .line 490
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->entrySet:Lcom/google/common/collect/ConcurrentHashMultiset$EntrySet;
 
-    .line 467
+    .line 491
     .local v0, result:Lcom/google/common/collect/ConcurrentHashMultiset$EntrySet;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>.EntrySet;"
     if-nez v0, :cond_0
 
-    .line 468
+    .line 492
     new-instance v0, Lcom/google/common/collect/ConcurrentHashMultiset$EntrySet;
 
     .end local v0           #result:Lcom/google/common/collect/ConcurrentHashMultiset$EntrySet;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>.EntrySet;"
@@ -760,7 +724,7 @@
     .restart local v0       #result:Lcom/google/common/collect/ConcurrentHashMultiset$EntrySet;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>.EntrySet;"
     iput-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->entrySet:Lcom/google/common/collect/ConcurrentHashMultiset$EntrySet;
 
-    .line 470
+    .line 494
     :cond_0
     return-object v0
 .end method
@@ -770,7 +734,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->equals(Ljava/lang/Object;)Z
 
@@ -783,7 +747,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->hashCode()I
 
@@ -796,7 +760,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 504
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -811,7 +775,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->iterator()Ljava/util/Iterator;
 
@@ -835,20 +799,20 @@
 
     const/4 v5, 0x0
 
-    .line 276
+    .line 283
     if-nez p2, :cond_1
 
-    .line 277
+    .line 284
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->count(Ljava/lang/Object;)I
 
     move-result v5
 
-    .line 298
+    .line 305
     :cond_0
     :goto_0
     return v5
 
-    .line 279
+    .line 286
     :cond_1
     if-lez p2, :cond_4
 
@@ -867,33 +831,37 @@
 
     invoke-static {v3, v6, v4}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 281
-    invoke-direct {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 288
+    iget-object v3, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v3, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 282
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 289
     .local v0, existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-eqz v0, :cond_0
 
-    .line 286
+    .line 293
     :cond_2
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
 
-    .line 287
+    .line 294
     .local v2, oldValue:I
     if-eqz v2, :cond_0
 
-    .line 288
+    .line 295
     sub-int v3, v2, p2
 
     invoke-static {v5, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 289
+    .line 296
     .local v1, newValue:I
     invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
 
@@ -901,10 +869,10 @@
 
     if-eqz v3, :cond_2
 
-    .line 290
+    .line 297
     if-nez v1, :cond_3
 
-    .line 293
+    .line 300
     iget-object v3, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v3, p1, v0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -912,7 +880,7 @@
     :cond_3
     move v5, v2
 
-    .line 295
+    .line 302
     goto :goto_0
 
     .end local v0           #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
@@ -921,7 +889,7 @@
     :cond_4
     move v3, v5
 
-    .line 279
+    .line 286
     goto :goto_1
 .end method
 
@@ -930,7 +898,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->remove(Ljava/lang/Object;)Z
 
@@ -944,7 +912,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->removeAll(Ljava/util/Collection;)Z
 
@@ -968,15 +936,15 @@
 
     const/4 v5, 0x0
 
-    .line 315
+    .line 322
     if-nez p2, :cond_1
 
-    .line 336
+    .line 343
     :cond_0
     :goto_0
     return v4
 
-    .line 318
+    .line 325
     :cond_1
     if-lez p2, :cond_2
 
@@ -995,48 +963,52 @@
 
     invoke-static {v3, v6, v7}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 320
-    invoke-direct {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 327
+    iget-object v3, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v3, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 321
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 328
     .local v0, existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-nez v0, :cond_3
 
     move v4, v5
 
-    .line 322
+    .line 329
     goto :goto_0
 
     .end local v0           #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     :cond_2
     move v3, v5
 
-    .line 318
+    .line 325
     goto :goto_1
 
-    .line 325
+    .line 332
     .restart local v0       #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     :cond_3
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
 
-    .line 326
+    .line 333
     .local v2, oldValue:I
     if-ge v2, p2, :cond_4
 
     move v4, v5
 
-    .line 327
+    .line 334
     goto :goto_0
 
-    .line 329
+    .line 336
     :cond_4
     sub-int v1, v2, p2
 
-    .line 330
+    .line 337
     .local v1, newValue:I
     invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
 
@@ -1044,10 +1016,10 @@
 
     if-eqz v3, :cond_3
 
-    .line 331
+    .line 338
     if-nez v1, :cond_0
 
-    .line 334
+    .line 341
     iget-object v3, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v3, p1, v0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1060,7 +1032,7 @@
     .parameter "x0"
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMultiset;->retainAll(Ljava/util/Collection;)Z
 
@@ -1084,32 +1056,39 @@
     .local p1, element:Ljava/lang/Object;,"TE;"
     const/4 v3, 0x0
 
-    .line 349
+    .line 357
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 358
     const-string v4, "count"
 
     invoke-static {p2, v4}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 351
+    .line 360
     :cond_0
-    invoke-direct {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v4, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v4, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 352
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 361
     .local v0, existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-nez v0, :cond_3
 
-    .line 353
+    .line 362
     if-nez p2, :cond_2
 
     move v2, v3
 
-    .line 384
+    .line 393
     :cond_1
     :goto_0
     return v2
 
-    .line 356
+    .line 365
     :cond_2
     iget-object v4, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -1124,40 +1103,40 @@
     .end local v0           #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 357
+    .line 366
     .restart local v0       #existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-nez v0, :cond_3
 
     move v2, v3
 
-    .line 358
+    .line 367
     goto :goto_0
 
-    .line 365
+    .line 374
     :cond_3
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
 
-    .line 366
+    .line 375
     .local v2, oldValue:I
     if-nez v2, :cond_6
 
-    .line 367
+    .line 376
     if-nez p2, :cond_4
 
     move v2, v3
 
-    .line 368
+    .line 377
     goto :goto_0
 
-    .line 370
+    .line 379
     :cond_4
     new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v1, p2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 371
+    .line 380
     .local v1, newCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     iget-object v4, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -1178,10 +1157,10 @@
     :cond_5
     move v2, v3
 
-    .line 373
+    .line 382
     goto :goto_0
 
-    .line 378
+    .line 387
     .end local v1           #newCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     :cond_6
     invoke-virtual {v0, v2, p2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
@@ -1190,10 +1169,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 379
+    .line 388
     if-nez p2, :cond_1
 
-    .line 382
+    .line 391
     iget-object v3, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v3, p1, v0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1219,40 +1198,47 @@
 
     const/4 v3, 0x1
 
-    .line 403
+    .line 413
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 414
     const-string v5, "oldCount"
 
     invoke-static {p2, v5}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 404
+    .line 415
     const-string v5, "newCount"
 
     invoke-static {p3, v5}, Lcom/google/common/collect/Multisets;->checkNonnegative(ILjava/lang/String;)V
 
-    .line 406
-    invoke-direct {p0, p1}, Lcom/google/common/collect/ConcurrentHashMultiset;->safeGet(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicInteger;
+    .line 417
+    iget-object v5, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
+
+    invoke-static {v5, p1}, Lcom/google/common/collect/Maps;->safeGet(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 407
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 418
     .local v0, existingCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     if-nez v0, :cond_2
 
-    .line 408
+    .line 419
     if-eqz p2, :cond_1
 
     move v3, v4
 
-    .line 440
+    .line 451
     :cond_0
     :goto_0
     return v3
 
-    .line 410
+    .line 421
     :cond_1
     if-eqz p3, :cond_0
 
-    .line 414
+    .line 425
     iget-object v5, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     new-instance v6, Ljava/util/concurrent/atomic/AtomicInteger;
@@ -1269,36 +1255,36 @@
 
     goto :goto_0
 
-    .line 417
+    .line 428
     :cond_2
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     move-result v2
 
-    .line 418
+    .line 429
     .local v2, oldValue:I
     if-ne v2, p2, :cond_7
 
-    .line 419
+    .line 430
     if-nez v2, :cond_6
 
-    .line 420
+    .line 431
     if-nez p3, :cond_3
 
-    .line 422
+    .line 433
     iget-object v4, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v4, p1, v0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 425
+    .line 436
     :cond_3
     new-instance v1, Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-direct {v1, p3}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
-    .line 426
+    .line 437
     .local v1, newCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     iget-object v5, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -1324,7 +1310,7 @@
 
     goto :goto_0
 
-    .line 430
+    .line 441
     .end local v1           #newCounter:Ljava/util/concurrent/atomic/AtomicInteger;
     :cond_6
     invoke-virtual {v0, v2, p3}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
@@ -1333,10 +1319,10 @@
 
     if-eqz v5, :cond_7
 
-    .line 431
+    .line 442
     if-nez p3, :cond_0
 
-    .line 434
+    .line 445
     iget-object v4, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
     invoke-interface {v4, p1, v0}, Ljava/util/concurrent/ConcurrentMap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1346,7 +1332,7 @@
     :cond_7
     move v3, v4
 
-    .line 440
+    .line 451
     goto :goto_0
 .end method
 
@@ -1354,11 +1340,11 @@
     .locals 6
 
     .prologue
-    .line 174
+    .line 167
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     const-wide/16 v1, 0x0
 
-    .line 175
+    .line 168
     .local v1, sum:J
     iget-object v4, p0, Lcom/google/common/collect/ConcurrentHashMultiset;->countMap:Ljava/util/concurrent/ConcurrentMap;
 
@@ -1384,7 +1370,7 @@
 
     check-cast v3, Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 176
+    .line 169
     .local v3, value:Ljava/util/concurrent/atomic/AtomicInteger;
     invoke-virtual {v3}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
@@ -1396,7 +1382,7 @@
 
     goto :goto_0
 
-    .line 178
+    .line 171
     .end local v3           #value:Ljava/util/concurrent/atomic/AtomicInteger;
     :cond_0
     invoke-static {v1, v2}, Lcom/google/common/primitives/Ints;->saturatedCast(J)I
@@ -1410,7 +1396,7 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 181
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ConcurrentHashMultiset;->snapshot()Ljava/util/List;
 
@@ -1435,7 +1421,7 @@
     .end annotation
 
     .prologue
-    .line 191
+    .line 186
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-direct {p0}, Lcom/google/common/collect/ConcurrentHashMultiset;->snapshot()Ljava/util/List;
@@ -1453,7 +1439,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 57
     .local p0, this:Lcom/google/common/collect/ConcurrentHashMultiset;,"Lcom/google/common/collect/ConcurrentHashMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMultiset;->toString()Ljava/lang/String;
 

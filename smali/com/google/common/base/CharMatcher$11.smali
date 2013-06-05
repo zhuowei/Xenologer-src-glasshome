@@ -19,15 +19,16 @@
 
 
 # direct methods
-.method constructor <init>([C)V
+.method constructor <init>(Ljava/lang/String;[C)V
     .locals 0
+    .parameter "x0"
     .parameter
 
     .prologue
-    .line 468
-    iput-object p1, p0, Lcom/google/common/base/CharMatcher$11;->val$chars:[C
+    .line 528
+    iput-object p2, p0, Lcom/google/common/base/CharMatcher$11;->val$chars:[C
 
-    invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
+    invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -39,7 +40,7 @@
     .parameter "x0"
 
     .prologue
-    .line 468
+    .line 528
     check-cast p1, Ljava/lang/Character;
 
     .end local p1
@@ -55,7 +56,7 @@
     .parameter "c"
 
     .prologue
-    .line 470
+    .line 531
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$11;->val$chars:[C
 
     invoke-static {v0, p1}, Ljava/util/Arrays;->binarySearch([CC)I
@@ -75,12 +76,15 @@
     goto :goto_0
 .end method
 
-.method setBits(Lcom/google/common/base/CharMatcher$LookupTable;)V
+.method setBits(Ljava/util/BitSet;)V
     .locals 4
     .parameter "table"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "java.util.BitSet"
+    .end annotation
 
     .prologue
-    .line 474
+    .line 537
     iget-object v0, p0, Lcom/google/common/base/CharMatcher$11;->val$chars:[C
 
     .local v0, arr$:[C
@@ -95,16 +99,16 @@
 
     aget-char v1, v0, v2
 
-    .line 475
+    .line 538
     .local v1, c:C
-    invoke-virtual {p1, v1}, Lcom/google/common/base/CharMatcher$LookupTable;->set(C)V
+    invoke-virtual {p1, v1}, Ljava/util/BitSet;->set(I)V
 
-    .line 474
+    .line 537
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 477
+    .line 540
     .end local v1           #c:C
     :cond_0
     return-void

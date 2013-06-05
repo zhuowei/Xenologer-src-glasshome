@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 52
+    .line 53
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 48
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSet;->delegate()Ljava/util/Set;
 
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 48
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSet;->delegate()Ljava/util/Set;
 
@@ -81,7 +81,7 @@
     .end parameter
 
     .prologue
-    .line 57
+    .line 60
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
     if-eq p1, p0, :cond_0
 
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 65
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSet;->delegate()Ljava/util/Set;
 
@@ -130,11 +130,9 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 72
+    .line 90
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
     invoke-static {p0, p1}, Lcom/google/common/collect/Sets;->equalsImpl(Ljava/util/Set;Ljava/lang/Object;)Z
 
@@ -145,13 +143,39 @@
 
 .method protected standardHashCode()I
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
+
+    .prologue
+    .line 101
+    .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
+    invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method protected standardRemoveAll(Ljava/util/Collection;)Z
+    .locals 1
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Collection",
+            "<*>;)Z"
+        }
     .end annotation
 
     .prologue
-    .line 83
+    .line 79
     .local p0, this:Lcom/google/common/collect/ForwardingSet;,"Lcom/google/common/collect/ForwardingSet<TE;>;"
-    invoke-static {p0}, Lcom/google/common/collect/Sets;->hashCodeImpl(Ljava/util/Set;)I
+    .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
+    invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Collection;
+
+    invoke-static {p0, v0}, Lcom/google/common/collect/Sets;->removeAllImpl(Ljava/util/Set;Ljava/util/Collection;)Z
 
     move-result v0
 

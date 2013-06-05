@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 68
+    .line 72
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 76
+    .line 80
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,12 +70,12 @@
     .parameter "intent"
 
     .prologue
-    .line 71
+    .line 75
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsItemView$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsItemView;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsItemView;->update()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsItemView;->access$000(Lcom/google/glass/home/settings/WifiSettingsItemView;)V
 
-    .line 72
+    .line 76
     return-void
 .end method

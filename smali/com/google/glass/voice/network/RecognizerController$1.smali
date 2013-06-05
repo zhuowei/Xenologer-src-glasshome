@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 97
+    .line 170
     iput-object p1, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,16 +40,16 @@
     .parameter "msg"
 
     .prologue
-    .line 100
+    .line 173
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 116
+    .line 189
     :goto_0
     return-void
 
-    .line 102
+    .line 175
     :pswitch_0
     invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Ljava/lang/String;
 
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 103
+    .line 176
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
     #getter for: Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
@@ -69,7 +69,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 177
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
     #getter for: Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->onError(Lcom/google/android/speech/exception/RecognizeException;)V
 
-    .line 109
+    .line 182
     :cond_0
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
@@ -100,12 +100,12 @@
 
     invoke-interface {v0}, Lcom/google/android/speech/Recognizer;->cancel()V
 
-    .line 113
+    .line 186
     invoke-static {}, Lcom/google/glass/net/NetworkUtil;->pingGoogle()Z
 
     goto :goto_0
 
-    .line 100
+    .line 173
     nop
 
     :pswitch_data_0

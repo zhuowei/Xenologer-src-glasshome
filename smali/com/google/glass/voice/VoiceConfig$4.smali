@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 222
+    .line 232
     iput-object p7, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$phrases:[Ljava/lang/String;
 
     iput-object p8, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$tags:[Ljava/lang/String;
@@ -45,12 +45,12 @@
 
 
 # virtual methods
-.method public getRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
     .locals 3
     .parameter "context"
 
     .prologue
-    .line 226
+    .line 236
     new-instance v0, Lcom/google/glass/voice/DynamicSensoryRecognizer;
 
     iget-object v1, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$phrases:[Ljava/lang/String;

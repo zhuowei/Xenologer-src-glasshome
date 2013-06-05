@@ -66,7 +66,7 @@
 
     const/4 v3, 0x0
 
-    .line 402
+    .line 368
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "FIXED_LINE"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 403
+    .line 369
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "MOBILE"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->MOBILE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 406
+    .line 372
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "FIXED_LINE_OR_MOBILE"
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE_OR_MOBILE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 408
+    .line 374
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "TOLL_FREE"
@@ -102,7 +102,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->TOLL_FREE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 409
+    .line 375
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "PREMIUM_RATE"
@@ -111,7 +111,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->PREMIUM_RATE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 413
+    .line 379
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "SHARED_COST"
@@ -122,7 +122,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->SHARED_COST:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 415
+    .line 381
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "VOIP"
@@ -133,7 +133,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->VOIP:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 419
+    .line 385
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "PERSONAL_NUMBER"
@@ -144,7 +144,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->PERSONAL_NUMBER:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 420
+    .line 386
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "PAGER"
@@ -155,7 +155,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->PAGER:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 423
+    .line 389
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "UAN"
@@ -166,7 +166,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->UAN:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 425
+    .line 391
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "VOICEMAIL"
@@ -177,7 +177,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->VOICEMAIL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 428
+    .line 394
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     const-string v1, "UNKNOWN"
@@ -188,7 +188,7 @@
 
     sput-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->UNKNOWN:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 401
+    .line 367
     const/16 v0, 0xc
 
     new-array v0, v0, [Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
@@ -271,7 +271,7 @@
     .end annotation
 
     .prologue
-    .line 401
+    .line 367
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -282,7 +282,7 @@
     .parameter "name"
 
     .prologue
-    .line 401
+    .line 367
     const-class v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -298,7 +298,7 @@
     .locals 1
 
     .prologue
-    .line 401
+    .line 367
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->$VALUES:[Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     invoke-virtual {v0}, [Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->clone()Ljava/lang/Object;

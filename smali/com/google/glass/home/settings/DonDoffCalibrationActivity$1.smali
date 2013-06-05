@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 52
+    .line 54
     iput-object p1, p0, Lcom/google/glass/home/settings/DonDoffCalibrationActivity$1;->this$0:Lcom/google/glass/home/settings/DonDoffCalibrationActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 55
+    .line 57
     iget-object v0, p0, Lcom/google/glass/home/settings/DonDoffCalibrationActivity$1;->this$0:Lcom/google/glass/home/settings/DonDoffCalibrationActivity;
 
     sget v1, Lcom/google/glass/home/R$string;->don_doff_calibration_failure:I
@@ -49,6 +49,6 @@
     #calls: Lcom/google/glass/home/settings/DonDoffCalibrationActivity;->showErrorDialogAndFinish(I)V
     invoke-static {v0, v1}, Lcom/google/glass/home/settings/DonDoffCalibrationActivity;->access$000(Lcom/google/glass/home/settings/DonDoffCalibrationActivity;I)V
 
-    .line 56
+    .line 58
     return-void
 .end method

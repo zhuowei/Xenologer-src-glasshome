@@ -63,13 +63,13 @@
     .end annotation
 
     .prologue
-    .line 220
+    .line 238
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     .local p1, delegate:Ljava/util/List;,"Ljava/util/List<TE;>;"
     .local p2, constraint:Lcom/google/common/collect/Constraint;,"Lcom/google/common/collect/Constraint<-TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingList;-><init>()V
 
-    .line 221
+    .line 239
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -78,7 +78,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
-    .line 222
+    .line 240
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -87,7 +87,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->constraint:Lcom/google/common/collect/Constraint;
 
-    .line 223
+    .line 241
     return-void
 .end method
 
@@ -104,19 +104,19 @@
     .end annotation
 
     .prologue
-    .line 233
+    .line 256
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p2}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 234
+    .line 257
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 235
+    .line 258
     return-void
 .end method
 
@@ -130,14 +130,14 @@
     .end annotation
 
     .prologue
-    .line 229
+    .line 250
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 230
+    .line 251
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -160,7 +160,7 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 267
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     .local p2, elements:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
@@ -191,7 +191,7 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 262
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     .local p1, elements:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
@@ -214,7 +214,7 @@
     .locals 1
 
     .prologue
-    .line 215
+    .line 233
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate()Ljava/util/List;
 
@@ -227,7 +227,7 @@
     .locals 1
 
     .prologue
-    .line 215
+    .line 233
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate()Ljava/util/List;
 
@@ -247,7 +247,7 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 245
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
@@ -265,7 +265,7 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 272
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
@@ -295,7 +295,7 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 277
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
@@ -324,14 +324,14 @@
     .end annotation
 
     .prologue
-    .line 250
+    .line 282
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     .local p2, element:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->constraint:Lcom/google/common/collect/Constraint;
 
     invoke-interface {v0, p2}, Lcom/google/common/collect/Constraint;->checkElement(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 251
+    .line 283
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
@@ -354,7 +354,7 @@
     .end annotation
 
     .prologue
-    .line 254
+    .line 288
     .local p0, this:Lcom/google/common/collect/Constraints$ConstrainedList;,"Lcom/google/common/collect/Constraints$ConstrainedList<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Constraints$ConstrainedList;->delegate:Ljava/util/List;
 

@@ -22,7 +22,7 @@
     .locals 3
 
     .prologue
-    .line 19
+    .line 20
     const-class v0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -31,7 +31,7 @@
 
     sput-object v0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->TAG:Ljava/lang/String;
 
-    .line 22
+    .line 23
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0xa
@@ -52,7 +52,7 @@
     .parameter "context"
 
     .prologue
-    .line 28
+    .line 29
     sget v0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->FIRST_RETRY_DELAY_MS:I
 
     const-wide/high16 v1, 0x4000
@@ -65,10 +65,10 @@
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/sync/BackOffSyncHandler;-><init>(Lcom/google/glass/util/RetryStrategy;)V
 
-    .line 30
+    .line 31
     iput-object p1, p0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->context:Landroid/content/Context;
 
-    .line 31
+    .line 32
     new-instance v0, Lcom/google/glass/logging/audio/SavedAudioStorage;
 
     new-instance v1, Lcom/google/glass/net/AndroidHttpRequestDispatcher;
@@ -83,7 +83,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->savedAudioStorage:Lcom/google/glass/logging/audio/SavedAudioStorage;
 
-    .line 33
+    .line 34
     return-void
 .end method
 
@@ -93,14 +93,14 @@
     .locals 2
 
     .prologue
-    .line 51
+    .line 52
     iget-object v0, p0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->savedAudioStorage:Lcom/google/glass/logging/audio/SavedAudioStorage;
 
     iget-object v1, p0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->context:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteOldAudio(Landroid/content/Context;)V
 
-    .line 52
+    .line 53
     return-void
 .end method
 
@@ -108,7 +108,7 @@
     .locals 2
 
     .prologue
-    .line 18
+    .line 19
     invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->getDelayRemainingSecs()J
 
     move-result-wide v0
@@ -120,18 +120,19 @@
     .locals 1
 
     .prologue
-    .line 37
+    .line 38
     sget-object v0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public bridge synthetic handleFail()V
+.method public bridge synthetic handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
     .locals 0
+    .parameter "x0"
 
     .prologue
-    .line 18
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleFail()V
+    .line 19
+    invoke-super {p0, p1}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
     return-void
 .end method
@@ -140,7 +141,7 @@
     .locals 0
 
     .prologue
-    .line 18
+    .line 19
     invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleSuccess()V
 
     return-void
@@ -150,8 +151,20 @@
     .locals 1
 
     .prologue
-    .line 18
+    .line 19
     invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->hasFailures()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public bridge synthetic hasServerFailures()Z
+    .locals 1
+
+    .prologue
+    .line 19
+    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->hasServerFailures()Z
 
     move-result v0
 
@@ -162,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 18
+    .line 19
     invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->shouldRetry()Z
 
     move-result v0
@@ -174,7 +187,7 @@
     .locals 4
 
     .prologue
-    .line 42
+    .line 43
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->savedAudioStorage:Lcom/google/glass/logging/audio/SavedAudioStorage;
 
@@ -186,20 +199,20 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/google/glass/logging/audio/SavedAudioStorage;->uploadStoredAudio(Landroid/content/Context;Ljava/util/List;)V
 
-    .line 43
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->handleSuccess()V
     :try_end_0
     .catch Lcom/google/glass/logging/audio/SyncFailedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 48
+    .line 49
     :goto_0
     return-void
 
-    .line 44
+    .line 45
     :catch_0
     move-exception v0
 
-    .line 45
+    .line 46
     .local v0, e:Lcom/google/glass/logging/audio/SyncFailedException;
     sget-object v1, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->TAG:Ljava/lang/String;
 
@@ -207,8 +220,10 @@
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 46
-    invoke-virtual {p0}, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->handleFail()V
+    .line 47
+    sget-object v1, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->INTERNAL_ERROR:Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
+
+    invoke-virtual {p0, v1}, Lcom/google/glass/home/sync/SavedAudioSyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
     goto :goto_0
 .end method

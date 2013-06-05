@@ -31,11 +31,11 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 257
     .local p1, bimap:Lcom/google/common/collect/ImmutableBiMap;,"Lcom/google/common/collect/ImmutableBiMap<**>;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ImmutableMap$SerializedForm;-><init>(Lcom/google/common/collect/ImmutableMap;)V
 
-    .line 314
+    .line 258
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .locals 2
 
     .prologue
-    .line 316
+    .line 262
     new-instance v0, Lcom/google/common/collect/ImmutableBiMap$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableBiMap$Builder;-><init>()V
 
-    .line 317
+    .line 263
     .local v0, builder:Lcom/google/common/collect/ImmutableBiMap$Builder;,"Lcom/google/common/collect/ImmutableBiMap$Builder<Ljava/lang/Object;Ljava/lang/Object;>;"
     invoke-virtual {p0, v0}, Lcom/google/common/collect/ImmutableBiMap$SerializedForm;->createMap(Lcom/google/common/collect/ImmutableMap$Builder;)Ljava/lang/Object;
 

@@ -20,7 +20,7 @@
     .parameter "entity"
 
     .prologue
-    .line 102
+    .line 108
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/home/voice/menu/Requirement;
@@ -48,44 +48,35 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/home/voice/menu/EntityMenuItem;-><init>(Lcom/google/googlex/glass/common/proto/Entity;[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    .line 104
+    .line 110
+    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->VOICE_COMPLETED:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem;->setCustomTriggerSound(Lcom/google/glass/sound/SoundManager$SoundId;)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    .line 111
     return-void
 .end method
 
 
 # virtual methods
-.method public onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
+.method protected onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
     .locals 1
     .parameter "environment"
     .parameter "spoken"
 
     .prologue
-    .line 108
-    if-eqz p2, :cond_0
+    .line 115
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->VOICE_COMPLETED:Lcom/google/glass/sound/SoundManager$SoundId;
+    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    :goto_0
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)V
-
-    .line 109
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
-
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 110
+    .line 116
     new-instance v0, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem$1;-><init>(Lcom/google/glass/home/voice/menu/EntityMenuItem$CallEntityItem;Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)V
 
     invoke-interface {p1, p0, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->selectSecondaryMenuItem(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Ljava/lang/Runnable;)V
 
-    .line 117
+    .line 123
     return-void
-
-    .line 108
-    :cond_0
-    sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    goto :goto_0
 .end method

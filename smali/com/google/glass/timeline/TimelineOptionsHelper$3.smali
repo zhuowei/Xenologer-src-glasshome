@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 751
+    .line 766
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$3;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$3;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -50,7 +50,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 754
+    .line 769
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$3;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;

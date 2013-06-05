@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 61
+    .line 60
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingSet;-><init>()V
 
@@ -41,13 +41,13 @@
     .parameter "o2"
 
     .prologue
-    .line 98
+    .line 92
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedSet;->comparator()Ljava/util/Comparator;
 
     move-result-object v0
 
-    .line 99
+    .line 93
     .local v0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TE;>;"
     if-nez v0, :cond_0
 
@@ -83,7 +83,7 @@
     .end annotation
 
     .prologue
-    .line 67
+    .line 66
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -154,7 +154,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 70
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -179,7 +179,7 @@
     .end annotation
 
     .prologue
-    .line 77
+    .line 74
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     .local p1, toElement:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedSet;->delegate()Ljava/util/SortedSet;
@@ -202,7 +202,7 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 78
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedSet;->delegate()Ljava/util/SortedSet;
 
@@ -228,10 +228,10 @@
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     const/4 v3, 0x0
 
-    .line 115
+    .line 110
     move-object v2, p0
 
-    .line 116
+    .line 111
     .local v2, self:Ljava/util/SortedSet;,"Ljava/util/SortedSet<Ljava/lang/Object;>;"
     :try_start_0
     invoke-interface {v2, p1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
@@ -242,7 +242,7 @@
 
     move-result-object v0
 
-    .line 117
+    .line 112
     .local v0, ceiling:Ljava/lang/Object;
     invoke-direct {p0, v0, p1}, Lcom/google/common/collect/ForwardingSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
     :try_end_0
@@ -256,35 +256,35 @@
 
     const/4 v3, 0x1
 
-    .line 123
+    .line 118
     .end local v0           #ceiling:Ljava/lang/Object;
     :cond_0
     :goto_0
     return v3
 
-    .line 118
+    .line 113
     :catch_0
     move-exception v1
 
-    .line 119
+    .line 114
     .local v1, e:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 120
+    .line 115
     .end local v1           #e:Ljava/lang/ClassCastException;
     :catch_1
     move-exception v1
 
-    .line 121
+    .line 116
     .local v1, e:Ljava/util/NoSuchElementException;
     goto :goto_0
 
-    .line 122
+    .line 117
     .end local v1           #e:Ljava/util/NoSuchElementException;
     :catch_2
     move-exception v1
 
-    .line 123
+    .line 118
     .local v1, e:Ljava/lang/NullPointerException;
     goto :goto_0
 .end method
@@ -302,10 +302,10 @@
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     const/4 v4, 0x0
 
-    .line 138
+    .line 135
     move-object v3, p0
 
-    .line 139
+    .line 136
     .local v3, self:Ljava/util/SortedSet;,"Ljava/util/SortedSet<Ljava/lang/Object;>;"
     :try_start_0
     invoke-interface {v3, p1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;
@@ -316,7 +316,7 @@
 
     move-result-object v2
 
-    .line 140
+    .line 137
     .local v2, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/Object;>;"
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -324,12 +324,12 @@
 
     if-eqz v5, :cond_0
 
-    .line 141
+    .line 138
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 142
+    .line 139
     .local v0, ceiling:Ljava/lang/Object;
     invoke-direct {p0, v0, p1}, Lcom/google/common/collect/ForwardingSortedSet;->unsafeCompare(Ljava/lang/Object;Ljava/lang/Object;)I
 
@@ -337,36 +337,36 @@
 
     if-nez v5, :cond_0
 
-    .line 143
+    .line 140
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 144
+    .line 141
     const/4 v4, 0x1
 
-    .line 152
+    .line 149
     .end local v0           #ceiling:Ljava/lang/Object;
     .end local v2           #iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/Object;>;"
     :cond_0
     :goto_0
     return v4
 
-    .line 147
+    .line 144
     :catch_0
     move-exception v1
 
-    .line 148
+    .line 145
     .local v1, e:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 149
+    .line 146
     .end local v1           #e:Ljava/lang/ClassCastException;
     :catch_1
     move-exception v1
 
-    .line 150
+    .line 147
     .local v1, e:Ljava/lang/NullPointerException;
     goto :goto_0
 .end method
@@ -387,7 +387,7 @@
     .end annotation
 
     .prologue
-    .line 164
+    .line 162
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     .local p2, toElement:Ljava/lang/Object;,"TE;"
@@ -415,7 +415,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 82
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     .local p2, toElement:Ljava/lang/Object;,"TE;"
@@ -442,7 +442,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 86
     .local p0, this:Lcom/google/common/collect/ForwardingSortedSet;,"Lcom/google/common/collect/ForwardingSortedSet<TE;>;"
     .local p1, fromElement:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingSortedSet;->delegate()Ljava/util/SortedSet;

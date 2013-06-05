@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field private static final HANGOUTS_SHARE_TARGETS_BLACKLIST:Ljava/util/Set; = null
+.field public static final HANGOUTS_SHARE_TARGETS_BLACKLIST:Ljava/util/Set; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -48,13 +48,15 @@
 
 .field private static final MAX_SPEAKABLE_COMMUNICATION_TARGETS:I = 0xa
 
-.field private static final MAX_SPEAKABLE_PLUS_SHARE_TARGETS:I = 0xf
+.field public static final MAX_SPEAKABLE_PLUS_SHARE_TARGETS:I = 0xf
 
 .field private static final PHONE_NUMBER_SEPARATOR:Ljava/lang/String; = ","
 
 .field public static final PLUS_GLASSWARE_SOURCE:Ljava/lang/String; = "api:442840586513"
 
-.field private static final RECENT_ENTITIES_MAX_NUMBER:I = 0x4
+.field public static final RECENT_ENTITIES_MAX_NUMBER:I = 0x4
+
+.field public static final SHARE_COUNT_MAX_NUMBER:I = 0x4
 
 .field private static final TAG:Ljava/lang/String;
 
@@ -111,7 +113,7 @@
     .prologue
     const/16 v3, 0x80
 
-    .line 55
+    .line 52
     const-class v0, Lcom/google/glass/entity/EntityHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -120,7 +122,7 @@
 
     sput-object v0, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
 
-    .line 97
+    .line 94
     const-string v0, "^([^+]+)(\\+[^@]+)?(@[^.]+)(\\..+)$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -129,35 +131,35 @@
 
     sput-object v0, Lcom/google/glass/entity/EntityHelper;->EMAIL_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 103
+    .line 100
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lcom/google/glass/entity/EntityHelper;->GMAIL_DOMAINS:Ljava/util/List;
 
-    .line 105
+    .line 102
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->GMAIL_DOMAINS:Ljava/util/List;
 
     const-string v1, "@gmail.com"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 106
+    .line 103
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->GMAIL_DOMAINS:Ljava/util/List;
 
     const-string v1, "@googlemail.com"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 107
+    .line 104
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->GMAIL_DOMAINS:Ljava/util/List;
 
     const-string v1, "@google.com"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 118
+    .line 115
     const/4 v0, 0x2
 
     new-array v0, v0, [Ljava/lang/String;
@@ -180,14 +182,14 @@
 
     sput-object v0, Lcom/google/glass/entity/EntityHelper;->HANGOUTS_SHARE_TARGETS_BLACKLIST:Ljava/util/Set;
 
-    .line 127
+    .line 134
     new-instance v0, Landroid/util/LruCache;
 
     invoke-direct {v0, v3}, Landroid/util/LruCache;-><init>(I)V
 
     sput-object v0, Lcom/google/glass/entity/EntityHelper;->sanitizedStrippedEmailCache:Landroid/util/LruCache;
 
-    .line 134
+    .line 141
     new-instance v0, Landroid/util/LruCache;
 
     invoke-direct {v0, v3}, Landroid/util/LruCache;-><init>(I)V
@@ -201,14 +203,14 @@
     .locals 1
 
     .prologue
-    .line 157
+    .line 164
     new-instance v0, Lcom/google/glass/util/Clock$Impl;
 
     invoke-direct {v0}, Lcom/google/glass/util/Clock$Impl;-><init>()V
 
     invoke-direct {p0, v0}, Lcom/google/glass/entity/EntityHelper;-><init>(Lcom/google/glass/util/Clock;)V
 
-    .line 158
+    .line 165
     return-void
 .end method
 
@@ -219,27 +221,27 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 182
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 153
+    .line 160
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
-    .line 227
+    .line 248
     new-instance v0, Lcom/google/glass/entity/EntityHelper$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/entity/EntityHelper$1;-><init>(Lcom/google/glass/entity/EntityHelper;)V
 
     iput-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityChangedReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 162
+    .line 183
     iput-object p1, p0, Lcom/google/glass/entity/EntityHelper;->clock:Lcom/google/glass/util/Clock;
 
-    .line 163
+    .line 184
     return-void
 .end method
 
@@ -247,7 +249,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 51
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -263,17 +265,17 @@
 
     const/4 v3, 0x1
 
-    .line 742
+    .line 766
     if-nez p0, :cond_1
 
     if-nez p1, :cond_1
 
-    .line 767
+    .line 791
     :cond_0
     :goto_0
     return v3
 
-    .line 747
+    .line 771
     :cond_1
     if-eqz p0, :cond_2
 
@@ -282,10 +284,10 @@
     :cond_2
     move v3, v4
 
-    .line 748
+    .line 772
     goto :goto_0
 
-    .line 751
+    .line 775
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
@@ -295,7 +297,7 @@
 
     move-result-object v2
 
-    .line 752
+    .line 776
     .local v2, secondId:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
 
@@ -305,7 +307,7 @@
 
     move-result-object v1
 
-    .line 754
+    .line 778
     .local v1, secondEmail:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
@@ -315,7 +317,7 @@
 
     move-result-object v0
 
-    .line 755
+    .line 779
     .local v0, compare:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -323,7 +325,7 @@
 
     if-nez v5, :cond_4
 
-    .line 756
+    .line 780
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
@@ -336,7 +338,7 @@
 
     if-nez v5, :cond_0
 
-    .line 760
+    .line 784
     :cond_4
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
 
@@ -346,14 +348,14 @@
 
     move-result-object v0
 
-    .line 761
+    .line 785
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
     if-nez v5, :cond_5
 
-    .line 762
+    .line 786
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v5
@@ -369,8 +371,137 @@
     :cond_5
     move v3, v4
 
-    .line 767
+    .line 791
     goto :goto_0
+.end method
+
+.method private extractRecentlyUsedShareTargets(Ljava/util/List;)Ljava/util/List;
+    .locals 13
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/glass/entity/EntityHelper$EntityData;",
+            ">;)",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .local p1, shareTargetsData:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/entity/EntityHelper$EntityData;>;"
+    const/4 v12, 0x4
+
+    .line 434
+    iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->clock:Lcom/google/glass/util/Clock;
+
+    invoke-interface {v8}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
+
+    move-result-wide v8
+
+    sget-wide v10, Lcom/google/glass/entity/EntityProvider;->RECENT_ENTITIES_INTERVAL_MILLIS_CUTOFF:J
+
+    sub-long v3, v8, v10
+
+    .line 438
+    .local v3, recentShareBoostCutoff:J
+    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v5
+
+    .line 439
+    .local v5, recentShares:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/entity/EntityHelper$EntityData;>;"
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_0
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/google/glass/entity/EntityHelper$EntityData;
+
+    .line 440
+    .local v7, shareTargetData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    iget-wide v8, v7, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
+
+    cmp-long v8, v8, v3
+
+    if-lez v8, :cond_0
+
+    .line 441
+    invoke-interface {v5, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 447
+    .end local v7           #shareTargetData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    :cond_1
+    new-instance v8, Lcom/google/glass/entity/EntityHelper$2;
+
+    invoke-direct {v8, p0}, Lcom/google/glass/entity/EntityHelper$2;-><init>(Lcom/google/glass/entity/EntityHelper;)V
+
+    invoke-static {v5, v8}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    .line 454
+    invoke-static {v12}, Lcom/google/common/collect/Lists;->newArrayListWithExpectedSize(I)Ljava/util/ArrayList;
+
+    move-result-object v6
+
+    .line 455
+    .local v6, retVal:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_1
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v8
+
+    invoke-static {v8, v12}, Ljava/lang/Math;->min(II)I
+
+    move-result v8
+
+    if-ge v0, v8, :cond_2
+
+    .line 456
+    invoke-interface {v5, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/glass/entity/EntityHelper$EntityData;
+
+    .line 457
+    .local v2, recentEntityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    iget-object v8, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-interface {v6, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 461
+    invoke-interface {p1, v2}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
+
+    .line 455
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_1
+
+    .line 464
+    .end local v2           #recentEntityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    :cond_2
+    return-object v6
 .end method
 
 .method public static fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/Entity;
@@ -378,7 +509,7 @@
     .parameter "cursor"
 
     .prologue
-    .line 836
+    .line 860
     const-string v0, "protobuf_blob"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -403,18 +534,18 @@
     .end annotation
 
     .prologue
-    .line 842
+    .line 866
     invoke-static {p0}, Lcom/google/glass/entity/EntityHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/Entity;
 
     move-result-object v1
 
-    .line 845
+    .line 869
     .local v1, entity:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 846
+    .line 870
     .local v2, phoneNumbers:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const-string v0, "phone_number"
 
@@ -426,14 +557,14 @@
 
     move-result-object v11
 
-    .line 847
+    .line 871
     .local v11, primaryPhone:Ljava/lang/String;
     if-eqz v11, :cond_0
 
-    .line 848
+    .line 872
     invoke-interface {v2, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 850
+    .line 874
     :cond_0
     const-string v0, "secondary_phone_numbers"
 
@@ -445,11 +576,11 @@
 
     move-result-object v13
 
-    .line 852
+    .line 876
     .local v13, secondaryPhoneListStr:Ljava/lang/String;
     if-eqz v13, :cond_1
 
-    .line 853
+    .line 877
     const-string v0, ","
 
     invoke-virtual {v13, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -468,16 +599,16 @@
 
     aget-object v12, v8, v9
 
-    .line 854
+    .line 878
     .local v12, secondaryPhone:Ljava/lang/String;
     invoke-interface {v2, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 853
+    .line 877
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_0
 
-    .line 859
+    .line 883
     .end local v8           #arr$:[Ljava/lang/String;
     .end local v9           #i$:I
     .end local v10           #len$:I
@@ -493,7 +624,7 @@
 
     move-result-object v3
 
-    .line 861
+    .line 885
     .local v3, sanitizedEmail:Ljava/lang/String;
     const-string v0, "share_time"
 
@@ -505,7 +636,7 @@
 
     move-result-wide v4
 
-    .line 862
+    .line 886
     .local v4, shareTime:J
     const-string v0, "share_count"
 
@@ -517,7 +648,7 @@
 
     move-result v6
 
-    .line 863
+    .line 887
     .local v6, shareCount:I
     const-string v0, "share_priority"
 
@@ -529,7 +660,7 @@
 
     move-result v7
 
-    .line 864
+    .line 888
     .local v7, priority:I
     new-instance v0, Lcom/google/glass/entity/EntityHelper$EntityData;
 
@@ -538,12 +669,12 @@
     return-object v0
 .end method
 
-.method private static fromProtoByteArray([B)Lcom/google/googlex/glass/common/proto/Entity;
+.method public static fromProtoByteArray([B)Lcom/google/googlex/glass/common/proto/Entity;
     .locals 4
     .parameter "data"
 
     .prologue
-    .line 875
+    .line 899
     :try_start_0
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/Entity;->parseFrom([B)Lcom/google/googlex/glass/common/proto/Entity;
     :try_end_0
@@ -551,15 +682,15 @@
 
     move-result-object v1
 
-    .line 881
+    .line 905
     :goto_0
     return-object v1
 
-    .line 876
+    .line 900
     :catch_0
     move-exception v0
 
-    .line 877
+    .line 901
     .local v0, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     sget-object v2, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
 
@@ -567,7 +698,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 878
+    .line 902
     const/4 v1, 0x0
 
     goto :goto_0
@@ -580,23 +711,23 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 930
+    .line 954
     if-nez p0, :cond_1
 
     move-object v0, v1
 
-    .line 952
+    .line 976
     :cond_0
     :goto_0
     return-object v0
 
-    .line 935
+    .line 959
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getDisplayName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 938
+    .line 962
     .local v0, name:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -604,12 +735,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 939
+    .line 963
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 943
+    .line 967
     :cond_2
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -617,12 +748,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 944
+    .line 968
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 948
+    .line 972
     :cond_3
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -632,7 +763,7 @@
 
     move-object v0, v1
 
-    .line 949
+    .line 973
     goto :goto_0
 .end method
 
@@ -643,15 +774,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 650
+    .line 674
     if-nez p0, :cond_1
 
-    .line 658
+    .line 682
     :cond_0
     :goto_0
     return-object v0
 
-    .line 654
+    .line 678
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getImageUrlCount()I
 
@@ -659,7 +790,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 658
+    .line 682
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/Entity;->getImageUrl(I)Ljava/lang/String;
@@ -680,15 +811,15 @@
 
     const/4 v4, 0x1
 
-    .line 774
+    .line 798
     if-nez p0, :cond_1
 
-    .line 793
+    .line 817
     :cond_0
     :goto_0
     return-object v2
 
-    .line 778
+    .line 802
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
@@ -698,7 +829,7 @@
 
     move-result-object v1
 
-    .line 779
+    .line 803
     .local v1, id:Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -706,10 +837,10 @@
 
     if-nez v3, :cond_2
 
-    .line 780
+    .line 804
     const/4 v1, 0x0
 
-    .line 782
+    .line 806
     :cond_2
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
 
@@ -719,7 +850,7 @@
 
     move-result-object v0
 
-    .line 783
+    .line 807
     .local v0, email:Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -727,16 +858,16 @@
 
     if-nez v3, :cond_3
 
-    .line 784
+    .line 808
     const/4 v0, 0x0
 
-    .line 786
+    .line 810
     :cond_3
     if-eqz v1, :cond_4
 
     if-eqz v0, :cond_4
 
-    .line 787
+    .line 811
     const/4 v2, 0x2
 
     new-array v2, v2, [Ljava/lang/String;
@@ -747,22 +878,22 @@
 
     goto :goto_0
 
-    .line 788
+    .line 812
     :cond_4
     if-eqz v1, :cond_5
 
-    .line 789
+    .line 813
     new-array v2, v4, [Ljava/lang/String;
 
     aput-object v1, v2, v5
 
     goto :goto_0
 
-    .line 790
+    .line 814
     :cond_5
     if-eqz v0, :cond_0
 
-    .line 791
+    .line 815
     new-array v2, v4, [Ljava/lang/String;
 
     aput-object v0, v2, v5
@@ -770,34 +901,8 @@
     goto :goto_0
 .end method
 
-.method private getMaxShareTargets()I
-    .locals 1
-
-    .prologue
-    .line 457
-    sget-object v0, Lcom/google/glass/util/Labs$Feature;->AUTO_SHARE_TARGETS:Lcom/google/glass/util/Labs$Feature;
-
-    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 458
-    const/16 v0, 0x19
-
-    .line 460
-    :goto_0
-    return v0
-
-    :cond_0
-    const v0, 0x7fffffff
-
-    goto :goto_0
-.end method
-
 .method private getPlusShareTargets(Ljava/lang/String;I)Ljava/util/Map;
-    .locals 9
+    .locals 8
     .parameter "id"
     .parameter "limit"
     .annotation system Ldalvik/annotation/Signature;
@@ -814,180 +919,169 @@
     .end annotation
 
     .prologue
-    .line 308
-    new-instance v5, Ljava/util/LinkedHashMap;
+    .line 330
+    new-instance v4, Ljava/util/LinkedHashMap;
 
-    invoke-direct {v5}, Ljava/util/LinkedHashMap;-><init>()V
+    invoke-direct {v4}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 309
-    .local v5, shareTargets:Ljava/util/LinkedHashMap;,"Ljava/util/LinkedHashMap<Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;>;"
+    .line 331
+    .local v4, shareTargets:Ljava/util/LinkedHashMap;,"Ljava/util/LinkedHashMap<Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;>;"
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_2
+    if-eqz v6, :cond_2
 
-    .line 312
-    sget-object v7, Lcom/google/glass/util/Labs$Feature;->AUTO_SHARE_TARGETS:Lcom/google/glass/util/Labs$Feature;
+    .line 334
+    const-string v6, "api:442840586513"
 
-    invoke-static {v7}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+    invoke-virtual {p0, v6}, Lcom/google/glass/entity/EntityHelper;->getSortedShareTargets(Ljava/lang/String;)Ljava/util/List;
 
-    move-result v0
+    move-result-object v5
 
-    .line 313
-    .local v0, autoSynced:Z
-    const-string v7, "api:442840586513"
+    .line 335
+    .local v5, sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    const/4 v2, 0x0
 
-    invoke-direct {p0, v7, v0}, Lcom/google/glass/entity/EntityHelper;->getSortedShareTargets(Ljava/lang/String;Z)Ljava/util/List;
+    .local v2, i:I
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    .local v3, n:I
+    :goto_0
+    if-ge v2, v3, :cond_0
+
+    .line 336
+    invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlex/glass/common/proto/Entity;
+
+    .line 337
+    .local v0, entity:Lcom/google/googlex/glass/common/proto/Entity;
+    sget-object v6, Lcom/google/glass/entity/EntityHelper;->HANGOUTS_SHARE_TARGETS_BLACKLIST:Ljava/util/Set;
+
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-interface {v6, v7}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    .line 338
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 314
-    .local v6, sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
-    const/4 v3, 0x0
+    invoke-virtual {v4, v6, v0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .local v3, i:I
-    invoke-interface {v6}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    .local v4, n:I
-    :goto_0
-    if-ge v3, v4, :cond_0
-
-    .line 315
-    invoke-interface {v6, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/googlex/glass/common/proto/Entity;
-
-    .line 316
-    .local v1, entity:Lcom/google/googlex/glass/common/proto/Entity;
-    sget-object v7, Lcom/google/glass/entity/EntityHelper;->HANGOUTS_SHARE_TARGETS_BLACKLIST:Ljava/util/Set;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-interface {v7, v8}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_1
-
-    .line 317
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v7, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 318
+    .line 339
     if-lez p2, :cond_1
 
-    invoke-virtual {v5}, Ljava/util/LinkedHashMap;->size()I
+    invoke-virtual {v4}, Ljava/util/LinkedHashMap;->size()I
 
-    move-result v7
+    move-result v6
 
-    if-lt v7, p2, :cond_1
+    if-lt v6, p2, :cond_1
 
-    .line 335
-    .end local v0           #autoSynced:Z
-    .end local v1           #entity:Lcom/google/googlex/glass/common/proto/Entity;
-    .end local v6           #sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    .line 356
+    .end local v0           #entity:Lcom/google/googlex/glass/common/proto/Entity;
+    .end local v5           #sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     :cond_0
     :goto_1
-    return-object v5
+    return-object v4
 
-    .line 314
-    .restart local v0       #autoSynced:Z
-    .restart local v1       #entity:Lcom/google/googlex/glass/common/proto/Entity;
-    .restart local v6       #sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    .line 335
+    .restart local v0       #entity:Lcom/google/googlex/glass/common/proto/Entity;
+    .restart local v5       #sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     :cond_1
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 325
-    .end local v0           #autoSynced:Z
-    .end local v1           #entity:Lcom/google/googlex/glass/common/proto/Entity;
-    .end local v3           #i:I
-    .end local v4           #n:I
-    .end local v6           #sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    .line 346
+    .end local v0           #entity:Lcom/google/googlex/glass/common/proto/Entity;
+    .end local v2           #i:I
+    .end local v3           #n:I
+    .end local v5           #sorted:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     :cond_2
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .restart local v3       #i:I
-    iget-object v7, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+    .restart local v2       #i:I
+    iget-object v6, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
-    invoke-interface {v7}, Ljava/util/List;->size()I
+    invoke-interface {v6}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v3
 
-    .restart local v4       #n:I
+    .restart local v3       #n:I
     :goto_2
-    if-ge v3, v4, :cond_0
+    if-ge v2, v3, :cond_0
 
-    .line 326
-    iget-object v7, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+    .line 347
+    iget-object v6, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
-    invoke-interface {v7, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v6, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Lcom/google/glass/entity/EntityHelper$EntityData;
+    check-cast v1, Lcom/google/glass/entity/EntityHelper$EntityData;
 
-    .line 327
-    .local v2, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    .line 348
+    .local v1, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v7
+    move-result v6
 
-    if-nez v7, :cond_3
+    if-nez v6, :cond_3
 
-    iget-object v7, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+    iget-object v6, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    invoke-virtual {v7}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    const-string v8, "api:442840586513"
+    const-string v7, "api:442840586513"
 
-    invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_3
+    if-eqz v6, :cond_3
 
-    iget-object v7, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+    iget-object v6, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    invoke-virtual {v7}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    invoke-virtual {v7, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v6, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v7
+    move-result v6
 
-    if-eqz v7, :cond_3
+    if-eqz v6, :cond_3
 
-    .line 330
-    iget-object v7, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+    .line 351
+    iget-object v6, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    invoke-virtual {v7}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    iget-object v8, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+    iget-object v7, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    invoke-virtual {v5, v7, v8}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v4, v6, v7}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 325
+    .line 346
     :cond_3
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_2
 .end method
@@ -996,171 +1090,10 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 191
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->sharedInstance:Lcom/google/glass/entity/EntityHelper;
 
     return-object v0
-.end method
-
-.method private getSortedShareTargets(Ljava/lang/String;Z)Ljava/util/List;
-    .locals 13
-    .parameter "source"
-    .parameter "autoSynced"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Z)",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/Entity;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 392
-    iget-object v9, p0, Lcom/google/glass/entity/EntityHelper;->clock:Lcom/google/glass/util/Clock;
-
-    invoke-interface {v9}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
-
-    move-result-wide v9
-
-    sget-wide v11, Lcom/google/glass/entity/EntityProvider;->RECENT_ENTITIES_INTERVAL_MILLIS_CUTOFF:J
-
-    sub-long v4, v9, v11
-
-    .line 395
-    .local v4, recentShareBoostCutoff:J
-    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v7
-
-    .line 396
-    .local v7, shareTargets:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
-    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
-
-    move-result-object v8
-
-    .line 398
-    .local v8, shareTargetsData:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/entity/EntityHelper$EntityData;>;"
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    iget-object v9, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
-
-    invoke-interface {v9}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    .local v3, n:I
-    :goto_0
-    if-ge v1, v3, :cond_3
-
-    .line 399
-    iget-object v9, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
-
-    invoke-interface {v9, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/entity/EntityHelper$EntityData;
-
-    .line 400
-    .local v0, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
-    iget-object v9, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-static {v9}, Lcom/google/glass/entity/EntityHelper;->isShareTarget(Lcom/google/googlex/glass/common/proto/Entity;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    .line 401
-    if-eqz p1, :cond_0
-
-    iget-object v9, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v9}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {p1, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_1
-
-    .line 403
-    :cond_0
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    move-result v9
-
-    const/4 v10, 0x4
-
-    if-ge v9, v10, :cond_2
-
-    iget-wide v9, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
-
-    cmp-long v9, v9, v4
-
-    if-lez v9, :cond_2
-
-    .line 406
-    iget-object v9, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-interface {v7, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 398
-    :cond_1
-    :goto_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 409
-    :cond_2
-    invoke-interface {v8, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 416
-    .end local v0           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
-    :cond_3
-    invoke-static {v8, p2}, Lcom/google/glass/entity/EntityHelper;->sortShareTargets(Ljava/util/List;Z)V
-
-    .line 417
-    invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    .local v2, i$:Ljava/util/Iterator;
-    :goto_2
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v9
-
-    if-eqz v9, :cond_4
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/google/glass/entity/EntityHelper$EntityData;
-
-    .line 418
-    .local v6, shareTargetData:Lcom/google/glass/entity/EntityHelper$EntityData;
-    iget-object v9, v6, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-interface {v7, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    .line 420
-    .end local v6           #shareTargetData:Lcom/google/glass/entity/EntityHelper$EntityData;
-    :cond_4
-    return-object v7
 .end method
 
 .method private isFocusEntity(Lcom/google/googlex/glass/common/proto/Entity;)Z
@@ -1168,7 +1101,7 @@
     .parameter "entity"
 
     .prologue
-    .line 589
+    .line 613
     const-string v0, "api:823483604716"
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
@@ -1187,7 +1120,7 @@
     .parameter "entity"
 
     .prologue
-    .line 585
+    .line 609
     const-string v0, "api:442840586513"
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
@@ -1206,7 +1139,7 @@
     .parameter "entity"
 
     .prologue
-    .line 340
+    .line 361
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getShouldSync()Z
 
     move-result v0
@@ -1222,7 +1155,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 498
+    .line 521
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasText()Z
 
     move-result v3
@@ -1237,12 +1170,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 512
+    .line 535
     :cond_0
     :goto_0
     return v2
 
-    .line 501
+    .line 524
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasHtml()Z
 
@@ -1258,7 +1191,7 @@
 
     if-nez v3, :cond_0
 
-    .line 504
+    .line 527
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasCanonicalUrl()Z
 
@@ -1274,7 +1207,7 @@
 
     if-nez v3, :cond_0
 
-    .line 507
+    .line 530
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachmentList()Ljava/util/List;
 
@@ -1298,7 +1231,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Attachment;
 
-    .line 508
+    .line 531
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->getContentType()Ljava/lang/String;
 
@@ -1312,7 +1245,7 @@
 
     goto :goto_0
 
-    .line 512
+    .line 535
     .end local v0           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     :cond_5
     const/4 v2, 0x0
@@ -1336,25 +1269,25 @@
 
     const/4 v5, 0x1
 
-    .line 681
+    .line 705
     if-nez p0, :cond_1
 
-    .line 682
+    .line 706
     const/4 v1, 0x0
 
-    .line 728
+    .line 752
     :cond_0
     :goto_0
     return-object v1
 
-    .line 687
+    .line 711
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 688
+    .line 712
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->sanitizedStrippedEmailCache:Landroid/util/LruCache;
 
-    .line 694
+    .line 718
     .local v0, cache:Landroid/util/LruCache;,"Landroid/util/LruCache<Ljava/lang/String;Ljava/lang/String;>;"
     :goto_1
     invoke-virtual {v0, p0}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1363,18 +1296,18 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 695
+    .line 719
     .local v1, cached:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 699
+    .line 723
     sget-object v7, Lcom/google/glass/entity/EntityHelper;->EMAIL_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v7, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
 
-    .line 702
+    .line 726
     .local v4, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -1382,15 +1315,15 @@
 
     if-nez v7, :cond_3
 
-    .line 705
+    .line 729
     invoke-virtual {v0, p0, p0}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v1, p0
 
-    .line 706
+    .line 730
     goto :goto_0
 
-    .line 690
+    .line 714
     .end local v0           #cache:Landroid/util/LruCache;,"Landroid/util/LruCache<Ljava/lang/String;Ljava/lang/String;>;"
     .end local v1           #cached:Ljava/lang/String;
     .end local v4           #matcher:Ljava/util/regex/Matcher;
@@ -1400,7 +1333,7 @@
     .restart local v0       #cache:Landroid/util/LruCache;,"Landroid/util/LruCache<Ljava/lang/String;Ljava/lang/String;>;"
     goto :goto_1
 
-    .line 709
+    .line 733
     .restart local v1       #cached:Ljava/lang/String;
     .restart local v4       #matcher:Ljava/util/regex/Matcher;
     :cond_3
@@ -1408,7 +1341,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 710
+    .line 734
     .local v3, emailBuilder:Ljava/lang/StringBuilder;
     invoke-virtual {v4, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -1416,7 +1349,7 @@
 
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 713
+    .line 737
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -1445,7 +1378,7 @@
 
     move-result-object v2
 
-    .line 714
+    .line 738
     .local v2, domain:Ljava/lang/String;
     if-eqz p1, :cond_5
 
@@ -1457,7 +1390,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 716
+    .line 740
     .local v5, removePlus:Z
     :goto_2
     if-nez v5, :cond_4
@@ -1472,14 +1405,14 @@
 
     if-nez v7, :cond_4
 
-    .line 717
+    .line 741
     invoke-virtual {v4, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 720
+    .line 744
     :cond_4
     invoke-virtual {v4, v10}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
@@ -1487,14 +1420,14 @@
 
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 721
+    .line 745
     invoke-virtual {v4, v11}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v7
 
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 724
+    .line 748
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v7
@@ -1503,16 +1436,16 @@
 
     move-result-object v6
 
-    .line 727
+    .line 751
     .local v6, result:Ljava/lang/String;
     invoke-virtual {v0, p0, v6}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-object v1, v6
 
-    .line 728
+    .line 752
     goto/16 :goto_0
 
-    .line 714
+    .line 738
     .end local v5           #removePlus:Z
     .end local v6           #result:Ljava/lang/String;
     :cond_5
@@ -1543,7 +1476,7 @@
     .end annotation
 
     .prologue
-    .line 663
+    .line 687
     .local p0, emails:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/Collection;->size()I
 
@@ -1553,7 +1486,7 @@
 
     move-result-object v2
 
-    .line 664
+    .line 688
     .local v2, ret:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -1573,7 +1506,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 665
+    .line 689
     .local v0, email:Ljava/lang/String;
     invoke-static {v0, p1}, Lcom/google/glass/entity/EntityHelper;->sanitizeEmail(Ljava/lang/String;Z)Ljava/lang/String;
 
@@ -1583,7 +1516,7 @@
 
     goto :goto_0
 
-    .line 667
+    .line 691
     .end local v0           #email:Ljava/lang/String;
     :cond_0
     return-object v2
@@ -1596,13 +1529,13 @@
     .end annotation
 
     .prologue
-    .line 175
+    .line 196
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 176
+    .line 197
     sput-object p0, Lcom/google/glass/entity/EntityHelper;->packageNameForTest:Ljava/lang/String;
 
-    .line 177
+    .line 198
     return-void
 .end method
 
@@ -1611,17 +1544,16 @@
     .parameter "instance"
 
     .prologue
-    .line 166
+    .line 187
     sput-object p0, Lcom/google/glass/entity/EntityHelper;->sharedInstance:Lcom/google/glass/entity/EntityHelper;
 
-    .line 167
+    .line 188
     return-void
 .end method
 
-.method static sortShareTargets(Ljava/util/List;Z)V
+.method static sortShareTargets(Ljava/util/List;)V
     .locals 1
     .parameter
-    .parameter "autoSynced"
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
     .end annotation
 
@@ -1631,20 +1563,20 @@
             "Ljava/util/List",
             "<",
             "Lcom/google/glass/entity/EntityHelper$EntityData;",
-            ">;Z)V"
+            ">;)V"
         }
     .end annotation
 
     .prologue
-    .line 429
+    .line 473
     .local p0, shareTargetData:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/entity/EntityHelper$EntityData;>;"
-    new-instance v0, Lcom/google/glass/entity/EntityHelper$2;
+    new-instance v0, Lcom/google/glass/entity/EntityHelper$3;
 
-    invoke-direct {v0, p1}, Lcom/google/glass/entity/EntityHelper$2;-><init>(Z)V
+    invoke-direct {v0}, Lcom/google/glass/entity/EntityHelper$3;-><init>()V
 
     invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 450
+    .line 490
     return-void
 .end method
 
@@ -1657,12 +1589,12 @@
 
     const/4 v8, 0x0
 
-    .line 519
+    .line 542
     new-instance v5, Landroid/content/ContentValues;
 
     invoke-direct {v5}, Landroid/content/ContentValues;-><init>()V
 
-    .line 520
+    .line 543
     .local v5, values:Landroid/content/ContentValues;
     const-string v6, "_id"
 
@@ -1672,7 +1604,7 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 521
+    .line 544
     const-string v6, "source"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
@@ -1681,7 +1613,7 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 522
+    .line 545
     const-string v9, "is_communication_target"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getIsCommunicationTarget()Z
@@ -1699,7 +1631,7 @@
 
     invoke-virtual {v5, v9, v6}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 523
+    .line 546
     const-string v6, "phone_number"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getPhoneNumber()Ljava/lang/String;
@@ -1712,7 +1644,7 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 525
+    .line 548
     const-string v6, "email"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
@@ -1725,12 +1657,12 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 526
+    .line 549
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getDisplayName()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 527
+    .line 550
     .local v1, displayName:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -1744,13 +1676,22 @@
 
     if-nez v6, :cond_0
 
-    .line 528
+    .line 551
     const-string v6, "display_name"
 
     invoke-virtual {v5, v6, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 530
+    .line 553
     :cond_0
+    const-string v6, "image_url"
+
+    invoke-static {p0}, Lcom/google/glass/entity/EntityHelper;->getFirstImageUrl(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 554
     const-string v6, "protobuf_blob"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->toByteArray()[B
@@ -1759,14 +1700,14 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;[B)V
 
-    .line 536
+    .line 560
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->hasPriority()Z
 
     move-result v6
 
     if-eqz v6, :cond_1
 
-    .line 537
+    .line 561
     const-string v6, "share_priority"
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getPriority()Lcom/google/googlex/glass/common/proto/Entity$Priority;
@@ -1783,7 +1724,7 @@
 
     invoke-virtual {v5, v6, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 540
+    .line 564
     :cond_1
     const-string v6, "is_share_target"
 
@@ -1800,21 +1741,21 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 543
+    .line 567
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity;->getSecondaryPhoneNumberCount()I
 
     move-result v3
 
-    .line 544
+    .line 568
     .local v3, numSecondaryPhoneNumbers:I
     if-lez v3, :cond_7
 
-    .line 545
+    .line 569
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 546
+    .line 570
     .local v0, allSecondaryNumbers:Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
@@ -1822,19 +1763,19 @@
     :goto_2
     if-ge v2, v3, :cond_6
 
-    .line 547
+    .line 571
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v6
 
     if-lez v6, :cond_2
 
-    .line 548
+    .line 572
     const-string v6, ","
 
     invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 551
+    .line 575
     :cond_2
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Entity;->getSecondaryPhoneNumber(I)Ljava/lang/String;
 
@@ -1844,14 +1785,14 @@
 
     move-result-object v4
 
-    .line 553
+    .line 577
     .local v4, phone:Ljava/lang/String;
     if-eqz v4, :cond_3
 
-    .line 554
+    .line 578
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 546
+    .line 570
     :cond_3
     add-int/lit8 v2, v2, 0x1
 
@@ -1865,17 +1806,17 @@
     :cond_4
     move v6, v8
 
-    .line 522
+    .line 545
     goto/16 :goto_0
 
     .restart local v1       #displayName:Ljava/lang/String;
     :cond_5
     move v7, v8
 
-    .line 540
+    .line 564
     goto :goto_1
 
-    .line 557
+    .line 581
     .restart local v0       #allSecondaryNumbers:Ljava/lang/StringBuilder;
     .restart local v2       #i:I
     .restart local v3       #numSecondaryPhoneNumbers:I
@@ -1888,7 +1829,7 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 560
+    .line 584
     .end local v0           #allSecondaryNumbers:Ljava/lang/StringBuilder;
     .end local v2           #i:I
     :cond_7
@@ -1897,26 +1838,103 @@
 
 
 # virtual methods
-.method public broadcastSyncChanged(Landroid/app/Application;)V
+.method public broadcastSyncChanged(Landroid/content/Context;)V
     .locals 2
-    .parameter "application"
+    .parameter "context"
 
     .prologue
-    .line 259
+    .line 280
+    sget-object v0, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
+
+    const-string v1, "Entity db was changed, broadcasting ENTITY_SYNC_CHANGED."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 281
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.ENTITY_SYNC_CHANGED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {p1, v0}, Landroid/app/Application;->sendBroadcast(Landroid/content/Intent;)V
+    invoke-virtual {p1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 260
+    .line 282
     return-void
 .end method
 
+.method public getAllEntities(I)Ljava/util/List;
+    .locals 4
+    .parameter "max"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 171
+    iget-object v3, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-static {p1, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/google/common/collect/Lists;->newArrayListWithExpectedSize(I)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    .line 172
+    .local v2, ret:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    iget-object v3, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/glass/entity/EntityHelper$EntityData;
+
+    .line 173
+    .local v0, data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    iget-object v3, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 174
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ne v3, p1, :cond_0
+
+    .line 178
+    .end local v0           #data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    :cond_1
+    return-object v2
+.end method
+
 .method public getAllShareTargets()Ljava/util/List;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1928,43 +1946,10 @@
     .end annotation
 
     .prologue
-    .line 348
-    sget-object v1, Lcom/google/glass/util/Labs$Feature;->AUTO_SHARE_TARGETS:Lcom/google/glass/util/Labs$Feature;
-
-    invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
-
-    move-result v0
-
-    .line 349
-    .local v0, autoSynced:Z
-    invoke-virtual {p0, v0}, Lcom/google/glass/entity/EntityHelper;->getAllShareTargets(Z)Ljava/util/List;
-
-    move-result-object v1
-
-    return-object v1
-.end method
-
-.method getAllShareTargets(Z)Ljava/util/List;
-    .locals 1
-    .parameter "autoSynced"
-    .annotation build Lcom/google/common/annotations/VisibleForTesting;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(Z)",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/Entity;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 354
+    .line 369
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0, p1}, Lcom/google/glass/entity/EntityHelper;->getSortedShareTargets(Ljava/lang/String;Z)Ljava/util/List;
+    invoke-virtual {p0, v0}, Lcom/google/glass/entity/EntityHelper;->getSortedShareTargets(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v0
 
@@ -1976,7 +1961,7 @@
     .parameter "context"
 
     .prologue
-    .line 817
+    .line 841
     monitor-enter p0
 
     :try_start_0
@@ -1988,7 +1973,7 @@
 
     move-result-object v0
 
-    .line 818
+    .line 842
     .local v0, account:Landroid/accounts/Account;
     if-eqz v0, :cond_0
 
@@ -2002,11 +1987,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 819
+    .line 843
     :cond_0
     const/4 v1, 0x0
 
-    .line 821
+    .line 845
     :goto_0
     monitor-exit p0
 
@@ -2020,7 +2005,7 @@
 
     goto :goto_0
 
-    .line 817
+    .line 841
     .end local v0           #account:Landroid/accounts/Account;
     :catchall_0
     move-exception v1
@@ -2035,7 +2020,7 @@
     .parameter "email"
 
     .prologue
-    .line 596
+    .line 620
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -2070,7 +2055,7 @@
     .end annotation
 
     .prologue
-    .line 612
+    .line 636
     monitor-enter p0
 
     :try_start_0
@@ -2082,21 +2067,21 @@
 
     if-eqz v5, :cond_1
 
-    .line 613
+    .line 637
     const/4 v0, 0x0
 
-    .line 645
+    .line 669
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-object v0
 
-    .line 616
+    .line 640
     :cond_1
     const/4 v0, 0x0
 
-    .line 617
+    .line 641
     .local v0, entity:Lcom/google/googlex/glass/common/proto/Entity;
     const/4 v5, 0x1
 
@@ -2105,7 +2090,7 @@
 
     move-result-object v2
 
-    .line 618
+    .line 642
     .local v2, formattedEmail:Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -2120,7 +2105,7 @@
     :goto_1
     if-ge v3, v4, :cond_0
 
-    .line 619
+    .line 643
     iget-object v5, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-interface {v5, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2129,7 +2114,7 @@
 
     check-cast v1, Lcom/google/glass/entity/EntityHelper$EntityData;
 
-    .line 620
+    .line 644
     .local v1, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->sanitizedEmail:Ljava/lang/String;
 
@@ -2139,10 +2124,10 @@
 
     if-eqz v5, :cond_3
 
-    .line 622
+    .line 646
     if-eqz p3, :cond_2
 
-    .line 623
+    .line 647
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-direct {p0, v5}, Lcom/google/glass/entity/EntityHelper;->isPlusEntity(Lcom/google/googlex/glass/common/proto/Entity;)Z
@@ -2151,12 +2136,12 @@
 
     if-eqz v5, :cond_3
 
-    .line 624
+    .line 648
     iget-object v0, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     goto :goto_0
 
-    .line 631
+    .line 655
     :cond_2
     if-eqz p2, :cond_4
 
@@ -2168,14 +2153,14 @@
 
     if-nez v5, :cond_4
 
-    .line 618
+    .line 642
     :cond_3
     :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 637
+    .line 661
     :cond_4
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
@@ -2185,12 +2170,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 638
+    .line 662
     iget-object v0, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     goto :goto_0
 
-    .line 639
+    .line 663
     :cond_5
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
@@ -2202,7 +2187,7 @@
 
     if-nez v0, :cond_3
 
-    .line 640
+    .line 664
     :cond_6
     iget-object v0, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
     :try_end_1
@@ -2210,7 +2195,7 @@
 
     goto :goto_2
 
-    .line 612
+    .line 636
     .end local v0           #entity:Lcom/google/googlex/glass/common/proto/Entity;
     .end local v1           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     .end local v2           #formattedEmail:Ljava/lang/String;
@@ -2231,7 +2216,7 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 567
+    .line 591
     monitor-enter p0
 
     :try_start_0
@@ -2243,21 +2228,21 @@
 
     if-eqz v8, :cond_1
 
-    .line 581
+    .line 605
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-object v7
 
-    .line 571
+    .line 595
     :cond_1
     :try_start_1
     invoke-static {p1}, Lcom/google/glass/util/PhoneNumberUtils;->formatPhoneNumberForDisplay(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 572
+    .line 596
     .local v1, formattedPhoneNumber:Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -2272,7 +2257,7 @@
     :goto_1
     if-ge v3, v5, :cond_0
 
-    .line 573
+    .line 597
     iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-interface {v8, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2281,11 +2266,11 @@
 
     check-cast v0, Lcom/google/glass/entity/EntityHelper$EntityData;
 
-    .line 574
+    .line 598
     .local v0, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     iget-object v2, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->formattedPhoneNumbers:Ljava/util/List;
 
-    .line 575
+    .line 599
     .local v2, formattedPhoneNumbers:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v4, 0x0
 
@@ -2298,7 +2283,7 @@
     :goto_2
     if-ge v4, v6, :cond_3
 
-    .line 576
+    .line 600
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -2309,26 +2294,26 @@
 
     if-eqz v8, :cond_2
 
-    .line 577
+    .line 601
     iget-object v7, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 575
+    .line 599
     :cond_2
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 572
+    .line 596
     :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 567
+    .line 591
     .end local v0           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     .end local v1           #formattedPhoneNumber:Ljava/lang/String;
     .end local v2           #formattedPhoneNumbers:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
@@ -2345,54 +2330,39 @@
 .end method
 
 .method public declared-synchronized getFirstEntityForUser(Landroid/content/Context;Z)Lcom/google/googlex/glass/common/proto/Entity;
-    .locals 3
+    .locals 2
     .parameter "context"
     .parameter "shareTargetsOnly"
 
     .prologue
-    .line 802
+    .line 826
     monitor-enter p0
 
     :try_start_0
-    new-instance v1, Lcom/google/glass/util/AuthUtils;
-
-    invoke-direct {v1, p1}, Lcom/google/glass/util/AuthUtils;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v1}, Lcom/google/glass/util/AuthUtils;->getGoogleAccount()Landroid/accounts/Account;
-
-    move-result-object v0
-
-    .line 803
-    .local v0, account:Landroid/accounts/Account;
-    if-eqz v0, :cond_0
-
-    iget-object v1, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p0, p1}, Lcom/google/glass/entity/EntityHelper;->getFirstEmailForUser(Landroid/content/Context;)Ljava/lang/String;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v1
+    move-result-object v0
 
-    if-eqz v1, :cond_1
+    .line 827
+    .local v0, email:Ljava/lang/String;
+    if-nez v0, :cond_0
 
-    .line 804
-    :cond_0
+    .line 828
     const/4 v1, 0x0
 
-    .line 806
+    .line 830
     :goto_0
     monitor-exit p0
 
     return-object v1
 
-    :cond_1
+    :cond_0
+    const/4 v1, 0x0
+
     :try_start_1
-    iget-object v1, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, p2, v2}, Lcom/google/glass/entity/EntityHelper;->getFirstEntityForEmail(Ljava/lang/String;ZZ)Lcom/google/googlex/glass/common/proto/Entity;
+    invoke-virtual {p0, v0, p2, v1}, Lcom/google/glass/entity/EntityHelper;->getFirstEntityForEmail(Ljava/lang/String;ZZ)Lcom/google/googlex/glass/common/proto/Entity;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -2400,8 +2370,8 @@
 
     goto :goto_0
 
-    .line 802
-    .end local v0           #account:Landroid/accounts/Account;
+    .line 826
+    .end local v0           #email:Ljava/lang/String;
     :catchall_0
     move-exception v1
 
@@ -2411,7 +2381,7 @@
 .end method
 
 .method public declared-synchronized getMatchingShareTargets(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
-    .locals 8
+    .locals 7
     .parameter "item"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2426,7 +2396,7 @@
     .end annotation
 
     .prologue
-    .line 475
+    .line 503
     monitor-enter p0
 
     :try_start_0
@@ -2434,7 +2404,7 @@
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 476
+    .line 504
     .local v4, result:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     invoke-virtual {p0}, Lcom/google/glass/entity/EntityHelper;->getAllShareTargets()Ljava/util/List;
 
@@ -2458,7 +2428,7 @@
 
     check-cast v5, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 477
+    .line 505
     .local v5, target:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/Entity;->getAcceptTypeCount()I
 
@@ -2466,14 +2436,14 @@
 
     if-nez v6, :cond_1
 
-    .line 478
+    .line 506
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 475
+    .line 503
     .end local v4           #result:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     .end local v5           #target:Lcom/google/googlex/glass/common/proto/Entity;
     :catchall_0
@@ -2483,7 +2453,7 @@
 
     throw v6
 
-    .line 480
+    .line 508
     .restart local v4       #result:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     .restart local v5       #target:Lcom/google/googlex/glass/common/proto/Entity;
     :cond_1
@@ -2492,7 +2462,7 @@
 
     invoke-direct {v3}, Lcom/google/glass/util/MimeTypeMatcher;-><init>()V
 
-    .line 481
+    .line 509
     .local v3, matcher:Lcom/google/glass/util/MimeTypeMatcher;
     invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/Entity;->getAcceptTypeList()Ljava/util/List;
 
@@ -2516,13 +2486,13 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 482
+    .line 510
     .local v0, acceptType:Ljava/lang/String;
     invoke-virtual {v3, v0}, Lcom/google/glass/util/MimeTypeMatcher;->addMatchPattern(Ljava/lang/String;)Z
 
     goto :goto_1
 
-    .line 484
+    .line 512
     .end local v0           #acceptType:Ljava/lang/String;
     :cond_2
     invoke-static {v3, p1}, Lcom/google/glass/entity/EntityHelper;->matchesItem(Lcom/google/glass/util/MimeTypeMatcher;Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
@@ -2531,23 +2501,14 @@
 
     if-eqz v6, :cond_0
 
-    .line 485
+    .line 513
     invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 488
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    move-result v6
-
-    invoke-direct {p0}, Lcom/google/glass/entity/EntityHelper;->getMaxShareTargets()I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-result v7
+    goto :goto_0
 
-    if-lt v6, v7, :cond_0
-
-    .line 494
+    .line 517
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #matcher:Lcom/google/glass/util/MimeTypeMatcher;
     .end local v5           #target:Lcom/google/googlex/glass/common/proto/Entity;
@@ -2562,7 +2523,7 @@
     .parameter "entity"
 
     .prologue
-    .line 907
+    .line 931
     monitor-enter p0
 
     :try_start_0
@@ -2580,20 +2541,20 @@
 
     if-nez v1, :cond_0
 
-    .line 908
+    .line 932
     const/4 v1, 0x0
 
-    .line 922
+    .line 946
     :goto_0
     monitor-exit p0
 
     return-object v1
 
-    .line 912
+    .line 936
     :cond_0
     const/4 v0, 0x0
 
-    .line 914
+    .line 938
     .local v0, entityByEmail:Lcom/google/googlex/glass/common/proto/Entity;
     :try_start_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->hasId()Z
@@ -2602,7 +2563,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 915
+    .line 939
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
     move-result-object v1
@@ -2611,7 +2572,7 @@
 
     move-result-object v0
 
-    .line 918
+    .line 942
     :cond_1
     if-nez v0, :cond_2
 
@@ -2621,7 +2582,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 919
+    .line 943
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
 
     move-result-object v1
@@ -2630,7 +2591,7 @@
 
     move-result-object v0
 
-    .line 922
+    .line 946
     :cond_2
     invoke-static {v0}, Lcom/google/glass/entity/EntityHelper;->getFirstImageUrl(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
     :try_end_1
@@ -2640,7 +2601,7 @@
 
     goto :goto_0
 
-    .line 907
+    .line 931
     .end local v0           #entityByEmail:Lcom/google/googlex/glass/common/proto/Entity;
     :catchall_0
     move-exception v1
@@ -2655,7 +2616,7 @@
     .parameter "entity"
 
     .prologue
-    .line 891
+    .line 915
     monitor-enter p0
 
     :try_start_0
@@ -2667,16 +2628,16 @@
 
     if-nez v1, :cond_0
 
-    .line 892
+    .line 916
     const/4 v1, 0x0
 
-    .line 897
+    .line 921
     :goto_0
     monitor-exit p0
 
     return-object v1
 
-    .line 896
+    .line 920
     :cond_0
     :try_start_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getPhoneNumber()Ljava/lang/String;
@@ -2687,7 +2648,7 @@
 
     move-result-object v0
 
-    .line 897
+    .line 921
     .local v0, entityByPhoneNumber:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-static {v0}, Lcom/google/glass/entity/EntityHelper;->getFirstImageUrl(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
     :try_end_1
@@ -2697,7 +2658,7 @@
 
     goto :goto_0
 
-    .line 891
+    .line 915
     .end local v0           #entityByPhoneNumber:Lcom/google/googlex/glass/common/proto/Entity;
     :catchall_0
     move-exception v1
@@ -2712,7 +2673,7 @@
     .parameter "context"
 
     .prologue
-    .line 828
+    .line 852
     monitor-enter p0
 
     :try_start_0
@@ -2724,7 +2685,7 @@
 
     move-result-object v0
 
-    .line 829
+    .line 853
     .local v0, account:Landroid/accounts/Account;
     if-eqz v0, :cond_0
 
@@ -2738,11 +2699,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 830
+    .line 854
     :cond_0
     const/4 v1, 0x0
 
-    .line 832
+    .line 856
     :goto_0
     monitor-exit p0
 
@@ -2764,7 +2725,7 @@
 
     goto :goto_0
 
-    .line 828
+    .line 852
     .end local v0           #account:Landroid/accounts/Account;
     :catchall_0
     move-exception v1
@@ -2791,7 +2752,7 @@
     .end annotation
 
     .prologue
-    .line 299
+    .line 321
     monitor-enter p0
 
     const/4 v0, -0x1
@@ -2815,6 +2776,137 @@
     throw v0
 .end method
 
+.method public getSortedShareTargets(Ljava/lang/String;)Ljava/util/List;
+    .locals 8
+    .parameter "source"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 410
+    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v6
+
+    .line 411
+    .local v6, shareTargetsData:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/entity/EntityHelper$EntityData;>;"
+    const/4 v1, 0x0
+
+    .local v1, i:I
+    iget-object v7, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+
+    invoke-interface {v7}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    .local v3, n:I
+    :goto_0
+    if-ge v1, v3, :cond_2
+
+    .line 412
+    iget-object v7, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+
+    invoke-interface {v7, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/glass/entity/EntityHelper$EntityData;
+
+    .line 413
+    .local v0, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    iget-object v7, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-static {v7}, Lcom/google/glass/entity/EntityHelper;->isShareTarget(Lcom/google/googlex/glass/common/proto/Entity;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 414
+    if-eqz p1, :cond_0
+
+    iget-object v7, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-virtual {v7}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {p1, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 415
+    :cond_0
+    invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 411
+    :cond_1
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_0
+
+    .line 421
+    .end local v0           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    :cond_2
+    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v5
+
+    .line 422
+    .local v5, shareTargets:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    invoke-direct {p0, v6}, Lcom/google/glass/entity/EntityHelper;->extractRecentlyUsedShareTargets(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v7
+
+    invoke-interface {v5, v7}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 425
+    invoke-static {v6}, Lcom/google/glass/entity/EntityHelper;->sortShareTargets(Ljava/util/List;)V
+
+    .line 426
+    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .local v2, i$:Ljava/util/Iterator;
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_3
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/glass/entity/EntityHelper$EntityData;
+
+    .line 427
+    .local v4, shareTargetData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    iget-object v7, v4, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-interface {v5, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    .line 429
+    .end local v4           #shareTargetData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    :cond_3
+    return-object v5
+.end method
+
 .method public declared-synchronized getSpeakableCommunicationTargets()Ljava/util/Map;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
@@ -2829,7 +2921,7 @@
     .end annotation
 
     .prologue
-    .line 267
+    .line 289
     monitor-enter p0
 
     :try_start_0
@@ -2837,7 +2929,7 @@
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 269
+    .line 291
     .local v0, communicationTargets:Ljava/util/LinkedHashMap;,"Ljava/util/LinkedHashMap<Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;>;"
     const/4 v2, 0x0
 
@@ -2852,7 +2944,7 @@
     :goto_0
     if-ge v2, v3, :cond_1
 
-    .line 270
+    .line 292
     iget-object v5, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-interface {v5, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2861,7 +2953,7 @@
 
     check-cast v1, Lcom/google/glass/entity/EntityHelper$EntityData;
 
-    .line 271
+    .line 293
     .local v1, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
@@ -2871,14 +2963,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 272
+    .line 294
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/Entity;->getDisplayName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 273
+    .line 295
     .local v4, name:Ljava/lang/String;
     if-eqz v4, :cond_0
 
@@ -2892,7 +2984,7 @@
 
     if-nez v5, :cond_0
 
-    .line 274
+    .line 296
     iget-object v5, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
@@ -2903,7 +2995,7 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 278
+    .line 300
     .end local v4           #name:Ljava/lang/String;
     :cond_0
     invoke-virtual {v0}, Ljava/util/LinkedHashMap;->size()I
@@ -2916,21 +3008,21 @@
 
     if-ne v5, v6, :cond_2
 
-    .line 283
+    .line 305
     .end local v1           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     :cond_1
     monitor-exit p0
 
     return-object v0
 
-    .line 269
+    .line 291
     .restart local v1       #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 267
+    .line 289
     .end local v0           #communicationTargets:Ljava/util/LinkedHashMap;,"Ljava/util/LinkedHashMap<Ljava/lang/String;Lcom/google/googlex/glass/common/proto/Entity;>;"
     .end local v1           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
     .end local v2           #i:I
@@ -2960,7 +3052,7 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 313
     monitor-enter p0
 
     const/16 v0, 0xf
@@ -2989,18 +3081,18 @@
     .parameter "context"
 
     .prologue
-    .line 180
+    .line 201
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 182
+    .line 203
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 184
+    .line 205
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
 
     const-string v1, "loadEntityDataCache"
@@ -3009,15 +3101,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 186
+    .line 207
     const/4 v7, 0x0
 
-    .line 188
+    .line 209
     .local v7, cursor:Landroid/database/Cursor;
     :try_start_1
     const-string v5, "share_time DESC,_id ASC"
 
-    .line 189
+    .line 210
     .local v5, orderBy:Ljava/lang/String;
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -3035,10 +3127,10 @@
 
     move-result-object v7
 
-    .line 190
+    .line 211
     if-nez v7, :cond_1
 
-    .line 192
+    .line 213
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
 
     const-string v1, "null cursor returned for share target query"
@@ -3047,23 +3139,23 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 200
+    .line 221
     if-eqz v7, :cond_0
 
-    .line 201
+    .line 222
     :try_start_2
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 216
+    .line 237
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 196
+    .line 217
     :cond_1
     :goto_1
     :try_start_3
@@ -3073,7 +3165,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 197
+    .line 218
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-static {v7}, Lcom/google/glass/entity/EntityHelper;->fromCursorToEntityData(Landroid/database/Cursor;)Lcom/google/glass/entity/EntityHelper$EntityData;
@@ -3086,14 +3178,14 @@
 
     goto :goto_1
 
-    .line 200
+    .line 221
     .end local v5           #orderBy:Ljava/lang/String;
     :catchall_0
     move-exception v0
 
     if-eqz v7, :cond_2
 
-    .line 201
+    .line 222
     :try_start_4
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
@@ -3102,7 +3194,7 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 180
+    .line 201
     .end local v7           #cursor:Landroid/database/Cursor;
     :catchall_1
     move-exception v0
@@ -3111,17 +3203,17 @@
 
     throw v0
 
-    .line 200
+    .line 221
     .restart local v5       #orderBy:Ljava/lang/String;
     .restart local v7       #cursor:Landroid/database/Cursor;
     :cond_3
     if-eqz v7, :cond_4
 
-    .line 201
+    .line 222
     :try_start_5
     invoke-interface {v7}, Landroid/database/Cursor;->close()V
 
-    .line 207
+    .line 228
     :cond_4
     new-instance v6, Landroid/content/Intent;
 
@@ -3129,7 +3221,7 @@
 
     invoke-direct {v6, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 213
+    .line 234
     .local v6, broadcast:Landroid/content/Intent;
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->packageNameForTest:Ljava/lang/String;
 
@@ -3142,12 +3234,12 @@
     :goto_2
     invoke-virtual {v6, v0}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 215
+    .line 236
     invoke-virtual {p1, v6}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto :goto_0
 
-    .line 213
+    .line 234
     :cond_5
     sget-object v0, Lcom/google/glass/entity/EntityHelper;->packageNameForTest:Ljava/lang/String;
     :try_end_5
@@ -3161,7 +3253,7 @@
     .parameter "context"
 
     .prologue
-    .line 252
+    .line 273
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityChangedReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     const/4 v1, 0x1
@@ -3176,7 +3268,7 @@
 
     invoke-virtual {v0, p1, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 253
+    .line 274
     return-void
 .end method
 
@@ -3194,31 +3286,31 @@
     .end annotation
 
     .prologue
-    .line 219
+    .line 240
     .local p1, testData:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/entity/EntityHelper$EntityData;>;"
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
-    .line 220
+    .line 241
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 221
+    .line 242
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 222
+    .line 243
     monitor-exit p0
 
     return-void
 
-    .line 219
+    .line 240
     :catchall_0
     move-exception v0
 
@@ -3227,233 +3319,331 @@
     throw v0
 .end method
 
-.method public declared-synchronized updateEntityShareColumns(Lcom/google/googlex/glass/common/proto/Entity;Landroid/content/ContentResolver;)V
-    .locals 11
+.method public declared-synchronized updateEntityShareColumns(Lcom/google/googlex/glass/common/proto/Entity;Landroid/content/Context;)V
+    .locals 13
     .parameter "entity"
-    .parameter "resolver"
+    .parameter "context"
 
     .prologue
-    .line 963
+    .line 983
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 966
+    .line 986
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
-    move-result-object v3
-
-    .line 967
-    .local v3, id:Ljava/lang/String;
-    const/4 v1, 0x0
-
-    .line 968
-    .local v1, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
-    const/4 v2, 0x0
-
-    .local v2, i:I
-    iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
-
-    invoke-interface {v8}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    .local v4, n:I
-    :goto_0
-    if-ge v2, v4, :cond_0
-
-    .line 969
-    iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
-
-    invoke-interface {v8, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/entity/EntityHelper$EntityData;
-
-    .line 970
-    .local v0, data:Lcom/google/glass/entity/EntityHelper$EntityData;
-    iget-object v8, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v8}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1
-
-    iget-object v8, v0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v8}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_1
-
-    .line 971
-    move-object v1, v0
-
-    .line 976
-    .end local v0           #data:Lcom/google/glass/entity/EntityHelper$EntityData;
-    :cond_0
-    if-eqz v1, :cond_2
-
-    .line 978
-    iget v8, v1, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
-
-    add-int/lit8 v5, v8, 0x1
-
-    .line 979
-    .local v5, shareCount:I
-    iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->clock:Lcom/google/glass/util/Clock;
-
-    invoke-interface {v8}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
-
-    move-result-wide v8
-
-    #calls: Lcom/google/glass/entity/EntityHelper$EntityData;->update(JI)V
-    invoke-static {v1, v8, v9, v5}, Lcom/google/glass/entity/EntityHelper$EntityData;->access$100(Lcom/google/glass/entity/EntityHelper$EntityData;JI)V
-
-    .line 982
-    iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
-
-    invoke-interface {v8, v1}, Ljava/util/List;->remove(Ljava/lang/Object;)Z
-
-    .line 983
-    iget-object v8, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
-
-    const/4 v9, 0x0
-
-    invoke-interface {v8, v9, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
-
-    .line 986
-    new-instance v6, Landroid/content/ContentValues;
-
-    invoke-direct {v6}, Landroid/content/ContentValues;-><init>()V
+    move-result-object v5
 
     .line 987
-    .local v6, values:Landroid/content/ContentValues;
-    const/4 v8, 0x2
+    .local v5, id:Ljava/lang/String;
+    const/4 v3, 0x0
 
-    new-array v7, v8, [Ljava/lang/String;
+    .line 988
+    .local v3, entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    const/4 v4, 0x0
 
-    const/4 v8, 0x0
+    .local v4, i:I
+    iget-object v10, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
 
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
+    invoke-interface {v10}, Ljava/util/List;->size()I
 
-    move-result-object v9
+    move-result v6
 
-    aput-object v9, v7, v8
+    .local v6, n:I
+    :goto_0
+    if-ge v4, v6, :cond_0
 
-    const/4 v8, 0x1
+    .line 989
+    iget-object v10, p0, Lcom/google/glass/entity/EntityHelper;->entityDataCache:Ljava/util/List;
+
+    invoke-interface {v10, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/google/glass/entity/EntityHelper$EntityData;
+
+    .line 990
+    .local v2, data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    iget-object v10, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-virtual {v10}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_1
+
+    iget-object v10, v2, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-virtual {v10}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
+
+    move-result-object v10
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v11
 
-    aput-object v9, v7, v8
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 988
-    .local v7, whereArgs:[Ljava/lang/String;
-    const-string v8, "share_count"
+    move-result v10
 
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eqz v10, :cond_1
 
-    move-result-object v9
+    .line 991
+    move-object v3, v2
 
-    invoke-virtual {v6, v8, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+    .line 996
+    .end local v2           #data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    :cond_0
+    if-eqz v3, :cond_3
 
-    .line 989
-    const-string v8, "share_time"
+    .line 998
+    iget v10, v3, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
 
-    iget-object v9, p0, Lcom/google/glass/entity/EntityHelper;->clock:Lcom/google/glass/util/Clock;
+    add-int/lit8 v7, v10, 0x1
 
-    invoke-interface {v9}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
+    .line 999
+    .local v7, shareCount:I
+    iget-object v10, p0, Lcom/google/glass/entity/EntityHelper;->clock:Lcom/google/glass/util/Clock;
 
-    move-result-wide v9
+    invoke-interface {v10}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
 
-    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    move-result-wide v0
 
-    move-result-object v9
+    .line 1000
+    .local v0, currentMillis:J
+    #calls: Lcom/google/glass/entity/EntityHelper$EntityData;->update(JI)V
+    invoke-static {v3, v0, v1, v7}, Lcom/google/glass/entity/EntityHelper$EntityData;->access$100(Lcom/google/glass/entity/EntityHelper$EntityData;JI)V
 
-    invoke-virtual {v6, v8, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+    .line 1003
+    new-instance v8, Landroid/content/ContentValues;
 
-    .line 990
-    sget-object v8, Lcom/google/glass/entity/EntityProvider;->URI:Landroid/net/Uri;
+    invoke-direct {v8}, Landroid/content/ContentValues;-><init>()V
 
-    const-string v9, "(_id=? AND source=?)"
+    .line 1004
+    .local v8, values:Landroid/content/ContentValues;
+    const/4 v10, 0x2
 
-    invoke-virtual {p2, v8, v6, v9, v7}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+    new-array v9, v10, [Ljava/lang/String;
+
+    const/4 v10, 0x0
+
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
+
+    move-result-object v11
+
+    aput-object v11, v9, v10
+
+    const/4 v10, 0x1
+
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
+
+    move-result-object v11
+
+    aput-object v11, v9, v10
+
+    .line 1005
+    .local v9, whereArgs:[Ljava/lang/String;
+    const-string v10, "share_count"
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v11
+
+    invoke-virtual {v8, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    .line 1006
+    const-string v10, "share_time"
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v11
+
+    invoke-virtual {v8, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 1007
+    invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v10
+
+    sget-object v11, Lcom/google/glass/entity/EntityProvider;->URI:Landroid/net/Uri;
+
+    const-string v12, "(_id=? AND source=?)"
+
+    invoke-virtual {v10, v11, v8, v12, v9}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    move-result v10
+
+    if-lez v10, :cond_2
+
+    .line 1010
+    sget-object v10, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "Updated entity\'s share columns [id="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string v12, ", shareCount="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string v12, ", shareTime="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string v12, "]."
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1012
+    invoke-virtual {p0, p2}, Lcom/google/glass/entity/EntityHelper;->broadcastSyncChanged(Landroid/content/Context;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 994
-    .end local v5           #shareCount:I
-    .end local v6           #values:Landroid/content/ContentValues;
-    .end local v7           #whereArgs:[Ljava/lang/String;
+    .line 1019
+    .end local v0           #currentMillis:J
+    .end local v7           #shareCount:I
+    .end local v8           #values:Landroid/content/ContentValues;
+    .end local v9           #whereArgs:[Ljava/lang/String;
     :goto_1
     monitor-exit p0
 
     return-void
 
-    .line 968
-    .restart local v0       #data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    .line 988
+    .restart local v2       #data:Lcom/google/glass/entity/EntityHelper$EntityData;
     :cond_1
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 992
-    .end local v0           #data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    .line 1014
+    .end local v2           #data:Lcom/google/glass/entity/EntityHelper$EntityData;
+    .restart local v0       #currentMillis:J
+    .restart local v7       #shareCount:I
+    .restart local v8       #values:Landroid/content/ContentValues;
+    .restart local v9       #whereArgs:[Ljava/lang/String;
     :cond_2
     :try_start_1
-    sget-object v8, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
+    sget-object v10, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v11, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "Unable to find entity in cache: "
+    const-string v12, "Failed to update entity\'s share columns in database [id="
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v11
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v12, "]."
 
-    move-result-object v9
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v8, v9}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_1
 
-    .line 963
-    .end local v1           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
-    .end local v2           #i:I
-    .end local v3           #id:Ljava/lang/String;
-    .end local v4           #n:I
+    .line 983
+    .end local v0           #currentMillis:J
+    .end local v3           #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    .end local v4           #i:I
+    .end local v5           #id:Ljava/lang/String;
+    .end local v6           #n:I
+    .end local v7           #shareCount:I
+    .end local v8           #values:Landroid/content/ContentValues;
+    .end local v9           #whereArgs:[Ljava/lang/String;
     :catchall_0
-    move-exception v8
+    move-exception v10
 
     monitor-exit p0
 
-    throw v8
+    throw v10
+
+    .line 1017
+    .restart local v3       #entityData:Lcom/google/glass/entity/EntityHelper$EntityData;
+    .restart local v4       #i:I
+    .restart local v5       #id:Ljava/lang/String;
+    .restart local v6       #n:I
+    :cond_3
+    :try_start_2
+    sget-object v10, Lcom/google/glass/entity/EntityHelper;->TAG:Ljava/lang/String;
+
+    new-instance v11, Ljava/lang/StringBuilder;
+
+    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v12, "Unable to find entity in cache [id="
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    const-string v12, "]."
+
+    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
 .end method

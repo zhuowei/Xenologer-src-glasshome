@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1243
+    .line 1286
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$10;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraManager$10;->val$client:Lcom/google/glass/camera/SharedCameraClient;
@@ -49,40 +49,40 @@
     .parameter "extra"
 
     .prologue
-    .line 1248
+    .line 1291
     const/16 v0, -0x3ef
 
     if-ne p3, v0, :cond_0
 
-    .line 1249
+    .line 1292
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$10;->val$client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v1, "Canceling video due to ERROR_MALFORMED from MediaRecorder."
 
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 1253
+    .line 1296
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$10;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager;->video:Lcom/google/glass/camera/Video;
-    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager;->access$3700(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/Video;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->video:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager;->access$3700(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/VideoWrapper;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/glass/camera/Video;->cancel()V
+    invoke-virtual {v0}, Lcom/google/glass/camera/VideoWrapper;->cancel()V
 
-    .line 1256
+    .line 1299
     new-instance v0, Lcom/google/glass/camera/SharedCameraManager$10$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$10$1;-><init>(Lcom/google/glass/camera/SharedCameraManager$10;)V
 
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraManager$10$1;->enqueue()V
 
-    .line 1270
+    .line 1313
     :goto_0
     return-void
 
-    .line 1267
+    .line 1310
     :cond_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$10;->val$client:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -123,7 +123,7 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->handleCameraError(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$2100(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 1269
+    .line 1312
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$10;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     const/4 v1, 0x0

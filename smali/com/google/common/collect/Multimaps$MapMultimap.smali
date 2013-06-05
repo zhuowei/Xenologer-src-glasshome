@@ -72,7 +72,7 @@
     .locals 2
 
     .prologue
-    .line 1181
+    .line 1210
     const-string v0, "], "
 
     invoke-static {v0}, Lcom/google/common/base/Joiner;->on(Ljava/lang/String;)Lcom/google/common/base/Joiner;
@@ -108,12 +108,12 @@
     .end annotation
 
     .prologue
-    .line 1032
+    .line 1078
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1033
+    .line 1079
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -122,7 +122,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
-    .line 1034
+    .line 1080
     return-void
 .end method
 
@@ -141,15 +141,15 @@
     .end annotation
 
     .prologue
-    .line 1159
+    .line 1186
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->asMap:Ljava/util/Map;
 
-    .line 1160
+    .line 1187
     .local v0, result:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     if-nez v0, :cond_0
 
-    .line 1161
+    .line 1188
     new-instance v0, Lcom/google/common/collect/Multimaps$MapMultimap$AsMap;
 
     .end local v0           #result:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
@@ -158,7 +158,7 @@
     .restart local v0       #result:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->asMap:Ljava/util/Map;
 
-    .line 1163
+    .line 1190
     :cond_0
     return-object v0
 .end method
@@ -167,13 +167,13 @@
     .locals 1
 
     .prologue
-    .line 1134
+    .line 1166
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 1135
+    .line 1167
     return-void
 .end method
 
@@ -183,7 +183,7 @@
     .parameter "value"
 
     .prologue
-    .line 1058
+    .line 1099
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -207,7 +207,7 @@
     .parameter "key"
 
     .prologue
-    .line 1048
+    .line 1091
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -223,7 +223,7 @@
     .parameter "value"
 
     .prologue
-    .line 1053
+    .line 1095
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -238,7 +238,7 @@
     .locals 1
 
     .prologue
-    .line 1027
+    .line 1074
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$MapMultimap;->entries()Ljava/util/Set;
 
@@ -260,7 +260,7 @@
     .end annotation
 
     .prologue
-    .line 1154
+    .line 1182
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -284,15 +284,15 @@
 
     const/4 v2, 0x0
 
-    .line 1167
+    .line 1195
     if-ne p1, p0, :cond_1
 
-    .line 1174
+    .line 1202
     :cond_0
     :goto_0
     return v1
 
-    .line 1170
+    .line 1198
     :cond_1
     instance-of v3, p1, Lcom/google/common/collect/Multimap;
 
@@ -300,10 +300,10 @@
 
     move-object v0, p1
 
-    .line 1171
+    .line 1199
     check-cast v0, Lcom/google/common/collect/Multimap;
 
-    .line 1172
+    .line 1200
     .local v0, that:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<**>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$MapMultimap;->size()I
 
@@ -338,7 +338,7 @@
     :cond_3
     move v1, v2
 
-    .line 1174
+    .line 1202
     goto :goto_0
 .end method
 
@@ -347,7 +347,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1027
+    .line 1074
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$MapMultimap;->get(Ljava/lang/Object;)Ljava/util/Set;
 
@@ -368,7 +368,7 @@
     .end annotation
 
     .prologue
-    .line 1063
+    .line 1103
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     new-instance v0, Lcom/google/common/collect/Multimaps$MapMultimap$1;
@@ -382,7 +382,7 @@
     .locals 1
 
     .prologue
-    .line 1178
+    .line 1207
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -397,7 +397,7 @@
     .locals 1
 
     .prologue
-    .line 1043
+    .line 1087
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -419,7 +419,7 @@
     .end annotation
 
     .prologue
-    .line 1139
+    .line 1170
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -441,17 +441,11 @@
     .end annotation
 
     .prologue
-    .line 1144
+    .line 1174
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
+    new-instance v0, Lcom/google/common/collect/Multimaps$Keys;
 
-    invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/common/collect/Multisets;->forSet(Ljava/util/Set;)Lcom/google/common/collect/Multiset;
-
-    move-result-object v0
+    invoke-direct {v0, p0}, Lcom/google/common/collect/Multimaps$Keys;-><init>(Lcom/google/common/collect/Multimap;)V
 
     return-object v0
 .end method
@@ -467,7 +461,7 @@
     .end annotation
 
     .prologue
-    .line 1099
+    .line 1137
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -490,7 +484,7 @@
     .end annotation
 
     .prologue
-    .line 1109
+    .line 1145
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -513,7 +507,7 @@
     .end annotation
 
     .prologue
-    .line 1104
+    .line 1141
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
@@ -530,7 +524,7 @@
     .parameter "value"
 
     .prologue
-    .line 1119
+    .line 1153
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -554,7 +548,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1027
+    .line 1074
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$MapMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/Set;
 
@@ -577,7 +571,7 @@
     .end annotation
 
     .prologue
-    .line 1124
+    .line 1157
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     new-instance v0, Ljava/util/HashSet;
 
@@ -585,7 +579,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
 
-    .line 1125
+    .line 1158
     .local v0, values:Ljava/util/Set;,"Ljava/util/Set<TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -595,11 +589,11 @@
 
     if-nez v1, :cond_0
 
-    .line 1129
+    .line 1162
     :goto_0
     return-object v0
 
-    .line 1128
+    .line 1161
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -618,7 +612,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1027
+    .line 1074
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$MapMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/Set;
 
@@ -642,7 +636,7 @@
     .end annotation
 
     .prologue
-    .line 1114
+    .line 1149
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
@@ -657,7 +651,7 @@
     .locals 1
 
     .prologue
-    .line 1038
+    .line 1083
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -672,7 +666,7 @@
     .locals 3
 
     .prologue
-    .line 1185
+    .line 1215
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -682,14 +676,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 1186
+    .line 1216
     const-string v1, "{}"
 
-    .line 1191
+    .line 1220
     :goto_0
     return-object v1
 
-    .line 1188
+    .line 1218
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 
@@ -707,7 +701,7 @@
 
     move-result-object v0
 
-    .line 1190
+    .line 1219
     .local v0, builder:Ljava/lang/StringBuilder;
     sget-object v1, Lcom/google/common/collect/Multimaps$MapMultimap;->JOINER:Lcom/google/common/base/Joiner$MapJoiner;
 
@@ -715,7 +709,7 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/google/common/base/Joiner$MapJoiner;->appendTo(Ljava/lang/StringBuilder;Ljava/util/Map;)Ljava/lang/StringBuilder;
 
-    .line 1191
+    .line 1220
     const-string v1, "]}"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -740,7 +734,7 @@
     .end annotation
 
     .prologue
-    .line 1149
+    .line 1178
     .local p0, this:Lcom/google/common/collect/Multimaps$MapMultimap;,"Lcom/google/common/collect/Multimaps$MapMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$MapMultimap;->map:Ljava/util/Map;
 

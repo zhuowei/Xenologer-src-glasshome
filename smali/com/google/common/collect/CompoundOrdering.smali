@@ -55,19 +55,19 @@
     .end annotation
 
     .prologue
-    .line 36
+    .line 33
     .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
     .local p1, comparators:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Ljava/util/Comparator<-TT;>;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 37
+    .line 34
     invoke-static {p1}, Lcom/google/common/collect/ImmutableList;->copyOf(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
-    .line 38
+    .line 35
     return-void
 .end method
 
@@ -86,66 +86,20 @@
     .end annotation
 
     .prologue
-    .line 31
+    .line 29
     .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
     .local p1, primary:Ljava/util/Comparator;,"Ljava/util/Comparator<-TT;>;"
     .local p2, secondary:Ljava/util/Comparator;,"Ljava/util/Comparator<-TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 32
+    .line 30
     invoke-static {p1, p2}, Lcom/google/common/collect/ImmutableList;->of(Ljava/lang/Object;Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
-    .line 34
-    return-void
-.end method
-
-.method constructor <init>(Ljava/util/List;Ljava/util/Comparator;)V
-    .locals 1
-    .parameter
-    .parameter
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<+",
-            "Ljava/util/Comparator",
-            "<-TT;>;>;",
-            "Ljava/util/Comparator",
-            "<-TT;>;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 41
-    .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
-    .local p1, comparators:Ljava/util/List;,"Ljava/util/List<+Ljava/util/Comparator<-TT;>;>;"
-    .local p2, lastComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TT;>;"
-    invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
-
-    .line 42
-    new-instance v0, Lcom/google/common/collect/ImmutableList$Builder;
-
-    invoke-direct {v0}, Lcom/google/common/collect/ImmutableList$Builder;-><init>()V
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/ImmutableList$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableList$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Lcom/google/common/collect/ImmutableList$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList$Builder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/common/collect/ImmutableList$Builder;->build()Lcom/google/common/collect/ImmutableList;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
-
-    .line 44
+    .line 31
     return-void
 .end method
 
@@ -162,50 +116,59 @@
     .end annotation
 
     .prologue
-    .line 47
+    .line 40
     .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
     .local p1, left:Ljava/lang/Object;,"TT;"
     .local p2, right:Ljava/lang/Object;,"TT;"
     iget-object v3, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
-    invoke-virtual {v3}, Lcom/google/common/collect/ImmutableList;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Comparator;
-
-    .line 48
-    .local v0, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TT;>;"
-    invoke-interface {v0, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-virtual {v3}, Lcom/google/common/collect/ImmutableList;->size()I
 
     move-result v2
 
-    .line 49
-    .local v2, result:I
-    if-eqz v2, :cond_0
+    .line 41
+    .local v2, size:I
+    const/4 v0, 0x0
 
-    .line 53
-    .end local v0           #comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TT;>;"
-    .end local v2           #result:I
+    .local v0, i:I
     :goto_0
-    return v2
+    if-ge v0, v2, :cond_1
 
-    :cond_1
-    const/4 v2, 0x0
+    .line 42
+    iget-object v3, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
+
+    invoke-virtual {v3, v0}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Comparator;
+
+    invoke-interface {v3, p1, p2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    move-result v1
+
+    .line 43
+    .local v1, result:I
+    if-eqz v1, :cond_0
+
+    .line 47
+    .end local v1           #result:I
+    :goto_1
+    return v1
+
+    .line 41
+    .restart local v1       #result:I
+    :cond_0
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    .line 47
+    .end local v1           #result:I
+    :cond_1
+    const/4 v1, 0x0
+
+    goto :goto_1
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -213,18 +176,18 @@
     .parameter "object"
 
     .prologue
-    .line 57
+    .line 52
     .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
     if-ne p1, p0, :cond_0
 
-    .line 58
+    .line 53
     const/4 v1, 0x1
 
-    .line 64
+    .line 59
     :goto_0
     return v1
 
-    .line 60
+    .line 55
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/CompoundOrdering;
 
@@ -232,10 +195,10 @@
 
     move-object v0, p1
 
-    .line 61
+    .line 56
     check-cast v0, Lcom/google/common/collect/CompoundOrdering;
 
-    .line 62
+    .line 57
     .local v0, that:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<*>;"
     iget-object v1, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
@@ -247,7 +210,7 @@
 
     goto :goto_0
 
-    .line 64
+    .line 59
     .end local v0           #that:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<*>;"
     :cond_1
     const/4 v1, 0x0
@@ -259,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 64
     .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/CompoundOrdering;->comparators:Lcom/google/common/collect/ImmutableList;
 
@@ -274,7 +237,7 @@
     .locals 2
 
     .prologue
-    .line 72
+    .line 69
     .local p0, this:Lcom/google/common/collect/CompoundOrdering;,"Lcom/google/common/collect/CompoundOrdering<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

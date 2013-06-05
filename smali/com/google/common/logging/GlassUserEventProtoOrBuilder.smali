@@ -13,6 +13,9 @@
 .method public abstract getEventDataBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getEventSerial()J
+.end method
+
 .method public abstract getEventTimeMs()J
 .end method
 
@@ -29,6 +32,9 @@
 .end method
 
 .method public abstract hasEventData()Z
+.end method
+
+.method public abstract hasEventSerial()Z
 .end method
 
 .method public abstract hasEventTimeMs()Z

@@ -34,7 +34,7 @@
     .parameter "x0"
 
     .prologue
-    .line 158
+    .line 160
     iput-object p1, p0, Lcom/google/glass/maps/MapHelper$3;->this$0:Lcom/google/glass/maps/MapHelper;
 
     invoke-direct {p0, p2}, Landroid/util/LruCache;-><init>(I)V
@@ -50,7 +50,7 @@
     .parameter "value"
 
     .prologue
-    .line 160
+    .line 162
     array-length v0, p2
 
     return v0
@@ -62,7 +62,7 @@
     .parameter "x1"
 
     .prologue
-    .line 158
+    .line 160
     check-cast p1, Lcom/google/glass/proto/MapRenderRequest;
 
     .end local p1

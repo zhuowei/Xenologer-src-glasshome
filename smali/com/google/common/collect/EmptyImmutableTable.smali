@@ -72,7 +72,7 @@
     .end annotation
 
     .prologue
-    .line 69
+    .line 71
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -109,10 +109,10 @@
     .end annotation
 
     .prologue
-    .line 73
+    .line 76
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 74
+    .line 77
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -146,7 +146,7 @@
     .end annotation
 
     .prologue
-    .line 78
+    .line 82
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -183,7 +183,7 @@
     .end annotation
 
     .prologue
-    .line 82
+    .line 87
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -215,7 +215,7 @@
     .end parameter
 
     .prologue
-    .line 87
+    .line 91
     const/4 v0, 0x0
 
     return v0
@@ -229,7 +229,7 @@
     .end parameter
 
     .prologue
-    .line 91
+    .line 95
     const/4 v0, 0x0
 
     return v0
@@ -243,7 +243,7 @@
     .end parameter
 
     .prologue
-    .line 95
+    .line 99
     const/4 v0, 0x0
 
     return v0
@@ -257,7 +257,7 @@
     .end parameter
 
     .prologue
-    .line 99
+    .line 103
     const/4 v0, 0x0
 
     return v0
@@ -320,7 +320,7 @@
     .end parameter
 
     .prologue
-    .line 46
+    .line 45
     const/4 v0, 0x0
 
     return-object v0
@@ -330,7 +330,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 66
     const/4 v0, 0x0
 
     return v0
@@ -340,7 +340,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 49
     const/4 v0, 0x1
 
     return v0
@@ -350,7 +350,7 @@
     .locals 1
 
     .prologue
-    .line 124
+    .line 132
     sget-object v0, Lcom/google/common/collect/EmptyImmutableTable;->INSTANCE:Lcom/google/common/collect/EmptyImmutableTable;
 
     return-object v0
@@ -373,10 +373,10 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 108
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 104
+    .line 109
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -410,7 +410,7 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 114
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0
@@ -447,7 +447,7 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 119
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
     move-result-object v0
@@ -481,7 +481,7 @@
     .locals 1
 
     .prologue
-    .line 116
+    .line 124
     const-string v0, "{}"
 
     return-object v0
@@ -500,7 +500,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 128
     invoke-static {}, Lcom/google/common/collect/ImmutableSet;->of()Lcom/google/common/collect/ImmutableSet;
 
     move-result-object v0

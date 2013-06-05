@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 88
+    .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 120
     const/4 v0, 0x0
 
     return v0
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 124
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 128
     new-instance v0, Ljava/lang/IllegalStateException;
 
     invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V

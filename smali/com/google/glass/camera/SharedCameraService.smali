@@ -58,6 +58,8 @@
 
 .field private final shutdownExecutor:Ljava/util/concurrent/ExecutorService;
 
+.field private final shuttingDown:Ljava/util/concurrent/atomic/AtomicBoolean;
+
 .field private final storageReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
 
@@ -66,7 +68,7 @@
     .locals 3
 
     .prologue
-    .line 74
+    .line 75
     const-class v0, Lcom/google/glass/camera/SharedCameraService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -75,7 +77,7 @@
 
     sput-object v0, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
-    .line 101
+    .line 102
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x5
@@ -93,10 +95,10 @@
     .locals 4
 
     .prologue
-    .line 73
+    .line 74
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 107
+    .line 108
     new-instance v0, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
 
     const/4 v1, 0x0
@@ -105,14 +107,14 @@
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->sharedCameraBinder:Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
 
-    .line 110
+    .line 111
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->onStartUpTasks:Ljava/util/List;
 
-    .line 113
+    .line 114
     new-instance v0, Lcom/google/glass/util/PriorityThreadFactory;
 
     const/16 v1, 0xa
@@ -145,21 +147,30 @@
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->shutdownExecutor:Ljava/util/concurrent/ExecutorService;
 
-    .line 117
+    .line 118
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->shuttingDown:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    .line 121
     new-instance v0, Lcom/google/glass/camera/SharedCameraService$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraService$1;-><init>(Lcom/google/glass/camera/SharedCameraService;)V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->storageReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 358
+    .line 362
     new-instance v0, Lcom/google/glass/camera/SharedCameraService$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraService$2;-><init>(Lcom/google/glass/camera/SharedCameraService;)V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->shutdownCameraReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 377
+    .line 381
     new-instance v0, Lcom/google/glass/camera/SharedCameraService$3;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraService$3;-><init>(Lcom/google/glass/camera/SharedCameraService;)V
@@ -173,10 +184,22 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 74
     sget-object v0, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method static synthetic access$1000(Lcom/google/glass/camera/SharedCameraService;Z)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 74
+    invoke-direct {p0, p1}, Lcom/google/glass/camera/SharedCameraService;->sendLockIntent(Z)V
+
+    return-void
 .end method
 
 .method static synthetic access$200(Lcom/google/glass/camera/SharedCameraService;)Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
@@ -184,7 +207,7 @@
     .parameter "x0"
 
     .prologue
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->sharedCameraBinder:Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
 
     return-object v0
@@ -195,7 +218,7 @@
     .parameter "x0"
 
     .prologue
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
 
     return-object v0
@@ -207,7 +230,7 @@
     .parameter "x1"
 
     .prologue
-    .line 73
+    .line 74
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
 
     return-object p1
@@ -218,41 +241,40 @@
     .parameter "x0"
 
     .prologue
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->onStartUpTasks:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method static synthetic access$700()J
+.method static synthetic access$700(Lcom/google/glass/camera/SharedCameraService;)Ljava/util/concurrent/atomic/AtomicBoolean;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 74
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->shuttingDown:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    return-object v0
+.end method
+
+.method static synthetic access$800()J
     .locals 2
 
     .prologue
-    .line 73
+    .line 74
     sget-wide v0, Lcom/google/glass/camera/SharedCameraService;->SHUTDOWN_TIMEOUT_MILLIS:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$800(Lcom/google/glass/camera/SharedCameraService;)V
+.method static synthetic access$900(Lcom/google/glass/camera/SharedCameraService;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 73
+    .line 74
     invoke-direct {p0}, Lcom/google/glass/camera/SharedCameraService;->startUp()V
-
-    return-void
-.end method
-
-.method static synthetic access$900(Lcom/google/glass/camera/SharedCameraService;Z)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 73
-    invoke-direct {p0, p1}, Lcom/google/glass/camera/SharedCameraService;->sendLockIntent(Z)V
 
     return-void
 .end method
@@ -262,7 +284,7 @@
     .parameter "context"
 
     .prologue
-    .line 496
+    .line 511
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.PREPARE_CAMERA"
@@ -271,7 +293,7 @@
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 497
+    .line 512
     return-void
 .end method
 
@@ -280,20 +302,20 @@
     .parameter "isLocked"
 
     .prologue
-    .line 590
+    .line 605
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.CAMERA_LOCK"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 591
+    .line 606
     .local v0, unlockIntent:Landroid/content/Intent;
     const-string v1, "locked"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 592
+    .line 607
     const-string v1, "pid"
 
     invoke-static {}, Landroid/os/Process;->myPid()I
@@ -302,10 +324,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 593
+    .line 608
     invoke-virtual {p0, v0}, Lcom/google/glass/camera/SharedCameraService;->sendStickyBroadcast(Landroid/content/Intent;)V
 
-    .line 594
+    .line 609
     return-void
 .end method
 
@@ -314,19 +336,19 @@
     .parameter "shouldRestartSharedCamera"
 
     .prologue
-    .line 541
+    .line 556
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->shutdownCameraReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v0, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 544
+    .line 559
     sget-object v0, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     const-string v1, "Shutdown requested."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 545
+    .line 560
     new-instance v0, Lcom/google/glass/camera/SharedCameraService$5;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/camera/SharedCameraService$5;-><init>(Lcom/google/glass/camera/SharedCameraService;Z)V
@@ -339,7 +361,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/camera/SharedCameraService$5;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 582
+    .line 597
     return-void
 .end method
 
@@ -349,24 +371,24 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 516
+    .line 531
     sget-object v2, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     const-string v3, "Initializing the shared camera."
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 517
+    .line 532
     new-instance v2, Lcom/google/glass/camera/SharedCameraManager;
 
     invoke-direct {v2, p0}, Lcom/google/glass/camera/SharedCameraManager;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
 
-    .line 520
+    .line 535
     invoke-direct {p0, v4}, Lcom/google/glass/camera/SharedCameraService;->sendLockIntent(Z)V
 
-    .line 523
+    .line 538
     iget-object v2, p0, Lcom/google/glass/camera/SharedCameraService;->shutdownCameraReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     new-array v3, v4, [Ljava/lang/String;
@@ -379,7 +401,7 @@
 
     invoke-virtual {v2, p0, v3}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 526
+    .line 541
     iget-object v2, p0, Lcom/google/glass/camera/SharedCameraService;->onStartUpTasks:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -400,20 +422,20 @@
 
     check-cast v1, Ljava/lang/Runnable;
 
-    .line 527
+    .line 542
     .local v1, task:Ljava/lang/Runnable;
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 529
+    .line 544
     .end local v1           #task:Ljava/lang/Runnable;
     :cond_0
     iget-object v2, p0, Lcom/google/glass/camera/SharedCameraService;->onStartUpTasks:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    .line 530
+    .line 545
     return-void
 .end method
 
@@ -424,7 +446,7 @@
     .parameter "intent"
 
     .prologue
-    .line 501
+    .line 516
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->sharedCameraBinder:Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
 
     return-object v0
@@ -436,17 +458,17 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 397
+    .line 401
     sget-object v1, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     const-string v2, "Created."
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 398
+    .line 402
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 401
+    .line 405
     const/4 v1, 0x0
 
     new-instance v2, Landroid/content/IntentFilter;
@@ -459,7 +481,7 @@
 
     move-result-object v0
 
-    .line 402
+    .line 406
     .local v0, getLockIntent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
@@ -471,14 +493,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 405
+    .line 409
     sget-object v1, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     const-string v2, "Requesting shutdown of other service instances."
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
+    .line 410
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "com.google.glass.action.SHUTDOWN_CAMERA"
@@ -487,7 +509,7 @@
 
     invoke-virtual {p0, v1}, Lcom/google/glass/camera/SharedCameraService;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 409
+    .line 413
     new-instance v1, Lcom/google/glass/camera/SharedCameraService$4;
 
     invoke-direct {v1, p0}, Lcom/google/glass/camera/SharedCameraService$4;-><init>(Lcom/google/glass/camera/SharedCameraService;)V
@@ -498,7 +520,7 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/google/glass/camera/SharedCameraService$4;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 470
+    .line 484
     :goto_0
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraService;->storageReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
@@ -512,10 +534,10 @@
 
     invoke-virtual {v1, p0, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 471
+    .line 485
     return-void
 
-    .line 466
+    .line 480
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/camera/SharedCameraService;->startUp()V
 
@@ -526,19 +548,26 @@
     .locals 3
 
     .prologue
-    .line 475
+    const/4 v0, 0x1
+
+    .line 489
     sget-object v1, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     const-string v2, "Destroyed."
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 478
+    .line 490
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraService;->shuttingDown:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    invoke-virtual {v1, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+
+    .line 493
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraService;->storageReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v1, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 483
+    .line 498
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraService;->prepareCameraReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->isRegistered()Z
@@ -547,25 +576,23 @@
 
     if-nez v1, :cond_0
 
-    const/4 v0, 0x1
-
-    .line 486
+    .line 501
     .local v0, shouldRestartSharedCamera:Z
     :goto_0
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraService;->prepareCameraReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v1, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 489
+    .line 504
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraService;->shutDown(Z)V
 
-    .line 491
+    .line 506
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 492
+    .line 507
     return-void
 
-    .line 483
+    .line 498
     .end local v0           #shouldRestartSharedCamera:Z
     :cond_0
     const/4 v0, 0x0
@@ -582,14 +609,14 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 506
+    .line 521
     sget-object v0, Lcom/google/glass/camera/SharedCameraService;->TAG:Ljava/lang/String;
 
     const-string v1, "Starting service."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 510
+    .line 525
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService;->prepareCameraReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     new-array v1, v4, [Ljava/lang/String;
@@ -602,6 +629,6 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 511
+    .line 526
     return v4
 .end method

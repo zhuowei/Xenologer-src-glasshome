@@ -52,18 +52,18 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 184
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
-    .line 171
+    .line 185
     invoke-static {}, Lcom/google/protobuf/FieldSet;->newFieldSet()Lcom/google/protobuf/FieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
-    .line 172
+    .line 186
     return-void
 .end method
 
@@ -79,12 +79,12 @@
     .end annotation
 
     .prologue
-    .line 174
+    .line 188
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     .local p1, builder:Lcom/google/protobuf/GeneratedMessageLite$ExtendableBuilder;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableBuilder<TMessageType;*>;"
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
-    .line 175
+    .line 189
     #calls: Lcom/google/protobuf/GeneratedMessageLite$ExtendableBuilder;->buildExtensions()Lcom/google/protobuf/FieldSet;
     invoke-static {p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableBuilder;->access$000(Lcom/google/protobuf/GeneratedMessageLite$ExtendableBuilder;)Lcom/google/protobuf/FieldSet;
 
@@ -92,7 +92,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
-    .line 176
+    .line 190
     return-void
 .end method
 
@@ -101,7 +101,7 @@
     .parameter "x0"
 
     .prologue
-    .line 163
+    .line 177
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     return-object v0
@@ -119,7 +119,7 @@
     .end annotation
 
     .prologue
-    .line 180
+    .line 194
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     .local p1, extension:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TMessageType;*>;"
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getContainingTypeDefaultInstance()Lcom/google/protobuf/MessageLite;
@@ -132,7 +132,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 183
+    .line 197
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "This extension is for a different message type.  Please make sure that you are not suppressing any generics type warnings."
@@ -141,7 +141,7 @@
 
     throw v0
 
-    .line 187
+    .line 201
     :cond_0
     return-void
 .end method
@@ -152,7 +152,7 @@
     .locals 1
 
     .prologue
-    .line 232
+    .line 246
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
@@ -167,7 +167,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 341
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 328
+    .line 344
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
@@ -207,12 +207,12 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 224
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     .local p1, extension:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TMessageType;TType;>;"
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->verifyExtensionContainingType(Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;)V
 
-    .line 211
+    .line 225
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     iget-object v2, p1, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -221,14 +221,14 @@
 
     move-result-object v0
 
-    .line 212
+    .line 226
     .local v0, value:Ljava/lang/Object;
     if-nez v0, :cond_0
 
-    .line 213
+    .line 227
     iget-object v1, p1, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->defaultValue:Ljava/lang/Object;
 
-    .line 215
+    .line 229
     :goto_0
     return-object v1
 
@@ -257,12 +257,12 @@
     .end annotation
 
     .prologue
-    .line 225
+    .line 239
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     .local p1, extension:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TMessageType;Ljava/util/List<TType;>;>;"
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->verifyExtensionContainingType(Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;)V
 
-    .line 226
+    .line 240
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     iget-object v1, p1, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -294,12 +294,12 @@
     .end annotation
 
     .prologue
-    .line 201
+    .line 215
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     .local p1, extension:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TMessageType;Ljava/util/List<TType;>;>;"
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->verifyExtensionContainingType(Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;)V
 
-    .line 202
+    .line 216
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     iget-object v1, p1, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -325,12 +325,12 @@
     .end annotation
 
     .prologue
-    .line 193
+    .line 207
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     .local p1, extension:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TMessageType;TType;>;"
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->verifyExtensionContainingType(Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;)V
 
-    .line 194
+    .line 208
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     iget-object v1, p1, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -346,13 +346,13 @@
     .locals 1
 
     .prologue
-    .line 270
+    .line 286
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
     invoke-virtual {v0}, Lcom/google/protobuf/FieldSet;->makeImmutable()V
 
-    .line 271
+    .line 287
     return-void
 .end method
 
@@ -360,7 +360,7 @@
     .locals 2
 
     .prologue
-    .line 255
+    .line 271
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite;->mutableCopy()Lcom/google/protobuf/MutableMessageLite;
 
@@ -368,7 +368,7 @@
 
     check-cast v0, Lcom/google/protobuf/GeneratedMutableMessageLite$ExtendableMutableMessage;
 
-    .line 261
+    .line 277
     .local v0, result:Lcom/google/protobuf/GeneratedMutableMessageLite$ExtendableMutableMessage;
     iget-object v1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
@@ -378,7 +378,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/protobuf/GeneratedMutableMessageLite$ExtendableMutableMessage;->internalSetExtensionSet(Lcom/google/protobuf/FieldSet;)V
 
-    .line 262
+    .line 278
     return-object v0
 .end method
 
@@ -393,7 +393,7 @@
     .end annotation
 
     .prologue
-    .line 317
+    .line 333
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;
 
@@ -417,7 +417,7 @@
     .end annotation
 
     .prologue
-    .line 320
+    .line 336
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage$ExtensionWriter;
 
@@ -430,9 +430,10 @@
     return-object v0
 .end method
 
-.method protected parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
-    .locals 2
+.method protected parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    .locals 6
     .parameter "input"
+    .parameter "unknownFieldsCodedOutput"
     .parameter "extensionRegistry"
     .parameter "tag"
     .annotation system Ldalvik/annotation/Throws;
@@ -442,7 +443,7 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 259
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;,"Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage<TMessageType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtendableMessage;->extensions:Lcom/google/protobuf/FieldSet;
 
@@ -450,8 +451,16 @@
 
     move-result-object v1
 
-    #calls: Lcom/google/protobuf/GeneratedMessageLite;->parseUnknownField(Lcom/google/protobuf/FieldSet;Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
-    invoke-static {v0, v1, p1, p2, p3}, Lcom/google/protobuf/GeneratedMessageLite;->access$100(Lcom/google/protobuf/FieldSet;Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move v5, p4
+
+    #calls: Lcom/google/protobuf/GeneratedMessageLite;->parseUnknownField(Lcom/google/protobuf/FieldSet;Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-static/range {v0 .. v5}, Lcom/google/protobuf/GeneratedMessageLite;->access$100(Lcom/google/protobuf/FieldSet;Lcom/google/protobuf/MessageLite;Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
     move-result v0
 

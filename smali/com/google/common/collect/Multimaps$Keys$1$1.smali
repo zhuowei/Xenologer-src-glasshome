@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Multimaps$Keys$1;->next()Lcom/google/common/collect/Multiset$Entry;
+    value = Lcom/google/common/collect/Multimaps$Keys$1;->transform(Ljava/util/Map$Entry;)Lcom/google/common/collect/Multiset$Entry;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 1875
+    .line 1835
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1$1;,"Lcom/google/common/collect/Multimaps$Keys$1.1;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->this$1:Lcom/google/common/collect/Multimaps$Keys$1;
 
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 1881
+    .line 1842
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1$1;,"Lcom/google/common/collect/Multimaps$Keys$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->val$backingEntry:Ljava/util/Map$Entry;
 
@@ -77,7 +77,7 @@
     .end annotation
 
     .prologue
-    .line 1877
+    .line 1838
     .local p0, this:Lcom/google/common/collect/Multimaps$Keys$1$1;,"Lcom/google/common/collect/Multimaps$Keys$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$Keys$1$1;->val$backingEntry:Ljava/util/Map$Entry;
 

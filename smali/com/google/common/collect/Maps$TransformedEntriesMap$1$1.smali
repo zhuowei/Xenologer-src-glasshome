@@ -1,9 +1,6 @@
 .class Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/TransformedIterator;
 .source "Maps.java"
-
-# interfaces
-.implements Lcom/google/common/base/Function;
 
 
 # annotations
@@ -18,8 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/common/base/Function",
+        "Lcom/google/common/collect/TransformedIterator",
         "<",
         "Ljava/util/Map$Entry",
         "<TK;TV1;>;",
@@ -34,41 +30,43 @@
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Maps$TransformedEntriesMap$1;)V
+.method constructor <init>(Lcom/google/common/collect/Maps$TransformedEntriesMap$1;Ljava/util/Iterator;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 1216
+    .line 1537
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;,"Lcom/google/common/collect/Maps$TransformedEntriesMap$1.1;"
+    .local p2, x0:Ljava/util/Iterator;,"Ljava/util/Iterator<+Ljava/util/Map$Entry<TK;TV1;>;>;"
     iput-object p1, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;->this$1:Lcom/google/common/collect/Maps$TransformedEntriesMap$1;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lcom/google/common/collect/TransformedIterator;-><init>(Ljava/util/Iterator;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
+.method bridge synthetic transform(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 1216
+    .line 1537
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;,"Lcom/google/common/collect/Maps$TransformedEntriesMap$1.1;"
     check-cast p1, Ljava/util/Map$Entry;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;->apply(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;->transform(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public apply(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
-    .locals 4
+.method transform(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
+    .locals 1
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -81,34 +79,12 @@
     .end annotation
 
     .prologue
-    .line 1218
+    .line 1541
     .local p0, this:Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;,"Lcom/google/common/collect/Maps$TransformedEntriesMap$1.1;"
     .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV1;>;"
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    new-instance v0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1$1;
 
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;->this$1:Lcom/google/common/collect/Maps$TransformedEntriesMap$1;
-
-    iget-object v1, v1, Lcom/google/common/collect/Maps$TransformedEntriesMap$1;->this$0:Lcom/google/common/collect/Maps$TransformedEntriesMap;
-
-    iget-object v1, v1, Lcom/google/common/collect/Maps$TransformedEntriesMap;->transformer:Lcom/google/common/collect/Maps$EntryTransformer;
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v2
-
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-interface {v1, v2, v3}, Lcom/google/common/collect/Maps$EntryTransformer;->transformEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/google/common/collect/Maps;->immutableEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1$1;-><init>(Lcom/google/common/collect/Maps$TransformedEntriesMap$1$1;Ljava/util/Map$Entry;)V
 
     return-object v0
 .end method

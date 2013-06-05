@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 284
+    .line 298
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,16 +43,16 @@
     .parameter "camera"
 
     .prologue
-    .line 287
+    .line 301
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
 
-    .line 289
+    .line 303
     .local v1, postviewTimeMillis:J
     sget-object v0, Lcom/google/glass/camera/SharedCameraConstants;->POSTVIEW_SIZE:Lcom/google/glass/camera/Size;
 
-    .line 290
+    .line 304
     .local v0, postviewSize:Lcom/google/glass/camera/Size;
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;->this$1:Lcom/google/glass/camera/SharedCameraManager$PictureRequest;
 
@@ -124,7 +124,7 @@
 
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logDebug(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 294
+    .line 308
     new-instance v3, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;
 
     invoke-direct {v3, p0, p1, v0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;-><init>(Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;[BLcom/google/glass/camera/Size;)V
@@ -133,7 +133,7 @@
 
     iget-object v4, v4, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager;->backgroundExecutor:Ljava/util/concurrent/ExecutorService;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->savePostviewExecutor:Ljava/util/concurrent/ExecutorService;
     invoke-static {v4}, Lcom/google/glass/camera/SharedCameraManager;->access$1500(Lcom/google/glass/camera/SharedCameraManager;)Ljava/util/concurrent/ExecutorService;
 
     move-result-object v4
@@ -144,6 +144,6 @@
 
     invoke-virtual {v3, v4, v5}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 324
+    .line 342
     return-void
 .end method

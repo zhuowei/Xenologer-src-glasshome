@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 1180
+    .line 1205
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$1$1;,"Lcom/google/common/collect/Sets$PowerSet$1.1;"
     iput-object p1, p0, Lcom/google/common/collect/Sets$PowerSet$1$1;->this$1:Lcom/google/common/collect/Sets$PowerSet$1;
 
@@ -58,7 +58,7 @@
     .end annotation
 
     .prologue
-    .line 1185
+    .line 1213
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$1$1;,"Lcom/google/common/collect/Sets$PowerSet$1.1;"
     new-instance v0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;
 
@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 1182
+    .line 1208
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$1$1;,"Lcom/google/common/collect/Sets$PowerSet$1.1;"
     iget v0, p0, Lcom/google/common/collect/Sets$PowerSet$1$1;->val$setBits:I
 

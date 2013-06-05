@@ -3,12 +3,12 @@
 .source "Multimaps.java"
 
 # interfaces
-.implements Lcom/google/common/collect/Maps$EntryTransformer;
+.implements Lcom/google/common/base/Function;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->asMap()Ljava/util/Map;
+    value = Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->entryIterator()Ljava/util/Iterator;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,12 +19,12 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/collect/Maps$EntryTransformer",
-        "<TK;",
-        "Ljava/util/Collection",
-        "<TV1;>;",
-        "Ljava/util/Collection",
-        "<TV2;>;>;"
+        "Lcom/google/common/base/Function",
+        "<",
+        "Ljava/util/Map$Entry",
+        "<TK;TV1;>;",
+        "Ljava/util/Map$Entry",
+        "<TK;TV2;>;>;"
     }
 .end annotation
 
@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 1425
+    .line 1494
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.2;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;->this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
 
@@ -50,48 +50,43 @@
 
 
 # virtual methods
-.method public bridge synthetic transformEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 1425
+    .line 1494
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.2;"
-    check-cast p2, Ljava/util/Collection;
+    check-cast p1, Ljava/util/Map$Entry;
 
-    .end local p2
-    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;->transformEntry(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;->apply(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public transformEntry(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
+.method public apply(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
     .locals 1
-    .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TK;",
-            "Ljava/util/Collection",
-            "<TV1;>;)",
-            "Ljava/util/Collection",
-            "<TV2;>;"
+            "(",
+            "Ljava/util/Map$Entry",
+            "<TK;TV1;>;)",
+            "Ljava/util/Map$Entry",
+            "<TK;TV2;>;"
         }
     .end annotation
 
     .prologue
-    .line 1429
+    .line 1497
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.2;"
-    .local p1, key:Ljava/lang/Object;,"TK;"
-    .local p2, value:Ljava/util/Collection;,"Ljava/util/Collection<TV1;>;"
-    iget-object v0, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;->this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
+    .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV1;>;"
+    new-instance v0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2$1;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->transform(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
-
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2$1;-><init>(Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$2;Ljava/util/Map$Entry;)V
 
     return-object v0
 .end method

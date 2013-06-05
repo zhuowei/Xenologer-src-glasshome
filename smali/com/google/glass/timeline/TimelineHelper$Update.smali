@@ -23,7 +23,7 @@
     .locals 0
 
     .prologue
-    .line 170
+    .line 183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .parameter "x0"
 
     .prologue
-    .line 170
+    .line 183
     invoke-direct {p0}, Lcom/google/glass/timeline/TimelineHelper$Update;->execute()V
 
     return-void
@@ -44,14 +44,14 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 200
     invoke-virtual {p0}, Lcom/google/glass/timeline/TimelineHelper$Update;->onExecute()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/timeline/TimelineHelper$Update;->updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 188
+    .line 201
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 196
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineHelper$Update;->updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     return-object v0

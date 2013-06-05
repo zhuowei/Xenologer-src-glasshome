@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcom/google/common/annotations/Beta;
-.end annotation
-
 .annotation build Lcom/google/common/annotations/GwtCompatible;
     serializable = true
 .end annotation
@@ -54,13 +51,13 @@
     .end annotation
 
     .prologue
-    .line 110
+    .line 109
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     .local p1, backingMap:Ljava/util/Map;,"Ljava/util/Map<TR;Ljava/util/Map<TC;TV;>;>;"
     .local p2, factory:Lcom/google/common/collect/HashBasedTable$Factory;,"Lcom/google/common/collect/HashBasedTable$Factory<TC;TV;>;"
     invoke-direct {p0, p1, p2}, Lcom/google/common/collect/StandardTable;-><init>(Ljava/util/Map;Lcom/google/common/base/Supplier;)V
 
-    .line 111
+    .line 110
     return-void
 .end method
 
@@ -81,7 +78,7 @@
     .end annotation
 
     .prologue
-    .line 72
+    .line 75
     new-instance v0, Lcom/google/common/collect/HashBasedTable;
 
     new-instance v1, Ljava/util/HashMap;
@@ -118,7 +115,7 @@
     .end annotation
 
     .prologue
-    .line 87
+    .line 88
     if-ltz p1, :cond_0
 
     const/4 v1, 0x1
@@ -126,7 +123,7 @@
     :goto_0
     invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 88
+    .line 89
     invoke-static {p0}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
     move-result-object v0
@@ -143,7 +140,7 @@
 
     return-object v1
 
-    .line 87
+    .line 88
     .end local v0           #backingMap:Ljava/util/Map;,"Ljava/util/Map<TR;Ljava/util/Map<TC;TV;>;>;"
     :cond_0
     const/4 v1, 0x0
@@ -171,17 +168,17 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 103
     .local p0, table:Lcom/google/common/collect/Table;,"Lcom/google/common/collect/Table<+TR;+TC;+TV;>;"
     invoke-static {}, Lcom/google/common/collect/HashBasedTable;->create()Lcom/google/common/collect/HashBasedTable;
 
     move-result-object v0
 
-    .line 105
+    .line 104
     .local v0, result:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-virtual {v0, p0}, Lcom/google/common/collect/HashBasedTable;->putAll(Lcom/google/common/collect/Table;)V
 
-    .line 106
+    .line 105
     return-object v0
 .end method
 
@@ -191,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->cellSet()Ljava/util/Set;
 
@@ -204,7 +201,7 @@
     .locals 0
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->clear()V
 
@@ -216,7 +213,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/StandardTable;->column(Ljava/lang/Object;)Ljava/util/Map;
 
@@ -229,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->columnKeySet()Ljava/util/Set;
 
@@ -242,7 +239,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->columnMap()Ljava/util/Map;
 
@@ -263,7 +260,7 @@
     .end parameter
 
     .prologue
-    .line 117
+    .line 116
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/StandardTable;->contains(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -297,7 +294,7 @@
     .end parameter
 
     .prologue
-    .line 125
+    .line 126
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/StandardTable;->containsRow(Ljava/lang/Object;)Z
 
@@ -314,7 +311,7 @@
     .end parameter
 
     .prologue
-    .line 129
+    .line 131
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/StandardTable;->containsValue(Ljava/lang/Object;)Z
 
@@ -331,7 +328,7 @@
     .end parameter
 
     .prologue
-    .line 137
+    .line 141
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/StandardTable;->equals(Ljava/lang/Object;)Z
 
@@ -360,7 +357,7 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 136
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/StandardTable;->get(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -373,7 +370,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->hashCode()I
 
@@ -386,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->isEmpty()Z
 
@@ -402,7 +399,7 @@
     .parameter "x2"
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1, p2, p3}, Lcom/google/common/collect/StandardTable;->put(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -416,7 +413,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/StandardTable;->putAll(Lcom/google/common/collect/Table;)V
 
@@ -443,7 +440,7 @@
     .end annotation
 
     .prologue
-    .line 142
+    .line 146
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/StandardTable;->remove(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -457,7 +454,7 @@
     .parameter "x0"
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/StandardTable;->row(Ljava/lang/Object;)Ljava/util/Map;
 
@@ -470,7 +467,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->rowKeySet()Ljava/util/Set;
 
@@ -483,7 +480,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->rowMap()Ljava/util/Map;
 
@@ -496,7 +493,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->size()I
 
@@ -509,7 +506,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->toString()Ljava/lang/String;
 
@@ -522,7 +519,7 @@
     .locals 1
 
     .prologue
-    .line 52
+    .line 55
     .local p0, this:Lcom/google/common/collect/HashBasedTable;,"Lcom/google/common/collect/HashBasedTable<TR;TC;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/StandardTable;->values()Ljava/util/Collection;
 

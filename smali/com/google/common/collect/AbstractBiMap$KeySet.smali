@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 168
+    .line 187
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractBiMap$KeySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
@@ -46,7 +46,7 @@
     .parameter "x1"
 
     .prologue
-    .line 168
+    .line 187
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractBiMap$KeySet;-><init>(Lcom/google/common/collect/AbstractBiMap;)V
 
@@ -59,13 +59,13 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 195
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$KeySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
     invoke-virtual {v0}, Lcom/google/common/collect/AbstractBiMap;->clear()V
 
-    .line 175
+    .line 196
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 187
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$KeySet;->delegate()Ljava/util/Set;
 
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 187
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     invoke-virtual {p0}, Lcom/google/common/collect/AbstractBiMap$KeySet;->delegate()Ljava/util/Set;
 
@@ -106,7 +106,7 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 190
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$KeySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
@@ -123,7 +123,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -133,30 +133,23 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 219
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
-    iget-object v1, p0, Lcom/google/common/collect/AbstractBiMap$KeySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
+    iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$KeySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
-    #getter for: Lcom/google/common/collect/AbstractBiMap;->delegate:Ljava/util/Map;
-    invoke-static {v1}, Lcom/google/common/collect/AbstractBiMap;->access$200(Lcom/google/common/collect/AbstractBiMap;)Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Lcom/google/common/collect/AbstractBiMap;->entrySet()Ljava/util/Set;
 
     move-result-object v0
 
-    .line 195
-    .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/AbstractBiMap$KeySet$1;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/AbstractBiMap$KeySet$1;-><init>(Lcom/google/common/collect/AbstractBiMap$KeySet;Ljava/util/Iterator;)V
+    move-result-object v0
 
-    return-object v1
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->keyIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public remove(Ljava/lang/Object;)Z
@@ -164,7 +157,7 @@
     .parameter "key"
 
     .prologue
-    .line 178
+    .line 200
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap$KeySet;->contains(Ljava/lang/Object;)Z
 
@@ -172,21 +165,21 @@
 
     if-nez v0, :cond_0
 
-    .line 179
+    .line 201
     const/4 v0, 0x0
 
-    .line 182
+    .line 204
     :goto_0
     return v0
 
-    .line 181
+    .line 203
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/AbstractBiMap$KeySet;->this$0:Lcom/google/common/collect/AbstractBiMap;
 
     #calls: Lcom/google/common/collect/AbstractBiMap;->removeFromBothMaps(Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v0, p1}, Lcom/google/common/collect/AbstractBiMap;->access$300(Lcom/google/common/collect/AbstractBiMap;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 182
+    .line 204
     const/4 v0, 0x1
 
     goto :goto_0
@@ -204,7 +197,7 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 209
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     .local p1, keysToRemove:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap$KeySet;->standardRemoveAll(Ljava/util/Collection;)Z
@@ -226,7 +219,7 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 214
     .local p0, this:Lcom/google/common/collect/AbstractBiMap$KeySet;,"Lcom/google/common/collect/AbstractBiMap<TK;TV;>.KeySet;"
     .local p1, keysToRetain:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/AbstractBiMap$KeySet;->standardRetainAll(Ljava/util/Collection;)Z

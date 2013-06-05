@@ -54,19 +54,19 @@
     .end annotation
 
     .prologue
-    .line 620
+    .line 630
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     .local p1, delegate:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Collection<TV;>;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
-    .line 621
+    .line 631
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableCollection(Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->delegate:Ljava/util/Collection;
 
-    .line 622
+    .line 632
     return-void
 .end method
 
@@ -77,7 +77,7 @@
     .parameter "o"
 
     .prologue
-    .line 650
+    .line 666
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->standardContains(Ljava/lang/Object;)Z
 
@@ -98,7 +98,7 @@
     .end annotation
 
     .prologue
-    .line 653
+    .line 671
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->standardContainsAll(Ljava/util/Collection;)Z
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 617
+    .line 627
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->delegate()Ljava/util/Collection;
 
@@ -134,7 +134,7 @@
     .end annotation
 
     .prologue
-    .line 624
+    .line 636
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->delegate:Ljava/util/Collection;
 
@@ -154,7 +154,7 @@
     .end annotation
 
     .prologue
-    .line 627
+    .line 641
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->delegate:Ljava/util/Collection;
 
@@ -162,7 +162,7 @@
 
     move-result-object v0
 
-    .line 628
+    .line 642
     .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Collection<TV;>;>;"
     new-instance v1, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues$1;
 
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 644
+    .line 656
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->standardToArray()[Ljava/lang/Object;
 
@@ -196,7 +196,7 @@
     .end annotation
 
     .prologue
-    .line 647
+    .line 661
     .local p0, this:Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;,"Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues<TV;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/Multimaps$UnmodifiableAsMapValues;->standardToArray([Ljava/lang/Object;)[Ljava/lang/Object;

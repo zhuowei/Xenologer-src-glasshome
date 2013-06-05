@@ -24,15 +24,15 @@
     .parameter "prototype"
 
     .prologue
-    .line 84
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 85
+    .line 88
     iget-object v0, p1, Lcom/google/common/base/Joiner;->separator:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/google/common/base/Joiner;->separator:Ljava/lang/String;
 
-    .line 86
+    .line 89
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "x1"
 
     .prologue
-    .line 63
+    .line 66
     invoke-direct {p0, p1}, Lcom/google/common/base/Joiner;-><init>(Lcom/google/common/base/Joiner;)V
 
     return-void
@@ -53,10 +53,10 @@
     .parameter "separator"
 
     .prologue
-    .line 80
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 81
+    .line 84
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Joiner;->separator:Ljava/lang/String;
 
-    .line 82
+    .line 85
     return-void
 .end method
 
@@ -74,7 +74,7 @@
     .parameter "x0"
 
     .prologue
-    .line 63
+    .line 66
     iget-object v0, p0, Lcom/google/common/base/Joiner;->separator:Ljava/lang/String;
 
     return-object v0
@@ -101,10 +101,10 @@
     .end annotation
 
     .prologue
-    .line 538
+    .line 541
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 539
+    .line 542
     new-instance v0, Lcom/google/common/base/Joiner$3;
 
     invoke-direct {v0, p2, p0, p1}, Lcom/google/common/base/Joiner$3;-><init>([Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
@@ -117,7 +117,7 @@
     .parameter "separator"
 
     .prologue
-    .line 75
+    .line 78
     new-instance v0, Lcom/google/common/base/Joiner;
 
     invoke-static {p0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
@@ -134,7 +134,7 @@
     .parameter "separator"
 
     .prologue
-    .line 68
+    .line 71
     new-instance v0, Lcom/google/common/base/Joiner;
 
     invoke-direct {v0, p0}, Lcom/google/common/base/Joiner;-><init>(Ljava/lang/String;)V
@@ -165,7 +165,7 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 111
     .local p1, appendable:Ljava/lang/Appendable;,"TA;"
     .local p2, parts:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
@@ -210,7 +210,7 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 103
     .local p1, appendable:Ljava/lang/Appendable;,"TA;"
     .local p2, parts:Ljava/lang/Object;,"TI;"
     check-cast p2, Ljava/util/Iterator;
@@ -257,7 +257,7 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 145
     .local p1, appendable:Ljava/lang/Appendable;,"TA;"
     invoke-static {p2, p3, p4}, Lcom/google/common/base/Joiner;->iterable(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Iterable;
 
@@ -274,9 +274,6 @@
     .locals 1
     .parameter
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<A::",
@@ -294,19 +291,19 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 121
     .local p1, appendable:Ljava/lang/Appendable;,"TA;"
     .local p2, parts:Ljava/util/Iterator;,"Ljava/util/Iterator<*>;"
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 120
+    .line 122
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 121
+    .line 123
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -317,7 +314,7 @@
 
     invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 122
+    .line 124
     :goto_0
     invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -325,12 +322,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 123
+    .line 125
     iget-object v0, p0, Lcom/google/common/base/Joiner;->separator:Ljava/lang/String;
 
     invoke-interface {p1, v0}, Ljava/lang/Appendable;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
 
-    .line 124
+    .line 126
     invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
@@ -343,7 +340,7 @@
 
     goto :goto_0
 
-    .line 127
+    .line 129
     :cond_0
     return-object p1
 .end method
@@ -369,7 +366,7 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 137
     .local p1, appendable:Ljava/lang/Appendable;,"TA;"
     invoke-static {p2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
@@ -397,7 +394,7 @@
     .end annotation
 
     .prologue
-    .line 168
+    .line 169
     .local p2, parts:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -436,7 +433,7 @@
     .end annotation
 
     .prologue
-    .line 159
+    .line 160
     .local p2, parts:Ljava/lang/Object;,"TI;"
     check-cast p2, Ljava/util/Iterator;
 
@@ -480,9 +477,6 @@
     .locals 2
     .parameter "builder"
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -610,7 +604,7 @@
     .end parameter
 
     .prologue
-    .line 253
+    .line 252
     invoke-static {p1, p2, p3}, Lcom/google/common/base/Joiner;->iterable(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Iterable;
 
     move-result-object v0
@@ -625,9 +619,6 @@
 .method public final join(Ljava/util/Iterator;)Ljava/lang/String;
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -638,7 +629,7 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 236
     .local p1, parts:Ljava/util/Iterator;,"Ljava/util/Iterator<*>;"
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -660,7 +651,7 @@
     .parameter "parts"
 
     .prologue
-    .line 245
+    .line 244
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -678,7 +669,7 @@
     .end annotation
 
     .prologue
-    .line 285
+    .line 287
     new-instance v0, Lcom/google/common/base/Joiner$2;
 
     invoke-direct {v0, p0, p0}, Lcom/google/common/base/Joiner$2;-><init>(Lcom/google/common/base/Joiner;Lcom/google/common/base/Joiner;)V
@@ -691,10 +682,10 @@
     .parameter "part"
 
     .prologue
-    .line 532
+    .line 535
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 533
+    .line 536
     instance-of v0, p1, Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_0
@@ -721,10 +712,10 @@
     .end annotation
 
     .prologue
-    .line 262
+    .line 261
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 263
+    .line 262
     new-instance v0, Lcom/google/common/base/Joiner$1;
 
     invoke-direct {v0, p0, p0, p1}, Lcom/google/common/base/Joiner$1;-><init>(Lcom/google/common/base/Joiner;Lcom/google/common/base/Joiner;Ljava/lang/String;)V
@@ -739,7 +730,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 329
     new-instance v0, Lcom/google/common/base/Joiner$MapJoiner;
 
     const/4 v1, 0x0

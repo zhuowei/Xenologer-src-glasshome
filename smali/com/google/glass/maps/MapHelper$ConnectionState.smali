@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 119
+    .line 122
     new-instance v0, Lcom/google/glass/maps/MapHelper$ConnectionState;
 
     const-string v1, "DISCONNECTED"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/glass/maps/MapHelper$ConnectionState;->DISCONNECTED:Lcom/google/glass/maps/MapHelper$ConnectionState;
 
-    .line 120
+    .line 123
     new-instance v0, Lcom/google/glass/maps/MapHelper$ConnectionState;
 
     const-string v1, "CONNECTING"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/glass/maps/MapHelper$ConnectionState;->CONNECTING:Lcom/google/glass/maps/MapHelper$ConnectionState;
 
-    .line 121
+    .line 124
     new-instance v0, Lcom/google/glass/maps/MapHelper$ConnectionState;
 
     const-string v1, "CONNECTED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/glass/maps/MapHelper$ConnectionState;->CONNECTED:Lcom/google/glass/maps/MapHelper$ConnectionState;
 
-    .line 118
+    .line 121
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/maps/MapHelper$ConnectionState;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 121
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 118
+    .line 121
     const-class v0, Lcom/google/glass/maps/MapHelper$ConnectionState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 121
     sget-object v0, Lcom/google/glass/maps/MapHelper$ConnectionState;->$VALUES:[Lcom/google/glass/maps/MapHelper$ConnectionState;
 
     invoke-virtual {v0}, [Lcom/google/glass/maps/MapHelper$ConnectionState;->clone()Ljava/lang/Object;

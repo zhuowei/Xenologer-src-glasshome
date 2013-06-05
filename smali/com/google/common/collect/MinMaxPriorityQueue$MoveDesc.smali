@@ -53,18 +53,18 @@
     .end annotation
 
     .prologue
-    .line 438
+    .line 439
     .local p0, this:Lcom/google/common/collect/MinMaxPriorityQueue$MoveDesc;,"Lcom/google/common/collect/MinMaxPriorityQueue$MoveDesc<TE;>;"
     .local p1, toTrickle:Ljava/lang/Object;,"TE;"
     .local p2, replaced:Ljava/lang/Object;,"TE;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 439
+    .line 440
     iput-object p1, p0, Lcom/google/common/collect/MinMaxPriorityQueue$MoveDesc;->toTrickle:Ljava/lang/Object;
 
-    .line 440
+    .line 441
     iput-object p2, p0, Lcom/google/common/collect/MinMaxPriorityQueue$MoveDesc;->replaced:Ljava/lang/Object;
 
-    .line 441
+    .line 442
     return-void
 .end method

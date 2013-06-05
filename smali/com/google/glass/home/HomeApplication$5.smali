@@ -30,19 +30,19 @@
     .parameter
 
     .prologue
-    .line 179
+    .line 193
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$5;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
 
-    .line 180
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$600()J
+    .line 194
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$400()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/glass/home/HomeApplication$5;->retryDelayMs:J
 
-    .line 183
+    .line 197
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/HomeApplication$5;->handler:Landroid/os/Handler;
 
-    .line 186
+    .line 200
     new-instance v0, Lcom/google/glass/home/HomeApplication$5$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$5$1;-><init>(Lcom/google/glass/home/HomeApplication$5;)V
@@ -69,12 +69,12 @@
     .locals 2
 
     .prologue
-    .line 216
+    .line 230
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
@@ -101,7 +101,7 @@
     .parameter "intent"
 
     .prologue
-    .line 195
+    .line 209
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$5;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -126,7 +126,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
+    .line 210
     const-string v0, "retry_gcm_register"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -139,10 +139,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 199
+    .line 213
     iget-wide v0, p0, Lcom/google/glass/home/HomeApplication$5;->retryDelayMs:J
 
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$800()J
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$600()J
 
     move-result-wide v2
 
@@ -150,7 +150,7 @@
 
     if-lez v0, :cond_1
 
-    .line 200
+    .line 214
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$5;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -165,7 +165,7 @@
 
     move-result-object v1
 
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$800()J
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$600()J
 
     move-result-wide v2
 
@@ -185,12 +185,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 226
     :cond_0
     :goto_0
     return-void
 
-    .line 206
+    .line 220
     :cond_1
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$5;->handler:Landroid/os/Handler;
 
@@ -198,7 +198,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 207
+    .line 221
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$5;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$5;->registerGcmRunnable:Ljava/lang/Runnable;
@@ -207,7 +207,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 210
+    .line 224
     iget-wide v0, p0, Lcom/google/glass/home/HomeApplication$5;->retryDelayMs:J
 
     const-wide/16 v2, 0x2

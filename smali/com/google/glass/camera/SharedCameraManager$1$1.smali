@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 148
+    .line 159
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$1$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$1;
 
     iget-object v0, p1, Lcom/google/glass/camera/SharedCameraManager$1;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -44,7 +44,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 151
+    .line 162
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$1$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$1;
 
     iget-object v0, v0, Lcom/google/glass/camera/SharedCameraManager$1;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -52,7 +52,7 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->stopPreviewSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraManager;->access$100(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
-    .line 153
+    .line 164
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$1$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$1;
 
     iget-object v0, v0, Lcom/google/glass/camera/SharedCameraManager$1;->this$0:Lcom/google/glass/camera/SharedCameraManager;
@@ -64,16 +64,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 154
+    .line 165
     const-string v0, "Not releasing the camera after prepare camera timed out, because video is being recorded."
 
     invoke-static {v1, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 160
+    .line 171
     :goto_0
     return-void
 
-    .line 158
+    .line 169
     :cond_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$1$1;->this$1:Lcom/google/glass/camera/SharedCameraManager$1;
 

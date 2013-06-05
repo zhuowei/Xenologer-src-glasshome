@@ -63,18 +63,18 @@
     .end annotation
 
     .prologue
-    .line 299
+    .line 227
     .local p0, this:Lcom/google/common/collect/Multisets$ImmutableEntry;,"Lcom/google/common/collect/Multisets$ImmutableEntry<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-direct {p0}, Lcom/google/common/collect/Multisets$AbstractEntry;-><init>()V
 
-    .line 300
+    .line 228
     iput-object p1, p0, Lcom/google/common/collect/Multisets$ImmutableEntry;->element:Ljava/lang/Object;
 
-    .line 301
+    .line 229
     iput p2, p0, Lcom/google/common/collect/Multisets$ImmutableEntry;->count:I
 
-    .line 302
+    .line 230
     if-ltz p2, :cond_0
 
     const/4 v0, 0x1
@@ -82,10 +82,10 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 303
+    .line 231
     return-void
 
-    .line 302
+    .line 230
     :cond_0
     const/4 v0, 0x0
 
@@ -98,7 +98,7 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 239
     .local p0, this:Lcom/google/common/collect/Multisets$ImmutableEntry;,"Lcom/google/common/collect/Multisets$ImmutableEntry<TE;>;"
     iget v0, p0, Lcom/google/common/collect/Multisets$ImmutableEntry;->count:I
 
@@ -117,7 +117,7 @@
     .end annotation
 
     .prologue
-    .line 307
+    .line 235
     .local p0, this:Lcom/google/common/collect/Multisets$ImmutableEntry;,"Lcom/google/common/collect/Multisets$ImmutableEntry<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multisets$ImmutableEntry;->element:Ljava/lang/Object;
 

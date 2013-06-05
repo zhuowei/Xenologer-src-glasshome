@@ -40,18 +40,18 @@
     .locals 1
 
     .prologue
-    .line 35043
+    .line 35051
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 35161
+    .line 35169
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35044
+    .line 35052
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->maybeForceBuilderInitialization()V
 
-    .line 35045
+    .line 35053
     return-void
 .end method
 
@@ -60,18 +60,18 @@
     .parameter "parent"
 
     .prologue
-    .line 35049
+    .line 35057
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 35161
+    .line 35169
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35050
+    .line 35058
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->maybeForceBuilderInitialization()V
 
-    .line 35051
+    .line 35059
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .parameter "x1"
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-direct {p0, p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->create()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 35057
+    .line 35065
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;-><init>()V
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 35032
+    .line 35040
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$25800()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -127,12 +127,12 @@
     .locals 1
 
     .prologue
-    .line 35053
+    .line 35061
     sget-boolean v0, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
 
     if-eqz v0, :cond_0
 
-    .line 35055
+    .line 35063
     :cond_0
     return-void
 .end method
@@ -143,12 +143,12 @@
     .locals 2
 
     .prologue
-    .line 35083
+    .line 35091
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
 
-    .line 35084
+    .line 35092
     .local v0, result:Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->isInitialized()Z
 
@@ -156,14 +156,14 @@
 
     if-nez v1, :cond_0
 
-    .line 35085
+    .line 35093
     invoke-static {v0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 35087
+    .line 35095
     :cond_0
     return-object v0
 .end method
@@ -172,7 +172,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->build()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->build()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -196,22 +196,22 @@
     .locals 5
 
     .prologue
-    .line 35091
+    .line 35099
     new-instance v1, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/protobuf/DescriptorProtos$1;)V
 
-    .line 35092
+    .line 35100
     .local v1, result:Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35093
+    .line 35101
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 35094
+    .line 35102
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -219,41 +219,41 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 35095
+    .line 35103
     or-int/lit8 v2, v2, 0x1
 
-    .line 35097
+    .line 35105
     :cond_0
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->namePart_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->access$26402(Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 35098
+    .line 35106
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 35099
+    .line 35107
     or-int/lit8 v2, v2, 0x2
 
-    .line 35101
+    .line 35109
     :cond_1
     iget-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->isExtension_:Z
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->isExtension_:Z
     invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->access$26502(Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;Z)Z
 
-    .line 35102
+    .line 35110
     #setter for: Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->access$26602(Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;I)I
 
-    .line 35103
+    .line 35111
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onBuilt()V
 
-    .line 35104
+    .line 35112
     return-object v1
 .end method
 
@@ -261,7 +261,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -273,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -285,7 +285,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -297,34 +297,34 @@
     .locals 1
 
     .prologue
-    .line 35061
+    .line 35069
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 35062
+    .line 35070
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35063
+    .line 35071
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35064
+    .line 35072
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->isExtension_:Z
 
-    .line 35065
+    .line 35073
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35066
+    .line 35074
     return-object p0
 .end method
 
@@ -332,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -344,7 +344,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -368,22 +368,22 @@
     .locals 1
 
     .prologue
-    .line 35260
+    .line 35268
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35261
+    .line 35269
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->isExtension_:Z
 
-    .line 35262
+    .line 35270
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onChanged()V
 
-    .line 35263
+    .line 35271
     return-object p0
 .end method
 
@@ -391,14 +391,14 @@
     .locals 1
 
     .prologue
-    .line 35215
+    .line 35223
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35216
+    .line 35224
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -409,10 +409,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35217
+    .line 35225
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onChanged()V
 
-    .line 35218
+    .line 35226
     return-object p0
 .end method
 
@@ -420,7 +420,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -432,7 +432,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -444,7 +444,7 @@
     .locals 2
 
     .prologue
-    .line 35070
+    .line 35078
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->create()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -464,7 +464,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -476,7 +476,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -488,7 +488,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -505,7 +505,7 @@
     .end annotation
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -517,7 +517,7 @@
     .locals 1
 
     .prologue
-    .line 35079
+    .line 35087
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -529,7 +529,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -541,7 +541,7 @@
     .locals 1
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
@@ -553,7 +553,7 @@
     .locals 1
 
     .prologue
-    .line 35075
+    .line 35083
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$25800()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -565,7 +565,7 @@
     .locals 1
 
     .prologue
-    .line 35245
+    .line 35253
     iget-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->isExtension_:Z
 
     return v0
@@ -575,16 +575,16 @@
     .locals 3
 
     .prologue
-    .line 35172
+    .line 35180
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35173
+    .line 35181
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 35174
+    .line 35182
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -592,11 +592,11 @@
 
     move-result-object v1
 
-    .line 35176
+    .line 35184
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35179
+    .line 35187
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -615,16 +615,16 @@
     .locals 3
 
     .prologue
-    .line 35187
+    .line 35195
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35188
+    .line 35196
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 35189
+    .line 35197
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -632,11 +632,11 @@
 
     move-result-object v0
 
-    .line 35192
+    .line 35200
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35195
+    .line 35203
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -655,7 +655,7 @@
     .locals 2
 
     .prologue
-    .line 35239
+    .line 35247
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -681,7 +681,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 35166
+    .line 35174
     iget v1, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -701,7 +701,7 @@
     .locals 3
 
     .prologue
-    .line 35037
+    .line 35045
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$25900()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -723,19 +723,19 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 35131
+    .line 35139
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->hasNamePart()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 35139
+    .line 35147
     :cond_0
     :goto_0
     return v0
 
-    .line 35135
+    .line 35143
     :cond_1
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->hasIsExtension()Z
 
@@ -743,7 +743,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 35139
+    .line 35147
     const/4 v0, 0x1
 
     goto :goto_0
@@ -760,7 +760,7 @@
     .end annotation
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -773,7 +773,7 @@
     .parameter "x0"
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -792,7 +792,7 @@
     .end annotation
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -811,10 +811,10 @@
     .end annotation
 
     .prologue
-    .line 35146
+    .line 35154
     const/4 v2, 0x0
 
-    .line 35148
+    .line 35156
     .local v2, parsedMessage:Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
     :try_start_0
     sget-object v3, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->PARSER:Lcom/google/protobuf/Parser;
@@ -832,21 +832,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 35153
+    .line 35161
     if-eqz v2, :cond_0
 
-    .line 35154
+    .line 35162
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
-    .line 35157
+    .line 35165
     :cond_0
     return-object p0
 
-    .line 35149
+    .line 35157
     :catch_0
     move-exception v1
 
-    .line 35150
+    .line 35158
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -859,19 +859,19 @@
 
     move-object v2, v0
 
-    .line 35151
+    .line 35159
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 35153
+    .line 35161
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 35154
+    .line 35162
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     :cond_1
@@ -883,18 +883,18 @@
     .parameter "other"
 
     .prologue
-    .line 35117
+    .line 35125
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 35127
+    .line 35135
     :goto_0
     return-object p0
 
-    .line 35118
+    .line 35126
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->hasNamePart()Z
 
@@ -902,14 +902,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 35119
+    .line 35127
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35120
+    .line 35128
     #getter for: Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->namePart_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->access$26400(Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;)Ljava/lang/Object;
 
@@ -917,10 +917,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35121
+    .line 35129
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onChanged()V
 
-    .line 35123
+    .line 35131
     :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->hasIsExtension()Z
 
@@ -928,14 +928,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 35124
+    .line 35132
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->getIsExtension()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->setIsExtension(Z)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
-    .line 35126
+    .line 35134
     :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -951,12 +951,12 @@
     .parameter "other"
 
     .prologue
-    .line 35108
+    .line 35116
     instance-of v0, p1, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     if-eqz v0, :cond_0
 
-    .line 35109
+    .line 35117
     check-cast p1, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     .end local p1
@@ -964,12 +964,12 @@
 
     move-result-object p0
 
-    .line 35112
+    .line 35120
     .end local p0
     :goto_0
     return-object p0
 
-    .line 35111
+    .line 35119
     .restart local p0
     .restart local p1
     :cond_0
@@ -989,7 +989,7 @@
     .end annotation
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -1002,7 +1002,7 @@
     .parameter "x0"
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -1021,7 +1021,7 @@
     .end annotation
 
     .prologue
-    .line 35026
+    .line 35034
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;
 
     move-result-object v0
@@ -1034,20 +1034,20 @@
     .parameter "value"
 
     .prologue
-    .line 35251
+    .line 35259
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35252
+    .line 35260
     iput-boolean p1, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->isExtension_:Z
 
-    .line 35253
+    .line 35261
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onChanged()V
 
-    .line 35254
+    .line 35262
     return-object p0
 .end method
 
@@ -1056,17 +1056,17 @@
     .parameter "value"
 
     .prologue
-    .line 35203
+    .line 35211
     if-nez p1, :cond_0
 
-    .line 35204
+    .line 35212
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 35206
+    .line 35214
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
@@ -1074,13 +1074,13 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35207
+    .line 35215
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35208
+    .line 35216
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onChanged()V
 
-    .line 35209
+    .line 35217
     return-object p0
 .end method
 
@@ -1089,17 +1089,17 @@
     .parameter "value"
 
     .prologue
-    .line 35225
+    .line 35233
     if-nez p1, :cond_0
 
-    .line 35226
+    .line 35234
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 35228
+    .line 35236
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
@@ -1107,12 +1107,12 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->bitField0_:I
 
-    .line 35229
+    .line 35237
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->namePart_:Ljava/lang/Object;
 
-    .line 35230
+    .line 35238
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$Builder;->onChanged()V
 
-    .line 35231
+    .line 35239
     return-object p0
 .end method

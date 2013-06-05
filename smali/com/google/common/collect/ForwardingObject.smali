@@ -28,7 +28,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 73
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingObject;->delegate()Ljava/lang/Object;
 
     move-result-object v0

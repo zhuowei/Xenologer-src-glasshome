@@ -21,7 +21,7 @@
         "Ljava/lang/Object;",
         "Lcom/google/common/base/Supplier",
         "<",
-        "Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;",
+        "Lcom/google/common/cache/AbstractCache$StatsCounter;",
         ">;"
     }
 .end annotation
@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 167
+    .line 178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,11 +40,11 @@
 
 
 # virtual methods
-.method public get()Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;
+.method public get()Lcom/google/common/cache/AbstractCache$StatsCounter;
     .locals 1
 
     .prologue
-    .line 170
+    .line 181
     new-instance v0, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;
 
     invoke-direct {v0}, Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;-><init>()V
@@ -56,8 +56,8 @@
     .locals 1
 
     .prologue
-    .line 167
-    invoke-virtual {p0}, Lcom/google/common/cache/CacheBuilder$2;->get()Lcom/google/common/cache/AbstractCache$SimpleStatsCounter;
+    .line 178
+    invoke-virtual {p0}, Lcom/google/common/cache/CacheBuilder$2;->get()Lcom/google/common/cache/AbstractCache$StatsCounter;
 
     move-result-object v0
 

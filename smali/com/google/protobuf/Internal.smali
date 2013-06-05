@@ -260,6 +260,7 @@
 
     add-int v1, v3, v4
 
+    .line 234
     goto :goto_0
 
     .line 235
@@ -329,6 +330,7 @@
 
     add-int v1, v3, v4
 
+    .line 210
     goto :goto_0
 
     .line 211

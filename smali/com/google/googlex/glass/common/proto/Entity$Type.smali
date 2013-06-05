@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 222
+    .line 238
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     const-string v1, "GROUP"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->GROUP:Lcom/google/googlex/glass/common/proto/Entity$Type;
 
-    .line 230
+    .line 246
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     const-string v1, "INDIVIDUAL"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->INDIVIDUAL:Lcom/google/googlex/glass/common/proto/Entity$Type;
 
-    .line 213
+    .line 229
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/Entity$Type;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->$VALUES:[Lcom/google/googlex/glass/common/proto/Entity$Type;
 
-    .line 266
+    .line 282
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Type$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Entity$Type$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 286
+    .line 302
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Type;->values()[Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 300
+    .line 316
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 301
+    .line 317
     iput p3, p0, Lcom/google/googlex/glass/common/proto/Entity$Type;->index:I
 
-    .line 302
+    .line 318
     iput p4, p0, Lcom/google/googlex/glass/common/proto/Entity$Type;->value:I
 
-    .line 303
+    .line 319
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 283
+    .line 299
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 263
+    .line 279
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 254
+    .line 270
     packed-switch p0, :pswitch_data_0
 
-    .line 257
+    .line 273
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 255
+    .line 271
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->GROUP:Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     goto :goto_0
 
-    .line 256
+    .line 272
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->INDIVIDUAL:Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     goto :goto_0
 
-    .line 254
+    .line 270
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 290
+    .line 306
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 291
+    .line 307
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 294
+    .line 310
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->VALUES:[Lcom/google/googlex/glass/common/proto/Entity$Type;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 213
+    .line 229
     const-class v0, Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 229
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Type;->$VALUES:[Lcom/google/googlex/glass/common/proto/Entity$Type;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/Entity$Type;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 279
+    .line 295
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Type;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 251
+    .line 267
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Type;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 275
+    .line 291
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Type;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

@@ -3,12 +3,12 @@
 .source "CharStreams.java"
 
 # interfaces
-.implements Lcom/google/common/io/InputSupplier;
+.implements Lcom/google/common/io/OutputSupplier;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/CharStreams;->join(Ljava/lang/Iterable;)Lcom/google/common/io/InputSupplier;
+    value = Lcom/google/common/io/CharStreams;->asOutputSupplier(Lcom/google/common/io/CharSink;)Lcom/google/common/io/OutputSupplier;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,26 +19,24 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/io/InputSupplier",
-        "<",
-        "Ljava/io/Reader;",
-        ">;"
+        "Lcom/google/common/io/OutputSupplier",
+        "<TW;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$suppliers:Ljava/lang/Iterable;
+.field final synthetic val$sink:Lcom/google/common/io/CharSink;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Iterable;)V
+.method constructor <init>(Lcom/google/common/io/CharSink;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 386
-    iput-object p1, p0, Lcom/google/common/io/CharStreams$4;->val$suppliers:Ljava/lang/Iterable;
+    .line 508
+    iput-object p1, p0, Lcom/google/common/io/CharStreams$4;->val$sink:Lcom/google/common/io/CharSink;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,8 +45,14 @@
 
 
 # virtual methods
-.method public getInput()Ljava/io/Reader;
-    .locals 2
+.method public getOutput()Ljava/io/Writer;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TW;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -56,21 +60,17 @@
     .end annotation
 
     .prologue
-    .line 388
-    new-instance v0, Lcom/google/common/io/MultiReader;
+    .line 511
+    iget-object v0, p0, Lcom/google/common/io/CharStreams$4;->val$sink:Lcom/google/common/io/CharSink;
 
-    iget-object v1, p0, Lcom/google/common/io/CharStreams$4;->val$suppliers:Ljava/lang/Iterable;
+    invoke-virtual {v0}, Lcom/google/common/io/CharSink;->openStream()Ljava/io/Writer;
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/common/io/MultiReader;-><init>(Ljava/util/Iterator;)V
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic getInput()Ljava/lang/Object;
+.method public bridge synthetic getOutput()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -79,8 +79,8 @@
     .end annotation
 
     .prologue
-    .line 386
-    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$4;->getInput()Ljava/io/Reader;
+    .line 508
+    invoke-virtual {p0}, Lcom/google/common/io/CharStreams$4;->getOutput()Ljava/io/Writer;
 
     move-result-object v0
 

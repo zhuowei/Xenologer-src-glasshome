@@ -3,12 +3,12 @@
 .source "ByteStreams.java"
 
 # interfaces
-.implements Lcom/google/common/io/InputSupplier;
+.implements Lcom/google/common/io/OutputSupplier;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/ByteStreams;->join(Ljava/lang/Iterable;)Lcom/google/common/io/InputSupplier;
+    value = Lcom/google/common/io/ByteStreams;->asOutputSupplier(Lcom/google/common/io/ByteSink;)Lcom/google/common/io/OutputSupplier;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,26 +19,24 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/io/InputSupplier",
-        "<",
-        "Ljava/io/InputStream;",
-        ">;"
+        "Lcom/google/common/io/OutputSupplier",
+        "<TS;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$suppliers:Ljava/lang/Iterable;
+.field final synthetic val$sink:Lcom/google/common/io/ByteSink;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/Iterable;)V
+.method constructor <init>(Lcom/google/common/io/ByteSink;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 866
-    iput-object p1, p0, Lcom/google/common/io/ByteStreams$5;->val$suppliers:Ljava/lang/Iterable;
+    .line 967
+    iput-object p1, p0, Lcom/google/common/io/ByteStreams$5;->val$sink:Lcom/google/common/io/ByteSink;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,8 +45,14 @@
 
 
 # virtual methods
-.method public getInput()Ljava/io/InputStream;
-    .locals 2
+.method public getOutput()Ljava/io/OutputStream;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TS;"
+        }
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -56,21 +60,17 @@
     .end annotation
 
     .prologue
-    .line 868
-    new-instance v0, Lcom/google/common/io/MultiInputStream;
+    .line 971
+    iget-object v0, p0, Lcom/google/common/io/ByteStreams$5;->val$sink:Lcom/google/common/io/ByteSink;
 
-    iget-object v1, p0, Lcom/google/common/io/ByteStreams$5;->val$suppliers:Ljava/lang/Iterable;
+    invoke-virtual {v0}, Lcom/google/common/io/ByteSink;->openStream()Ljava/io/OutputStream;
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/google/common/io/MultiInputStream;-><init>(Ljava/util/Iterator;)V
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic getInput()Ljava/lang/Object;
+.method public bridge synthetic getOutput()Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -79,8 +79,8 @@
     .end annotation
 
     .prologue
-    .line 866
-    invoke-virtual {p0}, Lcom/google/common/io/ByteStreams$5;->getInput()Ljava/io/InputStream;
+    .line 967
+    invoke-virtual {p0}, Lcom/google/common/io/ByteStreams$5;->getOutput()Ljava/io/OutputStream;
 
     move-result-object v0
 

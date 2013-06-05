@@ -64,21 +64,21 @@
     .end annotation
 
     .prologue
-    .line 1291
+    .line 1303
     .local p0, this:Lcom/google/common/collect/Iterators$MergingIterator;,"Lcom/google/common/collect/Iterators$MergingIterator<TT;>;"
     .local p1, iterators:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Ljava/util/Iterator<+TT;>;>;"
     .local p2, itemComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/AbstractIterator;-><init>()V
 
-    .line 1292
+    .line 1304
     iput-object p2, p0, Lcom/google/common/collect/Iterators$MergingIterator;->comparator:Ljava/util/Comparator;
 
-    .line 1296
+    .line 1308
     new-instance v0, Lcom/google/common/collect/Iterators$MergingIterator$1;
 
     invoke-direct {v0, p0}, Lcom/google/common/collect/Iterators$MergingIterator$1;-><init>(Lcom/google/common/collect/Iterators$MergingIterator;)V
 
-    .line 1304
+    .line 1315
     .local v0, heapComparator:Ljava/util/Comparator;,"Ljava/util/Comparator<Lcom/google/common/collect/PeekingIterator<TT;>;>;"
     new-instance v3, Ljava/util/PriorityQueue;
 
@@ -88,7 +88,7 @@
 
     iput-object v3, p0, Lcom/google/common/collect/Iterators$MergingIterator;->queue:Ljava/util/Queue;
 
-    .line 1306
+    .line 1317
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -108,7 +108,7 @@
 
     check-cast v2, Ljava/util/Iterator;
 
-    .line 1307
+    .line 1318
     .local v2, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<+TT;>;"
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -116,7 +116,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1308
+    .line 1319
     iget-object v3, p0, Lcom/google/common/collect/Iterators$MergingIterator;->queue:Ljava/util/Queue;
 
     invoke-static {v2}, Lcom/google/common/collect/Iterators;->peekingIterator(Ljava/util/Iterator;)Lcom/google/common/collect/PeekingIterator;
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 1311
+    .line 1322
     .end local v2           #iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<+TT;>;"
     :cond_1
     return-void
@@ -144,7 +144,7 @@
     .end annotation
 
     .prologue
-    .line 1315
+    .line 1326
     .local p0, this:Lcom/google/common/collect/Iterators$MergingIterator;,"Lcom/google/common/collect/Iterators$MergingIterator<TT;>;"
     iget-object v2, p0, Lcom/google/common/collect/Iterators$MergingIterator;->queue:Ljava/util/Queue;
 
@@ -154,17 +154,17 @@
 
     if-eqz v2, :cond_1
 
-    .line 1316
+    .line 1327
     invoke-virtual {p0}, Lcom/google/common/collect/Iterators$MergingIterator;->endOfData()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1326
+    .line 1337
     :cond_0
     :goto_0
     return-object v0
 
-    .line 1319
+    .line 1330
     :cond_1
     iget-object v2, p0, Lcom/google/common/collect/Iterators$MergingIterator;->queue:Ljava/util/Queue;
 
@@ -174,13 +174,13 @@
 
     check-cast v1, Lcom/google/common/collect/PeekingIterator;
 
-    .line 1320
+    .line 1331
     .local v1, nextIter:Lcom/google/common/collect/PeekingIterator;,"Lcom/google/common/collect/PeekingIterator<TT;>;"
     invoke-interface {v1}, Lcom/google/common/collect/PeekingIterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1322
+    .line 1333
     .local v0, next:Ljava/lang/Object;,"TT;"
     invoke-interface {v1}, Lcom/google/common/collect/PeekingIterator;->hasNext()Z
 
@@ -188,7 +188,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 1323
+    .line 1334
     iget-object v2, p0, Lcom/google/common/collect/Iterators$MergingIterator;->queue:Ljava/util/Queue;
 
     invoke-interface {v2, v1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z

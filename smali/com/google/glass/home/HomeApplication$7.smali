@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 309
+    .line 335
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$7;->this$0:Lcom/google/glass/home/HomeApplication;
 
     iput-object p2, p0, Lcom/google/glass/home/HomeApplication$7;->val$primaryAccount:Landroid/accounts/Account;
@@ -43,12 +43,12 @@
     .locals 2
 
     .prologue
-    .line 322
+    .line 348
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
@@ -75,7 +75,7 @@
     .parameter "intent"
 
     .prologue
-    .line 312
+    .line 338
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$7;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -84,12 +84,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 314
+    .line 340
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 315
+    .line 341
     .local v0, extras:Landroid/os/Bundle;
     const-string v1, "com.google.glass.sync.POWER_CONNECTED_SYNC"
 
@@ -97,20 +97,20 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 316
+    .line 342
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$7;->val$primaryAccount:Landroid/accounts/Account;
 
     const-string v2, "com.google.glass.timeline"
 
     invoke-static {v1, v2, v0}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 317
+    .line 343
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$7;->val$primaryAccount:Landroid/accounts/Account;
 
     const-string v2, "com.google.glass.entity"
 
     invoke-static {v1, v2, v0}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 318
+    .line 344
     return-void
 .end method

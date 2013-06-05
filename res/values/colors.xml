@@ -14,4 +14,5 @@
     <color name="state_yellow">#ffddbb11</color>
     <color name="state_red">#ffcc3333</color>
     <color name="divider">#ff666666</color>
+    <color name="people_grid_frame_focused">#ffffffff</color>
 </resources>

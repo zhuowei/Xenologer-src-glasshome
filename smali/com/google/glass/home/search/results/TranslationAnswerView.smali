@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/search/results/TranslationAnswerView;
-.super Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;
+.super Lcom/google/glass/horizontalscroll/LinearLayoutCard;
 .source "TranslationAnswerView.java"
 
 
@@ -14,7 +14,7 @@
 
     .prologue
     .line 28
-    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;)V
 
     .line 29
     invoke-direct {p0}, Lcom/google/glass/home/search/results/TranslationAnswerView;->init()V
@@ -30,7 +30,7 @@
 
     .prologue
     .line 33
-    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 34
     invoke-direct {p0}, Lcom/google/glass/home/search/results/TranslationAnswerView;->init()V
@@ -47,7 +47,7 @@
 
     .prologue
     .line 38
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/HorizontalScrollLinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 39
     invoke-direct {p0}, Lcom/google/glass/home/search/results/TranslationAnswerView;->init()V

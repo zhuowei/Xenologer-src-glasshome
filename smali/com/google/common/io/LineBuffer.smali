@@ -37,7 +37,7 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 88
     iget-object v0, p0, Lcom/google/common/io/LineBuffer;->line:Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -55,22 +55,22 @@
     :goto_0
     invoke-virtual {p0, v1, v0}, Lcom/google/common/io/LineBuffer;->handleLine(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 88
+    .line 89
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v0, p0, Lcom/google/common/io/LineBuffer;->line:Ljava/lang/StringBuilder;
 
-    .line 89
+    .line 90
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/common/io/LineBuffer;->sawReturn:Z
 
-    .line 90
+    .line 91
     return p1
 
-    .line 85
+    .line 88
     :cond_0
     const-string v0, "\r"
 
@@ -233,9 +233,10 @@
     .line 76
     add-int/lit8 v2, v1, 0x1
 
+    .line 77
     goto :goto_2
 
-    .line 80
+    .line 83
     :cond_4
     iget-object v3, p0, Lcom/google/common/io/LineBuffer;->line:Ljava/lang/StringBuilder;
 
@@ -245,7 +246,7 @@
 
     invoke-virtual {v3, p1, v2, v4}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
 
-    .line 81
+    .line 84
     return-void
 
     .line 61
@@ -267,7 +268,7 @@
     .end annotation
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/common/io/LineBuffer;->sawReturn:Z
 
     if-nez v0, :cond_0
@@ -280,13 +281,13 @@
 
     if-lez v0, :cond_1
 
-    .line 102
+    .line 103
     :cond_0
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/common/io/LineBuffer;->finishLine(Z)Z
 
-    .line 104
+    .line 105
     :cond_1
     return-void
 .end method

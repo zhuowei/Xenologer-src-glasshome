@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 459
+    .line 493
     iput-object p1, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$4;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,16 +41,16 @@
     .locals 1
 
     .prologue
-    .line 464
+    .line 498
     iget-object v0, p0, Lcom/google/glass/home/voice/BaseVoiceInputActivity$4;->this$0:Lcom/google/glass/home/voice/BaseVoiceInputActivity;
 
-    #getter for: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/home/search/MicrophoneView;
-    invoke-static {v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1400(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/home/search/MicrophoneView;
+    #getter for: Lcom/google/glass/home/voice/BaseVoiceInputActivity;->microphone:Lcom/google/glass/search/MicrophoneView;
+    invoke-static {v0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->access$1800(Lcom/google/glass/home/voice/BaseVoiceInputActivity;)Lcom/google/glass/search/MicrophoneView;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/glass/home/search/MicrophoneView;->showListening()V
+    invoke-virtual {v0}, Lcom/google/glass/search/MicrophoneView;->showListening()V
 
-    .line 465
+    .line 499
     return-void
 .end method

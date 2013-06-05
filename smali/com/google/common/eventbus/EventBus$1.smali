@@ -1,9 +1,6 @@
-.class Lcom/google/common/eventbus/EventBus$1;
-.super Ljava/lang/Object;
+.class final Lcom/google/common/eventbus/EventBus$1;
+.super Lcom/google/common/cache/CacheLoader;
 .source "EventBus.java"
-
-# interfaces
-.implements Lcom/google/common/base/Supplier;
 
 
 # annotations
@@ -12,72 +9,87 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x8
     name = null
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/common/base/Supplier",
+        "Lcom/google/common/cache/CacheLoader",
         "<",
+        "Ljava/lang/Class",
+        "<*>;",
         "Ljava/util/Set",
         "<",
-        "Lcom/google/common/eventbus/EventHandler;",
-        ">;>;"
+        "Ljava/lang/Class",
+        "<*>;>;>;"
     }
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/google/common/eventbus/EventBus;
-
-
 # direct methods
-.method constructor <init>(Lcom/google/common/eventbus/EventBus;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
 
     .prologue
-    .line 116
-    iput-object p1, p0, Lcom/google/common/eventbus/EventBus$1;->this$0:Lcom/google/common/eventbus/EventBus;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 121
+    invoke-direct {p0}, Lcom/google/common/cache/CacheLoader;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic get()Ljava/lang/Object;
+.method public bridge synthetic load(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 
     .prologue
-    .line 116
-    invoke-virtual {p0}, Lcom/google/common/eventbus/EventBus$1;->get()Ljava/util/Set;
+    .line 121
+    check-cast p1, Ljava/lang/Class;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/eventbus/EventBus$1;->load(Ljava/lang/Class;)Ljava/util/Set;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public get()Ljava/util/Set;
+.method public load(Ljava/lang/Class;)Ljava/util/Set;
     .locals 1
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()",
+            "(",
+            "Ljava/lang/Class",
+            "<*>;)",
             "Ljava/util/Set",
             "<",
-            "Lcom/google/common/eventbus/EventHandler;",
-            ">;"
+            "Ljava/lang/Class",
+            "<*>;>;"
         }
     .end annotation
 
     .prologue
-    .line 119
-    new-instance v0, Ljava/util/concurrent/CopyOnWriteArraySet;
+    .line 126
+    .local p1, concreteClass:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
+    invoke-static {p1}, Lcom/google/common/reflect/TypeToken;->of(Ljava/lang/Class;)Lcom/google/common/reflect/TypeToken;
 
-    invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArraySet;-><init>()V
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/reflect/TypeToken;->getTypes()Lcom/google/common/reflect/TypeToken$TypeSet;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/common/reflect/TypeToken$TypeSet;->rawTypes()Ljava/util/Set;
+
+    move-result-object v0
 
     return-object v0
 .end method

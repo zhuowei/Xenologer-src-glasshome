@@ -29,35 +29,35 @@
 
     sput-object v0, Lcom/google/glass/home/voice/menu/Requirements;->IS_CONNECTED:Lcom/google/glass/home/voice/menu/Requirement;
 
-    .line 33
+    .line 34
     new-instance v0, Lcom/google/glass/home/voice/menu/Requirements$2;
 
     invoke-direct {v0}, Lcom/google/glass/home/voice/menu/Requirements$2;-><init>()V
 
     sput-object v0, Lcom/google/glass/home/voice/menu/Requirements;->HAS_CONTACTS:Lcom/google/glass/home/voice/menu/Requirement;
 
-    .line 48
+    .line 49
     new-instance v0, Lcom/google/glass/home/voice/menu/Requirements$3;
 
     invoke-direct {v0}, Lcom/google/glass/home/voice/menu/Requirements$3;-><init>()V
 
     sput-object v0, Lcom/google/glass/home/voice/menu/Requirements;->HAS_PLUS_SHARE_TARGETS:Lcom/google/glass/home/voice/menu/Requirement;
 
-    .line 63
+    .line 64
     new-instance v0, Lcom/google/glass/home/voice/menu/Requirements$4;
 
     invoke-direct {v0}, Lcom/google/glass/home/voice/menu/Requirements$4;-><init>()V
 
     sput-object v0, Lcom/google/glass/home/voice/menu/Requirements;->IS_HEADSET_CONNECTED:Lcom/google/glass/home/voice/menu/Requirement;
 
-    .line 80
+    .line 81
     new-instance v0, Lcom/google/glass/home/voice/menu/Requirements$5;
 
     invoke-direct {v0}, Lcom/google/glass/home/voice/menu/Requirements$5;-><init>()V
 
     sput-object v0, Lcom/google/glass/home/voice/menu/Requirements;->IS_PHONE_AVAILABLE:Lcom/google/glass/home/voice/menu/Requirement;
 
-    .line 95
+    .line 96
     new-instance v0, Lcom/google/glass/home/voice/menu/Requirements$6;
 
     invoke-direct {v0}, Lcom/google/glass/home/voice/menu/Requirements$6;-><init>()V

@@ -42,7 +42,7 @@
     .parameter "callbackBuffer"
 
     .prologue
-    .line 36
+    .line 46
     new-instance v0, Lcom/google/glass/hidden/MethodInvoker;
 
     const-string v1, "addPostviewCallbackBuffer"
@@ -51,7 +51,7 @@
 
     invoke-direct {v0, p0, v1, v2}, Lcom/google/glass/hidden/MethodInvoker;-><init>(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 38
+    .line 48
     .local v0, addPostviewCallbackBufferMethod:Lcom/google/glass/hidden/MethodInvoker;
     const/4 v1, 0x1
 
@@ -60,6 +60,50 @@
     const/4 v2, 0x0
 
     aput-object p1, v1, v2
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/hidden/MethodInvoker;->invoke([Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
+    return-void
+.end method
+
+.method public static setGoogleCameraCaptureFinishCallback(Landroid/hardware/Camera;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
+    .locals 7
+    .parameter "camera"
+    .parameter "cb1"
+    .parameter "cb2"
+
+    .prologue
+    const/4 v6, 0x2
+
+    const/4 v5, 0x1
+
+    const/4 v4, 0x0
+
+    .line 35
+    new-instance v0, Lcom/google/glass/hidden/MethodInvoker;
+
+    const-string v1, "setGoogleCameraCaptureFinishCallback"
+
+    new-array v2, v6, [Ljava/lang/Class;
+
+    const-class v3, Landroid/hardware/Camera$PictureCallback;
+
+    aput-object v3, v2, v4
+
+    const-class v3, Landroid/hardware/Camera$PictureCallback;
+
+    aput-object v3, v2, v5
+
+    invoke-direct {v0, p0, v1, v2}, Lcom/google/glass/hidden/MethodInvoker;-><init>(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Class;)V
+
+    .line 38
+    .local v0, setGoogleCameraCaptureFinishCallbackMethod:Lcom/google/glass/hidden/MethodInvoker;
+    new-array v1, v6, [Ljava/lang/Object;
+
+    aput-object p1, v1, v4
+
+    aput-object p2, v1, v5
 
     invoke-virtual {v0, v1}, Lcom/google/glass/hidden/MethodInvoker;->invoke([Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -72,14 +116,14 @@
     .parameter "camera"
 
     .prologue
-    .line 25
+    .line 24
     new-instance v0, Lcom/google/glass/hidden/MethodInvoker;
 
     const-string v1, "startGoogleCameraMetering"
 
     invoke-direct {v0, p0, v1}, Lcom/google/glass/hidden/MethodInvoker;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 26
     .local v0, startGoogleCameraMeteringMethod:Lcom/google/glass/hidden/MethodInvoker;
     const/4 v1, 0x0
 

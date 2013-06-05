@@ -3,12 +3,12 @@
 .source "ByteStreams.java"
 
 # interfaces
-.implements Lcom/google/common/io/ByteProcessor;
+.implements Lcom/google/common/io/InputSupplier;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/io/ByteStreams;->getDigest(Lcom/google/common/io/InputSupplier;Ljava/security/MessageDigest;)[B
+    value = Lcom/google/common/io/ByteStreams;->join(Ljava/lang/Iterable;)Lcom/google/common/io/InputSupplier;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,24 +19,26 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/io/ByteProcessor",
-        "<[B>;"
+        "Lcom/google/common/io/InputSupplier",
+        "<",
+        "Ljava/io/InputStream;",
+        ">;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$md:Ljava/security/MessageDigest;
+.field final synthetic val$suppliers:Ljava/lang/Iterable;
 
 
 # direct methods
-.method constructor <init>(Ljava/security/MessageDigest;)V
+.method constructor <init>(Ljava/lang/Iterable;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 761
-    iput-object p1, p0, Lcom/google/common/io/ByteStreams$3;->val$md:Ljava/security/MessageDigest;
+    .line 940
+    iput-object p1, p0, Lcom/google/common/io/ByteStreams$3;->val$suppliers:Ljava/lang/Iterable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,46 +47,42 @@
 
 
 # virtual methods
-.method public bridge synthetic getResult()Ljava/lang/Object;
-    .locals 1
+.method public getInput()Ljava/io/InputStream;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .prologue
-    .line 761
-    invoke-virtual {p0}, Lcom/google/common/io/ByteStreams$3;->getResult()[B
+    .line 942
+    new-instance v0, Lcom/google/common/io/MultiInputStream;
 
-    move-result-object v0
+    iget-object v1, p0, Lcom/google/common/io/ByteStreams$3;->val$suppliers:Ljava/lang/Iterable;
+
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/common/io/MultiInputStream;-><init>(Ljava/util/Iterator;)V
 
     return-object v0
 .end method
 
-.method public getResult()[B
+.method public bridge synthetic getInput()Ljava/lang/Object;
     .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .prologue
-    .line 770
-    iget-object v0, p0, Lcom/google/common/io/ByteStreams$3;->val$md:Ljava/security/MessageDigest;
-
-    invoke-virtual {v0}, Ljava/security/MessageDigest;->digest()[B
+    .line 940
+    invoke-virtual {p0}, Lcom/google/common/io/ByteStreams$3;->getInput()Ljava/io/InputStream;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public processBytes([BII)Z
-    .locals 1
-    .parameter "buf"
-    .parameter "off"
-    .parameter "len"
-
-    .prologue
-    .line 764
-    iget-object v0, p0, Lcom/google/common/io/ByteStreams$3;->val$md:Ljava/security/MessageDigest;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/security/MessageDigest;->update([BII)V
-
-    .line 765
-    const/4 v0, 0x1
-
-    return v0
 .end method

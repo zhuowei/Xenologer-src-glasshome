@@ -64,6 +64,12 @@
 
     move-result-object v0
 
+    sget v1, Lcom/google/glass/home/R$drawable;->ic_cloud_sad_big:I
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassError;->setIconId(I)Lcom/google/glass/app/GlassError;
+
+    move-result-object v0
+
     return-object v0
 .end method
 

@@ -58,7 +58,7 @@
 
 .field public static final JAVA_API_VERSION_FIELD_NUMBER:I = 0x5
 
-.field public static final JAVA_DUAL_GENERATE_MUTABLE_API_FIELD_NUMBER:I = 0x1a
+.field public static final JAVA_ENABLE_DUAL_GENERATE_MUTABLE_API_FIELD_NUMBER:I = 0x1a
 
 .field public static final JAVA_GENERATE_EQUALS_AND_HASH_FIELD_NUMBER:I = 0x14
 
@@ -129,7 +129,7 @@
 
 .field private javaApiVersion_:I
 
-.field private javaDualGenerateMutableApi_:Z
+.field private javaEnableDualGenerateMutableApi_:Z
 
 .field private javaGenerateEqualsAndHash_:Z
 
@@ -854,7 +854,7 @@
 
     move-result v7
 
-    iput-boolean v7, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    iput-boolean v7, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
 
     goto/16 :goto_0
 
@@ -1235,7 +1235,7 @@
 
     .prologue
     .line 15526
-    iput-boolean p1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    iput-boolean p1, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
 
     return p1
 .end method
@@ -1518,7 +1518,7 @@
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaAltApiPackage_:Ljava/lang/Object;
 
     .line 16980
-    iput-boolean v2, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    iput-boolean v2, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
 
     .line 16981
     const-string v0, ""
@@ -2127,12 +2127,12 @@
     return v0
 .end method
 
-.method public getJavaDualGenerateMutableApi()Z
+.method public getJavaEnableDualGenerateMutableApi()Z
     .locals 1
 
     .prologue
     .line 16487
-    iget-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    iget-boolean v0, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
 
     return v0
 .end method
@@ -3103,7 +3103,7 @@
     .line 17204
     const/16 v3, 0x1a
 
-    iget-boolean v4, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    iget-boolean v4, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
 
     invoke-static {v3, v4}, Lcom/google/protobuf/CodedOutputStream;->computeBoolSize(IZ)I
 
@@ -3521,7 +3521,7 @@
     goto :goto_0
 .end method
 
-.method public hasJavaDualGenerateMutableApi()Z
+.method public hasJavaEnableDualGenerateMutableApi()Z
     .locals 2
 
     .prologue
@@ -4601,7 +4601,7 @@
     .line 17092
     const/16 v2, 0x1a
 
-    iget-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaDualGenerateMutableApi_:Z
+    iget-boolean v3, p0, Lcom/google/protobuf/DescriptorProtos$FileOptions;->javaEnableDualGenerateMutableApi_:Z
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 

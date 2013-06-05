@@ -39,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 22
+    .line 24
     const-class v0, Lcom/google/glass/util/ImageProxyDownloadTask;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -60,34 +60,34 @@
     .parameter "cropType"
 
     .prologue
-    .line 55
+    .line 57
     invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>()V
 
-    .line 56
+    .line 58
     iput-object p2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
-    .line 57
+    .line 59
     iput p3, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->width:I
 
-    .line 58
+    .line 60
     iput p4, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->height:I
 
-    .line 59
+    .line 61
     iput-object p5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cropType:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 60
+    .line 62
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
-    .line 61
+    .line 63
     invoke-static {p1}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
 
-    .line 62
+    .line 64
     .local v0, app:Lcom/google/glass/app/GlassApplication;
     invoke-virtual {v0}, Lcom/google/glass/app/GlassApplication;->getRequestDispatcher()Lcom/google/glass/net/ProtoRequestDispatcher;
 
@@ -95,7 +95,7 @@
 
     iput-object v1, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
-    .line 63
+    .line 65
     return-void
 .end method
 
@@ -109,37 +109,37 @@
 
     const/4 v1, 0x0
 
-    .line 124
+    .line 126
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 126
+    .line 128
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;->newBuilder()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;
 
     move-result-object v0
 
-    .line 128
+    .line 130
     .local v0, builder:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;
     iget v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->width:I
 
     if-eq v5, v6, :cond_0
 
-    .line 129
+    .line 131
     iget v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->width:I
 
     invoke-virtual {v0, v5}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;->setWidthPixels(I)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;
 
-    .line 131
+    .line 133
     :cond_0
     iget v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->height:I
 
     if-eq v5, v6, :cond_1
 
-    .line 132
+    .line 134
     iget v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->height:I
 
     invoke-virtual {v0, v5}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;->setHeightPixels(I)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;
 
-    .line 134
+    .line 136
     :cond_1
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
@@ -169,7 +169,7 @@
 
     move-result-object v2
 
-    .line 138
+    .line 140
     .local v2, request:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
     iget-object v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
@@ -181,7 +181,7 @@
 
     move-result-object v3
 
-    .line 140
+    .line 142
     .local v3, response:Lcom/google/glass/net/ProtoResponse;,"Lcom/google/glass/net/ProtoResponse<Lcom/google/googlex/glass/common/proto/ImageDownloadResponse;>;"
     invoke-virtual {v3}, Lcom/google/glass/net/ProtoResponse;->getResponseProto()Ljava/lang/Object;
 
@@ -189,22 +189,22 @@
 
     check-cast v4, Lcom/google/googlex/glass/common/proto/ImageDownloadResponse;
 
-    .line 142
+    .line 144
     .local v4, responseProto:Lcom/google/googlex/glass/common/proto/ImageDownloadResponse;
     if-nez v4, :cond_2
 
-    .line 143
+    .line 145
     sget-object v5, Lcom/google/glass/util/ImageProxyDownloadTask;->TAG:Ljava/lang/String;
 
     const-string v6, "No response - network may be disconnected"
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
+    .line 172
     :goto_0
     return-object v1
 
-    .line 147
+    .line 149
     :cond_2
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/ImageDownloadResponse;->getStatus()Lcom/google/googlex/glass/common/proto/ImageDownloadResponse$Status;
 
@@ -214,7 +214,7 @@
 
     if-eq v5, v6, :cond_3
 
-    .line 149
+    .line 151
     sget-object v5, Lcom/google/glass/util/ImageProxyDownloadTask;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -255,7 +255,7 @@
 
     goto :goto_0
 
-    .line 153
+    .line 155
     :cond_3
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/ImageDownloadResponse;->getImage()Lcom/google/protobuf/ByteString;
 
@@ -273,7 +273,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 155
+    .line 157
     :cond_4
     sget-object v5, Lcom/google/glass/util/ImageProxyDownloadTask;->TAG:Ljava/lang/String;
 
@@ -301,7 +301,7 @@
 
     goto :goto_0
 
-    .line 159
+    .line 161
     :cond_5
     invoke-virtual {p0}, Lcom/google/glass/util/ImageProxyDownloadTask;->isCancelled()Z
 
@@ -309,7 +309,7 @@
 
     if-eqz v5, :cond_6
 
-    .line 161
+    .line 163
     sget-object v5, Lcom/google/glass/util/ImageProxyDownloadTask;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -336,7 +336,7 @@
 
     goto :goto_0
 
-    .line 166
+    .line 168
     :cond_6
     iget-object v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
@@ -344,7 +344,7 @@
 
     move-result-object v1
 
-    .line 167
+    .line 169
     .local v1, filePath:Ljava/lang/String;
     sget-object v5, Lcom/google/glass/util/ImageProxyDownloadTask;->TAG:Ljava/lang/String;
 
@@ -380,7 +380,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
+    .line 170
     iget-object v5, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/ImageDownloadResponse;->getImage()Lcom/google/protobuf/ByteString;
@@ -396,66 +396,91 @@
     goto/16 :goto_0
 .end method
 
-.method private static getFilename(Ljava/lang/String;IILcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)Ljava/lang/String;
-    .locals 3
+.method public static getFilename(Ljava/lang/String;IILcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)Ljava/lang/String;
+    .locals 4
     .parameter "url"
     .parameter "width"
     .parameter "height"
     .parameter "cropType"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
     .prologue
-    .line 188
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 193
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 189
-    .local v0, name:Ljava/lang/StringBuilder;
-    invoke-static {p0}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 190
-    const-string v1, "-"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "-"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p3}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->getNumber()I
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    add-int/lit8 v2, v2, 0x40
 
-    .line 192
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    move-result-object v1
+    .line 195
+    .local v1, name:Ljava/lang/StringBuilder;
+    :try_start_0
+    const-string v2, "UTF-8"
 
-    return-object v1
+    invoke-static {p0, v2}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_end_0
+    .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 200
+    const-string v2, "-"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "-"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, "-"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {p3}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->getNumber()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 203
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    return-object v2
+
+    .line 196
+    :catch_0
+    move-exception v0
+
+    .line 198
+    .local v0, e:Ljava/io/UnsupportedEncodingException;
+    new-instance v2, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v2, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+
+    throw v2
 .end method
 
 
@@ -466,10 +491,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 77
+    .line 79
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 78
+    .line 80
     iget-object v3, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -478,12 +503,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 88
+    .line 90
     :cond_0
     :goto_0
     return-object v2
 
-    .line 82
+    .line 84
     :cond_1
     iget-object v3, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
@@ -497,11 +522,11 @@
 
     move-result-object v0
 
-    .line 83
+    .line 85
     .local v0, filename:Ljava/lang/String;
     sget-object v1, Lcom/google/glass/util/CachedFilesManager$Type;->PICTURE:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 85
+    .line 87
     .local v1, type:Lcom/google/glass/util/CachedFilesManager$Type;
     iget-object v3, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
@@ -511,7 +536,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 86
+    .line 88
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
     invoke-virtual {v2, v1, v0}, Lcom/google/glass/util/CachedFilesManager;->getPath(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;)Ljava/lang/String;
@@ -525,7 +550,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 74
     iget-object v0, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
     return-object v0
@@ -535,7 +560,7 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 23
     invoke-virtual {p0}, Lcom/google/glass/util/ImageProxyDownloadTask;->loadContent()Ljava/lang/String;
 
     move-result-object v0
@@ -547,10 +572,10 @@
     .locals 6
 
     .prologue
-    .line 106
+    .line 108
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 107
+    .line 109
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -559,14 +584,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 108
+    .line 110
     const/4 v2, 0x0
 
-    .line 119
+    .line 121
     :goto_0
     return-object v2
 
-    .line 111
+    .line 113
     :cond_0
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
@@ -580,11 +605,11 @@
 
     move-result-object v0
 
-    .line 112
+    .line 114
     .local v0, filename:Ljava/lang/String;
     sget-object v1, Lcom/google/glass/util/CachedFilesManager$Type;->PICTURE:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 114
+    .line 116
     .local v1, type:Lcom/google/glass/util/CachedFilesManager$Type;
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
@@ -594,14 +619,14 @@
 
     if-nez v2, :cond_1
 
-    .line 116
+    .line 118
     invoke-direct {p0, v0, v1}, Lcom/google/glass/util/ImageProxyDownloadTask;->downloadImage(Ljava/lang/String;Lcom/google/glass/util/CachedFilesManager$Type;)Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_0
 
-    .line 119
+    .line 121
     :cond_1
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
@@ -616,10 +641,10 @@
     .locals 6
 
     .prologue
-    .line 93
+    .line 95
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 94
+    .line 96
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -628,14 +653,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 95
+    .line 97
     const/4 v2, 0x0
 
-    .line 100
+    .line 102
     :goto_0
     return-object v2
 
-    .line 98
+    .line 100
     :cond_0
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
@@ -649,11 +674,11 @@
 
     move-result-object v0
 
-    .line 99
+    .line 101
     .local v0, filename:Ljava/lang/String;
     sget-object v1, Lcom/google/glass/util/CachedFilesManager$Type;->PICTURE:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    .line 100
+    .line 102
     .local v1, type:Lcom/google/glass/util/CachedFilesManager$Type;
     iget-object v2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
@@ -670,13 +695,13 @@
     .parameter "height"
 
     .prologue
-    .line 178
+    .line 180
     iput p1, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->width:I
 
-    .line 179
+    .line 181
     iput p2, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->height:I
 
-    .line 180
+    .line 182
     return-void
 .end method
 
@@ -685,7 +710,7 @@
     .parameter "imageUrl"
 
     .prologue
-    .line 67
+    .line 69
     iput-object p1, p0, Lcom/google/glass/util/ImageProxyDownloadTask;->imageUrl:Ljava/lang/String;
 
     return-object p1

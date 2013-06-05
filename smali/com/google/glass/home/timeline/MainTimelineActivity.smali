@@ -18,8 +18,6 @@
 # instance fields
 .field private final guestModeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-.field private isBatteryIndicatorShowing:Z
-
 .field private isFromScreenOffNotification:Z
 
 .field private isGuestModeEnabled:Z
@@ -70,27 +68,27 @@
     .locals 2
 
     .prologue
-    .line 43
+    .line 44
     invoke-direct {p0}, Lcom/google/glass/home/timeline/TimelineActivity;-><init>()V
 
-    .line 58
+    .line 56
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification:Z
 
-    .line 61
+    .line 59
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->wakeUpTimeMillis:J
 
-    .line 84
+    .line 82
     new-instance v0, Lcom/google/glass/home/timeline/MainTimelineActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/timeline/MainTimelineActivity$1;-><init>(Lcom/google/glass/home/timeline/MainTimelineActivity;)V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->guestModeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 104
+    .line 102
     new-instance v0, Lcom/google/glass/home/timeline/MainTimelineActivity$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/timeline/MainTimelineActivity$2;-><init>(Lcom/google/glass/home/timeline/MainTimelineActivity;)V
@@ -106,7 +104,7 @@
     .parameter "x1"
 
     .prologue
-    .line 43
+    .line 44
     invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->initTimelineView(Z)V
 
     return-void
@@ -117,7 +115,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -130,7 +128,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -143,7 +141,20 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$1200(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -156,7 +167,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     return-object v0
@@ -167,7 +178,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -180,7 +191,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification()Z
 
     move-result v0
@@ -193,45 +204,45 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     return-object v0
 .end method
 
-.method static synthetic access$600(Lcom/google/glass/home/timeline/MainTimelineActivity;)Lcom/google/glass/home/timeline/TimelineOverlayView;
+.method static synthetic access$600(Lcom/google/glass/home/timeline/MainTimelineActivity;)Lcom/google/glass/logging/UserEventHelper;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$700(Lcom/google/glass/home/timeline/MainTimelineActivity;)Lcom/google/glass/home/timeline/TimelineOverlayView;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 44
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineOverlayView:Lcom/google/glass/home/timeline/TimelineOverlayView;
 
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/google/glass/home/timeline/MainTimelineActivity;)V
+.method static synthetic access$800(Lcom/google/glass/home/timeline/MainTimelineActivity;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showTimeline()V
 
     return-void
-.end method
-
-.method static synthetic access$800(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 43
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method
 
 .method static synthetic access$900(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
@@ -239,7 +250,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -251,15 +262,15 @@
     .locals 3
 
     .prologue
-    .line 546
+    .line 553
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onTimelineLoadRunnable:Ljava/util/concurrent/FutureTask;
 
     if-eqz v1, :cond_1
 
-    .line 547
+    .line 554
     const/4 v0, 0x0
 
-    .line 548
+    .line 555
     .local v0, mayInterruptIfRunning:Z
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onTimelineLoadRunnable:Ljava/util/concurrent/FutureTask;
 
@@ -271,7 +282,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 549
+    .line 556
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -280,13 +291,13 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 551
+    .line 558
     :cond_0
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onTimelineLoadRunnable:Ljava/util/concurrent/FutureTask;
 
-    .line 553
+    .line 560
     .end local v0           #mayInterruptIfRunning:Z
     :cond_1
     return-void
@@ -299,32 +310,8 @@
     .prologue
     const/4 v8, 0x0
 
-    .line 375
-    invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification()Z
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    .line 376
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v5
-
-    const-string v6, "isFromScreenOffNotification was false, stopping speaking"
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 377
-    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/google/glass/home/HomeApplication;->stopSpeaking()V
-
-    .line 381
-    :cond_0
-    if-eqz p1, :cond_6
+    .line 388
+    if-eqz p1, :cond_5
 
     const-string v5, "item_id"
 
@@ -332,10 +319,10 @@
 
     move-result v5
 
-    if-eqz v5, :cond_6
+    if-eqz v5, :cond_5
 
-    .line 385
-    if-eqz p1, :cond_2
+    .line 392
+    if-eqz p1, :cond_1
 
     const-string v5, "bundle_item_id"
 
@@ -343,9 +330,9 @@
 
     move-result v5
 
-    if-eqz v5, :cond_2
+    if-eqz v5, :cond_1
 
-    .line 386
+    .line 393
     const-string v5, "bundle_item_id"
 
     invoke-virtual {p1, v5}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
@@ -354,15 +341,15 @@
 
     check-cast v1, Lcom/google/glass/timeline/TimelineItemId;
 
-    .line 393
+    .line 400
     .local v1, bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
     :goto_0
-    if-nez v1, :cond_3
+    if-nez v1, :cond_2
 
-    .line 394
+    .line 401
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showTimeline()V
 
-    .line 400
+    .line 407
     :goto_1
     const-string v5, "item_id"
 
@@ -372,7 +359,7 @@
 
     check-cast v4, Lcom/google/glass/timeline/TimelineItemId;
 
-    .line 402
+    .line 409
     .local v4, itemId:Lcom/google/glass/timeline/TimelineItemId;
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
@@ -398,10 +385,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 403
+    .line 410
     const/4 v0, 0x0
 
-    .line 404
+    .line 411
     .local v0, animate:Z
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
@@ -409,11 +396,11 @@
 
     move-result v2
 
-    .line 405
+    .line 412
     .local v2, foundItem:Z
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_3
 
-    .line 406
+    .line 413
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -422,10 +409,10 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 409
-    if-eqz v1, :cond_1
+    .line 416
+    if-eqz v1, :cond_0
 
-    .line 410
+    .line 417
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -450,40 +437,40 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 411
+    .line 418
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification()Z
 
     move-result v5
 
     invoke-static {p0, v1, v5}, Lcom/google/glass/timeline/TimelineHelper;->goToBundle(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;Z)V
 
-    .line 498
+    .line 508
     .end local v0           #animate:Z
     .end local v1           #bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
     .end local v2           #foundItem:Z
     .end local v4           #itemId:Lcom/google/glass/timeline/TimelineItemId;
-    :cond_1
+    :cond_0
     :goto_2
     return-void
 
-    .line 389
-    :cond_2
+    .line 396
+    :cond_1
     const/4 v1, 0x0
 
     .restart local v1       #bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
     goto :goto_0
 
-    .line 396
-    :cond_3
+    .line 403
+    :cond_2
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->hideTimeline()V
 
     goto :goto_1
 
-    .line 414
+    .line 421
     .restart local v0       #animate:Z
     .restart local v2       #foundItem:Z
     .restart local v4       #itemId:Lcom/google/glass/timeline/TimelineItemId;
-    :cond_4
+    :cond_3
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -508,17 +495,17 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 417
-    if-nez v1, :cond_5
+    .line 424
+    if-nez v1, :cond_4
 
-    .line 418
+    .line 425
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->hideTimeline()V
 
-    .line 422
-    :cond_5
+    .line 429
+    :cond_4
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->cancelOnTimelineLoadRunnable()V
 
-    .line 423
+    .line 430
     new-instance v5, Ljava/util/concurrent/FutureTask;
 
     new-instance v6, Lcom/google/glass/home/timeline/MainTimelineActivity$4;
@@ -531,7 +518,7 @@
 
     iput-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onTimelineLoadRunnable:Ljava/util/concurrent/FutureTask;
 
-    .line 452
+    .line 459
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v6, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onTimelineLoadRunnable:Ljava/util/concurrent/FutureTask;
@@ -540,54 +527,54 @@
 
     goto :goto_2
 
-    .line 457
+    .line 464
     .end local v0           #animate:Z
     .end local v1           #bundleItemId:Lcom/google/glass/timeline/TimelineItemId;
     .end local v2           #foundItem:Z
     .end local v4           #itemId:Lcom/google/glass/timeline/TimelineItemId;
-    :cond_6
+    :cond_5
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showTimeline()V
 
-    .line 460
+    .line 467
     const/4 v3, 0x0
 
-    .line 461
+    .line 468
     .local v3, gesture:Lcom/google/glass/util/ScreenOffGesture;
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_6
 
     invoke-static {p1}, Lcom/google/glass/util/ScreenOffGesture;->hasScreenOffGesture(Landroid/content/Intent;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_7
+    if-eqz v5, :cond_6
 
-    .line 462
+    .line 469
     invoke-static {p1}, Lcom/google/glass/util/ScreenOffGesture;->fromIntent(Landroid/content/Intent;)Lcom/google/glass/util/ScreenOffGesture;
 
     move-result-object v3
 
-    .line 463
+    .line 470
     invoke-static {p1}, Lcom/google/glass/util/ScreenOffGesture;->clearScreenOffGesture(Landroid/content/Intent;)V
 
-    .line 466
-    :cond_7
+    .line 473
+    :cond_6
     sget-object v5, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->NAVIGATION:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
     invoke-static {v5}, Lcom/google/glass/ongoing/OngoingActivityService;->isActivityOngoing(Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_a
+    if-eqz v5, :cond_9
 
-    .line 467
+    .line 474
     sget-object v5, Lcom/google/glass/util/ScreenOffGesture;->SWIPE_LEFT:Lcom/google/glass/util/ScreenOffGesture;
 
-    if-ne v3, v5, :cond_8
+    if-ne v3, v5, :cond_7
 
-    .line 468
+    .line 475
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logScreenOnViaSwipe()V
 
-    .line 469
+    .line 476
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -596,7 +583,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 470
+    .line 477
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v6, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -609,16 +596,16 @@
 
     goto :goto_2
 
-    .line 471
-    :cond_8
+    .line 478
+    :cond_7
     sget-object v5, Lcom/google/glass/util/ScreenOffGesture;->SWIPE_RIGHT:Lcom/google/glass/util/ScreenOffGesture;
 
-    if-ne v3, v5, :cond_9
+    if-ne v3, v5, :cond_8
 
-    .line 472
+    .line 479
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logScreenOnViaSwipe()V
 
-    .line 473
+    .line 480
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -627,7 +614,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 474
+    .line 481
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v6, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -640,8 +627,8 @@
 
     goto/16 :goto_2
 
-    .line 476
-    :cond_9
+    .line 483
+    :cond_8
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -650,24 +637,35 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 477
+    .line 484
     invoke-static {p0}, Lcom/google/glass/maps/NavigationLauncher;->bringNavigationToForeground(Landroid/content/Context;)V
 
-    .line 480
+    .line 487
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->hideTimeline()V
 
     goto/16 :goto_2
 
-    .line 484
-    :cond_a
+    .line 491
+    :cond_9
+    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Lcom/google/glass/home/HomeApplication;->isSpeaking()Z
+
+    move-result v5
+
+    if-nez v5, :cond_0
+
+    .line 494
     sget-object v5, Lcom/google/glass/util/ScreenOffGesture;->SWIPE_LEFT:Lcom/google/glass/util/ScreenOffGesture;
 
-    if-ne v3, v5, :cond_b
+    if-ne v3, v5, :cond_a
 
-    .line 485
+    .line 495
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logScreenOnViaSwipe()V
 
-    .line 486
+    .line 496
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -676,7 +674,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 487
+    .line 497
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v6, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -689,16 +687,16 @@
 
     goto/16 :goto_2
 
-    .line 488
-    :cond_b
+    .line 498
+    :cond_a
     sget-object v5, Lcom/google/glass/util/ScreenOffGesture;->SWIPE_RIGHT:Lcom/google/glass/util/ScreenOffGesture;
 
-    if-ne v3, v5, :cond_c
+    if-ne v3, v5, :cond_b
 
-    .line 489
+    .line 499
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logScreenOnViaSwipe()V
 
-    .line 490
+    .line 500
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -707,7 +705,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 491
+    .line 501
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v6, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -720,8 +718,8 @@
 
     goto/16 :goto_2
 
-    .line 493
-    :cond_c
+    .line 503
+    :cond_b
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v5
@@ -730,7 +728,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 494
+    .line 504
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v6, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -749,12 +747,12 @@
     .parameter "intent"
 
     .prologue
-    .line 281
+    .line 298
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
 
     if-eqz v0, :cond_0
 
-    .line 282
+    .line 299
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -763,15 +761,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 295
+    .line 312
     :goto_0
     return-void
 
-    .line 285
+    .line 302
     :cond_0
     if-nez p1, :cond_1
 
-    .line 286
+    .line 303
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -782,7 +780,7 @@
 
     goto :goto_0
 
-    .line 291
+    .line 308
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
@@ -790,7 +788,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
 
-    .line 294
+    .line 311
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->cancelOnTimelineLoadRunnable()V
 
     goto :goto_0
@@ -800,14 +798,14 @@
     .locals 2
 
     .prologue
-    .line 734
+    .line 721
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/MainTimelineView;->setVisibility(I)V
 
-    .line 735
+    .line 722
     return-void
 .end method
 
@@ -818,7 +816,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 162
+    .line 160
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     if-eqz v4, :cond_1
@@ -827,7 +825,7 @@
 
     if-ne v4, p1, :cond_1
 
-    .line 163
+    .line 161
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -852,62 +850,62 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 271
+    .line 288
     :cond_0
     :goto_0
     return-void
 
-    .line 166
+    .line 164
     :cond_1
     iput-boolean p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->isGuestModeEnabled:Z
 
-    .line 169
+    .line 167
     const/4 v2, 0x0
 
-    .line 170
+    .line 168
     .local v2, isActivated:Z
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     if-eqz v4, :cond_3
 
-    .line 171
+    .line 169
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v4}, Lcom/google/glass/home/timeline/MainTimelineView;->isActivated()Z
 
     move-result v2
 
-    .line 172
+    .line 170
     if-eqz v2, :cond_2
 
-    .line 173
+    .line 171
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v4}, Lcom/google/glass/home/timeline/MainTimelineView;->deactivate()V
 
-    .line 175
+    .line 173
     :cond_2
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v4, v5}, Lcom/google/glass/home/timeline/MainTimelineView;->setUiPerformanceLog(Lcom/google/glass/home/timeline/UiPerformanceLog;)V
 
-    .line 176
+    .line 174
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v4, v5}, Lcom/google/glass/home/timeline/MainTimelineView;->setPositionListener(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;)V
 
-    .line 177
+    .line 175
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v4}, Lcom/google/glass/home/timeline/MainTimelineView;->clear()V
 
-    .line 178
+    .line 176
     iput-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
-    .line 179
+    .line 177
     iput-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineOverlayView:Lcom/google/glass/home/timeline/TimelineOverlayView;
 
-    .line 183
+    .line 181
     :cond_3
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getContentView()Landroid/view/View;
 
@@ -915,17 +913,17 @@
 
     check-cast v0, Landroid/widget/FrameLayout;
 
-    .line 184
+    .line 182
     .local v0, contentFrameLayout:Landroid/widget/FrameLayout;
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 187
+    .line 185
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->stopTimelineLoaders()V
 
-    .line 190
+    .line 188
     if-eqz p1, :cond_4
 
-    .line 191
+    .line 189
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -934,24 +932,20 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
+    .line 190
     new-instance v4, Lcom/google/glass/home/timeline/GuestTimelineView;
 
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Lcom/google/glass/home/timeline/GuestTimelineView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, p0}, Lcom/google/glass/home/timeline/GuestTimelineView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
-    .line 197
+    .line 195
     :goto_1
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 200
+    .line 198
     new-instance v4, Lcom/google/glass/home/timeline/TimelineOverlayView;
 
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getApplicationContext()Landroid/content/Context;
@@ -964,12 +958,12 @@
 
     iput-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineOverlayView:Lcom/google/glass/home/timeline/TimelineOverlayView;
 
-    .line 201
+    .line 199
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineOverlayView:Lcom/google/glass/home/timeline/TimelineOverlayView;
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 204
+    .line 202
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
@@ -986,14 +980,14 @@
 
     iput-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineLoaders:Ljava/util/List;
 
-    .line 207
+    .line 205
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-virtual {v4, v5}, Lcom/google/glass/home/timeline/MainTimelineView;->setUiPerformanceLog(Lcom/google/glass/home/timeline/UiPerformanceLog;)V
 
-    .line 210
+    .line 208
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     new-instance v5, Lcom/google/glass/home/timeline/MainTimelineActivity$3;
@@ -1002,7 +996,7 @@
 
     invoke-virtual {v4, v5}, Lcom/google/glass/home/timeline/MainTimelineView;->setPositionListener(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;)V
 
-    .line 260
+    .line 277
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -1039,7 +1033,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 261
+    .line 278
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineLoaders:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1060,13 +1054,13 @@
 
     check-cast v3, Landroid/content/Loader;
 
-    .line 262
+    .line 279
     .local v3, loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
     invoke-virtual {v3}, Landroid/content/Loader;->startLoading()V
 
     goto :goto_2
 
-    .line 194
+    .line 192
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v3           #loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
     :cond_4
@@ -1078,30 +1072,26 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 193
     new-instance v4, Lcom/google/glass/home/timeline/UserTimelineView;
 
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Lcom/google/glass/home/timeline/UserTimelineView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, p0}, Lcom/google/glass/home/timeline/UserTimelineView;-><init>(Landroid/content/Context;)V
 
     iput-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     goto/16 :goto_1
 
-    .line 266
+    .line 283
     .restart local v1       #i$:Ljava/util/Iterator;
     :cond_5
     if-eqz v2, :cond_0
 
-    .line 267
+    .line 284
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v4}, Lcom/google/glass/home/timeline/MainTimelineView;->activate()V
 
-    .line 268
+    .line 285
     iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
@@ -1114,7 +1104,7 @@
 
     invoke-virtual {v4, v5, v6}, Lcom/google/glass/home/timeline/MainTimelineView;->setSelection(IZ)V
 
-    .line 269
+    .line 286
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showTimeline()V
 
     goto/16 :goto_0
@@ -1124,7 +1114,7 @@
     .locals 1
 
     .prologue
-    .line 584
+    .line 591
     iget-boolean v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification:Z
 
     return v0
@@ -1134,7 +1124,7 @@
     .locals 1
 
     .prologue
-    .line 541
+    .line 548
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onTimelineLoadRunnable:Ljava/util/concurrent/FutureTask;
 
     if-eqz v0, :cond_0
@@ -1162,14 +1152,14 @@
     .locals 2
 
     .prologue
-    .line 504
+    .line 514
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->USER_INITIATED_SCREEN_ON:Lcom/google/glass/logging/UserEventAction;
 
     const-string v1, "2"
 
     invoke-virtual {p0, v0, v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 505
+    .line 515
     return-void
 .end method
 
@@ -1180,19 +1170,19 @@
     .prologue
     const-wide/16 v4, -0x1
 
-    .line 611
+    .line 618
     iget-wide v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->wakeUpTimeMillis:J
 
     cmp-long v2, v2, v4
 
     if-eqz v2, :cond_0
 
-    .line 612
+    .line 619
     iget-wide v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->wakeUpTimeMillis:J
 
     sub-long v0, p1, v2
 
-    .line 613
+    .line 620
     .local v0, delay:J
     sget-object v2, Lcom/google/glass/logging/UserEventAction;->WAKE_UP_DELAY:Lcom/google/glass/logging/UserEventAction;
 
@@ -1202,15 +1192,15 @@
 
     invoke-virtual {p0, v2, v3}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 614
+    .line 621
     iput-wide v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->wakeUpTimeMillis:J
 
-    .line 618
+    .line 625
     .end local v0           #delay:J
     :goto_0
     return-void
 
-    .line 616
+    .line 623
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
@@ -1228,7 +1218,7 @@
     .parameter "isFromScreenOffNotification"
 
     .prologue
-    .line 592
+    .line 599
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -1253,10 +1243,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 593
+    .line 600
     iput-boolean p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification:Z
 
-    .line 594
+    .line 601
     return-void
 .end method
 
@@ -1265,31 +1255,10 @@
     .parameter "wakeUpTimeMillis"
 
     .prologue
-    .line 601
+    .line 608
     iput-wide p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->wakeUpTimeMillis:J
 
-    .line 602
-    return-void
-.end method
-
-.method private showBatteryIndicator(Z)V
-    .locals 1
-    .parameter "show"
-
-    .prologue
-    .line 714
-    iget-boolean v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->isBatteryIndicatorShowing:Z
-
-    if-eq p1, v0, :cond_0
-
-    .line 715
-    invoke-static {p0, p1}, Lcom/google/glass/hidden/BatteryIndicator;->show(Landroid/content/Context;Z)V
-
-    .line 716
-    iput-boolean p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->isBatteryIndicatorShowing:Z
-
-    .line 718
-    :cond_0
+    .line 609
     return-void
 .end method
 
@@ -1297,21 +1266,21 @@
     .locals 3
 
     .prologue
-    .line 725
+    .line 712
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/MainTimelineView;->setAlpha(F)V
 
-    .line 726
+    .line 713
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/MainTimelineView;->setVisibility(I)V
 
-    .line 727
+    .line 714
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/MainTimelineView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1342,14 +1311,14 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 729
+    .line 716
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logWakeUpDelay(J)V
 
-    .line 730
+    .line 717
     return-void
 .end method
 
@@ -1357,12 +1326,12 @@
     .locals 3
 
     .prologue
-    .line 574
+    .line 581
     iget-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineLoaders:Ljava/util/List;
 
     if-eqz v2, :cond_1
 
-    .line 575
+    .line 582
     iget-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineLoaders:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1383,20 +1352,20 @@
 
     check-cast v1, Landroid/content/Loader;
 
-    .line 576
+    .line 583
     .local v1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
     invoke-virtual {v1}, Landroid/content/Loader;->reset()V
 
     goto :goto_0
 
-    .line 578
+    .line 585
     .end local v1           #loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
     :cond_0
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineLoaders:Ljava/util/List;
 
-    .line 580
+    .line 587
     .end local v0           #i$:Ljava/util/Iterator;
     :cond_1
     return-void
@@ -1408,15 +1377,15 @@
     .locals 0
 
     .prologue
-    .line 558
+    .line 565
     return-void
 .end method
 
-.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
     .locals 2
 
     .prologue
-    .line 632
+    .line 639
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->OK_GLASS_EVERYWHERE:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -1425,14 +1394,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 633
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->GUARD:Lcom/google/glass/voice/VoiceConfig;
-
     .line 640
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->GUARD:Lcom/google/glass/voice/VoiceConfigDescriptor;
+
+    .line 647
     :goto_0
     return-object v0
 
-    .line 634
+    .line 641
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification()Z
 
@@ -1440,16 +1409,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 635
+    .line 642
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
-    invoke-virtual {v0}, Lcom/google/glass/voice/NotificationVoiceCommandHelper;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+    invoke-virtual {v0}, Lcom/google/glass/voice/NotificationVoiceCommandHelper;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 639
+    .line 646
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
@@ -1459,10 +1428,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 640
+    .line 647
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
-    invoke-virtual {v0}, Lcom/google/glass/home/timeline/MainTimelineView;->getCurrentVoiceConfig()Lcom/google/glass/voice/VoiceConfig;
+    invoke-virtual {v0}, Lcom/google/glass/home/timeline/MainTimelineView;->getCurrentVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     move-result-object v0
 
@@ -1473,7 +1442,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 321
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
     return-object v0
@@ -1483,7 +1452,7 @@
     .locals 1
 
     .prologue
-    .line 43
+    .line 44
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
 
     move-result-object v0
@@ -1492,50 +1461,47 @@
 .end method
 
 .method public onConfirm()Z
-    .locals 3
+    .locals 1
 
     .prologue
-    const/4 v1, 0x1
+    .line 653
+    const/4 v0, 0x0
 
-    .line 654
-    const/4 v2, 0x0
+    invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setFromScreenOffNotification(Z)V
 
-    invoke-direct {p0, v2}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setFromScreenOffNotification(Z)V
+    .line 657
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
 
-    .line 658
-    const/4 v0, 0x1
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/home/timeline/TimelineView;->onConfirm()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/home/timeline/TimelineView;->shouldSuppressSingleTapSound()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
 
     .line 659
-    .local v0, openBundle:Z
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p0, v1}, Lcom/google/glass/home/timeline/TimelineView;->onConfirm(Lcom/google/glass/app/GlassActivity;Z)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/glass/home/timeline/TimelineView;->shouldSuppressSingleTapSound()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 664
     :cond_0
+    const/4 v0, 0x1
+
+    .line 662
     :goto_0
-    return v1
+    return v0
 
     :cond_1
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onConfirm()Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_0
 .end method
@@ -1549,35 +1515,35 @@
 
     const/4 v3, 0x0
 
-    .line 134
+    .line 132
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 136
+    .line 134
     new-instance v0, Lcom/google/glass/util/PowerHelper;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/PowerHelper;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->power:Lcom/google/glass/util/PowerHelper;
 
-    .line 138
+    .line 136
     new-instance v0, Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/timeline/UiPerformanceLog;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
-    .line 140
+    .line 138
     new-instance v0, Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineOptionsHelper()Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     move-result-object v1
 
-    invoke-direct {v0, p0, v1}, Lcom/google/glass/voice/NotificationVoiceCommandHelper;-><init>(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/timeline/TimelineOptionsHelper;)V
+    invoke-direct {v0, p0, v1}, Lcom/google/glass/voice/NotificationVoiceCommandHelper;-><init>(Lcom/google/glass/app/GlassVoiceActivity;Lcom/google/glass/timeline/TimelineOptionsHelper;)V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
-    .line 143
+    .line 141
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
@@ -1588,7 +1554,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->initTimelineView(Z)V
 
-    .line 146
+    .line 144
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->guestModeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     new-array v1, v4, [Ljava/lang/String;
@@ -1599,7 +1565,7 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 149
+    .line 147
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->notificationReceivedReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     new-array v1, v4, [Ljava/lang/String;
@@ -1610,14 +1576,14 @@
 
     invoke-virtual {v0, p0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 151
+    .line 149
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->handleIntent(Landroid/content/Intent;)V
 
-    .line 152
+    .line 150
     return-void
 .end method
 
@@ -1625,23 +1591,23 @@
     .locals 1
 
     .prologue
-    .line 564
+    .line 571
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->stopTimelineLoaders()V
 
-    .line 566
+    .line 573
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->guestModeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v0, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 567
+    .line 574
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->notificationReceivedReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v0, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 569
+    .line 576
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onDestroy()V
 
-    .line 570
+    .line 577
     return-void
 .end method
 
@@ -1650,19 +1616,19 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 678
+    .line 676
     sget-object v0, Lcom/google/glass/input/InputListener$DismissAction;->SWIPE_DOWN:Lcom/google/glass/input/InputListener$DismissAction;
 
     if-ne p1, v0, :cond_0
 
-    .line 679
+    .line 677
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->HOME_DISMISSED:Lcom/google/glass/logging/UserEventAction;
 
     const-string v1, "1"
 
     invoke-virtual {p0, v0, v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 681
+    .line 679
     :cond_0
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
@@ -1675,21 +1641,21 @@
     .locals 1
 
     .prologue
-    .line 669
+    .line 667
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
 
     move-result-object v0
 
-    invoke-virtual {v0, p0}, Lcom/google/glass/home/timeline/TimelineView;->onDoubleTap(Lcom/google/glass/app/GlassActivity;)Z
+    invoke-virtual {v0}, Lcom/google/glass/home/timeline/TimelineView;->onDoubleTap()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 670
+    .line 668
     const/4 v0, 0x1
 
-    .line 673
+    .line 671
     :goto_0
     return v0
 
@@ -1706,13 +1672,13 @@
     .parameter "intent"
 
     .prologue
-    .line 275
+    .line 292
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 276
+    .line 293
     invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->handleIntent(Landroid/content/Intent;)V
 
-    .line 277
+    .line 294
     return-void
 .end method
 
@@ -1720,229 +1686,195 @@
     .locals 1
 
     .prologue
-    .line 511
+    .line 521
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/UiPerformanceLog;->stopPerformanceMeasure()V
 
-    .line 512
+    .line 522
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/UiPerformanceLog;->stopPerformanceLogging()V
 
-    .line 515
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showBatteryIndicator(Z)V
-
-    .line 517
+    .line 524
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onPause()V
 
-    .line 518
+    .line 525
     return-void
 .end method
 
-.method public onPrepareSwipe(IFFFFII)Z
-    .locals 1
-    .parameter "fingerCount"
-    .parameter "accumulatorX"
-    .parameter "accumulatorY"
-    .parameter "velocityX"
-    .parameter "velocityY"
-    .parameter "numSwipesX"
-    .parameter "numSwipesY"
-
-    .prologue
-    .line 647
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showBatteryIndicator(Z)V
-
-    .line 648
-    invoke-super/range {p0 .. p7}, Lcom/google/glass/home/timeline/TimelineActivity;->onPrepareSwipe(IFFFFII)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public onResume()V
-    .locals 8
+    .locals 7
 
     .prologue
-    const-wide/16 v6, -0x1
+    const-wide/16 v5, -0x1
 
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    .line 327
+    new-instance v3, Lcom/google/glass/util/SettingsHelper;
 
-    .line 310
-    new-instance v4, Lcom/google/glass/util/SettingsHelper;
+    invoke-direct {v3, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v4, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v3}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
 
-    invoke-virtual {v4}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
+    move-result v3
 
-    move-result v4
-
-    invoke-direct {p0, v4}, Lcom/google/glass/home/timeline/MainTimelineActivity;->initTimelineView(Z)V
-
-    .line 313
-    invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onResume()V
-
-    .line 316
-    iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
-
-    invoke-virtual {v4}, Lcom/google/glass/home/timeline/MainTimelineView;->updateQueryParameters()V
-
-    .line 319
-    iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
-
-    if-eqz v4, :cond_3
-
-    .line 321
-    new-instance v0, Landroid/content/Intent;
-
-    iget-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
-
-    invoke-direct {v0, v4}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
-
-    .line 325
-    .local v0, intent:Landroid/content/Intent;
-    const/4 v4, 0x0
-
-    iput-object v4, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
-
-    .line 328
-    const-string v4, "from_screen_off_notification"
-
-    invoke-virtual {v0, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v4
-
-    invoke-direct {p0, v4}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setFromScreenOffNotification(Z)V
+    invoke-direct {p0, v3}, Lcom/google/glass/home/timeline/MainTimelineActivity;->initTimelineView(Z)V
 
     .line 330
-    const-string v4, "wake_up_time"
+    invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onResume()V
 
-    invoke-virtual {v0, v4, v6, v7}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    .line 333
+    iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
 
-    move-result-wide v4
-
-    invoke-direct {p0, v4, v5}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setWakeUpTime(J)V
-
-    .line 334
-    invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isLoadingTimeline()Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    .line 335
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "No pending intent, going to the timeline."
-
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v3}, Lcom/google/glass/home/timeline/MainTimelineView;->updateQueryParameters()V
 
     .line 336
+    iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
+
+    if-eqz v3, :cond_3
+
+    .line 338
+    new-instance v0, Landroid/content/Intent;
+
+    iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
+
+    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
+
+    .line 342
+    .local v0, intent:Landroid/content/Intent;
+    const/4 v3, 0x0
+
+    iput-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->onResumeTask:Landroid/content/Intent;
+
+    .line 345
+    const-string v3, "from_screen_off_notification"
+
+    invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    invoke-direct {p0, v3}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setFromScreenOffNotification(Z)V
+
+    .line 347
+    const-string v3, "wake_up_time"
+
+    invoke-virtual {v0, v3, v5, v6}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+
+    move-result-wide v3
+
+    invoke-direct {p0, v3, v4}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setWakeUpTime(J)V
+
+    .line 351
+    invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isLoadingTimeline()Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 352
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "No pending intent, going to the timeline."
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 353
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->goToTimeline(Landroid/content/Intent;)V
 
-    .line 341
+    .line 358
     :cond_0
     if-eqz v0, :cond_2
 
-    const-string v4, "screen_turned_on"
+    const-string v3, "screen_turned_on"
 
-    invoke-virtual {v0, v4, v3}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_2
+    if-eqz v3, :cond_2
 
-    move v1, v2
+    const/4 v1, 0x1
 
-    .line 343
+    .line 360
     .local v1, unblockScreen:Z
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 344
+    .line 361
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "Now turning the screen on."
+    const-string v4, "Now turning the screen on."
 
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 345
-    invoke-static {p0, v3}, Lcom/google/glass/hidden/HiddenPowerManager;->preventScreenOn(Landroid/content/Context;Z)V
-
-    .line 346
-    const-string v3, "screen_turned_on"
-
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 362
+    invoke-static {p0, v2}, Lcom/google/glass/hidden/HiddenPowerManager;->preventScreenOn(Landroid/content/Context;Z)V
+
+    .line 363
+    const-string v2, "screen_turned_on"
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
+
+    .line 379
     .end local v0           #intent:Landroid/content/Intent;
     .end local v1           #unblockScreen:Z
     :cond_1
     :goto_1
-    invoke-direct {p0, v2}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showBatteryIndicator(Z)V
-
-    .line 365
     iget-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->uiPerformanceLog:Lcom/google/glass/home/timeline/UiPerformanceLog;
 
     invoke-virtual {v2}, Lcom/google/glass/home/timeline/UiPerformanceLog;->startPerformanceLogging()V
 
-    .line 366
+    .line 380
     return-void
 
     .restart local v0       #intent:Landroid/content/Intent;
     :cond_2
-    move v1, v3
+    move v1, v2
 
-    .line 341
+    .line 358
     goto :goto_0
 
-    .line 349
+    .line 366
     .end local v0           #intent:Landroid/content/Intent;
     :cond_3
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "There is no pending task, checking for pending runnable."
+    const-string v4, "There is no pending task, checking for pending runnable."
 
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 352
-    invoke-direct {p0, v6, v7}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setWakeUpTime(J)V
+    .line 369
+    invoke-direct {p0, v5, v6}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setWakeUpTime(J)V
 
-    .line 354
+    .line 371
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isLoadingTimeline()Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_1
+    if-nez v3, :cond_1
 
-    .line 355
+    .line 372
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "No pending intent, showing the timeline."
+    const-string v4, "No pending intent, showing the timeline."
 
-    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 356
+    .line 373
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->showTimeline()V
 
-    .line 357
-    invoke-direct {p0, v3}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setFromScreenOffNotification(Z)V
+    .line 374
+    invoke-direct {p0, v2}, Lcom/google/glass/home/timeline/MainTimelineActivity;->setFromScreenOffNotification(Z)V
 
     goto :goto_1
 .end method
@@ -1951,16 +1883,16 @@
     .locals 0
 
     .prologue
-    .line 524
+    .line 531
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->cancelOnTimelineLoadRunnable()V
 
-    .line 532
+    .line 539
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->hideTimeline()V
 
-    .line 533
+    .line 540
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onStop()V
 
-    .line 534
+    .line 541
     return-void
 .end method
 
@@ -1970,7 +1902,7 @@
     .parameter "direction"
 
     .prologue
-    .line 686
+    .line 684
     sget-object v0, Lcom/google/glass/home/timeline/MainTimelineActivity$5;->$SwitchMap$com$google$glass$input$SwipeDirection:[I
 
     invoke-virtual {p2}, Lcom/google/glass/input/SwipeDirection;->ordinal()I
@@ -1981,7 +1913,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 696
+    .line 694
     :goto_0
     invoke-super {p0, p1, p2}, Lcom/google/glass/home/timeline/TimelineActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
@@ -1989,7 +1921,7 @@
 
     return v0
 
-    .line 689
+    .line 687
     :pswitch_0
     const/4 v0, 0x0
 
@@ -1997,7 +1929,7 @@
 
     goto :goto_0
 
-    .line 686
+    .line 684
     nop
 
     :pswitch_data_0
@@ -2012,19 +1944,19 @@
     .parameter "command"
 
     .prologue
-    .line 701
+    .line 699
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->power:Lcom/google/glass/util/PowerHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/util/PowerHelper;->userActivity()V
 
-    .line 702
+    .line 700
     invoke-direct {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->isFromScreenOffNotification()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 703
+    .line 701
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity;->notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
@@ -2041,7 +1973,7 @@
 
     move-result v0
 
-    .line 705
+    .line 703
     :goto_0
     return v0
 
@@ -2057,7 +1989,7 @@
     .locals 1
 
     .prologue
-    .line 299
+    .line 316
     sget v0, Lcom/google/glass/home/R$layout;->timeline_activity:I
 
     return v0
@@ -2067,7 +1999,7 @@
     .locals 1
 
     .prologue
-    .line 622
+    .line 629
     const/4 v0, 0x1
 
     return v0
@@ -2077,7 +2009,7 @@
     .locals 1
 
     .prologue
-    .line 627
+    .line 634
     const/4 v0, 0x0
 
     return v0

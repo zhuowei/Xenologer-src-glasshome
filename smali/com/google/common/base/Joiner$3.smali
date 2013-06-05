@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 539
+    .line 542
     iput-object p1, p0, Lcom/google/common/base/Joiner$3;->val$rest:[Ljava/lang/Object;
 
     iput-object p2, p0, Lcom/google/common/base/Joiner$3;->val$first:Ljava/lang/Object;
@@ -58,10 +58,10 @@
     .parameter "index"
 
     .prologue
-    .line 545
+    .line 550
     packed-switch p1, :pswitch_data_0
 
-    .line 551
+    .line 556
     iget-object v0, p0, Lcom/google/common/base/Joiner$3;->val$rest:[Ljava/lang/Object;
 
     add-int/lit8 v1, p1, -0x2
@@ -71,19 +71,19 @@
     :goto_0
     return-object v0
 
-    .line 547
+    .line 552
     :pswitch_0
     iget-object v0, p0, Lcom/google/common/base/Joiner$3;->val$first:Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 549
+    .line 554
     :pswitch_1
     iget-object v0, p0, Lcom/google/common/base/Joiner$3;->val$second:Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 545
+    .line 550
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 541
+    .line 545
     iget-object v0, p0, Lcom/google/common/base/Joiner$3;->val$rest:[Ljava/lang/Object;
 
     array-length v0, v0

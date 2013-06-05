@@ -42,15 +42,15 @@
     .end annotation
 
     .prologue
-    .line 1828
+    .line 1737
     .local p0, this:Lcom/google/common/cache/LocalCache$WeightedStrongValueReference;,"Lcom/google/common/cache/LocalCache$WeightedStrongValueReference<TK;TV;>;"
     .local p1, referent:Ljava/lang/Object;,"TV;"
     invoke-direct {p0, p1}, Lcom/google/common/cache/LocalCache$StrongValueReference;-><init>(Ljava/lang/Object;)V
 
-    .line 1829
+    .line 1738
     iput p2, p0, Lcom/google/common/cache/LocalCache$WeightedStrongValueReference;->weight:I
 
-    .line 1830
+    .line 1739
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 1834
+    .line 1743
     .local p0, this:Lcom/google/common/cache/LocalCache$WeightedStrongValueReference;,"Lcom/google/common/cache/LocalCache$WeightedStrongValueReference<TK;TV;>;"
     iget v0, p0, Lcom/google/common/cache/LocalCache$WeightedStrongValueReference;->weight:I
 

@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 112
+    .line 114
     iput-object p1, p0, Lcom/google/common/io/FileBackedOutputStream$2;->this$0:Lcom/google/common/io/FileBackedOutputStream;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
     .end annotation
 
     .prologue
-    .line 115
+    .line 117
     iget-object v0, p0, Lcom/google/common/io/FileBackedOutputStream$2;->this$0:Lcom/google/common/io/FileBackedOutputStream;
 
     #calls: Lcom/google/common/io/FileBackedOutputStream;->openStream()Ljava/io/InputStream;
@@ -76,7 +76,7 @@
     .end annotation
 
     .prologue
-    .line 112
+    .line 114
     invoke-virtual {p0}, Lcom/google/common/io/FileBackedOutputStream$2;->getInput()Ljava/io/InputStream;
 
     move-result-object v0

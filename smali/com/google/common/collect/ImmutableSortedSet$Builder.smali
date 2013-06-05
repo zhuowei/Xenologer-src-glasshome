@@ -48,12 +48,12 @@
     .end annotation
 
     .prologue
-    .line 483
+    .line 503
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<-TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ImmutableSet$Builder;-><init>()V
 
-    .line 484
+    .line 504
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -62,7 +62,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->comparator:Ljava/util/Comparator;
 
-    .line 485
+    .line 505
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -87,7 +87,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -101,7 +101,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -115,7 +115,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -136,12 +136,12 @@
     .end annotation
 
     .prologue
-    .line 498
+    .line 519
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableSet$Builder;->add(Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
 
-    .line 499
+    .line 520
     return-object p0
 .end method
 
@@ -157,12 +157,12 @@
     .end annotation
 
     .prologue
-    .line 511
+    .line 533
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     .local p1, elements:[Ljava/lang/Object;,"[TE;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableSet$Builder;->add([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSet$Builder;
 
-    .line 512
+    .line 534
     return-object p0
 .end method
 
@@ -171,7 +171,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -185,7 +185,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->addAll(Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -199,7 +199,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -213,7 +213,7 @@
     .parameter "x0"
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->addAll(Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableSortedSet$Builder;
 
@@ -236,12 +236,12 @@
     .end annotation
 
     .prologue
-    .line 524
+    .line 547
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     .local p1, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableSet$Builder;->addAll(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableSet$Builder;
 
-    .line 525
+    .line 548
     return-object p0
 .end method
 
@@ -259,12 +259,12 @@
     .end annotation
 
     .prologue
-    .line 537
+    .line 561
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     .local p1, elements:Ljava/util/Iterator;,"Ljava/util/Iterator<+TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/ImmutableSet$Builder;->addAll(Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableSet$Builder;
 
-    .line 538
+    .line 562
     return-object p0
 .end method
 
@@ -272,7 +272,7 @@
     .locals 1
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->build()Lcom/google/common/collect/ImmutableSortedSet;
 
@@ -285,7 +285,7 @@
     .locals 1
 
     .prologue
-    .line 476
+    .line 496
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ImmutableSortedSet$Builder;->build()Lcom/google/common/collect/ImmutableSortedSet;
 
@@ -295,7 +295,7 @@
 .end method
 
 .method public build()Lcom/google/common/collect/ImmutableSortedSet;
-    .locals 2
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -305,20 +305,30 @@
     .end annotation
 
     .prologue
-    .line 546
+    .line 573
     .local p0, this:Lcom/google/common/collect/ImmutableSortedSet$Builder;,"Lcom/google/common/collect/ImmutableSortedSet$Builder<TE;>;"
-    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->comparator:Ljava/util/Comparator;
+    iget-object v0, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->contents:[Ljava/lang/Object;
 
-    iget-object v1, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->contents:Ljava/util/ArrayList;
+    check-cast v0, [Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    .line 574
+    .local v0, contentsArray:[Ljava/lang/Object;,"[TE;"
+    iget-object v2, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->comparator:Ljava/util/Comparator;
+
+    iget v3, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->size:I
+
+    invoke-static {v2, v3, v0}, Lcom/google/common/collect/ImmutableSortedSet;->construct(Ljava/util/Comparator;I[Ljava/lang/Object;)Lcom/google/common/collect/ImmutableSortedSet;
 
     move-result-object v1
 
-    #calls: Lcom/google/common/collect/ImmutableSortedSet;->copyOfInternal(Ljava/util/Comparator;Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableSortedSet;
-    invoke-static {v0, v1}, Lcom/google/common/collect/ImmutableSortedSet;->access$000(Ljava/util/Comparator;Ljava/util/Iterator;)Lcom/google/common/collect/ImmutableSortedSet;
+    .line 575
+    .local v1, result:Lcom/google/common/collect/ImmutableSortedSet;,"Lcom/google/common/collect/ImmutableSortedSet<TE;>;"
+    invoke-virtual {v1}, Lcom/google/common/collect/ImmutableSortedSet;->size()I
 
-    move-result-object v0
+    move-result v2
 
-    return-object v0
+    iput v2, p0, Lcom/google/common/collect/ImmutableSortedSet$Builder;->size:I
+
+    .line 576
+    return-object v1
 .end method

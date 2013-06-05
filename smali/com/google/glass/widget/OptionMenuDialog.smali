@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field private canceled:Z
+
 .field private final keyDetector:Lcom/google/glass/input/KeyDetector;
 
 .field private final listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
@@ -38,21 +40,26 @@
     .parameter "listener"
 
     .prologue
-    .line 99
+    .line 100
     sget v0, Lcom/google/glass/common/R$style;->ContextualDialogTheme:I
 
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    .line 101
-    iput-object p1, p0, Lcom/google/glass/widget/OptionMenuDialog;->owner:Lcom/google/glass/app/GlassActivity;
+    .line 96
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->canceled:Z
 
     .line 102
-    iput-object p2, p0, Lcom/google/glass/widget/OptionMenuDialog;->soundManager:Lcom/google/glass/sound/SoundManager;
+    iput-object p1, p0, Lcom/google/glass/widget/OptionMenuDialog;->owner:Lcom/google/glass/app/GlassActivity;
 
     .line 103
-    iput-object p3, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
+    iput-object p2, p0, Lcom/google/glass/widget/OptionMenuDialog;->soundManager:Lcom/google/glass/sound/SoundManager;
 
     .line 104
+    iput-object p3, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
+
+    .line 105
     new-instance v0, Lcom/google/glass/input/TouchDetector;
 
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->getContext()Landroid/content/Context;
@@ -63,7 +70,7 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->touchDetector:Lcom/google/glass/input/TouchDetector;
 
-    .line 105
+    .line 106
     new-instance v0, Lcom/google/glass/input/KeyDetector;
 
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->getContext()Landroid/content/Context;
@@ -74,12 +81,12 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->keyDetector:Lcom/google/glass/input/KeyDetector;
 
-    .line 107
+    .line 108
     sget v0, Lcom/google/glass/common/R$layout;->option_menu_dialog:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/widget/OptionMenuDialog;->setContentView(I)V
 
-    .line 108
+    .line 109
     sget v0, Lcom/google/glass/common/R$id;->slider:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/widget/OptionMenuDialog;->findViewById(I)Landroid/view/View;
@@ -90,7 +97,7 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->sliderView:Lcom/google/glass/widget/SliderView;
 
-    .line 109
+    .line 110
     sget v0, Lcom/google/glass/common/R$id;->options:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/widget/OptionMenuDialog;->findViewById(I)Landroid/view/View;
@@ -101,12 +108,12 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
-    .line 110
+    .line 111
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenuView;->activate()V
 
-    .line 112
+    .line 113
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     new-instance v1, Lcom/google/glass/widget/OptionMenuDialog$1;
@@ -115,21 +122,21 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/OptionMenuView;->setListener(Lcom/google/glass/widget/OptionMenuView$Listener;)V
 
-    .line 119
+    .line 120
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->sliderView:Lcom/google/glass/widget/SliderView;
 
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/SliderView;->setScrollView(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 121
+    .line 122
     new-instance v0, Lcom/google/glass/widget/OptionMenuDialog$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenuDialog$2;-><init>(Lcom/google/glass/widget/OptionMenuDialog;)V
 
     invoke-virtual {p0, v0}, Lcom/google/glass/widget/OptionMenuDialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 127
+    .line 128
     return-void
 .end method
 
@@ -138,7 +145,7 @@
     .parameter "x0"
 
     .prologue
-    .line 24
+    .line 23
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
 
     return-object v0
@@ -146,22 +153,38 @@
 
 
 # virtual methods
+.method public cancel()V
+    .locals 1
+
+    .prologue
+    .line 163
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->canceled:Z
+
+    .line 164
+    invoke-super {p0}, Landroid/app/Dialog;->cancel()V
+
+    .line 165
+    return-void
+.end method
+
 .method public dismiss()V
     .locals 2
 
     .prologue
-    .line 152
+    .line 154
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->isShowing()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 157
+    .line 159
     :goto_0
     return-void
 
-    .line 155
+    .line 157
     :cond_0
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->soundManager:Lcom/google/glass/sound/SoundManager;
 
@@ -169,7 +192,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 156
+    .line 158
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
 
     goto :goto_0
@@ -179,28 +202,15 @@
     .locals 0
 
     .prologue
-    .line 164
+    .line 179
     return-void
-.end method
-
-.method public onAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 308
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method public onCameraButtonPressed()Z
     .locals 1
 
     .prologue
-    .line 280
+    .line 295
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
 
     invoke-interface {v0}, Lcom/google/glass/widget/OptionMenuDialog$Listener;->onCameraButtonPressed()Z
@@ -211,32 +221,28 @@
 .end method
 
 .method public onConfirm()Z
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 220
+    .line 235
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
-    iget-object v1, p0, Lcom/google/glass/widget/OptionMenuDialog;->owner:Lcom/google/glass/app/GlassActivity;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v0, v1, v2}, Lcom/google/glass/widget/OptionMenuView;->onConfirm(Lcom/google/glass/app/GlassActivity;Z)Z
+    invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenuView;->onConfirm()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 236
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->dismiss()V
 
-    .line 225
+    .line 240
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 223
+    .line 238
     :cond_0
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
 
@@ -250,10 +256,10 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 235
+    .line 250
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->dismiss()V
 
-    .line 236
+    .line 251
     const/4 v0, 0x1
 
     return v0
@@ -263,7 +269,7 @@
     .locals 1
 
     .prologue
-    .line 230
+    .line 245
     const/4 v0, 0x0
 
     return v0
@@ -275,7 +281,7 @@
     .parameter "wentDown"
 
     .prologue
-    .line 268
+    .line 283
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/widget/OptionMenuView;->onFingerCountChanged(IZ)Z
@@ -290,12 +296,12 @@
     .parameter "event"
 
     .prologue
-    .line 180
+    .line 195
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->touchDetector:Lcom/google/glass/input/TouchDetector;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/input/TouchDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 182
+    .line 197
     const/4 v0, 0x1
 
     return v0
@@ -309,7 +315,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 191
+    .line 206
     const/16 v1, 0x1b
 
     if-ne p1, v1, :cond_2
@@ -320,7 +326,7 @@
 
     if-nez v1, :cond_2
 
-    .line 192
+    .line 207
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
 
     invoke-interface {v1}, Lcom/google/glass/widget/OptionMenuDialog$Listener;->shouldAllowCameraButton()Z
@@ -329,19 +335,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 195
+    .line 210
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->onCameraButtonPressed()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 208
+    .line 223
     :cond_0
     :goto_0
     return v0
 
-    .line 201
+    .line 216
     :cond_1
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
 
@@ -349,7 +355,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 223
     :cond_2
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenuDialog;->keyDetector:Lcom/google/glass/input/KeyDetector;
 
@@ -376,7 +382,7 @@
     .parameter "event"
 
     .prologue
-    .line 213
+    .line 228
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->keyDetector:Lcom/google/glass/input/KeyDetector;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/input/KeyDetector;->onKeyUp(ILandroid/view/KeyEvent;)Z
@@ -414,7 +420,7 @@
     .parameter "numSwipesY"
 
     .prologue
-    .line 261
+    .line 276
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     move v1, p1
@@ -433,21 +439,8 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/google/glass/widget/OptionMenuView;->onPrepareSwipe(IFFFFII)Z
 
-    .line 263
+    .line 278
     const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public onResampledAudioData([BII)Z
-    .locals 1
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 313
-    const/4 v0, 0x0
 
     return v0
 .end method
@@ -458,32 +451,32 @@
     .parameter "direction"
 
     .prologue
-    .line 243
+    .line 258
     sget-object v0, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
 
     if-ne p2, v0, :cond_0
 
-    .line 244
+    .line 259
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     sget-object v1, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
 
     invoke-static {v0, v1}, Lcom/google/glass/util/HopHelper;->performHopAnimation(Landroid/view/View;Lcom/google/glass/input/SwipeDirection;)V
 
-    .line 245
+    .line 260
     const/4 v0, 0x1
 
-    .line 250
+    .line 265
     :goto_0
     return v0
 
-    .line 248
+    .line 263
     :cond_0
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/widget/OptionMenuView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/widget/OptionMenuView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
-    .line 250
+    .line 265
     const/4 v0, 0x0
 
     goto :goto_0
@@ -494,7 +487,7 @@
     .parameter "fingerCount"
 
     .prologue
-    .line 275
+    .line 290
     const/4 v0, 0x0
 
     return v0
@@ -505,7 +498,7 @@
     .parameter "event"
 
     .prologue
-    .line 175
+    .line 190
     invoke-virtual {p0, p1}, Lcom/google/glass/widget/OptionMenuDialog;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
@@ -519,55 +512,17 @@
     .parameter "velocity"
 
     .prologue
-    .line 287
+    .line 302
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public onVoiceAmplitudeChanged(D)Z
-    .locals 1
-    .parameter "amplitude"
-
-    .prologue
-    .line 303
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-    .locals 1
-    .parameter "command"
-
-    .prologue
-    .line 298
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onVoiceServiceConnected()V
-    .locals 0
-
-    .prologue
-    .line 291
-    return-void
-.end method
-
-.method public onVoiceServiceDisconnected()V
-    .locals 0
-
-    .prologue
-    .line 294
-    return-void
 .end method
 
 .method public resetToHomePosition()V
     .locals 3
 
     .prologue
-    .line 170
+    .line 185
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
@@ -580,7 +535,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/widget/OptionMenuView;->setSelection(IZ)V
 
-    .line 171
+    .line 186
     return-void
 .end method
 
@@ -591,17 +546,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 136
+    .line 137
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/widget/OptionMenuView;->setOptionMenu(Lcom/google/glass/widget/OptionMenu;)V
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->optionsView:Lcom/google/glass/widget/OptionMenuView;
 
     invoke-virtual {v0, v1, v1}, Lcom/google/glass/widget/OptionMenuView;->setSelection(IZ)V
 
-    .line 138
+    .line 139
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->sliderView:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {p1}, Lcom/google/glass/widget/OptionMenu;->getVisibleItemCount()I
@@ -610,7 +565,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/SliderView;->setCount(I)V
 
-    .line 139
+    .line 140
     return-object p0
 .end method
 
@@ -618,20 +573,35 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 145
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuDialog;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 148
+    .line 150
     :goto_0
     return-void
 
-    .line 147
+    .line 148
     :cond_0
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->canceled:Z
+
+    .line 149
     invoke-super {p0}, Landroid/app/Dialog;->show()V
 
     goto :goto_0
+.end method
+
+.method public wasCanceled()Z
+    .locals 1
+
+    .prologue
+    .line 171
+    iget-boolean v0, p0, Lcom/google/glass/widget/OptionMenuDialog;->canceled:Z
+
+    return v0
 .end method

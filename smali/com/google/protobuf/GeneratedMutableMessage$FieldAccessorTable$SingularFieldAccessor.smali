@@ -58,10 +58,10 @@
     .local p3, messageClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMutableMessage;>;"
     const/4 v3, 0x0
 
-    .line 169
+    .line 215
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 170
+    .line 216
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -89,7 +89,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
-    .line 171
+    .line 217
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
@@ -98,7 +98,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->type:Ljava/lang/Class;
 
-    .line 172
+    .line 218
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -132,7 +132,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->setMethod:Ljava/lang/reflect/Method;
 
-    .line 173
+    .line 219
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethod:Ljava/lang/reflect/Method;
 
-    .line 174
+    .line 220
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -188,7 +188,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->clearMethod:Ljava/lang/reflect/Method;
 
-    .line 175
+    .line 221
     return-void
 .end method
 
@@ -200,7 +200,7 @@
     .parameter "value"
 
     .prologue
-    .line 203
+    .line 249
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."
@@ -215,7 +215,7 @@
     .parameter "message"
 
     .prologue
-    .line 214
+    .line 260
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->clearMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -225,7 +225,7 @@
     #calls: Lcom/google/protobuf/GeneratedMutableMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMutableMessage;->access$100(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 215
+    .line 261
     return-void
 .end method
 
@@ -234,7 +234,7 @@
     .parameter "message"
 
     .prologue
-    .line 184
+    .line 230
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -254,7 +254,7 @@
     .parameter "message"
 
     .prologue
-    .line 187
+    .line 233
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getMutable() called on a non-Message type."
@@ -270,7 +270,7 @@
     .parameter "index"
 
     .prologue
-    .line 194
+    .line 240
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."
@@ -285,7 +285,7 @@
     .parameter "message"
 
     .prologue
-    .line 210
+    .line 256
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."
@@ -300,7 +300,7 @@
     .parameter "message"
 
     .prologue
-    .line 207
+    .line 253
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -325,7 +325,7 @@
     .locals 2
 
     .prologue
-    .line 217
+    .line 263
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "newMessageForField() called on a non-Message type."
@@ -341,7 +341,7 @@
     .parameter "value"
 
     .prologue
-    .line 191
+    .line 237
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->setMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
@@ -355,7 +355,7 @@
     #calls: Lcom/google/protobuf/GeneratedMutableMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMutableMessage;->access$100(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 192
+    .line 238
     return-void
 .end method
 
@@ -366,7 +366,7 @@
     .parameter "value"
 
     .prologue
-    .line 199
+    .line 245
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."

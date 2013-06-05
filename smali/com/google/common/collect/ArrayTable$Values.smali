@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 821
+    .line 827
     .local p0, this:Lcom/google/common/collect/ArrayTable$Values;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.Values;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
 
@@ -46,7 +46,7 @@
     .parameter "x1"
 
     .prologue
-    .line 821
+    .line 827
     .local p0, this:Lcom/google/common/collect/ArrayTable$Values;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.Values;"
     invoke-direct {p0, p1}, Lcom/google/common/collect/ArrayTable$Values;-><init>(Lcom/google/common/collect/ArrayTable;)V
 
@@ -55,22 +55,6 @@
 
 
 # virtual methods
-.method public contains(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "value"
-
-    .prologue
-    .line 837
-    .local p0, this:Lcom/google/common/collect/ArrayTable$Values;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.Values;"
-    iget-object v0, p0, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
-
-    invoke-virtual {v0, p1}, Lcom/google/common/collect/ArrayTable;->containsValue(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public iterator()Ljava/util/Iterator;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -82,15 +66,21 @@
     .end annotation
 
     .prologue
-    .line 823
+    .line 830
     .local p0, this:Lcom/google/common/collect/ArrayTable$Values;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.Values;"
     new-instance v0, Lcom/google/common/collect/ArrayTable$Values$1;
 
-    invoke-virtual {p0}, Lcom/google/common/collect/ArrayTable$Values;->size()I
+    iget-object v1, p0, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
 
-    move-result v1
+    invoke-virtual {v1}, Lcom/google/common/collect/ArrayTable;->cellSet()Ljava/util/Set;
 
-    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/ArrayTable$Values$1;-><init>(Lcom/google/common/collect/ArrayTable$Values;I)V
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/collect/ArrayTable$Values$1;-><init>(Lcom/google/common/collect/ArrayTable$Values;Ljava/util/Iterator;)V
 
     return-object v0
 .end method
@@ -99,7 +89,7 @@
     .locals 1
 
     .prologue
-    .line 833
+    .line 841
     .local p0, this:Lcom/google/common/collect/ArrayTable$Values;,"Lcom/google/common/collect/ArrayTable<TR;TC;TV;>.Values;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$Values;->this$0:Lcom/google/common/collect/ArrayTable;
 

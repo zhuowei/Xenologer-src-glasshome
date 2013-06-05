@@ -1,9 +1,6 @@
 .class Lcom/google/glass/home/HomeApplication$2;
-.super Ljava/lang/Object;
+.super Lcom/google/glass/util/SafeBroadcastReceiver;
 .source "HomeApplication.java"
-
-# interfaces
-.implements Landroid/content/ServiceConnection;
 
 
 # annotations
@@ -18,255 +15,181 @@
 
 
 # instance fields
+.field private lastScreenOnTime:J
+
 .field final synthetic this$0:Lcom/google/glass/home/HomeApplication;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/glass/home/HomeApplication;)V
-    .locals 0
+    .locals 2
     .parameter
 
     .prologue
-    .line 91
+    .line 105
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
+
+    .line 111
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
-    .locals 3
-    .parameter "name"
-    .parameter "binder"
+.method protected getTag()Ljava/lang/String;
+    .locals 2
 
     .prologue
-    .line 105
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
+    .line 137
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    const-string v1, "/screenOnOffReceiver"
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Connected to "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getShortClassName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 106
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-class v1, Lcom/google/glass/location/LocationService;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 107
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    invoke-static {}, Lcom/google/glass/location/LocationService;->getRunningInstance()Lcom/google/glass/location/LocationService;
-
-    move-result-object v1
-
-    #setter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-    invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$002(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
-
-    .line 112
-    .end local p2
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    #calls: Lcom/google/glass/home/HomeApplication;->onServiceConnected()V
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$400(Lcom/google/glass/home/HomeApplication;)V
-
-    .line 113
-    return-void
-
-    .line 108
-    .restart local p2
-    :cond_1
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    const-class v1, Lcom/google/glass/home/companion/CompanionService;
-
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 109
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    check-cast p2, Lcom/google/glass/home/companion/CompanionService$CompanionBinder;
-
-    .end local p2
-    invoke-virtual {p2}, Lcom/google/glass/home/companion/CompanionService$CompanionBinder;->getService()Lcom/google/glass/home/companion/CompanionService;
-
-    move-result-object v1
-
-    #setter for: Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-    invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$202(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/home/companion/CompanionService;)Lcom/google/glass/home/companion/CompanionService;
-
-    .line 110
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    #getter for: Lcom/google/glass/home/HomeApplication;->companionState:Lcom/google/glass/home/companion/CompanionState;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$300(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/home/companion/CompanionState;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    #getter for: Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-    invoke-static {v1}, Lcom/google/glass/home/HomeApplication;->access$200(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/home/companion/CompanionService;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/companion/CompanionState;->update(Lcom/google/glass/home/companion/CompanionService;)V
-
-    goto :goto_0
+    return-object v0
 .end method
 
-.method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 4
-    .parameter "name"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 8
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    const/4 v3, 0x0
+    const-wide/16 v6, 0x0
 
-    .line 94
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$100()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Disconnected from "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getShortClassName()Ljava/lang/String;
+    .line 115
+    invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$2;->getTag()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v4, "Received intent: "
 
-    move-result-object v1
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v3
 
-    .line 95
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object v3
 
-    const-class v1, Lcom/google/glass/location/LocationService;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v1
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 116
+    const-string v2, "android.intent.action.SCREEN_ON"
 
-    move-result v0
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    if-eqz v0, :cond_1
+    move-result-object v3
 
-    .line 96
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    #setter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
-    invoke-static {v0, v3}, Lcom/google/glass/home/HomeApplication;->access$002(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
+    move-result v2
 
-    .line 101
+    if-eqz v2, :cond_1
+
+    .line 119
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iput-wide v2, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
+
+    .line 120
+    iget-object v2, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
+
+    invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/glass/logging/UserEventAction;->SCREEN_ON:Lcom/google/glass/logging/UserEventAction;
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+
+    .line 133
     :cond_0
     :goto_0
     return-void
 
-    .line 97
+    .line 122
     :cond_1
-    invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+    const-string v2, "android.intent.action.SCREEN_OFF"
 
-    move-result-object v0
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
-    const-class v1, Lcom/google/glass/home/companion/CompanionService;
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v1
+    move-result v2
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    if-eqz v2, :cond_0
 
-    move-result v0
+    .line 126
+    iget-wide v2, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
-    if-eqz v0, :cond_0
+    cmp-long v2, v2, v6
 
-    .line 98
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
+    if-eqz v2, :cond_0
 
-    #setter for: Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-    invoke-static {v0, v3}, Lcom/google/glass/home/HomeApplication;->access$202(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/home/companion/CompanionService;)Lcom/google/glass/home/companion/CompanionService;
+    .line 127
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    .line 99
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
+    move-result-wide v2
 
-    #getter for: Lcom/google/glass/home/HomeApplication;->companionState:Lcom/google/glass/home/companion/CompanionState;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$300(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/home/companion/CompanionState;
+    iget-wide v4, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
-    move-result-object v0
+    sub-long v0, v2, v4
 
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
+    .line 128
+    .local v0, screenOnDuration:J
+    iput-wide v6, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
-    #getter for: Lcom/google/glass/home/HomeApplication;->companionService:Lcom/google/glass/home/companion/CompanionService;
-    invoke-static {v1}, Lcom/google/glass/home/HomeApplication;->access$200(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/home/companion/CompanionService;
+    .line 129
+    iget-object v2, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    move-result-object v1
+    invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/companion/CompanionState;->update(Lcom/google/glass/home/companion/CompanionService;)V
+    move-result-object v2
+
+    sget-object v3, Lcom/google/glass/logging/UserEventAction;->SCREEN_ON_DURATION:Lcom/google/glass/logging/UserEventAction;
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3, v4}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
     goto :goto_0
 .end method

@@ -36,7 +36,7 @@
     .parameter "b"
 
     .prologue
-    .line 89
+    .line 91
     if-eq p0, p1, :cond_1
 
     if-eqz p0, :cond_0
@@ -49,7 +49,7 @@
 
     if-nez v0, :cond_1
 
-    .line 90
+    .line 92
     :cond_0
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -85,7 +85,7 @@
 
     throw v0
 
-    .line 92
+    .line 94
     :cond_1
     return-void
 .end method
@@ -95,10 +95,10 @@
     .parameter "condition"
 
     .prologue
-    .line 83
+    .line 85
     if-eqz p0, :cond_0
 
-    .line 84
+    .line 86
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Expected condition to be false."
@@ -107,7 +107,7 @@
 
     throw v0
 
-    .line 86
+    .line 88
     :cond_0
     return-void
 .end method
@@ -147,18 +147,18 @@
     .end annotation
 
     .prologue
-    .line 55
+    .line 57
     .local p0, object:Ljava/lang/Object;,"TT;"
     if-nez p0, :cond_0
 
-    .line 56
+    .line 58
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 59
+    .line 61
     :cond_0
     return-object p0
 .end method
@@ -178,18 +178,18 @@
     .end annotation
 
     .prologue
-    .line 63
+    .line 65
     .local p1, object:Ljava/lang/Object;,"TT;"
     if-nez p1, :cond_0
 
-    .line 64
+    .line 66
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0, p0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 67
+    .line 69
     :cond_0
     return-object p1
 .end method
@@ -198,7 +198,7 @@
     .locals 2
 
     .prologue
-    .line 48
+    .line 47
     invoke-static {}, Lcom/google/glass/util/BuildHelper;->isUser()Z
 
     move-result v0
@@ -209,21 +209,13 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-static {}, Lcom/google/glass/util/Assert;->isUiThread()Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_0
-
-    .line 50
+    .line 48
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This should not be called on the UI thread."
@@ -232,7 +224,7 @@
 
     throw v0
 
-    .line 52
+    .line 50
     :cond_0
     return-void
 .end method
@@ -242,10 +234,10 @@
     .parameter "object"
 
     .prologue
-    .line 71
+    .line 73
     if-eqz p0, :cond_0
 
-    .line 72
+    .line 74
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Expected null."
@@ -254,7 +246,7 @@
 
     throw v0
 
-    .line 74
+    .line 76
     :cond_0
     return-void
 .end method
@@ -264,10 +256,10 @@
     .parameter "condition"
 
     .prologue
-    .line 77
+    .line 79
     if-nez p0, :cond_0
 
-    .line 78
+    .line 80
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Expected condition to be true."
@@ -276,7 +268,7 @@
 
     throw v0
 
-    .line 80
+    .line 82
     :cond_0
     return-void
 .end method
@@ -296,21 +288,13 @@
 
     if-nez v0, :cond_0
 
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    invoke-static {}, Lcom/google/glass/util/Assert;->isUiThread()Z
 
-    move-result-object v0
+    move-result v0
 
-    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+    if-nez v0, :cond_0
 
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_0
-
-    .line 43
+    .line 42
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "This should be called on the UI thread."
@@ -319,7 +303,7 @@
 
     throw v0
 
-    .line 45
+    .line 44
     :cond_0
     return-void
 .end method
@@ -332,6 +316,36 @@
     sget-boolean v0, Lcom/google/glass/util/Assert;->isTest:Z
 
     return v0
+.end method
+
+.method public static isUiThread()Z
+    .locals 2
+
+    .prologue
+    .line 53
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method public static setIsTest()V

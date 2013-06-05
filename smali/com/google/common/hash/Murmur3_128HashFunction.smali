@@ -28,13 +28,13 @@
     .parameter "seed"
 
     .prologue
-    .line 34
+    .line 45
     invoke-direct {p0}, Lcom/google/common/hash/AbstractStreamingHashFunction;-><init>()V
 
-    .line 35
+    .line 46
     iput p1, p0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
 
-    .line 36
+    .line 47
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 50
     const/16 v0, 0x80
 
     return v0
@@ -54,12 +54,46 @@
     .locals 2
 
     .prologue
-    .line 43
+    .line 54
     new-instance v0, Lcom/google/common/hash/Murmur3_128HashFunction$Murmur3_128Hasher;
 
     iget v1, p0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
 
     invoke-direct {v0, v1}, Lcom/google/common/hash/Murmur3_128HashFunction$Murmur3_128Hasher;-><init>(I)V
+
+    return-object v0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 59
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Hashing.murmur3_128("
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/common/hash/Murmur3_128HashFunction;->seed:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method

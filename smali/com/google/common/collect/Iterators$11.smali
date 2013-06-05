@@ -32,7 +32,7 @@
     .parameter
 
     .prologue
-    .line 1038
+    .line 1063
     iput-object p2, p0, Lcom/google/common/collect/Iterators$11;->val$array:[Ljava/lang/Object;
 
     invoke-direct {p0, p1}, Lcom/google/common/collect/AbstractIndexedListIterator;-><init>(I)V
@@ -52,7 +52,7 @@
     .end annotation
 
     .prologue
-    .line 1040
+    .line 1066
     iget-object v0, p0, Lcom/google/common/collect/Iterators$11;->val$array:[Ljava/lang/Object;
 
     aget-object v0, v0, p1

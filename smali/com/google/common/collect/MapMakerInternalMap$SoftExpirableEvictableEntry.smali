@@ -111,47 +111,47 @@
     .end annotation
 
     .prologue
-    .line 1405
+    .line 1297
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<TK;>;"
     .local p2, key:Ljava/lang/Object;,"TK;"
     .local p4, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/common/collect/MapMakerInternalMap$SoftEntry;-><init>(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;ILcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)V
 
-    .line 1410
+    .line 1302
     const-wide v0, 0x7fffffffffffffffL
 
     iput-wide v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->time:J
 
-    .line 1422
+    .line 1314
     invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->nullEntry()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->nextExpirable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1435
+    .line 1327
     invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->nullEntry()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->previousExpirable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1450
+    .line 1342
     invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->nullEntry()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->nextEvictable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1463
+    .line 1355
     invoke-static {}, Lcom/google/common/collect/MapMakerInternalMap;->nullEntry()Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->previousEvictable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1406
+    .line 1298
     return-void
 .end method
 
@@ -161,7 +161,7 @@
     .locals 2
 
     .prologue
-    .line 1414
+    .line 1306
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     iget-wide v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->time:J
 
@@ -179,7 +179,7 @@
     .end annotation
 
     .prologue
-    .line 1455
+    .line 1347
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->nextEvictable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -197,7 +197,7 @@
     .end annotation
 
     .prologue
-    .line 1427
+    .line 1319
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->nextExpirable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -215,7 +215,7 @@
     .end annotation
 
     .prologue
-    .line 1468
+    .line 1360
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->previousEvictable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -233,7 +233,7 @@
     .end annotation
 
     .prologue
-    .line 1440
+    .line 1332
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->previousExpirable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
@@ -245,11 +245,11 @@
     .parameter "time"
 
     .prologue
-    .line 1419
+    .line 1311
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     iput-wide p1, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->time:J
 
-    .line 1420
+    .line 1312
     return-void
 .end method
 
@@ -265,12 +265,12 @@
     .end annotation
 
     .prologue
-    .line 1460
+    .line 1352
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     .local p1, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->nextEvictable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1461
+    .line 1353
     return-void
 .end method
 
@@ -286,12 +286,12 @@
     .end annotation
 
     .prologue
-    .line 1432
+    .line 1324
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     .local p1, next:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->nextExpirable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1433
+    .line 1325
     return-void
 .end method
 
@@ -307,12 +307,12 @@
     .end annotation
 
     .prologue
-    .line 1473
+    .line 1365
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     .local p1, previous:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->previousEvictable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1474
+    .line 1366
     return-void
 .end method
 
@@ -328,11 +328,11 @@
     .end annotation
 
     .prologue
-    .line 1445
+    .line 1337
     .local p0, this:Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;,"Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry<TK;TV;>;"
     .local p1, previous:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<TK;TV;>;"
     iput-object p1, p0, Lcom/google/common/collect/MapMakerInternalMap$SoftExpirableEvictableEntry;->previousExpirable:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;
 
-    .line 1446
+    .line 1338
     return-void
 .end method

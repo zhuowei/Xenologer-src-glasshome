@@ -1948,6 +1948,113 @@
     return v0
 .end method
 
+.method public isProto1FieldInMutableApi()Z
+    .locals 5
+
+    .prologue
+    const/4 v2, 0x0
+
+    const/4 v1, 0x1
+
+    .line 1164
+    sget-object v3, Lcom/google/protobuf/Descriptors$1;->$SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType:[I
+
+    invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getJavaType()Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->ordinal()I
+
+    move-result v4
+
+    aget v3, v3, v4
+
+    packed-switch v3, :pswitch_data_0
+
+    move v1, v2
+
+    .line 1176
+    :cond_0
+    :goto_0
+    return v1
+
+    .line 1166
+    :pswitch_0
+    invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getMessageType()Lcom/google/protobuf/Descriptors$Descriptor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/protobuf/Descriptors$Descriptor;->getFile()Lcom/google/protobuf/Descriptors$FileDescriptor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getOptions()Lcom/google/protobuf/DescriptorProtos$FileOptions;
+
+    move-result-object v0
+
+    .line 1167
+    .local v0, fileOptions:Lcom/google/protobuf/DescriptorProtos$FileOptions;
+    invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->getJavaApiVersion()I
+
+    move-result v3
+
+    if-ne v3, v1, :cond_1
+
+    invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->getJavaEnableDualGenerateMutableApi()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    :cond_1
+    move v1, v2
+
+    goto :goto_0
+
+    .line 1171
+    .end local v0           #fileOptions:Lcom/google/protobuf/DescriptorProtos$FileOptions;
+    :pswitch_1
+    invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getEnumType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/protobuf/Descriptors$EnumDescriptor;->getFile()Lcom/google/protobuf/Descriptors$FileDescriptor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getOptions()Lcom/google/protobuf/DescriptorProtos$FileOptions;
+
+    move-result-object v0
+
+    .line 1172
+    .restart local v0       #fileOptions:Lcom/google/protobuf/DescriptorProtos$FileOptions;
+    invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->getJavaApiVersion()I
+
+    move-result v3
+
+    if-ne v3, v1, :cond_2
+
+    invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$FileOptions;->getJavaEnableDualGenerateMutableApi()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    :cond_2
+    move v1, v2
+
+    goto :goto_0
+
+    .line 1164
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
 .method public isRepeated()Z
     .locals 2
 

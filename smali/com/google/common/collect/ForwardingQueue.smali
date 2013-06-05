@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 50
+    .line 48
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingCollection;-><init>()V
 
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 44
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
 
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 44
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
 
@@ -82,7 +82,7 @@
     .end annotation
 
     .prologue
-    .line 76
+    .line 70
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
 
@@ -105,7 +105,7 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 54
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     .local p1, o:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
@@ -128,7 +128,7 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 66
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
 
@@ -150,7 +150,7 @@
     .end annotation
 
     .prologue
-    .line 61
+    .line 58
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
 
@@ -172,7 +172,7 @@
     .end annotation
 
     .prologue
-    .line 66
+    .line 62
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->delegate()Ljava/util/Queue;
 
@@ -188,9 +188,6 @@
 .method protected standardOffer(Ljava/lang/Object;)Z
     .locals 2
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -198,7 +195,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 82
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     .local p1, e:Ljava/lang/Object;,"TE;"
     :try_start_0
@@ -208,15 +205,15 @@
 
     move-result v1
 
-    .line 90
+    .line 84
     :goto_0
     return v1
 
-    .line 89
+    .line 83
     :catch_0
     move-exception v0
 
-    .line 90
+    .line 84
     .local v0, caught:Ljava/lang/IllegalStateException;
     const/4 v1, 0x0
 
@@ -225,9 +222,6 @@
 
 .method protected standardPeek()Ljava/lang/Object;
     .locals 2
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -235,7 +229,7 @@
     .end annotation
 
     .prologue
-    .line 103
+    .line 97
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->element()Ljava/lang/Object;
@@ -244,15 +238,15 @@
 
     move-result-object v1
 
-    .line 105
+    .line 99
     :goto_0
     return-object v1
 
-    .line 104
+    .line 98
     :catch_0
     move-exception v0
 
-    .line 105
+    .line 99
     .local v0, caught:Ljava/util/NoSuchElementException;
     const/4 v1, 0x0
 
@@ -261,9 +255,6 @@
 
 .method protected standardPoll()Ljava/lang/Object;
     .locals 2
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -271,7 +262,7 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 112
     .local p0, this:Lcom/google/common/collect/ForwardingQueue;,"Lcom/google/common/collect/ForwardingQueue<TE;>;"
     :try_start_0
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingQueue;->remove()Ljava/lang/Object;
@@ -280,15 +271,15 @@
 
     move-result-object v1
 
-    .line 120
+    .line 114
     :goto_0
     return-object v1
 
-    .line 119
+    .line 113
     :catch_0
     move-exception v0
 
-    .line 120
+    .line 114
     .local v0, caught:Ljava/util/NoSuchElementException;
     const/4 v1, 0x0
 

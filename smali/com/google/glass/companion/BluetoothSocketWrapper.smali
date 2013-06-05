@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "BluetoothSocketWrapper.java"
 
+# interfaces
+.implements Ljava/io/Closeable;
+
 
 # instance fields
 .field private final socket:Landroid/bluetooth/BluetoothSocket;
@@ -13,13 +16,13 @@
     .parameter "socket"
 
     .prologue
-    .line 17
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 18
+    .line 19
     iput-object p1, p0, Lcom/google/glass/companion/BluetoothSocketWrapper;->socket:Landroid/bluetooth/BluetoothSocket;
 
-    .line 19
+    .line 20
     return-void
 .end method
 
@@ -34,12 +37,12 @@
     .end annotation
 
     .prologue
-    .line 26
+    .line 27
     iget-object v0, p0, Lcom/google/glass/companion/BluetoothSocketWrapper;->socket:Landroid/bluetooth/BluetoothSocket;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothSocket;->close()V
 
-    .line 27
+    .line 28
     return-void
 .end method
 
@@ -52,12 +55,12 @@
     .end annotation
 
     .prologue
-    .line 22
+    .line 23
     iget-object v0, p0, Lcom/google/glass/companion/BluetoothSocketWrapper;->socket:Landroid/bluetooth/BluetoothSocket;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothSocket;->connect()V
 
-    .line 23
+    .line 24
     return-void
 .end method
 
@@ -70,7 +73,7 @@
     .end annotation
 
     .prologue
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/google/glass/companion/BluetoothSocketWrapper;->socket:Landroid/bluetooth/BluetoothSocket;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothSocket;->getInputStream()Ljava/io/InputStream;
@@ -89,12 +92,30 @@
     .end annotation
 
     .prologue
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/google/glass/companion/BluetoothSocketWrapper;->socket:Landroid/bluetooth/BluetoothSocket;
 
     invoke-virtual {v0}, Landroid/bluetooth/BluetoothSocket;->getOutputStream()Ljava/io/OutputStream;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getRemoteDevice()Lcom/google/glass/companion/BluetoothDeviceWrapper;
+    .locals 2
+
+    .prologue
+    .line 39
+    new-instance v0, Lcom/google/glass/companion/BluetoothDeviceWrapper;
+
+    iget-object v1, p0, Lcom/google/glass/companion/BluetoothSocketWrapper;->socket:Landroid/bluetooth/BluetoothSocket;
+
+    invoke-virtual {v1}, Landroid/bluetooth/BluetoothSocket;->getRemoteDevice()Landroid/bluetooth/BluetoothDevice;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/google/glass/companion/BluetoothDeviceWrapper;-><init>(Landroid/bluetooth/BluetoothDevice;)V
 
     return-object v0
 .end method

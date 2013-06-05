@@ -27,7 +27,7 @@
     .locals 0
 
     .prologue
-    .line 54
+    .line 52
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
@@ -46,7 +46,7 @@
     .end annotation
 
     .prologue
-    .line 85
+    .line 78
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, element:Ljava/lang/Object;,"TE;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
@@ -72,7 +72,7 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 90
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
@@ -90,7 +90,7 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 98
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -98,7 +98,7 @@
 
     invoke-interface {v0}, Ljava/util/Collection;->clear()V
 
-    .line 111
+    .line 99
     return-void
 .end method
 
@@ -107,7 +107,7 @@
     .parameter "object"
 
     .prologue
-    .line 80
+    .line 74
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -132,7 +132,7 @@
     .end annotation
 
     .prologue
-    .line 95
+    .line 86
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 48
+    .line 47
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -173,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 70
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -197,7 +197,7 @@
     .end annotation
 
     .prologue
-    .line 60
+    .line 58
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -215,7 +215,7 @@
     .parameter "object"
 
     .prologue
-    .line 90
+    .line 82
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -240,7 +240,7 @@
     .end annotation
 
     .prologue
-    .line 70
+    .line 66
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
@@ -266,7 +266,7 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 94
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
@@ -284,7 +284,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 62
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -300,9 +300,6 @@
 .method protected standardAddAll(Ljava/util/Collection;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -312,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 158
+    .line 144
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<+TE;>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -327,36 +324,18 @@
 .end method
 
 .method protected standardClear()V
-    .locals 2
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
+    .locals 1
 
     .prologue
-    .line 213
+    .line 199
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 214
-    .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {v0}, Lcom/google/common/collect/Iterators;->clear(Ljava/util/Iterator;)V
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 215
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 216
-    invoke-interface {v0}, Ljava/util/Iterator;->remove()V
-
-    goto :goto_0
-
-    .line 218
-    :cond_0
+    .line 200
     return-void
 .end method
 
@@ -366,11 +345,9 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 131
+    .line 117
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
 
@@ -386,9 +363,6 @@
 .method protected standardContainsAll(Ljava/util/Collection;)Z
     .locals 3
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -398,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 142
+    .line 128
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -417,7 +391,7 @@
 
     move-result-object v1
 
-    .line 143
+    .line 129
     .local v1, o:Ljava/lang/Object;
     invoke-virtual {p0, v1}, Lcom/google/common/collect/ForwardingCollection;->contains(Ljava/lang/Object;)Z
 
@@ -425,10 +399,10 @@
 
     if-nez v2, :cond_0
 
-    .line 144
+    .line 130
     const/4 v2, 0x0
 
-    .line 147
+    .line 133
     .end local v1           #o:Ljava/lang/Object;
     :goto_0
     return v2
@@ -441,11 +415,9 @@
 
 .method protected standardIsEmpty()Z
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 229
+    .line 211
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
 
@@ -474,17 +446,15 @@
         .annotation runtime Ljavax/annotation/Nullable;
         .end annotation
     .end parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 170
+    .line 156
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 171
+    .line 157
     .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
     :cond_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -493,7 +463,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 172
+    .line 158
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
@@ -504,13 +474,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 173
+    .line 159
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 174
+    .line 160
     const/4 v1, 0x1
 
-    .line 177
+    .line 163
     :goto_0
     return v1
 
@@ -523,9 +493,6 @@
 .method protected standardRemoveAll(Ljava/util/Collection;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -535,7 +502,7 @@
     .end annotation
 
     .prologue
-    .line 189
+    .line 175
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
@@ -552,9 +519,6 @@
 .method protected standardRetainAll(Ljava/util/Collection;)Z
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -564,7 +528,7 @@
     .end annotation
 
     .prologue
-    .line 201
+    .line 187
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, collection:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->iterator()Ljava/util/Iterator;
@@ -580,11 +544,9 @@
 
 .method protected standardToArray()[Ljava/lang/Object;
     .locals 2
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 251
+    .line 233
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->size()I
 
@@ -592,7 +554,7 @@
 
     new-array v0, v1, [Ljava/lang/Object;
 
-    .line 252
+    .line 234
     .local v0, newArray:[Ljava/lang/Object;
     invoke-virtual {p0, v0}, Lcom/google/common/collect/ForwardingCollection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -604,9 +566,6 @@
 .method protected standardToArray([Ljava/lang/Object;)[Ljava/lang/Object;
     .locals 1
     .parameter
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -616,7 +575,7 @@
     .end annotation
 
     .prologue
-    .line 263
+    .line 245
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-static {p0, p1}, Lcom/google/common/collect/ObjectArrays;->toArrayImpl(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
@@ -628,11 +587,9 @@
 
 .method protected standardToString()Ljava/lang/String;
     .locals 1
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 240
+    .line 222
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-static {p0}, Lcom/google/common/collect/Collections2;->toStringImpl(Ljava/util/Collection;)Ljava/lang/String;
 
@@ -645,7 +602,7 @@
     .locals 1
 
     .prologue
-    .line 115
+    .line 102
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;
 
@@ -670,7 +627,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 106
     .local p0, this:Lcom/google/common/collect/ForwardingCollection;,"Lcom/google/common/collect/ForwardingCollection<TE;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0}, Lcom/google/common/collect/ForwardingCollection;->delegate()Ljava/util/Collection;

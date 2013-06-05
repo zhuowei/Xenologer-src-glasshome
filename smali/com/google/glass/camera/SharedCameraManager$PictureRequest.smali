@@ -17,13 +17,19 @@
 # instance fields
 .field private final client:Lcom/google/glass/camera/SharedCameraClient;
 
+.field private final gcamCaptureComplete:Landroid/hardware/Camera$PictureCallback;
+
+.field private final gcamHqFallbackCaptureComplete:Landroid/hardware/Camera$PictureCallback;
+
 .field private isTakingPicture:Z
 
 .field private final jpegCallback:Landroid/hardware/Camera$PictureCallback;
 
-.field private final picture:Lcom/google/glass/camera/Picture;
+.field private final picture:Lcom/google/glass/camera/PictureWrapper;
 
 .field private final pictureCallbackCondition:Ljava/util/concurrent/locks/Condition;
+
+.field private pictureTakenDispatched:Ljava/util/concurrent/CountDownLatch;
 
 .field private final postviewCallback:Landroid/hardware/Camera$PictureCallback;
 
@@ -40,19 +46,28 @@
 
 # direct methods
 .method public constructor <init>(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)V
-    .locals 2
+    .locals 3
     .parameter
     .parameter "client"
 
     .prologue
-    .line 405
+    const/4 v2, 0x1
+
+    .line 450
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/camera/SharedCameraManager$CameraManipulation;-><init>(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraManager$1;)V
 
-    .line 243
+    .line 254
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
+
+    invoke-direct {v0, v2}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureTakenDispatched:Ljava/util/concurrent/CountDownLatch;
+
+    .line 257
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #getter for: Lcom/google/glass/camera/SharedCameraManager;->cameraLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -66,45 +81,59 @@
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureCallbackCondition:Ljava/util/concurrent/locks/Condition;
 
-    .line 261
+    .line 275
     new-instance v0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$1;-><init>(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shutterCallback:Landroid/hardware/Camera$ShutterCallback;
 
-    .line 284
+    .line 298
     new-instance v0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$2;-><init>(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->postviewCallback:Landroid/hardware/Camera$PictureCallback;
 
-    .line 336
+    .line 361
     new-instance v0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$3;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$3;-><init>(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)V
 
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->gcamCaptureComplete:Landroid/hardware/Camera$PictureCallback;
+
+    .line 372
+    new-instance v0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$4;
+
+    invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$4;-><init>(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)V
+
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->gcamHqFallbackCaptureComplete:Landroid/hardware/Camera$PictureCallback;
+
+    .line 383
+    new-instance v0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$5;
+
+    invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest$5;-><init>(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)V
+
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->jpegCallback:Landroid/hardware/Camera$PictureCallback;
 
-    .line 406
+    .line 451
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->requestTimeMillis:J
 
-    .line 407
-    new-instance v0, Lcom/google/glass/camera/Picture;
+    .line 452
+    new-instance v0, Lcom/google/glass/camera/PictureWrapper;
 
-    invoke-direct {v0}, Lcom/google/glass/camera/Picture;-><init>()V
+    invoke-direct {v0}, Lcom/google/glass/camera/PictureWrapper;-><init>()V
 
-    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/Picture;
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/PictureWrapper;
 
-    .line 408
+    .line 453
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
-    .line 409
+    .line 454
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->CLIPLET:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -125,23 +154,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 411
-    const/4 v0, 0x1
+    .line 456
+    iput-boolean v2, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
 
-    iput-boolean v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
-
-    .line 413
+    .line 458
     :cond_0
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/Picture;
+.method static synthetic access$1000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Lcom/google/glass/camera/PictureWrapper;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 237
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/Picture;
+    .line 248
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/PictureWrapper;
 
     return-object v0
 .end method
@@ -151,7 +178,7 @@
     .parameter "x0"
 
     .prologue
-    .line 237
+    .line 248
     iget-wide v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shutterTimeMillis:J
 
     return-wide v0
@@ -163,7 +190,7 @@
     .parameter "x1"
 
     .prologue
-    .line 237
+    .line 248
     iput-wide p1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shutterTimeMillis:J
 
     return-wide p1
@@ -174,7 +201,7 @@
     .parameter "x0"
 
     .prologue
-    .line 237
+    .line 248
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     return-object v0
@@ -185,111 +212,87 @@
     .parameter "x0"
 
     .prologue
-    .line 237
+    .line 248
     iget-wide v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->requestTimeMillis:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$1700(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;[B)Z
+.method static synthetic access$1600(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Ljava/util/concurrent/CountDownLatch;
     .locals 1
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 237
-    invoke-direct {p0, p1}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->isGcamCaptureFinished([B)Z
+    .line 248
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureTakenDispatched:Ljava/util/concurrent/CountDownLatch;
 
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$1800(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Z
+.method static synthetic access$1800(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 248
+    invoke-direct {p0}, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->allowPictureRequestToContinue()V
+
+    return-void
+.end method
+
+.method static synthetic access$1900(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 237
+    .line 248
     iget-boolean v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
 
     return v0
 .end method
 
-.method static synthetic access$1902(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
+.method private final allowPictureRequestToContinue()V
+    .locals 2
 
     .prologue
-    .line 237
-    iput-boolean p1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->isTakingPicture:Z
+    .line 351
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    return p1
-.end method
+    #calls: Lcom/google/glass/camera/SharedCameraManager;->lockCamera()V
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager;->access$700(Lcom/google/glass/camera/SharedCameraManager;)V
 
-.method static synthetic access$2000(Lcom/google/glass/camera/SharedCameraManager$PictureRequest;)Ljava/util/concurrent/locks/Condition;
-    .locals 1
-    .parameter "x0"
+    .line 352
+    const/4 v0, 0x0
 
-    .prologue
-    .line 237
+    iput-boolean v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->isTakingPicture:Z
+
+    .line 354
+    :try_start_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureCallbackCondition:Ljava/util/concurrent/locks/Condition;
 
-    return-object v0
-.end method
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signalAll()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-.method private final isGcamCaptureFinished([B)Z
-    .locals 4
-    .parameter "data"
+    .line 356
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    .prologue
-    const/4 v0, 0x1
+    #calls: Lcom/google/glass/camera/SharedCameraManager;->unlockCamera()V
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraManager;->access$800(Lcom/google/glass/camera/SharedCameraManager;)V
 
-    const/4 v1, 0x0
+    .line 358
+    return-void
 
-    .line 331
-    array-length v2, p1
+    .line 356
+    :catchall_0
+    move-exception v0
 
-    const/4 v3, 0x4
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    if-lt v2, v3, :cond_0
+    #calls: Lcom/google/glass/camera/SharedCameraManager;->unlockCamera()V
+    invoke-static {v1}, Lcom/google/glass/camera/SharedCameraManager;->access$800(Lcom/google/glass/camera/SharedCameraManager;)V
 
-    aget-byte v2, p1, v1
-
-    const/16 v3, 0x47
-
-    if-ne v2, v3, :cond_0
-
-    aget-byte v2, p1, v0
-
-    const/16 v3, 0x43
-
-    if-ne v2, v3, :cond_0
-
-    const/4 v2, 0x2
-
-    aget-byte v2, p1, v2
-
-    const/16 v3, 0x41
-
-    if-ne v2, v3, :cond_0
-
-    const/4 v2, 0x3
-
-    aget-byte v2, p1, v2
-
-    const/16 v3, 0x4d
-
-    if-ne v2, v3, :cond_0
-
-    :goto_0
-    return v0
-
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
+    throw v0
 .end method
 
 
@@ -302,14 +305,14 @@
 
     const/4 v8, 0x0
 
-    .line 417
+    .line 462
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "About to take a picture."
 
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logDebug(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 419
+    .line 464
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
@@ -321,7 +324,7 @@
 
     if-nez v3, :cond_1
 
-    .line 420
+    .line 465
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Failed to stop recording for taking a picture."
@@ -329,12 +332,12 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->handleCameraError(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2100(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 503
+    .line 550
     :cond_0
     :goto_0
     return-void
 
-    .line 423
+    .line 468
     :cond_1
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
@@ -347,7 +350,7 @@
 
     if-nez v3, :cond_2
 
-    .line 424
+    .line 469
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Failed to acquire the camera for taking a picture."
@@ -357,7 +360,7 @@
 
     goto :goto_0
 
-    .line 428
+    .line 473
     :cond_2
     sget-object v3, Lcom/google/glass/util/Labs$Feature;->GCAM:Lcom/google/glass/util/Labs$Feature;
 
@@ -367,12 +370,12 @@
 
     if-eqz v3, :cond_7
 
-    .line 430
-    iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/Picture;
+    .line 475
+    iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->picture:Lcom/google/glass/camera/PictureWrapper;
 
-    invoke-virtual {v3, v6}, Lcom/google/glass/camera/Picture;->setIsGcam(Z)V
+    invoke-virtual {v3, v6}, Lcom/google/glass/camera/PictureWrapper;->setIsGcam(Z)V
 
-    .line 431
+    .line 476
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
@@ -380,7 +383,21 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->startMeteringSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2400(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
-    .line 456
+    .line 477
+    iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
+
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->camera:Landroid/hardware/Camera;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Landroid/hardware/Camera;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->gcamCaptureComplete:Landroid/hardware/Camera$PictureCallback;
+
+    iget-object v5, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->gcamHqFallbackCaptureComplete:Landroid/hardware/Camera$PictureCallback;
+
+    invoke-static {v3, v4, v5}, Lcom/google/glass/hidden/HiddenCamera;->setGoogleCameraCaptureFinishCallback(Landroid/hardware/Camera;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
+
+    .line 503
     :cond_3
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
@@ -388,14 +405,14 @@
 
     if-eqz v3, :cond_4
 
-    .line 457
+    .line 504
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Adding delay for testing."
 
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 459
+    .line 506
     const-wide/16 v3, 0x64
 
     :try_start_0
@@ -403,13 +420,13 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 465
+    .line 512
     :cond_4
     :goto_1
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #getter for: Lcom/google/glass/camera/SharedCameraManager;->camera:Landroid/hardware/Camera;
-    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2800(Lcom/google/glass/camera/SharedCameraManager;)Landroid/hardware/Camera;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
 
@@ -422,15 +439,15 @@
 
     invoke-static {v3, v4}, Lcom/google/glass/hidden/HiddenCamera;->addPostviewCallbackBuffer(Landroid/hardware/Camera;[B)V
 
-    .line 468
+    .line 515
     iput-boolean v6, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->isTakingPicture:Z
 
-    .line 470
+    .line 517
     :try_start_1
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     #getter for: Lcom/google/glass/camera/SharedCameraManager;->camera:Landroid/hardware/Camera;
-    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2800(Lcom/google/glass/camera/SharedCameraManager;)Landroid/hardware/Camera;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Landroid/hardware/Camera;
 
     move-result-object v3
 
@@ -444,16 +461,16 @@
 
     invoke-virtual {v3, v4, v5, v6, v7}, Landroid/hardware/Camera;->takePicture(Landroid/hardware/Camera$ShutterCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;Landroid/hardware/Camera$PictureCallback;)V
 
-    .line 473
+    .line 520
     iget-boolean v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
 
     if-eqz v3, :cond_5
 
-    .line 474
+    .line 521
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/Video;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2600(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/VideoWrapper;
 
     move-result-object v3
 
@@ -464,15 +481,15 @@
 
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Lcom/google/glass/camera/Video;->stop(Landroid/content/Context;)V
+    invoke-virtual {v3, v4}, Lcom/google/glass/camera/VideoWrapper;->stop(Landroid/content/Context;)V
 
-    .line 475
+    .line 522
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/Video;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2600(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/VideoWrapper;
 
     move-result-object v4
 
@@ -481,26 +498,26 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 482
+    .line 529
     :cond_5
     iget-boolean v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
 
     if-eqz v3, :cond_6
 
-    .line 483
+    .line 530
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v3, v8}, Lcom/google/glass/camera/SharedCameraManager;->access$2502(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/Video;)Lcom/google/glass/camera/Video;
+    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v3, v8}, Lcom/google/glass/camera/SharedCameraManager;->access$2602(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/VideoWrapper;)Lcom/google/glass/camera/VideoWrapper;
 
-    .line 489
+    .line 536
     :cond_6
     :try_start_2
     iget-boolean v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->isTakingPicture:Z
 
     if-eqz v3, :cond_b
 
-    .line 490
+    .line 537
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->pictureCallbackCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-static {}, Lcom/google/glass/camera/SharedCameraManager;->access$3100()J
@@ -511,7 +528,7 @@
 
     move-result-wide v1
 
-    .line 491
+    .line 538
     .local v1, timeRemainingNanos:J
     const-wide/16 v3, 0x0
 
@@ -519,7 +536,7 @@
 
     if-gtz v3, :cond_6
 
-    .line 492
+    .line 539
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Timed out while taking a picture."
@@ -531,12 +548,12 @@
 
     goto/16 :goto_0
 
-    .line 496
+    .line 543
     .end local v1           #timeRemainingNanos:J
     :catch_0
     move-exception v0
 
-    .line 497
+    .line 544
     .local v0, e:Ljava/lang/InterruptedException;
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -547,38 +564,38 @@
 
     goto/16 :goto_0
 
-    .line 432
+    .line 479
     .end local v0           #e:Ljava/lang/InterruptedException;
     :cond_7
     iget-boolean v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
 
     if-eqz v3, :cond_9
 
-    .line 435
+    .line 482
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    new-instance v4, Lcom/google/glass/camera/Video;
+    new-instance v4, Lcom/google/glass/camera/VideoWrapper;
 
-    invoke-direct {v4}, Lcom/google/glass/camera/Video;-><init>()V
+    invoke-direct {v4}, Lcom/google/glass/camera/VideoWrapper;-><init>()V
 
-    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2502(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/Video;)Lcom/google/glass/camera/Video;
+    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2602(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/VideoWrapper;)Lcom/google/glass/camera/VideoWrapper;
 
-    .line 436
+    .line 483
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/Video;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v3}, Lcom/google/glass/camera/SharedCameraManager;->access$2600(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/VideoWrapper;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/glass/camera/Video;->start()Z
+    invoke-virtual {v3}, Lcom/google/glass/camera/VideoWrapper;->start()Z
 
     move-result v3
 
     if-nez v3, :cond_8
 
-    .line 437
+    .line 484
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Unable to start cliplet video recording."
@@ -586,7 +603,7 @@
     #calls: Lcom/google/glass/camera/SharedCameraManager;->handleCameraError(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2100(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 439
+    .line 486
     :cond_8
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -602,12 +619,12 @@
 
     iget-object v5, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v5}, Lcom/google/glass/camera/SharedCameraManager;->access$2500(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/Video;
+    #getter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v5}, Lcom/google/glass/camera/SharedCameraManager;->access$2600(Lcom/google/glass/camera/SharedCameraManager;)Lcom/google/glass/camera/VideoWrapper;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Lcom/google/glass/camera/Video;->getFilePath()Ljava/lang/String;
+    invoke-virtual {v5}, Lcom/google/glass/camera/VideoWrapper;->getFilePath()Ljava/lang/String;
 
     move-result-object v5
 
@@ -621,19 +638,19 @@
 
     invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logDebug(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
 
-    .line 442
+    .line 489
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->setClipletParametersSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
-    invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2600(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
+    invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2700(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
-    .line 443
+    .line 490
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Failed to set parameters for taking a Cliplet burst."
@@ -643,20 +660,20 @@
 
     goto/16 :goto_0
 
-    .line 449
+    .line 496
     :cond_9
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     #calls: Lcom/google/glass/camera/SharedCameraManager;->startPreviewSynchronously(Lcom/google/glass/camera/SharedCameraClient;)Z
-    invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2700(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
+    invoke-static {v3, v4}, Lcom/google/glass/camera/SharedCameraManager;->access$2800(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/SharedCameraClient;)Z
 
     move-result v3
 
     if-nez v3, :cond_3
 
-    .line 450
+    .line 497
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Failed to start the preview for taking a picture."
@@ -666,11 +683,11 @@
 
     goto/16 :goto_0
 
-    .line 460
+    .line 507
     :catch_1
     move-exception v0
 
-    .line 461
+    .line 508
     .restart local v0       #e:Ljava/lang/InterruptedException;
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -680,19 +697,19 @@
 
     goto/16 :goto_1
 
-    .line 477
+    .line 524
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catch_2
     move-exception v0
 
-    .line 478
+    .line 525
     .local v0, e:Ljava/lang/RuntimeException;
     const/4 v3, 0x0
 
     :try_start_3
     iput-boolean v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->isTakingPicture:Z
 
-    .line 479
+    .line 526
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->client:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v4, "Failed to take a picture."
@@ -702,20 +719,20 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 482
+    .line 529
     iget-boolean v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->shouldTakeCliplet:Z
 
     if-eqz v3, :cond_0
 
-    .line 483
+    .line 530
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v3, v8}, Lcom/google/glass/camera/SharedCameraManager;->access$2502(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/Video;)Lcom/google/glass/camera/Video;
+    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v3, v8}, Lcom/google/glass/camera/SharedCameraManager;->access$2602(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/VideoWrapper;)Lcom/google/glass/camera/VideoWrapper;
 
     goto/16 :goto_0
 
-    .line 482
+    .line 529
     .end local v0           #e:Ljava/lang/RuntimeException;
     :catchall_0
     move-exception v3
@@ -724,16 +741,16 @@
 
     if-eqz v4, :cond_a
 
-    .line 483
+    .line 530
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
-    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/Video;
-    invoke-static {v4, v8}, Lcom/google/glass/camera/SharedCameraManager;->access$2502(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/Video;)Lcom/google/glass/camera/Video;
+    #setter for: Lcom/google/glass/camera/SharedCameraManager;->cliplet:Lcom/google/glass/camera/VideoWrapper;
+    invoke-static {v4, v8}, Lcom/google/glass/camera/SharedCameraManager;->access$2602(Lcom/google/glass/camera/SharedCameraManager;Lcom/google/glass/camera/VideoWrapper;)Lcom/google/glass/camera/VideoWrapper;
 
     :cond_a
     throw v3
 
-    .line 502
+    .line 549
     :cond_b
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraManager$PictureRequest;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 

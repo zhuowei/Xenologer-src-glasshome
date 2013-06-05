@@ -41,31 +41,31 @@
     .locals 1
 
     .prologue
-    .line 10394
+    .line 10568
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;-><init>()V
 
-    .line 10481
+    .line 10656
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10578
+    .line 10753
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 10395
+    .line 10569
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 10396
+    .line 10570
     return-void
 .end method
 
-.method static synthetic access$8900()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
+.method static synthetic access$9800()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->create()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -77,7 +77,7 @@
     .locals 1
 
     .prologue
-    .line 10401
+    .line 10575
     new-instance v0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;-><init>()V
@@ -89,7 +89,7 @@
     .locals 0
 
     .prologue
-    .line 10399
+    .line 10573
     return-void
 .end method
 
@@ -99,12 +99,12 @@
     .locals 2
 
     .prologue
-    .line 10422
+    .line 10596
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->buildPartial()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
 
-    .line 10423
+    .line 10597
     .local v0, result:Lcom/google/glass/companion/Proto$TimelineItemResponse;
     invoke-virtual {v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->isInitialized()Z
 
@@ -112,14 +112,14 @@
 
     if-nez v1, :cond_0
 
-    .line 10424
+    .line 10598
     invoke-static {v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->newUninitializedMessageException(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 10426
+    .line 10600
     :cond_0
     return-object v0
 .end method
@@ -128,7 +128,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->build()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -140,22 +140,22 @@
     .locals 5
 
     .prologue
-    .line 10430
+    .line 10604
     new-instance v1, Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/glass/companion/Proto$TimelineItemResponse;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;Lcom/google/glass/companion/Proto$1;)V
 
-    .line 10431
+    .line 10605
     .local v1, result:Lcom/google/glass/companion/Proto$TimelineItemResponse;
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10432
+    .line 10606
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 10433
+    .line 10607
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -163,38 +163,38 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 10434
+    .line 10608
     or-int/lit8 v2, v2, 0x1
 
-    .line 10436
+    .line 10610
     :cond_0
     iget-object v3, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
     #setter for: Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$9102(Lcom/google/glass/companion/Proto$TimelineItemResponse;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$10002(Lcom/google/glass/companion/Proto$TimelineItemResponse;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10437
+    .line 10611
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 10438
+    .line 10612
     or-int/lit8 v2, v2, 0x2
 
-    .line 10440
+    .line 10614
     :cond_1
     iget-object v3, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     #setter for: Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$9202(Lcom/google/glass/companion/Proto$TimelineItemResponse;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    invoke-static {v1, v3}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$10102(Lcom/google/glass/companion/Proto$TimelineItemResponse;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 10441
+    .line 10615
     #setter for: Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$9302(Lcom/google/glass/companion/Proto$TimelineItemResponse;I)I
+    invoke-static {v1, v2}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$10202(Lcom/google/glass/companion/Proto$TimelineItemResponse;I)I
 
-    .line 10442
+    .line 10616
     return-object v1
 .end method
 
@@ -202,7 +202,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->buildPartial()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -214,34 +214,34 @@
     .locals 1
 
     .prologue
-    .line 10405
+    .line 10579
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->clear()Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
-    .line 10406
+    .line 10580
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10407
+    .line 10581
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10408
+    .line 10582
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 10409
+    .line 10583
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10410
+    .line 10584
     return-object p0
 .end method
 
@@ -249,7 +249,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->clear()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -261,7 +261,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->clear()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -273,14 +273,14 @@
     .locals 1
 
     .prologue
-    .line 10555
+    .line 10730
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10556
+    .line 10731
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getDefaultInstance()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -291,7 +291,7 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10558
+    .line 10733
     return-object p0
 .end method
 
@@ -299,19 +299,19 @@
     .locals 1
 
     .prologue
-    .line 10607
+    .line 10782
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10608
+    .line 10783
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 10610
+    .line 10785
     return-object p0
 .end method
 
@@ -319,7 +319,7 @@
     .locals 2
 
     .prologue
-    .line 10414
+    .line 10588
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->create()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -339,7 +339,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->clone()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -351,7 +351,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->clone()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -363,7 +363,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->clone()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -380,7 +380,7 @@
     .end annotation
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->clone()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -392,7 +392,7 @@
     .locals 1
 
     .prologue
-    .line 10418
+    .line 10592
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getDefaultInstance()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -404,7 +404,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -416,7 +416,7 @@
     .locals 1
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -428,16 +428,16 @@
     .locals 3
 
     .prologue
-    .line 10500
+    .line 10675
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10501
+    .line 10676
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 10502
+    .line 10677
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -445,11 +445,11 @@
 
     move-result-object v1
 
-    .line 10504
+    .line 10679
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10507
+    .line 10682
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -468,16 +468,16 @@
     .locals 3
 
     .prologue
-    .line 10519
+    .line 10694
     iget-object v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10520
+    .line 10695
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 10521
+    .line 10696
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -485,11 +485,11 @@
 
     move-result-object v0
 
-    .line 10524
+    .line 10699
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10527
+    .line 10702
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -508,7 +508,7 @@
     .locals 1
 
     .prologue
-    .line 10589
+    .line 10764
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     return-object v0
@@ -520,7 +520,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10490
+    .line 10665
     iget v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -540,7 +540,7 @@
     .locals 2
 
     .prologue
-    .line 10583
+    .line 10758
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -564,66 +564,82 @@
     .locals 1
 
     .prologue
-    .line 10459
+    .line 10634
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public mergeFrom(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
-    .locals 1
+    .locals 2
     .parameter "other"
 
     .prologue
-    .line 10446
+    .line 10620
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getDefaultInstance()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
 
-    if-ne p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
-    .line 10455
-    :cond_0
+    .line 10630
     :goto_0
     return-object p0
 
-    .line 10447
-    :cond_1
+    .line 10621
+    :cond_0
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->hasId()Z
 
     move-result v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_1
 
-    .line 10448
+    .line 10622
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10449
+    .line 10623
     #getter for: Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
-    invoke-static {p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$9100(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$10000(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10452
-    :cond_2
+    .line 10626
+    :cond_1
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->hasSyncStatus()Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-eqz v0, :cond_2
 
-    .line 10453
+    .line 10627
     invoke-virtual {p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getSyncStatus()Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->setSyncStatus(Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
+
+    .line 10629
+    :cond_2
+    invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->getUnknownFields()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    #getter for: Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+    invoke-static {p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->access$10300(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/ByteString;->concat(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->setUnknownFields(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     goto :goto_0
 .end method
@@ -639,10 +655,10 @@
     .end annotation
 
     .prologue
-    .line 10466
+    .line 10641
     const/4 v2, 0x0
 
-    .line 10468
+    .line 10643
     .local v2, parsedMessage:Lcom/google/glass/companion/Proto$TimelineItemResponse;
     :try_start_0
     sget-object v3, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
@@ -660,21 +676,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 10473
+    .line 10648
     if-eqz v2, :cond_0
 
-    .line 10474
+    .line 10649
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
-    .line 10477
+    .line 10652
     :cond_0
     return-object p0
 
-    .line 10469
+    .line 10644
     :catch_0
     move-exception v1
 
-    .line 10470
+    .line 10645
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -687,19 +703,19 @@
 
     move-object v2, v0
 
-    .line 10471
+    .line 10646
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 10473
+    .line 10648
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 10474
+    .line 10649
     invoke-virtual {p0, v2}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->mergeFrom(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     :cond_1
@@ -717,7 +733,7 @@
     .end annotation
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -730,7 +746,7 @@
     .parameter "x0"
 
     .prologue
-    .line 10387
+    .line 10561
     check-cast p1, Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     .end local p1
@@ -752,7 +768,7 @@
     .end annotation
 
     .prologue
-    .line 10387
+    .line 10561
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -765,17 +781,17 @@
     .parameter "value"
 
     .prologue
-    .line 10539
+    .line 10714
     if-nez p1, :cond_0
 
-    .line 10540
+    .line 10715
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10542
+    .line 10717
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
@@ -783,10 +799,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10543
+    .line 10718
     iput-object p1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10545
+    .line 10720
     return-object p0
 .end method
 
@@ -795,17 +811,17 @@
     .parameter "value"
 
     .prologue
-    .line 10569
+    .line 10744
     if-nez p1, :cond_0
 
-    .line 10570
+    .line 10745
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10572
+    .line 10747
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
@@ -813,10 +829,10 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10573
+    .line 10748
     iput-object p1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->id_:Ljava/lang/Object;
 
-    .line 10575
+    .line 10750
     return-object p0
 .end method
 
@@ -825,17 +841,17 @@
     .parameter "value"
 
     .prologue
-    .line 10595
+    .line 10770
     if-nez p1, :cond_0
 
-    .line 10596
+    .line 10771
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10598
+    .line 10773
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
@@ -843,9 +859,9 @@
 
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->bitField0_:I
 
-    .line 10599
+    .line 10774
     iput-object p1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 10601
+    .line 10776
     return-object p0
 .end method

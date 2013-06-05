@@ -37,7 +37,7 @@
     .parameter "readable"
 
     .prologue
-    .line 54
+    .line 55
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
@@ -70,13 +70,13 @@
 
     iput-object v0, p0, Lcom/google/common/io/LineReader;->lineBuf:Lcom/google/common/io/LineBuffer;
 
-    .line 55
+    .line 56
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 56
+    .line 57
     iput-object p1, p0, Lcom/google/common/io/LineReader;->readable:Ljava/lang/Readable;
 
-    .line 57
+    .line 58
     instance-of v0, p1, Ljava/io/Reader;
 
     if-eqz v0, :cond_0
@@ -87,10 +87,10 @@
     :goto_0
     iput-object p1, p0, Lcom/google/common/io/LineReader;->reader:Ljava/io/Reader;
 
-    .line 58
+    .line 59
     return-void
 
-    .line 57
+    .line 58
     .restart local p1
     :cond_0
     const/4 p1, 0x0
@@ -122,7 +122,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 72
+    .line 73
     :goto_0
     iget-object v1, p0, Lcom/google/common/io/LineReader;->lines:Ljava/util/Queue;
 
@@ -132,12 +132,12 @@
 
     if-nez v1, :cond_0
 
-    .line 73
+    .line 74
     iget-object v1, p0, Lcom/google/common/io/LineReader;->cbuf:Ljava/nio/CharBuffer;
 
     invoke-virtual {v1}, Ljava/nio/CharBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 76
+    .line 77
     iget-object v1, p0, Lcom/google/common/io/LineReader;->reader:Ljava/io/Reader;
 
     if-eqz v1, :cond_1
@@ -154,19 +154,19 @@
 
     move-result v0
 
-    .line 79
+    .line 78
     .local v0, read:I
     :goto_1
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_2
 
-    .line 80
+    .line 79
     iget-object v1, p0, Lcom/google/common/io/LineReader;->lineBuf:Lcom/google/common/io/LineBuffer;
 
     invoke-virtual {v1}, Lcom/google/common/io/LineBuffer;->finish()V
 
-    .line 85
+    .line 84
     .end local v0           #read:I
     :cond_0
     iget-object v1, p0, Lcom/google/common/io/LineReader;->lines:Ljava/util/Queue;
@@ -179,7 +179,7 @@
 
     return-object v1
 
-    .line 76
+    .line 77
     :cond_1
     iget-object v1, p0, Lcom/google/common/io/LineReader;->readable:Ljava/lang/Readable;
 
@@ -191,7 +191,7 @@
 
     goto :goto_1
 
-    .line 83
+    .line 82
     .restart local v0       #read:I
     :cond_2
     iget-object v1, p0, Lcom/google/common/io/LineReader;->lineBuf:Lcom/google/common/io/LineBuffer;

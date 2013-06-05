@@ -51,12 +51,12 @@
     .end annotation
 
     .prologue
-    .line 35
+    .line 36
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     .local p1, comparator:Ljava/util/Comparator;,"Ljava/util/Comparator<TT;>;"
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
-    .line 36
+    .line 37
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -65,7 +65,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
-    .line 37
+    .line 38
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .end annotation
 
     .prologue
-    .line 45
+    .line 48
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     .local p1, sortedList:Ljava/util/List;,"Ljava/util/List<+TT;>;"
     .local p2, key:Ljava/lang/Object;,"TT;"
@@ -108,7 +108,7 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 42
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     .local p1, a:Ljava/lang/Object;,"TT;"
     .local p2, b:Ljava/lang/Object;,"TT;"
@@ -129,18 +129,18 @@
     .end parameter
 
     .prologue
-    .line 56
+    .line 74
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     if-ne p1, p0, :cond_0
 
-    .line 57
+    .line 75
     const/4 v1, 0x1
 
-    .line 63
+    .line 81
     :goto_0
     return v1
 
-    .line 59
+    .line 77
     :cond_0
     instance-of v1, p1, Lcom/google/common/collect/ComparatorOrdering;
 
@@ -148,10 +148,10 @@
 
     move-object v0, p1
 
-    .line 60
+    .line 78
     check-cast v0, Lcom/google/common/collect/ComparatorOrdering;
 
-    .line 61
+    .line 79
     .local v0, that:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<*>;"
     iget-object v1, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
@@ -163,7 +163,7 @@
 
     goto :goto_0
 
-    .line 63
+    .line 81
     .end local v0           #that:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<*>;"
     :cond_1
     const/4 v1, 0x0
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 67
+    .line 86
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
@@ -184,6 +184,69 @@
     move-result v0
 
     return v0
+.end method
+
+.method public immutableSortedCopy(Ljava/lang/Iterable;)Lcom/google/common/collect/ImmutableList;
+    .locals 6
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:TT;>(",
+            "Ljava/lang/Iterable",
+            "<TE;>;)",
+            "Lcom/google/common/collect/ImmutableList",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 64
+    .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
+    .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
+    invoke-static {p1}, Lcom/google/common/collect/Iterables;->toArray(Ljava/lang/Iterable;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Ljava/lang/Object;
+
+    .line 65
+    .local v2, elements:[Ljava/lang/Object;,"[TE;"
+    move-object v0, v2
+
+    .local v0, arr$:[Ljava/lang/Object;
+    array-length v4, v0
+
+    .local v4, len$:I
+    const/4 v3, 0x0
+
+    .local v3, i$:I
+    :goto_0
+    if-ge v3, v4, :cond_0
+
+    aget-object v1, v0, v3
+
+    .line 66
+    .local v1, e:Ljava/lang/Object;,"TE;"
+    invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 65
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    .line 68
+    .end local v1           #e:Ljava/lang/Object;,"TE;"
+    :cond_0
+    iget-object v5, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
+
+    invoke-static {v2, v5}, Ljava/util/Arrays;->sort([Ljava/lang/Object;Ljava/util/Comparator;)V
+
+    .line 69
+    invoke-static {v2}, Lcom/google/common/collect/ImmutableList;->asImmutableList([Ljava/lang/Object;)Lcom/google/common/collect/ImmutableList;
+
+    move-result-object v5
+
+    return-object v5
 .end method
 
 .method public sortedCopy(Ljava/lang/Iterable;)Ljava/util/List;
@@ -200,20 +263,20 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 54
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     .local p1, iterable:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     invoke-static {p1}, Lcom/google/common/collect/Lists;->newArrayList(Ljava/lang/Iterable;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 51
+    .line 55
     .local v0, list:Ljava/util/List;,"Ljava/util/List<TE;>;"
     iget-object v1, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 52
+    .line 56
     return-object v0
 .end method
 
@@ -221,7 +284,7 @@
     .locals 1
 
     .prologue
-    .line 71
+    .line 91
     .local p0, this:Lcom/google/common/collect/ComparatorOrdering;,"Lcom/google/common/collect/ComparatorOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/ComparatorOrdering;->comparator:Ljava/util/Comparator;
 

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 143
+    .line 147
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder$1;->this$1:Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder$1;->val$client:Lcom/google/glass/camera/SharedCameraClient;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 146
+    .line 150
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder$1;->this$1:Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;
 
     iget-object v0, v0, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;->this$0:Lcom/google/glass/camera/SharedCameraService;
@@ -60,6 +60,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraService$SharedCameraBinder;->takePicture(Lcom/google/glass/camera/SharedCameraClient;)V
 
-    .line 147
+    .line 151
     return-void
 .end method

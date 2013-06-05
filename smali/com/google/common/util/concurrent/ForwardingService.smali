@@ -10,13 +10,16 @@
 .annotation build Lcom/google/common/annotations/Beta;
 .end annotation
 
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
 
 # direct methods
 .method protected constructor <init>()V
     .locals 0
 
     .prologue
-    .line 33
+    .line 42
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingObject;-><init>()V
 
     return-void
@@ -24,6 +27,23 @@
 
 
 # virtual methods
+.method public addListener(Lcom/google/common/util/concurrent/Service$Listener;Ljava/util/concurrent/Executor;)V
+    .locals 1
+    .parameter "listener"
+    .parameter "executor"
+
+    .prologue
+    .line 75
+    invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
+
+    move-result-object v0
+
+    invoke-interface {v0, p1, p2}, Lcom/google/common/util/concurrent/Service;->addListener(Lcom/google/common/util/concurrent/Service$Listener;Ljava/util/concurrent/Executor;)V
+
+    .line 76
+    return-void
+.end method
+
 .method protected abstract delegate()Lcom/google/common/util/concurrent/Service;
 .end method
 
@@ -31,8 +51,24 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 36
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public failureCause()Ljava/lang/Throwable;
+    .locals 1
+
+    .prologue
+    .line 82
+    invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/google/common/util/concurrent/Service;->failureCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
@@ -43,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 68
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
 
     move-result-object v0
@@ -59,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 92
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->start()Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -77,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 102
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->stop()Lcom/google/common/util/concurrent/ListenableFuture;
 
     move-result-object v0
@@ -104,7 +140,7 @@
     .end annotation
 
     .prologue
-    .line 38
+    .line 48
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
 
     move-result-object v0
@@ -120,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 60
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
 
     move-result-object v0
@@ -136,7 +172,7 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 52
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
 
     move-result-object v0
@@ -161,7 +197,7 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 56
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
 
     move-result-object v0
@@ -177,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 64
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingService;->delegate()Lcom/google/common/util/concurrent/Service;
 
     move-result-object v0

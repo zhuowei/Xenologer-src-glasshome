@@ -3,12 +3,12 @@
 .source "Futures.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/common/util/concurrent/Futures$FutureCombiner;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/util/concurrent/Futures;->addCallback(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/util/concurrent/FutureCallback;Ljava/util/concurrent/Executor;)V
+    value = Lcom/google/common/util/concurrent/Futures;->listFuture(Lcom/google/common/collect/ImmutableList;ZLjava/util/concurrent/Executor;)Lcom/google/common/util/concurrent/ListenableFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,25 +16,23 @@
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic val$callback:Lcom/google/common/util/concurrent/FutureCallback;
-
-.field final synthetic val$future:Lcom/google/common/util/concurrent/ListenableFuture;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/google/common/util/concurrent/Futures$FutureCombiner",
+        "<TV;",
+        "Ljava/util/List",
+        "<TV;>;>;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/util/concurrent/FutureCallback;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
-    .line 968
-    iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$6;->val$future:Lcom/google/common/util/concurrent/ListenableFuture;
-
-    iput-object p2, p0, Lcom/google/common/util/concurrent/Futures$6;->val$callback:Lcom/google/common/util/concurrent/FutureCallback;
-
+    .line 1538
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,72 +40,81 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 4
+.method public bridge synthetic combine(Ljava/util/List;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 974
-    :try_start_0
-    iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$6;->val$future:Lcom/google/common/util/concurrent/ListenableFuture;
+    .line 1538
+    invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/Futures$6;->combine(Ljava/util/List;)Ljava/util/List;
 
-    invoke-static {v2}, Lcom/google/common/util/concurrent/Uninterruptibles;->getUninterruptibly(Ljava/util/concurrent/Future;)Ljava/lang/Object;
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public combine(Ljava/util/List;)Ljava/util/List;
+    .locals 4
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/common/base/Optional",
+            "<TV;>;>;)",
+            "Ljava/util/List",
+            "<TV;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1541
+    .local p1, values:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/base/Optional<TV;>;>;"
+    invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    .line 1542
+    .local v2, result:Ljava/util/List;,"Ljava/util/List<TV;>;"
+    invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .line 975
-    .local v1, value:Ljava/lang/Object;,"TV;"
-    iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$6;->val$callback:Lcom/google/common/util/concurrent/FutureCallback;
-
-    invoke-interface {v2, v1}, Lcom/google/common/util/concurrent/FutureCallback;->onSuccess(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/Error; {:try_start_0 .. :try_end_0} :catch_2
-
-    .line 983
-    .end local v1           #value:Ljava/lang/Object;,"TV;"
+    .local v1, i$:Ljava/util/Iterator;
     :goto_0
-    return-void
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 976
-    :catch_0
-    move-exception v0
+    move-result v3
 
-    .line 977
-    .local v0, e:Ljava/util/concurrent/ExecutionException;
-    iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$6;->val$callback:Lcom/google/common/util/concurrent/FutureCallback;
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v0}, Ljava/util/concurrent/ExecutionException;->getCause()Ljava/lang/Throwable;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/common/base/Optional;
+
+    .line 1543
+    .local v0, element:Lcom/google/common/base/Optional;,"Lcom/google/common/base/Optional<TV;>;"
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/google/common/base/Optional;->orNull()Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-interface {v2, v3}, Lcom/google/common/util/concurrent/FutureCallback;->onFailure(Ljava/lang/Throwable;)V
+    :goto_1
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 978
-    .end local v0           #e:Ljava/util/concurrent/ExecutionException;
-    :catch_1
-    move-exception v0
+    :cond_0
+    const/4 v3, 0x0
 
-    .line 979
-    .local v0, e:Ljava/lang/RuntimeException;
-    iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$6;->val$callback:Lcom/google/common/util/concurrent/FutureCallback;
+    goto :goto_1
 
-    invoke-interface {v2, v0}, Lcom/google/common/util/concurrent/FutureCallback;->onFailure(Ljava/lang/Throwable;)V
-
-    goto :goto_0
-
-    .line 980
-    .end local v0           #e:Ljava/lang/RuntimeException;
-    :catch_2
-    move-exception v0
-
-    .line 981
-    .local v0, e:Ljava/lang/Error;
-    iget-object v2, p0, Lcom/google/common/util/concurrent/Futures$6;->val$callback:Lcom/google/common/util/concurrent/FutureCallback;
-
-    invoke-interface {v2, v0}, Lcom/google/common/util/concurrent/FutureCallback;->onFailure(Ljava/lang/Throwable;)V
-
-    goto :goto_0
+    .line 1546
+    .end local v0           #element:Lcom/google/common/base/Optional;,"Lcom/google/common/base/Optional<TV;>;"
+    :cond_1
+    return-object v2
 .end method

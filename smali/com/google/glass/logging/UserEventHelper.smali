@@ -8,6 +8,8 @@
 
 .field private static final EVENT_TUPLE_SEPARATOR:C = '|'
 
+.field public static final EXTRA_FORCE_FLUSH:Ljava/lang/String; = "force_flush"
+
 .field public static final EXTRA_USER_EVENT:Ljava/lang/String; = "user_event"
 
 .field private static final RESERVED_CHAR_MATCHER:Lcom/google/common/base/CharMatcher; = null
@@ -39,7 +41,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventHelper;->TAG:Ljava/lang/String;
 
-    .line 46
+    .line 49
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -82,8 +84,8 @@
     .parameter "context"
 
     .prologue
-    .line 64
-    invoke-static {}, Lcom/google/glass/util/BuildHelper;->isEng()Z
+    .line 67
+    invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
     move-result v0
 
@@ -94,10 +96,10 @@
     :goto_0
     invoke-direct {p0, p1, v0}, Lcom/google/glass/logging/UserEventHelper;-><init>(Landroid/content/Context;Z)V
 
-    .line 65
+    .line 68
     return-void
 
-    .line 64
+    .line 67
     :cond_0
     const/4 v0, 0x0
 
@@ -110,16 +112,16 @@
     .parameter "loggingEnabled"
 
     .prologue
-    .line 74
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 78
     iput-object p1, p0, Lcom/google/glass/logging/UserEventHelper;->context:Landroid/content/Context;
 
-    .line 76
+    .line 79
     iput-boolean p2, p0, Lcom/google/glass/logging/UserEventHelper;->loggingEnabled:Z
 
-    .line 77
+    .line 80
     return-void
 .end method
 
@@ -142,7 +144,7 @@
     .parameter "data"
 
     .prologue
-    .line 242
+    .line 244
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->isEmpty()Z
@@ -151,16 +153,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 253
+    .line 255
     :cond_0
     :goto_0
     return-void
 
-    .line 246
+    .line 248
     :cond_1
     invoke-static {p0}, Lcom/google/glass/logging/UserEventHelper;->ensureEndsWithSeparator(Ljava/lang/StringBuilder;)V
 
-    .line 247
+    .line 249
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
@@ -171,7 +173,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 248
+    .line 250
     const/4 v0, 0x1
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -180,13 +182,13 @@
 
     invoke-virtual {p0, p1, v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
-    .line 252
+    .line 254
     :goto_1
     invoke-static {p0}, Lcom/google/glass/logging/UserEventHelper;->ensureEndsWithSeparator(Ljava/lang/StringBuilder;)V
 
     goto :goto_0
 
-    .line 250
+    .line 252
     :cond_2
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -200,34 +202,34 @@
     .parameter "value"
 
     .prologue
-    .line 223
+    .line 225
     invoke-static {p0}, Lcom/google/glass/logging/UserEventHelper;->ensureEndsWithSeparator(Ljava/lang/StringBuilder;)V
 
-    .line 224
+    .line 226
     invoke-static {p1}, Lcom/google/glass/logging/UserEventHelper;->sanitize(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 225
+    .line 227
     const/16 v0, 0x3d
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 226
+    .line 228
     invoke-static {p2}, Lcom/google/glass/logging/UserEventHelper;->sanitize(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 227
+    .line 229
     const/16 v0, 0x7c
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 228
+    .line 230
     return-void
 .end method
 
@@ -235,7 +237,7 @@
     .locals 10
 
     .prologue
-    .line 139
+    .line 142
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->newBuilder()Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     move-result-object v6
@@ -256,7 +258,7 @@
 
     long-to-int v7, v7
 
-    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryStateOfChargeMah(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryStateOfChargeUah(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     move-result-object v6
 
@@ -266,7 +268,17 @@
 
     long-to-int v7, v7
 
-    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryChargeWhenFullMah(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryChargeWhenFullUah(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getReportedBatteryStateOfChargePercent()J
+
+    move-result-wide v7
+
+    long-to-int v7, v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setReportedSoc(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
     move-result-object v6
 
@@ -288,20 +300,20 @@
 
     move-result-object v0
 
-    .line 147
+    .line 149
     .local v0, builder:Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
     new-instance v1, Ljava/util/TreeMap;
 
     invoke-direct {v1}, Ljava/util/TreeMap;-><init>()V
 
-    .line 148
+    .line 150
     .local v1, cpuFrequencyTime:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Ljava/lang/Long;Ljava/lang/Long;>;"
     invoke-static {v1}, Lcom/google/glass/logging/PerformanceUtil;->getFrequencyStats(Ljava/util/Map;)V
 
-    .line 149
+    .line 151
     const-wide/16 v4, 0x0
 
-    .line 150
+    .line 152
     .local v4, totalCpuTime:J
     invoke-virtual {v1}, Ljava/util/TreeMap;->entrySet()Ljava/util/Set;
 
@@ -325,7 +337,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 151
+    .line 153
     .local v2, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Long;Ljava/lang/Long;>;"
     invoke-static {}, Lcom/google/common/logging/GlassUserEventFrequencyStat;->newBuilder()Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;
 
@@ -361,7 +373,7 @@
 
     invoke-virtual {v0, v6}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->addFrequencyStat(Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
-    .line 155
+    .line 157
     invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v6
@@ -374,14 +386,15 @@
 
     add-long/2addr v4, v6
 
+    .line 158
     goto :goto_0
 
-    .line 157
+    .line 159
     .end local v2           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Long;Ljava/lang/Long;>;"
     :cond_0
     invoke-virtual {v0, v4, v5}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setTotalKernelMs(J)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
 
-    .line 158
+    .line 160
     invoke-virtual {v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->build()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v6
@@ -396,7 +409,7 @@
     .parameter "args"
 
     .prologue
-    .line 186
+    .line 188
     invoke-static {p0, p1, p2}, Lcom/google/glass/logging/UserEventHelper;->createEventTupleBuilder(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v0
@@ -419,12 +432,12 @@
 
     const/4 v5, 0x0
 
-    .line 196
+    .line 198
     const-string v3, "null key"
 
     invoke-static {p0, v3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 197
+    .line 199
     array-length v3, p2
 
     rem-int/lit8 v3, v3, 0x2
@@ -448,16 +461,16 @@
 
     invoke-static {v3, v6, v7}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 200
+    .line 202
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 201
+    .line 203
     .local v0, builder:Ljava/lang/StringBuilder;
     invoke-static {v0, p0, p1}, Lcom/google/glass/logging/UserEventHelper;->appendPair(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 203
+    .line 205
     const/4 v1, 0x0
 
     .local v1, i:I
@@ -468,7 +481,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 205
+    .line 207
     aget-object v3, p2, v1
 
     const-string v6, "null key (vararg %s)"
@@ -485,7 +498,7 @@
 
     move-result-object v2
 
-    .line 206
+    .line 208
     .local v2, keyObj:Ljava/lang/Object;
     instance-of v3, v2, Ljava/lang/String;
 
@@ -503,18 +516,18 @@
 
     move-object p0, v2
 
-    .line 207
+    .line 209
     check-cast p0, Ljava/lang/String;
 
-    .line 209
+    .line 211
     add-int/lit8 v3, v1, 0x1
 
     aget-object p1, p2, v3
 
-    .line 210
+    .line 212
     invoke-static {v0, p0, p1}, Lcom/google/glass/logging/UserEventHelper;->appendPair(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/Object;)V
 
-    .line 203
+    .line 205
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_1
@@ -525,10 +538,10 @@
     :cond_0
     move v3, v5
 
-    .line 197
+    .line 199
     goto :goto_0
 
-    .line 213
+    .line 215
     .restart local v0       #builder:Ljava/lang/StringBuilder;
     .restart local v1       #i:I
     :cond_1
@@ -542,12 +555,12 @@
     .prologue
     const/16 v2, 0x7c
 
-    .line 275
+    .line 277
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v0
 
-    .line 276
+    .line 278
     .local v0, length:I
     if-eqz v0, :cond_0
 
@@ -559,11 +572,11 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 277
+    .line 279
     :cond_0
     invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 279
+    .line 281
     :cond_1
     return-void
 .end method
@@ -574,12 +587,12 @@
     .parameter "data"
 
     .prologue
-    .line 114
+    .line 117
     iget-boolean v2, p0, Lcom/google/glass/logging/UserEventHelper;->loggingEnabled:Z
 
     if-nez v2, :cond_0
 
-    .line 115
+    .line 118
     sget-object v2, Lcom/google/glass/logging/UserEventHelper;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -618,11 +631,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 133
+    .line 136
     :goto_0
     return-void
 
-    .line 119
+    .line 122
     :cond_0
     sget-object v2, Lcom/google/glass/logging/UserEventHelper;->TAG:Ljava/lang/String;
 
@@ -662,7 +675,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 120
+    .line 123
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->newBuilder()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v2
@@ -689,20 +702,20 @@
 
     move-result-object v1
 
-    .line 125
+    .line 128
     .local v1, userEvent:Lcom/google/common/logging/GlassUserEventProto$Builder;
     if-eqz p2, :cond_1
 
-    .line 126
+    .line 129
     invoke-virtual {v1, p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->setEventData(Ljava/lang/String;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
-    .line 129
+    .line 132
     :cond_1
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 130
+    .line 133
     .local v0, intent:Landroid/content/Intent;
     const-string v2, "com.google.glass.logging"
 
@@ -710,7 +723,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 131
+    .line 134
     const-string v2, "user_event"
 
     invoke-virtual {v1}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
@@ -719,7 +732,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 132
+    .line 135
     iget-object v2, p0, Lcom/google/glass/logging/UserEventHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v2, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
@@ -732,7 +745,7 @@
     .parameter "s"
 
     .prologue
-    .line 267
+    .line 269
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
@@ -761,12 +774,12 @@
     .parameter "action"
 
     .prologue
-    .line 86
+    .line 89
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, v0}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 87
+    .line 90
     return-void
 .end method
 
@@ -776,7 +789,7 @@
     .parameter "data"
 
     .prologue
-    .line 97
+    .line 100
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
@@ -787,6 +800,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 103
+    .line 106
     return-void
 .end method

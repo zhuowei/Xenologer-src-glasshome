@@ -1,14 +1,11 @@
 .class final Lcom/google/common/collect/Maps$4;
-.super Ljava/lang/Object;
+.super Lcom/google/common/collect/AbstractMapEntry;
 .source "Maps.java"
-
-# interfaces
-.implements Lcom/google/common/base/Predicate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Maps;->filterKeys(Ljava/util/Map;Lcom/google/common/base/Predicate;)Ljava/util/Map;
+    value = Lcom/google/common/collect/Maps;->unmodifiableEntry(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,74 +15,66 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ljava/lang/Object;",
-        "Lcom/google/common/base/Predicate",
-        "<",
-        "Ljava/util/Map$Entry",
-        "<TK;TV;>;>;"
+        "Lcom/google/common/collect/AbstractMapEntry",
+        "<TK;TV;>;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic val$keyPredicate:Lcom/google/common/base/Predicate;
+.field final synthetic val$entry:Ljava/util/Map$Entry;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/common/base/Predicate;)V
+.method constructor <init>(Ljava/util/Map$Entry;)V
     .locals 0
     .parameter
 
     .prologue
-    .line 1319
-    iput-object p1, p0, Lcom/google/common/collect/Maps$4;->val$keyPredicate:Lcom/google/common/base/Predicate;
+    .line 1035
+    iput-object p1, p0, Lcom/google/common/collect/Maps$4;->val$entry:Ljava/util/Map$Entry;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/common/collect/AbstractMapEntry;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic apply(Ljava/lang/Object;)Z
+.method public getKey()Ljava/lang/Object;
     .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 1319
-    check-cast p1, Ljava/util/Map$Entry;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/common/collect/Maps$4;->apply(Ljava/util/Map$Entry;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public apply(Ljava/util/Map$Entry;)Z
-    .locals 2
-    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/util/Map$Entry",
-            "<TK;TV;>;)Z"
+            "()TK;"
         }
     .end annotation
 
     .prologue
-    .line 1322
-    .local p1, input:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
-    iget-object v0, p0, Lcom/google/common/collect/Maps$4;->val$keyPredicate:Lcom/google/common/base/Predicate;
+    .line 1038
+    iget-object v0, p0, Lcom/google/common/collect/Maps$4;->val$entry:Ljava/util/Map$Entry;
 
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v0, v1}, Lcom/google/common/base/Predicate;->apply(Ljava/lang/Object;)Z
+    return-object v0
+.end method
 
-    move-result v0
+.method public getValue()Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TV;"
+        }
+    .end annotation
 
-    return v0
+    .prologue
+    .line 1043
+    iget-object v0, p0, Lcom/google/common/collect/Maps$4;->val$entry:Ljava/util/Map$Entry;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method

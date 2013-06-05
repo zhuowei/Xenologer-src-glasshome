@@ -2,6 +2,9 @@
 .super Lcom/google/common/collect/ForwardingMultimap;
 .source "MapConstraints.java"
 
+# interfaces
+.implements Ljava/io/Serializable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -21,7 +24,8 @@
         "Ljava/lang/Object;",
         ">",
         "Lcom/google/common/collect/ForwardingMultimap",
-        "<TK;TV;>;"
+        "<TK;TV;>;",
+        "Ljava/io/Serializable;"
     }
 .end annotation
 
@@ -84,13 +88,13 @@
     .end annotation
 
     .prologue
-    .line 405
+    .line 409
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     .local p1, delegate:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     .local p2, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingMultimap;-><init>()V
 
-    .line 406
+    .line 410
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -99,7 +103,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate:Lcom/google/common/collect/Multimap;
 
-    .line 407
+    .line 411
     invoke-static {p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -108,7 +112,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->constraint:Lcom/google/common/collect/MapConstraint;
 
-    .line 408
+    .line 412
     return-void
 .end method
 
@@ -127,22 +131,22 @@
     .end annotation
 
     .prologue
-    .line 415
+    .line 421
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->asMap:Ljava/util/Map;
 
-    .line 416
+    .line 422
     .local v1, result:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     if-nez v1, :cond_0
 
-    .line 417
+    .line 423
     iget-object v2, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v2}, Lcom/google/common/collect/Multimap;->asMap()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 419
+    .line 425
     .local v0, asMapDelegate:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     new-instance v1, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap$1;
 
@@ -152,7 +156,7 @@
     .restart local v1       #result:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     iput-object v1, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->asMap:Ljava/util/Map;
 
-    .line 460
+    .line 469
     .end local v0           #asMapDelegate:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     :cond_0
     return-object v1
@@ -169,7 +173,7 @@
     .end annotation
 
     .prologue
-    .line 411
+    .line 416
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate:Lcom/google/common/collect/Multimap;
 
@@ -180,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 397
+    .line 401
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate()Lcom/google/common/collect/Multimap;
 
@@ -202,15 +206,15 @@
     .end annotation
 
     .prologue
-    .line 464
+    .line 474
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->entries:Ljava/util/Collection;
 
-    .line 465
+    .line 475
     .local v0, result:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/util/Map$Entry<TK;TV;>;>;"
     if-nez v0, :cond_0
 
-    .line 466
+    .line 476
     iget-object v1, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v1}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
@@ -226,7 +230,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->entries:Ljava/util/Collection;
 
-    .line 468
+    .line 478
     :cond_0
     return-object v0
 .end method
@@ -243,7 +247,7 @@
     .end annotation
 
     .prologue
-    .line 472
+    .line 483
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate:Lcom/google/common/collect/Multimap;
@@ -274,7 +278,7 @@
     .end annotation
 
     .prologue
-    .line 483
+    .line 495
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -282,7 +286,7 @@
 
     invoke-interface {v0, p1, p2}, Lcom/google/common/collect/MapConstraint;->checkKeyValue(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 484
+    .line 496
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;->delegate:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0, p1, p2}, Lcom/google/common/collect/Multimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -304,12 +308,12 @@
     .end annotation
 
     .prologue
-    .line 493
+    .line 506
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     const/4 v0, 0x0
 
-    .line 494
+    .line 507
     .local v0, changed:Z
     invoke-interface {p1}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
 
@@ -333,7 +337,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 495
+    .line 508
     .local v1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -351,7 +355,7 @@
 
     goto :goto_0
 
-    .line 497
+    .line 510
     .end local v1           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     :cond_0
     return v0
@@ -370,7 +374,7 @@
     .end annotation
 
     .prologue
-    .line 488
+    .line 501
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"
@@ -405,7 +409,7 @@
     .end annotation
 
     .prologue
-    .line 502
+    .line 515
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedMultimap;,"Lcom/google/common/collect/MapConstraints$ConstrainedMultimap<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+TV;>;"

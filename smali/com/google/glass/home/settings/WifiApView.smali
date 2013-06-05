@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/settings/WifiApView;
-.super Lcom/google/glass/home/settings/SettingsItemView;
+.super Lcom/google/glass/home/settings/SettingsCard;
 .source "WifiApView.java"
 
 
@@ -53,7 +53,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 30
     new-instance v0, Lcom/google/glass/home/settings/WifiLevels;

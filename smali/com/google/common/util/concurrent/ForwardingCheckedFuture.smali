@@ -40,7 +40,7 @@
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture<TV;TX;>;"
     invoke-direct {p0}, Lcom/google/common/util/concurrent/ForwardingListenableFuture;-><init>()V
 
-    .line 64
+    .line 62
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 45
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture<TV;TX;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingCheckedFuture;->delegate()Lcom/google/common/util/concurrent/CheckedFuture;
 
@@ -96,7 +96,7 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 49
     .local p0, this:Lcom/google/common/util/concurrent/ForwardingCheckedFuture;,"Lcom/google/common/util/concurrent/ForwardingCheckedFuture<TV;TX;>;"
     invoke-virtual {p0}, Lcom/google/common/util/concurrent/ForwardingCheckedFuture;->delegate()Lcom/google/common/util/concurrent/CheckedFuture;
 

@@ -10,6 +10,8 @@
 # instance fields
 .field private final activity:Lcom/google/glass/app/GlassActivity;
 
+.field private final timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
+
 .field private final userEventHelper:Lcom/google/glass/logging/UserEventHelper;
 
 
@@ -18,7 +20,7 @@
     .locals 1
 
     .prologue
-    .line 31
+    .line 29
     const-class v0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -36,22 +38,29 @@
     .parameter "iconProvider"
 
     .prologue
-    .line 37
+    .line 36
     invoke-direct {p0, p1, p2}, Lcom/google/glass/timeline/TimelineOptionsHelper;-><init>(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/util/IconProvider;)V
 
-    .line 39
+    .line 38
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->getGlassActivity()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
 
-    .line 40
+    .line 39
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->userEventHelper:Lcom/google/glass/logging/UserEventHelper;
+
+    .line 40
+    new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
+
+    invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
+
+    iput-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
     .line 41
     return-void
@@ -62,7 +71,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 28
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
 
     return-object v0
@@ -72,7 +81,7 @@
     .locals 1
 
     .prologue
-    .line 30
+    .line 28
     sget-object v0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -83,10 +92,8 @@
     .parameter "x0"
 
     .prologue
-    .line 30
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->getTimelineHelper()Lcom/google/glass/timeline/TimelineHelper;
-
-    move-result-object v0
+    .line 28
+    iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
     return-object v0
 .end method
@@ -119,68 +126,6 @@
     .line 49
     :cond_0
     return-void
-.end method
-
-.method protected notifyOnCustomMenuSelected(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/UserAction;Lcom/google/googlex/glass/common/proto/MenuItem;)V
-    .locals 3
-    .parameter "updatedItem"
-    .parameter "userAction"
-    .parameter "menuItem"
-
-    .prologue
-    .line 99
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceType()Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
-
-    move-result-object v1
-
-    sget-object v2, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->COMPANIONWARE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
-
-    if-ne v1, v2, :cond_1
-
-    const/4 v0, 0x1
-
-    .line 101
-    .local v0, isCompanionwareItem:Z
-    :goto_0
-    if-eqz v0, :cond_2
-
-    .line 103
-    iget-object v1, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
-
-    invoke-static {v1, p1, p2}, Lcom/google/glass/home/companion/CompanionHelper;->sendApiResponse(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/UserAction;)Z
-
-    .line 104
-    invoke-virtual {p3}, Lcom/google/googlex/glass/common/proto/MenuItem;->getRemoveWhenSelected()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    .line 105
-    new-instance v1, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$3;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$3;-><init>(Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
-
-    invoke-static {v1}, Lcom/google/glass/timeline/TimelineHelper;->atomicUpdateTimelineItemAsync(Lcom/google/glass/timeline/TimelineHelper$Update;)V
-
-    .line 116
-    :cond_0
-    :goto_1
-    return-void
-
-    .line 99
-    .end local v0           #isCompanionwareItem:Z
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    .line 114
-    .restart local v0       #isCompanionwareItem:Z
-    :cond_2
-    invoke-super {p0, p1, p2, p3}, Lcom/google/glass/timeline/TimelineOptionsHelper;->notifyOnCustomMenuSelected(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/UserAction;Lcom/google/googlex/glass/common/proto/MenuItem;)V
-
-    goto :goto_1
 .end method
 
 .method public onReply(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
@@ -274,7 +219,7 @@
 
     invoke-static {v3}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 92
+    .line 95
     .end local v0           #dialog:Lcom/google/glass/widget/MessageDialog;
     .end local v1           #sent:Ljava/util/concurrent/atomic/AtomicBoolean;
     :goto_0

@@ -33,7 +33,7 @@
     .locals 0
 
     .prologue
-    .line 630
+    .line 586
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -56,15 +56,21 @@
     .end annotation
 
     .prologue
-    .line 658
+    .line 609
     .local p1, newValue:Lcom/google/common/collect/MapMakerInternalMap$ValueReference;,"Lcom/google/common/collect/MapMakerInternalMap$ValueReference<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-void
 .end method
 
-.method public copyFor(Ljava/lang/ref/ReferenceQueue;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
+.method public copyFor(Ljava/lang/ref/ReferenceQueue;Ljava/lang/Object;Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;)Lcom/google/common/collect/MapMakerInternalMap$ValueReference;
     .locals 0
     .parameter
+    .end parameter
+    .parameter "value"
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .parameter
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,6 +78,7 @@
             "<",
             "Ljava/lang/Object;",
             ">;",
+            "Ljava/lang/Object;",
             "Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry",
             "<",
             "Ljava/lang/Object;",
@@ -86,9 +93,9 @@
     .end annotation
 
     .prologue
-    .line 644
+    .line 598
     .local p1, queue:Ljava/lang/ref/ReferenceQueue;,"Ljava/lang/ref/ReferenceQueue<Ljava/lang/Object;>;"
-    .local p2, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
+    .local p3, entry:Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry;,"Lcom/google/common/collect/MapMakerInternalMap$ReferenceEntry<Ljava/lang/Object;Ljava/lang/Object;>;"
     return-object p0
 .end method
 
@@ -96,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 633
+    .line 589
     const/4 v0, 0x0
 
     return-object v0
@@ -116,7 +123,7 @@
     .end annotation
 
     .prologue
-    .line 638
+    .line 593
     const/4 v0, 0x0
 
     return-object v0
@@ -126,7 +133,7 @@
     .locals 1
 
     .prologue
-    .line 649
+    .line 602
     const/4 v0, 0x0
 
     return v0
@@ -136,7 +143,7 @@
     .locals 1
 
     .prologue
-    .line 654
+    .line 606
     const/4 v0, 0x0
 
     return-object v0

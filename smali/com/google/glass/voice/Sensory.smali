@@ -10,23 +10,23 @@
 
 .field public static final RECOG_FILE_GENERIC:Ljava/lang/String; = "nn_en_us_mfcc_16k_15_big_250_v4.7.raw"
 
-.field public static final RECOG_FILE_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery08_am.raw"
+.field public static final RECOG_FILE_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery09_am.raw"
 
 .field public static final RECOG_FILE_MAIN_MENU:Ljava/lang/String; = "google_glass_mainset_en_us_alpha_sfs_delivery21_am.raw"
 
 .field public static final RECOG_FILE_NOTIFICATION:Ljava/lang/String; = "google_notification_en_us_v3_net.raw"
 
-.field public static final RECOG_FILE_NOTIFICATION_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery08_am.raw"
+.field public static final RECOG_FILE_NOTIFICATION_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery09_am.raw"
 
 .field public static final RECOG_FILE_TAKE_A_NOTE:Ljava/lang/String; = "google_glass_takeanote_en_us_alpha_sfs_delivery01_am.raw"
 
-.field public static final SEARCH_FILE_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery08_search_10.raw"
+.field public static final SEARCH_FILE_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery09_search_10.raw"
 
 .field public static final SEARCH_FILE_MAIN_MENU:Ljava/lang/String; = "google_glass_mainset_en_us_alpha_sfs_delivery21_search_20.raw"
 
 .field public static final SEARCH_FILE_NOTIFICATION:Ljava/lang/String; = "google_notification_en_us_v3_5.raw"
 
-.field public static final SEARCH_FILE_NOTIFICATION_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery08_search_1.raw"
+.field public static final SEARCH_FILE_NOTIFICATION_GUARD:Ljava/lang/String; = "google_glass_okglass_en_us_alpha_sfs_delivery09_search_1.raw"
 
 .field public static final SEARCH_FILE_TAKE_A_NOTE:Ljava/lang/String; = "google_glass_takeanote_en_us_alpha_sfs_delivery01_search_7.raw"
 
@@ -77,52 +77,52 @@
     .line 75
     sget-object v0, Lcom/google/glass/voice/Sensory;->resIdToFilename:Ljava/util/Map;
 
-    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery08_am:I
+    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery09_am:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery08_am.raw"
+    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery09_am.raw"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 77
     sget-object v0, Lcom/google/glass/voice/Sensory;->resIdToFilename:Ljava/util/Map;
 
-    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery08_search_10:I
+    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery09_search_10:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery08_search_10.raw"
+    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery09_search_10.raw"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 79
     sget-object v0, Lcom/google/glass/voice/Sensory;->resIdToFilename:Ljava/util/Map;
 
-    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery08_am:I
+    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery09_am:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery08_am.raw"
+    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery09_am.raw"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 81
     sget-object v0, Lcom/google/glass/voice/Sensory;->resIdToFilename:Ljava/util/Map;
 
-    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery08_search_1:I
+    sget v1, Lcom/google/glass/common/R$raw;->google_glass_okglass_en_us_alpha_sfs_delivery09_search_1:I
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
-    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery08_search_1.raw"
+    const-string v2, "google_glass_okglass_en_us_alpha_sfs_delivery09_search_1.raw"
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

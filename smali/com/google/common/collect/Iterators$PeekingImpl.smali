@@ -62,12 +62,12 @@
     .end annotation
 
     .prologue
-    .line 1157
+    .line 1175
     .local p0, this:Lcom/google/common/collect/Iterators$PeekingImpl;,"Lcom/google/common/collect/Iterators$PeekingImpl<TE;>;"
     .local p1, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<+TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1158
+    .line 1176
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -76,7 +76,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->iterator:Ljava/util/Iterator;
 
-    .line 1159
+    .line 1177
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 1163
+    .line 1180
     .local p0, this:Lcom/google/common/collect/Iterators$PeekingImpl;,"Lcom/google/common/collect/Iterators$PeekingImpl<TE;>;"
     iget-boolean v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->hasPeeked:Z
 
@@ -121,34 +121,34 @@
     .end annotation
 
     .prologue
-    .line 1168
+    .line 1184
     .local p0, this:Lcom/google/common/collect/Iterators$PeekingImpl;,"Lcom/google/common/collect/Iterators$PeekingImpl<TE;>;"
     iget-boolean v1, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->hasPeeked:Z
 
     if-nez v1, :cond_0
 
-    .line 1169
+    .line 1185
     iget-object v1, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1174
+    .line 1190
     :goto_0
     return-object v0
 
-    .line 1171
+    .line 1187
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->peekedElement:Ljava/lang/Object;
 
-    .line 1172
+    .line 1188
     .local v0, result:Ljava/lang/Object;,"TE;"
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->hasPeeked:Z
 
-    .line 1173
+    .line 1189
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->peekedElement:Ljava/lang/Object;
@@ -165,13 +165,13 @@
     .end annotation
 
     .prologue
-    .line 1185
+    .line 1199
     .local p0, this:Lcom/google/common/collect/Iterators$PeekingImpl;,"Lcom/google/common/collect/Iterators$PeekingImpl<TE;>;"
     iget-boolean v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->hasPeeked:Z
 
     if-nez v0, :cond_0
 
-    .line 1186
+    .line 1200
     iget-object v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -180,12 +180,12 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->peekedElement:Ljava/lang/Object;
 
-    .line 1187
+    .line 1201
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->hasPeeked:Z
 
-    .line 1189
+    .line 1203
     :cond_0
     iget-object v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->peekedElement:Ljava/lang/Object;
 
@@ -196,7 +196,7 @@
     .locals 2
 
     .prologue
-    .line 1179
+    .line 1194
     .local p0, this:Lcom/google/common/collect/Iterators$PeekingImpl;,"Lcom/google/common/collect/Iterators$PeekingImpl<TE;>;"
     iget-boolean v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->hasPeeked:Z
 
@@ -209,15 +209,15 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
-    .line 1180
+    .line 1195
     iget-object v0, p0, Lcom/google/common/collect/Iterators$PeekingImpl;->iterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->remove()V
 
-    .line 1181
+    .line 1196
     return-void
 
-    .line 1179
+    .line 1194
     :cond_0
     const/4 v0, 0x0
 

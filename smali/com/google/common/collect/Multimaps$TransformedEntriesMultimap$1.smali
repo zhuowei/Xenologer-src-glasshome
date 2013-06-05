@@ -3,12 +3,12 @@
 .source "Multimaps.java"
 
 # interfaces
-.implements Lcom/google/common/base/Function;
+.implements Lcom/google/common/collect/Maps$EntryTransformer;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->transform(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
+    value = Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->createAsMap()Ljava/util/Map;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,8 +19,12 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/base/Function",
-        "<TV1;TV2;>;"
+        "Lcom/google/common/collect/Maps$EntryTransformer",
+        "<TK;",
+        "Ljava/util/Collection",
+        "<TV1;>;",
+        "Ljava/util/Collection",
+        "<TV2;>;>;"
     }
 .end annotation
 
@@ -28,21 +32,16 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
 
-.field final synthetic val$key:Ljava/lang/Object;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;Ljava/lang/Object;)V
+.method constructor <init>(Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 1413
+    .line 1463
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.1;"
     iput-object p1, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;->this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
-
-    iput-object p2, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;->val$key:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,26 +50,46 @@
 
 
 # virtual methods
-.method public apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public bridge synthetic transformEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 1463
+    .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.1;"
+    check-cast p2, Ljava/util/Collection;
+
+    .end local p2
+    invoke-virtual {p0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;->transformEntry(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public transformEntry(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
+    .locals 1
+    .parameter
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TV1;)TV2;"
+            "(TK;",
+            "Ljava/util/Collection",
+            "<TV1;>;)",
+            "Ljava/util/Collection",
+            "<TV2;>;"
         }
     .end annotation
 
     .prologue
-    .line 1415
+    .line 1466
     .local p0, this:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;,"Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap.1;"
-    .local p1, value:Ljava/lang/Object;,"TV1;"
+    .local p1, key:Ljava/lang/Object;,"TK;"
+    .local p2, value:Ljava/util/Collection;,"Ljava/util/Collection<TV1;>;"
     iget-object v0, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;->this$0:Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;
 
-    iget-object v0, v0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->transformer:Lcom/google/common/collect/Maps$EntryTransformer;
-
-    iget-object v1, p0, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap$1;->val$key:Ljava/lang/Object;
-
-    invoke-interface {v0, v1, p1}, Lcom/google/common/collect/Maps$EntryTransformer;->transformEntry(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, p2}, Lcom/google/common/collect/Multimaps$TransformedEntriesMultimap;->transform(Ljava/lang/Object;Ljava/util/Collection;)Ljava/util/Collection;
 
     move-result-object v0
 

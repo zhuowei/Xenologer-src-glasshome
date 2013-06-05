@@ -1,5 +1,5 @@
 .class public final Lcom/google/glass/home/settings/BatterySettingsItemView;
-.super Lcom/google/glass/home/settings/SettingsItemView;
+.super Lcom/google/glass/home/settings/SettingsCard;
 .source "BatterySettingsItemView.java"
 
 
@@ -100,7 +100,7 @@
 
     .prologue
     .line 62
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsItemView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/settings/SettingsCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 33
     new-instance v1, Lcom/google/glass/home/settings/BatterySettingsItemView$1;
@@ -603,7 +603,7 @@
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
     .line 83
-    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsItemView;->onUnload()V
+    invoke-super {p0}, Lcom/google/glass/home/settings/SettingsCard;->onUnload()V
 
     .line 84
     return-void

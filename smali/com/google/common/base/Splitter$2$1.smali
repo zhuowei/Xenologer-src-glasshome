@@ -26,7 +26,7 @@
     .parameter "x1"
 
     .prologue
-    .line 172
+    .line 173
     iput-object p1, p0, Lcom/google/common/base/Splitter$2$1;->this$0:Lcom/google/common/base/Splitter$2;
 
     invoke-direct {p0, p2, p3}, Lcom/google/common/base/Splitter$SplittingIterator;-><init>(Lcom/google/common/base/Splitter;Ljava/lang/CharSequence;)V
@@ -41,7 +41,7 @@
     .parameter "separatorPosition"
 
     .prologue
-    .line 190
+    .line 191
     iget-object v0, p0, Lcom/google/common/base/Splitter$2$1;->this$0:Lcom/google/common/base/Splitter$2;
 
     iget-object v0, v0, Lcom/google/common/base/Splitter$2;->val$separator:Ljava/lang/String;
@@ -60,7 +60,7 @@
     .parameter "start"
 
     .prologue
-    .line 174
+    .line 176
     iget-object v4, p0, Lcom/google/common/base/Splitter$2$1;->this$0:Lcom/google/common/base/Splitter$2;
 
     iget-object v4, v4, Lcom/google/common/base/Splitter$2;->val$separator:Ljava/lang/String;
@@ -69,7 +69,7 @@
 
     move-result v0
 
-    .line 177
+    .line 178
     .local v0, delimeterLength:I
     move v3, p1
 
@@ -82,7 +82,6 @@
 
     sub-int v2, v4, v0
 
-    .line 178
     .local v2, last:I
     :goto_0
     if-gt v3, v2, :cond_1

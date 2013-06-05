@@ -33,7 +33,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 29
     new-instance v0, Lcom/google/common/collect/UsingToStringOrdering;
 
     invoke-direct {v0}, Lcom/google/common/collect/UsingToStringOrdering;-><init>()V
@@ -47,7 +47,7 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 46
     invoke-direct {p0}, Lcom/google/common/collect/Ordering;-><init>()V
 
     return-void
@@ -57,7 +57,7 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 38
     sget-object v0, Lcom/google/common/collect/UsingToStringOrdering;->INSTANCE:Lcom/google/common/collect/UsingToStringOrdering;
 
     return-object v0
@@ -71,7 +71,7 @@
     .parameter "right"
 
     .prologue
-    .line 30
+    .line 33
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 39
+    .line 43
     const-string v0, "Ordering.usingToString()"
 
     return-object v0

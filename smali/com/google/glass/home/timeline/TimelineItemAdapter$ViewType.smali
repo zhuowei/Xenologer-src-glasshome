@@ -58,7 +58,7 @@
 
     const/4 v3, 0x0
 
-    .line 66
+    .line 68
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "TEXT"
@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->TEXT:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 67
+    .line 69
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "MESSAGE"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->MESSAGE:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 68
+    .line 70
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "IMAGE"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->IMAGE:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 69
+    .line 71
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "VIDEO"
@@ -94,7 +94,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->VIDEO:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 70
+    .line 72
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "HTML"
@@ -103,7 +103,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->HTML:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 71
+    .line 73
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "SEARCH"
@@ -114,7 +114,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->SEARCH:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 72
+    .line 74
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "CALL"
@@ -125,7 +125,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->CALL:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 73
+    .line 75
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     const-string v1, "HANGOUT"
@@ -136,7 +136,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->HANGOUT:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
-    .line 65
+    .line 67
     const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
@@ -195,7 +195,7 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 67
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -206,7 +206,7 @@
     .parameter "name"
 
     .prologue
-    .line 65
+    .line 67
     const-class v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -222,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 67
     sget-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->$VALUES:[Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     invoke-virtual {v0}, [Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->clone()Ljava/lang/Object;

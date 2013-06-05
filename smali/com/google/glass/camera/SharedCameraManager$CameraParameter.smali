@@ -30,17 +30,17 @@
     .parameter "value"
 
     .prologue
-    .line 511
+    .line 558
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraManager$CameraParameter;->this$0:Lcom/google/glass/camera/SharedCameraManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 512
+    .line 559
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraManager$CameraParameter;->key:Ljava/lang/String;
 
-    .line 513
+    .line 560
     iput-object p3, p0, Lcom/google/glass/camera/SharedCameraManager$CameraParameter;->value:Ljava/lang/String;
 
-    .line 514
+    .line 561
     return-void
 .end method

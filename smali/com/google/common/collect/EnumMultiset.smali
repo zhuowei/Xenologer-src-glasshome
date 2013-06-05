@@ -51,7 +51,7 @@
     .end annotation
 
     .prologue
-    .line 62
+    .line 79
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     .local p1, type:Ljava/lang/Class;,"Ljava/lang/Class<TE;>;"
     new-instance v0, Ljava/util/EnumMap;
@@ -64,10 +64,10 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractMapBasedMultiset;-><init>(Ljava/util/Map;)V
 
-    .line 63
+    .line 80
     iput-object p1, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
-    .line 64
+    .line 81
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .end annotation
 
     .prologue
-    .line 38
+    .line 42
     .local p0, type:Ljava/lang/Class;,"Ljava/lang/Class<TE;>;"
     new-instance v0, Lcom/google/common/collect/EnumMultiset;
 
@@ -112,13 +112,13 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 55
     .local p0, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 52
+    .line 56
     .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<TE;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
@@ -128,7 +128,7 @@
 
     invoke-static {v2, v3}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 53
+    .line 57
     new-instance v1, Lcom/google/common/collect/EnumMultiset;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -143,12 +143,46 @@
 
     invoke-direct {v1, v2}, Lcom/google/common/collect/EnumMultiset;-><init>(Ljava/lang/Class;)V
 
-    .line 54
+    .line 58
     .local v1, multiset:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-static {v1, p0}, Lcom/google/common/collect/Iterables;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
 
-    .line 55
+    .line 59
     return-object v1
+.end method
+
+.method public static create(Ljava/lang/Iterable;Ljava/lang/Class;)Lcom/google/common/collect/EnumMultiset;
+    .locals 1
+    .parameter
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<E:",
+            "Ljava/lang/Enum",
+            "<TE;>;>(",
+            "Ljava/lang/Iterable",
+            "<TE;>;",
+            "Ljava/lang/Class",
+            "<TE;>;)",
+            "Lcom/google/common/collect/EnumMultiset",
+            "<TE;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 70
+    .local p0, elements:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TE;>;"
+    .local p1, type:Ljava/lang/Class;,"Ljava/lang/Class<TE;>;"
+    invoke-static {p1}, Lcom/google/common/collect/EnumMultiset;->create(Ljava/lang/Class;)Lcom/google/common/collect/EnumMultiset;
+
+    move-result-object v0
+
+    .line 71
+    .local v0, result:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
+    invoke-static {v0, p0}, Lcom/google/common/collect/Iterables;->addAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+
+    .line 72
+    return-object v0
 .end method
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
@@ -166,22 +200,22 @@
     .end annotation
 
     .prologue
-    .line 80
+    .line 97
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 82
+    .line 100
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readObject()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Class;
 
-    .line 83
+    .line 101
     .local v0, localType:Ljava/lang/Class;,"Ljava/lang/Class<TE;>;"
     iput-object v0, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
-    .line 84
+    .line 102
     new-instance v1, Ljava/util/EnumMap;
 
     iget-object v2, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
@@ -194,10 +228,10 @@
 
     invoke-virtual {p0, v1}, Lcom/google/common/collect/EnumMultiset;->setBackingMap(Ljava/util/Map;)V
 
-    .line 85
+    .line 103
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->populateMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectInputStream;)V
 
-    .line 86
+    .line 104
     return-void
 .end method
 
@@ -215,19 +249,19 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 85
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 69
+    .line 86
     iget-object v0, p0, Lcom/google/common/collect/EnumMultiset;->type:Ljava/lang/Class;
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeObject(Ljava/lang/Object;)V
 
-    .line 70
+    .line 87
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->writeMultiset(Lcom/google/common/collect/Multiset;Ljava/io/ObjectOutputStream;)V
 
-    .line 71
+    .line 88
     return-void
 .end method
 
@@ -238,7 +272,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->addAll(Ljava/util/Collection;)Z
 
@@ -251,7 +285,7 @@
     .locals 0
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->clear()V
 
@@ -263,7 +297,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->contains(Ljava/lang/Object;)Z
 
@@ -277,7 +311,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->count(Ljava/lang/Object;)I
 
@@ -290,7 +324,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->elementSet()Ljava/util/Set;
 
@@ -303,7 +337,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->entrySet()Ljava/util/Set;
 
@@ -317,7 +351,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->equals(Ljava/lang/Object;)Z
 
@@ -330,7 +364,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->hashCode()I
 
@@ -343,7 +377,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->isEmpty()Z
 
@@ -356,7 +390,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->iterator()Ljava/util/Iterator;
 
@@ -371,7 +405,7 @@
     .parameter "x1"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractMapBasedMultiset;->remove(Ljava/lang/Object;I)I
 
@@ -385,7 +419,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->remove(Ljava/lang/Object;)Z
 
@@ -399,7 +433,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->removeAll(Ljava/util/Collection;)Z
 
@@ -413,7 +447,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->retainAll(Ljava/util/Collection;)Z
 
@@ -426,7 +460,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->size()I
 
@@ -439,7 +473,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 38
     .local p0, this:Lcom/google/common/collect/EnumMultiset;,"Lcom/google/common/collect/EnumMultiset<TE;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractMapBasedMultiset;->toString()Ljava/lang/String;
 

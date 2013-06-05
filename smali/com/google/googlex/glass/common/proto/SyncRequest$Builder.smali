@@ -95,8 +95,6 @@
 
 .field private select_:Lcom/google/googlex/glass/common/proto/Select;
 
-.field private supportsUserActions_:Z
-
 .field private updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -127,46 +125,46 @@
     .locals 1
 
     .prologue
-    .line 551
+    .line 513
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 815
+    .line 768
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Select;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Select;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 931
+    .line 884
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 1171
+    .line 1124
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 1411
+    .line 1364
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 1651
+    .line 1604
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 552
+    .line 514
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 553
+    .line 515
     return-void
 .end method
 
@@ -175,46 +173,46 @@
     .parameter "parent"
 
     .prologue
-    .line 557
+    .line 519
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 815
+    .line 768
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Select;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Select;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 931
+    .line 884
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 1171
+    .line 1124
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 1411
+    .line 1364
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 1651
+    .line 1604
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 558
+    .line 520
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 559
+    .line 521
     return-void
 .end method
 
@@ -224,7 +222,7 @@
     .parameter "x1"
 
     .prologue
-    .line 534
+    .line 496
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -234,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -246,7 +244,7 @@
     .locals 1
 
     .prologue
-    .line 569
+    .line 531
     new-instance v0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;-><init>()V
@@ -258,7 +256,7 @@
     .locals 2
 
     .prologue
-    .line 1414
+    .line 1367
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -267,7 +265,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1415
+    .line 1368
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
@@ -276,14 +274,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 1416
+    .line 1369
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1418
+    .line 1371
     :cond_0
     return-void
 .end method
@@ -292,7 +290,7 @@
     .locals 2
 
     .prologue
-    .line 934
+    .line 887
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -301,7 +299,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 935
+    .line 888
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
@@ -310,14 +308,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 936
+    .line 889
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 938
+    .line 891
     :cond_0
     return-void
 .end method
@@ -326,7 +324,7 @@
     .locals 2
 
     .prologue
-    .line 1174
+    .line 1127
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -335,7 +333,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1175
+    .line 1128
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
@@ -344,14 +342,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 1176
+    .line 1129
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1178
+    .line 1131
     :cond_0
     return-void
 .end method
@@ -371,12 +369,12 @@
     .end annotation
 
     .prologue
-    .line 1639
+    .line 1592
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1640
+    .line 1593
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
@@ -404,18 +402,18 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1646
+    .line 1599
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 1648
+    .line 1601
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 1640
+    .line 1593
     :cond_1
     const/4 v0, 0x0
 
@@ -426,7 +424,7 @@
     .locals 1
 
     .prologue
-    .line 540
+    .line 502
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_SyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -447,12 +445,12 @@
     .end annotation
 
     .prologue
-    .line 1159
+    .line 1112
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1160
+    .line 1113
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
@@ -480,18 +478,18 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1166
+    .line 1119
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 1168
+    .line 1121
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 1160
+    .line 1113
     :cond_1
     const/4 v0, 0x0
 
@@ -513,12 +511,12 @@
     .end annotation
 
     .prologue
-    .line 920
+    .line 873
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 921
+    .line 874
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
@@ -535,12 +533,12 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 926
+    .line 879
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 928
+    .line 881
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -562,12 +560,12 @@
     .end annotation
 
     .prologue
-    .line 1399
+    .line 1352
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1400
+    .line 1353
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
@@ -595,18 +593,18 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1406
+    .line 1359
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 1408
+    .line 1361
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 1400
+    .line 1353
     :cond_1
     const/4 v0, 0x0
 
@@ -617,26 +615,26 @@
     .locals 1
 
     .prologue
-    .line 561
+    .line 523
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 562
+    .line 524
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getSelectFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 563
+    .line 525
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getInsertReplaceOnConflictFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 564
+    .line 526
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdateFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 565
+    .line 527
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDeleteFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 567
+    .line 529
     :cond_0
     return-void
 .end method
@@ -658,28 +656,28 @@
     .end annotation
 
     .prologue
-    .line 1550
+    .line 1503
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/Delete;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1551
+    .line 1504
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1552
+    .line 1505
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1554
+    .line 1507
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1558
+    .line 1511
     :goto_0
     return-object p0
 
-    .line 1556
+    .line 1509
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -703,28 +701,28 @@
     .end annotation
 
     .prologue
-    .line 1070
+    .line 1023
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1071
+    .line 1024
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 1072
+    .line 1025
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1074
+    .line 1027
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1078
+    .line 1031
     :goto_0
     return-object p0
 
-    .line 1076
+    .line 1029
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -748,28 +746,28 @@
     .end annotation
 
     .prologue
-    .line 1310
+    .line 1263
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/Update;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1311
+    .line 1264
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1312
+    .line 1265
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1314
+    .line 1267
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1318
+    .line 1271
     :goto_0
     return-object p0
 
-    .line 1316
+    .line 1269
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -784,15 +782,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1536
+    .line 1489
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1537
+    .line 1490
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1538
+    .line 1491
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->build()Lcom/google/googlex/glass/common/proto/Delete;
@@ -801,14 +799,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1539
+    .line 1492
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1543
+    .line 1496
     :goto_0
     return-object p0
 
-    .line 1541
+    .line 1494
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -827,38 +825,38 @@
     .parameter "value"
 
     .prologue
-    .line 1505
+    .line 1458
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1506
+    .line 1459
     if-nez p2, :cond_0
 
-    .line 1507
+    .line 1460
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1509
+    .line 1462
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1510
+    .line 1463
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1511
+    .line 1464
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1515
+    .line 1468
     :goto_0
     return-object p0
 
-    .line 1513
+    .line 1466
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -872,15 +870,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1522
+    .line 1475
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1523
+    .line 1476
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1524
+    .line 1477
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->build()Lcom/google/googlex/glass/common/proto/Delete;
@@ -889,14 +887,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1525
+    .line 1478
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1529
+    .line 1482
     :goto_0
     return-object p0
 
-    .line 1527
+    .line 1480
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -914,38 +912,38 @@
     .parameter "value"
 
     .prologue
-    .line 1488
+    .line 1441
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1489
+    .line 1442
     if-nez p1, :cond_0
 
-    .line 1490
+    .line 1443
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1492
+    .line 1445
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1493
+    .line 1446
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1494
+    .line 1447
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1498
+    .line 1451
     :goto_0
     return-object p0
 
-    .line 1496
+    .line 1449
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -958,7 +956,7 @@
     .locals 2
 
     .prologue
-    .line 1618
+    .line 1571
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDeleteFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -981,7 +979,7 @@
     .parameter "index"
 
     .prologue
-    .line 1626
+    .line 1579
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDeleteFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1005,15 +1003,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1056
+    .line 1009
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1057
+    .line 1010
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 1058
+    .line 1011
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict$Builder;->build()Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict;
@@ -1022,14 +1020,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1059
+    .line 1012
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1063
+    .line 1016
     :goto_0
     return-object p0
 
-    .line 1061
+    .line 1014
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1048,38 +1046,38 @@
     .parameter "value"
 
     .prologue
-    .line 1025
+    .line 978
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1026
+    .line 979
     if-nez p2, :cond_0
 
-    .line 1027
+    .line 980
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1029
+    .line 982
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 1030
+    .line 983
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1031
+    .line 984
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1035
+    .line 988
     :goto_0
     return-object p0
 
-    .line 1033
+    .line 986
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1093,15 +1091,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1042
+    .line 995
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1043
+    .line 996
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 1044
+    .line 997
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict$Builder;->build()Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict;
@@ -1110,14 +1108,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1045
+    .line 998
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1049
+    .line 1002
     :goto_0
     return-object p0
 
-    .line 1047
+    .line 1000
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1135,38 +1133,38 @@
     .parameter "value"
 
     .prologue
-    .line 1008
+    .line 961
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1009
+    .line 962
     if-nez p1, :cond_0
 
-    .line 1010
+    .line 963
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1012
+    .line 965
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 1013
+    .line 966
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1014
+    .line 967
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1018
+    .line 971
     :goto_0
     return-object p0
 
-    .line 1016
+    .line 969
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1179,7 +1177,7 @@
     .locals 2
 
     .prologue
-    .line 1138
+    .line 1091
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getInsertReplaceOnConflictFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1202,7 +1200,7 @@
     .parameter "index"
 
     .prologue
-    .line 1146
+    .line 1099
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getInsertReplaceOnConflictFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1226,15 +1224,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1296
+    .line 1249
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1297
+    .line 1250
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1298
+    .line 1251
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->build()Lcom/google/googlex/glass/common/proto/Update;
@@ -1243,14 +1241,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1299
+    .line 1252
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1303
+    .line 1256
     :goto_0
     return-object p0
 
-    .line 1301
+    .line 1254
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1269,38 +1267,38 @@
     .parameter "value"
 
     .prologue
-    .line 1265
+    .line 1218
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1266
+    .line 1219
     if-nez p2, :cond_0
 
-    .line 1267
+    .line 1220
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1269
+    .line 1222
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1270
+    .line 1223
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1271
+    .line 1224
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1275
+    .line 1228
     :goto_0
     return-object p0
 
-    .line 1273
+    .line 1226
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1314,15 +1312,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1282
+    .line 1235
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1283
+    .line 1236
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1284
+    .line 1237
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Update$Builder;->build()Lcom/google/googlex/glass/common/proto/Update;
@@ -1331,14 +1329,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1285
+    .line 1238
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1289
+    .line 1242
     :goto_0
     return-object p0
 
-    .line 1287
+    .line 1240
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1356,38 +1354,38 @@
     .parameter "value"
 
     .prologue
-    .line 1248
+    .line 1201
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1249
+    .line 1202
     if-nez p1, :cond_0
 
-    .line 1250
+    .line 1203
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1252
+    .line 1205
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1253
+    .line 1206
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1254
+    .line 1207
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1258
+    .line 1211
     :goto_0
     return-object p0
 
-    .line 1256
+    .line 1209
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1400,7 +1398,7 @@
     .locals 2
 
     .prologue
-    .line 1378
+    .line 1331
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdateFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1423,7 +1421,7 @@
     .parameter "index"
 
     .prologue
-    .line 1386
+    .line 1339
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdateFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1445,12 +1443,12 @@
     .locals 2
 
     .prologue
-    .line 619
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
 
-    .line 620
+    .line 580
     .local v0, result:Lcom/google/googlex/glass/common/proto/SyncRequest;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/SyncRequest;->isInitialized()Z
 
@@ -1458,14 +1456,14 @@
 
     if-nez v1, :cond_0
 
-    .line 621
+    .line 581
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 623
+    .line 583
     :cond_0
     return-object v0
 .end method
@@ -1474,7 +1472,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -1486,7 +1484,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -1498,22 +1496,22 @@
     .locals 5
 
     .prologue
-    .line 627
+    .line 587
     new-instance v1, Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/SyncRequest$1;)V
 
-    .line 628
+    .line 588
     .local v1, result:Lcom/google/googlex/glass/common/proto/SyncRequest;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 629
+    .line 589
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 630
+    .line 590
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -1521,28 +1519,28 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 631
+    .line 591
     or-int/lit8 v2, v2, 0x1
 
-    .line 633
+    .line 593
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_5
 
-    .line 634
+    .line 594
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->select_:Lcom/google/googlex/glass/common/proto/Select;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$502(Lcom/google/googlex/glass/common/proto/SyncRequest;Lcom/google/googlex/glass/common/proto/Select;)Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 638
+    .line 598
     :goto_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v3, :cond_7
+    if-nez v3, :cond_6
 
-    .line 639
+    .line 599
     iget v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x2
@@ -1551,7 +1549,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 640
+    .line 600
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1560,27 +1558,27 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 641
+    .line 601
     iget v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x3
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 643
+    .line 603
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$602(Lcom/google/googlex/glass/common/proto/SyncRequest;Ljava/util/List;)Ljava/util/List;
 
-    .line 647
+    .line 607
     :goto_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v3, :cond_8
+    if-nez v3, :cond_7
 
-    .line 648
+    .line 608
     iget v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x4
@@ -1589,7 +1587,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 649
+    .line 609
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1598,27 +1596,27 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 650
+    .line 610
     iget v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x5
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 652
+    .line 612
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$702(Lcom/google/googlex/glass/common/proto/SyncRequest;Ljava/util/List;)Ljava/util/List;
 
-    .line 656
+    .line 616
     :goto_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_8
 
-    .line 657
+    .line 617
     iget v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x8
@@ -1627,7 +1625,7 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 658
+    .line 618
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1636,21 +1634,21 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 659
+    .line 619
     iget v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x9
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 661
+    .line 621
     :cond_3
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$802(Lcom/google/googlex/glass/common/proto/SyncRequest;Ljava/util/List;)Ljava/util/List;
 
-    .line 665
+    .line 625
     :goto_3
     and-int/lit8 v3, v0, 0x10
 
@@ -1658,45 +1656,28 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 666
+    .line 626
     or-int/lit8 v2, v2, 0x2
 
-    .line 668
+    .line 628
     :cond_4
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$902(Lcom/google/googlex/glass/common/proto/SyncRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 669
-    and-int/lit8 v3, v0, 0x20
-
-    const/16 v4, 0x20
-
-    if-ne v3, v4, :cond_5
-
-    .line 670
-    or-int/lit8 v2, v2, 0x4
-
-    .line 672
-    :cond_5
-    iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->supportsUserActions_:Z
-
-    #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->supportsUserActions_:Z
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1002(Lcom/google/googlex/glass/common/proto/SyncRequest;Z)Z
-
-    .line 673
+    .line 629
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1102(Lcom/google/googlex/glass/common/proto/SyncRequest;I)I
+    invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1002(Lcom/google/googlex/glass/common/proto/SyncRequest;I)I
 
-    .line 674
+    .line 630
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onBuilt()V
 
-    .line 675
+    .line 631
     return-object v1
 
-    .line 636
-    :cond_6
+    .line 596
+    :cond_5
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/SingleFieldBuilder;->build()Lcom/google/protobuf/GeneratedMessage;
@@ -1708,10 +1689,10 @@
     #setter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->select_:Lcom/google/googlex/glass/common/proto/Select;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$502(Lcom/google/googlex/glass/common/proto/SyncRequest;Lcom/google/googlex/glass/common/proto/Select;)Lcom/google/googlex/glass/common/proto/Select;
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 645
-    :cond_7
+    .line 605
+    :cond_6
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/RepeatedFieldBuilder;->build()Ljava/util/List;
@@ -1723,8 +1704,8 @@
 
     goto :goto_1
 
-    .line 654
-    :cond_8
+    .line 614
+    :cond_7
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/RepeatedFieldBuilder;->build()Ljava/util/List;
@@ -1736,8 +1717,8 @@
 
     goto :goto_2
 
-    .line 663
-    :cond_9
+    .line 623
+    :cond_8
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/RepeatedFieldBuilder;->build()Ljava/util/List;
@@ -1754,7 +1735,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -1766,7 +1747,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -1778,22 +1759,22 @@
     .locals 1
 
     .prologue
-    .line 573
+    .line 535
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 574
+    .line 536
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 575
+    .line 537
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Select;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Select;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 579
+    .line 541
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -1801,94 +1782,82 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 580
+    .line 542
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 581
+    .line 543
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 582
+    .line 544
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 586
+    .line 548
     :goto_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_2
 
-    .line 587
+    .line 549
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 588
+    .line 550
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 592
+    .line 554
     :goto_2
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_3
 
-    .line 593
+    .line 555
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 594
+    .line 556
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 598
+    .line 560
     :goto_3
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 599
+    .line 561
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 600
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->supportsUserActions_:Z
-
-    .line 601
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, -0x21
-
-    iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    .line 602
+    .line 562
     return-object p0
 
-    .line 577
+    .line 539
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1896,7 +1865,7 @@
 
     goto :goto_0
 
-    .line 584
+    .line 546
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1904,7 +1873,7 @@
 
     goto :goto_1
 
-    .line 590
+    .line 552
     :cond_2
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1912,7 +1881,7 @@
 
     goto :goto_2
 
-    .line 596
+    .line 558
     :cond_3
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1925,7 +1894,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -1937,7 +1906,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -1949,7 +1918,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -1961,7 +1930,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -1973,33 +1942,33 @@
     .locals 1
 
     .prologue
-    .line 1564
+    .line 1517
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1565
+    .line 1518
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 1566
+    .line 1519
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1567
+    .line 1520
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1571
+    .line 1524
     :goto_0
     return-object p0
 
-    .line 1569
+    .line 1522
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2012,14 +1981,14 @@
     .locals 1
 
     .prologue
-    .line 1730
+    .line 1683
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1731
+    .line 1684
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -2030,10 +1999,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1732
+    .line 1685
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1733
+    .line 1686
     return-object p0
 .end method
 
@@ -2041,33 +2010,33 @@
     .locals 1
 
     .prologue
-    .line 1084
+    .line 1037
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1085
+    .line 1038
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 1086
+    .line 1039
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1087
+    .line 1040
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1091
+    .line 1044
     :goto_0
     return-object p0
 
-    .line 1089
+    .line 1042
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2080,22 +2049,22 @@
     .locals 1
 
     .prologue
-    .line 887
+    .line 840
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 888
+    .line 841
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Select;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Select;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 889
+    .line 842
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 893
+    .line 846
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -2103,10 +2072,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 894
+    .line 847
     return-object p0
 
-    .line 891
+    .line 844
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2115,60 +2084,37 @@
     goto :goto_0
 .end method
 
-.method public clearSupportsUserActions()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
-    .locals 1
-
-    .prologue
-    .line 1800
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, -0x21
-
-    iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    .line 1801
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->supportsUserActions_:Z
-
-    .line 1802
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
-
-    .line 1803
-    return-object p0
-.end method
-
 .method public clearUpdate()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
     .locals 1
 
     .prologue
-    .line 1324
+    .line 1277
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1325
+    .line 1278
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 1326
+    .line 1279
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1327
+    .line 1280
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1331
+    .line 1284
     :goto_0
     return-object p0
 
-    .line 1329
+    .line 1282
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2181,7 +2127,7 @@
     .locals 2
 
     .prologue
-    .line 606
+    .line 566
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2201,7 +2147,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2213,7 +2159,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2225,7 +2171,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2237,7 +2183,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2249,7 +2195,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2266,7 +2212,7 @@
     .end annotation
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -2278,7 +2224,7 @@
     .locals 1
 
     .prologue
-    .line 615
+    .line 575
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -2290,7 +2236,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -2302,7 +2248,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
@@ -2315,12 +2261,12 @@
     .parameter "index"
 
     .prologue
-    .line 1447
+    .line 1400
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1448
+    .line 1401
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2329,7 +2275,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Delete;
 
-    .line 1450
+    .line 1403
     :goto_0
     return-object v0
 
@@ -2350,7 +2296,7 @@
     .parameter "index"
 
     .prologue
-    .line 1591
+    .line 1544
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDeleteFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2377,7 +2323,7 @@
     .end annotation
 
     .prologue
-    .line 1634
+    .line 1587
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDeleteFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2393,19 +2339,19 @@
     .locals 1
 
     .prologue
-    .line 1437
+    .line 1390
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1438
+    .line 1391
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1440
+    .line 1393
     :goto_0
     return v0
 
@@ -2432,19 +2378,19 @@
     .end annotation
 
     .prologue
-    .line 1427
+    .line 1380
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1428
+    .line 1381
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1430
+    .line 1383
     :goto_0
     return-object v0
 
@@ -2463,12 +2409,12 @@
     .parameter "index"
 
     .prologue
-    .line 1598
+    .line 1551
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1599
+    .line 1552
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2477,7 +2423,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/DeleteOrBuilder;
 
-    .line 1600
+    .line 1553
     :goto_0
     return-object v0
 
@@ -2506,19 +2452,19 @@
     .end annotation
 
     .prologue
-    .line 1608
+    .line 1561
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1609
+    .line 1562
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1611
+    .line 1564
     :goto_0
     return-object v0
 
@@ -2536,7 +2482,7 @@
     .locals 1
 
     .prologue
-    .line 611
+    .line 571
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_SyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -2546,16 +2492,16 @@
     .locals 3
 
     .prologue
-    .line 1672
+    .line 1625
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1673
+    .line 1626
     .local v0, ref:Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-nez v2, :cond_0
 
-    .line 1674
+    .line 1627
     check-cast v0, Lcom/google/protobuf/ByteString;
 
     .end local v0           #ref:Ljava/lang/Object;
@@ -2563,11 +2509,11 @@
 
     move-result-object v1
 
-    .line 1676
+    .line 1629
     .local v1, s:Ljava/lang/String;
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1679
+    .line 1632
     .end local v1           #s:Ljava/lang/String;
     :goto_0
     return-object v1
@@ -2586,16 +2532,16 @@
     .locals 3
 
     .prologue
-    .line 1692
+    .line 1645
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1693
+    .line 1646
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1694
+    .line 1647
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2603,11 +2549,11 @@
 
     move-result-object v0
 
-    .line 1697
+    .line 1650
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1700
+    .line 1653
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2627,12 +2573,12 @@
     .parameter "index"
 
     .prologue
-    .line 967
+    .line 920
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 968
+    .line 921
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2641,7 +2587,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict;
 
-    .line 970
+    .line 923
     :goto_0
     return-object v0
 
@@ -2662,7 +2608,7 @@
     .parameter "index"
 
     .prologue
-    .line 1111
+    .line 1064
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getInsertReplaceOnConflictFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2689,7 +2635,7 @@
     .end annotation
 
     .prologue
-    .line 1154
+    .line 1107
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getInsertReplaceOnConflictFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2705,19 +2651,19 @@
     .locals 1
 
     .prologue
-    .line 957
+    .line 910
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 958
+    .line 911
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 960
+    .line 913
     :goto_0
     return v0
 
@@ -2744,19 +2690,19 @@
     .end annotation
 
     .prologue
-    .line 947
+    .line 900
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 948
+    .line 901
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 950
+    .line 903
     :goto_0
     return-object v0
 
@@ -2775,12 +2721,12 @@
     .parameter "index"
 
     .prologue
-    .line 1118
+    .line 1071
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1119
+    .line 1072
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2789,7 +2735,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflictOrBuilder;
 
-    .line 1120
+    .line 1073
     :goto_0
     return-object v0
 
@@ -2818,19 +2764,19 @@
     .end annotation
 
     .prologue
-    .line 1128
+    .line 1081
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1129
+    .line 1082
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1131
+    .line 1084
     :goto_0
     return-object v0
 
@@ -2848,15 +2794,15 @@
     .locals 1
 
     .prologue
-    .line 828
+    .line 781
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 829
+    .line 782
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 831
+    .line 784
     :goto_0
     return-object v0
 
@@ -2876,17 +2822,17 @@
     .locals 1
 
     .prologue
-    .line 900
+    .line 853
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 901
+    .line 854
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 902
+    .line 855
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getSelectFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -2904,12 +2850,12 @@
     .locals 1
 
     .prologue
-    .line 908
+    .line 861
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 909
+    .line 862
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -2918,7 +2864,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/SelectOrBuilder;
 
-    .line 911
+    .line 864
     :goto_0
     return-object v0
 
@@ -2928,27 +2874,17 @@
     goto :goto_0
 .end method
 
-.method public getSupportsUserActions()Z
-    .locals 1
-
-    .prologue
-    .line 1775
-    iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->supportsUserActions_:Z
-
-    return v0
-.end method
-
 .method public getUpdate(I)Lcom/google/googlex/glass/common/proto/Update;
     .locals 1
     .parameter "index"
 
     .prologue
-    .line 1207
+    .line 1160
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1208
+    .line 1161
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2957,7 +2893,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Update;
 
-    .line 1210
+    .line 1163
     :goto_0
     return-object v0
 
@@ -2978,7 +2914,7 @@
     .parameter "index"
 
     .prologue
-    .line 1351
+    .line 1304
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdateFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -3005,7 +2941,7 @@
     .end annotation
 
     .prologue
-    .line 1394
+    .line 1347
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdateFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -3021,19 +2957,19 @@
     .locals 1
 
     .prologue
-    .line 1197
+    .line 1150
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1198
+    .line 1151
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1200
+    .line 1153
     :goto_0
     return v0
 
@@ -3060,19 +2996,19 @@
     .end annotation
 
     .prologue
-    .line 1187
+    .line 1140
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1188
+    .line 1141
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1190
+    .line 1143
     :goto_0
     return-object v0
 
@@ -3091,12 +3027,12 @@
     .parameter "index"
 
     .prologue
-    .line 1358
+    .line 1311
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1359
+    .line 1312
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3105,7 +3041,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UpdateOrBuilder;
 
-    .line 1360
+    .line 1313
     :goto_0
     return-object v0
 
@@ -3134,19 +3070,19 @@
     .end annotation
 
     .prologue
-    .line 1368
+    .line 1321
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1369
+    .line 1322
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1371
+    .line 1324
     :goto_0
     return-object v0
 
@@ -3164,7 +3100,7 @@
     .locals 2
 
     .prologue
-    .line 1661
+    .line 1614
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -3190,7 +3126,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 822
+    .line 775
     iget v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -3206,35 +3142,11 @@
     goto :goto_0
 .end method
 
-.method public hasSupportsUserActions()Z
-    .locals 2
-
-    .prologue
-    .line 1764
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, 0x20
-
-    const/16 v1, 0x20
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method protected internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
     .locals 3
 
     .prologue
-    .line 545
+    .line 507
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_SyncRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/SyncRequest;
@@ -3254,19 +3166,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 783
+    .line 736
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->hasDeviceId()Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 793
+    .line 746
     :cond_0
     :goto_0
     return v1
 
-    .line 787
+    .line 740
     :cond_1
     const/4 v0, 0x0
 
@@ -3278,7 +3190,7 @@
 
     if-ge v0, v2, :cond_2
 
-    .line 788
+    .line 741
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdate(I)Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v2
@@ -3289,12 +3201,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 787
+    .line 740
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 793
+    .line 746
     :cond_2
     const/4 v1, 0x1
 
@@ -3308,18 +3220,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 688
+    .line 644
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 779
+    .line 732
     :goto_0
     return-object p0
 
-    .line 689
+    .line 645
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->hasSelect()Z
 
@@ -3327,20 +3239,20 @@
 
     if-eqz v0, :cond_1
 
-    .line 690
+    .line 646
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->getSelect()Lcom/google/googlex/glass/common/proto/Select;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeSelect(Lcom/google/googlex/glass/common/proto/Select;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
-    .line 692
+    .line 648
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v0, :cond_8
+    if-nez v0, :cond_7
 
-    .line 693
+    .line 649
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$600(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3352,16 +3264,16 @@
 
     if-nez v0, :cond_2
 
-    .line 694
+    .line 650
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    .line 695
+    .line 651
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$600(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3369,25 +3281,25 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 696
+    .line 652
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 701
+    .line 657
     :goto_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 718
+    .line 674
     :cond_2
     :goto_2
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_b
 
-    .line 719
+    .line 675
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$700(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3399,16 +3311,16 @@
 
     if-nez v0, :cond_3
 
-    .line 720
+    .line 676
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_a
 
-    .line 721
+    .line 677
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$700(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3416,25 +3328,25 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 722
+    .line 678
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 727
+    .line 683
     :goto_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 744
+    .line 700
     :cond_3
     :goto_4
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v0, :cond_10
+    if-nez v0, :cond_f
 
-    .line 745
+    .line 701
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$800(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3446,16 +3358,16 @@
 
     if-nez v0, :cond_4
 
-    .line 746
+    .line 702
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_e
 
-    .line 747
+    .line 703
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$800(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3463,18 +3375,18 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 748
+    .line 704
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 753
+    .line 709
     :goto_5
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 770
+    .line 726
     :cond_4
     :goto_6
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->hasDeviceId()Z
@@ -3483,14 +3395,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 771
+    .line 727
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 772
+    .line 728
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$900(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/lang/Object;
 
@@ -3498,26 +3410,11 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 773
+    .line 729
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 775
+    .line 731
     :cond_5
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->hasSupportsUserActions()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_6
-
-    .line 776
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->getSupportsUserActions()Z
-
-    move-result v0
-
-    invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->setSupportsUserActions(Z)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
-
-    .line 778
-    :cond_6
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
@@ -3526,11 +3423,11 @@
 
     goto/16 :goto_0
 
-    .line 698
-    :cond_7
+    .line 654
+    :cond_6
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 699
+    .line 655
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
@@ -3540,10 +3437,10 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    goto/16 :goto_1
+    goto :goto_1
 
-    .line 704
-    :cond_8
+    .line 660
+    :cond_7
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$600(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3555,24 +3452,24 @@
 
     if-nez v0, :cond_2
 
-    .line 705
+    .line 661
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_9
 
-    .line 706
+    .line 662
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 707
+    .line 663
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 708
+    .line 664
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$600(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3580,19 +3477,19 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
-    .line 709
+    .line 665
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 710
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1200()Z
+    .line 666
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1100()Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getInsertReplaceOnConflictFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -3603,13 +3500,13 @@
 
     goto/16 :goto_2
 
-    :cond_9
+    :cond_8
     move-object v0, v1
 
     goto :goto_7
 
-    .line 714
-    :cond_a
+    .line 670
+    :cond_9
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->insertReplaceOnConflict_:Ljava/util/List;
@@ -3621,11 +3518,11 @@
 
     goto/16 :goto_2
 
-    .line 724
-    :cond_b
+    .line 680
+    :cond_a
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 725
+    .line 681
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
@@ -3637,8 +3534,8 @@
 
     goto/16 :goto_3
 
-    .line 730
-    :cond_c
+    .line 686
+    :cond_b
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$700(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3650,24 +3547,24 @@
 
     if-nez v0, :cond_3
 
-    .line 731
+    .line 687
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_d
 
-    .line 732
+    .line 688
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 733
+    .line 689
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 734
+    .line 690
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$700(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3675,19 +3572,19 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
-    .line 735
+    .line 691
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 736
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1300()Z
+    .line 692
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1200()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_c
 
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getUpdateFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -3698,13 +3595,13 @@
 
     goto/16 :goto_4
 
-    :cond_d
+    :cond_c
     move-object v0, v1
 
     goto :goto_8
 
-    .line 740
-    :cond_e
+    .line 696
+    :cond_d
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->update_:Ljava/util/List;
@@ -3716,11 +3613,11 @@
 
     goto/16 :goto_4
 
-    .line 750
-    :cond_f
+    .line 706
+    :cond_e
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 751
+    .line 707
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
@@ -3732,8 +3629,8 @@
 
     goto/16 :goto_5
 
-    .line 756
-    :cond_10
+    .line 712
+    :cond_f
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$800(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3745,24 +3642,24 @@
 
     if-nez v0, :cond_4
 
-    .line 757
+    .line 713
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_11
 
-    .line 758
+    .line 714
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 759
+    .line 715
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 760
+    .line 716
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$800(Lcom/google/googlex/glass/common/proto/SyncRequest;)Ljava/util/List;
 
@@ -3770,31 +3667,31 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
-    .line 761
+    .line 717
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 762
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1400()Z
+    .line 718
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->access$1300()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_10
 
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->getDeleteFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v1
 
-    :cond_11
+    :cond_10
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     goto/16 :goto_6
 
-    .line 766
-    :cond_12
+    .line 722
+    :cond_11
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/googlex/glass/common/proto/SyncRequest;->delete_:Ljava/util/List;
@@ -3818,10 +3715,10 @@
     .end annotation
 
     .prologue
-    .line 800
+    .line 753
     const/4 v2, 0x0
 
-    .line 802
+    .line 755
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/SyncRequest;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/SyncRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -3839,21 +3736,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 807
+    .line 760
     if-eqz v2, :cond_0
 
-    .line 808
+    .line 761
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/SyncRequest;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
-    .line 811
+    .line 764
     :cond_0
     return-object p0
 
-    .line 803
+    .line 756
     :catch_0
     move-exception v1
 
-    .line 804
+    .line 757
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -3866,19 +3763,19 @@
 
     move-object v2, v0
 
-    .line 805
+    .line 758
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 807
+    .line 760
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 808
+    .line 761
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/SyncRequest;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     :cond_1
@@ -3890,12 +3787,12 @@
     .parameter "other"
 
     .prologue
-    .line 679
+    .line 635
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     if-eqz v0, :cond_0
 
-    .line 680
+    .line 636
     check-cast p1, Lcom/google/googlex/glass/common/proto/SyncRequest;
 
     .end local p1
@@ -3903,12 +3800,12 @@
 
     move-result-object p0
 
-    .line 683
+    .line 639
     .end local p0
     :goto_0
     return-object p0
 
-    .line 682
+    .line 638
     .restart local p0
     .restart local p1
     :cond_0
@@ -3928,7 +3825,7 @@
     .end annotation
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -3941,7 +3838,7 @@
     .parameter "x0"
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -3960,7 +3857,7 @@
     .end annotation
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -3979,7 +3876,7 @@
     .end annotation
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -3992,7 +3889,7 @@
     .parameter "x0"
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -4011,7 +3908,7 @@
     .end annotation
 
     .prologue
-    .line 534
+    .line 496
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -4024,12 +3921,12 @@
     .parameter "value"
 
     .prologue
-    .line 868
+    .line 821
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 869
+    .line 822
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -4046,7 +3943,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 871
+    .line 824
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Select;->newBuilder(Lcom/google/googlex/glass/common/proto/Select;)Lcom/google/googlex/glass/common/proto/Select$Builder;
@@ -4063,11 +3960,11 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 876
+    .line 829
     :goto_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 880
+    .line 833
     :goto_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -4075,16 +3972,16 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 881
+    .line 834
     return-object p0
 
-    .line 874
+    .line 827
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
     goto :goto_0
 
-    .line 878
+    .line 831
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -4098,27 +3995,27 @@
     .parameter "index"
 
     .prologue
-    .line 1577
+    .line 1530
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1578
+    .line 1531
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1579
+    .line 1532
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1580
+    .line 1533
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1584
+    .line 1537
     :goto_0
     return-object p0
 
-    .line 1582
+    .line 1535
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4132,27 +4029,27 @@
     .parameter "index"
 
     .prologue
-    .line 1097
+    .line 1050
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1098
+    .line 1051
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 1099
+    .line 1052
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1100
+    .line 1053
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1104
+    .line 1057
     :goto_0
     return-object p0
 
-    .line 1102
+    .line 1055
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4166,27 +4063,27 @@
     .parameter "index"
 
     .prologue
-    .line 1337
+    .line 1290
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1338
+    .line 1291
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1339
+    .line 1292
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1340
+    .line 1293
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1344
+    .line 1297
     :goto_0
     return-object p0
 
-    .line 1342
+    .line 1295
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4201,15 +4098,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1475
+    .line 1428
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1476
+    .line 1429
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1477
+    .line 1430
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->build()Lcom/google/googlex/glass/common/proto/Delete;
@@ -4218,14 +4115,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1478
+    .line 1431
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1482
+    .line 1435
     :goto_0
     return-object p0
 
-    .line 1480
+    .line 1433
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4244,38 +4141,38 @@
     .parameter "value"
 
     .prologue
-    .line 1458
+    .line 1411
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1459
+    .line 1412
     if-nez p2, :cond_0
 
-    .line 1460
+    .line 1413
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1462
+    .line 1415
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureDeleteIsMutable()V
 
-    .line 1463
+    .line 1416
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->delete_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1464
+    .line 1417
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1468
+    .line 1421
     :goto_0
     return-object p0
 
-    .line 1466
+    .line 1419
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deleteBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4289,17 +4186,17 @@
     .parameter "value"
 
     .prologue
-    .line 1713
+    .line 1666
     if-nez p1, :cond_0
 
-    .line 1714
+    .line 1667
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1716
+    .line 1669
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -4307,13 +4204,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1717
+    .line 1670
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1718
+    .line 1671
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1719
+    .line 1672
     return-object p0
 .end method
 
@@ -4322,17 +4219,17 @@
     .parameter "value"
 
     .prologue
-    .line 1745
+    .line 1698
     if-nez p1, :cond_0
 
-    .line 1746
+    .line 1699
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1748
+    .line 1701
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -4340,13 +4237,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 1749
+    .line 1702
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1750
+    .line 1703
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1751
+    .line 1704
     return-object p0
 .end method
 
@@ -4356,15 +4253,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 995
+    .line 948
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 996
+    .line 949
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 997
+    .line 950
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict$Builder;->build()Lcom/google/googlex/glass/common/proto/InsertReplaceOnConflict;
@@ -4373,14 +4270,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 998
+    .line 951
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1002
+    .line 955
     :goto_0
     return-object p0
 
-    .line 1000
+    .line 953
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4399,38 +4296,38 @@
     .parameter "value"
 
     .prologue
-    .line 978
+    .line 931
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 979
+    .line 932
     if-nez p2, :cond_0
 
-    .line 980
+    .line 933
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 982
+    .line 935
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureInsertReplaceOnConflictIsMutable()V
 
-    .line 983
+    .line 936
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflict_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 984
+    .line 937
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 988
+    .line 941
     :goto_0
     return-object p0
 
-    .line 986
+    .line 939
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->insertReplaceOnConflictBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4444,22 +4341,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 855
+    .line 808
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 856
+    .line 809
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Select$Builder;->build()Lcom/google/googlex/glass/common/proto/Select;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 857
+    .line 810
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 861
+    .line 814
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -4467,10 +4364,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 862
+    .line 815
     return-object p0
 
-    .line 859
+    .line 812
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -4488,29 +4385,29 @@
     .parameter "value"
 
     .prologue
-    .line 838
+    .line 791
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 839
+    .line 792
     if-nez p1, :cond_0
 
-    .line 840
+    .line 793
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 842
+    .line 795
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->select_:Lcom/google/googlex/glass/common/proto/Select;
 
-    .line 843
+    .line 796
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 847
+    .line 800
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
@@ -4518,10 +4415,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
 
-    .line 848
+    .line 801
     return-object p0
 
-    .line 845
+    .line 798
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->selectBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -4530,43 +4427,21 @@
     goto :goto_0
 .end method
 
-.method public setSupportsUserActions(Z)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
-    .locals 1
-    .parameter "value"
-
-    .prologue
-    .line 1786
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    or-int/lit8 v0, v0, 0x20
-
-    iput v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->bitField0_:I
-
-    .line 1787
-    iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->supportsUserActions_:Z
-
-    .line 1788
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
-
-    .line 1789
-    return-object p0
-.end method
-
 .method public setUpdate(ILcom/google/googlex/glass/common/proto/Update$Builder;)Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
     .locals 2
     .parameter "index"
     .parameter "builderForValue"
 
     .prologue
-    .line 1235
+    .line 1188
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1236
+    .line 1189
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1237
+    .line 1190
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->build()Lcom/google/googlex/glass/common/proto/Update;
@@ -4575,14 +4450,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1238
+    .line 1191
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1242
+    .line 1195
     :goto_0
     return-object p0
 
-    .line 1240
+    .line 1193
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4601,38 +4476,38 @@
     .parameter "value"
 
     .prologue
-    .line 1218
+    .line 1171
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1219
+    .line 1172
     if-nez p2, :cond_0
 
-    .line 1220
+    .line 1173
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1222
+    .line 1175
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->ensureUpdateIsMutable()V
 
-    .line 1223
+    .line 1176
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->update_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1224
+    .line 1177
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->onChanged()V
 
-    .line 1228
+    .line 1181
     :goto_0
     return-object p0
 
-    .line 1226
+    .line 1179
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;->updateBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

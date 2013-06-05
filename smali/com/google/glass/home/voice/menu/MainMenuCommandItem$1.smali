@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newGoogleItem()Lcom/google/glass/home/voice/menu/MainMenuCommandItem;
+    value = Lcom/google/glass/home/voice/menu/MainMenuCommandItem;->newGoogleItem()Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,7 +24,7 @@
     .parameter "x4"
 
     .prologue
-    .line 135
+    .line 134
     const/4 v6, 0x0
 
     move-object v0, p0
@@ -62,20 +62,17 @@
 
     .line 140
     .local v0, activity:Landroid/app/Activity;
-    invoke-interface {p1, p2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSoundForPendingOpenEndedInput(Z)V
+    sget-object v1, Lcom/google/glass/voice/VoiceConfigDescriptor;->SEARCH:Lcom/google/glass/voice/VoiceConfigDescriptor;
+
+    invoke-interface {p1, v1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
     .line 141
-    sget-object v1, Lcom/google/glass/voice/VoiceConfig;->SEARCH:Lcom/google/glass/voice/VoiceConfig;
-
-    invoke-interface {p1, v1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 142
     new-instance v1, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$1$1;
 
     invoke-direct {v1, p0, v0, p2, p1}, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$1$1;-><init>(Lcom/google/glass/home/voice/menu/MainMenuCommandItem$1;Landroid/app/Activity;ZLcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)V
 
     invoke-interface {p1, p0, v1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->selectMenuItem(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Ljava/lang/Runnable;)V
 
-    .line 155
+    .line 154
     return-void
 .end method

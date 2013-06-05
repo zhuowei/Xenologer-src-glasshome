@@ -20,16 +20,16 @@
     .parameter "context"
 
     .prologue
-    .line 200
+    .line 218
     const-string v0, "entity.db"
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x7
+    const/16 v2, 0x8
 
     invoke-direct {p0, p1, v0, v1, v2}, Landroid/database/sqlite/SQLiteOpenHelper;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
 
-    .line 201
+    .line 219
     return-void
 .end method
 
@@ -40,37 +40,37 @@
     .parameter "db"
 
     .prologue
-    .line 206
-    const-string v0, "CREATE TABLE entity (_id TEXT,source TEXT,is_share_target INTEGER DEFAULT 0,is_communication_target INTEGER DEFAULT 0,share_priority INTEGER,share_count INTEGER DEFAULT 0,share_time INTEGER DEFAULT 0,phone_number TEXT,secondary_phone_numbers TEXT,email TEXT,display_name TEXT,protobuf_blob BLOB,PRIMARY KEY (_id,source));"
+    .line 224
+    const-string v0, "CREATE TABLE entity (_id TEXT,source TEXT,is_share_target INTEGER DEFAULT 0,is_communication_target INTEGER DEFAULT 0,share_priority INTEGER,share_count INTEGER DEFAULT 0,share_time INTEGER DEFAULT 0,phone_number TEXT,secondary_phone_numbers TEXT,email TEXT,display_name TEXT,image_url TEXT,protobuf_blob BLOB,PRIMARY KEY (_id,source));"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 223
+    .line 242
     const-string v0, "CREATE INDEX ix_entity_source ON entity(source);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 225
+    .line 244
     const-string v0, "CREATE INDEX ix_entity_is_share_target ON entity(is_share_target);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 227
+    .line 246
     const-string v0, "CREATE INDEX ix_entity_is_communication_target ON entity(is_communication_target);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 229
+    .line 248
     const-string v0, "CREATE INDEX ix_entity_phone_number ON entity(phone_number);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 231
+    .line 250
     const-string v0, "CREATE INDEX ix_entity_email ON entity(email);"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 233
+    .line 252
     return-void
 .end method
 
@@ -81,10 +81,10 @@
     .parameter "newVersion"
 
     .prologue
-    .line 258
+    .line 277
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/glass/entity/EntityProvider$DatabaseHelper;->onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
 
-    .line 259
+    .line 278
     return-void
 .end method
 
@@ -93,13 +93,13 @@
     .parameter "db"
 
     .prologue
-    .line 263
+    .line 282
     invoke-super {p0, p1}, Landroid/database/sqlite/SQLiteOpenHelper;->onOpen(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 268
+    .line 287
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->enableWriteAheadLogging()Z
 
-    .line 269
+    .line 288
     return-void
 .end method
 
@@ -110,7 +110,7 @@
     .parameter "newVersion"
 
     .prologue
-    .line 237
+    .line 256
     invoke-static {}, Lcom/google/glass/entity/EntityProvider;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -145,44 +145,44 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 257
     const-string v0, "DROP TABLE IF EXISTS entity"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 240
+    .line 259
     const-string v0, "DROP INDEX IF EXISTS ix_entity_source"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 241
+    .line 260
     const-string v0, "DROP INDEX IF EXISTS ix_entity_is_share_target"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 242
+    .line 261
     const-string v0, "DROP INDEX IF EXISTS ix_entity_is_communication_target"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 243
+    .line 262
     const-string v0, "DROP INDEX IF EXISTS ix_entity_phone_number"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 244
+    .line 263
     const-string v0, "DROP INDEX IF EXISTS ix_entity_email"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 250
+    .line 269
     const-string v0, "DROP INDEX IF EXISTS ix_entity_should_sync"
 
     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 252
+    .line 271
     invoke-virtual {p0, p1}, Lcom/google/glass/entity/EntityProvider$DatabaseHelper;->onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
 
-    .line 253
+    .line 272
     return-void
 .end method

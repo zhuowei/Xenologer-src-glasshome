@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 187
+    .line 184
     iput-object p1, p0, Lcom/google/common/collect/MapConstraints$1;->val$entry:Ljava/util/Map$Entry;
 
     iput-object p2, p0, Lcom/google/common/collect/MapConstraints$1;->val$constraint:Lcom/google/common/collect/MapConstraint;
@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 187
+    .line 184
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$1;->delegate()Ljava/util/Map$Entry;
 
     move-result-object v0
@@ -69,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 189
+    .line 187
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$1;->val$entry:Ljava/util/Map$Entry;
 
     return-object v0

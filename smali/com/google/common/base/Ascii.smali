@@ -53,15 +53,9 @@
 
 .field public static final LF:B = 0xat
 
-.field public static final MAX:I = 0x7f
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-.end field
+.field public static final MAX:C = '\u007f'
 
-.field public static final MIN:I = 0x0
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
-.end field
+.field public static final MIN:C = '\u0000'
 
 .field public static final NAK:B = 0x15t
 
@@ -101,7 +95,7 @@
     .locals 0
 
     .prologue
-    .line 42
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -112,7 +106,7 @@
     .parameter "c"
 
     .prologue
-    .line 455
+    .line 498
     const/16 v0, 0x61
 
     if-lt p0, v0, :cond_0
@@ -137,7 +131,7 @@
     .parameter "c"
 
     .prologue
-    .line 464
+    .line 507
     const/16 v0, 0x41
 
     if-lt p0, v0, :cond_0
@@ -162,7 +156,7 @@
     .parameter "c"
 
     .prologue
-    .line 424
+    .line 456
     invoke-static {p0}, Lcom/google/common/base/Ascii;->isUpperCase(C)Z
 
     move-result v0
@@ -178,23 +172,23 @@
     return p0
 .end method
 
-.method public static toLowerCase(Ljava/lang/String;)Ljava/lang/String;
+.method public static toLowerCase(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 4
-    .parameter "string"
+    .parameter "chars"
 
     .prologue
-    .line 411
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    .line 443
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    .line 412
+    .line 444
     .local v2, length:I
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 413
+    .line 445
     .local v0, builder:Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
@@ -202,8 +196,8 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 414
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+    .line 446
+    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
@@ -213,12 +207,12 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 413
+    .line 445
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 416
+    .line 448
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -227,12 +221,25 @@
     return-object v3
 .end method
 
+.method public static toLowerCase(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "string"
+
+    .prologue
+    .line 432
+    invoke-static {p0}, Lcom/google/common/base/Ascii;->toLowerCase(Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static toUpperCase(C)C
     .locals 1
     .parameter "c"
 
     .prologue
-    .line 446
+    .line 489
     invoke-static {p0}, Lcom/google/common/base/Ascii;->isLowerCase(C)Z
 
     move-result v0
@@ -248,23 +255,23 @@
     return p0
 .end method
 
-.method public static toUpperCase(Ljava/lang/String;)Ljava/lang/String;
+.method public static toUpperCase(Ljava/lang/CharSequence;)Ljava/lang/String;
     .locals 4
-    .parameter "string"
+    .parameter "chars"
 
     .prologue
-    .line 433
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    .line 476
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
 
-    .line 434
+    .line 477
     .local v2, length:I
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 435
+    .line 478
     .local v0, builder:Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
@@ -272,8 +279,8 @@
     :goto_0
     if-ge v1, v2, :cond_0
 
-    .line 436
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+    .line 479
+    invoke-interface {p0, v1}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v3
 
@@ -283,16 +290,29 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 435
+    .line 478
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 438
+    .line 481
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
     return-object v3
+.end method
+
+.method public static toUpperCase(Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "string"
+
+    .prologue
+    .line 465
+    invoke-static {p0}, Lcom/google/common/base/Ascii;->toUpperCase(Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

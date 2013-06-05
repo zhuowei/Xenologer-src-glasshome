@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 232
+    .line 239
     iput-object p1, p0, Lcom/google/glass/voice/VoiceService$3;->this$0:Lcom/google/glass/voice/VoiceService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 243
+    .line 250
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,12 +70,12 @@
     .parameter "intent"
 
     .prologue
-    .line 235
+    .line 242
     invoke-static {p1}, Lcom/google/glass/bluetooth/BluetoothHeadset;->isInCallOrCallSetup(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 236
+    .line 243
     .local v0, isInCall:Z
     if-eqz v0, :cond_0
 
@@ -90,17 +90,17 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 237
+    .line 244
     iget-object v1, p0, Lcom/google/glass/voice/VoiceService$3;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    sget-object v2, Lcom/google/glass/voice/VoiceConfig;->OFF:Lcom/google/glass/voice/VoiceConfig;
+    sget-object v2, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    const/4 v3, 0x1
+    const/4 v3, 0x0
 
-    #calls: Lcom/google/glass/voice/VoiceService;->setConfigAsync(Lcom/google/glass/voice/VoiceConfig;Z)V
-    invoke-static {v1, v2, v3}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfig;Z)V
+    #calls: Lcom/google/glass/voice/VoiceService;->setConfigAsync(Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
+    invoke-static {v1, v2, v3}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
 
-    .line 239
+    .line 246
     :cond_0
     return-void
 .end method

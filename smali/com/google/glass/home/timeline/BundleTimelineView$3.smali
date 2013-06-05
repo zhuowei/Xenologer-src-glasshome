@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/BundleTimelineView;->applyNewData(Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Ljava/util/Map;Lcom/google/glass/widget/SliderView;)V
+    value = Lcom/google/glass/home/timeline/BundleTimelineView;->applyNewData(Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/widget/SliderView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 330
+    .line 235
     iput-object p1, p0, Lcom/google/glass/home/timeline/BundleTimelineView$3;->this$0:Lcom/google/glass/home/timeline/BundleTimelineView;
 
     iput-object p3, p0, Lcom/google/glass/home/timeline/BundleTimelineView$3;->val$loader:Lcom/google/glass/home/timeline/TimelineItemLoader;
@@ -54,7 +54,7 @@
     .parameter "id"
 
     .prologue
-    .line 340
+    .line 245
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$3;->val$loader:Lcom/google/glass/home/timeline/TimelineItemLoader;
 
     invoke-interface {v0, p1}, Lcom/google/glass/home/timeline/TimelineItemLoader;->find(Lcom/google/glass/timeline/TimelineItemId;)I
@@ -69,7 +69,7 @@
     .parameter "id"
 
     .prologue
-    .line 335
+    .line 240
     const/4 v0, 0x1
 
     return v0
@@ -81,13 +81,13 @@
     .parameter "view"
 
     .prologue
-    .line 345
+    .line 250
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView$3;->adapter:Landroid/widget/Adapter;
 
     check-cast v0, Lcom/google/glass/home/timeline/TimelineItemAdapter;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->rebind(ILandroid/view/View;)V
 
-    .line 346
+    .line 251
     return-void
 .end method

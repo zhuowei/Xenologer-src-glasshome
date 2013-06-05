@@ -23,7 +23,7 @@
 
 
 # static fields
-.field private static final DEFAULT_VALUES_PER_KEY:I = 0xa
+.field private static final DEFAULT_VALUES_PER_KEY:I = 0x3
 
 .field private static final serialVersionUID:J
     .annotation build Lcom/google/common/annotations/GwtIncompatible;
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 106
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     new-instance v0, Ljava/util/HashMap;
 
@@ -52,12 +52,12 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractListMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 104
-    const/16 v0, 0xa
+    .line 107
+    const/4 v0, 0x3
 
     iput v0, p0, Lcom/google/common/collect/ArrayListMultimap;->expectedValuesPerKey:I
 
-    .line 105
+    .line 108
     return-void
 .end method
 
@@ -67,7 +67,7 @@
     .parameter "expectedValuesPerKey"
 
     .prologue
-    .line 108
+    .line 111
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-static {p1}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
@@ -75,7 +75,7 @@
 
     invoke-direct {p0, v0}, Lcom/google/common/collect/AbstractListMultimap;-><init>(Ljava/util/Map;)V
 
-    .line 109
+    .line 112
     if-ltz p2, :cond_0
 
     const/4 v0, 0x1
@@ -83,13 +83,13 @@
     :goto_0
     invoke-static {v0}, Lcom/google/common/base/Preconditions;->checkArgument(Z)V
 
-    .line 110
+    .line 113
     iput p2, p0, Lcom/google/common/collect/ArrayListMultimap;->expectedValuesPerKey:I
 
-    .line 111
+    .line 114
     return-void
 
-    .line 109
+    .line 112
     :cond_0
     const/4 v0, 0x0
 
@@ -108,7 +108,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 117
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     invoke-interface {p1}, Lcom/google/common/collect/Multimap;->keySet()Ljava/util/Set;
@@ -132,15 +132,15 @@
     :goto_0
     invoke-direct {p0, v1, v0}, Lcom/google/common/collect/ArrayListMultimap;-><init>(II)V
 
-    .line 118
+    .line 121
     invoke-virtual {p0, p1}, Lcom/google/common/collect/ArrayListMultimap;->putAll(Lcom/google/common/collect/Multimap;)Z
 
-    .line 119
+    .line 122
     return-void
 
-    .line 114
+    .line 117
     :cond_0
-    const/16 v0, 0xa
+    const/4 v0, 0x3
 
     goto :goto_0
 .end method
@@ -160,7 +160,7 @@
     .end annotation
 
     .prologue
-    .line 74
+    .line 79
     new-instance v0, Lcom/google/common/collect/ArrayListMultimap;
 
     invoke-direct {v0}, Lcom/google/common/collect/ArrayListMultimap;-><init>()V
@@ -185,7 +185,7 @@
     .end annotation
 
     .prologue
-    .line 88
+    .line 92
     new-instance v0, Lcom/google/common/collect/ArrayListMultimap;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/collect/ArrayListMultimap;-><init>(II)V
@@ -211,7 +211,7 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 102
     .local p0, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<+TK;+TV;>;"
     new-instance v0, Lcom/google/common/collect/ArrayListMultimap;
 
@@ -235,36 +235,36 @@
     .end annotation
 
     .prologue
-    .line 154
+    .line 157
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 155
+    .line 158
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v2
 
     iput v2, p0, Lcom/google/common/collect/ArrayListMultimap;->expectedValuesPerKey:I
 
-    .line 156
+    .line 159
     invoke-static {p1}, Lcom/google/common/collect/Serialization;->readCount(Ljava/io/ObjectInputStream;)I
 
     move-result v0
 
-    .line 157
+    .line 160
     .local v0, distinctKeys:I
     invoke-static {v0}, Lcom/google/common/collect/Maps;->newHashMapWithExpectedSize(I)Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 158
+    .line 161
     .local v1, map:Ljava/util/Map;,"Ljava/util/Map<TK;Ljava/util/Collection<TV;>;>;"
     invoke-virtual {p0, v1}, Lcom/google/common/collect/ArrayListMultimap;->setMap(Ljava/util/Map;)V
 
-    .line 159
+    .line 162
     invoke-static {p0, p1, v0}, Lcom/google/common/collect/Serialization;->populateMultimap(Lcom/google/common/collect/Multimap;Ljava/io/ObjectInputStream;I)V
 
-    .line 160
+    .line 163
     return-void
 .end method
 
@@ -282,19 +282,19 @@
     .end annotation
 
     .prologue
-    .line 146
+    .line 150
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectOutputStream;->defaultWriteObject()V
 
-    .line 147
+    .line 151
     iget v0, p0, Lcom/google/common/collect/ArrayListMultimap;->expectedValuesPerKey:I
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
 
-    .line 148
+    .line 152
     invoke-static {p0, p1}, Lcom/google/common/collect/Serialization;->writeMultimap(Lcom/google/common/collect/Multimap;Ljava/io/ObjectOutputStream;)V
 
-    .line 149
+    .line 153
     return-void
 .end method
 
@@ -304,7 +304,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->asMap()Ljava/util/Map;
 
@@ -317,7 +317,7 @@
     .locals 0
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->clear()V
 
@@ -330,7 +330,7 @@
     .parameter "x1"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractListMultimap;->containsEntry(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -344,7 +344,7 @@
     .parameter "x0"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractListMultimap;->containsKey(Ljava/lang/Object;)Z
 
@@ -358,7 +358,7 @@
     .parameter "x0"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractListMultimap;->containsValue(Ljava/lang/Object;)Z
 
@@ -371,7 +371,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ArrayListMultimap;->createCollection()Ljava/util/List;
 
@@ -391,7 +391,7 @@
     .end annotation
 
     .prologue
-    .line 126
+    .line 130
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     new-instance v0, Ljava/util/ArrayList;
 
@@ -406,7 +406,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->entries()Ljava/util/Collection;
 
@@ -420,7 +420,7 @@
     .parameter "x0"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractListMultimap;->equals(Ljava/lang/Object;)Z
 
@@ -434,7 +434,7 @@
     .parameter "x0"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractListMultimap;->get(Ljava/lang/Object;)Ljava/util/List;
 
@@ -447,7 +447,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->hashCode()I
 
@@ -460,7 +460,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->isEmpty()Z
 
@@ -473,7 +473,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->keySet()Ljava/util/Set;
 
@@ -486,7 +486,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->keys()Lcom/google/common/collect/Multiset;
 
@@ -501,7 +501,7 @@
     .parameter "x1"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractListMultimap;->put(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -515,7 +515,7 @@
     .parameter "x0"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractListMultimap;->putAll(Lcom/google/common/collect/Multimap;)Z
 
@@ -530,7 +530,7 @@
     .parameter "x1"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractListMultimap;->putAll(Ljava/lang/Object;Ljava/lang/Iterable;)Z
 
@@ -545,7 +545,7 @@
     .parameter "x1"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractListMultimap;->remove(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -559,7 +559,7 @@
     .parameter "x0"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1}, Lcom/google/common/collect/AbstractListMultimap;->removeAll(Ljava/lang/Object;)Ljava/util/List;
 
@@ -574,7 +574,7 @@
     .parameter "x1"
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0, p1, p2}, Lcom/google/common/collect/AbstractListMultimap;->replaceValues(Ljava/lang/Object;Ljava/lang/Iterable;)Ljava/util/List;
 
@@ -587,7 +587,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->size()I
 
@@ -600,7 +600,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->toString()Ljava/lang/String;
 
@@ -613,7 +613,7 @@
     .locals 4
 
     .prologue
-    .line 133
+    .line 137
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/ArrayListMultimap;->backingMap()Ljava/util/Map;
 
@@ -644,16 +644,16 @@
     .local v1, collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     move-object v0, v1
 
-    .line 134
+    .line 138
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 135
+    .line 139
     .local v0, arrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<TV;>;"
     invoke-virtual {v0}, Ljava/util/ArrayList;->trimToSize()V
 
     goto :goto_0
 
-    .line 137
+    .line 141
     .end local v0           #arrayList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<TV;>;"
     .end local v1           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TV;>;"
     :cond_0
@@ -664,7 +664,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 66
     .local p0, this:Lcom/google/common/collect/ArrayListMultimap;,"Lcom/google/common/collect/ArrayListMultimap<TK;TV;>;"
     invoke-super {p0}, Lcom/google/common/collect/AbstractListMultimap;->values()Ljava/util/Collection;
 

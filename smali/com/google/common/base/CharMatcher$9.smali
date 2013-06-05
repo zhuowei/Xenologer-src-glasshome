@@ -1,11 +1,11 @@
 .class final Lcom/google/common/base/CharMatcher$9;
-.super Lcom/google/common/base/CharMatcher;
+.super Lcom/google/common/base/CharMatcher$FastMatcher;
 .source "CharMatcher.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/base/CharMatcher;->isNot(C)Lcom/google/common/base/CharMatcher;
+    value = Lcom/google/common/base/CharMatcher;->is(C)Lcom/google/common/base/CharMatcher;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,15 +19,16 @@
 
 
 # direct methods
-.method constructor <init>(C)V
+.method constructor <init>(Ljava/lang/String;C)V
     .locals 0
+    .parameter "x0"
     .parameter
 
     .prologue
-    .line 417
-    iput-char p1, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
+    .line 434
+    iput-char p2, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
 
-    invoke-direct {p0}, Lcom/google/common/base/CharMatcher;-><init>()V
+    invoke-direct {p0, p1}, Lcom/google/common/base/CharMatcher$FastMatcher;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -39,7 +40,7 @@
     .parameter "other"
 
     .prologue
-    .line 423
+    .line 447
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
 
     invoke-virtual {p1, v0}, Lcom/google/common/base/CharMatcher;->matches(C)Z
@@ -48,29 +49,15 @@
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1}, Lcom/google/common/base/CharMatcher;->and(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
+    .end local p0
+    :goto_0
+    return-object p0
 
-    move-result-object p1
-
-    .end local p1
+    .restart local p0
     :cond_0
-    return-object p1
-.end method
+    sget-object p0, Lcom/google/common/base/CharMatcher$9;->NONE:Lcom/google/common/base/CharMatcher;
 
-.method public bridge synthetic apply(Ljava/lang/Object;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 417
-    check-cast p1, Ljava/lang/Character;
-
-    .end local p1
-    invoke-super {p0, p1}, Lcom/google/common/base/CharMatcher;->apply(Ljava/lang/Character;)Z
-
-    move-result v0
-
-    return v0
+    goto :goto_0
 .end method
 
 .method public matches(C)Z
@@ -78,10 +65,10 @@
     .parameter "c"
 
     .prologue
-    .line 419
+    .line 437
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
 
-    if-eq p1, v0, :cond_0
+    if-ne p1, v0, :cond_0
 
     const/4 v0, 0x1
 
@@ -98,10 +85,10 @@
     .locals 1
 
     .prologue
-    .line 431
+    .line 457
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
 
-    invoke-static {v0}, Lcom/google/common/base/CharMatcher$9;->is(C)Lcom/google/common/base/CharMatcher;
+    invoke-static {v0}, Lcom/google/common/base/CharMatcher$9;->isNot(C)Lcom/google/common/base/CharMatcher;
 
     move-result-object v0
 
@@ -113,7 +100,7 @@
     .parameter "other"
 
     .prologue
-    .line 427
+    .line 452
     iget-char v0, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
 
     invoke-virtual {p1, v0}, Lcom/google/common/base/CharMatcher;->matches(C)Z
@@ -122,9 +109,52 @@
 
     if-eqz v0, :cond_0
 
-    sget-object p0, Lcom/google/common/base/CharMatcher$9;->ANY:Lcom/google/common/base/CharMatcher;
+    .end local p1
+    :goto_0
+    return-object p1
 
-    .end local p0
+    .restart local p1
     :cond_0
-    return-object p0
+    invoke-super {p0, p1}, Lcom/google/common/base/CharMatcher$FastMatcher;->or(Lcom/google/common/base/CharMatcher;)Lcom/google/common/base/CharMatcher;
+
+    move-result-object p1
+
+    goto :goto_0
+.end method
+
+.method public replaceFrom(Ljava/lang/CharSequence;C)Ljava/lang/String;
+    .locals 2
+    .parameter "sequence"
+    .parameter "replacement"
+
+    .prologue
+    .line 442
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-char v1, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
+
+    invoke-virtual {v0, v1, p2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method setBits(Ljava/util/BitSet;)V
+    .locals 1
+    .parameter "table"
+    .annotation build Lcom/google/common/annotations/GwtIncompatible;
+        value = "java.util.BitSet"
+    .end annotation
+
+    .prologue
+    .line 463
+    iget-char v0, p0, Lcom/google/common/base/CharMatcher$9;->val$match:C
+
+    invoke-virtual {p1, v0}, Ljava/util/BitSet;->set(I)V
+
+    .line 464
+    return-void
 .end method

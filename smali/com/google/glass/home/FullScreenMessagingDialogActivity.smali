@@ -263,13 +263,3 @@
 
     return v0
 .end method
-
-.method public shouldAllowVoiceInput()Z
-    .locals 1
-
-    .prologue
-    .line 89
-    const/4 v0, 0x0
-
-    return v0
-.end method

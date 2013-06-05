@@ -16,11 +16,13 @@
 
 # direct methods
 .method constructor <init>(Lcom/google/googlex/glass/common/proto/Entity;)V
-    .locals 3
+    .locals 4
     .parameter "entity"
 
     .prologue
-    .line 144
+    const/4 v3, 0x1
+
+    .line 150
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/glass/home/voice/menu/Requirement;
@@ -31,23 +33,24 @@
 
     aput-object v2, v0, v1
 
-    const/4 v1, 0x1
+    new-instance v1, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;
 
-    new-instance v2, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;
+    invoke-direct {v1, p1}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;-><init>(Lcom/google/googlex/glass/common/proto/Entity;)V
 
-    invoke-direct {v2, p1}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;-><init>(Lcom/google/googlex/glass/common/proto/Entity;)V
-
-    aput-object v2, v0, v1
+    aput-object v1, v0, v3
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/home/voice/menu/EntityMenuItem;-><init>(Lcom/google/googlex/glass/common/proto/Entity;[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    .line 176
+    .line 184
+    invoke-virtual {p0, v3}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
+
+    .line 185
     return-void
 .end method
 
 
 # virtual methods
-.method public onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
+.method protected onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
     .locals 7
     .parameter "environment"
     .parameter "spoken"
@@ -55,7 +58,7 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 183
+    .line 192
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->getPhoneNumber()Ljava/lang/String;
@@ -76,11 +79,11 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->getCompanionState()Lcom/google/glass/home/companion/CompanionState;
+    invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->getRemoteCompanionProxy()Lcom/google/glass/companion/RemoteCompanionProxy;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/glass/home/companion/CompanionState;->isConnected()Z
+    invoke-virtual {v0}, Lcom/google/glass/companion/RemoteCompanionProxy;->isConnected()Z
 
     move-result v0
 
@@ -89,12 +92,12 @@
     :cond_0
     move v6, v4
 
-    .line 186
+    .line 196
     .local v6, fallbackToEmail:Z
     :goto_0
     if-eqz v6, :cond_2
 
-    .line 188
+    .line 198
     .local v4, messageType:I
     :goto_1
     if-eqz v6, :cond_3
@@ -105,17 +108,14 @@
 
     move-result-object v5
 
-    .line 190
+    .line 200
     .local v5, toId:Ljava/lang/String;
     :goto_2
-    invoke-interface {p1, p2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSoundForPendingOpenEndedInput(Z)V
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    .line 191
-    sget-object v0, Lcom/google/glass/voice/VoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfig;
+    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfig;)V
-
-    .line 192
+    .line 201
     new-instance v0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$2;
 
     move-object v1, p0
@@ -128,10 +128,10 @@
 
     invoke-interface {p1, p0, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->selectSecondaryMenuItem(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Ljava/lang/Runnable;)V
 
-    .line 198
+    .line 207
     return-void
 
-    .line 183
+    .line 192
     .end local v4           #messageType:I
     .end local v5           #toId:Ljava/lang/String;
     .end local v6           #fallbackToEmail:Z
@@ -140,14 +140,14 @@
 
     goto :goto_0
 
-    .line 186
+    .line 196
     .restart local v6       #fallbackToEmail:Z
     :cond_2
     const/4 v4, 0x2
 
     goto :goto_1
 
-    .line 188
+    .line 198
     .restart local v4       #messageType:I
     :cond_3
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem;->entity:Lcom/google/googlex/glass/common/proto/Entity;

@@ -3,12 +3,12 @@
 .source "Futures.java"
 
 # interfaces
-.implements Ljava/util/concurrent/Future;
+.implements Lcom/google/common/base/Function;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/util/concurrent/Futures;->lazyTransform(Ljava/util/concurrent/Future;Lcom/google/common/base/Function;)Ljava/util/concurrent/Future;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/common/util/concurrent/Futures;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,183 +19,77 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Ljava/util/concurrent/Future",
-        "<TO;>;"
+        "Lcom/google/common/base/Function",
+        "<",
+        "Ljava/lang/reflect/Constructor",
+        "<*>;",
+        "Ljava/lang/Boolean;",
+        ">;"
     }
 .end annotation
 
 
-# instance fields
-.field final synthetic val$function:Lcom/google/common/base/Function;
-
-.field final synthetic val$future:Ljava/util/concurrent/Future;
-
-
 # direct methods
-.method constructor <init>(Ljava/util/concurrent/Future;Lcom/google/common/base/Function;)V
+.method constructor <init>()V
     .locals 0
-    .parameter
-    .parameter
 
     .prologue
-    .line 538
-    iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$5;->val$future:Ljava/util/concurrent/Future;
-
-    iput-object p2, p0, Lcom/google/common/util/concurrent/Futures$5;->val$function:Lcom/google/common/base/Function;
-
+    .line 1364
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method private applyTransformation(Ljava/lang/Object;)Ljava/lang/Object;
+
+# virtual methods
+.method public apply(Ljava/lang/reflect/Constructor;)Ljava/lang/Boolean;
     .locals 2
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(TI;)TO;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/util/concurrent/ExecutionException;
-        }
-    .end annotation
-
-    .prologue
-    .line 568
-    .local p1, input:Ljava/lang/Object;,"TI;"
-    :try_start_0
-    iget-object v1, p0, Lcom/google/common/util/concurrent/Futures$5;->val$function:Lcom/google/common/base/Function;
-
-    invoke-interface {v1, p1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v1
-
-    return-object v1
-
-    .line 569
-    :catch_0
-    move-exception v0
-
-    .line 570
-    .local v0, t:Ljava/lang/Throwable;
-    new-instance v1, Ljava/util/concurrent/ExecutionException;
-
-    invoke-direct {v1, v0}, Ljava/util/concurrent/ExecutionException;-><init>(Ljava/lang/Throwable;)V
-
-    throw v1
-.end method
-
-
-# virtual methods
-.method public cancel(Z)Z
-    .locals 1
-    .parameter "mayInterruptIfRunning"
-
-    .prologue
-    .line 542
-    iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$5;->val$future:Ljava/util/concurrent/Future;
-
-    invoke-interface {v0, p1}, Ljava/util/concurrent/Future;->cancel(Z)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public get()Ljava/lang/Object;
-    .locals 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TO;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/InterruptedException;,
-            Ljava/util/concurrent/ExecutionException;
+            "(",
+            "Ljava/lang/reflect/Constructor",
+            "<*>;)",
+            "Ljava/lang/Boolean;"
         }
     .end annotation
 
     .prologue
-    .line 557
-    iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$5;->val$future:Ljava/util/concurrent/Future;
-
-    invoke-interface {v0}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+    .line 1366
+    .local p1, input:Ljava/lang/reflect/Constructor;,"Ljava/lang/reflect/Constructor<*>;"
+    invoke-virtual {p1}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/google/common/util/concurrent/Futures$5;->applyTransformation(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    const-class v1, Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
-    .parameter "timeout"
-    .parameter "unit"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(J",
-            "Ljava/util/concurrent/TimeUnit;",
-            ")TO;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/InterruptedException;,
-            Ljava/util/concurrent/ExecutionException;,
-            Ljava/util/concurrent/TimeoutException;
-        }
-    .end annotation
+    .parameter "x0"
 
     .prologue
-    .line 563
-    iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$5;->val$future:Ljava/util/concurrent/Future;
+    .line 1364
+    check-cast p1, Ljava/lang/reflect/Constructor;
 
-    invoke-interface {v0, p1, p2, p3}, Ljava/util/concurrent/Future;->get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0}, Lcom/google/common/util/concurrent/Futures$5;->applyTransformation(Ljava/lang/Object;)Ljava/lang/Object;
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/Futures$5;->apply(Ljava/lang/reflect/Constructor;)Ljava/lang/Boolean;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public isCancelled()Z
-    .locals 1
-
-    .prologue
-    .line 547
-    iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$5;->val$future:Ljava/util/concurrent/Future;
-
-    invoke-interface {v0}, Ljava/util/concurrent/Future;->isCancelled()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isDone()Z
-    .locals 1
-
-    .prologue
-    .line 552
-    iget-object v0, p0, Lcom/google/common/util/concurrent/Futures$5;->val$future:Ljava/util/concurrent/Future;
-
-    invoke-interface {v0}, Ljava/util/concurrent/Future;->isDone()Z
-
-    move-result v0
-
-    return v0
 .end method

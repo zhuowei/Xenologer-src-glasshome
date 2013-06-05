@@ -176,7 +176,7 @@
     .end annotation
 
     .prologue
-    .line 44
+    .line 45
     .local p0, this:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<TT;>;"
     .local p1, value:Ljava/lang/Object;,"TT;"
     iget-object v1, p0, Lcom/google/common/collect/ExplicitOrdering;->rankMap:Lcom/google/common/collect/ImmutableMap;
@@ -187,18 +187,18 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 45
+    .line 46
     .local v0, rank:Ljava/lang/Integer;
     if-nez v0, :cond_0
 
-    .line 46
+    .line 47
     new-instance v1, Lcom/google/common/collect/Ordering$IncomparableValueException;
 
     invoke-direct {v1, p1}, Lcom/google/common/collect/Ordering$IncomparableValueException;-><init>(Ljava/lang/Object;)V
 
     throw v1
 
-    .line 48
+    .line 49
     :cond_0
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
@@ -220,7 +220,7 @@
     .end annotation
 
     .prologue
-    .line 40
+    .line 41
     .local p0, this:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<TT;>;"
     .local p1, left:Ljava/lang/Object;,"TT;"
     .local p2, right:Ljava/lang/Object;,"TT;"
@@ -245,7 +245,7 @@
     .end parameter
 
     .prologue
-    .line 62
+    .line 63
     .local p0, this:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<TT;>;"
     instance-of v1, p1, Lcom/google/common/collect/ExplicitOrdering;
 
@@ -253,10 +253,10 @@
 
     move-object v0, p1
 
-    .line 63
+    .line 64
     check-cast v0, Lcom/google/common/collect/ExplicitOrdering;
 
-    .line 64
+    .line 65
     .local v0, that:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<*>;"
     iget-object v1, p0, Lcom/google/common/collect/ExplicitOrdering;->rankMap:Lcom/google/common/collect/ImmutableMap;
 
@@ -266,7 +266,7 @@
 
     move-result v1
 
-    .line 66
+    .line 67
     .end local v0           #that:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<*>;"
     :goto_0
     return v1
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 72
     .local p0, this:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<TT;>;"
     iget-object v0, p0, Lcom/google/common/collect/ExplicitOrdering;->rankMap:Lcom/google/common/collect/ImmutableMap;
 
@@ -296,7 +296,7 @@
     .locals 2
 
     .prologue
-    .line 74
+    .line 77
     .local p0, this:Lcom/google/common/collect/ExplicitOrdering;,"Lcom/google/common/collect/ExplicitOrdering<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

@@ -51,15 +51,15 @@
     .end annotation
 
     .prologue
-    .line 51
+    .line 50
     .local p0, function:Lcom/google/common/base/Function;,"Lcom/google/common/base/Function<-TF;TT;>;"
     .local p1, supplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TF;>;"
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 52
+    .line 51
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 53
+    .line 52
     new-instance v0, Lcom/google/common/base/Suppliers$SupplierComposition;
 
     invoke-direct {v0, p0, p1}, Lcom/google/common/base/Suppliers$SupplierComposition;-><init>(Lcom/google/common/base/Function;Lcom/google/common/base/Supplier;)V
@@ -83,7 +83,7 @@
     .end annotation
 
     .prologue
-    .line 86
+    .line 104
     .local p0, delegate:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TT;>;"
     instance-of v0, p0, Lcom/google/common/base/Suppliers$MemoizingSupplier;
 
@@ -130,7 +130,7 @@
     .end annotation
 
     .prologue
-    .line 142
+    .line 163
     .local p0, delegate:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TT;>;"
     new-instance v0, Lcom/google/common/base/Suppliers$ExpiringMemoizingSupplier;
 
@@ -156,7 +156,7 @@
     .end annotation
 
     .prologue
-    .line 193
+    .line 219
     .local p0, instance:Ljava/lang/Object;,"TT;"
     new-instance v0, Lcom/google/common/base/Suppliers$SupplierOfInstance;
 
@@ -183,7 +183,7 @@
     .end annotation
 
     .prologue
-    .line 243
+    .line 294
     sget-object v0, Lcom/google/common/base/Suppliers$SupplierFunction;->INSTANCE:Lcom/google/common/base/Suppliers$SupplierFunction;
 
     return-object v0
@@ -205,7 +205,7 @@
     .end annotation
 
     .prologue
-    .line 215
+    .line 260
     .local p0, delegate:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<TT;>;"
     new-instance v1, Lcom/google/common/base/Suppliers$ThreadSafeSupplier;
 

@@ -46,8 +46,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 42
+    .line 44
     .local p0, this:Lcom/google/common/collect/UnmodifiableListIterator;,"Lcom/google/common/collect/UnmodifiableListIterator<TE;>;"
     .local p1, e:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
@@ -66,8 +69,11 @@
         }
     .end annotation
 
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
     .prologue
-    .line 51
+    .line 55
     .local p0, this:Lcom/google/common/collect/UnmodifiableListIterator;,"Lcom/google/common/collect/UnmodifiableListIterator<TE;>;"
     .local p1, e:Ljava/lang/Object;,"TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;

@@ -13,7 +13,7 @@
     .locals 0
 
     .prologue
-    .line 39
+    .line 38
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,17 +23,15 @@
     .locals 4
     .parameter "a"
     .parameter "b"
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 191
+    .line 190
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 192
+    .line 191
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 194
+    .line 193
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -46,11 +44,11 @@
 
     move-result v0
 
-    .line 195
+    .line 194
     .local v0, maxPrefixLength:I
     const/4 v1, 0x0
 
-    .line 196
+    .line 195
     .local v1, p:I
     :goto_0
     if-ge v1, v0, :cond_0
@@ -65,12 +63,12 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 197
+    .line 196
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 199
+    .line 198
     :cond_0
     add-int/lit8 v2, v1, -0x1
 
@@ -88,11 +86,11 @@
 
     if-eqz v2, :cond_2
 
-    .line 200
+    .line 199
     :cond_1
     add-int/lit8 v1, v1, -0x1
 
-    .line 202
+    .line 201
     :cond_2
     const/4 v2, 0x0
 
@@ -111,17 +109,15 @@
     .locals 4
     .parameter "a"
     .parameter "b"
-    .annotation build Lcom/google/common/annotations/Beta;
-    .end annotation
 
     .prologue
-    .line 215
+    .line 213
     invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 216
+    .line 214
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 218
+    .line 216
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
     move-result v2
@@ -134,11 +130,11 @@
 
     move-result v0
 
-    .line 219
+    .line 217
     .local v0, maxSuffixLength:I
     const/4 v1, 0x0
 
-    .line 221
+    .line 218
     .local v1, s:I
     :goto_0
     if-ge v1, v0, :cond_0
@@ -169,12 +165,12 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 222
+    .line 219
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 224
+    .line 221
     :cond_0
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -204,11 +200,11 @@
 
     if-eqz v2, :cond_2
 
-    .line 226
+    .line 222
     :cond_1
     add-int/lit8 v1, v1, -0x1
 
-    .line 228
+    .line 224
     :cond_2
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
 
@@ -292,7 +288,7 @@
     .end parameter
 
     .prologue
-    .line 48
+    .line 47
     if-nez p0, :cond_0
 
     const-string p0, ""
@@ -575,7 +571,7 @@
     .end annotation
 
     .prologue
-    .line 237
+    .line 233
     if-ltz p1, :cond_0
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I

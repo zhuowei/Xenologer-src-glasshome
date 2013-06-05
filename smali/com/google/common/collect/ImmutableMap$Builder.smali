@@ -43,18 +43,18 @@
     .locals 1
 
     .prologue
-    .line 171
+    .line 174
     .local p0, this:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<TK;TV;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 165
+    .line 168
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/ImmutableMap$Builder;->entries:Ljava/util/ArrayList;
 
-    .line 171
+    .line 174
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 239
     .local p0, entries:Ljava/util/List;,"Ljava/util/List<Ljava/util/Map$Entry<TK;TV;>;>;"
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 237
+    .line 240
     .local v1, size:I
     packed-switch v1, :pswitch_data_0
 
-    .line 243
+    .line 246
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v2
@@ -101,7 +101,7 @@
 
     check-cast v0, [Ljava/util/Map$Entry;
 
-    .line 245
+    .line 247
     .local v0, entryArray:[Ljava/util/Map$Entry;,"[Ljava/util/Map$Entry<**>;"
     new-instance v2, Lcom/google/common/collect/RegularImmutableMap;
 
@@ -111,7 +111,7 @@
     :goto_0
     return-object v2
 
-    .line 239
+    .line 242
     :pswitch_0
     invoke-static {}, Lcom/google/common/collect/ImmutableMap;->of()Lcom/google/common/collect/ImmutableMap;
 
@@ -119,9 +119,9 @@
 
     goto :goto_0
 
-    .line 241
+    .line 244
     :pswitch_1
-    new-instance v3, Lcom/google/common/collect/SingletonImmutableMap;
+    new-instance v3, Lcom/google/common/collect/SingletonImmutableBiMap;
 
     invoke-static {p0}, Lcom/google/common/collect/Iterables;->getOnlyElement(Ljava/lang/Iterable;)Ljava/lang/Object;
 
@@ -129,13 +129,13 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    invoke-direct {v3, v2}, Lcom/google/common/collect/SingletonImmutableMap;-><init>(Ljava/util/Map$Entry;)V
+    invoke-direct {v3, v2}, Lcom/google/common/collect/SingletonImmutableBiMap;-><init>(Ljava/util/Map$Entry;)V
 
     move-object v2, v3
 
     goto :goto_0
 
-    .line 237
+    .line 240
     nop
 
     :pswitch_data_0
@@ -158,7 +158,7 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 235
     .local p0, this:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/ImmutableMap$Builder;->entries:Ljava/util/ArrayList;
 
@@ -182,7 +182,7 @@
     .end annotation
 
     .prologue
-    .line 178
+    .line 181
     .local p0, this:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<TK;TV;>;"
     .local p1, key:Ljava/lang/Object;,"TK;"
     .local p2, value:Ljava/lang/Object;,"TV;"
@@ -194,7 +194,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 179
+    .line 182
     return-object p0
 .end method
 
@@ -212,46 +212,46 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 193
     .local p0, this:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<TK;TV;>;"
     .local p1, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {p1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 191
+    .line 194
     .local v1, key:Ljava/lang/Object;,"TK;"
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 192
+    .line 195
     .local v2, value:Ljava/lang/Object;,"TV;"
     instance-of v3, p1, Lcom/google/common/collect/ImmutableEntry;
 
     if-eqz v3, :cond_0
 
-    .line 193
+    .line 196
     invoke-static {v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 194
+    .line 197
     invoke-static {v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 196
+    .line 200
     move-object v0, p1
 
-    .line 197
+    .line 201
     .local v0, immutableEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     iget-object v3, p0, Lcom/google/common/collect/ImmutableMap$Builder;->entries:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 203
+    .line 207
     .end local v0           #immutableEntry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<TK;TV;>;"
     :goto_0
     return-object p0
 
-    .line 201
+    .line 205
     :cond_0
     iget-object v3, p0, Lcom/google/common/collect/ImmutableMap$Builder;->entries:Ljava/util/ArrayList;
 
@@ -278,7 +278,7 @@
     .end annotation
 
     .prologue
-    .line 213
+    .line 217
     .local p0, this:Lcom/google/common/collect/ImmutableMap$Builder;,"Lcom/google/common/collect/ImmutableMap$Builder<TK;TV;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<+TK;+TV;>;"
     iget-object v2, p0, Lcom/google/common/collect/ImmutableMap$Builder;->entries:Ljava/util/ArrayList;
@@ -297,7 +297,7 @@
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->ensureCapacity(I)V
 
-    .line 214
+    .line 218
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -320,7 +320,7 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 215
+    .line 219
     .local v0, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -334,7 +334,7 @@
 
     goto :goto_0
 
-    .line 217
+    .line 221
     .end local v0           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<+TK;+TV;>;"
     :cond_0
     return-object p0

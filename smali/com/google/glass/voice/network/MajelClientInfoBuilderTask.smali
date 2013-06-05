@@ -28,15 +28,15 @@
     .parameter "deviceParams"
 
     .prologue
-    .line 25
+    .line 26
     const-string v0, "MajelClientInfoBuilderTask"
 
     invoke-direct {p0, v0}, Lcom/google/android/speech/network/request/BaseRequestBuilderTask;-><init>(Ljava/lang/String;)V
 
-    .line 26
+    .line 27
     iput-object p1, p0, Lcom/google/glass/voice/network/MajelClientInfoBuilderTask;->deviceParams:Lcom/google/android/speech/params/DeviceParams;
 
-    .line 27
+    .line 28
     return-void
 .end method
 
@@ -44,7 +44,7 @@
     .locals 1
 
     .prologue
-    .line 65
+    .line 71
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
     move-result-object v0
@@ -62,7 +62,7 @@
     .locals 4
 
     .prologue
-    .line 33
+    .line 34
     new-instance v1, Lcom/google/speech/speech/s3/Majel$MajelClientInfo;
 
     invoke-direct {v1}, Lcom/google/speech/speech/s3/Majel$MajelClientInfo;-><init>()V
@@ -195,8 +195,23 @@
 
     move-result-object v0
 
-    .line 61
+    .line 62
     .local v0, clientInfo:Lcom/google/speech/speech/s3/Majel$MajelClientInfo;
+    sget-object v1, Lcom/google/glass/util/Labs$Feature;->SOUND_SEARCH:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 64
+    const/4 v1, 0x3
+
+    invoke-virtual {v0, v1}, Lcom/google/speech/speech/s3/Majel$MajelClientInfo;->addCapabilities(I)Lcom/google/speech/speech/s3/Majel$MajelClientInfo;
+
+    .line 67
+    :cond_0
     return-object v0
 .end method
 
@@ -204,7 +219,7 @@
     .locals 1
 
     .prologue
-    .line 17
+    .line 18
     invoke-virtual {p0}, Lcom/google/glass/voice/network/MajelClientInfoBuilderTask;->build()Lcom/google/speech/speech/s3/Majel$MajelClientInfo;
 
     move-result-object v0

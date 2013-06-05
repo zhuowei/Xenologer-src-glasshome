@@ -3,12 +3,12 @@
 .source "Futures.java"
 
 # interfaces
-.implements Lcom/google/common/base/Function;
+.implements Lcom/google/common/util/concurrent/AsyncFunction;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/common/util/concurrent/Futures;->immediateCheckedFuture(Ljava/lang/Object;)Lcom/google/common/util/concurrent/CheckedFuture;
+    value = Lcom/google/common/util/concurrent/Futures;->transform(Lcom/google/common/util/concurrent/ListenableFuture;Lcom/google/common/base/Function;Ljava/util/concurrent/Executor;)Lcom/google/common/util/concurrent/ListenableFuture;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,20 +19,25 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lcom/google/common/base/Function",
-        "<",
-        "Ljava/lang/Exception;",
-        "TX;>;"
+        "Lcom/google/common/util/concurrent/AsyncFunction",
+        "<TI;TO;>;"
     }
 .end annotation
 
 
+# instance fields
+.field final synthetic val$function:Lcom/google/common/base/Function;
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/google/common/base/Function;)V
     .locals 0
+    .parameter
 
     .prologue
-    .line 108
+    .line 700
+    iput-object p1, p0, Lcom/google/common/util/concurrent/Futures$1;->val$function:Lcom/google/common/base/Function;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,40 +45,31 @@
 
 
 # virtual methods
-.method public apply(Ljava/lang/Exception;)Ljava/lang/Exception;
+.method public apply(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
     .locals 2
-    .parameter "e"
+    .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
-            "Ljava/lang/Exception;",
-            ")TX;"
+            "(TI;)",
+            "Lcom/google/common/util/concurrent/ListenableFuture",
+            "<TO;>;"
         }
     .end annotation
 
     .prologue
-    .line 111
-    new-instance v0, Ljava/lang/AssertionError;
+    .line 702
+    .local p1, input:Ljava/lang/Object;,"TI;"
+    iget-object v1, p0, Lcom/google/common/util/concurrent/Futures$1;->val$function:Lcom/google/common/base/Function;
 
-    const-string v1, "impossible"
-
-    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    throw v0
-.end method
-
-.method public bridge synthetic apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 108
-    check-cast p1, Ljava/lang/Exception;
-
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/google/common/util/concurrent/Futures$1;->apply(Ljava/lang/Exception;)Ljava/lang/Exception;
+    invoke-interface {v1, p1}, Lcom/google/common/base/Function;->apply(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    return-object v0
+    .line 703
+    .local v0, output:Ljava/lang/Object;,"TO;"
+    invoke-static {v0}, Lcom/google/common/util/concurrent/Futures;->immediateFuture(Ljava/lang/Object;)Lcom/google/common/util/concurrent/ListenableFuture;
+
+    move-result-object v1
+
+    return-object v1
 .end method

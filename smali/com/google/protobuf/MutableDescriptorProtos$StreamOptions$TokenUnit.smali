@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 16415
+    .line 16419
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     const-string v1, "MESSAGE"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->MESSAGE:Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
-    .line 16419
+    .line 16423
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     const-string v1, "BYTE"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->BYTE:Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
-    .line 16410
+    .line 16414
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
-    .line 16447
+    .line 16451
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 16467
+    .line 16471
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->values()[Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 16481
+    .line 16485
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 16482
+    .line 16486
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->index:I
 
-    .line 16483
+    .line 16487
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->value:I
 
-    .line 16484
+    .line 16488
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 16464
+    .line 16468
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 16444
+    .line 16448
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 16435
+    .line 16439
     packed-switch p0, :pswitch_data_0
 
-    .line 16438
+    .line 16442
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 16436
+    .line 16440
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->MESSAGE:Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     goto :goto_0
 
-    .line 16437
+    .line 16441
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->BYTE:Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     goto :goto_0
 
-    .line 16435
+    .line 16439
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 16471
+    .line 16475
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 16472
+    .line 16476
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 16475
+    .line 16479
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 16410
+    .line 16414
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 16410
+    .line 16414
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 16460
+    .line 16464
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 16432
+    .line 16436
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 16456
+    .line 16460
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$StreamOptions$TokenUnit;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

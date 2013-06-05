@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 48
+    .line 52
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,7 +33,7 @@
     .parameter "x3"
 
     .prologue
-    .line 47
+    .line 51
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/primitives/Bytes;->indexOf([BBII)I
 
     move-result v0
@@ -49,7 +49,7 @@
     .parameter "x3"
 
     .prologue
-    .line 47
+    .line 51
     invoke-static {p0, p1, p2, p3}, Lcom/google/common/primitives/Bytes;->lastIndexOf([BBII)I
 
     move-result v0
@@ -71,17 +71,17 @@
     .end annotation
 
     .prologue
-    .line 256
+    .line 255
     array-length v0, p0
 
     if-nez v0, :cond_0
 
-    .line 257
+    .line 256
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 259
+    .line 258
     :goto_0
     return-object v0
 
@@ -98,10 +98,10 @@
     .parameter "arrays"
 
     .prologue
-    .line 167
+    .line 168
     const/4 v4, 0x0
 
-    .line 168
+    .line 169
     .local v4, length:I
     move-object v0, p0
 
@@ -117,27 +117,27 @@
 
     aget-object v1, v0, v2
 
-    .line 169
+    .line 170
     .local v1, array:[B
     array-length v7, v1
 
     add-int/2addr v4, v7
 
-    .line 168
+    .line 169
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 171
+    .line 172
     .end local v1           #array:[B
     :cond_0
     new-array v6, v4, [B
 
-    .line 172
+    .line 173
     .local v6, result:[B
     const/4 v5, 0x0
 
-    .line 173
+    .line 174
     .local v5, pos:I
     move-object v0, p0
 
@@ -150,7 +150,7 @@
 
     aget-object v1, v0, v2
 
-    .line 174
+    .line 175
     .restart local v1       #array:[B
     const/4 v7, 0x0
 
@@ -158,17 +158,17 @@
 
     invoke-static {v1, v7, v6, v5, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 175
+    .line 176
     array-length v7, v1
 
     add-int/2addr v5, v7
 
-    .line 173
+    .line 174
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 177
+    .line 178
     .end local v1           #array:[B
     :cond_1
     return-object v6
@@ -180,7 +180,7 @@
     .parameter "target"
 
     .prologue
-    .line 71
+    .line 75
     move-object v0, p0
 
     .local v0, arr$:[B
@@ -195,26 +195,26 @@
 
     aget-byte v3, v0, v1
 
-    .line 72
+    .line 76
     .local v3, value:B
     if-ne v3, p1, :cond_0
 
-    .line 73
+    .line 77
     const/4 v4, 0x1
 
-    .line 76
+    .line 80
     .end local v3           #value:B
     :goto_1
     return v4
 
-    .line 71
+    .line 75
     .restart local v3       #value:B
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 76
+    .line 80
     .end local v3           #value:B
     :cond_1
     const/4 v4, 0x0
@@ -230,10 +230,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 207
+    .line 205
     new-array v0, p1, [B
 
-    .line 208
+    .line 206
     .local v0, copy:[B
     array-length v1, p0
 
@@ -243,7 +243,7 @@
 
     invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 209
+    .line 207
     return-object v0
 .end method
 
@@ -328,7 +328,7 @@
     .parameter "value"
 
     .prologue
-    .line 58
+    .line 62
     return p0
 .end method
 
@@ -338,7 +338,7 @@
     .parameter "target"
 
     .prologue
-    .line 89
+    .line 93
     const/4 v0, 0x0
 
     array-length v1, p0
@@ -358,31 +358,31 @@
     .parameter "end"
 
     .prologue
-    .line 95
+    .line 98
     move v0, p2
 
     .local v0, i:I
     :goto_0
     if-ge v0, p3, :cond_1
 
-    .line 96
+    .line 99
     aget-byte v1, p0, v0
 
     if-ne v1, p1, :cond_0
 
-    .line 100
+    .line 103
     .end local v0           #i:I
     :goto_1
     return v0
 
-    .line 95
+    .line 98
     .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 100
+    .line 103
     :cond_1
     const/4 v0, -0x1
 
@@ -395,30 +395,30 @@
     .parameter "target"
 
     .prologue
-    .line 115
+    .line 118
     const-string v2, "array"
 
     invoke-static {p0, v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 116
+    .line 119
     const-string v2, "target"
 
     invoke-static {p1, v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 117
+    .line 120
     array-length v2, p1
 
     if-nez v2, :cond_1
 
-    .line 118
+    .line 121
     const/4 v0, 0x0
 
-    .line 130
+    .line 132
     :cond_0
     :goto_0
     return v0
 
-    .line 122
+    .line 124
     :cond_1
     const/4 v0, 0x0
 
@@ -434,7 +434,7 @@
 
     if-ge v0, v2, :cond_3
 
-    .line 123
+    .line 125
     const/4 v1, 0x0
 
     .local v1, j:I
@@ -443,7 +443,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 124
+    .line 126
     add-int v2, v0, v1
 
     aget-byte v2, p0, v2
@@ -452,18 +452,18 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 122
+    .line 124
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 123
+    .line 125
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 130
+    .line 132
     .end local v1           #j:I
     :cond_3
     const/4 v0, -0x1
@@ -477,7 +477,7 @@
     .parameter "target"
 
     .prologue
-    .line 143
+    .line 145
     const/4 v0, 0x0
 
     array-length v1, p0
@@ -497,31 +497,31 @@
     .parameter "end"
 
     .prologue
-    .line 149
+    .line 150
     add-int/lit8 v0, p3, -0x1
 
     .local v0, i:I
     :goto_0
     if-lt v0, p2, :cond_1
 
-    .line 150
+    .line 151
     aget-byte v1, p0, v0
 
     if-ne v1, p1, :cond_0
 
-    .line 154
+    .line 155
     .end local v0           #i:I
     :goto_1
     return v0
 
-    .line 149
+    .line 150
     .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 154
+    .line 155
     :cond_1
     const/4 v0, -0x1
 
@@ -535,37 +535,37 @@
         value = {
             "(",
             "Ljava/util/Collection",
-            "<",
-            "Ljava/lang/Byte;",
+            "<+",
+            "Ljava/lang/Number;",
             ">;)[B"
         }
     .end annotation
 
     .prologue
-    .line 227
-    .local p0, collection:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/Byte;>;"
+    .line 226
+    .local p0, collection:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/lang/Number;>;"
     instance-of v4, p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;
 
     if-eqz v4, :cond_1
 
-    .line 228
+    .line 227
     check-cast p0, Lcom/google/common/primitives/Bytes$ByteArrayAsList;
 
-    .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/Byte;>;"
+    .end local p0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/lang/Number;>;"
     invoke-virtual {p0}, Lcom/google/common/primitives/Bytes$ByteArrayAsList;->toByteArray()[B
 
     move-result-object v0
 
-    .line 238
+    .line 237
     .local v0, array:[B
     .local v1, boxedArray:[Ljava/lang/Object;
     .local v2, i:I
     .local v3, len:I
-    .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<Ljava/lang/Byte;>;"
+    .restart local p0       #collection:Ljava/util/Collection;,"Ljava/util/Collection<+Ljava/lang/Number;>;"
     :cond_0
     return-object v0
 
-    .line 231
+    .line 230
     .end local v0           #array:[B
     .end local v1           #boxedArray:[Ljava/lang/Object;
     .end local v2           #i:I
@@ -575,15 +575,15 @@
 
     move-result-object v1
 
-    .line 232
+    .line 231
     .restart local v1       #boxedArray:[Ljava/lang/Object;
     array-length v3, v1
 
-    .line 233
+    .line 232
     .restart local v3       #len:I
     new-array v0, v3, [B
 
-    .line 234
+    .line 233
     .restart local v0       #array:[B
     const/4 v2, 0x0
 
@@ -591,22 +591,22 @@
     :goto_0
     if-ge v2, v3, :cond_0
 
-    .line 236
+    .line 235
     aget-object v4, v1, v2
 
     invoke-static {v4}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/Byte;
+    check-cast v4, Ljava/lang/Number;
 
-    invoke-virtual {v4}, Ljava/lang/Byte;->byteValue()B
+    invoke-virtual {v4}, Ljava/lang/Number;->byteValue()B
 
     move-result v4
 
     aput-byte v4, v0, v2
 
-    .line 234
+    .line 233
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0

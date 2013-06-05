@@ -1,13 +1,12 @@
 .class public Lcom/google/glass/widget/OptionMenuItemView;
-.super Landroid/widget/LinearLayout;
+.super Lcom/google/glass/horizontalscroll/LinearLayoutCard;
 .source "OptionMenuItemView.java"
-
-# interfaces
-.implements Lcom/google/glass/horizontalscroll/HorizontalScrollItem;
 
 
 # instance fields
 .field private listener:Lcom/google/glass/widget/OptionMenuView$Listener;
+
+.field private suppressTapSound:Z
 
 
 # direct methods
@@ -16,13 +15,13 @@
     .parameter "context"
 
     .prologue
-    .line 21
-    invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    .line 19
+    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;)V
 
-    .line 22
+    .line 20
     invoke-direct {p0}, Lcom/google/glass/widget/OptionMenuItemView;->initialize()V
 
-    .line 23
+    .line 21
     return-void
 .end method
 
@@ -32,13 +31,13 @@
     .parameter "attrs"
 
     .prologue
-    .line 26
-    invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .line 24
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 27
+    .line 25
     invoke-direct {p0}, Lcom/google/glass/widget/OptionMenuItemView;->initialize()V
 
-    .line 28
+    .line 26
     return-void
 .end method
 
@@ -49,13 +48,13 @@
     .parameter "defStyle"
 
     .prologue
-    .line 31
-    invoke-direct {p0, p1, p2, p3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    .line 29
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 32
+    .line 30
     invoke-direct {p0}, Lcom/google/glass/widget/OptionMenuItemView;->initialize()V
 
-    .line 33
+    .line 31
     return-void
 .end method
 
@@ -63,7 +62,7 @@
     .locals 2
 
     .prologue
-    .line 40
+    .line 38
     invoke-virtual {p0}, Lcom/google/glass/widget/OptionMenuItemView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -72,39 +71,28 @@
 
     move-result-object v0
 
-    .line 41
+    .line 39
     .local v0, layoutInflater:Landroid/view/LayoutInflater;
     sget v1, Lcom/google/glass/common/R$layout;->option_menu_item:I
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    .line 42
+    .line 40
     return-void
 .end method
 
 
 # virtual methods
-.method public getBundleId()Lcom/google/glass/timeline/TimelineItemId;
-    .locals 1
-
-    .prologue
-    .line 104
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public onConfirm(Lcom/google/glass/app/GlassActivity;)Z
+.method public onConfirm()Z
     .locals 2
-    .parameter "activity"
 
     .prologue
-    .line 47
+    .line 45
     iget-object v1, p0, Lcom/google/glass/widget/OptionMenuItemView;->listener:Lcom/google/glass/widget/OptionMenuView$Listener;
 
     if-eqz v1, :cond_0
 
-    .line 49
+    .line 47
     sget v1, Lcom/google/glass/common/R$id;->tag_horizontal_scroll_item:I
 
     invoke-virtual {p0, v1}, Lcom/google/glass/widget/OptionMenuItemView;->getTag(I)Ljava/lang/Object;
@@ -113,7 +101,7 @@
 
     check-cast v0, Lcom/google/glass/widget/OptionMenu$Item;
 
-    .line 50
+    .line 48
     .local v0, item:Lcom/google/glass/widget/OptionMenu$Item;
     invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenu$Item;->isEnabled()Z
 
@@ -129,10 +117,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 51
+    .line 49
     const/4 v1, 0x1
 
-    .line 55
+    .line 53
     .end local v0           #item:Lcom/google/glass/widget/OptionMenu$Item;
     :goto_0
     return v1
@@ -143,96 +131,27 @@
     goto :goto_0
 .end method
 
-.method public onDoubleTap(Lcom/google/glass/app/GlassActivity;)Z
-    .locals 1
-    .parameter "activity"
-
-    .prologue
-    .line 60
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onFocus()V
-    .locals 0
-
-    .prologue
-    .line 88
-    return-void
-.end method
-
-.method public onLoad()V
-    .locals 0
-
-    .prologue
-    .line 80
-    return-void
-.end method
-
-.method public onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
-    .locals 1
-    .parameter "item"
-
-    .prologue
-    .line 75
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onPrepareOptionsMenu(Lcom/google/glass/widget/OptionMenu;)Z
-    .locals 1
-    .parameter "menu"
-
-    .prologue
-    .line 70
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onSettled()V
-    .locals 0
-
-    .prologue
-    .line 96
-    return-void
-.end method
-
-.method public onUnfocus()V
-    .locals 0
-
-    .prologue
-    .line 92
-    return-void
-.end method
-
-.method public onUnload()V
-    .locals 0
-
-    .prologue
-    .line 84
-    return-void
-.end method
-
-.method public onUnsettled()V
-    .locals 0
-
-    .prologue
-    .line 100
-    return-void
-.end method
-
 .method public setListener(Lcom/google/glass/widget/OptionMenuView$Listener;)V
     .locals 0
     .parameter "listener"
 
     .prologue
-    .line 36
+    .line 34
     iput-object p1, p0, Lcom/google/glass/widget/OptionMenuItemView;->listener:Lcom/google/glass/widget/OptionMenuView$Listener;
 
-    .line 37
+    .line 35
+    return-void
+.end method
+
+.method public setShouldSuppressSingleTapSound(Z)V
+    .locals 0
+    .parameter "suppress"
+
+    .prologue
+    .line 57
+    iput-boolean p1, p0, Lcom/google/glass/widget/OptionMenuItemView;->suppressTapSound:Z
+
+    .line 58
     return-void
 .end method
 
@@ -240,8 +159,8 @@
     .locals 1
 
     .prologue
-    .line 65
-    const/4 v0, 0x0
+    .line 62
+    iget-boolean v0, p0, Lcom/google/glass/widget/OptionMenuItemView;->suppressTapSound:Z
 
     return v0
 .end method

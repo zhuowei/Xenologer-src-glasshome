@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 167
+    .line 170
     iput-object p1, p0, Lcom/google/glass/util/WifiHelper$2;->this$0:Lcom/google/glass/util/WifiHelper;
 
     iput-object p2, p0, Lcom/google/glass/util/WifiHelper$2;->val$callback:Lcom/google/glass/util/WifiHelper$WifiScanCallback;
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 184
+    .line 187
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -75,7 +75,7 @@
     .parameter "intent"
 
     .prologue
-    .line 170
+    .line 173
     invoke-virtual {p0}, Lcom/google/glass/util/WifiHelper$2;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -84,15 +84,15 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 171
+    .line 174
     invoke-virtual {p0, p1}, Lcom/google/glass/util/WifiHelper$2;->unregister(Landroid/content/Context;)V
 
-    .line 173
+    .line 176
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$2;->val$callback:Lcom/google/glass/util/WifiHelper$WifiScanCallback;
 
     if-eqz v1, :cond_0
 
-    .line 174
+    .line 177
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$2;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #getter for: Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
@@ -104,21 +104,21 @@
 
     move-result-object v0
 
-    .line 175
+    .line 178
     .local v0, scanResults:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     if-eqz v0, :cond_0
 
-    .line 176
+    .line 179
     sget-object v1, Lcom/google/glass/util/WifiHelper;->SCAN_RESULT_COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 177
+    .line 180
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$2;->val$callback:Lcom/google/glass/util/WifiHelper$WifiScanCallback;
 
     invoke-interface {v1, v0}, Lcom/google/glass/util/WifiHelper$WifiScanCallback;->onScanResultsAvailable(Ljava/util/List;)V
 
-    .line 180
+    .line 183
     .end local v0           #scanResults:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     :cond_0
     return-void

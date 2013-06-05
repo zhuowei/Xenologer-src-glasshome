@@ -74,19 +74,19 @@
     .end annotation
 
     .prologue
-    .line 644
+    .line 689
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     .local p1, entries:Ljava/util/Set;,"Ljava/util/Set<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     .local p2, constraint:Lcom/google/common/collect/MapConstraint;,"Lcom/google/common/collect/MapConstraint<-TK;-TV;>;"
     invoke-direct {p0}, Lcom/google/common/collect/ForwardingSet;-><init>()V
 
-    .line 645
+    .line 690
     iput-object p1, p0, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->entries:Ljava/util/Set;
 
-    .line 646
+    .line 691
     iput-object p2, p0, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->constraint:Lcom/google/common/collect/MapConstraint;
 
-    .line 647
+    .line 692
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .parameter "x0"
 
     .prologue
-    .line 638
+    .line 684
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->constraint:Lcom/google/common/collect/MapConstraint;
 
     return-object v0
@@ -108,7 +108,7 @@
     .parameter "o"
 
     .prologue
-    .line 676
+    .line 729
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -133,7 +133,7 @@
     .end annotation
 
     .prologue
-    .line 680
+    .line 734
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardContainsAll(Ljava/util/Collection;)Z
@@ -147,7 +147,7 @@
     .locals 1
 
     .prologue
-    .line 638
+    .line 684
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -160,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 638
+    .line 684
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -184,7 +184,7 @@
     .end annotation
 
     .prologue
-    .line 650
+    .line 696
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     iget-object v0, p0, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->entries:Ljava/util/Set;
 
@@ -199,7 +199,7 @@
     .end parameter
 
     .prologue
-    .line 684
+    .line 739
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardEquals(Ljava/lang/Object;)Z
 
@@ -212,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 688
+    .line 744
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardHashCode()I
 
@@ -236,7 +236,7 @@
     .end annotation
 
     .prologue
-    .line 654
+    .line 701
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     iget-object v1, p0, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->entries:Ljava/util/Set;
 
@@ -244,7 +244,7 @@
 
     move-result-object v0
 
-    .line 655
+    .line 702
     .local v0, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;Ljava/util/Collection<TV;>;>;>;"
     new-instance v1, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries$1;
 
@@ -258,7 +258,7 @@
     .parameter "o"
 
     .prologue
-    .line 692
+    .line 749
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->delegate()Ljava/util/Set;
 
@@ -283,7 +283,7 @@
     .end annotation
 
     .prologue
-    .line 696
+    .line 754
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardRemoveAll(Ljava/util/Collection;)Z
@@ -305,7 +305,7 @@
     .end annotation
 
     .prologue
-    .line 700
+    .line 759
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardRetainAll(Ljava/util/Collection;)Z
@@ -319,7 +319,7 @@
     .locals 1
 
     .prologue
-    .line 668
+    .line 719
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     invoke-virtual {p0}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardToArray()[Ljava/lang/Object;
 
@@ -340,7 +340,7 @@
     .end annotation
 
     .prologue
-    .line 672
+    .line 724
     .local p0, this:Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;,"Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries<TK;TV;>;"
     .local p1, array:[Ljava/lang/Object;,"[TT;"
     invoke-virtual {p0, p1}, Lcom/google/common/collect/MapConstraints$ConstrainedAsMapEntries;->standardToArray([Ljava/lang/Object;)[Ljava/lang/Object;

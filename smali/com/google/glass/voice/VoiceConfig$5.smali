@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 275
+    .line 285
     iput-object p7, p0, Lcom/google/glass/voice/VoiceConfig$5;->val$configs:[Lcom/google/glass/voice/VoiceConfig;
 
     invoke-direct/range {p0 .. p6}, Lcom/google/glass/voice/VoiceConfig;-><init>(Lcom/google/glass/voice/VoiceConfig$Type;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
@@ -40,19 +40,19 @@
 
 
 # virtual methods
-.method public getRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
     .locals 3
     .parameter "context"
 
     .prologue
-    .line 279
+    .line 289
     iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig$5;->val$configs:[Lcom/google/glass/voice/VoiceConfig;
 
     array-length v2, v2
 
     new-array v1, v2, [Lcom/google/glass/voice/Sensory;
 
-    .line 280
+    .line 290
     .local v1, recognizers:[Lcom/google/glass/voice/Sensory;
     const/4 v0, 0x0
 
@@ -64,23 +64,23 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 281
+    .line 291
     iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig$5;->val$configs:[Lcom/google/glass/voice/VoiceConfig;
 
     aget-object v2, v2, v0
 
-    invoke-virtual {v2, p1}, Lcom/google/glass/voice/VoiceConfig;->getRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+    invoke-virtual {v2, p1}, Lcom/google/glass/voice/VoiceConfig;->getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
 
     move-result-object v2
 
     aput-object v2, v1, v0
 
-    .line 280
+    .line 290
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 283
+    .line 293
     :cond_0
     new-instance v2, Lcom/google/glass/voice/HybridSensoryRecognizer;
 

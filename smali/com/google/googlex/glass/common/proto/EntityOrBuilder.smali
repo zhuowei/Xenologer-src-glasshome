@@ -7,6 +7,39 @@
 
 
 # virtual methods
+.method public abstract getAcceptCommand(I)Lcom/google/googlex/glass/common/proto/Entity$Command;
+.end method
+
+.method public abstract getAcceptCommandCount()I
+.end method
+
+.method public abstract getAcceptCommandList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity$Command;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getAcceptCommandOrBuilder(I)Lcom/google/googlex/glass/common/proto/Entity$CommandOrBuilder;
+.end method
+
+.method public abstract getAcceptCommandOrBuilderList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<+",
+            "Lcom/google/googlex/glass/common/proto/Entity$CommandOrBuilder;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getAcceptType(I)Ljava/lang/String;
 .end method
 
@@ -133,6 +166,12 @@
 .method public abstract getSourceBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getSpeakableName()Ljava/lang/String;
+.end method
+
+.method public abstract getSpeakableNameBytes()Lcom/google/protobuf/ByteString;
+.end method
+
 .method public abstract getType()Lcom/google/googlex/glass/common/proto/Entity$Type;
 .end method
 
@@ -158,6 +197,9 @@
 .end method
 
 .method public abstract hasSource()Z
+.end method
+
+.method public abstract hasSpeakableName()Z
 .end method
 
 .method public abstract hasType()Z

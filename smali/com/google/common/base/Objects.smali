@@ -20,7 +20,7 @@
     .locals 0
 
     .prologue
-    .line 35
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
     .end parameter
 
     .prologue
-    .line 51
+    .line 55
     if-eq p0, p1, :cond_0
 
     if-eqz p0, :cond_1
@@ -80,7 +80,7 @@
     .end annotation
 
     .prologue
-    .line 174
+    .line 186
     .local p0, first:Ljava/lang/Object;,"TT;"
     .local p1, second:Ljava/lang/Object;,"TT;"
     if-eqz p0, :cond_0
@@ -106,7 +106,7 @@
     .end parameter
 
     .prologue
-    .line 70
+    .line 74
     invoke-static {p0}, Ljava/util/Arrays;->hashCode([Ljava/lang/Object;)I
 
     move-result v0
@@ -127,13 +127,13 @@
     .end annotation
 
     .prologue
-    .line 140
+    .line 152
     .local p0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 144
+    .line 156
     .local v0, name:Ljava/lang/String;
     const-string v2, "\\$[0-9]+"
 
@@ -143,27 +143,27 @@
 
     move-result-object v0
 
-    .line 147
+    .line 159
     const/16 v2, 0x24
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
-    .line 151
+    .line 163
     .local v1, start:I
     const/4 v2, -0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 152
+    .line 164
     const/16 v2, 0x2e
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
-    .line 154
+    .line 166
     :cond_0
     add-int/lit8 v2, v1, 0x1
 
@@ -187,7 +187,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 132
     .local p0, clazz:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     new-instance v0, Lcom/google/common/base/Objects$ToStringHelper;
 
@@ -207,7 +207,7 @@
     .parameter "self"
 
     .prologue
-    .line 106
+    .line 118
     new-instance v0, Lcom/google/common/base/Objects$ToStringHelper;
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -230,7 +230,7 @@
     .parameter "className"
 
     .prologue
-    .line 132
+    .line 144
     new-instance v0, Lcom/google/common/base/Objects$ToStringHelper;
 
     const/4 v1, 0x0

@@ -38,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 476
+    .line 597
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet$1$1;,"Lcom/google/common/collect/ArrayTable$CellSet$1.1;"
     iput-object p1, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->this$2:Lcom/google/common/collect/ArrayTable$CellSet$1;
 
@@ -46,7 +46,7 @@
 
     invoke-direct {p0}, Lcom/google/common/collect/Tables$AbstractCell;-><init>()V
 
-    .line 477
+    .line 598
     iget v0, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->val$index:I
 
     iget-object v1, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->this$2:Lcom/google/common/collect/ArrayTable$CellSet$1;
@@ -68,7 +68,7 @@
 
     iput v0, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->rowIndex:I
 
-    .line 478
+    .line 599
     iget v0, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->val$index:I
 
     iget-object v1, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->this$2:Lcom/google/common/collect/ArrayTable$CellSet$1;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 485
+    .line 606
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet$1$1;,"Lcom/google/common/collect/ArrayTable$CellSet$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->this$2:Lcom/google/common/collect/ArrayTable$CellSet$1;
 
@@ -135,7 +135,7 @@
     .end annotation
 
     .prologue
-    .line 481
+    .line 602
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet$1$1;,"Lcom/google/common/collect/ArrayTable$CellSet$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->this$2:Lcom/google/common/collect/ArrayTable$CellSet$1;
 
@@ -158,7 +158,7 @@
 .end method
 
 .method public getValue()Ljava/lang/Object;
-    .locals 2
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TV;"
@@ -166,7 +166,7 @@
     .end annotation
 
     .prologue
-    .line 489
+    .line 610
     .local p0, this:Lcom/google/common/collect/ArrayTable$CellSet$1$1;,"Lcom/google/common/collect/ArrayTable$CellSet$1.1;"
     iget-object v0, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->this$2:Lcom/google/common/collect/ArrayTable$CellSet$1;
 
@@ -174,18 +174,13 @@
 
     iget-object v0, v0, Lcom/google/common/collect/ArrayTable$CellSet;->this$0:Lcom/google/common/collect/ArrayTable;
 
-    #getter for: Lcom/google/common/collect/ArrayTable;->array:[[Ljava/lang/Object;
-    invoke-static {v0}, Lcom/google/common/collect/ArrayTable;->access$300(Lcom/google/common/collect/ArrayTable;)[[Ljava/lang/Object;
-
-    move-result-object v0
-
     iget v1, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->rowIndex:I
 
-    aget-object v0, v0, v1
+    iget v2, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->columnIndex:I
 
-    iget v1, p0, Lcom/google/common/collect/ArrayTable$CellSet$1$1;->columnIndex:I
+    invoke-virtual {v0, v1, v2}, Lcom/google/common/collect/ArrayTable;->at(II)Ljava/lang/Object;
 
-    aget-object v0, v0, v1
+    move-result-object v0
 
     return-object v0
 .end method

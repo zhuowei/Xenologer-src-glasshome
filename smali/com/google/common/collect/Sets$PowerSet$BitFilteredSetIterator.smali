@@ -51,18 +51,18 @@
     .end annotation
 
     .prologue
-    .line 1197
+    .line 1224
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;,"Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator<TE;>;"
     .local p1, input:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<TE;>;"
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
 
-    .line 1198
+    .line 1225
     iput-object p1, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->input:Lcom/google/common/collect/ImmutableList;
 
-    .line 1199
+    .line 1226
     iput p2, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->remainingSetBits:I
 
-    .line 1200
+    .line 1227
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .locals 1
 
     .prologue
-    .line 1203
+    .line 1230
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;,"Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator<TE;>;"
     iget v0, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->remainingSetBits:I
 
@@ -98,7 +98,7 @@
     .end annotation
 
     .prologue
-    .line 1207
+    .line 1234
     .local p0, this:Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;,"Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator<TE;>;"
     iget v2, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->remainingSetBits:I
 
@@ -106,26 +106,26 @@
 
     move-result v1
 
-    .line 1208
+    .line 1235
     .local v1, index:I
     const/16 v2, 0x20
 
     if-ne v1, v2, :cond_0
 
-    .line 1209
+    .line 1236
     new-instance v2, Ljava/util/NoSuchElementException;
 
     invoke-direct {v2}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v2
 
-    .line 1212
+    .line 1239
     :cond_0
     const/4 v2, 0x1
 
     shl-int v0, v2, v1
 
-    .line 1213
+    .line 1240
     .local v0, currentElementMask:I
     iget v2, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->remainingSetBits:I
 
@@ -135,7 +135,7 @@
 
     iput v2, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->remainingSetBits:I
 
-    .line 1214
+    .line 1241
     iget-object v2, p0, Lcom/google/common/collect/Sets$PowerSet$BitFilteredSetIterator;->input:Lcom/google/common/collect/ImmutableList;
 
     invoke-virtual {v2, v1}, Lcom/google/common/collect/ImmutableList;->get(I)Ljava/lang/Object;

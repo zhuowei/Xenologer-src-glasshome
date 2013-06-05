@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 232
+    .line 253
     iput-object p1, p0, Lcom/google/glass/entity/EntityHelper$1$1;->this$1:Lcom/google/glass/entity/EntityHelper$1;
 
     iput-object p2, p0, Lcom/google/glass/entity/EntityHelper$1$1;->val$context:Landroid/content/Context;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 235
+    .line 256
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper$1$1;->this$1:Lcom/google/glass/entity/EntityHelper$1;
 
     invoke-virtual {v0}, Lcom/google/glass/entity/EntityHelper$1;->getTag()Ljava/lang/String;
@@ -57,7 +57,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 236
+    .line 257
     iget-object v0, p0, Lcom/google/glass/entity/EntityHelper$1$1;->this$1:Lcom/google/glass/entity/EntityHelper$1;
 
     iget-object v0, v0, Lcom/google/glass/entity/EntityHelper$1;->this$0:Lcom/google/glass/entity/EntityHelper;
@@ -66,6 +66,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/entity/EntityHelper;->loadEntityDataCache(Landroid/content/Context;)V
 
-    .line 237
+    .line 258
     return-void
 .end method

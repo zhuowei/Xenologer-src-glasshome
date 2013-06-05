@@ -14,17 +14,6 @@
 
 .field private dismissAnimation:Landroid/view/animation/Animation;
 
-.field private glassFragments:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/glass/app/GlassFragment;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field private isOptionsMenuShowing:Z
 
 .field private menu:Lcom/google/glass/widget/OptionMenu;
@@ -52,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 51
+    .line 47
     const-class v0, Lcom/google/glass/app/GlassActivity;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -68,17 +57,10 @@
     .locals 1
 
     .prologue
-    .line 49
+    .line 45
     invoke-direct {p0}, Lcom/google/glass/input/InputDetectingActivity;-><init>()V
 
-    .line 95
-    invoke-static {}, Lcom/google/common/collect/Lists;->newLinkedList()Ljava/util/LinkedList;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    .line 104
+    .line 90
     new-instance v0, Lcom/google/glass/app/GlassActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/app/GlassActivity$1;-><init>(Lcom/google/glass/app/GlassActivity;)V
@@ -93,7 +75,7 @@
     .parameter "x0"
 
     .prologue
-    .line 49
+    .line 45
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -106,7 +88,7 @@
     .parameter "x0"
 
     .prologue
-    .line 49
+    .line 45
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     return-object v0
@@ -117,12 +99,69 @@
     .parameter "x0"
 
     .prologue
-    .line 49
+    .line 45
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowCameraButton()Z
 
     move-result v0
 
     return v0
+.end method
+
+.method public static from(Landroid/content/Context;)Lcom/google/glass/app/GlassActivity;
+    .locals 2
+    .parameter "context"
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 640
+    if-nez p0, :cond_0
+
+    move-object p0, v0
+
+    .line 647
+    .end local p0
+    :goto_0
+    return-object p0
+
+    .line 642
+    .restart local p0
+    :cond_0
+    instance-of v1, p0, Lcom/google/glass/app/GlassActivity;
+
+    if-eqz v1, :cond_1
+
+    .line 643
+    check-cast p0, Lcom/google/glass/app/GlassActivity;
+
+    goto :goto_0
+
+    .line 644
+    :cond_1
+    instance-of v1, p0, Landroid/content/ContextWrapper;
+
+    if-eqz v1, :cond_2
+
+    .line 645
+    check-cast p0, Landroid/content/ContextWrapper;
+
+    .end local p0
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/glass/app/GlassActivity;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassActivity;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    .restart local p0
+    :cond_2
+    move-object p0, v0
+
+    .line 647
+    goto :goto_0
 .end method
 
 .method private handleIntent(Landroid/content/Intent;)V
@@ -132,17 +171,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 193
+    .line 179
     if-nez p1, :cond_0
 
-    .line 194
+    .line 180
     iput-boolean v1, p0, Lcom/google/glass/app/GlassActivity;->shouldTurnScreenOff:Z
 
-    .line 198
+    .line 184
     :goto_0
     return-void
 
-    .line 196
+    .line 182
     :cond_0
     const-string v0, "should_finish_turn_screen_off"
 
@@ -161,17 +200,17 @@
     .locals 1
 
     .prologue
-    .line 689
+    .line 538
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
     if-eqz v0, :cond_0
 
-    .line 690
+    .line 539
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenuDialog;->dismiss()V
 
-    .line 692
+    .line 541
     :cond_0
     return-void
 .end method
@@ -181,12 +220,12 @@
     .parameter "id"
 
     .prologue
-    .line 572
+    .line 418
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     if-eqz v0, :cond_0
 
-    .line 573
+    .line 419
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     invoke-virtual {v0}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->getView()Landroid/view/View;
@@ -197,7 +236,7 @@
 
     move-result-object v0
 
-    .line 576
+    .line 422
     :goto_0
     return-object v0
 
@@ -213,14 +252,14 @@
     .locals 2
 
     .prologue
-    .line 470
+    .line 313
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->isFinishing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 320
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -229,11 +268,11 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 486
+    .line 329
     :goto_0
     return-void
 
-    .line 482
+    .line 325
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getContentView()Landroid/view/View;
 
@@ -243,7 +282,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 485
+    .line 328
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->powerHelper:Lcom/google/glass/util/PowerHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/util/PowerHelper;->goToSleep()V
@@ -255,21 +294,21 @@
     .locals 1
 
     .prologue
-    .line 461
+    .line 304
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldFinishTurnScreenOff()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 462
+    .line 305
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->finishAndTurnScreenOff()V
 
-    .line 466
+    .line 309
     :goto_0
     return-void
 
-    .line 464
+    .line 307
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->finish()V
 
@@ -280,7 +319,7 @@
     .locals 1
 
     .prologue
-    .line 250
+    .line 227
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->contentView:Landroid/view/View;
 
     return-object v0
@@ -290,7 +329,7 @@
     .locals 1
 
     .prologue
-    .line 542
+    .line 385
     invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -304,14 +343,14 @@
     .end annotation
 
     .prologue
-    .line 754
+    .line 613
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->isMessageShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 755
+    .line 614
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->messageDialog:Lcom/google/glass/widget/MessageDialog;
 
     sget v1, Lcom/google/glass/common/R$id;->label:I
@@ -326,7 +365,7 @@
 
     move-result-object v0
 
-    .line 757
+    .line 616
     :goto_0
     return-object v0
 
@@ -342,7 +381,7 @@
     .end annotation
 
     .prologue
-    .line 724
+    .line 578
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     return-object v0
@@ -352,7 +391,7 @@
     .locals 1
 
     .prologue
-    .line 529
+    .line 372
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getGlassApplication()Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -368,7 +407,7 @@
     .locals 1
 
     .prologue
-    .line 534
+    .line 377
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getGlassApplication()Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -384,19 +423,19 @@
     .locals 1
 
     .prologue
-    .line 764
+    .line 623
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->isMessageShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 765
+    .line 624
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->messageDialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->dismiss()V
 
-    .line 767
+    .line 626
     :cond_0
     return-void
 .end method
@@ -405,20 +444,20 @@
     .locals 1
 
     .prologue
-    .line 682
+    .line 531
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->closeOptionsMenu()V
 
-    .line 683
+    .line 532
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
-    .line 684
+    .line 533
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/app/GlassActivity;->rebuildMenu:Z
 
-    .line 685
+    .line 534
     return-void
 .end method
 
@@ -426,7 +465,7 @@
     .locals 1
 
     .prologue
-    .line 749
+    .line 608
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->messageDialog:Lcom/google/glass/widget/MessageDialog;
 
     if-eqz v0, :cond_0
@@ -456,7 +495,7 @@
     .end annotation
 
     .prologue
-    .line 719
+    .line 573
     iget-boolean v0, p0, Lcom/google/glass/app/GlassActivity;->isOptionsMenuShowing:Z
 
     return v0
@@ -467,285 +506,100 @@
     .parameter "action"
 
     .prologue
-    .line 553
+    .line 396
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 554
+    .line 397
     return-void
 .end method
 
-.method protected logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+.method public logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
     .locals 1
     .parameter "action"
     .parameter "data"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
     .prologue
-    .line 565
+    .line 411
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 566
+    .line 412
     return-void
-.end method
-
-.method public onAttachFragment(Landroid/app/Fragment;)V
-    .locals 2
-    .parameter "fragment"
-
-    .prologue
-    .line 236
-    instance-of v0, p1, Lcom/google/glass/app/GlassFragment;
-
-    if-eqz v0, :cond_0
-
-    .line 237
-    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    check-cast p1, Lcom/google/glass/app/GlassFragment;
-
-    .end local p1
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 241
-    :goto_0
-    return-void
-
-    .line 239
-    .restart local p1
-    :cond_0
-    sget-object v0, Lcom/google/glass/app/GlassActivity;->TAG:Ljava/lang/String;
-
-    const-string v1, "Adding a non GlassFragment Fragment to GlassActivity"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-.end method
-
-.method public onAudioData([BII)Z
-    .locals 3
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 436
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 437
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/glass/app/GlassFragment;->onAudioData([BII)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 438
-    const/4 v2, 0x1
-
-    .line 442
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-super {p0, p1, p2, p3}, Lcom/google/glass/input/InputDetectingActivity;->onAudioData([BII)Z
-
-    move-result v2
-
-    goto :goto_0
-.end method
-
-.method public onCameraButtonPressed()Z
-    .locals 3
-
-    .prologue
-    .line 373
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 374
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->onCameraButtonPressed()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 375
-    const/4 v2, 0x1
-
-    .line 379
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onCameraButtonPressed()Z
-
-    move-result v2
-
-    goto :goto_0
 .end method
 
 .method public onConfirm()Z
-    .locals 5
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v0, 0x1
 
-    const/4 v2, 0x1
+    .line 232
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->openOptionsMenu()V
 
-    .line 255
-    iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
+    .line 234
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
 
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
+
+    invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onConfirm()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 247
+    :goto_0
+    return v0
+
+    .line 242
+    :cond_0
+    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
+
+    if-eqz v1, :cond_1
+
+    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
+
+    invoke-virtual {v1}, Lcom/google/glass/widget/OptionMenuDialog;->isShowing()Z
+
+    move-result v1
+
+    if-nez v1, :cond_2
+
+    .line 243
+    :cond_1
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->onDisallowedInput()V
+
+    .line 244
+    const/4 v0, 0x0
+
+    goto :goto_0
+
+    .line 246
+    :cond_2
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v1
 
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    sget-object v2, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
 
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 256
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->onConfirm()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 275
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :cond_1
-    :goto_0
-    return v2
-
-    .line 260
-    :cond_2
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->openOptionsMenu()V
-
-    .line 262
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_3
-
-    iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
-
-    if-eqz v4, :cond_3
-
-    iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
-
-    invoke-virtual {v4, p0, v3}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onConfirm(Lcom/google/glass/app/GlassActivity;Z)Z
-
-    move-result v4
-
-    if-nez v4, :cond_1
-
-    .line 270
-    :cond_3
-    iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
-
-    if-eqz v4, :cond_4
-
-    iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
-
-    invoke-virtual {v4}, Lcom/google/glass/widget/OptionMenuDialog;->isShowing()Z
-
-    move-result v4
-
-    if-nez v4, :cond_5
-
-    .line 271
-    :cond_4
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->onDisallowedInput()V
-
-    move v2, v3
-
-    .line 272
-    goto :goto_0
-
-    .line 274
-    :cond_5
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    invoke-virtual {v3, v4}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+    invoke-virtual {v1, v2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
     goto :goto_0
 .end method
@@ -755,17 +609,17 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 127
+    .line 113
     invoke-super {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 129
+    .line 115
     new-instance v4, Lcom/google/glass/util/PowerHelper;
 
     invoke-direct {v4, p0}, Lcom/google/glass/util/PowerHelper;-><init>(Landroid/content/Context;)V
 
     iput-object v4, p0, Lcom/google/glass/app/GlassActivity;->powerHelper:Lcom/google/glass/util/PowerHelper;
 
-    .line 137
+    .line 123
     new-instance v4, Landroid/os/StrictMode$ThreadPolicy$Builder;
 
     invoke-direct {v4}, Landroid/os/StrictMode$ThreadPolicy$Builder;-><init>()V
@@ -784,7 +638,7 @@
 
     invoke-static {v4}, Landroid/os/StrictMode;->setThreadPolicy(Landroid/os/StrictMode$ThreadPolicy;)V
 
-    .line 141
+    .line 127
     new-instance v4, Landroid/os/StrictMode$VmPolicy$Builder;
 
     invoke-direct {v4}, Landroid/os/StrictMode$VmPolicy$Builder;-><init>()V
@@ -803,34 +657,34 @@
 
     invoke-static {v4}, Landroid/os/StrictMode;->setVmPolicy(Landroid/os/StrictMode$VmPolicy;)V
 
-    .line 147
+    .line 133
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v3
 
-    .line 148
+    .line 134
     .local v3, window:Landroid/view/Window;
     const/high16 v4, 0x8
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->addFlags(I)V
 
-    .line 149
+    .line 135
     const/high16 v4, 0x40
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->addFlags(I)V
 
-    .line 154
+    .line 140
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->provideContentView()I
 
     move-result v0
 
-    .line 155
+    .line 141
     .local v0, contentViewId:I
     const/4 v4, -0x1
 
     if-ne v0, v4, :cond_1
 
-    .line 156
+    .line 142
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -839,7 +693,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
+    .line 158
     :goto_0
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldScreenOffFinish()Z
 
@@ -847,23 +701,23 @@
 
     if-eqz v4, :cond_0
 
-    .line 174
+    .line 160
     new-instance v1, Landroid/content/IntentFilter;
 
     invoke-direct {v1}, Landroid/content/IntentFilter;-><init>()V
 
-    .line 175
+    .line 161
     .local v1, screenOffFilter:Landroid/content/IntentFilter;
     const-string v4, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {v1, v4}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 176
+    .line 162
     iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->screenOffReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v4, p0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 180
+    .line 166
     .end local v1           #screenOffFilter:Landroid/content/IntentFilter;
     :cond_0
     sget v4, Lcom/google/glass/common/R$anim;->window_exit_down:I
@@ -874,7 +728,7 @@
 
     iput-object v4, p0, Lcom/google/glass/app/GlassActivity;->dismissAnimation:Landroid/view/animation/Animation;
 
-    .line 181
+    .line 167
     iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->dismissAnimation:Landroid/view/animation/Animation;
 
     new-instance v5, Lcom/google/glass/app/GlassActivity$2;
@@ -883,17 +737,17 @@
 
     invoke-virtual {v4, v5}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 188
+    .line 174
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v4
 
     invoke-direct {p0, v4}, Lcom/google/glass/app/GlassActivity;->handleIntent(Landroid/content/Intent;)V
 
-    .line 189
+    .line 175
     return-void
 
-    .line 157
+    .line 143
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
 
@@ -901,7 +755,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 158
+    .line 144
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -910,12 +764,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 159
+    .line 145
     sget v4, Lcom/google/glass/common/R$layout;->glass_activity_tuggable:I
 
     invoke-super {p0, v4}, Lcom/google/glass/input/InputDetectingActivity;->setContentView(I)V
 
-    .line 160
+    .line 146
     sget v4, Lcom/google/glass/common/R$id;->content_view_container:I
 
     invoke-virtual {p0, v4}, Lcom/google/glass/app/GlassActivity;->findViewById(I)Landroid/view/View;
@@ -926,7 +780,7 @@
 
     iput-object v4, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
-    .line 161
+    .line 147
     invoke-static {p0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v4
@@ -939,7 +793,7 @@
 
     iput-object v4, p0, Lcom/google/glass/app/GlassActivity;->contentView:Landroid/view/View;
 
-    .line 162
+    .line 148
     iget-object v4, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     iget-object v5, p0, Lcom/google/glass/app/GlassActivity;->contentView:Landroid/view/View;
@@ -948,7 +802,7 @@
 
     goto :goto_0
 
-    .line 164
+    .line 150
     :cond_2
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getTag()Ljava/lang/String;
 
@@ -958,12 +812,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
+    .line 151
     sget v4, Lcom/google/glass/common/R$layout;->glass_activity:I
 
     invoke-super {p0, v4}, Lcom/google/glass/input/InputDetectingActivity;->setContentView(I)V
 
-    .line 166
+    .line 152
     sget v4, Lcom/google/glass/common/R$id;->content_view_stub:I
 
     invoke-virtual {p0, v4}, Lcom/google/glass/app/GlassActivity;->findViewById(I)Landroid/view/View;
@@ -972,11 +826,11 @@
 
     check-cast v2, Landroid/view/ViewStub;
 
-    .line 167
+    .line 153
     .local v2, stub:Landroid/view/ViewStub;
     invoke-virtual {v2, v0}, Landroid/view/ViewStub;->setLayoutResource(I)V
 
-    .line 168
+    .line 154
     invoke-virtual {v2}, Landroid/view/ViewStub;->inflate()Landroid/view/View;
 
     move-result-object v4
@@ -991,7 +845,7 @@
     .parameter "menu"
 
     .prologue
-    .line 604
+    .line 450
     const/4 v0, 0x0
 
     return v0
@@ -1001,23 +855,23 @@
     .locals 1
 
     .prologue
-    .line 227
+    .line 213
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldScreenOffFinish()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 228
+    .line 214
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->screenOffReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     invoke-virtual {v0, p0}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 231
+    .line 217
     :cond_0
     invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onDestroy()V
 
-    .line 232
+    .line 218
     return-void
 .end method
 
@@ -1025,7 +879,7 @@
     .locals 2
 
     .prologue
-    .line 524
+    .line 367
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
@@ -1034,225 +888,89 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 525
+    .line 368
     return-void
 .end method
 
 .method public onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
-    .locals 5
+    .locals 2
     .parameter "dismissAction"
 
     .prologue
-    const/4 v2, 0x1
-
-    .line 354
-    iget-object v3, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 355
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v0, p1}, Lcom/google/glass/app/GlassFragment;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 368
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    .line 360
-    :cond_1
+    .line 288
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowDismiss()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_2
+    if-nez v0, :cond_0
 
-    .line 361
+    .line 289
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getContentView()Landroid/view/View;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/glass/input/SwipeDirection;->DOWN:Lcom/google/glass/input/SwipeDirection;
-
-    invoke-static {v2, v3}, Lcom/google/glass/util/HopHelper;->performHopAnimation(Landroid/view/View;Lcom/google/glass/input/SwipeDirection;)V
-
-    .line 362
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    .line 365
-    :cond_2
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/glass/sound/SoundManager$SoundId;->DISMISS:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    invoke-virtual {v3, v4}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
-
-    .line 367
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->finishAndTurnScreenOffIfRequested()V
-
-    goto :goto_0
-.end method
-
-.method public onDoubleTap()Z
-    .locals 3
-
-    .prologue
-    .line 281
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
+    sget-object v1, Lcom/google/glass/input/SwipeDirection;->DOWN:Lcom/google/glass/input/SwipeDirection;
 
-    .line 282
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
+    invoke-static {v0, v1}, Lcom/google/glass/util/HopHelper;->performHopAnimation(Landroid/view/View;Lcom/google/glass/input/SwipeDirection;)V
 
-    move-result v2
+    .line 290
+    const/4 v0, 0x0
 
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->onDoubleTap()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 283
-    const/4 v2, 0x1
-
-    .line 286
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
+    .line 296
     :goto_0
-    return v2
+    return v0
 
-    :cond_1
-    invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onDoubleTap()Z
+    .line 293
+    :cond_0
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
-    move-result v2
+    move-result-object v0
+
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->DISMISS:Lcom/google/glass/sound/SoundManager$SoundId;
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
+
+    .line 295
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->finishAndTurnScreenOffIfRequested()V
+
+    .line 296
+    const/4 v0, 0x1
 
     goto :goto_0
 .end method
 
 .method public onFingerCountChanged(IZ)Z
-    .locals 3
+    .locals 1
     .parameter "count"
     .parameter "wentDown"
 
     .prologue
-    .line 341
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 342
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/app/GlassFragment;->onFingerCountChanged(IZ)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 343
-    const/4 v2, 0x1
-
-    .line 349
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    .line 346
-    :cond_1
+    .line 280
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_0
 
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
+    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_0
 
-    .line 347
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
+    .line 281
+    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
-    invoke-virtual {v2, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onFingerCountChanged(IZ)Z
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onFingerCountChanged(IZ)Z
 
-    move-result v2
+    move-result v0
 
-    goto :goto_0
+    .line 283
+    :goto_0
+    return v0
 
-    .line 349
-    :cond_2
+    :cond_0
     invoke-super {p0, p1, p2}, Lcom/google/glass/input/InputDetectingActivity;->onFingerCountChanged(IZ)Z
 
-    move-result v2
+    move-result v0
 
     goto :goto_0
 .end method
@@ -1263,12 +981,12 @@
     .parameter "menu"
 
     .prologue
-    .line 714
+    .line 568
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/app/GlassActivity;->isOptionsMenuShowing:Z
 
-    .line 715
+    .line 569
     return-void
 .end method
 
@@ -1277,13 +995,13 @@
     .parameter "intent"
 
     .prologue
-    .line 121
+    .line 107
     invoke-super {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 122
+    .line 108
     invoke-direct {p0, p1}, Lcom/google/glass/app/GlassActivity;->handleIntent(Landroid/content/Intent;)V
 
-    .line 123
+    .line 109
     return-void
 .end method
 
@@ -1292,10 +1010,19 @@
     .parameter "item"
 
     .prologue
-    .line 698
+    .line 547
     const/4 v0, 0x0
 
     return v0
+.end method
+
+.method public onOptionsMenuCanceled(Lcom/google/glass/widget/OptionMenu;)V
+    .locals 0
+    .parameter "menu"
+
+    .prologue
+    .line 553
+    return-void
 .end method
 
 .method public onOptionsMenuClosed(Lcom/google/glass/widget/OptionMenu;)V
@@ -1303,12 +1030,12 @@
     .parameter "menu"
 
     .prologue
-    .line 706
+    .line 560
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/app/GlassActivity;->isOptionsMenuShowing:Z
 
-    .line 707
+    .line 561
     return-void
 .end method
 
@@ -1316,35 +1043,35 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 198
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->closeOptionsMenu()V
 
-    .line 214
+    .line 200
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldHideMessageDialogOnPause()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 215
+    .line 201
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->hideMessageDialog()V
 
-    .line 218
+    .line 204
     :cond_0
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     if-eqz v0, :cond_1
 
-    .line 219
+    .line 205
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     invoke-virtual {v0}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->deactivate()V
 
-    .line 222
+    .line 208
     :cond_1
     invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onPause()V
 
-    .line 223
+    .line 209
     return-void
 .end method
 
@@ -1353,14 +1080,14 @@
     .parameter "menu"
 
     .prologue
-    .line 611
+    .line 457
     const/4 v0, 0x1
 
     return v0
 .end method
 
 .method public onPrepareSwipe(IFFFFII)Z
-    .locals 10
+    .locals 8
     .parameter "fingerCount"
     .parameter "accumulatorX"
     .parameter "accumulatorY"
@@ -1370,34 +1097,19 @@
     .parameter "numSwipesY"
 
     .prologue
-    .line 293
-    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
+    .line 255
+    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
 
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result v0
 
-    move-result-object v9
+    if-eqz v0, :cond_0
 
-    .local v9, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
-    move-result v1
+    if-eqz v0, :cond_0
 
-    if-eqz v1, :cond_1
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 294
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    .line 256
+    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     move v1, p1
 
@@ -1409,120 +1121,20 @@
 
     move v5, p5
 
-    move/from16 v6, p6
+    move v6, p6
 
-    move/from16 v7, p7
+    move v7, p7
 
-    invoke-virtual/range {v0 .. v7}, Lcom/google/glass/app/GlassFragment;->onPrepareSwipe(IFFFFII)Z
+    invoke-virtual/range {v0 .. v7}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onPrepareSwipe(IFFFFII)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
-
-    .line 296
-    const/4 v1, 0x1
-
-    .line 305
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
+    .line 260
     :goto_0
-    return v1
+    return v0
 
-    .line 300
-    :cond_1
-    invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
-
-    if-eqz v1, :cond_2
-
-    .line 301
-    iget-object v1, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
-
-    move v2, p1
-
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    move v6, p5
-
-    move/from16 v7, p6
-
-    move/from16 v8, p7
-
-    invoke-virtual/range {v1 .. v8}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onPrepareSwipe(IFFFFII)Z
-
-    move-result v1
-
-    goto :goto_0
-
-    .line 305
-    :cond_2
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method public onResampledAudioData([BII)Z
-    .locals 3
-    .parameter "buffer"
-    .parameter "offset"
-    .parameter "length"
-
-    .prologue
-    .line 447
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
     :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 448
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/google/glass/app/GlassFragment;->onResampledAudioData([BII)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 449
-    const/4 v2, 0x1
-
-    .line 453
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-super {p0, p1, p2, p3}, Lcom/google/glass/input/InputDetectingActivity;->onResampledAudioData([BII)Z
-
-    move-result v2
+    const/4 v0, 0x0
 
     goto :goto_0
 .end method
@@ -1531,20 +1143,20 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 188
     invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onResume()V
 
-    .line 204
+    .line 190
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     if-eqz v0, :cond_0
 
-    .line 205
+    .line 191
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
     invoke-virtual {v0}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->activate()V
 
-    .line 207
+    .line 193
     :cond_0
     return-void
 .end method
@@ -1553,15 +1165,15 @@
     .locals 2
 
     .prologue
-    .line 490
+    .line 333
     invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onStart()V
 
-    .line 493
+    .line 336
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->dismissAnimation:Landroid/view/animation/Animation;
 
     invoke-virtual {v0}, Landroid/view/animation/Animation;->cancel()V
 
-    .line 494
+    .line 337
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getContentView()Landroid/view/View;
 
     move-result-object v0
@@ -1570,418 +1182,59 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setY(F)V
 
-    .line 495
+    .line 338
     return-void
 .end method
 
 .method public onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
-    .locals 5
+    .locals 2
     .parameter "fingerCount"
     .parameter "direction"
 
     .prologue
-    const/4 v2, 0x1
+    .line 266
+    sget-object v0, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
 
-    .line 310
-    iget-object v3, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
+    if-ne p2, v0, :cond_0
 
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 311
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/app/GlassFragment;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 326
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    .line 317
-    :cond_1
-    sget-object v3, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
-
-    if-ne p2, v3, :cond_2
-
-    .line 318
+    .line 267
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getContentView()Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v0
 
-    sget-object v4, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
+    sget-object v1, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
 
-    invoke-static {v3, v4}, Lcom/google/glass/util/HopHelper;->performHopAnimation(Landroid/view/View;Lcom/google/glass/input/SwipeDirection;)V
+    invoke-static {v0, v1}, Lcom/google/glass/util/HopHelper;->performHopAnimation(Landroid/view/View;Lcom/google/glass/input/SwipeDirection;)V
 
-    goto :goto_0
+    .line 268
+    const/4 v0, 0x1
 
-    .line 322
-    :cond_2
+    .line 275
+    :goto_0
+    return v0
+
+    .line 271
+    :cond_0
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->shouldAllowHorizontalTugging()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
+    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
-    if-eqz v2, :cond_3
+    if-eqz v0, :cond_1
 
-    .line 323
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
+    .line 272
+    iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->tuggableContentView:Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;
 
-    invoke-virtual {v2, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)V
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/horizontalscroll/HorizontallyTuggableView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
-    .line 326
-    :cond_3
-    const/4 v2, 0x0
-
-    goto :goto_0
-.end method
-
-.method public onSwipeCanceled(I)Z
-    .locals 3
-    .parameter "fingerCount"
-
-    .prologue
-    .line 331
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 332
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1}, Lcom/google/glass/app/GlassFragment;->onSwipeCanceled(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 333
-    const/4 v2, 0x1
-
-    .line 336
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
+    .line 275
     :cond_1
-    invoke-super {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->onSwipeCanceled(I)Z
-
-    move-result v2
+    const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public onVerticalHeadScroll(FF)Z
-    .locals 3
-    .parameter "delta"
-    .parameter "velocity"
-
-    .prologue
-    .line 384
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 385
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/app/GlassFragment;->onVerticalHeadScroll(FF)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 386
-    const/4 v2, 0x1
-
-    .line 389
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-super {p0, p1, p2}, Lcom/google/glass/input/InputDetectingActivity;->onVerticalHeadScroll(FF)Z
-
-    move-result v2
-
-    goto :goto_0
-.end method
-
-.method public onVoiceAmplitudeChanged(D)Z
-    .locals 3
-    .parameter "amplitude"
-
-    .prologue
-    .line 425
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 426
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1, p2}, Lcom/google/glass/app/GlassFragment;->onVoiceAmplitudeChanged(D)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 427
-    const/4 v2, 0x1
-
-    .line 431
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-super {p0, p1, p2}, Lcom/google/glass/input/InputDetectingActivity;->onVoiceAmplitudeChanged(D)Z
-
-    move-result v2
-
-    goto :goto_0
-.end method
-
-.method public onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-    .locals 3
-    .parameter "command"
-
-    .prologue
-    .line 414
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 415
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    invoke-virtual {v0, p1}, Lcom/google/glass/app/GlassFragment;->onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 416
-    const/4 v2, 0x1
-
-    .line 420
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :goto_0
-    return v2
-
-    :cond_1
-    invoke-super {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)Z
-
-    move-result v2
-
-    goto :goto_0
-.end method
-
-.method public onVoiceServiceConnected()V
-    .locals 3
-
-    .prologue
-    .line 394
-    invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onVoiceServiceConnected()V
-
-    .line 395
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 396
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 397
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->onVoiceServiceConnected()V
-
-    goto :goto_0
-
-    .line 400
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :cond_1
-    return-void
-.end method
-
-.method public onVoiceServiceDisconnected()V
-    .locals 3
-
-    .prologue
-    .line 404
-    invoke-super {p0}, Lcom/google/glass/input/InputDetectingActivity;->onVoiceServiceDisconnected()V
-
-    .line 405
-    iget-object v2, p0, Lcom/google/glass/app/GlassActivity;->glassFragments:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, i$:Ljava/util/Iterator;
-    :cond_0
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/glass/app/GlassFragment;
-
-    .line 406
-    .local v0, glassFragment:Lcom/google/glass/app/GlassFragment;
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->isVisible()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 407
-    invoke-virtual {v0}, Lcom/google/glass/app/GlassFragment;->onVoiceServiceDisconnected()V
-
-    goto :goto_0
-
-    .line 410
-    .end local v0           #glassFragment:Lcom/google/glass/app/GlassFragment;
-    :cond_1
-    return-void
 .end method
 
 .method public openOptionsMenu()V
@@ -1990,7 +1243,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 616
+    .line 462
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     if-eqz v0, :cond_0
@@ -1999,20 +1252,20 @@
 
     if-eqz v0, :cond_5
 
-    .line 617
+    .line 463
     :cond_0
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     if-nez v0, :cond_3
 
-    .line 618
+    .line 464
     new-instance v0, Lcom/google/glass/widget/OptionMenu;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
-    .line 622
+    .line 468
     :cond_1
     :goto_0
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
@@ -2023,34 +1276,34 @@
 
     if-nez v0, :cond_4
 
-    .line 623
+    .line 469
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
-    .line 678
+    .line 527
     :cond_2
     :goto_1
     return-void
 
-    .line 619
+    .line 465
     :cond_3
     iget-boolean v0, p0, Lcom/google/glass/app/GlassActivity;->rebuildMenu:Z
 
     if-eqz v0, :cond_1
 
-    .line 620
+    .line 466
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenu;->clearItems()V
 
     goto :goto_0
 
-    .line 626
+    .line 472
     :cond_4
     iput-boolean v3, p0, Lcom/google/glass/app/GlassActivity;->rebuildMenu:Z
 
-    .line 628
+    .line 474
     :cond_5
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
@@ -2060,7 +1313,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 632
+    .line 478
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenu;->getVisibleItemCount()I
@@ -2069,12 +1322,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 636
+    .line 482
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
     if-nez v0, :cond_6
 
-    .line 637
+    .line 483
     new-instance v0, Lcom/google/glass/widget/OptionMenuDialog;
 
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -2089,7 +1342,7 @@
 
     iput-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
-    .line 675
+    .line 524
     :cond_6
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
@@ -2097,12 +1350,12 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/OptionMenuDialog;->setMenu(Lcom/google/glass/widget/OptionMenu;)Lcom/google/glass/widget/OptionMenuDialog;
 
-    .line 676
+    .line 525
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menuDialog:Lcom/google/glass/widget/OptionMenuDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/OptionMenuDialog;->show()V
 
-    .line 677
+    .line 526
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity;->menu:Lcom/google/glass/widget/OptionMenu;
 
     invoke-virtual {p0, v3, v0}, Lcom/google/glass/app/GlassActivity;->onMenuOpened(ILcom/google/glass/widget/OptionMenu;)V
@@ -2114,7 +1367,7 @@
     .locals 1
 
     .prologue
-    .line 245
+    .line 222
     const/4 v0, -0x1
 
     return v0
@@ -2127,10 +1380,10 @@
     .end annotation
 
     .prologue
-    .line 583
+    .line 429
     invoke-super {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->setContentView(I)V
 
-    .line 584
+    .line 430
     return-void
 .end method
 
@@ -2141,10 +1394,10 @@
     .end annotation
 
     .prologue
-    .line 590
+    .line 436
     invoke-super {p0, p1}, Lcom/google/glass/input/InputDetectingActivity;->setContentView(Landroid/view/View;)V
 
-    .line 591
+    .line 437
     return-void
 .end method
 
@@ -2156,10 +1409,10 @@
     .end annotation
 
     .prologue
-    .line 597
+    .line 443
     invoke-super {p0, p1, p2}, Lcom/google/glass/input/InputDetectingActivity;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 598
+    .line 444
     return-void
 .end method
 
@@ -2167,7 +1420,7 @@
     .locals 1
 
     .prologue
-    .line 512
+    .line 355
     const/4 v0, 0x1
 
     return v0
@@ -2177,7 +1430,7 @@
     .locals 1
 
     .prologue
-    .line 519
+    .line 362
     const/4 v0, 0x0
 
     return v0
@@ -2187,7 +1440,7 @@
     .locals 1
 
     .prologue
-    .line 499
+    .line 342
     iget-boolean v0, p0, Lcom/google/glass/app/GlassActivity;->shouldTurnScreenOff:Z
 
     return v0
@@ -2197,7 +1450,7 @@
     .locals 1
 
     .prologue
-    .line 773
+    .line 632
     const/4 v0, 0x1
 
     return v0
@@ -2207,10 +1460,22 @@
     .locals 1
 
     .prologue
-    .line 504
+    .line 347
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method public showError(Lcom/google/glass/widget/MessageDialog;)V
+    .locals 0
+    .parameter "errorDialog"
+
+    .prologue
+    .line 603
+    invoke-virtual {p0, p1}, Lcom/google/glass/app/GlassActivity;->showMessage(Lcom/google/glass/widget/MessageDialog;)V
+
+    .line 604
+    return-void
 .end method
 
 .method public showMessage(I)V
@@ -2218,14 +1483,14 @@
     .parameter "message"
 
     .prologue
-    .line 729
+    .line 583
     invoke-virtual {p0, p1}, Lcom/google/glass/app/GlassActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/app/GlassActivity;->showMessage(Ljava/lang/String;)V
 
-    .line 730
+    .line 584
     return-void
 .end method
 
@@ -2234,16 +1499,16 @@
     .parameter "messageDialog"
 
     .prologue
-    .line 742
+    .line 596
     invoke-virtual {p0}, Lcom/google/glass/app/GlassActivity;->hideMessageDialog()V
 
-    .line 743
+    .line 597
     iput-object p1, p0, Lcom/google/glass/app/GlassActivity;->messageDialog:Lcom/google/glass/widget/MessageDialog;
 
-    .line 744
+    .line 598
     invoke-virtual {p1}, Lcom/google/glass/widget/MessageDialog;->show()V
 
-    .line 745
+    .line 599
     return-void
 .end method
 
@@ -2252,7 +1517,7 @@
     .parameter "message"
 
     .prologue
-    .line 734
+    .line 588
     new-instance v0, Lcom/google/glass/widget/MessageDialog$Builder;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/MessageDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -2273,6 +1538,6 @@
 
     invoke-virtual {p0, v0}, Lcom/google/glass/app/GlassActivity;->showMessage(Lcom/google/glass/widget/MessageDialog;)V
 
-    .line 738
+    .line 592
     return-void
 .end method

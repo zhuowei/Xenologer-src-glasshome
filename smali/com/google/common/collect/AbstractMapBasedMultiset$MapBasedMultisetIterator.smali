@@ -63,13 +63,13 @@
     .parameter
 
     .prologue
-    .line 171
+    .line 163
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>.MapBasedMultisetIterator;"
     iput-object p1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->this$0:Lcom/google/common/collect/AbstractMapBasedMultiset;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 172
+    .line 164
     #getter for: Lcom/google/common/collect/AbstractMapBasedMultiset;->backingMap:Ljava/util/Map;
     invoke-static {p1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->access$000(Lcom/google/common/collect/AbstractMapBasedMultiset;)Ljava/util/Map;
 
@@ -85,7 +85,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->entryIterator:Ljava/util/Iterator;
 
-    .line 173
+    .line 165
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 177
+    .line 168
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>.MapBasedMultisetIterator;"
     iget v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->occurrencesLeft:I
 
@@ -130,13 +130,13 @@
     .end annotation
 
     .prologue
-    .line 182
+    .line 172
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>.MapBasedMultisetIterator;"
     iget v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->occurrencesLeft:I
 
     if-nez v0, :cond_0
 
-    .line 183
+    .line 173
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->entryIterator:Ljava/util/Iterator;
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
@@ -147,7 +147,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->currentEntry:Ljava/util/Map$Entry;
 
-    .line 184
+    .line 174
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->currentEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -162,7 +162,7 @@
 
     iput v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->occurrencesLeft:I
 
-    .line 186
+    .line 176
     :cond_0
     iget v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->occurrencesLeft:I
 
@@ -170,12 +170,12 @@
 
     iput v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->occurrencesLeft:I
 
-    .line 187
+    .line 177
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->canRemove:Z
 
-    .line 188
+    .line 178
     iget-object v0, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->currentEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -189,7 +189,7 @@
     .locals 3
 
     .prologue
-    .line 193
+    .line 182
     .local p0, this:Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;,"Lcom/google/common/collect/AbstractMapBasedMultiset<TE;>.MapBasedMultisetIterator;"
     iget-boolean v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->canRemove:Z
 
@@ -197,7 +197,7 @@
 
     invoke-static {v1, v2}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
-    .line 195
+    .line 183
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->currentEntry:Ljava/util/Map$Entry;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
@@ -210,18 +210,18 @@
 
     move-result v0
 
-    .line 196
+    .line 184
     .local v0, frequency:I
     if-gtz v0, :cond_0
 
-    .line 197
+    .line 185
     new-instance v1, Ljava/util/ConcurrentModificationException;
 
     invoke-direct {v1}, Ljava/util/ConcurrentModificationException;-><init>()V
 
     throw v1
 
-    .line 199
+    .line 187
     :cond_0
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->currentEntry:Ljava/util/Map$Entry;
 
@@ -239,22 +239,22 @@
 
     if-nez v1, :cond_1
 
-    .line 200
+    .line 188
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->entryIterator:Ljava/util/Iterator;
 
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
-    .line 202
+    .line 190
     :cond_1
     iget-object v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->this$0:Lcom/google/common/collect/AbstractMapBasedMultiset;
 
     invoke-static {v1}, Lcom/google/common/collect/AbstractMapBasedMultiset;->access$110(Lcom/google/common/collect/AbstractMapBasedMultiset;)J
 
-    .line 203
+    .line 191
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/google/common/collect/AbstractMapBasedMultiset$MapBasedMultisetIterator;->canRemove:Z
 
-    .line 204
+    .line 192
     return-void
 .end method

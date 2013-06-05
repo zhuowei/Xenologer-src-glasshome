@@ -76,12 +76,12 @@
     .end annotation
 
     .prologue
-    .line 462
+    .line 490
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     .local p1, map:Ljava/util/Map;,"Ljava/util/Map<TE;Ljava/lang/Boolean;>;"
     invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
-    .line 463
+    .line 491
     invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
 
     move-result v0
@@ -90,17 +90,17 @@
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 
-    .line 464
+    .line 492
     iput-object p1, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
-    .line 465
+    .line 493
     invoke-interface {p1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
-    .line 466
+    .line 494
     return-void
 .end method
 
@@ -119,11 +119,11 @@
     .end annotation
 
     .prologue
-    .line 521
+    .line 577
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->defaultReadObject()V
 
-    .line 522
+    .line 578
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -132,7 +132,7 @@
 
     iput-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
-    .line 523
+    .line 579
     return-void
 .end method
 
@@ -148,7 +148,7 @@
     .end annotation
 
     .prologue
-    .line 484
+    .line 523
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     .local p1, e:Ljava/lang/Object;,"TE;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
@@ -176,13 +176,13 @@
     .locals 1
 
     .prologue
-    .line 469
+    .line 498
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 470
+    .line 499
     return-void
 .end method
 
@@ -191,7 +191,7 @@
     .parameter "o"
 
     .prologue
-    .line 478
+    .line 513
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
@@ -214,7 +214,7 @@
     .end annotation
 
     .prologue
-    .line 505
+    .line 558
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
@@ -234,7 +234,7 @@
     .end parameter
 
     .prologue
-    .line 502
+    .line 553
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     if-eq p0, p1, :cond_0
 
@@ -262,7 +262,7 @@
     .locals 1
 
     .prologue
-    .line 499
+    .line 548
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
@@ -277,7 +277,7 @@
     .locals 1
 
     .prologue
-    .line 475
+    .line 508
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
@@ -299,7 +299,7 @@
     .end annotation
 
     .prologue
-    .line 487
+    .line 528
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
@@ -315,7 +315,7 @@
     .parameter "o"
 
     .prologue
-    .line 481
+    .line 518
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
@@ -348,7 +348,7 @@
     .end annotation
 
     .prologue
-    .line 508
+    .line 563
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
@@ -372,7 +372,7 @@
     .end annotation
 
     .prologue
-    .line 511
+    .line 568
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     .local p1, c:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
@@ -388,7 +388,7 @@
     .locals 1
 
     .prologue
-    .line 472
+    .line 503
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->m:Ljava/util/Map;
 
@@ -403,7 +403,7 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 533
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 
@@ -426,7 +426,7 @@
     .end annotation
 
     .prologue
-    .line 493
+    .line 538
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     .local p1, a:[Ljava/lang/Object;,"[TT;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
@@ -442,7 +442,7 @@
     .locals 1
 
     .prologue
-    .line 496
+    .line 543
     .local p0, this:Lcom/google/common/collect/Sets$SetFromMap;,"Lcom/google/common/collect/Sets$SetFromMap<TE;>;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$SetFromMap;->s:Ljava/util/Set;
 

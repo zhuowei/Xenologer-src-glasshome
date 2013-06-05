@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 222
+    .line 208
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4$1;->this$0:Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
@@ -53,14 +53,14 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 226
+    .line 212
     iget-object v2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
 
     invoke-interface {v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
 
-    .line 228
+    .line 214
     .local v0, context:Landroid/app/Activity;
     new-instance v1, Landroid/content/Intent;
 
@@ -68,7 +68,7 @@
 
     invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 229
+    .line 215
     .local v1, voiceNavigationIntent:Landroid/content/Intent;
     const-string v3, "trigger_method"
 
@@ -81,21 +81,21 @@
     :goto_0
     invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 232
+    .line 218
     iget-object v2, p0, Lcom/google/glass/home/voice/menu/MainMenuCommandItem$4$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
 
     invoke-interface {v2, v4}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->setAnimateOnNextPause(Z)V
 
-    .line 233
+    .line 219
     invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 234
+    .line 220
     invoke-virtual {v0, v4, v4}, Landroid/app/Activity;->overridePendingTransition(II)V
 
-    .line 235
+    .line 221
     return-void
 
-    .line 229
+    .line 215
     :cond_0
     const/4 v2, 0x2
 

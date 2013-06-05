@@ -8,12 +8,6 @@
 
 .field public static final EXTRA_SETUP_WIFI:Ljava/lang/String; = "wifi_setup_string"
 
-.field public static final INTENT_MESSENGER:Ljava/lang/String; = "com.google.glass.companion.MESSENGER"
-
-.field public static final KEY_ENVELOPE_PAYLOAD:Ljava/lang/String; = "Payload"
-
-.field public static final KEY_REPLYABLE_ID:Ljava/lang/String; = "ReplyableId"
-
 .field public static final SECURE_UUID:Ljava/util/UUID; = null
 
 .field public static final SOCKET_NAME:Ljava/lang/String; = "Companion"

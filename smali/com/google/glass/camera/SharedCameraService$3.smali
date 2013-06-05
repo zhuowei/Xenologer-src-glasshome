@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 377
+    .line 381
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService$3;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 391
+    .line 395
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +70,7 @@
     .parameter "intent"
 
     .prologue
-    .line 380
+    .line 384
     const-string v0, "com.google.glass.action.PREPARE_CAMERA"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,7 +83,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 381
+    .line 385
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$3;->this$0:Lcom/google/glass/camera/SharedCameraService;
 
     #getter for: Lcom/google/glass/camera/SharedCameraService;->cameraManager:Lcom/google/glass/camera/SharedCameraManager;
@@ -93,7 +93,7 @@
 
     if-nez v0, :cond_1
 
-    .line 382
+    .line 386
     invoke-static {}, Lcom/google/glass/camera/SharedCameraService;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -102,12 +102,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 387
+    .line 391
     :cond_0
     :goto_0
     return-void
 
-    .line 384
+    .line 388
     :cond_1
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$3;->this$0:Lcom/google/glass/camera/SharedCameraService;
 

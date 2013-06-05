@@ -1,4 +1,4 @@
-.class abstract Lcom/google/common/collect/Multimaps$Values;
+.class Lcom/google/common/collect/Multimaps$Values;
 .super Ljava/util/AbstractCollection;
 .source "Multimaps.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x408
+    accessFlags = 0x8
     name = "Values"
 .end annotation
 
@@ -26,15 +26,39 @@
 .end annotation
 
 
+# instance fields
+.field final multimap:Lcom/google/common/collect/Multimap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/google/common/collect/Multimap",
+            "<TK;TV;>;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
-.method constructor <init>()V
+.method constructor <init>(Lcom/google/common/collect/Multimap;)V
     .locals 0
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/google/common/collect/Multimap",
+            "<TK;TV;>;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 2007
+    .line 1953
     .local p0, this:Lcom/google/common/collect/Multimaps$Values;,"Lcom/google/common/collect/Multimaps$Values<TK;TV;>;"
+    .local p1, multimap:Lcom/google/common/collect/Multimap;,"Lcom/google/common/collect/Multimap<TK;TV;>;"
     invoke-direct {p0}, Ljava/util/AbstractCollection;-><init>()V
 
+    .line 1954
+    iput-object p1, p0, Lcom/google/common/collect/Multimaps$Values;->multimap:Lcom/google/common/collect/Multimap;
+
+    .line 1955
     return-void
 .end method
 
@@ -44,15 +68,13 @@
     .locals 1
 
     .prologue
-    .line 2037
+    .line 1970
     .local p0, this:Lcom/google/common/collect/Multimaps$Values;,"Lcom/google/common/collect/Multimaps$Values<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$Values;->multimap()Lcom/google/common/collect/Multimap;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$Values;->multimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0}, Lcom/google/common/collect/Multimap;->clear()V
 
-    .line 2038
+    .line 1971
     return-void
 .end method
 
@@ -64,11 +86,9 @@
     .end parameter
 
     .prologue
-    .line 2033
+    .line 1966
     .local p0, this:Lcom/google/common/collect/Multimaps$Values;,"Lcom/google/common/collect/Multimaps$Values<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$Values;->multimap()Lcom/google/common/collect/Multimap;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$Values;->multimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0, p1}, Lcom/google/common/collect/Multimap;->containsValue(Ljava/lang/Object;)Z
 
@@ -78,7 +98,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .locals 2
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -88,48 +108,32 @@
     .end annotation
 
     .prologue
-    .line 2011
+    .line 1958
     .local p0, this:Lcom/google/common/collect/Multimaps$Values;,"Lcom/google/common/collect/Multimaps$Values<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$Values;->multimap()Lcom/google/common/collect/Multimap;
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$Values;->multimap:Lcom/google/common/collect/Multimap;
 
-    move-result-object v1
-
-    invoke-interface {v1}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Lcom/google/common/collect/Multimap;->entries()Ljava/util/Collection;
 
     move-result-object v0
 
-    .line 2013
-    .local v0, backingIterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
-    new-instance v1, Lcom/google/common/collect/Multimaps$Values$1;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    invoke-direct {v1, p0, v0}, Lcom/google/common/collect/Multimaps$Values$1;-><init>(Lcom/google/common/collect/Multimaps$Values;Ljava/util/Iterator;)V
+    move-result-object v0
 
-    return-object v1
-.end method
+    invoke-static {v0}, Lcom/google/common/collect/Maps;->valueIterator(Ljava/util/Iterator;)Ljava/util/Iterator;
 
-.method abstract multimap()Lcom/google/common/collect/Multimap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/common/collect/Multimap",
-            "<TK;TV;>;"
-        }
-    .end annotation
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public size()I
     .locals 1
 
     .prologue
-    .line 2029
+    .line 1962
     .local p0, this:Lcom/google/common/collect/Multimaps$Values;,"Lcom/google/common/collect/Multimaps$Values<TK;TV;>;"
-    invoke-virtual {p0}, Lcom/google/common/collect/Multimaps$Values;->multimap()Lcom/google/common/collect/Multimap;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/google/common/collect/Multimaps$Values;->multimap:Lcom/google/common/collect/Multimap;
 
     invoke-interface {v0}, Lcom/google/common/collect/Multimap;->size()I
 

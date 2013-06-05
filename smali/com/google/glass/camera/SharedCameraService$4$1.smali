@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 422
+    .line 426
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraService$4$1;->this$1:Lcom/google/glass/camera/SharedCameraService$4;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 433
+    .line 437
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -70,7 +70,7 @@
     .parameter "intent"
 
     .prologue
-    .line 425
+    .line 429
     const-string v0, "com.google.glass.action.CAMERA_LOCK"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -93,7 +93,7 @@
 
     if-nez v0, :cond_0
 
-    .line 427
+    .line 431
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraService$4$1;->this$1:Lcom/google/glass/camera/SharedCameraService$4;
 
     #getter for: Lcom/google/glass/camera/SharedCameraService$4;->lockLatch:Ljava/util/concurrent/CountDownLatch;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 429
+    .line 433
     :cond_0
     return-void
 .end method

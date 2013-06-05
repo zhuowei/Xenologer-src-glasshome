@@ -17,7 +17,7 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 6
+    .locals 7
     .parameter "context"
     .parameter "intent"
 
@@ -40,18 +40,20 @@
 
     sget-object v2, Lcom/google/glass/util/Feedback$RecoveryAction;->SHOULD_CONTINUE:Lcom/google/glass/util/Feedback$RecoveryAction;
 
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     move-object v0, p1
 
     move v4, v3
 
-    invoke-static/range {v0 .. v5}, Lcom/google/glass/util/Feedback;->show(Landroid/content/Context;Ljava/lang/String;Lcom/google/glass/util/Feedback$RecoveryAction;ZZ[Ljava/lang/String;)V
+    move v5, v3
 
-    .line 31
+    invoke-static/range {v0 .. v6}, Lcom/google/glass/util/Feedback;->show(Landroid/content/Context;Ljava/lang/String;Lcom/google/glass/util/Feedback$RecoveryAction;ZZZ[Ljava/lang/String;)V
+
+    .line 32
     invoke-virtual {p0}, Lcom/google/glass/home/BugReportReceiver;->abortBroadcast()V
 
-    .line 33
+    .line 34
     :cond_0
     return-void
 .end method

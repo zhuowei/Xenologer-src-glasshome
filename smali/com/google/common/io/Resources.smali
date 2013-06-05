@@ -7,16 +7,56 @@
 .annotation build Lcom/google/common/annotations/Beta;
 .end annotation
 
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/common/io/Resources$1;,
+        Lcom/google/common/io/Resources$UrlByteSource;
+    }
+.end annotation
+
 
 # direct methods
 .method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 45
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static asByteSource(Ljava/net/URL;)Lcom/google/common/io/ByteSource;
+    .locals 2
+    .parameter "url"
+
+    .prologue
+    .line 66
+    new-instance v0, Lcom/google/common/io/Resources$UrlByteSource;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, p0, v1}, Lcom/google/common/io/Resources$UrlByteSource;-><init>(Ljava/net/URL;Lcom/google/common/io/Resources$1;)V
+
+    return-object v0
+.end method
+
+.method public static asCharSource(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
+    .locals 1
+    .parameter "url"
+    .parameter "charset"
+
+    .prologue
+    .line 110
+    invoke-static {p0}, Lcom/google/common/io/Resources;->asByteSource(Ljava/net/URL;)Lcom/google/common/io/ByteSource;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->asCharSource(Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public static copy(Ljava/net/URL;Ljava/io/OutputStream;)V
@@ -30,14 +70,14 @@
     .end annotation
 
     .prologue
-    .line 140
-    invoke-static {p0}, Lcom/google/common/io/Resources;->newInputStreamSupplier(Ljava/net/URL;)Lcom/google/common/io/InputSupplier;
+    .line 177
+    invoke-static {p0}, Lcom/google/common/io/Resources;->asByteSource(Ljava/net/URL;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/ByteStreams;->copy(Lcom/google/common/io/InputSupplier;Ljava/io/OutputStream;)J
+    invoke-virtual {v0, p1}, Lcom/google/common/io/ByteSource;->copyTo(Ljava/io/OutputStream;)J
 
-    .line 141
+    .line 178
     return-void
 .end method
 
@@ -62,12 +102,12 @@
 
     const/4 v3, 0x0
 
-    .line 163
+    .line 200
     invoke-virtual {p0, p1}, Ljava/lang/Class;->getResource(Ljava/lang/String;)Ljava/net/URL;
 
     move-result-object v0
 
-    .line 164
+    .line 201
     .local v0, url:Ljava/net/URL;
     if-eqz v0, :cond_0
 
@@ -90,13 +130,13 @@
 
     invoke-static {v1, v4, v5}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 166
+    .line 203
     return-object v0
 
     :cond_0
     move v1, v3
 
-    .line 164
+    .line 201
     goto :goto_0
 .end method
 
@@ -109,7 +149,7 @@
 
     const/4 v3, 0x0
 
-    .line 151
+    .line 188
     const-class v1, Lcom/google/common/io/Resources;
 
     invoke-virtual {v1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
@@ -120,7 +160,7 @@
 
     move-result-object v0
 
-    .line 152
+    .line 189
     .local v0, url:Ljava/net/URL;
     if-eqz v0, :cond_0
 
@@ -135,13 +175,13 @@
 
     invoke-static {v1, v4, v2}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;[Ljava/lang/Object;)V
 
-    .line 153
+    .line 190
     return-object v0
 
     :cond_0
     move v1, v3
 
-    .line 152
+    .line 189
     goto :goto_0
 .end method
 
@@ -161,13 +201,14 @@
     .end annotation
 
     .prologue
-    .line 56
-    invoke-static {p0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 57
-    new-instance v0, Lcom/google/common/io/Resources$1;
+    invoke-static {p0}, Lcom/google/common/io/Resources;->asByteSource(Ljava/net/URL;)Lcom/google/common/io/ByteSource;
 
-    invoke-direct {v0, p0}, Lcom/google/common/io/Resources$1;-><init>(Ljava/net/URL;)V
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->asInputSupplier(Lcom/google/common/io/ByteSource;)Lcom/google/common/io/InputSupplier;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -190,12 +231,12 @@
     .end annotation
 
     .prologue
-    .line 75
-    invoke-static {p0}, Lcom/google/common/io/Resources;->newInputStreamSupplier(Ljava/net/URL;)Lcom/google/common/io/InputSupplier;
+    .line 101
+    invoke-static {p0, p1}, Lcom/google/common/io/Resources;->asCharSource(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Lcom/google/common/io/CharStreams;->newReaderSupplier(Lcom/google/common/io/InputSupplier;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    invoke-static {v0}, Lcom/google/common/io/CharStreams;->asInputSupplier(Lcom/google/common/io/CharSource;)Lcom/google/common/io/InputSupplier;
 
     move-result-object v0
 
@@ -226,7 +267,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 151
     .local p2, callback:Lcom/google/common/io/LineProcessor;,"Lcom/google/common/io/LineProcessor<TT;>;"
     invoke-static {p0, p1}, Lcom/google/common/io/Resources;->newReaderSupplier(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
 
@@ -263,7 +304,7 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 166
     invoke-static {p0, p1}, Lcom/google/common/io/Resources;->newReaderSupplier(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
 
     move-result-object v0
@@ -285,12 +326,12 @@
     .end annotation
 
     .prologue
-    .line 86
-    invoke-static {p0}, Lcom/google/common/io/Resources;->newInputStreamSupplier(Ljava/net/URL;)Lcom/google/common/io/InputSupplier;
+    .line 121
+    invoke-static {p0}, Lcom/google/common/io/Resources;->asByteSource(Ljava/net/URL;)Lcom/google/common/io/ByteSource;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/common/io/ByteStreams;->toByteArray(Lcom/google/common/io/InputSupplier;)[B
+    invoke-virtual {v0}, Lcom/google/common/io/ByteSource;->read()[B
 
     move-result-object v0
 
@@ -308,12 +349,12 @@
     .end annotation
 
     .prologue
-    .line 99
-    invoke-static {p0, p1}, Lcom/google/common/io/Resources;->newReaderSupplier(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/InputSupplier;
+    .line 135
+    invoke-static {p0, p1}, Lcom/google/common/io/Resources;->asCharSource(Ljava/net/URL;Ljava/nio/charset/Charset;)Lcom/google/common/io/CharSource;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/common/io/CharStreams;->toString(Lcom/google/common/io/InputSupplier;)Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/common/io/CharSource;->read()Ljava/lang/String;
 
     move-result-object v0
 

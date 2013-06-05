@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 199
+    .line 149
     iput-object p1, p0, Lcom/google/glass/util/TtsHelper$3;->this$0:Lcom/google/glass/util/TtsHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,13 +41,13 @@
     .locals 1
 
     .prologue
-    .line 202
+    .line 152
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->getSharedInstance()Lcom/google/glass/voice/network/translate/NetworkTts;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/glass/voice/network/translate/NetworkTts;->stopSpeaking()V
 
-    .line 203
+    .line 153
     return-void
 .end method

@@ -16,7 +16,7 @@
 
 .field private final incoming:Landroid/os/Messenger;
 
-.field private final replyableId:J
+.field private final uniqueId:J
 
 
 # direct methods
@@ -70,11 +70,11 @@
     iput-object v2, p0, Lcom/google/glass/logging/CompanionLogReader;->countDownLatch:Ljava/util/concurrent/CountDownLatch;
 
     .line 53
-    invoke-static {}, Lcom/google/glass/companion/CompanionMessagingUtil;->getNextUniqueReplyableId()J
+    invoke-static {}, Lcom/google/glass/companion/CompanionMessagingUtil;->getNextUniqueId()J
 
     move-result-wide v2
 
-    iput-wide v2, p0, Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    iput-wide v2, p0, Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
 
     .line 54
     sget-object v2, Lcom/google/glass/logging/CompanionLogReader;->TAG:Ljava/lang/String;
@@ -89,7 +89,7 @@
 
     move-result-object v3
 
-    iget-wide v4, p0, Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    iget-wide v4, p0, Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
 
     invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -110,7 +110,7 @@
 
     move-result-object v3
 
-    iget-wide v4, p0, Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    iget-wide v4, p0, Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
 
     invoke-virtual {v3, v4, v5}, Lcom/google/glass/companion/Proto$CompanionInfo$Builder;->setId(J)Lcom/google/glass/companion/Proto$CompanionInfo$Builder;
 
@@ -136,34 +136,25 @@
 
     invoke-virtual {v2}, Lcom/google/glass/companion/Proto$Envelope$Builder;->build()Lcom/google/glass/companion/Proto$Envelope;
 
-    move-result-object v0
-
-    .line 62
-    .local v0, envelope:Lcom/google/glass/companion/Proto$Envelope;
-    iget-wide v2, p0, Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
-
-    invoke-static {v2, v3, v0}, Lcom/google/glass/companion/CompanionMessagingUtil;->createRequestMessage(JLcom/google/glass/companion/Proto$Envelope;)Landroid/os/Message;
-
     move-result-object v1
 
-    .line 63
-    .local v1, message:Landroid/os/Message;
+    .line 62
+    .local v1, envelope:Lcom/google/glass/companion/Proto$Envelope;
     iget-object v2, p0, Lcom/google/glass/logging/CompanionLogReader;->incoming:Landroid/os/Messenger;
 
-    iput-object v2, v1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
+    invoke-static {v1, v2}, Lcom/google/glass/companion/CompanionMessagingUtil;->createBundle(Lcom/google/glass/companion/Proto$Envelope;Landroid/os/Messenger;)Landroid/os/Bundle;
 
-    .line 64
+    move-result-object v0
+
+    .line 63
+    .local v0, bundle:Landroid/os/Bundle;
     invoke-static {p1}, Lcom/google/glass/logging/LoggingApplication;->from(Landroid/content/Context;)Lcom/google/glass/logging/LoggingApplication;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/glass/logging/LoggingApplication;->getCompanionMessenger()Lcom/google/glass/util/RemoteMessenger;
+    invoke-virtual {v2, v0}, Lcom/google/glass/logging/LoggingApplication;->sendBundleToCompanion(Landroid/os/Bundle;)V
 
-    move-result-object v2
-
-    invoke-virtual {v2, v1}, Lcom/google/glass/util/RemoteMessenger;->sendMessage(Landroid/os/Message;)V
-
-    .line 65
+    .line 64
     return-void
 .end method
 
@@ -183,7 +174,7 @@
 
     .prologue
     .line 19
-    iget-wide v0, p0, Lcom/google/glass/logging/CompanionLogReader;->replyableId:J
+    iget-wide v0, p0, Lcom/google/glass/logging/CompanionLogReader;->uniqueId:J
 
     return-wide v0
 .end method
@@ -217,7 +208,7 @@
     .locals 7
 
     .prologue
-    .line 72
+    .line 71
     :try_start_0
     sget-object v2, Lcom/google/glass/logging/CompanionLogReader;->TAG:Ljava/lang/String;
 
@@ -258,23 +249,23 @@
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 77
+    .line 76
     :goto_1
     iget-object v1, p0, Lcom/google/glass/logging/CompanionLogReader;->companionLog:Ljava/lang/String;
 
     return-object v1
 
-    .line 72
+    .line 71
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 74
+    .line 73
     :catch_0
     move-exception v0
 
-    .line 75
+    .line 74
     .local v0, e:Ljava/lang/InterruptedException;
     sget-object v1, Lcom/google/glass/logging/CompanionLogReader;->TAG:Ljava/lang/String;
 

@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 589
+    .line 649
     iput-object p1, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     iput-object p2, p0, Lcom/google/common/collect/Sets$1;->val$set2minus1:Ljava/util/Set;
@@ -58,7 +58,7 @@
     .parameter "object"
 
     .prologue
-    .line 601
+    .line 668
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -99,18 +99,18 @@
     .end annotation
 
     .prologue
-    .line 604
+    .line 673
     .local p1, set:Ljava/util/Set;,"TS;"
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 605
+    .line 674
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set2:Ljava/util/Set;
 
     invoke-interface {p1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 606
+    .line 675
     return-object p1
 .end method
 
@@ -125,7 +125,7 @@
     .end annotation
 
     .prologue
-    .line 609
+    .line 680
     new-instance v0, Lcom/google/common/collect/ImmutableSet$Builder;
 
     invoke-direct {v0}, Lcom/google/common/collect/ImmutableSet$Builder;-><init>()V
@@ -153,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 594
+    .line 657
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
@@ -192,7 +192,7 @@
     .end annotation
 
     .prologue
-    .line 597
+    .line 662
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -220,7 +220,7 @@
     .locals 2
 
     .prologue
-    .line 591
+    .line 652
     iget-object v0, p0, Lcom/google/common/collect/Sets$1;->val$set1:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I

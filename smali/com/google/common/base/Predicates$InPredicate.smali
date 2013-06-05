@@ -58,12 +58,12 @@
     .end annotation
 
     .prologue
-    .line 484
+    .line 522
     .local p0, this:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     .local p1, target:Ljava/util/Collection;,"Ljava/util/Collection<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 485
+    .line 523
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 
     iput-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
-    .line 486
+    .line 524
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .parameter "x1"
 
     .prologue
-    .line 481
+    .line 519
     .local p0, this:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     invoke-direct {p0, p1}, Lcom/google/common/base/Predicates$InPredicate;-><init>(Ljava/util/Collection;)V
 
@@ -94,6 +94,9 @@
 .method public apply(Ljava/lang/Object;)Z
     .locals 3
     .parameter
+        .annotation runtime Ljavax/annotation/Nullable;
+        .end annotation
+    .end parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -105,7 +108,7 @@
     .local p1, t:Ljava/lang/Object;,"TT;"
     const/4 v1, 0x0
 
-    .line 491
+    .line 528
     :try_start_0
     iget-object v2, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
@@ -116,24 +119,24 @@
 
     move-result v1
 
-    .line 495
+    .line 532
     :goto_0
     return v1
 
-    .line 492
+    .line 529
     :catch_0
     move-exception v0
 
-    .line 493
+    .line 530
     .local v0, e:Ljava/lang/NullPointerException;
     goto :goto_0
 
-    .line 494
+    .line 531
     .end local v0           #e:Ljava/lang/NullPointerException;
     :catch_1
     move-exception v0
 
-    .line 495
+    .line 532
     .local v0, e:Ljava/lang/ClassCastException;
     goto :goto_0
 .end method
@@ -146,7 +149,7 @@
     .end parameter
 
     .prologue
-    .line 500
+    .line 538
     .local p0, this:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     instance-of v1, p1, Lcom/google/common/base/Predicates$InPredicate;
 
@@ -154,10 +157,10 @@
 
     move-object v0, p1
 
-    .line 501
+    .line 539
     check-cast v0, Lcom/google/common/base/Predicates$InPredicate;
 
-    .line 502
+    .line 540
     .local v0, that:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<*>;"
     iget-object v1, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
@@ -167,7 +170,7 @@
 
     move-result v1
 
-    .line 504
+    .line 542
     .end local v0           #that:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<*>;"
     :goto_0
     return v1
@@ -182,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 508
+    .line 547
     .local p0, this:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     iget-object v0, p0, Lcom/google/common/base/Predicates$InPredicate;->target:Ljava/util/Collection;
 
@@ -197,7 +200,7 @@
     .locals 2
 
     .prologue
-    .line 512
+    .line 552
     .local p0, this:Lcom/google/common/base/Predicates$InPredicate;,"Lcom/google/common/base/Predicates$InPredicate<TT;>;"
     new-instance v0, Ljava/lang/StringBuilder;
 

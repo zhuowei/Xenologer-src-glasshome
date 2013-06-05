@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 536
+    .line 549
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineHelper$5;->val$update:Lcom/google/glass/timeline/TimelineHelper$Update;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 539
+    .line 552
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineHelper$5;->val$update:Lcom/google/glass/timeline/TimelineHelper$Update;
 
     invoke-static {v0}, Lcom/google/glass/timeline/TimelineHelper;->atomicUpdateTimelineItem(Lcom/google/glass/timeline/TimelineHelper$Update;)V
 
-    .line 540
+    .line 553
     return-void
 .end method

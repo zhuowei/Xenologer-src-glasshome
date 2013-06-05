@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 1087
+    .line 1106
     iput-object p1, p0, Lcom/google/common/collect/Iterators$13;->val$value:Ljava/lang/Object;
 
     invoke-direct {p0}, Lcom/google/common/collect/UnmodifiableIterator;-><init>()V
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 1091
+    .line 1110
     iget-boolean v0, p0, Lcom/google/common/collect/Iterators$13;->done:Z
 
     if-nez v0, :cond_0
@@ -72,25 +72,25 @@
     .end annotation
 
     .prologue
-    .line 1095
+    .line 1114
     iget-boolean v0, p0, Lcom/google/common/collect/Iterators$13;->done:Z
 
     if-eqz v0, :cond_0
 
-    .line 1096
+    .line 1115
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw v0
 
-    .line 1098
+    .line 1117
     :cond_0
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/common/collect/Iterators$13;->done:Z
 
-    .line 1099
+    .line 1118
     iget-object v0, p0, Lcom/google/common/collect/Iterators$13;->val$value:Ljava/lang/Object;
 
     return-object v0

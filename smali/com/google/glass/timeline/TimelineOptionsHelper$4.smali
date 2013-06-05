@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 777
+    .line 792
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$4;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$4;->val$itemSourceId:Ljava/lang/String;
@@ -57,7 +57,7 @@
     .parameter "item"
 
     .prologue
-    .line 780
+    .line 795
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$4;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->userEventHelper:Lcom/google/glass/logging/UserEventHelper;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 782
+    .line 797
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$4;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
@@ -94,17 +94,17 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/timeline/TimelineHelper;->deleteTimelineItemAsync(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 783
+    .line 798
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$4;->val$deletedListener:Lcom/google/glass/timeline/TimelineOptionsHelper$TimelineItemDeletedListener;
 
     if-eqz v0, :cond_0
 
-    .line 784
+    .line 799
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$4;->val$deletedListener:Lcom/google/glass/timeline/TimelineOptionsHelper$TimelineItemDeletedListener;
 
     invoke-interface {v0}, Lcom/google/glass/timeline/TimelineOptionsHelper$TimelineItemDeletedListener;->onDeleted()V
 
-    .line 786
+    .line 801
     :cond_0
     return-void
 .end method

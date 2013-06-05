@@ -57,7 +57,7 @@
 
     const/4 v4, 0x0
 
-    .line 36
+    .line 37
     new-instance v0, Lcom/google/glass/util/Feedback$RecoveryAction;
 
     const-string v1, "SHOULD_SHUTDOWN"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/glass/util/Feedback$RecoveryAction;->SHOULD_SHUTDOWN:Lcom/google/glass/util/Feedback$RecoveryAction;
 
-    .line 37
+    .line 38
     new-instance v0, Lcom/google/glass/util/Feedback$RecoveryAction;
 
     const-string v1, "SHOULD_REBOOT"
@@ -95,7 +95,7 @@
 
     sput-object v0, Lcom/google/glass/util/Feedback$RecoveryAction;->SHOULD_REBOOT:Lcom/google/glass/util/Feedback$RecoveryAction;
 
-    .line 38
+    .line 39
     new-instance v0, Lcom/google/glass/util/Feedback$RecoveryAction;
 
     const-string v1, "SHOULD_CONTINUE"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/google/glass/util/Feedback$RecoveryAction;->SHOULD_CONTINUE:Lcom/google/glass/util/Feedback$RecoveryAction;
 
-    .line 35
+    .line 36
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/util/Feedback$RecoveryAction;
@@ -146,10 +146,10 @@
     .end annotation
 
     .prologue
-    .line 46
+    .line 47
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 47
+    .line 48
     invoke-static {p3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Lcom/google/glass/util/Feedback$RecoveryAction;->buildTypes:Ljava/util/Set;
 
-    .line 48
+    .line 49
     return-void
 .end method
 
@@ -169,7 +169,7 @@
     .parameter "name"
 
     .prologue
-    .line 35
+    .line 36
     const-class v0, Lcom/google/glass/util/Feedback$RecoveryAction;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -185,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 35
+    .line 36
     sget-object v0, Lcom/google/glass/util/Feedback$RecoveryAction;->$VALUES:[Lcom/google/glass/util/Feedback$RecoveryAction;
 
     invoke-virtual {v0}, [Lcom/google/glass/util/Feedback$RecoveryAction;->clone()Ljava/lang/Object;

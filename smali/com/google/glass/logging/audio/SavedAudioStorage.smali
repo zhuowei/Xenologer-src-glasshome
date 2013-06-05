@@ -661,6 +661,7 @@
 
     add-long/2addr v2, v4
 
+    .line 297
     goto :goto_0
 
     .line 298

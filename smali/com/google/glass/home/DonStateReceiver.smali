@@ -4,25 +4,19 @@
 
 
 # static fields
-.field private static final INVALID_TIMESTAMP:J = -0x1L
-
 .field public static final SOUND_ID_DONNED_OFF:Lcom/google/glass/sound/SoundManager$SoundId;
 
 .field public static final SOUND_ID_DONNED_ON:Lcom/google/glass/sound/SoundManager$SoundId;
 
 .field private static final TAG:Ljava/lang/String;
 
-.field private static donnedTimestamp:J
-
-.field private static gotFirstBroadcast:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 21
+    .line 20
     const-class v0, Lcom/google/glass/home/DonStateReceiver;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -31,25 +25,15 @@
 
     sput-object v0, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 
-    .line 24
+    .line 23
     sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->DON:Lcom/google/glass/sound/SoundManager$SoundId;
 
     sput-object v0, Lcom/google/glass/home/DonStateReceiver;->SOUND_ID_DONNED_ON:Lcom/google/glass/sound/SoundManager$SoundId;
 
-    .line 27
+    .line 26
     sget-object v0, Lcom/google/glass/sound/SoundManager$SoundId;->DOFF:Lcom/google/glass/sound/SoundManager$SoundId;
 
     sput-object v0, Lcom/google/glass/home/DonStateReceiver;->SOUND_ID_DONNED_OFF:Lcom/google/glass/sound/SoundManager$SoundId;
-
-    .line 33
-    const-wide/16 v0, -0x1
-
-    sput-wide v0, Lcom/google/glass/home/DonStateReceiver;->donnedTimestamp:J
-
-    .line 36
-    const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/google/glass/home/DonStateReceiver;->gotFirstBroadcast:Z
 
     return-void
 .end method
@@ -58,7 +42,7 @@
     .locals 0
 
     .prologue
-    .line 20
+    .line 19
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
 
     return-void
@@ -70,12 +54,12 @@
     .parameter "donTimeMs"
 
     .prologue
-    .line 125
+    .line 114
     invoke-static {p1}, Lcom/google/glass/home/DonStateReceiver;->isDonDetectorEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 126
+    .line 115
     .local v0, isOhdActive:Z
     const-string v2, "ohd_active"
 
@@ -119,12 +103,12 @@
     .parameter "context"
 
     .prologue
-    .line 119
+    .line 108
     invoke-static {p1}, Lcom/google/glass/home/DonStateReceiver;->isDonDetectorEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 120
+    .line 109
     .local v0, isOhdActive:Z
     const-string v2, "ohd_active"
 
@@ -154,7 +138,7 @@
     .parameter "context"
 
     .prologue
-    .line 178
+    .line 152
     invoke-static {p0}, Lcom/google/glass/util/HiddenApiHelper;->isDonDoffDetectorEnabled(Landroid/content/Context;)Z
 
     move-result v0
@@ -162,93 +146,51 @@
     return v0
 .end method
 
-.method private logDoffedUserEvent(Landroid/content/Context;)V
-    .locals 8
+.method private logDoffedUserEvent(Landroid/content/Context;J)V
+    .locals 3
     .parameter "context"
+    .parameter "timeDonnedMillis"
 
     .prologue
-    const-wide/16 v6, -0x1
+    .line 139
+    sget-object v0, Lcom/google/glass/logging/UserEventAction;->DOFFED:Lcom/google/glass/logging/UserEventAction;
 
-    .line 153
-    const-wide/16 v0, 0x0
+    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/DonStateReceiver;->getDoffedEventTuple(Landroid/content/Context;J)Ljava/lang/String;
 
-    .line 156
-    .local v0, timeDonnedMillis:J
-    sget-wide v2, Lcom/google/glass/home/DonStateReceiver;->donnedTimestamp:J
+    move-result-object v1
 
-    cmp-long v2, v2, v6
+    invoke-virtual {p0, p1, v0, v1}, Lcom/google/glass/home/DonStateReceiver;->logUserEvent(Landroid/content/Context;Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    if-eqz v2, :cond_0
-
-    .line 157
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v2
-
-    sget-wide v4, Lcom/google/glass/home/DonStateReceiver;->donnedTimestamp:J
-
-    sub-long v0, v2, v4
-
-    .line 158
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-gez v2, :cond_0
-
-    .line 159
-    sget-object v2, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
-
-    const-string v3, "Error: donned time was negative?  Logging 0 for the user event."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 160
-    const-wide/16 v0, 0x0
-
-    .line 164
-    :cond_0
-    sput-wide v6, Lcom/google/glass/home/DonStateReceiver;->donnedTimestamp:J
-
-    .line 165
-    sget-object v2, Lcom/google/glass/logging/UserEventAction;->DOFFED:Lcom/google/glass/logging/UserEventAction;
-
-    invoke-direct {p0, p1, v0, v1}, Lcom/google/glass/home/DonStateReceiver;->getDoffedEventTuple(Landroid/content/Context;J)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p0, p1, v2, v3}, Lcom/google/glass/home/DonStateReceiver;->logUserEvent(Landroid/content/Context;Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
-
-    .line 166
+    .line 140
     invoke-virtual {p0}, Lcom/google/glass/home/DonStateReceiver;->getTag()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Logging doffed user event with donned time ms = "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v1
 
-    const-string v4, "Logging doffed user event with donned time ms = "
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 168
+    .line 142
     return-void
 .end method
 
@@ -257,12 +199,12 @@
     .parameter "context"
 
     .prologue
-    .line 107
+    .line 96
     invoke-static {p0}, Lcom/google/glass/home/DonStateReceiver;->isDonDetectorEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 108
+    .line 97
     .local v0, detectorEnabled:Z
     invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
@@ -272,27 +214,27 @@
 
     move-result-object v1
 
-    .line 109
+    .line 98
     .local v1, userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     if-eqz v0, :cond_0
 
-    .line 110
+    .line 99
     sget-object v2, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 
     const-string v3, "Logging user event for DON_DETECTOR_ENABLED."
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
+    .line 100
     sget-object v2, Lcom/google/glass/logging/UserEventAction;->DON_DETECTOR_ENABLED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
 
-    .line 116
+    .line 105
     :goto_0
     return-void
 
-    .line 113
+    .line 102
     :cond_0
     sget-object v2, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 
@@ -300,7 +242,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
+    .line 103
     sget-object v2, Lcom/google/glass/logging/UserEventAction;->DON_DETECTOR_DISABLED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;)V
@@ -309,30 +251,34 @@
 .end method
 
 .method private logDonStateChanged(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 1
+    .locals 3
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 93
+    .line 82
     invoke-static {p2}, Lcom/google/glass/hidden/DonState;->isDonned(Landroid/content/Intent;)Z
 
     move-result v0
 
-    .line 94
+    .line 83
     .local v0, isDonned:Z
     if-eqz v0, :cond_0
 
-    .line 95
+    .line 84
     invoke-direct {p0, p1}, Lcom/google/glass/home/DonStateReceiver;->logDonnedUserEvent(Landroid/content/Context;)V
 
-    .line 99
+    .line 88
     :goto_0
     return-void
 
-    .line 97
+    .line 86
     :cond_0
-    invoke-direct {p0, p1}, Lcom/google/glass/home/DonStateReceiver;->logDoffedUserEvent(Landroid/content/Context;)V
+    invoke-static {p2}, Lcom/google/glass/hidden/DonState;->getMillisSinceLastDonStateEvent(Landroid/content/Intent;)J
+
+    move-result-wide v1
+
+    invoke-direct {p0, p1, v1, v2}, Lcom/google/glass/home/DonStateReceiver;->logDoffedUserEvent(Landroid/content/Context;J)V
 
     goto :goto_0
 .end method
@@ -342,19 +288,12 @@
     .parameter "context"
 
     .prologue
-    .line 138
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v1
-
-    sput-wide v1, Lcom/google/glass/home/DonStateReceiver;->donnedTimestamp:J
-
-    .line 139
+    .line 126
     invoke-static {p1}, Lcom/google/glass/home/DonStateReceiver;->isDonDetectorEnabled(Landroid/content/Context;)Z
 
     move-result v0
 
-    .line 140
+    .line 127
     .local v0, detectorEnabled:Z
     invoke-virtual {p0}, Lcom/google/glass/home/DonStateReceiver;->getTag()Ljava/lang/String;
 
@@ -380,7 +319,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 142
+    .line 129
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->DONNED:Lcom/google/glass/logging/UserEventAction;
 
     invoke-direct {p0, p1}, Lcom/google/glass/home/DonStateReceiver;->getDonnedEventTuple(Landroid/content/Context;)Ljava/lang/String;
@@ -389,14 +328,14 @@
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/google/glass/home/DonStateReceiver;->logUserEvent(Landroid/content/Context;Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 143
+    .line 130
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->USER_INITIATED_SCREEN_ON:Lcom/google/glass/logging/UserEventAction;
 
     const-string v2, "11"
 
     invoke-virtual {p0, p1, v1, v2}, Lcom/google/glass/home/DonStateReceiver;->logUserEvent(Landroid/content/Context;Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 144
+    .line 131
     return-void
 .end method
 
@@ -406,12 +345,14 @@
     .parameter "intent"
 
     .prologue
-    .line 80
-    sget-boolean v1, Lcom/google/glass/home/DonStateReceiver;->gotFirstBroadcast:Z
+    .line 69
+    invoke-static {p2}, Lcom/google/glass/hidden/DonState;->isFirstEvent(Landroid/content/Intent;)Z
 
-    if-eqz v1, :cond_0
+    move-result v1
 
-    .line 81
+    if-nez v1, :cond_0
+
+    .line 70
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/home/DonStateReceiver;->checkDonnedState(Landroid/content/Context;Landroid/content/Intent;)Z
 
     move-result v1
@@ -420,7 +361,7 @@
 
     move-result-object v0
 
-    .line 82
+    .line 71
     .local v0, idToPlay:Lcom/google/glass/sound/SoundManager$SoundId;
     invoke-static {p1}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
@@ -432,7 +373,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 84
+    .line 73
     .end local v0           #idToPlay:Lcom/google/glass/sound/SoundManager$SoundId;
     :cond_0
     return-void
@@ -448,12 +389,12 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 45
     invoke-static {p2}, Lcom/google/glass/hidden/DonState;->isDonned(Landroid/content/Intent;)Z
 
     move-result v0
 
-    .line 57
+    .line 46
     .local v0, isDonned:Z
     sget-object v1, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 
@@ -477,7 +418,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 58
+    .line 47
     return v0
 .end method
 
@@ -488,7 +429,7 @@
     .end annotation
 
     .prologue
-    .line 64
+    .line 53
     if-eqz p1, :cond_0
 
     sget-object v0, Lcom/google/glass/home/DonStateReceiver;->SOUND_ID_DONNED_ON:Lcom/google/glass/sound/SoundManager$SoundId;
@@ -506,7 +447,7 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 58
     sget-object v0, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -518,12 +459,12 @@
     .parameter "intent"
 
     .prologue
-    .line 40
+    .line 30
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 41
+    .line 31
     .local v0, action:Ljava/lang/String;
     const-string v1, "com.google.glass.action.DON_STATE"
 
@@ -533,7 +474,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 44
+    .line 34
     sget-object v1, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -556,22 +497,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 45
+    .line 35
     invoke-direct {p0, p1, p2}, Lcom/google/glass/home/DonStateReceiver;->playSoundForDonStateChange(Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 46
+    .line 36
     invoke-direct {p0, p1, p2}, Lcom/google/glass/home/DonStateReceiver;->logDonStateChanged(Landroid/content/Context;Landroid/content/Intent;)V
 
-    .line 47
-    const/4 v1, 0x1
-
-    sput-boolean v1, Lcom/google/glass/home/DonStateReceiver;->gotFirstBroadcast:Z
-
-    .line 51
+    .line 40
     :goto_0
     return-void
 
-    .line 49
+    .line 38
     :cond_0
     sget-object v1, Lcom/google/glass/home/DonStateReceiver;->TAG:Ljava/lang/String;
 

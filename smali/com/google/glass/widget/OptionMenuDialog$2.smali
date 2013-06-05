@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 121
+    .line 122
     iput-object p1, p0, Lcom/google/glass/widget/OptionMenuDialog$2;->this$0:Lcom/google/glass/widget/OptionMenuDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "dialog"
 
     .prologue
-    .line 124
+    .line 125
     iget-object v0, p0, Lcom/google/glass/widget/OptionMenuDialog$2;->this$0:Lcom/google/glass/widget/OptionMenuDialog;
 
     #getter for: Lcom/google/glass/widget/OptionMenuDialog;->listener:Lcom/google/glass/widget/OptionMenuDialog$Listener;
@@ -52,6 +52,6 @@
 
     invoke-interface {v0}, Lcom/google/glass/widget/OptionMenuDialog$Listener;->onClosed()V
 
-    .line 125
+    .line 126
     return-void
 .end method

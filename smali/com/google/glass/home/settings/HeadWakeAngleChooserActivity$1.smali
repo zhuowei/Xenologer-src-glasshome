@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 185
+    .line 180
     iput-object p1, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity$1;->this$0:Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;
 
     invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
@@ -38,11 +38,11 @@
     .locals 1
 
     .prologue
-    .line 189
+    .line 184
     iget-object v0, p0, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity$1;->this$0:Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/settings/HeadWakeAngleChooserActivity;->finish()V
 
-    .line 190
+    .line 185
     return-void
 .end method
