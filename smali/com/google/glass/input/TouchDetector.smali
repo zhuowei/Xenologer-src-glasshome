@@ -692,7 +692,8 @@
 
     move-result v1
 
-    const v2, 0x100008
+    #const v2, 0x100008 # SOURCE_CLASS_TOUCHPAD
+    const v2, 0x2 # SOURCE_CLASS_POINTER
 
     and-int/2addr v1, v2
 
