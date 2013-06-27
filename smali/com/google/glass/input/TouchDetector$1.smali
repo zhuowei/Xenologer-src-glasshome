@@ -485,7 +485,7 @@
     .line 160
     iget v0, p0, Lcom/google/glass/input/TouchDetector$1;->totalDistanceX:F
 
-    sub-float/2addr v0, p3
+    add-float/2addr v0, p3
 
     iput v0, p0, Lcom/google/glass/input/TouchDetector$1;->totalDistanceX:F
 
