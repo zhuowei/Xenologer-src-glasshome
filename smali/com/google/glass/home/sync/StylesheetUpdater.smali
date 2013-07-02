@@ -335,310 +335,122 @@
 .end method
 
 .method private writeStylesheet([BJ)V
-    .locals 6
-    .parameter "data"
-    .parameter "fingerprint"
-
-    .prologue
-    .line 115
-    :try_start_0
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->writeLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v3}, Ljava/util/concurrent/locks/Lock;->lock()V
-
-    .line 120
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 121
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    .line 122
-    sget-object v3, Lcom/google/glass/home/sync/StylesheetUpdater;->TAG:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Unable to create directory: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 137
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->writeLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v3}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    .line 139
-    :goto_0
+    .locals 9
     return-void
-
-    .line 128
-    :cond_0
-    :try_start_1
-    new-instance v2, Ljava/io/File;
-
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    const-string v4, "base_style.css.tmp"
-
-    invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 129
-    .local v2, stylesheetTempFile:Ljava/io/File;
-    new-instance v1, Ljava/io/File;
-
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    const-string v4, "base_style.css.fingerprint.tmp"
-
-    invoke-direct {v1, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 130
-    .local v1, fingerprintTempFile:Ljava/io/File;
-    invoke-static {p1, v2}, Lcom/google/common/io/Files;->write([BLjava/io/File;)V
-
-    .line 131
-    invoke-static {p2, p3}, Lcom/google/common/primitives/Longs;->toByteArray(J)[B
-
-    move-result-object v3
-
-    invoke-static {v3, v1}, Lcom/google/common/io/Files;->write([BLjava/io/File;)V
-
-    .line 132
-    new-instance v3, Ljava/io/File;
-
-    iget-object v4, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    const-string v5, "base_style.css"
-
-    invoke-direct {v3, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v2, v3}, Lcom/google/common/io/Files;->move(Ljava/io/File;Ljava/io/File;)V
-
-    .line 133
-    new-instance v3, Ljava/io/File;
-
-    iget-object v4, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->baseDir:Ljava/io/File;
-
-    const-string v5, "base_style.css.fingerprint"
-
-    invoke-direct {v3, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v1, v3}, Lcom/google/common/io/Files;->move(Ljava/io/File;Ljava/io/File;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-
-    .line 137
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->writeLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v3}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    goto :goto_0
-
-    .line 134
-    .end local v1           #fingerprintTempFile:Ljava/io/File;
-    .end local v2           #stylesheetTempFile:Ljava/io/File;
-    :catch_0
-    move-exception v0
-
-    .line 135
-    .local v0, e:Ljava/io/IOException;
-    :try_start_2
-    sget-object v3, Lcom/google/glass/home/sync/StylesheetUpdater;->TAG:Ljava/lang/String;
-
-    const-string v4, "Error writing to cache"
-
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 137
-    iget-object v3, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->writeLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v3}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    goto :goto_0
-
-    .end local v0           #e:Ljava/io/IOException;
-    :catchall_0
-    move-exception v3
-
-    iget-object v4, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->writeLock:Ljava/util/concurrent/locks/Lock;
-
-    invoke-interface {v4}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    throw v3
 .end method
 
 
 # virtual methods
 .method public checkForUpdates()V
-    .locals 12
+    .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
 
     .prologue
-    .line 58
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
+    .line 20
+    :try_start_0
+    new-instance v0, Ljava/io/File;
 
-    .line 60
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+    iget-object v7, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->application:Lcom/google/glass/home/HomeApplication;
 
-    move-result-wide v3
+    invoke-virtual {v7}, Landroid/app/Application;->getFilesDir()Ljava/io/File;
 
-    iget-wide v10, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->lastUpdateElapsedRealtime:J
+    move-result-object v7
 
-    sub-long v8, v3, v10
+    const-string v8, "stylesheets"
 
-    .line 61
-    .local v8, msSinceLastUpdate:J
-    sget-wide v3, Lcom/google/glass/home/sync/StylesheetUpdater;->MIN_UPDATE_INTERVAL_MS:J
+    invoke-direct {v0, v7, v8}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    cmp-long v1, v8, v3
+    .line 21
+    .local v0, baseDir:Ljava/io/File;
+    new-instance v2, Ljava/io/File;
 
-    if-gez v1, :cond_0
+    const-string v7, "base_style2.css"
 
-    .line 62
-    sget-object v1, Lcom/google/glass/home/sync/StylesheetUpdater;->TAG:Ljava/lang/String;
+    invoke-direct {v2, v0, v7}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 22
+    .local v2, cssFile:Ljava/io/File;
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v7
 
-    const-string v4, "Skipping update, last update was "
+    if-eqz v7, :cond_0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-wide/16 v4, 0x3e8
-
-    div-long v4, v8, v4
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, " sec ago"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 92
+    .line 36
+    .end local v0           #baseDir:Ljava/io/File;
+    .end local v2           #cssFile:Ljava/io/File;
     :goto_0
     return-void
 
-    .line 66
+    .line 23
+    .restart local v0       #baseDir:Ljava/io/File;
+    .restart local v2       #cssFile:Ljava/io/File;
     :cond_0
-    invoke-direct {p0}, Lcom/google/glass/home/sync/StylesheetUpdater;->getFingerprint()J
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    move-result-wide v6
+    .line 24
+    iget-object v7, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->application:Lcom/google/glass/home/HomeApplication;
 
-    .line 67
-    .local v6, fingerprint:J
-    sget-object v1, Lcom/google/glass/home/sync/StylesheetUpdater;->TAG:Ljava/lang/String;
+    invoke-virtual {v7}, Landroid/app/Application;->getAssets()Landroid/content/res/AssetManager;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v7
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v8, "base_style.css"
 
-    const-string v4, "Checking for stylesheet update, fingerprint="
+    invoke-virtual {v7, v8}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    move-result-object v3
+    .line 25
+    .local v4, input:Ljava/io/InputStream;
+    invoke-virtual {v4}, Ljava/io/InputStream;->available()I
 
-    invoke-virtual {v3, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    move-result v6
 
-    move-result-object v3
+    .line 26
+    .local v6, size:I
+    new-array v1, v6, [B
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 27
+    .local v1, buffer:[B
+    invoke-virtual {v4, v1}, Ljava/io/InputStream;->read([B)I
 
-    move-result-object v3
+    .line 28
+    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
 
-    invoke-static {v1, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    .line 29
+    new-instance v5, Ljava/io/FileOutputStream;
 
-    .line 68
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/ResourceRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;
+    invoke-direct {v5, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    move-result-object v1
+    .line 30
+    .local v5, output:Ljava/io/FileOutputStream;
+    invoke-virtual {v5, v1}, Ljava/io/FileOutputStream;->write([B)V
 
-    sget-object v3, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->STYLESHEET:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+    .line 31
+    invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    invoke-virtual {v1, v3}, Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;->setType(Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;)Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;
+    goto :goto_0
 
-    move-result-object v1
+    .line 32
+    .end local v0           #baseDir:Ljava/io/File;
+    .end local v1           #buffer:[B
+    .end local v2           #cssFile:Ljava/io/File;
+    .end local v4           #input:Ljava/io/InputStream;
+    .end local v5           #output:Ljava/io/FileOutputStream;
+    .end local v6           #size:I
+    :catch_0
+    move-exception v3
 
-    const-string v3, "base_style.css"
-
-    invoke-virtual {v1, v3}, Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;->setName(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v6, v7}, Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;->setFingerprint(J)Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/ResourceRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/ResourceRequest;
-
-    move-result-object v2
-
-    .line 74
-    .local v2, request:Lcom/google/googlex/glass/common/proto/ResourceRequest;
-    iget-object v1, p0, Lcom/google/glass/home/sync/StylesheetUpdater;->application:Lcom/google/glass/home/HomeApplication;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->getRequestDispatcher()Lcom/google/glass/net/ProtoRequestDispatcher;
-
-    move-result-object v0
-
-    .line 75
-    .local v0, dispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
-    sget-object v1, Lcom/google/glass/net/ServerConstants$Action;->RESOURCE:Lcom/google/glass/net/ServerConstants$Action;
-
-    const/4 v3, 0x1
-
-    sget-object v4, Lcom/google/googlex/glass/common/proto/ResourceResponse;->PARSER:Lcom/google/protobuf/Parser;
-
-    new-instance v5, Lcom/google/glass/home/sync/StylesheetUpdater$1;
-
-    invoke-direct {v5, p0}, Lcom/google/glass/home/sync/StylesheetUpdater$1;-><init>(Lcom/google/glass/home/sync/StylesheetUpdater;)V
-
-    invoke-virtual/range {v0 .. v5}, Lcom/google/glass/net/ProtoRequestDispatcher;->dispatch(Lcom/google/glass/net/ServerConstants$Action;Lcom/google/protobuf/AbstractMessage;ZLcom/google/protobuf/Parser;Lcom/google/glass/net/ProtoResponseHandler;)Z
+    .line 33
+    .local v3, e:Ljava/lang/Exception;
+    invoke-virtual {v3}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method

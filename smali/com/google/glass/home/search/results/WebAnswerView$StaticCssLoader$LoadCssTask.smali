@@ -102,7 +102,7 @@
 
     move-result-object v2
 
-    const-string v3, "stylesheets/base_style.css"
+    const-string v3, "stylesheets/base_style2.css"
 
     invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
