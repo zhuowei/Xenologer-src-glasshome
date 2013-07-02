@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 379
+    .line 442
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->this$0:Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->val$db:Landroid/database/sqlite/SQLiteDatabase;
@@ -48,7 +48,7 @@
     .parameter "orderBy"
 
     .prologue
-    .line 405
+    .line 468
     invoke-static {}, Lcom/google/glass/timeline/TimelineProvider;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -75,7 +75,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
+    .line 469
     const/4 v3, 0x0
 
     const/4 v5, 0x0
@@ -96,11 +96,11 @@
 
     move-result-object v10
 
-    .line 407
+    .line 470
     .local v10, cursor:Landroid/database/Cursor;
     if-nez v10, :cond_1
 
-    .line 408
+    .line 471
     invoke-static {}, Lcom/google/glass/timeline/TimelineProvider;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -109,35 +109,35 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 439
+    .line 502
     :cond_0
     :goto_0
     return-void
 
-    .line 412
+    .line 475
     :cond_1
     :try_start_0
     new-instance v12, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v12}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
 
-    .line 413
+    .line 476
     .local v12, timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
     new-instance v11, Ljava/util/ArrayList;
 
     invoke-direct {v11}, Ljava/util/ArrayList;-><init>()V
 
-    .line 417
+    .line 480
     .local v11, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     const/4 v9, 0x0
 
-    .line 418
+    .line 481
     .local v9, count:I
     invoke-interface {v10}, Landroid/database/Cursor;->getCount()I
 
     move-result v13
 
-    .line 419
+    .line 482
     .local v13, total:I
     :cond_2
     :goto_1
@@ -147,17 +147,17 @@
 
     if-eqz v1, :cond_4
 
-    .line 420
+    .line 483
     invoke-static {v10}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v1
 
     invoke-interface {v11, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 421
+    .line 484
     add-int/lit8 v9, v9, 0x1
 
-    .line 423
+    .line 486
     invoke-interface {v11}, Ljava/util/List;->size()I
 
     move-result v1
@@ -166,17 +166,17 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 424
+    .line 487
     iget-object v1, p0, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->this$0:Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper;
 
     iget-object v1, v1, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v12, v1, v11}, Lcom/google/glass/timeline/TimelineHelper;->bulkInsertTimelineItem(Landroid/content/Context;Ljava/util/List;)I
 
-    .line 425
+    .line 488
     invoke-interface {v11}, Ljava/util/List;->clear()V
 
-    .line 427
+    .line 490
     invoke-static {}, Lcom/google/glass/timeline/TimelineProvider;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -221,7 +221,7 @@
 
     goto :goto_1
 
-    .line 435
+    .line 498
     .end local v9           #count:I
     .end local v11           #items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     .end local v12           #timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
@@ -231,13 +231,13 @@
 
     if-eqz v10, :cond_3
 
-    .line 436
+    .line 499
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
     :cond_3
     throw v1
 
-    .line 430
+    .line 493
     .restart local v9       #count:I
     .restart local v11       #items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     .restart local v12       #timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
@@ -250,10 +250,10 @@
 
     invoke-virtual {v12, v1, v11}, Lcom/google/glass/timeline/TimelineHelper;->bulkInsertTimelineItem(Landroid/content/Context;Ljava/util/List;)I
 
-    .line 431
+    .line 494
     invoke-interface {v11}, Ljava/util/List;->clear()V
 
-    .line 433
+    .line 496
     invoke-static {}, Lcom/google/glass/timeline/TimelineProvider;->access$000()Ljava/lang/String;
 
     move-result-object v1
@@ -264,10 +264,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 435
+    .line 498
     if-eqz v10, :cond_0
 
-    .line 436
+    .line 499
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
@@ -279,7 +279,7 @@
     .locals 4
 
     .prologue
-    .line 389
+    .line 452
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->val$db:Landroid/database/sqlite/SQLiteDatabase;
 
@@ -291,7 +291,7 @@
 
     invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->migrate(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 395
+    .line 458
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->val$db:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v1, "temp_timeline"
@@ -304,17 +304,17 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 399
+    .line 462
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineProvider$DatabaseHelper$1;->val$db:Landroid/database/sqlite/SQLiteDatabase;
 
     const-string v1, "DROP TABLE IF EXISTS temp_timeline"
 
     invoke-virtual {v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    .line 401
+    .line 464
     return-void
 
-    .line 399
+    .line 462
     :catchall_0
     move-exception v0
 

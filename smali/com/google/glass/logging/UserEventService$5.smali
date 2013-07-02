@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 523
+    .line 600
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService$5;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iput-object p2, p0, Lcom/google/glass/logging/UserEventService$5;->val$event:Lcom/google/common/logging/GlassUserEventProto;
@@ -56,7 +56,7 @@
     .locals 2
 
     .prologue
-    .line 526
+    .line 603
     invoke-static {}, Lcom/google/glass/logging/UserEventService;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -65,15 +65,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 527
+    .line 604
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$5;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iget-object v1, p0, Lcom/google/glass/logging/UserEventService$5;->val$event:Lcom/google/common/logging/GlassUserEventProto;
 
     #calls: Lcom/google/glass/logging/UserEventService;->addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
-    invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$300(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
+    invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$600(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
 
-    .line 528
+    .line 605
     return-void
 .end method
 
@@ -82,15 +82,15 @@
     .parameter "errorCode"
 
     .prologue
-    .line 533
+    .line 610
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService$5;->this$0:Lcom/google/glass/logging/UserEventService;
 
     iget-object v1, p0, Lcom/google/glass/logging/UserEventService$5;->val$event:Lcom/google/common/logging/GlassUserEventProto;
 
     #calls: Lcom/google/glass/logging/UserEventService;->addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
-    invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$300(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
+    invoke-static {v0, v1}, Lcom/google/glass/logging/UserEventService;->access$600(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
 
-    .line 534
+    .line 611
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .parameter "responseProto"
 
     .prologue
-    .line 538
+    .line 615
     return-void
 .end method
 
@@ -108,7 +108,7 @@
     .parameter "x0"
 
     .prologue
-    .line 523
+    .line 600
     check-cast p1, Lcom/google/googlex/glass/common/proto/ReportUserEventResponse;
 
     .end local p1

@@ -13,5 +13,26 @@
 .method public abstract getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getEmail(I)Ljava/lang/String;
+.end method
+
+.method public abstract getEmailBytes(I)Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract getEmailCount()I
+.end method
+
+.method public abstract getEmailList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract hasDeviceId()Z
 .end method

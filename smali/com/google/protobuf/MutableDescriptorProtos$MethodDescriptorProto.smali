@@ -71,12 +71,12 @@
     .locals 2
 
     .prologue
-    .line 6426
+    .line 6872
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
-    .line 6436
+    .line 6882
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     const/4 v1, 0x1
@@ -85,17 +85,17 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
-    .line 6437
+    .line 6883
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->initFields()V
 
-    .line 6438
+    .line 6884
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->makeImmutable()V
 
-    .line 6439
+    .line 6885
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     invoke-static {v0}, Lcom/google/protobuf/AbstractMutableMessageLite;->internalNewParserForType(Lcom/google/protobuf/MutableMessageLite;)Lcom/google/protobuf/Parser;
@@ -104,7 +104,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 6441
+    .line 6887
     return-void
 .end method
 
@@ -112,25 +112,25 @@
     .locals 1
 
     .prologue
-    .line 5910
+    .line 6356
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMutableMessage;-><init>()V
 
-    .line 5946
+    .line 6392
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 6016
+    .line 6462
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6116
+    .line 6562
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 5910
+    .line 6356
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->initFields()V
 
     return-void
@@ -141,25 +141,25 @@
     .parameter "noInit"
 
     .prologue
-    .line 5911
+    .line 6357
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMutableMessage;-><init>()V
 
-    .line 5946
+    .line 6392
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 6016
+    .line 6462
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6116
+    .line 6562
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 5911
+    .line 6357
     return-void
 .end method
 
@@ -167,7 +167,7 @@
     .locals 2
 
     .prologue
-    .line 6188
+    .line 6634
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
@@ -176,14 +176,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 6189
+    .line 6635
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->newMessage()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 6191
+    .line 6637
     :cond_0
     return-void
 .end method
@@ -192,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 5923
+    .line 6369
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     return-object v0
@@ -202,8 +202,8 @@
     .locals 1
 
     .prologue
-    .line 5930
-    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$1600()Lcom/google/protobuf/Descriptors$Descriptor;
+    .line 6376
+    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$1800()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
@@ -214,14 +214,14 @@
     .locals 1
 
     .prologue
-    .line 5919
+    .line 6365
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 5920
+    .line 6366
     return-void
 .end method
 
@@ -229,7 +229,7 @@
     .locals 1
 
     .prologue
-    .line 5916
+    .line 6362
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;-><init>()V
@@ -243,7 +243,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clear()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -255,49 +255,49 @@
     .locals 2
 
     .prologue
-    .line 6411
+    .line 6857
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6412
+    .line 6858
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMutableMessage;->clear()Lcom/google/protobuf/GeneratedMutableMessage;
 
-    .line 6413
+    .line 6859
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 6414
+    .line 6860
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6415
+    .line 6861
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6416
+    .line 6862
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6417
+    .line 6863
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6418
+    .line 6864
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6419
+    .line 6865
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
@@ -306,12 +306,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 6420
+    .line 6866
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->clear()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 6422
+    .line 6868
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -319,7 +319,7 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6423
+    .line 6869
     return-object p0
 .end method
 
@@ -327,7 +327,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clear()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -339,7 +339,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clear()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -351,22 +351,22 @@
     .locals 1
 
     .prologue
-    .line 6109
+    .line 6555
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6110
+    .line 6556
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6111
+    .line 6557
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6112
+    .line 6558
     return-object p0
 .end method
 
@@ -374,22 +374,22 @@
     .locals 1
 
     .prologue
-    .line 6009
+    .line 6455
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6010
+    .line 6456
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6011
+    .line 6457
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 6012
+    .line 6458
     return-object p0
 .end method
 
@@ -397,17 +397,17 @@
     .locals 2
 
     .prologue
-    .line 6230
+    .line 6676
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6231
+    .line 6677
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6232
+    .line 6678
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
@@ -416,12 +416,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 6233
+    .line 6679
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->clear()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 6235
+    .line 6681
     :cond_0
     return-object p0
 .end method
@@ -430,22 +430,22 @@
     .locals 1
 
     .prologue
-    .line 6179
+    .line 6625
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6180
+    .line 6626
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6181
+    .line 6627
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6182
+    .line 6628
     return-object p0
 .end method
 
@@ -453,7 +453,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -465,7 +465,7 @@
     .locals 1
 
     .prologue
-    .line 6248
+    .line 6694
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -481,7 +481,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -493,7 +493,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -510,7 +510,7 @@
     .end annotation
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -522,7 +522,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -534,7 +534,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -546,7 +546,7 @@
     .locals 1
 
     .prologue
-    .line 5926
+    .line 6372
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     return-object v0
@@ -556,7 +556,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -568,24 +568,24 @@
     .locals 4
 
     .prologue
-    .line 6037
+    .line 6483
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6038
+    .line 6484
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 6039
+    .line 6485
     check-cast v1, Ljava/lang/String;
 
-    .line 6047
+    .line 6493
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 6041
+    .line 6487
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -595,13 +595,13 @@
 
     check-cast v0, [B
 
-    .line 6042
+    .line 6488
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 6044
+    .line 6490
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -609,13 +609,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 6045
+    .line 6491
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 6047
+    .line 6493
     goto :goto_0
 .end method
 
@@ -623,10 +623,10 @@
     .locals 4
 
     .prologue
-    .line 6059
+    .line 6505
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6060
+    .line 6506
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -634,20 +634,20 @@
 
     move-object v2, v1
 
-    .line 6061
+    .line 6507
     check-cast v2, Ljava/lang/String;
 
-    .line 6062
+    .line 6508
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 6063
+    .line 6509
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6066
+    .line 6512
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -670,20 +670,20 @@
     .locals 1
 
     .prologue
-    .line 6208
+    .line 6654
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6209
+    .line 6655
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->ensureOptionsInitialized()V
 
-    .line 6210
+    .line 6656
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6211
+    .line 6657
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     return-object v0
@@ -693,24 +693,24 @@
     .locals 4
 
     .prologue
-    .line 5957
+    .line 6403
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 5958
+    .line 6404
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 5959
+    .line 6405
     check-cast v1, Ljava/lang/String;
 
-    .line 5967
+    .line 6413
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 5961
+    .line 6407
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -720,13 +720,13 @@
 
     check-cast v0, [B
 
-    .line 5962
+    .line 6408
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 5964
+    .line 6410
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -734,13 +734,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 5965
+    .line 6411
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 5967
+    .line 6413
     goto :goto_0
 .end method
 
@@ -748,10 +748,10 @@
     .locals 4
 
     .prologue
-    .line 5974
+    .line 6420
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 5975
+    .line 6421
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -759,20 +759,20 @@
 
     move-object v2, v1
 
-    .line 5976
+    .line 6422
     check-cast v2, Ljava/lang/String;
 
-    .line 5977
+    .line 6423
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 5978
+    .line 6424
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 5981
+    .line 6427
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -795,7 +795,7 @@
     .locals 1
 
     .prologue
-    .line 6202
+    .line 6648
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     return-object v0
@@ -805,24 +805,24 @@
     .locals 4
 
     .prologue
-    .line 6127
+    .line 6573
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6128
+    .line 6574
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 6129
+    .line 6575
     check-cast v1, Ljava/lang/String;
 
-    .line 6137
+    .line 6583
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 6131
+    .line 6577
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -832,13 +832,13 @@
 
     check-cast v0, [B
 
-    .line 6132
+    .line 6578
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 6134
+    .line 6580
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -846,13 +846,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 6135
+    .line 6581
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 6137
+    .line 6583
     goto :goto_0
 .end method
 
@@ -860,10 +860,10 @@
     .locals 4
 
     .prologue
-    .line 6144
+    .line 6590
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6145
+    .line 6591
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -871,20 +871,20 @@
 
     move-object v2, v1
 
-    .line 6146
+    .line 6592
     check-cast v2, Ljava/lang/String;
 
-    .line 6147
+    .line 6593
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 6148
+    .line 6594
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6151
+    .line 6597
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -916,7 +916,7 @@
     .end annotation
 
     .prologue
-    .line 5941
+    .line 6387
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -932,10 +932,10 @@
 
     const/4 v2, 0x1
 
-    .line 6381
+    .line 6827
     const/4 v0, 0x0
 
-    .line 6382
+    .line 6828
     .local v0, size:I
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -943,7 +943,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 6383
+    .line 6829
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getNameAsBytes()[B
 
     move-result-object v1
@@ -954,7 +954,7 @@
 
     add-int/2addr v0, v1
 
-    .line 6386
+    .line 6832
     :cond_0
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -962,7 +962,7 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 6387
+    .line 6833
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getInputTypeAsBytes()[B
 
     move-result-object v1
@@ -973,7 +973,7 @@
 
     add-int/2addr v0, v1
 
-    .line 6390
+    .line 6836
     :cond_1
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -981,7 +981,7 @@
 
     if-ne v1, v4, :cond_2
 
-    .line 6391
+    .line 6837
     const/4 v1, 0x3
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getOutputTypeAsBytes()[B
@@ -994,7 +994,7 @@
 
     add-int/2addr v0, v1
 
-    .line 6394
+    .line 6840
     :cond_2
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1004,7 +1004,7 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 6395
+    .line 6841
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-static {v4, v1}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
@@ -1013,7 +1013,7 @@
 
     add-int/2addr v0, v1
 
-    .line 6398
+    .line 6844
     :cond_3
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1025,10 +1025,10 @@
 
     add-int/2addr v0, v1
 
-    .line 6399
+    .line 6845
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->cachedSize:I
 
-    .line 6400
+    .line 6846
     return v0
 .end method
 
@@ -1036,7 +1036,7 @@
     .locals 2
 
     .prologue
-    .line 6026
+    .line 6472
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1062,7 +1062,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 5951
+    .line 6397
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1082,7 +1082,7 @@
     .locals 2
 
     .prologue
-    .line 6196
+    .line 6642
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1106,7 +1106,7 @@
     .locals 2
 
     .prologue
-    .line 6121
+    .line 6567
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1130,8 +1130,8 @@
     .locals 2
 
     .prologue
-    .line 5934
-    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$1700()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    .line 6380
+    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$1900()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     move-result-object v0
 
@@ -1148,12 +1148,12 @@
     .locals 1
 
     .prologue
-    .line 6429
+    .line 6875
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
     if-nez v0, :cond_0
 
-    .line 6430
+    .line 6876
     const-string v0, "com.google.protobuf.DescriptorProtos$MethodDescriptorProto"
 
     invoke-static {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->internalImmutableDefault(Ljava/lang/String;)Lcom/google/protobuf/Message;
@@ -1162,7 +1162,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
-    .line 6432
+    .line 6878
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
@@ -1173,14 +1173,14 @@
     .locals 1
 
     .prologue
-    .line 6239
+    .line 6685
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->hasOptions()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 6240
+    .line 6686
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getOptions()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     move-result-object v0
@@ -1191,10 +1191,10 @@
 
     if-nez v0, :cond_0
 
-    .line 6241
+    .line 6687
     const/4 v0, 0x0
 
-    .line 6244
+    .line 6690
     :goto_0
     return v0
 
@@ -1209,7 +1209,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -1222,21 +1222,21 @@
     .parameter "other"
 
     .prologue
-    .line 6262
+    .line 6708
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6263
+    .line 6709
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 6297
+    .line 6743
     :goto_0
     return-object p0
 
-    .line 6264
+    .line 6710
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->hasName()Z
 
@@ -1244,26 +1244,26 @@
 
     if-eqz v1, :cond_1
 
-    .line 6265
+    .line 6711
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6266
+    .line 6712
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
     if-eqz v1, :cond_5
 
-    .line 6267
+    .line 6713
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 6273
+    .line 6719
     :cond_1
     :goto_1
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->hasInputType()Z
@@ -1272,26 +1272,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 6274
+    .line 6720
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x2
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6275
+    .line 6721
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
     if-eqz v1, :cond_6
 
-    .line 6276
+    .line 6722
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6282
+    .line 6728
     :cond_2
     :goto_2
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->hasOutputType()Z
@@ -1300,26 +1300,26 @@
 
     if-eqz v1, :cond_3
 
-    .line 6283
+    .line 6729
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6284
+    .line 6730
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
     if-eqz v1, :cond_7
 
-    .line 6285
+    .line 6731
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6291
+    .line 6737
     :cond_3
     :goto_3
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->hasOptions()Z
@@ -1328,10 +1328,10 @@
 
     if-eqz v1, :cond_4
 
-    .line 6292
+    .line 6738
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->ensureOptionsInitialized()V
 
-    .line 6293
+    .line 6739
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getOptions()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
@@ -1340,14 +1340,14 @@
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->mergeFrom(Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;)Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 6294
+    .line 6740
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x8
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6296
+    .line 6742
     :cond_4
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1357,7 +1357,7 @@
 
     goto :goto_0
 
-    .line 6269
+    .line 6715
     :cond_5
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
@@ -1367,7 +1367,7 @@
 
     check-cast v0, [B
 
-    .line 6270
+    .line 6716
     .local v0, ba:[B
     array-length v1, v0
 
@@ -1379,7 +1379,7 @@
 
     goto :goto_1
 
-    .line 6278
+    .line 6724
     .end local v0           #ba:[B
     :cond_6
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
@@ -1390,7 +1390,7 @@
 
     check-cast v0, [B
 
-    .line 6279
+    .line 6725
     .restart local v0       #ba:[B
     array-length v1, v0
 
@@ -1402,7 +1402,7 @@
 
     goto :goto_2
 
-    .line 6287
+    .line 6733
     .end local v0           #ba:[B
     :cond_7
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
@@ -1413,7 +1413,7 @@
 
     check-cast v0, [B
 
-    .line 6288
+    .line 6734
     .restart local v0       #ba:[B
     array-length v1, v0
 
@@ -1431,15 +1431,15 @@
     .parameter "other"
 
     .prologue
-    .line 6253
+    .line 6699
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6254
+    .line 6700
     instance-of v0, p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     if-eqz v0, :cond_0
 
-    .line 6255
+    .line 6701
     check-cast p1, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     .end local p1
@@ -1447,7 +1447,7 @@
 
     move-result-object v0
 
-    .line 6257
+    .line 6703
     :goto_0
     return-object v0
 
@@ -1467,7 +1467,7 @@
     .parameter "x0"
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -1475,16 +1475,16 @@
     return-object v0
 .end method
 
-.method public mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
+.method public mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
     .locals 6
     .parameter "input"
     .parameter "extensionRegistry"
 
     .prologue
-    .line 6303
+    .line 6749
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6305
+    .line 6751
     :try_start_0
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1494,45 +1494,45 @@
 
     move-result-object v3
 
-    .line 6308
+    .line 6754
     .local v3, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     const/4 v0, 0x0
 
-    .line 6309
+    .line 6755
     .local v0, done:Z
     :cond_0
     :goto_0
     if-nez v0, :cond_2
 
-    .line 6310
+    .line 6756
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result v2
 
-    .line 6311
+    .line 6757
     .local v2, tag:I
     sparse-switch v2, :sswitch_data_0
 
-    .line 6316
+    .line 6762
     invoke-virtual {p0, p1, v3, p2, v2}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 6318
+    .line 6764
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 6313
+    .line 6759
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 6314
+    .line 6760
     goto :goto_0
 
-    .line 6323
+    .line 6769
     :sswitch_1
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1540,7 +1540,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6324
+    .line 6770
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v4
@@ -1549,14 +1549,14 @@
 
     goto :goto_0
 
-    .line 6349
+    .line 6795
     .end local v0           #done:Z
     .end local v2           #tag:I
     .end local v3           #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     :catch_0
     move-exception v1
 
-    .line 6350
+    .line 6796
     .local v1, e:Ljava/io/IOException;
     const/4 v4, 0x0
 
@@ -1564,7 +1564,7 @@
     :goto_1
     return v4
 
-    .line 6328
+    .line 6774
     .restart local v0       #done:Z
     .restart local v2       #tag:I
     .restart local v3       #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
@@ -1575,7 +1575,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6329
+    .line 6775
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v4
@@ -1584,7 +1584,7 @@
 
     goto :goto_0
 
-    .line 6333
+    .line 6779
     :sswitch_3
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1592,7 +1592,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6334
+    .line 6780
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v4
@@ -1601,7 +1601,7 @@
 
     goto :goto_0
 
-    .line 6338
+    .line 6784
     :sswitch_4
     iget-object v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
@@ -1611,14 +1611,14 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 6339
+    .line 6785
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->newMessage()Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 6341
+    .line 6787
     :cond_1
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1626,14 +1626,14 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6342
+    .line 6788
     iget-object v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-virtual {p1, v4, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/MutableMessageLite;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
     goto :goto_0
 
-    .line 6347
+    .line 6793
     .end local v2           #tag:I
     :cond_2
     invoke-virtual {v3}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
@@ -1644,12 +1644,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6348
+    .line 6794
     const/4 v4, 0x1
 
     goto :goto_1
 
-    .line 6311
+    .line 6757
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -1664,7 +1664,7 @@
     .locals 1
 
     .prologue
-    .line 5913
+    .line 6359
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;-><init>()V
@@ -1676,7 +1676,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -1688,7 +1688,7 @@
     .locals 1
 
     .prologue
-    .line 5905
+    .line 6351
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0
@@ -1701,10 +1701,10 @@
     .parameter "value"
 
     .prologue
-    .line 6078
+    .line 6524
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6079
+    .line 6525
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -1713,7 +1713,7 @@
 
     throw v0
 
-    .line 6080
+    .line 6526
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1721,10 +1721,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6081
+    .line 6527
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6082
+    .line 6528
     return-object p0
 .end method
 
@@ -1733,10 +1733,10 @@
     .parameter "value"
 
     .prologue
-    .line 6094
+    .line 6540
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6095
+    .line 6541
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -1745,7 +1745,7 @@
 
     throw v0
 
-    .line 6096
+    .line 6542
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1753,10 +1753,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6097
+    .line 6543
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->inputType_:Ljava/lang/Object;
 
-    .line 6098
+    .line 6544
     return-object p0
 .end method
 
@@ -1765,10 +1765,10 @@
     .parameter "value"
 
     .prologue
-    .line 5988
+    .line 6434
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 5989
+    .line 6435
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -1777,7 +1777,7 @@
 
     throw v0
 
-    .line 5990
+    .line 6436
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1785,10 +1785,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 5991
+    .line 6437
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 5992
+    .line 6438
     return-object p0
 .end method
 
@@ -1797,10 +1797,10 @@
     .parameter "value"
 
     .prologue
-    .line 5999
+    .line 6445
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6000
+    .line 6446
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -1809,7 +1809,7 @@
 
     throw v0
 
-    .line 6001
+    .line 6447
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1817,10 +1817,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6002
+    .line 6448
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 6003
+    .line 6449
     return-object p0
 .end method
 
@@ -1829,20 +1829,20 @@
     .parameter "value"
 
     .prologue
-    .line 6218
+    .line 6664
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6219
+    .line 6665
     if-nez p1, :cond_0
 
-    .line 6220
+    .line 6666
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 6222
+    .line 6668
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1850,10 +1850,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6223
+    .line 6669
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
-    .line 6224
+    .line 6670
     return-object p0
 .end method
 
@@ -1862,10 +1862,10 @@
     .parameter "value"
 
     .prologue
-    .line 6158
+    .line 6604
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6159
+    .line 6605
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -1874,7 +1874,7 @@
 
     throw v0
 
-    .line 6160
+    .line 6606
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1882,10 +1882,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6161
+    .line 6607
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6162
+    .line 6608
     return-object p0
 .end method
 
@@ -1894,10 +1894,10 @@
     .parameter "value"
 
     .prologue
-    .line 6169
+    .line 6615
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->assertMutable()V
 
-    .line 6170
+    .line 6616
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -1906,7 +1906,7 @@
 
     throw v0
 
-    .line 6171
+    .line 6617
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1914,10 +1914,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
-    .line 6172
+    .line 6618
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->outputType_:Ljava/lang/Object;
 
-    .line 6173
+    .line 6619
     return-object p0
 .end method
 
@@ -1930,7 +1930,7 @@
     .end annotation
 
     .prologue
-    .line 6407
+    .line 6853
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMutableMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1954,12 +1954,12 @@
 
     const/4 v3, 0x1
 
-    .line 6357
+    .line 6803
     invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->getTotalBytesWritten()I
 
     move-result v1
 
-    .line 6358
+    .line 6804
     .local v1, bytesWrittenBefore:I
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1967,14 +1967,14 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 6359
+    .line 6805
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getNameAsBytes()[B
 
     move-result-object v2
 
     invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 6361
+    .line 6807
     :cond_0
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1982,14 +1982,14 @@
 
     if-ne v2, v4, :cond_1
 
-    .line 6362
+    .line 6808
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getInputTypeAsBytes()[B
 
     move-result-object v2
 
     invoke-virtual {p1, v4, v2}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 6364
+    .line 6810
     :cond_1
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -1997,7 +1997,7 @@
 
     if-ne v2, v5, :cond_2
 
-    .line 6365
+    .line 6811
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getOutputTypeAsBytes()[B
@@ -2006,7 +2006,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 6367
+    .line 6813
     :cond_2
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->bitField0_:I
 
@@ -2016,12 +2016,12 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 6368
+    .line 6814
     iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;
 
     invoke-virtual {p1, v5, v2}, Lcom/google/protobuf/CodedOutputStream;->writeMessageWithCachedSizes(ILcom/google/protobuf/MutableMessageLite;)V
 
-    .line 6370
+    .line 6816
     :cond_3
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -2029,12 +2029,12 @@
 
     invoke-virtual {v2, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 6371
+    .line 6817
     invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->getTotalBytesWritten()I
 
     move-result v0
 
-    .line 6372
+    .line 6818
     .local v0, bytesWrittenAfter:I
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodDescriptorProto;->getCachedSize()I
 
@@ -2044,7 +2044,7 @@
 
     if-eq v2, v3, :cond_4
 
-    .line 6373
+    .line 6819
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Serialized size doesn\'t match cached size. You may forget to call getSerializedSize() or the message is being modified concurrently."
@@ -2053,7 +2053,7 @@
 
     throw v2
 
-    .line 6378
+    .line 6824
     :cond_4
     return-void
 .end method

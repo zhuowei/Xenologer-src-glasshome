@@ -37,11 +37,11 @@
     .end annotation
 
     .prologue
-    .line 574
+    .line 729
     .local p3, messageClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMutableMessage;>;"
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;-><init>(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 575
+    .line 730
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -71,7 +71,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularMessageFieldAccessor;->getMutableMethod:Ljava/lang/reflect/Method;
 
-    .line 577
+    .line 732
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "value"
 
     .prologue
-    .line 582
+    .line 737
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularMessageFieldAccessor;->type:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 589
+    .line 744
     .end local p1
     :goto_0
     return-object p1
@@ -117,7 +117,7 @@
     .parameter "message"
 
     .prologue
-    .line 600
+    .line 755
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularMessageFieldAccessor;->getMutableMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -136,7 +136,7 @@
     .locals 1
 
     .prologue
-    .line 595
+    .line 750
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularMessageFieldAccessor;->type:Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMutableMessage;->newInstance(Ljava/lang/Class;)Ljava/lang/Object;
@@ -155,13 +155,13 @@
     .parameter "value"
 
     .prologue
-    .line 605
+    .line 760
     invoke-direct {p0, p2}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularMessageFieldAccessor;->coerceType(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-super {p0, p1, v0}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->set(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
 
-    .line 606
+    .line 761
     return-void
 .end method

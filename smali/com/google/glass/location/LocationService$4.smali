@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 292
+    .line 290
     iput-object p1, p0, Lcom/google/glass/location/LocationService$4;->this$0:Lcom/google/glass/location/LocationService;
 
     iput p2, p0, Lcom/google/glass/location/LocationService$4;->val$pid:I
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 295
+    .line 293
     iget-object v0, p0, Lcom/google/glass/location/LocationService$4;->this$0:Lcom/google/glass/location/LocationService;
 
     iget v1, p0, Lcom/google/glass/location/LocationService$4;->val$pid:I
@@ -58,6 +58,6 @@
     #calls: Lcom/google/glass/location/LocationService;->postOnClientDisconnected(Ljava/lang/Integer;)V
     invoke-static {v0, v1}, Lcom/google/glass/location/LocationService;->access$900(Lcom/google/glass/location/LocationService;Ljava/lang/Integer;)V
 
-    .line 296
+    .line 294
     return-void
 .end method

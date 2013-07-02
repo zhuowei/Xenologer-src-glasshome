@@ -101,7 +101,7 @@
 
     const/4 v5, 0x1
 
-    .line 131
+    .line 132
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "NEW_MESSAGE"
@@ -114,7 +114,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->NEW_MESSAGE:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 139
+    .line 140
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "SHARE"
@@ -123,7 +123,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->SHARE:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 147
+    .line 148
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "REPLY"
@@ -132,7 +132,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->REPLY:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 155
+    .line 156
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "REPLY_ALL"
@@ -141,7 +141,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->REPLY_ALL:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 163
+    .line 164
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "CUSTOM"
@@ -150,7 +150,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->CUSTOM:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 171
+    .line 172
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "DELETE"
@@ -161,7 +161,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->DELETE:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 179
+    .line 180
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "LAUNCH"
@@ -176,7 +176,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->LAUNCH:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 187
+    .line 188
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "PIN"
@@ -191,7 +191,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->PIN:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 195
+    .line 196
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     const-string v1, "UNPIN"
@@ -206,7 +206,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->UNPIN:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 122
+    .line 123
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/UserAction$Type;
@@ -257,14 +257,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->$VALUES:[Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    .line 294
+    .line 295
     new-instance v0, Lcom/google/googlex/glass/common/proto/UserAction$Type$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/UserAction$Type$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 314
+    .line 315
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction$Type;->values()[Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     move-result-object v0
@@ -287,16 +287,16 @@
     .end annotation
 
     .prologue
-    .line 328
+    .line 329
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 329
+    .line 330
     iput p3, p0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->index:I
 
-    .line 330
+    .line 331
     iput p4, p0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->value:I
 
-    .line 331
+    .line 332
     return-void
 .end method
 
@@ -304,7 +304,7 @@
     .locals 2
 
     .prologue
-    .line 311
+    .line 312
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -337,7 +337,7 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 292
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -348,70 +348,70 @@
     .parameter "value"
 
     .prologue
-    .line 275
+    .line 276
     packed-switch p0, :pswitch_data_0
 
-    .line 285
+    .line 286
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 276
+    .line 277
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->NEW_MESSAGE:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 277
+    .line 278
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->SHARE:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 278
+    .line 279
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->REPLY:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 279
+    .line 280
     :pswitch_3
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->REPLY_ALL:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 280
+    .line 281
     :pswitch_4
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->CUSTOM:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 281
+    .line 282
     :pswitch_5
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->DELETE:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 282
+    .line 283
     :pswitch_6
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->LAUNCH:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 283
+    .line 284
     :pswitch_7
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->PIN:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 284
+    .line 285
     :pswitch_8
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->UNPIN:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     goto :goto_0
 
-    .line 275
+    .line 276
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -431,7 +431,7 @@
     .parameter "desc"
 
     .prologue
-    .line 318
+    .line 319
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -442,7 +442,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 319
+    .line 320
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -451,7 +451,7 @@
 
     throw v0
 
-    .line 322
+    .line 323
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->VALUES:[Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
@@ -469,7 +469,7 @@
     .parameter "name"
 
     .prologue
-    .line 122
+    .line 123
     const-class v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -485,7 +485,7 @@
     .locals 1
 
     .prologue
-    .line 122
+    .line 123
     sget-object v0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->$VALUES:[Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/UserAction$Type;->clone()Ljava/lang/Object;
@@ -503,7 +503,7 @@
     .locals 1
 
     .prologue
-    .line 307
+    .line 308
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction$Type;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -515,7 +515,7 @@
     .locals 1
 
     .prologue
-    .line 272
+    .line 273
     iget v0, p0, Lcom/google/googlex/glass/common/proto/UserAction$Type;->value:I
 
     return v0
@@ -525,7 +525,7 @@
     .locals 2
 
     .prologue
-    .line 303
+    .line 304
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction$Type;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

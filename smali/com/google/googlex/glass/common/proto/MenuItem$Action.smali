@@ -133,7 +133,7 @@
 
     const/4 v5, 0x0
 
-    .line 156
+    .line 169
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "CUSTOM"
@@ -142,7 +142,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 166
+    .line 179
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "REPLY"
@@ -155,7 +155,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 174
+    .line 187
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "DELETE"
@@ -164,7 +164,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->DELETE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 182
+    .line 195
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "SHARE"
@@ -173,7 +173,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SHARE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 190
+    .line 203
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "READ_ALOUD"
@@ -182,7 +182,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->READ_ALOUD:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 201
+    .line 214
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "REPLY_ALL"
@@ -193,7 +193,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY_ALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 211
+    .line 224
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "BROADCAST"
@@ -208,7 +208,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->BROADCAST:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 222
+    .line 235
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "VOICE_CALL"
@@ -223,7 +223,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VOICE_CALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 231
+    .line 246
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "NAVIGATE"
@@ -238,7 +238,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->NAVIGATE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 241
+    .line 256
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "SEARCH"
@@ -253,7 +253,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SEARCH:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 250
+    .line 265
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "MUTE_MIC"
@@ -268,7 +268,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->MUTE_MIC:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 260
+    .line 275
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "SEND_TO_PHONE"
@@ -283,7 +283,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SEND_TO_PHONE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 268
+    .line 283
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "VIEW_WEB_SITE"
@@ -298,7 +298,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VIEW_WEB_SITE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 276
+    .line 291
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "HANGOUT"
@@ -313,7 +313,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->HANGOUT:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 284
+    .line 299
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "TOGGLE_PINNED"
@@ -328,7 +328,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->TOGGLE_PINNED:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 293
+    .line 308
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "READ_MORE"
@@ -343,7 +343,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->READ_MORE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 301
+    .line 316
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     const-string v1, "PLAY_VIDEO"
@@ -358,7 +358,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->PLAY_VIDEO:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 146
+    .line 159
     const/16 v0, 0x11
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/MenuItem$Action;
@@ -457,14 +457,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->$VALUES:[Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 490
+    .line 507
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/MenuItem$Action$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 510
+    .line 527
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->values()[Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     move-result-object v0
@@ -487,16 +487,16 @@
     .end annotation
 
     .prologue
-    .line 524
+    .line 541
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 525
+    .line 542
     iput p3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->index:I
 
-    .line 526
+    .line 543
     iput p4, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->value:I
 
-    .line 527
+    .line 544
     return-void
 .end method
 
@@ -504,7 +504,7 @@
     .locals 2
 
     .prologue
-    .line 507
+    .line 524
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -537,7 +537,7 @@
     .end annotation
 
     .prologue
-    .line 487
+    .line 504
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -548,119 +548,119 @@
     .parameter "value"
 
     .prologue
-    .line 463
+    .line 480
     packed-switch p0, :pswitch_data_0
 
-    .line 481
+    .line 498
     :pswitch_0
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 464
+    .line 481
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 465
+    .line 482
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 466
+    .line 483
     :pswitch_3
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->DELETE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 467
+    .line 484
     :pswitch_4
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SHARE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 468
+    .line 485
     :pswitch_5
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->READ_ALOUD:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 469
+    .line 486
     :pswitch_6
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY_ALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 470
+    .line 487
     :pswitch_7
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->BROADCAST:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 471
+    .line 488
     :pswitch_8
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VOICE_CALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 472
+    .line 489
     :pswitch_9
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->NAVIGATE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 473
+    .line 490
     :pswitch_a
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SEARCH:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 474
+    .line 491
     :pswitch_b
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->MUTE_MIC:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 475
+    .line 492
     :pswitch_c
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SEND_TO_PHONE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 476
+    .line 493
     :pswitch_d
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VIEW_WEB_SITE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 477
+    .line 494
     :pswitch_e
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->HANGOUT:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 478
+    .line 495
     :pswitch_f
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->TOGGLE_PINNED:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 479
+    .line 496
     :pswitch_10
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->READ_MORE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 480
+    .line 497
     :pswitch_11
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->PLAY_VIDEO:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     goto :goto_0
 
-    .line 463
+    .line 480
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
@@ -689,7 +689,7 @@
     .parameter "desc"
 
     .prologue
-    .line 514
+    .line 531
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -700,7 +700,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 515
+    .line 532
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -709,7 +709,7 @@
 
     throw v0
 
-    .line 518
+    .line 535
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VALUES:[Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
@@ -727,7 +727,7 @@
     .parameter "name"
 
     .prologue
-    .line 146
+    .line 159
     const-class v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -743,7 +743,7 @@
     .locals 1
 
     .prologue
-    .line 146
+    .line 159
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->$VALUES:[Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/MenuItem$Action;->clone()Ljava/lang/Object;
@@ -761,7 +761,7 @@
     .locals 1
 
     .prologue
-    .line 503
+    .line 520
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -773,7 +773,7 @@
     .locals 1
 
     .prologue
-    .line 460
+    .line 477
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->value:I
 
     return v0
@@ -783,7 +783,7 @@
     .locals 2
 
     .prologue
-    .line 499
+    .line 516
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

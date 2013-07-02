@@ -21,7 +21,7 @@
     .locals 1
 
     .prologue
-    .line 241
+    .line 252
     const/4 v0, 0x0
 
     new-array v0, v0, [B
@@ -254,7 +254,7 @@
     .local v0, bytes:[B
     mul-int/lit8 v3, v1, 0x1f
 
-    invoke-static {v0}, Ljava/util/Arrays;->hashCode([B)I
+    invoke-static {v0}, Lcom/google/protobuf/Internal;->hashCode([B)I
 
     move-result v4
 
@@ -267,6 +267,19 @@
     .end local v0           #bytes:[B
     :cond_0
     return v1
+.end method
+
+.method public static hashCode([B)I
+    .locals 1
+    .parameter "bytes"
+
+    .prologue
+    .line 246
+    invoke-static {p0}, Lcom/google/protobuf/LiteralByteString;->hashCode([B)I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public static hashEnum(Lcom/google/protobuf/Internal$EnumLite;)I
@@ -356,6 +369,36 @@
     return v0
 .end method
 
+.method static isProto1Group(Lcom/google/protobuf/MessageLite;)Z
+    .locals 1
+    .parameter "message"
+
+    .prologue
+    .line 282
+    instance-of v0, p0, Lcom/google/protobuf/AbstractMutableMessageLite;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Lcom/google/protobuf/AbstractMutableMessageLite;
+
+    .end local p0
+    invoke-virtual {p0}, Lcom/google/protobuf/AbstractMutableMessageLite;->isProto1Group()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static isValidUtf8(Lcom/google/protobuf/ByteString;)Z
     .locals 1
     .parameter "byteString"
@@ -403,7 +446,7 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 268
     .local p0, message:Lcom/google/protobuf/MutableMessageLite;,"TT;"
     invoke-interface {p0, p1}, Lcom/google/protobuf/MutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
@@ -411,14 +454,14 @@
 
     if-nez v0, :cond_0
 
-    .line 258
+    .line 269
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0
 
     throw v0
 
-    .line 260
+    .line 271
     :cond_0
     return-object p0
 .end method
@@ -446,7 +489,7 @@
     .end annotation
 
     .prologue
-    .line 250
+    .line 261
     .local p0, message:Lcom/google/protobuf/MutableMessageLite;,"TT;"
     invoke-interface {p0, p1, p2}, Lcom/google/protobuf/MutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
@@ -454,14 +497,14 @@
 
     if-nez v0, :cond_0
 
-    .line 251
+    .line 262
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0
 
     throw v0
 
-    .line 253
+    .line 264
     :cond_0
     return-object p0
 .end method
@@ -485,7 +528,7 @@
     .end annotation
 
     .prologue
-    .line 264
+    .line 275
     .local p0, message:Lcom/google/protobuf/MutableMessageLite;,"TT;"
     invoke-interface {p0, p1}, Lcom/google/protobuf/MutableMessageLite;->mergeFrom([B)Z
 
@@ -493,14 +536,14 @@
 
     if-nez v0, :cond_0
 
-    .line 265
+    .line 276
     invoke-static {}, Lcom/google/protobuf/InvalidProtocolBufferException;->parseFailure()Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v0
 
     throw v0
 
-    .line 267
+    .line 278
     :cond_0
     return-object p0
 .end method

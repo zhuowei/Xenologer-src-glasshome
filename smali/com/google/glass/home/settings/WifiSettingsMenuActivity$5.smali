@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 491
+    .line 468
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$5;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "animation"
 
     .prologue
-    .line 494
+    .line 471
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$5;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
 
-    .line 495
+    .line 472
     return-void
 .end method

@@ -41,7 +41,7 @@
     .parameter
 
     .prologue
-    .line 153
+    .line 159
     iput-object p1, p0, Lcom/google/glass/home/GCMIntentService$1;->val$application:Lcom/google/glass/home/HomeApplication;
 
     iput-object p2, p0, Lcom/google/glass/home/GCMIntentService$1;->val$registrationId:Ljava/lang/String;
@@ -70,7 +70,7 @@
     .end annotation
 
     .prologue
-    .line 156
+    .line 162
     new-instance v3, Lcom/google/glass/util/SettingsSecure;
 
     iget-object v4, p0, Lcom/google/glass/home/GCMIntentService$1;->val$application:Lcom/google/glass/home/HomeApplication;
@@ -87,7 +87,7 @@
 
     move-result-object v2
 
-    .line 158
+    .line 164
     .local v2, id:Ljava/lang/String;
     iget-object v3, p0, Lcom/google/glass/home/GCMIntentService$1;->val$application:Lcom/google/glass/home/HomeApplication;
 
@@ -96,7 +96,7 @@
 
     move-result-wide v0
 
-    .line 159
+    .line 165
     .local v0, gsfDeviceId:J
     new-instance v3, Landroid/util/Pair;
 
@@ -114,7 +114,7 @@
     .parameter "x0"
 
     .prologue
-    .line 153
+    .line 159
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -140,7 +140,7 @@
     .end annotation
 
     .prologue
-    .line 165
+    .line 171
     .local p1, deviceIds:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/Long;>;"
     const-string v7, "ro.build.version.glass"
 
@@ -156,7 +156,7 @@
 
     move-result-object v2
 
-    .line 169
+    .line 175
     .local v2, majorVersion:Ljava/lang/String;
     :try_start_0
     iget-object v7, p0, Lcom/google/glass/home/GCMIntentService$1;->val$application:Lcom/google/glass/home/HomeApplication;
@@ -181,16 +181,16 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 174
+    .line 180
     .local v6, version:I
     :goto_0
     sget-object v3, Landroid/os/Build$VERSION;->INCREMENTAL:Ljava/lang/String;
 
-    .line 175
+    .line 181
     .local v3, osVersion:Ljava/lang/String;
     sget-object v1, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
-    .line 178
+    .line 184
     .local v1, hwVersion:Ljava/lang/String;
     iget-object v7, p0, Lcom/google/glass/home/GCMIntentService$1;->val$application:Lcom/google/glass/home/HomeApplication;
 
@@ -198,7 +198,7 @@
 
     move-result-object v5
 
-    .line 179
+    .line 185
     .local v5, requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
@@ -266,7 +266,7 @@
 
     move-result-object v4
 
-    .line 189
+    .line 195
     .local v4, requestBuilder:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
@@ -279,10 +279,10 @@
     #calls: Lcom/google/glass/home/GCMIntentService;->dispatch(Lcom/google/glass/net/ProtoRequestDispatcher;Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Lcom/google/glass/net/ProtoResponseHandler;)V
     invoke-static {v5, v7, v8}, Lcom/google/glass/home/GCMIntentService;->access$100(Lcom/google/glass/net/ProtoRequestDispatcher;Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Lcom/google/glass/net/ProtoResponseHandler;)V
 
-    .line 205
+    .line 211
     return-void
 
-    .line 171
+    .line 177
     .end local v1           #hwVersion:Ljava/lang/String;
     .end local v3           #osVersion:Ljava/lang/String;
     .end local v4           #requestBuilder:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
@@ -291,7 +291,7 @@
     :catch_0
     move-exception v0
 
-    .line 172
+    .line 178
     .local v0, exception:Landroid/content/pm/PackageManager$NameNotFoundException;
     const/4 v6, -0x1
 
@@ -304,7 +304,7 @@
     .parameter "x0"
 
     .prologue
-    .line 153
+    .line 159
     check-cast p1, Landroid/util/Pair;
 
     .end local p1

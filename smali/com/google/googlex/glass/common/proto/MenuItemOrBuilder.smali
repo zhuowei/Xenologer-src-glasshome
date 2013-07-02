@@ -25,6 +25,9 @@
 .method public abstract getRemoveWhenSelected()Z
 .end method
 
+.method public abstract getTravelMode()Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+.end method
+
 .method public abstract getValue(I)Lcom/google/googlex/glass/common/proto/MenuValue;
 .end method
 
@@ -68,4 +71,7 @@
 .end method
 
 .method public abstract hasRemoveWhenSelected()Z
+.end method
+
+.method public abstract hasTravelMode()Z
 .end method

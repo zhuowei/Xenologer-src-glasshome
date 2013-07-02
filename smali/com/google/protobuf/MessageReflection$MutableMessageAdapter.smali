@@ -27,13 +27,13 @@
     .parameter "message"
 
     .prologue
-    .line 452
+    .line 468
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 453
+    .line 469
     iput-object p1, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
-    .line 454
+    .line 470
     return-void
 .end method
 
@@ -45,12 +45,12 @@
     .parameter "value"
 
     .prologue
-    .line 488
+    .line 504
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0, p1, p2}, Lcom/google/protobuf/MutableMessage;->addRepeatedField(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/MutableMessage;
 
-    .line 489
+    .line 505
     return-object p0
 .end method
 
@@ -59,12 +59,12 @@
     .parameter "field"
 
     .prologue
-    .line 476
+    .line 492
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0, p1}, Lcom/google/protobuf/MutableMessage;->clearField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Lcom/google/protobuf/MutableMessage;
 
-    .line 477
+    .line 493
     return-object p0
 .end method
 
@@ -74,7 +74,7 @@
     .parameter "name"
 
     .prologue
-    .line 498
+    .line 514
     invoke-virtual {p1, p2}, Lcom/google/protobuf/ExtensionRegistry;->findMutableExtensionByName(Ljava/lang/String;)Lcom/google/protobuf/ExtensionRegistry$ExtensionInfo;
 
     move-result-object v0
@@ -89,7 +89,7 @@
     .parameter "fieldNumber"
 
     .prologue
-    .line 504
+    .line 520
     invoke-virtual {p1, p2, p3}, Lcom/google/protobuf/ExtensionRegistry;->findMutableExtensionByNumber(Lcom/google/protobuf/Descriptors$Descriptor;I)Lcom/google/protobuf/ExtensionRegistry$ExtensionInfo;
 
     move-result-object v0
@@ -101,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 595
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     return-object v0
@@ -111,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 493
+    .line 509
     sget-object v0, Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;->MESSAGE:Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;
 
     return-object v0
@@ -121,7 +121,7 @@
     .locals 1
 
     .prologue
-    .line 457
+    .line 473
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0}, Lcom/google/protobuf/MutableMessage;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;
@@ -136,7 +136,7 @@
     .parameter "field"
 
     .prologue
-    .line 461
+    .line 477
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0, p1}, Lcom/google/protobuf/MutableMessage;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
@@ -151,7 +151,7 @@
     .parameter "field"
 
     .prologue
-    .line 466
+    .line 482
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0, p1}, Lcom/google/protobuf/MutableMessage;->hasField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Z
@@ -167,10 +167,10 @@
     .parameter "defaultInstance"
 
     .prologue
-    .line 563
+    .line 579
     if-eqz p2, :cond_0
 
-    .line 564
+    .line 580
     new-instance v0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;
 
     check-cast p2, Lcom/google/protobuf/MutableMessage;
@@ -182,7 +182,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;-><init>(Lcom/google/protobuf/MutableMessage;)V
 
-    .line 567
+    .line 583
     :goto_0
     return-object v0
 
@@ -214,10 +214,10 @@
     .end annotation
 
     .prologue
-    .line 512
+    .line 528
     if-eqz p4, :cond_1
 
-    .line 513
+    .line 529
     check-cast p4, Lcom/google/protobuf/MutableMessage;
 
     .end local p4
@@ -225,7 +225,7 @@
 
     move-result-object v1
 
-    .line 517
+    .line 533
     .local v1, subMessage:Lcom/google/protobuf/MutableMessage;
     :goto_0
     invoke-virtual {p3}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
@@ -240,18 +240,18 @@
 
     if-eqz v2, :cond_0
 
-    .line 518
+    .line 534
     invoke-virtual {p0, p3}, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/protobuf/MutableMessage;
 
-    .line 519
+    .line 535
     .local v0, originalMessage:Lcom/google/protobuf/MutableMessage;
     invoke-interface {v1, v0}, Lcom/google/protobuf/MutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
 
-    .line 521
+    .line 537
     .end local v0           #originalMessage:Lcom/google/protobuf/MutableMessage;
     :cond_0
     invoke-virtual {p3}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getNumber()I
@@ -260,10 +260,10 @@
 
     invoke-virtual {p1, v2, v1, p2}, Lcom/google/protobuf/CodedInputStream;->readGroup(ILcom/google/protobuf/MutableMessageLite;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
-    .line 522
+    .line 538
     return-object v1
 
-    .line 515
+    .line 531
     .end local v1           #subMessage:Lcom/google/protobuf/MutableMessage;
     .restart local p4
     :cond_1
@@ -290,10 +290,10 @@
     .end annotation
 
     .prologue
-    .line 530
+    .line 546
     if-eqz p4, :cond_1
 
-    .line 531
+    .line 547
     check-cast p4, Lcom/google/protobuf/MutableMessage;
 
     .end local p4
@@ -301,7 +301,7 @@
 
     move-result-object v1
 
-    .line 535
+    .line 551
     .local v1, subMessage:Lcom/google/protobuf/MutableMessage;
     :goto_0
     invoke-virtual {p3}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
@@ -316,26 +316,26 @@
 
     if-eqz v2, :cond_0
 
-    .line 536
+    .line 552
     invoke-virtual {p0, p3}, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/protobuf/MutableMessage;
 
-    .line 537
+    .line 553
     .local v0, originalMessage:Lcom/google/protobuf/MutableMessage;
     invoke-interface {v1, v0}, Lcom/google/protobuf/MutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
 
-    .line 539
+    .line 555
     .end local v0           #originalMessage:Lcom/google/protobuf/MutableMessage;
     :cond_0
     invoke-virtual {p1, v1, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/MutableMessageLite;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
-    .line 540
+    .line 556
     return-object v1
 
-    .line 533
+    .line 549
     .end local v1           #subMessage:Lcom/google/protobuf/MutableMessage;
     .restart local p4
     :cond_1
@@ -362,10 +362,10 @@
     .end annotation
 
     .prologue
-    .line 548
+    .line 564
     if-eqz p4, :cond_1
 
-    .line 549
+    .line 565
     check-cast p4, Lcom/google/protobuf/MutableMessage;
 
     .end local p4
@@ -373,7 +373,7 @@
 
     move-result-object v1
 
-    .line 553
+    .line 569
     .local v1, subMessage:Lcom/google/protobuf/MutableMessage;
     :goto_0
     invoke-virtual {p3}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
@@ -388,26 +388,26 @@
 
     if-eqz v2, :cond_0
 
-    .line 554
+    .line 570
     invoke-virtual {p0, p3}, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/google/protobuf/MutableMessage;
 
-    .line 555
+    .line 571
     .local v0, originalMessage:Lcom/google/protobuf/MutableMessage;
     invoke-interface {v1, v0}, Lcom/google/protobuf/MutableMessage;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableMessage;
 
-    .line 557
+    .line 573
     .end local v0           #originalMessage:Lcom/google/protobuf/MutableMessage;
     :cond_0
     invoke-interface {v1, p1, p2}, Lcom/google/protobuf/MutableMessage;->mergeFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 
-    .line 558
+    .line 574
     return-object v1
 
-    .line 551
+    .line 567
     .end local v1           #subMessage:Lcom/google/protobuf/MutableMessage;
     .restart local p4
     :cond_1
@@ -421,10 +421,11 @@
     goto :goto_0
 .end method
 
-.method public readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;)Ljava/lang/Object;
+.method public readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
     .locals 1
     .parameter "input"
     .parameter "type"
+    .parameter "checkUtf8"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -432,8 +433,8 @@
     .end annotation
 
     .prologue
-    .line 574
-    invoke-static {p1, p2}, Lcom/google/protobuf/FieldSet;->readPrimitiveFieldForMutable(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;)Ljava/lang/Object;
+    .line 591
+    invoke-static {p1, p2, p3}, Lcom/google/protobuf/FieldSet;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -446,12 +447,12 @@
     .parameter "value"
 
     .prologue
-    .line 471
+    .line 487
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0, p1, p2}, Lcom/google/protobuf/MutableMessage;->setField(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/MutableMessage;
 
-    .line 472
+    .line 488
     return-object p0
 .end method
 
@@ -462,11 +463,11 @@
     .parameter "value"
 
     .prologue
-    .line 482
+    .line 498
     iget-object v0, p0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;->message:Lcom/google/protobuf/MutableMessage;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/google/protobuf/MutableMessage;->setRepeatedField(Lcom/google/protobuf/Descriptors$FieldDescriptor;ILjava/lang/Object;)Lcom/google/protobuf/MutableMessage;
 
-    .line 483
+    .line 499
     return-object p0
 .end method

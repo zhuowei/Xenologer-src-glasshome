@@ -52,19 +52,19 @@
     .locals 2
 
     .prologue
-    .line 92
+    .line 93
     new-instance v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 206
+    .line 207
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 508
+    .line 512
     new-instance v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     const/4 v1, 0x1
@@ -73,17 +73,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->defaultInstance:Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
-    .line 509
+    .line 513
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->defaultInstance:Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->initFields()V
 
-    .line 510
+    .line 514
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 7
+    .locals 8
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -93,82 +93,84 @@
     .end annotation
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     .line 43
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 165
-    iput-byte v5, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedIsInitialized:B
+    .line 166
+    iput-byte v6, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedIsInitialized:B
 
-    .line 183
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedSerializedSize:I
+    .line 184
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedSerializedSize:I
 
     .line 44
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->initFields()V
 
     .line 45
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 46
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 49
-    .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 50
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     .line 51
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v3
+    move-result v4
 
     .line 52
-    .local v3, tag:I
-    sparse-switch v3, :sswitch_data_0
+    .local v4, tag:I
+    sparse-switch v4, :sswitch_data_0
 
     .line 57
-    invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 59
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 54
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 55
     goto :goto_0
 
     .line 64
     :sswitch_1
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x1
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
-
-    .line 65
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
+    .line 65
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x1
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
+
+    .line 66
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -176,72 +178,73 @@
 
     goto :goto_0
 
-    .line 70
-    .end local v3           #tag:I
-    :catch_0
-    move-exception v1
-
     .line 71
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
+    :catch_0
+    move-exception v2
+
+    .line 72
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    move-result-object v5
+    move-result-object v6
 
-    throw v5
+    throw v6
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 76
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 77
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
-    move-exception v5
+    move-exception v6
 
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 78
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->makeExtensionsImmutable()V
+
+    throw v6
+
+    .line 77
+    :cond_1
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 77
+    .line 78
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->makeExtensionsImmutable()V
 
-    throw v5
-
-    .line 76
-    :cond_1
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
-    .line 77
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->makeExtensionsImmutable()V
-
-    .line 79
+    .line 80
     return-void
 
-    .line 72
-    :catch_1
-    move-exception v1
-
     .line 73
-    .local v1, e:Ljava/io/IOException;
-    :try_start_2
-    new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catch_1
+    move-exception v2
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    .line 74
+    .local v2, e:Ljava/io/IOException;
+    :try_start_2
+    new-instance v6, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
+    throw v6
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
@@ -291,10 +294,10 @@
     .line 20
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 165
+    .line 166
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedIsInitialized:B
 
-    .line 183
+    .line 184
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedSerializedSize:I
 
     .line 21
@@ -330,10 +333,10 @@
     .line 23
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 165
+    .line 166
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedIsInitialized:B
 
-    .line 183
+    .line 184
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedSerializedSize:I
 
     .line 23
@@ -405,7 +408,7 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 83
     sget-object v0, Lcom/google/googlex/glass/common/proto/Setup;->internal_static_googlex_glass_common_proto_SetupUserAccountRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -415,12 +418,12 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 164
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 164
+    .line 165
     return-void
 .end method
 
@@ -428,7 +431,7 @@
     .locals 1
 
     .prologue
-    .line 268
+    .line 269
     #calls: Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->access$100()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
@@ -442,7 +445,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 271
+    .line 272
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -464,7 +467,7 @@
     .end annotation
 
     .prologue
-    .line 248
+    .line 249
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -487,7 +490,7 @@
     .end annotation
 
     .prologue
-    .line 254
+    .line 255
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -509,7 +512,7 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 219
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -532,7 +535,7 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 225
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -554,7 +557,7 @@
     .end annotation
 
     .prologue
-    .line 259
+    .line 260
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -577,7 +580,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 266
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -599,7 +602,7 @@
     .end annotation
 
     .prologue
-    .line 238
+    .line 239
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -622,7 +625,7 @@
     .end annotation
 
     .prologue
-    .line 244
+    .line 245
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -644,7 +647,7 @@
     .end annotation
 
     .prologue
-    .line 228
+    .line 229
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -667,7 +670,7 @@
     .end annotation
 
     .prologue
-    .line 234
+    .line 235
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -719,19 +722,19 @@
     .locals 4
 
     .prologue
-    .line 128
+    .line 129
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 129
+    .line 130
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 130
+    .line 131
     check-cast v1, Ljava/lang/String;
 
-    .line 138
+    .line 139
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -740,16 +743,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 132
+    .line 133
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 134
+    .line 135
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 135
+    .line 136
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -757,13 +760,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 136
+    .line 137
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 138
+    .line 139
     goto :goto_0
 .end method
 
@@ -771,16 +774,16 @@
     .locals 3
 
     .prologue
-    .line 150
+    .line 151
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 151
+    .line 152
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 152
+    .line 153
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -788,11 +791,11 @@
 
     move-result-object v0
 
-    .line 155
+    .line 156
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 158
+    .line 159
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -820,7 +823,7 @@
     .end annotation
 
     .prologue
-    .line 104
+    .line 105
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -832,10 +835,10 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 185
+    .line 186
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedSerializedSize:I
 
-    .line 186
+    .line 187
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -843,26 +846,26 @@
 
     move v1, v0
 
-    .line 195
+    .line 196
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 188
+    .line 189
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 189
+    .line 190
     iget v2, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 190
+    .line 191
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -873,7 +876,7 @@
 
     add-int/2addr v0, v2
 
-    .line 193
+    .line 194
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -885,12 +888,12 @@
 
     add-int/2addr v0, v2
 
-    .line 194
+    .line 195
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 195
+    .line 196
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -912,7 +915,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 118
+    .line 119
     iget v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -932,7 +935,7 @@
     .locals 3
 
     .prologue
-    .line 87
+    .line 88
     sget-object v0, Lcom/google/googlex/glass/common/proto/Setup;->internal_static_googlex_glass_common_proto_SetupUserAccountRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
@@ -950,12 +953,12 @@
     .locals 1
 
     .prologue
-    .line 209
+    .line 210
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 210
+    .line 211
     const-string v0, "com.google.googlex.glass.common.proto.MutableSetup$SetupUserAccountRequest"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -964,7 +967,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 212
+    .line 213
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -977,10 +980,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 167
+    .line 168
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedIsInitialized:B
 
-    .line 168
+    .line 169
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -988,17 +991,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 171
+    .line 172
     :goto_0
     return v1
 
-    .line 168
+    .line 169
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 170
+    .line 171
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->memoizedIsInitialized:B
 
@@ -1009,7 +1012,7 @@
     .locals 1
 
     .prologue
-    .line 269
+    .line 270
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -1022,14 +1025,14 @@
     .parameter "parent"
 
     .prologue
-    .line 278
+    .line 279
     new-instance v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$1;)V
 
-    .line 279
+    .line 280
     .local v0, builder:Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
     return-object v0
 .end method
@@ -1075,7 +1078,7 @@
     .locals 1
 
     .prologue
-    .line 273
+    .line 274
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->newBuilder(Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -1116,7 +1119,7 @@
     .end annotation
 
     .prologue
-    .line 202
+    .line 203
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1136,24 +1139,24 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 176
+    .line 177
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getSerializedSize()I
 
-    .line 177
+    .line 178
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 178
+    .line 179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 180
+    .line 181
     :cond_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1161,6 +1164,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 181
+    .line 182
     return-void
 .end method

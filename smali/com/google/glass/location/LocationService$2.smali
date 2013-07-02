@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 226
+    .line 224
     iput-object p1, p0, Lcom/google/glass/location/LocationService$2;->this$0:Lcom/google/glass/location/LocationService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 229
+    .line 227
     iget-object v0, p0, Lcom/google/glass/location/LocationService$2;->this$0:Lcom/google/glass/location/LocationService;
 
     #calls: Lcom/google/glass/location/LocationService;->handleCompanionConnected()V
     invoke-static {v0}, Lcom/google/glass/location/LocationService;->access$800(Lcom/google/glass/location/LocationService;)V
 
-    .line 230
+    .line 228
     return-void
 .end method

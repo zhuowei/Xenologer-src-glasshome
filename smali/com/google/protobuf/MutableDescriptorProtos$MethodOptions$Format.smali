@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 14507
+    .line 15039
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     const-string v1, "UNCOMPRESSED"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->UNCOMPRESSED:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
-    .line 14511
+    .line 15043
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     const-string v1, "ZIPPY_COMPRESSED"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->ZIPPY_COMPRESSED:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
-    .line 14502
+    .line 15034
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
-    .line 14539
+    .line 15071
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 14559
+    .line 15091
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->values()[Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 14573
+    .line 15105
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 14574
+    .line 15106
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->index:I
 
-    .line 14575
+    .line 15107
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->value:I
 
-    .line 14576
+    .line 15108
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 14556
+    .line 15088
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 14536
+    .line 15068
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 14527
+    .line 15059
     packed-switch p0, :pswitch_data_0
 
-    .line 14530
+    .line 15062
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 14528
+    .line 15060
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->UNCOMPRESSED:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     goto :goto_0
 
-    .line 14529
+    .line 15061
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->ZIPPY_COMPRESSED:Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     goto :goto_0
 
-    .line 14527
+    .line 15059
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 14563
+    .line 15095
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 14564
+    .line 15096
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 14567
+    .line 15099
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 14502
+    .line 15034
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 14502
+    .line 15034
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 14552
+    .line 15084
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 14524
+    .line 15056
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 14548
+    .line 15080
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$MethodOptions$Format;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

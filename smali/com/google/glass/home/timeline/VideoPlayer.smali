@@ -71,7 +71,7 @@
     .locals 3
 
     .prologue
-    .line 37
+    .line 39
     const-class v0, Lcom/google/glass/home/timeline/VideoPlayer;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -80,7 +80,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
-    .line 43
+    .line 45
     const-string v0, "http"
 
     const-string v1, "https"
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->VALID_STREAM_URL_SCHEMES:Ljava/util/Set;
 
-    .line 49
+    .line 51
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
@@ -111,32 +111,32 @@
     .parameter "videoAttachment"
 
     .prologue
-    .line 88
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 78
+    .line 80
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->destroyedSurfaces:Ljava/util/Set;
 
-    .line 89
+    .line 91
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 90
+    .line 92
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoView:Landroid/view/TextureView;
 
-    .line 91
+    .line 93
     iput-object p2, p0, Lcom/google/glass/home/timeline/VideoPlayer;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
-    .line 92
+    .line 94
     iput-object p3, p0, Lcom/google/glass/home/timeline/VideoPlayer;->listener:Lcom/google/glass/home/timeline/VideoPlayerListener;
 
-    .line 93
+    .line 95
     iput-object p4, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoAttachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
-    .line 94
+    .line 96
     new-instance v0, Lcom/google/glass/home/timeline/VideoEventLogger;
 
     invoke-virtual {p1}, Landroid/view/TextureView;->getContext()Landroid/content/Context;
@@ -151,7 +151,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->eventLogger:Lcom/google/glass/home/timeline/VideoEventLogger;
 
-    .line 95
+    .line 97
     return-void
 .end method
 
@@ -160,7 +160,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-boolean v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldCallStartCallback:Z
 
     return v0
@@ -172,7 +172,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 38
     iput-boolean p1, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldCallStartCallback:Z
 
     return p1
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 38
     sget-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -193,7 +193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoAttachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
     return-object v0
@@ -204,7 +204,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
     return-object v0
@@ -215,7 +215,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     invoke-direct {p0}, Lcom/google/glass/home/timeline/VideoPlayer;->releaseDestroyedSurfaces()V
 
     return-void
@@ -226,7 +226,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->listener:Lcom/google/glass/home/timeline/VideoPlayerListener;
 
     return-object v0
@@ -237,7 +237,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->eventLogger:Lcom/google/glass/home/timeline/VideoEventLogger;
 
     return-object v0
@@ -248,7 +248,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->destroyedSurfaces:Ljava/util/Set;
 
     return-object v0
@@ -259,7 +259,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoView:Landroid/view/TextureView;
 
     return-object v0
@@ -270,7 +270,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-boolean v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldStartPlayback:Z
 
     return v0
@@ -282,7 +282,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 38
     iput-boolean p1, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldStartPlayback:Z
 
     return p1
@@ -293,7 +293,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     invoke-direct {p0}, Lcom/google/glass/home/timeline/VideoPlayer;->playInternal()V
 
     return-void
@@ -304,7 +304,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
 
     return-object v0
@@ -316,7 +316,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 38
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
 
     return-object p1
@@ -327,7 +327,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 38
     iget-boolean v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->isPlayerError:Z
 
     return v0
@@ -339,7 +339,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 38
     iput-boolean p1, p0, Lcom/google/glass/home/timeline/VideoPlayer;->isPlayerError:Z
 
     return p1
@@ -349,26 +349,26 @@
     .locals 3
 
     .prologue
-    .line 175
+    .line 177
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 178
+    .line 180
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 181
     sget-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     const-string v1, "Already playing."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
+    .line 294
     :goto_0
     return-void
 
-    .line 184
+    .line 186
     :cond_0
     new-instance v0, Lcom/google/glass/home/timeline/VideoPlayer$2;
 
@@ -376,7 +376,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
-    .line 291
+    .line 293
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
     sget-object v1, Lcom/google/glass/home/timeline/VideoPlayer;->PLAY_STOP_EXECUTOR:Ljava/util/concurrent/Executor;
@@ -399,12 +399,12 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 384
+    .line 386
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 385
+    .line 387
     .local v1, file:Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->length()J
 
@@ -426,7 +426,7 @@
 
     if-lez v7, :cond_2
 
-    .line 386
+    .line 388
     :cond_0
     sget-object v7, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
@@ -464,12 +464,12 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 410
+    .line 412
     :cond_1
     :goto_0
     return-object v6
 
-    .line 391
+    .line 393
     :cond_2
     :try_start_0
     const-string v7, "utf8"
@@ -482,7 +482,7 @@
 
     move-result-object v4
 
-    .line 392
+    .line 394
     .local v4, lines:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -503,13 +503,13 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 393
+    .line 395
     .local v3, line:Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 396
+    .line 398
     const-string v7, "#"
 
     invoke-virtual {v3, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -518,12 +518,12 @@
 
     if-nez v7, :cond_3
 
-    .line 400
+    .line 402
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v5
 
-    .line 401
+    .line 403
     .local v5, uri:Landroid/net/Uri;
     sget-object v7, Lcom/google/glass/home/timeline/VideoPlayer;->VALID_STREAM_URL_SCHEMES:Ljava/util/Set;
 
@@ -537,7 +537,7 @@
 
     if-nez v7, :cond_4
 
-    .line 402
+    .line 404
     sget-object v7, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -574,7 +574,7 @@
 
     goto :goto_1
 
-    .line 407
+    .line 409
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #line:Ljava/lang/String;
     .end local v4           #lines:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
@@ -582,7 +582,7 @@
     :catch_0
     move-exception v0
 
-    .line 408
+    .line 410
     .local v0, e:Ljava/io/IOException;
     sget-object v7, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
@@ -608,7 +608,7 @@
 
     goto :goto_0
 
-    .line 405
+    .line 407
     .end local v0           #e:Ljava/io/IOException;
     .restart local v2       #i$:Ljava/util/Iterator;
     .restart local v3       #line:Ljava/lang/String;
@@ -629,10 +629,10 @@
     .locals 4
 
     .prologue
-    .line 367
+    .line 369
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 369
+    .line 371
     iget-object v2, p0, Lcom/google/glass/home/timeline/VideoPlayer;->destroyedSurfaces:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -653,7 +653,7 @@
 
     check-cast v1, Landroid/graphics/SurfaceTexture;
 
-    .line 370
+    .line 372
     .local v1, surface:Landroid/graphics/SurfaceTexture;
     sget-object v2, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
@@ -661,19 +661,19 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 371
+    .line 373
     invoke-virtual {v1}, Landroid/graphics/SurfaceTexture;->release()V
 
     goto :goto_0
 
-    .line 373
+    .line 375
     .end local v1           #surface:Landroid/graphics/SurfaceTexture;
     :cond_0
     iget-object v2, p0, Lcom/google/glass/home/timeline/VideoPlayer;->destroyedSurfaces:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->clear()V
 
-    .line 374
+    .line 376
     return-void
 .end method
 
@@ -683,7 +683,7 @@
     .locals 2
 
     .prologue
-    .line 101
+    .line 103
     const-string v0, "video/vnd.google-glass.stream-url"
 
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoAttachment:Lcom/google/googlex/glass/common/proto/Attachment;
@@ -705,35 +705,35 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 106
+    .line 108
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 107
+    .line 109
     sget-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     const-string v1, "Play requested."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 108
+    .line 110
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->eventLogger:Lcom/google/glass/home/timeline/VideoEventLogger;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/VideoEventLogger;->onPlaybackRequested()V
 
-    .line 111
+    .line 113
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertNull(Ljava/lang/Object;)V
 
-    .line 114
+    .line 116
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoView:Landroid/view/TextureView;
 
     invoke-virtual {v0, v2}, Landroid/view/TextureView;->setVisibility(I)V
 
-    .line 118
+    .line 120
     iput-boolean v2, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldCallStartCallback:Z
 
-    .line 119
+    .line 121
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoView:Landroid/view/TextureView;
 
     new-instance v1, Lcom/google/glass/home/timeline/VideoPlayer$1;
@@ -742,7 +742,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
 
-    .line 165
+    .line 167
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->videoView:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->isAvailable()Z
@@ -751,24 +751,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 166
+    .line 168
     sget-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     const-string v1, "Surface texture already available."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 167
+    .line 169
     iput-boolean v2, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldStartPlayback:Z
 
-    .line 168
+    .line 170
     invoke-direct {p0}, Lcom/google/glass/home/timeline/VideoPlayer;->playInternal()V
 
-    .line 172
+    .line 174
     :goto_0
     return-void
 
-    .line 170
+    .line 172
     :cond_0
     const/4 v0, 0x1
 
@@ -783,47 +783,47 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 296
+    .line 298
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 297
+    .line 299
     sget-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     const-string v1, "Stop requested."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 300
+    .line 302
     iput-boolean v2, p0, Lcom/google/glass/home/timeline/VideoPlayer;->shouldStartPlayback:Z
 
-    .line 303
+    .line 305
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
     if-nez v0, :cond_0
 
-    .line 304
+    .line 306
     sget-object v0, Lcom/google/glass/home/timeline/VideoPlayer;->TAG:Ljava/lang/String;
 
     const-string v1, "Already stopped."
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 360
+    .line 362
     :goto_0
     return-void
 
-    .line 309
+    .line 311
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
     invoke-virtual {v0, v2}, Lcom/google/glass/util/SerialAsyncTask;->cancel(Z)Z
 
-    .line 310
+    .line 312
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer;->playRequest:Lcom/google/glass/util/SerialAsyncTask;
 
-    .line 313
+    .line 315
     new-instance v0, Lcom/google/glass/home/timeline/VideoPlayer$3;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/timeline/VideoPlayer$3;-><init>(Lcom/google/glass/home/timeline/VideoPlayer;)V

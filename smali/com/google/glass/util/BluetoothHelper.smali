@@ -30,7 +30,7 @@
     .locals 2
 
     .prologue
-    .line 26
+    .line 25
     const-class v0, Lcom/google/glass/util/BluetoothHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -39,7 +39,7 @@
 
     sput-object v0, Lcom/google/glass/util/BluetoothHelper;->TAG:Ljava/lang/String;
 
-    .line 28
+    .line 27
     new-instance v0, Landroid/os/ParcelUuid;
 
     sget-object v1, Lcom/google/glass/bluetooth/BluetoothUuids;->IDENTITY_UUID:Ljava/util/UUID;
@@ -55,10 +55,10 @@
     .locals 0
 
     .prologue
-    .line 25
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 204
+    .line 185
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 25
+    .line 24
     sget-object v0, Lcom/google/glass/util/BluetoothHelper;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -76,12 +76,12 @@
     .locals 3
 
     .prologue
-    .line 186
+    .line 166
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    .line 187
+    .line 168
     .local v0, adapter:Landroid/bluetooth/BluetoothAdapter;
     invoke-static {v0}, Lcom/google/glass/util/BluetoothHelper;->isBluetoothEnabled(Landroid/bluetooth/BluetoothAdapter;)Z
 
@@ -97,12 +97,12 @@
 
     if-eq v1, v2, :cond_1
 
-    .line 196
+    .line 177
     :cond_0
     :goto_0
     return-void
 
-    .line 192
+    .line 173
     :cond_1
     sget-object v1, Lcom/google/glass/util/BluetoothHelper;->TAG:Ljava/lang/String;
 
@@ -110,7 +110,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 176
     const/16 v1, 0x15
 
     const/4 v2, 0x0
@@ -125,16 +125,16 @@
     .parameter "device"
 
     .prologue
-    .line 125
+    .line 115
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getUuids()[Landroid/os/ParcelUuid;
 
     move-result-object v4
 
-    .line 126
+    .line 116
     .local v4, uuids:[Landroid/os/ParcelUuid;
     if-nez v4, :cond_1
 
-    .line 127
+    .line 117
     sget-object v5, Lcom/google/glass/util/BluetoothHelper;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -161,14 +161,14 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
+    .line 125
     :cond_0
     const/4 v5, 0x0
 
     :goto_0
     return v5
 
-    .line 129
+    .line 119
     :cond_1
     move-object v0, v4
 
@@ -184,7 +184,7 @@
 
     aget-object v3, v0, v1
 
-    .line 130
+    .line 120
     .local v3, uuid:Landroid/os/ParcelUuid;
     sget-object v5, Lcom/google/glass/bluetooth/BluetoothUuids;->BLUETOOTH_NAP_UUID:Landroid/os/ParcelUuid;
 
@@ -194,50 +194,16 @@
 
     if-eqz v5, :cond_2
 
-    .line 131
+    .line 121
     const/4 v5, 0x1
 
     goto :goto_0
 
-    .line 129
+    .line 119
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
-.end method
-
-.method public static hasUuid(Landroid/bluetooth/BluetoothDevice;)Z
-    .locals 3
-    .parameter "device"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 67
-    if-nez p0, :cond_1
-
-    .line 71
-    :cond_0
-    :goto_0
-    return v1
-
-    .line 70
-    :cond_1
-    invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getUuids()[Landroid/os/ParcelUuid;
-
-    move-result-object v0
-
-    .line 71
-    .local v0, uuids:[Landroid/os/ParcelUuid;
-    if-eqz v0, :cond_0
-
-    array-length v2, v0
-
-    if-lez v2, :cond_0
-
-    const/4 v1, 0x1
-
-    goto :goto_0
 .end method
 
 .method public static isBluetoothEnabled(Landroid/bluetooth/BluetoothAdapter;)Z
@@ -245,7 +211,7 @@
     .parameter "bluetoothAdapter"
 
     .prologue
-    .line 153
+    .line 132
     if-eqz p0, :cond_0
 
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothAdapter;->isEnabled()Z
@@ -272,21 +238,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 110
+    .line 100
     if-nez p0, :cond_1
 
-    .line 114
+    .line 104
     :cond_0
     :goto_0
     return v1
 
-    .line 113
+    .line 103
     :cond_1
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getUuids()[Landroid/os/ParcelUuid;
 
     move-result-object v0
 
-    .line 114
+    .line 104
     .local v0, uuids:[Landroid/os/ParcelUuid;
     if-eqz v0, :cond_0
 
@@ -307,41 +273,6 @@
     goto :goto_0
 .end method
 
-.method public static isPhone(Landroid/bluetooth/BluetoothDevice;)Z
-    .locals 2
-    .parameter "device"
-
-    .prologue
-    .line 145
-    invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/bluetooth/BluetoothClass;->getMajorDeviceClass()I
-
-    move-result v0
-
-    const/16 v1, 0x200
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method public static isProbablyKnownAsGlassDevice(Landroid/bluetooth/BluetoothDevice;)Z
     .locals 6
     .parameter "device"
@@ -349,31 +280,31 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 81
+    .line 71
     if-nez p0, :cond_1
 
-    .line 100
+    .line 90
     :cond_0
     :goto_0
     return v3
 
-    .line 84
+    .line 74
     :cond_1
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getUuids()[Landroid/os/ParcelUuid;
 
     move-result-object v2
 
-    .line 85
+    .line 75
     .local v2, uuids:[Landroid/os/ParcelUuid;
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 86
+    .line 76
     .local v0, address:Ljava/lang/String;
     if-eqz v2, :cond_2
 
-    .line 87
+    .line 77
     invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v3
@@ -386,20 +317,20 @@
 
     goto :goto_0
 
-    .line 88
+    .line 78
     :cond_2
     if-eqz v0, :cond_0
 
-    .line 89
+    .line 79
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getBluetoothClass()Landroid/bluetooth/BluetoothClass;
 
     move-result-object v1
 
-    .line 90
+    .line 80
     .local v1, bluetoothClass:Landroid/bluetooth/BluetoothClass;
     if-eqz v1, :cond_0
 
-    .line 94
+    .line 84
     invoke-virtual {v1}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v4
@@ -437,17 +368,17 @@
     .parameter "device"
 
     .prologue
-    .line 48
+    .line 47
     if-nez p0, :cond_0
 
-    .line 49
+    .line 48
     const-string v0, "null"
 
-    .line 61
+    .line 60
     :goto_0
     return-object v0
 
-    .line 52
+    .line 51
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -485,7 +416,7 @@
 
     move-result-object v0
 
-    .line 53
+    .line 52
     .local v0, identity:Ljava/lang/String;
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothDevice;->getBondState()I
 
@@ -495,7 +426,7 @@
 
     goto :goto_0
 
-    .line 59
+    .line 58
     :pswitch_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -517,7 +448,7 @@
 
     goto :goto_0
 
-    .line 55
+    .line 54
     :pswitch_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -539,7 +470,7 @@
 
     goto :goto_0
 
-    .line 57
+    .line 56
     :pswitch_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -561,7 +492,7 @@
 
     goto :goto_0
 
-    .line 53
+    .line 52
     :pswitch_data_0
     .packed-switch 0xa
         :pswitch_0
@@ -574,12 +505,12 @@
     .locals 1
 
     .prologue
-    .line 158
+    .line 137
     const/16 v0, 0x78
 
     invoke-static {v0}, Lcom/google/glass/util/BluetoothHelper;->makeBluetoothDiscoverable(I)V
 
-    .line 159
+    .line 138
     return-void
 .end method
 
@@ -590,12 +521,12 @@
     .prologue
     const/16 v4, 0x17
 
-    .line 167
+    .line 146
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    .line 168
+    .line 148
     .local v0, adapter:Landroid/bluetooth/BluetoothAdapter;
     invoke-static {v0}, Lcom/google/glass/util/BluetoothHelper;->isBluetoothEnabled(Landroid/bluetooth/BluetoothAdapter;)Z
 
@@ -609,12 +540,12 @@
 
     if-ne v1, v4, :cond_1
 
-    .line 180
+    .line 160
     :cond_0
     :goto_0
     return-void
 
-    .line 173
+    .line 153
     :cond_1
     sget-object v1, Lcom/google/glass/util/BluetoothHelper;->TAG:Ljava/lang/String;
 
@@ -644,10 +575,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 177
+    .line 157
     invoke-static {p0}, Lcom/google/glass/hidden/HiddenBluetoothAdapter;->setDiscoverableTimeout(I)V
 
-    .line 178
+    .line 158
     invoke-static {v4, p0}, Lcom/google/glass/hidden/HiddenBluetoothAdapter;->setScanMode(II)V
 
     goto :goto_0

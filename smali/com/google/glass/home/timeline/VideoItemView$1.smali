@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 42
+    .line 44
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoItemView$1;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 45
+    .line 47
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoItemView$1;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
 
     #getter for: Lcom/google/glass/home/timeline/VideoItemView;->videoPlayer:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 46
+    .line 48
     invoke-static {}, Lcom/google/glass/home/timeline/VideoItemView;->access$200()Ljava/lang/String;
 
     move-result-object v0
@@ -92,7 +92,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 47
+    .line 49
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoItemView$1;->this$0:Lcom/google/glass/home/timeline/VideoItemView;
 
     #getter for: Lcom/google/glass/home/timeline/VideoItemView;->videoPlayer:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -102,7 +102,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->play()V
 
-    .line 49
+    .line 51
     :cond_0
     return-void
 .end method

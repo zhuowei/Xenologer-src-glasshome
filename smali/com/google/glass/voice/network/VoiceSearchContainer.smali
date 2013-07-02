@@ -55,6 +55,8 @@
 
 .field private final context:Landroid/content/Context;
 
+.field private cookies:Lcom/google/glass/voice/network/Cookies;
+
 .field private greco3EngineManager:Lcom/google/android/speech/embedded/Greco3EngineManager;
 
 .field private networkInfo:Lcom/google/android/speech/utils/NetworkInformation;
@@ -94,20 +96,20 @@
     .parameter "context"
 
     .prologue
-    .line 150
+    .line 151
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 152
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->context:Landroid/content/Context;
 
-    .line 153
+    .line 154
     invoke-static {p1}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getConfiguration(Landroid/content/Context;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
-    .line 155
+    .line 156
     const/4 v0, 0x5
 
     const-string v1, "BackgroundExecutor"
@@ -118,21 +120,21 @@
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->scheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
-    .line 158
+    .line 159
     new-instance v0, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;
 
     invoke-direct {v0, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->audioInputStreamFactory:Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;
 
-    .line 159
+    .line 160
     new-instance v0, Lcom/google/android/speech/SpeechLevelSource;
 
     invoke-direct {v0}, Lcom/google/android/speech/SpeechLevelSource;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechLevelSource:Lcom/google/android/speech/SpeechLevelSource;
 
-    .line 160
+    .line 161
     new-instance v0, Lcom/google/glass/voice/network/VoiceSearchContainer$SpeechSettingsImpl;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
@@ -141,7 +143,14 @@
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechSettings:Lcom/google/android/speech/SpeechSettings;
 
-    .line 161
+    .line 162
+    invoke-static {p1}, Lcom/google/glass/voice/network/Cookies;->create(Landroid/content/Context;)Lcom/google/glass/voice/network/Cookies;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->cookies:Lcom/google/glass/voice/network/Cookies;
+
+    .line 163
     return-void
 .end method
 
@@ -172,7 +181,7 @@
     .parameter "context"
 
     .prologue
-    .line 132
+    .line 133
     const-class v1, Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     monitor-enter v1
@@ -186,12 +195,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 133
+    .line 134
     monitor-exit v1
 
     return-void
 
-    .line 132
+    .line 133
     :catchall_0
     move-exception v0
 
@@ -200,23 +209,34 @@
     throw v0
 .end method
 
-.method private createEmbeddedParams(Lcom/google/glass/voice/VoiceService;)Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
+.method private createEmbeddedParams(Ljava/util/List;)Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
     .locals 8
-    .parameter "voiceService"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;",
+            ">;)",
+            "Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;"
+        }
+    .end annotation
 
     .prologue
-    .line 294
+    .line 299
+    .local p1, endpointerEventPreprocessors:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;>;"
     new-instance v3, Lcom/google/glass/voice/network/VoiceSearchContainer$4;
 
     invoke-direct {v3, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$4;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
-    .line 306
+    .line 311
     .local v3, greco3SelectorMode:Lcom/google/android/speech/embedded/Greco3ModeSelector;
     new-instance v0, Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
 
     new-instance v1, Lcom/google/glass/voice/network/CallbackFactory;
 
-    invoke-direct {v1, p1}, Lcom/google/glass/voice/network/CallbackFactory;-><init>(Lcom/google/glass/voice/VoiceService;)V
+    invoke-direct {v1, p1}, Lcom/google/glass/voice/network/CallbackFactory;-><init>(Ljava/util/List;)V
 
     invoke-virtual {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getGreco3EngineManager()Lcom/google/android/speech/embedded/Greco3EngineManager;
 
@@ -243,7 +263,7 @@
     .parameter "networkExecutorService"
 
     .prologue
-    .line 368
+    .line 374
     new-instance v0, Lcom/google/android/speech/params/RecognitionEngineParams$HybridParams;
 
     invoke-virtual {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getNetworkInfo()Lcom/google/android/speech/utils/NetworkInformation;
@@ -270,12 +290,12 @@
     .parameter "networkExecutorService"
 
     .prologue
-    .line 332
+    .line 338
     new-instance v7, Lcom/google/glass/voice/network/VoiceSearchContainer$6;
 
     invoke-direct {v7, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$6;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
-    .line 340
+    .line 346
     .local v7, pairHttpServerInfoSupplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;>;"
     new-instance v1, Lcom/google/android/speech/network/PairHttpConnectionFactory;
 
@@ -287,13 +307,13 @@
 
     invoke-direct {v1, v7, v0}, Lcom/google/android/speech/network/PairHttpConnectionFactory;-><init>(Lcom/google/common/base/Supplier;Lcom/google/android/speech/network/ConnectionFactory;)V
 
-    .line 344
+    .line 350
     .local v1, http:Lcom/google/android/speech/network/S3ConnectionFactory;
     new-instance v6, Lcom/google/glass/voice/network/VoiceSearchContainer$7;
 
     invoke-direct {v6, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$7;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
-    .line 352
+    .line 358
     .local v6, networkRecognizerInfoSupplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$NetworkRecognizer;>;"
     new-instance v0, Lcom/google/android/speech/params/RecognitionEngineParams$NetworkParams;
 
@@ -318,21 +338,32 @@
     return-object v0
 .end method
 
-.method private createRecognizer(Lcom/google/glass/voice/VoiceService;)Lcom/google/android/speech/Recognizer;
+.method private createRecognizer(Ljava/util/List;)Lcom/google/android/speech/Recognizer;
     .locals 11
-    .parameter "voiceService"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;",
+            ">;)",
+            "Lcom/google/android/speech/Recognizer;"
+        }
+    .end annotation
 
     .prologue
+    .local p1, endpointerEventPreprocessors:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;>;"
     const/4 v6, 0x0
 
-    .line 219
+    .line 222
     sget-object v7, Lcom/google/glass/voice/network/VoiceSearchContainer;->TAG:Ljava/lang/String;
 
     const-string v8, "Creating Recognizer"
 
     invoke-static {v7, v8}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
+    .line 225
     const/4 v7, 0x1
 
     :try_start_0
@@ -342,7 +373,7 @@
 
     move-result-object v2
 
-    .line 224
+    .line 227
     .local v2, localExecutorService:Ljava/util/concurrent/ExecutorService;
     const/4 v7, 0x1
 
@@ -352,25 +383,25 @@
 
     move-result-object v3
 
-    .line 227
+    .line 230
     .local v3, networkExecutorService:Ljava/util/concurrent/ExecutorService;
-    invoke-direct {p0, p1}, Lcom/google/glass/voice/network/VoiceSearchContainer;->createEmbeddedParams(Lcom/google/glass/voice/VoiceService;)Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
+    invoke-direct {p0, p1}, Lcom/google/glass/voice/network/VoiceSearchContainer;->createEmbeddedParams(Ljava/util/List;)Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
 
     move-result-object v0
 
-    .line 228
+    .line 232
     .local v0, embeddedParams:Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
     invoke-direct {p0, v3}, Lcom/google/glass/voice/network/VoiceSearchContainer;->createNetworkParams(Ljava/util/concurrent/ExecutorService;)Lcom/google/android/speech/params/RecognitionEngineParams$NetworkParams;
 
     move-result-object v4
 
-    .line 230
+    .line 234
     .local v4, networkParams:Lcom/google/android/speech/params/RecognitionEngineParams$NetworkParams;
     invoke-direct {p0, v2, v3}, Lcom/google/glass/voice/network/VoiceSearchContainer;->createHybridParams(Ljava/util/concurrent/ExecutorService;Ljava/util/concurrent/ExecutorService;)Lcom/google/android/speech/params/RecognitionEngineParams$HybridParams;
 
     move-result-object v1
 
-    .line 235
+    .line 239
     .local v1, hybridParams:Lcom/google/android/speech/params/RecognitionEngineParams$HybridParams;
     const-string v7, "GrecoExecutor"
 
@@ -398,7 +429,7 @@
 
     move-result-object v6
 
-    .line 241
+    .line 245
     .end local v0           #embeddedParams:Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
     .end local v1           #hybridParams:Lcom/google/android/speech/params/RecognitionEngineParams$HybridParams;
     .end local v2           #localExecutorService:Ljava/util/concurrent/ExecutorService;
@@ -407,11 +438,11 @@
     :goto_0
     return-object v6
 
-    .line 239
+    .line 243
     :catch_0
     move-exception v5
 
-    .line 240
+    .line 244
     .local v5, re:Ljava/lang/RuntimeException;
     sget-object v7, Lcom/google/glass/voice/network/VoiceSearchContainer;->TAG:Ljava/lang/String;
 
@@ -426,7 +457,7 @@
     .locals 2
 
     .prologue
-    .line 136
+    .line 137
     const-class v1, Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     monitor-enter v1
@@ -436,25 +467,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
+    .line 138
     sget-object v0, Lcom/google/glass/voice/network/VoiceSearchContainer;->container:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-virtual {v0}, Lcom/google/glass/voice/network/VoiceSearchContainer;->destroy()V
 
-    .line 138
+    .line 139
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/glass/voice/network/VoiceSearchContainer;->container:Lcom/google/glass/voice/network/VoiceSearchContainer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 140
+    .line 141
     :cond_0
     monitor-exit v1
 
     return-void
 
-    .line 136
+    .line 137
     :catchall_0
     move-exception v0
 
@@ -468,7 +499,7 @@
     .parameter "context"
 
     .prologue
-    .line 167
+    .line 169
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -480,43 +511,43 @@
 
     move-result-object v4
 
-    .line 168
+    .line 170
     .local v4, is:Ljava/io/InputStream;
     invoke-static {v4}, Lcom/google/common/io/ByteStreams;->toByteArray(Ljava/io/InputStream;)[B
 
     move-result-object v0
 
-    .line 169
+    .line 171
     .local v0, bytes:[B
     invoke-static {v0}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->parseFrom([B)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
     move-result-object v1
 
-    .line 172
+    .line 174
     .local v1, config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getServiceApi()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServiceApi;
 
     move-result-object v5
 
-    .line 173
+    .line 175
     .local v5, serviceApi:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServiceApi;
     invoke-virtual {v5}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServiceApi;->getEndpointerParams()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;
 
     move-result-object v3
 
-    .line 174
+    .line 176
     .local v3, endpointerParams:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;
     const/16 v6, 0x2ee
 
     invoke-virtual {v3, v6}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;->setExtraSilenceAfterEndOfSpeechMsec(I)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;
 
-    .line 175
+    .line 177
     invoke-virtual {v5, v3}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServiceApi;->setEndpointerParams(Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServiceApi;
 
-    .line 176
+    .line 178
     invoke-virtual {v1, v5}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->setServiceApi(Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServiceApi;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
-    .line 180
+    .line 182
     sget-object v6, Lcom/google/glass/util/Labs$Feature;->SEARCH_DEV_SERVER:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v6}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -525,7 +556,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 181
+    .line 183
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getTcpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
     move-result-object v6
@@ -534,7 +565,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->setHost(Ljava/lang/String;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
-    .line 182
+    .line 184
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getTcpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
     move-result-object v6
@@ -543,7 +574,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->setPort(I)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
-    .line 183
+    .line 185
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getPairHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v6
@@ -556,7 +587,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->setUrl(Ljava/lang/String;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;
 
-    .line 186
+    .line 188
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getPairHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v6
@@ -569,7 +600,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->setUrl(Ljava/lang/String;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;
 
-    .line 211
+    .line 213
     :cond_0
     :goto_0
     sget-object v6, Lcom/google/glass/voice/network/VoiceSearchContainer;->TAG:Ljava/lang/String;
@@ -602,10 +633,10 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 212
+    .line 214
     return-object v1
 
-    .line 189
+    .line 191
     :cond_1
     sget-object v6, Lcom/google/glass/util/Labs$Feature;->SEARCH_TEST_SERVER:Lcom/google/glass/util/Labs$Feature;
 
@@ -615,7 +646,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 190
+    .line 192
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getTcpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
     move-result-object v6
@@ -624,7 +655,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->setHost(Ljava/lang/String;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
-    .line 191
+    .line 193
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getTcpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
     move-result-object v6
@@ -633,7 +664,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->setPort(I)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;
 
-    .line 192
+    .line 194
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getPairHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v6
@@ -646,7 +677,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->setUrl(Ljava/lang/String;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;
 
-    .line 195
+    .line 197
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getPairHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v6
@@ -663,7 +694,7 @@
 
     goto :goto_0
 
-    .line 213
+    .line 215
     .end local v0           #bytes:[B
     .end local v1           #config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
     .end local v3           #endpointerParams:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;
@@ -672,7 +703,7 @@
     :catch_0
     move-exception v2
 
-    .line 214
+    .line 216
     .local v2, e:Ljava/io/IOException;
     new-instance v6, Ljava/lang/RuntimeException;
 
@@ -682,7 +713,7 @@
 
     throw v6
 
-    .line 198
+    .line 200
     .end local v2           #e:Ljava/io/IOException;
     .restart local v0       #bytes:[B
     .restart local v1       #config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
@@ -699,10 +730,10 @@
 
     if-eqz v6, :cond_0
 
-    .line 201
+    .line 203
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->clearTcpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
-    .line 203
+    .line 205
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getPairHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v6
@@ -715,7 +746,7 @@
 
     invoke-virtual {v6, v7}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->setUrl(Ljava/lang/String;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;
 
-    .line 206
+    .line 208
     invoke-virtual {v1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getPairHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v6
@@ -737,7 +768,7 @@
     .locals 3
 
     .prologue
-    .line 143
+    .line 144
     const-class v1, Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     monitor-enter v1
@@ -747,7 +778,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 144
+    .line 145
     sget-object v0, Lcom/google/glass/voice/network/VoiceSearchContainer;->container:Lcom/google/glass/voice/network/VoiceSearchContainer;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -756,7 +787,7 @@
 
     return-object v0
 
-    .line 146
+    .line 147
     :cond_0
     :try_start_1
     new-instance v0, Ljava/lang/NullPointerException;
@@ -769,7 +800,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 143
+    .line 144
     :catchall_0
     move-exception v0
 
@@ -779,15 +810,15 @@
 .end method
 
 .method private getNetworkRequestProducerParams()Lcom/google/android/speech/params/NetworkRequestProducerParams;
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 358
+    .line 364
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->networkRequestProducerParams:Lcom/google/android/speech/params/NetworkRequestProducerParams;
 
     if-nez v0, :cond_0
 
-    .line 359
+    .line 365
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->context:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechSettings:Lcom/google/android/speech/SpeechSettings;
@@ -796,17 +827,19 @@
 
     move-result-object v2
 
-    new-instance v3, Lcom/google/glass/util/SearchQueryBuilder$LocationHelperImpl;
+    new-instance v3, Lcom/google/glass/voice/network/SearchQueryBuilder$LocationHelperImpl;
 
-    invoke-direct {v3}, Lcom/google/glass/util/SearchQueryBuilder$LocationHelperImpl;-><init>()V
+    invoke-direct {v3}, Lcom/google/glass/voice/network/SearchQueryBuilder$LocationHelperImpl;-><init>()V
 
-    invoke-static {v0, v1, v2, v3}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder;->create(Landroid/content/Context;Lcom/google/android/speech/SpeechSettings;Lcom/google/android/speech/utils/NetworkInformation;Lcom/google/android/speech/helper/SpeechLocationHelper;)Lcom/google/android/speech/params/NetworkRequestProducerParams;
+    iget-object v4, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->cookies:Lcom/google/glass/voice/network/Cookies;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder;->create(Landroid/content/Context;Lcom/google/android/speech/SpeechSettings;Lcom/google/android/speech/utils/NetworkInformation;Lcom/google/android/speech/helper/SpeechLocationHelper;Lcom/google/glass/voice/network/Cookies;)Lcom/google/android/speech/params/NetworkRequestProducerParams;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->networkRequestProducerParams:Lcom/google/android/speech/params/NetworkRequestProducerParams;
 
-    .line 363
+    .line 369
     :cond_0
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->networkRequestProducerParams:Lcom/google/android/speech/params/NetworkRequestProducerParams;
 
@@ -817,19 +850,19 @@
     .locals 1
 
     .prologue
-    .line 287
+    .line 291
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechLibFactory:Lcom/google/android/speech/SpeechLibFactory;
 
     if-nez v0, :cond_0
 
-    .line 288
+    .line 292
     new-instance v0, Lcom/google/glass/voice/network/SpeechLibFactoryImpl;
 
     invoke-direct {v0}, Lcom/google/glass/voice/network/SpeechLibFactoryImpl;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechLibFactory:Lcom/google/android/speech/SpeechLibFactory;
 
-    .line 290
+    .line 294
     :cond_0
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechLibFactory:Lcom/google/android/speech/SpeechLibFactory;
 
@@ -842,12 +875,12 @@
     .locals 1
 
     .prologue
-    .line 383
+    .line 389
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->scheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
     invoke-interface {v0}, Ljava/util/concurrent/ScheduledExecutorService;->shutdownNow()Ljava/util/List;
 
-    .line 384
+    .line 390
     return-void
 .end method
 
@@ -855,29 +888,29 @@
     .locals 9
 
     .prologue
-    .line 248
+    .line 252
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->audioController:Lcom/google/android/speech/audio/AudioController;
 
     if-nez v0, :cond_0
 
-    .line 249
+    .line 253
     new-instance v4, Lcom/google/glass/voice/network/VoiceSearchContainer$1;
 
     invoke-direct {v4, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$1;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
-    .line 256
+    .line 260
     .local v4, dummySpeechSoundManager:Lcom/google/android/speech/audio/SpeechSoundManager;
     new-instance v7, Lcom/google/glass/voice/network/VoiceSearchContainer$2;
 
     invoke-direct {v7, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$2;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
-    .line 269
+    .line 273
     .local v7, dummyAudioRouter:Lcom/google/android/voicesearch/AudioRouter;
     new-instance v6, Lcom/google/glass/voice/network/VoiceSearchContainer$3;
 
     invoke-direct {v6, p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$3;-><init>(Lcom/google/glass/voice/network/VoiceSearchContainer;)V
 
-    .line 277
+    .line 281
     .local v6, dummyAudioRoutingSupplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<Ljava/lang/Integer;>;"
     new-instance v0, Lcom/google/android/speech/audio/AudioController;
 
@@ -903,14 +936,14 @@
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->audioController:Lcom/google/android/speech/audio/AudioController;
 
-    .line 280
+    .line 284
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->audioController:Lcom/google/android/speech/audio/AudioController;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->audioInputStreamFactory:Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;
 
     invoke-virtual {v0, v1}, Lcom/google/android/speech/audio/AudioController;->setRawInputStreamFactory(Lcom/google/android/speech/audio/AudioInputStreamFactory;)V
 
-    .line 283
+    .line 287
     .end local v4           #dummySpeechSoundManager:Lcom/google/android/speech/audio/SpeechSoundManager;
     .end local v6           #dummyAudioRoutingSupplier:Lcom/google/common/base/Supplier;,"Lcom/google/common/base/Supplier<Ljava/lang/Integer;>;"
     .end local v7           #dummyAudioRouter:Lcom/google/android/voicesearch/AudioRouter;
@@ -924,7 +957,7 @@
     .locals 1
 
     .prologue
-    .line 387
+    .line 393
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->audioInputStreamFactory:Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;
 
     return-object v0
@@ -934,7 +967,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 405
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
     return-object v0
@@ -946,12 +979,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 314
+    .line 320
     iget-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->greco3EngineManager:Lcom/google/android/speech/embedded/Greco3EngineManager;
 
     if-nez v1, :cond_0
 
-    .line 315
+    .line 321
     new-instance v1, Ljava/io/File;
 
     const-string v3, "/system/usr/srec"
@@ -962,7 +995,7 @@
 
     move-result-object v4
 
-    .line 316
+    .line 322
     .local v4, endpointerModels:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<Ljava/io/File;>;"
     new-instance v0, Lcom/google/android/speech/embedded/Greco3DataManager;
 
@@ -976,7 +1009,7 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/android/speech/embedded/Greco3DataManager;-><init>(Landroid/content/Context;Lcom/google/android/speech/embedded/Greco3Preferences;ILcom/google/common/collect/ImmutableList;Ljava/io/File;Ljava/util/concurrent/Executor;)V
 
-    .line 319
+    .line 325
     .local v0, dataManager:Lcom/google/android/speech/embedded/Greco3DataManager;
     new-instance v1, Lcom/google/glass/voice/network/VoiceSearchContainer$5;
 
@@ -984,14 +1017,14 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/speech/embedded/Greco3DataManager;->setPathDeleter(Lcom/google/android/speech/embedded/Greco3DataManager$PathDeleter;)V
 
-    .line 325
+    .line 331
     new-instance v1, Lcom/google/android/speech/embedded/Greco3EngineManager;
 
     invoke-direct {v1, v0, v2, v2}, Lcom/google/android/speech/embedded/Greco3EngineManager;-><init>(Lcom/google/android/speech/embedded/Greco3DataManager;Lcom/google/android/speech/embedded/Greco3Preferences;Lcom/google/android/speech/embedded/EndpointerModelCopier;)V
 
     iput-object v1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->greco3EngineManager:Lcom/google/android/speech/embedded/Greco3EngineManager;
 
-    .line 327
+    .line 333
     .end local v0           #dataManager:Lcom/google/android/speech/embedded/Greco3DataManager;
     .end local v4           #endpointerModels:Lcom/google/common/collect/ImmutableList;,"Lcom/google/common/collect/ImmutableList<Ljava/io/File;>;"
     :cond_0
@@ -1004,7 +1037,7 @@
     .locals 4
 
     .prologue
-    .line 373
+    .line 379
     monitor-enter p0
 
     :try_start_0
@@ -1012,7 +1045,7 @@
 
     if-nez v0, :cond_0
 
-    .line 374
+    .line 380
     new-instance v2, Lcom/google/android/speech/utils/NetworkInformation;
 
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->context:Landroid/content/Context;
@@ -1039,7 +1072,7 @@
 
     iput-object v2, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->networkInfo:Lcom/google/android/speech/utils/NetworkInformation;
 
-    .line 379
+    .line 385
     :cond_0
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->networkInfo:Lcom/google/android/speech/utils/NetworkInformation;
     :try_end_0
@@ -1049,7 +1082,7 @@
 
     return-object v0
 
-    .line 373
+    .line 379
     :catchall_0
     move-exception v0
 
@@ -1058,24 +1091,35 @@
     throw v0
 .end method
 
-.method public getRecognizerController(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/network/RecognizerController;
-    .locals 4
-    .parameter "voiceService"
+.method public getRecognizerController(Ljava/util/List;)Lcom/google/glass/voice/network/RecognizerController;
+    .locals 5
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;",
+            ">;)",
+            "Lcom/google/glass/voice/network/RecognizerController;"
+        }
+    .end annotation
 
     .prologue
-    .line 409
+    .line 416
+    .local p1, endpointerEventPreprocessors:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;>;"
     monitor-enter p0
 
-    .line 410
+    .line 417
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->recognizerController:Lcom/google/glass/voice/network/RecognizerController;
 
     if-nez v0, :cond_0
 
-    .line 411
+    .line 418
     new-instance v0, Lcom/google/glass/voice/network/RecognizerController;
 
-    invoke-direct {p0, p1}, Lcom/google/glass/voice/network/VoiceSearchContainer;->createRecognizer(Lcom/google/glass/voice/VoiceService;)Lcom/google/android/speech/Recognizer;
+    invoke-direct {p0, p1}, Lcom/google/glass/voice/network/VoiceSearchContainer;->createRecognizer(Ljava/util/List;)Lcom/google/android/speech/Recognizer;
 
     move-result-object v1
 
@@ -1083,22 +1127,24 @@
 
     iget-object v3, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechSettings:Lcom/google/android/speech/SpeechSettings;
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/voice/network/RecognizerController;-><init>(Lcom/google/android/speech/Recognizer;Lcom/google/android/speech/SpeechLevelSource;Lcom/google/android/speech/SpeechSettings;)V
+    iget-object v4, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->cookies:Lcom/google/glass/voice/network/Cookies;
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/google/glass/voice/network/RecognizerController;-><init>(Lcom/google/android/speech/Recognizer;Lcom/google/android/speech/SpeechLevelSource;Lcom/google/android/speech/SpeechSettings;Lcom/google/glass/voice/network/Cookies;)V
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->recognizerController:Lcom/google/glass/voice/network/RecognizerController;
 
-    .line 414
+    .line 422
     :cond_0
     monitor-exit p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 416
+    .line 424
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->recognizerController:Lcom/google/glass/voice/network/RecognizerController;
 
     return-object v0
 
-    .line 414
+    .line 422
     :catchall_0
     move-exception v0
 
@@ -1114,7 +1160,7 @@
     .locals 1
 
     .prologue
-    .line 395
+    .line 401
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->scheduledExecutorService:Ljava/util/concurrent/ScheduledExecutorService;
 
     return-object v0
@@ -1124,7 +1170,7 @@
     .locals 1
 
     .prologue
-    .line 391
+    .line 397
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechLevelSource:Lcom/google/android/speech/SpeechLevelSource;
 
     return-object v0
@@ -1134,7 +1180,7 @@
     .locals 1
 
     .prologue
-    .line 403
+    .line 409
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer;->speechSettings:Lcom/google/android/speech/SpeechSettings;
 
     return-object v0

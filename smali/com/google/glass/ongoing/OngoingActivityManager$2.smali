@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 106
     iput-object p1, p0, Lcom/google/glass/ongoing/OngoingActivityManager$2;->this$0:Lcom/google/glass/ongoing/OngoingActivityManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,13 +43,13 @@
     .parameter "service"
 
     .prologue
-    .line 112
+    .line 113
     iget-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager$2;->this$0:Lcom/google/glass/ongoing/OngoingActivityManager;
 
     #calls: Lcom/google/glass/ongoing/OngoingActivityManager;->handleConnection(Landroid/content/ComponentName;Landroid/os/IBinder;)V
     invoke-static {v0, p1, p2}, Lcom/google/glass/ongoing/OngoingActivityManager;->access$100(Lcom/google/glass/ongoing/OngoingActivityManager;Landroid/content/ComponentName;Landroid/os/IBinder;)V
 
-    .line 113
+    .line 114
     return-void
 .end method
 
@@ -58,12 +58,12 @@
     .parameter "name"
 
     .prologue
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager$2;->this$0:Lcom/google/glass/ongoing/OngoingActivityManager;
 
     #calls: Lcom/google/glass/ongoing/OngoingActivityManager;->handleDisconnection()V
     invoke-static {v0}, Lcom/google/glass/ongoing/OngoingActivityManager;->access$000(Lcom/google/glass/ongoing/OngoingActivityManager;)V
 
-    .line 109
+    .line 110
     return-void
 .end method

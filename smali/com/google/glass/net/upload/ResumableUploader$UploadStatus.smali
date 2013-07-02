@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 129
+    .line 88
     new-instance v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     const-string v1, "ACTIVE"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->ACTIVE:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
-    .line 130
+    .line 89
     new-instance v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     const-string v1, "FINAL"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->FINAL:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
-    .line 131
+    .line 90
     new-instance v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     const-string v1, "CANCELLED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->CANCELLED:Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
-    .line 128
+    .line 87
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 128
+    .line 87
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 128
+    .line 87
     const-class v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 87
     sget-object v0, Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->$VALUES:[Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;
 
     invoke-virtual {v0}, [Lcom/google/glass/net/upload/ResumableUploader$UploadStatus;->clone()Ljava/lang/Object;

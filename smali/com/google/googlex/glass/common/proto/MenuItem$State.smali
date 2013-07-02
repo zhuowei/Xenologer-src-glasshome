@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 544
+    .line 561
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     const-string v1, "DEFAULT"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->DEFAULT:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
-    .line 548
+    .line 565
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     const-string v1, "PENDING"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->PENDING:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
-    .line 552
+    .line 569
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     const-string v1, "CONFIRMED"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->CONFIRMED:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
-    .line 539
+    .line 556
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/MenuItem$State;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->$VALUES:[Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
-    .line 585
+    .line 602
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$State$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/MenuItem$State$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 605
+    .line 622
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$State;->values()[Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 619
+    .line 636
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 620
+    .line 637
     iput p3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->index:I
 
-    .line 621
+    .line 638
     iput p4, p0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->value:I
 
-    .line 622
+    .line 639
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 602
+    .line 619
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 582
+    .line 599
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 572
+    .line 589
     packed-switch p0, :pswitch_data_0
 
-    .line 576
+    .line 593
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 573
+    .line 590
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->DEFAULT:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     goto :goto_0
 
-    .line 574
+    .line 591
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->PENDING:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     goto :goto_0
 
-    .line 575
+    .line 592
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->CONFIRMED:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     goto :goto_0
 
-    .line 572
+    .line 589
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 609
+    .line 626
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 610
+    .line 627
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 613
+    .line 630
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->VALUES:[Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 539
+    .line 556
     const-class v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 539
+    .line 556
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->$VALUES:[Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/MenuItem$State;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 598
+    .line 615
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$State;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 569
+    .line 586
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 594
+    .line 611
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$State;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

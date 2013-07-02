@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 118
+    .line 116
     iput-object p1, p0, Lcom/google/glass/location/LocationService$RemoteLocationListener;->this$0:Lcom/google/glass/location/LocationService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 118
+    .line 116
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService$RemoteLocationListener;-><init>(Lcom/google/glass/location/LocationService;)V
 
     return-void
@@ -54,7 +54,7 @@
     .parameter "location"
 
     .prologue
-    .line 121
+    .line 119
     iget-object v0, p0, Lcom/google/glass/location/LocationService$RemoteLocationListener;->this$0:Lcom/google/glass/location/LocationService;
 
     const/4 v1, 0x0
@@ -62,7 +62,7 @@
     #calls: Lcom/google/glass/location/LocationService;->handleLocationChanged(Landroid/location/Location;Z)V
     invoke-static {v0, p1, v1}, Lcom/google/glass/location/LocationService;->access$000(Lcom/google/glass/location/LocationService;Landroid/location/Location;Z)V
 
-    .line 122
+    .line 120
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "provider"
 
     .prologue
-    .line 128
+    .line 126
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "provider"
 
     .prologue
-    .line 126
+    .line 124
     return-void
 .end method
 
@@ -91,6 +91,6 @@
     .parameter "extras"
 
     .prologue
-    .line 130
+    .line 128
     return-void
 .end method

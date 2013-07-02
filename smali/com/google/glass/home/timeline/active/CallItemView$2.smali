@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 98
+    .line 108
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/CallItemView$2;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,12 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 111
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/CallItemView$2;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
 
     #calls: Lcom/google/glass/home/timeline/active/CallItemView;->updateCallTimer()V
-    invoke-static {v0}, Lcom/google/glass/home/timeline/active/CallItemView;->access$600(Lcom/google/glass/home/timeline/active/CallItemView;)V
+    invoke-static {v0}, Lcom/google/glass/home/timeline/active/CallItemView;->access$500(Lcom/google/glass/home/timeline/active/CallItemView;)V
 
-    .line 102
+    .line 112
     return-void
 .end method

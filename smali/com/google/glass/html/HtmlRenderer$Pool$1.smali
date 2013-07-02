@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 88
+    .line 97
     iput-object p1, p0, Lcom/google/glass/html/HtmlRenderer$Pool$1;->this$0:Lcom/google/glass/html/HtmlRenderer$Pool;
 
     iput-object p2, p0, Lcom/google/glass/html/HtmlRenderer$Pool$1;->val$context:Landroid/content/Context;
@@ -51,7 +51,7 @@
     .locals 5
 
     .prologue
-    .line 91
+    .line 100
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$Pool$1;->this$0:Lcom/google/glass/html/HtmlRenderer$Pool;
 
     new-instance v1, Lcom/google/glass/html/HtmlRenderer;
@@ -66,6 +66,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/html/HtmlRenderer$Pool;->releaseRenderer(Lcom/google/glass/html/HtmlRenderer;)V
 
-    .line 92
+    .line 101
     return-void
 .end method

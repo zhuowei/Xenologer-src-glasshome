@@ -23,9 +23,11 @@
 
 .field public static final head_wake_settings_menu:I = 0x7f0f0003
 
-.field public static final wifi_settings_menu:I = 0x7f0f0004
+.field public static final musicplayer_menu:I = 0x7f0f0004
 
-.field public static final wink_settings_menu:I = 0x7f0f0005
+.field public static final wifi_settings_menu:I = 0x7f0f0005
+
+.field public static final wink_settings_menu:I = 0x7f0f0006
 
 
 # direct methods
@@ -33,7 +35,7 @@
     .locals 0
 
     .prologue
-    .line 940
+    .line 1010
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

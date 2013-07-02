@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;
-.super Landroid/os/Binder;
+.super Lcom/google/glass/voice/IVoiceService$Stub;
 .source "VoiceService.java"
 
 
@@ -24,78 +24,75 @@
     .parameter
 
     .prologue
-    .line 313
+    .line 38
     iput-object p1, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    invoke-direct {p0}, Landroid/os/Binder;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/voice/IVoiceService$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public attachVoiceSearchUi(Lcom/google/glass/voice/network/VoiceSearchUi;)V
-    .locals 2
-    .parameter "voiceSearchUi"
+.method public addListener(Lcom/google/glass/voice/IVoiceServiceListener;)V
+    .locals 1
+    .parameter "listener"
 
     .prologue
-    .line 345
+    .line 46
+    invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 48
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    new-instance v1, Ljava/lang/ref/WeakReference;
+    #getter for: Lcom/google/glass/voice/VoiceService;->serviceListenerBroadcaster:Lcom/google/glass/voice/remote/BroadcastingVoiceServiceListener;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$000(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/remote/BroadcastingVoiceServiceListener;
 
-    invoke-direct {v1, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    move-result-object v0
 
-    #setter for: Lcom/google/glass/voice/VoiceService;->pendingVoiceSearchUi:Ljava/lang/ref/WeakReference;
-    invoke-static {v0, v1}, Lcom/google/glass/voice/VoiceService;->access$902(Lcom/google/glass/voice/VoiceService;Ljava/lang/ref/WeakReference;)Ljava/lang/ref/WeakReference;
+    invoke-virtual {v0, p1}, Lcom/google/glass/voice/remote/BroadcastingVoiceServiceListener;->register(Landroid/os/IInterface;)Z
 
-    .line 346
-    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
-
-    new-instance v1, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$2;
-
-    invoke-direct {v1, p0}, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$2;-><init>(Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;)V
-
-    #calls: Lcom/google/glass/voice/VoiceService;->doInBackground(Ljava/lang/Runnable;)V
-    invoke-static {v0, v1}, Lcom/google/glass/voice/VoiceService;->access$700(Lcom/google/glass/voice/VoiceService;Ljava/lang/Runnable;)V
-
-    .line 352
+    .line 49
     return-void
 .end method
 
-.method public detachVoiceSearchUi()V
-    .locals 2
+.method public addVoiceInputCallback(Lcom/google/glass/voice/network/IVoiceInputCallback;)V
+    .locals 1
+    .parameter "voiceInputCallback"
 
     .prologue
-    .line 355
+    .line 76
+    invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 78
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    new-instance v1, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$3;
+    #getter for: Lcom/google/glass/voice/VoiceService;->callbackBroadcaster:Lcom/google/glass/voice/remote/BroadcastingVoiceInputCallback;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/remote/BroadcastingVoiceInputCallback;
 
-    invoke-direct {v1, p0}, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$3;-><init>(Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;)V
+    move-result-object v0
 
-    #calls: Lcom/google/glass/voice/VoiceService;->doInBackground(Ljava/lang/Runnable;)V
-    invoke-static {v0, v1}, Lcom/google/glass/voice/VoiceService;->access$700(Lcom/google/glass/voice/VoiceService;Ljava/lang/Runnable;)V
+    invoke-virtual {v0, p1}, Lcom/google/glass/voice/remote/BroadcastingVoiceInputCallback;->register(Landroid/os/IInterface;)Z
 
-    .line 361
+    .line 79
     return-void
 .end method
 
 .method public endpointNetworkRecognizer()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 364
+    .line 90
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    new-instance v1, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$4;
+    #getter for: Lcom/google/glass/voice/VoiceService;->voiceEngine:Lcom/google/glass/voice/VoiceEngine;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$100(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/VoiceEngine;
 
-    invoke-direct {v1, p0}, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$4;-><init>(Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;)V
+    move-result-object v0
 
-    #calls: Lcom/google/glass/voice/VoiceService;->doInBackground(Ljava/lang/Runnable;)V
-    invoke-static {v0, v1}, Lcom/google/glass/voice/VoiceService;->access$700(Lcom/google/glass/voice/VoiceService;Ljava/lang/Runnable;)V
+    invoke-virtual {v0}, Lcom/google/glass/voice/VoiceEngine;->endpointNetworkRecognizer()V
 
-    .line 370
+    .line 91
     return-void
 .end method
 
@@ -103,10 +100,15 @@
     .locals 1
 
     .prologue
-    .line 337
+    .line 67
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    invoke-virtual {v0}, Lcom/google/glass/voice/VoiceService;->getVoiceConfigDescriptor()Lcom/google/glass/voice/VoiceConfigDescriptor;
+    #getter for: Lcom/google/glass/voice/VoiceService;->voiceEngine:Lcom/google/glass/voice/VoiceEngine;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$100(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/VoiceEngine;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/voice/VoiceEngine;->getVoiceConfigDescriptor()Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     move-result-object v0
 
@@ -117,11 +119,15 @@
     .locals 1
 
     .prologue
-    .line 341
+    .line 71
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    #calls: Lcom/google/glass/voice/VoiceService;->getMockMicrophone()Lcom/google/glass/voice/MockMicrophoneInputStream;
-    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$800(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/MockMicrophoneInputStream;
+    #getter for: Lcom/google/glass/voice/VoiceService;->voiceEngine:Lcom/google/glass/voice/VoiceEngine;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$100(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/VoiceEngine;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/voice/VoiceEngine;->getMockMicrophone()Lcom/google/glass/voice/MockMicrophoneInputStream;
 
     move-result-object v0
 
@@ -134,7 +140,7 @@
     .end annotation
 
     .prologue
-    .line 316
+    .line 41
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
     return-object v0
@@ -144,12 +150,61 @@
     .locals 1
 
     .prologue
-    .line 373
+    .line 95
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    invoke-virtual {v0}, Lcom/google/glass/voice/VoiceService;->refeedLastCommand()V
+    #getter for: Lcom/google/glass/voice/VoiceService;->voiceEngine:Lcom/google/glass/voice/VoiceEngine;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$100(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/VoiceEngine;
 
-    .line 374
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/voice/VoiceEngine;->refeedLastCommand()V
+
+    .line 96
+    return-void
+.end method
+
+.method public removeListener(Lcom/google/glass/voice/IVoiceServiceListener;)V
+    .locals 1
+    .parameter "listener"
+
+    .prologue
+    .line 53
+    invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 55
+    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
+
+    #getter for: Lcom/google/glass/voice/VoiceService;->serviceListenerBroadcaster:Lcom/google/glass/voice/remote/BroadcastingVoiceServiceListener;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$000(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/remote/BroadcastingVoiceServiceListener;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/glass/voice/remote/BroadcastingVoiceServiceListener;->unregister(Landroid/os/IInterface;)Z
+
+    .line 56
+    return-void
+.end method
+
+.method public removeVoiceInputCallback(Lcom/google/glass/voice/network/IVoiceInputCallback;)V
+    .locals 1
+    .parameter "voiceInputCallback"
+
+    .prologue
+    .line 83
+    invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 85
+    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
+
+    #getter for: Lcom/google/glass/voice/VoiceService;->callbackBroadcaster:Lcom/google/glass/voice/remote/BroadcastingVoiceInputCallback;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/remote/BroadcastingVoiceInputCallback;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/google/glass/voice/remote/BroadcastingVoiceInputCallback;->unregister(Landroid/os/IInterface;)Z
+
+    .line 86
     return-void
 .end method
 
@@ -159,44 +214,19 @@
     .parameter "allowScreenOff"
 
     .prologue
-    .line 333
+    .line 60
+    invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 62
     iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
 
-    #calls: Lcom/google/glass/voice/VoiceService;->setConfigAsync(Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
-    invoke-static {v0, p1, p2}, Lcom/google/glass/voice/VoiceService;->access$200(Lcom/google/glass/voice/VoiceService;Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
+    #getter for: Lcom/google/glass/voice/VoiceService;->voiceEngine:Lcom/google/glass/voice/VoiceEngine;
+    invoke-static {v0}, Lcom/google/glass/voice/VoiceService;->access$100(Lcom/google/glass/voice/VoiceService;)Lcom/google/glass/voice/VoiceEngine;
 
-    .line 334
-    return-void
-.end method
+    move-result-object v0
 
-.method public setListener(Lcom/google/glass/voice/VoiceServiceListener;)V
-    .locals 1
-    .parameter "listener"
+    invoke-virtual {v0, p1, p2}, Lcom/google/glass/voice/VoiceEngine;->setConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;Z)V
 
-    .prologue
-    .line 320
-    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
-
-    invoke-virtual {v0, p1}, Lcom/google/glass/voice/VoiceService;->setListener(Lcom/google/glass/voice/VoiceServiceListener;)V
-
-    .line 321
-    return-void
-.end method
-
-.method public updateConfigs()V
-    .locals 2
-
-    .prologue
-    .line 324
-    iget-object v0, p0, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;->this$0:Lcom/google/glass/voice/VoiceService;
-
-    new-instance v1, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$1;
-
-    invoke-direct {v1, p0}, Lcom/google/glass/voice/VoiceService$VoiceServiceBinder$1;-><init>(Lcom/google/glass/voice/VoiceService$VoiceServiceBinder;)V
-
-    #calls: Lcom/google/glass/voice/VoiceService;->doInBackground(Ljava/lang/Runnable;)V
-    invoke-static {v0, v1}, Lcom/google/glass/voice/VoiceService;->access$700(Lcom/google/glass/voice/VoiceService;Ljava/lang/Runnable;)V
-
-    .line 330
+    .line 63
     return-void
 .end method

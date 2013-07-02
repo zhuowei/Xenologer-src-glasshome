@@ -21,7 +21,7 @@
 
 .field public static final AdjustedCardFooterRhs:I = 0x7f0a0015
 
-.field public static final AngleText:I = 0x7f0a0037
+.field public static final AngleText:I = 0x7f0a0039
 
 .field public static final Animation_BundleTimeline:I = 0x7f0a0008
 
@@ -33,9 +33,9 @@
 
 .field public static final Animation_MainTimeline:I = 0x7f0a0007
 
-.field public static final ContextualDialogTheme:I = 0x7f0a0034
+.field public static final ContextualDialogTheme:I = 0x7f0a0036
 
-.field public static final ContextualDialogTheme_NoAnimation:I = 0x7f0a0035
+.field public static final ContextualDialogTheme_NoAnimation:I = 0x7f0a0037
 
 .field public static final CurrentTemperatureText:I = 0x7f0a0029
 
@@ -61,19 +61,23 @@
 
 .field public static final GenericCardRhs:I = 0x7f0a0010
 
-.field public static final GlassTheme:I = 0x7f0a002d
+.field public static final GlassTheme:I = 0x7f0a002e
 
-.field public static final GlassTheme_BundleTimeline:I = 0x7f0a0033
+.field public static final GlassTheme_BundleTimeline:I = 0x7f0a0035
 
-.field public static final GlassTheme_Fade:I = 0x7f0a002f
+.field public static final GlassTheme_Fade:I = 0x7f0a0030
 
-.field public static final GlassTheme_FadeExitOnly:I = 0x7f0a0030
+.field public static final GlassTheme_FadeExitOnly:I = 0x7f0a0031
 
-.field public static final GlassTheme_MainTimeline:I = 0x7f0a0032
+.field public static final GlassTheme_MainTimeline:I = 0x7f0a0034
 
-.field public static final GlassTheme_Translucent:I = 0x7f0a002e
+.field public static final GlassTheme_Translucent:I = 0x7f0a002f
 
-.field public static final GlassTheme_Translucent_Fade:I = 0x7f0a0031
+.field public static final GlassTheme_Translucent_Fade:I = 0x7f0a0032
+
+.field public static final GlassTheme_Translucent_FadeExitOnly:I = 0x7f0a0033
+
+.field public static final GuardPhraseText:I = 0x7f0a002d
 
 .field public static final LargeOverlayText:I = 0x7f0a001b
 
@@ -117,7 +121,7 @@
 
 .field public static final TopPaddedCard:I = 0x7f0a000c
 
-.field public static final VoiceMessagePrompt:I = 0x7f0a0036
+.field public static final VoiceMessagePrompt:I = 0x7f0a0038
 
 .field public static final gf_ListItem:I = 0x7f0a0003
 
@@ -133,7 +137,7 @@
     .locals 0
 
     .prologue
-    .line 1445
+    .line 1565
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 329
+    .line 332
     iput-object p1, p0, Lcom/google/glass/widget/MosaicView$2;->this$0:Lcom/google/glass/widget/MosaicView;
 
     iput p2, p0, Lcom/google/glass/widget/MosaicView$2;->val$entitySetIndex:I
@@ -76,7 +76,7 @@
     .locals 7
 
     .prologue
-    .line 332
+    .line 335
     iget v3, p0, Lcom/google/glass/widget/MosaicView$2;->val$entitySetIndex:I
 
     iget-object v4, p0, Lcom/google/glass/widget/MosaicView$2;->this$0:Lcom/google/glass/widget/MosaicView;
@@ -88,15 +88,15 @@
 
     if-eq v3, v4, :cond_0
 
-    .line 357
+    .line 360
     :goto_0
     return-void
 
-    .line 337
+    .line 340
     :cond_0
     const/4 v1, 0x0
 
-    .line 338
+    .line 341
     .local v1, cellView:Landroid/widget/FrameLayout;
     invoke-static {}, Lcom/google/glass/widget/MosaicView;->access$100()Landroid/util/SparseArray;
 
@@ -110,11 +110,11 @@
 
     check-cast v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    .line 339
+    .line 342
     .local v0, cache:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/widget/FrameLayout;>;"
     if-eqz v0, :cond_1
 
-    .line 340
+    .line 343
     invoke-virtual {v0}, Ljava/util/concurrent/LinkedBlockingQueue;->poll()Ljava/lang/Object;
 
     move-result-object v1
@@ -122,12 +122,12 @@
     .end local v1           #cellView:Landroid/widget/FrameLayout;
     check-cast v1, Landroid/widget/FrameLayout;
 
-    .line 342
+    .line 345
     .restart local v1       #cellView:Landroid/widget/FrameLayout;
     :cond_1
     if-nez v1, :cond_2
 
-    .line 343
+    .line 346
     iget-object v3, p0, Lcom/google/glass/widget/MosaicView$2;->this$0:Lcom/google/glass/widget/MosaicView;
 
     invoke-virtual {v3}, Lcom/google/glass/widget/MosaicView;->getContext()Landroid/content/Context;
@@ -138,7 +138,7 @@
 
     move-result-object v2
 
-    .line 344
+    .line 347
     .local v2, inflater:Landroid/view/LayoutInflater;
     iget v3, p0, Lcom/google/glass/widget/MosaicView$2;->val$layoutId:I
 
@@ -151,7 +151,7 @@
     .end local v1           #cellView:Landroid/widget/FrameLayout;
     check-cast v1, Landroid/widget/FrameLayout;
 
-    .line 347
+    .line 350
     .restart local v1       #cellView:Landroid/widget/FrameLayout;
     sget v3, Lcom/google/glass/common/R$id;->tag_cell_layout_type:I
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 350
+    .line 353
     .end local v2           #inflater:Landroid/view/LayoutInflater;
     :cond_2
     iget-object v3, p0, Lcom/google/glass/widget/MosaicView$2;->this$0:Lcom/google/glass/widget/MosaicView;
@@ -172,12 +172,12 @@
 
     invoke-virtual {v3, v1, v4}, Lcom/google/glass/widget/MosaicView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 352
+    .line 355
     iget v3, p0, Lcom/google/glass/widget/MosaicView$2;->val$remainingCount:I
 
     if-lez v3, :cond_3
 
-    .line 353
+    .line 356
     iget-object v3, p0, Lcom/google/glass/widget/MosaicView$2;->this$0:Lcom/google/glass/widget/MosaicView;
 
     iget-object v4, p0, Lcom/google/glass/widget/MosaicView$2;->val$entity:Lcom/google/googlex/glass/common/proto/Entity;
@@ -189,7 +189,7 @@
 
     goto :goto_0
 
-    .line 355
+    .line 358
     :cond_3
     iget-object v3, p0, Lcom/google/glass/widget/MosaicView$2;->this$0:Lcom/google/glass/widget/MosaicView;
 

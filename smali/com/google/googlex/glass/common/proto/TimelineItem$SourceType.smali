@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 373
+    .line 397
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     const-string v1, "GLASSWARE"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->GLASSWARE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
-    .line 381
+    .line 405
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     const-string v1, "GLASS_DEVICE"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->GLASS_DEVICE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
-    .line 389
+    .line 413
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     const-string v1, "COMPANIONWARE"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->COMPANIONWARE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
-    .line 364
+    .line 388
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->$VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
-    .line 434
+    .line 458
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 454
+    .line 478
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->values()[Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 468
+    .line 492
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 469
+    .line 493
     iput p3, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->index:I
 
-    .line 470
+    .line 494
     iput p4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->value:I
 
-    .line 471
+    .line 495
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 451
+    .line 475
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 431
+    .line 455
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 421
+    .line 445
     packed-switch p0, :pswitch_data_0
 
-    .line 425
+    .line 449
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 422
+    .line 446
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->GLASSWARE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     goto :goto_0
 
-    .line 423
+    .line 447
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->GLASS_DEVICE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     goto :goto_0
 
-    .line 424
+    .line 448
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->COMPANIONWARE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     goto :goto_0
 
-    .line 421
+    .line 445
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 458
+    .line 482
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 459
+    .line 483
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 462
+    .line 486
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 364
+    .line 388
     const-class v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 364
+    .line 388
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->$VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 447
+    .line 471
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 418
+    .line 442
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 443
+    .line 467
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

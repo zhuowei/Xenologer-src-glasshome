@@ -61,7 +61,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 190
+    .line 193
     new-instance v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
     const-string v1, "SUCCESS"
@@ -70,7 +70,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
-    .line 185
+    .line 188
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
@@ -81,14 +81,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->$VALUES:[Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
-    .line 213
+    .line 216
     new-instance v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 233
+    .line 236
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->values()[Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
     move-result-object v0
@@ -111,16 +111,16 @@
     .end annotation
 
     .prologue
-    .line 247
+    .line 250
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 248
+    .line 251
     iput p3, p0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->index:I
 
-    .line 249
+    .line 252
     iput p4, p0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->value:I
 
-    .line 250
+    .line 253
     return-void
 .end method
 
@@ -128,7 +128,7 @@
     .locals 2
 
     .prologue
-    .line 230
+    .line 233
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncResponse;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -161,7 +161,7 @@
     .end annotation
 
     .prologue
-    .line 210
+    .line 213
     sget-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -172,22 +172,22 @@
     .parameter "value"
 
     .prologue
-    .line 202
+    .line 205
     packed-switch p0, :pswitch_data_0
 
-    .line 204
+    .line 207
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 203
+    .line 206
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
     goto :goto_0
 
-    .line 202
+    .line 205
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -199,7 +199,7 @@
     .parameter "desc"
 
     .prologue
-    .line 237
+    .line 240
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -210,7 +210,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 238
+    .line 241
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -219,7 +219,7 @@
 
     throw v0
 
-    .line 241
+    .line 244
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->VALUES:[Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
@@ -237,7 +237,7 @@
     .parameter "name"
 
     .prologue
-    .line 185
+    .line 188
     const-class v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -253,7 +253,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 188
     sget-object v0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->$VALUES:[Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->clone()Ljava/lang/Object;
@@ -271,7 +271,7 @@
     .locals 1
 
     .prologue
-    .line 226
+    .line 229
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -283,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 202
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->value:I
 
     return v0
@@ -293,7 +293,7 @@
     .locals 2
 
     .prologue
-    .line 222
+    .line 225
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncResponse$ResponseCode;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

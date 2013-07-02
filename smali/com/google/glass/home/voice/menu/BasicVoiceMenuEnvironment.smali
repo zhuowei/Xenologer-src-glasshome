@@ -16,13 +16,13 @@
     .parameter "glassVoiceActivity"
 
     .prologue
-    .line 21
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 22
+    .line 23
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
-    .line 23
+    .line 24
     return-void
 .end method
 
@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 28
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     return-object v0
@@ -42,7 +42,7 @@
     .locals 1
 
     .prologue
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-static {v0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
@@ -66,12 +66,12 @@
     .parameter "data"
 
     .prologue
-    .line 94
+    .line 100
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/app/GlassVoiceActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 95
+    .line 101
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "soundId"
 
     .prologue
-    .line 57
+    .line 58
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassVoiceActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, p1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 58
+    .line 59
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .parameter "listener"
 
     .prologue
-    .line 62
+    .line 63
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassVoiceActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;Lcom/google/glass/sound/SoundManager$OnSoundDoneListener;)I
 
-    .line 63
+    .line 64
     return-void
 .end method
 
@@ -117,12 +117,12 @@
     .parameter "voiceConfig"
 
     .prologue
-    .line 37
+    .line 38
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    .line 38
+    .line 39
     return-void
 .end method
 
@@ -130,12 +130,12 @@
     .locals 1
 
     .prologue
-    .line 42
+    .line 43
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassVoiceActivity;->refeedLastVoiceCommand()V
 
-    .line 43
+    .line 44
     return-void
 .end method
 
@@ -145,13 +145,13 @@
     .parameter "postAnimationRunnable"
 
     .prologue
-    .line 70
+    .line 71
     if-eqz p2, :cond_0
 
-    .line 71
+    .line 72
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 73
+    .line 74
     :cond_0
     return-void
 .end method
@@ -162,13 +162,13 @@
     .parameter "postAnimationRunnable"
 
     .prologue
-    .line 82
+    .line 88
     if-eqz p2, :cond_0
 
-    .line 83
+    .line 89
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 85
+    .line 91
     :cond_0
     return-void
 .end method
@@ -178,7 +178,7 @@
     .parameter "animate"
 
     .prologue
-    .line 66
+    .line 67
     return-void
 .end method
 
@@ -187,12 +187,12 @@
     .parameter "voiceConfig"
 
     .prologue
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/app/GlassVoiceActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    .line 33
+    .line 34
     return-void
 .end method
 
@@ -201,12 +201,12 @@
     .parameter "error"
 
     .prologue
-    .line 89
+    .line 95
     iget-object v0, p0, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->glassVoiceActivity:Lcom/google/glass/app/GlassVoiceActivity;
 
     invoke-virtual {p1, v0}, Lcom/google/glass/app/GlassError;->show(Lcom/google/glass/app/GlassActivity;)V
 
-    .line 90
+    .line 96
     return-void
 .end method
 
@@ -217,14 +217,14 @@
     .parameter "command"
 
     .prologue
-    .line 77
+    .line 78
     invoke-virtual {p0}, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
 
     invoke-static {v0, p2, p3}, Lcom/google/glass/home/voice/EntityListActivity;->startEntityListActivity(Landroid/content/Context;Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityType;Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment$EntityCommand;)V
 
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -232,6 +232,23 @@
     .locals 0
 
     .prologue
-    .line 53
+    .line 54
+    return-void
+.end method
+
+.method public showShareTargetList(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;)V
+    .locals 1
+    .parameter "menuItem"
+    .parameter "commandType"
+
+    .prologue
+    .line 83
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/menu/BasicVoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
+
+    move-result-object v0
+
+    invoke-static {v0, p2}, Lcom/google/glass/home/voice/EntityListActivity;->startEntityListActivity(Lcom/google/glass/app/GlassActivity;Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;)V
+
+    .line 84
     return-void
 .end method

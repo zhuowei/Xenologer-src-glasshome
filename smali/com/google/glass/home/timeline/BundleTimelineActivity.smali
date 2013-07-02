@@ -14,8 +14,6 @@
 # instance fields
 .field private cursorLoader:Landroid/content/CursorLoader;
 
-.field private isNotification:Z
-
 .field private notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
 .field private onResumeTask:Landroid/content/Intent;
@@ -28,7 +26,7 @@
     .locals 0
 
     .prologue
-    .line 24
+    .line 25
     invoke-direct {p0}, Lcom/google/glass/home/timeline/TimelineActivity;-><init>()V
 
     .line 181
@@ -40,21 +38,21 @@
     .parameter "intent"
 
     .prologue
-    .line 61
+    .line 59
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->onResumeTask:Landroid/content/Intent;
 
     if-eqz v0, :cond_1
 
-    .line 70
+    .line 68
     :cond_0
     :goto_0
     return-void
 
-    .line 64
+    .line 62
     :cond_1
     if-eqz p1, :cond_0
 
-    .line 69
+    .line 67
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
@@ -70,23 +68,39 @@
     .locals 1
 
     .prologue
-    .line 135
-    iget-boolean v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification:Z
+    .line 131
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 132
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->shouldShowVoiceMenuImmediately()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 136
+    .line 133
+    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->NOTIFICATION:Lcom/google/glass/voice/VoiceConfigDescriptor;
+
+    .line 138
+    :goto_0
+    return-object v0
+
+    .line 135
+    :cond_0
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/voice/NotificationVoiceCommandHelper;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     move-result-object v0
 
-    .line 138
-    :goto_0
-    return-object v0
+    goto :goto_0
 
-    :cond_0
+    .line 138
+    :cond_1
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     move-result-object v0
@@ -108,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 24
+    .line 25
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
 
     move-result-object v0
@@ -123,7 +137,7 @@
     .line 161
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification:Z
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->setIsNotification(Z)V
 
     .line 164
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->getTimelineView()Lcom/google/glass/home/timeline/TimelineView;
@@ -156,10 +170,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 43
+    .line 41
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 46
+    .line 44
     sget v0, Lcom/google/glass/home/R$id;->timeline:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->findViewById(I)Landroid/view/View;
@@ -170,7 +184,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/BundleTimelineView;
 
-    .line 48
+    .line 46
     new-instance v0, Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->getTimelineOptionsHelper()Lcom/google/glass/timeline/TimelineOptionsHelper;
@@ -181,14 +195,14 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
 
-    .line 50
+    .line 48
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->handleIntent(Landroid/content/Intent;)V
 
-    .line 51
+    .line 49
     return-void
 .end method
 
@@ -196,34 +210,36 @@
     .locals 1
 
     .prologue
-    .line 119
+    .line 115
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onDestroy()V
 
-    .line 122
+    .line 118
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
 
     if-eqz v0, :cond_0
 
-    .line 123
+    .line 119
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
 
     invoke-virtual {v0}, Landroid/content/CursorLoader;->reset()V
 
-    .line 124
+    .line 120
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
 
-    .line 126
+    .line 122
     :cond_0
     return-void
 .end method
 
 .method public onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
-    .locals 10
+    .locals 11
     .parameter "dismissAction"
 
     .prologue
+    const/4 v10, 0x0
+
     .line 189
     iget-object v4, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/BundleTimelineView;
 
@@ -276,11 +292,9 @@
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    const/4 v8, 0x0
+    const-string v8, "v"
 
-    const-string v9, "v"
-
-    aput-object v9, v7, v8
+    aput-object v8, v7, v10
 
     const/4 v8, 0x1
 
@@ -301,6 +315,9 @@
     .end local v1           #userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     .end local v2           #v:I
     :cond_0
+    invoke-virtual {p0, v10}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->setIsNotification(Z)V
+
+    .line 202
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
     move-result v4
@@ -313,142 +330,139 @@
     .parameter "intent"
 
     .prologue
-    .line 55
+    .line 53
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 56
+    .line 54
     invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->handleIntent(Landroid/content/Intent;)V
 
-    .line 57
-    return-void
-.end method
-
-.method protected onPause()V
-    .locals 1
-
-    .prologue
-    .line 109
-    invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onPause()V
-
-    .line 112
-    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
-
-    if-eqz v0, :cond_0
-
-    .line 113
-    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
-
-    invoke-virtual {v0}, Landroid/content/CursorLoader;->stopLoading()V
-
-    .line 115
-    :cond_0
+    .line 55
     return-void
 .end method
 
 .method protected onResume()V
-    .locals 5
+    .locals 8
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    .line 74
+    .line 72
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineActivity;->onResume()V
 
-    .line 76
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->onResumeTask:Landroid/content/Intent;
-
-    if-eqz v3, :cond_1
-
-    .line 77
+    .line 74
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->onResumeTask:Landroid/content/Intent;
 
-    .line 78
-    .local v0, intent:Landroid/content/Intent;
-    iput-object v4, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->onResumeTask:Landroid/content/Intent;
+    if-eqz v0, :cond_1
+
+    .line 75
+    iget-object v6, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->onResumeTask:Landroid/content/Intent;
+
+    .line 76
+    .local v6, intent:Landroid/content/Intent;
+    iput-object v1, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->onResumeTask:Landroid/content/Intent;
+
+    .line 79
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+
+    if-eqz v0, :cond_0
+
+    .line 80
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+
+    invoke-virtual {v0}, Landroid/content/CursorLoader;->reset()V
 
     .line 81
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+    iput-object v1, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
 
-    if-eqz v3, :cond_0
+    .line 84
+    :cond_0
+    const-string v0, "item_id"
 
-    .line 82
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+    invoke-virtual {v6, v0}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
-    invoke-virtual {v3}, Landroid/content/CursorLoader;->reset()V
+    move-result-object v5
 
-    .line 83
-    iput-object v4, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+    check-cast v5, Lcom/google/glass/timeline/TimelineItemId;
 
     .line 86
-    :cond_0
-    const-string v3, "item_id"
+    .local v5, itemId:Lcom/google/glass/timeline/TimelineItemId;
+    const-string v0, "item"
 
-    invoke-virtual {v0, v3}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
+    invoke-virtual {v6, v0}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
-    move-result-object v1
+    move-result-object v7
 
-    check-cast v1, Lcom/google/glass/timeline/TimelineItemId;
+    check-cast v7, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 88
-    .local v1, itemId:Lcom/google/glass/timeline/TimelineItemId;
-    const-string v3, "is_notification"
+    .line 90
+    .local v7, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    sget v0, Lcom/google/glass/home/R$id;->slider:I
 
-    const/4 v4, 0x0
-
-    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v3
-
-    iput-boolean v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification:Z
-
-    .line 91
-    sget v3, Lcom/google/glass/home/R$id;->slider:I
-
-    invoke-virtual {p0, v3}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lcom/google/glass/widget/SliderView;
 
-    .line 94
+    .line 93
     .local v2, sliderView:Lcom/google/glass/widget/SliderView;
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/BundleTimelineView;
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/BundleTimelineView;
 
-    invoke-virtual {v2, v3}, Lcom/google/glass/widget/SliderView;->setScrollView(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
+    invoke-virtual {v2, v0}, Lcom/google/glass/widget/SliderView;->setScrollView(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 97
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/BundleTimelineView;
+    .line 96
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/BundleTimelineView;
 
-    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/glass/home/HomeApplication;->getBitmapFactory()Lcom/google/glass/util/CachedBitmapFactory;
-
-    move-result-object v4
-
-    invoke-virtual {v3, p0, v2, v4, v1}, Lcom/google/glass/home/timeline/BundleTimelineView;->init(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/widget/SliderView;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/timeline/TimelineItemId;)Landroid/content/CursorLoader;
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->getNotificationState()Lcom/google/glass/home/timeline/NotificationState;
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+    invoke-static {p0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
 
-    .line 102
-    .end local v0           #intent:Landroid/content/Intent;
-    .end local v1           #itemId:Lcom/google/glass/timeline/TimelineItemId;
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->getBitmapFactory()Lcom/google/glass/util/CachedBitmapFactory;
+
+    move-result-object v4
+
+    move-object v1, p0
+
+    invoke-virtual/range {v0 .. v5}, Lcom/google/glass/home/timeline/BundleTimelineView;->init(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/widget/SliderView;Lcom/google/glass/home/timeline/NotificationState;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/timeline/TimelineItemId;)Landroid/content/CursorLoader;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+
+    .line 98
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
+
+    invoke-virtual {v0}, Landroid/content/CursorLoader;->startLoading()V
+
+    .line 106
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->shouldShowVoiceMenuImmediately()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 107
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->setShouldShowVoiceMenuImmediately(Z)V
+
+    .line 108
+    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->notificationVoiceHelper:Lcom/google/glass/voice/NotificationVoiceCommandHelper;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v7, v1}, Lcom/google/glass/voice/NotificationVoiceCommandHelper;->triggerOkGlass(Lcom/google/googlex/glass/common/proto/TimelineItem;Z)Z
+
+    .line 111
     .end local v2           #sliderView:Lcom/google/glass/widget/SliderView;
+    .end local v5           #itemId:Lcom/google/glass/timeline/TimelineItemId;
+    .end local v6           #intent:Landroid/content/Intent;
+    .end local v7           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :cond_1
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
-
-    if-eqz v3, :cond_2
-
-    .line 103
-    iget-object v3, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->cursorLoader:Landroid/content/CursorLoader;
-
-    invoke-virtual {v3}, Landroid/content/CursorLoader;->startLoading()V
-
-    .line 105
-    :cond_2
     return-void
 .end method
 
@@ -481,11 +495,13 @@
     :pswitch_0
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification:Z
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->setIsNotification(Z)V
 
     goto :goto_0
 
     .line 173
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -499,7 +515,9 @@
 
     .prologue
     .line 143
-    iget-boolean v0, p0, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification:Z
+    invoke-virtual {p0}, Lcom/google/glass/home/timeline/BundleTimelineActivity;->isNotification()Z
+
+    move-result v0
 
     if-eqz v0, :cond_0
 
@@ -546,7 +564,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 126
     const/4 v0, 0x0
 
     return v0

@@ -66,35 +66,35 @@
     .locals 1
 
     .prologue
-    .line 488
+    .line 490
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 657
+    .line 659
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 760
+    .line 765
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 857
+    .line 865
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 1169
+    .line 1177
     sget-object v0, Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;->UNVERSIONED:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
-    .line 489
+    .line 491
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->maybeForceBuilderInitialization()V
 
-    .line 490
+    .line 492
     return-void
 .end method
 
@@ -103,35 +103,35 @@
     .parameter "parent"
 
     .prologue
-    .line 494
+    .line 496
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 657
+    .line 659
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 760
+    .line 765
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 857
+    .line 865
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 1169
+    .line 1177
     sget-object v0, Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;->UNVERSIONED:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
-    .line 495
+    .line 497
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->maybeForceBuilderInitialization()V
 
-    .line 496
+    .line 498
     return-void
 .end method
 
@@ -141,7 +141,7 @@
     .parameter "x1"
 
     .prologue
-    .line 471
+    .line 473
     invoke-direct {p0, p1}, Lcom/google/common/logging/GlassExtensionsProto$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -151,7 +151,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->create()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -163,7 +163,7 @@
     .locals 1
 
     .prologue
-    .line 503
+    .line 505
     new-instance v0, Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     invoke-direct {v0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;-><init>()V
@@ -175,7 +175,7 @@
     .locals 2
 
     .prologue
-    .line 860
+    .line 868
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -184,7 +184,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 861
+    .line 869
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
@@ -193,14 +193,14 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 862
+    .line 870
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 864
+    .line 872
     :cond_0
     return-void
 .end method
@@ -209,7 +209,7 @@
     .locals 1
 
     .prologue
-    .line 477
+    .line 479
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassExtensionsProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -230,12 +230,12 @@
     .end annotation
 
     .prologue
-    .line 1157
+    .line 1165
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1158
+    .line 1166
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
@@ -263,18 +263,18 @@
 
     iput-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1164
+    .line 1172
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 1166
+    .line 1174
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 1158
+    .line 1166
     :cond_1
     const/4 v0, 0x0
 
@@ -285,17 +285,17 @@
     .locals 1
 
     .prologue
-    .line 498
+    .line 500
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 499
+    .line 501
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getUserEventFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 501
+    .line 503
     :cond_0
     return-void
 .end method
@@ -317,28 +317,28 @@
     .end annotation
 
     .prologue
-    .line 1036
+    .line 1044
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/common/logging/GlassUserEventProto;>;"
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1037
+    .line 1045
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 1038
+    .line 1046
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1040
+    .line 1048
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1044
+    .line 1052
     :goto_0
     return-object p0
 
-    .line 1042
+    .line 1050
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -353,15 +353,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1018
+    .line 1026
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1019
+    .line 1027
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 1020
+    .line 1028
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
@@ -370,14 +370,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1021
+    .line 1029
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1025
+    .line 1033
     :goto_0
     return-object p0
 
-    .line 1023
+    .line 1031
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -396,38 +396,38 @@
     .parameter "value"
 
     .prologue
-    .line 979
+    .line 987
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 980
+    .line 988
     if-nez p2, :cond_0
 
-    .line 981
+    .line 989
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 983
+    .line 991
     :cond_0
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 984
+    .line 992
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 985
+    .line 993
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 989
+    .line 997
     :goto_0
     return-object p0
 
-    .line 987
+    .line 995
     :cond_1
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -441,15 +441,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1000
+    .line 1008
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1001
+    .line 1009
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 1002
+    .line 1010
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
@@ -458,14 +458,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1003
+    .line 1011
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1007
+    .line 1015
     :goto_0
     return-object p0
 
-    .line 1005
+    .line 1013
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -483,38 +483,38 @@
     .parameter "value"
 
     .prologue
-    .line 958
+    .line 966
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 959
+    .line 967
     if-nez p1, :cond_0
 
-    .line 960
+    .line 968
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 962
+    .line 970
     :cond_0
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 963
+    .line 971
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 964
+    .line 972
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 968
+    .line 976
     :goto_0
     return-object p0
 
-    .line 966
+    .line 974
     :cond_1
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -527,7 +527,7 @@
     .locals 2
 
     .prologue
-    .line 1128
+    .line 1136
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getUserEventFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -550,7 +550,7 @@
     .parameter "index"
 
     .prologue
-    .line 1140
+    .line 1148
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getUserEventFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -572,12 +572,12 @@
     .locals 2
 
     .prologue
-    .line 537
+    .line 539
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->buildPartial()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
 
-    .line 538
+    .line 540
     .local v0, result:Lcom/google/common/logging/GlassExtensionsProto;
     invoke-virtual {v0}, Lcom/google/common/logging/GlassExtensionsProto;->isInitialized()Z
 
@@ -585,14 +585,14 @@
 
     if-nez v1, :cond_0
 
-    .line 539
+    .line 541
     invoke-static {v0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 541
+    .line 543
     :cond_0
     return-object v0
 .end method
@@ -601,7 +601,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->build()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -613,7 +613,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->build()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -625,22 +625,22 @@
     .locals 5
 
     .prologue
-    .line 545
+    .line 547
     new-instance v1, Lcom/google/common/logging/GlassExtensionsProto;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/common/logging/GlassExtensionsProto;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/common/logging/GlassExtensionsProto$1;)V
 
-    .line 546
+    .line 548
     .local v1, result:Lcom/google/common/logging/GlassExtensionsProto;
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 547
+    .line 549
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 548
+    .line 550
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -648,39 +648,39 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 549
+    .line 551
     or-int/lit8 v2, v2, 0x1
 
-    .line 551
+    .line 553
     :cond_0
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/common/logging/GlassExtensionsProto;->sessionId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassExtensionsProto;->access$502(Lcom/google/common/logging/GlassExtensionsProto;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 552
+    .line 554
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 553
+    .line 555
     or-int/lit8 v2, v2, 0x2
 
-    .line 555
+    .line 557
     :cond_1
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
     #setter for: Lcom/google/common/logging/GlassExtensionsProto;->softwareVersion_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassExtensionsProto;->access$602(Lcom/google/common/logging/GlassExtensionsProto;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 556
+    .line 558
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v3, :cond_4
 
-    .line 557
+    .line 559
     iget v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x4
@@ -689,7 +689,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 558
+    .line 560
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -698,21 +698,21 @@
 
     iput-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 559
+    .line 561
     iget v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x5
 
     iput v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 561
+    .line 563
     :cond_2
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     #setter for: Lcom/google/common/logging/GlassExtensionsProto;->userEvent_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassExtensionsProto;->access$702(Lcom/google/common/logging/GlassExtensionsProto;Ljava/util/List;)Ljava/util/List;
 
-    .line 565
+    .line 567
     :goto_0
     and-int/lit8 v3, v0, 0x8
 
@@ -720,27 +720,27 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 566
+    .line 568
     or-int/lit8 v2, v2, 0x4
 
-    .line 568
+    .line 570
     :cond_3
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     #setter for: Lcom/google/common/logging/GlassExtensionsProto;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassExtensionsProto;->access$802(Lcom/google/common/logging/GlassExtensionsProto;Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;)Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
-    .line 569
+    .line 571
     #setter for: Lcom/google/common/logging/GlassExtensionsProto;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/common/logging/GlassExtensionsProto;->access$902(Lcom/google/common/logging/GlassExtensionsProto;I)I
 
-    .line 570
+    .line 572
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onBuilt()V
 
-    .line 571
+    .line 573
     return-object v1
 
-    .line 563
+    .line 565
     :cond_4
     iget-object v3, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -758,7 +758,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->buildPartial()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -770,7 +770,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->buildPartial()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -782,69 +782,69 @@
     .locals 1
 
     .prologue
-    .line 507
+    .line 509
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 508
+    .line 510
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 509
+    .line 511
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 510
+    .line 512
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 511
+    .line 513
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 512
+    .line 514
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 513
+    .line 515
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 514
+    .line 516
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 518
+    .line 520
     :goto_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;->UNVERSIONED:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
-    .line 519
+    .line 521
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 520
+    .line 522
     return-object p0
 
-    .line 516
+    .line 518
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -857,7 +857,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clear()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -869,7 +869,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clear()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -881,7 +881,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clear()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -893,7 +893,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clear()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -905,22 +905,22 @@
     .locals 1
 
     .prologue
-    .line 1214
+    .line 1222
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 1215
+    .line 1223
     sget-object v0, Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;->UNVERSIONED:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
-    .line 1216
+    .line 1224
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1217
+    .line 1225
     return-object p0
 .end method
 
@@ -928,14 +928,14 @@
     .locals 1
 
     .prologue
-    .line 736
+    .line 741
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 737
+    .line 742
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto;->getDefaultInstance()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -946,10 +946,10 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 738
+    .line 743
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 739
+    .line 744
     return-object p0
 .end method
 
@@ -957,14 +957,14 @@
     .locals 1
 
     .prologue
-    .line 834
+    .line 842
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 835
+    .line 843
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto;->getDefaultInstance()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -975,10 +975,10 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 836
+    .line 844
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 837
+    .line 845
     return-object p0
 .end method
 
@@ -986,33 +986,33 @@
     .locals 1
 
     .prologue
-    .line 1054
+    .line 1062
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1055
+    .line 1063
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 1056
+    .line 1064
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 1057
+    .line 1065
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1061
+    .line 1069
     :goto_0
     return-object p0
 
-    .line 1059
+    .line 1067
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1025,7 +1025,7 @@
     .locals 2
 
     .prologue
-    .line 524
+    .line 526
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->create()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1045,7 +1045,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clone()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1057,7 +1057,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clone()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1069,7 +1069,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clone()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1081,7 +1081,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clone()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1093,7 +1093,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clone()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1110,7 +1110,7 @@
     .end annotation
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->clone()Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -1122,7 +1122,7 @@
     .locals 1
 
     .prologue
-    .line 533
+    .line 535
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto;->getDefaultInstance()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -1134,7 +1134,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getDefaultInstanceForType()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -1146,7 +1146,7 @@
     .locals 1
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getDefaultInstanceForType()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v0
@@ -1158,7 +1158,7 @@
     .locals 1
 
     .prologue
-    .line 529
+    .line 531
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassExtensionsProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -1168,48 +1168,61 @@
     .locals 1
 
     .prologue
-    .line 1188
+    .line 1196
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     return-object v0
 .end method
 
 .method public getSessionId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 678
-    iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
-
-    .line 679
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
     .line 680
-    check-cast v0, Lcom/google/protobuf/ByteString;
+    iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+    .line 681
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    move-result-object v1
+    if-nez v3, :cond_1
+
+    move-object v0, v1
 
     .line 682
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 684
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
 
     .line 685
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 686
+    iput-object v2, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
+
+    .line 690
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1218,16 +1231,16 @@
     .locals 3
 
     .prologue
-    .line 698
+    .line 703
     iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 699
+    .line 704
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 700
+    .line 705
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1235,11 +1248,11 @@
 
     move-result-object v0
 
-    .line 703
+    .line 708
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 706
+    .line 711
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1255,41 +1268,54 @@
 .end method
 
 .method public getSoftwareVersion()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 779
-    iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
+    .line 784
+    iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 780
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 785
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 781
-    check-cast v0, Lcom/google/protobuf/ByteString;
-
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 783
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
+    move-object v0, v1
 
     .line 786
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 788
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 789
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 790
+    iput-object v2, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
+
+    .line 794
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1298,16 +1324,16 @@
     .locals 3
 
     .prologue
-    .line 798
+    .line 806
     iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 799
+    .line 807
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 800
+    .line 808
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1315,11 +1341,11 @@
 
     move-result-object v0
 
-    .line 803
+    .line 811
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 806
+    .line 814
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1339,12 +1365,12 @@
     .parameter "index"
 
     .prologue
-    .line 905
+    .line 913
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 906
+    .line 914
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1353,7 +1379,7 @@
 
     check-cast v0, Lcom/google/common/logging/GlassUserEventProto;
 
-    .line 908
+    .line 916
     :goto_0
     return-object v0
 
@@ -1374,7 +1400,7 @@
     .parameter "index"
 
     .prologue
-    .line 1089
+    .line 1097
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getUserEventFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1401,7 +1427,7 @@
     .end annotation
 
     .prologue
-    .line 1152
+    .line 1160
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getUserEventFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1417,19 +1443,19 @@
     .locals 1
 
     .prologue
-    .line 891
+    .line 899
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 892
+    .line 900
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 894
+    .line 902
     :goto_0
     return v0
 
@@ -1456,19 +1482,19 @@
     .end annotation
 
     .prologue
-    .line 877
+    .line 885
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 878
+    .line 886
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 880
+    .line 888
     :goto_0
     return-object v0
 
@@ -1487,12 +1513,12 @@
     .parameter "index"
 
     .prologue
-    .line 1100
+    .line 1108
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1101
+    .line 1109
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1501,7 +1527,7 @@
 
     check-cast v0, Lcom/google/common/logging/GlassUserEventProtoOrBuilder;
 
-    .line 1102
+    .line 1110
     :goto_0
     return-object v0
 
@@ -1530,19 +1556,19 @@
     .end annotation
 
     .prologue
-    .line 1114
+    .line 1122
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1115
+    .line 1123
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1117
+    .line 1125
     :goto_0
     return-object v0
 
@@ -1560,7 +1586,7 @@
     .locals 2
 
     .prologue
-    .line 1178
+    .line 1186
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1586,7 +1612,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 667
+    .line 669
     iget v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1606,7 +1632,7 @@
     .locals 2
 
     .prologue
-    .line 769
+    .line 774
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1630,7 +1656,7 @@
     .locals 3
 
     .prologue
-    .line 482
+    .line 484
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassExtensionsProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/common/logging/GlassExtensionsProto;
@@ -1648,7 +1674,7 @@
     .locals 2
 
     .prologue
-    .line 629
+    .line 631
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1659,7 +1685,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 630
+    .line 632
     invoke-virtual {p0, v0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->getUserEvent(I)Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v1
@@ -1670,20 +1696,20 @@
 
     if-nez v1, :cond_0
 
-    .line 632
+    .line 634
     const/4 v1, 0x0
 
-    .line 635
+    .line 637
     :goto_1
     return v1
 
-    .line 629
+    .line 631
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 635
+    .line 637
     :cond_1
     const/4 v1, 0x1
 
@@ -1697,18 +1723,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 584
+    .line 586
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto;->getDefaultInstance()Lcom/google/common/logging/GlassExtensionsProto;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 625
+    .line 627
     :goto_0
     return-object p0
 
-    .line 585
+    .line 587
     :cond_0
     invoke-virtual {p1}, Lcom/google/common/logging/GlassExtensionsProto;->hasSessionId()Z
 
@@ -1716,14 +1742,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 586
+    .line 588
     iget v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 587
+    .line 589
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->sessionId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/common/logging/GlassExtensionsProto;->access$500(Lcom/google/common/logging/GlassExtensionsProto;)Ljava/lang/Object;
 
@@ -1731,10 +1757,10 @@
 
     iput-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 588
+    .line 590
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 590
+    .line 592
     :cond_1
     invoke-virtual {p1}, Lcom/google/common/logging/GlassExtensionsProto;->hasSoftwareVersion()Z
 
@@ -1742,14 +1768,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 591
+    .line 593
     iget v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x2
 
     iput v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 592
+    .line 594
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->softwareVersion_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/common/logging/GlassExtensionsProto;->access$600(Lcom/google/common/logging/GlassExtensionsProto;)Ljava/lang/Object;
 
@@ -1757,16 +1783,16 @@
 
     iput-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 593
+    .line 595
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 595
+    .line 597
     :cond_2
     iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_6
 
-    .line 596
+    .line 598
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->userEvent_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/common/logging/GlassExtensionsProto;->access$700(Lcom/google/common/logging/GlassExtensionsProto;)Ljava/util/List;
 
@@ -1778,7 +1804,7 @@
 
     if-nez v0, :cond_3
 
-    .line 597
+    .line 599
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1787,7 +1813,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 598
+    .line 600
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->userEvent_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/common/logging/GlassExtensionsProto;->access$700(Lcom/google/common/logging/GlassExtensionsProto;)Ljava/util/List;
 
@@ -1795,18 +1821,18 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 599
+    .line 601
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 604
+    .line 606
     :goto_1
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 621
+    .line 623
     :cond_3
     :goto_2
     invoke-virtual {p1}, Lcom/google/common/logging/GlassExtensionsProto;->hasHardwareVersion()Z
@@ -1815,14 +1841,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 622
+    .line 624
     invoke-virtual {p1}, Lcom/google/common/logging/GlassExtensionsProto;->getHardwareVersion()Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->setHardwareVersion(Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
-    .line 624
+    .line 626
     :cond_4
     invoke-virtual {p1}, Lcom/google/common/logging/GlassExtensionsProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1832,11 +1858,11 @@
 
     goto :goto_0
 
-    .line 601
+    .line 603
     :cond_5
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 602
+    .line 604
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->userEvent_:Ljava/util/List;
@@ -1848,7 +1874,7 @@
 
     goto :goto_1
 
-    .line 607
+    .line 609
     :cond_6
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->userEvent_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/common/logging/GlassExtensionsProto;->access$700(Lcom/google/common/logging/GlassExtensionsProto;)Ljava/util/List;
@@ -1861,7 +1887,7 @@
 
     if-nez v1, :cond_3
 
-    .line 608
+    .line 610
     iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
@@ -1870,15 +1896,15 @@
 
     if-eqz v1, :cond_8
 
-    .line 609
+    .line 611
     iget-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 610
+    .line 612
     iput-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 611
+    .line 613
     #getter for: Lcom/google/common/logging/GlassExtensionsProto;->userEvent_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/common/logging/GlassExtensionsProto;->access$700(Lcom/google/common/logging/GlassExtensionsProto;)Ljava/util/List;
 
@@ -1886,14 +1912,14 @@
 
     iput-object v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
-    .line 612
+    .line 614
     iget v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, -0x5
 
     iput v1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 613
+    .line 615
     invoke-static {}, Lcom/google/common/logging/GlassExtensionsProto;->access$1000()Z
 
     move-result v1
@@ -1909,7 +1935,7 @@
 
     goto :goto_2
 
-    .line 617
+    .line 619
     :cond_8
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1934,10 +1960,10 @@
     .end annotation
 
     .prologue
-    .line 642
+    .line 644
     const/4 v2, 0x0
 
-    .line 644
+    .line 646
     .local v2, parsedMessage:Lcom/google/common/logging/GlassExtensionsProto;
     :try_start_0
     sget-object v3, Lcom/google/common/logging/GlassExtensionsProto;->PARSER:Lcom/google/protobuf/Parser;
@@ -1955,21 +1981,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 649
+    .line 651
     if-eqz v2, :cond_0
 
-    .line 650
+    .line 652
     invoke-virtual {p0, v2}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/common/logging/GlassExtensionsProto;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
-    .line 653
+    .line 655
     :cond_0
     return-object p0
 
-    .line 645
+    .line 647
     :catch_0
     move-exception v1
 
-    .line 646
+    .line 648
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1982,19 +2008,19 @@
 
     move-object v2, v0
 
-    .line 647
+    .line 649
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 649
+    .line 651
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 650
+    .line 652
     invoke-virtual {p0, v2}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/common/logging/GlassExtensionsProto;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     :cond_1
@@ -2006,12 +2032,12 @@
     .parameter "other"
 
     .prologue
-    .line 575
+    .line 577
     instance-of v0, p1, Lcom/google/common/logging/GlassExtensionsProto;
 
     if-eqz v0, :cond_0
 
-    .line 576
+    .line 578
     check-cast p1, Lcom/google/common/logging/GlassExtensionsProto;
 
     .end local p1
@@ -2019,12 +2045,12 @@
 
     move-result-object p0
 
-    .line 579
+    .line 581
     .end local p0
     :goto_0
     return-object p0
 
-    .line 578
+    .line 580
     .restart local p0
     .restart local p1
     :cond_0
@@ -2044,7 +2070,7 @@
     .end annotation
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -2057,7 +2083,7 @@
     .parameter "x0"
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0, p1}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -2076,7 +2102,7 @@
     .end annotation
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -2095,7 +2121,7 @@
     .end annotation
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -2108,7 +2134,7 @@
     .parameter "x0"
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0, p1}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -2127,7 +2153,7 @@
     .end annotation
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassExtensionsProto$Builder;
 
     move-result-object v0
@@ -2140,27 +2166,27 @@
     .parameter "index"
 
     .prologue
-    .line 1071
+    .line 1079
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1072
+    .line 1080
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 1073
+    .line 1081
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1074
+    .line 1082
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1078
+    .line 1086
     :goto_0
     return-object p0
 
-    .line 1076
+    .line 1084
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2174,17 +2200,17 @@
     .parameter "value"
 
     .prologue
-    .line 1198
+    .line 1206
     if-nez p1, :cond_0
 
-    .line 1199
+    .line 1207
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1201
+    .line 1209
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
@@ -2192,13 +2218,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 1202
+    .line 1210
     iput-object p1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->hardwareVersion_:Lcom/google/googlex/glass/common/proto/proto2api/HardwareVersion;
 
-    .line 1203
+    .line 1211
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 1204
+    .line 1212
     return-object p0
 .end method
 
@@ -2207,17 +2233,17 @@
     .parameter "value"
 
     .prologue
-    .line 719
+    .line 724
     if-nez p1, :cond_0
 
-    .line 720
+    .line 725
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 722
+    .line 727
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
@@ -2225,13 +2251,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 723
+    .line 728
     iput-object p1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 724
+    .line 729
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 725
+    .line 730
     return-object p0
 .end method
 
@@ -2240,17 +2266,17 @@
     .parameter "value"
 
     .prologue
-    .line 751
+    .line 756
     if-nez p1, :cond_0
 
-    .line 752
+    .line 757
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 754
+    .line 759
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
@@ -2258,13 +2284,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 755
+    .line 760
     iput-object p1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 756
+    .line 761
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 757
+    .line 762
     return-object p0
 .end method
 
@@ -2273,17 +2299,17 @@
     .parameter "value"
 
     .prologue
-    .line 818
+    .line 826
     if-nez p1, :cond_0
 
-    .line 819
+    .line 827
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 821
+    .line 829
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
@@ -2291,13 +2317,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 822
+    .line 830
     iput-object p1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 823
+    .line 831
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 824
+    .line 832
     return-object p0
 .end method
 
@@ -2306,17 +2332,17 @@
     .parameter "value"
 
     .prologue
-    .line 848
+    .line 856
     if-nez p1, :cond_0
 
-    .line 849
+    .line 857
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 851
+    .line 859
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
@@ -2324,13 +2350,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->bitField0_:I
 
-    .line 852
+    .line 860
     iput-object p1, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->softwareVersion_:Ljava/lang/Object;
 
-    .line 853
+    .line 861
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 854
+    .line 862
     return-object p0
 .end method
 
@@ -2340,15 +2366,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 941
+    .line 949
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 942
+    .line 950
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 943
+    .line 951
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
@@ -2357,14 +2383,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 944
+    .line 952
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 948
+    .line 956
     :goto_0
     return-object p0
 
-    .line 946
+    .line 954
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2383,38 +2409,38 @@
     .parameter "value"
 
     .prologue
-    .line 920
+    .line 928
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 921
+    .line 929
     if-nez p2, :cond_0
 
-    .line 922
+    .line 930
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 924
+    .line 932
     :cond_0
     invoke-direct {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->ensureUserEventIsMutable()V
 
-    .line 925
+    .line 933
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEvent_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 926
+    .line 934
     invoke-virtual {p0}, Lcom/google/common/logging/GlassExtensionsProto$Builder;->onChanged()V
 
-    .line 930
+    .line 938
     :goto_0
     return-object p0
 
-    .line 928
+    .line 936
     :cond_1
     iget-object v0, p0, Lcom/google/common/logging/GlassExtensionsProto$Builder;->userEventBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

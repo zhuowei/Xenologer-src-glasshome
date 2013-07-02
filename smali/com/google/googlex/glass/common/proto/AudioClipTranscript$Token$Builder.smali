@@ -40,18 +40,18 @@
     .locals 1
 
     .prologue
-    .line 495
+    .line 496
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 653
+    .line 654
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 496
+    .line 497
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->maybeForceBuilderInitialization()V
 
-    .line 497
+    .line 498
     return-void
 .end method
 
@@ -60,18 +60,18 @@
     .parameter "parent"
 
     .prologue
-    .line 501
+    .line 502
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 653
+    .line 654
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 502
+    .line 503
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->maybeForceBuilderInitialization()V
 
-    .line 503
+    .line 504
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .parameter "x1"
 
     .prologue
-    .line 478
+    .line 479
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->create()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 509
+    .line 510
     new-instance v0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;-><init>()V
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 484
+    .line 485
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioClip;->internal_static_googlex_glass_common_proto_AudioClipTranscript_Token_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -125,14 +125,14 @@
     .locals 1
 
     .prologue
-    .line 505
+    .line 506
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->access$400()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 507
+    .line 508
     :cond_0
     return-void
 .end method
@@ -143,12 +143,12 @@
     .locals 2
 
     .prologue
-    .line 535
+    .line 536
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
 
-    .line 536
+    .line 537
     .local v0, result:Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->isInitialized()Z
 
@@ -156,14 +156,14 @@
 
     if-nez v1, :cond_0
 
-    .line 537
+    .line 538
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 539
+    .line 540
     :cond_0
     return-object v0
 .end method
@@ -172,7 +172,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->build()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->build()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -196,22 +196,22 @@
     .locals 5
 
     .prologue
-    .line 543
+    .line 544
     new-instance v1, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/AudioClipTranscript$1;)V
 
-    .line 544
+    .line 545
     .local v1, result:Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 545
+    .line 546
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 546
+    .line 547
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -219,41 +219,41 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 547
+    .line 548
     or-int/lit8 v2, v2, 0x1
 
-    .line 549
+    .line 550
     :cond_0
     iget v3, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->confidence_:F
 
     #setter for: Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->confidence_:F
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->access$602(Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;F)F
 
-    .line 550
+    .line 551
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 551
+    .line 552
     or-int/lit8 v2, v2, 0x2
 
-    .line 553
+    .line 554
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->token_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->access$702(Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 554
+    .line 555
     #setter for: Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->access$802(Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;I)I
 
-    .line 555
+    .line 556
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onBuilt()V
 
-    .line 556
+    .line 557
     return-object v1
 .end method
 
@@ -261,7 +261,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -273,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -285,34 +285,34 @@
     .locals 1
 
     .prologue
-    .line 513
+    .line 514
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 514
+    .line 515
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->confidence_:F
 
-    .line 515
+    .line 516
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 516
+    .line 517
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 517
+    .line 518
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 518
+    .line 519
     return-object p0
 .end method
 
@@ -320,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clear()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -332,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clear()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -344,7 +344,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clear()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clear()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -368,22 +368,22 @@
     .locals 1
 
     .prologue
-    .line 647
+    .line 648
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 648
+    .line 649
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->confidence_:F
 
-    .line 649
+    .line 650
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onChanged()V
 
-    .line 650
+    .line 651
     return-object p0
 .end method
 
@@ -391,14 +391,14 @@
     .locals 1
 
     .prologue
-    .line 727
+    .line 731
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 728
+    .line 732
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -409,10 +409,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 729
+    .line 733
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onChanged()V
 
-    .line 730
+    .line 734
     return-object p0
 .end method
 
@@ -420,7 +420,7 @@
     .locals 2
 
     .prologue
-    .line 522
+    .line 523
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->create()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -440,7 +440,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clone()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -452,7 +452,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clone()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -464,7 +464,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clone()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -476,7 +476,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clone()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -488,7 +488,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clone()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -505,7 +505,7 @@
     .end annotation
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->clone()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -517,7 +517,7 @@
     .locals 1
 
     .prologue
-    .line 624
+    .line 625
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->confidence_:F
 
     return v0
@@ -527,7 +527,7 @@
     .locals 1
 
     .prologue
-    .line 531
+    .line 532
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -539,7 +539,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -551,7 +551,7 @@
     .locals 1
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
@@ -563,48 +563,61 @@
     .locals 1
 
     .prologue
-    .line 527
+    .line 528
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioClip;->internal_static_googlex_glass_common_proto_AudioClipTranscript_Token_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getToken()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 672
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
-
     .line 673
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
     .line 674
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 675
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 677
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 676
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
+    .line 678
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 679
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 683
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -613,16 +626,16 @@
     .locals 3
 
     .prologue
-    .line 691
+    .line 695
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 692
+    .line 696
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 693
+    .line 697
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -630,11 +643,11 @@
 
     move-result-object v0
 
-    .line 696
+    .line 700
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 699
+    .line 703
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -655,7 +668,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 614
+    .line 615
     iget v1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -675,7 +688,7 @@
     .locals 2
 
     .prologue
-    .line 662
+    .line 663
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -699,7 +712,7 @@
     .locals 3
 
     .prologue
-    .line 489
+    .line 490
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioClip;->internal_static_googlex_glass_common_proto_AudioClipTranscript_Token_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
@@ -717,7 +730,7 @@
     .locals 1
 
     .prologue
-    .line 583
+    .line 584
     const/4 v0, 0x1
 
     return v0
@@ -728,18 +741,18 @@
     .parameter "other"
 
     .prologue
-    .line 569
+    .line 570
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 579
+    .line 580
     :goto_0
     return-object p0
 
-    .line 570
+    .line 571
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->hasConfidence()Z
 
@@ -747,14 +760,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 571
+    .line 572
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->getConfidence()F
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->setConfidence(F)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
-    .line 573
+    .line 574
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->hasToken()Z
 
@@ -762,14 +775,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 574
+    .line 575
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 575
+    .line 576
     #getter for: Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->token_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->access$700(Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;)Ljava/lang/Object;
 
@@ -777,10 +790,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 576
+    .line 577
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onChanged()V
 
-    .line 578
+    .line 579
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -802,10 +815,10 @@
     .end annotation
 
     .prologue
-    .line 590
+    .line 591
     const/4 v2, 0x0
 
-    .line 592
+    .line 593
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;->PARSER:Lcom/google/protobuf/Parser;
@@ -823,21 +836,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 597
+    .line 598
     if-eqz v2, :cond_0
 
-    .line 598
+    .line 599
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
-    .line 601
+    .line 602
     :cond_0
     return-object p0
 
-    .line 593
+    .line 594
     :catch_0
     move-exception v1
 
-    .line 594
+    .line 595
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -850,19 +863,19 @@
 
     move-object v2, v0
 
-    .line 595
+    .line 596
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 597
+    .line 598
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 598
+    .line 599
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     :cond_1
@@ -874,12 +887,12 @@
     .parameter "other"
 
     .prologue
-    .line 560
+    .line 561
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     if-eqz v0, :cond_0
 
-    .line 561
+    .line 562
     check-cast p1, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     .end local p1
@@ -887,12 +900,12 @@
 
     move-result-object p0
 
-    .line 564
+    .line 565
     .end local p0
     :goto_0
     return-object p0
 
-    .line 563
+    .line 564
     .restart local p0
     .restart local p1
     :cond_0
@@ -912,7 +925,7 @@
     .end annotation
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -925,7 +938,7 @@
     .parameter "x0"
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -944,7 +957,7 @@
     .end annotation
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -963,7 +976,7 @@
     .end annotation
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -976,7 +989,7 @@
     .parameter "x0"
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -995,7 +1008,7 @@
     .end annotation
 
     .prologue
-    .line 478
+    .line 479
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;
 
     move-result-object v0
@@ -1008,20 +1021,20 @@
     .parameter "value"
 
     .prologue
-    .line 634
+    .line 635
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 635
+    .line 636
     iput p1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->confidence_:F
 
-    .line 636
+    .line 637
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onChanged()V
 
-    .line 637
+    .line 638
     return-object p0
 .end method
 
@@ -1030,17 +1043,17 @@
     .parameter "value"
 
     .prologue
-    .line 711
+    .line 715
     if-nez p1, :cond_0
 
-    .line 712
+    .line 716
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 714
+    .line 718
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
@@ -1048,13 +1061,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 715
+    .line 719
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 716
+    .line 720
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onChanged()V
 
-    .line 717
+    .line 721
     return-object p0
 .end method
 
@@ -1063,17 +1076,17 @@
     .parameter "value"
 
     .prologue
-    .line 741
+    .line 745
     if-nez p1, :cond_0
 
-    .line 742
+    .line 746
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 744
+    .line 748
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
@@ -1081,12 +1094,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->bitField0_:I
 
-    .line 745
+    .line 749
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->token_:Ljava/lang/Object;
 
-    .line 746
+    .line 750
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$Builder;->onChanged()V
 
-    .line 747
+    .line 751
     return-object p0
 .end method

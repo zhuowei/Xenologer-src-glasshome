@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 153
+    .line 156
     iput-object p1, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->val$currentRecognitionResult:Ljava/lang/String;
@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 156
+    .line 159
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
 
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_MESSAGE_DISMISS:Lcom/google/glass/logging/UserEventAction;
@@ -52,12 +52,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 157
+    .line 160
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->finish()V
 
-    .line 158
+    .line 161
     return-void
 .end method
 
@@ -65,19 +65,19 @@
     .locals 1
 
     .prologue
-    .line 162
+    .line 165
     new-instance v0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2$1;-><init>(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 168
+    .line 171
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$2;->this$0:Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
 
     #calls: Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->finishAndTurnScreenOffIfRequested()V
     invoke-static {v0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->access$300(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)V
 
-    .line 169
+    .line 172
     return-void
 .end method

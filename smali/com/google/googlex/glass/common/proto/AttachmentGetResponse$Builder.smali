@@ -42,28 +42,28 @@
     .locals 1
 
     .prologue
-    .line 456
+    .line 457
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 575
+    .line 576
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 610
+    .line 611
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 707
+    .line 711
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
-    .line 457
+    .line 458
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 458
+    .line 459
     return-void
 .end method
 
@@ -72,28 +72,28 @@
     .parameter "parent"
 
     .prologue
-    .line 462
+    .line 463
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 575
+    .line 576
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 610
+    .line 611
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 707
+    .line 711
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
-    .line 463
+    .line 464
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 464
+    .line 465
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .parameter "x1"
 
     .prologue
-    .line 439
+    .line 440
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->create()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -125,7 +125,7 @@
     .locals 1
 
     .prologue
-    .line 470
+    .line 471
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;-><init>()V
@@ -137,7 +137,7 @@
     .locals 1
 
     .prologue
-    .line 445
+    .line 446
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_AttachmentGetResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -147,14 +147,14 @@
     .locals 1
 
     .prologue
-    .line 466
+    .line 467
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 468
+    .line 469
     :cond_0
     return-void
 .end method
@@ -165,12 +165,12 @@
     .locals 2
 
     .prologue
-    .line 498
+    .line 499
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
 
-    .line 499
+    .line 500
     .local v0, result:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->isInitialized()Z
 
@@ -178,14 +178,14 @@
 
     if-nez v1, :cond_0
 
-    .line 500
+    .line 501
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 502
+    .line 503
     :cond_0
     return-object v0
 .end method
@@ -194,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->build()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -206,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->build()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -218,22 +218,22 @@
     .locals 5
 
     .prologue
-    .line 506
+    .line 507
     new-instance v1, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$1;)V
 
-    .line 507
+    .line 508
     .local v1, result:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 508
+    .line 509
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 509
+    .line 510
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -241,58 +241,58 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 510
+    .line 511
     or-int/lit8 v2, v2, 0x1
 
-    .line 512
+    .line 513
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     #setter for: Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->access$502(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 513
+    .line 514
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 514
+    .line 515
     or-int/lit8 v2, v2, 0x2
 
-    .line 516
+    .line 517
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->mimeType_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->access$602(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 517
+    .line 518
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 518
+    .line 519
     or-int/lit8 v2, v2, 0x4
 
-    .line 520
+    .line 521
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
     #setter for: Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->content_:Lcom/google/protobuf/ByteString;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->access$702(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
 
-    .line 521
+    .line 522
     #setter for: Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->access$802(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;I)I
 
-    .line 522
+    .line 523
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onBuilt()V
 
-    .line 523
+    .line 524
     return-object v1
 .end method
 
@@ -300,7 +300,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -312,7 +312,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -324,46 +324,46 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 475
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 475
+    .line 476
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 476
+    .line 477
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 477
+    .line 478
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 478
+    .line 479
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 479
+    .line 480
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
-    .line 480
+    .line 481
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 481
+    .line 482
     return-object p0
 .end method
 
@@ -371,7 +371,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -383,7 +383,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -395,7 +395,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -407,7 +407,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -419,14 +419,14 @@
     .locals 1
 
     .prologue
-    .line 752
+    .line 756
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 753
+    .line 757
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -437,10 +437,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
-    .line 754
+    .line 758
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 755
+    .line 759
     return-object p0
 .end method
 
@@ -448,14 +448,14 @@
     .locals 1
 
     .prologue
-    .line 684
+    .line 688
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 685
+    .line 689
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -466,10 +466,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 686
+    .line 690
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 687
+    .line 691
     return-object p0
 .end method
 
@@ -477,22 +477,22 @@
     .locals 1
 
     .prologue
-    .line 604
+    .line 605
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 605
+    .line 606
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 606
+    .line 607
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 607
+    .line 608
     return-object p0
 .end method
 
@@ -500,7 +500,7 @@
     .locals 2
 
     .prologue
-    .line 485
+    .line 486
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->create()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -520,7 +520,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -532,7 +532,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -544,7 +544,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -556,7 +556,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -568,7 +568,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -585,7 +585,7 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -597,7 +597,7 @@
     .locals 1
 
     .prologue
-    .line 726
+    .line 730
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
     return-object v0
@@ -607,7 +607,7 @@
     .locals 1
 
     .prologue
-    .line 494
+    .line 495
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -619,7 +619,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -631,7 +631,7 @@
     .locals 1
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
@@ -643,48 +643,61 @@
     .locals 1
 
     .prologue
-    .line 490
+    .line 491
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_AttachmentGetResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getMimeType()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 629
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
-
     .line 630
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
     .line 631
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 632
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 634
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 633
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
+    .line 635
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 636
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 640
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -693,16 +706,16 @@
     .locals 3
 
     .prologue
-    .line 648
+    .line 652
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 649
+    .line 653
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 650
+    .line 654
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -710,11 +723,11 @@
 
     move-result-object v0
 
-    .line 653
+    .line 657
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 656
+    .line 660
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -733,7 +746,7 @@
     .locals 1
 
     .prologue
-    .line 586
+    .line 587
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     return-object v0
@@ -743,7 +756,7 @@
     .locals 2
 
     .prologue
-    .line 716
+    .line 720
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -767,7 +780,7 @@
     .locals 2
 
     .prologue
-    .line 619
+    .line 620
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -793,7 +806,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 580
+    .line 581
     iget v1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -813,7 +826,7 @@
     .locals 3
 
     .prologue
-    .line 450
+    .line 451
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_AttachmentGetResponse_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
@@ -831,7 +844,7 @@
     .locals 1
 
     .prologue
-    .line 553
+    .line 554
     const/4 v0, 0x1
 
     return v0
@@ -842,18 +855,18 @@
     .parameter "other"
 
     .prologue
-    .line 536
+    .line 537
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 549
+    .line 550
     :goto_0
     return-object p0
 
-    .line 537
+    .line 538
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->hasResponseCode()Z
 
@@ -861,14 +874,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 538
+    .line 539
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getResponseCode()Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->setResponseCode(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
-    .line 540
+    .line 541
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->hasMimeType()Z
 
@@ -876,14 +889,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 541
+    .line 542
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 542
+    .line 543
     #getter for: Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->mimeType_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->access$600(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;)Ljava/lang/Object;
 
@@ -891,10 +904,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 543
+    .line 544
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 545
+    .line 546
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->hasContent()Z
 
@@ -902,14 +915,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 546
+    .line 547
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getContent()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->setContent(Lcom/google/protobuf/ByteString;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
-    .line 548
+    .line 549
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -931,10 +944,10 @@
     .end annotation
 
     .prologue
-    .line 560
+    .line 561
     const/4 v2, 0x0
 
-    .line 562
+    .line 563
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->PARSER:Lcom/google/protobuf/Parser;
@@ -952,21 +965,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 567
+    .line 568
     if-eqz v2, :cond_0
 
-    .line 568
+    .line 569
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
-    .line 571
+    .line 572
     :cond_0
     return-object p0
 
-    .line 563
+    .line 564
     :catch_0
     move-exception v1
 
-    .line 564
+    .line 565
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -979,19 +992,19 @@
 
     move-object v2, v0
 
-    .line 565
+    .line 566
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 567
+    .line 568
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 568
+    .line 569
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     :cond_1
@@ -1003,12 +1016,12 @@
     .parameter "other"
 
     .prologue
-    .line 527
+    .line 528
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     if-eqz v0, :cond_0
 
-    .line 528
+    .line 529
     check-cast p1, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;
 
     .end local p1
@@ -1016,12 +1029,12 @@
 
     move-result-object p0
 
-    .line 531
+    .line 532
     .end local p0
     :goto_0
     return-object p0
 
-    .line 530
+    .line 531
     .restart local p0
     .restart local p1
     :cond_0
@@ -1041,7 +1054,7 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -1054,7 +1067,7 @@
     .parameter "x0"
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -1073,7 +1086,7 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -1092,7 +1105,7 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -1105,7 +1118,7 @@
     .parameter "x0"
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -1124,7 +1137,7 @@
     .end annotation
 
     .prologue
-    .line 439
+    .line 440
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;
 
     move-result-object v0
@@ -1137,17 +1150,17 @@
     .parameter "value"
 
     .prologue
-    .line 736
+    .line 740
     if-nez p1, :cond_0
 
-    .line 737
+    .line 741
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 739
+    .line 743
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
@@ -1155,13 +1168,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 740
+    .line 744
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->content_:Lcom/google/protobuf/ByteString;
 
-    .line 741
+    .line 745
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 742
+    .line 746
     return-object p0
 .end method
 
@@ -1170,17 +1183,17 @@
     .parameter "value"
 
     .prologue
-    .line 668
+    .line 672
     if-nez p1, :cond_0
 
-    .line 669
+    .line 673
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 671
+    .line 675
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
@@ -1188,13 +1201,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 672
+    .line 676
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 673
+    .line 677
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 674
+    .line 678
     return-object p0
 .end method
 
@@ -1203,17 +1216,17 @@
     .parameter "value"
 
     .prologue
-    .line 698
+    .line 702
     if-nez p1, :cond_0
 
-    .line 699
+    .line 703
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 701
+    .line 705
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
@@ -1221,13 +1234,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 702
+    .line 706
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->mimeType_:Ljava/lang/Object;
 
-    .line 703
+    .line 707
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 704
+    .line 708
     return-object p0
 .end method
 
@@ -1236,17 +1249,17 @@
     .parameter "value"
 
     .prologue
-    .line 592
+    .line 593
     if-nez p1, :cond_0
 
-    .line 593
+    .line 594
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 595
+    .line 596
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
@@ -1254,12 +1267,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->bitField0_:I
 
-    .line 596
+    .line 597
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->responseCode_:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 597
+    .line 598
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$Builder;->onChanged()V
 
-    .line 598
+    .line 599
     return-object p0
 .end method

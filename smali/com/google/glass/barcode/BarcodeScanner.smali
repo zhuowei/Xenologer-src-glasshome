@@ -22,7 +22,7 @@
 
 .field private bound:Z
 
-.field private final camera:Lcom/google/glass/camera/SharedCameraService$SharedCamera;
+.field private camera:Lcom/google/glass/camera/CameraConnection;
 
 .field private final cameraClient:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -48,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 32
+    .line 30
     const-class v0, Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -68,34 +68,34 @@
     .parameter "listener"
 
     .prologue
-    .line 141
+    .line 139
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
-    new-instance v0, Lcom/google/glass/camera/SharedCameraService$SharedCamera;
-
-    invoke-direct {v0}, Lcom/google/glass/camera/SharedCameraService$SharedCamera;-><init>()V
-
-    iput-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/SharedCameraService$SharedCamera;
-
-    .line 73
+    .line 71
     new-instance v0, Lcom/google/glass/barcode/BarcodeScanner$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/barcode/BarcodeScanner$1;-><init>(Lcom/google/glass/barcode/BarcodeScanner;)V
 
     iput-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraClient:Lcom/google/glass/camera/SharedCameraClient;
 
-    .line 142
+    .line 140
     iput-object p1, p0, Lcom/google/glass/barcode/BarcodeScanner;->context:Landroid/content/Context;
 
-    .line 143
+    .line 141
     iput p2, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraFrameModulus:I
 
-    .line 144
+    .line 142
     iput-wide p3, p0, Lcom/google/glass/barcode/BarcodeScanner;->scanTimeoutNanos:J
 
-    .line 145
+    .line 143
     iput-object p5, p0, Lcom/google/glass/barcode/BarcodeScanner;->listener:Lcom/google/glass/barcode/BarcodeScanner$BarcodeScannerListener;
+
+    .line 145
+    new-instance v0, Lcom/google/glass/camera/CameraConnection;
+
+    invoke-direct {v0, p1}, Lcom/google/glass/camera/CameraConnection;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/CameraConnection;
 
     .line 146
     return-void
@@ -106,7 +106,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->shouldIgnorePreviewFrames:Z
 
     return v0
@@ -118,7 +118,7 @@
     .parameter "x1"
 
     .prologue
-    .line 31
+    .line 29
     iput-boolean p1, p0, Lcom/google/glass/barcode/BarcodeScanner;->shouldIgnorePreviewFrames:Z
 
     return p1
@@ -129,7 +129,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->previewFrameCount:I
 
     return v0
@@ -140,7 +140,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->previewFrameCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -155,7 +155,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget-wide v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->firstPreviewFrameTimeNanos:J
 
     return-wide v0
@@ -167,7 +167,7 @@
     .parameter "x1"
 
     .prologue
-    .line 31
+    .line 29
     iput-wide p1, p0, Lcom/google/glass/barcode/BarcodeScanner;->firstPreviewFrameTimeNanos:J
 
     return-wide p1
@@ -178,7 +178,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraFrameModulus:I
 
     return v0
@@ -189,7 +189,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget-wide v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->scanTimeoutNanos:J
 
     return-wide v0
@@ -200,7 +200,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->listener:Lcom/google/glass/barcode/BarcodeScanner$BarcodeScannerListener;
 
     return-object v0
@@ -211,7 +211,7 @@
     .parameter "x0"
 
     .prologue
-    .line 31
+    .line 29
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->barcodeRecognizer:Lcom/google/glass/barcode/BarcodeRecognizer;
 
     return-object v0
@@ -224,7 +224,7 @@
     .parameter "x2"
 
     .prologue
-    .line 31
+    .line 29
     invoke-direct {p0, p1, p2}, Lcom/google/glass/barcode/BarcodeScanner;->stopScanning(ZLcom/google/android/libraries/barhopper/Barcode;)V
 
     return-void
@@ -234,7 +234,7 @@
     .locals 1
 
     .prologue
-    .line 31
+    .line 29
     sget-object v0, Lcom/google/glass/barcode/BarcodeScanner;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -246,14 +246,14 @@
     .prologue
     const-wide/16 v0, 0x0
 
-    .line 238
+    .line 237
     iget-wide v2, p0, Lcom/google/glass/barcode/BarcodeScanner;->firstPreviewFrameTimeNanos:J
 
     cmp-long v2, v2, v0
 
     if-nez v2, :cond_0
 
-    .line 242
+    .line 241
     :goto_0
     return-wide v0
 
@@ -281,7 +281,7 @@
     .parameter "eventData"
 
     .prologue
-    .line 225
+    .line 224
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner;->context:Landroid/content/Context;
 
     invoke-static {v1}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
@@ -292,11 +292,11 @@
 
     move-result-object v0
 
-    .line 226
+    .line 225
     .local v0, userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 227
+    .line 226
     return-void
 .end method
 
@@ -304,7 +304,7 @@
     .locals 6
 
     .prologue
-    .line 219
+    .line 218
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->BARCODE_FAILED_SCAN:Lcom/google/glass/logging/UserEventAction;
 
     const-string v1, "m"
@@ -343,7 +343,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/barcode/BarcodeScanner;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 222
+    .line 221
     return-void
 .end method
 
@@ -352,7 +352,7 @@
     .parameter "barcode"
 
     .prologue
-    .line 230
+    .line 229
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->BARCODE_SUCCESSFUL_SCAN:Lcom/google/glass/logging/UserEventAction;
 
     const-string v1, "m"
@@ -437,7 +437,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/barcode/BarcodeScanner;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 235
+    .line 234
     return-void
 .end method
 
@@ -445,7 +445,7 @@
     .locals 4
 
     .prologue
-    .line 285
+    .line 284
     new-instance v0, Lcom/google/glass/barcode/BarcodeScanner$Builder;
 
     const/4 v1, 0x1
@@ -463,45 +463,45 @@
     .parameter "barcode"
 
     .prologue
-    .line 203
+    .line 202
     iget-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->scanning:Z
 
     if-eqz v0, :cond_1
 
-    .line 204
+    .line 203
     if-eqz p1, :cond_0
 
-    .line 205
+    .line 204
     invoke-direct {p0, p2}, Lcom/google/glass/barcode/BarcodeScanner;->logSuccess(Lcom/google/android/libraries/barhopper/Barcode;)V
 
-    .line 213
+    .line 212
     :goto_0
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->scanning:Z
 
-    .line 214
+    .line 213
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->shouldIgnorePreviewFrames:Z
 
-    .line 215
-    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/SharedCameraService$SharedCamera;
+    .line 214
+    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/CameraConnection;
 
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraClient:Lcom/google/glass/camera/SharedCameraClient;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraService$SharedCamera;->stopPreview(Lcom/google/glass/camera/SharedCameraClient;)V
+    invoke-virtual {v0, v1}, Lcom/google/glass/camera/CameraConnection;->stopPreview(Lcom/google/glass/camera/SharedCameraClient;)V
 
-    .line 216
+    .line 215
     return-void
 
-    .line 207
+    .line 206
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/barcode/BarcodeScanner;->logFailure()V
 
     goto :goto_0
 
-    .line 210
+    .line 209
     :cond_1
     sget-object v0, Lcom/google/glass/barcode/BarcodeScanner;->TAG:Ljava/lang/String;
 
@@ -514,30 +514,21 @@
 
 
 # virtual methods
-.method public bindCamera(Landroid/content/Context;)V
-    .locals 3
-    .parameter "context"
+.method public bindCamera()V
+    .locals 1
 
     .prologue
-    const/4 v2, 0x1
-
     .line 149
-    iput-boolean v2, p0, Lcom/google/glass/barcode/BarcodeScanner;->bound:Z
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->bound:Z
 
     .line 150
-    new-instance v0, Landroid/content/Intent;
+    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/CameraConnection;
 
-    const-class v1, Lcom/google/glass/camera/SharedCameraService;
-
-    invoke-direct {v0, p1, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {v0}, Lcom/google/glass/camera/CameraConnection;->bind()V
 
     .line 151
-    .local v0, cameraService:Landroid/content/Intent;
-    iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/SharedCameraService$SharedCamera;
-
-    invoke-virtual {p1, v0, v1, v2}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    .line 152
     return-void
 .end method
 
@@ -550,23 +541,23 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 160
     iget-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->bound:Z
 
     if-eqz v0, :cond_0
 
-    .line 162
+    .line 161
     sget-object v0, Lcom/google/glass/barcode/BarcodeScanner;->TAG:Ljava/lang/String;
 
     const-string v1, "BarcodeScanner finalized while bound to camera service!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
+    .line 163
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 165
+    .line 164
     return-void
 .end method
 
@@ -575,12 +566,12 @@
     .parameter "viewfinder"
 
     .prologue
-    .line 168
+    .line 167
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraClient:Lcom/google/glass/camera/SharedCameraClient;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/camera/SharedCameraClient;->setViewfinder(Landroid/view/TextureView;)V
 
-    .line 169
+    .line 168
     return-void
 .end method
 
@@ -590,12 +581,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 172
+    .line 171
     iget-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->bound:Z
 
     if-nez v0, :cond_0
 
-    .line 173
+    .line 172
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Cannot scan unless bound."
@@ -604,7 +595,7 @@
 
     throw v0
 
-    .line 176
+    .line 175
     :cond_0
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraClient:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -614,7 +605,7 @@
 
     if-nez v0, :cond_1
 
-    .line 177
+    .line 176
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "Cannot scan without a viewfinder."
@@ -623,51 +614,51 @@
 
     throw v0
 
-    .line 180
+    .line 179
     :cond_1
     iget-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->scanning:Z
 
     if-eqz v0, :cond_2
 
-    .line 181
+    .line 180
     sget-object v0, Lcom/google/glass/barcode/BarcodeScanner;->TAG:Ljava/lang/String;
 
     const-string v1, "Duplicate startScanning calls."
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 184
+    .line 183
     :cond_2
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->scanning:Z
 
-    .line 187
+    .line 186
     new-instance v0, Lcom/google/glass/barcode/BarhopperRecognizer;
 
     invoke-direct {v0}, Lcom/google/glass/barcode/BarhopperRecognizer;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->barcodeRecognizer:Lcom/google/glass/barcode/BarcodeRecognizer;
 
-    .line 190
+    .line 189
     iput v2, p0, Lcom/google/glass/barcode/BarcodeScanner;->previewFrameCount:I
 
-    .line 191
+    .line 190
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->firstPreviewFrameTimeNanos:J
 
-    .line 192
+    .line 191
     iput-boolean v2, p0, Lcom/google/glass/barcode/BarcodeScanner;->shouldIgnorePreviewFrames:Z
 
-    .line 195
-    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/SharedCameraService$SharedCamera;
+    .line 194
+    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/CameraConnection;
 
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner;->cameraClient:Lcom/google/glass/camera/SharedCameraClient;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraService$SharedCamera;->startPreview(Lcom/google/glass/camera/SharedCameraClient;)V
+    invoke-virtual {v0, v1}, Lcom/google/glass/camera/CameraConnection;->startPreview(Lcom/google/glass/camera/SharedCameraClient;)V
 
-    .line 196
+    .line 195
     return-void
 .end method
 
@@ -675,32 +666,31 @@
     .locals 2
 
     .prologue
-    .line 199
+    .line 198
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/barcode/BarcodeScanner;->stopScanning(ZLcom/google/android/libraries/barhopper/Barcode;)V
 
-    .line 200
+    .line 199
     return-void
 .end method
 
-.method public unbindCamera(Landroid/content/Context;)V
+.method public unbindCamera()V
     .locals 1
-    .parameter "context"
 
     .prologue
+    .line 154
+    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/CameraConnection;
+
+    invoke-virtual {v0}, Lcom/google/glass/camera/CameraConnection;->unbind()V
+
     .line 155
-    iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->camera:Lcom/google/glass/camera/SharedCameraService$SharedCamera;
-
-    invoke-virtual {p1, v0}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
-
-    .line 156
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/barcode/BarcodeScanner;->bound:Z
 
-    .line 157
+    .line 156
     return-void
 .end method

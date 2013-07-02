@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 282
+    .line 279
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$2;->val$messageToSend:Ljava/lang/String;
@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 285
+    .line 282
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_MESSAGE_DISMISS:Lcom/google/glass/logging/UserEventAction;
@@ -52,12 +52,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/home/voice/VoiceMessageActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 286
+    .line 283
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/voice/VoiceMessageActivity;->finish()V
 
-    .line 287
+    .line 284
     return-void
 .end method
 
@@ -65,7 +65,7 @@
     .locals 2
 
     .prologue
-    .line 291
+    .line 288
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceMessageActivity;
 
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMessageActivity$2;->val$messageToSend:Ljava/lang/String;
@@ -73,6 +73,6 @@
     #calls: Lcom/google/glass/home/voice/VoiceMessageActivity;->onMessageCommitted(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->access$100(Lcom/google/glass/home/voice/VoiceMessageActivity;Ljava/lang/String;)V
 
-    .line 292
+    .line 289
     return-void
 .end method

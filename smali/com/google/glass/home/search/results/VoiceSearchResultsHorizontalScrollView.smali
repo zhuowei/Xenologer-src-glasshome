@@ -183,29 +183,67 @@
     .locals 1
 
     .prologue
-    .line 64
+    .line 69
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public getViewForPosition(I)Landroid/view/View;
-    .locals 2
+    .locals 3
     .parameter "position"
 
     .prologue
-    .line 54
+    .line 56
+    const/4 v0, 0x0
+
+    .local v0, i:I
+    :goto_0
+    const/4 v1, 0x3
+
+    if-ge v0, v1, :cond_0
+
+    add-int v1, p1, v0
+
+    iget-object v2, p0, Lcom/google/glass/home/search/results/VoiceSearchResultsHorizontalScrollView;->resultPages:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_0
+
+    .line 57
+    iget-object v1, p0, Lcom/google/glass/home/search/results/VoiceSearchResultsHorizontalScrollView;->resultPages:Ljava/util/List;
+
+    add-int v2, p1, v0
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->seen()V
+
+    .line 56
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 59
+    :cond_0
     invoke-virtual {p0}, Lcom/google/glass/home/search/results/VoiceSearchResultsHorizontalScrollView;->getAdapter()Landroid/widget/Adapter;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
-    invoke-interface {v0, p1, v1, p0}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    invoke-interface {v1, p1, v2, p0}, Landroid/widget/Adapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
 
-    return-object v0
+    return-object v1
 .end method
 
 .method public rebindView(ILandroid/view/View;)V
@@ -214,7 +252,7 @@
     .parameter "view"
 
     .prologue
-    .line 60
+    .line 65
     return-void
 .end method
 

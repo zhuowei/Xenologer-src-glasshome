@@ -213,203 +213,223 @@
 
 .field public static final ic_hangout_medium:I = 0x7f020062
 
-.field public static final ic_hangout_small:I = 0x7f020063
+.field public static final ic_head_wake_set_trigger_angle:I = 0x7f020063
 
-.field public static final ic_head_wake_set_trigger_angle:I = 0x7f020064
+.field public static final ic_head_wake_up_large_head:I = 0x7f020064
 
-.field public static final ic_head_wake_up_large_head:I = 0x7f020065
+.field public static final ic_head_wake_up_large_lower:I = 0x7f020065
 
-.field public static final ic_head_wake_up_large_lower:I = 0x7f020066
+.field public static final ic_head_wake_up_large_neck:I = 0x7f020066
 
-.field public static final ic_head_wake_up_large_neck:I = 0x7f020067
+.field public static final ic_help_medium:I = 0x7f020067
 
-.field public static final ic_help_medium:I = 0x7f020068
+.field public static final ic_launcher:I = 0x7f020068
 
-.field public static final ic_launcher:I = 0x7f020069
+.field public static final ic_message_medium:I = 0x7f020069
 
-.field public static final ic_message_medium:I = 0x7f02006a
+.field public static final ic_microphone_medium:I = 0x7f02006a
 
-.field public static final ic_microphone_medium:I = 0x7f02006b
+.field public static final ic_microphone_off_medium:I = 0x7f02006b
 
-.field public static final ic_microphone_off_medium:I = 0x7f02006c
+.field public static final ic_msg_small:I = 0x7f02006c
 
-.field public static final ic_msg_small:I = 0x7f02006d
+.field public static final ic_musicplayer_next:I = 0x7f02006d
 
-.field public static final ic_nav_small:I = 0x7f02006e
+.field public static final ic_musicplayer_pause:I = 0x7f02006e
 
-.field public static final ic_navigate_medium:I = 0x7f02006f
+.field public static final ic_musicplayer_play:I = 0x7f02006f
 
-.field public static final ic_on_head_off_160:I = 0x7f020070
+.field public static final ic_musicplayer_previous:I = 0x7f020070
 
-.field public static final ic_on_head_on_160:I = 0x7f020071
+.field public static final ic_nav_small:I = 0x7f020071
 
-.field public static final ic_phone_hang_medium:I = 0x7f020072
+.field public static final ic_navigate_medium:I = 0x7f020072
 
-.field public static final ic_phone_in_medium:I = 0x7f020073
+.field public static final ic_on_head_off_160:I = 0x7f020073
 
-.field public static final ic_phone_on:I = 0x7f020074
+.field public static final ic_on_head_on_160:I = 0x7f020074
 
-.field public static final ic_phone_out_medium:I = 0x7f020075
+.field public static final ic_phone_hang_medium:I = 0x7f020075
 
-.field public static final ic_phone_out_small:I = 0x7f020076
+.field public static final ic_phone_in_medium:I = 0x7f020076
 
-.field public static final ic_pin_medium:I = 0x7f020077
+.field public static final ic_phone_on:I = 0x7f020077
 
-.field public static final ic_placeholder_photo_large:I = 0x7f020078
+.field public static final ic_phone_out_medium:I = 0x7f020078
 
-.field public static final ic_placeholder_video_large:I = 0x7f020079
+.field public static final ic_phone_out_small:I = 0x7f020079
 
-.field public static final ic_power_medium:I = 0x7f02007a
+.field public static final ic_pin_medium:I = 0x7f02007a
 
-.field public static final ic_read_aloud_medium:I = 0x7f02007b
+.field public static final ic_placeholder_photo_large:I = 0x7f02007b
 
-.field public static final ic_reply_all_medium:I = 0x7f02007c
+.field public static final ic_placeholder_video_large:I = 0x7f02007c
 
-.field public static final ic_reply_medium:I = 0x7f02007d
+.field public static final ic_power_medium:I = 0x7f02007d
 
-.field public static final ic_reset_medium:I = 0x7f02007e
+.field public static final ic_read_aloud_medium:I = 0x7f02007e
 
-.field public static final ic_search_medium:I = 0x7f02007f
+.field public static final ic_reply_all_medium:I = 0x7f02007f
 
-.field public static final ic_search_small:I = 0x7f020080
+.field public static final ic_reply_medium:I = 0x7f020080
 
-.field public static final ic_share_medium:I = 0x7f020081
+.field public static final ic_reset_medium:I = 0x7f020081
 
-.field public static final ic_sphere_pano_medium:I = 0x7f020082
+.field public static final ic_search_medium:I = 0x7f020082
 
-.field public static final ic_sync_medium:I = 0x7f020083
+.field public static final ic_search_small:I = 0x7f020083
 
-.field public static final ic_sync_small:I = 0x7f020084
+.field public static final ic_share_medium:I = 0x7f020084
 
-.field public static final ic_unpin_medium:I = 0x7f020085
+.field public static final ic_sphere_pano_medium:I = 0x7f020085
 
-.field public static final ic_video_medium:I = 0x7f020086
+.field public static final ic_sync_medium:I = 0x7f020086
 
-.field public static final ic_video_off_medium:I = 0x7f020087
+.field public static final ic_sync_small:I = 0x7f020087
 
-.field public static final ic_video_play_medium:I = 0x7f020088
+.field public static final ic_unpin_medium:I = 0x7f020088
 
-.field public static final ic_video_small:I = 0x7f020089
+.field public static final ic_video_call_small:I = 0x7f020089
 
-.field public static final ic_warning_large:I = 0x7f02008a
+.field public static final ic_video_medium:I = 0x7f02008a
 
-.field public static final ic_warning_medium:I = 0x7f02008b
+.field public static final ic_video_off_medium:I = 0x7f02008b
 
-.field public static final ic_wifi0_big:I = 0x7f02008c
+.field public static final ic_video_play_medium:I = 0x7f02008c
 
-.field public static final ic_wifi1_big:I = 0x7f02008d
+.field public static final ic_video_small:I = 0x7f02008d
 
-.field public static final ic_wifi1_warn_big:I = 0x7f02008e
+.field public static final ic_volume_full:I = 0x7f02008e
 
-.field public static final ic_wifi2_big:I = 0x7f02008f
+.field public static final ic_volume_medium:I = 0x7f02008f
 
-.field public static final ic_wifi2_warn_big:I = 0x7f020090
+.field public static final ic_volume_muted:I = 0x7f020090
 
-.field public static final ic_wifi2anim_big:I = 0x7f020091
+.field public static final ic_warning_large:I = 0x7f020091
 
-.field public static final ic_wifi3_big:I = 0x7f020092
+.field public static final ic_warning_medium:I = 0x7f020092
 
-.field public static final ic_wifi3_warn_big:I = 0x7f020093
+.field public static final ic_wifi0_big:I = 0x7f020093
 
-.field public static final ic_wifi3anim_big:I = 0x7f020094
+.field public static final ic_wifi1_big:I = 0x7f020094
 
-.field public static final ic_wifi4_add_big:I = 0x7f020095
+.field public static final ic_wifi1_warn_big:I = 0x7f020095
 
-.field public static final ic_wifi4_big:I = 0x7f020096
+.field public static final ic_wifi2_big:I = 0x7f020096
 
-.field public static final ic_wifi4_warn_big:I = 0x7f020097
+.field public static final ic_wifi2_warn_big:I = 0x7f020097
 
-.field public static final ic_wifi4anim_big:I = 0x7f020098
+.field public static final ic_wifi2anim_big:I = 0x7f020098
 
-.field public static final ic_wifi_medium:I = 0x7f020099
+.field public static final ic_wifi3_big:I = 0x7f020099
 
-.field public static final ic_wink_for_photo_off_big:I = 0x7f02009a
+.field public static final ic_wifi3_warn_big:I = 0x7f02009a
 
-.field public static final ic_wink_for_photo_on_big:I = 0x7f02009b
+.field public static final ic_wifi3anim_big:I = 0x7f02009b
 
-.field public static final overlay_large:I = 0x7f02009c
+.field public static final ic_wifi4_add_big:I = 0x7f02009c
 
-.field public static final overlay_medium:I = 0x7f02009d
+.field public static final ic_wifi4_big:I = 0x7f02009d
 
-.field public static final overlay_small:I = 0x7f02009e
+.field public static final ic_wifi4_warn_big:I = 0x7f02009e
 
-.field public static final qr_code_footer:I = 0x7f02009f
+.field public static final ic_wifi4anim_big:I = 0x7f02009f
 
-.field public static final qr_code_scan_frame:I = 0x7f0200a0
+.field public static final ic_wifi_medium:I = 0x7f0200a0
 
-.field public static final slider_indeterminate:I = 0x7f0200a1
+.field public static final ic_wink_for_photo_off_big:I = 0x7f0200a1
 
-.field public static final status_battery:I = 0x7f0200a2
+.field public static final ic_wink_for_photo_on_big:I = 0x7f0200a2
 
-.field public static final status_battery_0:I = 0x7f0200a3
+.field public static final mic_max_circle:I = 0x7f0200a3
 
-.field public static final status_battery_100:I = 0x7f0200a4
+.field public static final mic_red_circle:I = 0x7f0200a4
 
-.field public static final status_battery_15:I = 0x7f0200a5
+.field public static final overlay_guard_phrase:I = 0x7f0200a5
 
-.field public static final status_battery_28:I = 0x7f0200a6
+.field public static final overlay_large:I = 0x7f0200a6
 
-.field public static final status_battery_43:I = 0x7f0200a7
+.field public static final overlay_medium:I = 0x7f0200a7
 
-.field public static final status_battery_57:I = 0x7f0200a8
+.field public static final overlay_small:I = 0x7f0200a8
 
-.field public static final status_battery_71:I = 0x7f0200a9
+.field public static final qr_code_footer:I = 0x7f0200a9
 
-.field public static final status_battery_85:I = 0x7f0200aa
+.field public static final qr_code_scan_frame:I = 0x7f0200aa
 
-.field public static final status_battery_charge_anim0:I = 0x7f0200ab
+.field public static final slider_indeterminate:I = 0x7f0200ab
 
-.field public static final status_battery_charge_anim100:I = 0x7f0200ac
+.field public static final status_battery:I = 0x7f0200ac
 
-.field public static final status_battery_charge_anim15:I = 0x7f0200ad
+.field public static final status_battery_0:I = 0x7f0200ad
 
-.field public static final status_battery_charge_anim28:I = 0x7f0200ae
+.field public static final status_battery_100:I = 0x7f0200ae
 
-.field public static final status_battery_charge_anim43:I = 0x7f0200af
+.field public static final status_battery_15:I = 0x7f0200af
 
-.field public static final status_battery_charge_anim57:I = 0x7f0200b0
+.field public static final status_battery_28:I = 0x7f0200b0
 
-.field public static final status_battery_charge_anim71:I = 0x7f0200b1
+.field public static final status_battery_43:I = 0x7f0200b1
 
-.field public static final status_battery_charge_anim85:I = 0x7f0200b2
+.field public static final status_battery_57:I = 0x7f0200b2
 
-.field public static final status_battery_charging:I = 0x7f0200b3
+.field public static final status_battery_71:I = 0x7f0200b3
 
-.field public static final status_bluetooth:I = 0x7f0200b4
+.field public static final status_battery_85:I = 0x7f0200b4
 
-.field public static final status_bluetooth_connected:I = 0x7f0200b5
+.field public static final status_battery_charge_anim0:I = 0x7f0200b5
 
-.field public static final status_bluetooth_disconnected:I = 0x7f0200b6
+.field public static final status_battery_charge_anim100:I = 0x7f0200b6
 
-.field public static final status_wifi:I = 0x7f0200b7
+.field public static final status_battery_charge_anim15:I = 0x7f0200b7
 
-.field public static final status_wifi_0:I = 0x7f0200b8
+.field public static final status_battery_charge_anim28:I = 0x7f0200b8
 
-.field public static final status_wifi_1:I = 0x7f0200b9
+.field public static final status_battery_charge_anim43:I = 0x7f0200b9
 
-.field public static final status_wifi_1_connected:I = 0x7f0200ba
+.field public static final status_battery_charge_anim57:I = 0x7f0200ba
 
-.field public static final status_wifi_2:I = 0x7f0200bb
+.field public static final status_battery_charge_anim71:I = 0x7f0200bb
 
-.field public static final status_wifi_2_connected:I = 0x7f0200bc
+.field public static final status_battery_charge_anim85:I = 0x7f0200bc
 
-.field public static final status_wifi_3:I = 0x7f0200bd
+.field public static final status_battery_charging:I = 0x7f0200bd
 
-.field public static final status_wifi_3_connected:I = 0x7f0200be
+.field public static final status_bluetooth:I = 0x7f0200be
 
-.field public static final status_wifi_4:I = 0x7f0200bf
+.field public static final status_bluetooth_connected:I = 0x7f0200bf
 
-.field public static final status_wifi_4_connected:I = 0x7f0200c0
+.field public static final status_bluetooth_disconnected:I = 0x7f0200c0
 
-.field public static final voice_search_local_placeholder:I = 0x7f0200c1
+.field public static final status_wifi:I = 0x7f0200c1
 
-.field public static final voice_search_reactive_dark:I = 0x7f0200c2
+.field public static final status_wifi_0:I = 0x7f0200c2
 
-.field public static final voice_search_reactive_light:I = 0x7f0200c3
+.field public static final status_wifi_1:I = 0x7f0200c3
 
-.field public static final web_results:I = 0x7f0200c4
+.field public static final status_wifi_1_connected:I = 0x7f0200c4
 
-.field public static final wifi_disconnected:I = 0x7f0200c5
+.field public static final status_wifi_2:I = 0x7f0200c5
+
+.field public static final status_wifi_2_connected:I = 0x7f0200c6
+
+.field public static final status_wifi_3:I = 0x7f0200c7
+
+.field public static final status_wifi_3_connected:I = 0x7f0200c8
+
+.field public static final status_wifi_4:I = 0x7f0200c9
+
+.field public static final status_wifi_4_connected:I = 0x7f0200ca
+
+.field public static final voice_input_reactive_dark:I = 0x7f0200cb
+
+.field public static final voice_input_sound_level_circle:I = 0x7f0200cc
+
+.field public static final voice_search_local_placeholder:I = 0x7f0200cd
+
+.field public static final web_results:I = 0x7f0200ce
+
+.field public static final wifi_disconnected:I = 0x7f0200cf
 
 
 # direct methods
@@ -417,7 +437,7 @@
     .locals 0
 
     .prologue
-    .line 272
+    .line 296
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -563,7 +563,7 @@
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_AttachmentInsertRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/4 v2, 0x6
+    const/4 v2, 0x7
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -590,6 +590,12 @@
     const/4 v3, 0x5
 
     const-string v4, "CreationTime"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x6
+
+    const-string v4, "Source"
 
     aput-object v4, v2, v3
 

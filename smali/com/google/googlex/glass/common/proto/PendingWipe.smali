@@ -64,19 +64,19 @@
     .locals 2
 
     .prologue
-    .line 107
+    .line 108
     new-instance v0, Lcom/google/googlex/glass/common/proto/PendingWipe$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/PendingWipe$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 316
+    .line 317
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 793
+    .line 797
     new-instance v0, Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     const/4 v1, 0x1
@@ -85,17 +85,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->defaultInstance:Lcom/google/googlex/glass/common/proto/PendingWipe;
 
-    .line 794
+    .line 798
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->defaultInstance:Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->initFields()V
 
-    .line 795
+    .line 799
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 7
+    .locals 8
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -105,82 +105,82 @@
     .end annotation
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     .line 43
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 254
-    iput-byte v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedIsInitialized:B
+    .line 255
+    iput-byte v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedIsInitialized:B
 
-    .line 281
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedSerializedSize:I
+    .line 282
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedSerializedSize:I
 
     .line 44
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->initFields()V
 
     .line 45
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 46
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 49
-    .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 50
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     .line 51
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v3
+    move-result v4
 
     .line 52
-    .local v3, tag:I
-    sparse-switch v3, :sswitch_data_0
+    .local v4, tag:I
+    sparse-switch v4, :sswitch_data_0
 
     .line 57
-    invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/googlex/glass/common/proto/PendingWipe;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/googlex/glass/common/proto/PendingWipe;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 59
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 54
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 55
     goto :goto_0
 
     .line 64
     :sswitch_1
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
-    or-int/lit8 v5, v5, 0x1
+    or-int/lit8 v6, v6, 0x1
 
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     .line 65
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
 
-    move-result-wide v5
+    move-result-wide v6
 
-    iput-wide v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
+    iput-wide v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -188,54 +188,56 @@
 
     goto :goto_0
 
-    .line 85
-    .end local v3           #tag:I
-    :catch_0
-    move-exception v1
-
     .line 86
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v4           #tag:I
+    :catch_0
+    move-exception v2
+
+    .line 87
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 91
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
-    :catchall_0
-    move-exception v5
-
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    throw v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 92
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_0
+    move-exception v6
+
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 93
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->makeExtensionsImmutable()V
 
-    throw v5
+    throw v6
 
     .line 69
-    .restart local v3       #tag:I
+    .restart local v4       #tag:I
     :sswitch_2
     :try_start_2
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x2
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
-
-    .line 70
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
+    .line 70
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x2
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+
+    .line 71
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
@@ -243,64 +245,65 @@
 
     goto :goto_0
 
-    .line 87
-    .end local v3           #tag:I
-    :catch_1
-    move-exception v1
-
     .line 88
-    .local v1, e:Ljava/io/IOException;
-    :try_start_3
-    new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
+    :catch_1
+    move-exception v2
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    .line 89
+    .local v2, e:Ljava/io/IOException;
+    :try_start_3
+    new-instance v6, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
+    throw v6
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 74
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v3       #tag:I
+    .line 75
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v4       #tag:I
     :sswitch_3
     :try_start_4
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
-    or-int/lit8 v5, v5, 0x4
+    or-int/lit8 v6, v6, 0x4
 
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
-    .line 75
+    .line 76
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
-    move-result v5
+    move-result v6
 
-    iput-boolean v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
+    iput-boolean v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
 
     goto :goto_0
 
-    .line 79
-    :sswitch_4
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x8
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
-
     .line 80
+    :sswitch_4
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x8
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
+
+    .line 81
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt32()I
 
-    move-result v5
+    move-result v6
 
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
@@ -308,19 +311,19 @@
 
     goto :goto_0
 
-    .line 91
-    .end local v3           #tag:I
-    :cond_1
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
     .line 92
+    .end local v4           #tag:I
+    :cond_1
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 93
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->makeExtensionsImmutable()V
 
-    .line 94
+    .line 95
     return-void
 
     .line 52
@@ -370,10 +373,10 @@
     .line 20
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 254
+    .line 255
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedIsInitialized:B
 
-    .line 281
+    .line 282
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedSerializedSize:I
 
     .line 21
@@ -409,10 +412,10 @@
     .line 23
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 254
+    .line 255
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedIsInitialized:B
 
-    .line 281
+    .line 282
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedSerializedSize:I
 
     .line 23
@@ -520,7 +523,7 @@
     .locals 1
 
     .prologue
-    .line 97
+    .line 98
     sget-object v0, Lcom/google/googlex/glass/common/proto/Admin;->internal_static_googlex_glass_common_proto_PendingWipe_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -532,23 +535,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 249
+    .line 250
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
 
-    .line 250
+    .line 251
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
 
-    .line 251
+    .line 252
     iput-boolean v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
 
-    .line 252
+    .line 253
     iput v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
 
-    .line 253
+    .line 254
     return-void
 .end method
 
@@ -556,7 +559,7 @@
     .locals 1
 
     .prologue
-    .line 378
+    .line 379
     #calls: Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->create()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->access$100()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
@@ -570,7 +573,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 381
+    .line 382
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe;->newBuilder()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -592,7 +595,7 @@
     .end annotation
 
     .prologue
-    .line 358
+    .line 359
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -615,7 +618,7 @@
     .end annotation
 
     .prologue
-    .line 364
+    .line 365
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -637,7 +640,7 @@
     .end annotation
 
     .prologue
-    .line 328
+    .line 329
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -660,7 +663,7 @@
     .end annotation
 
     .prologue
-    .line 334
+    .line 335
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -682,7 +685,7 @@
     .end annotation
 
     .prologue
-    .line 369
+    .line 370
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -705,7 +708,7 @@
     .end annotation
 
     .prologue
-    .line 375
+    .line 376
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -727,7 +730,7 @@
     .end annotation
 
     .prologue
-    .line 348
+    .line 349
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -750,7 +753,7 @@
     .end annotation
 
     .prologue
-    .line 354
+    .line 355
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -772,7 +775,7 @@
     .end annotation
 
     .prologue
-    .line 338
+    .line 339
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -795,7 +798,7 @@
     .end annotation
 
     .prologue
-    .line 344
+    .line 345
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -847,19 +850,19 @@
     .locals 4
 
     .prologue
-    .line 168
+    .line 169
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
 
-    .line 169
+    .line 170
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 170
+    .line 171
     check-cast v1, Ljava/lang/String;
 
-    .line 178
+    .line 179
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -868,16 +871,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 172
+    .line 173
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 174
+    .line 175
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 175
+    .line 176
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -885,13 +888,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 176
+    .line 177
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 178
+    .line 179
     goto :goto_0
 .end method
 
@@ -899,16 +902,16 @@
     .locals 3
 
     .prologue
-    .line 190
+    .line 191
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
 
-    .line 191
+    .line 192
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 192
+    .line 193
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -916,11 +919,11 @@
 
     move-result-object v0
 
-    .line 195
+    .line 196
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
 
-    .line 198
+    .line 199
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -948,7 +951,7 @@
     .end annotation
 
     .prologue
-    .line 119
+    .line 120
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -958,7 +961,7 @@
     .locals 1
 
     .prologue
-    .line 245
+    .line 246
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
 
     return v0
@@ -974,10 +977,10 @@
 
     const/4 v4, 0x1
 
-    .line 283
+    .line 284
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedSerializedSize:I
 
-    .line 284
+    .line 285
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -985,26 +988,26 @@
 
     move v1, v0
 
-    .line 305
+    .line 306
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 286
+    .line 287
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 287
+    .line 288
     iget v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v4, :cond_1
 
-    .line 288
+    .line 289
     iget-wide v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
 
     invoke-static {v4, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->computeUInt64Size(IJ)I
@@ -1013,7 +1016,7 @@
 
     add-int/2addr v0, v2
 
-    .line 291
+    .line 292
     :cond_1
     iget v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
@@ -1021,7 +1024,7 @@
 
     if-ne v2, v5, :cond_2
 
-    .line 292
+    .line 293
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1032,7 +1035,7 @@
 
     add-int/2addr v0, v2
 
-    .line 295
+    .line 296
     :cond_2
     iget v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
@@ -1040,7 +1043,7 @@
 
     if-ne v2, v6, :cond_3
 
-    .line 296
+    .line 297
     const/4 v2, 0x3
 
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
@@ -1051,7 +1054,7 @@
 
     add-int/2addr v0, v2
 
-    .line 299
+    .line 300
     :cond_3
     iget v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
@@ -1061,7 +1064,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 300
+    .line 301
     iget v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
 
     invoke-static {v6, v2}, Lcom/google/protobuf/CodedOutputStream;->computeUInt32Size(II)I
@@ -1070,7 +1073,7 @@
 
     add-int/2addr v0, v2
 
-    .line 303
+    .line 304
     :cond_4
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1082,12 +1085,12 @@
 
     add-int/2addr v0, v2
 
-    .line 304
+    .line 305
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 305
+    .line 306
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -1097,7 +1100,7 @@
     .locals 2
 
     .prologue
-    .line 145
+    .line 146
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
 
     return-wide v0
@@ -1117,7 +1120,7 @@
     .locals 1
 
     .prologue
-    .line 222
+    .line 223
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
 
     return v0
@@ -1127,7 +1130,7 @@
     .locals 2
 
     .prologue
-    .line 158
+    .line 159
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1151,7 +1154,7 @@
     .locals 2
 
     .prologue
-    .line 235
+    .line 236
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1177,7 +1180,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 134
+    .line 135
     iget v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1197,7 +1200,7 @@
     .locals 2
 
     .prologue
-    .line 212
+    .line 213
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1221,7 +1224,7 @@
     .locals 3
 
     .prologue
-    .line 102
+    .line 103
     sget-object v0, Lcom/google/googlex/glass/common/proto/Admin;->internal_static_googlex_glass_common_proto_PendingWipe_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/PendingWipe;
@@ -1239,12 +1242,12 @@
     .locals 1
 
     .prologue
-    .line 319
+    .line 320
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 320
+    .line 321
     const-string v0, "com.google.googlex.glass.common.proto.MutableAdmin$PendingWipe"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1253,7 +1256,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 322
+    .line 323
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/PendingWipe;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1266,10 +1269,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 256
+    .line 257
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedIsInitialized:B
 
-    .line 257
+    .line 258
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -1277,17 +1280,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 260
+    .line 261
     :goto_0
     return v1
 
-    .line 257
+    .line 258
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 259
+    .line 260
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->memoizedIsInitialized:B
 
@@ -1298,7 +1301,7 @@
     .locals 1
 
     .prologue
-    .line 379
+    .line 380
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe;->newBuilder()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1311,14 +1314,14 @@
     .parameter "parent"
 
     .prologue
-    .line 388
+    .line 389
     new-instance v0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/PendingWipe$1;)V
 
-    .line 389
+    .line 390
     .local v0, builder:Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
     return-object v0
 .end method
@@ -1364,7 +1367,7 @@
     .locals 1
 
     .prologue
-    .line 383
+    .line 384
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->newBuilder(Lcom/google/googlex/glass/common/proto/PendingWipe;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1405,7 +1408,7 @@
     .end annotation
 
     .prologue
-    .line 312
+    .line 313
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1429,22 +1432,22 @@
 
     const/4 v2, 0x1
 
-    .line 265
+    .line 266
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getSerializedSize()I
 
-    .line 266
+    .line 267
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v2, :cond_0
 
-    .line 267
+    .line 268
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
 
     invoke-virtual {p1, v2, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
-    .line 269
+    .line 270
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
@@ -1452,14 +1455,14 @@
 
     if-ne v0, v3, :cond_1
 
-    .line 270
+    .line 271
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getDeviceIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v3, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 272
+    .line 273
     :cond_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
@@ -1467,14 +1470,14 @@
 
     if-ne v0, v4, :cond_2
 
-    .line 273
+    .line 274
     const/4 v0, 0x3
 
     iget-boolean v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 275
+    .line 276
     :cond_2
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
 
@@ -1484,12 +1487,12 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 276
+    .line 277
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
 
     invoke-virtual {p1, v4, v0}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32(II)V
 
-    .line 278
+    .line 279
     :cond_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1497,6 +1500,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 279
+    .line 280
     return-void
 .end method

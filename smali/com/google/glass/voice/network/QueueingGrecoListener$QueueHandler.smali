@@ -25,13 +25,13 @@
     .parameter "looper"
 
     .prologue
-    .line 316
+    .line 320
     iput-object p1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
-    .line 317
+    .line 321
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    .line 318
+    .line 322
     return-void
 .end method
 
@@ -42,7 +42,7 @@
     .parameter "x2"
 
     .prologue
-    .line 314
+    .line 318
     invoke-direct {p0, p1, p2}, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;-><init>(Lcom/google/glass/voice/network/QueueingGrecoListener;Landroid/os/Looper;)V
 
     return-void
@@ -55,18 +55,18 @@
     .parameter "msg"
 
     .prologue
-    .line 322
+    .line 326
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 366
+    .line 370
     :cond_0
     :goto_0
     :pswitch_0
     return-void
 
-    .line 324
+    .line 328
     :pswitch_1
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 327
+    .line 331
     :pswitch_2
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -84,7 +84,7 @@
 
     goto :goto_0
 
-    .line 330
+    .line 334
     :pswitch_3
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 333
+    .line 337
     :pswitch_4
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 336
+    .line 340
     :pswitch_5
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 339
+    .line 343
     :pswitch_6
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 342
+    .line 346
     :pswitch_7
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 345
+    .line 349
     :pswitch_8
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 348
+    .line 352
     :pswitch_9
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -169,7 +169,7 @@
 
     goto :goto_0
 
-    .line 351
+    .line 355
     :pswitch_a
     iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -179,7 +179,7 @@
 
     check-cast v0, [F
 
-    .line 352
+    .line 356
     .local v0, args:[F
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -196,7 +196,7 @@
 
     goto :goto_0
 
-    .line 355
+    .line 359
     .end local v0           #args:[F
     :pswitch_b
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
@@ -206,7 +206,7 @@
 
     goto :goto_0
 
-    .line 358
+    .line 362
     :pswitch_c
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -219,7 +219,7 @@
 
     goto :goto_0
 
-    .line 362
+    .line 366
     :pswitch_d
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
@@ -230,7 +230,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 363
+    .line 367
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->this$0:Lcom/google/glass/voice/network/QueueingGrecoListener;
 
     #getter for: Lcom/google/glass/voice/network/QueueingGrecoListener;->handlerThread:Landroid/os/HandlerThread;
@@ -242,7 +242,7 @@
 
     goto/16 :goto_0
 
-    .line 322
+    .line 326
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_a

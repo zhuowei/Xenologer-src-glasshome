@@ -35,8 +35,6 @@
     .end annotation
 .end field
 
-.field static final MILLIS_PER_SECOND:J
-
 .field static final POSITIVE_RECORDING_PAD_LENGTH_MS:J
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
     .end annotation
@@ -65,7 +63,7 @@
     .locals 3
 
     .prologue
-    .line 29
+    .line 30
     const-class v0, Lcom/google/glass/logging/audio/SavedAudioStorage;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -74,7 +72,7 @@
 
     sput-object v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
-    .line 35
+    .line 36
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0xa
@@ -85,7 +83,7 @@
 
     sput-wide v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->MAX_POSITIVE_RECORDING_LENGTH_MS:J
 
-    .line 38
+    .line 39
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0xf
@@ -96,7 +94,7 @@
 
     sput-wide v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->MAX_NEGATIVE_RECORDING_LENGTH_MS:J
 
-    .line 41
+    .line 42
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x2
@@ -107,7 +105,7 @@
 
     sput-wide v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->POSITIVE_RECORDING_PAD_LENGTH_MS:J
 
-    .line 44
+    .line 45
     sget-object v0, Ljava/util/concurrent/TimeUnit;->DAYS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x7
@@ -118,7 +116,7 @@
 
     sput-wide v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->MAX_RECORDING_AGE:J
 
-    .line 46
+    .line 47
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/util/Labs$Feature;
@@ -131,13 +129,13 @@
 
     const/4 v1, 0x1
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x2
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
@@ -147,17 +145,6 @@
 
     sput-object v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->STORAGE_LABS:Ljava/util/List;
 
-    .line 78
-    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    const-wide/16 v1, 0x1
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
-
-    move-result-wide v0
-
-    sput-wide v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->MILLIS_PER_SECOND:J
-
     return-void
 .end method
 
@@ -166,13 +153,13 @@
     .parameter "syncer"
 
     .prologue
-    .line 74
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 76
     iput-object p1, p0, Lcom/google/glass/logging/audio/SavedAudioStorage;->syncer:Lcom/google/glass/logging/audio/SavedAudioSyncer;
 
-    .line 76
+    .line 77
     return-void
 .end method
 
@@ -186,7 +173,7 @@
     .parameter "x5"
 
     .prologue
-    .line 28
+    .line 29
     invoke-direct/range {p0 .. p6}, Lcom/google/glass/logging/audio/SavedAudioStorage;->storeAudioBlocking(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;JLjava/util/List;)V
 
     return-void
@@ -196,7 +183,7 @@
     .locals 1
 
     .prologue
-    .line 28
+    .line 29
     sget-object v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -216,14 +203,14 @@
             "Ljava/lang/String;",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;JJ)V"
         }
     .end annotation
 
     .prologue
-    .line 248
-    .local p3, sensoryResults:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 232
+    .local p3, hotwordResults:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     new-instance v1, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;
 
     invoke-direct {v1, p1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;-><init>(Landroid/content/Context;)V
@@ -239,22 +226,22 @@
 
     move-wide v6, p4
 
-    .line 250
+    .line 234
     :try_start_0
     invoke-direct/range {v0 .. v7}, Lcom/google/glass/logging/audio/SavedAudioStorage;->insert(Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;Ljava/lang/String;Ljava/util/List;JJ)V
 
-    .line 251
+    .line 235
     invoke-direct {p0, v1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->limitSavedFileCount(Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 253
+    .line 237
     invoke-virtual {v1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->close()V
 
-    .line 255
+    .line 239
     return-void
 
-    .line 253
+    .line 237
     :catchall_0
     move-exception v0
 
@@ -267,14 +254,14 @@
     .locals 4
 
     .prologue
-    .line 122
+    .line 105
     new-instance v0, Ljava/io/File;
 
     sget-object v1, Lcom/google/glass/logging/audio/BufferedAudioSaver;->SAVE_TO_DISK_BASE_PATH:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 123
+    .line 106
     .local v0, basePath:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -282,14 +269,14 @@
 
     if-nez v1, :cond_0
 
-    .line 124
+    .line 107
     invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 125
+    .line 108
     sget-object v1, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -312,10 +299,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 126
+    .line 109
     const/4 v1, 0x0
 
-    .line 129
+    .line 112
     :goto_0
     return v1
 
@@ -332,14 +319,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 472
+    .line 458
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 473
+    .line 459
     sget-object v1, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -368,12 +355,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
+    .line 468
     :cond_0
     :goto_0
     return v0
 
-    .line 477
+    .line 463
     :cond_1
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
@@ -381,7 +368,7 @@
 
     if-nez v1, :cond_0
 
-    .line 478
+    .line 464
     sget-object v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -404,7 +391,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 479
+    .line 465
     const/4 v0, 0x0
 
     goto :goto_0
@@ -415,7 +402,7 @@
     .parameter "filename"
 
     .prologue
-    .line 464
+    .line 450
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -433,7 +420,7 @@
     .parameter "savedAudioRecord"
 
     .prologue
-    .line 457
+    .line 443
     invoke-virtual {p1}, Lcom/google/glass/logging/audio/SavedAudioRecord;->getFilename()Ljava/lang/String;
 
     move-result-object v0
@@ -444,7 +431,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 458
+    .line 444
     sget-object v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -467,10 +454,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 459
+    .line 445
     invoke-virtual {p0, p1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->delete(Lcom/google/glass/logging/audio/SavedAudioRecord;)V
 
-    .line 461
+    .line 447
     :cond_0
     return-void
 .end method
@@ -480,18 +467,18 @@
     .parameter "databaseHelper"
 
     .prologue
-    .line 445
+    .line 431
     invoke-virtual {p1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->list()Ljava/util/List;
 
     move-result-object v3
 
-    .line 447
+    .line 433
     .local v3, records:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/logging/audio/SavedAudioRecord;>;"
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 448
+    .line 434
     .local v1, now:J
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -512,7 +499,7 @@
 
     check-cast v4, Lcom/google/glass/logging/audio/SavedAudioRecord;
 
-    .line 449
+    .line 435
     .local v4, savedAudioRecord:Lcom/google/glass/logging/audio/SavedAudioRecord;
     invoke-virtual {v4}, Lcom/google/glass/logging/audio/SavedAudioRecord;->getTimestamp()J
 
@@ -526,12 +513,12 @@
 
     if-lez v5, :cond_0
 
-    .line 450
+    .line 436
     invoke-static {p1, v4}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteFileAndRecord(Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;Lcom/google/glass/logging/audio/SavedAudioRecord;)V
 
     goto :goto_0
 
-    .line 453
+    .line 439
     .end local v4           #savedAudioRecord:Lcom/google/glass/logging/audio/SavedAudioRecord;
     :cond_1
     return-void
@@ -550,12 +537,12 @@
     .end annotation
 
     .prologue
-    .line 133
+    .line 116
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 134
+    .line 117
     .local v0, enabledFeatures:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/util/Labs$Feature;>;"
     sget-object v3, Lcom/google/glass/logging/audio/SavedAudioStorage;->STORAGE_LABS:Ljava/util/List;
 
@@ -578,7 +565,7 @@
 
     check-cast v1, Lcom/google/glass/util/Labs$Feature;
 
-    .line 135
+    .line 118
     .local v1, feature:Lcom/google/glass/util/Labs$Feature;
     invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
@@ -586,12 +573,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 136
+    .line 119
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 139
+    .line 122
     .end local v1           #feature:Lcom/google/glass/util/Labs$Feature;
     :cond_1
     return-object v0
@@ -603,12 +590,12 @@
     .parameter "sampleRate"
 
     .prologue
-    .line 306
+    .line 291
     invoke-virtual {p0}, Ljava/io/File;->length()J
 
     move-result-wide v0
 
-    invoke-static {v0, v1, p1, p2}, Lcom/google/glass/logging/audio/SavedAudioStorage;->toMillis(JJ)J
+    invoke-static {v0, v1, p1, p2}, Lcom/google/glass/voice/AudioByteUtils;->getMillis(JJ)J
 
     move-result-wide v0
 
@@ -623,17 +610,17 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;)J"
         }
     .end annotation
 
     .prologue
-    .line 294
-    .local p0, commands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 279
+    .local p0, commands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     const-wide/16 v2, 0x0
 
-    .line 295
+    .line 280
     .local v2, sum:J
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -651,21 +638,21 @@
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/glass/voice/SensoryResult;
+    check-cast v0, Lcom/google/glass/voice/HotwordResult;
 
-    .line 296
-    .local v0, command:Lcom/google/glass/voice/SensoryResult;
-    invoke-virtual {v0}, Lcom/google/glass/voice/SensoryResult;->getPhraseEndMillis()J
+    .line 281
+    .local v0, command:Lcom/google/glass/voice/HotwordResult;
+    invoke-virtual {v0}, Lcom/google/glass/voice/HotwordResult;->getPhraseEndMillis()J
 
     move-result-wide v4
 
     add-long/2addr v2, v4
 
-    .line 297
+    .line 282
     goto :goto_0
 
-    .line 298
-    .end local v0           #command:Lcom/google/glass/voice/SensoryResult;
+    .line 283
+    .end local v0           #command:Lcom/google/glass/voice/HotwordResult;
     :cond_0
     return-wide v2
 .end method
@@ -678,23 +665,23 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;)J"
         }
     .end annotation
 
     .prologue
-    .line 302
-    .local p0, commands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 287
+    .local p0, commands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     const/4 v0, 0x0
 
     invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/glass/voice/SensoryResult;
+    check-cast v0, Lcom/google/glass/voice/HotwordResult;
 
-    invoke-virtual {v0}, Lcom/google/glass/voice/SensoryResult;->getPhraseStartMillis()J
+    invoke-virtual {v0}, Lcom/google/glass/voice/HotwordResult;->getPhraseStartMillis()J
 
     move-result-wide v0
 
@@ -715,19 +702,19 @@
             "Ljava/lang/String;",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;JJ)V"
         }
     .end annotation
 
     .prologue
-    .line 361
-    .local p3, recognizedCommands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 347
+    .local p3, recognizedCommands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     invoke-static {p3, p4, p5}, Lcom/google/glass/voice/AlignmentInfo;->getRecognizedCommandString(Ljava/util/List;J)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 363
+    .line 349
     .local v0, recognizedCommandString:Ljava/lang/String;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -766,7 +753,7 @@
 
     move-result-object v1
 
-    .line 369
+    .line 355
     .local v1, savedAudioRecord:Lcom/google/glass/logging/audio/SavedAudioRecord;
     sget-object v2, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
@@ -790,13 +777,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 370
+    .line 356
     invoke-virtual {p1, v1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->insert(Lcom/google/glass/logging/audio/SavedAudioRecord;)V
 
-    .line 371
+    .line 357
     return-void
 
-    .line 363
+    .line 349
     .end local v1           #savedAudioRecord:Lcom/google/glass/logging/audio/SavedAudioRecord;
     :cond_0
     const/4 v2, 0x0
@@ -809,12 +796,12 @@
     .parameter "databaseHelper"
 
     .prologue
-    .line 347
+    .line 332
     invoke-virtual {p1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->list()Ljava/util/List;
 
     move-result-object v3
 
-    .line 348
+    .line 333
     .local v3, savedAudioRecords:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/logging/audio/SavedAudioRecord;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
@@ -824,11 +811,11 @@
 
     if-gt v4, v5, :cond_1
 
-    .line 357
+    .line 342
     :cond_0
     return-void
 
-    .line 352
+    .line 337
     :cond_1
     const/4 v4, 0x0
 
@@ -842,7 +829,7 @@
 
     move-result-object v2
 
-    .line 354
+    .line 339
     .local v2, recordsToDelete:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/logging/audio/SavedAudioRecord;>;"
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -862,7 +849,7 @@
 
     check-cast v1, Lcom/google/glass/logging/audio/SavedAudioRecord;
 
-    .line 355
+    .line 340
     .local v1, recordToDelete:Lcom/google/glass/logging/audio/SavedAudioRecord;
     invoke-static {p1, v1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteFileAndRecord(Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;Lcom/google/glass/logging/audio/SavedAudioRecord;)V
 
@@ -874,7 +861,7 @@
     .parameter "sampleRate"
 
     .prologue
-    .line 97
+    .line 80
     sget-object v0, Lcom/google/glass/util/Labs$Feature;->SAVE_AUDIO:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -883,25 +870,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
+    .line 81
     sget-object v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     const-string v1, "SAVE_AUDIO lab is enabled, will save all audio from mic to disk."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 99
+    .line 82
     invoke-static {p0, p1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->newBufferedAudioSaver(J)Lcom/google/glass/logging/audio/AudioSaver;
 
     move-result-object v0
 
-    .line 105
+    .line 88
     :goto_0
     return-object v0
 
-    .line 100
+    .line 83
     :cond_0
-    sget-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
@@ -909,16 +896,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 101
+    .line 84
     invoke-static {p0, p1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->newBufferedAudioSaver(J)Lcom/google/glass/logging/audio/AudioSaver;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 102
+    .line 85
     :cond_1
-    sget-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
 
@@ -926,14 +913,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 103
+    .line 86
     invoke-static {p0, p1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->newBufferedAudioSaver(J)Lcom/google/glass/logging/audio/AudioSaver;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 105
+    .line 88
     :cond_2
     invoke-static {}, Lcom/google/glass/logging/audio/SavedAudioStorage;->newNoOpSaver()Lcom/google/glass/logging/audio/SavedAudioStorage$NoOpAudioSaver;
 
@@ -947,19 +934,19 @@
     .parameter "sampleRate"
 
     .prologue
-    .line 110
+    .line 93
     invoke-static {}, Lcom/google/glass/logging/audio/SavedAudioStorage;->createSavedAudioDirectory()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 111
+    .line 94
     invoke-static {}, Lcom/google/glass/logging/audio/SavedAudioStorage;->newNoOpSaver()Lcom/google/glass/logging/audio/SavedAudioStorage$NoOpAudioSaver;
 
     move-result-object v0
 
-    .line 114
+    .line 97
     :goto_0
     return-object v0
 
@@ -975,7 +962,7 @@
     .locals 1
 
     .prologue
-    .line 118
+    .line 101
     new-instance v0, Lcom/google/glass/logging/audio/SavedAudioStorage$NoOpAudioSaver;
 
     invoke-direct {v0}, Lcom/google/glass/logging/audio/SavedAudioStorage$NoOpAudioSaver;-><init>()V
@@ -996,12 +983,12 @@
     .end annotation
 
     .prologue
-    .line 319
+    .line 304
     cmp-long v7, p4, p6
 
     if-lez v7, :cond_0
 
-    .line 320
+    .line 305
     new-instance v7, Ljava/lang/IllegalArgumentException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1040,29 +1027,29 @@
 
     throw v7
 
-    .line 323
+    .line 308
     :cond_0
     invoke-static {p1}, Lcom/google/common/io/Files;->toByteArray(Ljava/io/File;)[B
 
     move-result-object v2
 
-    .line 324
+    .line 309
     .local v2, byteArray:[B
     move-wide/from16 v0, p4
 
-    invoke-static {v0, v1, p2, p3}, Lcom/google/glass/logging/audio/SavedAudioStorage;->toByteLength(JJ)I
+    invoke-static {v0, v1, p2, p3}, Lcom/google/glass/voice/AudioByteUtils;->getByteLength(JJ)I
 
     move-result v6
 
-    .line 325
+    .line 310
     .local v6, offset:I
     sub-long v7, p6, p4
 
-    invoke-static {v7, v8, p2, p3}, Lcom/google/glass/logging/audio/SavedAudioStorage;->toByteLength(JJ)I
+    invoke-static {v7, v8, p2, p3}, Lcom/google/glass/voice/AudioByteUtils;->getByteLength(JJ)I
 
     move-result v5
 
-    .line 327
+    .line 312
     .local v5, length:I
     array-length v7, v2
 
@@ -1070,7 +1057,7 @@
 
     if-ge v7, v8, :cond_1
 
-    .line 328
+    .line 313
     new-instance v7, Ljava/io/IOException;
 
     const-string v8, "Illegal slice bounds; file length: %d, offset: %d, length: %d"
@@ -1113,17 +1100,17 @@
 
     throw v7
 
-    .line 333
+    .line 318
     :cond_1
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
     move-result v3
 
-    .line 334
+    .line 319
     .local v3, deleteSucceeded:Z
     if-nez v3, :cond_2
 
-    .line 335
+    .line 320
     new-instance v7, Ljava/io/IOException;
 
     const-string v8, "Failed to delete."
@@ -1132,26 +1119,26 @@
 
     throw v7
 
-    .line 338
+    .line 323
     :cond_2
     new-instance v4, Ljava/io/FileOutputStream;
 
     invoke-direct {v4, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 340
+    .line 325
     .local v4, fileOutputStream:Ljava/io/FileOutputStream;
     :try_start_0
     invoke-virtual {v4, v2, v6, v5}, Ljava/io/FileOutputStream;->write([BII)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 342
+    .line 327
     invoke-virtual {v4}, Ljava/io/FileOutputStream;->close()V
 
-    .line 344
+    .line 329
     return-void
 
-    .line 342
+    .line 327
     :catchall_0
     move-exception v7
 
@@ -1174,7 +1161,7 @@
             "Ljava/lang/String;",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;J",
             "Ljava/util/List",
             "<",
@@ -1184,8 +1171,8 @@
     .end annotation
 
     .prologue
-    .line 200
-    .local p3, sensoryResults:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 183
+    .local p3, hotwordResults:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     .local p6, enabledLabs:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/util/Labs$Feature;>;"
     sget-object v4, Lcom/google/glass/util/Labs$Feature;->SAVE_AUDIO:Lcom/google/glass/util/Labs$Feature;
 
@@ -1197,7 +1184,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 202
+    .line 185
     const-wide/16 v10, 0x0
 
     move-object/from16 v4, p0
@@ -1212,16 +1199,16 @@
 
     invoke-direct/range {v4 .. v11}, Lcom/google/glass/logging/audio/SavedAudioStorage;->addToDatabase(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;JJ)V
 
-    .line 244
+    .line 227
     :cond_0
     :goto_0
     return-void
 
-    .line 206
+    .line 189
     :cond_1
     const-wide/16 v12, 0x0
 
-    .line 207
+    .line 190
     .local v12, trimmedPrefixLengthMs:J
     new-instance v5, Ljava/io/File;
 
@@ -1229,9 +1216,9 @@
 
     invoke-direct {v5, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 209
+    .line 192
     .local v5, audioFile:Ljava/io/File;
-    sget-object v4, Lcom/google/glass/util/Labs$Feature;->LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v4, Lcom/google/glass/util/Labs$Feature;->LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     move-object/from16 v0, p6
 
@@ -1239,9 +1226,9 @@
 
     move-result v18
 
-    .line 210
+    .line 193
     .local v18, uploadPositive:Z
-    sget-object v4, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v4, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     move-object/from16 v0, p6
 
@@ -1249,7 +1236,7 @@
 
     move-result v17
 
-    .line 212
+    .line 195
     .local v17, uploadNegative:Z
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->isEmpty()Z
 
@@ -1257,10 +1244,10 @@
 
     if-eqz v4, :cond_4
 
-    .line 213
+    .line 196
     if-eqz v17, :cond_3
 
-    .line 215
+    .line 198
     :try_start_0
     move-wide/from16 v0, p4
 
@@ -1268,7 +1255,7 @@
 
     move-result-wide v15
 
-    .line 216
+    .line 199
     .local v15, fileLengthMs:J
     sget-wide v6, Lcom/google/glass/logging/audio/SavedAudioStorage;->MAX_NEGATIVE_RECORDING_LENGTH_MS:J
 
@@ -1276,7 +1263,7 @@
 
     if-lez v4, :cond_2
 
-    .line 217
+    .line 200
     const-wide/16 v8, 0x0
 
     sget-wide v10, Lcom/google/glass/logging/audio/SavedAudioStorage;->MAX_NEGATIVE_RECORDING_LENGTH_MS:J
@@ -1298,19 +1285,19 @@
 
     move-wide/from16 v10, p4
 
-    .line 219
+    .line 202
     invoke-direct/range {v6 .. v13}, Lcom/google/glass/logging/audio/SavedAudioStorage;->addToDatabase(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;JJ)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 220
+    .line 203
     .end local v15           #fileLengthMs:J
     :catch_0
     move-exception v14
 
-    .line 221
+    .line 204
     .local v14, e:Ljava/io/IOException;
     sget-object v4, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
@@ -1318,23 +1305,23 @@
 
     invoke-static {v4, v6, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 222
+    .line 205
     invoke-static {v5}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteFile(Ljava/io/File;)Z
 
     goto :goto_0
 
-    .line 227
+    .line 210
     .end local v14           #e:Ljava/io/IOException;
     :cond_3
     invoke-static {v5}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteFile(Ljava/io/File;)Z
 
     goto :goto_0
 
-    .line 232
+    .line 215
     :cond_4
     if-eqz v18, :cond_0
 
-    .line 236
+    .line 219
     :try_start_1
     move-object/from16 v0, p0
 
@@ -1358,16 +1345,16 @@
 
     move-wide/from16 v10, p4
 
-    .line 242
+    .line 225
     invoke-direct/range {v6 .. v13}, Lcom/google/glass/logging/audio/SavedAudioStorage;->addToDatabase(Landroid/content/Context;Ljava/lang/String;Ljava/util/List;JJ)V
 
     goto :goto_0
 
-    .line 237
+    .line 220
     :catch_1
     move-exception v14
 
-    .line 238
+    .line 221
     .restart local v14       #e:Ljava/io/IOException;
     sget-object v4, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
@@ -1375,64 +1362,10 @@
 
     invoke-static {v4, v6, v14}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 239
+    .line 222
     invoke-static {v5}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteFile(Ljava/io/File;)Z
 
     goto :goto_0
-.end method
-
-.method public static toByteLength(JJ)I
-    .locals 3
-    .parameter "millis"
-    .parameter "sampleRate"
-
-    .prologue
-    .line 93
-    const/high16 v0, 0x4000
-
-    long-to-float v1, p2
-
-    mul-float/2addr v0, v1
-
-    long-to-float v1, p0
-
-    mul-float/2addr v0, v1
-
-    sget-wide v1, Lcom/google/glass/logging/audio/SavedAudioStorage;->MILLIS_PER_SECOND:J
-
-    long-to-float v1, v1
-
-    div-float/2addr v0, v1
-
-    float-to-int v0, v0
-
-    return v0
-.end method
-
-.method public static toMillis(JJ)J
-    .locals 3
-    .parameter "byteLength"
-    .parameter "sampleRate"
-
-    .prologue
-    .line 85
-    sget-wide v0, Lcom/google/glass/logging/audio/SavedAudioStorage;->MILLIS_PER_SECOND:J
-
-    mul-long/2addr v0, p0
-
-    long-to-float v0, v0
-
-    const/high16 v1, 0x4000
-
-    long-to-float v2, p2
-
-    mul-float/2addr v1, v2
-
-    div-float/2addr v0, v1
-
-    float-to-long v0, v0
-
-    return-wide v0
 .end method
 
 .method private uploadStoredAudioInternal(Landroid/content/Context;Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;Ljava/util/List;)V
@@ -1459,23 +1392,23 @@
     .end annotation
 
     .prologue
-    .line 386
+    .line 372
     .local p3, enabledLabs:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/util/Labs$Feature;>;"
-    sget-object v7, Lcom/google/glass/util/Labs$Feature;->LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v7, Lcom/google/glass/util/Labs$Feature;->LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     invoke-interface {p3, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v6
 
-    .line 387
+    .line 373
     .local v6, uploadPositive:Z
-    sget-object v7, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v7, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     invoke-interface {p3, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
-    .line 388
+    .line 374
     .local v5, uploadNegative:Z
     sget-object v7, Lcom/google/glass/util/Labs$Feature;->SAVE_AUDIO:Lcom/google/glass/util/Labs$Feature;
 
@@ -1483,23 +1416,23 @@
 
     move-result v3
 
-    .line 390
+    .line 376
     .local v3, saveAudio:Z
     if-nez v6, :cond_1
 
     if-nez v5, :cond_1
 
-    .line 429
+    .line 415
     :cond_0
     return-void
 
-    .line 394
+    .line 380
     :cond_1
     invoke-virtual {p2}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->list()Ljava/util/List;
 
     move-result-object v2
 
-    .line 395
+    .line 381
     .local v2, records:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/logging/audio/SavedAudioRecord;>;"
     sget-object v7, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
@@ -1533,7 +1466,7 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 396
+    .line 382
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1553,7 +1486,7 @@
 
     check-cast v4, Lcom/google/glass/logging/audio/SavedAudioRecord;
 
-    .line 397
+    .line 383
     .local v4, savedAudioRecord:Lcom/google/glass/logging/audio/SavedAudioRecord;
     invoke-virtual {v4}, Lcom/google/glass/logging/audio/SavedAudioRecord;->isSynced()Z
 
@@ -1561,7 +1494,7 @@
 
     if-nez v7, :cond_2
 
-    .line 401
+    .line 387
     invoke-virtual {v4}, Lcom/google/glass/logging/audio/SavedAudioRecord;->isRecognized()Z
 
     move-result v7
@@ -1570,7 +1503,7 @@
 
     if-eqz v5, :cond_2
 
-    .line 405
+    .line 391
     :cond_3
     invoke-virtual {v4}, Lcom/google/glass/logging/audio/SavedAudioRecord;->isRecognized()Z
 
@@ -1580,7 +1513,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 410
+    .line 396
     :cond_4
     :try_start_0
     iget-object v7, p0, Lcom/google/glass/logging/audio/SavedAudioStorage;->syncer:Lcom/google/glass/logging/audio/SavedAudioSyncer;
@@ -1589,7 +1522,7 @@
     :try_end_0
     .catch Lcom/google/glass/logging/audio/SyncFailedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 420
+    .line 406
     const/4 v7, 0x1
 
     invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -1598,7 +1531,7 @@
 
     invoke-virtual {v4, v7}, Lcom/google/glass/logging/audio/SavedAudioRecord;->setSynced(Ljava/lang/Boolean;)Lcom/google/glass/logging/audio/SavedAudioRecord;
 
-    .line 422
+    .line 408
     sget-object v7, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1627,19 +1560,19 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 423
+    .line 409
     if-eqz v3, :cond_6
 
-    .line 424
+    .line 410
     invoke-virtual {p2, v4}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->update(Lcom/google/glass/logging/audio/SavedAudioRecord;)V
 
     goto :goto_0
 
-    .line 411
+    .line 397
     :catch_0
     move-exception v0
 
-    .line 412
+    .line 398
     .local v0, e:Lcom/google/glass/logging/audio/SyncFailedException;
     invoke-virtual {v0}, Lcom/google/glass/logging/audio/SyncFailedException;->getCause()Ljava/lang/Throwable;
 
@@ -1649,7 +1582,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 413
+    .line 399
     sget-object v7, Lcom/google/glass/logging/audio/SavedAudioStorage;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1676,16 +1609,16 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 414
+    .line 400
     invoke-virtual {p2, v4}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->delete(Lcom/google/glass/logging/audio/SavedAudioRecord;)V
 
     goto :goto_0
 
-    .line 417
+    .line 403
     :cond_5
     throw v0
 
-    .line 426
+    .line 412
     .end local v0           #e:Lcom/google/glass/logging/audio/SyncFailedException;
     :cond_6
     invoke-static {p2, v4}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteFileAndRecord(Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;Lcom/google/glass/logging/audio/SavedAudioRecord;)V
@@ -1700,25 +1633,25 @@
     .parameter "context"
 
     .prologue
-    .line 436
+    .line 422
     new-instance v0, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;
 
     invoke-direct {v0, p1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;-><init>(Landroid/content/Context;)V
 
-    .line 438
+    .line 424
     .local v0, databaseHelper:Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;
     :try_start_0
     invoke-direct {p0, v0}, Lcom/google/glass/logging/audio/SavedAudioStorage;->deleteOldAudioInternal(Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 440
+    .line 426
     invoke-virtual {v0}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->close()V
 
-    .line 442
+    .line 428
     return-void
 
-    .line 440
+    .line 426
     :catchall_0
     move-exception v1
 
@@ -1741,7 +1674,7 @@
             "Ljava/lang/String;",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;J",
             "Ljava/util/List",
             "<",
@@ -1751,8 +1684,8 @@
     .end annotation
 
     .prologue
-    .line 186
-    .local p3, sensoryResults:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 168
+    .local p3, hotwordResults:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     .local p6, enabledLabs:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/util/Labs$Feature;>;"
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
@@ -1776,7 +1709,7 @@
 
     invoke-interface {v8, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 196
+    .line 178
     return-void
 .end method
 
@@ -1793,7 +1726,7 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;J",
             "Ljava/io/File;",
             ")J"
@@ -1807,23 +1740,23 @@
     .end annotation
 
     .prologue
-    .line 270
-    .local p1, recognizedCommands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
+    .line 255
+    .local p1, recognizedCommands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
     invoke-static/range {p1 .. p1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->getRecognizedAudioStartMs(Ljava/util/List;)J
 
     move-result-wide v19
 
-    .line 271
+    .line 256
     .local v19, recognizedAudioStartMs:J
     invoke-static/range {p1 .. p1}, Lcom/google/glass/logging/audio/SavedAudioStorage;->getRecocognizedAudioEndMs(Ljava/util/List;)J
 
     move-result-wide v15
 
-    .line 273
+    .line 258
     .local v15, recognizedAudioEndMs:J
     sub-long v17, v15, v19
 
-    .line 275
+    .line 260
     .local v17, recognizedAudioLengthMs:J
     sget-wide v3, Lcom/google/glass/logging/audio/SavedAudioStorage;->MAX_POSITIVE_RECORDING_LENGTH_MS:J
 
@@ -1831,7 +1764,7 @@
 
     if-lez v3, :cond_0
 
-    .line 276
+    .line 261
     new-instance v3, Ljava/io/IOException;
 
     const-string v4, "Audio is too long"
@@ -1840,11 +1773,11 @@
 
     throw v3
 
-    .line 279
+    .line 264
     :cond_0
     sget-wide v13, Lcom/google/glass/logging/audio/SavedAudioStorage;->POSITIVE_RECORDING_PAD_LENGTH_MS:J
 
-    .line 280
+    .line 265
     .local v13, padding:J
     move-object/from16 v0, p4
 
@@ -1854,7 +1787,7 @@
 
     move-result-wide v11
 
-    .line 281
+    .line 266
     .local v11, fileLengthMs:J
     cmp-long v3, v19, v13
 
@@ -1862,7 +1795,7 @@
 
     const-wide/16 v7, 0x0
 
-    .line 283
+    .line 268
     .local v7, paddedAudioStartMs:J
     :goto_0
     add-long v3, v15, v13
@@ -1873,7 +1806,7 @@
 
     move-wide v9, v11
 
-    .line 286
+    .line 271
     .local v9, paddedAudioEndMs:J
     :goto_1
     const-wide/16 v3, 0x0
@@ -1893,14 +1826,14 @@
 
     move-wide/from16 v5, p2
 
-    .line 287
+    .line 272
     invoke-direct/range {v3 .. v10}, Lcom/google/glass/logging/audio/SavedAudioStorage;->slice(Ljava/io/File;JJJ)V
 
-    .line 290
+    .line 275
     :cond_2
     return-wide v7
 
-    .line 281
+    .line 266
     .end local v7           #paddedAudioStartMs:J
     .end local v9           #paddedAudioEndMs:J
     :cond_3
@@ -1908,7 +1841,7 @@
 
     goto :goto_0
 
-    .line 283
+    .line 268
     .restart local v7       #paddedAudioStartMs:J
     :cond_4
     add-long v9, v15, v13
@@ -1938,26 +1871,26 @@
     .end annotation
 
     .prologue
-    .line 375
+    .line 361
     .local p2, enabledLabs:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/util/Labs$Feature;>;"
     new-instance v0, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;
 
     invoke-direct {v0, p1}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;-><init>(Landroid/content/Context;)V
 
-    .line 377
+    .line 363
     .local v0, databaseHelper:Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;
     :try_start_0
     invoke-direct {p0, p1, v0, p2}, Lcom/google/glass/logging/audio/SavedAudioStorage;->uploadStoredAudioInternal(Landroid/content/Context;Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;Ljava/util/List;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 379
+    .line 365
     invoke-virtual {v0}, Lcom/google/glass/logging/audio/SavedAudioDatabaseHelper;->close()V
 
-    .line 381
+    .line 367
     return-void
 
-    .line 379
+    .line 365
     :catchall_0
     move-exception v1
 

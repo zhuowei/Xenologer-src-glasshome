@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 113
+    .line 112
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -46,21 +46,21 @@
     .parameter "rhs"
 
     .prologue
-    .line 116
+    .line 115
     iget v0, p1, Landroid/net/wifi/ScanResult;->level:I
 
     iget v1, p2, Landroid/net/wifi/ScanResult;->level:I
 
     if-le v0, v1, :cond_0
 
-    .line 117
+    .line 116
     const/4 v0, -0x1
 
-    .line 121
+    .line 120
     :goto_0
     return v0
 
-    .line 118
+    .line 117
     :cond_0
     iget v0, p1, Landroid/net/wifi/ScanResult;->level:I
 
@@ -68,12 +68,12 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 119
+    .line 118
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 121
+    .line 120
     :cond_1
     const/4 v0, 0x0
 
@@ -86,7 +86,7 @@
     .parameter "x1"
 
     .prologue
-    .line 113
+    .line 112
     check-cast p1, Landroid/net/wifi/ScanResult;
 
     .end local p1

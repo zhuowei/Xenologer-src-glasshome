@@ -120,29 +120,6 @@
     return v0
 .end method
 
-.method public onRemove()V
-    .locals 2
-
-    .prologue
-    .line 55
-    invoke-super {p0}, Lcom/google/glass/timeline/active/ActiveItemView;->onRemove()V
-
-    .line 56
-    sget-object v0, Lcom/google/glass/home/timeline/active/HangoutItemView;->TAG:Ljava/lang/String;
-
-    const-string v1, "onRemove"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 57
-    iget-object v0, p0, Lcom/google/glass/home/timeline/active/HangoutItemView;->hangoutHelper:Lcom/google/glass/util/HangoutHelper;
-
-    invoke-virtual {v0}, Lcom/google/glass/util/HangoutHelper;->exitOngoingHangout()V
-
-    .line 58
-    return-void
-.end method
-
 .method public provideContentView()I
     .locals 1
 

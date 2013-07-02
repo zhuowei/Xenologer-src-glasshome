@@ -39,6 +39,67 @@
     return-void
 .end method
 
+.method private static hashCode(I[BII)I
+    .locals 3
+    .parameter "h"
+    .parameter "bytes"
+    .parameter "offset"
+    .parameter "length"
+
+    .prologue
+    .line 239
+    move v0, p2
+
+    .local v0, i:I
+    :goto_0
+    add-int v1, p2, p3
+
+    if-ge v0, v1, :cond_0
+
+    .line 240
+    mul-int/lit8 v1, p0, 0x1f
+
+    aget-byte v2, p1, v0
+
+    add-int p0, v1, v2
+
+    .line 239
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_0
+
+    .line 242
+    :cond_0
+    return p0
+.end method
+
+.method static hashCode([B)I
+    .locals 4
+    .parameter "bytes"
+
+    .prologue
+    .line 246
+    array-length v1, p0
+
+    const/4 v2, 0x0
+
+    array-length v3, p0
+
+    invoke-static {v1, p0, v2, v3}, Lcom/google/protobuf/LiteralByteString;->hashCode(I[BII)I
+
+    move-result v0
+
+    .line 247
+    .local v0, h:I
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    .end local v0           #h:I
+    :cond_0
+    return v0
+.end method
+
 
 # virtual methods
 .method public asReadOnlyByteBuffer()Ljava/nio/ByteBuffer;
@@ -456,7 +517,7 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 325
     const/4 v0, 0x0
 
     return v0
@@ -466,7 +527,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 311
     const/4 v0, 0x0
 
     return v0
@@ -516,7 +577,7 @@
     .locals 1
 
     .prologue
-    .line 309
+    .line 316
     const/4 v0, 0x1
 
     return v0
@@ -552,7 +613,7 @@
     .locals 2
 
     .prologue
-    .line 265
+    .line 272
     new-instance v0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;
 
     const/4 v1, 0x0
@@ -578,7 +639,7 @@
     .locals 3
 
     .prologue
-    .line 256
+    .line 263
     iget-object v0, p0, Lcom/google/protobuf/LiteralByteString;->bytes:[B
 
     invoke-virtual {p0}, Lcom/google/protobuf/LiteralByteString;->getOffsetIntoBytes()I
@@ -600,7 +661,7 @@
     .locals 4
 
     .prologue
-    .line 248
+    .line 255
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
     iget-object v1, p0, Lcom/google/protobuf/LiteralByteString;->bytes:[B
@@ -619,45 +680,26 @@
 .end method
 
 .method protected partialHash(III)I
-    .locals 5
+    .locals 2
     .parameter "h"
     .parameter "offset"
     .parameter "length"
 
     .prologue
     .line 235
-    iget-object v2, p0, Lcom/google/protobuf/LiteralByteString;->bytes:[B
+    iget-object v0, p0, Lcom/google/protobuf/LiteralByteString;->bytes:[B
 
-    .line 236
-    .local v2, thisBytes:[B
     invoke-virtual {p0}, Lcom/google/protobuf/LiteralByteString;->getOffsetIntoBytes()I
 
-    move-result v3
+    move-result v1
 
-    add-int v0, v3, p2
+    add-int/2addr v1, p2
 
-    .local v0, i:I
-    add-int v1, v0, p3
+    invoke-static {p1, v0, v1, p3}, Lcom/google/protobuf/LiteralByteString;->hashCode(I[BII)I
 
-    .local v1, limit:I
-    :goto_0
-    if-ge v0, v1, :cond_0
+    move-result v0
 
-    .line 238
-    mul-int/lit8 v3, p1, 0x1f
-
-    aget-byte v4, v2, v0
-
-    add-int p1, v3, v4
-
-    .line 237
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 240
-    :cond_0
-    return p1
+    return v0
 .end method
 
 .method protected partialIsValidUtf8(III)I

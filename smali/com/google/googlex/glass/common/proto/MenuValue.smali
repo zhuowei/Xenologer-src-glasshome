@@ -60,19 +60,19 @@
     .locals 2
 
     .prologue
-    .line 108
+    .line 110
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuValue$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/MenuValue$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 315
+    .line 317
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 785
+    .line 793
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuValue;
 
     const/4 v1, 0x1
@@ -81,17 +81,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->defaultInstance:Lcom/google/googlex/glass/common/proto/MenuValue;
 
-    .line 786
+    .line 794
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->defaultInstance:Lcom/google/googlex/glass/common/proto/MenuValue;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/MenuValue;->initFields()V
 
-    .line 787
+    .line 795
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 9
+    .locals 10
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -101,82 +101,84 @@
     .end annotation
 
     .prologue
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
     .line 43
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 260
-    iput-byte v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedIsInitialized:B
+    .line 262
+    iput-byte v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedIsInitialized:B
 
-    .line 284
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedSerializedSize:I
+    .line 286
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedSerializedSize:I
 
     .line 44
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->initFields()V
 
     .line 45
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 46
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 49
-    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v6, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 50
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
     .line 51
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v4
+    move-result v5
 
     .line 52
-    .local v4, tag:I
-    sparse-switch v4, :sswitch_data_0
+    .local v5, tag:I
+    sparse-switch v5, :sswitch_data_0
 
     .line 57
-    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/googlex/glass/common/proto/MenuValue;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v6, p2, v5}, Lcom/google/googlex/glass/common/proto/MenuValue;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_0
+    if-nez v8, :cond_0
 
     .line 59
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 54
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 55
     goto :goto_0
 
     .line 64
     :sswitch_1
-    iget v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
-
-    or-int/lit8 v7, v7, 0x2
-
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
-
-    .line 65
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
+    .line 65
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+
+    or-int/lit8 v8, v8, 0x2
+
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+
+    .line 66
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -184,54 +186,57 @@
 
     goto :goto_0
 
-    .line 86
-    .end local v4           #tag:I
+    .line 88
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v5           #tag:I
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    .line 87
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 89
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v7
-
-    throw v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 92
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
-    :catchall_0
-    move-exception v7
-
-    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v8
 
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    throw v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 93
+    .line 94
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_0
+    move-exception v8
+
+    invoke-virtual {v6}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v9
+
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 95
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->makeExtensionsImmutable()V
 
-    throw v7
-
-    .line 69
-    .restart local v4       #tag:I
-    :sswitch_2
-    :try_start_2
-    iget v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
-
-    or-int/lit8 v7, v7, 0x4
-
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+    throw v8
 
     .line 70
+    .restart local v5       #tag:I
+    :sswitch_2
+    :try_start_2
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
+    .line 71
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+
+    or-int/lit8 v8, v8, 0x4
+
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+
+    .line 72
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
@@ -239,66 +244,67 @@
 
     goto :goto_0
 
-    .line 88
-    .end local v4           #tag:I
+    .line 90
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v5           #tag:I
     :catch_1
-    move-exception v1
+    move-exception v2
 
-    .line 89
-    .local v1, e:Ljava/io/IOException;
+    .line 91
+    .local v2, e:Ljava/io/IOException;
     :try_start_3
-    new-instance v7, Lcom/google/protobuf/InvalidProtocolBufferException;
+    new-instance v8, Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v8, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v8
 
-    invoke-direct {v7, v8}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v7
-
-    throw v7
+    throw v8
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 74
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v4       #tag:I
+    .line 76
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v5       #tag:I
     :sswitch_3
     :try_start_4
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
 
-    move-result v3
-
-    .line 75
-    .local v3, rawValue:I
-    invoke-static {v3}, Lcom/google/googlex/glass/common/proto/MenuItem$State;->valueOf(I)Lcom/google/googlex/glass/common/proto/MenuItem$State;
-
-    move-result-object v6
-
-    .line 76
-    .local v6, value:Lcom/google/googlex/glass/common/proto/MenuItem$State;
-    if-nez v6, :cond_1
+    move-result v4
 
     .line 77
-    const/4 v7, 0x3
+    .local v4, rawValue:I
+    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/MenuItem$State;->valueOf(I)Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
-    invoke-virtual {v5, v7, v3}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+    move-result-object v7
+
+    .line 78
+    .local v7, value:Lcom/google/googlex/glass/common/proto/MenuItem$State;
+    if-nez v7, :cond_1
+
+    .line 79
+    const/4 v8, 0x3
+
+    invoke-virtual {v6, v8, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
 
     goto :goto_0
 
-    .line 79
+    .line 81
     :cond_1
-    iget v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+    iget v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
-    or-int/lit8 v7, v7, 0x1
+    or-int/lit8 v8, v8, 0x1
 
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
-    .line 80
-    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->state_:Lcom/google/googlex/glass/common/proto/MenuItem$State;
+    .line 82
+    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->state_:Lcom/google/googlex/glass/common/proto/MenuItem$State;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
@@ -306,21 +312,21 @@
 
     goto :goto_0
 
-    .line 92
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v6           #value:Lcom/google/googlex/glass/common/proto/MenuItem$State;
+    .line 94
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v7           #value:Lcom/google/googlex/glass/common/proto/MenuItem$State;
     :cond_2
-    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v6}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
-    move-result-object v7
+    move-result-object v8
 
-    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
-    .line 93
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->makeExtensionsImmutable()V
+    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
     .line 95
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->makeExtensionsImmutable()V
+
+    .line 97
     return-void
 
     .line 52
@@ -369,10 +375,10 @@
     .line 20
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 260
+    .line 262
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedIsInitialized:B
 
-    .line 284
+    .line 286
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedSerializedSize:I
 
     .line 21
@@ -408,10 +414,10 @@
     .line 23
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 260
+    .line 262
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedIsInitialized:B
 
-    .line 284
+    .line 286
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedSerializedSize:I
 
     .line 23
@@ -518,7 +524,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 100
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuValue_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -528,22 +534,22 @@
     .locals 1
 
     .prologue
-    .line 256
+    .line 258
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$State;->DEFAULT:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->state_:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
-    .line 257
+    .line 259
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
 
-    .line 258
+    .line 260
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
 
-    .line 259
+    .line 261
     return-void
 .end method
 
@@ -551,7 +557,7 @@
     .locals 1
 
     .prologue
-    .line 377
+    .line 379
     #calls: Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->create()Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->access$100()Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
 
@@ -565,7 +571,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 380
+    .line 382
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuValue;->newBuilder()Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
 
     move-result-object v0
@@ -587,7 +593,7 @@
     .end annotation
 
     .prologue
-    .line 357
+    .line 359
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -610,7 +616,7 @@
     .end annotation
 
     .prologue
-    .line 363
+    .line 365
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -632,7 +638,7 @@
     .end annotation
 
     .prologue
-    .line 327
+    .line 329
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -655,7 +661,7 @@
     .end annotation
 
     .prologue
-    .line 333
+    .line 335
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -677,7 +683,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 370
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -700,7 +706,7 @@
     .end annotation
 
     .prologue
-    .line 374
+    .line 376
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -722,7 +728,7 @@
     .end annotation
 
     .prologue
-    .line 347
+    .line 349
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -745,7 +751,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 355
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -767,7 +773,7 @@
     .end annotation
 
     .prologue
-    .line 337
+    .line 339
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -790,7 +796,7 @@
     .end annotation
 
     .prologue
-    .line 343
+    .line 345
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -842,19 +848,19 @@
     .locals 4
 
     .prologue
-    .line 167
+    .line 169
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
 
-    .line 168
+    .line 170
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 169
+    .line 171
     check-cast v1, Ljava/lang/String;
 
-    .line 177
+    .line 179
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -863,16 +869,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 171
+    .line 173
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 173
+    .line 175
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 174
+    .line 176
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -880,13 +886,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 175
+    .line 177
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 177
+    .line 179
     goto :goto_0
 .end method
 
@@ -894,16 +900,16 @@
     .locals 3
 
     .prologue
-    .line 189
+    .line 191
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
 
-    .line 190
+    .line 192
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 191
+    .line 193
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -911,11 +917,11 @@
 
     move-result-object v0
 
-    .line 194
+    .line 196
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->displayName_:Ljava/lang/Object;
 
-    .line 197
+    .line 199
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -934,19 +940,19 @@
     .locals 4
 
     .prologue
-    .line 221
+    .line 223
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
 
-    .line 222
+    .line 224
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 223
+    .line 225
     check-cast v1, Ljava/lang/String;
 
-    .line 231
+    .line 233
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -955,16 +961,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 225
+    .line 227
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 227
+    .line 229
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 228
+    .line 230
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -972,13 +978,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 229
+    .line 231
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 231
+    .line 233
     goto :goto_0
 .end method
 
@@ -986,16 +992,16 @@
     .locals 3
 
     .prologue
-    .line 243
+    .line 245
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
 
-    .line 244
+    .line 246
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 245
+    .line 247
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1003,11 +1009,11 @@
 
     move-result-object v0
 
-    .line 248
+    .line 250
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->iconUrl_:Ljava/lang/Object;
 
-    .line 251
+    .line 253
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1035,7 +1041,7 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 122
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -1049,10 +1055,10 @@
 
     const/4 v4, 0x1
 
-    .line 286
+    .line 288
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedSerializedSize:I
 
-    .line 287
+    .line 289
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -1060,26 +1066,26 @@
 
     move v1, v0
 
-    .line 304
+    .line 306
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 289
+    .line 291
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 290
+    .line 292
     iget v2, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x2
 
     if-ne v2, v5, :cond_1
 
-    .line 291
+    .line 293
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getDisplayNameBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1090,7 +1096,7 @@
 
     add-int/2addr v0, v2
 
-    .line 294
+    .line 296
     :cond_1
     iget v2, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
@@ -1100,7 +1106,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 295
+    .line 297
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getIconUrlBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1111,7 +1117,7 @@
 
     add-int/2addr v0, v2
 
-    .line 298
+    .line 300
     :cond_2
     iget v2, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
@@ -1119,7 +1125,7 @@
 
     if-ne v2, v4, :cond_3
 
-    .line 299
+    .line 301
     const/4 v2, 0x3
 
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->state_:Lcom/google/googlex/glass/common/proto/MenuItem$State;
@@ -1134,7 +1140,7 @@
 
     add-int/2addr v0, v2
 
-    .line 302
+    .line 304
     :cond_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1146,12 +1152,12 @@
 
     add-int/2addr v0, v2
 
-    .line 303
+    .line 305
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 304
+    .line 306
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -1161,7 +1167,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 146
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->state_:Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     return-object v0
@@ -1181,7 +1187,7 @@
     .locals 2
 
     .prologue
-    .line 157
+    .line 159
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1205,7 +1211,7 @@
     .locals 2
 
     .prologue
-    .line 211
+    .line 213
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1231,7 +1237,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 134
+    .line 136
     iget v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1251,7 +1257,7 @@
     .locals 3
 
     .prologue
-    .line 103
+    .line 105
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuValue_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/MenuValue;
@@ -1269,12 +1275,12 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 320
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 319
+    .line 321
     const-string v0, "com.google.googlex.glass.common.proto.MutableTimeline$MenuValue"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/MenuValue;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1283,7 +1289,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 321
+    .line 323
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuValue;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1296,10 +1302,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 262
+    .line 264
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedIsInitialized:B
 
-    .line 263
+    .line 265
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -1307,17 +1313,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 266
+    .line 268
     :goto_0
     return v1
 
-    .line 263
+    .line 265
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 265
+    .line 267
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->memoizedIsInitialized:B
 
@@ -1328,7 +1334,7 @@
     .locals 1
 
     .prologue
-    .line 378
+    .line 380
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuValue;->newBuilder()Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
 
     move-result-object v0
@@ -1341,14 +1347,14 @@
     .parameter "parent"
 
     .prologue
-    .line 387
+    .line 389
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/MenuValue$1;)V
 
-    .line 388
+    .line 390
     .local v0, builder:Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
     return-object v0
 .end method
@@ -1394,7 +1400,7 @@
     .locals 1
 
     .prologue
-    .line 382
+    .line 384
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->newBuilder(Lcom/google/googlex/glass/common/proto/MenuValue;)Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
 
     move-result-object v0
@@ -1435,7 +1441,7 @@
     .end annotation
 
     .prologue
-    .line 311
+    .line 313
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1457,24 +1463,24 @@
 
     const/4 v2, 0x1
 
-    .line 271
+    .line 273
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getSerializedSize()I
 
-    .line 272
+    .line 274
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-ne v0, v3, :cond_0
 
-    .line 273
+    .line 275
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getDisplayNameBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 275
+    .line 277
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
@@ -1484,14 +1490,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 276
+    .line 278
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getIconUrlBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v3, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 278
+    .line 280
     :cond_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->bitField0_:I
 
@@ -1499,7 +1505,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 279
+    .line 281
     const/4 v0, 0x3
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuValue;->state_:Lcom/google/googlex/glass/common/proto/MenuItem$State;
@@ -1510,7 +1516,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 281
+    .line 283
     :cond_2
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuValue;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1518,6 +1524,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 282
+    .line 284
     return-void
 .end method

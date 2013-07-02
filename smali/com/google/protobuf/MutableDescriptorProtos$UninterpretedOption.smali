@@ -98,12 +98,12 @@
     .locals 2
 
     .prologue
-    .line 18317
+    .line 18941
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->immutableDefault:Lcom/google/protobuf/Message;
 
-    .line 18327
+    .line 18951
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     const/4 v1, 0x1
@@ -112,17 +112,17 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
-    .line 18328
+    .line 18952
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->initFields()V
 
-    .line 18329
+    .line 18953
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->makeImmutable()V
 
-    .line 18330
+    .line 18954
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     invoke-static {v0}, Lcom/google/protobuf/AbstractMutableMessageLite;->internalNewParserForType(Lcom/google/protobuf/MutableMessageLite;)Lcom/google/protobuf/Parser;
@@ -131,7 +131,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 18332
+    .line 18956
     return-void
 .end method
 
@@ -139,30 +139,30 @@
     .locals 1
 
     .prologue
-    .line 17341
+    .line 17973
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMutableMessage;-><init>()V
 
-    .line 17685
+    .line 18309
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
-    .line 17782
+    .line 18406
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17981
+    .line 18605
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
-    .line 18015
+    .line 18639
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 17341
+    .line 17973
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->initFields()V
 
     return-void
@@ -173,30 +173,30 @@
     .parameter "noInit"
 
     .prologue
-    .line 17342
+    .line 17974
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMutableMessage;-><init>()V
 
-    .line 17685
+    .line 18309
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
-    .line 17782
+    .line 18406
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17981
+    .line 18605
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
-    .line 18015
+    .line 18639
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 17342
+    .line 17974
     return-void
 .end method
 
@@ -204,19 +204,19 @@
     .locals 1
 
     .prologue
-    .line 17687
+    .line 18311
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    .line 17688
+    .line 18312
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
-    .line 17690
+    .line 18314
     :cond_0
     return-void
 .end method
@@ -225,7 +225,7 @@
     .locals 1
 
     .prologue
-    .line 17353
+    .line 17985
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     return-object v0
@@ -235,8 +235,8 @@
     .locals 1
 
     .prologue
-    .line 17360
-    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$3800()Lcom/google/protobuf/Descriptors$Descriptor;
+    .line 17992
+    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$4000()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
@@ -247,7 +247,7 @@
     .locals 0
 
     .prologue
-    .line 17350
+    .line 17982
     return-void
 .end method
 
@@ -255,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 17347
+    .line 17979
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;-><init>()V
@@ -280,19 +280,19 @@
     .end annotation
 
     .prologue
-    .line 17753
+    .line 18377
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption$NamePart;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17754
+    .line 18378
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->ensureNameInitialized()V
 
-    .line 17755
+    .line 18379
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMutableMessageLite;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 17757
+    .line 18381
     return-object p0
 .end method
 
@@ -300,24 +300,24 @@
     .locals 2
 
     .prologue
-    .line 17730
+    .line 18354
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17731
+    .line 18355
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->ensureNameInitialized()V
 
-    .line 17732
+    .line 18356
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption$NamePart;->newMessage()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0
 
-    .line 17733
+    .line 18357
     .local v0, value:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption$NamePart;
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 17734
+    .line 18358
     return-object v0
 .end method
 
@@ -326,29 +326,29 @@
     .parameter "value"
 
     .prologue
-    .line 17740
+    .line 18364
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17741
+    .line 18365
     if-nez p1, :cond_0
 
-    .line 17742
+    .line 18366
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 17744
+    .line 18368
     :cond_0
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->ensureNameInitialized()V
 
-    .line 17745
+    .line 18369
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 17746
+    .line 18370
     return-object p0
 .end method
 
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clear()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -370,86 +370,86 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 18299
+    .line 18923
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18300
+    .line 18924
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMutableMessage;->clear()Lcom/google/protobuf/GeneratedMutableMessage;
 
-    .line 18301
+    .line 18925
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
-    .line 18302
+    .line 18926
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 18303
+    .line 18927
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18304
+    .line 18928
     iput-wide v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->positiveIntValue_:J
 
-    .line 18305
+    .line 18929
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18306
+    .line 18930
     iput-wide v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->negativeIntValue_:J
 
-    .line 18307
+    .line 18931
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18308
+    .line 18932
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->doubleValue_:D
 
-    .line 18309
+    .line 18933
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18310
+    .line 18934
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
-    .line 18311
+    .line 18935
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18312
+    .line 18936
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18313
+    .line 18937
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18314
+    .line 18938
     return-object p0
 .end method
 
@@ -457,7 +457,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clear()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -469,7 +469,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clear()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -481,22 +481,22 @@
     .locals 1
 
     .prologue
-    .line 18078
+    .line 18702
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18079
+    .line 18703
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18080
+    .line 18704
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18081
+    .line 18705
     return-object p0
 .end method
 
@@ -504,22 +504,22 @@
     .locals 2
 
     .prologue
-    .line 17974
+    .line 18598
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17975
+    .line 18599
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17976
+    .line 18600
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->doubleValue_:D
 
-    .line 17977
+    .line 18601
     return-object p0
 .end method
 
@@ -527,22 +527,22 @@
     .locals 1
 
     .prologue
-    .line 17875
+    .line 18499
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17876
+    .line 18500
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17877
+    .line 18501
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17878
+    .line 18502
     return-object p0
 .end method
 
@@ -550,15 +550,15 @@
     .locals 1
 
     .prologue
-    .line 17776
+    .line 18400
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17777
+    .line 18401
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
-    .line 17778
+    .line 18402
     return-object p0
 .end method
 
@@ -566,22 +566,22 @@
     .locals 2
 
     .prologue
-    .line 17941
+    .line 18565
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17942
+    .line 18566
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17943
+    .line 18567
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->negativeIntValue_:J
 
-    .line 17944
+    .line 18568
     return-object p0
 .end method
 
@@ -589,22 +589,22 @@
     .locals 2
 
     .prologue
-    .line 17908
+    .line 18532
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17909
+    .line 18533
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17910
+    .line 18534
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->positiveIntValue_:J
 
-    .line 17911
+    .line 18535
     return-object p0
 .end method
 
@@ -612,22 +612,22 @@
     .locals 1
 
     .prologue
-    .line 18008
+    .line 18632
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18009
+    .line 18633
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18010
+    .line 18634
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
-    .line 18011
+    .line 18635
     return-object p0
 .end method
 
@@ -635,7 +635,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clone()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -647,7 +647,7 @@
     .locals 1
 
     .prologue
-    .line 18094
+    .line 18718
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -663,7 +663,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clone()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -675,7 +675,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clone()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -692,7 +692,7 @@
     .end annotation
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->clone()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -704,24 +704,24 @@
     .locals 4
 
     .prologue
-    .line 18026
+    .line 18650
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18027
+    .line 18651
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 18028
+    .line 18652
     check-cast v1, Ljava/lang/String;
 
-    .line 18036
+    .line 18660
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 18030
+    .line 18654
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -731,13 +731,13 @@
 
     check-cast v0, [B
 
-    .line 18031
+    .line 18655
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 18033
+    .line 18657
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -745,13 +745,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 18034
+    .line 18658
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 18036
+    .line 18660
     goto :goto_0
 .end method
 
@@ -759,10 +759,10 @@
     .locals 4
 
     .prologue
-    .line 18043
+    .line 18667
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18044
+    .line 18668
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -770,20 +770,20 @@
 
     move-object v2, v1
 
-    .line 18045
+    .line 18669
     check-cast v2, Ljava/lang/String;
 
-    .line 18046
+    .line 18670
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 18047
+    .line 18671
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18050
+    .line 18674
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -806,7 +806,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -818,7 +818,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -830,7 +830,7 @@
     .locals 1
 
     .prologue
-    .line 17356
+    .line 17988
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     return-object v0
@@ -840,7 +840,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -852,7 +852,7 @@
     .locals 2
 
     .prologue
-    .line 17959
+    .line 18583
     iget-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->doubleValue_:D
 
     return-wide v0
@@ -862,24 +862,24 @@
     .locals 4
 
     .prologue
-    .line 17803
+    .line 18427
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17804
+    .line 18428
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 17805
+    .line 18429
     check-cast v1, Ljava/lang/String;
 
-    .line 17813
+    .line 18437
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 17807
+    .line 18431
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -889,13 +889,13 @@
 
     check-cast v0, [B
 
-    .line 17808
+    .line 18432
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 17810
+    .line 18434
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -903,13 +903,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 17811
+    .line 18435
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 17813
+    .line 18437
     goto :goto_0
 .end method
 
@@ -917,10 +917,10 @@
     .locals 4
 
     .prologue
-    .line 17825
+    .line 18449
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17826
+    .line 18450
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -928,20 +928,20 @@
 
     move-object v2, v1
 
-    .line 17827
+    .line 18451
     check-cast v2, Ljava/lang/String;
 
-    .line 17828
+    .line 18452
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 17829
+    .line 18453
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17832
+    .line 18456
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -965,7 +965,7 @@
     .parameter "index"
 
     .prologue
-    .line 17724
+    .line 18348
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -990,13 +990,13 @@
     .end annotation
 
     .prologue
-    .line 17710
+    .line 18334
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17711
+    .line 18335
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->ensureNameInitialized()V
 
-    .line 17712
+    .line 18336
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     return-object v0
@@ -1007,7 +1007,7 @@
     .parameter "index"
 
     .prologue
-    .line 17718
+    .line 18342
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1023,7 +1023,7 @@
     .locals 1
 
     .prologue
-    .line 17695
+    .line 18319
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     if-nez v0, :cond_0
@@ -1056,17 +1056,17 @@
     .end annotation
 
     .prologue
-    .line 17701
+    .line 18325
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     if-nez v0, :cond_0
 
-    .line 17702
+    .line 18326
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 17704
+    .line 18328
     :goto_0
     return-object v0
 
@@ -1084,7 +1084,7 @@
     .locals 2
 
     .prologue
-    .line 17926
+    .line 18550
     iget-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->negativeIntValue_:J
 
     return-wide v0
@@ -1103,7 +1103,7 @@
     .end annotation
 
     .prologue
-    .line 17371
+    .line 18003
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -1113,7 +1113,7 @@
     .locals 2
 
     .prologue
-    .line 17893
+    .line 18517
     iget-wide v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->positiveIntValue_:J
 
     return-wide v0
@@ -1129,16 +1129,16 @@
 
     const/4 v4, 0x2
 
-    .line 18255
+    .line 18879
     const/4 v1, 0x0
 
-    .line 18256
+    .line 18880
     .local v1, size:I
     iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     if-eqz v2, :cond_0
 
-    .line 18257
+    .line 18881
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1151,7 +1151,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 18258
+    .line 18882
     iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1166,12 +1166,12 @@
 
     add-int/2addr v1, v2
 
-    .line 18257
+    .line 18881
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 18262
+    .line 18886
     .end local v0           #i:I
     :cond_0
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
@@ -1182,7 +1182,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 18263
+    .line 18887
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getIdentifierValueAsBytes()[B
@@ -1195,7 +1195,7 @@
 
     add-int/2addr v1, v2
 
-    .line 18266
+    .line 18890
     :cond_1
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1203,7 +1203,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 18267
+    .line 18891
     iget-wide v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->positiveIntValue_:J
 
     invoke-static {v5, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->computeUInt64Size(IJ)I
@@ -1212,7 +1212,7 @@
 
     add-int/2addr v1, v2
 
-    .line 18270
+    .line 18894
     :cond_2
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1220,7 +1220,7 @@
 
     if-ne v2, v5, :cond_3
 
-    .line 18271
+    .line 18895
     const/4 v2, 0x5
 
     iget-wide v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->negativeIntValue_:J
@@ -1231,7 +1231,7 @@
 
     add-int/2addr v1, v2
 
-    .line 18274
+    .line 18898
     :cond_3
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1239,7 +1239,7 @@
 
     if-ne v2, v6, :cond_4
 
-    .line 18275
+    .line 18899
     const/4 v2, 0x6
 
     iget-wide v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->doubleValue_:D
@@ -1250,7 +1250,7 @@
 
     add-int/2addr v1, v2
 
-    .line 18278
+    .line 18902
     :cond_4
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1260,7 +1260,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 18279
+    .line 18903
     const/4 v2, 0x7
 
     iget-object v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
@@ -1271,7 +1271,7 @@
 
     add-int/2addr v1, v2
 
-    .line 18282
+    .line 18906
     :cond_5
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1281,7 +1281,7 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 18283
+    .line 18907
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getAggregateValueAsBytes()[B
 
     move-result-object v2
@@ -1292,7 +1292,7 @@
 
     add-int/2addr v1, v2
 
-    .line 18286
+    .line 18910
     :cond_6
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1304,10 +1304,10 @@
 
     add-int/2addr v1, v2
 
-    .line 18287
+    .line 18911
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->cachedSize:I
 
-    .line 18288
+    .line 18912
     return v1
 .end method
 
@@ -1315,7 +1315,7 @@
     .locals 1
 
     .prologue
-    .line 17992
+    .line 18616
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
     return-object v0
@@ -1325,7 +1325,7 @@
     .locals 2
 
     .prologue
-    .line 18020
+    .line 18644
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -1349,7 +1349,7 @@
     .locals 2
 
     .prologue
-    .line 17953
+    .line 18577
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1375,7 +1375,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 17792
+    .line 18416
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1395,7 +1395,7 @@
     .locals 2
 
     .prologue
-    .line 17920
+    .line 18544
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1419,7 +1419,7 @@
     .locals 2
 
     .prologue
-    .line 17887
+    .line 18511
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1443,7 +1443,7 @@
     .locals 2
 
     .prologue
-    .line 17986
+    .line 18610
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1467,8 +1467,8 @@
     .locals 2
 
     .prologue
-    .line 17364
-    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$3900()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    .line 17996
+    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$4100()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     move-result-object v0
 
@@ -1485,12 +1485,12 @@
     .locals 1
 
     .prologue
-    .line 18320
+    .line 18944
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->immutableDefault:Lcom/google/protobuf/Message;
 
     if-nez v0, :cond_0
 
-    .line 18321
+    .line 18945
     const-string v0, "com.google.protobuf.DescriptorProtos$UninterpretedOption"
 
     invoke-static {v0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->internalImmutableDefault(Ljava/lang/String;)Lcom/google/protobuf/Message;
@@ -1499,7 +1499,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->immutableDefault:Lcom/google/protobuf/Message;
 
-    .line 18323
+    .line 18947
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->immutableDefault:Lcom/google/protobuf/Message;
 
@@ -1510,7 +1510,7 @@
     .locals 2
 
     .prologue
-    .line 18085
+    .line 18709
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1521,7 +1521,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 18086
+    .line 18710
     invoke-virtual {p0, v0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getName(I)Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v1
@@ -1532,20 +1532,20 @@
 
     if-nez v1, :cond_0
 
-    .line 18087
+    .line 18711
     const/4 v1, 0x0
 
-    .line 18090
+    .line 18714
     :goto_1
     return v1
 
-    .line 18085
+    .line 18709
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 18090
+    .line 18714
     :cond_1
     const/4 v1, 0x1
 
@@ -1557,7 +1557,7 @@
     .parameter "x0"
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -1570,21 +1570,21 @@
     .parameter "other"
 
     .prologue
-    .line 18108
+    .line 18732
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18109
+    .line 18733
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 18148
+    .line 18772
     :goto_0
     return-object p0
 
-    .line 18110
+    .line 18734
     :cond_0
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
@@ -1598,17 +1598,17 @@
 
     if-nez v1, :cond_1
 
-    .line 18111
+    .line 18735
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->ensureNameInitialized()V
 
-    .line 18112
+    .line 18736
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-static {v1, v2}, Lcom/google/protobuf/AbstractMutableMessageLite;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 18115
+    .line 18739
     :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->hasIdentifierValue()Z
 
@@ -1616,26 +1616,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 18116
+    .line 18740
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18117
+    .line 18741
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
     if-eqz v1, :cond_8
 
-    .line 18118
+    .line 18742
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 18124
+    .line 18748
     :cond_2
     :goto_1
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->hasPositiveIntValue()Z
@@ -1644,14 +1644,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 18125
+    .line 18749
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getPositiveIntValue()J
 
     move-result-wide v1
 
     invoke-virtual {p0, v1, v2}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->setPositiveIntValue(J)Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
-    .line 18127
+    .line 18751
     :cond_3
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->hasNegativeIntValue()Z
 
@@ -1659,14 +1659,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 18128
+    .line 18752
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getNegativeIntValue()J
 
     move-result-wide v1
 
     invoke-virtual {p0, v1, v2}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->setNegativeIntValue(J)Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
-    .line 18130
+    .line 18754
     :cond_4
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->hasDoubleValue()Z
 
@@ -1674,14 +1674,14 @@
 
     if-eqz v1, :cond_5
 
-    .line 18131
+    .line 18755
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getDoubleValue()D
 
     move-result-wide v1
 
     invoke-virtual {p0, v1, v2}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->setDoubleValue(D)Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
-    .line 18133
+    .line 18757
     :cond_5
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->hasStringValue()Z
 
@@ -1689,14 +1689,14 @@
 
     if-eqz v1, :cond_6
 
-    .line 18134
+    .line 18758
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x10
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18135
+    .line 18759
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
     iget-object v2, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
@@ -1709,7 +1709,7 @@
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
-    .line 18138
+    .line 18762
     :cond_6
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->hasAggregateValue()Z
 
@@ -1717,26 +1717,26 @@
 
     if-eqz v1, :cond_7
 
-    .line 18139
+    .line 18763
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x20
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18140
+    .line 18764
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
     if-eqz v1, :cond_9
 
-    .line 18141
+    .line 18765
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18147
+    .line 18771
     :cond_7
     :goto_2
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
@@ -1747,7 +1747,7 @@
 
     goto/16 :goto_0
 
-    .line 18120
+    .line 18744
     :cond_8
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
@@ -1757,7 +1757,7 @@
 
     check-cast v0, [B
 
-    .line 18121
+    .line 18745
     .local v0, ba:[B
     array-length v1, v0
 
@@ -1769,7 +1769,7 @@
 
     goto :goto_1
 
-    .line 18143
+    .line 18767
     .end local v0           #ba:[B
     :cond_9
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
@@ -1780,7 +1780,7 @@
 
     check-cast v0, [B
 
-    .line 18144
+    .line 18768
     .restart local v0       #ba:[B
     array-length v1, v0
 
@@ -1798,15 +1798,15 @@
     .parameter "other"
 
     .prologue
-    .line 18099
+    .line 18723
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18100
+    .line 18724
     instance-of v0, p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     if-eqz v0, :cond_0
 
-    .line 18101
+    .line 18725
     check-cast p1, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     .end local p1
@@ -1814,7 +1814,7 @@
 
     move-result-object v0
 
-    .line 18103
+    .line 18727
     :goto_0
     return-object v0
 
@@ -1834,7 +1834,7 @@
     .parameter "x0"
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -1842,16 +1842,16 @@
     return-object v0
 .end method
 
-.method public mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
+.method public mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
     .locals 6
     .parameter "input"
     .parameter "extensionRegistry"
 
     .prologue
-    .line 18154
+    .line 18778
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18156
+    .line 18780
     :try_start_0
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1861,45 +1861,45 @@
 
     move-result-object v3
 
-    .line 18159
+    .line 18783
     .local v3, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     const/4 v0, 0x0
 
-    .line 18160
+    .line 18784
     .local v0, done:Z
     :cond_0
     :goto_0
     if-nez v0, :cond_1
 
-    .line 18161
+    .line 18785
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result v2
 
-    .line 18162
+    .line 18786
     .local v2, tag:I
     sparse-switch v2, :sswitch_data_0
 
-    .line 18167
+    .line 18791
     invoke-virtual {p0, p1, v3, p2, v2}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 18169
+    .line 18793
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 18164
+    .line 18788
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 18165
+    .line 18789
     goto :goto_0
 
-    .line 18174
+    .line 18798
     :sswitch_1
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->addName()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption$NamePart;
 
@@ -1909,14 +1909,14 @@
 
     goto :goto_0
 
-    .line 18211
+    .line 18835
     .end local v0           #done:Z
     .end local v2           #tag:I
     .end local v3           #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     :catch_0
     move-exception v1
 
-    .line 18212
+    .line 18836
     .local v1, e:Ljava/io/IOException;
     const/4 v4, 0x0
 
@@ -1924,7 +1924,7 @@
     :goto_1
     return v4
 
-    .line 18178
+    .line 18802
     .restart local v0       #done:Z
     .restart local v2       #tag:I
     .restart local v3       #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
@@ -1935,7 +1935,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18179
+    .line 18803
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v4
@@ -1944,7 +1944,7 @@
 
     goto :goto_0
 
-    .line 18183
+    .line 18807
     :sswitch_3
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1952,7 +1952,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18184
+    .line 18808
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
 
     move-result-wide v4
@@ -1961,7 +1961,7 @@
 
     goto :goto_0
 
-    .line 18188
+    .line 18812
     :sswitch_4
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1969,7 +1969,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18189
+    .line 18813
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt64()J
 
     move-result-wide v4
@@ -1978,7 +1978,7 @@
 
     goto :goto_0
 
-    .line 18193
+    .line 18817
     :sswitch_5
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -1986,7 +1986,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18194
+    .line 18818
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readDouble()D
 
     move-result-wide v4
@@ -1995,7 +1995,7 @@
 
     goto :goto_0
 
-    .line 18198
+    .line 18822
     :sswitch_6
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2003,7 +2003,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18199
+    .line 18823
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v4
@@ -2012,7 +2012,7 @@
 
     goto :goto_0
 
-    .line 18203
+    .line 18827
     :sswitch_7
     iget v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2020,7 +2020,7 @@
 
     iput v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18204
+    .line 18828
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v4
@@ -2029,7 +2029,7 @@
 
     goto :goto_0
 
-    .line 18209
+    .line 18833
     .end local v2           #tag:I
     :cond_1
     invoke-virtual {v3}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
@@ -2040,12 +2040,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 18210
+    .line 18834
     const/4 v4, 0x1
 
     goto :goto_1
 
-    .line 18162
+    .line 18786
     nop
 
     :sswitch_data_0
@@ -2065,7 +2065,7 @@
     .locals 1
 
     .prologue
-    .line 17344
+    .line 17976
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;-><init>()V
@@ -2077,7 +2077,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -2089,7 +2089,7 @@
     .locals 1
 
     .prologue
-    .line 17336
+    .line 17968
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;
 
     move-result-object v0
@@ -2102,10 +2102,10 @@
     .parameter "value"
 
     .prologue
-    .line 18057
+    .line 18681
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18058
+    .line 18682
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2114,7 +2114,7 @@
 
     throw v0
 
-    .line 18059
+    .line 18683
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2122,10 +2122,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18060
+    .line 18684
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18061
+    .line 18685
     return-object p0
 .end method
 
@@ -2134,10 +2134,10 @@
     .parameter "value"
 
     .prologue
-    .line 18068
+    .line 18692
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 18069
+    .line 18693
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2146,7 +2146,7 @@
 
     throw v0
 
-    .line 18070
+    .line 18694
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2154,10 +2154,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18071
+    .line 18695
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->aggregateValue_:Ljava/lang/Object;
 
-    .line 18072
+    .line 18696
     return-object p0
 .end method
 
@@ -2166,20 +2166,20 @@
     .parameter "value"
 
     .prologue
-    .line 17965
+    .line 18589
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17966
+    .line 18590
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17967
+    .line 18591
     iput-wide p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->doubleValue_:D
 
-    .line 17968
+    .line 18592
     return-object p0
 .end method
 
@@ -2188,10 +2188,10 @@
     .parameter "value"
 
     .prologue
-    .line 17844
+    .line 18468
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17845
+    .line 18469
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2200,7 +2200,7 @@
 
     throw v0
 
-    .line 17846
+    .line 18470
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2208,10 +2208,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17847
+    .line 18471
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17848
+    .line 18472
     return-object p0
 .end method
 
@@ -2220,10 +2220,10 @@
     .parameter "value"
 
     .prologue
-    .line 17860
+    .line 18484
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17861
+    .line 18485
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2232,7 +2232,7 @@
 
     throw v0
 
-    .line 17862
+    .line 18486
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2240,10 +2240,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17863
+    .line 18487
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->identifierValue_:Ljava/lang/Object;
 
-    .line 17864
+    .line 18488
     return-object p0
 .end method
 
@@ -2253,29 +2253,29 @@
     .parameter "value"
 
     .prologue
-    .line 17764
+    .line 18388
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17765
+    .line 18389
     if-nez p2, :cond_0
 
-    .line 17766
+    .line 18390
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 17768
+    .line 18392
     :cond_0
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->ensureNameInitialized()V
 
-    .line 17769
+    .line 18393
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 17770
+    .line 18394
     return-object p0
 .end method
 
@@ -2284,20 +2284,20 @@
     .parameter "value"
 
     .prologue
-    .line 17932
+    .line 18556
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17933
+    .line 18557
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17934
+    .line 18558
     iput-wide p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->negativeIntValue_:J
 
-    .line 17935
+    .line 18559
     return-object p0
 .end method
 
@@ -2306,20 +2306,20 @@
     .parameter "value"
 
     .prologue
-    .line 17899
+    .line 18523
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17900
+    .line 18524
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 17901
+    .line 18525
     iput-wide p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->positiveIntValue_:J
 
-    .line 17902
+    .line 18526
     return-object p0
 .end method
 
@@ -2328,10 +2328,10 @@
     .parameter "value"
 
     .prologue
-    .line 17998
+    .line 18622
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->assertMutable()V
 
-    .line 17999
+    .line 18623
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2340,7 +2340,7 @@
 
     throw v0
 
-    .line 18000
+    .line 18624
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2348,10 +2348,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
-    .line 18001
+    .line 18625
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
-    .line 18002
+    .line 18626
     return-object p0
 .end method
 
@@ -2364,7 +2364,7 @@
     .end annotation
 
     .prologue
-    .line 18295
+    .line 18919
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMutableMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -2388,18 +2388,18 @@
 
     const/4 v5, 0x2
 
-    .line 18219
+    .line 18843
     invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->getTotalBytesWritten()I
 
     move-result v1
 
-    .line 18220
+    .line 18844
     .local v1, bytesWrittenBefore:I
     iget-object v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     if-eqz v3, :cond_0
 
-    .line 18221
+    .line 18845
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -2412,7 +2412,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 18222
+    .line 18846
     iget-object v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->name_:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2423,12 +2423,12 @@
 
     invoke-virtual {p1, v5, v3}, Lcom/google/protobuf/CodedOutputStream;->writeMessageWithCachedSizes(ILcom/google/protobuf/MutableMessageLite;)V
 
-    .line 18221
+    .line 18845
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 18226
+    .line 18850
     .end local v2           #i:I
     :cond_0
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
@@ -2439,7 +2439,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 18227
+    .line 18851
     const/4 v3, 0x3
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getIdentifierValueAsBytes()[B
@@ -2448,7 +2448,7 @@
 
     invoke-virtual {p1, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 18229
+    .line 18853
     :cond_1
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2456,12 +2456,12 @@
 
     if-ne v3, v5, :cond_2
 
-    .line 18230
+    .line 18854
     iget-wide v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->positiveIntValue_:J
 
     invoke-virtual {p1, v6, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
-    .line 18232
+    .line 18856
     :cond_2
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2469,14 +2469,14 @@
 
     if-ne v3, v6, :cond_3
 
-    .line 18233
+    .line 18857
     const/4 v3, 0x5
 
     iget-wide v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->negativeIntValue_:J
 
     invoke-virtual {p1, v3, v4, v5}, Lcom/google/protobuf/CodedOutputStream;->writeInt64(IJ)V
 
-    .line 18235
+    .line 18859
     :cond_3
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2484,14 +2484,14 @@
 
     if-ne v3, v7, :cond_4
 
-    .line 18236
+    .line 18860
     const/4 v3, 0x6
 
     iget-wide v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->doubleValue_:D
 
     invoke-virtual {p1, v3, v4, v5}, Lcom/google/protobuf/CodedOutputStream;->writeDouble(ID)V
 
-    .line 18238
+    .line 18862
     :cond_4
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2501,14 +2501,14 @@
 
     if-ne v3, v4, :cond_5
 
-    .line 18239
+    .line 18863
     const/4 v3, 0x7
 
     iget-object v4, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->stringValue_:[B
 
     invoke-virtual {p1, v3, v4}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 18241
+    .line 18865
     :cond_5
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->bitField0_:I
 
@@ -2518,14 +2518,14 @@
 
     if-ne v3, v4, :cond_6
 
-    .line 18242
+    .line 18866
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getAggregateValueAsBytes()[B
 
     move-result-object v3
 
     invoke-virtual {p1, v7, v3}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 18244
+    .line 18868
     :cond_6
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -2533,12 +2533,12 @@
 
     invoke-virtual {v3, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 18245
+    .line 18869
     invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->getTotalBytesWritten()I
 
     move-result v0
 
-    .line 18246
+    .line 18870
     .local v0, bytesWrittenAfter:I
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$UninterpretedOption;->getCachedSize()I
 
@@ -2548,7 +2548,7 @@
 
     if-eq v3, v4, :cond_7
 
-    .line 18247
+    .line 18871
     new-instance v3, Ljava/lang/RuntimeException;
 
     const-string v4, "Serialized size doesn\'t match cached size. You may forget to call getSerializedSize() or the message is being modified concurrently."
@@ -2557,7 +2557,7 @@
 
     throw v3
 
-    .line 18252
+    .line 18876
     :cond_7
     return-void
 .end method

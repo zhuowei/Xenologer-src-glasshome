@@ -54,7 +54,7 @@
 
     const/4 v3, 0x0
 
-    .line 69
+    .line 76
     new-instance v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     const-string v1, "SHARE"
@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->SHARE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
-    .line 70
+    .line 77
     new-instance v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     const-string v1, "READ_ALOUD"
@@ -72,7 +72,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->READ_ALOUD:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
-    .line 71
+    .line 78
     new-instance v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     const-string v1, "VOICE_CALL"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->VOICE_CALL:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
-    .line 72
+    .line 79
     new-instance v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     const-string v1, "NAVIGATE"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->NAVIGATE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
-    .line 73
+    .line 80
     new-instance v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     const-string v1, "SEARCH"
@@ -99,7 +99,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->SEARCH:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
-    .line 74
+    .line 81
     new-instance v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     const-string v1, "VIEW_WEB_SITE"
@@ -110,7 +110,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->VIEW_WEB_SITE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
-    .line 68
+    .line 75
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
@@ -157,7 +157,7 @@
     .end annotation
 
     .prologue
-    .line 68
+    .line 75
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -168,7 +168,7 @@
     .parameter "name"
 
     .prologue
-    .line 68
+    .line 75
     const-class v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 75
     sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->$VALUES:[Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
 
     invoke-virtual {v0}, [Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->clone()Ljava/lang/Object;

@@ -77,32 +77,32 @@
     .locals 1
 
     .prologue
-    .line 1701
+    .line 1703
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1868
+    .line 1870
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update$Mutations;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1984
+    .line 1986
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2081
+    .line 2086
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 1702
+    .line 1704
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->maybeForceBuilderInitialization()V
 
-    .line 1703
+    .line 1705
     return-void
 .end method
 
@@ -111,32 +111,32 @@
     .parameter "parent"
 
     .prologue
-    .line 1707
+    .line 1709
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 1868
+    .line 1870
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update$Mutations;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1984
+    .line 1986
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2081
+    .line 2086
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 1708
+    .line 1710
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->maybeForceBuilderInitialization()V
 
-    .line 1709
+    .line 1711
     return-void
 .end method
 
@@ -146,7 +146,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/Update$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -156,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update$Builder;->create()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -168,7 +168,7 @@
     .locals 1
 
     .prologue
-    .line 1717
+    .line 1719
     new-instance v0, Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Update$Builder;-><init>()V
@@ -180,7 +180,7 @@
     .locals 2
 
     .prologue
-    .line 2084
+    .line 2089
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -189,7 +189,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 2085
+    .line 2090
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
@@ -198,14 +198,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 2086
+    .line 2091
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 2088
+    .line 2093
     :cond_0
     return-void
 .end method
@@ -214,7 +214,7 @@
     .locals 1
 
     .prologue
-    .line 1690
+    .line 1692
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_Update_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -235,12 +235,12 @@
     .end annotation
 
     .prologue
-    .line 1973
+    .line 1975
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1974
+    .line 1976
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
@@ -257,12 +257,12 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 1979
+    .line 1981
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1981
+    .line 1983
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -284,12 +284,12 @@
     .end annotation
 
     .prologue
-    .line 2381
+    .line 2386
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2382
+    .line 2387
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
@@ -317,18 +317,18 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 2388
+    .line 2393
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 2390
+    .line 2395
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 2382
+    .line 2387
     :cond_1
     const/4 v0, 0x0
 
@@ -339,20 +339,20 @@
     .locals 1
 
     .prologue
-    .line 1711
+    .line 1713
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update;->access$1200()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1712
+    .line 1714
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getMutationsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 1713
+    .line 1715
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1715
+    .line 1717
     :cond_0
     return-void
 .end method
@@ -374,28 +374,28 @@
     .end annotation
 
     .prologue
-    .line 2260
+    .line 2265
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/UserAction;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2261
+    .line 2266
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2262
+    .line 2267
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 2264
+    .line 2269
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2268
+    .line 2273
     :goto_0
     return-object p0
 
-    .line 2266
+    .line 2271
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -410,15 +410,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 2242
+    .line 2247
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2243
+    .line 2248
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2244
+    .line 2249
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -427,14 +427,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 2245
+    .line 2250
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2249
+    .line 2254
     :goto_0
     return-object p0
 
-    .line 2247
+    .line 2252
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -453,38 +453,38 @@
     .parameter "value"
 
     .prologue
-    .line 2203
+    .line 2208
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 2204
+    .line 2209
     if-nez p2, :cond_0
 
-    .line 2205
+    .line 2210
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2207
+    .line 2212
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2208
+    .line 2213
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 2209
+    .line 2214
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2213
+    .line 2218
     :goto_0
     return-object p0
 
-    .line 2211
+    .line 2216
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -498,15 +498,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 2224
+    .line 2229
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2225
+    .line 2230
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2226
+    .line 2231
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -515,14 +515,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2227
+    .line 2232
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2231
+    .line 2236
     :goto_0
     return-object p0
 
-    .line 2229
+    .line 2234
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -540,38 +540,38 @@
     .parameter "value"
 
     .prologue
-    .line 2182
+    .line 2187
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 2183
+    .line 2188
     if-nez p1, :cond_0
 
-    .line 2184
+    .line 2189
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2186
+    .line 2191
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2187
+    .line 2192
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2188
+    .line 2193
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2192
+    .line 2197
     :goto_0
     return-object p0
 
-    .line 2190
+    .line 2195
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -584,7 +584,7 @@
     .locals 2
 
     .prologue
-    .line 2352
+    .line 2357
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -607,7 +607,7 @@
     .parameter "index"
 
     .prologue
-    .line 2364
+    .line 2369
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -629,12 +629,12 @@
     .locals 2
 
     .prologue
-    .line 1753
+    .line 1755
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
 
-    .line 1754
+    .line 1756
     .local v0, result:Lcom/google/googlex/glass/common/proto/Update;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Update;->isInitialized()Z
 
@@ -642,14 +642,14 @@
 
     if-nez v1, :cond_0
 
-    .line 1755
+    .line 1757
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 1757
+    .line 1759
     :cond_0
     return-object v0
 .end method
@@ -658,7 +658,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->build()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -670,7 +670,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->build()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -682,22 +682,22 @@
     .locals 5
 
     .prologue
-    .line 1761
+    .line 1763
     new-instance v1, Lcom/google/googlex/glass/common/proto/Update;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/Update;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/Update$1;)V
 
-    .line 1762
+    .line 1764
     .local v1, result:Lcom/google/googlex/glass/common/proto/Update;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1763
+    .line 1765
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 1764
+    .line 1766
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -705,22 +705,22 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1765
+    .line 1767
     or-int/lit8 v2, v2, 0x1
 
-    .line 1767
+    .line 1769
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v3, :cond_3
 
-    .line 1768
+    .line 1770
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Update;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Update;->access$1402(Lcom/google/googlex/glass/common/proto/Update;Lcom/google/googlex/glass/common/proto/Update$Mutations;)Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1772
+    .line 1774
     :goto_0
     and-int/lit8 v3, v0, 0x2
 
@@ -728,22 +728,22 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 1773
+    .line 1775
     or-int/lit8 v2, v2, 0x2
 
-    .line 1775
+    .line 1777
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Update;->timelineItemId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Update;->access$1502(Lcom/google/googlex/glass/common/proto/Update;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1776
+    .line 1778
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v3, :cond_4
 
-    .line 1777
+    .line 1779
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x4
@@ -752,7 +752,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1778
+    .line 1780
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -761,32 +761,32 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 1779
+    .line 1781
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x5
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1781
+    .line 1783
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Update;->userAction_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Update;->access$1602(Lcom/google/googlex/glass/common/proto/Update;Ljava/util/List;)Ljava/util/List;
 
-    .line 1785
+    .line 1787
     :goto_1
     #setter for: Lcom/google/googlex/glass/common/proto/Update;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Update;->access$1702(Lcom/google/googlex/glass/common/proto/Update;I)I
 
-    .line 1786
+    .line 1788
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onBuilt()V
 
-    .line 1787
+    .line 1789
     return-object v1
 
-    .line 1770
+    .line 1772
     :cond_3
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -801,7 +801,7 @@
 
     goto :goto_0
 
-    .line 1783
+    .line 1785
     :cond_4
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -819,7 +819,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -831,7 +831,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -843,22 +843,22 @@
     .locals 1
 
     .prologue
-    .line 1721
+    .line 1723
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 1722
+    .line 1724
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1723
+    .line 1725
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update$Mutations;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1727
+    .line 1729
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -866,42 +866,42 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1728
+    .line 1730
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 1729
+    .line 1731
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1730
+    .line 1732
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1731
+    .line 1733
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 1732
+    .line 1734
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1736
+    .line 1738
     :goto_1
     return-object p0
 
-    .line 1725
+    .line 1727
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -909,7 +909,7 @@
 
     goto :goto_0
 
-    .line 1734
+    .line 1736
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -922,7 +922,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clear()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -934,7 +934,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clear()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -946,7 +946,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clear()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -958,7 +958,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clear()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -970,22 +970,22 @@
     .locals 1
 
     .prologue
-    .line 1940
+    .line 1942
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1941
+    .line 1943
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update$Mutations;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1942
+    .line 1944
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1946
+    .line 1948
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -993,10 +993,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1947
+    .line 1949
     return-object p0
 
-    .line 1944
+    .line 1946
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1009,14 +1009,14 @@
     .locals 1
 
     .prologue
-    .line 2058
+    .line 2063
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 2059
+    .line 2064
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -1027,10 +1027,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2060
+    .line 2065
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2061
+    .line 2066
     return-object p0
 .end method
 
@@ -1038,33 +1038,33 @@
     .locals 1
 
     .prologue
-    .line 2278
+    .line 2283
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2279
+    .line 2284
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 2280
+    .line 2285
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 2281
+    .line 2286
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2285
+    .line 2290
     :goto_0
     return-object p0
 
-    .line 2283
+    .line 2288
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1077,7 +1077,7 @@
     .locals 2
 
     .prologue
-    .line 1740
+    .line 1742
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update$Builder;->create()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1097,7 +1097,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clone()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1109,7 +1109,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clone()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1121,7 +1121,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clone()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1133,7 +1133,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clone()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1145,7 +1145,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clone()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1162,7 +1162,7 @@
     .end annotation
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->clone()Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -1174,7 +1174,7 @@
     .locals 1
 
     .prologue
-    .line 1749
+    .line 1751
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -1186,7 +1186,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -1198,7 +1198,7 @@
     .locals 1
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v0
@@ -1210,7 +1210,7 @@
     .locals 1
 
     .prologue
-    .line 1745
+    .line 1747
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_Update_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -1220,15 +1220,15 @@
     .locals 1
 
     .prologue
-    .line 1881
+    .line 1883
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1882
+    .line 1884
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1884
+    .line 1886
     :goto_0
     return-object v0
 
@@ -1248,17 +1248,17 @@
     .locals 1
 
     .prologue
-    .line 1953
+    .line 1955
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1954
+    .line 1956
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1955
+    .line 1957
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getMutationsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -1276,12 +1276,12 @@
     .locals 1
 
     .prologue
-    .line 1961
+    .line 1963
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1962
+    .line 1964
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -1290,7 +1290,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Update$MutationsOrBuilder;
 
-    .line 1964
+    .line 1966
     :goto_0
     return-object v0
 
@@ -1301,41 +1301,54 @@
 .end method
 
 .method public getTimelineItemId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 2003
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
-
-    .line 2004
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
     .line 2005
-    check-cast v0, Lcom/google/protobuf/ByteString;
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+    .line 2006
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    move-result-object v1
+    if-nez v3, :cond_1
+
+    move-object v0, v1
 
     .line 2007
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 2009
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
 
     .line 2010
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 2011
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
+
+    .line 2015
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1344,16 +1357,16 @@
     .locals 3
 
     .prologue
-    .line 2022
+    .line 2027
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2023
+    .line 2028
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 2024
+    .line 2029
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1361,11 +1374,11 @@
 
     move-result-object v0
 
-    .line 2027
+    .line 2032
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2030
+    .line 2035
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1385,12 +1398,12 @@
     .parameter "index"
 
     .prologue
-    .line 2129
+    .line 2134
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2130
+    .line 2135
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1399,7 +1412,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UserAction;
 
-    .line 2132
+    .line 2137
     :goto_0
     return-object v0
 
@@ -1420,7 +1433,7 @@
     .parameter "index"
 
     .prologue
-    .line 2313
+    .line 2318
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1447,7 +1460,7 @@
     .end annotation
 
     .prologue
-    .line 2376
+    .line 2381
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1463,19 +1476,19 @@
     .locals 1
 
     .prologue
-    .line 2115
+    .line 2120
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2116
+    .line 2121
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 2118
+    .line 2123
     :goto_0
     return v0
 
@@ -1502,19 +1515,19 @@
     .end annotation
 
     .prologue
-    .line 2101
+    .line 2106
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2102
+    .line 2107
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 2104
+    .line 2109
     :goto_0
     return-object v0
 
@@ -1533,12 +1546,12 @@
     .parameter "index"
 
     .prologue
-    .line 2324
+    .line 2329
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2325
+    .line 2330
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1547,7 +1560,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UserActionOrBuilder;
 
-    .line 2326
+    .line 2331
     :goto_0
     return-object v0
 
@@ -1576,19 +1589,19 @@
     .end annotation
 
     .prologue
-    .line 2338
+    .line 2343
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 2339
+    .line 2344
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 2341
+    .line 2346
     :goto_0
     return-object v0
 
@@ -1608,7 +1621,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1875
+    .line 1877
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1628,7 +1641,7 @@
     .locals 2
 
     .prologue
-    .line 1993
+    .line 1995
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1652,7 +1665,7 @@
     .locals 3
 
     .prologue
-    .line 1695
+    .line 1697
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_Update_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/Update;
@@ -1670,14 +1683,14 @@
     .locals 1
 
     .prologue
-    .line 1840
+    .line 1842
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->hasMutations()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1841
+    .line 1843
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->getMutations()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0
@@ -1688,10 +1701,10 @@
 
     if-nez v0, :cond_0
 
-    .line 1843
+    .line 1845
     const/4 v0, 0x0
 
-    .line 1846
+    .line 1848
     :goto_0
     return v0
 
@@ -1708,18 +1721,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1800
+    .line 1802
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Update;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 1836
+    .line 1838
     :goto_0
     return-object p0
 
-    .line 1801
+    .line 1803
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Update;->hasMutations()Z
 
@@ -1727,14 +1740,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 1802
+    .line 1804
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Update;->getMutations()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeMutations(Lcom/google/googlex/glass/common/proto/Update$Mutations;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
-    .line 1804
+    .line 1806
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Update;->hasTimelineItemId()Z
 
@@ -1742,14 +1755,14 @@
 
     if-eqz v1, :cond_2
 
-    .line 1805
+    .line 1807
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x2
 
     iput v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1806
+    .line 1808
     #getter for: Lcom/google/googlex/glass/common/proto/Update;->timelineItemId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Update;->access$1500(Lcom/google/googlex/glass/common/proto/Update;)Ljava/lang/Object;
 
@@ -1757,16 +1770,16 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 1807
+    .line 1809
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1809
+    .line 1811
     :cond_2
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_5
 
-    .line 1810
+    .line 1812
     #getter for: Lcom/google/googlex/glass/common/proto/Update;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Update;->access$1600(Lcom/google/googlex/glass/common/proto/Update;)Ljava/util/List;
 
@@ -1778,7 +1791,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1811
+    .line 1813
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1787,7 +1800,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1812
+    .line 1814
     #getter for: Lcom/google/googlex/glass/common/proto/Update;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Update;->access$1600(Lcom/google/googlex/glass/common/proto/Update;)Ljava/util/List;
 
@@ -1795,18 +1808,18 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 1813
+    .line 1815
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1818
+    .line 1820
     :goto_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1835
+    .line 1837
     :cond_3
     :goto_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Update;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
@@ -1817,11 +1830,11 @@
 
     goto :goto_0
 
-    .line 1815
+    .line 1817
     :cond_4
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 1816
+    .line 1818
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Update;->userAction_:Ljava/util/List;
@@ -1833,7 +1846,7 @@
 
     goto :goto_1
 
-    .line 1821
+    .line 1823
     :cond_5
     #getter for: Lcom/google/googlex/glass/common/proto/Update;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Update;->access$1600(Lcom/google/googlex/glass/common/proto/Update;)Ljava/util/List;
@@ -1846,7 +1859,7 @@
 
     if-nez v1, :cond_3
 
-    .line 1822
+    .line 1824
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
@@ -1855,15 +1868,15 @@
 
     if-eqz v1, :cond_7
 
-    .line 1823
+    .line 1825
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 1824
+    .line 1826
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1825
+    .line 1827
     #getter for: Lcom/google/googlex/glass/common/proto/Update;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Update;->access$1600(Lcom/google/googlex/glass/common/proto/Update;)Ljava/util/List;
 
@@ -1871,14 +1884,14 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
-    .line 1826
+    .line 1828
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, -0x5
 
     iput v1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1827
+    .line 1829
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Update;->access$1800()Z
 
     move-result v1
@@ -1894,7 +1907,7 @@
 
     goto :goto_2
 
-    .line 1831
+    .line 1833
     :cond_7
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1919,10 +1932,10 @@
     .end annotation
 
     .prologue
-    .line 1853
+    .line 1855
     const/4 v2, 0x0
 
-    .line 1855
+    .line 1857
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/Update;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/Update;->PARSER:Lcom/google/protobuf/Parser;
@@ -1940,21 +1953,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1860
+    .line 1862
     if-eqz v2, :cond_0
 
-    .line 1861
+    .line 1863
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Update;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
-    .line 1864
+    .line 1866
     :cond_0
     return-object p0
 
-    .line 1856
+    .line 1858
     :catch_0
     move-exception v1
 
-    .line 1857
+    .line 1859
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1967,19 +1980,19 @@
 
     move-object v2, v0
 
-    .line 1858
+    .line 1860
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1860
+    .line 1862
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1861
+    .line 1863
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Update;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     :cond_1
@@ -1991,12 +2004,12 @@
     .parameter "other"
 
     .prologue
-    .line 1791
+    .line 1793
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/Update;
 
     if-eqz v0, :cond_0
 
-    .line 1792
+    .line 1794
     check-cast p1, Lcom/google/googlex/glass/common/proto/Update;
 
     .end local p1
@@ -2004,12 +2017,12 @@
 
     move-result-object p0
 
-    .line 1795
+    .line 1797
     .end local p0
     :goto_0
     return-object p0
 
-    .line 1794
+    .line 1796
     .restart local p0
     .restart local p1
     :cond_0
@@ -2029,7 +2042,7 @@
     .end annotation
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -2042,7 +2055,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -2061,7 +2074,7 @@
     .end annotation
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -2080,7 +2093,7 @@
     .end annotation
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -2093,7 +2106,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -2112,7 +2125,7 @@
     .end annotation
 
     .prologue
-    .line 1684
+    .line 1686
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Update$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Update$Builder;
 
     move-result-object v0
@@ -2125,12 +2138,12 @@
     .parameter "value"
 
     .prologue
-    .line 1921
+    .line 1923
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1922
+    .line 1924
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -2147,7 +2160,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1924
+    .line 1926
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Update$Mutations;->newBuilder(Lcom/google/googlex/glass/common/proto/Update$Mutations;)Lcom/google/googlex/glass/common/proto/Update$Mutations$Builder;
@@ -2164,11 +2177,11 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1929
+    .line 1931
     :goto_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1933
+    .line 1935
     :goto_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -2176,16 +2189,16 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1934
+    .line 1936
     return-object p0
 
-    .line 1927
+    .line 1929
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     goto :goto_0
 
-    .line 1931
+    .line 1933
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2199,27 +2212,27 @@
     .parameter "index"
 
     .prologue
-    .line 2295
+    .line 2300
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2296
+    .line 2301
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2297
+    .line 2302
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2298
+    .line 2303
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2302
+    .line 2307
     :goto_0
     return-object p0
 
-    .line 2300
+    .line 2305
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2233,22 +2246,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1908
+    .line 1910
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1909
+    .line 1911
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Update$Mutations$Builder;->build()Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1910
+    .line 1912
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1914
+    .line 1916
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -2256,10 +2269,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1915
+    .line 1917
     return-object p0
 
-    .line 1912
+    .line 1914
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2277,29 +2290,29 @@
     .parameter "value"
 
     .prologue
-    .line 1891
+    .line 1893
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1892
+    .line 1894
     if-nez p1, :cond_0
 
-    .line 1893
+    .line 1895
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1895
+    .line 1897
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutations_:Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
-    .line 1896
+    .line 1898
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 1900
+    .line 1902
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -2307,10 +2320,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 1901
+    .line 1903
     return-object p0
 
-    .line 1898
+    .line 1900
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->mutationsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2324,17 +2337,17 @@
     .parameter "value"
 
     .prologue
-    .line 2042
+    .line 2047
     if-nez p1, :cond_0
 
-    .line 2043
+    .line 2048
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2045
+    .line 2050
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -2342,13 +2355,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 2046
+    .line 2051
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2047
+    .line 2052
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2048
+    .line 2053
     return-object p0
 .end method
 
@@ -2357,17 +2370,17 @@
     .parameter "value"
 
     .prologue
-    .line 2072
+    .line 2077
     if-nez p1, :cond_0
 
-    .line 2073
+    .line 2078
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2075
+    .line 2080
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
@@ -2375,13 +2388,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->bitField0_:I
 
-    .line 2076
+    .line 2081
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 2077
+    .line 2082
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2078
+    .line 2083
     return-object p0
 .end method
 
@@ -2391,15 +2404,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 2165
+    .line 2170
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2166
+    .line 2171
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2167
+    .line 2172
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -2408,14 +2421,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2168
+    .line 2173
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2172
+    .line 2177
     :goto_0
     return-object p0
 
-    .line 2170
+    .line 2175
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2434,38 +2447,38 @@
     .parameter "value"
 
     .prologue
-    .line 2144
+    .line 2149
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 2145
+    .line 2150
     if-nez p2, :cond_0
 
-    .line 2146
+    .line 2151
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2148
+    .line 2153
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->ensureUserActionIsMutable()V
 
-    .line 2149
+    .line 2154
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2150
+    .line 2155
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Update$Builder;->onChanged()V
 
-    .line 2154
+    .line 2159
     :goto_0
     return-object p0
 
-    .line 2152
+    .line 2157
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Update$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

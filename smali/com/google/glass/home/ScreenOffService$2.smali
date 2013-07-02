@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 123
+    .line 117
     iput-object p1, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 209
+    .line 204
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,15 +64,17 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 8
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 9
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
-    .line 126
+    const/4 v7, 0x0
+
+    .line 120
     invoke-virtual {p0}, Lcom/google/glass/home/ScreenOffService$2;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -97,12 +99,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 127
+    .line 121
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 130
+    .line 124
     .local v1, action:Ljava/lang/String;
     const-string v4, "android.intent.action.ACTION_POWER_CONNECTED"
 
@@ -112,7 +114,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 131
+    .line 125
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     #getter for: Lcom/google/glass/home/ScreenOffService;->soundManager:Lcom/google/glass/sound/SoundManager;
@@ -124,12 +126,12 @@
 
     invoke-virtual {v4, v5}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 205
+    .line 200
     :cond_0
     :goto_0
     return-void
 
-    .line 136
+    .line 130
     :cond_1
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
@@ -143,18 +145,18 @@
 
     if-nez v4, :cond_2
 
-    .line 137
+    .line 131
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v5, "Device was not donned, dropping screen off input."
+    const-string v5, "Device was not donned, dropping screen off input"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 141
+    .line 135
     :cond_2
     const-string v4, "com.google.glass.LOG_HEAD_GESTURE"
 
@@ -164,12 +166,12 @@
 
     if-eqz v4, :cond_3
 
-    .line 142
+    .line 136
     invoke-static {p2}, Lcom/google/glass/gesture/HeadGestureUtils;->getHeadGesture(Landroid/content/Intent;)Lcom/google/glass/gesture/HeadGestureUtils$HeadGesture;
 
     move-result-object v2
 
-    .line 143
+    .line 137
     .local v2, gesture:Lcom/google/glass/gesture/HeadGestureUtils$HeadGesture;
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
@@ -199,8 +201,8 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 144
-    sget-object v4, Lcom/google/glass/home/ScreenOffService$9;->$SwitchMap$com$google$glass$gesture$HeadGestureUtils$HeadGesture:[I
+    .line 138
+    sget-object v4, Lcom/google/glass/home/ScreenOffService$6;->$SwitchMap$com$google$glass$gesture$HeadGestureUtils$HeadGesture:[I
 
     invoke-virtual {v2}, Lcom/google/glass/gesture/HeadGestureUtils$HeadGesture;->ordinal()I
 
@@ -210,7 +212,7 @@
 
     packed-switch v4, :pswitch_data_0
 
-    .line 157
+    .line 152
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v4
@@ -221,17 +223,17 @@
 
     goto :goto_0
 
-    .line 146
+    .line 140
     :pswitch_0
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v5, "... taking no action."
+    const-string v5, "... taking no action"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 147
+    .line 141
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-string v5, "7"
@@ -241,31 +243,31 @@
 
     goto :goto_0
 
-    .line 150
+    .line 144
     :pswitch_1
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v5, "... checking if we should show notification."
+    const-string v5, "... checking if we should show notification"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
+    .line 145
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-string v5, "10"
 
-    #calls: Lcom/google/glass/home/ScreenOffService;->showNotificationIfNeeded(Ljava/lang/String;)Z
-    invoke-static {v4, v5}, Lcom/google/glass/home/ScreenOffService;->access$400(Lcom/google/glass/home/ScreenOffService;Ljava/lang/String;)Z
+    #calls: Lcom/google/glass/home/ScreenOffService;->showNotificationIfNeeded(Ljava/lang/String;Z)Z
+    invoke-static {v4, v5, v7}, Lcom/google/glass/home/ScreenOffService;->access$400(Lcom/google/glass/home/ScreenOffService;Ljava/lang/String;Z)Z
 
     move-result v0
 
-    .line 152
+    .line 147
     .local v0, accepted:Z
     if-eqz v0, :cond_0
 
-    .line 153
+    .line 148
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-string v5, "10"
@@ -275,7 +277,7 @@
 
     goto/16 :goto_0
 
-    .line 162
+    .line 157
     .end local v0           #accepted:Z
     .end local v2           #gesture:Lcom/google/glass/gesture/HeadGestureUtils$HeadGesture;
     :cond_3
@@ -287,8 +289,8 @@
 
     if-eqz v4, :cond_0
 
-    .line 163
-    sget-object v4, Lcom/google/glass/home/ScreenOffService$9;->$SwitchMap$com$google$glass$util$ScreenOffGesture:[I
+    .line 158
+    sget-object v4, Lcom/google/glass/home/ScreenOffService$6;->$SwitchMap$com$google$glass$util$ScreenOffGesture:[I
 
     invoke-static {p2}, Lcom/google/glass/util/ScreenOffGesture;->fromIntent(Landroid/content/Intent;)Lcom/google/glass/util/ScreenOffGesture;
 
@@ -304,17 +306,17 @@
 
     goto/16 :goto_0
 
-    .line 165
+    .line 160
     :pswitch_2
     invoke-virtual {p0}, Lcom/google/glass/home/ScreenOffService$2;->getTag()Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v5, "Screen off TAP gesture received."
+    const-string v5, "Screen off TAP gesture received"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 166
+    .line 161
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-string v5, "9"
@@ -322,19 +324,19 @@
     #calls: Lcom/google/glass/home/ScreenOffService;->logScreenOn(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/google/glass/home/ScreenOffService;->access$300(Lcom/google/glass/home/ScreenOffService;Ljava/lang/String;)V
 
-    .line 167
+    .line 162
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-string v5, "9"
 
-    #calls: Lcom/google/glass/home/ScreenOffService;->showNotificationIfNeeded(Ljava/lang/String;)Z
-    invoke-static {v4, v5}, Lcom/google/glass/home/ScreenOffService;->access$400(Lcom/google/glass/home/ScreenOffService;Ljava/lang/String;)Z
+    #calls: Lcom/google/glass/home/ScreenOffService;->showNotificationIfNeeded(Ljava/lang/String;Z)Z
+    invoke-static {v4, v5, v7}, Lcom/google/glass/home/ScreenOffService;->access$400(Lcom/google/glass/home/ScreenOffService;Ljava/lang/String;Z)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 168
+    .line 163
     invoke-virtual {p0}, Lcom/google/glass/home/ScreenOffService$2;->getTag()Ljava/lang/String;
 
     move-result-object v4
@@ -343,25 +345,25 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 169
-    invoke-virtual {p0, v7}, Lcom/google/glass/home/ScreenOffService$2;->setResultCode(I)V
+    .line 164
+    invoke-virtual {p0, v8}, Lcom/google/glass/home/ScreenOffService$2;->setResultCode(I)V
 
-    .line 170
+    .line 165
     invoke-virtual {p0}, Lcom/google/glass/home/ScreenOffService$2;->abortBroadcast()V
 
     goto/16 :goto_0
 
-    .line 175
+    .line 170
     :pswitch_3
     invoke-virtual {p0}, Lcom/google/glass/home/ScreenOffService$2;->getTag()Ljava/lang/String;
 
     move-result-object v4
 
-    const-string v5, "Screen off LONG_TAP gesture received."
+    const-string v5, "Screen off LONG_TAP gesture received"
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 176
+    .line 171
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const-string v5, "1"
@@ -369,7 +371,7 @@
     #calls: Lcom/google/glass/home/ScreenOffService;->logScreenOn(Ljava/lang/String;)V
     invoke-static {v4, v5}, Lcom/google/glass/home/ScreenOffService;->access$300(Lcom/google/glass/home/ScreenOffService;Ljava/lang/String;)V
 
-    .line 179
+    .line 174
     sget-object v4, Lcom/google/glass/util/Labs$Feature;->LONG_TAP_TO_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v4}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -378,14 +380,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 184
+    .line 179
     invoke-static {p1}, Lcom/google/glass/home/LongTapReceiver;->maySearchOnLongTap(Landroid/content/Context;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 190
+    .line 185
     new-instance v4, Landroid/content/Intent;
 
     iget-object v5, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
@@ -396,9 +398,7 @@
 
     const-string v5, "called_by_press_to_search"
 
-    const/4 v6, 0x0
-
-    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v4, v5, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     move-result-object v4
 
@@ -418,28 +418,28 @@
 
     move-result-object v3
 
-    .line 196
+    .line 191
     .local v3, voiceSearchIntent:Landroid/content/Intent;
     iget-object v4, p0, Lcom/google/glass/home/ScreenOffService$2;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-virtual {v4, v3}, Lcom/google/glass/home/ScreenOffService;->startActivity(Landroid/content/Intent;)V
 
-    .line 197
-    invoke-virtual {p0, v7}, Lcom/google/glass/home/ScreenOffService$2;->setResultCode(I)V
+    .line 192
+    invoke-virtual {p0, v8}, Lcom/google/glass/home/ScreenOffService$2;->setResultCode(I)V
 
-    .line 198
+    .line 193
     invoke-virtual {p0}, Lcom/google/glass/home/ScreenOffService$2;->abortBroadcast()V
 
     goto/16 :goto_0
 
-    .line 144
+    .line 138
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
     .end packed-switch
 
-    .line 163
+    .line 158
     :pswitch_data_1
     .packed-switch 0x1
         :pswitch_2

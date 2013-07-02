@@ -59,41 +59,41 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1257
+    .line 1369
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1258
+    .line 1370
     iput p4, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->index:I
 
-    .line 1259
+    .line 1371
     iput-object p1, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;
 
-    .line 1260
+    .line 1372
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     #calls: Lcom/google/protobuf/Descriptors;->computeFullName(Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$Descriptor;Ljava/lang/String;)Ljava/lang/String;
-    invoke-static {p2, p3, v0}, Lcom/google/protobuf/Descriptors;->access$1400(Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$Descriptor;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, v0}, Lcom/google/protobuf/Descriptors;->access$1500(Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$Descriptor;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->fullName:Ljava/lang/String;
 
-    .line 1261
+    .line 1373
     iput-object p2, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 1262
+    .line 1374
     iput-object p3, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->containingType:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 1264
+    .line 1376
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;->getValueCount()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1267
+    .line 1379
     new-instance v0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     const-string v1, "Enums must contain at least one value."
@@ -102,7 +102,7 @@
 
     throw v0
 
-    .line 1271
+    .line 1383
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;->getValueCount()I
 
@@ -112,7 +112,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->values:[Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
-    .line 1272
+    .line 1384
     const/4 v4, 0x0
 
     .local v4, i:I
@@ -123,7 +123,7 @@
 
     if-ge v4, v0, :cond_1
 
-    .line 1273
+    .line 1385
     iget-object v6, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->values:[Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     new-instance v0, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
@@ -140,21 +140,21 @@
 
     aput-object v0, v6, v4
 
-    .line 1272
+    .line 1384
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1277
+    .line 1389
     :cond_1
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
-    invoke-static {p2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
+    invoke-static {p2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1300(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/google/protobuf/Descriptors$DescriptorPool;->addSymbol(Lcom/google/protobuf/Descriptors$GenericDescriptor;)V
 
-    .line 1278
+    .line 1390
     return-void
 .end method
 
@@ -172,19 +172,19 @@
     .end annotation
 
     .prologue
-    .line 1186
+    .line 1298
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/protobuf/Descriptors$EnumDescriptor;-><init>(Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$Descriptor;I)V
 
     return-void
 .end method
 
-.method static synthetic access$900(Lcom/google/protobuf/Descriptors$EnumDescriptor;Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;)V
+.method static synthetic access$1000(Lcom/google/protobuf/Descriptors$EnumDescriptor;Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 1186
+    .line 1298
     invoke-direct {p0, p1}, Lcom/google/protobuf/Descriptors$EnumDescriptor;->setProto(Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;)V
 
     return-void
@@ -195,10 +195,10 @@
     .parameter "proto"
 
     .prologue
-    .line 1282
+    .line 1394
     iput-object p1, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;
 
-    .line 1284
+    .line 1396
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -209,7 +209,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1285
+    .line 1397
     iget-object v1, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->values:[Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     aget-object v1, v1, v0
@@ -219,14 +219,14 @@
     move-result-object v2
 
     #calls: Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->setProto(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)V
-    invoke-static {v1, v2}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->access$2000(Lcom/google/protobuf/Descriptors$EnumValueDescriptor;Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)V
+    invoke-static {v1, v2}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->access$2100(Lcom/google/protobuf/Descriptors$EnumValueDescriptor;Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)V
 
-    .line 1284
+    .line 1396
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1287
+    .line 1399
     :cond_0
     return-void
 .end method
@@ -238,11 +238,11 @@
     .parameter "name"
 
     .prologue
-    .line 1226
+    .line 1338
     iget-object v1, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
-    invoke-static {v1}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
+    invoke-static {v1}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1300(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
 
     move-result-object v1
 
@@ -274,7 +274,7 @@
 
     move-result-object v0
 
-    .line 1228
+    .line 1340
     .local v0, result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     if-eqz v0, :cond_0
 
@@ -282,10 +282,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1229
+    .line 1341
     check-cast v0, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
-    .line 1231
+    .line 1343
     .end local v0           #result:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     :goto_0
     return-object v0
@@ -302,16 +302,16 @@
     .parameter "number"
 
     .prologue
-    .line 1242
+    .line 1354
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
-    invoke-static {v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
+    invoke-static {v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1300(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
 
     move-result-object v0
 
     #getter for: Lcom/google/protobuf/Descriptors$DescriptorPool;->enumValuesByNumber:Ljava/util/Map;
-    invoke-static {v0}, Lcom/google/protobuf/Descriptors$DescriptorPool;->access$1800(Lcom/google/protobuf/Descriptors$DescriptorPool;)Ljava/util/Map;
+    invoke-static {v0}, Lcom/google/protobuf/Descriptors$DescriptorPool;->access$1900(Lcom/google/protobuf/Descriptors$DescriptorPool;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -333,7 +333,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1186
+    .line 1298
     invoke-virtual {p0, p1}, Lcom/google/protobuf/Descriptors$EnumDescriptor;->findValueByNumber(I)Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     move-result-object v0
@@ -345,7 +345,7 @@
     .locals 1
 
     .prologue
-    .line 1210
+    .line 1322
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->containingType:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -355,7 +355,7 @@
     .locals 1
 
     .prologue
-    .line 1207
+    .line 1319
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     return-object v0
@@ -365,7 +365,7 @@
     .locals 1
 
     .prologue
-    .line 1204
+    .line 1316
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->fullName:Ljava/lang/String;
 
     return-object v0
@@ -375,7 +375,7 @@
     .locals 1
 
     .prologue
-    .line 1192
+    .line 1304
     iget v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->index:I
 
     return v0
@@ -385,7 +385,7 @@
     .locals 1
 
     .prologue
-    .line 1198
+    .line 1310
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;
 
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;->getName()Ljava/lang/String;
@@ -399,7 +399,7 @@
     .locals 1
 
     .prologue
-    .line 1213
+    .line 1325
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;
 
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;->getOptions()Lcom/google/protobuf/DescriptorProtos$EnumOptions;
@@ -422,7 +422,7 @@
     .end annotation
 
     .prologue
-    .line 1217
+    .line 1329
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->values:[Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -440,7 +440,7 @@
     .locals 1
 
     .prologue
-    .line 1195
+    .line 1307
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$EnumDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;
 
     return-object v0
@@ -450,7 +450,7 @@
     .locals 1
 
     .prologue
-    .line 1186
+    .line 1298
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumDescriptor;->toProto()Lcom/google/protobuf/DescriptorProtos$EnumDescriptorProto;
 
     move-result-object v0

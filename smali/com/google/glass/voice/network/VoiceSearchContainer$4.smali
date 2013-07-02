@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/voice/network/VoiceSearchContainer;->createEmbeddedParams(Lcom/google/glass/voice/VoiceService;)Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
+    value = Lcom/google/glass/voice/network/VoiceSearchContainer;->createEmbeddedParams(Ljava/util/List;)Lcom/google/android/speech/params/RecognitionEngineParams$EmbeddedParams;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 294
+    .line 299
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$4;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "grammar"
 
     .prologue
-    .line 302
+    .line 307
     return-object p1
 .end method
 
@@ -53,6 +53,6 @@
     .parameter "grammar"
 
     .prologue
-    .line 297
+    .line 302
     return-object p1
 .end method

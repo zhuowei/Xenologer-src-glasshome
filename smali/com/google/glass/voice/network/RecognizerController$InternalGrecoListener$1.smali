@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 634
+    .line 644
     iput-object p1, p0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
     iput-object p2, p0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->val$query:Ljava/lang/String;
@@ -43,379 +43,569 @@
 
 # virtual methods
 .method public run()V
-    .locals 18
+    .locals 26
 
     .prologue
-    .line 638
-    new-instance v13, Lcom/google/glass/util/SearchQueryBuilder;
+    .line 648
+    new-instance v20, Lcom/google/glass/voice/network/SearchQueryBuilder;
 
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->val$query:Ljava/lang/String;
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->val$query:Ljava/lang/String;
 
-    invoke-direct {v13, v15}, Lcom/google/glass/util/SearchQueryBuilder;-><init>(Ljava/lang/String;)V
+    move-object/from16 v22, v0
 
-    .line 639
-    .local v13, sqb:Lcom/google/glass/util/SearchQueryBuilder;
-    invoke-virtual {v13}, Lcom/google/glass/util/SearchQueryBuilder;->addTransportParams()V
+    move-object/from16 v0, v20
 
-    .line 640
-    const-string v15, "persist.search.server"
+    move-object/from16 v1, v22
 
-    const-string v16, ""
+    invoke-direct {v0, v1}, Lcom/google/glass/voice/network/SearchQueryBuilder;-><init>(Ljava/lang/String;)V
 
-    invoke-static/range {v15 .. v16}, Lcom/google/glass/hidden/HiddenSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 649
+    .local v20, sqb:Lcom/google/glass/voice/network/SearchQueryBuilder;
+    invoke-virtual/range {v20 .. v20}, Lcom/google/glass/voice/network/SearchQueryBuilder;->addTransportParams()V
+
+    .line 650
+    const-string v22, "persist.search.server"
+
+    const-string v23, ""
+
+    invoke-static/range {v22 .. v23}, Lcom/google/glass/hidden/HiddenSystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v19
+
+    .line 651
+    .local v19, sandboxId:Ljava/lang/String;
+    invoke-static/range {v19 .. v19}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v22
+
+    if-nez v22, :cond_0
+
+    .line 652
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SearchQueryBuilder;->setSandboxHost(Ljava/lang/String;)V
+
+    .line 656
+    :cond_0
+    new-instance v5, Lorg/apache/http/impl/client/DefaultHttpClient;
+
+    invoke-direct {v5}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
+
+    .line 657
+    .local v5, client:Lorg/apache/http/client/HttpClient;
+    new-instance v17, Lorg/apache/http/client/methods/HttpGet;
+
+    invoke-virtual/range {v20 .. v20}, Lcom/google/glass/voice/network/SearchQueryBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v22
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v22
+
+    invoke-direct {v0, v1}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
+
+    .line 660
+    .local v17, request:Lorg/apache/http/client/methods/HttpGet;
+    new-instance v22, Lcom/google/glass/voice/network/SearchQueryBuilder$LocationHelperImpl;
+
+    invoke-direct/range {v22 .. v22}, Lcom/google/glass/voice/network/SearchQueryBuilder$LocationHelperImpl;-><init>()V
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v22
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/SearchQueryBuilder;->getHttpHeaders(Lcom/google/android/speech/helper/SpeechLocationHelper;)Ljava/util/Map;
 
     move-result-object v12
 
-    .line 641
-    .local v12, sandboxId:Ljava/lang/String;
-    invoke-static {v12}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 662
+    .local v12, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    invoke-interface {v12}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result v15
+    move-result-object v22
 
-    if-nez v15, :cond_0
-
-    .line 642
-    invoke-virtual {v13, v12}, Lcom/google/glass/util/SearchQueryBuilder;->setSandboxHost(Ljava/lang/String;)V
-
-    .line 646
-    :cond_0
-    new-instance v1, Lorg/apache/http/impl/client/DefaultHttpClient;
-
-    invoke-direct {v1}, Lorg/apache/http/impl/client/DefaultHttpClient;-><init>()V
-
-    .line 647
-    .local v1, client:Lorg/apache/http/client/HttpClient;
-    new-instance v10, Lorg/apache/http/client/methods/HttpGet;
-
-    invoke-virtual {v13}, Lcom/google/glass/util/SearchQueryBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v15
-
-    invoke-direct {v10, v15}, Lorg/apache/http/client/methods/HttpGet;-><init>(Ljava/lang/String;)V
-
-    .line 648
-    .local v10, request:Lorg/apache/http/client/methods/HttpGet;
-    new-instance v15, Lcom/google/glass/util/SearchQueryBuilder$LocationHelperImpl;
-
-    invoke-direct {v15}, Lcom/google/glass/util/SearchQueryBuilder$LocationHelperImpl;-><init>()V
-
-    invoke-virtual {v13, v15}, Lcom/google/glass/util/SearchQueryBuilder;->getHttpHeaders(Lcom/google/android/speech/helper/SpeechLocationHelper;)Ljava/util/Map;
-
-    move-result-object v6
-
-    .line 650
-    .local v6, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-interface {v6}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v15
-
-    invoke-interface {v15}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    .local v7, i$:Ljava/util/Iterator;
-    :goto_0
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v15
-
-    if-eqz v15, :cond_1
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Ljava/util/Map$Entry;
-
-    .line 651
-    .local v4, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v15
-
-    check-cast v15, Ljava/lang/String;
-
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v16
-
-    check-cast v16, Ljava/lang/String;
-
-    move-object/from16 v0, v16
-
-    invoke-virtual {v10, v15, v0}, Lorg/apache/http/client/methods/HttpGet;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 654
-    .end local v4           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    :cond_1
-    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Ljava/lang/String;
-
-    move-result-object v15
-
-    new-instance v16, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v17, "Sending GWS request: "
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    invoke-virtual {v13}, Lcom/google/glass/util/SearchQueryBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v16
-
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v16
-
-    invoke-static/range {v15 .. v16}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 657
-    :try_start_0
-    invoke-interface {v1, v10}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
-
-    move-result-object v11
-
-    .line 659
-    .local v11, response:Lorg/apache/http/HttpResponse;
-    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+    invoke-interface/range {v22 .. v22}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v14
 
-    .line 660
-    .local v14, status:Lorg/apache/http/StatusLine;
-    invoke-interface {v14}, Lorg/apache/http/StatusLine;->getStatusCode()I
+    .local v14, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v15
+    move-result v22
 
-    const/16 v16, 0xc8
+    if-eqz v22, :cond_1
 
-    move/from16 v0, v16
+    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    if-eq v15, v0, :cond_2
+    move-result-object v9
 
-    .line 661
-    new-instance v15, Ljava/io/IOException;
+    check-cast v9, Ljava/util/Map$Entry;
 
-    new-instance v16, Ljava/lang/StringBuilder;
+    .line 663
+    .local v9, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
+    invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    invoke-direct/range {v16 .. v16}, Ljava/lang/StringBuilder;-><init>()V
+    move-result-object v22
 
-    const-string v17, "Invalid response from server: "
+    check-cast v22, Ljava/lang/String;
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v9}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v16
+    move-result-object v23
 
-    invoke-virtual {v14}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    check-cast v23, Ljava/lang/String;
 
-    move-result-object v17
+    move-object/from16 v0, v17
 
-    invoke-virtual/range {v16 .. v17}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-object/from16 v1, v22
 
-    move-result-object v16
+    move-object/from16 v2, v23
 
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1, v2}, Lorg/apache/http/client/methods/HttpGet;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v16
+    goto :goto_0
 
-    invoke-direct/range {v15 .. v16}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    .line 666
+    .end local v9           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
+    :cond_1
+    move-object/from16 v0, p0
 
-    throw v15
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->this$0:Lcom/google/glass/voice/network/RecognizerController;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/google/glass/voice/network/RecognizerController;->cookies:Lcom/google/glass/voice/network/Cookies;
+    invoke-static/range {v22 .. v22}, Lcom/google/glass/voice/network/RecognizerController;->access$800(Lcom/google/glass/voice/network/RecognizerController;)Lcom/google/glass/voice/network/Cookies;
+
+    move-result-object v22
+
+    invoke-virtual/range {v20 .. v20}, Lcom/google/glass/voice/network/SearchQueryBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-virtual/range {v22 .. v23}, Lcom/google/glass/voice/network/Cookies;->getCookie(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 667
+    .local v4, beforeCookie:Ljava/lang/String;
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v22
+
+    if-nez v22, :cond_2
+
+    .line 668
+    const-string v22, "Cookie"
+
+    move-object/from16 v0, v17
+
+    move-object/from16 v1, v22
+
+    invoke-virtual {v0, v1, v4}, Lorg/apache/http/client/methods/HttpGet;->setHeader(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 671
+    :cond_2
+    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Lcom/google/glass/util/FormattingLogger;
+
+    move-result-object v22
+
+    const-string v23, "Sending GWS request: %s"
+
+    const/16 v24, 0x1
+
+    move/from16 v0, v24
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    move-object/from16 v24, v0
+
+    const/16 v25, 0x0
+
+    aput-object v20, v24, v25
+
+    invoke-interface/range {v22 .. v24}, Lcom/google/glass/util/FormattingLogger;->d(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 674
+    :try_start_0
+    move-object/from16 v0, v17
+
+    invoke-interface {v5, v0}, Lorg/apache/http/client/HttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;
+
+    move-result-object v18
+
+    .line 676
+    .local v18, response:Lorg/apache/http/HttpResponse;
+    invoke-interface/range {v18 .. v18}, Lorg/apache/http/HttpResponse;->getStatusLine()Lorg/apache/http/StatusLine;
+
+    move-result-object v21
+
+    .line 677
+    .local v21, status:Lorg/apache/http/StatusLine;
+    invoke-interface/range {v21 .. v21}, Lorg/apache/http/StatusLine;->getStatusCode()I
+
+    move-result v22
+
+    const/16 v23, 0xc8
+
+    move/from16 v0, v22
+
+    move/from16 v1, v23
+
+    if-eq v0, v1, :cond_3
+
+    .line 678
+    new-instance v22, Ljava/io/IOException;
+
+    new-instance v23, Ljava/lang/StringBuilder;
+
+    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v24, "Invalid response from server: "
+
+    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v23
+
+    invoke-virtual/range {v21 .. v21}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v24
+
+    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v23
+
+    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v23
+
+    invoke-direct/range {v22 .. v23}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v22
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 678
-    .end local v11           #response:Lorg/apache/http/HttpResponse;
-    .end local v14           #status:Lorg/apache/http/StatusLine;
+    .line 706
+    .end local v18           #response:Lorg/apache/http/HttpResponse;
+    .end local v21           #status:Lorg/apache/http/StatusLine;
     :catch_0
-    move-exception v3
+    move-exception v8
 
-    .line 679
-    .local v3, e:Ljava/io/IOException;
+    .line 707
+    .local v8, e:Ljava/io/IOException;
     :try_start_1
-    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Lcom/google/glass/util/FormattingLogger;
 
-    move-result-object v15
+    move-result-object v22
 
-    const-string v16, "Exception sending GWS request"
+    const-string v23, "Exception sending GWS request"
 
-    move-object/from16 v0, v16
+    const/16 v24, 0x0
 
-    invoke-static {v15, v0, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move/from16 v0, v24
 
-    .line 680
+    new-array v0, v0, [Ljava/lang/Object;
+
+    move-object/from16 v24, v0
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v23
+
+    move-object/from16 v2, v24
+
+    invoke-interface {v0, v8, v1, v2}, Lcom/google/glass/util/FormattingLogger;->e(Ljava/lang/Throwable;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 708
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
-    #getter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
-    invoke-static {v15}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$800(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;)Lcom/google/glass/voice/network/VoiceSearchUi;
+    move-object/from16 v22, v0
 
-    move-result-object v15
+    #getter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->voiceInputCallback:Lcom/google/glass/voice/network/VoiceInputCallback;
+    invoke-static/range {v22 .. v22}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$900(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;)Lcom/google/glass/voice/network/VoiceInputCallback;
 
-    invoke-interface {v15}, Lcom/google/glass/voice/network/VoiceSearchUi;->showDone()V
+    move-result-object v22
+
+    invoke-interface/range {v22 .. v22}, Lcom/google/glass/voice/network/VoiceInputCallback;->showDone()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 682
+    .line 710
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
-    const/16 v16, 0x0
+    move-object/from16 v22, v0
+
+    const/16 v23, 0x0
 
     #setter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->sendingThroughGws:Z
-    invoke-static/range {v15 .. v16}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$902(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;Z)Z
+    invoke-static/range {v22 .. v23}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$1002(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;Z)Z
 
-    .line 684
-    .end local v3           #e:Ljava/io/IOException;
+    .line 712
+    .end local v8           #e:Ljava/io/IOException;
     :goto_1
     return-void
 
-    .line 665
-    .restart local v11       #response:Lorg/apache/http/HttpResponse;
-    .restart local v14       #status:Lorg/apache/http/StatusLine;
-    :cond_2
+    .line 682
+    .restart local v18       #response:Lorg/apache/http/HttpResponse;
+    .restart local v21       #status:Lorg/apache/http/StatusLine;
+    :cond_3
     :try_start_2
-    invoke-interface {v11}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+    invoke-interface/range {v18 .. v18}, Lorg/apache/http/HttpResponse;->getAllHeaders()[Lorg/apache/http/Header;
+
+    move-result-object v3
+
+    .line 683
+    .local v3, allHeaders:[Lorg/apache/http/Header;
+    new-instance v6, Ljava/util/ArrayList;
+
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
+
+    .line 684
+    .local v6, cookieList:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    const/4 v13, 0x0
+
+    .local v13, i:I
+    :goto_2
+    array-length v0, v3
+
+    move/from16 v22, v0
+
+    move/from16 v0, v22
+
+    if-ge v13, v0, :cond_5
+
+    .line 685
+    aget-object v11, v3, v13
+
+    .line 686
+    .local v11, h:Lorg/apache/http/Header;
+    invoke-interface {v11}, Lorg/apache/http/Header;->getName()Ljava/lang/String;
+
+    move-result-object v22
+
+    const-string v23, "Set-Cookie"
+
+    invoke-virtual/range {v22 .. v23}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v22
+
+    if-eqz v22, :cond_4
+
+    .line 687
+    invoke-interface {v11}, Lorg/apache/http/Header;->getValue()Ljava/lang/String;
+
+    move-result-object v22
+
+    move-object/from16 v0, v22
+
+    invoke-interface {v6, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 684
+    :cond_4
+    add-int/lit8 v13, v13, 0x1
+
+    goto :goto_2
+
+    .line 690
+    .end local v11           #h:Lorg/apache/http/Header;
+    :cond_5
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+
+    move-object/from16 v22, v0
+
+    move-object/from16 v0, v22
+
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->this$0:Lcom/google/glass/voice/network/RecognizerController;
+
+    move-object/from16 v22, v0
+
+    #getter for: Lcom/google/glass/voice/network/RecognizerController;->cookies:Lcom/google/glass/voice/network/Cookies;
+    invoke-static/range {v22 .. v22}, Lcom/google/glass/voice/network/RecognizerController;->access$800(Lcom/google/glass/voice/network/RecognizerController;)Lcom/google/glass/voice/network/Cookies;
+
+    move-result-object v22
+
+    invoke-virtual/range {v20 .. v20}, Lcom/google/glass/voice/network/SearchQueryBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v23
+
+    move-object/from16 v0, v22
+
+    move-object/from16 v1, v23
+
+    invoke-virtual {v0, v1, v6}, Lcom/google/glass/voice/network/Cookies;->setCookiesFromSetCookieHeaders(Ljava/lang/String;Ljava/util/List;)V
+
+    .line 693
+    invoke-interface/range {v18 .. v18}, Lorg/apache/http/HttpResponse;->getEntity()Lorg/apache/http/HttpEntity;
+
+    move-result-object v22
+
+    invoke-interface/range {v22 .. v22}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
 
     move-result-object v15
 
-    invoke-interface {v15}, Lorg/apache/http/HttpEntity;->getContent()Ljava/io/InputStream;
+    .line 694
+    .local v15, is:Ljava/io/InputStream;
+    new-instance v22, Ljava/io/InputStreamReader;
 
-    move-result-object v8
+    sget-object v23, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    .line 666
-    .local v8, is:Ljava/io/InputStream;
-    new-instance v15, Ljava/io/InputStreamReader;
+    move-object/from16 v0, v22
 
-    sget-object v16, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    move-object/from16 v1, v23
+
+    invoke-direct {v0, v15, v1}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+
+    invoke-static/range {v22 .. v22}, Lcom/google/common/io/CharStreams;->toString(Ljava/lang/Readable;)Ljava/lang/String;
+
+    move-result-object v10
+
+    .line 696
+    .local v10, fullResponse:Ljava/lang/String;
+    new-instance v16, Lcom/google/glass/voice/network/PinholePage;
+
+    invoke-direct/range {v16 .. v16}, Lcom/google/glass/voice/network/PinholePage;-><init>()V
+
+    .line 697
+    .local v16, pinholePage:Lcom/google/glass/voice/network/PinholePage;
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v10}, Lcom/google/glass/voice/network/PinholePage;->updateDirectlyFromFullGwsResponse(Ljava/lang/String;)V
+
+    .line 698
+    const-string v22, "ans0"
 
     move-object/from16 v0, v16
 
-    invoke-direct {v15, v8, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
+    move-object/from16 v1, v22
 
-    invoke-static {v15}, Lcom/google/common/io/CharStreams;->toString(Ljava/lang/Readable;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/PinholePage;->getPinholeDocumentByType(Ljava/lang/String;)Lcom/google/glass/voice/network/PinholePage$PinholeDocument;
 
-    move-result-object v5
+    move-result-object v7
 
-    .line 668
-    .local v5, fullResponse:Ljava/lang/String;
-    new-instance v9, Lcom/google/glass/voice/network/PinholePage;
+    .line 700
+    .local v7, doc:Lcom/google/glass/voice/network/PinholePage$PinholeDocument;
+    if-eqz v7, :cond_6
 
-    invoke-direct {v9}, Lcom/google/glass/voice/network/PinholePage;-><init>()V
+    .line 701
+    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Lcom/google/glass/util/FormattingLogger;
 
-    .line 669
-    .local v9, pinholePage:Lcom/google/glass/voice/network/PinholePage;
-    invoke-virtual {v9, v5}, Lcom/google/glass/voice/network/PinholePage;->updateDirectlyFromFullGwsResponse(Ljava/lang/String;)V
+    move-result-object v22
 
-    .line 670
-    const-string v15, "ans0"
+    const-string v23, "Got a doc from the pinhole results."
 
-    invoke-virtual {v9, v15}, Lcom/google/glass/voice/network/PinholePage;->getPinholeDocumentByType(Ljava/lang/String;)Lcom/google/glass/voice/network/PinholePage$PinholeDocument;
+    const/16 v24, 0x0
 
-    move-result-object v2
+    move/from16 v0, v24
 
-    .line 672
-    .local v2, doc:Lcom/google/glass/voice/network/PinholePage$PinholeDocument;
-    if-eqz v2, :cond_3
+    new-array v0, v0, [Ljava/lang/Object;
 
-    .line 673
-    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Ljava/lang/String;
+    move-object/from16 v24, v0
 
-    move-result-object v15
+    invoke-interface/range {v22 .. v24}, Lcom/google/glass/util/FormattingLogger;->d(Ljava/lang/String;[Ljava/lang/Object;)V
 
-    const-string v16, "Got a doc from the pinhole results."
-
-    invoke-static/range {v15 .. v16}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 674
+    .line 702
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
-    #getter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
-    invoke-static {v15}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$800(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;)Lcom/google/glass/voice/network/VoiceSearchUi;
+    move-object/from16 v22, v0
 
-    move-result-object v15
+    #getter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->voiceInputCallback:Lcom/google/glass/voice/network/VoiceInputCallback;
+    invoke-static/range {v22 .. v22}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$900(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;)Lcom/google/glass/voice/network/VoiceInputCallback;
 
-    invoke-virtual {v2}, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->getText()Ljava/lang/CharSequence;
+    move-result-object v22
 
-    move-result-object v16
+    invoke-virtual {v7}, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->getText()Ljava/lang/CharSequence;
 
-    invoke-interface/range {v16 .. v16}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    move-result-object v23
 
-    move-result-object v16
+    invoke-interface/range {v23 .. v23}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    invoke-interface/range {v15 .. v16}, Lcom/google/glass/voice/network/VoiceSearchUi;->onHtmlAnswerCardResult(Ljava/lang/String;)V
+    move-result-object v23
+
+    invoke-interface/range {v22 .. v23}, Lcom/google/glass/voice/network/VoiceInputCallback;->onHtmlAnswerCardResult(Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 682
-    :goto_2
+    .line 710
+    :goto_3
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
-    const/16 v16, 0x0
+    move-object/from16 v22, v0
+
+    const/16 v23, 0x0
 
     #setter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->sendingThroughGws:Z
-    invoke-static/range {v15 .. v16}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$902(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;Z)Z
+    invoke-static/range {v22 .. v23}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$1002(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;Z)Z
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 676
-    :cond_3
+    .line 704
+    :cond_6
     :try_start_3
     move-object/from16 v0, p0
 
-    iget-object v15, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
+    iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
-    #getter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->voiceSearchUi:Lcom/google/glass/voice/network/VoiceSearchUi;
-    invoke-static {v15}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$800(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;)Lcom/google/glass/voice/network/VoiceSearchUi;
+    move-object/from16 v22, v0
 
-    move-result-object v15
+    #getter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->voiceInputCallback:Lcom/google/glass/voice/network/VoiceInputCallback;
+    invoke-static/range {v22 .. v22}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$900(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;)Lcom/google/glass/voice/network/VoiceInputCallback;
 
-    invoke-interface {v15}, Lcom/google/glass/voice/network/VoiceSearchUi;->showDone()V
+    move-result-object v22
+
+    invoke-interface/range {v22 .. v22}, Lcom/google/glass/voice/network/VoiceInputCallback;->showDone()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
 
-    goto :goto_2
+    goto :goto_3
 
-    .line 682
-    .end local v2           #doc:Lcom/google/glass/voice/network/PinholePage$PinholeDocument;
-    .end local v5           #fullResponse:Ljava/lang/String;
-    .end local v8           #is:Ljava/io/InputStream;
-    .end local v9           #pinholePage:Lcom/google/glass/voice/network/PinholePage;
-    .end local v11           #response:Lorg/apache/http/HttpResponse;
-    .end local v14           #status:Lorg/apache/http/StatusLine;
+    .line 710
+    .end local v3           #allHeaders:[Lorg/apache/http/Header;
+    .end local v6           #cookieList:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .end local v7           #doc:Lcom/google/glass/voice/network/PinholePage$PinholeDocument;
+    .end local v10           #fullResponse:Ljava/lang/String;
+    .end local v13           #i:I
+    .end local v15           #is:Ljava/io/InputStream;
+    .end local v16           #pinholePage:Lcom/google/glass/voice/network/PinholePage;
+    .end local v18           #response:Lorg/apache/http/HttpResponse;
+    .end local v21           #status:Lorg/apache/http/StatusLine;
     :catchall_0
-    move-exception v15
+    move-exception v22
 
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener$1;->this$1:Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;
 
-    move-object/from16 v16, v0
+    move-object/from16 v23, v0
 
-    const/16 v17, 0x0
+    const/16 v24, 0x0
 
     #setter for: Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->sendingThroughGws:Z
-    invoke-static/range {v16 .. v17}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$902(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;Z)Z
+    invoke-static/range {v23 .. v24}, Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;->access$1002(Lcom/google/glass/voice/network/RecognizerController$InternalGrecoListener;Z)Z
 
-    throw v15
+    throw v22
 .end method

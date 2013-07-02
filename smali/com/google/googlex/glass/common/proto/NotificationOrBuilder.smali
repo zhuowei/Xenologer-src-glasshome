@@ -73,6 +73,12 @@
 .method public abstract getOperation()Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 .end method
 
+.method public abstract getSource()Ljava/lang/String;
+.end method
+
+.method public abstract getSourceBytes()Lcom/google/protobuf/ByteString;
+.end method
+
 .method public abstract getTimestamp()J
 .end method
 
@@ -134,6 +140,9 @@
 .end method
 
 .method public abstract hasOperation()Z
+.end method
+
+.method public abstract hasSource()Z
 .end method
 
 .method public abstract hasTimestamp()Z

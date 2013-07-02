@@ -8,6 +8,9 @@
 
 .field private static final MAX_QUEUE_FILE_SIZE:J = 0x9c4000L
 
+#the value of this static final field might be set in the static constructor
+.field private static final PERF_STATS_LOGCAT_INTERVAL:J = 0x0L
+
 .field private static final QUEUE_FILE:Ljava/lang/String; = "user_events_1"
 
 .field private static final SERIAL_KEY:Ljava/lang/String; = "serial"
@@ -40,7 +43,11 @@
 
 .field private executor:Ljava/util/concurrent/ExecutorService;
 
+.field private isStarted:Z
+
 .field private lastFlushTime:J
+
+.field private lastPerfStatsLogcatTime:J
 
 .field private requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
@@ -56,7 +63,7 @@
     .locals 3
 
     .prologue
-    .line 54
+    .line 58
     const-class v0, Lcom/google/glass/logging/UserEventService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -65,7 +72,7 @@
 
     sput-object v0, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
-    .line 83
+    .line 87
     sget-object v0, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1
@@ -76,6 +83,17 @@
 
     sput-wide v0, Lcom/google/glass/logging/UserEventService;->TIME_BETWEEN_FLUSHES_MS:J
 
+    .line 90
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    const-wide/16 v1, 0xf
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toMillis(J)J
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/google/glass/logging/UserEventService;->PERF_STATS_LOGCAT_INTERVAL:J
+
     return-void
 .end method
 
@@ -83,7 +101,7 @@
     .locals 0
 
     .prologue
-    .line 53
+    .line 57
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
     return-void
@@ -93,7 +111,7 @@
     .locals 1
 
     .prologue
-    .line 53
+    .line 57
     sget-object v0, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -105,7 +123,7 @@
     .parameter "x1"
 
     .prologue
-    .line 53
+    .line 57
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
     return-object p1
@@ -117,7 +135,7 @@
     .parameter "x1"
 
     .prologue
-    .line 53
+    .line 57
     invoke-direct {p0, p1}, Lcom/google/glass/logging/UserEventService;->readEventsFromDisk(Landroid/content/Context;)Ljava/util/List;
 
     move-result-object v0
@@ -125,62 +143,294 @@
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
+.method static synthetic access$300(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 57
+    invoke-direct {p0, p1}, Lcom/google/glass/logging/UserEventService;->addPerformanceStats(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/google/glass/logging/UserEventService;)J
+    .locals 2
+    .parameter "x0"
+
+    .prologue
+    .line 57
+    iget-wide v0, p0, Lcom/google/glass/logging/UserEventService;->lastPerfStatsLogcatTime:J
+
+    return-wide v0
+.end method
+
+.method static synthetic access$402(Lcom/google/glass/logging/UserEventService;J)J
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 53
+    .line 57
+    iput-wide p1, p0, Lcom/google/glass/logging/UserEventService;->lastPerfStatsLogcatTime:J
+
+    return-wide p1
+.end method
+
+.method static synthetic access$500()J
+    .locals 2
+
+    .prologue
+    .line 57
+    sget-wide v0, Lcom/google/glass/logging/UserEventService;->PERF_STATS_LOGCAT_INTERVAL:J
+
+    return-wide v0
+.end method
+
+.method static synthetic access$600(Lcom/google/glass/logging/UserEventService;Lcom/google/common/logging/GlassUserEventProto;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 57
     invoke-direct {p0, p1}, Lcom/google/glass/logging/UserEventService;->addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
 
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/google/glass/logging/UserEventService;Z)V
+.method static synthetic access$700(Lcom/google/glass/logging/UserEventService;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 53
+    .line 57
     invoke-direct {p0, p1}, Lcom/google/glass/logging/UserEventService;->logQueued(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$500(Lcom/google/glass/logging/UserEventService;)Ljava/lang/String;
+.method static synthetic access$800(Lcom/google/glass/logging/UserEventService;)Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 57
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$502(Lcom/google/glass/logging/UserEventService;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$802(Lcom/google/glass/logging/UserEventService;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 53
+    .line 57
     iput-object p1, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
     return-object p1
 .end method
 
-.method static synthetic access$600(Lcom/google/glass/logging/UserEventService;)Landroid/content/SharedPreferences;
+.method static synthetic access$900(Lcom/google/glass/logging/UserEventService;)Landroid/content/SharedPreferences;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 53
+    .line 57
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->sharedPreferences:Landroid/content/SharedPreferences;
 
     return-object v0
+.end method
+
+.method private addPerformanceStats(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto;
+    .locals 10
+    .parameter "userEvent"
+
+    .prologue
+    .line 334
+    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
+
+    .line 335
+    invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->newBuilder()Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getBoardTemperature()J
+
+    move-result-wide v7
+
+    long-to-int v7, v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBoardTemperatureMilliCentigrade(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getBatteryStateOfChargeUah()J
+
+    move-result-wide v7
+
+    long-to-int v7, v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryStateOfChargeUah(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getBatteryChargeWhenFullUah()J
+
+    move-result-wide v7
+
+    long-to-int v7, v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryChargeWhenFullUah(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getReportedBatteryStateOfChargePercent()J
+
+    move-result-wide v7
+
+    long-to-int v7, v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setReportedSoc(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getBatteryTemperature()J
+
+    move-result-wide v7
+
+    long-to-int v7, v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setBatteryTemperatureMilliCentigrade(I)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v6
+
+    invoke-static {}, Lcom/google/glass/logging/PerformanceUtil;->getTotalBytesSent()J
+
+    move-result-wide v7
+
+    invoke-virtual {v6, v7, v8}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setTotalBytesSent(J)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    move-result-object v0
+
+    .line 342
+    .local v0, builder:Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+    new-instance v1, Ljava/util/TreeMap;
+
+    invoke-direct {v1}, Ljava/util/TreeMap;-><init>()V
+
+    .line 343
+    .local v1, cpuFrequencyTime:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Ljava/lang/Long;Ljava/lang/Long;>;"
+    invoke-static {v1}, Lcom/google/glass/logging/PerformanceUtil;->getFrequencyStats(Ljava/util/Map;)V
+
+    .line 344
+    const-wide/16 v4, 0x0
+
+    .line 345
+    .local v4, totalCpuTime:J
+    invoke-virtual {v1}, Ljava/util/TreeMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v6
+
+    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    .local v3, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_0
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Map$Entry;
+
+    .line 346
+    .local v2, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Long;Ljava/lang/Long;>;"
+    invoke-static {}, Lcom/google/common/logging/GlassUserEventFrequencyStat;->newBuilder()Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;
+
+    move-result-object v7
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Long;
+
+    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v8
+
+    invoke-virtual {v7, v8, v9}, Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;->setFrequencyHz(J)Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;
+
+    move-result-object v7
+
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Long;
+
+    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v8
+
+    invoke-virtual {v7, v8, v9}, Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;->setDurationMs(J)Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;
+
+    move-result-object v6
+
+    invoke-virtual {v0, v6}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->addFrequencyStat(Lcom/google/common/logging/GlassUserEventFrequencyStat$Builder;)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    .line 349
+    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/Long;
+
+    invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v6
+
+    add-long/2addr v4, v6
+
+    .line 350
+    goto :goto_0
+
+    .line 351
+    .end local v2           #entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/Long;Ljava/lang/Long;>;"
+    :cond_0
+    invoke-virtual {v0, v4, v5}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->setTotalKernelMs(J)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
+
+    .line 352
+    invoke-static {p1}, Lcom/google/common/logging/GlassUserEventProto;->newBuilder(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto$Builder;
+
+    move-result-object v6
+
+    invoke-virtual {v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->build()Lcom/google/common/logging/GlassUserEventPerformanceStats;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Lcom/google/common/logging/GlassUserEventProto$Builder;->setPerformanceStats(Lcom/google/common/logging/GlassUserEventPerformanceStats;)Lcom/google/common/logging/GlassUserEventProto$Builder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
+
+    move-result-object v6
+
+    return-object v6
 .end method
 
 .method private addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
@@ -188,12 +438,12 @@
     .parameter "userEvent"
 
     .prologue
-    .line 288
+    .line 359
     invoke-direct {p0}, Lcom/google/glass/logging/UserEventService;->getQueueFileSize()J
 
     move-result-wide v0
 
-    .line 289
+    .line 360
     .local v0, queueFileSize:J
     iget-object v2, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
@@ -211,7 +461,7 @@
 
     if-ltz v2, :cond_2
 
-    .line 293
+    .line 364
     :cond_0
     sget-object v2, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
@@ -257,7 +507,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 297
+    .line 368
     sget-object v2, Lcom/google/glass/logging/UserEventAction;->USER_EVENT_QUEUE_FULL:Lcom/google/glass/logging/UserEventAction;
 
     iget-object v2, v2, Lcom/google/glass/logging/UserEventAction;->action:Ljava/lang/String;
@@ -272,25 +522,25 @@
 
     if-nez v2, :cond_1
 
-    .line 298
+    .line 369
     iget v2, p0, Lcom/google/glass/logging/UserEventService;->eventQueueFullCount:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, p0, Lcom/google/glass/logging/UserEventService;->eventQueueFullCount:I
 
-    .line 306
+    .line 377
     :cond_1
     :goto_0
     return-void
 
-    .line 302
+    .line 373
     :cond_2
     iget-object v2, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
     invoke-interface {v2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 305
+    .line 376
     invoke-direct {p0, p1}, Lcom/google/glass/logging/UserEventService;->saveEventToDisk(Lcom/google/common/logging/GlassUserEventProto;)V
 
     goto :goto_0
@@ -301,7 +551,7 @@
     .parameter "threadName"
 
     .prologue
-    .line 185
+    .line 201
     new-instance v0, Lcom/google/glass/util/PriorityThreadFactory;
 
     const/4 v1, 0x1
@@ -319,15 +569,15 @@
     .locals 1
 
     .prologue
-    .line 474
+    .line 551
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 475
+    .line 552
     const-string v0, "user_events_1"
 
     invoke-virtual {p0, v0}, Lcom/google/glass/logging/UserEventService;->deleteFile(Ljava/lang/String;)Z
 
-    .line 476
+    .line 553
     return-void
 .end method
 
@@ -335,10 +585,10 @@
     .locals 2
 
     .prologue
-    .line 390
+    .line 467
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 392
+    .line 469
     const-string v0, "user_events_1"
 
     invoke-virtual {p0, v0}, Lcom/google/glass/logging/UserEventService;->getFileStreamPath(Ljava/lang/String;)Ljava/io/File;
@@ -357,7 +607,7 @@
     .parameter "context"
 
     .prologue
-    .line 551
+    .line 628
     const-string v3, "connectivity"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -366,24 +616,24 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 553
+    .line 630
     .local v0, cm:Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v2
 
-    .line 554
+    .line 631
     .local v2, ni:Landroid/net/NetworkInfo;
     if-nez v2, :cond_0
 
     const/4 v1, 0x0
 
-    .line 555
+    .line 632
     .local v1, isConnected:Z
     :goto_0
     return v1
 
-    .line 554
+    .line 631
     .end local v1           #isConnected:Z
     :cond_0
     invoke-virtual {v2}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -399,7 +649,7 @@
     .parameter "isForced"
 
     .prologue
-    .line 247
+    .line 273
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/google/glass/logging/UserEventService$3;
@@ -408,7 +658,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    .line 254
+    .line 302
     return-void
 .end method
 
@@ -417,10 +667,10 @@
     .parameter "isForced"
 
     .prologue
-    .line 315
+    .line 386
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 318
+    .line 389
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
@@ -429,12 +679,12 @@
 
     if-eqz v7, :cond_1
 
-    .line 386
+    .line 463
     :cond_0
     :goto_0
     return-void
 
-    .line 323
+    .line 394
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/logging/UserEventService;->getApplicationContext()Landroid/content/Context;
 
@@ -446,7 +696,7 @@
 
     if-nez v7, :cond_2
 
-    .line 325
+    .line 396
     sget-object v7, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     const-string v8, "Cannot send user events as there is no data connection."
@@ -455,8 +705,10 @@
 
     goto :goto_0
 
-    .line 330
+    .line 401
     :cond_2
+    if-nez p1, :cond_3
+
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->battery:Lcom/google/glass/util/BatteryHelper;
 
     invoke-virtual {v7}, Lcom/google/glass/util/BatteryHelper;->isPowered()Z
@@ -465,16 +717,16 @@
 
     if-nez v7, :cond_3
 
-    .line 332
+    .line 402
     sget-object v7, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
-    const-string v8, "Cannot send user events as the device is not plugged in."
+    const-string v8, "Cannot send user events as the device is not plugged in, log is not forced."
 
     invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 
-    .line 337
+    .line 407
     :cond_3
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
@@ -484,7 +736,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 338
+    .line 408
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->sharedPreferences:Landroid/content/SharedPreferences;
 
     const-string v8, "session"
@@ -497,7 +749,7 @@
 
     iput-object v7, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
-    .line 339
+    .line 409
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -506,10 +758,10 @@
 
     if-eqz v7, :cond_4
 
-    .line 340
+    .line 410
     invoke-direct {p0}, Lcom/google/glass/logging/UserEventService;->sendBlockingGetSessionIdRequest()V
 
-    .line 344
+    .line 414
     :cond_4
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
@@ -519,7 +771,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 345
+    .line 415
     sget-object v7, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     const-string v8, "Cannot send user events as we have no session ID."
@@ -528,13 +780,13 @@
 
     goto :goto_0
 
-    .line 351
+    .line 421
     :cond_5
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 352
+    .line 422
     .local v3, now:J
     if-nez p1, :cond_6
 
@@ -548,7 +800,7 @@
 
     if-lez v7, :cond_0
 
-    .line 353
+    .line 423
     :cond_6
     sget-object v7, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
@@ -556,10 +808,10 @@
 
     invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 354
+    .line 424
     iput-wide v3, p0, Lcom/google/glass/logging/UserEventService;->lastFlushTime:J
 
-    .line 356
+    .line 426
     const-string v7, "ro.build.display.id"
 
     const-string v8, "unknown build version"
@@ -568,7 +820,7 @@
 
     move-result-object v5
 
-    .line 358
+    .line 428
     .local v5, softwareVersion:Ljava/lang/String;
     new-instance v7, Lcom/google/glass/logging/Util;
 
@@ -586,13 +838,13 @@
 
     move-result-object v1
 
-    .line 362
+    .line 432
     .local v1, hardwareVersion:Ljava/lang/String;
     iget v7, p0, Lcom/google/glass/logging/UserEventService;->eventQueueFullCount:I
 
     if-lez v7, :cond_7
 
-    .line 363
+    .line 433
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->newBuilder()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v7
@@ -627,7 +879,7 @@
 
     move-result-object v6
 
-    .line 367
+    .line 437
     .local v6, userEvent:Lcom/google/common/logging/GlassUserEventProto;
     invoke-virtual {p0, v6}, Lcom/google/glass/logging/UserEventService;->addSerial(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto;
 
@@ -635,14 +887,44 @@
 
     invoke-direct {p0, v7, v5, v1}, Lcom/google/glass/logging/UserEventService;->sendReportUserEventRequest(Lcom/google/common/logging/GlassUserEventProto;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 368
+    .line 438
     const/4 v7, 0x0
 
     iput v7, p0, Lcom/google/glass/logging/UserEventService;->eventQueueFullCount:I
 
-    .line 373
+    .line 442
     .end local v6           #userEvent:Lcom/google/common/logging/GlassUserEventProto;
     :cond_7
+    if-eqz p1, :cond_8
+
+    .line 443
+    invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->newBuilder()Lcom/google/common/logging/GlassUserEventProto$Builder;
+
+    move-result-object v7
+
+    sget-object v8, Lcom/google/glass/logging/UserEventAction;->FORCE_EVENT_LOG_FLUSH:Lcom/google/glass/logging/UserEventAction;
+
+    iget-object v8, v8, Lcom/google/glass/logging/UserEventAction;->action:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Lcom/google/common/logging/GlassUserEventProto$Builder;->setEventType(Ljava/lang/String;)Lcom/google/common/logging/GlassUserEventProto$Builder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
+
+    move-result-object v6
+
+    .line 445
+    .restart local v6       #userEvent:Lcom/google/common/logging/GlassUserEventProto;
+    invoke-virtual {p0, v6}, Lcom/google/glass/logging/UserEventService;->addSerial(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto;
+
+    move-result-object v7
+
+    invoke-direct {p0, v7, v5, v1}, Lcom/google/glass/logging/UserEventService;->sendReportUserEventRequest(Lcom/google/common/logging/GlassUserEventProto;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 450
+    .end local v6           #userEvent:Lcom/google/common/logging/GlassUserEventProto;
+    :cond_8
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -655,7 +937,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_8
+    if-eqz v7, :cond_9
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -663,25 +945,25 @@
 
     check-cast v0, Lcom/google/common/logging/GlassUserEventProto;
 
-    .line 374
+    .line 451
     .local v0, e:Lcom/google/common/logging/GlassUserEventProto;
     invoke-direct {p0, v0, v5, v1}, Lcom/google/glass/logging/UserEventService;->sendReportUserEventRequest(Lcom/google/common/logging/GlassUserEventProto;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
 
-    .line 378
+    .line 455
     .end local v0           #e:Lcom/google/common/logging/GlassUserEventProto;
-    :cond_8
+    :cond_9
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
     invoke-virtual {v7}, Lcom/google/glass/net/ProtoRequestDispatcher;->flush()V
 
-    .line 381
+    .line 458
     iget-object v7, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
     invoke-interface {v7}, Ljava/util/List;->clear()V
 
-    .line 384
+    .line 461
     invoke-direct {p0}, Lcom/google/glass/logging/UserEventService;->deleteEventsFromDisk()V
 
     goto/16 :goto_0
@@ -697,22 +979,22 @@
     .end annotation
 
     .prologue
-    .line 141
+    .line 157
     invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
     move-result v0
 
-    .line 142
+    .line 158
     .local v0, length:I
     new-array v1, v0, [B
 
-    .line 143
+    .line 159
     .local v1, serializedEvent:[B
     const/4 v2, 0x0
 
     invoke-virtual {p1, v1, v2, v0}, Ljava/io/DataInputStream;->readFully([BII)V
 
-    .line 144
+    .line 160
     invoke-static {v1}, Lcom/google/common/logging/GlassUserEventProto;->parseFrom([B)Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v2
@@ -736,13 +1018,13 @@
     .end annotation
 
     .prologue
-    .line 433
+    .line 510
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 435
+    .line 512
     const/4 v3, 0x0
 
-    .line 437
+    .line 514
     .local v3, fis:Ljava/io/FileInputStream;
     :try_start_0
     const-string v6, "user_events_1"
@@ -751,18 +1033,18 @@
 
     move-result-object v3
 
-    .line 438
+    .line 515
     new-instance v0, Ljava/io/BufferedInputStream;
 
     invoke-direct {v0, v3}, Ljava/io/BufferedInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 439
+    .line 516
     .local v0, bis:Ljava/io/BufferedInputStream;
     new-instance v1, Ljava/io/DataInputStream;
 
     invoke-direct {v1, v0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 442
+    .line 519
     .local v1, dis:Ljava/io/DataInputStream;
     new-instance v5, Ljava/util/ArrayList;
 
@@ -771,16 +1053,16 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 443
+    .line 520
     .local v5, result:Ljava/util/List;,"Ljava/util/List<Lcom/google/common/logging/GlassUserEventProto;>;"
     const/4 v4, 0x1
 
-    .line 444
+    .line 521
     .local v4, hasData:Z
     :goto_0
     if-eqz v4, :cond_0
 
-    .line 446
+    .line 523
     :try_start_1
     invoke-direct {p0, v1}, Lcom/google/glass/logging/UserEventService;->readEvent(Ljava/io/DataInputStream;)Lcom/google/common/logging/GlassUserEventProto;
 
@@ -794,18 +1076,18 @@
 
     goto :goto_0
 
-    .line 447
+    .line 524
     :catch_0
     move-exception v2
 
-    .line 450
+    .line 527
     .local v2, e:Ljava/io/EOFException;
     const/4 v4, 0x0
 
-    .line 451
+    .line 528
     goto :goto_0
 
-    .line 453
+    .line 530
     .end local v2           #e:Ljava/io/EOFException;
     :cond_0
     :try_start_2
@@ -844,16 +1126,16 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 458
+    .line 535
     if-eqz v3, :cond_1
 
-    .line 460
+    .line 537
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_3
     .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 469
+    .line 546
     .end local v0           #bis:Ljava/io/BufferedInputStream;
     .end local v1           #dis:Ljava/io/DataInputStream;
     .end local v4           #hasData:Z
@@ -862,7 +1144,7 @@
     :goto_1
     return-object v5
 
-    .line 461
+    .line 538
     .restart local v0       #bis:Ljava/io/BufferedInputStream;
     .restart local v1       #dis:Ljava/io/DataInputStream;
     .restart local v4       #hasData:Z
@@ -870,7 +1152,7 @@
     :catch_1
     move-exception v2
 
-    .line 462
+    .line 539
     .local v2, e:Ljava/io/IOException;
     sget-object v6, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
@@ -880,7 +1162,7 @@
 
     goto :goto_1
 
-    .line 455
+    .line 532
     .end local v0           #bis:Ljava/io/BufferedInputStream;
     .end local v1           #dis:Ljava/io/DataInputStream;
     .end local v2           #e:Ljava/io/IOException;
@@ -889,7 +1171,7 @@
     :catch_2
     move-exception v2
 
-    .line 456
+    .line 533
     .restart local v2       #e:Ljava/io/IOException;
     :try_start_4
     sget-object v6, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
@@ -900,32 +1182,32 @@
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 458
+    .line 535
     if-eqz v3, :cond_2
 
-    .line 460
+    .line 537
     :try_start_5
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_5
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_3
 
-    .line 468
+    .line 545
     :cond_2
     :goto_2
     invoke-direct {p0}, Lcom/google/glass/logging/UserEventService;->deleteEventsFromDisk()V
 
-    .line 469
+    .line 546
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     goto :goto_1
 
-    .line 461
+    .line 538
     :catch_3
     move-exception v2
 
-    .line 462
+    .line 539
     sget-object v6, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     const-string v7, "Could not close events file after read."
@@ -934,29 +1216,29 @@
 
     goto :goto_2
 
-    .line 458
+    .line 535
     .end local v2           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v6
 
     if-eqz v3, :cond_3
 
-    .line 460
+    .line 537
     :try_start_6
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_4
 
-    .line 463
+    .line 540
     :cond_3
     :goto_3
     throw v6
 
-    .line 461
+    .line 538
     :catch_4
     move-exception v2
 
-    .line 462
+    .line 539
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v7, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
@@ -972,13 +1254,13 @@
     .parameter "event"
 
     .prologue
-    .line 401
+    .line 478
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 403
+    .line 480
     const/4 v3, 0x0
 
-    .line 405
+    .line 482
     .local v3, fos:Ljava/io/FileOutputStream;
     :try_start_0
     const-string v4, "user_events_1"
@@ -989,50 +1271,50 @@
 
     move-result-object v3
 
-    .line 406
+    .line 483
     new-instance v0, Ljava/io/BufferedOutputStream;
 
     invoke-direct {v0, v3}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 407
+    .line 484
     .local v0, bos:Ljava/io/BufferedOutputStream;
     new-instance v1, Ljava/io/DataOutputStream;
 
     invoke-direct {v1, v0}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 410
+    .line 487
     .local v1, dos:Ljava/io/DataOutputStream;
     invoke-direct {p0, p1, v1}, Lcom/google/glass/logging/UserEventService;->writeEvent(Lcom/google/common/logging/GlassUserEventProto;Ljava/io/DataOutputStream;)V
 
-    .line 417
+    .line 494
     invoke-virtual {v0}, Ljava/io/BufferedOutputStream;->flush()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 422
+    .line 499
     if-eqz v3, :cond_0
 
-    .line 424
+    .line 501
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 430
+    .line 507
     .end local v0           #bos:Ljava/io/BufferedOutputStream;
     .end local v1           #dos:Ljava/io/DataOutputStream;
     :cond_0
     :goto_0
     return-void
 
-    .line 425
+    .line 502
     .restart local v0       #bos:Ljava/io/BufferedOutputStream;
     .restart local v1       #dos:Ljava/io/DataOutputStream;
     :catch_0
     move-exception v2
 
-    .line 426
+    .line 503
     .local v2, e:Ljava/io/IOException;
     sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
@@ -1042,14 +1324,14 @@
 
     goto :goto_0
 
-    .line 418
+    .line 495
     .end local v0           #bos:Ljava/io/BufferedOutputStream;
     .end local v1           #dos:Ljava/io/DataOutputStream;
     .end local v2           #e:Ljava/io/IOException;
     :catch_1
     move-exception v2
 
-    .line 419
+    .line 496
     .restart local v2       #e:Ljava/io/IOException;
     :try_start_2
     sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
@@ -1060,10 +1342,10 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 422
+    .line 499
     if-eqz v3, :cond_0
 
-    .line 424
+    .line 501
     :try_start_3
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_3
@@ -1071,11 +1353,11 @@
 
     goto :goto_0
 
-    .line 425
+    .line 502
     :catch_2
     move-exception v2
 
-    .line 426
+    .line 503
     sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     const-string v5, "Could not close events file after write."
@@ -1084,29 +1366,29 @@
 
     goto :goto_0
 
-    .line 422
+    .line 499
     .end local v2           #e:Ljava/io/IOException;
     :catchall_0
     move-exception v4
 
     if-eqz v3, :cond_1
 
-    .line 424
+    .line 501
     :try_start_4
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 427
+    .line 504
     :cond_1
     :goto_1
     throw v4
 
-    .line 425
+    .line 502
     :catch_3
     move-exception v2
 
-    .line 426
+    .line 503
     .restart local v2       #e:Ljava/io/IOException;
     sget-object v5, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
@@ -1121,7 +1403,7 @@
     .locals 5
 
     .prologue
-    .line 480
+    .line 557
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
     sget-object v1, Lcom/google/glass/net/ServerConstants$Action;->GET_SESSION_ID:Lcom/google/glass/net/ServerConstants$Action;
@@ -1142,7 +1424,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lcom/google/glass/net/ProtoRequestDispatcher;->blockingDispatch(Lcom/google/glass/net/ServerConstants$Action;Lcom/google/protobuf/AbstractMessage;Lcom/google/protobuf/Parser;Lcom/google/glass/net/ProtoResponseHandler;)Z
 
-    .line 492
+    .line 569
     return-void
 .end method
 
@@ -1155,12 +1437,12 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 499
+    .line 576
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
     move-result-object v10
 
-    .line 504
+    .line 581
     .local v10, requestBuilder:Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getEventType()Ljava/lang/String;
 
@@ -1168,21 +1450,21 @@
 
     invoke-virtual {v10, v0}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setAction(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 505
+    .line 582
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasEventData()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 506
+    .line 583
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getEventData()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v10, v0}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setData(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 508
+    .line 585
     :cond_0
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getEventTimeMs()J
 
@@ -1190,28 +1472,28 @@
 
     invoke-virtual {v10, v0, v1}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setTimestamp(J)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 510
+    .line 587
     invoke-virtual {v10, p1}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setUserEventProto(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 511
+    .line 588
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->sessionId:Ljava/lang/String;
 
     invoke-virtual {v10, v0}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setSessionId(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 512
+    .line 589
     invoke-virtual {v10, p2}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setSoftwareVersion(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 513
+    .line 590
     invoke-virtual {v10, p3}, Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;->setHardwareVersion(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/ReportUserEventRequest$Builder;
 
-    .line 517
+    .line 594
     const/4 v9, 0x0
 
-    .line 520
+    .line 597
     .local v9, logMetrics:Z
     const/4 v8, 0x0
 
-    .line 521
+    .line 598
     .local v8, isImmediate:Z
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
@@ -1233,14 +1515,14 @@
 
     move-result v7
 
-    .line 542
+    .line 619
     .local v7, dispatched:Z
     if-nez v7, :cond_1
 
-    .line 543
+    .line 620
     invoke-direct {p0, p1}, Lcom/google/glass/logging/UserEventService;->addToQueue(Lcom/google/common/logging/GlassUserEventProto;)V
 
-    .line 545
+    .line 622
     :cond_1
     return-void
 .end method
@@ -1256,25 +1538,25 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 147
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->toByteArray()[B
 
     move-result-object v0
 
-    .line 132
+    .line 148
     .local v0, serializedEvent:[B
     array-length v1, v0
 
     invoke-virtual {p2, v1}, Ljava/io/DataOutputStream;->writeInt(I)V
 
-    .line 133
+    .line 149
     const/4 v1, 0x0
 
     array-length v2, v0
 
     invoke-virtual {p2, v0, v1, v2}, Ljava/io/DataOutputStream;->write([BII)V
 
-    .line 134
+    .line 150
     return-void
 .end method
 
@@ -1289,24 +1571,24 @@
     .prologue
     const-wide/16 v2, 0x0
 
-    .line 259
+    .line 307
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 262
+    .line 310
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasEventSerial()Z
 
     move-result v0
 
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertFalse(Z)V
 
-    .line 265
+    .line 313
     iget-wide v0, p0, Lcom/google/glass/logging/UserEventService;->serial:J
 
     cmp-long v0, v0, v2
 
     if-nez v0, :cond_0
 
-    .line 266
+    .line 314
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->sharedPreferences:Landroid/content/SharedPreferences;
 
     const-string v1, "serial"
@@ -1317,7 +1599,7 @@
 
     iput-wide v0, p0, Lcom/google/glass/logging/UserEventService;->serial:J
 
-    .line 270
+    .line 318
     :cond_0
     invoke-static {p1}, Lcom/google/common/logging/GlassUserEventProto;->newBuilder(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
@@ -1333,7 +1615,7 @@
 
     move-result-object p1
 
-    .line 275
+    .line 323
     iget-wide v0, p0, Lcom/google/glass/logging/UserEventService;->serial:J
 
     const-wide/16 v2, 0x1
@@ -1342,7 +1624,7 @@
 
     iput-wide v0, p0, Lcom/google/glass/logging/UserEventService;->serial:J
 
-    .line 276
+    .line 324
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->sharedPreferences:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -1359,7 +1641,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 281
+    .line 329
     return-object p1
 .end method
 
@@ -1368,7 +1650,7 @@
     .parameter "intent"
 
     .prologue
-    .line 149
+    .line 165
     const/4 v0, 0x0
 
     return-object v0
@@ -1378,17 +1660,17 @@
     .locals 5
 
     .prologue
-    .line 154
+    .line 170
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 155
+    .line 171
     sget-object v0, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     const-string v1, "onCreate"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 158
+    .line 174
     invoke-virtual {p0}, Lcom/google/glass/logging/UserEventService;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1403,7 +1685,7 @@
 
     iput-object v0, p0, Lcom/google/glass/logging/UserEventService;->sharedPreferences:Landroid/content/SharedPreferences;
 
-    .line 161
+    .line 177
     new-instance v0, Lcom/google/glass/util/BatteryHelper;
 
     invoke-virtual {p0}, Lcom/google/glass/logging/UserEventService;->getApplicationContext()Landroid/content/Context;
@@ -1414,7 +1696,7 @@
 
     iput-object v0, p0, Lcom/google/glass/logging/UserEventService;->battery:Lcom/google/glass/util/BatteryHelper;
 
-    .line 163
+    .line 179
     const-string v0, "UserEventBackgroundThread"
 
     invoke-direct {p0, v0}, Lcom/google/glass/logging/UserEventService;->createThread(Ljava/lang/String;)Ljava/util/concurrent/ExecutorService;
@@ -1423,7 +1705,7 @@
 
     iput-object v0, p0, Lcom/google/glass/logging/UserEventService;->executor:Ljava/util/concurrent/ExecutorService;
 
-    .line 167
+    .line 183
     new-instance v0, Lcom/google/glass/net/ProtoRequestDispatcher;
 
     invoke-virtual {p0}, Lcom/google/glass/logging/UserEventService;->getApplicationContext()Landroid/content/Context;
@@ -1442,7 +1724,7 @@
 
     iput-object v0, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
-    .line 169
+    .line 185
     new-instance v0, Lcom/google/glass/logging/UserEventService$1;
 
     iget-object v1, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
@@ -1451,7 +1733,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/logging/UserEventService$1;->start()V
 
-    .line 176
+    .line 192
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->executor:Ljava/util/concurrent/ExecutorService;
 
     new-instance v1, Lcom/google/glass/logging/UserEventService$2;
@@ -1460,7 +1742,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/ExecutorService;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
 
-    .line 182
+    .line 198
     return-void
 .end method
 
@@ -1470,169 +1752,229 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 191
+    .line 207
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 192
+    .line 208
     sget-object v0, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
     const-string v1, "onDestroy"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 211
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
     if-eqz v0, :cond_0
 
-    .line 196
+    .line 212
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
     invoke-virtual {v0}, Lcom/google/glass/net/ProtoRequestDispatcher;->exit()V
 
-    .line 197
+    .line 213
     iput-object v2, p0, Lcom/google/glass/logging/UserEventService;->requestDispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
 
-    .line 201
+    .line 217
     :cond_0
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->executor:Ljava/util/concurrent/ExecutorService;
 
     if-eqz v0, :cond_1
 
-    .line 202
+    .line 218
     iget-object v0, p0, Lcom/google/glass/logging/UserEventService;->executor:Ljava/util/concurrent/ExecutorService;
 
     invoke-interface {v0}, Ljava/util/concurrent/ExecutorService;->shutdown()V
 
-    .line 203
+    .line 219
     iput-object v2, p0, Lcom/google/glass/logging/UserEventService;->executor:Ljava/util/concurrent/ExecutorService;
 
-    .line 207
+    .line 223
     :cond_1
     iput-object v2, p0, Lcom/google/glass/logging/UserEventService;->events:Ljava/util/List;
 
-    .line 208
+    .line 224
     return-void
 .end method
 
 .method public onStartCommand(Landroid/content/Intent;II)I
-    .locals 6
+    .locals 9
     .parameter "intent"
     .parameter "flags"
     .parameter "startId"
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v8, 0x1
 
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
-    .line 212
-    if-eqz p1, :cond_2
+    .line 228
+    iget-boolean v4, p0, Lcom/google/glass/logging/UserEventService;->isStarted:Z
 
-    .line 215
-    const-string v2, "force_flush"
-
-    invoke-virtual {p1, v2, v4}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    .line 217
-    .local v0, isFlushForced:Z
-    const-string v2, "user_event"
-
-    invoke-virtual {p1, v2}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    .line 218
-    invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    const-string v3, "user_event"
-
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/google/common/logging/GlassUserEventProto;
-
-    .line 220
-    .local v1, userEvent:Lcom/google/common/logging/GlassUserEventProto;
-    invoke-virtual {v1}, Lcom/google/common/logging/GlassUserEventProto;->getEventType()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 221
-    sget-object v2, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
-
-    const-string v3, "User event logging requested with empty action."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 223
-    :cond_0
-    invoke-direct {p0, v1, v4}, Lcom/google/glass/logging/UserEventService;->log(Lcom/google/common/logging/GlassUserEventProto;Z)V
-
-    .line 229
-    .end local v1           #userEvent:Lcom/google/common/logging/GlassUserEventProto;
-    :cond_1
-    :goto_0
-    if-eqz v0, :cond_2
+    if-nez v4, :cond_0
 
     .line 231
-    invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->newBuilder()Lcom/google/common/logging/GlassUserEventProto$Builder;
+    iput-boolean v8, p0, Lcom/google/glass/logging/UserEventService;->isStarted:Z
 
-    move-result-object v2
+    .line 232
+    iget-object v4, p0, Lcom/google/glass/logging/UserEventService;->battery:Lcom/google/glass/util/BatteryHelper;
 
-    sget-object v3, Lcom/google/glass/logging/UserEventAction;->FORCE_EVENT_LOG_FLUSH:Lcom/google/glass/logging/UserEventAction;
+    invoke-virtual {v4}, Lcom/google/glass/util/BatteryHelper;->getCurrentState()Lcom/google/glass/util/BatteryHelper$BatteryState;
 
-    iget-object v3, v3, Lcom/google/glass/logging/UserEventAction;->action:Ljava/lang/String;
+    move-result-object v4
 
-    invoke-virtual {v2, v3}, Lcom/google/common/logging/GlassUserEventProto$Builder;->setEventType(Ljava/lang/String;)Lcom/google/common/logging/GlassUserEventProto$Builder;
+    const-string v5, "boot"
 
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
+    invoke-virtual {v4, v5}, Lcom/google/glass/util/BatteryHelper$BatteryState;->getUserEventActionData(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 233
-    .restart local v1       #userEvent:Lcom/google/common/logging/GlassUserEventProto;
-    sget-object v2, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
-
-    const-string v3, "Logging force flush event"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 234
-    invoke-direct {p0, v1, v5}, Lcom/google/glass/logging/UserEventService;->log(Lcom/google/common/logging/GlassUserEventProto;Z)V
+    .local v1, data:Ljava/lang/String;
+    sget-object v4, Lcom/google/glass/logging/UserEventAction;->BATTERY_STATE:Lcom/google/glass/logging/UserEventAction;
 
-    .line 237
-    .end local v0           #isFlushForced:Z
-    .end local v1           #userEvent:Lcom/google/common/logging/GlassUserEventProto;
+    invoke-static {v4, v1}, Lcom/google/glass/logging/UserEventHelper;->createProto(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)Lcom/google/common/logging/GlassUserEventProto;
+
+    move-result-object v0
+
+    .line 236
+    .local v0, batteryEvent:Lcom/google/common/logging/GlassUserEventProto;
+    sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Logging user event [action="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    sget-object v6, Lcom/google/glass/logging/UserEventAction;->BATTERY_STATE:Lcom/google/glass/logging/UserEventAction;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ", data="
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, "]."
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 238
+    invoke-direct {p0, v0, v7}, Lcom/google/glass/logging/UserEventService;->log(Lcom/google/common/logging/GlassUserEventProto;Z)V
+
+    .line 241
+    .end local v0           #batteryEvent:Lcom/google/common/logging/GlassUserEventProto;
+    .end local v1           #data:Ljava/lang/String;
+    :cond_0
+    if-eqz p1, :cond_3
+
+    .line 244
+    const-string v4, "force_flush"
+
+    invoke-virtual {p1, v4, v7}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+
+    move-result v2
+
+    .line 246
+    .local v2, isFlushForced:Z
+    const-string v4, "user_event"
+
+    invoke-virtual {p1, v4}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_4
+
+    .line 247
+    invoke-virtual {p1}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v4
+
+    const-string v5, "user_event"
+
+    invoke-virtual {v4, v5}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/google/common/logging/GlassUserEventProto;
+
+    .line 249
+    .local v3, userEvent:Lcom/google/common/logging/GlassUserEventProto;
+    invoke-virtual {v3}, Lcom/google/common/logging/GlassUserEventProto;->getEventType()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    .line 250
+    sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
+
+    const-string v5, "User event logging requested with empty action."
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 252
+    :cond_1
+    invoke-direct {p0, v3, v7}, Lcom/google/glass/logging/UserEventService;->log(Lcom/google/common/logging/GlassUserEventProto;Z)V
+
+    .line 258
+    .end local v3           #userEvent:Lcom/google/common/logging/GlassUserEventProto;
     :cond_2
-    return v5
+    :goto_0
+    if-eqz v2, :cond_3
 
-    .line 224
-    .restart local v0       #isFlushForced:Z
+    .line 259
+    sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
+
+    const-string v5, "Forcing log flush."
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 260
+    const/4 v4, 0x0
+
+    invoke-direct {p0, v4, v8}, Lcom/google/glass/logging/UserEventService;->log(Lcom/google/common/logging/GlassUserEventProto;Z)V
+
+    .line 263
+    .end local v2           #isFlushForced:Z
     :cond_3
-    if-nez v0, :cond_1
+    return v8
 
-    .line 225
-    sget-object v2, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
+    .line 253
+    .restart local v2       #isFlushForced:Z
+    :cond_4
+    if-nez v2, :cond_2
 
-    const-string v3, "User event logging contains no user event!  Your application is too old for your logging apk."
+    .line 254
+    sget-object v4, Lcom/google/glass/logging/UserEventService;->TAG:Ljava/lang/String;
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v5, "User event logging contains no user event!  Your application is too old for your logging apk."
+
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
 .end method

@@ -30,7 +30,7 @@
 
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
-    .locals 1
+    .locals 2
     .parameter "r"
 
     .prologue
@@ -42,6 +42,15 @@
     invoke-static {v0}, Lcom/google/glass/util/AsyncThreadExecutorManager;->access$002(Ljava/lang/Thread;)Ljava/lang/Thread;
 
     .line 29
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->access$000()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    const-string v1, "serialInstance Executor Thread"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+
+    .line 30
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->access$000()Ljava/lang/Thread;
 
     move-result-object v0

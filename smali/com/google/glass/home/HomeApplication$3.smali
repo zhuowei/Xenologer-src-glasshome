@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 142
+    .line 143
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$3;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 158
+    .line 159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,13 +64,13 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 145
+    .line 146
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$3;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -95,7 +95,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 146
+    .line 147
     const-string v1, "com.google.glass.setup.ACTION_SETUP_COMPLETE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -108,7 +108,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 147
+    .line 148
     new-instance v1, Lcom/google/glass/util/AuthUtils;
 
     iget-object v2, p0, Lcom/google/glass/home/HomeApplication$3;->this$0:Lcom/google/glass/home/HomeApplication;
@@ -123,23 +123,23 @@
 
     move-result-object v0
 
-    .line 148
+    .line 149
     .local v0, account:Landroid/accounts/Account;
     if-eqz v0, :cond_1
 
-    .line 149
+    .line 150
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$3;->this$0:Lcom/google/glass/home/HomeApplication;
 
     #calls: Lcom/google/glass/home/HomeApplication;->onAccountReady(Landroid/accounts/Account;)V
     invoke-static {v1, v0}, Lcom/google/glass/home/HomeApplication;->access$300(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
 
-    .line 154
+    .line 155
     .end local v0           #account:Landroid/accounts/Account;
     :cond_0
     :goto_0
     return-void
 
-    .line 151
+    .line 152
     .restart local v0       #account:Landroid/accounts/Account;
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$3;->getTag()Ljava/lang/String;

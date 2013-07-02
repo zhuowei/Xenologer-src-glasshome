@@ -56,19 +56,19 @@
     .locals 2
 
     .prologue
-    .line 102
+    .line 103
     new-instance v0, Lcom/google/googlex/glass/common/proto/AuthToken$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AuthToken$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 227
+    .line 228
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 548
+    .line 552
     new-instance v0, Lcom/google/googlex/glass/common/proto/AuthToken;
 
     const/4 v1, 0x1
@@ -77,17 +77,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->defaultInstance:Lcom/google/googlex/glass/common/proto/AuthToken;
 
-    .line 549
+    .line 553
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->defaultInstance:Lcom/google/googlex/glass/common/proto/AuthToken;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AuthToken;->initFields()V
 
-    .line 550
+    .line 554
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 9
+    .locals 10
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -97,64 +97,64 @@
     .end annotation
 
     .prologue
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
     .line 42
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 179
-    iput-byte v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedIsInitialized:B
+    .line 180
+    iput-byte v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedIsInitialized:B
 
-    .line 200
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedSerializedSize:I
+    .line 201
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedSerializedSize:I
 
     .line 43
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->initFields()V
 
     .line 44
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 45
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v5
+    move-result-object v6
 
     .line 48
-    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v6, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 49
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
     .line 50
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v4
+    move-result v5
 
     .line 51
-    .local v4, tag:I
-    sparse-switch v4, :sswitch_data_0
+    .local v5, tag:I
+    sparse-switch v5, :sswitch_data_0
 
     .line 56
-    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/googlex/glass/common/proto/AuthToken;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v6, p2, v5}, Lcom/google/googlex/glass/common/proto/AuthToken;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v7
+    move-result v8
 
-    if-nez v7, :cond_0
+    if-nez v8, :cond_0
 
     .line 58
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 53
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 54
     goto :goto_0
@@ -163,22 +163,22 @@
     :sswitch_1
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
 
-    move-result v3
+    move-result v4
 
     .line 64
-    .local v3, rawValue:I
-    invoke-static {v3}, Lcom/google/googlex/glass/common/proto/AuthTokenType;->valueOf(I)Lcom/google/googlex/glass/common/proto/AuthTokenType;
+    .local v4, rawValue:I
+    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/AuthTokenType;->valueOf(I)Lcom/google/googlex/glass/common/proto/AuthTokenType;
 
-    move-result-object v6
+    move-result-object v7
 
     .line 65
-    .local v6, value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
-    if-nez v6, :cond_1
+    .local v7, value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
+    if-nez v7, :cond_1
 
     .line 66
-    const/4 v7, 0x1
+    const/4 v8, 0x1
 
-    invoke-virtual {v5, v7, v3}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+    invoke-virtual {v6, v8, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -186,54 +186,54 @@
 
     goto :goto_0
 
-    .line 80
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v6           #value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
-    :catch_0
-    move-exception v1
-
     .line 81
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v7           #value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
+    :catch_0
+    move-exception v2
+
+    .line 82
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v7
-
-    throw v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 86
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
-    :catchall_0
-    move-exception v7
-
-    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v8
 
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    throw v8
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 87
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_0
+    move-exception v8
+
+    invoke-virtual {v6}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v9
+
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 88
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->makeExtensionsImmutable()V
 
-    throw v7
+    throw v8
 
     .line 68
-    .restart local v3       #rawValue:I
-    .restart local v4       #tag:I
-    .restart local v6       #value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
+    .restart local v4       #rawValue:I
+    .restart local v5       #tag:I
+    .restart local v7       #value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
     :cond_1
     :try_start_2
-    iget v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
+    iget v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
-    or-int/lit8 v7, v7, 0x1
+    or-int/lit8 v8, v8, 0x1
 
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
     .line 69
-    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->type_:Lcom/google/googlex/glass/common/proto/AuthTokenType;
+    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->type_:Lcom/google/googlex/glass/common/proto/AuthTokenType;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
@@ -241,49 +241,51 @@
 
     goto :goto_0
 
-    .line 82
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v6           #value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
-    :catch_1
-    move-exception v1
-
     .line 83
-    .local v1, e:Ljava/io/IOException;
-    :try_start_3
-    new-instance v7, Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v7           #value:Lcom/google/googlex/glass/common/proto/AuthTokenType;
+    :catch_1
+    move-exception v2
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    .line 84
+    .local v2, e:Ljava/io/IOException;
+    :try_start_3
+    new-instance v8, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-direct {v8, v9}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v8, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v8
 
-    invoke-direct {v7, v8}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v7
-
-    throw v7
+    throw v8
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     .line 74
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v4       #tag:I
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v5       #tag:I
     :sswitch_2
     :try_start_4
-    iget v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
-
-    or-int/lit8 v7, v7, 0x2
-
-    iput v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
-
-    .line 75
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
+    .line 75
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
+
+    or-int/lit8 v8, v8, 0x2
+
+    iput v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
+
+    .line 76
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
@@ -291,19 +293,20 @@
 
     goto :goto_0
 
-    .line 86
-    .end local v4           #tag:I
-    :cond_2
-    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
     .line 87
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v5           #tag:I
+    :cond_2
+    invoke-virtual {v6}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v8
+
+    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 88
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->makeExtensionsImmutable()V
 
-    .line 89
+    .line 90
     return-void
 
     .line 51
@@ -353,10 +356,10 @@
     .line 19
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 179
+    .line 180
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedIsInitialized:B
 
-    .line 200
+    .line 201
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedSerializedSize:I
 
     .line 20
@@ -392,10 +395,10 @@
     .line 22
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 179
+    .line 180
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedIsInitialized:B
 
-    .line 200
+    .line 201
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedSerializedSize:I
 
     .line 22
@@ -479,7 +482,7 @@
     .locals 1
 
     .prologue
-    .line 92
+    .line 93
     sget-object v0, Lcom/google/googlex/glass/common/proto/Batch;->internal_static_googlex_glass_common_proto_AuthToken_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -489,17 +492,17 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 177
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthTokenType;->ANDROID_SERVICE:Lcom/google/googlex/glass/common/proto/AuthTokenType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->type_:Lcom/google/googlex/glass/common/proto/AuthTokenType;
 
-    .line 177
+    .line 178
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
 
-    .line 178
+    .line 179
     return-void
 .end method
 
@@ -507,7 +510,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     #calls: Lcom/google/googlex/glass/common/proto/AuthToken$Builder;->create()Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AuthToken$Builder;->access$100()Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
 
@@ -521,7 +524,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 292
+    .line 293
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AuthToken;->newBuilder()Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
 
     move-result-object v0
@@ -543,7 +546,7 @@
     .end annotation
 
     .prologue
-    .line 269
+    .line 270
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -566,7 +569,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -588,7 +591,7 @@
     .end annotation
 
     .prologue
-    .line 239
+    .line 240
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -611,7 +614,7 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 246
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -633,7 +636,7 @@
     .end annotation
 
     .prologue
-    .line 280
+    .line 281
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -656,7 +659,7 @@
     .end annotation
 
     .prologue
-    .line 286
+    .line 287
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -678,7 +681,7 @@
     .end annotation
 
     .prologue
-    .line 259
+    .line 260
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -701,7 +704,7 @@
     .end annotation
 
     .prologue
-    .line 265
+    .line 266
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -723,7 +726,7 @@
     .end annotation
 
     .prologue
-    .line 249
+    .line 250
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -746,7 +749,7 @@
     .end annotation
 
     .prologue
-    .line 255
+    .line 256
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -807,7 +810,7 @@
     .end annotation
 
     .prologue
-    .line 114
+    .line 115
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -821,10 +824,10 @@
 
     const/4 v3, 0x1
 
-    .line 202
+    .line 203
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedSerializedSize:I
 
-    .line 203
+    .line 204
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -832,26 +835,26 @@
 
     move v1, v0
 
-    .line 216
+    .line 217
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 205
+    .line 206
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 206
+    .line 207
     iget v2, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 207
+    .line 208
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->type_:Lcom/google/googlex/glass/common/proto/AuthTokenType;
 
     invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/AuthTokenType;->getNumber()I
@@ -864,7 +867,7 @@
 
     add-int/2addr v0, v2
 
-    .line 210
+    .line 211
     :cond_1
     iget v2, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
@@ -872,7 +875,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 211
+    .line 212
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->getValueBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -883,7 +886,7 @@
 
     add-int/2addr v0, v2
 
-    .line 214
+    .line 215
     :cond_2
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -895,12 +898,12 @@
 
     add-int/2addr v0, v2
 
-    .line 215
+    .line 216
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 216
+    .line 217
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -910,7 +913,7 @@
     .locals 1
 
     .prologue
-    .line 130
+    .line 131
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->type_:Lcom/google/googlex/glass/common/proto/AuthTokenType;
 
     return-object v0
@@ -930,19 +933,19 @@
     .locals 4
 
     .prologue
-    .line 145
+    .line 146
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
 
-    .line 146
+    .line 147
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 147
+    .line 148
     check-cast v1, Ljava/lang/String;
 
-    .line 155
+    .line 156
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -951,16 +954,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 149
+    .line 150
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 151
+    .line 152
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 152
+    .line 153
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -968,13 +971,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 153
+    .line 154
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 155
+    .line 156
     goto :goto_0
 .end method
 
@@ -982,16 +985,16 @@
     .locals 3
 
     .prologue
-    .line 163
+    .line 164
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
 
-    .line 164
+    .line 165
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 165
+    .line 166
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -999,11 +1002,11 @@
 
     move-result-object v0
 
-    .line 168
+    .line 169
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->value_:Ljava/lang/Object;
 
-    .line 171
+    .line 172
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1024,7 +1027,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 124
+    .line 125
     iget v1, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1044,7 +1047,7 @@
     .locals 2
 
     .prologue
-    .line 139
+    .line 140
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1068,7 +1071,7 @@
     .locals 3
 
     .prologue
-    .line 97
+    .line 98
     sget-object v0, Lcom/google/googlex/glass/common/proto/Batch;->internal_static_googlex_glass_common_proto_AuthToken_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/AuthToken;
@@ -1086,12 +1089,12 @@
     .locals 1
 
     .prologue
-    .line 230
+    .line 231
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 231
+    .line 232
     const-string v0, "com.google.googlex.glass.common.proto.MutableBatch$AuthToken"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/AuthToken;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1100,7 +1103,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 233
+    .line 234
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/AuthToken;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1113,10 +1116,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 181
+    .line 182
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedIsInitialized:B
 
-    .line 182
+    .line 183
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -1124,17 +1127,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 185
+    .line 186
     :goto_0
     return v1
 
-    .line 182
+    .line 183
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 184
+    .line 185
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->memoizedIsInitialized:B
 
@@ -1145,7 +1148,7 @@
     .locals 1
 
     .prologue
-    .line 290
+    .line 291
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AuthToken;->newBuilder()Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
 
     move-result-object v0
@@ -1158,14 +1161,14 @@
     .parameter "parent"
 
     .prologue
-    .line 299
+    .line 300
     new-instance v0, Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/AuthToken$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/AuthToken$1;)V
 
-    .line 300
+    .line 301
     .local v0, builder:Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
     return-object v0
 .end method
@@ -1211,7 +1214,7 @@
     .locals 1
 
     .prologue
-    .line 294
+    .line 295
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->newBuilder(Lcom/google/googlex/glass/common/proto/AuthToken;)Lcom/google/googlex/glass/common/proto/AuthToken$Builder;
 
     move-result-object v0
@@ -1252,7 +1255,7 @@
     .end annotation
 
     .prologue
-    .line 223
+    .line 224
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1274,17 +1277,17 @@
 
     const/4 v1, 0x1
 
-    .line 190
+    .line 191
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->getSerializedSize()I
 
-    .line 191
+    .line 192
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 192
+    .line 193
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->type_:Lcom/google/googlex/glass/common/proto/AuthTokenType;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/AuthTokenType;->getNumber()I
@@ -1293,7 +1296,7 @@
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 194
+    .line 195
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AuthToken;->bitField0_:I
 
@@ -1301,14 +1304,14 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 195
+    .line 196
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->getValueBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 197
+    .line 198
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AuthToken;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1316,6 +1319,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 198
+    .line 199
     return-void
 .end method

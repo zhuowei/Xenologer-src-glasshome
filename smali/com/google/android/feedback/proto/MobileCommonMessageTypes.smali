@@ -54,126 +54,126 @@
 
     const/4 v6, 0x0
 
-    .line 10
+    .line 9
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->DIMENSIONS:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 11
+    .line 10
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->RECTANGLE:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 12
+    .line 11
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PRODUCT_SPECIFIC_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 13
+    .line 12
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->COMMON_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 14
+    .line 13
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PRODUCT_SPECIFIC_BINARY_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 15
+    .line 14
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->IMAGE:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 16
+    .line 15
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->MOBILE_BUG_REPORT:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 17
+    .line 16
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->MOBILE_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 18
+    .line 17
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->SYSTEM_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 19
+    .line 18
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PACKAGE_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 20
+    .line 19
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->BUILD_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 21
+    .line 20
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->CRASH_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 22
+    .line 21
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->ANR_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 23
+    .line 22
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->BATTERY_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 24
+    .line 23
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->RUNNING_SERVICE_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 25
+    .line 24
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->USER_INITIATED_FEEDBACK_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 26
+    .line 25
     new-instance v0, Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-direct {v0}, Lcom/x/google/common/io/protocol/ProtoBufType;-><init>()V
 
     sput-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->TELEPHONY_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 29
+    .line 28
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->DIMENSIONS:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x112
@@ -186,7 +186,7 @@
 
     invoke-virtual {v0, v1, v10, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 35
+    .line 34
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->RECTANGLE:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x112
@@ -215,7 +215,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 45
+    .line 44
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PRODUCT_SPECIFIC_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v8, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -224,7 +224,21 @@
 
     invoke-virtual {v0, v7, v10, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 51
+    move-result-object v0
+
+    const/16 v1, 0x215
+
+    const/4 v2, 0x3
+
+    new-instance v3, Ljava/lang/Long;
+
+    const-wide/16 v4, 0x1
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    .line 52
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->COMMON_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x216
@@ -349,7 +363,37 @@
 
     invoke-virtual {v0, v7, v1, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 88
+    move-result-object v0
+
+    const/16 v1, 0x41b
+
+    const/16 v2, 0x13
+
+    sget-object v3, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PRODUCT_SPECIFIC_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    move-result-object v0
+
+    const/16 v1, 0x14
+
+    invoke-virtual {v0, v7, v1, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    move-result-object v0
+
+    const/16 v1, 0x215
+
+    const/16 v2, 0x15
+
+    new-instance v3, Ljava/lang/Long;
+
+    const-wide/16 v4, 0x1
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    .line 94
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PRODUCT_SPECIFIC_BINARY_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v8, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -366,7 +410,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 96
+    .line 102
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->IMAGE:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v8, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -385,7 +429,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 104
+    .line 110
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->MOBILE_BUG_REPORT:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x11b
@@ -416,9 +460,15 @@
 
     const/4 v2, 0x4
 
-    invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+    new-instance v3, Ljava/lang/Long;
 
-    .line 114
+    const-wide/16 v4, 0x0
+
+    invoke-direct {v3, v4, v5}, Ljava/lang/Long;-><init>(J)V
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    .line 120
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->MOBILE_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x11b
@@ -503,7 +553,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 134
+    .line 140
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->SYSTEM_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x116
@@ -546,7 +596,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 148
+    .line 154
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->PACKAGE_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v8, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -583,7 +633,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 162
+    .line 168
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->BUILD_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v8, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -648,7 +698,13 @@
 
     invoke-virtual {v0, v7, v1, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 186
+    move-result-object v0
+
+    const/16 v1, 0xc
+
+    invoke-virtual {v0, v7, v1, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
+
+    .line 194
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->CRASH_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v8, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -697,7 +753,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 204
+    .line 212
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->ANR_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v7, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -718,7 +774,7 @@
 
     invoke-virtual {v0, v7, v1, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 214
+    .line 222
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->BATTERY_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x115
@@ -759,7 +815,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 228
+    .line 236
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->RUNNING_SERVICE_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x113
@@ -770,7 +826,7 @@
 
     invoke-virtual {v0, v8, v10, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 234
+    .line 242
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->USER_INITIATED_FEEDBACK_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     invoke-virtual {v0, v7, v9, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
@@ -819,7 +875,7 @@
 
     invoke-virtual {v0, v7, v1, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 250
+    .line 258
     sget-object v0, Lcom/google/android/feedback/proto/MobileCommonMessageTypes;->TELEPHONY_DATA:Lcom/x/google/common/io/protocol/ProtoBufType;
 
     const/16 v1, 0x115
@@ -838,7 +894,7 @@
 
     invoke-virtual {v0, v1, v2, v6}, Lcom/x/google/common/io/protocol/ProtoBufType;->addElement(IILjava/lang/Object;)Lcom/x/google/common/io/protocol/ProtoBufType;
 
-    .line 258
+    .line 266
     return-void
 .end method
 
@@ -846,7 +902,7 @@
     .locals 0
 
     .prologue
-    .line 9
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

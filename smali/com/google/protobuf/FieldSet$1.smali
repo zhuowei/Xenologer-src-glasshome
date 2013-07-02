@@ -25,7 +25,7 @@
     .locals 3
 
     .prologue
-    .line 641
+    .line 643
     invoke-static {}, Lcom/google/protobuf/WireFormat$FieldType;->values()[Lcom/google/protobuf/WireFormat$FieldType;
 
     move-result-object v0
@@ -526,7 +526,7 @@
 
     goto :goto_12
 
-    .line 641
+    .line 643
     :catch_9
     move-exception v0
 

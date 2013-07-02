@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 509
+    .line 486
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "animation"
 
     .prologue
-    .line 512
+    .line 489
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$6;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->barcodeScanLayout:Landroid/view/ViewGroup;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 513
+    .line 490
     return-void
 .end method

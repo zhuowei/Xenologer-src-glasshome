@@ -38,6 +38,8 @@
 
 .field private removeWhenSelected_:Z
 
+.field private travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
 .field private valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -68,35 +70,40 @@
     .locals 1
 
     .prologue
-    .line 1031
+    .line 1196
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1203
+    .line 1377
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1306
+    .line 1483
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 1341
+    .line 1518
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1707
+    .line 1884
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1032
+    .line 2048
+    sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;->MOST_RECENTLY_USED:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    .line 1197
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->maybeForceBuilderInitialization()V
 
-    .line 1033
+    .line 1198
     return-void
 .end method
 
@@ -105,35 +112,40 @@
     .parameter "parent"
 
     .prologue
-    .line 1037
+    .line 1202
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 1203
+    .line 1377
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1306
+    .line 1483
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 1341
+    .line 1518
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1707
+    .line 1884
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1038
+    .line 2048
+    sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;->MOST_RECENTLY_USED:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    .line 1203
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->maybeForceBuilderInitialization()V
 
-    .line 1039
+    .line 1204
     return-void
 .end method
 
@@ -143,7 +155,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -153,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->create()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -165,7 +177,7 @@
     .locals 1
 
     .prologue
-    .line 1046
+    .line 1211
     new-instance v0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;-><init>()V
@@ -177,7 +189,7 @@
     .locals 2
 
     .prologue
-    .line 1344
+    .line 1521
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -186,7 +198,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1345
+    .line 1522
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
@@ -195,14 +207,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1346
+    .line 1523
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1348
+    .line 1525
     :cond_0
     return-void
 .end method
@@ -211,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 1020
+    .line 1185
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -232,12 +244,12 @@
     .end annotation
 
     .prologue
-    .line 1695
+    .line 1872
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1696
+    .line 1873
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
@@ -265,18 +277,18 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1702
+    .line 1879
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1704
+    .line 1881
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 1696
+    .line 1873
     :cond_1
     const/4 v0, 0x0
 
@@ -287,17 +299,17 @@
     .locals 1
 
     .prologue
-    .line 1041
+    .line 1206
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1042
+    .line 1207
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getValueFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1044
+    .line 1209
     :cond_0
     return-void
 .end method
@@ -319,28 +331,28 @@
     .end annotation
 
     .prologue
-    .line 1550
+    .line 1727
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/MenuValue;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1551
+    .line 1728
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1552
+    .line 1729
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1554
+    .line 1731
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1558
+    .line 1735
     :goto_0
     return-object p0
 
-    .line 1556
+    .line 1733
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -355,15 +367,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1529
+    .line 1706
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1530
+    .line 1707
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1531
+    .line 1708
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuValue;
@@ -372,14 +384,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1532
+    .line 1709
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1536
+    .line 1713
     :goto_0
     return-object p0
 
-    .line 1534
+    .line 1711
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -398,38 +410,38 @@
     .parameter "value"
 
     .prologue
-    .line 1484
+    .line 1661
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1485
+    .line 1662
     if-nez p2, :cond_0
 
-    .line 1486
+    .line 1663
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1488
+    .line 1665
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1489
+    .line 1666
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1490
+    .line 1667
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1494
+    .line 1671
     :goto_0
     return-object p0
 
-    .line 1492
+    .line 1669
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -443,15 +455,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1508
+    .line 1685
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1509
+    .line 1686
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1510
+    .line 1687
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuValue;
@@ -460,14 +472,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1511
+    .line 1688
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1515
+    .line 1692
     :goto_0
     return-object p0
 
-    .line 1513
+    .line 1690
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -485,38 +497,38 @@
     .parameter "value"
 
     .prologue
-    .line 1460
+    .line 1637
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1461
+    .line 1638
     if-nez p1, :cond_0
 
-    .line 1462
+    .line 1639
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1464
+    .line 1641
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1465
+    .line 1642
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1466
+    .line 1643
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1470
+    .line 1647
     :goto_0
     return-object p0
 
-    .line 1468
+    .line 1645
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -529,7 +541,7 @@
     .locals 2
 
     .prologue
-    .line 1660
+    .line 1837
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getValueFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -552,7 +564,7 @@
     .parameter "index"
 
     .prologue
-    .line 1675
+    .line 1852
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getValueFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -574,12 +586,12 @@
     .locals 2
 
     .prologue
-    .line 1082
+    .line 1249
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
 
-    .line 1083
+    .line 1250
     .local v0, result:Lcom/google/googlex/glass/common/proto/MenuItem;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/MenuItem;->isInitialized()Z
 
@@ -587,14 +599,14 @@
 
     if-nez v1, :cond_0
 
-    .line 1084
+    .line 1251
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 1086
+    .line 1253
     :cond_0
     return-object v0
 .end method
@@ -603,7 +615,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -615,7 +627,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -627,22 +639,22 @@
     .locals 5
 
     .prologue
-    .line 1090
+    .line 1257
     new-instance v1, Lcom/google/googlex/glass/common/proto/MenuItem;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/MenuItem$1;)V
 
-    .line 1091
+    .line 1258
     .local v1, result:Lcom/google/googlex/glass/common/proto/MenuItem;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1092
+    .line 1259
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 1093
+    .line 1260
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -650,39 +662,39 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1094
+    .line 1261
     or-int/lit8 v2, v2, 0x1
 
-    .line 1096
+    .line 1263
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->id_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$502(Lcom/google/googlex/glass/common/proto/MenuItem;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1097
+    .line 1264
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 1098
+    .line 1265
     or-int/lit8 v2, v2, 0x2
 
-    .line 1100
+    .line 1267
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$602(Lcom/google/googlex/glass/common/proto/MenuItem;Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 1101
+    .line 1268
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_6
 
-    .line 1102
+    .line 1269
     iget v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x4
@@ -691,7 +703,7 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1103
+    .line 1270
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -700,21 +712,21 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1104
+    .line 1271
     iget v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x5
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1106
+    .line 1273
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$702(Lcom/google/googlex/glass/common/proto/MenuItem;Ljava/util/List;)Ljava/util/List;
 
-    .line 1110
+    .line 1277
     :goto_0
     and-int/lit8 v3, v0, 0x8
 
@@ -722,45 +734,62 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 1111
+    .line 1278
     or-int/lit8 v2, v2, 0x4
 
-    .line 1113
+    .line 1280
     :cond_3
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->broadcastAction_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$802(Lcom/google/googlex/glass/common/proto/MenuItem;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1114
+    .line 1281
     and-int/lit8 v3, v0, 0x10
 
     const/16 v4, 0x10
 
     if-ne v3, v4, :cond_4
 
-    .line 1115
+    .line 1282
     or-int/lit8 v2, v2, 0x8
 
-    .line 1117
+    .line 1284
     :cond_4
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->removeWhenSelected_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->removeWhenSelected_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$902(Lcom/google/googlex/glass/common/proto/MenuItem;Z)Z
 
-    .line 1118
-    #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$1002(Lcom/google/googlex/glass/common/proto/MenuItem;I)I
+    .line 1285
+    and-int/lit8 v3, v0, 0x20
 
-    .line 1119
+    const/16 v4, 0x20
+
+    if-ne v3, v4, :cond_5
+
+    .line 1286
+    or-int/lit8 v2, v2, 0x10
+
+    .line 1288
+    :cond_5
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$1002(Lcom/google/googlex/glass/common/proto/MenuItem;Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;)Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    .line 1289
+    #setter for: Lcom/google/googlex/glass/common/proto/MenuItem;->bitField0_:I
+    invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$1102(Lcom/google/googlex/glass/common/proto/MenuItem;I)I
+
+    .line 1290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onBuilt()V
 
-    .line 1120
+    .line 1291
     return-object v1
 
-    .line 1108
-    :cond_5
+    .line 1275
+    :cond_6
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/RepeatedFieldBuilder;->build()Ljava/util/List;
@@ -777,7 +806,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -789,7 +818,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -801,81 +830,93 @@
     .locals 1
 
     .prologue
-    .line 1050
+    .line 1215
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 1051
+    .line 1216
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1052
+    .line 1217
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1053
+    .line 1218
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 1054
+    .line 1219
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1055
+    .line 1220
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1056
+    .line 1221
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1057
+    .line 1222
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1061
+    .line 1226
     :goto_0
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1062
+    .line 1227
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1063
+    .line 1228
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->removeWhenSelected_:Z
 
-    .line 1064
+    .line 1229
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1065
+    .line 1230
+    sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;->MOST_RECENTLY_USED:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    .line 1231
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, -0x21
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    .line 1232
     return-object p0
 
-    .line 1059
+    .line 1224
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -888,7 +929,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clear()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -900,7 +941,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clear()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -912,7 +953,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clear()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -924,7 +965,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clear()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -936,22 +977,22 @@
     .locals 1
 
     .prologue
-    .line 1335
+    .line 1512
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1336
+    .line 1513
     sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 1337
+    .line 1514
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1338
+    .line 1515
     return-object p0
 .end method
 
@@ -959,14 +1000,14 @@
     .locals 1
 
     .prologue
-    .line 1791
+    .line 1971
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1792
+    .line 1972
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -977,10 +1018,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1793
+    .line 1973
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1794
+    .line 1974
     return-object p0
 .end method
 
@@ -988,14 +1029,14 @@
     .locals 1
 
     .prologue
-    .line 1282
+    .line 1459
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1283
+    .line 1460
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -1006,10 +1047,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1284
+    .line 1461
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1285
+    .line 1462
     return-object p0
 .end method
 
@@ -1017,22 +1058,45 @@
     .locals 1
 
     .prologue
-    .line 1862
+    .line 2042
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1863
+    .line 2043
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->removeWhenSelected_:Z
 
-    .line 1864
+    .line 2044
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1865
+    .line 2045
+    return-object p0
+.end method
+
+.method public clearTravelMode()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    .locals 1
+
+    .prologue
+    .line 2093
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, -0x21
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    .line 2094
+    sget-object v0, Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;->MOST_RECENTLY_USED:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    .line 2095
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
+
+    .line 2096
     return-object p0
 .end method
 
@@ -1040,33 +1104,33 @@
     .locals 1
 
     .prologue
-    .line 1571
+    .line 1748
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1572
+    .line 1749
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1573
+    .line 1750
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1574
+    .line 1751
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1578
+    .line 1755
     :goto_0
     return-object p0
 
-    .line 1576
+    .line 1753
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1079,7 +1143,7 @@
     .locals 2
 
     .prologue
-    .line 1069
+    .line 1236
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->create()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1099,7 +1163,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clone()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1111,7 +1175,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clone()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1123,7 +1187,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clone()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1135,7 +1199,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clone()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1147,7 +1211,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clone()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1164,7 +1228,7 @@
     .end annotation
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->clone()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -1176,48 +1240,61 @@
     .locals 1
 
     .prologue
-    .line 1317
+    .line 1494
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     return-object v0
 .end method
 
 .method public getBroadcastAction()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1730
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
+    .line 1907
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1731
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1908
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1732
+    move-object v0, v1
+
+    .line 1909
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1911
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1734
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
+    .line 1912
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1737
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1913
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
+
+    .line 1917
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1226,16 +1303,16 @@
     .locals 3
 
     .prologue
-    .line 1751
+    .line 1931
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1752
+    .line 1932
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1753
+    .line 1933
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1243,11 +1320,11 @@
 
     move-result-object v0
 
-    .line 1756
+    .line 1936
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1759
+    .line 1939
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1266,7 +1343,7 @@
     .locals 1
 
     .prologue
-    .line 1078
+    .line 1245
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -1278,7 +1355,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -1290,7 +1367,7 @@
     .locals 1
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v0
@@ -1302,48 +1379,61 @@
     .locals 1
 
     .prologue
-    .line 1074
+    .line 1241
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1224
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
+    .line 1398
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1225
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1399
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1226
+    move-object v0, v1
+
+    .line 1400
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1402
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1228
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
+    .line 1403
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1231
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1404
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
+
+    .line 1408
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1352,16 +1442,16 @@
     .locals 3
 
     .prologue
-    .line 1244
+    .line 1421
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1245
+    .line 1422
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1246
+    .line 1423
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1369,11 +1459,11 @@
 
     move-result-object v0
 
-    .line 1249
+    .line 1426
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1252
+    .line 1429
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1392,10 +1482,20 @@
     .locals 1
 
     .prologue
-    .line 1837
+    .line 2017
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->removeWhenSelected_:Z
 
     return v0
+.end method
+
+.method public getTravelMode()Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+    .locals 1
+
+    .prologue
+    .line 2067
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    return-object v0
 .end method
 
 .method public getValue(I)Lcom/google/googlex/glass/common/proto/MenuValue;
@@ -1403,12 +1503,12 @@
     .parameter "index"
 
     .prologue
-    .line 1398
+    .line 1575
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1399
+    .line 1576
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1417,7 +1517,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/MenuValue;
 
-    .line 1401
+    .line 1578
     :goto_0
     return-object v0
 
@@ -1438,7 +1538,7 @@
     .parameter "index"
 
     .prologue
-    .line 1612
+    .line 1789
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getValueFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1465,7 +1565,7 @@
     .end annotation
 
     .prologue
-    .line 1690
+    .line 1867
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getValueFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1481,19 +1581,19 @@
     .locals 1
 
     .prologue
-    .line 1381
+    .line 1558
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1382
+    .line 1559
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1384
+    .line 1561
     :goto_0
     return v0
 
@@ -1520,19 +1620,19 @@
     .end annotation
 
     .prologue
-    .line 1364
+    .line 1541
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1365
+    .line 1542
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1367
+    .line 1544
     :goto_0
     return-object v0
 
@@ -1551,12 +1651,12 @@
     .parameter "index"
 
     .prologue
-    .line 1626
+    .line 1803
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1627
+    .line 1804
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1565,7 +1665,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/MenuValueOrBuilder;
 
-    .line 1628
+    .line 1805
     :goto_0
     return-object v0
 
@@ -1594,19 +1694,19 @@
     .end annotation
 
     .prologue
-    .line 1643
+    .line 1820
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1644
+    .line 1821
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1646
+    .line 1823
     :goto_0
     return-object v0
 
@@ -1624,7 +1724,7 @@
     .locals 2
 
     .prologue
-    .line 1311
+    .line 1488
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1648,7 +1748,7 @@
     .locals 2
 
     .prologue
-    .line 1718
+    .line 1895
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1674,7 +1774,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1213
+    .line 1387
     iget v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1694,7 +1794,7 @@
     .locals 2
 
     .prologue
-    .line 1826
+    .line 2006
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1714,11 +1814,35 @@
     goto :goto_0
 .end method
 
+.method public hasTravelMode()Z
+    .locals 2
+
+    .prologue
+    .line 2057
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x20
+
+    const/16 v1, 0x20
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method protected internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
     .locals 3
 
     .prologue
-    .line 1025
+    .line 1190
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_MenuItem_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/MenuItem;
@@ -1736,7 +1860,7 @@
     .locals 1
 
     .prologue
-    .line 1181
+    .line 1355
     const/4 v0, 0x1
 
     return v0
@@ -1749,18 +1873,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1133
+    .line 1304
     invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/MenuItem;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 1177
+    .line 1351
     :goto_0
     return-object p0
 
-    .line 1134
+    .line 1305
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->hasId()Z
 
@@ -1768,14 +1892,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 1135
+    .line 1306
     iget v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1136
+    .line 1307
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->id_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$500(Lcom/google/googlex/glass/common/proto/MenuItem;)Ljava/lang/Object;
 
@@ -1783,10 +1907,10 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1137
+    .line 1308
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1139
+    .line 1310
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->hasAction()Z
 
@@ -1794,20 +1918,20 @@
 
     if-eqz v1, :cond_2
 
-    .line 1140
+    .line 1311
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->getAction()Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 1142
+    .line 1313
     :cond_2
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v1, :cond_7
+    if-nez v1, :cond_8
 
-    .line 1143
+    .line 1314
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$700(Lcom/google/googlex/glass/common/proto/MenuItem;)Ljava/util/List;
 
@@ -1819,16 +1943,16 @@
 
     if-nez v0, :cond_3
 
-    .line 1144
+    .line 1315
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
-    .line 1145
+    .line 1316
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$700(Lcom/google/googlex/glass/common/proto/MenuItem;)Ljava/util/List;
 
@@ -1836,18 +1960,18 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1146
+    .line 1317
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1151
+    .line 1322
     :goto_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1168
+    .line 1339
     :cond_3
     :goto_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->hasBroadcastAction()Z
@@ -1856,14 +1980,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 1169
+    .line 1340
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1170
+    .line 1341
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->broadcastAction_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$800(Lcom/google/googlex/glass/common/proto/MenuItem;)Ljava/lang/Object;
 
@@ -1871,10 +1995,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1171
+    .line 1342
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1173
+    .line 1344
     :cond_4
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->hasRemoveWhenSelected()Z
 
@@ -1882,15 +2006,30 @@
 
     if-eqz v0, :cond_5
 
-    .line 1174
+    .line 1345
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->getRemoveWhenSelected()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setRemoveWhenSelected(Z)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 1176
+    .line 1347
     :cond_5
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->hasTravelMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_6
+
+    .line 1348
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->getTravelMode()Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setTravelMode(Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+
+    .line 1350
+    :cond_6
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
@@ -1899,11 +2038,11 @@
 
     goto :goto_0
 
-    .line 1148
-    :cond_6
+    .line 1319
+    :cond_7
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1149
+    .line 1320
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
@@ -1915,8 +2054,8 @@
 
     goto :goto_1
 
-    .line 1154
-    :cond_7
+    .line 1325
+    :cond_8
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$700(Lcom/google/googlex/glass/common/proto/MenuItem;)Ljava/util/List;
 
@@ -1928,24 +2067,24 @@
 
     if-nez v1, :cond_3
 
-    .line 1155
+    .line 1326
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
-    .line 1156
+    .line 1327
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 1157
+    .line 1328
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1158
+    .line 1329
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$700(Lcom/google/googlex/glass/common/proto/MenuItem;)Ljava/util/List;
 
@@ -1953,31 +2092,31 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
-    .line 1159
+    .line 1330
     iget v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, -0x5
 
     iput v1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1160
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$1100()Z
+    .line 1331
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem;->access$1200()Z
 
     move-result v1
 
-    if-eqz v1, :cond_8
+    if-eqz v1, :cond_9
 
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->getValueFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
 
-    :cond_8
+    :cond_9
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     goto :goto_2
 
-    .line 1164
-    :cond_9
+    .line 1335
+    :cond_a
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/googlex/glass/common/proto/MenuItem;->value_:Ljava/util/List;
@@ -2001,10 +2140,10 @@
     .end annotation
 
     .prologue
-    .line 1188
+    .line 1362
     const/4 v2, 0x0
 
-    .line 1190
+    .line 1364
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/MenuItem;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/MenuItem;->PARSER:Lcom/google/protobuf/Parser;
@@ -2022,21 +2161,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1195
+    .line 1369
     if-eqz v2, :cond_0
 
-    .line 1196
+    .line 1370
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/MenuItem;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 1199
+    .line 1373
     :cond_0
     return-object p0
 
-    .line 1191
+    .line 1365
     :catch_0
     move-exception v1
 
-    .line 1192
+    .line 1366
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -2049,19 +2188,19 @@
 
     move-object v2, v0
 
-    .line 1193
+    .line 1367
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1195
+    .line 1369
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1196
+    .line 1370
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/MenuItem;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     :cond_1
@@ -2073,12 +2212,12 @@
     .parameter "other"
 
     .prologue
-    .line 1124
+    .line 1295
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/MenuItem;
 
     if-eqz v0, :cond_0
 
-    .line 1125
+    .line 1296
     check-cast p1, Lcom/google/googlex/glass/common/proto/MenuItem;
 
     .end local p1
@@ -2086,12 +2225,12 @@
 
     move-result-object p0
 
-    .line 1128
+    .line 1299
     .end local p0
     :goto_0
     return-object p0
 
-    .line 1127
+    .line 1298
     .restart local p0
     .restart local p1
     :cond_0
@@ -2111,7 +2250,7 @@
     .end annotation
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -2124,7 +2263,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -2143,7 +2282,7 @@
     .end annotation
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -2162,7 +2301,7 @@
     .end annotation
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -2175,7 +2314,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -2194,7 +2333,7 @@
     .end annotation
 
     .prologue
-    .line 1014
+    .line 1179
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
     move-result-object v0
@@ -2207,27 +2346,27 @@
     .parameter "index"
 
     .prologue
-    .line 1591
+    .line 1768
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1592
+    .line 1769
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1593
+    .line 1770
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1594
+    .line 1771
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1598
+    .line 1775
     :goto_0
     return-object p0
 
-    .line 1596
+    .line 1773
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2241,17 +2380,17 @@
     .parameter "value"
 
     .prologue
-    .line 1323
+    .line 1500
     if-nez p1, :cond_0
 
-    .line 1324
+    .line 1501
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1326
+    .line 1503
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
@@ -2259,13 +2398,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1327
+    .line 1504
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->action_:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    .line 1328
+    .line 1505
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1329
+    .line 1506
     return-object p0
 .end method
 
@@ -2274,17 +2413,17 @@
     .parameter "value"
 
     .prologue
-    .line 1773
+    .line 1953
     if-nez p1, :cond_0
 
-    .line 1774
+    .line 1954
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1776
+    .line 1956
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
@@ -2292,13 +2431,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1777
+    .line 1957
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1778
+    .line 1958
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1779
+    .line 1959
     return-object p0
 .end method
 
@@ -2307,17 +2446,17 @@
     .parameter "value"
 
     .prologue
-    .line 1807
+    .line 1987
     if-nez p1, :cond_0
 
-    .line 1808
+    .line 1988
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1810
+    .line 1990
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
@@ -2325,13 +2464,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1811
+    .line 1991
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->broadcastAction_:Ljava/lang/Object;
 
-    .line 1812
+    .line 1992
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1813
+    .line 1993
     return-object p0
 .end method
 
@@ -2340,17 +2479,17 @@
     .parameter "value"
 
     .prologue
-    .line 1265
+    .line 1442
     if-nez p1, :cond_0
 
-    .line 1266
+    .line 1443
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1268
+    .line 1445
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
@@ -2358,13 +2497,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1269
+    .line 1446
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1270
+    .line 1447
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1271
+    .line 1448
     return-object p0
 .end method
 
@@ -2373,17 +2512,17 @@
     .parameter "value"
 
     .prologue
-    .line 1297
+    .line 1474
     if-nez p1, :cond_0
 
-    .line 1298
+    .line 1475
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1300
+    .line 1477
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
@@ -2391,13 +2530,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1301
+    .line 1478
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->id_:Ljava/lang/Object;
 
-    .line 1302
+    .line 1479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1303
+    .line 1480
     return-object p0
 .end method
 
@@ -2406,20 +2545,53 @@
     .parameter "value"
 
     .prologue
-    .line 1848
+    .line 2028
     iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
 
-    .line 1849
+    .line 2029
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->removeWhenSelected_:Z
 
-    .line 1850
+    .line 2030
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1851
+    .line 2031
+    return-object p0
+.end method
+
+.method public setTravelMode(Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    .locals 1
+    .parameter "value"
+
+    .prologue
+    .line 2077
+    if-nez p1, :cond_0
+
+    .line 2078
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 2080
+    :cond_0
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x20
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->bitField0_:I
+
+    .line 2081
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->travelMode_:Lcom/google/googlex/glass/common/proto/MenuItem$TravelMode;
+
+    .line 2082
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
+
+    .line 2083
     return-object p0
 .end method
 
@@ -2429,15 +2601,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1440
+    .line 1617
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1441
+    .line 1618
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1442
+    .line 1619
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuValue;
@@ -2446,14 +2618,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1443
+    .line 1620
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1447
+    .line 1624
     :goto_0
     return-object p0
 
-    .line 1445
+    .line 1622
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -2472,38 +2644,38 @@
     .parameter "value"
 
     .prologue
-    .line 1416
+    .line 1593
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1417
+    .line 1594
     if-nez p2, :cond_0
 
-    .line 1418
+    .line 1595
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1420
+    .line 1597
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->ensureValueIsMutable()V
 
-    .line 1421
+    .line 1598
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->value_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1422
+    .line 1599
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->onChanged()V
 
-    .line 1426
+    .line 1603
     :goto_0
     return-object p0
 
-    .line 1424
+    .line 1601
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->valueBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

@@ -392,22 +392,37 @@
     goto :goto_1
 .end method
 
-.method protected onPostExecute()V
-    .locals 1
+.method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
+    .locals 0
+    .parameter "x0"
 
     .prologue
-    .line 88
+    .line 33
+    check-cast p1, Ljava/lang/Void;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/glass/companion/DebugConnectivityChecker$PingTask;->onPostExecute(Ljava/lang/Void;)V
+
+    return-void
+.end method
+
+.method protected onPostExecute(Ljava/lang/Void;)V
+    .locals 1
+    .parameter "result"
+
+    .prologue
+    .line 89
     invoke-static {}, Lcom/google/glass/companion/DebugConnectivityChecker;->access$100()Landroid/os/PowerManager$WakeLock;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
-    .line 89
+    .line 90
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/google/glass/companion/DebugConnectivityChecker;->access$202(Lcom/google/glass/companion/DebugConnectivityChecker$PingTask;)Lcom/google/glass/companion/DebugConnectivityChecker$PingTask;
 
-    .line 90
+    .line 91
     return-void
 .end method

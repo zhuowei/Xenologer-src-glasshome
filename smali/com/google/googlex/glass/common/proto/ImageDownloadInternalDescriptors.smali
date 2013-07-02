@@ -37,11 +37,15 @@
 
     .line 36
     .local v0, assigner:Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;
-    new-array v2, v4, [Lcom/google/protobuf/Descriptors$FileDescriptor;
+    const-class v2, Lcom/google/googlex/glass/common/proto/ImageDownloadInternalDescriptors;
 
-    invoke-static {v1, v2, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;[Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+    new-array v3, v4, [Ljava/lang/String;
 
-    .line 40
+    new-array v4, v4, [Ljava/lang/String;
+
+    invoke-static {v1, v2, v3, v4, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;[Ljava/lang/String;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+
+    .line 42
     return-void
 .end method
 

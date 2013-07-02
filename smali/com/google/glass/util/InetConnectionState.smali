@@ -169,23 +169,26 @@
 
     .prologue
     .line 75
+    invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
+
+    .line 76
     invoke-virtual {p0}, Lcom/google/glass/util/InetConnectionState;->isConnected()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lcom/google/glass/util/InetConnectionState;->prevState:Z
 
-    .line 77
+    .line 78
     iget-object v0, p0, Lcom/google/glass/util/InetConnectionState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 78
+    .line 79
     iget-boolean v0, p0, Lcom/google/glass/util/InetConnectionState;->prevState:Z
 
     invoke-interface {p1, v0}, Lcom/google/glass/util/InetConnectionState$Listener;->onConnectivityChanged(Z)V
 
-    .line 79
+    .line 80
     iget-object v0, p0, Lcom/google/glass/util/InetConnectionState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
@@ -194,7 +197,7 @@
 
     if-nez v0, :cond_0
 
-    .line 80
+    .line 81
     iget-object v0, p0, Lcom/google/glass/util/InetConnectionState;->connectivityReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/util/InetConnectionState;->context:Landroid/content/Context;
@@ -211,7 +214,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 82
+    .line 83
     :cond_0
     return-void
 .end method
@@ -222,7 +225,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 93
+    .line 95
     iget-object v2, p0, Lcom/google/glass/util/InetConnectionState;->connectivityManager:Landroid/net/ConnectivityManager;
 
     invoke-virtual {v2}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
@@ -231,12 +234,12 @@
 
     if-nez v2, :cond_1
 
-    .line 102
+    .line 104
     :cond_0
     :goto_0
     return v1
 
-    .line 97
+    .line 99
     :cond_1
     iget-object v2, p0, Lcom/google/glass/util/InetConnectionState;->context:Landroid/content/Context;
 
@@ -252,11 +255,11 @@
 
     move-result-object v0
 
-    .line 98
+    .line 100
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
-    .line 102
+    .line 104
     sget-object v2, Lcom/google/glass/util/InetConnectionState;->EXTRA_INET_CONDITION:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -277,12 +280,15 @@
     .parameter "l"
 
     .prologue
-    .line 86
+    .line 87
+    invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
+
+    .line 88
     iget-object v0, p0, Lcom/google/glass/util/InetConnectionState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 87
+    .line 89
     iget-object v0, p0, Lcom/google/glass/util/InetConnectionState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
@@ -291,14 +297,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 88
+    .line 90
     iget-object v0, p0, Lcom/google/glass/util/InetConnectionState;->connectivityReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/util/InetConnectionState;->context:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 90
+    .line 92
     :cond_0
     return-void
 .end method

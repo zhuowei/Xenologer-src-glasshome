@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 177
+    .line 231
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.1;"
     iput-object p1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
@@ -39,7 +39,7 @@
     .locals 2
 
     .prologue
-    .line 180
+    .line 234
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.1;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->updateViews(Z)V
 
-    .line 181
+    .line 235
     return-void
 .end method
 
@@ -55,7 +55,7 @@
     .locals 2
 
     .prologue
-    .line 185
+    .line 239
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.1;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$1;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
@@ -63,6 +63,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->updateViews(Z)V
 
-    .line 186
+    .line 240
     return-void
 .end method

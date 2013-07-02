@@ -33,7 +33,7 @@
     .parameter "description"
 
     .prologue
-    .line 1615
+    .line 1727
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -62,24 +62,24 @@
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 1620
+    .line 1732
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->name:Ljava/lang/String;
 
-    .line 1621
+    .line 1733
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FileDescriptor;->toProto()Lcom/google/protobuf/DescriptorProtos$FileDescriptorProto;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->proto:Lcom/google/protobuf/Message;
 
-    .line 1622
+    .line 1734
     iput-object p2, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->description:Ljava/lang/String;
 
-    .line 1623
+    .line 1735
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .parameter "x2"
 
     .prologue
-    .line 1571
+    .line 1683
     invoke-direct {p0, p1, p2}, Lcom/google/protobuf/Descriptors$DescriptorValidationException;-><init>(Lcom/google/protobuf/Descriptors$FileDescriptor;Ljava/lang/String;)V
 
     return-void
@@ -102,7 +102,7 @@
     .parameter "description"
 
     .prologue
-    .line 1594
+    .line 1706
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -131,24 +131,24 @@
 
     invoke-direct {p0, v0}, Ljava/lang/Exception;-><init>(Ljava/lang/String;)V
 
-    .line 1599
+    .line 1711
     invoke-interface {p1}, Lcom/google/protobuf/Descriptors$GenericDescriptor;->getFullName()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->name:Ljava/lang/String;
 
-    .line 1600
+    .line 1712
     invoke-interface {p1}, Lcom/google/protobuf/Descriptors$GenericDescriptor;->toProto()Lcom/google/protobuf/Message;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->proto:Lcom/google/protobuf/Message;
 
-    .line 1601
+    .line 1713
     iput-object p2, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->description:Ljava/lang/String;
 
-    .line 1602
+    .line 1714
     return-void
 .end method
 
@@ -159,7 +159,7 @@
     .parameter "x2"
 
     .prologue
-    .line 1571
+    .line 1683
     invoke-direct {p0, p1, p2}, Lcom/google/protobuf/Descriptors$DescriptorValidationException;-><init>(Lcom/google/protobuf/Descriptors$GenericDescriptor;Ljava/lang/String;)V
 
     return-void
@@ -172,13 +172,13 @@
     .parameter "cause"
 
     .prologue
-    .line 1608
+    .line 1720
     invoke-direct {p0, p1, p2}, Lcom/google/protobuf/Descriptors$DescriptorValidationException;-><init>(Lcom/google/protobuf/Descriptors$GenericDescriptor;Ljava/lang/String;)V
 
-    .line 1609
+    .line 1721
     invoke-virtual {p0, p3}, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    .line 1610
+    .line 1722
     return-void
 .end method
 
@@ -190,7 +190,7 @@
     .parameter "x3"
 
     .prologue
-    .line 1571
+    .line 1683
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/Descriptors$DescriptorValidationException;-><init>(Lcom/google/protobuf/Descriptors$GenericDescriptor;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     return-void
@@ -202,7 +202,7 @@
     .locals 1
 
     .prologue
-    .line 1585
+    .line 1697
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->description:Ljava/lang/String;
 
     return-object v0
@@ -212,7 +212,7 @@
     .locals 1
 
     .prologue
-    .line 1580
+    .line 1692
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->proto:Lcom/google/protobuf/Message;
 
     return-object v0
@@ -222,7 +222,7 @@
     .locals 1
 
     .prologue
-    .line 1575
+    .line 1687
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$DescriptorValidationException;->name:Ljava/lang/String;
 
     return-object v0

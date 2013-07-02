@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/GuestTimelineView;->createDatabaseAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLjava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    value = Lcom/google/glass/home/timeline/GuestTimelineView;->createDatabaseAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLcom/google/glass/home/timeline/NotificationState;Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -40,7 +40,7 @@
     .parameter
 
     .prologue
-    .line 148
+    .line 149
     iput-object p1, p0, Lcom/google/glass/home/timeline/GuestTimelineView$5;->this$0:Lcom/google/glass/home/timeline/GuestTimelineView;
 
     iput-boolean p3, p0, Lcom/google/glass/home/timeline/GuestTimelineView$5;->val$pinned:Z
@@ -59,7 +59,7 @@
     .parameter "id"
 
     .prologue
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/google/glass/home/timeline/GuestTimelineView$5;->val$cursorManager:Lcom/google/glass/home/timeline/database/TimelineCursorManager;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/home/timeline/database/TimelineCursorManager;->find(Lcom/google/glass/timeline/TimelineItemId;)I
@@ -76,7 +76,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 153
+    .line 154
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
 
     move-result-object v1
@@ -89,7 +89,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 156
+    .line 157
     :cond_0
     :goto_0
     return v0
@@ -114,14 +114,14 @@
     .parameter "view"
 
     .prologue
-    .line 166
+    .line 167
     iget-object v0, p0, Lcom/google/glass/home/timeline/GuestTimelineView$5;->adapter:Landroid/widget/Adapter;
 
     check-cast v0, Lcom/google/glass/home/timeline/TimelineItemAdapter;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->rebind(ILandroid/view/View;)V
 
-    .line 167
+    .line 168
     return-void
 .end method
 
@@ -130,9 +130,9 @@
     .parameter "onLoad"
 
     .prologue
-    .line 171
+    .line 172
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 172
+    .line 173
     return-void
 .end method

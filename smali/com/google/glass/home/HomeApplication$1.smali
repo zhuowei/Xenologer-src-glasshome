@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 85
+    .line 86
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "binder"
 
     .prologue
-    .line 96
+    .line 97
     invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 97
+    .line 98
     invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v0
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
+    .line 99
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-static {}, Lcom/google/glass/location/LocationService;->getRunningInstance()Lcom/google/glass/location/LocationService;
@@ -99,7 +99,7 @@
     #setter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
     invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$102(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
     #getter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/location/LocationService;->setLocationProxy(Lcom/google/glass/location/LocationProxy;)V
 
-    .line 101
+    .line 102
     :cond_0
     return-void
 .end method
@@ -126,7 +126,7 @@
     .parameter "name"
 
     .prologue
-    .line 88
+    .line 89
     invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -155,7 +155,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 89
+    .line 90
     invoke-virtual {p1}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
 
     move-result-object v0
@@ -172,7 +172,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 90
+    .line 91
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$1;->this$0:Lcom/google/glass/home/HomeApplication;
 
     const/4 v1, 0x0
@@ -180,7 +180,7 @@
     #setter for: Lcom/google/glass/home/HomeApplication;->locationService:Lcom/google/glass/location/LocationService;
     invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$102(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/location/LocationService;)Lcom/google/glass/location/LocationService;
 
-    .line 92
+    .line 93
     :cond_0
     return-void
 .end method

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 48
+    .line 53
     iput-object p1, p0, Lcom/google/userfeedback/android/api/PreviewActivity$1;->this$0:Lcom/google/userfeedback/android/api/PreviewActivity;
 
     iput-object p2, p0, Lcom/google/userfeedback/android/api/PreviewActivity$1;->val$thisActivity:Landroid/app/Activity;
@@ -47,12 +47,12 @@
     .parameter "currentView"
 
     .prologue
-    .line 51
+    .line 56
     invoke-static {}, Lcom/google/userfeedback/android/api/UserFeedback;->userFeedback()Lcom/google/userfeedback/android/api/UserFeedback;
 
     move-result-object v2
 
-    .line 52
+    .line 57
     .local v2, uf:Lcom/google/userfeedback/android/api/UserFeedback;
     iget-object v3, p0, Lcom/google/userfeedback/android/api/PreviewActivity$1;->val$thisActivity:Landroid/app/Activity;
 
@@ -72,11 +72,11 @@
 
     move-result-object v0
 
-    .line 54
+    .line 59
     .local v0, dialog:Landroid/app/Dialog;
     if-nez v0, :cond_0
 
-    .line 55
+    .line 60
     invoke-virtual {v2}, Lcom/google/userfeedback/android/api/UserFeedback;->shouldIncludeScreenshot()Z
 
     move-result v3
@@ -91,12 +91,12 @@
 
     invoke-virtual {v2, v3, v4, v5}, Lcom/google/userfeedback/android/api/UserFeedback;->submitFeedback(ZZLjava/lang/String;)V
 
-    .line 57
+    .line 62
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 58
+    .line 63
     .local v1, intent:Landroid/content/Intent;
     iget-object v3, p0, Lcom/google/userfeedback/android/api/PreviewActivity$1;->this$0:Lcom/google/userfeedback/android/api/PreviewActivity;
 
@@ -104,17 +104,17 @@
 
     invoke-virtual {v3, v4, v1}, Lcom/google/userfeedback/android/api/PreviewActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 59
+    .line 64
     iget-object v3, p0, Lcom/google/userfeedback/android/api/PreviewActivity$1;->this$0:Lcom/google/userfeedback/android/api/PreviewActivity;
 
     invoke-virtual {v3}, Lcom/google/userfeedback/android/api/PreviewActivity;->finish()V
 
-    .line 63
+    .line 68
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 61
+    .line 66
     :cond_0
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
 

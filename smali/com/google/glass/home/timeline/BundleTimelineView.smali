@@ -4,8 +4,6 @@
 
 
 # static fields
-.field private static final MAX_BUNDLE_ITEMS:I = 0x64
-
 .field private static final TAG:Ljava/lang/String;
 
 
@@ -27,7 +25,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 32
     const-class v0, Lcom/google/glass/home/timeline/BundleTimelineView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -44,14 +42,14 @@
     .parameter "context"
 
     .prologue
-    .line 50
+    .line 38
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/glass/home/timeline/BundleTimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 51
+    .line 39
     return-void
 .end method
 
@@ -61,12 +59,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 54
+    .line 42
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/glass/home/timeline/BundleTimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 55
+    .line 43
     return-void
 .end method
 
@@ -77,275 +75,126 @@
     .parameter "defStyle"
 
     .prologue
-    .line 58
+    .line 46
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 47
+    .line 35
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView;->viewedPositions:Ljava/util/Set;
 
-    .line 59
+    .line 47
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/google/glass/home/timeline/BundleTimelineView;Landroid/database/Cursor;)Z
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 35
-    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->isCursorEmpty(Landroid/database/Cursor;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$100()Ljava/lang/String;
+.method static synthetic access$000()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 35
+    .line 31
     sget-object v0, Lcom/google/glass/home/timeline/BundleTimelineView;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/google/glass/home/timeline/BundleTimelineView;Landroid/database/Cursor;)Ljava/util/List;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 35
-    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->loadItems(Landroid/database/Cursor;)Ljava/util/List;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/widget/SliderView;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-    .parameter "x3"
-
-    .prologue
-    .line 35
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/timeline/BundleTimelineView;->applyNewData(Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/widget/SliderView;)V
-
-    return-void
-.end method
-
-.method static synthetic access$400(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/timeline/TimelineItemId;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 35
-    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->markItemAsReadMore(Lcom/google/glass/timeline/TimelineItemId;)V
-
-    return-void
-.end method
-
-.method static synthetic access$500(Lcom/google/glass/home/timeline/BundleTimelineView;)Ljava/util/Set;
+.method static synthetic access$100(Lcom/google/glass/home/timeline/BundleTimelineView;)Ljava/util/Set;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 31
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView;->viewedPositions:Ljava/util/Set;
 
     return-object v0
 .end method
 
-.method private applyNewData(Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/widget/SliderView;)V
-    .locals 4
-    .parameter "adapter"
-    .parameter "loader"
-    .parameter "sliderView"
+.method static synthetic access$200(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/timeline/TimelineItemId;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    const/4 v3, 0x1
+    .line 31
+    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->markItemAsReadMore(Lcom/google/glass/timeline/TimelineItemId;)V
 
-    .line 229
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
-
-    .line 232
-    invoke-interface {p2}, Lcom/google/glass/home/timeline/TimelineItemLoader;->getCount()I
-
-    move-result v0
-
-    invoke-virtual {p3, v0}, Lcom/google/glass/widget/SliderView;->setCount(I)V
-
-    .line 235
-    new-array v0, v3, [Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
-
-    const/4 v1, 0x0
-
-    new-instance v2, Lcom/google/glass/home/timeline/BundleTimelineView$3;
-
-    invoke-direct {v2, p0, p1, p2}, Lcom/google/glass/home/timeline/BundleTimelineView$3;-><init>(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;)V
-
-    aput-object v2, v0, v1
-
-    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineView;->setAdapters([Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)V
-
-    .line 255
-    invoke-virtual {p0, v3}, Lcom/google/glass/home/timeline/BundleTimelineView;->updateViews(Z)V
-
-    .line 256
     return-void
 .end method
 
-.method private isCursorEmpty(Landroid/database/Cursor;)Z
-    .locals 1
-    .parameter "cursor"
+.method static synthetic access$300(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/timeline/TimelineItemId;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 169
-    if-eqz p1, :cond_0
+    .line 31
+    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->clearReadMoreMark(Lcom/google/glass/timeline/TimelineItemId;)V
 
-    invoke-interface {p1}, Landroid/database/Cursor;->isClosed()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-interface {p1}, Landroid/database/Cursor;->getCount()I
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
+    return-void
 .end method
 
-.method private loadItems(Landroid/database/Cursor;)Ljava/util/List;
-    .locals 7
-    .parameter "cursor"
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/database/Cursor;",
-            ")",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/TimelineItem;",
-            ">;"
-        }
-    .end annotation
+.method private clearReadMoreMark(Lcom/google/glass/timeline/TimelineItemId;)V
+    .locals 3
+    .parameter "itemId"
 
     .prologue
-    const/16 v6, 0x64
+    .line 170
+    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->viewForItem(Lcom/google/glass/timeline/TimelineItemId;)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 171
+    .local v0, view:Landroid/view/View;
+    if-eqz v0, :cond_0
+
+    .line 172
+    sget v1, Lcom/google/glass/home/R$id;->tag_item_read_more:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 174
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
-
-    .line 177
-    invoke-interface {p1}, Landroid/database/Cursor;->getCount()I
-
-    move-result v0
-
-    .line 178
-    .local v0, count:I
-    if-le v0, v6, :cond_0
-
-    .line 179
-    sget-object v3, Lcom/google/glass/home/timeline/BundleTimelineView;->TAG:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "There are "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " items in this bundle; truncating to "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 180
-    const/16 v0, 0x64
-
-    .line 183
     :cond_0
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 184
-    .local v2, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
-    const/4 v1, 0x0
-
-    .local v1, i:I
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    .line 185
-    invoke-interface {p1, v1}, Landroid/database/Cursor;->moveToPosition(I)Z
-
-    .line 186
-    invoke-static {p1}, Lcom/google/glass/timeline/TimelineHelper;->fromCursor(Landroid/database/Cursor;)Lcom/google/googlex/glass/common/proto/TimelineItem;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    .line 184
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 188
-    :cond_1
-    return-object v2
+    return-void
 .end method
 
 .method private markItemAsReadMore(Lcom/google/glass/timeline/TimelineItemId;)V
+    .locals 3
+    .parameter "itemId"
+
+    .prologue
+    .line 162
+    invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView;->viewForItem(Lcom/google/glass/timeline/TimelineItemId;)Landroid/view/View;
+
+    move-result-object v0
+
+    .line 163
+    .local v0, view:Landroid/view/View;
+    if-eqz v0, :cond_0
+
+    .line 164
+    sget v1, Lcom/google/glass/home/R$id;->tag_item_read_more:I
+
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 166
+    :cond_0
+    return-void
+.end method
+
+.method private viewForItem(Lcom/google/glass/timeline/TimelineItemId;)Landroid/view/View;
     .locals 6
     .parameter "itemId"
 
     .prologue
-    .line 260
+    .line 178
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 261
+    .line 179
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -355,14 +204,14 @@
 
     .local v2, n:I
     :goto_0
-    if-ge v0, v2, :cond_0
+    if-ge v0, v2, :cond_1
 
-    .line 262
+    .line 180
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineView;->getCard(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 263
+    .line 181
     .local v3, view:Landroid/view/View;
     sget v4, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
 
@@ -372,9 +221,9 @@
 
     check-cast v1, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 264
+    .line 182
     .local v1, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
 
@@ -388,64 +237,38 @@
 
     move-result v4
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_0
 
-    .line 265
-    sget v4, Lcom/google/glass/home/R$id;->tag_item_read_more:I
-
-    sget-object v5, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    invoke-virtual {v3, v4, v5}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 269
+    .line 187
     .end local v1           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v3           #view:Landroid/view/View;
-    :cond_0
-    return-void
+    :goto_1
+    return-object v3
 
-    .line 261
+    .line 179
     .restart local v1       #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .restart local v3       #view:Landroid/view/View;
-    :cond_1
+    :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
+
+    .line 187
+    .end local v1           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .end local v3           #view:Landroid/view/View;
+    :cond_1
+    const/4 v3, 0x0
+
+    goto :goto_1
 .end method
 
 
 # virtual methods
-.method createLoader(Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineItemLoader;
-    .locals 1
-    .parameter
-    .annotation build Lcom/google/common/annotations/VisibleForTesting;
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/TimelineItem;",
-            ">;)",
-            "Lcom/google/glass/home/timeline/TimelineItemLoader;"
-        }
-    .end annotation
-
-    .prologue
-    .line 198
-    .local p1, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
-    new-instance v0, Lcom/google/glass/home/timeline/BundleTimelineView$2;
-
-    invoke-direct {v0, p0, p1}, Lcom/google/glass/home/timeline/BundleTimelineView$2;-><init>(Lcom/google/glass/home/timeline/BundleTimelineView;Ljava/util/List;)V
-
-    return-object v0
-.end method
-
 .method public getHomePosition()I
     .locals 1
 
     .prologue
-    .line 275
+    .line 194
     const/4 v0, 0x0
 
     return v0
@@ -464,101 +287,158 @@
     .end annotation
 
     .prologue
-    .line 287
+    .line 206
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView;->viewedPositions:Ljava/util/Set;
 
     return-object v0
 .end method
 
-.method public init(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/widget/SliderView;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/timeline/TimelineItemId;)Landroid/content/CursorLoader;
-    .locals 13
+.method public init(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/widget/SliderView;Lcom/google/glass/home/timeline/NotificationState;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/timeline/TimelineItemId;)Landroid/content/CursorLoader;
+    .locals 21
     .parameter "activity"
     .parameter "sliderView"
+    .parameter "notificationState"
     .parameter "bitmapFactory"
     .parameter "id"
 
     .prologue
-    .line 72
-    invoke-virtual/range {p4 .. p4}, Lcom/google/glass/timeline/TimelineItemId;->isPinned()Z
+    .line 63
+    invoke-virtual/range {p5 .. p5}, Lcom/google/glass/timeline/TimelineItemId;->isPinned()Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
-    .line 75
-    .local v5, descDisplayTime:Z
+    .line 66
+    .local v6, descDisplayTime:Z
     :goto_0
-    iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView;->viewedPositions:Ljava/util/Set;
+    move-object/from16 v0, p0
 
-    invoke-interface {v0}, Ljava/util/Set;->clear()V
+    iget-object v1, v0, Lcom/google/glass/home/timeline/BundleTimelineView;->viewedPositions:Ljava/util/Set;
 
-    .line 78
-    invoke-virtual/range {p4 .. p4}, Lcom/google/glass/timeline/TimelineItemId;->isPinned()Z
+    invoke-interface {v1}, Ljava/util/Set;->clear()V
 
-    move-result v0
+    .line 69
+    invoke-virtual/range {p5 .. p5}, Lcom/google/glass/timeline/TimelineItemId;->isPinned()Z
 
-    invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/BundleTimelineView;->getMaxItemTimestamp(Z)J
+    move-result v1
 
-    move-result-wide v3
+    invoke-static {v1}, Lcom/google/glass/home/timeline/BundleTimelineView;->getMaxItemTimestamp(Z)J
 
-    .line 81
-    .local v3, maxItemTimestamp:J
-    invoke-virtual/range {p4 .. p4}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
+    move-result-wide v4
 
-    move-result-object v1
-
-    invoke-virtual/range {p4 .. p4}, Lcom/google/glass/timeline/TimelineItemId;->getBundleId()Ljava/lang/String;
+    .line 72
+    .local v4, maxItemTimestamp:J
+    invoke-virtual/range {p5 .. p5}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual/range {p4 .. p4}, Lcom/google/glass/timeline/TimelineItemId;->isPinned()Z
+    invoke-virtual/range {p5 .. p5}, Lcom/google/glass/timeline/TimelineItemId;->getBundleId()Ljava/lang/String;
 
-    move-result v6
+    move-result-object v3
 
-    move-object v0, p1
+    invoke-virtual/range {p5 .. p5}, Lcom/google/glass/timeline/TimelineItemId;->isPinned()Z
 
-    invoke-static/range {v0 .. v6}, Lcom/google/glass/timeline/TimelineHelper;->createItemLoaderForBundleTimeline(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;JZZ)Landroid/content/CursorLoader;
+    move-result v7
 
-    move-result-object v12
+    move-object/from16 v1, p1
 
-    .line 85
-    .local v12, cursorLoader:Landroid/content/CursorLoader;
-    new-instance v6, Lcom/google/glass/home/timeline/BundleTimelineView$1;
+    invoke-static/range {v1 .. v7}, Lcom/google/glass/timeline/TimelineHelper;->createItemLoaderForBundleTimeline(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;JZZ)Landroid/content/CursorLoader;
 
-    move-object v7, p0
+    move-result-object v20
 
-    move-object v8, p1
+    .line 76
+    .local v20, cursorLoader:Landroid/content/CursorLoader;
+    new-instance v12, Ljava/util/ArrayList;
 
-    move-object/from16 v9, p3
+    invoke-direct {v12}, Ljava/util/ArrayList;-><init>()V
 
-    move-object v10, p2
+    .line 79
+    .local v12, onLoadRunnables:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Runnable;>;"
+    new-instance v7, Lcom/google/glass/home/timeline/BundleTimelineView$1;
 
-    move-object/from16 v11, p4
+    move-object/from16 v8, p0
 
-    invoke-direct/range {v6 .. v11}, Lcom/google/glass/home/timeline/BundleTimelineView$1;-><init>(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/app/GlassActivity;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/SliderView;Lcom/google/glass/timeline/TimelineItemId;)V
+    move v9, v6
 
-    .line 164
-    .local v6, listener:Landroid/content/Loader$OnLoadCompleteListener;,"Landroid/content/Loader$OnLoadCompleteListener<Landroid/database/Cursor;>;"
-    sget-object v0, Lcom/google/glass/home/timeline/BundleTimelineView;->nextLoaderId:Ljava/util/concurrent/atomic/AtomicInteger;
+    move-object/from16 v10, p5
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+    move-object/from16 v11, p2
 
-    move-result v0
+    invoke-direct/range {v7 .. v12}, Lcom/google/glass/home/timeline/BundleTimelineView$1;-><init>(Lcom/google/glass/home/timeline/BundleTimelineView;ZLcom/google/glass/timeline/TimelineItemId;Lcom/google/glass/widget/SliderView;Ljava/util/List;)V
 
-    invoke-virtual {v12, v0, v6}, Landroid/content/CursorLoader;->registerListener(ILandroid/content/Loader$OnLoadCompleteListener;)V
+    .line 114
+    .local v7, cursorManager:Lcom/google/glass/home/timeline/database/TimelineCursorManager;
+    sget-object v1, Lcom/google/glass/home/timeline/BundleTimelineView;->nextLoaderId:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 165
-    return-object v12
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 
-    .line 72
-    .end local v3           #maxItemTimestamp:J
-    .end local v5           #descDisplayTime:Z
-    .end local v6           #listener:Landroid/content/Loader$OnLoadCompleteListener;,"Landroid/content/Loader$OnLoadCompleteListener<Landroid/database/Cursor;>;"
-    .end local v12           #cursorLoader:Landroid/content/CursorLoader;
+    move-result v1
+
+    move-object/from16 v0, v20
+
+    invoke-virtual {v0, v1, v7}, Landroid/content/CursorLoader;->registerListener(ILandroid/content/Loader$OnLoadCompleteListener;)V
+
+    .line 117
+    new-instance v13, Lcom/google/glass/home/timeline/TimelineItemAdapter;
+
+    const/16 v17, 0x1
+
+    const/16 v18, 0x0
+
+    move-object/from16 v14, p1
+
+    move-object/from16 v15, p4
+
+    move-object/from16 v16, v7
+
+    move-object/from16 v19, p3
+
+    invoke-direct/range {v13 .. v19}, Lcom/google/glass/home/timeline/TimelineItemAdapter;-><init>(Landroid/content/Context;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/home/timeline/TimelineItemLoader;ZZLcom/google/glass/home/timeline/NotificationState;)V
+
+    .line 122
+    .local v13, adapter:Lcom/google/glass/home/timeline/TimelineItemAdapter;
+    new-instance v1, Lcom/google/glass/home/timeline/BundleTimelineView$2;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v1, v0}, Lcom/google/glass/home/timeline/BundleTimelineView$2;-><init>(Lcom/google/glass/home/timeline/BundleTimelineView;)V
+
+    invoke-virtual {v13, v1}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->setContentSizedListener(Lcom/google/glass/home/timeline/TimelineItemAdapter$ContentSizedListener;)V
+
+    .line 134
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+
+    const/4 v2, 0x0
+
+    new-instance v3, Lcom/google/glass/home/timeline/BundleTimelineView$3;
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v3, v0, v13, v7, v12}, Lcom/google/glass/home/timeline/BundleTimelineView$3;-><init>(Lcom/google/glass/home/timeline/BundleTimelineView;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/database/TimelineCursorManager;Ljava/util/List;)V
+
+    aput-object v3, v1, v2
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/BundleTimelineView;->setAdapters([Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)V
+
+    .line 157
+    return-object v20
+
+    .line 63
+    .end local v4           #maxItemTimestamp:J
+    .end local v6           #descDisplayTime:Z
+    .end local v7           #cursorManager:Lcom/google/glass/home/timeline/database/TimelineCursorManager;
+    .end local v12           #onLoadRunnables:Ljava/util/List;,"Ljava/util/List<Ljava/lang/Runnable;>;"
+    .end local v13           #adapter:Lcom/google/glass/home/timeline/TimelineItemAdapter;
+    .end local v20           #cursorLoader:Landroid/content/CursorLoader;
     :cond_0
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
     goto :goto_0
 .end method
@@ -568,10 +448,10 @@
     .parameter "position"
 
     .prologue
-    .line 281
+    .line 200
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineView;->onFocused(I)V
 
-    .line 282
+    .line 201
     iget-object v0, p0, Lcom/google/glass/home/timeline/BundleTimelineView;->viewedPositions:Ljava/util/Set;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -580,6 +460,6 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 283
+    .line 202
     return-void
 .end method

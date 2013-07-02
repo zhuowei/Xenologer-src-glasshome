@@ -8,6 +8,8 @@
 
 .field public static final BRAND:I = 0xb
 
+.field public static final BUILD_FINGERPRINT:I = 0xc
+
 .field public static final BUILD_ID:I = 0x2
 
 .field public static final BUILD_TYPE:I = 0x3

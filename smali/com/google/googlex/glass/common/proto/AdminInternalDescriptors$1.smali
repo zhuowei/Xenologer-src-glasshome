@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 25
+    .line 26
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,10 +35,10 @@
     .parameter "root"
 
     .prologue
-    .line 28
+    .line 29
     sput-object p1, Lcom/google/googlex/glass/common/proto/AdminInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 29
+    .line 30
     const/4 v0, 0x0
 
     return-object v0

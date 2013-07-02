@@ -392,9 +392,11 @@
 
     move-result-object v13
 
+    const/4 v14, 0x0
+
     move-object/from16 v0, p2
 
-    invoke-static {v0, v13}, Lcom/google/protobuf/FieldSet;->readPrimitiveFieldForMutable(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;)Ljava/lang/Object;
+    invoke-static {v0, v13, v14}, Lcom/google/protobuf/FieldSet;->readPrimitiveFieldForMutable(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
 
     move-result-object v11
 
@@ -446,9 +448,11 @@
 
     move-result-object v13
 
+    const/4 v14, 0x0
+
     move-object/from16 v0, p2
 
-    invoke-static {v0, v13}, Lcom/google/protobuf/FieldSet;->readPrimitiveFieldForMutable(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;)Ljava/lang/Object;
+    invoke-static {v0, v13, v14}, Lcom/google/protobuf/FieldSet;->readPrimitiveFieldForMutable(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
 
     move-result-object v11
 

@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 929
+    .line 1062
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     const-string v1, "TAKE_A_NOTE"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->TAKE_A_NOTE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 937
+    .line 1070
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     const-string v1, "POST_AN_UPDATE"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->POST_AN_UPDATE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 920
+    .line 1053
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->$VALUES:[Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 973
+    .line 1106
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 993
+    .line 1126
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->values()[Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 1007
+    .line 1140
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 1008
+    .line 1141
     iput p3, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->index:I
 
-    .line 1009
+    .line 1142
     iput p4, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->value:I
 
-    .line 1010
+    .line 1143
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 990
+    .line 1123
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 970
+    .line 1103
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 961
+    .line 1094
     packed-switch p0, :pswitch_data_0
 
-    .line 964
+    .line 1097
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 962
+    .line 1095
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->TAKE_A_NOTE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     goto :goto_0
 
-    .line 963
+    .line 1096
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->POST_AN_UPDATE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     goto :goto_0
 
-    .line 961
+    .line 1094
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 997
+    .line 1130
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 998
+    .line 1131
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 1001
+    .line 1134
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->VALUES:[Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 920
+    .line 1053
     const-class v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 920
+    .line 1053
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->$VALUES:[Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 986
+    .line 1119
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 958
+    .line 1091
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 982
+    .line 1115
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

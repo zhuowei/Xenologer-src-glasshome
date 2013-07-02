@@ -18,6 +18,9 @@
 .method public abstract addRepeated(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
 .end method
 
+.method public abstract addRepeatedRaw(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
+.end method
+
 .method public abstract clear(Lcom/google/protobuf/GeneratedMutableMessage;)V
 .end method
 
@@ -27,10 +30,16 @@
 .method public abstract getMutable(Lcom/google/protobuf/GeneratedMutableMessage;)Ljava/lang/Object;
 .end method
 
+.method public abstract getRaw(Lcom/google/protobuf/GeneratedMutableMessage;)Ljava/lang/Object;
+.end method
+
 .method public abstract getRepeated(Lcom/google/protobuf/GeneratedMutableMessage;I)Ljava/lang/Object;
 .end method
 
 .method public abstract getRepeatedCount(Lcom/google/protobuf/GeneratedMutableMessage;)I
+.end method
+
+.method public abstract getRepeatedRaw(Lcom/google/protobuf/GeneratedMutableMessage;I)Ljava/lang/Object;
 .end method
 
 .method public abstract has(Lcom/google/protobuf/GeneratedMutableMessage;)Z
@@ -42,5 +51,11 @@
 .method public abstract set(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
 .end method
 
+.method public abstract setRaw(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
+.end method
+
 .method public abstract setRepeated(Lcom/google/protobuf/GeneratedMutableMessage;ILjava/lang/Object;)V
+.end method
+
+.method public abstract setRepeatedRaw(Lcom/google/protobuf/GeneratedMutableMessage;ILjava/lang/Object;)V
 .end method

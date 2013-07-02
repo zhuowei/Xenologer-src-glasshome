@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 315
+    .line 306
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
@@ -46,7 +46,7 @@
     .parameter "iconId"
 
     .prologue
-    .line 329
+    .line 320
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->isShowing()Z
@@ -55,11 +55,11 @@
 
     if-nez v0, :cond_0
 
-    .line 344
+    .line 335
     :goto_0
     return-void
 
-    .line 333
+    .line 324
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
 
@@ -69,17 +69,17 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/MessageDialog;->setListener(Lcom/google/glass/widget/MessageDialog$Listener;)V
 
-    .line 341
+    .line 332
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/widget/MessageDialog;->updateContent(II)V
 
-    .line 342
+    .line 333
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->val$connectionDialog:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->autoHide()V
 
-    .line 343
+    .line 334
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getContentView()Landroid/view/View;
@@ -100,7 +100,7 @@
     .locals 2
 
     .prologue
-    .line 324
+    .line 315
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -111,14 +111,14 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 325
+    .line 316
     sget v0, Lcom/google/glass/home/R$string;->wifi_menu_connected:I
 
     sget v1, Lcom/google/glass/home/R$drawable;->ic_done_medium:I
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->updateDialog(II)V
 
-    .line 326
+    .line 317
     return-void
 .end method
 
@@ -126,7 +126,7 @@
     .locals 2
 
     .prologue
-    .line 318
+    .line 309
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -137,13 +137,13 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 319
+    .line 310
     sget v0, Lcom/google/glass/home/R$string;->wifi_menu_failed:I
 
     sget v1, Lcom/google/glass/home/R$drawable;->ic_fail_medium:I
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->updateDialog(II)V
 
-    .line 320
+    .line 311
     return-void
 .end method

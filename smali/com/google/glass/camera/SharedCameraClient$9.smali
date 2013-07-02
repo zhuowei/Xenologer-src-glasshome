@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 434
+    .line 463
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$9;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$previewFrame:[B
@@ -51,7 +51,7 @@
     .locals 4
 
     .prologue
-    .line 437
+    .line 466
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$9;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$9;->val$previewFrame:[B
@@ -60,6 +60,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/camera/SharedCameraClient;->onPreviewFrame([BJ)V
 
-    .line 438
+    .line 467
     return-void
 .end method

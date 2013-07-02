@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 483
+    .line 481
     iput-object p1, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .locals 1
 
     .prologue
-    .line 515
+    .line 513
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassActivity;->onCameraButtonPressed()Z
@@ -57,24 +57,24 @@
     .locals 2
 
     .prologue
-    .line 498
+    .line 496
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->lastSelectedItem:Lcom/google/glass/widget/OptionMenu$Item;
 
     if-eqz v0, :cond_0
 
-    .line 499
+    .line 497
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
     iget-object v1, p0, Lcom/google/glass/app/GlassActivity$3;->lastSelectedItem:Lcom/google/glass/widget/OptionMenu$Item;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassActivity;->onOptionsItemSelected(Lcom/google/glass/widget/OptionMenu$Item;)Z
 
-    .line 500
+    .line 498
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->lastSelectedItem:Lcom/google/glass/widget/OptionMenu$Item;
 
-    .line 502
+    .line 500
     :cond_0
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
@@ -92,7 +92,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 503
+    .line 501
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
     iget-object v1, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
@@ -104,7 +104,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassActivity;->onOptionsMenuCanceled(Lcom/google/glass/widget/OptionMenu;)V
 
-    .line 505
+    .line 503
     :cond_1
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
@@ -117,7 +117,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassActivity;->onOptionsMenuClosed(Lcom/google/glass/widget/OptionMenu;)V
 
-    .line 506
+    .line 504
     return-void
 .end method
 
@@ -125,12 +125,12 @@
     .locals 1
 
     .prologue
-    .line 520
+    .line 518
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassActivity;->onDisallowedInput()V
 
-    .line 521
+    .line 519
     return-void
 .end method
 
@@ -139,10 +139,10 @@
     .parameter "item"
 
     .prologue
-    .line 492
+    .line 490
     iput-object p1, p0, Lcom/google/glass/app/GlassActivity$3;->lastSelectedItem:Lcom/google/glass/widget/OptionMenu$Item;
 
-    .line 493
+    .line 491
     const/4 v0, 0x1
 
     return v0
@@ -152,7 +152,7 @@
     .locals 1
 
     .prologue
-    .line 510
+    .line 508
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$3;->this$0:Lcom/google/glass/app/GlassActivity;
 
     #calls: Lcom/google/glass/app/GlassActivity;->shouldAllowCameraButton()Z

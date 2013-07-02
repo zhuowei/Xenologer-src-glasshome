@@ -77,26 +77,26 @@
     .parameter "voiceInterface"
 
     .prologue
-    .line 87
+    .line 97
     const/4 v1, 0x2
 
     invoke-static {v1}, Lcom/google/common/collect/Lists;->newArrayListWithExpectedSize(I)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 89
+    .line 99
     .local v0, sounds:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/sound/SoundManager$SoundId;>;"
     if-eqz p2, :cond_0
 
     if-nez p3, :cond_1
 
-    .line 91
+    .line 101
     :cond_0
     sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->TAP:Lcom/google/glass/sound/SoundManager$SoundId;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 94
+    .line 104
     :cond_1
     iget-boolean v1, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->voicePendingAfterTrigger:Z
 
@@ -112,13 +112,13 @@
 
     if-eqz p3, :cond_3
 
-    .line 97
+    .line 107
     :cond_2
     sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->VOICE_PENDING:Lcom/google/glass/sound/SoundManager$SoundId;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 99
+    .line 109
     :cond_3
     if-eqz p2, :cond_4
 
@@ -126,12 +126,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 100
+    .line 110
     iget-object v1, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->customTriggerSound:Lcom/google/glass/sound/SoundManager$SoundId;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 103
+    .line 113
     :cond_4
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -139,7 +139,7 @@
 
     if-lez v1, :cond_5
 
-    .line 105
+    .line 115
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -154,7 +154,7 @@
 
     invoke-interface {p1, v1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;Lcom/google/glass/sound/SoundManager$OnSoundDoneListener;)V
 
-    .line 118
+    .line 128
     :cond_5
     return-void
 .end method
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 128
+    .line 142
     const/4 v0, 0x0
 
     return v0
@@ -176,8 +176,10 @@
     .parameter "context"
 
     .prologue
-    .line 124
-    const/4 v0, 0x0
+    .line 138
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->getLabel(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
@@ -239,6 +241,61 @@
 .method protected abstract onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
 .end method
 
+.method public requirementsSatisfied(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Z
+    .locals 3
+    .parameter "environment"
+
+    .prologue
+    .line 65
+    iget-object v2, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->requirements:Ljava/util/List;
+
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    .local v0, i$:Ljava/util/Iterator;
+    :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/google/glass/home/voice/menu/Requirement;
+
+    .line 66
+    .local v1, requirement:Lcom/google/glass/home/voice/menu/Requirement;
+    invoke-interface {v1, p1}, Lcom/google/glass/home/voice/menu/Requirement;->isSatisfied(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 67
+    invoke-interface {v1, p1}, Lcom/google/glass/home/voice/menu/Requirement;->getError(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Lcom/google/glass/app/GlassError;
+
+    move-result-object v2
+
+    invoke-interface {p1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->showError(Lcom/google/glass/app/GlassError;)V
+
+    .line 68
+    const/4 v2, 0x0
+
+    .line 71
+    .end local v1           #requirement:Lcom/google/glass/home/voice/menu/Requirement;
+    :goto_0
+    return v2
+
+    :cond_1
+    const/4 v2, 0x1
+
+    goto :goto_0
+.end method
+
 .method public setCustomTriggerSound(Lcom/google/glass/sound/SoundManager$SoundId;)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
     .locals 0
     .parameter "customTriggerSound"
@@ -279,71 +336,39 @@
 .end method
 
 .method public trigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;ZZ)V
-    .locals 3
+    .locals 1
     .parameter "environment"
     .parameter "spoken"
     .parameter "voiceInterface"
 
     .prologue
-    .line 69
-    iget-boolean v2, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->hasTriggered:Z
+    .line 82
+    iget-boolean v0, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->hasTriggered:Z
 
-    if-eqz v2, :cond_0
+    if-eqz v0, :cond_1
 
-    .line 83
+    .line 93
+    :cond_0
     :goto_0
     return-void
 
-    .line 72
-    :cond_0
-    iget-object v2, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->requirements:Ljava/util/List;
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, i$:Ljava/util/Iterator;
+    .line 85
     :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->requirementsSatisfied(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_2
+    if-eqz v0, :cond_0
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 89
+    const/4 v0, 0x1
 
-    move-result-object v1
+    iput-boolean v0, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->hasTriggered:Z
 
-    check-cast v1, Lcom/google/glass/home/voice/menu/Requirement;
-
-    .line 73
-    .local v1, requirement:Lcom/google/glass/home/voice/menu/Requirement;
-    invoke-interface {v1, p1}, Lcom/google/glass/home/voice/menu/Requirement;->isSatisfied(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_1
-
-    .line 74
-    invoke-interface {v1, p1}, Lcom/google/glass/home/voice/menu/Requirement;->getError(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Lcom/google/glass/app/GlassError;
-
-    move-result-object v2
-
-    invoke-interface {p1, v2}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->showError(Lcom/google/glass/app/GlassError;)V
-
-    goto :goto_0
-
-    .line 79
-    .end local v1           #requirement:Lcom/google/glass/home/voice/menu/Requirement;
-    :cond_2
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->hasTriggered:Z
-
-    .line 80
+    .line 90
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->playTriggerSounds(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;ZZ)V
 
-    .line 82
+    .line 92
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/home/voice/menu/VoiceMenuItem;->onTrigger(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
 
     goto :goto_0

@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field private handler:Landroid/os/Handler;
+.field private final handler:Landroid/os/Handler;
 
-.field private registerGcmRunnable:Ljava/lang/Runnable;
+.field private final registerGcmRunnable:Ljava/lang/Runnable;
 
 .field private retryDelayMs:J
 
@@ -30,19 +30,19 @@
     .parameter
 
     .prologue
-    .line 193
+    .line 194
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$5;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
 
-    .line 194
+    .line 195
     invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$400()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/glass/home/HomeApplication$5;->retryDelayMs:J
 
-    .line 197
+    .line 198
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -53,7 +53,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/HomeApplication$5;->handler:Landroid/os/Handler;
 
-    .line 200
+    .line 201
     new-instance v0, Lcom/google/glass/home/HomeApplication$5$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/HomeApplication$5$1;-><init>(Lcom/google/glass/home/HomeApplication$5;)V
@@ -69,7 +69,7 @@
     .locals 2
 
     .prologue
-    .line 230
+    .line 231
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -95,13 +95,13 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 4
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 209
+    .line 210
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$5;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -126,7 +126,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 210
+    .line 211
     const-string v0, "retry_gcm_register"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -139,7 +139,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 213
+    .line 214
     iget-wide v0, p0, Lcom/google/glass/home/HomeApplication$5;->retryDelayMs:J
 
     invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$600()J
@@ -150,7 +150,7 @@
 
     if-lez v0, :cond_1
 
-    .line 214
+    .line 215
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$5;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -185,12 +185,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 226
+    .line 227
     :cond_0
     :goto_0
     return-void
 
-    .line 220
+    .line 221
     :cond_1
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$5;->handler:Landroid/os/Handler;
 
@@ -198,7 +198,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 221
+    .line 222
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$5;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/glass/home/HomeApplication$5;->registerGcmRunnable:Ljava/lang/Runnable;
@@ -207,7 +207,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 224
+    .line 225
     iget-wide v0, p0, Lcom/google/glass/home/HomeApplication$5;->retryDelayMs:J
 
     const-wide/16 v2, 0x2

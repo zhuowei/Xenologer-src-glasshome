@@ -706,7 +706,7 @@
 .end method
 
 .method public writeTo(Lcom/google/protobuf/CodedOutputStream;)V
-    .locals 0
+    .locals 1
     .parameter "output"
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -716,7 +716,9 @@
 
     .prologue
     .line 45
-    invoke-static {p0, p1}, Lcom/google/protobuf/MessageReflection;->writeMessageTo(Lcom/google/protobuf/Message;Lcom/google/protobuf/CodedOutputStream;)V
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, v0}, Lcom/google/protobuf/MessageReflection;->writeMessageTo(Lcom/google/protobuf/Message;Lcom/google/protobuf/CodedOutputStream;Z)V
 
     .line 46
     return-void

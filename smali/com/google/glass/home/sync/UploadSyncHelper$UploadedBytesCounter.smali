@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 637
+    .line 631
     iput-object p1, p0, Lcom/google/glass/home/sync/UploadSyncHelper$UploadedBytesCounter;->this$0:Lcom/google/glass/home/sync/UploadSyncHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 638
+    .line 632
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/glass/home/sync/UploadSyncHelper$UploadedBytesCounter;->numBytes:J
@@ -45,7 +45,7 @@
     .parameter "x1"
 
     .prologue
-    .line 637
+    .line 631
     invoke-direct {p0, p1}, Lcom/google/glass/home/sync/UploadSyncHelper$UploadedBytesCounter;-><init>(Lcom/google/glass/home/sync/UploadSyncHelper;)V
 
     return-void
@@ -56,7 +56,7 @@
     .parameter "x0"
 
     .prologue
-    .line 637
+    .line 631
     iget-wide v0, p0, Lcom/google/glass/home/sync/UploadSyncHelper$UploadedBytesCounter;->numBytes:J
 
     return-wide v0
@@ -68,7 +68,7 @@
     .parameter "x1"
 
     .prologue
-    .line 637
+    .line 631
     iget-wide v0, p0, Lcom/google/glass/home/sync/UploadSyncHelper$UploadedBytesCounter;->numBytes:J
 
     add-long/2addr v0, p1

@@ -65,19 +65,19 @@
     .locals 2
 
     .prologue
-    .line 10345
+    .line 13696
     new-instance v0, Lcom/google/glass/companion/Proto$TimelineItemResponse$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse$1;-><init>()V
 
     sput-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 10482
+    .line 13833
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
-    .line 10792
+    .line 14146
     new-instance v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     const/4 v1, 0x1
@@ -86,17 +86,17 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->defaultInstance:Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
-    .line 10793
+    .line 14147
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->defaultInstance:Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->initFields()V
 
-    .line 10794
+    .line 14148
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 10
+    .locals 11
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -106,88 +106,90 @@
     .end annotation
 
     .prologue
-    const/4 v8, -0x1
+    const/4 v9, -0x1
 
-    .line 10287
+    .line 13637
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
-    .line 10434
-    iput-byte v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedIsInitialized:B
+    .line 13785
+    iput-byte v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedIsInitialized:B
 
-    .line 10455
-    iput v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedSerializedSize:I
+    .line 13806
+    iput v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedSerializedSize:I
 
-    .line 10288
+    .line 13638
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->initFields()V
 
-    .line 10289
-    const/4 v2, 0x0
+    .line 13639
+    const/4 v3, 0x0
 
-    .line 10290
-    .local v2, mutable_bitField0_:I
+    .line 13640
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/ByteString;->newOutput()Lcom/google/protobuf/ByteString$Output;
+
+    move-result-object v7
+
+    .line 13642
+    .local v7, unknownFieldsOutput:Lcom/google/protobuf/ByteString$Output;
+    invoke-static {v7}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/google/protobuf/CodedOutputStream;
 
     move-result-object v6
 
-    .line 10292
-    .local v6, unknownFieldsOutput:Lcom/google/protobuf/ByteString$Output;
-    invoke-static {v6}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/google/protobuf/CodedOutputStream;
+    .line 13646
+    .local v6, unknownFieldsCodedOutput:Lcom/google/protobuf/CodedOutputStream;
+    const/4 v1, 0x0
 
-    move-result-object v5
-
-    .line 10296
-    .local v5, unknownFieldsCodedOutput:Lcom/google/protobuf/CodedOutputStream;
-    const/4 v0, 0x0
-
-    .line 10297
-    .local v0, done:Z
+    .line 13647
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_2
+    if-nez v1, :cond_2
 
-    .line 10298
+    .line 13648
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v4
+    move-result v5
 
-    .line 10299
-    .local v4, tag:I
-    sparse-switch v4, :sswitch_data_0
+    .line 13649
+    .local v5, tag:I
+    sparse-switch v5, :sswitch_data_0
 
-    .line 10304
-    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    .line 13654
+    invoke-virtual {p0, p1, v6, p2, v5}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v8
+    move-result v9
 
-    if-nez v8, :cond_0
+    if-nez v9, :cond_0
 
-    .line 10306
-    const/4 v0, 0x1
+    .line 13656
+    const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 10301
+    .line 13651
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
-    .line 10302
+    .line 13652
     goto :goto_0
 
-    .line 10311
+    .line 13661
     :sswitch_1
-    iget v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
-
-    or-int/lit8 v8, v8, 0x1
-
-    iput v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
-
-    .line 10312
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v8
+    move-result-object v0
 
-    iput-object v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
+    .line 13662
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
+
+    or-int/lit8 v9, v9, 0x1
+
+    iput v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
+
+    .line 13663
+    iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -195,70 +197,71 @@
 
     goto :goto_0
 
-    .line 10329
-    .end local v4           #tag:I
+    .line 13680
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v5           #tag:I
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    .line 10330
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 13681
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    move-result-object v8
+    move-result-object v9
 
-    throw v8
+    throw v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 10335
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 13686
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
-    move-exception v8
+    move-exception v9
 
-    .line 10336
+    .line 13687
     :try_start_2
-    invoke-virtual {v5}, Lcom/google/protobuf/CodedOutputStream;->flush()V
+    invoke-virtual {v6}, Lcom/google/protobuf/CodedOutputStream;->flush()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 10340
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    .line 13691
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v10
 
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    .line 10342
+    .line 13693
     :goto_1
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->makeExtensionsImmutable()V
 
-    throw v8
+    throw v9
 
-    .line 10316
-    .restart local v4       #tag:I
+    .line 13667
+    .restart local v5       #tag:I
     :sswitch_2
     :try_start_3
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
 
-    move-result v3
+    move-result v4
 
-    .line 10317
-    .local v3, rawValue:I
-    invoke-static {v3}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    .line 13668
+    .local v4, rawValue:I
+    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    move-result-object v7
+    move-result-object v8
 
-    .line 10318
-    .local v7, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-    if-nez v7, :cond_1
+    .line 13669
+    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    if-nez v8, :cond_1
 
-    .line 10319
-    invoke-virtual {v5, v4}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+    .line 13670
+    invoke-virtual {v6, v5}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
 
-    .line 10320
-    invoke-virtual {v5, v3}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+    .line 13671
+    invoke-virtual {v6, v4}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_3 .. :try_end_3} :catch_0
@@ -266,47 +269,47 @@
 
     goto :goto_0
 
-    .line 10331
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v7           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    .line 13682
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     :catch_1
-    move-exception v1
+    move-exception v2
 
-    .line 10332
-    .local v1, e:Ljava/io/IOException;
+    .line 13683
+    .local v2, e:Ljava/io/IOException;
     :try_start_4
-    new-instance v8, Lcom/google/protobuf/InvalidProtocolBufferException;
+    new-instance v9, Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v9, v10}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v9, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v9
 
-    invoke-direct {v8, v9}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v8
-
-    throw v8
+    throw v9
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 10322
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v3       #rawValue:I
-    .restart local v4       #tag:I
-    .restart local v7       #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    .line 13673
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v4       #rawValue:I
+    .restart local v5       #tag:I
+    .restart local v8       #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     :cond_1
     :try_start_5
-    iget v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
+    iget v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
-    or-int/lit8 v8, v8, 0x2
+    or-int/lit8 v9, v9, 0x2
 
-    iput v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
+    iput v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
-    .line 10323
-    iput-object v7, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    .line 13674
+    iput-object v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_5 .. :try_end_5} :catch_0
@@ -314,80 +317,80 @@
 
     goto :goto_0
 
-    .line 10336
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v7           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    .line 13687
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     :cond_2
     :try_start_6
-    invoke-virtual {v5}, Lcom/google/protobuf/CodedOutputStream;->flush()V
+    invoke-virtual {v6}, Lcom/google/protobuf/CodedOutputStream;->flush()V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 10340
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    .line 13691
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v8
+    move-result-object v9
 
-    iput-object v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    .line 10342
+    .line 13693
     :goto_2
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->makeExtensionsImmutable()V
 
-    .line 10344
+    .line 13695
     return-void
 
-    .line 10337
+    .line 13688
     :catch_2
-    move-exception v8
+    move-exception v9
 
-    .line 10340
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    .line 13691
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v8
+    move-result-object v9
 
-    iput-object v8, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
     goto :goto_2
 
     :catchall_1
-    move-exception v8
-
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
-
-    throw v8
-
-    .line 10337
-    :catch_3
     move-exception v9
 
-    .line 10340
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v10
 
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+
+    throw v9
+
+    .line 13688
+    :catch_3
+    move-exception v10
+
+    .line 13691
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+
+    move-result-object v10
+
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
     goto :goto_1
 
     :catchall_2
-    move-exception v8
+    move-exception v9
 
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v10
 
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    throw v8
+    throw v9
 
-    .line 10299
+    .line 13649
     nop
 
     :sswitch_data_0
@@ -410,7 +413,7 @@
     .end annotation
 
     .prologue
-    .line 10263
+    .line 13613
     invoke-direct {p0, p1, p2}, Lcom/google/glass/companion/Proto$TimelineItemResponse;-><init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
     return-void
@@ -423,23 +426,23 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 10269
+    .line 13619
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
 
-    .line 10434
+    .line 13785
     iput-byte v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedIsInitialized:B
 
-    .line 10455
+    .line 13806
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedSerializedSize:I
 
-    .line 10270
+    .line 13620
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->getUnknownFields()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    .line 10271
+    .line 13621
     return-void
 .end method
 
@@ -449,7 +452,7 @@
     .parameter "x1"
 
     .prologue
-    .line 10263
+    .line 13613
     invoke-direct {p0, p1}, Lcom/google/glass/companion/Proto$TimelineItemResponse;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
 
     return-void
@@ -462,16 +465,16 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 10272
+    .line 13622
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
-    .line 10434
+    .line 13785
     iput-byte v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedIsInitialized:B
 
-    .line 10455
+    .line 13806
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedSerializedSize:I
 
-    .line 10272
+    .line 13622
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
@@ -479,59 +482,59 @@
     return-void
 .end method
 
-.method static synthetic access$10000(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Ljava/lang/Object;
+.method static synthetic access$14100(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 10263
+    .line 13613
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method static synthetic access$10002(Lcom/google/glass/companion/Proto$TimelineItemResponse;Ljava/lang/Object;)Ljava/lang/Object;
+.method static synthetic access$14102(Lcom/google/glass/companion/Proto$TimelineItemResponse;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 10263
+    .line 13613
     iput-object p1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method static synthetic access$10102(Lcom/google/glass/companion/Proto$TimelineItemResponse;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+.method static synthetic access$14202(Lcom/google/glass/companion/Proto$TimelineItemResponse;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 10263
+    .line 13613
     iput-object p1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     return-object p1
 .end method
 
-.method static synthetic access$10202(Lcom/google/glass/companion/Proto$TimelineItemResponse;I)I
+.method static synthetic access$14302(Lcom/google/glass/companion/Proto$TimelineItemResponse;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 10263
+    .line 13613
     iput p1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
     return p1
 .end method
 
-.method static synthetic access$10300(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/protobuf/ByteString;
+.method static synthetic access$14400(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/protobuf/ByteString;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 10263
+    .line 13613
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
     return-object v0
@@ -541,7 +544,7 @@
     .locals 1
 
     .prologue
-    .line 10276
+    .line 13626
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->defaultInstance:Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     return-object v0
@@ -551,17 +554,17 @@
     .locals 1
 
     .prologue
-    .line 10431
+    .line 13782
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
-    .line 10432
+    .line 13783
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 10433
+    .line 13784
     return-void
 .end method
 
@@ -569,9 +572,9 @@
     .locals 1
 
     .prologue
-    .line 10544
+    .line 13895
     #calls: Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->create()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
-    invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->access$9800()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
+    invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;->access$13900()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
 
@@ -583,7 +586,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 10547
+    .line 13898
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->newBuilder()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -605,7 +608,7 @@
     .end annotation
 
     .prologue
-    .line 10524
+    .line 13875
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -628,7 +631,7 @@
     .end annotation
 
     .prologue
-    .line 10530
+    .line 13881
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -650,7 +653,7 @@
     .end annotation
 
     .prologue
-    .line 10494
+    .line 13845
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -673,7 +676,7 @@
     .end annotation
 
     .prologue
-    .line 10500
+    .line 13851
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -695,7 +698,7 @@
     .end annotation
 
     .prologue
-    .line 10535
+    .line 13886
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -718,7 +721,7 @@
     .end annotation
 
     .prologue
-    .line 10541
+    .line 13892
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -740,7 +743,7 @@
     .end annotation
 
     .prologue
-    .line 10514
+    .line 13865
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -763,7 +766,7 @@
     .end annotation
 
     .prologue
-    .line 10520
+    .line 13871
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -785,7 +788,7 @@
     .end annotation
 
     .prologue
-    .line 10504
+    .line 13855
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -808,7 +811,7 @@
     .end annotation
 
     .prologue
-    .line 10510
+    .line 13861
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -826,7 +829,7 @@
     .locals 1
 
     .prologue
-    .line 10280
+    .line 13630
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->defaultInstance:Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     return-object v0
@@ -836,7 +839,7 @@
     .locals 1
 
     .prologue
-    .line 10263
+    .line 13613
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$TimelineItemResponse;
 
     move-result-object v0
@@ -848,19 +851,19 @@
     .locals 4
 
     .prologue
-    .line 10381
+    .line 13732
     iget-object v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
-    .line 10382
+    .line 13733
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 10383
+    .line 13734
     check-cast v1, Ljava/lang/String;
 
-    .line 10391
+    .line 13742
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -869,16 +872,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 10385
+    .line 13736
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 10387
+    .line 13738
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 10388
+    .line 13739
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -886,13 +889,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 10389
+    .line 13740
     iput-object v2, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 10391
+    .line 13742
     goto :goto_0
 .end method
 
@@ -900,16 +903,16 @@
     .locals 3
 
     .prologue
-    .line 10403
+    .line 13754
     iget-object v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
-    .line 10404
+    .line 13755
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 10405
+    .line 13756
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -917,11 +920,11 @@
 
     move-result-object v0
 
-    .line 10408
+    .line 13759
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->id_:Ljava/lang/Object;
 
-    .line 10411
+    .line 13762
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -949,7 +952,7 @@
     .end annotation
 
     .prologue
-    .line 10357
+    .line 13708
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -963,10 +966,10 @@
 
     const/4 v3, 0x1
 
-    .line 10457
+    .line 13808
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedSerializedSize:I
 
-    .line 10458
+    .line 13809
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -974,26 +977,26 @@
 
     move v1, v0
 
-    .line 10471
+    .line 13822
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 10460
+    .line 13811
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 10461
+    .line 13812
     iget v2, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 10462
+    .line 13813
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1004,7 +1007,7 @@
 
     add-int/2addr v0, v2
 
-    .line 10465
+    .line 13816
     :cond_1
     iget v2, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
@@ -1012,7 +1015,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 10466
+    .line 13817
     iget-object v2, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->getNumber()I
@@ -1025,7 +1028,7 @@
 
     add-int/2addr v0, v2
 
-    .line 10469
+    .line 13820
     :cond_2
     iget-object v2, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
@@ -1035,12 +1038,12 @@
 
     add-int/2addr v0, v2
 
-    .line 10470
+    .line 13821
     iput v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 10471
+    .line 13822
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -1050,7 +1053,7 @@
     .locals 1
 
     .prologue
-    .line 10427
+    .line 13778
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     return-object v0
@@ -1062,7 +1065,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10371
+    .line 13722
     iget v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1082,7 +1085,7 @@
     .locals 2
 
     .prologue
-    .line 10421
+    .line 13772
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1106,12 +1109,12 @@
     .locals 1
 
     .prologue
-    .line 10485
+    .line 13836
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
     if-nez v0, :cond_0
 
-    .line 10486
+    .line 13837
     const-string v0, "com.google.glass.companion.MutableProto$TimelineItemResponse"
 
     invoke-static {v0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessageLite;
@@ -1120,7 +1123,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
-    .line 10488
+    .line 13839
     :cond_0
     sget-object v0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
@@ -1133,10 +1136,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 10436
+    .line 13787
     iget-byte v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedIsInitialized:B
 
-    .line 10437
+    .line 13788
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -1144,17 +1147,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 10440
+    .line 13791
     :goto_0
     return v1
 
-    .line 10437
+    .line 13788
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 10439
+    .line 13790
     :cond_1
     iput-byte v1, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->memoizedIsInitialized:B
 
@@ -1165,7 +1168,7 @@
     .locals 1
 
     .prologue
-    .line 10545
+    .line 13896
     invoke-static {}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->newBuilder()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -1177,7 +1180,7 @@
     .locals 1
 
     .prologue
-    .line 10263
+    .line 13613
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->newBuilderForType()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -1189,7 +1192,7 @@
     .locals 1
 
     .prologue
-    .line 10549
+    .line 13900
     invoke-static {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->newBuilder(Lcom/google/glass/companion/Proto$TimelineItemResponse;)Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -1201,7 +1204,7 @@
     .locals 1
 
     .prologue
-    .line 10263
+    .line 13613
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->toBuilder()Lcom/google/glass/companion/Proto$TimelineItemResponse$Builder;
 
     move-result-object v0
@@ -1218,7 +1221,7 @@
     .end annotation
 
     .prologue
-    .line 10478
+    .line 13829
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1240,24 +1243,24 @@
 
     const/4 v1, 0x1
 
-    .line 10445
+    .line 13796
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getSerializedSize()I
 
-    .line 10446
+    .line 13797
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 10447
+    .line 13798
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$TimelineItemResponse;->getIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 10449
+    .line 13800
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->bitField0_:I
 
@@ -1265,7 +1268,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 10450
+    .line 13801
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->syncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->getNumber()I
@@ -1274,12 +1277,12 @@
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 10452
+    .line 13803
     :cond_1
     iget-object v0, p0, Lcom/google/glass/companion/Proto$TimelineItemResponse;->unknownFields:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeRawBytes(Lcom/google/protobuf/ByteString;)V
 
-    .line 10453
+    .line 13804
     return-void
 .end method

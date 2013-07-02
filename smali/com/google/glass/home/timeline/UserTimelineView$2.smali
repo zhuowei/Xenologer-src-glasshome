@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/UserTimelineView;->createActiveItemAdapter(Landroid/app/Activity;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    value = Lcom/google/glass/home/timeline/UserTimelineView;->createActiveItemAdapter(Landroid/app/Activity;Lcom/google/glass/home/timeline/NotificationState;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -34,7 +34,7 @@
     .parameter "x0"
 
     .prologue
-    .line 75
+    .line 73
     iput-object p1, p0, Lcom/google/glass/home/timeline/UserTimelineView$2;->this$0:Lcom/google/glass/home/timeline/UserTimelineView;
 
     invoke-direct {p0, p2}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;-><init>(Landroid/widget/Adapter;)V
@@ -49,7 +49,7 @@
     .parameter "id"
 
     .prologue
-    .line 83
+    .line 81
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/UserTimelineView$2;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
@@ -72,7 +72,7 @@
     .parameter "id"
 
     .prologue
-    .line 78
+    .line 76
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
 
     move-result-object v0

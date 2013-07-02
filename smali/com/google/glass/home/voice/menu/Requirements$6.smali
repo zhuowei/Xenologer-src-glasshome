@@ -42,15 +42,9 @@
 
     invoke-direct {v0}, Lcom/google/glass/app/GlassError;-><init>()V
 
-    sget v1, Lcom/google/glass/home/R$string;->voice_navigation_directions_not_available:I
+    sget v1, Lcom/google/glass/home/R$string;->error_phone_in_use:I
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
-
-    move-result-object v0
-
-    sget v1, Lcom/google/glass/home/R$string;->error_get_my_glass_for_location:I
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassError;->setSecondaryMessageId(I)Lcom/google/glass/app/GlassError;
 
     move-result-object v0
 
@@ -75,13 +69,19 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->from(Landroid/content/Context;)Lcom/google/glass/home/HomeApplication;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->isNavigationAllowed()Z
+    invoke-static {v0}, Lcom/google/glass/bluetooth/BluetoothHeadset;->isInCallOrCallSetup(Landroid/content/Context;)Z
 
     move-result v0
 
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

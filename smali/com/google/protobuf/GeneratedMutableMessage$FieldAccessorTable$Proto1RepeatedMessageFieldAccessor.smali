@@ -33,11 +33,11 @@
     .end annotation
 
     .prologue
-    .line 614
+    .line 769
     .local p3, messageClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMutableMessage;>;"
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$RepeatedFieldAccessor;-><init>(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 615
+    .line 770
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .parameter "value"
 
     .prologue
-    .line 618
+    .line 773
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1RepeatedMessageFieldAccessor;->type:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
@@ -55,7 +55,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 625
+    .line 780
     .end local p1
     :goto_0
     return-object p1
@@ -84,14 +84,14 @@
     .parameter "value"
 
     .prologue
-    .line 642
+    .line 797
     invoke-direct {p0, p2}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1RepeatedMessageFieldAccessor;->coerceType(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-super {p0, p1, v0}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$RepeatedFieldAccessor;->addRepeated(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
 
-    .line 643
+    .line 798
     return-void
 .end method
 
@@ -99,7 +99,7 @@
     .locals 1
 
     .prologue
-    .line 631
+    .line 786
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1RepeatedMessageFieldAccessor;->type:Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMutableMessage;->newInstance(Ljava/lang/Class;)Ljava/lang/Object;
@@ -119,13 +119,13 @@
     .parameter "value"
 
     .prologue
-    .line 637
+    .line 792
     invoke-direct {p0, p3}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1RepeatedMessageFieldAccessor;->coerceType(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     invoke-super {p0, p1, p2, v0}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$RepeatedFieldAccessor;->setRepeated(Lcom/google/protobuf/GeneratedMutableMessage;ILjava/lang/Object;)V
 
-    .line 638
+    .line 793
     return-void
 .end method

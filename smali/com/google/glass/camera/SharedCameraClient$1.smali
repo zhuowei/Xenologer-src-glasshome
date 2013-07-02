@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 63
+    .line 66
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,14 +44,14 @@
     .parameter "height"
 
     .prologue
-    .line 66
+    .line 69
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v1, "Surface available."
 
-    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
 
-    .line 67
+    .line 70
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 69
+    .line 72
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
@@ -70,7 +70,7 @@
     #setter for: Lcom/google/glass/camera/SharedCameraClient;->isPreviewSurfaceValid:Z
     invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->access$102(Lcom/google/glass/camera/SharedCameraClient;Z)Z
 
-    .line 70
+    .line 73
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceAvailableCondition:Ljava/util/concurrent/locks/Condition;
@@ -82,7 +82,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 72
+    .line 75
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -92,10 +92,10 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 74
+    .line 77
     return-void
 
-    .line 72
+    .line 75
     :catchall_0
     move-exception v0
 
@@ -116,72 +116,58 @@
     .parameter "surface"
 
     .prologue
-    const/4 v0, 0x0
-
-    .line 78
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
-
-    const-string v2, "Surface destroyed."
-
-    invoke-static {v1, v2}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
-
-    .line 83
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
-
-    #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-    invoke-static {v1}, Lcom/google/glass/camera/SharedCameraClient;->access$000(Lcom/google/glass/camera/SharedCameraClient;)Ljava/util/concurrent/locks/ReentrantLock;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
-
-    .line 85
-    :try_start_0
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
-
     const/4 v2, 0x0
 
-    #setter for: Lcom/google/glass/camera/SharedCameraClient;->isPreviewSurfaceValid:Z
-    invoke-static {v1, v2}, Lcom/google/glass/camera/SharedCameraClient;->access$102(Lcom/google/glass/camera/SharedCameraClient;Z)Z
+    .line 81
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
+
+    const-string v1, "Surface destroyed."
+
+    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
 
     .line 86
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
+
+    #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraClient;->access$000(Lcom/google/glass/camera/SharedCameraClient;)Ljava/util/concurrent/locks/ReentrantLock;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    .line 88
+    :try_start_0
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
+
+    const/4 v1, 0x0
+
+    #setter for: Lcom/google/glass/camera/SharedCameraClient;->isPreviewSurfaceValid:Z
+    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->access$102(Lcom/google/glass/camera/SharedCameraClient;Z)Z
+
+    .line 89
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     #getter for: Lcom/google/glass/camera/SharedCameraClient;->isUsingViewfinder:Z
-    invoke-static {v1}, Lcom/google/glass/camera/SharedCameraClient;->access$300(Lcom/google/glass/camera/SharedCameraClient;)Z
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraClient;->access$300(Lcom/google/glass/camera/SharedCameraClient;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 87
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
+    .line 90
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     #getter for: Lcom/google/glass/camera/SharedCameraClient;->destroyedPreviewSurfaces:Ljava/util/Set;
-    invoke-static {v1}, Lcom/google/glass/camera/SharedCameraClient;->access$400(Lcom/google/glass/camera/SharedCameraClient;)Ljava/util/Set;
+    invoke-static {v0}, Lcom/google/glass/camera/SharedCameraClient;->access$400(Lcom/google/glass/camera/SharedCameraClient;)Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 91
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
-
-    #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-    invoke-static {v1}, Lcom/google/glass/camera/SharedCameraClient;->access$000(Lcom/google/glass/camera/SharedCameraClient;)Ljava/util/concurrent/locks/ReentrantLock;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 95
+    .line 97
     :goto_0
-    return v0
-
-    .line 91
-    :cond_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     #getter for: Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
@@ -191,12 +177,19 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 95
-    const/4 v0, 0x1
+    .line 100
+    return v2
+
+    .line 94
+    :cond_0
+    :try_start_1
+    invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->release()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto :goto_0
 
-    .line 91
+    .line 97
     :catchall_0
     move-exception v0
 
@@ -219,14 +212,14 @@
     .parameter "height"
 
     .prologue
-    .line 104
+    .line 109
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$1;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     const-string v1, "Surface changed."
 
-    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
 
-    .line 105
+    .line 110
     return-void
 .end method
 
@@ -235,6 +228,6 @@
     .parameter "surface"
 
     .prologue
-    .line 100
+    .line 105
     return-void
 .end method

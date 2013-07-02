@@ -63,40 +63,40 @@
     .end annotation
 
     .prologue
-    .line 385
+    .line 537
     .local p2, formattedPhoneNumbers:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 386
+    .line 538
     iput-object p1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 387
+    .line 539
     iput-object p2, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->formattedPhoneNumbers:Ljava/util/List;
 
-    .line 388
+    .line 540
     iput-object p3, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->sanitizedEmail:Ljava/lang/String;
 
-    .line 389
+    .line 541
     iput-wide p4, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
 
-    .line 390
+    .line 542
     iput p6, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
 
-    .line 391
+    .line 543
     iput p7, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->priority:I
 
-    .line 392
+    .line 544
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/google/glass/entity/EntityHelper$EntityData;JI)V
+.method static synthetic access$300(Lcom/google/glass/entity/EntityHelper$EntityData;JI)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 376
+    .line 528
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/entity/EntityHelper$EntityData;->update(JI)V
 
     return-void
@@ -108,12 +108,88 @@
     .parameter "shareCount"
 
     .prologue
-    .line 395
+    .line 547
     iput-wide p1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
 
-    .line 396
+    .line 548
     iput p3, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
 
-    .line 397
+    .line 549
     return-void
+.end method
+
+
+# virtual methods
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 553
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "EntityData<Name:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->entity:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/Entity;->getDisplayName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", shareCount:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->shareCount:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", lastShareTime:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->lastShareTime:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", priority:"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/google/glass/entity/EntityHelper$EntityData;->priority:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ">"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

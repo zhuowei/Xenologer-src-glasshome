@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 38
+    .line 37
     iput-object p1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -35,22 +35,24 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .locals 6
+    .locals 7
     .parameter "msg"
 
     .prologue
+    const/4 v6, 0x0
+
     const/4 v5, 0x0
 
-    .line 41
+    .line 40
     iget v1, p1, Landroid/os/Message;->what:I
 
     packed-switch v1, :pswitch_data_0
 
-    .line 64
+    .line 63
     :goto_0
     return-void
 
-    .line 43
+    .line 42
     :pswitch_0
     invoke-static {}, Lcom/google/glass/util/TtsHelper;->access$000()Ljava/lang/String;
 
@@ -58,9 +60,11 @@
 
     const-string v2, "Speaking text"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v3, v5, [Ljava/lang/Object;
 
-    .line 44
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 43
     const/4 v1, 0x3
 
     invoke-static {}, Lcom/google/glass/util/TtsHelper;->access$000()Ljava/lang/String;
@@ -92,9 +96,9 @@
 
     move-result-object v3
 
-    invoke-static {v1, v2, v3}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->logPii(ILjava/lang/String;Ljava/lang/String;)V
 
-    .line 46
+    .line 45
     iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
 
     iget-object v2, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
@@ -107,7 +111,7 @@
     #setter for: Lcom/google/glass/util/TtsHelper;->currentTtsListener:Landroid/speech/tts/UtteranceProgressListener;
     invoke-static {v1, v2}, Lcom/google/glass/util/TtsHelper;->access$202(Lcom/google/glass/util/TtsHelper;Landroid/speech/tts/UtteranceProgressListener;)Landroid/speech/tts/UtteranceProgressListener;
 
-    .line 47
+    .line 46
     iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
 
     #getter for: Lcom/google/glass/util/TtsHelper;->textToSpeech:Landroid/speech/tts/TextToSpeech;
@@ -124,12 +128,12 @@
 
     invoke-virtual {v1, v2}, Landroid/speech/tts/TextToSpeech;->setOnUtteranceProgressListener(Landroid/speech/tts/UtteranceProgressListener;)I
 
-    .line 52
+    .line 51
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 53
+    .line 52
     .local v0, params:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v1, "utteranceId"
 
@@ -137,7 +141,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 54
+    .line 53
     iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
 
     #getter for: Lcom/google/glass/util/TtsHelper;->textToSpeech:Landroid/speech/tts/TextToSpeech;
@@ -152,25 +156,23 @@
 
     move-result-object v2
 
-    const/4 v3, 0x0
+    invoke-virtual {v1, v2, v5, v0}, Landroid/speech/tts/TextToSpeech;->speak(Ljava/lang/String;ILjava/util/HashMap;)I
 
-    invoke-virtual {v1, v2, v3, v0}, Landroid/speech/tts/TextToSpeech;->speak(Ljava/lang/String;ILjava/util/HashMap;)I
+    .line 55
+    iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
+
+    #setter for: Lcom/google/glass/util/TtsHelper;->pendingTextToSynthesize:Ljava/lang/String;
+    invoke-static {v1, v6}, Lcom/google/glass/util/TtsHelper;->access$102(Lcom/google/glass/util/TtsHelper;Ljava/lang/String;)Ljava/lang/String;
 
     .line 56
     iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
 
-    #setter for: Lcom/google/glass/util/TtsHelper;->pendingTextToSynthesize:Ljava/lang/String;
-    invoke-static {v1, v5}, Lcom/google/glass/util/TtsHelper;->access$102(Lcom/google/glass/util/TtsHelper;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 57
-    iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
-
     #setter for: Lcom/google/glass/util/TtsHelper;->pendingTtsListener:Landroid/speech/tts/UtteranceProgressListener;
-    invoke-static {v1, v5}, Lcom/google/glass/util/TtsHelper;->access$302(Lcom/google/glass/util/TtsHelper;Landroid/speech/tts/UtteranceProgressListener;)Landroid/speech/tts/UtteranceProgressListener;
+    invoke-static {v1, v6}, Lcom/google/glass/util/TtsHelper;->access$302(Lcom/google/glass/util/TtsHelper;Landroid/speech/tts/UtteranceProgressListener;)Landroid/speech/tts/UtteranceProgressListener;
 
     goto :goto_0
 
-    .line 60
+    .line 59
     .end local v0           #params:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     :pswitch_1
     invoke-static {}, Lcom/google/glass/util/TtsHelper;->access$000()Ljava/lang/String;
@@ -179,9 +181,11 @@
 
     const-string v2, "Stopping speaking"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v3, v5, [Ljava/lang/Object;
 
-    .line 61
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 60
     iget-object v1, p0, Lcom/google/glass/util/TtsHelper$1;->this$0:Lcom/google/glass/util/TtsHelper;
 
     #getter for: Lcom/google/glass/util/TtsHelper;->textToSpeech:Landroid/speech/tts/TextToSpeech;
@@ -191,11 +195,9 @@
 
     invoke-virtual {v1}, Landroid/speech/tts/TextToSpeech;->stop()I
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 41
-    nop
-
+    .line 40
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

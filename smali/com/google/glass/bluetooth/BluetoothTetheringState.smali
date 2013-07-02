@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 20
     const-class v0, Lcom/google/glass/bluetooth/BluetoothTetheringState;
 
     invoke-virtual {v0}, Ljava/lang/Class;->desiredAssertionStatus()Z
@@ -68,7 +68,7 @@
     :goto_0
     sput-boolean v0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->$assertionsDisabled:Z
 
-    .line 22
+    .line 21
     const-class v0, Lcom/google/glass/bluetooth/BluetoothTetheringState;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -79,7 +79,7 @@
 
     return-void
 
-    .line 21
+    .line 20
     :cond_0
     const/4 v0, 0x0
 
@@ -91,60 +91,60 @@
     .parameter "context"
 
     .prologue
-    .line 100
+    .line 99
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 52
+    .line 51
     new-instance v1, Lcom/google/glass/bluetooth/BluetoothTetheringState$1;
 
     invoke-direct {v1, p0}, Lcom/google/glass/bluetooth/BluetoothTetheringState$1;-><init>(Lcom/google/glass/bluetooth/BluetoothTetheringState;)V
 
     iput-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->stateChangeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 80
+    .line 79
     new-instance v1, Lcom/google/glass/bluetooth/BluetoothTetheringState$2;
 
     invoke-direct {v1, p0}, Lcom/google/glass/bluetooth/BluetoothTetheringState$2;-><init>(Lcom/google/glass/bluetooth/BluetoothTetheringState;)V
 
     iput-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->serviceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    .line 101
+    .line 100
     iput-object p1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->context:Landroid/content/Context;
 
-    .line 102
+    .line 101
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
-    .line 103
+    .line 102
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->waitingListeners:Ljava/util/Set;
 
-    .line 105
-    invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
+    .line 104
+    invoke-static {}, Lcom/google/glass/bluetooth/BluetoothAdapter;->getDefaultAdapter()Lcom/google/glass/bluetooth/BluetoothAdapter;
 
     move-result-object v0
 
-    .line 106
-    .local v0, adapter:Landroid/bluetooth/BluetoothAdapter;
+    .line 105
+    .local v0, adapter:Lcom/google/glass/bluetooth/BluetoothAdapter;
     if-nez v0, :cond_0
 
-    .line 111
+    .line 110
     :goto_0
     return-void
 
-    .line 110
+    .line 109
     :cond_0
     iget-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->serviceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     const/4 v2, 0x5
 
-    invoke-virtual {v0, p1, v1, v2}, Landroid/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
+    invoke-virtual {v0, p1, v1, v2}, Lcom/google/glass/bluetooth/BluetoothAdapter;->getProfileProxy(Landroid/content/Context;Landroid/bluetooth/BluetoothProfile$ServiceListener;I)Z
 
     goto :goto_0
 .end method
@@ -154,7 +154,7 @@
     .parameter "x0"
 
     .prologue
-    .line 21
+    .line 20
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->waitingListeners:Ljava/util/Set;
 
     return-object v0
@@ -165,7 +165,7 @@
     .parameter "x0"
 
     .prologue
-    .line 21
+    .line 20
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
     return-object v0
@@ -175,7 +175,7 @@
     .locals 1
 
     .prologue
-    .line 21
+    .line 20
     sget-object v0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -187,7 +187,7 @@
     .parameter "x1"
 
     .prologue
-    .line 21
+    .line 20
     iput-object p1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->profile:Landroid/bluetooth/BluetoothProfile;
 
     return-object p1
@@ -198,7 +198,7 @@
     .parameter "x0"
 
     .prologue
-    .line 21
+    .line 20
     invoke-direct {p0}, Lcom/google/glass/bluetooth/BluetoothTetheringState;->getState()I
 
     move-result v0
@@ -212,7 +212,7 @@
     .prologue
     const/4 v1, 0x2
 
-    .line 140
+    .line 139
     sget-boolean v2, Lcom/google/glass/bluetooth/BluetoothTetheringState;->$assertionsDisabled:Z
 
     if-nez v2, :cond_0
@@ -227,7 +227,7 @@
 
     throw v1
 
-    .line 142
+    .line 141
     :cond_0
     iget-object v2, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->profile:Landroid/bluetooth/BluetoothProfile;
 
@@ -243,19 +243,19 @@
 
     move v0, v1
 
-    .line 144
+    .line 143
     .local v0, state:I
     :goto_0
     if-eq v0, v1, :cond_1
 
-    .line 145
+    .line 144
     const/4 v0, 0x0
 
-    .line 148
+    .line 147
     :cond_1
     return v0
 
-    .line 142
+    .line 141
     .end local v0           #state:I
     :cond_2
     const/4 v0, 0x0
@@ -272,7 +272,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 114
+    .line 113
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -289,23 +289,23 @@
 
     if-eqz v0, :cond_1
 
-    .line 128
+    .line 127
     :cond_0
     :goto_0
     return-void
 
-    .line 118
+    .line 117
     :cond_1
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->profile:Landroid/bluetooth/BluetoothProfile;
 
     if-nez v0, :cond_2
 
-    .line 119
+    .line 118
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->waitingListeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 125
+    .line 124
     :goto_1
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
@@ -323,7 +323,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 126
+    .line 125
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->stateChangeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->context:Landroid/content/Context;
@@ -340,13 +340,13 @@
 
     goto :goto_0
 
-    .line 121
+    .line 120
     :cond_2
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 122
+    .line 121
     invoke-direct {p0}, Lcom/google/glass/bluetooth/BluetoothTetheringState;->getState()I
 
     move-result v0
@@ -361,17 +361,17 @@
     .parameter "listener"
 
     .prologue
-    .line 131
+    .line 130
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 132
+    .line 131
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->waitingListeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 134
+    .line 133
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->listeners:Ljava/util/Set;
 
     invoke-interface {v0}, Ljava/util/Set;->size()I
@@ -388,14 +388,14 @@
 
     if-nez v0, :cond_0
 
-    .line 135
+    .line 134
     iget-object v0, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->stateChangeReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
 
     iget-object v1, p0, Lcom/google/glass/bluetooth/BluetoothTetheringState;->context:Landroid/content/Context;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 137
+    .line 136
     :cond_0
     return-void
 .end method

@@ -40,18 +40,18 @@
     .locals 1
 
     .prologue
-    .line 1207
+    .line 1340
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1315
+    .line 1448
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->TAKE_A_NOTE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 1208
+    .line 1341
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->maybeForceBuilderInitialization()V
 
-    .line 1209
+    .line 1342
     return-void
 .end method
 
@@ -60,18 +60,18 @@
     .parameter "parent"
 
     .prologue
-    .line 1213
+    .line 1346
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 1315
+    .line 1448
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->TAKE_A_NOTE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 1214
+    .line 1347
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->maybeForceBuilderInitialization()V
 
-    .line 1215
+    .line 1348
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->create()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 1221
+    .line 1354
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;-><init>()V
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 1196
+    .line 1329
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Command_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -125,14 +125,14 @@
     .locals 1
 
     .prologue
-    .line 1217
+    .line 1350
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command;->access$1100()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1219
+    .line 1352
     :cond_0
     return-void
 .end method
@@ -143,12 +143,12 @@
     .locals 2
 
     .prologue
-    .line 1247
+    .line 1380
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
 
-    .line 1248
+    .line 1381
     .local v0, result:Lcom/google/googlex/glass/common/proto/Entity$Command;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity$Command;->isInitialized()Z
 
@@ -156,14 +156,14 @@
 
     if-nez v1, :cond_0
 
-    .line 1249
+    .line 1382
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 1251
+    .line 1384
     :cond_0
     return-object v0
 .end method
@@ -172,7 +172,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->build()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->build()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -196,22 +196,22 @@
     .locals 5
 
     .prologue
-    .line 1255
+    .line 1388
     new-instance v1, Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/Entity$Command;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/Entity$1;)V
 
-    .line 1256
+    .line 1389
     .local v1, result:Lcom/google/googlex/glass/common/proto/Entity$Command;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1257
+    .line 1390
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 1258
+    .line 1391
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -219,41 +219,41 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1259
+    .line 1392
     or-int/lit8 v2, v2, 0x1
 
-    .line 1261
+    .line 1394
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Entity$Command;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Entity$Command;->access$1302(Lcom/google/googlex/glass/common/proto/Entity$Command;Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;)Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 1262
+    .line 1395
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 1263
+    .line 1396
     or-int/lit8 v2, v2, 0x2
 
-    .line 1265
+    .line 1398
     :cond_1
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->isVoiceEnabled_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/Entity$Command;->isVoiceEnabled_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Entity$Command;->access$1402(Lcom/google/googlex/glass/common/proto/Entity$Command;Z)Z
 
-    .line 1266
+    .line 1399
     #setter for: Lcom/google/googlex/glass/common/proto/Entity$Command;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Entity$Command;->access$1502(Lcom/google/googlex/glass/common/proto/Entity$Command;I)I
 
-    .line 1267
+    .line 1400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->onBuilt()V
 
-    .line 1268
+    .line 1401
     return-object v1
 .end method
 
@@ -261,7 +261,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -273,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -285,34 +285,34 @@
     .locals 1
 
     .prologue
-    .line 1225
+    .line 1358
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 1226
+    .line 1359
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->TAKE_A_NOTE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 1227
+    .line 1360
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1228
+    .line 1361
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->isVoiceEnabled_:Z
 
-    .line 1229
+    .line 1362
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1230
+    .line 1363
     return-object p0
 .end method
 
@@ -320,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -332,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -344,7 +344,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -368,22 +368,22 @@
     .locals 1
 
     .prologue
-    .line 1396
+    .line 1529
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1397
+    .line 1530
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->isVoiceEnabled_:Z
 
-    .line 1398
+    .line 1531
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->onChanged()V
 
-    .line 1399
+    .line 1532
     return-object p0
 .end method
 
@@ -391,22 +391,22 @@
     .locals 1
 
     .prologue
-    .line 1344
+    .line 1477
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1345
+    .line 1478
     sget-object v0, Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;->TAKE_A_NOTE:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 1346
+    .line 1479
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->onChanged()V
 
-    .line 1347
+    .line 1480
     return-object p0
 .end method
 
@@ -414,7 +414,7 @@
     .locals 2
 
     .prologue
-    .line 1234
+    .line 1367
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->create()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -434,7 +434,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -446,7 +446,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -458,7 +458,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -470,7 +470,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -482,7 +482,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -499,7 +499,7 @@
     .end annotation
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -511,7 +511,7 @@
     .locals 1
 
     .prologue
-    .line 1243
+    .line 1376
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -523,7 +523,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -535,7 +535,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
@@ -547,7 +547,7 @@
     .locals 1
 
     .prologue
-    .line 1239
+    .line 1372
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Command_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -557,7 +557,7 @@
     .locals 1
 
     .prologue
-    .line 1371
+    .line 1504
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->isVoiceEnabled_:Z
 
     return v0
@@ -567,7 +567,7 @@
     .locals 1
 
     .prologue
-    .line 1326
+    .line 1459
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     return-object v0
@@ -577,7 +577,7 @@
     .locals 2
 
     .prologue
-    .line 1360
+    .line 1493
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -603,7 +603,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1320
+    .line 1453
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -623,7 +623,7 @@
     .locals 3
 
     .prologue
-    .line 1201
+    .line 1334
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Command_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/Entity$Command;
@@ -641,7 +641,7 @@
     .locals 1
 
     .prologue
-    .line 1293
+    .line 1426
     const/4 v0, 0x1
 
     return v0
@@ -652,18 +652,18 @@
     .parameter "other"
 
     .prologue
-    .line 1281
+    .line 1414
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Command;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 1289
+    .line 1422
     :goto_0
     return-object p0
 
-    .line 1282
+    .line 1415
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Command;->hasType()Z
 
@@ -671,14 +671,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1283
+    .line 1416
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Command;->getType()Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->setType(Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
-    .line 1285
+    .line 1418
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Command;->hasIsVoiceEnabled()Z
 
@@ -686,14 +686,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1286
+    .line 1419
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Command;->getIsVoiceEnabled()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->setIsVoiceEnabled(Z)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
-    .line 1288
+    .line 1421
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Command;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -715,10 +715,10 @@
     .end annotation
 
     .prologue
-    .line 1300
+    .line 1433
     const/4 v2, 0x0
 
-    .line 1302
+    .line 1435
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/Entity$Command;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/Entity$Command;->PARSER:Lcom/google/protobuf/Parser;
@@ -736,21 +736,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1307
+    .line 1440
     if-eqz v2, :cond_0
 
-    .line 1308
+    .line 1441
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Entity$Command;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
-    .line 1311
+    .line 1444
     :cond_0
     return-object p0
 
-    .line 1303
+    .line 1436
     :catch_0
     move-exception v1
 
-    .line 1304
+    .line 1437
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -763,19 +763,19 @@
 
     move-object v2, v0
 
-    .line 1305
+    .line 1438
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1307
+    .line 1440
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1308
+    .line 1441
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Entity$Command;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     :cond_1
@@ -787,12 +787,12 @@
     .parameter "other"
 
     .prologue
-    .line 1272
+    .line 1405
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     if-eqz v0, :cond_0
 
-    .line 1273
+    .line 1406
     check-cast p1, Lcom/google/googlex/glass/common/proto/Entity$Command;
 
     .end local p1
@@ -800,12 +800,12 @@
 
     move-result-object p0
 
-    .line 1276
+    .line 1409
     .end local p0
     :goto_0
     return-object p0
 
-    .line 1275
+    .line 1408
     .restart local p0
     .restart local p1
     :cond_0
@@ -825,7 +825,7 @@
     .end annotation
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -838,7 +838,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -857,7 +857,7 @@
     .end annotation
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -876,7 +876,7 @@
     .end annotation
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -889,7 +889,7 @@
     .parameter "x0"
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -908,7 +908,7 @@
     .end annotation
 
     .prologue
-    .line 1190
+    .line 1323
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;
 
     move-result-object v0
@@ -921,20 +921,20 @@
     .parameter "value"
 
     .prologue
-    .line 1382
+    .line 1515
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1383
+    .line 1516
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->isVoiceEnabled_:Z
 
-    .line 1384
+    .line 1517
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->onChanged()V
 
-    .line 1385
+    .line 1518
     return-object p0
 .end method
 
@@ -943,17 +943,17 @@
     .parameter "value"
 
     .prologue
-    .line 1332
+    .line 1465
     if-nez p1, :cond_0
 
-    .line 1333
+    .line 1466
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1335
+    .line 1468
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
@@ -961,12 +961,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->bitField0_:I
 
-    .line 1336
+    .line 1469
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->type_:Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;
 
-    .line 1337
+    .line 1470
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Command$Builder;->onChanged()V
 
-    .line 1338
+    .line 1471
     return-object p0
 .end method

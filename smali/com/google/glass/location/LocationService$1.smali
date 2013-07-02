@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 151
+    .line 149
     iput-object p1, p0, Lcom/google/glass/location/LocationService$1;->this$0:Lcom/google/glass/location/LocationService;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,12 +39,12 @@
     .parameter "msg"
 
     .prologue
-    .line 154
+    .line 152
     iget-object v0, p0, Lcom/google/glass/location/LocationService$1;->this$0:Lcom/google/glass/location/LocationService;
 
     #calls: Lcom/google/glass/location/LocationService;->handleIncomingMessage(Landroid/os/Message;)V
     invoke-static {v0, p1}, Lcom/google/glass/location/LocationService;->access$300(Lcom/google/glass/location/LocationService;Landroid/os/Message;)V
 
-    .line 155
+    .line 153
     return-void
 .end method

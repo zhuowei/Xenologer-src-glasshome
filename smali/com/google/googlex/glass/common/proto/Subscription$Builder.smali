@@ -76,106 +76,47 @@
     .locals 1
 
     .prologue
-    .line 918
+    .line 924
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1118
+    .line 1124
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1267
+    .line 1276
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1364
+    .line 1376
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1461
+    .line 1476
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
-    .line 1533
+    .line 1548
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1630
+    .line 1648
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1733
+    .line 1754
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1836
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
-
-    .line 919
-    invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->maybeForceBuilderInitialization()V
-
-    .line 920
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
-    .locals 1
-    .parameter "parent"
-
-    .prologue
-    .line 924
-    invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
-
-    .line 1118
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
-
-    .line 1267
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
-
-    .line 1364
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
-
-    .line 1461
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
-
-    .line 1533
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
-
-    .line 1630
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
-
-    .line 1733
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
-
-    .line 1836
+    .line 1860
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -189,13 +130,72 @@
     return-void
 .end method
 
+.method private constructor <init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
+    .locals 1
+    .parameter "parent"
+
+    .prologue
+    .line 930
+    invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
+
+    .line 1124
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
+
+    .line 1276
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
+
+    .line 1376
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
+
+    .line 1476
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
+
+    .line 1548
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
+
+    .line 1648
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
+
+    .line 1754
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
+
+    .line 1860
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
+
+    .line 931
+    invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->maybeForceBuilderInitialization()V
+
+    .line 932
+    return-void
+.end method
+
 .method synthetic constructor <init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/Subscription$1;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 901
+    .line 907
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -205,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->create()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -217,7 +217,7 @@
     .locals 1
 
     .prologue
-    .line 933
+    .line 939
     new-instance v0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;-><init>()V
@@ -229,7 +229,7 @@
     .locals 2
 
     .prologue
-    .line 1464
+    .line 1479
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1465
+    .line 1480
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
@@ -247,14 +247,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
-    .line 1466
+    .line 1481
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1468
+    .line 1483
     :cond_0
     return-void
 .end method
@@ -263,7 +263,7 @@
     .locals 1
 
     .prologue
-    .line 907
+    .line 913
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Subscription_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -284,12 +284,12 @@
     .end annotation
 
     .prologue
-    .line 1995
+    .line 2019
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1996
+    .line 2020
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
@@ -306,12 +306,12 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 2001
+    .line 2025
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 2003
+    .line 2027
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -322,17 +322,17 @@
     .locals 1
 
     .prologue
-    .line 928
+    .line 934
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 929
+    .line 935
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->getNotificationFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 931
+    .line 937
     :cond_0
     return-void
 .end method
@@ -354,19 +354,19 @@
     .end annotation
 
     .prologue
-    .line 1517
+    .line 1532
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/Subscription$Operation;>;"
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->ensureOperationIsMutable()V
 
-    .line 1518
+    .line 1533
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1520
+    .line 1535
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1521
+    .line 1536
     return-object p0
 .end method
 
@@ -375,29 +375,29 @@
     .parameter "value"
 
     .prologue
-    .line 1504
+    .line 1519
     if-nez p1, :cond_0
 
-    .line 1505
+    .line 1520
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1507
+    .line 1522
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->ensureOperationIsMutable()V
 
-    .line 1508
+    .line 1523
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1509
+    .line 1524
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1510
+    .line 1525
     return-object p0
 .end method
 
@@ -405,12 +405,12 @@
     .locals 2
 
     .prologue
-    .line 977
+    .line 983
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
 
-    .line 978
+    .line 984
     .local v0, result:Lcom/google/googlex/glass/common/proto/Subscription;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Subscription;->isInitialized()Z
 
@@ -418,14 +418,14 @@
 
     if-nez v1, :cond_0
 
-    .line 979
+    .line 985
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 981
+    .line 987
     :cond_0
     return-object v0
 .end method
@@ -434,7 +434,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->build()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -446,7 +446,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->build()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -458,22 +458,22 @@
     .locals 5
 
     .prologue
-    .line 985
+    .line 991
     new-instance v1, Lcom/google/googlex/glass/common/proto/Subscription;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/Subscription;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/Subscription$1;)V
 
-    .line 986
+    .line 992
     .local v1, result:Lcom/google/googlex/glass/common/proto/Subscription;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 987
+    .line 993
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 988
+    .line 994
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -481,68 +481,68 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 989
+    .line 995
     or-int/lit8 v2, v2, 0x1
 
-    .line 991
+    .line 997
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->id_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$502(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 992
+    .line 998
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 993
+    .line 999
     or-int/lit8 v2, v2, 0x2
 
-    .line 995
+    .line 1001
     :cond_1
     iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->modifiedTime_:J
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->modifiedTime_:J
     invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/Subscription;->access$602(Lcom/google/googlex/glass/common/proto/Subscription;J)J
 
-    .line 996
+    .line 1002
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 997
+    .line 1003
     or-int/lit8 v2, v2, 0x4
 
-    .line 999
+    .line 1005
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->subscriber_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$702(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1000
+    .line 1006
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 1001
+    .line 1007
     or-int/lit8 v2, v2, 0x8
 
-    .line 1003
+    .line 1009
     :cond_3
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->collection_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$802(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1004
+    .line 1010
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x10
@@ -551,7 +551,7 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 1005
+    .line 1011
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -560,105 +560,105 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
-    .line 1006
+    .line 1012
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x11
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1008
+    .line 1014
     :cond_4
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->operation_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$902(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/util/List;)Ljava/util/List;
 
-    .line 1009
+    .line 1015
     and-int/lit8 v3, v0, 0x20
 
     const/16 v4, 0x20
 
     if-ne v3, v4, :cond_5
 
-    .line 1010
+    .line 1016
     or-int/lit8 v2, v2, 0x10
 
-    .line 1012
+    .line 1018
     :cond_5
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->callbackUrl_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1002(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1013
+    .line 1019
     and-int/lit8 v3, v0, 0x40
 
     const/16 v4, 0x40
 
     if-ne v3, v4, :cond_6
 
-    .line 1014
+    .line 1020
     or-int/lit8 v2, v2, 0x20
 
-    .line 1016
+    .line 1022
     :cond_6
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->verifyToken_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1102(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1017
+    .line 1023
     and-int/lit16 v3, v0, 0x80
 
     const/16 v4, 0x80
 
     if-ne v3, v4, :cond_7
 
-    .line 1018
+    .line 1024
     or-int/lit8 v2, v2, 0x40
 
-    .line 1020
+    .line 1026
     :cond_7
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->userToken_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1202(Lcom/google/googlex/glass/common/proto/Subscription;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1021
+    .line 1027
     and-int/lit16 v3, v0, 0x100
 
     const/16 v4, 0x100
 
     if-ne v3, v4, :cond_8
 
-    .line 1022
+    .line 1028
     or-int/lit16 v2, v2, 0x80
 
-    .line 1024
+    .line 1030
     :cond_8
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v3, :cond_9
 
-    .line 1025
+    .line 1031
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1302(Lcom/google/googlex/glass/common/proto/Subscription;Lcom/google/googlex/glass/common/proto/Notification;)Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 1029
+    .line 1035
     :goto_0
     #setter for: Lcom/google/googlex/glass/common/proto/Subscription;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1402(Lcom/google/googlex/glass/common/proto/Subscription;I)I
 
-    .line 1030
+    .line 1036
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onBuilt()V
 
-    .line 1031
+    .line 1037
     return-object v1
 
-    .line 1027
+    .line 1033
     :cond_9
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -678,7 +678,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -690,7 +690,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -702,120 +702,120 @@
     .locals 2
 
     .prologue
-    .line 937
+    .line 943
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 938
+    .line 944
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 939
+    .line 945
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 940
+    .line 946
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->modifiedTime_:J
 
-    .line 941
+    .line 947
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 942
+    .line 948
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 943
+    .line 949
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 944
+    .line 950
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 945
+    .line 951
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 946
+    .line 952
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
-    .line 947
+    .line 953
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 948
+    .line 954
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 949
+    .line 955
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 950
+    .line 956
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 951
+    .line 957
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 952
+    .line 958
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 953
+    .line 959
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 954
+    .line 960
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 955
+    .line 961
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 959
+    .line 965
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -823,10 +823,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 960
+    .line 966
     return-object p0
 
-    .line 957
+    .line 963
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -839,7 +839,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clear()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -851,7 +851,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clear()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -863,7 +863,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clear()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -875,7 +875,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clear()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -887,14 +887,14 @@
     .locals 1
 
     .prologue
-    .line 1607
+    .line 1625
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1608
+    .line 1626
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -905,10 +905,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1609
+    .line 1627
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1610
+    .line 1628
     return-object p0
 .end method
 
@@ -916,14 +916,14 @@
     .locals 1
 
     .prologue
-    .line 1438
+    .line 1453
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1439
+    .line 1454
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -934,10 +934,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1440
+    .line 1455
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1441
+    .line 1456
     return-object p0
 .end method
 
@@ -945,14 +945,14 @@
     .locals 1
 
     .prologue
-    .line 1192
+    .line 1201
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1193
+    .line 1202
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -963,10 +963,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1194
+    .line 1203
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1195
+    .line 1204
     return-object p0
 .end method
 
@@ -974,22 +974,22 @@
     .locals 2
 
     .prologue
-    .line 1261
+    .line 1270
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1262
+    .line 1271
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->modifiedTime_:J
 
-    .line 1263
+    .line 1272
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1264
+    .line 1273
     return-object p0
 .end method
 
@@ -997,22 +997,22 @@
     .locals 1
 
     .prologue
-    .line 1944
+    .line 1968
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1945
+    .line 1969
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 1946
+    .line 1970
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1950
+    .line 1974
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -1020,10 +1020,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1951
+    .line 1975
     return-object p0
 
-    .line 1948
+    .line 1972
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1036,24 +1036,24 @@
     .locals 1
 
     .prologue
-    .line 1527
+    .line 1542
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
-    .line 1528
+    .line 1543
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1529
+    .line 1544
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1530
+    .line 1545
     return-object p0
 .end method
 
@@ -1061,14 +1061,14 @@
     .locals 1
 
     .prologue
-    .line 1341
+    .line 1353
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1342
+    .line 1354
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -1079,10 +1079,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1343
+    .line 1355
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1344
+    .line 1356
     return-object p0
 .end method
 
@@ -1090,14 +1090,14 @@
     .locals 1
 
     .prologue
-    .line 1812
+    .line 1836
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1813
+    .line 1837
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -1108,10 +1108,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1814
+    .line 1838
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1815
+    .line 1839
     return-object p0
 .end method
 
@@ -1119,14 +1119,14 @@
     .locals 1
 
     .prologue
-    .line 1709
+    .line 1730
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1710
+    .line 1731
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -1137,10 +1137,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1711
+    .line 1732
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1712
+    .line 1733
     return-object p0
 .end method
 
@@ -1148,7 +1148,7 @@
     .locals 2
 
     .prologue
-    .line 964
+    .line 970
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->create()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1168,7 +1168,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clone()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1180,7 +1180,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clone()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1192,7 +1192,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clone()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1204,7 +1204,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clone()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1216,7 +1216,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clone()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1233,7 +1233,7 @@
     .end annotation
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->clone()Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -1242,41 +1242,54 @@
 .end method
 
 .method public getCallbackUrl()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1552
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
+    .line 1567
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1553
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1568
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1554
+    move-object v0, v1
+
+    .line 1569
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1571
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1556
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
+    .line 1572
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1559
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1573
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
+
+    .line 1577
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1285,16 +1298,16 @@
     .locals 3
 
     .prologue
-    .line 1571
+    .line 1589
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1572
+    .line 1590
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1573
+    .line 1591
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1302,11 +1315,11 @@
 
     move-result-object v0
 
-    .line 1576
+    .line 1594
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1579
+    .line 1597
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1322,41 +1335,54 @@
 .end method
 
 .method public getCollection()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1383
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
+    .line 1395
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1384
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1396
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1385
+    move-object v0, v1
+
+    .line 1397
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1399
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1387
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
+    .line 1400
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1390
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1401
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
+
+    .line 1405
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1365,16 +1391,16 @@
     .locals 3
 
     .prologue
-    .line 1402
+    .line 1417
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1403
+    .line 1418
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1404
+    .line 1419
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1382,11 +1408,11 @@
 
     move-result-object v0
 
-    .line 1407
+    .line 1422
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1410
+    .line 1425
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1405,7 +1431,7 @@
     .locals 1
 
     .prologue
-    .line 973
+    .line 979
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -1417,7 +1443,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -1429,7 +1455,7 @@
     .locals 1
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
@@ -1441,48 +1467,61 @@
     .locals 1
 
     .prologue
-    .line 969
+    .line 975
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Subscription_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1137
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
-
-    .line 1138
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
-    .line 1139
-    check-cast v0, Lcom/google/protobuf/ByteString;
-
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 1141
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
+    .line 1143
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
     .line 1144
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 1145
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 1147
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1148
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 1149
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
+
+    .line 1153
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1491,16 +1530,16 @@
     .locals 3
 
     .prologue
-    .line 1156
+    .line 1165
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1157
+    .line 1166
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1158
+    .line 1167
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1508,11 +1547,11 @@
 
     move-result-object v0
 
-    .line 1161
+    .line 1170
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1164
+    .line 1173
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1531,7 +1570,7 @@
     .locals 2
 
     .prologue
-    .line 1236
+    .line 1245
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->modifiedTime_:J
 
     return-wide v0
@@ -1541,15 +1580,15 @@
     .locals 1
 
     .prologue
-    .line 1861
+    .line 1885
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1862
+    .line 1886
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 1864
+    .line 1888
     :goto_0
     return-object v0
 
@@ -1569,17 +1608,17 @@
     .locals 1
 
     .prologue
-    .line 1963
+    .line 1987
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1964
+    .line 1988
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1965
+    .line 1989
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->getNotificationFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -1597,12 +1636,12 @@
     .locals 1
 
     .prologue
-    .line 1977
+    .line 2001
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1978
+    .line 2002
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -1611,7 +1650,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/NotificationOrBuilder;
 
-    .line 1980
+    .line 2004
     :goto_0
     return-object v0
 
@@ -1626,7 +1665,7 @@
     .parameter "index"
 
     .prologue
-    .line 1485
+    .line 1500
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1642,7 +1681,7 @@
     .locals 1
 
     .prologue
-    .line 1479
+    .line 1494
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -1665,7 +1704,7 @@
     .end annotation
 
     .prologue
-    .line 1473
+    .line 1488
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1676,41 +1715,54 @@
 .end method
 
 .method public getSubscriber()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1286
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
+    .line 1295
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1287
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1296
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1288
+    move-object v0, v1
+
+    .line 1297
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1299
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1290
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
+    .line 1300
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1293
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1301
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
+
+    .line 1305
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1719,16 +1771,16 @@
     .locals 3
 
     .prologue
-    .line 1305
+    .line 1317
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1306
+    .line 1318
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1307
+    .line 1319
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1736,11 +1788,11 @@
 
     move-result-object v0
 
-    .line 1310
+    .line 1322
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1313
+    .line 1325
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1756,41 +1808,54 @@
 .end method
 
 .method public getUserToken()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1754
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
+    .line 1775
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1755
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1776
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1756
+    move-object v0, v1
+
+    .line 1777
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1779
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1758
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
+    .line 1780
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1761
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1781
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
+
+    .line 1785
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1799,16 +1864,16 @@
     .locals 3
 
     .prologue
-    .line 1774
+    .line 1798
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1775
+    .line 1799
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1776
+    .line 1800
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1816,11 +1881,11 @@
 
     move-result-object v0
 
-    .line 1779
+    .line 1803
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1782
+    .line 1806
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1836,41 +1901,54 @@
 .end method
 
 .method public getVerifyToken()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1651
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
+    .line 1669
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1652
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1670
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1653
+    move-object v0, v1
+
+    .line 1671
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1673
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1655
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
+    .line 1674
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1658
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1675
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
+
+    .line 1679
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1879,16 +1957,16 @@
     .locals 3
 
     .prologue
-    .line 1671
+    .line 1692
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1672
+    .line 1693
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1673
+    .line 1694
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1896,11 +1974,11 @@
 
     move-result-object v0
 
-    .line 1676
+    .line 1697
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1679
+    .line 1700
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1919,7 +1997,7 @@
     .locals 2
 
     .prologue
-    .line 1542
+    .line 1557
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -1943,7 +2021,7 @@
     .locals 2
 
     .prologue
-    .line 1373
+    .line 1385
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1969,7 +2047,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1127
+    .line 1133
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1989,7 +2067,7 @@
     .locals 2
 
     .prologue
-    .line 1225
+    .line 1234
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -2013,7 +2091,7 @@
     .locals 2
 
     .prologue
-    .line 1849
+    .line 1873
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x100
@@ -2037,7 +2115,7 @@
     .locals 2
 
     .prologue
-    .line 1276
+    .line 1285
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -2061,7 +2139,7 @@
     .locals 2
 
     .prologue
-    .line 1743
+    .line 1764
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x80
@@ -2085,7 +2163,7 @@
     .locals 2
 
     .prologue
-    .line 1640
+    .line 1658
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -2109,7 +2187,7 @@
     .locals 3
 
     .prologue
-    .line 912
+    .line 918
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Subscription_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/Subscription;
@@ -2127,7 +2205,7 @@
     .locals 1
 
     .prologue
-    .line 1096
+    .line 1102
     const/4 v0, 0x1
 
     return v0
@@ -2138,18 +2216,18 @@
     .parameter "other"
 
     .prologue
-    .line 1044
+    .line 1050
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Subscription;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 1092
+    .line 1098
     :goto_0
     return-object p0
 
-    .line 1045
+    .line 1051
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasId()Z
 
@@ -2157,14 +2235,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1046
+    .line 1052
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1047
+    .line 1053
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->id_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$500(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/lang/Object;
 
@@ -2172,10 +2250,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1048
+    .line 1054
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1050
+    .line 1056
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasModifiedTime()Z
 
@@ -2183,14 +2261,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1051
+    .line 1057
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->getModifiedTime()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->setModifiedTime(J)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
-    .line 1053
+    .line 1059
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasSubscriber()Z
 
@@ -2198,14 +2276,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 1054
+    .line 1060
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1055
+    .line 1061
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->subscriber_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$700(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/lang/Object;
 
@@ -2213,10 +2291,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1056
+    .line 1062
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1058
+    .line 1064
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasCollection()Z
 
@@ -2224,14 +2302,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 1059
+    .line 1065
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1060
+    .line 1066
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->collection_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$800(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/lang/Object;
 
@@ -2239,10 +2317,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1061
+    .line 1067
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1063
+    .line 1069
     :cond_4
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->operation_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$900(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/util/List;
@@ -2255,7 +2333,7 @@
 
     if-nez v0, :cond_5
 
-    .line 1064
+    .line 1070
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -2264,7 +2342,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 1065
+    .line 1071
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->operation_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$900(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/util/List;
 
@@ -2272,18 +2350,18 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
-    .line 1066
+    .line 1072
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1071
+    .line 1077
     :goto_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1073
+    .line 1079
     :cond_5
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasCallbackUrl()Z
 
@@ -2291,14 +2369,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 1074
+    .line 1080
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x20
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1075
+    .line 1081
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->callbackUrl_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1000(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/lang/Object;
 
@@ -2306,10 +2384,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1076
+    .line 1082
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1078
+    .line 1084
     :cond_6
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasVerifyToken()Z
 
@@ -2317,14 +2395,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 1079
+    .line 1085
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1080
+    .line 1086
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->verifyToken_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1100(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/lang/Object;
 
@@ -2332,10 +2410,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1081
+    .line 1087
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1083
+    .line 1089
     :cond_7
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasUserToken()Z
 
@@ -2343,14 +2421,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 1084
+    .line 1090
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1085
+    .line 1091
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->userToken_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->access$1200(Lcom/google/googlex/glass/common/proto/Subscription;)Ljava/lang/Object;
 
@@ -2358,10 +2436,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1086
+    .line 1092
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1088
+    .line 1094
     :cond_8
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->hasNotification()Z
 
@@ -2369,14 +2447,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 1089
+    .line 1095
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->getNotification()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeNotification(Lcom/google/googlex/glass/common/proto/Notification;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
-    .line 1091
+    .line 1097
     :cond_9
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Subscription;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -2386,11 +2464,11 @@
 
     goto/16 :goto_0
 
-    .line 1068
+    .line 1074
     :cond_a
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->ensureOperationIsMutable()V
 
-    .line 1069
+    .line 1075
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Subscription;->operation_:Ljava/util/List;
@@ -2414,10 +2492,10 @@
     .end annotation
 
     .prologue
-    .line 1103
+    .line 1109
     const/4 v2, 0x0
 
-    .line 1105
+    .line 1111
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/Subscription;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/Subscription;->PARSER:Lcom/google/protobuf/Parser;
@@ -2435,21 +2513,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1110
+    .line 1116
     if-eqz v2, :cond_0
 
-    .line 1111
+    .line 1117
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Subscription;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
-    .line 1114
+    .line 1120
     :cond_0
     return-object p0
 
-    .line 1106
+    .line 1112
     :catch_0
     move-exception v1
 
-    .line 1107
+    .line 1113
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -2462,19 +2540,19 @@
 
     move-object v2, v0
 
-    .line 1108
+    .line 1114
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1110
+    .line 1116
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1111
+    .line 1117
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Subscription;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     :cond_1
@@ -2486,12 +2564,12 @@
     .parameter "other"
 
     .prologue
-    .line 1035
+    .line 1041
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/Subscription;
 
     if-eqz v0, :cond_0
 
-    .line 1036
+    .line 1042
     check-cast p1, Lcom/google/googlex/glass/common/proto/Subscription;
 
     .end local p1
@@ -2499,12 +2577,12 @@
 
     move-result-object p0
 
-    .line 1039
+    .line 1045
     .end local p0
     :goto_0
     return-object p0
 
-    .line 1038
+    .line 1044
     .restart local p0
     .restart local p1
     :cond_0
@@ -2524,7 +2602,7 @@
     .end annotation
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -2537,7 +2615,7 @@
     .parameter "x0"
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -2556,7 +2634,7 @@
     .end annotation
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -2575,7 +2653,7 @@
     .end annotation
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -2588,7 +2666,7 @@
     .parameter "x0"
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -2607,7 +2685,7 @@
     .end annotation
 
     .prologue
-    .line 901
+    .line 907
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Subscription$Builder;
 
     move-result-object v0
@@ -2620,12 +2698,12 @@
     .parameter "value"
 
     .prologue
-    .line 1919
+    .line 1943
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1920
+    .line 1944
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x100
@@ -2642,7 +2720,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1922
+    .line 1946
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Notification;->newBuilder(Lcom/google/googlex/glass/common/proto/Notification;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
@@ -2659,11 +2737,11 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 1927
+    .line 1951
     :goto_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1931
+    .line 1955
     :goto_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2671,16 +2749,16 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1932
+    .line 1956
     return-object p0
 
-    .line 1925
+    .line 1949
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
     goto :goto_0
 
-    .line 1929
+    .line 1953
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2694,17 +2772,17 @@
     .parameter "value"
 
     .prologue
-    .line 1591
+    .line 1609
     if-nez p1, :cond_0
 
-    .line 1592
+    .line 1610
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1594
+    .line 1612
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2712,13 +2790,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1595
+    .line 1613
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1596
+    .line 1614
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1597
+    .line 1615
     return-object p0
 .end method
 
@@ -2727,17 +2805,17 @@
     .parameter "value"
 
     .prologue
-    .line 1621
+    .line 1639
     if-nez p1, :cond_0
 
-    .line 1622
+    .line 1640
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1624
+    .line 1642
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2745,13 +2823,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1625
+    .line 1643
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 1626
+    .line 1644
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1627
+    .line 1645
     return-object p0
 .end method
 
@@ -2760,17 +2838,17 @@
     .parameter "value"
 
     .prologue
-    .line 1422
+    .line 1437
     if-nez p1, :cond_0
 
-    .line 1423
+    .line 1438
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1425
+    .line 1440
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2778,13 +2856,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1426
+    .line 1441
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1427
+    .line 1442
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1428
+    .line 1443
     return-object p0
 .end method
 
@@ -2793,17 +2871,17 @@
     .parameter "value"
 
     .prologue
-    .line 1452
+    .line 1467
     if-nez p1, :cond_0
 
-    .line 1453
+    .line 1468
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1455
+    .line 1470
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2811,13 +2889,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1456
+    .line 1471
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1457
+    .line 1472
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1458
+    .line 1473
     return-object p0
 .end method
 
@@ -2826,17 +2904,17 @@
     .parameter "value"
 
     .prologue
-    .line 1176
+    .line 1185
     if-nez p1, :cond_0
 
-    .line 1177
+    .line 1186
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1179
+    .line 1188
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2844,13 +2922,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1180
+    .line 1189
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1181
+    .line 1190
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1182
+    .line 1191
     return-object p0
 .end method
 
@@ -2859,17 +2937,17 @@
     .parameter "value"
 
     .prologue
-    .line 1206
+    .line 1215
     if-nez p1, :cond_0
 
-    .line 1207
+    .line 1216
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1209
+    .line 1218
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2877,13 +2955,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1210
+    .line 1219
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->id_:Ljava/lang/Object;
 
-    .line 1211
+    .line 1220
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1212
+    .line 1221
     return-object p0
 .end method
 
@@ -2892,20 +2970,20 @@
     .parameter "value"
 
     .prologue
-    .line 1247
+    .line 1256
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1248
+    .line 1257
     iput-wide p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->modifiedTime_:J
 
-    .line 1249
+    .line 1258
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1250
+    .line 1259
     return-object p0
 .end method
 
@@ -2914,22 +2992,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1900
+    .line 1924
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1901
+    .line 1925
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->build()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 1902
+    .line 1926
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1906
+    .line 1930
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2937,10 +3015,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1907
+    .line 1931
     return-object p0
 
-    .line 1904
+    .line 1928
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2958,29 +3036,29 @@
     .parameter "value"
 
     .prologue
-    .line 1877
+    .line 1901
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1878
+    .line 1902
     if-nez p1, :cond_0
 
-    .line 1879
+    .line 1903
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1881
+    .line 1905
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notification_:Lcom/google/googlex/glass/common/proto/Notification;
 
-    .line 1882
+    .line 1906
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1886
+    .line 1910
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -2988,10 +3066,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1887
+    .line 1911
     return-object p0
 
-    .line 1884
+    .line 1908
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->notificationBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -3006,29 +3084,29 @@
     .parameter "value"
 
     .prologue
-    .line 1492
+    .line 1507
     if-nez p2, :cond_0
 
-    .line 1493
+    .line 1508
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1495
+    .line 1510
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->ensureOperationIsMutable()V
 
-    .line 1496
+    .line 1511
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->operation_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1497
+    .line 1512
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1498
+    .line 1513
     return-object p0
 .end method
 
@@ -3037,17 +3115,17 @@
     .parameter "value"
 
     .prologue
-    .line 1325
+    .line 1337
     if-nez p1, :cond_0
 
-    .line 1326
+    .line 1338
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1328
+    .line 1340
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -3055,13 +3133,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1329
+    .line 1341
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1330
+    .line 1342
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1331
+    .line 1343
     return-object p0
 .end method
 
@@ -3070,17 +3148,17 @@
     .parameter "value"
 
     .prologue
-    .line 1355
+    .line 1367
     if-nez p1, :cond_0
 
-    .line 1356
+    .line 1368
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1358
+    .line 1370
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -3088,13 +3166,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1359
+    .line 1371
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->subscriber_:Ljava/lang/Object;
 
-    .line 1360
+    .line 1372
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1361
+    .line 1373
     return-object p0
 .end method
 
@@ -3103,17 +3181,17 @@
     .parameter "value"
 
     .prologue
-    .line 1795
+    .line 1819
     if-nez p1, :cond_0
 
-    .line 1796
+    .line 1820
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1798
+    .line 1822
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -3121,13 +3199,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1799
+    .line 1823
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1800
+    .line 1824
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1801
+    .line 1825
     return-object p0
 .end method
 
@@ -3136,17 +3214,17 @@
     .parameter "value"
 
     .prologue
-    .line 1827
+    .line 1851
     if-nez p1, :cond_0
 
-    .line 1828
+    .line 1852
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1830
+    .line 1854
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -3154,13 +3232,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1831
+    .line 1855
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1832
+    .line 1856
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1833
+    .line 1857
     return-object p0
 .end method
 
@@ -3169,17 +3247,17 @@
     .parameter "value"
 
     .prologue
-    .line 1692
+    .line 1713
     if-nez p1, :cond_0
 
-    .line 1693
+    .line 1714
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1695
+    .line 1716
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -3187,13 +3265,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1696
+    .line 1717
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1697
+    .line 1718
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1698
+    .line 1719
     return-object p0
 .end method
 
@@ -3202,17 +3280,17 @@
     .parameter "value"
 
     .prologue
-    .line 1724
+    .line 1745
     if-nez p1, :cond_0
 
-    .line 1725
+    .line 1746
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1727
+    .line 1748
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
@@ -3220,12 +3298,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->bitField0_:I
 
-    .line 1728
+    .line 1749
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1729
+    .line 1750
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Subscription$Builder;->onChanged()V
 
-    .line 1730
+    .line 1751
     return-object p0
 .end method

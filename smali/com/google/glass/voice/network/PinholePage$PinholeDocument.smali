@@ -28,17 +28,17 @@
     .parameter "url"
 
     .prologue
-    .line 61
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 59
+    .line 42
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     iput-object v2, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->text:Ljava/lang/StringBuilder;
 
-    .line 62
+    .line 45
     const-string v2, "\\u0026"
 
     const-string v3, "&"
@@ -47,12 +47,12 @@
 
     move-result-object p1
 
-    .line 63
+    .line 46
     invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 64
+    .line 47
     .local v1, parsed:Landroid/net/Uri;
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -86,18 +86,18 @@
 
     iput-object v2, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->baseUrl:Ljava/lang/String;
 
-    .line 65
+    .line 48
     const-string v2, "ect"
 
     invoke-virtual {v1, v2}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 66
+    .line 49
     .local v0, ect:Ljava/lang/String;
     iput-object v0, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->type:Ljava/lang/String;
 
-    .line 67
+    .line 50
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 39
     iget-object v0, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->text:Ljava/lang/StringBuilder;
 
     return-object v0
@@ -118,7 +118,7 @@
     .parameter "x1"
 
     .prologue
-    .line 56
+    .line 39
     iput-object p1, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->text:Ljava/lang/StringBuilder;
 
     return-object p1
@@ -130,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 57
     iget-object v0, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->baseUrl:Ljava/lang/String;
 
     return-object v0
@@ -140,7 +140,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 53
     iget-object v0, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->text:Ljava/lang/StringBuilder;
 
     return-object v0
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 78
+    .line 61
     iget-object v0, p0, Lcom/google/glass/voice/network/PinholePage$PinholeDocument;->type:Ljava/lang/String;
 
     return-object v0

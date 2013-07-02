@@ -12,7 +12,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 30
     const-class v0, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;-><init>()V
 
     return-void
@@ -40,13 +40,13 @@
     .locals 1
 
     .prologue
-    .line 33
+    .line 34
     sget v0, Lcom/google/glass/home/R$layout;->timeline_item_hangout:I
 
     return v0
 .end method
 
-.method protected onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
+.method protected onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;Lcom/google/glass/home/timeline/TimelineItemAdapter$ContentSizedListener;)Z
     .locals 14
     .parameter "context"
     .parameter "item"
@@ -55,14 +55,15 @@
     .parameter "view"
     .parameter "bitmapFactory"
     .parameter "textClipListener"
+    .parameter "contentSizedListener"
 
     .prologue
-    .line 40
+    .line 41
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v5
 
-    .line 43
+    .line 44
     .local v5, resources:Landroid/content/res/Resources;
     sget v11, Lcom/google/glass/home/R$id;->message:I
 
@@ -74,7 +75,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 44
+    .line 45
     .local v4, messageView:Landroid/widget/TextView;
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
 
@@ -82,7 +83,7 @@
 
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 45
+    .line 46
     sget v11, Lcom/google/glass/home/R$integer;->max_lines_in_hangouts_timeline_card:I
 
     invoke-virtual {v5, v11}, Landroid/content/res/Resources;->getInteger(I)I
@@ -91,7 +92,7 @@
 
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 47
+    .line 48
     const v11, 0x106000b
 
     invoke-virtual {v5, v11}, Landroid/content/res/Resources;->getColor(I)I
@@ -100,7 +101,7 @@
 
     invoke-virtual {v4, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 49
+    .line 50
     sget v11, Lcom/google/glass/home/R$id;->sender_picture_mosaic:I
 
     move-object/from16 v0, p5
@@ -111,7 +112,7 @@
 
     check-cast v6, Lcom/google/glass/widget/MosaicView;
 
-    .line 51
+    .line 52
     .local v6, senderPictureMosaicView:Lcom/google/glass/widget/MosaicView;
     sget v11, Lcom/google/glass/home/R$id;->sender_picture_placeholder:I
 
@@ -123,7 +124,7 @@
 
     check-cast v7, Landroid/widget/ImageView;
 
-    .line 53
+    .line 54
     .local v7, senderPicturePlaceholderView:Landroid/widget/ImageView;
     sget v11, Lcom/google/glass/home/R$dimen;->lhs_width:I
 
@@ -133,7 +134,7 @@
 
     float-to-int v10, v11
 
-    .line 54
+    .line 55
     .local v10, width:I
     invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
@@ -141,7 +142,7 @@
 
     iget v1, v11, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 57
+    .line 58
     .local v1, height:I
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasCreator()Z
 
@@ -149,21 +150,21 @@
 
     if-nez v11, :cond_2
 
-    .line 60
+    .line 61
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
 
     const-string v12, "No creator, setting MosaicView to share target 0\'s imageUrlList."
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 61
+    .line 62
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getShareTargetCount()I
 
     move-result v11
 
     if-lez v11, :cond_1
 
-    .line 62
+    .line 63
     const/4 v11, 0x0
 
     move-object/from16 v0, p2
@@ -176,7 +177,7 @@
 
     move-result-object v3
 
-    .line 98
+    .line 99
     .local v3, imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_0
     :goto_0
@@ -188,33 +189,33 @@
 
     if-lez v11, :cond_6
 
-    .line 99
+    .line 100
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
 
     const-string v12, "Setting mosaic view to valid list of image urls."
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 100
+    .line 101
     invoke-virtual {v6, v3, v10, v1}, Lcom/google/glass/widget/MosaicView;->setImageUrls(Ljava/util/List;II)V
 
-    .line 101
+    .line 102
     const/4 v11, 0x0
 
     invoke-virtual {v6, v11}, Lcom/google/glass/widget/MosaicView;->setVisibility(I)V
 
-    .line 102
+    .line 103
     const/4 v11, 0x4
 
     invoke-virtual {v7, v11}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 109
+    .line 110
     :goto_1
     const/4 v11, 0x0
 
     return v11
 
-    .line 64
+    .line 65
     .end local v3           #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_1
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
@@ -223,13 +224,13 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 65
+    .line 66
     const/4 v3, 0x0
 
     .restart local v3       #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 72
+    .line 73
     .end local v3           #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_2
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
@@ -238,21 +239,21 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 73
+    .line 74
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getShareTargetCount()I
 
     move-result v11
 
     if-nez v11, :cond_4
 
-    .line 74
+    .line 75
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
 
     const-string v12, "We didn\'t hang out with any share targets. :("
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
+    .line 76
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCreator()Lcom/google/googlex/glass/common/proto/Entity;
 
     move-result-object v11
@@ -263,14 +264,14 @@
 
     if-lez v11, :cond_3
 
-    .line 76
+    .line 77
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
 
     const-string v12, "Creator had an image URL, using that."
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 77
+    .line 78
     const/4 v11, 0x1
 
     new-array v11, v11, [Ljava/lang/String;
@@ -294,7 +295,7 @@
     .restart local v3       #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 79
+    .line 80
     .end local v3           #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_3
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
@@ -303,13 +304,13 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
+    .line 81
     const/4 v3, 0x0
 
     .restart local v3       #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     goto :goto_0
 
-    .line 84
+    .line 85
     .end local v3           #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_4
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
@@ -344,7 +345,7 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 85
+    .line 86
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getShareTargetCount()I
 
     move-result v11
@@ -353,7 +354,7 @@
 
     move-result-object v3
 
-    .line 86
+    .line 87
     .restart local v3       #imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p2 .. p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getShareTargetList()Ljava/util/List;
 
@@ -377,13 +378,13 @@
 
     check-cast v8, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 87
+    .line 88
     .local v8, shareTarget:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-static {v8}, Lcom/google/glass/entity/EntityHelper;->getFirstImageUrl(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 88
+    .line 89
     .local v9, url:Ljava/lang/String;
     invoke-static {v9}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -391,12 +392,12 @@
 
     if-nez v11, :cond_5
 
-    .line 89
+    .line 90
     invoke-interface {v3, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 91
+    .line 92
     :cond_5
     sget-object v11, Lcom/google/glass/home/timeline/database/HangoutItemViewBinder;->TAG:Ljava/lang/String;
 
@@ -426,7 +427,7 @@
 
     goto :goto_2
 
-    .line 104
+    .line 105
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v8           #shareTarget:Lcom/google/googlex/glass/common/proto/Entity;
     .end local v9           #url:Ljava/lang/String;
@@ -437,12 +438,12 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 105
+    .line 106
     const/4 v11, 0x4
 
     invoke-virtual {v6, v11}, Lcom/google/glass/widget/MosaicView;->setVisibility(I)V
 
-    .line 106
+    .line 107
     const/4 v11, 0x0
 
     invoke-virtual {v7, v11}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -456,7 +457,7 @@
     .parameter "willBindSameItem"
 
     .prologue
-    .line 115
+    .line 116
     sget v1, Lcom/google/glass/home/R$id;->sender_picture_mosaic:I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -465,14 +466,14 @@
 
     check-cast v0, Lcom/google/glass/widget/MosaicView;
 
-    .line 116
+    .line 117
     .local v0, senderPictureMosaicView:Lcom/google/glass/widget/MosaicView;
     invoke-virtual {v0}, Lcom/google/glass/widget/MosaicView;->cancelImageDownloads()V
 
-    .line 117
+    .line 118
     invoke-virtual {v0}, Lcom/google/glass/widget/MosaicView;->clearImages()V
 
-    .line 118
+    .line 119
     return-void
 .end method
 
@@ -492,7 +493,7 @@
     .end annotation
 
     .prologue
-    .line 122
+    .line 123
     .local p2, split:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     sget-object v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->HANGOUT:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
@@ -506,9 +507,9 @@
 
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 125
+    .line 126
     invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 126
+    .line 127
     return-void
 .end method

@@ -65,26 +65,26 @@
     .end annotation
 
     .prologue
-    .line 702
+    .line 704
     .local p1, enumTypeMap:Lcom/google/protobuf/Internal$EnumLiteMap;,"Lcom/google/protobuf/Internal$EnumLiteMap<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 703
+    .line 705
     iput-object p1, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->enumTypeMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 704
+    .line 706
     iput p2, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->number:I
 
-    .line 705
+    .line 707
     iput-object p3, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/protobuf/WireFormat$FieldType;
 
-    .line 706
+    .line 708
     iput-boolean p4, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated:Z
 
-    .line 707
+    .line 709
     iput-boolean p5, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked:Z
 
-    .line 708
+    .line 710
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .parameter "other"
 
     .prologue
-    .line 754
+    .line 756
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->number:I
 
     iget v1, p1, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->number:I
@@ -110,7 +110,7 @@
     .parameter "x0"
 
     .prologue
-    .line 694
+    .line 696
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     .end local p1
@@ -132,7 +132,7 @@
     .end annotation
 
     .prologue
-    .line 737
+    .line 739
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->enumTypeMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -142,7 +142,7 @@
     .locals 1
 
     .prologue
-    .line 725
+    .line 727
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/protobuf/WireFormat$FieldType;
 
     invoke-virtual {v0}, Lcom/google/protobuf/WireFormat$FieldType;->getJavaType()Lcom/google/protobuf/WireFormat$JavaType;
@@ -156,7 +156,7 @@
     .locals 1
 
     .prologue
-    .line 721
+    .line 723
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->type:Lcom/google/protobuf/WireFormat$FieldType;
 
     return-object v0
@@ -166,7 +166,7 @@
     .locals 1
 
     .prologue
-    .line 717
+    .line 719
     iget v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->number:I
 
     return v0
@@ -178,7 +178,7 @@
     .parameter "from"
 
     .prologue
-    .line 743
+    .line 745
     check-cast p1, Lcom/google/protobuf/GeneratedMessageLite$Builder;
 
     .end local p1
@@ -198,7 +198,7 @@
     .parameter "from"
 
     .prologue
-    .line 749
+    .line 751
     check-cast p1, Lcom/google/protobuf/GeneratedMutableMessageLite;
 
     .end local p1
@@ -216,7 +216,7 @@
     .locals 1
 
     .prologue
-    .line 733
+    .line 735
     iget-boolean v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isPacked:Z
 
     return v0
@@ -226,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 729
+    .line 731
     iget-boolean v0, p0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->isRepeated:Z
 
     return v0

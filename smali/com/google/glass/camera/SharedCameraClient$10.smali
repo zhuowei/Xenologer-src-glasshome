@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+    value = Lcom/google/glass/camera/SharedCameraClient;->dispatchBarcodeFound(Landroid/content/Intent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-.field final synthetic val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+.field final synthetic val$barcode:Landroid/content/Intent;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/android/libraries/barhopper/Barcode;)V
+.method constructor <init>(Lcom/google/glass/camera/SharedCameraClient;Landroid/content/Intent;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 444
+    .line 474
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$10;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$10;->val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+    iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$10;->val$barcode:Landroid/content/Intent;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 447
+    .line 477
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$10;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$10;->val$barcode:Lcom/google/android/libraries/barhopper/Barcode;
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$10;->val$barcode:Landroid/content/Intent;
 
-    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+    invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onBarcodeFound(Landroid/content/Intent;)V
 
-    .line 448
+    .line 478
     return-void
 .end method

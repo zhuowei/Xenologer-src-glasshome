@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 170
+    .line 169
     iput-object p1, p0, Lcom/google/glass/util/WifiHelper$2;->this$0:Lcom/google/glass/util/WifiHelper;
 
     iput-object p2, p0, Lcom/google/glass/util/WifiHelper$2;->val$callback:Lcom/google/glass/util/WifiHelper$WifiScanCallback;
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 187
+    .line 186
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,30 +69,38 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 173
+    .line 172
     invoke-virtual {p0}, Lcom/google/glass/util/WifiHelper$2;->getTag()Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "Wifi scan completed, scan results received."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v3, 0x0
 
-    .line 174
-    invoke-virtual {p0, p1}, Lcom/google/glass/util/WifiHelper$2;->unregister(Landroid/content/Context;)V
+    new-array v3, v3, [Ljava/lang/Object;
 
-    .line 176
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 173
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1, p1}, Lcom/google/glass/util/WifiHelper$2;->unregisterAsync(Ljava/util/concurrent/Executor;Landroid/content/Context;)V
+
+    .line 175
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$2;->val$callback:Lcom/google/glass/util/WifiHelper$WifiScanCallback;
 
     if-eqz v1, :cond_0
 
-    .line 177
+    .line 176
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$2;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #getter for: Lcom/google/glass/util/WifiHelper;->wifiManager:Landroid/net/wifi/WifiManager;
@@ -104,21 +112,21 @@
 
     move-result-object v0
 
-    .line 178
+    .line 177
     .local v0, scanResults:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     if-eqz v0, :cond_0
 
-    .line 179
+    .line 178
     sget-object v1, Lcom/google/glass/util/WifiHelper;->SCAN_RESULT_COMPARATOR:Ljava/util/Comparator;
 
     invoke-static {v0, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 180
+    .line 179
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$2;->val$callback:Lcom/google/glass/util/WifiHelper$WifiScanCallback;
 
     invoke-interface {v1, v0}, Lcom/google/glass/util/WifiHelper$WifiScanCallback;->onScanResultsAvailable(Ljava/util/List;)V
 
-    .line 183
+    .line 182
     .end local v0           #scanResults:Ljava/util/List;,"Ljava/util/List<Landroid/net/wifi/ScanResult;>;"
     :cond_0
     return-void

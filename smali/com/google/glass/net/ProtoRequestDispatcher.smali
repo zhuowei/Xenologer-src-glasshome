@@ -184,17 +184,17 @@
     .locals 1
 
     .prologue
-    .line 615
+    .line 640
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queue:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 616
+    .line 641
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->explicitFlush:Z
 
-    .line 617
+    .line 642
     return-void
 .end method
 
@@ -225,24 +225,24 @@
     .end annotation
 
     .prologue
-    .line 495
+    .line 520
     .local p4, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     .local p5, responseHandler:Lcom/google/glass/net/ProtoResponseHandler;,"Lcom/google/glass/net/ProtoResponseHandler<TT;>;"
     iget-object v2, p1, Lcom/google/glass/net/ServerConstants$Action;->path:Ljava/lang/String;
 
-    .line 498
+    .line 523
     .local v2, path:Ljava/lang/String;
     invoke-virtual {p2}, Lcom/google/protobuf/AbstractMessage;->toByteString()Lcom/google/protobuf/ByteString;
 
     move-result-object v3
 
-    .line 501
+    .line 526
     .local v3, requestData:Lcom/google/protobuf/ByteString;
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 505
+    .line 530
     :try_start_0
     iget-boolean v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->shouldExit:Z
     :try_end_0
@@ -250,19 +250,19 @@
 
     if-eqz v0, :cond_0
 
-    .line 506
+    .line 531
     const/4 v0, 0x0
 
-    .line 525
+    .line 550
     iget-object v1, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 527
+    .line 552
     :goto_0
     return v0
 
-    .line 510
+    .line 535
     :cond_0
     :try_start_1
     iget-object v9, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queue:Ljava/util/List;
@@ -285,14 +285,14 @@
 
     invoke-interface {v9, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 514
+    .line 539
     iget-boolean v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->explicitFlush:Z
 
     or-int/2addr v0, p3
 
     iput-boolean v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->explicitFlush:Z
 
-    .line 517
+    .line 542
     iget v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->totalQueuedDataSize:I
 
     if-ltz v0, :cond_2
@@ -302,7 +302,7 @@
     :goto_1
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 518
+    .line 543
     iget v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->totalQueuedDataSize:I
 
     invoke-virtual {v3}, Lcom/google/protobuf/ByteString;->size()I
@@ -313,38 +313,38 @@
 
     iput v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->totalQueuedDataSize:I
 
-    .line 521
+    .line 546
     invoke-virtual {p0}, Lcom/google/glass/net/ProtoRequestDispatcher;->isFlushConditionMet()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 522
+    .line 547
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 525
+    .line 550
     :cond_1
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 527
+    .line 552
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 517
+    .line 542
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 525
+    .line 550
     :catchall_0
     move-exception v0
 
@@ -361,7 +361,7 @@
     .prologue
     const-wide/16 v5, 0x0
 
-    .line 772
+    .line 797
     iget-wide v2, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->dispatcherId:J
 
     cmp-long v2, v2, v5
@@ -372,7 +372,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 773
+    .line 798
     iget-object v2, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->context:Landroid/content/Context;
 
     const-string v3, "prd_prefs"
@@ -383,11 +383,11 @@
 
     move-result-object v1
 
-    .line 775
+    .line 800
     .local v1, sharedPreferences:Landroid/content/SharedPreferences;
     if-eqz v1, :cond_2
 
-    .line 776
+    .line 801
     const-string v2, "id"
 
     invoke-interface {v1, v2, v5, v6}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
@@ -396,19 +396,19 @@
 
     iput-wide v2, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->dispatcherId:J
 
-    .line 777
+    .line 802
     iget-wide v2, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->dispatcherId:J
 
     cmp-long v2, v2, v5
 
     if-nez v2, :cond_1
 
-    .line 778
+    .line 803
     new-instance v0, Ljava/security/SecureRandom;
 
     invoke-direct {v0}, Ljava/security/SecureRandom;-><init>()V
 
-    .line 780
+    .line 805
     .local v0, random:Ljava/security/SecureRandom;
     :cond_0
     invoke-virtual {v0}, Ljava/security/SecureRandom;->nextLong()J
@@ -417,14 +417,14 @@
 
     iput-wide v2, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->dispatcherId:J
 
-    .line 781
+    .line 806
     iget-wide v2, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->dispatcherId:J
 
     cmp-long v2, v2, v5
 
     if-eqz v2, :cond_0
 
-    .line 783
+    .line 808
     .end local v0           #random:Ljava/security/SecureRandom;
     :cond_1
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -441,7 +441,7 @@
 
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 786
+    .line 811
     .end local v1           #sharedPreferences:Landroid/content/SharedPreferences;
     :cond_2
     return-void
@@ -464,11 +464,11 @@
     .end annotation
 
     .prologue
-    .line 811
+    .line 836
     .local p1, batchedRequests:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;>;"
     const/4 v1, 0x0
 
-    .line 812
+    .line 837
     .local v1, error:Z
     const/4 v2, 0x0
 
@@ -480,12 +480,12 @@
 
     if-ge v2, v4, :cond_2
 
-    .line 813
+    .line 838
     invoke-virtual {p2, v2}, Lcom/google/googlex/glass/common/proto/BatchResponse;->getResponse(I)Lcom/google/googlex/glass/common/proto/ResponseWrapper;
 
     move-result-object v3
 
-    .line 814
+    .line 839
     .local v3, responseWrapper:Lcom/google/googlex/glass/common/proto/ResponseWrapper;
     invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -493,7 +493,7 @@
 
     check-cast v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 815
+    .line 840
     .local v0, batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/ResponseWrapper;->hasErrorCode()Z
 
@@ -501,24 +501,24 @@
 
     if-eqz v4, :cond_1
 
-    .line 816
+    .line 841
     const/4 v1, 0x1
 
-    .line 817
+    .line 842
     invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/ResponseWrapper;->getErrorCode()Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
     move-result-object v4
 
     invoke-virtual {v0, v4}, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->onError(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
-    .line 812
+    .line 837
     :cond_0
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 819
+    .line 844
     :cond_1
     invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/ResponseWrapper;->getData()Lcom/google/protobuf/ByteString;
 
@@ -526,12 +526,12 @@
 
     invoke-virtual {v0, v4}, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->onSuccess(Lcom/google/protobuf/ByteString;)V
 
-    .line 822
+    .line 847
     iget-boolean v4, v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->logMetrics:Z
 
     if-eqz v4, :cond_0
 
-    .line 823
+    .line 848
     iget-object v4, v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->path:Ljava/lang/String;
 
     iget-object v5, v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->requestData:Lcom/google/protobuf/ByteString;
@@ -552,7 +552,7 @@
 
     goto :goto_1
 
-    .line 828
+    .line 853
     .end local v0           #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     .end local v3           #responseWrapper:Lcom/google/googlex/glass/common/proto/ResponseWrapper;
     :cond_2
@@ -580,12 +580,18 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
     .prologue
-    .line 368
+    .line 390
     .local p3, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     const/4 v0, 0x1
 
-    .line 369
+    .line 391
     .local v0, logMetrics:Z
     const/4 v1, 0x1
 
@@ -616,23 +622,29 @@
         }
     .end annotation
 
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/InterruptedException;
+        }
+    .end annotation
+
     .prologue
-    .line 390
+    .line 417
     .local p3, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 396
+    .line 423
     new-instance v9, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v9}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 397
+    .line 424
     .local v9, errorCodeReference:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;>;"
     new-instance v12, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v12}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 400
+    .line 427
     .local v12, responseProtoReference:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<TT;>;"
     new-instance v11, Ljava/util/concurrent/CountDownLatch;
 
@@ -640,17 +652,17 @@
 
     invoke-direct {v11, v0}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    .line 401
+    .line 428
     .local v11, latch:Ljava/util/concurrent/CountDownLatch;
     new-instance v5, Lcom/google/glass/net/ProtoRequestDispatcher$2;
 
     invoke-direct {v5, p0, v11, v9, v12}, Lcom/google/glass/net/ProtoRequestDispatcher$2;-><init>(Lcom/google/glass/net/ProtoRequestDispatcher;Ljava/util/concurrent/CountDownLatch;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/atomic/AtomicReference;)V
 
-    .line 419
+    .line 446
     .local v5, latchedResponseHandler:Lcom/google/glass/net/ProtoResponseHandler;,"Lcom/google/glass/net/ProtoResponseHandler<TT;>;"
     const/4 v10, 0x1
 
-    .line 420
+    .line 447
     .local v10, isImmediate:Z
     const/4 v3, 0x1
 
@@ -674,21 +686,21 @@
 
     if-nez v0, :cond_0
 
-    .line 429
+    .line 456
     const/4 v0, 0x0
 
-    .line 448
+    .line 473
     :goto_0
     return-object v0
 
-    .line 434
+    .line 461
     :cond_0
     :try_start_0
     invoke-virtual {v11}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 443
+    .line 468
     invoke-virtual {v9}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -701,31 +713,29 @@
 
     if-nez v0, :cond_1
 
-    .line 444
+    .line 469
     invoke-static {}, Lcom/google/glass/net/ProtoResponse;->cancel()Lcom/google/glass/net/ProtoResponse;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 435
+    .line 462
     :catch_0
     move-exception v8
 
-    .line 436
+    .line 463
     .local v8, e:Ljava/lang/InterruptedException;
     sget-object v0, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
 
-    const-string v1, "Interrupted while waiting for blocking request."
+    const-string v1, "Interrupted during blockingDispatch"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 439
-    const/4 v0, 0x0
+    .line 464
+    throw v8
 
-    goto :goto_0
-
-    .line 445
+    .line 470
     .end local v8           #e:Ljava/lang/InterruptedException;
     :cond_1
     invoke-virtual {v9}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -734,7 +744,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 446
+    .line 471
     invoke-virtual {v9}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -747,7 +757,7 @@
 
     goto :goto_0
 
-    .line 447
+    .line 472
     :cond_2
     invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
@@ -755,7 +765,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 448
+    .line 473
     invoke-virtual {v12}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -766,7 +776,7 @@
 
     goto :goto_0
 
-    .line 450
+    .line 475
     :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -798,12 +808,12 @@
     .end annotation
 
     .prologue
-    .line 307
+    .line 312
     .local p3, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     .local p4, responseHandler:Lcom/google/glass/net/ProtoResponseHandler;,"Lcom/google/glass/net/ProtoResponseHandler<TT;>;"
     const/4 v6, 0x1
 
-    .line 308
+    .line 313
     .local v6, logMetrics:Z
     const/4 v5, 0x1
 
@@ -825,7 +835,7 @@
 .end method
 
 .method public blockingDispatch(Lcom/google/glass/net/ServerConstants$Action;Lcom/google/protobuf/AbstractMessage;Lcom/google/protobuf/Parser;Lcom/google/glass/net/ProtoResponseHandler;Z)Z
-    .locals 2
+    .locals 4
     .parameter "action"
     .parameter "requestProto"
     .parameter
@@ -846,78 +856,103 @@
     .end annotation
 
     .prologue
-    .line 330
+    .line 339
     .local p3, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     .local p4, responseHandler:Lcom/google/glass/net/ProtoResponseHandler;,"Lcom/google/glass/net/ProtoResponseHandler<TT;>;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 333
-    invoke-virtual {p0, p1, p2, p3, p5}, Lcom/google/glass/net/ProtoRequestDispatcher;->blockingDispatch(Lcom/google/glass/net/ServerConstants$Action;Lcom/google/protobuf/AbstractMessage;Lcom/google/protobuf/Parser;Z)Lcom/google/glass/net/ProtoResponse;
-
-    move-result-object v0
-
-    .line 336
-    .local v0, response:Lcom/google/glass/net/ProtoResponse;,"Lcom/google/glass/net/ProtoResponse<TT;>;"
-    if-nez v0, :cond_0
-
-    .line 337
+    .line 342
     const/4 v1, 0x0
 
-    .line 348
+    .line 345
+    .local v1, response:Lcom/google/glass/net/ProtoResponse;,"Lcom/google/glass/net/ProtoResponse<TT;>;"
+    :try_start_0
+    invoke-virtual {p0, p1, p2, p3, p5}, Lcom/google/glass/net/ProtoRequestDispatcher;->blockingDispatch(Lcom/google/glass/net/ServerConstants$Action;Lcom/google/protobuf/AbstractMessage;Lcom/google/protobuf/Parser;Z)Lcom/google/glass/net/ProtoResponse;
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v1
+
+    .line 353
     :goto_0
-    return v1
+    if-nez v1, :cond_0
 
-    .line 341
-    :cond_0
-    invoke-virtual {v0}, Lcom/google/glass/net/ProtoResponse;->isCancelled()Z
+    .line 354
+    const/4 v2, 0x0
 
-    move-result v1
+    .line 366
+    :goto_1
+    return v2
 
-    if-eqz v1, :cond_2
+    .line 346
+    :catch_0
+    move-exception v0
 
-    .line 342
-    invoke-interface {p4}, Lcom/google/glass/net/ProtoResponseHandler;->onCancel()V
+    .line 347
+    .local v0, e:Ljava/lang/InterruptedException;
+    sget-object v2, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
+
+    const-string v3, "Thread interrupted during request -- calling ProtoResponseHandler#onCancel"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 348
-    :cond_1
-    :goto_1
-    const/4 v1, 0x1
+    invoke-interface {p4}, Lcom/google/glass/net/ProtoResponseHandler;->onCancel()V
 
     goto :goto_0
 
-    .line 343
+    .line 358
+    .end local v0           #e:Ljava/lang/InterruptedException;
+    :cond_0
+    invoke-virtual {v1}, Lcom/google/glass/net/ProtoResponse;->isCancelled()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 359
+    invoke-interface {p4}, Lcom/google/glass/net/ProtoResponseHandler;->onCancel()V
+
+    .line 366
+    :cond_1
+    :goto_2
+    const/4 v2, 0x1
+
+    goto :goto_1
+
+    .line 360
     :cond_2
-    invoke-virtual {v0}, Lcom/google/glass/net/ProtoResponse;->isError()Z
+    invoke-virtual {v1}, Lcom/google/glass/net/ProtoResponse;->isError()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
-    .line 344
-    invoke-virtual {v0}, Lcom/google/glass/net/ProtoResponse;->getErrorCode()Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
+    .line 361
+    invoke-virtual {v1}, Lcom/google/glass/net/ProtoResponse;->getErrorCode()Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {p4, v1}, Lcom/google/glass/net/ProtoResponseHandler;->onError(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
+    invoke-interface {p4, v2}, Lcom/google/glass/net/ProtoResponseHandler;->onError(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 345
+    .line 362
     :cond_3
-    invoke-virtual {v0}, Lcom/google/glass/net/ProtoResponse;->isSuccess()Z
+    invoke-virtual {v1}, Lcom/google/glass/net/ProtoResponse;->isSuccess()Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
-    .line 346
-    invoke-virtual {v0}, Lcom/google/glass/net/ProtoResponse;->getResponseProto()Ljava/lang/Object;
+    .line 363
+    invoke-virtual {v1}, Lcom/google/glass/net/ProtoResponse;->getResponseProto()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-interface {p4, v1}, Lcom/google/glass/net/ProtoResponseHandler;->onSuccess(Ljava/lang/Object;)V
+    invoke-interface {p4, v2}, Lcom/google/glass/net/ProtoResponseHandler;->onSuccess(Ljava/lang/Object;)V
 
-    goto :goto_1
+    goto :goto_2
 .end method
 
 .method composeBatchLogEventString(IIIJJZ)Ljava/lang/String;
@@ -932,7 +967,7 @@
     .end annotation
 
     .prologue
-    .line 801
+    .line 826
     const-string v1, "r"
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1027,7 +1062,7 @@
     .end annotation
 
     .prologue
-    .line 844
+    .line 869
     const-string v0, "p"
 
     const/4 v1, 0x4
@@ -1092,12 +1127,12 @@
     .end annotation
 
     .prologue
-    .line 468
+    .line 493
     .local p4, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     .local p5, responseHandler:Lcom/google/glass/net/ProtoResponseHandler;,"Lcom/google/glass/net/ProtoResponseHandler<TT;>;"
     const/4 v8, 0x1
 
-    .line 469
+    .line 494
     .local v8, logMetrics:Z
     iget-object v6, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->defaultResponseThread:Ljava/util/concurrent/Executor;
 
@@ -1146,7 +1181,7 @@
     .end annotation
 
     .prologue
-    .line 488
+    .line 513
     .local p4, responseParser:Lcom/google/protobuf/Parser;,"Lcom/google/protobuf/Parser<TT;>;"
     .local p5, responseHandler:Lcom/google/glass/net/ProtoResponseHandler;,"Lcom/google/glass/net/ProtoResponseHandler<TT;>;"
     iget-object v6, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->defaultResponseThread:Ljava/util/concurrent/Executor;
@@ -1176,33 +1211,33 @@
     .locals 2
 
     .prologue
-    .line 551
+    .line 576
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 553
+    .line 578
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->shouldExit:Z
 
-    .line 554
+    .line 579
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 556
+    .line 581
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 558
+    .line 583
     return-void
 
-    .line 556
+    .line 581
     :catchall_0
     move-exception v0
 
@@ -1217,12 +1252,12 @@
     .locals 2
 
     .prologue
-    .line 532
+    .line 557
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 536
+    .line 561
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queue:Ljava/util/List;
 
@@ -1232,28 +1267,28 @@
 
     if-nez v0, :cond_0
 
-    .line 537
+    .line 562
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->explicitFlush:Z
 
-    .line 538
+    .line 563
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Condition;->signal()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 541
+    .line 566
     :cond_0
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 543
+    .line 568
     return-void
 
-    .line 541
+    .line 566
     :catchall_0
     move-exception v0
 
@@ -1270,7 +1305,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 852
+    .line 877
     iget-object v1, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->isHeldByCurrentThread()Z
@@ -1279,7 +1314,7 @@
 
     invoke-static {v1}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 855
+    .line 880
     iget-object v1, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queue:Ljava/util/List;
 
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
@@ -1288,7 +1323,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 860
+    .line 885
     :cond_0
     :goto_0
     return v0
@@ -1319,7 +1354,7 @@
     .end annotation
 
     .prologue
-    .line 866
+    .line 891
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     const-wide/16 v1, 0xa
@@ -1345,7 +1380,7 @@
     .end annotation
 
     .prologue
-    .line 792
+    .line 817
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->userEventHelper:Lcom/google/glass/logging/UserEventHelper;
 
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->PROTO_REQUEST_DISPATCHER_BATCH:Lcom/google/glass/logging/UserEventAction;
@@ -1356,7 +1391,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 795
+    .line 820
     return-void
 .end method
 
@@ -1369,7 +1404,7 @@
     .end annotation
 
     .prologue
-    .line 834
+    .line 859
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->userEventHelper:Lcom/google/glass/logging/UserEventHelper;
 
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->PROTO_REQUEST_DISPATCHER_REQUEST_SIZE:Lcom/google/glass/logging/UserEventAction;
@@ -1380,7 +1415,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 836
+    .line 861
     return-void
 .end method
 
@@ -1388,26 +1423,26 @@
     .locals 6
 
     .prologue
-    .line 564
+    .line 589
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 566
+    .line 591
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 568
+    .line 593
     .local v3, servicing:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;>;"
     :cond_0
     :goto_0
     invoke-interface {v3}, Ljava/util/List;->clear()V
 
-    .line 571
+    .line 596
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 573
+    .line 598
     :goto_1
     :try_start_0
     iget-boolean v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->shouldExit:Z
@@ -1422,7 +1457,7 @@
 
     if-nez v4, :cond_1
 
-    .line 575
+    .line 600
     :try_start_1
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueCondition:Ljava/util/concurrent/locks/Condition;
 
@@ -1433,11 +1468,11 @@
 
     goto :goto_1
 
-    .line 576
+    .line 601
     :catch_0
     move-exception v0
 
-    .line 577
+    .line 602
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_2
     sget-object v4, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
@@ -1450,7 +1485,7 @@
 
     goto :goto_1
 
-    .line 603
+    .line 628
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catchall_0
     move-exception v4
@@ -1461,14 +1496,14 @@
 
     throw v4
 
-    .line 580
+    .line 605
     :cond_1
     :try_start_3
     iget-boolean v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->shouldExit:Z
 
     if-eqz v4, :cond_4
 
-    .line 583
+    .line 608
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queue:Ljava/util/List;
 
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -1489,30 +1524,30 @@
 
     check-cast v2, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 584
+    .line 609
     .local v2, request:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     invoke-virtual {v2}, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->onCancel()V
 
     goto :goto_2
 
-    .line 586
+    .line 611
     .end local v2           #request:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     :cond_2
     invoke-direct {p0}, Lcom/google/glass/net/ProtoRequestDispatcher;->clearQueue()V
 
-    .line 589
+    .line 614
     iget-boolean v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->closeHttpOnExit:Z
 
     if-eqz v4, :cond_3
 
-    .line 590
+    .line 615
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->httpDispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
     invoke-interface {v4}, Lcom/google/glass/net/HttpRequestDispatcher;->close()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 603
+    .line 628
     :cond_3
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
@@ -1520,7 +1555,7 @@
 
     return-void
 
-    .line 596
+    .line 621
     .end local v1           #i$:Ljava/util/Iterator;
     :cond_4
     :try_start_4
@@ -1530,30 +1565,30 @@
 
     if-eqz v4, :cond_5
 
-    .line 599
+    .line 624
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queue:Ljava/util/List;
 
     invoke-interface {v3, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 600
+    .line 625
     invoke-direct {p0}, Lcom/google/glass/net/ProtoRequestDispatcher;->clearQueue()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 603
+    .line 628
     :cond_5
     iget-object v4, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 607
+    .line 632
     invoke-interface {v3}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 608
+    .line 633
     invoke-virtual {p0, v3}, Lcom/google/glass/net/ProtoRequestDispatcher;->service(Ljava/util/List;)V
 
     goto :goto_0
@@ -1573,11 +1608,11 @@
     .end annotation
 
     .prologue
-    .line 623
+    .line 648
     .local p1, requests:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;>;"
     invoke-direct/range {p0 .. p0}, Lcom/google/glass/net/ProtoRequestDispatcher;->ensureDispatcherId()V
 
-    .line 626
+    .line 651
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/glass/net/ProtoRequestDispatcher;->requestPriorityComparator:Ljava/util/Comparator;
@@ -1586,7 +1621,7 @@
 
     invoke-static {v0, v3}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 628
+    .line 653
     const/16 v22, 0x0
 
     .local v22, requestIndex:I
@@ -1600,14 +1635,14 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 632
+    .line 657
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 634
+    .line 659
     :try_start_0
     move-object/from16 v0, p0
 
@@ -1615,7 +1650,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 635
+    .line 660
     :goto_1
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
 
@@ -1625,7 +1660,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 636
+    .line 661
     move-object/from16 v0, p1
 
     move/from16 v1, v22
@@ -1640,12 +1675,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 637
+    .line 662
     add-int/lit8 v22, v22, 0x1
 
     goto :goto_1
 
-    .line 642
+    .line 667
     :cond_1
     move-object/from16 v0, p0
 
@@ -1653,11 +1688,11 @@
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 763
+    .line 788
     :cond_2
     return-void
 
-    .line 642
+    .line 667
     :cond_3
     move-object/from16 v0, p0
 
@@ -1665,30 +1700,30 @@
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 646
+    .line 671
     const/4 v4, 0x0
 
-    .line 647
+    .line 672
     .local v4, logNumRequests:I
     const/4 v5, 0x0
 
-    .line 650
+    .line 675
     .local v5, logNumBytes:I
     invoke-static {}, Lcom/google/googlex/glass/common/proto/BatchRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/BatchRequest$Builder;
 
     move-result-object v15
 
-    .line 651
+    .line 676
     .local v15, batchRequestBuilder:Lcom/google/googlex/glass/common/proto/BatchRequest$Builder;
     new-instance v18, Ljava/util/ArrayList;
 
     invoke-direct/range {v18 .. v18}, Ljava/util/ArrayList;-><init>()V
 
-    .line 652
+    .line 677
     .local v18, batchedRequests:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;>;"
     const/4 v13, 0x0
 
-    .line 654
+    .line 679
     .local v13, batchBytes:I
     :cond_4
     move-object/from16 v0, p1
@@ -1701,21 +1736,21 @@
 
     check-cast v21, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 655
+    .line 680
     .local v21, request:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     add-int/lit8 v22, v22, 0x1
 
-    .line 658
+    .line 683
     move-object/from16 v0, v21
 
     iget-boolean v3, v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->logMetrics:Z
 
     if-eqz v3, :cond_5
 
-    .line 659
+    .line 684
     add-int/lit8 v4, v4, 0x1
 
-    .line 660
+    .line 685
     move-object/from16 v0, v21
 
     iget-object v3, v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->requestData:Lcom/google/protobuf/ByteString;
@@ -1726,7 +1761,7 @@
 
     add-int/2addr v5, v3
 
-    .line 664
+    .line 689
     :cond_5
     move-object/from16 v0, v18
 
@@ -1734,7 +1769,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 665
+    .line 690
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->newBuilder()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v3
@@ -1769,7 +1804,7 @@
 
     invoke-virtual {v15, v3}, Lcom/google/googlex/glass/common/proto/BatchRequest$Builder;->addRequest(Lcom/google/googlex/glass/common/proto/RequestWrapper;)Lcom/google/googlex/glass/common/proto/BatchRequest$Builder;
 
-    .line 669
+    .line 694
     move-object/from16 v0, v21
 
     iget-object v3, v0, Lcom/google/glass/net/ProtoRequestDispatcher$Request;->requestData:Lcom/google/protobuf/ByteString;
@@ -1780,7 +1815,7 @@
 
     add-int/2addr v13, v3
 
-    .line 673
+    .line 698
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
 
     move-result v3
@@ -1813,13 +1848,13 @@
 
     if-lt v3, v0, :cond_4
 
-    .line 677
+    .line 702
     :cond_6
     invoke-static {}, Lcom/google/googlex/glass/common/proto/BatchHeader;->newBuilder()Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;
 
     move-result-object v14
 
-    .line 678
+    .line 703
     .local v14, batchHeaderBuilder:Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;
     move-object/from16 v0, p0
 
@@ -1831,14 +1866,14 @@
 
     invoke-virtual {v14, v0, v1}, Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;->setDispatcherId(J)Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;
 
-    .line 679
+    .line 704
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/google/glass/net/ProtoRequestDispatcher;->context:Landroid/content/Context;
 
     if-eqz v3, :cond_7
 
-    .line 680
+    .line 705
     new-instance v3, Lcom/google/glass/util/AuthUtils;
 
     move-object/from16 v0, p0
@@ -1855,24 +1890,24 @@
 
     move-result-object v12
 
-    .line 681
+    .line 706
     .local v12, authToken:Lcom/google/googlex/glass/common/proto/AuthToken;
     if-eqz v12, :cond_7
 
-    .line 682
+    .line 707
     invoke-virtual {v14, v12}, Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;->addAuthToken(Lcom/google/googlex/glass/common/proto/AuthToken;)Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;
 
-    .line 685
+    .line 710
     .end local v12           #authToken:Lcom/google/googlex/glass/common/proto/AuthToken;
     :cond_7
     invoke-virtual {v15, v14}, Lcom/google/googlex/glass/common/proto/BatchRequest$Builder;->setHeader(Lcom/google/googlex/glass/common/proto/BatchHeader$Builder;)Lcom/google/googlex/glass/common/proto/BatchRequest$Builder;
 
-    .line 688
+    .line 713
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v7
 
-    .line 691
+    .line 716
     .local v7, beforeHttpTime:J
     move-object/from16 v0, p0
 
@@ -1902,17 +1937,17 @@
 
     move-result-object v23
 
-    .line 695
+    .line 720
     .local v23, response:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;[B>;"
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v9
 
-    .line 698
+    .line 723
     .local v9, afterHttpTime:J
     const/4 v11, 0x0
 
-    .line 701
+    .line 726
     .local v11, logError:Z
     if-eqz v23, :cond_8
 
@@ -1922,7 +1957,7 @@
 
     if-nez v3, :cond_9
 
-    .line 704
+    .line 729
     :cond_8
     sget-object v3, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
 
@@ -1932,7 +1967,7 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 705
+    .line 730
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v20
@@ -1951,11 +1986,11 @@
 
     check-cast v17, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 706
+    .line 731
     .local v17, batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     const/4 v11, 0x1
 
-    .line 707
+    .line 732
     sget-object v3, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->NETWORK_ERROR:Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
     move-object/from16 v0, v17
@@ -1964,7 +1999,7 @@
 
     goto :goto_2
 
-    .line 642
+    .line 667
     .end local v4           #logNumRequests:I
     .end local v5           #logNumBytes:I
     .end local v7           #beforeHttpTime:J
@@ -1991,7 +2026,7 @@
 
     throw v3
 
-    .line 709
+    .line 734
     .restart local v4       #logNumRequests:I
     .restart local v5       #logNumBytes:I
     .restart local v7       #beforeHttpTime:J
@@ -2020,7 +2055,7 @@
 
     if-eq v3, v0, :cond_a
 
-    .line 712
+    .line 737
     sget-object v3, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
 
     const-string v24, "Batch request failed due to internal server error."
@@ -2029,7 +2064,7 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 713
+    .line 738
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v20
@@ -2048,11 +2083,11 @@
 
     check-cast v17, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 714
+    .line 739
     .restart local v17       #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     const/4 v11, 0x1
 
-    .line 715
+    .line 740
     sget-object v3, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->INTERNAL_ERROR:Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
     move-object/from16 v0, v17
@@ -2061,7 +2096,7 @@
 
     goto :goto_3
 
-    .line 719
+    .line 744
     .end local v17           #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     .end local v20           #i$:Ljava/util/Iterator;
     :cond_a
@@ -2076,7 +2111,7 @@
 
     move-result-object v16
 
-    .line 720
+    .line 745
     .local v16, batchResponse:Lcom/google/googlex/glass/common/proto/BatchResponse;
     invoke-virtual/range {v16 .. v16}, Lcom/google/googlex/glass/common/proto/BatchResponse;->getResponseCount()I
 
@@ -2090,7 +2125,7 @@
 
     if-eq v3, v0, :cond_b
 
-    .line 723
+    .line 748
     sget-object v3, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
 
     const-string v24, "Batch request failed due to batch size mismatch."
@@ -2099,7 +2134,7 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 724
+    .line 749
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v20
@@ -2118,11 +2153,11 @@
 
     check-cast v17, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 725
+    .line 750
     .restart local v17       #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     const/4 v11, 0x1
 
-    .line 726
+    .line 751
     sget-object v3, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->INTERNAL_ERROR:Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
     move-object/from16 v0, v17
@@ -2133,14 +2168,14 @@
 
     goto :goto_4
 
-    .line 735
+    .line 760
     .end local v16           #batchResponse:Lcom/google/googlex/glass/common/proto/BatchResponse;
     .end local v17           #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     .end local v20           #i$:Ljava/util/Iterator;
     :catch_0
     move-exception v19
 
-    .line 738
+    .line 763
     .local v19, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     sget-object v3, Lcom/google/glass/net/ProtoRequestDispatcher;->TAG:Ljava/lang/String;
 
@@ -2150,7 +2185,7 @@
 
     invoke-static {v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 739
+    .line 764
     invoke-interface/range {v18 .. v18}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v20
@@ -2169,11 +2204,11 @@
 
     check-cast v17, Lcom/google/glass/net/ProtoRequestDispatcher$Request;
 
-    .line 740
+    .line 765
     .restart local v17       #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     const/4 v11, 0x1
 
-    .line 741
+    .line 766
     sget-object v3, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->INVALID_PROTO:Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
     move-object/from16 v0, v17
@@ -2182,7 +2217,7 @@
 
     goto :goto_5
 
-    .line 731
+    .line 756
     .end local v17           #batchedRequest:Lcom/google/glass/net/ProtoRequestDispatcher$Request;,"Lcom/google/glass/net/ProtoRequestDispatcher$Request<*>;"
     .end local v19           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     .end local v20           #i$:Ljava/util/Iterator;
@@ -2203,18 +2238,18 @@
 
     if-eqz v3, :cond_c
 
-    .line 732
+    .line 757
     const/4 v11, 0x1
 
-    .line 751
+    .line 776
     .end local v16           #batchResponse:Lcom/google/googlex/glass/common/proto/BatchResponse;
     :cond_c
     if-lez v4, :cond_0
 
-    .line 754
+    .line 779
     const/4 v6, 0x0
 
-    .line 755
+    .line 780
     .local v6, numBytesResponse:I
     if-eqz v23, :cond_d
 
@@ -2224,7 +2259,7 @@
 
     if-eqz v3, :cond_d
 
-    .line 756
+    .line 781
     move-object/from16 v0, v23
 
     iget-object v3, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -2236,7 +2271,7 @@
     :cond_d
     move-object/from16 v3, p0
 
-    .line 759
+    .line 784
     invoke-virtual/range {v3 .. v11}, Lcom/google/glass/net/ProtoRequestDispatcher;->logBatchMetrics(IIIJJZ)V
 
     goto/16 :goto_0
@@ -2246,11 +2281,11 @@
     .locals 1
 
     .prologue
-    .line 871
+    .line 896
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher;->queueLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 872
+    .line 897
     return-void
 .end method

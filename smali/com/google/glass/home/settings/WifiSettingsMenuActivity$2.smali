@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 159
+    .line 154
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 163
+    .line 158
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
@@ -50,13 +50,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 164
+    .line 159
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$300(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
-    .line 165
+    .line 160
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .locals 2
 
     .prologue
-    .line 169
+    .line 164
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
@@ -76,18 +76,18 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 170
+    .line 165
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->forgetCurrentNetwork()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$500(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
-    .line 171
+    .line 166
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$2;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$300(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
-    .line 172
+    .line 167
     return-void
 .end method

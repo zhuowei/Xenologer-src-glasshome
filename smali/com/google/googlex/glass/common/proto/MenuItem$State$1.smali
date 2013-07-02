@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 586
+    .line 603
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 588
+    .line 605
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/MenuItem$State;->valueOf(I)Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 586
+    .line 603
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/MenuItem$State$1;->findValueByNumber(I)Lcom/google/googlex/glass/common/proto/MenuItem$State;
 
     move-result-object v0

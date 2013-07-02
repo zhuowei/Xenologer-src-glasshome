@@ -38,18 +38,18 @@
     .locals 1
 
     .prologue
-    .line 292
+    .line 293
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 393
+    .line 394
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 293
+    .line 294
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 294
+    .line 295
     return-void
 .end method
 
@@ -58,18 +58,18 @@
     .parameter "parent"
 
     .prologue
-    .line 298
+    .line 299
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 393
+    .line 394
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 299
+    .line 300
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 300
+    .line 301
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .parameter "x1"
 
     .prologue
-    .line 275
+    .line 276
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -89,7 +89,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->create()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -101,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 307
     new-instance v0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;-><init>()V
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 281
+    .line 282
     sget-object v0, Lcom/google/googlex/glass/common/proto/Logging;->internal_static_googlex_glass_common_proto_GetSessionIdResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -123,14 +123,14 @@
     .locals 1
 
     .prologue
-    .line 302
+    .line 303
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 304
+    .line 305
     :cond_0
     return-void
 .end method
@@ -141,12 +141,12 @@
     .locals 2
 
     .prologue
-    .line 330
+    .line 331
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
 
-    .line 331
+    .line 332
     .local v0, result:Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->isInitialized()Z
 
@@ -154,14 +154,14 @@
 
     if-nez v1, :cond_0
 
-    .line 332
+    .line 333
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 334
+    .line 335
     :cond_0
     return-object v0
 .end method
@@ -170,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->build()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->build()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -194,22 +194,22 @@
     .locals 5
 
     .prologue
-    .line 338
+    .line 339
     new-instance v1, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$1;)V
 
-    .line 339
+    .line 340
     .local v1, result:Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
-    .line 340
+    .line 341
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 341
+    .line 342
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -217,24 +217,24 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 342
+    .line 343
     or-int/lit8 v2, v2, 0x1
 
-    .line 344
+    .line 345
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->sessionId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->access$502(Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 345
+    .line 346
     #setter for: Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->access$602(Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;I)I
 
-    .line 346
+    .line 347
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->onBuilt()V
 
-    .line 347
+    .line 348
     return-object v1
 .end method
 
@@ -242,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -254,7 +254,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -266,22 +266,22 @@
     .locals 1
 
     .prologue
-    .line 310
+    .line 311
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 311
+    .line 312
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 312
+    .line 313
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
-    .line 313
+    .line 314
     return-object p0
 .end method
 
@@ -289,7 +289,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -301,7 +301,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -313,7 +313,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -325,7 +325,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -337,14 +337,14 @@
     .locals 1
 
     .prologue
-    .line 447
+    .line 451
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
-    .line 448
+    .line 452
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -355,10 +355,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 449
+    .line 453
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->onChanged()V
 
-    .line 450
+    .line 454
     return-object p0
 .end method
 
@@ -366,7 +366,7 @@
     .locals 2
 
     .prologue
-    .line 317
+    .line 318
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->create()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -386,7 +386,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -398,7 +398,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -410,7 +410,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -422,7 +422,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -434,7 +434,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -451,7 +451,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -463,7 +463,7 @@
     .locals 1
 
     .prologue
-    .line 326
+    .line 327
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -475,7 +475,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -487,7 +487,7 @@
     .locals 1
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
@@ -499,48 +499,61 @@
     .locals 1
 
     .prologue
-    .line 322
+    .line 323
     sget-object v0, Lcom/google/googlex/glass/common/proto/Logging;->internal_static_googlex_glass_common_proto_GetSessionIdResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getSessionId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 404
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
-
     .line 405
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
     .line 406
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 407
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 409
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 408
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
+    .line 410
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 411
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 415
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -549,16 +562,16 @@
     .locals 3
 
     .prologue
-    .line 419
+    .line 423
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 420
+    .line 424
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 421
+    .line 425
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -566,11 +579,11 @@
 
     move-result-object v0
 
-    .line 424
+    .line 428
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 427
+    .line 431
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -591,7 +604,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 398
+    .line 399
     iget v1, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -611,7 +624,7 @@
     .locals 3
 
     .prologue
-    .line 286
+    .line 287
     sget-object v0, Lcom/google/googlex/glass/common/proto/Logging;->internal_static_googlex_glass_common_proto_GetSessionIdResponse_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
@@ -629,7 +642,7 @@
     .locals 1
 
     .prologue
-    .line 371
+    .line 372
     const/4 v0, 0x1
 
     return v0
@@ -640,18 +653,18 @@
     .parameter "other"
 
     .prologue
-    .line 360
+    .line 361
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 367
+    .line 368
     :goto_0
     return-object p0
 
-    .line 361
+    .line 362
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->hasSessionId()Z
 
@@ -659,14 +672,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 362
+    .line 363
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
-    .line 363
+    .line 364
     #getter for: Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->sessionId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->access$500(Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;)Ljava/lang/Object;
 
@@ -674,10 +687,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 364
+    .line 365
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->onChanged()V
 
-    .line 366
+    .line 367
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -699,10 +712,10 @@
     .end annotation
 
     .prologue
-    .line 378
+    .line 379
     const/4 v2, 0x0
 
-    .line 380
+    .line 381
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;->PARSER:Lcom/google/protobuf/Parser;
@@ -720,21 +733,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 385
+    .line 386
     if-eqz v2, :cond_0
 
-    .line 386
+    .line 387
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
-    .line 389
+    .line 390
     :cond_0
     return-object p0
 
-    .line 381
+    .line 382
     :catch_0
     move-exception v1
 
-    .line 382
+    .line 383
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -747,19 +760,19 @@
 
     move-object v2, v0
 
-    .line 383
+    .line 384
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 385
+    .line 386
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 386
+    .line 387
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     :cond_1
@@ -771,12 +784,12 @@
     .parameter "other"
 
     .prologue
-    .line 351
+    .line 352
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     if-eqz v0, :cond_0
 
-    .line 352
+    .line 353
     check-cast p1, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     .end local p1
@@ -784,12 +797,12 @@
 
     move-result-object p0
 
-    .line 355
+    .line 356
     .end local p0
     :goto_0
     return-object p0
 
-    .line 354
+    .line 355
     .restart local p0
     .restart local p1
     :cond_0
@@ -809,7 +822,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -822,7 +835,7 @@
     .parameter "x0"
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -841,7 +854,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -860,7 +873,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -873,7 +886,7 @@
     .parameter "x0"
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -892,7 +905,7 @@
     .end annotation
 
     .prologue
-    .line 275
+    .line 276
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;
 
     move-result-object v0
@@ -905,17 +918,17 @@
     .parameter "value"
 
     .prologue
-    .line 435
+    .line 439
     if-nez p1, :cond_0
 
-    .line 436
+    .line 440
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 438
+    .line 442
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
@@ -923,13 +936,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
-    .line 439
+    .line 443
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 440
+    .line 444
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->onChanged()V
 
-    .line 441
+    .line 445
     return-object p0
 .end method
 
@@ -938,17 +951,17 @@
     .parameter "value"
 
     .prologue
-    .line 457
+    .line 461
     if-nez p1, :cond_0
 
-    .line 458
+    .line 462
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 460
+    .line 464
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
@@ -956,12 +969,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->bitField0_:I
 
-    .line 461
+    .line 465
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->sessionId_:Ljava/lang/Object;
 
-    .line 462
+    .line 466
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$Builder;->onChanged()V
 
-    .line 463
+    .line 467
     return-object p0
 .end method

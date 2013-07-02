@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 136
+    .line 137
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$1;->this$0:Lcom/google/glass/widget/MessageDialog;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -43,17 +43,17 @@
 
     const/4 v2, 0x1
 
-    .line 139
+    .line 140
     iget v4, p1, Landroid/os/Message;->what:I
 
     packed-switch v4, :pswitch_data_0
 
-    .line 161
+    .line 162
     :cond_0
     :goto_0
     return-void
 
-    .line 141
+    .line 142
     :pswitch_0
     iget-object v2, p0, Lcom/google/glass/widget/MessageDialog$1;->this$0:Lcom/google/glass/widget/MessageDialog;
 
@@ -61,7 +61,7 @@
 
     goto :goto_0
 
-    .line 144
+    .line 145
     :pswitch_1
     iget-object v2, p0, Lcom/google/glass/widget/MessageDialog$1;->this$0:Lcom/google/glass/widget/MessageDialog;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 147
+    .line 148
     :pswitch_2
     iget-object v4, p0, Lcom/google/glass/widget/MessageDialog$1;->this$0:Lcom/google/glass/widget/MessageDialog;
 
@@ -86,14 +86,14 @@
 
     if-eqz v4, :cond_0
 
-    .line 148
+    .line 149
     iget v4, p1, Landroid/os/Message;->arg1:I
 
     if-ne v4, v2, :cond_1
 
     move v0, v2
 
-    .line 149
+    .line 150
     .local v0, dismissedByUser:Z
     :goto_1
     iget v4, p1, Landroid/os/Message;->arg2:I
@@ -102,14 +102,14 @@
 
     move v1, v2
 
-    .line 151
+    .line 152
     .local v1, onTemporaryMessage:Z
     :goto_2
     if-eqz v0, :cond_3
 
     if-eqz v1, :cond_3
 
-    .line 153
+    .line 154
     iget-object v2, p0, Lcom/google/glass/widget/MessageDialog$1;->this$0:Lcom/google/glass/widget/MessageDialog;
 
     #getter for: Lcom/google/glass/widget/MessageDialog;->params:Lcom/google/glass/widget/MessageDialog$Params;
@@ -131,17 +131,17 @@
     :cond_1
     move v0, v3
 
-    .line 148
+    .line 149
     goto :goto_1
 
     .restart local v0       #dismissedByUser:Z
     :cond_2
     move v1, v3
 
-    .line 149
+    .line 150
     goto :goto_2
 
-    .line 156
+    .line 157
     .restart local v1       #onTemporaryMessage:Z
     :cond_3
     iget-object v2, p0, Lcom/google/glass/widget/MessageDialog$1;->this$0:Lcom/google/glass/widget/MessageDialog;
@@ -160,7 +160,7 @@
 
     goto :goto_0
 
-    .line 139
+    .line 140
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

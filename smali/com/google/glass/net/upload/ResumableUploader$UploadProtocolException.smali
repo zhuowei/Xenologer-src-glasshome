@@ -25,13 +25,13 @@
     .parameter "message"
 
     .prologue
-    .line 183
+    .line 142
     iput-object p1, p0, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;->this$0:Lcom/google/glass/net/upload/ResumableUploader;
 
-    .line 184
+    .line 143
     invoke-direct {p0, p2}, Lorg/apache/http/ProtocolException;-><init>(Ljava/lang/String;)V
 
-    .line 185
+    .line 144
     return-void
 .end method
 
@@ -42,12 +42,12 @@
     .parameter "e"
 
     .prologue
-    .line 187
+    .line 146
     iput-object p1, p0, Lcom/google/glass/net/upload/ResumableUploader$UploadProtocolException;->this$0:Lcom/google/glass/net/upload/ResumableUploader;
 
-    .line 188
+    .line 147
     invoke-direct {p0, p2, p3}, Lorg/apache/http/ProtocolException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 189
+    .line 148
     return-void
 .end method

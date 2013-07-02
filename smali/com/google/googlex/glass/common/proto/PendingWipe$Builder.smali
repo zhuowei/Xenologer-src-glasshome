@@ -44,18 +44,18 @@
     .locals 1
 
     .prologue
-    .line 416
+    .line 417
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 596
+    .line 597
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 417
+    .line 418
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->maybeForceBuilderInitialization()V
 
-    .line 418
+    .line 419
     return-void
 .end method
 
@@ -64,18 +64,18 @@
     .parameter "parent"
 
     .prologue
-    .line 422
+    .line 423
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 596
+    .line 597
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 423
+    .line 424
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->maybeForceBuilderInitialization()V
 
-    .line 424
+    .line 425
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .parameter "x1"
 
     .prologue
-    .line 399
+    .line 400
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -95,7 +95,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->create()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -107,7 +107,7 @@
     .locals 1
 
     .prologue
-    .line 430
+    .line 431
     new-instance v0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;-><init>()V
@@ -119,7 +119,7 @@
     .locals 1
 
     .prologue
-    .line 405
+    .line 406
     sget-object v0, Lcom/google/googlex/glass/common/proto/Admin;->internal_static_googlex_glass_common_proto_PendingWipe_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -129,14 +129,14 @@
     .locals 1
 
     .prologue
-    .line 426
+    .line 427
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 428
+    .line 429
     :cond_0
     return-void
 .end method
@@ -147,12 +147,12 @@
     .locals 2
 
     .prologue
-    .line 460
+    .line 461
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
 
-    .line 461
+    .line 462
     .local v0, result:Lcom/google/googlex/glass/common/proto/PendingWipe;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/PendingWipe;->isInitialized()Z
 
@@ -160,14 +160,14 @@
 
     if-nez v1, :cond_0
 
-    .line 462
+    .line 463
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 464
+    .line 465
     :cond_0
     return-object v0
 .end method
@@ -176,7 +176,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->build()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -188,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->build()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -200,22 +200,22 @@
     .locals 5
 
     .prologue
-    .line 468
+    .line 469
     new-instance v1, Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/PendingWipe;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/PendingWipe$1;)V
 
-    .line 469
+    .line 470
     .local v1, result:Lcom/google/googlex/glass/common/proto/PendingWipe;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 470
+    .line 471
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 471
+    .line 472
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -223,75 +223,75 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 472
+    .line 473
     or-int/lit8 v2, v2, 0x1
 
-    .line 474
+    .line 475
     :cond_0
     iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->timestamp_:J
 
     #setter for: Lcom/google/googlex/glass/common/proto/PendingWipe;->timestamp_:J
     invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$502(Lcom/google/googlex/glass/common/proto/PendingWipe;J)J
 
-    .line 475
+    .line 476
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 476
+    .line 477
     or-int/lit8 v2, v2, 0x2
 
-    .line 478
+    .line 479
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$602(Lcom/google/googlex/glass/common/proto/PendingWipe;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 479
+    .line 480
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 480
+    .line 481
     or-int/lit8 v2, v2, 0x4
 
-    .line 482
+    .line 483
     :cond_2
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->wipeExternalStorage_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/PendingWipe;->wipeExternalStorage_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$702(Lcom/google/googlex/glass/common/proto/PendingWipe;Z)Z
 
-    .line 483
+    .line 484
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 484
+    .line 485
     or-int/lit8 v2, v2, 0x8
 
-    .line 486
+    .line 487
     :cond_3
     iget v3, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->retryCount_:I
 
     #setter for: Lcom/google/googlex/glass/common/proto/PendingWipe;->retryCount_:I
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$802(Lcom/google/googlex/glass/common/proto/PendingWipe;I)I
 
-    .line 487
+    .line 488
     #setter for: Lcom/google/googlex/glass/common/proto/PendingWipe;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$902(Lcom/google/googlex/glass/common/proto/PendingWipe;I)I
 
-    .line 488
+    .line 489
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onBuilt()V
 
-    .line 489
+    .line 490
     return-object v1
 .end method
 
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -325,54 +325,54 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 434
+    .line 435
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 435
+    .line 436
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->timestamp_:J
 
-    .line 436
+    .line 437
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 437
+    .line 438
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 438
+    .line 439
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 439
+    .line 440
     iput-boolean v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->wipeExternalStorage_:Z
 
-    .line 440
+    .line 441
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 441
+    .line 442
     iput v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->retryCount_:I
 
-    .line 442
+    .line 443
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 443
+    .line 444
     return-object p0
 .end method
 
@@ -380,7 +380,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clear()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -392,7 +392,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clear()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -404,7 +404,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clear()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -416,7 +416,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clear()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -428,14 +428,14 @@
     .locals 1
 
     .prologue
-    .line 670
+    .line 674
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 671
+    .line 675
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -446,10 +446,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 672
+    .line 676
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 673
+    .line 677
     return-object p0
 .end method
 
@@ -457,22 +457,22 @@
     .locals 1
 
     .prologue
-    .line 783
+    .line 787
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 784
+    .line 788
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->retryCount_:I
 
-    .line 785
+    .line 789
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 786
+    .line 790
     return-object p0
 .end method
 
@@ -480,22 +480,22 @@
     .locals 2
 
     .prologue
-    .line 590
+    .line 591
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 591
+    .line 592
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->timestamp_:J
 
-    .line 592
+    .line 593
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 593
+    .line 594
     return-object p0
 .end method
 
@@ -503,22 +503,22 @@
     .locals 1
 
     .prologue
-    .line 735
+    .line 739
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 736
+    .line 740
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->wipeExternalStorage_:Z
 
-    .line 737
+    .line 741
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 738
+    .line 742
     return-object p0
 .end method
 
@@ -526,7 +526,7 @@
     .locals 2
 
     .prologue
-    .line 447
+    .line 448
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->create()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -546,7 +546,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clone()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -558,7 +558,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clone()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -570,7 +570,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clone()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -582,7 +582,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clone()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -594,7 +594,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clone()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -611,7 +611,7 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->clone()Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -623,7 +623,7 @@
     .locals 1
 
     .prologue
-    .line 456
+    .line 457
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -635,7 +635,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -647,7 +647,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
@@ -659,48 +659,61 @@
     .locals 1
 
     .prologue
-    .line 452
+    .line 453
     sget-object v0, Lcom/google/googlex/glass/common/proto/Admin;->internal_static_googlex_glass_common_proto_PendingWipe_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getDeviceId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 615
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
-
     .line 616
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
     .line 617
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 618
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 620
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 619
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
+    .line 621
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 622
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 626
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -709,16 +722,16 @@
     .locals 3
 
     .prologue
-    .line 634
+    .line 638
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 635
+    .line 639
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 636
+    .line 640
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -726,11 +739,11 @@
 
     move-result-object v0
 
-    .line 639
+    .line 643
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 642
+    .line 646
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -749,7 +762,7 @@
     .locals 1
 
     .prologue
-    .line 760
+    .line 764
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->retryCount_:I
 
     return v0
@@ -759,7 +772,7 @@
     .locals 2
 
     .prologue
-    .line 565
+    .line 566
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->timestamp_:J
 
     return-wide v0
@@ -769,7 +782,7 @@
     .locals 1
 
     .prologue
-    .line 712
+    .line 716
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->wipeExternalStorage_:Z
 
     return v0
@@ -779,7 +792,7 @@
     .locals 2
 
     .prologue
-    .line 605
+    .line 606
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -803,7 +816,7 @@
     .locals 2
 
     .prologue
-    .line 750
+    .line 754
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -829,7 +842,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 554
+    .line 555
     iget v1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -849,7 +862,7 @@
     .locals 2
 
     .prologue
-    .line 702
+    .line 706
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -873,7 +886,7 @@
     .locals 3
 
     .prologue
-    .line 410
+    .line 411
     sget-object v0, Lcom/google/googlex/glass/common/proto/Admin;->internal_static_googlex_glass_common_proto_PendingWipe_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/PendingWipe;
@@ -891,7 +904,7 @@
     .locals 1
 
     .prologue
-    .line 522
+    .line 523
     const/4 v0, 0x1
 
     return v0
@@ -902,18 +915,18 @@
     .parameter "other"
 
     .prologue
-    .line 502
+    .line 503
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 518
+    .line 519
     :goto_0
     return-object p0
 
-    .line 503
+    .line 504
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->hasTimestamp()Z
 
@@ -921,14 +934,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 504
+    .line 505
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getTimestamp()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->setTimestamp(J)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
-    .line 506
+    .line 507
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->hasDeviceId()Z
 
@@ -936,14 +949,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 507
+    .line 508
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 508
+    .line 509
     #getter for: Lcom/google/googlex/glass/common/proto/PendingWipe;->deviceId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->access$600(Lcom/google/googlex/glass/common/proto/PendingWipe;)Ljava/lang/Object;
 
@@ -951,10 +964,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 509
+    .line 510
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 511
+    .line 512
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->hasWipeExternalStorage()Z
 
@@ -962,14 +975,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 512
+    .line 513
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getWipeExternalStorage()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->setWipeExternalStorage(Z)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
-    .line 514
+    .line 515
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->hasRetryCount()Z
 
@@ -977,14 +990,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 515
+    .line 516
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getRetryCount()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->setRetryCount(I)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
-    .line 517
+    .line 518
     :cond_4
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PendingWipe;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1006,10 +1019,10 @@
     .end annotation
 
     .prologue
-    .line 529
+    .line 530
     const/4 v2, 0x0
 
-    .line 531
+    .line 532
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/PendingWipe;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/PendingWipe;->PARSER:Lcom/google/protobuf/Parser;
@@ -1027,21 +1040,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 536
+    .line 537
     if-eqz v2, :cond_0
 
-    .line 537
+    .line 538
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/PendingWipe;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
-    .line 540
+    .line 541
     :cond_0
     return-object p0
 
-    .line 532
+    .line 533
     :catch_0
     move-exception v1
 
-    .line 533
+    .line 534
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1054,19 +1067,19 @@
 
     move-object v2, v0
 
-    .line 534
+    .line 535
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 536
+    .line 537
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 537
+    .line 538
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/PendingWipe;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     :cond_1
@@ -1078,12 +1091,12 @@
     .parameter "other"
 
     .prologue
-    .line 493
+    .line 494
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     if-eqz v0, :cond_0
 
-    .line 494
+    .line 495
     check-cast p1, Lcom/google/googlex/glass/common/proto/PendingWipe;
 
     .end local p1
@@ -1091,12 +1104,12 @@
 
     move-result-object p0
 
-    .line 497
+    .line 498
     .end local p0
     :goto_0
     return-object p0
 
-    .line 496
+    .line 497
     .restart local p0
     .restart local p1
     :cond_0
@@ -1116,7 +1129,7 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1129,7 +1142,7 @@
     .parameter "x0"
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1148,7 +1161,7 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1167,7 +1180,7 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1180,7 +1193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1199,7 +1212,7 @@
     .end annotation
 
     .prologue
-    .line 399
+    .line 400
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;
 
     move-result-object v0
@@ -1212,17 +1225,17 @@
     .parameter "value"
 
     .prologue
-    .line 654
+    .line 658
     if-nez p1, :cond_0
 
-    .line 655
+    .line 659
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 657
+    .line 661
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
@@ -1230,13 +1243,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 658
+    .line 662
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 659
+    .line 663
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 660
+    .line 664
     return-object p0
 .end method
 
@@ -1245,17 +1258,17 @@
     .parameter "value"
 
     .prologue
-    .line 684
+    .line 688
     if-nez p1, :cond_0
 
-    .line 685
+    .line 689
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 687
+    .line 691
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
@@ -1263,13 +1276,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 688
+    .line 692
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 689
+    .line 693
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 690
+    .line 694
     return-object p0
 .end method
 
@@ -1278,20 +1291,20 @@
     .parameter "value"
 
     .prologue
-    .line 770
+    .line 774
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 771
+    .line 775
     iput p1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->retryCount_:I
 
-    .line 772
+    .line 776
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 773
+    .line 777
     return-object p0
 .end method
 
@@ -1300,20 +1313,20 @@
     .parameter "value"
 
     .prologue
-    .line 576
+    .line 577
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 577
+    .line 578
     iput-wide p1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->timestamp_:J
 
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 579
+    .line 580
     return-object p0
 .end method
 
@@ -1322,19 +1335,19 @@
     .parameter "value"
 
     .prologue
-    .line 722
+    .line 726
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->bitField0_:I
 
-    .line 723
+    .line 727
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->wipeExternalStorage_:Z
 
-    .line 724
+    .line 728
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PendingWipe$Builder;->onChanged()V
 
-    .line 725
+    .line 729
     return-object p0
 .end method

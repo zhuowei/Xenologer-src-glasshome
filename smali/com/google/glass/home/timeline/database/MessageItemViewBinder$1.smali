@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/database/MessageItemViewBinder;->onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
+    value = Lcom/google/glass/home/timeline/database/MessageItemViewBinder;->onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;Lcom/google/glass/home/timeline/TimelineItemAdapter$ContentSizedListener;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -42,7 +42,7 @@
     .parameter
 
     .prologue
-    .line 99
+    .line 100
     iput-object p1, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->this$0:Lcom/google/glass/home/timeline/database/MessageItemViewBinder;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->val$view:Landroid/view/View;
@@ -66,7 +66,7 @@
     .locals 3
 
     .prologue
-    .line 102
+    .line 103
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->val$view:Landroid/view/View;
 
     sget v2, Lcom/google/glass/home/R$id;->tag_view_binding_index:I
@@ -75,7 +75,7 @@
 
     move-result-object v0
 
-    .line 103
+    .line 104
     .local v0, bindingIndexTag:Ljava/lang/Object;
     if-eqz v0, :cond_0
 
@@ -90,21 +90,21 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 105
+    .line 106
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->val$messageView:Lcom/google/glass/widget/DynamicSizeTextView;
 
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->val$textClipListener:Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setTextClipListener(Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)V
 
-    .line 106
+    .line 107
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->val$messageView:Lcom/google/glass/widget/DynamicSizeTextView;
 
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/MessageItemViewBinder$1;->val$finalContent:Ljava/lang/CharSequence;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 108
+    .line 109
     :cond_0
     return-void
 .end method

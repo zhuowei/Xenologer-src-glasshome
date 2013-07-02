@@ -79,7 +79,7 @@
 
     const/4 v2, 0x0
 
-    .line 198
+    .line 204
     new-instance v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     const-string v1, "INSERT"
@@ -88,7 +88,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 202
+    .line 208
     new-instance v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     const-string v1, "UPDATE"
@@ -97,7 +97,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->UPDATE:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 206
+    .line 212
     new-instance v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     const-string v1, "DELETE"
@@ -106,7 +106,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->DELETE:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 210
+    .line 216
     new-instance v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     const-string v1, "MENU_ACTION"
@@ -115,7 +115,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->MENU_ACTION:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 193
+    .line 199
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/Subscription$Operation;
@@ -138,14 +138,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->$VALUES:[Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 248
+    .line 254
     new-instance v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Subscription$Operation$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 268
+    .line 274
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->values()[Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     move-result-object v0
@@ -168,16 +168,16 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 288
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 283
+    .line 289
     iput p3, p0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->index:I
 
-    .line 284
+    .line 290
     iput p4, p0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->value:I
 
-    .line 285
+    .line 291
     return-void
 .end method
 
@@ -185,7 +185,7 @@
     .locals 2
 
     .prologue
-    .line 265
+    .line 271
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -218,7 +218,7 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 251
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -229,40 +229,40 @@
     .parameter "value"
 
     .prologue
-    .line 234
+    .line 240
     packed-switch p0, :pswitch_data_0
 
-    .line 239
+    .line 245
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 235
+    .line 241
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     goto :goto_0
 
-    .line 236
+    .line 242
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->UPDATE:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     goto :goto_0
 
-    .line 237
+    .line 243
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->DELETE:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     goto :goto_0
 
-    .line 238
+    .line 244
     :pswitch_3
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->MENU_ACTION:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     goto :goto_0
 
-    .line 234
+    .line 240
     nop
 
     :pswitch_data_0
@@ -279,7 +279,7 @@
     .parameter "desc"
 
     .prologue
-    .line 272
+    .line 278
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -290,7 +290,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 273
+    .line 279
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -299,7 +299,7 @@
 
     throw v0
 
-    .line 276
+    .line 282
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->VALUES:[Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
@@ -317,7 +317,7 @@
     .parameter "name"
 
     .prologue
-    .line 193
+    .line 199
     const-class v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -333,7 +333,7 @@
     .locals 1
 
     .prologue
-    .line 193
+    .line 199
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->$VALUES:[Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/Subscription$Operation;->clone()Ljava/lang/Object;
@@ -351,7 +351,7 @@
     .locals 1
 
     .prologue
-    .line 261
+    .line 267
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -363,7 +363,7 @@
     .locals 1
 
     .prologue
-    .line 231
+    .line 237
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->value:I
 
     return v0
@@ -373,7 +373,7 @@
     .locals 2
 
     .prologue
-    .line 257
+    .line 263
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

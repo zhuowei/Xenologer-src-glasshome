@@ -69,7 +69,7 @@
 
     const/4 v2, 0x1
 
-    .line 195
+    .line 197
     new-instance v0, Lcom/google/glass/proto/MapRenderRequest$Type;
 
     const-string v1, "RENDER_MAP"
@@ -78,7 +78,7 @@
 
     sput-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->RENDER_MAP:Lcom/google/glass/proto/MapRenderRequest$Type;
 
-    .line 199
+    .line 201
     new-instance v0, Lcom/google/glass/proto/MapRenderRequest$Type;
 
     const-string v1, "CANCEL"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->CANCEL:Lcom/google/glass/proto/MapRenderRequest$Type;
 
-    .line 190
+    .line 192
     new-array v0, v4, [Lcom/google/glass/proto/MapRenderRequest$Type;
 
     sget-object v1, Lcom/google/glass/proto/MapRenderRequest$Type;->RENDER_MAP:Lcom/google/glass/proto/MapRenderRequest$Type;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->$VALUES:[Lcom/google/glass/proto/MapRenderRequest$Type;
 
-    .line 227
+    .line 229
     new-instance v0, Lcom/google/glass/proto/MapRenderRequest$Type$1;
 
     invoke-direct {v0}, Lcom/google/glass/proto/MapRenderRequest$Type$1;-><init>()V
 
     sput-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 247
+    .line 249
     invoke-static {}, Lcom/google/glass/proto/MapRenderRequest$Type;->values()[Lcom/google/glass/proto/MapRenderRequest$Type;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 261
+    .line 263
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 262
+    .line 264
     iput p3, p0, Lcom/google/glass/proto/MapRenderRequest$Type;->index:I
 
-    .line 263
+    .line 265
     iput p4, p0, Lcom/google/glass/proto/MapRenderRequest$Type;->value:I
 
-    .line 264
+    .line 266
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 244
+    .line 246
     invoke-static {}, Lcom/google/glass/proto/MapRenderRequest;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 226
     sget-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 215
+    .line 217
     packed-switch p0, :pswitch_data_0
 
-    .line 218
+    .line 220
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 216
+    .line 218
     :pswitch_0
     sget-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->RENDER_MAP:Lcom/google/glass/proto/MapRenderRequest$Type;
 
     goto :goto_0
 
-    .line 217
+    .line 219
     :pswitch_1
     sget-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->CANCEL:Lcom/google/glass/proto/MapRenderRequest$Type;
 
     goto :goto_0
 
-    .line 215
+    .line 217
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 251
+    .line 253
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 252
+    .line 254
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 255
+    .line 257
     :cond_0
     sget-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->VALUES:[Lcom/google/glass/proto/MapRenderRequest$Type;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 190
+    .line 192
     const-class v0, Lcom/google/glass/proto/MapRenderRequest$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 192
     sget-object v0, Lcom/google/glass/proto/MapRenderRequest$Type;->$VALUES:[Lcom/google/glass/proto/MapRenderRequest$Type;
 
     invoke-virtual {v0}, [Lcom/google/glass/proto/MapRenderRequest$Type;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 242
     invoke-static {}, Lcom/google/glass/proto/MapRenderRequest$Type;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 214
     iget v0, p0, Lcom/google/glass/proto/MapRenderRequest$Type;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 236
+    .line 238
     invoke-static {}, Lcom/google/glass/proto/MapRenderRequest$Type;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

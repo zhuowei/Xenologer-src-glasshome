@@ -26,12 +26,14 @@
 # instance fields
 .field private active:Z
 
+.field private final context:Landroid/content/Context;
+
 .field estimatedTimeToCancel:F
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
     .end annotation
 .end field
 
-.field private final isCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field private final isCancelled:Lcom/google/glass/util/Condition;
 
 .field scrollItemPosition:I
     .annotation build Lcom/google/common/annotations/VisibleForTesting;
@@ -65,146 +67,176 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 2
+    .parameter "context"
 
     .prologue
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     const/4 v1, 0x0
 
-    .line 103
+    .line 176
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 106
+    .line 110
     new-instance v0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;-><init>(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
     iput-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->task:Landroid/os/AsyncTask;
 
-    .line 140
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    .line 151
+    new-instance v0, Lcom/google/glass/util/Condition;
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
+    invoke-direct {v0}, Lcom/google/glass/util/Condition;-><init>()V
 
-    iput-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
 
-    .line 146
+    .line 157
     iput-object v1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
-    .line 149
+    .line 160
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemPosition:I
 
-    .line 153
+    .line 164
     iput-object v1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollView:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    .line 156
+    .line 167
     const/high16 v0, 0x7f80
 
     iput v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->estimatedTimeToCancel:F
 
-    .line 160
+    .line 171
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->timeAddedToPendingList:J
 
-    .line 163
+    .line 174
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->active:Z
 
+    .line 177
+    invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 178
+    iput-object p1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->context:Landroid/content/Context;
+
+    .line 179
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 103
-    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->stop()V
-
-    return-void
-.end method
-
-.method static synthetic access$1000(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)J
-    .locals 2
-    .parameter "x0"
-
-    .prologue
-    .line 103
-    iget-wide v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->timeAddedToPendingList:J
-
-    return-wide v0
-.end method
-
-.method static synthetic access$1002(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;J)J
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 103
-    iput-wide p1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->timeAddedToPendingList:J
-
-    return-wide p1
-.end method
-
-.method static synthetic access$1100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;Ljava/util/concurrent/Executor;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 103
-    invoke-direct {p0, p1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->start(Ljava/util/concurrent/Executor;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1200(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;Landroid/view/View;)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 103
-    invoke-direct {p0, p1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->enableScrollPrioritization(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method static synthetic access$700(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Landroid/view/View;
+.method static synthetic access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Lcom/google/glass/util/Condition;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 103
-    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
+    .line 107
+    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
 
     return-object v0
 .end method
 
-.method static synthetic access$800(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
+.method static synthetic access$1000(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
     .locals 0
     .parameter "x0"
 
     .prologue
-    .line 103
+    .line 107
     invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->prepareForScrollPrioritization()V
 
     return-void
 .end method
 
-.method static synthetic access$900(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
+.method static synthetic access$1100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 103
+    .line 107
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollView:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1200(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)J
+    .locals 2
+    .parameter "x0"
+
+    .prologue
+    .line 107
+    iget-wide v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->timeAddedToPendingList:J
+
+    return-wide v0
+.end method
+
+.method static synthetic access$1202(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;J)J
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 107
+    iput-wide p1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->timeAddedToPendingList:J
+
+    return-wide p1
+.end method
+
+.method static synthetic access$1300(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;Ljava/util/concurrent/Executor;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 107
+    invoke-direct {p0, p1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->start(Ljava/util/concurrent/Executor;)V
+
+    return-void
+.end method
+
+.method static synthetic access$1400(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;Landroid/view/View;)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 107
+    invoke-direct {p0, p1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->enableScrollPrioritization(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method static synthetic access$200(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Landroid/content/Context;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 107
+    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->context:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$300(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 107
+    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->stop()V
+
+    return-void
+.end method
+
+.method static synthetic access$900(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Landroid/view/View;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 107
+    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
     return-object v0
 .end method
@@ -214,11 +246,11 @@
     .parameter "itemSubview"
 
     .prologue
-    .line 167
+    .line 183
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     iput-object p1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
-    .line 168
+    .line 184
     return-void
 .end method
 
@@ -226,7 +258,7 @@
     .locals 1
 
     .prologue
-    .line 331
+    .line 362
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->task:Landroid/os/AsyncTask;
 
@@ -244,23 +276,23 @@
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     const/4 v6, 0x0
 
-    .line 178
+    .line 194
     iget-object v3, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
     invoke-static {v3}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 180
+    .line 196
     iget-object v3, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 181
+    .line 197
     .local v0, itemView:Landroid/view/ViewParent;
     const/4 v1, 0x0
 
-    .line 182
+    .line 198
     :goto_0
     if-eqz v0, :cond_4
 
@@ -285,7 +317,7 @@
     .local v1, positionTag:Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 185
+    .line 201
     invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -295,19 +327,19 @@
     :cond_0
     move-object v3, v1
 
-    .line 188
+    .line 204
     .end local v1           #positionTag:Ljava/lang/Object;
     :goto_1
     if-nez v3, :cond_1
 
-    .line 189
+    .line 205
     iput-object v6, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
-    .line 210
+    .line 226
     :goto_2
     return-void
 
-    .line 195
+    .line 211
     :cond_1
     check-cast v3, Ljava/lang/Integer;
 
@@ -317,13 +349,13 @@
 
     iput v3, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemPosition:I
 
-    .line 196
+    .line 212
     iget v3, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemPosition:I
 
     if-gez v3, :cond_2
 
-    .line 197
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$200()Ljava/lang/String;
+    .line 213
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$400()Ljava/lang/String;
 
     move-result-object v3
 
@@ -351,18 +383,18 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 198
+    .line 214
     iput-object v6, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
     goto :goto_2
 
-    .line 203
+    .line 219
     :cond_2
     invoke-interface {v0}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
-    .line 204
+    .line 220
     .local v2, scrollView:Landroid/view/ViewParent;
     :goto_3
     if-eqz v2, :cond_3
@@ -375,24 +407,24 @@
 
     if-nez v3, :cond_3
 
-    .line 205
+    .line 221
     invoke-interface {v2}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
     goto :goto_3
 
-    .line 207
+    .line 223
     :cond_3
     invoke-static {v2}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 208
+    .line 224
     check-cast v2, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     .end local v2           #scrollView:Landroid/view/ViewParent;
     iput-object v2, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollView:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    .line 209
+    .line 225
     iput-object v6, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->scrollItemSubview:Landroid/view/View;
 
     goto :goto_2
@@ -408,24 +440,24 @@
     .parameter "executor"
 
     .prologue
-    .line 214
+    .line 230
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 215
+    .line 231
     iget-boolean v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->active:Z
 
     if-nez v0, :cond_0
 
-    .line 216
+    .line 232
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->active:Z
 
-    .line 217
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$308()I
+    .line 233
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$508()I
 
-    .line 221
+    .line 237
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->task:Landroid/os/AsyncTask;
 
     const/4 v1, 0x0
@@ -434,7 +466,7 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 223
+    .line 239
     :cond_0
     return-void
 .end method
@@ -446,22 +478,22 @@
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     const/4 v0, 0x0
 
-    .line 227
+    .line 243
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 228
+    .line 244
     iget-boolean v1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->active:Z
 
     if-eqz v1, :cond_1
 
-    .line 229
+    .line 245
     iput-boolean v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->active:Z
 
-    .line 230
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$310()I
+    .line 246
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$510()I
 
-    .line 234
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$300()I
+    .line 250
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$500()I
 
     move-result v1
 
@@ -472,8 +504,8 @@
     :cond_0
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 235
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$400()Ljava/util/List;
+    .line 251
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$600()Ljava/util/List;
 
     move-result-object v0
 
@@ -483,18 +515,18 @@
 
     if-lez v0, :cond_1
 
-    .line 236
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$600()Landroid/os/Handler;
+    .line 252
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$800()Landroid/os/Handler;
 
     move-result-object v0
 
-    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$500()Ljava/lang/Runnable;
+    invoke-static {}, Lcom/google/glass/util/DeferredContentLoader;->access$700()Ljava/lang/Runnable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 239
+    .line 255
     :cond_1
     return-void
 .end method
@@ -510,25 +542,26 @@
 .end method
 
 .method public cancel(Z)V
-    .locals 2
+    .locals 1
     .parameter "mayInterruptIfRunning"
 
     .prologue
-    .line 243
+    .line 259
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
-    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Lcom/google/glass/util/Condition;->set()V
 
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-
-    .line 244
+    .line 260
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->task:Landroid/os/AsyncTask;
 
     invoke-virtual {v0, p1}, Landroid/os/AsyncTask;->cancel(Z)Z
 
-    .line 245
+    .line 261
     return-void
+.end method
+
+.method protected abstract getUserEventTag()Ljava/lang/String;
 .end method
 
 .method protected hideView(Landroid/view/View;ZZ)V
@@ -538,29 +571,29 @@
     .parameter "shouldPreserveLayout"
 
     .prologue
-    .line 304
+    .line 335
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
     if-nez p1, :cond_0
 
-    .line 327
+    .line 358
     :goto_0
     return-void
 
-    .line 308
+    .line 339
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 309
+    .line 340
     const/high16 v1, 0x3f80
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 310
+    .line 341
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 311
+    .line 342
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -571,7 +604,7 @@
 
     move-result v0
 
-    .line 313
+    .line 344
     .local v0, duration:I
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -597,7 +630,7 @@
 
     goto :goto_0
 
-    .line 325
+    .line 356
     .end local v0           #duration:I
     :cond_1
     if-eqz p3, :cond_2
@@ -619,21 +652,73 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 265
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
-    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
 
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
+    invoke-virtual {v0}, Lcom/google/glass/util/Condition;->get()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method protected abstract loadContent()Ljava/lang/Object;
+.method protected final isFinished()Z
+    .locals 2
+
+    .prologue
+    .line 275
+    .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
+    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->getStatus()Landroid/os/AsyncTask$Status;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/os/AsyncTask$Status;->FINISHED:Landroid/os/AsyncTask$Status;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected final isRunning()Z
+    .locals 2
+
+    .prologue
+    .line 270
+    .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask<TResult;>;"
+    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->getStatus()Landroid/os/AsyncTask$Status;
+
+    move-result-object v0
+
+    sget-object v1, Landroid/os/AsyncTask$Status;->RUNNING:Landroid/os/AsyncTask$Status;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected abstract loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "()TResult;"
+            "(",
+            "Lcom/google/glass/util/Condition;",
+            ")TResult;"
         }
     .end annotation
 .end method
@@ -652,26 +737,26 @@
 
     const/high16 v3, 0x3f80
 
-    .line 277
+    .line 308
     if-nez p1, :cond_0
 
-    .line 293
+    .line 324
     :goto_0
     return-void
 
-    .line 281
+    .line 312
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 282
+    .line 313
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 283
+    .line 314
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 284
+    .line 315
     invoke-virtual {p1}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -682,7 +767,7 @@
 
     move-result v0
 
-    .line 286
+    .line 317
     .local v0, duration:I
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -698,12 +783,12 @@
 
     goto :goto_0
 
-    .line 290
+    .line 321
     .end local v0           #duration:I
     :cond_1
     invoke-virtual {p1, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 291
+    .line 322
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0

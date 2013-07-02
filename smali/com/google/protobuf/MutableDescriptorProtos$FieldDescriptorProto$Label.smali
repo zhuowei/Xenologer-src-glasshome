@@ -75,7 +75,7 @@
 
     const/4 v2, 0x1
 
-    .line 3466
+    .line 3585
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     const-string v1, "LABEL_OPTIONAL"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3470
+    .line 3589
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     const-string v1, "LABEL_REQUIRED"
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_REQUIRED:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3478
+    .line 3597
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     const-string v1, "LABEL_REPEATED"
@@ -102,7 +102,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_REPEATED:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3457
+    .line 3576
     new-array v0, v5, [Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3519
+    .line 3638
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 3539
+    .line 3658
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->values()[Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 3553
+    .line 3672
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 3554
+    .line 3673
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->index:I
 
-    .line 3555
+    .line 3674
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->value:I
 
-    .line 3556
+    .line 3675
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 3536
+    .line 3655
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 3516
+    .line 3635
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 3506
+    .line 3625
     packed-switch p0, :pswitch_data_0
 
-    .line 3510
+    .line 3629
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 3507
+    .line 3626
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     goto :goto_0
 
-    .line 3508
+    .line 3627
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_REQUIRED:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     goto :goto_0
 
-    .line 3509
+    .line 3628
     :pswitch_2
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_REPEATED:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     goto :goto_0
 
-    .line 3506
+    .line 3625
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 3543
+    .line 3662
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 3544
+    .line 3663
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 3547
+    .line 3666
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 3457
+    .line 3576
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 3457
+    .line 3576
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 3532
+    .line 3651
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 3503
+    .line 3622
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 3528
+    .line 3647
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

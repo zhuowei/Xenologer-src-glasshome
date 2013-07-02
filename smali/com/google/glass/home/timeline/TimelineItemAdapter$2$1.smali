@@ -3,7 +3,7 @@
 .source "TimelineItemAdapter.java"
 
 # interfaces
-.implements Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;
+.implements Lcom/google/glass/home/timeline/NotificationState$Listener;
 
 
 # annotations
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 311
+    .line 338
     iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -42,42 +42,48 @@
 
 
 # virtual methods
-.method public onTextClipped(Ljava/lang/String;)V
-    .locals 3
-    .parameter "clipped"
+.method public onUpdateNotificationState(Z)V
+    .locals 2
+    .parameter "isNotification"
 
     .prologue
-    .line 314
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
+    .line 343
+    if-eqz p1, :cond_0
 
-    iget-object v0, v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2;->this$0:Lcom/google/glass/home/timeline/TimelineItemAdapter;
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    #getter for: Lcom/google/glass/home/timeline/TimelineItemAdapter;->remainingTextListener:Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->access$500(Lcom/google/glass/home/timeline/TimelineItemAdapter;)Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 315
-    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
-
-    iget-object v0, v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2;->this$0:Lcom/google/glass/home/timeline/TimelineItemAdapter;
-
-    #getter for: Lcom/google/glass/home/timeline/TimelineItemAdapter;->remainingTextListener:Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->access$500(Lcom/google/glass/home/timeline/TimelineItemAdapter;)Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;
+    invoke-static {v0}, Lcom/google/glass/timeline/TimelineHelper;->getSupportedContextualVoiceCommands(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
 
     move-result-object v0
 
-    new-instance v1, Lcom/google/glass/timeline/TimelineItemId;
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    iget-object v2, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    move-result v0
 
-    invoke-direct {v1, v2}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+    if-nez v0, :cond_0
 
-    invoke-interface {v0, v1, p1}, Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;->onRemainingText(Lcom/google/glass/timeline/TimelineItemId;Ljava/lang/String;)V
+    .line 345
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
 
-    .line 317
-    :cond_0
+    iget-object v0, v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2;->val$container:Lcom/google/glass/home/timeline/TimelineItemContainerView;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setShouldShowGuardPhrase(Z)V
+
+    .line 349
+    :goto_0
     return-void
+
+    .line 347
+    :cond_0
+    iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2$1;->this$1:Lcom/google/glass/home/timeline/TimelineItemAdapter$2;
+
+    iget-object v0, v0, Lcom/google/glass/home/timeline/TimelineItemAdapter$2;->val$container:Lcom/google/glass/home/timeline/TimelineItemContainerView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setShouldShowGuardPhrase(Z)V
+
+    goto :goto_0
 .end method

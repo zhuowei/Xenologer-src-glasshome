@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/search/VoiceSearchActivity;
-.super Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+.super Lcom/google/glass/voice/BaseVoiceInputActivity;
 .source "VoiceSearchActivity.java"
 
 
@@ -23,7 +23,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/voice/BaseVoiceInputActivity;-><init>()V
 
     return-void
 .end method
@@ -268,7 +268,7 @@
     .end local v0           #delay:J
     .end local v2           #now:J
     :cond_0
-    invoke-super {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
+    invoke-super {p0, p1}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
     move-result v4
 
@@ -404,7 +404,7 @@
     const/4 v3, 0x0
 
     .line 47
-    invoke-super {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onStart()V
+    invoke-super {p0}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onStart()V
 
     .line 49
     invoke-virtual {p0}, Lcom/google/glass/home/search/VoiceSearchActivity;->getIntent()Landroid/content/Intent;
@@ -474,7 +474,7 @@
     if-nez v2, :cond_0
 
     .line 76
-    invoke-super {p0, p1, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+    invoke-super {p0, p1, p2}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
     move-result v1
 
@@ -519,7 +519,7 @@
     .line 91
     .end local v0           #intent:Landroid/content/Intent;
     :cond_1
-    invoke-super {p0, p1, p2}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
+    invoke-super {p0, p1, p2}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
     move-result v1
 

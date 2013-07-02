@@ -18,7 +18,7 @@
     .parameter "height"
 
     .prologue
-    .line 29
+    .line 30
     invoke-static {p2}, Lcom/google/glass/entity/EntityHelper;->getFirstImageUrl(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
 
     move-result-object v2
@@ -37,10 +37,10 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/glass/util/PersonImageDownloadTask;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/widget/ImageView;Landroid/widget/TextView;II)V
 
-    .line 30
+    .line 31
     if-nez p2, :cond_0
 
-    .line 31
+    .line 32
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Entity cannot be null."
@@ -49,11 +49,11 @@
 
     throw v0
 
-    .line 33
+    .line 34
     :cond_0
     iput-object p2, p0, Lcom/google/glass/util/EntityImageDownloadTask;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 34
+    .line 35
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 44
     iget-object v0, p0, Lcom/google/glass/util/EntityImageDownloadTask;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->hasId()Z
@@ -72,14 +72,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 39
+    .line 45
     iget-object v0, p0, Lcom/google/glass/util/EntityImageDownloadTask;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 41
+    .line 47
     :goto_0
     return-object v0
 
@@ -93,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 68
     iget-object v0, p0, Lcom/google/glass/util/EntityImageDownloadTask;->entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-static {v0}, Lcom/google/glass/entity/EntityHelper;->getDisplayableName(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
@@ -103,11 +103,21 @@
     return-object v0
 .end method
 
+.method protected getUserEventTag()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 39
+    const-string v0, "ei"
+
+    return-object v0
+.end method
+
 .method protected onPreLoad()V
     .locals 2
 
     .prologue
-    .line 50
+    .line 56
     invoke-virtual {p0}, Lcom/google/glass/util/EntityImageDownloadTask;->getImageUrl()Ljava/lang/String;
 
     move-result-object v0
@@ -118,7 +128,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 51
+    .line 57
     invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
 
     move-result-object v0
@@ -131,7 +141,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/glass/util/EntityImageDownloadTask;->setImageUrl(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 55
+    .line 61
     :cond_0
     invoke-virtual {p0}, Lcom/google/glass/util/EntityImageDownloadTask;->getImageUrl()Ljava/lang/String;
 
@@ -143,7 +153,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 56
+    .line 62
     invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
 
     move-result-object v0
@@ -156,7 +166,7 @@
 
     invoke-virtual {p0, v0}, Lcom/google/glass/util/EntityImageDownloadTask;->setImageUrl(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 58
+    .line 64
     :cond_1
     return-void
 .end method

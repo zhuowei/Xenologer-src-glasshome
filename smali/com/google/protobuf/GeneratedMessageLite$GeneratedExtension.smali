@@ -70,16 +70,16 @@
     .end annotation
 
     .prologue
-    .line 815
+    .line 817
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     .local p1, containingTypeDefaultInstance:Lcom/google/protobuf/MessageLite;,"TContainingType;"
     .local p2, defaultValue:Ljava/lang/Object;,"TType;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 818
+    .line 820
     if-nez p1, :cond_0
 
-    .line 819
+    .line 821
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Null containingTypeDefaultInstance"
@@ -88,7 +88,7 @@
 
     throw v0
 
-    .line 822
+    .line 824
     :cond_0
     invoke-virtual {p4}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
 
@@ -100,7 +100,7 @@
 
     if-nez p3, :cond_1
 
-    .line 824
+    .line 826
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Null messageDefaultInstance"
@@ -109,23 +109,23 @@
 
     throw v0
 
-    .line 827
+    .line 829
     :cond_1
     iput-object p1, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->containingTypeDefaultInstance:Lcom/google/protobuf/MessageLite;
 
-    .line 828
+    .line 830
     iput-object p2, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->defaultValue:Ljava/lang/Object;
 
-    .line 829
+    .line 831
     iput-object p3, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/protobuf/MessageLite;
 
-    .line 830
+    .line 832
     iput-object p4, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
-    .line 834
+    .line 836
     iput-object p5, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->singularType:Ljava/lang/Class;
 
-    .line 835
+    .line 837
     const-class v0, Lcom/google/protobuf/Internal$EnumLite;
 
     invoke-virtual {v0, p5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -134,7 +134,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 836
+    .line 838
     const-string v0, "valueOf"
 
     const/4 v1, 0x1
@@ -153,11 +153,11 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->enumValueOf:Ljava/lang/reflect/Method;
 
-    .line 841
+    .line 843
     :goto_0
     return-void
 
-    .line 839
+    .line 841
     :cond_2
     const/4 v0, 0x0
 
@@ -173,7 +173,7 @@
     .parameter "value"
 
     .prologue
-    .line 873
+    .line 875
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v3, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -183,7 +183,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 874
+    .line 876
     iget-object v3, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v3}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteJavaType()Lcom/google/protobuf/WireFormat$JavaType;
@@ -194,12 +194,12 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 875
+    .line 877
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 876
+    .line 878
     .local v2, result:Ljava/util/List;
     check-cast p1, Ljava/util/List;
 
@@ -220,7 +220,7 @@
 
     move-result-object v0
 
-    .line 877
+    .line 879
     .local v0, element:Ljava/lang/Object;
     invoke-virtual {p0, v0}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->singularFromFieldSetType(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -237,7 +237,7 @@
     :cond_0
     move-object v2, p1
 
-    .line 884
+    .line 886
     .end local p1
     :cond_1
     :goto_1
@@ -261,7 +261,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 856
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->containingTypeDefaultInstance:Lcom/google/protobuf/MessageLite;
 
@@ -272,7 +272,7 @@
     .locals 1
 
     .prologue
-    .line 868
+    .line 870
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->messageDefaultInstance:Lcom/google/protobuf/MessageLite;
 
@@ -283,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 859
+    .line 861
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -299,7 +299,7 @@
     .parameter "value"
 
     .prologue
-    .line 889
+    .line 891
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -311,7 +311,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 890
+    .line 892
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->enumValueOf:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -331,7 +331,7 @@
 
     move-result-object p1
 
-    .line 892
+    .line 894
     :cond_0
     return-object p1
 .end method
@@ -341,7 +341,7 @@
     .parameter "value"
 
     .prologue
-    .line 914
+    .line 916
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -353,7 +353,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 915
+    .line 917
     check-cast p1, Lcom/google/protobuf/Internal$EnumLite;
 
     .end local p1
@@ -365,7 +365,7 @@
 
     move-result-object p1
 
-    .line 917
+    .line 919
     :cond_0
     return-object p1
 .end method
@@ -375,7 +375,7 @@
     .parameter "value"
 
     .prologue
-    .line 898
+    .line 900
     .local p0, this:Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;,"Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension<TContainingType;TType;>;"
     iget-object v3, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -385,7 +385,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 899
+    .line 901
     iget-object v3, p0, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v3}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteJavaType()Lcom/google/protobuf/WireFormat$JavaType;
@@ -396,12 +396,12 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 900
+    .line 902
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 901
+    .line 903
     .local v2, result:Ljava/util/List;
     check-cast p1, Ljava/util/List;
 
@@ -422,7 +422,7 @@
 
     move-result-object v0
 
-    .line 902
+    .line 904
     .local v0, element:Ljava/lang/Object;
     invoke-virtual {p0, v0}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->singularToFieldSetType(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -439,7 +439,7 @@
     :cond_0
     move-object v2, p1
 
-    .line 909
+    .line 911
     .end local p1
     :cond_1
     :goto_1

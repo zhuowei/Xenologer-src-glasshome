@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 1608
+    .line 1732
     const/4 v0, 0x4
 
     new-array v0, v0, [I
@@ -52,7 +52,7 @@
 
     sput-object v0, Lcom/google/glass/home/R$styleable;->OptionMenuItem:[I
 
-    .line 1677
+    .line 1801
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -65,7 +65,7 @@
 
     sput-object v0, Lcom/google/glass/home/R$styleable;->TipsView:[I
 
-    .line 1706
+    .line 1830
     const/4 v0, 0x3
 
     new-array v0, v0, [I
@@ -76,7 +76,7 @@
 
     return-void
 
-    .line 1608
+    .line 1732
     :array_0
     .array-data 0x4
         0x3t 0x0t 0x1t 0x7ft
@@ -85,7 +85,7 @@
         0x6t 0x0t 0x1t 0x7ft
     .end array-data
 
-    .line 1706
+    .line 1830
     :array_1
     .array-data 0x4
         0x0t 0x0t 0x1t 0x7ft
@@ -98,7 +98,7 @@
     .locals 0
 
     .prologue
-    .line 1591
+    .line 1715
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

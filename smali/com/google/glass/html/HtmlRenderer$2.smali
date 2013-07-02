@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;IZLcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
+    value = Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;IZZLcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,11 +24,11 @@
 
 .field final synthetic val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-.field final synthetic val$listener:Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
+.field final synthetic val$onlyLoadFirstPage:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/html/HtmlRenderer;Lcom/google/googlex/glass/common/proto/TimelineItem;ILcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
+.method constructor <init>(Lcom/google/glass/html/HtmlRenderer;Lcom/google/googlex/glass/common/proto/TimelineItem;IZ)V
     .locals 0
     .parameter
     .parameter
@@ -36,14 +36,14 @@
     .parameter
 
     .prologue
-    .line 270
+    .line 356
     iput-object p1, p0, Lcom/google/glass/html/HtmlRenderer$2;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
     iput-object p2, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     iput p3, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$footerMarginRight:I
 
-    iput-object p4, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$listener:Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
+    iput-boolean p4, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$onlyLoadFirstPage:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,17 +53,17 @@
 
 # virtual methods
 .method public onResourceLoaded()V
-    .locals 5
+    .locals 6
 
     .prologue
-    .line 273
+    .line 359
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 276
+    .line 362
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$2;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
     #getter for: Lcom/google/glass/html/HtmlRenderer;->isAllocated:Z
-    invoke-static {v0}, Lcom/google/glass/html/HtmlRenderer;->access$700(Lcom/google/glass/html/HtmlRenderer;)Z
+    invoke-static {v0}, Lcom/google/glass/html/HtmlRenderer;->access$1100(Lcom/google/glass/html/HtmlRenderer;)Z
 
     move-result v0
 
@@ -78,7 +78,7 @@
     iget-object v1, p0, Lcom/google/glass/html/HtmlRenderer$2;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
     #getter for: Lcom/google/glass/html/HtmlRenderer;->itemId:Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/html/HtmlRenderer;->access$800(Lcom/google/glass/html/HtmlRenderer;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/glass/html/HtmlRenderer;->access$1200(Lcom/google/glass/html/HtmlRenderer;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -88,7 +88,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 277
+    .line 363
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$2;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
     iget-object v1, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -97,12 +97,19 @@
 
     const/4 v3, 0x0
 
-    iget-object v4, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$listener:Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
+    iget-boolean v4, p0, Lcom/google/glass/html/HtmlRenderer$2;->val$onlyLoadFirstPage:Z
 
-    #calls: Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;IZLcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/google/glass/html/HtmlRenderer;->access$900(Lcom/google/glass/html/HtmlRenderer;Lcom/google/googlex/glass/common/proto/TimelineItem;IZLcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
+    iget-object v5, p0, Lcom/google/glass/html/HtmlRenderer$2;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
-    .line 279
+    #getter for: Lcom/google/glass/html/HtmlRenderer;->pageChangeListener:Lcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;
+    invoke-static {v5}, Lcom/google/glass/html/HtmlRenderer;->access$600(Lcom/google/glass/html/HtmlRenderer;)Lcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;
+
+    move-result-object v5
+
+    #calls: Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;IZZLcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;)V
+    invoke-static/range {v0 .. v5}, Lcom/google/glass/html/HtmlRenderer;->access$1300(Lcom/google/glass/html/HtmlRenderer;Lcom/google/googlex/glass/common/proto/TimelineItem;IZZLcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;)V
+
+    .line 365
     :cond_0
     return-void
 .end method

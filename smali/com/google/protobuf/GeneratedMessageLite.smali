@@ -79,7 +79,7 @@
     .parameter "params"
 
     .prologue
-    .line 764
+    .line 766
     :try_start_0
     invoke-virtual {p0, p1, p2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
@@ -89,11 +89,11 @@
 
     return-object v1
 
-    .line 765
+    .line 767
     :catch_0
     move-exception v0
 
-    .line 766
+    .line 768
     .local v0, e:Ljava/lang/NoSuchMethodException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -202,7 +202,7 @@
     .parameter "params"
 
     .prologue
-    .line 775
+    .line 777
     :try_start_0
     invoke-virtual {p0, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
@@ -213,11 +213,11 @@
 
     return-object v2
 
-    .line 776
+    .line 778
     :catch_0
     move-exception v1
 
-    .line 777
+    .line 779
     .local v1, e:Ljava/lang/IllegalAccessException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -227,43 +227,43 @@
 
     throw v2
 
-    .line 780
+    .line 782
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :catch_1
     move-exception v1
 
-    .line 781
+    .line 783
     .local v1, e:Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v1}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    .line 782
+    .line 784
     .local v0, cause:Ljava/lang/Throwable;
     instance-of v2, v0, Ljava/lang/RuntimeException;
 
     if-eqz v2, :cond_0
 
-    .line 783
+    .line 785
     check-cast v0, Ljava/lang/RuntimeException;
 
     .end local v0           #cause:Ljava/lang/Throwable;
     throw v0
 
-    .line 784
+    .line 786
     .restart local v0       #cause:Ljava/lang/Throwable;
     :cond_0
     instance-of v2, v0, Ljava/lang/Error;
 
     if-eqz v2, :cond_1
 
-    .line 785
+    .line 787
     check-cast v0, Ljava/lang/Error;
 
     .end local v0           #cause:Ljava/lang/Throwable;
     throw v0
 
-    .line 787
+    .line 789
     .restart local v0       #cause:Ljava/lang/Throwable;
     :cond_1
     new-instance v2, Ljava/lang/RuntimeException;
@@ -304,14 +304,14 @@
     .end annotation
 
     .prologue
-    .line 684
+    .line 686
     .local p0, containingTypeDefaultInstance:Lcom/google/protobuf/MessageLite;,"TContainingType;"
     .local p2, enumTypeMap:Lcom/google/protobuf/Internal$EnumLiteMap;,"Lcom/google/protobuf/Internal$EnumLiteMap<*>;"
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v7
 
-    .line 685
+    .line 687
     .local v7, emptyList:Ljava/util/List;,"TType;"
     new-instance v8, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
@@ -379,7 +379,7 @@
     .local p3, enumTypeMap:Lcom/google/protobuf/Internal$EnumLiteMap;,"Lcom/google/protobuf/Internal$EnumLiteMap<*>;"
     const/4 v4, 0x0
 
-    .line 662
+    .line 664
     new-instance v7, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;
 
     new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -495,7 +495,7 @@
 
     move-result v14
 
-    .line 646
+    .line 648
     :goto_1
     return v14
 
@@ -658,13 +658,15 @@
 
     move-result-object v14
 
+    const/4 v15, 0x0
+
     move-object/from16 v0, p2
 
-    invoke-static {v0, v14}, Lcom/google/protobuf/FieldSet;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;)Ljava/lang/Object;
+    invoke-static {v0, v14, v15}, Lcom/google/protobuf/FieldSet;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
 
     move-result-object v12
 
-    .line 589
+    .line 590
     .local v12, value:Ljava/lang/Object;
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -674,14 +676,14 @@
 
     goto :goto_3
 
-    .line 592
+    .line 593
     .end local v12           #value:Ljava/lang/Object;
     :cond_6
     move-object/from16 v0, p2
 
     invoke-virtual {v0, v7}, Lcom/google/protobuf/CodedInputStream;->popLimit(I)V
 
-    .line 646
+    .line 648
     .end local v6           #length:I
     .end local v7           #limit:I
     :goto_4
@@ -689,7 +691,7 @@
 
     goto/16 :goto_1
 
-    .line 595
+    .line 596
     :cond_7
     sget-object v14, Lcom/google/protobuf/GeneratedMessageLite$1;->$SwitchMap$com$google$protobuf$WireFormat$JavaType:[I
 
@@ -707,20 +709,22 @@
 
     packed-switch v14, :pswitch_data_0
 
-    .line 632
+    .line 633
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v14}, Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;->getLiteType()Lcom/google/protobuf/WireFormat$FieldType;
 
     move-result-object v14
 
+    const/4 v15, 0x0
+
     move-object/from16 v0, p2
 
-    invoke-static {v0, v14}, Lcom/google/protobuf/FieldSet;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;)Ljava/lang/Object;
+    invoke-static {v0, v14, v15}, Lcom/google/protobuf/FieldSet;->readPrimitiveField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/WireFormat$FieldType;Z)Ljava/lang/Object;
 
     move-result-object v12
 
-    .line 637
+    .line 639
     :cond_8
     :goto_5
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
@@ -731,7 +735,7 @@
 
     if-eqz v14, :cond_c
 
-    .line 638
+    .line 640
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     invoke-virtual {v4, v12}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->singularToFieldSetType(Ljava/lang/Object;)Ljava/lang/Object;
@@ -744,11 +748,11 @@
 
     goto :goto_4
 
-    .line 597
+    .line 598
     :pswitch_0
     const/4 v10, 0x0
 
-    .line 598
+    .line 599
     .local v10, subBuilder:Lcom/google/protobuf/MessageLite$Builder;
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -758,7 +762,7 @@
 
     if-nez v14, :cond_9
 
-    .line 599
+    .line 600
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
     move-object/from16 v0, p0
@@ -769,21 +773,21 @@
 
     check-cast v3, Lcom/google/protobuf/MessageLite;
 
-    .line 601
+    .line 602
     .local v3, existingValue:Lcom/google/protobuf/MessageLite;
     if-eqz v3, :cond_9
 
-    .line 602
+    .line 603
     invoke-interface {v3}, Lcom/google/protobuf/MessageLite;->toBuilder()Lcom/google/protobuf/MessageLite$Builder;
 
     move-result-object v10
 
-    .line 605
+    .line 606
     .end local v3           #existingValue:Lcom/google/protobuf/MessageLite;
     :cond_9
     if-nez v10, :cond_a
 
-    .line 606
+    .line 607
     invoke-virtual {v4}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getMessageDefaultInstance()Lcom/google/protobuf/MessageLite;
 
     move-result-object v14
@@ -792,7 +796,7 @@
 
     move-result-object v10
 
-    .line 609
+    .line 610
     :cond_a
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -804,7 +808,7 @@
 
     if-ne v14, v15, :cond_b
 
-    .line 611
+    .line 612
     invoke-virtual {v4}, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->getNumber()I
 
     move-result v14
@@ -815,17 +819,17 @@
 
     invoke-virtual {v0, v14, v10, v1}, Lcom/google/protobuf/CodedInputStream;->readGroup(ILcom/google/protobuf/MessageLite$Builder;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
-    .line 616
+    .line 617
     :goto_6
     invoke-interface {v10}, Lcom/google/protobuf/MessageLite$Builder;->build()Lcom/google/protobuf/MessageLite;
 
     move-result-object v12
 
-    .line 617
+    .line 618
     .local v12, value:Lcom/google/protobuf/MessageLite;
     goto :goto_5
 
-    .line 614
+    .line 615
     .end local v12           #value:Lcom/google/protobuf/MessageLite;
     :cond_b
     move-object/from16 v0, p2
@@ -836,14 +840,14 @@
 
     goto :goto_6
 
-    .line 620
+    .line 621
     .end local v10           #subBuilder:Lcom/google/protobuf/MessageLite$Builder;
     :pswitch_1
     invoke-virtual/range {p2 .. p2}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
 
     move-result v9
 
-    .line 621
+    .line 622
     .restart local v9       #rawValue:I
     iget-object v14, v4, Lcom/google/protobuf/GeneratedMessageLite$GeneratedExtension;->descriptor:Lcom/google/protobuf/GeneratedMessageLite$ExtensionDescriptor;
 
@@ -855,28 +859,28 @@
 
     move-result-object v12
 
-    .line 625
+    .line 626
     .local v12, value:Lcom/google/protobuf/Internal$EnumLite;
     if-nez v12, :cond_8
 
-    .line 626
+    .line 627
     move-object/from16 v0, p3
 
     move/from16 v1, p5
 
     invoke-virtual {v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
 
-    .line 627
+    .line 628
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v9}, Lcom/google/protobuf/CodedOutputStream;->writeUInt32NoTag(I)V
 
-    .line 628
+    .line 629
     const/4 v14, 0x1
 
     goto/16 :goto_1
 
-    .line 641
+    .line 643
     .end local v9           #rawValue:I
     .end local v12           #value:Lcom/google/protobuf/Internal$EnumLite;
     :cond_c
@@ -892,7 +896,7 @@
 
     goto/16 :goto_4
 
-    .line 595
+    .line 596
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -982,7 +986,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/protobuf/MutableMessageLite;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;)Z
+    invoke-interface {v0, v1}, Lcom/google/protobuf/MutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
     goto :goto_0
 .end method
@@ -1017,7 +1021,7 @@
     .end annotation
 
     .prologue
-    .line 976
+    .line 978
     new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;-><init>(Lcom/google/protobuf/MessageLite;)V

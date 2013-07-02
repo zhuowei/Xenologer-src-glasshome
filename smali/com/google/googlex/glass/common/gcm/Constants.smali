@@ -8,11 +8,11 @@
 
 .field public static final GCM_MESSAGE_REPORT_LOCATION:Ljava/lang/String; = "report_location"
 
+.field public static final GCM_MESSAGE_START_GLASSWARE_SYNC:Ljava/lang/String; = "glassware_sync"
+
 .field public static final GCM_MESSAGE_START_SHARE_TARGET_SYNC:Ljava/lang/String; = "share_target_sync"
 
 .field public static final GCM_MESSAGE_START_TIMELINE_SYNC:Ljava/lang/String; = "timeline_sync"
-
-.field public static final GCM_MESSAGE_START_TIMELINE_SYNC_TTL:Ljava/lang/String; = "timeline_sync_ttl"
 
 .field public static final GCM_PAYLOAD_KEY:Ljava/lang/String; = "p"
 
@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 31
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

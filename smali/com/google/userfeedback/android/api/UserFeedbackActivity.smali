@@ -127,12 +127,12 @@
     .parameter "previewButton"
 
     .prologue
-    .line 371
+    .line 375
     new-instance v0, Lcom/google/userfeedback/android/api/UserFeedbackActivity$UpdateActivityOnReportCollection;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/google/userfeedback/android/api/UserFeedbackActivity$UpdateActivityOnReportCollection;-><init>(Lcom/google/userfeedback/android/api/UserFeedbackActivity;Landroid/content/Context;Landroid/widget/Spinner;Landroid/widget/Button;)V
 
-    .line 373
+    .line 377
     .local v0, updateUi:Lcom/google/userfeedback/android/api/UserFeedbackActivity$UpdateActivityOnReportCollection;
     const/4 v1, 0x0
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/userfeedback/android/api/UserFeedbackActivity$UpdateActivityOnReportCollection;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 374
+    .line 378
     return-void
 .end method
 
@@ -369,16 +369,16 @@
     .parameter "descriptionText"
 
     .prologue
-    .line 361
+    .line 365
     invoke-static {}, Lcom/google/userfeedback/android/api/UserFeedback;->userFeedback()Lcom/google/userfeedback/android/api/UserFeedback;
 
     move-result-object v0
 
-    .line 362
+    .line 366
     .local v0, uf:Lcom/google/userfeedback/android/api/UserFeedback;
     invoke-virtual {v0, p1, p2, p3}, Lcom/google/userfeedback/android/api/UserFeedback;->setUserInputParams(ZZLjava/lang/String;)V
 
-    .line 363
+    .line 367
     return-void
 .end method
 
@@ -388,42 +388,42 @@
     .parameter "config"
 
     .prologue
-    .line 344
+    .line 348
     invoke-virtual {p0, p1}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 345
+    .line 349
     .local v2, view:Landroid/widget/TextView;
     invoke-virtual {p2}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getHeaderBackgroundResourceId()I
 
     move-result v1
 
-    .line 346
+    .line 350
     .local v1, resId:I
     invoke-virtual {p2}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getSectionHeaderFontColor()I
 
     move-result v0
 
-    .line 347
+    .line 351
     .local v0, colorId:I
     if-eqz v2, :cond_0
 
-    .line 348
+    .line 352
     if-gez v1, :cond_1
 
-    .line 349
+    .line 353
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 353
+    .line 357
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 354
+    .line 358
     invoke-virtual {p0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
@@ -434,11 +434,11 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 357
+    .line 361
     :cond_0
     return-void
 
-    .line 351
+    .line 355
     :cond_1
     invoke-virtual {p0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->getResources()Landroid/content/res/Resources;
 
@@ -522,7 +522,7 @@
 .end method
 
 .method private updateUi(Landroid/app/Activity;)V
-    .locals 3
+    .locals 4
     .parameter "thisActivity"
 
     .prologue
@@ -541,14 +541,14 @@
 
     .line 329
     .local v0, config:Lcom/google/userfeedback/android/api/UiConfigurationOptions;
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
     .line 330
     invoke-virtual {v0}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getHideTitleBar()Z
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     .line 331
     sget v1, Lcom/google/userfeedback/android/api/R$id;->gf_app_header:I
@@ -563,32 +563,63 @@
 
     .line 335
     :goto_0
+    invoke-virtual {v0}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getBackgroundColor()I
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 336
+    invoke-virtual {p0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getBackgroundColor()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 339
+    :cond_0
     sget v1, Lcom/google/userfeedback/android/api/R$id;->gf_feedback_header:I
 
     invoke-direct {p0, v1, v0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->setHeaderUi(ILcom/google/userfeedback/android/api/UiConfigurationOptions;)V
 
-    .line 336
+    .line 340
     sget v1, Lcom/google/userfeedback/android/api/R$id;->gf_privacy:I
 
     invoke-direct {p0, v1, v0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->setHeaderUi(ILcom/google/userfeedback/android/api/UiConfigurationOptions;)V
 
-    .line 337
+    .line 341
     sget v1, Lcom/google/userfeedback/android/api/R$id;->gf_user_account:I
 
     invoke-direct {p0, v1, v0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->setHeaderUi(ILcom/google/userfeedback/android/api/UiConfigurationOptions;)V
 
-    .line 341
+    .line 345
     :goto_1
     return-void
 
     .line 333
-    :cond_0
+    :cond_1
     invoke-direct {p0, p1}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->updateAppIcon(Landroid/app/Activity;)V
 
     goto :goto_0
 
-    .line 339
-    :cond_1
+    .line 343
+    :cond_2
     invoke-direct {p0, p1}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->updateAppIcon(Landroid/app/Activity;)V
 
     goto :goto_1
@@ -654,13 +685,13 @@
     .locals 0
 
     .prologue
-    .line 390
+    .line 394
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
-    .line 391
+    .line 395
     invoke-static {p0}, Lcom/google/userfeedback/android/api/UserFeedback;->flushBitmapsOnDestroy(Landroid/app/Activity;)V
 
-    .line 392
+    .line 396
     return-void
 .end method
 
@@ -669,10 +700,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 378
+    .line 382
     invoke-super {p0, p1}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 381
+    .line 385
     iget-object v0, p0, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->mUserfeedback:Lcom/google/userfeedback/android/api/UserFeedback;
 
     if-eqz v0, :cond_0
@@ -693,16 +724,16 @@
 
     if-nez v0, :cond_1
 
-    .line 383
+    .line 387
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->setResult(I)V
 
-    .line 384
+    .line 388
     invoke-virtual {p0}, Lcom/google/userfeedback/android/api/UserFeedbackActivity;->finish()V
 
-    .line 386
+    .line 390
     :cond_1
     return-void
 .end method

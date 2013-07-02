@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 435
+    .line 459
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 437
+    .line 461
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 435
+    .line 459
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType$1;->findValueByNumber(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     move-result-object v0

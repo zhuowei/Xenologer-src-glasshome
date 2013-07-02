@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 424
+    .line 452
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$8;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     iput-object p2, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$message:Ljava/lang/String;
@@ -46,13 +46,13 @@
     .locals 2
 
     .prologue
-    .line 427
+    .line 455
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$8;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient$8;->val$message:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/camera/SharedCameraClient;->onAudioError(Ljava/lang/String;)V
 
-    .line 428
+    .line 456
     return-void
 .end method

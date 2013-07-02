@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 123
+    .line 124
     iput-object p1, p0, Lcom/google/glass/home/sync/LocationSyncHandler$1;->this$0:Lcom/google/glass/home/sync/LocationSyncHandler;
 
     iput-object p2, p0, Lcom/google/glass/home/sync/LocationSyncHandler$1;->val$locationRef:Ljava/util/concurrent/atomic/AtomicReference;
@@ -52,17 +52,17 @@
     .parameter "location"
 
     .prologue
-    .line 126
+    .line 127
     iget-object v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler$1;->val$locationRef:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 127
+    .line 128
     iget-object v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler$1;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 128
+    .line 129
     return-void
 .end method
 
@@ -71,7 +71,7 @@
     .parameter "provider"
 
     .prologue
-    .line 131
+    .line 132
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "provider"
 
     .prologue
-    .line 130
+    .line 131
     return-void
 .end method
 
@@ -91,6 +91,6 @@
     .parameter "extras"
 
     .prologue
-    .line 129
+    .line 130
     return-void
 .end method

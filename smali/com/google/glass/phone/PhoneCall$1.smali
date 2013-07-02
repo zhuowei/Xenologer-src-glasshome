@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 41
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "in"
 
     .prologue
-    .line 44
+    .line 47
     new-instance v0, Lcom/google/glass/phone/PhoneCall;
 
     invoke-direct {v0, p1}, Lcom/google/glass/phone/PhoneCall;-><init>(Landroid/os/Parcel;)V
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 44
     invoke-virtual {p0, p1}, Lcom/google/glass/phone/PhoneCall$1;->createFromParcel(Landroid/os/Parcel;)Lcom/google/glass/phone/PhoneCall;
 
     move-result-object v0
@@ -71,24 +71,10 @@
     .parameter "size"
 
     .prologue
-    .line 49
-    if-ltz p1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
-
-    .line 50
+    .line 52
     new-array v0, p1, [Lcom/google/glass/phone/PhoneCall;
 
     return-object v0
-
-    .line 49
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
 .end method
 
 .method public bridge synthetic newArray(I)[Ljava/lang/Object;
@@ -96,7 +82,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 44
     invoke-virtual {p0, p1}, Lcom/google/glass/phone/PhoneCall$1;->newArray(I)[Lcom/google/glass/phone/PhoneCall;
 
     move-result-object v0

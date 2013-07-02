@@ -9,12 +9,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 7
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v5, 0x1
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     .line 10
     const/4 v2, 0x2
@@ -23,11 +23,11 @@
 
     const-string v2, "\nHjava/com/google/googlex/glass/common/clientserverproto/entity_sync.proto\u0012\u001agooglex_glass_common_proto\u001aEjava/com/google/googlex/glass/common/clientserverproto/timeline.proto\"m\n\u0011EntitySyncRequest\u0012\u0011\n\tdevice_id\u0018\u0005 \u0001(\t\u0012 \n\u0011all_share_targets\u0018\u0006 \u0001(\u0008:\u0005false\u0012#\n\u0014enabled_targets_only\u0018\u0007 \u0001(\u0008:\u0005false\"J\n\u0012EntitySyncResponse\u00124\n\u0008entities\u0018\u0001 \u0003(\u000b2\".googlex_glass_common_proto.EntityB)\n%com.google.googlex.glass.common.prot"
 
-    aput-object v2, v1, v4
+    aput-object v2, v1, v6
 
     const-string v2, "oP\u0001"
 
-    aput-object v2, v1, v3
+    aput-object v2, v1, v5
 
     .line 23
     .local v1, descriptorData:[Ljava/lang/String;
@@ -37,15 +37,23 @@
 
     .line 31
     .local v0, assigner:Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;
-    new-array v2, v3, [Lcom/google/protobuf/Descriptors$FileDescriptor;
+    const-class v2, Lcom/google/googlex/glass/common/proto/EntitySyncInternalDescriptors;
 
-    sget-object v3, Lcom/google/googlex/glass/common/proto/TimelineInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
+    new-array v3, v5, [Ljava/lang/String;
 
-    aput-object v3, v2, v4
+    const-string v4, "com.google.googlex.glass.common.proto.TimelineInternalDescriptors"
 
-    invoke-static {v1, v2, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;[Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+    aput-object v4, v3, v6
 
-    .line 36
+    new-array v4, v5, [Ljava/lang/String;
+
+    const-string v5, "java/com/google/googlex/glass/common/clientserverproto/timeline.proto"
+
+    aput-object v5, v4, v6
+
+    invoke-static {v1, v2, v3, v4, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;[Ljava/lang/String;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+
+    .line 39
     return-void
 .end method
 

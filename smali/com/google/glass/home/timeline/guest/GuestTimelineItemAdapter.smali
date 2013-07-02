@@ -311,7 +311,7 @@
     invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->addView(Landroid/view/View;)V
 
     .line 101
-    invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setContainedCard(Lcom/google/glass/horizontalscroll/Card;)V
+    invoke-virtual {v1, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;->setContainedView(Landroid/view/View;)V
 
     .line 103
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Attachment;->newBuilder()Lcom/google/googlex/glass/common/proto/Attachment$Builder;

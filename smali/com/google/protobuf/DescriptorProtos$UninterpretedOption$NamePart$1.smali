@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 34816
+    .line 36225
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 34821
+    .line 36230
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 34816
+    .line 36225
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$UninterpretedOption$NamePart;
 
     move-result-object v0

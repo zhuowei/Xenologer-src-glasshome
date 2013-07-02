@@ -18,6 +18,8 @@
 
 .field public static final TRIGGER_METHOD_NOTIFICATION_VOICE:I = 0xa
 
+.field public static final TRIGGER_METHOD_PEOPLE_UI_SAY_HEY:I = 0xc
+
 .field public static final TRIGGER_METHOD_QR_CODE:I = 0x9
 
 .field public static final TRIGGER_METHOD_RETRY:I = 0x7

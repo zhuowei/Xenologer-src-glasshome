@@ -274,6 +274,12 @@
 .method public abstract getSource()Ljava/lang/String;
 .end method
 
+.method public abstract getSourceAccountId()Ljava/lang/String;
+.end method
+
+.method public abstract getSourceAccountIdBytes()Lcom/google/protobuf/ByteString;
+.end method
+
 .method public abstract getSourceBytes()Lcom/google/protobuf/ByteString;
 .end method
 
@@ -290,6 +296,12 @@
 .end method
 
 .method public abstract getSpeakableTextBytes()Lcom/google/protobuf/ByteString;
+.end method
+
+.method public abstract getSpeakableType()Ljava/lang/String;
+.end method
+
+.method public abstract getSpeakableTypeBytes()Lcom/google/protobuf/ByteString;
 .end method
 
 .method public abstract getText()Ljava/lang/String;
@@ -377,6 +389,9 @@
 .method public abstract hasSource()Z
 .end method
 
+.method public abstract hasSourceAccountId()Z
+.end method
+
 .method public abstract hasSourceItemId()Z
 .end method
 
@@ -384,6 +399,9 @@
 .end method
 
 .method public abstract hasSpeakableText()Z
+.end method
+
+.method public abstract hasSpeakableType()Z
 .end method
 
 .method public abstract hasText()Z

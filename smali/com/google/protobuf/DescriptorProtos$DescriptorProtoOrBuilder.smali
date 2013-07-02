@@ -189,6 +189,39 @@
     .end annotation
 .end method
 
+.method public abstract getOneofDecl(I)Lcom/google/protobuf/DescriptorProtos$OneofDescriptorProto;
+.end method
+
+.method public abstract getOneofDeclCount()I
+.end method
+
+.method public abstract getOneofDeclList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/protobuf/DescriptorProtos$OneofDescriptorProto;",
+            ">;"
+        }
+    .end annotation
+.end method
+
+.method public abstract getOneofDeclOrBuilder(I)Lcom/google/protobuf/DescriptorProtos$OneofDescriptorProtoOrBuilder;
+.end method
+
+.method public abstract getOneofDeclOrBuilderList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<+",
+            "Lcom/google/protobuf/DescriptorProtos$OneofDescriptorProtoOrBuilder;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getOptions()Lcom/google/protobuf/DescriptorProtos$MessageOptions;
 .end method
 

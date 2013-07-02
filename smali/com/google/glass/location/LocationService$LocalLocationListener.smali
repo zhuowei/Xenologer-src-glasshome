@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 93
+    .line 91
     iput-object p1, p0, Lcom/google/glass/location/LocationService$LocalLocationListener;->this$0:Lcom/google/glass/location/LocationService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .parameter "x1"
 
     .prologue
-    .line 93
+    .line 91
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService$LocalLocationListener;-><init>(Lcom/google/glass/location/LocationService;)V
 
     return-void
@@ -57,7 +57,7 @@
     .parameter "event"
 
     .prologue
-    .line 104
+    .line 102
     iget-object v0, p0, Lcom/google/glass/location/LocationService$LocalLocationListener;->this$0:Lcom/google/glass/location/LocationService;
 
     #getter for: Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
@@ -73,7 +73,7 @@
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService$LocalLocationListener;->gpsStatus:Landroid/location/GpsStatus;
 
-    .line 105
+    .line 103
     return-void
 .end method
 
@@ -82,12 +82,12 @@
     .parameter "location"
 
     .prologue
-    .line 98
+    .line 96
     iget-object v0, p0, Lcom/google/glass/location/LocationService$LocalLocationListener;->gpsStatus:Landroid/location/GpsStatus;
 
     invoke-static {p1, v0}, Lcom/google/glass/location/LocationHelper;->addSatelliteExtras(Landroid/location/Location;Landroid/location/GpsStatus;)V
 
-    .line 99
+    .line 97
     iget-object v0, p0, Lcom/google/glass/location/LocationService$LocalLocationListener;->this$0:Lcom/google/glass/location/LocationService;
 
     const/4 v1, 0x1
@@ -95,7 +95,7 @@
     #calls: Lcom/google/glass/location/LocationService;->handleLocationChanged(Landroid/location/Location;Z)V
     invoke-static {v0, p1, v1}, Lcom/google/glass/location/LocationService;->access$000(Lcom/google/glass/location/LocationService;Landroid/location/Location;Z)V
 
-    .line 100
+    .line 98
     return-void
 .end method
 
@@ -104,7 +104,7 @@
     .parameter "provider"
 
     .prologue
-    .line 112
+    .line 110
     return-void
 .end method
 
@@ -113,7 +113,7 @@
     .parameter "provider"
 
     .prologue
-    .line 110
+    .line 108
     return-void
 .end method
 
@@ -124,6 +124,6 @@
     .parameter "extras"
 
     .prologue
-    .line 114
+    .line 112
     return-void
 .end method

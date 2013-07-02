@@ -34,8 +34,6 @@
 
 .field public static final enum CLASSIC_SALIL:Lcom/google/glass/util/Labs$Feature;
 
-.field public static final enum CLIPLET:Lcom/google/glass/util/Labs$Feature;
-
 .field public static final enum DEBUG_LAUNCHER:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum DEV_SERVERS:Lcom/google/glass/util/Labs$Feature;
@@ -46,11 +44,17 @@
 
 .field public static final enum GPS_DEBUG_CARD:Lcom/google/glass/util/Labs$Feature;
 
+.field public static final enum GPS_ENABLE_LOCAL:Lcom/google/glass/util/Labs$Feature;
+
+.field public static final enum GPS_ENABLE_REMOTE:Lcom/google/glass/util/Labs$Feature;
+
 .field public static final enum GPS_IN_BACKGROUND:Lcom/google/glass/util/Labs$Feature;
 
-.field public static final enum HO_BG_WAITING:Lcom/google/glass/util/Labs$Feature;
+.field public static final enum HO_B:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum HO_CONNECTIVITY:Lcom/google/glass/util/Labs$Feature;
+
+.field public static final enum HO_HO_HO:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum HO_LOG_VERBOSE:Lcom/google/glass/util/Labs$Feature;
 
@@ -60,9 +64,9 @@
 
 .field public static final enum KANNADI_DEV_SERVER:Lcom/google/glass/util/Labs$Feature;
 
-.field public static final enum LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+.field public static final enum LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
-.field public static final enum LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+.field public static final enum LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum LONG_TAP_TO_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
@@ -72,11 +76,9 @@
 
 .field public static final enum NAV_CONTAMINATE_FIX:Lcom/google/glass/util/Labs$Feature;
 
-.field public static final enum NAV_NO_COMPANION:Lcom/google/glass/util/Labs$Feature;
+.field public static final enum NV_TRST:Lcom/google/glass/util/Labs$Feature;
 
-.field public static final enum NAV_USE_LOCAL_GPS:Lcom/google/glass/util/Labs$Feature;
-
-.field public static final enum OK_GLASS_EVERYWHERE:Lcom/google/glass/util/Labs$Feature;
+.field public static final enum OKG_INC_CALL:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum OMELETTE_DU_FROMAGE:Lcom/google/glass/util/Labs$Feature;
 
@@ -91,6 +93,8 @@
 .field public static final enum QUICK_QR_CODE:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum SAVE_AUDIO:Lcom/google/glass/util/Labs$Feature;
+
+.field public static final enum SC_RM:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum SEARCH_DEV_SERVER:Lcom/google/glass/util/Labs$Feature;
 
@@ -115,6 +119,12 @@
 .field public static final enum TOUCH_VOICE_MENU:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum UPLOAD_SESSION_MNGR:Lcom/google/glass/util/Labs$Feature;
+
+.field public static final enum USE_SAX_PARSER:Lcom/google/glass/util/Labs$Feature;
+
+.field public static final enum VIDEO_PLAYER:Lcom/google/glass/util/Labs$Feature;
+
+.field public static final enum VOLUME_SLIDER:Lcom/google/glass/util/Labs$Feature;
 
 .field public static final enum VSTAB:Lcom/google/glass/util/Labs$Feature;
 
@@ -189,55 +199,55 @@
     .line 57
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "CLIPLET"
+    const-string v1, "HO_B"
 
     invoke-direct {v0, v1, v7, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->CLIPLET:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_B:Lcom/google/glass/util/Labs$Feature;
 
     .line 60
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "HO_BG_WAITING"
+    const-string v1, "HO_LOG_VERBOSE"
 
     const/4 v2, 0x5
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_BG_WAITING:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_LOG_VERBOSE:Lcom/google/glass/util/Labs$Feature;
 
     .line 63
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "HO_LOG_VERBOSE"
+    const-string v1, "HO_SUPER_DEBUG"
 
     const/4 v2, 0x6
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_LOG_VERBOSE:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_SUPER_DEBUG:Lcom/google/glass/util/Labs$Feature;
 
     .line 66
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "HO_SUPER_DEBUG"
+    const-string v1, "HO_CONNECTIVITY"
 
     const/4 v2, 0x7
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_SUPER_DEBUG:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_CONNECTIVITY:Lcom/google/glass/util/Labs$Feature;
 
     .line 69
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "HO_CONNECTIVITY"
+    const-string v1, "HO_HO_HO"
 
     const/16 v2, 0x8
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_CONNECTIVITY:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->HO_HO_HO:Lcom/google/glass/util/Labs$Feature;
 
     .line 72
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
@@ -253,24 +263,24 @@
     .line 78
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "LOG_POS_SENSORY_REC"
+    const-string v1, "LOG_POS_HOTWORD_REC"
 
     const/16 v2, 0xa
 
     invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     .line 84
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "LOG_NEG_SENSORY_REC"
+    const-string v1, "LOG_NEG_HOTWORD_REC"
 
     const/16 v2, 0xb
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     .line 87
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
@@ -400,7 +410,7 @@
 
     const/16 v2, 0x17
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->UPLOAD_SESSION_MNGR:Lcom/google/glass/util/Labs$Feature;
 
@@ -429,37 +439,37 @@
     .line 147
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "NAV_USE_LOCAL_GPS"
+    const-string v1, "GPS_ENABLE_LOCAL"
 
     const/16 v2, 0x1a
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->NAV_USE_LOCAL_GPS:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->GPS_ENABLE_LOCAL:Lcom/google/glass/util/Labs$Feature;
 
     .line 153
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "NAV_NO_COMPANION"
+    const-string v1, "GPS_ENABLE_REMOTE"
 
     const/16 v2, 0x1b
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->NAV_NO_COMPANION:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->GPS_ENABLE_REMOTE:Lcom/google/glass/util/Labs$Feature;
 
-    .line 160
+    .line 159
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "OK_GLASS_EVERYWHERE"
+    const-string v1, "NV_TRST"
 
     const/16 v2, 0x1c
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->OK_GLASS_EVERYWHERE:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->NV_TRST:Lcom/google/glass/util/Labs$Feature;
 
-    .line 167
+    .line 166
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "CALL_NOISE_CANCEL"
@@ -470,7 +480,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->CALL_NOISE_CANCEL:Lcom/google/glass/util/Labs$Feature;
 
-    .line 170
+    .line 169
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "THIRD_PARTY_VOICE"
@@ -481,7 +491,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->THIRD_PARTY_VOICE:Lcom/google/glass/util/Labs$Feature;
 
-    .line 173
+    .line 172
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "NATIVE_APP_VOICE"
@@ -492,7 +502,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->NATIVE_APP_VOICE:Lcom/google/glass/util/Labs$Feature;
 
-    .line 176
+    .line 175
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "SMS_FROM_VOICE_MENU"
@@ -503,18 +513,18 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->SMS_FROM_VOICE_MENU:Lcom/google/glass/util/Labs$Feature;
 
-    .line 179
+    .line 178
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "WEB_BROWSING"
 
     const/16 v2, 0x21
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->WEB_BROWSING:Lcom/google/glass/util/Labs$Feature;
 
-    .line 182
+    .line 181
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "DING_ON_LOAD"
@@ -525,7 +535,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->DING_ON_LOAD:Lcom/google/glass/util/Labs$Feature;
 
-    .line 185
+    .line 184
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "LONG_TAP_TO_SEARCH"
@@ -536,7 +546,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->LONG_TAP_TO_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
-    .line 188
+    .line 187
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "LONG_TAP_UI_SEARCH"
@@ -547,7 +557,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->LONG_TAP_UI_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
-    .line 191
+    .line 190
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "QUICK_QR_CODE"
@@ -558,7 +568,7 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->QUICK_QR_CODE:Lcom/google/glass/util/Labs$Feature;
 
-    .line 196
+    .line 195
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "WINK"
@@ -569,14 +579,14 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->WINK:Lcom/google/glass/util/Labs$Feature;
 
-    .line 201
+    .line 200
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "TOUCH_VOICE_MENU"
 
     const/16 v2, 0x27
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->TOUCH_VOICE_MENU:Lcom/google/glass/util/Labs$Feature;
 
@@ -587,7 +597,7 @@
 
     const/16 v2, 0x28
 
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->SEARCH_GWS_FLOW:Lcom/google/glass/util/Labs$Feature;
 
@@ -602,85 +612,140 @@
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->SPECIAL_GWS_SERVER:Lcom/google/glass/util/Labs$Feature;
 
-    .line 218
+    .line 220
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "PHONE_AEC_LOG"
+    const-string v1, "USE_SAX_PARSER"
 
     const/16 v2, 0x2a
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->PHONE_AEC_LOG:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->USE_SAX_PARSER:Lcom/google/glass/util/Labs$Feature;
 
-    .line 221
+    .line 223
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "PEOPLE_GRID"
+    const-string v1, "PHONE_AEC_LOG"
 
     const/16 v2, 0x2b
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->PHONE_AEC_LOG:Lcom/google/glass/util/Labs$Feature;
+
+    .line 226
+    new-instance v0, Lcom/google/glass/util/Labs$Feature;
+
+    const-string v1, "PEOPLE_GRID"
+
+    const/16 v2, 0x2c
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->PEOPLE_GRID:Lcom/google/glass/util/Labs$Feature;
 
-    .line 227
+    .line 232
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "NAV_CONTAMINATE_FIX"
 
-    const/16 v2, 0x2c
+    const/16 v2, 0x2d
 
     invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->NAV_CONTAMINATE_FIX:Lcom/google/glass/util/Labs$Feature;
 
-    .line 233
+    .line 238
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
     const-string v1, "SOUND_SEARCH"
-
-    const/16 v2, 0x2d
-
-    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
-
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->SOUND_SEARCH:Lcom/google/glass/util/Labs$Feature;
-
-    .line 236
-    new-instance v0, Lcom/google/glass/util/Labs$Feature;
-
-    const-string v1, "CLASSIC_SALIL"
 
     const/16 v2, 0x2e
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->CLASSIC_SALIL:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->SOUND_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
-    .line 239
+    .line 241
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "PUPPIES_IN_PJS"
+    const-string v1, "CLASSIC_SALIL"
 
     const/16 v2, 0x2f
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/util/Labs$Feature;->PUPPIES_IN_PJS:Lcom/google/glass/util/Labs$Feature;
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->CLASSIC_SALIL:Lcom/google/glass/util/Labs$Feature;
 
-    .line 242
+    .line 244
     new-instance v0, Lcom/google/glass/util/Labs$Feature;
 
-    const-string v1, "OMELETTE_DU_FROMAGE"
+    const-string v1, "PUPPIES_IN_PJS"
 
     const/16 v2, 0x30
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
 
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->PUPPIES_IN_PJS:Lcom/google/glass/util/Labs$Feature;
+
+    .line 247
+    new-instance v0, Lcom/google/glass/util/Labs$Feature;
+
+    const-string v1, "OMELETTE_DU_FROMAGE"
+
+    const/16 v2, 0x31
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+
     sput-object v0, Lcom/google/glass/util/Labs$Feature;->OMELETTE_DU_FROMAGE:Lcom/google/glass/util/Labs$Feature;
 
+    .line 250
+    new-instance v0, Lcom/google/glass/util/Labs$Feature;
+
+    const-string v1, "VIDEO_PLAYER"
+
+    const/16 v2, 0x32
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->VIDEO_PLAYER:Lcom/google/glass/util/Labs$Feature;
+
+    .line 253
+    new-instance v0, Lcom/google/glass/util/Labs$Feature;
+
+    const-string v1, "VOLUME_SLIDER"
+
+    const/16 v2, 0x33
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->VOLUME_SLIDER:Lcom/google/glass/util/Labs$Feature;
+
+    .line 259
+    new-instance v0, Lcom/google/glass/util/Labs$Feature;
+
+    const-string v1, "OKG_INC_CALL"
+
+    const/16 v2, 0x34
+
+    invoke-direct {v0, v1, v2, v4}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->OKG_INC_CALL:Lcom/google/glass/util/Labs$Feature;
+
+    .line 262
+    new-instance v0, Lcom/google/glass/util/Labs$Feature;
+
+    const-string v1, "SC_RM"
+
+    const/16 v2, 0x35
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/util/Labs$Feature;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/util/Labs$Feature;->SC_RM:Lcom/google/glass/util/Labs$Feature;
+
     .line 43
-    const/16 v0, 0x31
+    const/16 v0, 0x36
 
     new-array v0, v0, [Lcom/google/glass/util/Labs$Feature;
 
@@ -700,31 +765,31 @@
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/google/glass/util/Labs$Feature;->CLIPLET:Lcom/google/glass/util/Labs$Feature;
+    sget-object v1, Lcom/google/glass/util/Labs$Feature;->HO_B:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_BG_WAITING:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_LOG_VERBOSE:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_LOG_VERBOSE:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_SUPER_DEBUG:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_SUPER_DEBUG:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_CONNECTIVITY:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_CONNECTIVITY:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->HO_HO_HO:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
@@ -736,13 +801,13 @@
 
     const/16 v1, 0xa
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_POS_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_POS_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_SENSORY_REC:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->LOG_NEG_HOTWORD_REC:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
@@ -832,19 +897,19 @@
 
     const/16 v1, 0x1a
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->NAV_USE_LOCAL_GPS:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->GPS_ENABLE_LOCAL:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1b
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->NAV_NO_COMPANION:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->GPS_ENABLE_REMOTE:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x1c
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->OK_GLASS_EVERYWHERE:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->NV_TRST:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
@@ -928,43 +993,73 @@
 
     const/16 v1, 0x2a
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->PHONE_AEC_LOG:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->USE_SAX_PARSER:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2b
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->PEOPLE_GRID:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->PHONE_AEC_LOG:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2c
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->NAV_CONTAMINATE_FIX:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->PEOPLE_GRID:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2d
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->SOUND_SEARCH:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->NAV_CONTAMINATE_FIX:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2e
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->CLASSIC_SALIL:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->SOUND_SEARCH:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x2f
 
-    sget-object v2, Lcom/google/glass/util/Labs$Feature;->PUPPIES_IN_PJS:Lcom/google/glass/util/Labs$Feature;
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->CLASSIC_SALIL:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x30
 
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->PUPPIES_IN_PJS:Lcom/google/glass/util/Labs$Feature;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x31
+
     sget-object v2, Lcom/google/glass/util/Labs$Feature;->OMELETTE_DU_FROMAGE:Lcom/google/glass/util/Labs$Feature;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x32
+
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->VIDEO_PLAYER:Lcom/google/glass/util/Labs$Feature;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x33
+
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->VOLUME_SLIDER:Lcom/google/glass/util/Labs$Feature;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x34
+
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->OKG_INC_CALL:Lcom/google/glass/util/Labs$Feature;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x35
+
+    sget-object v2, Lcom/google/glass/util/Labs$Feature;->SC_RM:Lcom/google/glass/util/Labs$Feature;
 
     aput-object v2, v0, v1
 
@@ -987,13 +1082,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 250
+    .line 270
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 251
+    .line 271
     iput-boolean p3, p0, Lcom/google/glass/util/Labs$Feature;->defaultValue:Z
 
-    .line 252
+    .line 272
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1024,7 +1119,7 @@
 
     iput-object v0, p0, Lcom/google/glass/util/Labs$Feature;->propertyKey:Ljava/lang/String;
 
-    .line 253
+    .line 273
     iget-object v0, p0, Lcom/google/glass/util/Labs$Feature;->propertyKey:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -1040,19 +1135,19 @@
     :goto_0
     invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 254
+    .line 274
     iput-boolean v1, p0, Lcom/google/glass/util/Labs$Feature;->setByTest:Z
 
-    .line 255
+    .line 275
     iput-boolean p3, p0, Lcom/google/glass/util/Labs$Feature;->valueForTest:Z
 
-    .line 256
+    .line 276
     return-void
 
     :cond_0
     move v0, v1
 
-    .line 253
+    .line 273
     goto :goto_0
 .end method
 
@@ -1095,7 +1190,7 @@
     .locals 1
 
     .prologue
-    .line 259
+    .line 279
     iget-boolean v0, p0, Lcom/google/glass/util/Labs$Feature;->defaultValue:Z
 
     return v0
@@ -1105,7 +1200,7 @@
     .locals 1
 
     .prologue
-    .line 263
+    .line 283
     iget-object v0, p0, Lcom/google/glass/util/Labs$Feature;->propertyKey:Ljava/lang/String;
 
     return-object v0
@@ -1115,7 +1210,7 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 296
     iget-boolean v0, p0, Lcom/google/glass/util/Labs$Feature;->valueForTest:Z
 
     return v0
@@ -1125,7 +1220,7 @@
     .locals 1
 
     .prologue
-    .line 272
+    .line 292
     iget-boolean v0, p0, Lcom/google/glass/util/Labs$Feature;->setByTest:Z
 
     return v0
@@ -1136,14 +1231,14 @@
     .parameter "value"
 
     .prologue
-    .line 267
+    .line 287
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/util/Labs$Feature;->setByTest:Z
 
-    .line 268
+    .line 288
     iput-boolean p1, p0, Lcom/google/glass/util/Labs$Feature;->valueForTest:Z
 
-    .line 269
+    .line 289
     return-void
 .end method

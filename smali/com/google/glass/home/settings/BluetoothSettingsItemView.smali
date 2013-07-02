@@ -1107,16 +1107,24 @@
 .end method
 
 .method public onSettled()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 317
-    invoke-static {}, Lcom/google/glass/util/BluetoothHelper;->makeBluetoothDiscoverable()V
+    .line 316
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
 
-    .line 318
+    move-result-object v0
+
+    new-instance v1, Lcom/google/glass/home/settings/BluetoothSettingsItemView$4;
+
+    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/BluetoothSettingsItemView$4;-><init>(Lcom/google/glass/home/settings/BluetoothSettingsItemView;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    .line 324
     invoke-direct {p0}, Lcom/google/glass/home/settings/BluetoothSettingsItemView;->update()V
 
-    .line 319
+    .line 325
     return-void
 .end method
 
@@ -1127,19 +1135,19 @@
     .parameter "localVersion"
 
     .prologue
-    .line 329
+    .line 341
     iput-boolean p1, p0, Lcom/google/glass/home/settings/BluetoothSettingsItemView;->isCompanionConnected:Z
 
-    .line 330
+    .line 342
     iput p2, p0, Lcom/google/glass/home/settings/BluetoothSettingsItemView;->companionRemoteVersion:I
 
-    .line 331
+    .line 343
     iput p3, p0, Lcom/google/glass/home/settings/BluetoothSettingsItemView;->companionLocalVersion:I
 
-    .line 332
+    .line 344
     invoke-direct {p0}, Lcom/google/glass/home/settings/BluetoothSettingsItemView;->update()V
 
-    .line 333
+    .line 345
     return-void
 .end method
 
@@ -1202,15 +1210,23 @@
 .end method
 
 .method public onUnsettled()V
-    .locals 0
+    .locals 2
 
     .prologue
-    .line 323
-    invoke-static {}, Lcom/google/glass/util/BluetoothHelper;->cancelDiscoverable()V
+    .line 329
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
 
-    .line 324
+    move-result-object v0
+
+    new-instance v1, Lcom/google/glass/home/settings/BluetoothSettingsItemView$5;
+
+    invoke-direct {v1, p0}, Lcom/google/glass/home/settings/BluetoothSettingsItemView$5;-><init>(Lcom/google/glass/home/settings/BluetoothSettingsItemView;)V
+
+    invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    .line 336
     invoke-direct {p0}, Lcom/google/glass/home/settings/BluetoothSettingsItemView;->update()V
 
-    .line 325
+    .line 337
     return-void
 .end method

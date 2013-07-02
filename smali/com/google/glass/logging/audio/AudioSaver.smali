@@ -10,10 +10,10 @@
 .method public abstract isSavingAudio()Z
 .end method
 
-.method public abstract onResult(Lcom/google/glass/voice/SensoryResult;)V
+.method public abstract onResult(Lcom/google/glass/voice/HotwordResult;)V
 .end method
 
-.method public abstract prepareToSaveAudio()V
+.method public abstract prepareToSaveAudio(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;

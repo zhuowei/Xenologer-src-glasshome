@@ -1,11 +1,14 @@
 .class Lcom/google/glass/home/timeline/active/SettingsCoverView$3;
-.super Lcom/google/glass/util/SafeBroadcastReceiver;
+.super Ljava/lang/Object;
 .source "SettingsCoverView.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/glass/home/timeline/active/SettingsCoverView;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/glass/home/timeline/active/SettingsCoverView;->updateConnectivity()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,178 +20,67 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
+.field final synthetic val$context:Landroid/content/Context;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/timeline/active/SettingsCoverView;)V
+.method constructor <init>(Lcom/google/glass/home/timeline/active/SettingsCoverView;Landroid/content/Context;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 91
+    .line 202
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
-    invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->val$context:Landroid/content/Context;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getTag()Ljava/lang/String;
-    .locals 2
+.method public run()V
+    .locals 4
 
     .prologue
-    .line 116
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$500()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "/stateReceiver"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 5
-    .parameter "context"
-    .parameter "intent"
-
-    .prologue
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    .line 94
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 95
-    .local v0, action:Ljava/lang/String;
-    const-string v4, "android.intent.action.BATTERY_CHANGED"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    const-string v4, "android.intent.action.ACTION_POWER_CONNECTED"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_0
-
-    const-string v4, "android.intent.action.ACTION_POWER_DISCONNECTED"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    .line 99
-    :cond_0
+    .line 205
     iget-object v2, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
-    #calls: Lcom/google/glass/home/timeline/active/SettingsCoverView;->updateBattery()V
-    invoke-static {v2}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$200(Lcom/google/glass/home/timeline/active/SettingsCoverView;)V
-
-    .line 112
-    :goto_0
-    return-void
-
-    .line 100
-    :cond_1
-    const-string v4, "com.google.glass.bluetooth.PAIRED_DEVICE"
-
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_2
-
-    .line 101
-    iget-object v3, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
-
-    const-string v2, "com.google.glass.bluetooth.EXTRA_DEVICE"
-
-    invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {v2}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
-    check-cast v2, Landroid/bluetooth/BluetoothDevice;
+    const-string v3, "connectivity"
 
-    #setter for: Lcom/google/glass/home/timeline/active/SettingsCoverView;->singlyPairedDevice:Landroid/bluetooth/BluetoothDevice;
-    invoke-static {v3, v2}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$302(Lcom/google/glass/home/timeline/active/SettingsCoverView;Landroid/bluetooth/BluetoothDevice;)Landroid/bluetooth/BluetoothDevice;
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 102
-    iget-object v2, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
+    move-result-object v0
 
-    #calls: Lcom/google/glass/home/timeline/active/SettingsCoverView;->updateConnectivity()V
-    invoke-static {v2}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$000(Lcom/google/glass/home/timeline/active/SettingsCoverView;)V
+    check-cast v0, Landroid/net/ConnectivityManager;
 
-    goto :goto_0
+    .line 207
+    .local v0, connManager:Landroid/net/ConnectivityManager;
+    const/4 v2, 0x1
 
-    .line 104
-    :cond_2
-    const-string v4, "com.google.glass.action.HEADSET_STATE"
+    invoke-virtual {v0, v2}, Landroid/net/ConnectivityManager;->getNetworkInfo(I)Landroid/net/NetworkInfo;
 
-    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v4
+    .line 208
+    .local v1, netInfo:Landroid/net/NetworkInfo;
+    invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
-    if-eqz v4, :cond_3
+    move-result-object v2
 
-    .line 106
-    const-string v4, "com.google.glass.extra.STATE"
+    new-instance v3, Lcom/google/glass/home/timeline/active/SettingsCoverView$3$1;
 
-    invoke-virtual {p2, v4, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-direct {v3, p0, v1}, Lcom/google/glass/home/timeline/active/SettingsCoverView$3$1;-><init>(Lcom/google/glass/home/timeline/active/SettingsCoverView$3;Landroid/net/NetworkInfo;)V
 
-    move-result v1
+    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 108
-    .local v1, state:I
-    iget-object v4, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
-
-    if-ne v1, v2, :cond_4
-
-    :goto_1
-    #setter for: Lcom/google/glass/home/timeline/active/SettingsCoverView;->isHeadset:Z
-    invoke-static {v4, v2}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$402(Lcom/google/glass/home/timeline/active/SettingsCoverView;Z)Z
-
-    .line 110
-    .end local v1           #state:I
-    :cond_3
-    iget-object v2, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$3;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
-
-    #calls: Lcom/google/glass/home/timeline/active/SettingsCoverView;->updateConnectivity()V
-    invoke-static {v2}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$000(Lcom/google/glass/home/timeline/active/SettingsCoverView;)V
-
-    goto :goto_0
-
-    .restart local v1       #state:I
-    :cond_4
-    move v2, v3
-
-    .line 108
-    goto :goto_1
+    .line 255
+    return-void
 .end method

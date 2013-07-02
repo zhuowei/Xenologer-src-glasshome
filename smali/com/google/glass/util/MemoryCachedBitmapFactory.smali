@@ -82,10 +82,11 @@
     return-void
 .end method
 
-.method public decodeFile(Ljava/lang/String;Z)Landroid/graphics/Bitmap;
+.method public decodeFile(Ljava/lang/String;ZLcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
     .locals 6
     .parameter "path"
     .parameter "lookupOnly"
+    .parameter "isCancelled"
 
     .prologue
     .line 61
@@ -149,7 +150,7 @@
 
     iget v4, p0, Lcom/google/glass/util/MemoryCachedBitmapFactory;->minHeight:I
 
-    invoke-virtual {p0, p1, v2, v4}, Lcom/google/glass/util/MemoryCachedBitmapFactory;->loadBitmap(Ljava/lang/String;II)Landroid/graphics/Bitmap;
+    invoke-virtual {p0, p1, v2, v4, p3}, Lcom/google/glass/util/MemoryCachedBitmapFactory;->loadBitmap(Ljava/lang/String;IILcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 

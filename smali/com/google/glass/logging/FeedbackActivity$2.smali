@@ -48,7 +48,7 @@
     .parameter
 
     .prologue
-    .line 122
+    .line 119
     iput-object p1, p0, Lcom/google/glass/logging/FeedbackActivity$2;->this$0:Lcom/google/glass/logging/FeedbackActivity;
 
     iput-object p2, p0, Lcom/google/glass/logging/FeedbackActivity$2;->val$name:Ljava/lang/String;
@@ -76,14 +76,14 @@
     .locals 8
 
     .prologue
-    .line 126
+    .line 123
     iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$2;->this$0:Lcom/google/glass/logging/FeedbackActivity;
 
     invoke-virtual {v1}, Lcom/google/glass/logging/FeedbackActivity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
-    .line 128
+    .line 125
     .local v0, context:Landroid/content/Context;
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$2;->this$0:Lcom/google/glass/logging/FeedbackActivity;
@@ -109,15 +109,15 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 137
+    .line 134
     iget-object v1, p0, Lcom/google/glass/logging/FeedbackActivity$2;->val$recoveryAction:Lcom/google/glass/util/Feedback$RecoveryAction;
 
     invoke-static {v0, v1}, Lcom/google/glass/util/Feedback;->handleRecoveryAction(Landroid/content/Context;Lcom/google/glass/util/Feedback$RecoveryAction;)V
 
-    .line 139
+    .line 136
     return-void
 
-    .line 137
+    .line 134
     :catchall_0
     move-exception v1
 

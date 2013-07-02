@@ -49,6 +49,9 @@
 .method public abstract getMessageC2GBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getMotionC2G()Lcom/google/glass/companion/Proto$MotionEvent;
+.end method
+
 .method public abstract getNavigationRequestC2G()Lcom/google/glass/companion/Proto$NavigationRequest;
 .end method
 
@@ -147,6 +150,9 @@
 .end method
 
 .method public abstract hasMessageC2G()Z
+.end method
+
+.method public abstract hasMotionC2G()Z
 .end method
 
 .method public abstract hasNavigationRequestC2G()Z

@@ -42,6 +42,9 @@
 .method public abstract getNumber()I
 .end method
 
+.method public abstract getOneofIndex()I
+.end method
+
 .method public abstract getOptions()Lcom/google/protobuf/DescriptorProtos$FieldOptions;
 .end method
 
@@ -70,6 +73,9 @@
 .end method
 
 .method public abstract hasNumber()Z
+.end method
+
+.method public abstract hasOneofIndex()Z
 .end method
 
 .method public abstract hasOptions()Z

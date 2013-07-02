@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 404
+    .line 406
     iput-object p1, p0, Lcom/google/glass/util/WifiHelper$4;->this$0:Lcom/google/glass/util/WifiHelper;
 
     iput-object p2, p0, Lcom/google/glass/util/WifiHelper$4;->val$callback:Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 429
+    .line 430
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -69,13 +69,15 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 408
+    const/4 v4, 0x0
+
+    .line 409
     invoke-virtual {p0}, Lcom/google/glass/util/WifiHelper$4;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -102,9 +104,11 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v3, v4, [Ljava/lang/Object;
 
-    .line 409
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 410
     const-string v1, "networkInfo"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -113,7 +117,7 @@
 
     check-cast v0, Landroid/net/NetworkInfo;
 
-    .line 410
+    .line 411
     .local v0, networkInfo:Landroid/net/NetworkInfo;
     if-eqz v0, :cond_0
 
@@ -123,16 +127,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 416
+    .line 417
     invoke-virtual {p0}, Lcom/google/glass/util/WifiHelper$4;->getTag()Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "WifiManager claims we are connected to wifi."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v3, v4, [Ljava/lang/Object;
 
-    .line 417
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 418
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$4;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #getter for: Lcom/google/glass/util/WifiHelper;->connectivityManager:Landroid/net/ConnectivityManager;
@@ -146,7 +152,7 @@
 
     move-result-object v0
 
-    .line 418
+    .line 419
     if-eqz v0, :cond_0
 
     invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -155,33 +161,35 @@
 
     if-eqz v1, :cond_0
 
-    .line 419
+    .line 420
     invoke-virtual {p0}, Lcom/google/glass/util/WifiHelper$4;->getTag()Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "ConnectivityManager agrees with WifiManager, progressing..."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v3, v4, [Ljava/lang/Object;
 
-    .line 420
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->d(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 421
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$4;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #calls: Lcom/google/glass/util/WifiHelper;->cancelTimeout()V
     invoke-static {v1}, Lcom/google/glass/util/WifiHelper;->access$300(Lcom/google/glass/util/WifiHelper;)V
 
-    .line 421
+    .line 422
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$4;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #calls: Lcom/google/glass/util/WifiHelper;->cancelConnectivityReceiver()V
     invoke-static {v1}, Lcom/google/glass/util/WifiHelper;->access$400(Lcom/google/glass/util/WifiHelper;)V
 
-    .line 422
+    .line 423
     iget-object v1, p0, Lcom/google/glass/util/WifiHelper$4;->val$callback:Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;
 
     invoke-interface {v1}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnected()V
 
-    .line 425
+    .line 426
     :cond_0
     return-void
 .end method

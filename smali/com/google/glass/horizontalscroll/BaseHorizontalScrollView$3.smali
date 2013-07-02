@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 212
+    .line 266
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.3;"
     iput-object p1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
@@ -42,12 +42,12 @@
     .locals 1
 
     .prologue
-    .line 215
+    .line 269
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.3;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v0
 
@@ -58,21 +58,21 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 360
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.3;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->hasData()Z
-    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
+    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 307
+    .line 361
     const/4 v0, 0x0
 
-    .line 309
+    .line 363
     :goto_0
     return v0
 
@@ -80,7 +80,7 @@
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->getItemCount()I
-    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
+    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$800(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
 
     move-result v0
 
@@ -91,12 +91,12 @@
     .locals 1
 
     .prologue
-    .line 314
+    .line 368
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.3;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->currentScale:F
-    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1400(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v0
 
@@ -108,21 +108,21 @@
     .parameter "item"
 
     .prologue
-    .line 220
+    .line 274
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.3;"
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->isActivated:Z
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
 
     move-result v11
 
     if-nez v11, :cond_1
 
-    .line 221
-    invoke-static {}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$300()Ljava/lang/String;
+    .line 275
+    invoke-static {}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$400()Ljava/lang/String;
 
     move-result-object v11
 
@@ -154,34 +154,34 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 302
+    .line 356
     :cond_0
     :goto_0
     return-void
 
-    .line 226
+    .line 280
     :cond_1
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v5
 
-    .line 227
+    .line 281
     .local v5, lastScrollerPosition:F
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPositionUpdateTime:D
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$400(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)D
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$500(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)D
 
     move-result-wide v6
 
-    .line 228
+    .line 282
     .local v6, lastScrollerPositionUpdateTime:D
     move-object/from16 v0, p0
 
@@ -191,7 +191,7 @@
 
     move-result v10
 
-    .line 231
+    .line 285
     .local v10, wasSettled:Z
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
@@ -203,7 +203,7 @@
 
     div-double v3, v11, v13
 
-    .line 234
+    .line 288
     .local v3, currentTime:D
     move-object/from16 v0, p0
 
@@ -212,17 +212,17 @@
     move/from16 v0, p1
 
     #setter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v11, v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$102(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;F)F
+    invoke-static {v11, v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$202(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;F)F
 
-    .line 235
+    .line 289
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #setter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPositionUpdateTime:D
-    invoke-static {v11, v3, v4}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$402(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;D)D
+    invoke-static {v11, v3, v4}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$502(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;D)D
 
-    .line 238
+    .line 292
     const-wide/16 v11, 0x0
 
     cmpl-double v11, v6, v11
@@ -233,7 +233,7 @@
 
     if-lez v11, :cond_2
 
-    .line 240
+    .line 294
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -243,7 +243,7 @@
     iget-object v12, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v12
 
@@ -258,16 +258,16 @@
     double-to-float v12, v12
 
     #setter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollVelocity:F
-    invoke-static {v11, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$502(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;F)F
+    invoke-static {v11, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$602(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;F)F
 
-    .line 245
+    .line 299
     :cond_2
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v11
 
@@ -275,38 +275,38 @@
 
     move-result v9
 
-    .line 246
+    .line 300
     .local v9, position:I
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->hasData()Z
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
 
     move-result v11
 
     if-eqz v11, :cond_9
 
-    .line 249
+    .line 303
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->getItemCount()I
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$800(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
 
     move-result v2
 
-    .line 250
+    .line 304
     .local v2, count:I
     if-ltz v9, :cond_3
 
     if-lt v9, v2, :cond_4
 
-    .line 251
+    .line 305
     :cond_3
-    invoke-static {}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$300()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$400()Ljava/lang/String;
 
     move-result-object v11
 
@@ -358,13 +358,13 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 253
+    .line 307
     if-gez v9, :cond_8
 
-    .line 254
+    .line 308
     const/4 v9, 0x0
 
-    .line 268
+    .line 322
     .end local v2           #count:I
     :cond_4
     :goto_1
@@ -375,7 +375,7 @@
     iget-object v12, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v12
 
@@ -387,20 +387,20 @@
 
     float-to-int v8, v11
 
-    .line 271
+    .line 325
     .local v8, offset:I
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->selectedPosition:I
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$800(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$900(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
 
     move-result v11
 
     if-eq v11, v9, :cond_5
 
-    .line 272
+    .line 326
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -408,9 +408,9 @@
     const/4 v12, 0x1
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->internalSetSelectedPosition(IZ)V
-    invoke-static {v11, v9, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$900(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;IZ)V
+    invoke-static {v11, v9, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1000(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;IZ)V
 
-    .line 273
+    .line 327
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -418,26 +418,26 @@
     const/4 v12, 0x0
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->updateViewsInternal(Z)Z
-    invoke-static {v11, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1000(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;Z)Z
+    invoke-static {v11, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;Z)Z
 
     move-result v1
 
-    .line 274
+    .line 328
     .local v1, changedViews:Z
     invoke-static {v1}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 277
+    .line 331
     if-eqz v10, :cond_5
 
-    .line 278
+    .line 332
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onSettledInternal()V
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 283
+    .line 337
     .end local v1           #changedViews:Z
     :cond_5
     move-object/from16 v0, p0
@@ -445,13 +445,13 @@
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->currentTranslation:I
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
 
     move-result v11
 
     if-eq v11, v8, :cond_6
 
-    .line 284
+    .line 338
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -461,18 +461,18 @@
     iget-object v12, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->currentScale:F
-    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1400(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v12
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->setTranslationAndScale(IF)V
-    invoke-static {v11, v8, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1400(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;IF)V
+    invoke-static {v11, v8, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1500(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;IF)V
 
-    .line 288
+    .line 342
     :cond_6
     if-eqz v10, :cond_a
 
-    .line 289
+    .line 343
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
@@ -483,23 +483,23 @@
 
     if-nez v11, :cond_7
 
-    .line 290
+    .line 344
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onUnsettledInternal()V
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1500(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 299
+    .line 353
     :cond_7
     :goto_2
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListener:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
+    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListeners:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
 
     move-result-object v11
 
@@ -510,7 +510,7 @@
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v11
 
@@ -518,13 +518,13 @@
 
     if-eqz v11, :cond_0
 
-    .line 300
+    .line 354
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListener:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
+    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListeners:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
 
     move-result-object v11
 
@@ -533,15 +533,15 @@
     iget-object v12, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->scrollerPosition:F
-    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v12
 
-    invoke-interface {v11, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;->onScrollPositionChanged(F)V
+    invoke-virtual {v11, v12}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;->onScrollPositionChanged(F)V
 
     goto/16 :goto_0
 
-    .line 256
+    .line 310
     .end local v8           #offset:I
     .restart local v2       #count:I
     :cond_8
@@ -549,17 +549,17 @@
 
     goto/16 :goto_1
 
-    .line 262
+    .line 316
     .end local v2           #count:I
     :cond_9
     if-eqz v9, :cond_4
 
-    .line 263
+    .line 317
     const/4 v9, 0x0
 
     goto/16 :goto_1
 
-    .line 293
+    .line 347
     .restart local v8       #offset:I
     :cond_a
     move-object/from16 v0, p0
@@ -572,13 +572,13 @@
 
     if-eqz v11, :cond_7
 
-    .line 294
+    .line 348
     move-object/from16 v0, p0
 
     iget-object v11, v0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onSettledInternal()V
-    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
+    invoke-static {v11}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
     goto :goto_2
 .end method
@@ -588,19 +588,19 @@
     .parameter "scale"
 
     .prologue
-    .line 319
+    .line 373
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.3;"
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->isActivated:Z
-    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
+    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 320
-    invoke-static {}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$300()Ljava/lang/String;
+    .line 374
+    invoke-static {}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$400()Ljava/lang/String;
 
     move-result-object v1
 
@@ -630,17 +630,17 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 348
+    .line 402
     :cond_0
     :goto_0
     return-void
 
-    .line 324
+    .line 378
     :cond_1
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->currentScale:F
-    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
+    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1400(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)F
 
     move-result v1
 
@@ -648,31 +648,31 @@
 
     if-eqz v1, :cond_0
 
-    .line 327
+    .line 381
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->isSettled()Z
 
     move-result v0
 
-    .line 330
+    .line 384
     .local v0, wasSettled:Z
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     iget-object v2, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->currentTranslation:I
-    invoke-static {v2}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
+    invoke-static {v2}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1300(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)I
 
     move-result v2
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->setTranslationAndScale(IF)V
-    invoke-static {v1, v2, p1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1400(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;IF)V
+    invoke-static {v1, v2, p1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1500(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;IF)V
 
-    .line 333
+    .line 387
     if-eqz v0, :cond_3
 
-    .line 334
+    .line 388
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     invoke-virtual {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->isSettled()Z
@@ -681,37 +681,37 @@
 
     if-nez v1, :cond_2
 
-    .line 335
+    .line 389
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onUnsettledInternal()V
-    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1500(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
+    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 344
+    .line 398
     :cond_2
     :goto_1
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListener:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
-    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
+    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListeners:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
+    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 345
+    .line 399
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
-    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListener:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
-    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1600(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
+    #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->positionListeners:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
+    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1700(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;
 
     move-result-object v1
 
-    invoke-interface {v1, p1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;->onScaleChanged(F)V
+    invoke-virtual {v1, p1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListenerCollection;->onScaleChanged(F)V
 
     goto :goto_0
 
-    .line 338
+    .line 392
     :cond_3
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
@@ -721,11 +721,11 @@
 
     if-eqz v1, :cond_2
 
-    .line 339
+    .line 393
     iget-object v1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$3;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #calls: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->onSettledInternal()V
-    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
+    invoke-static {v1}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$1200(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
     goto :goto_1
 .end method

@@ -4,8 +4,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/voice/VoiceConfig;->newCustomVoiceConfig(Landroid/content/Context;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)Lcom/google/glass/voice/VoiceConfig;
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/glass/voice/VoiceConfig;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,50 +14,169 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$phrases:[Ljava/lang/String;
-
-.field final synthetic val$tags:[Ljava/lang/String;
+# static fields
+.field private static final GET_QUALIFIED_ENTITY_NAME_TIMEOUT_MS:J = 0xfaL
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/voice/VoiceConfig$Type;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
     .parameter "x3"
-    .parameter "x4"
-    .parameter "x5"
-    .parameter
-    .parameter
 
     .prologue
-    .line 232
-    iput-object p7, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$phrases:[Ljava/lang/String;
-
-    iput-object p8, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$tags:[Ljava/lang/String;
-
-    invoke-direct/range {p0 .. p6}, Lcom/google/glass/voice/VoiceConfig;-><init>(Lcom/google/glass/voice/VoiceConfig$Type;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .line 95
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/voice/VoiceConfig;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
+.method private getQualifiedName(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
+    .locals 2
+    .parameter "context"
+    .parameter "entity"
+
+    .prologue
+    .line 128
+    const-wide/16 v0, 0xfa
+
+    invoke-static {p1, p2, v0, v1}, Lcom/google/glass/voice/EntityUtils;->getQualifiedName(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Entity;J)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private prependNames(Landroid/content/Context;Ljava/util/Collection;)Ljava/util/Collection;
+    .locals 5
+    .parameter "context"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Ljava/util/Collection",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity;",
+            ">;)",
+            "Ljava/util/Collection",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 116
+    .local p2, photoShareTargetEntities:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    invoke-interface {p2}, Ljava/util/Collection;->size()I
+
+    move-result v3
+
+    invoke-static {v3}, Lcom/google/common/collect/Lists;->newArrayListWithCapacity(I)Ljava/util/ArrayList;
+
+    move-result-object v2
+
+    .line 118
+    .local v2, withPrependedNames:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    invoke-interface {p2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    .local v1, i$:Ljava/util/Iterator;
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/googlex/glass/common/proto/Entity;
+
+    .line 122
+    .local v0, e:Lcom/google/googlex/glass/common/proto/Entity;
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity;->toBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
+
+    move-result-object v3
+
+    invoke-direct {p0, p1, v0}, Lcom/google/glass/voice/VoiceConfig$4;->getQualifiedName(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/google/googlex/glass/common/proto/Entity$Builder;->setDisplayName(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/Entity$Builder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/Entity$Builder;->build()Lcom/google/googlex/glass/common/proto/Entity;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    .line 124
+    .end local v0           #e:Lcom/google/googlex/glass/common/proto/Entity;
+    :cond_0
+    return-object v2
+.end method
+
 
 # virtual methods
-.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
-    .locals 3
+.method public bridge synthetic getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/HotwordRecognizer;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 95
+    invoke-virtual {p0, p1}, Lcom/google/glass/voice/VoiceConfig$4;->getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+    .locals 2
     .parameter "context"
 
     .prologue
-    .line 236
-    new-instance v0, Lcom/google/glass/voice/DynamicSensoryRecognizer;
+    .line 104
+    invoke-static {p1}, Lcom/google/glass/voice/VoiceService;->getPhotoShareTargetEntities(Landroid/content/Context;)Ljava/util/Collection;
 
-    iget-object v1, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$phrases:[Ljava/lang/String;
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/google/glass/voice/VoiceConfig$4;->val$tags:[Ljava/lang/String;
+    .line 106
+    .local v0, photoShareTargetEntities:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/googlex/glass/common/proto/Entity;>;"
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    invoke-direct {v0, p1, p0, v1, v2}, Lcom/google/glass/voice/DynamicSensoryRecognizer;-><init>(Landroid/content/Context;Lcom/google/glass/voice/VoiceConfig;[Ljava/lang/String;[Ljava/lang/String;)V
+    move-result v1
 
-    return-object v0
+    if-eqz v1, :cond_0
+
+    .line 107
+    const/4 v1, 0x0
+
+    .line 111
+    :goto_0
+    return-object v1
+
+    .line 110
+    :cond_0
+    invoke-direct {p0, p1, v0}, Lcom/google/glass/voice/VoiceConfig$4;->prependNames(Landroid/content/Context;Ljava/util/Collection;)Ljava/util/Collection;
+
+    move-result-object v0
+
+    .line 111
+    invoke-static {p1, p0, v0}, Lcom/google/glass/voice/Sensory;->newEntityRecognizer(Landroid/content/Context;Lcom/google/glass/voice/VoiceConfig;Ljava/util/Collection;)Lcom/google/glass/voice/Sensory;
+
+    move-result-object v1
+
+    goto :goto_0
 .end method

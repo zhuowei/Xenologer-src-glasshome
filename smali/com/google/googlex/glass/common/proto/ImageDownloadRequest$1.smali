@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 118
+    .line 119
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 123
+    .line 124
     new-instance v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 118
+    .line 119
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0

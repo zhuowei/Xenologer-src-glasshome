@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/cover_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <com.google.glass.widget.SliderView android:id="@id/progress_slider" android:background="@color/background_dark_gray" android:layout_width="fill_parent" android:layout_height="8.0px" android:layout_alignParentBottom="true" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/generic_card_padding" android:layout_marginRight="@dimen/generic_card_padding" android:layout_marginBottom="32.0px" android:layout_alignParentBottom="true">
+        <com.google.glass.widget.TypophileTextView android:ellipsize="end" android:id="@id/artist_name" android:layout_width="@dimen/artist_width" android:layout_height="40.0px" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" style="@style/SmallOverlayText" />
+        <LinearLayout android:id="@id/duration_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="40.0px" android:layout_above="@id/progress_slider" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+            <com.google.glass.widget.TypophileTextView android:id="@id/song_time" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SmallOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:paddingLeft="@dimen/duration_padding" android:paddingRight="@dimen/duration_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/slash" style="@style/SmallOverlayText" />
+            <com.google.glass.widget.TypophileTextView android:id="@id/song_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/SmallOverlayText" />
+        </LinearLayout>
+        <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/artist_name">
+            <ImageView android:id="@id/play_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/between_icon_text_padding" android:src="@drawable/ic_musicplayer_play" />
+            <com.google.glass.widget.TypophileTextView android:textSize="@dimen/music_large_text_size" android:ellipsize="end" android:id="@id/song_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@style/OverlayText" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

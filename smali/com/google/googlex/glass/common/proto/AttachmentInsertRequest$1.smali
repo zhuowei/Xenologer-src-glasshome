@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 117
+    .line 127
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 122
+    .line 132
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentInsertRequest;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 117
+    .line 127
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AttachmentInsertRequest$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AttachmentInsertRequest;
 
     move-result-object v0

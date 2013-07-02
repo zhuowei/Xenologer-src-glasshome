@@ -35,7 +35,7 @@
     .parameter
 
     .prologue
-    .line 313
+    .line 315
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     invoke-direct {p0}, Lcom/google/glass/util/SerialAsyncTask;-><init>()V
@@ -50,10 +50,10 @@
     .parameter "params"
 
     .prologue
-    .line 324
+    .line 326
     const/4 v0, 0x0
 
-    .line 326
+    .line 328
     .local v0, shouldCallStopCallback:Z
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/VideoPlayer$3;->isCancelled()Z
 
@@ -61,16 +61,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 327
+    .line 329
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
-    .line 344
+    .line 346
     :goto_0
     return-object v1
 
-    .line 330
+    .line 332
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
@@ -81,7 +81,7 @@
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/VideoEventLogger;->logEvent()V
 
-    .line 332
+    .line 334
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
@@ -95,7 +95,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 333
+    .line 335
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v1
@@ -104,7 +104,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 334
+    .line 336
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
@@ -114,10 +114,10 @@
 
     invoke-virtual {v1}, Landroid/media/MediaPlayer;->stop()V
 
-    .line 335
+    .line 337
     const/4 v0, 0x1
 
-    .line 338
+    .line 340
     :cond_1
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
@@ -127,7 +127,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 339
+    .line 341
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
@@ -139,7 +139,7 @@
 
     invoke-virtual {v1, v2}, Landroid/media/MediaPlayer;->setSurface(Landroid/view/Surface;)V
 
-    .line 341
+    .line 343
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v1
@@ -148,7 +148,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 342
+    .line 344
     iget-object v1, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
@@ -158,7 +158,7 @@
 
     invoke-virtual {v1}, Landroid/media/MediaPlayer;->release()V
 
-    .line 344
+    .line 346
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
@@ -171,7 +171,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 315
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -187,14 +187,14 @@
     .parameter "shouldCallStopCallback"
 
     .prologue
-    .line 349
+    .line 351
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 350
+    .line 352
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -203,7 +203,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 351
+    .line 353
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->listener:Lcom/google/glass/home/timeline/VideoPlayerListener;
@@ -213,14 +213,14 @@
 
     invoke-interface {v0}, Lcom/google/glass/home/timeline/VideoPlayerListener;->onVideoPlaybackStopped()V
 
-    .line 355
+    .line 357
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #calls: Lcom/google/glass/home/timeline/VideoPlayer;->releaseDestroyedSurfaces()V
     invoke-static {v0}, Lcom/google/glass/home/timeline/VideoPlayer;->access$1200(Lcom/google/glass/home/timeline/VideoPlayer;)V
 
-    .line 357
+    .line 359
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     const/4 v1, 0x0
@@ -228,7 +228,7 @@
     #setter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
     invoke-static {v0, v1}, Lcom/google/glass/home/timeline/VideoPlayer;->access$802(Lcom/google/glass/home/timeline/VideoPlayer;Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
-    .line 358
+    .line 360
     return-void
 .end method
 
@@ -237,7 +237,7 @@
     .parameter "x0"
 
     .prologue
-    .line 313
+    .line 315
     check-cast p1, Ljava/lang/Boolean;
 
     .end local p1
@@ -250,7 +250,7 @@
     .locals 2
 
     .prologue
-    .line 316
+    .line 318
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$3;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
 
     #getter for: Lcom/google/glass/home/timeline/VideoPlayer;->videoPlayer:Landroid/media/MediaPlayer;
@@ -260,7 +260,7 @@
 
     if-nez v0, :cond_0
 
-    .line 317
+    .line 319
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -269,12 +269,12 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 318
+    .line 320
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/VideoPlayer$3;->cancel(Z)Z
 
-    .line 320
+    .line 322
     :cond_0
     return-void
 .end method

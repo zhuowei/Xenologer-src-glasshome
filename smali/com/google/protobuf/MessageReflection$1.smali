@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 809
+    .line 827
     invoke-static {}, Lcom/google/protobuf/Descriptors$FieldDescriptor$Type;->values()[Lcom/google/protobuf/Descriptors$FieldDescriptor$Type;
 
     move-result-object v0

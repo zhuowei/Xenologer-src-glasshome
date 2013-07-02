@@ -34,29 +34,31 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/glass/home/timeline/database/ImageItemViewBinder;Lcom/google/googlex/glass/common/proto/Attachment;Landroid/widget/ImageView;Lcom/google/glass/util/CachedBitmapFactory;)V
+.method public constructor <init>(Lcom/google/glass/home/timeline/database/ImageItemViewBinder;Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Attachment;Landroid/widget/ImageView;Lcom/google/glass/util/CachedBitmapFactory;)V
     .locals 0
     .parameter
+    .parameter "context"
     .parameter "attachment"
     .parameter "imageView"
     .parameter "bitmapFactory"
 
     .prologue
-    .line 37
+    .line 40
     iput-object p1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->this$0:Lcom/google/glass/home/timeline/database/ImageItemViewBinder;
 
-    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>()V
-
-    .line 38
-    iput-object p2, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-
-    .line 39
-    iput-object p4, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
-
-    .line 40
-    iput-object p3, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
-
     .line 41
+    invoke-direct {p0, p2}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>(Landroid/content/Context;)V
+
+    .line 42
+    iput-object p3, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+
+    .line 43
+    iput-object p5, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
+
+    .line 44
+    iput-object p4, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
+
+    .line 45
     return-void
 .end method
 
@@ -64,22 +66,22 @@
     .locals 4
 
     .prologue
-    .line 56
+    .line 65
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 58
-    iget-object v1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
+    .line 66
+    iget-object v0, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
-    iget-object v2, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+    iget-object v1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v2, v3}, Lcom/google/glass/util/CachedBitmapFactory;->decodeAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Z)Landroid/graphics/Bitmap;
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/util/CachedBitmapFactory;->decodeAttachment(Lcom/google/googlex/glass/common/proto/Attachment;ZLcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 59
-    .local v0, bitmap:Landroid/graphics/Bitmap;
     return-object v0
 .end method
 
@@ -90,22 +92,22 @@
     .parameter "bitmap"
 
     .prologue
-    .line 69
+    .line 76
     if-eqz p1, :cond_0
 
-    .line 70
+    .line 77
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 71
+    .line 78
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
 
     const/4 v1, 0x1
 
     invoke-virtual {p0, v0, v1}, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->showView(Landroid/view/View;Z)V
 
-    .line 73
+    .line 80
     :cond_0
     return-void
 .end method
@@ -115,7 +117,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 33
     check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1
@@ -124,30 +126,42 @@
     return-void
 .end method
 
-.method protected loadContent()Landroid/graphics/Bitmap;
-    .locals 3
+.method protected getUserEventTag()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 64
+    .line 49
+    const-string v0, "ia"
+
+    return-object v0
+.end method
+
+.method protected loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
+    .locals 3
+    .parameter "isCancelled"
+
+    .prologue
+    .line 71
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/CachedBitmapFactory;->decodeAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Z)Landroid/graphics/Bitmap;
+    invoke-virtual {v0, v1, v2, p1}, Lcom/google/glass/util/CachedBitmapFactory;->decodeAttachment(Lcom/google/googlex/glass/common/proto/Attachment;ZLcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected bridge synthetic loadContent()Ljava/lang/Object;
+.method protected bridge synthetic loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 30
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->loadContent()Landroid/graphics/Bitmap;
+    .line 33
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -160,33 +174,33 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 45
+    .line 54
     invoke-direct {p0}, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->loadContentFromCache()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 46
+    .line 55
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
-    .line 47
+    .line 56
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 48
+    .line 57
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v3}, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->showView(Landroid/view/View;Z)V
 
-    .line 49
+    .line 58
     invoke-virtual {p0, v3}, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->cancel(Z)V
 
-    .line 53
+    .line 62
     :goto_0
     return-void
 
-    .line 51
+    .line 60
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/ImageItemViewBinder$ImageAttachmentLoadingTask;->imageView:Landroid/widget/ImageView;
 

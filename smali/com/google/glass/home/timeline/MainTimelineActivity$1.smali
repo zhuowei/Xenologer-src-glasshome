@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 82
+    .line 83
     iput-object p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$1;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,15 +38,14 @@
     .locals 2
 
     .prologue
-    .line 94
+    .line 95
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$1;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
-    #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$100(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
 
@@ -67,13 +66,13 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 3
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 85
+    .line 86
     const-string v1, "com.google.glass.ACTION_GUEST_MODE"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -86,7 +85,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 86
+    .line 87
     const-string v1, "com.google.glass.EXTRA_GUEST_MODE_ENABLED"
 
     const/4 v2, 0x0
@@ -95,14 +94,14 @@
 
     move-result v0
 
-    .line 88
+    .line 89
     .local v0, isGuestModeEnabled:Z
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$1;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->initTimelineView(Z)V
     invoke-static {v1, v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$000(Lcom/google/glass/home/timeline/MainTimelineActivity;Z)V
 
-    .line 90
+    .line 91
     .end local v0           #isGuestModeEnabled:Z
     :cond_0
     return-void

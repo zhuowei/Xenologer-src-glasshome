@@ -30,6 +30,8 @@
 
 .field public static final HEADER_UPLOAD_FILE_NAME:Ljava/lang/String; = "X-Goog-Upload-File-Name"
 
+.field public static final NOW_GLASSWARE_PROJECT_ID:Ljava/lang/String; = "582969681302"
+
 .field public static final PLUS_GLASSWARE_PROJECT_ID:Ljava/lang/String; = "442840586513"
 
 
@@ -38,7 +40,7 @@
     .locals 0
 
     .prologue
-    .line 71
+    .line 74
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

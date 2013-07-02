@@ -34,10 +34,10 @@
     .locals 1
 
     .prologue
-    .line 93
+    .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 94
+    .line 106
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,12 +53,12 @@
     .parameter "context"
 
     .prologue
-    .line 122
+    .line 134
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
     invoke-direct {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;-><init>()V
 
-    .line 123
+    .line 135
     .local v0, builder:Lcom/google/glass/home/search/results/ResultsContainer$Builder;
     invoke-static {p1}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->getDefaultOptionMenu(Landroid/content/Context;)Lcom/google/glass/widget/OptionMenu;
 
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, p0, v1, v2}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 124
+    .line 136
     invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v1
@@ -81,7 +81,7 @@
     .parameter "context"
 
     .prologue
-    .line 128
+    .line 140
     sget-object v1, Lcom/google/glass/util/Labs$Feature;->WEB_BROWSING:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v1}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -90,12 +90,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 129
+    .line 141
     new-instance v0, Lcom/google/glass/widget/OptionMenu;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
-    .line 130
+    .line 142
     .local v0, optionMenu:Lcom/google/glass/widget/OptionMenu;
     const/16 v1, 0xd
 
@@ -109,7 +109,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 134
+    .line 146
     .end local v0           #optionMenu:Lcom/google/glass/widget/OptionMenu;
     :goto_0
     return-object v0
@@ -126,12 +126,12 @@
     .parameter "hasPhoneNumber"
 
     .prologue
-    .line 139
+    .line 151
     new-instance v0, Lcom/google/glass/widget/OptionMenu;
 
     invoke-direct {v0, p0}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
-    .line 140
+    .line 152
     .local v0, optionMenu:Lcom/google/glass/widget/OptionMenu;
     const/16 v1, 0x9
 
@@ -145,10 +145,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 142
+    .line 154
     if-eqz p1, :cond_0
 
-    .line 143
+    .line 155
     const/16 v1, 0x8
 
     sget v2, Lcom/google/glass/home/R$string;->timeline_menu_voice_call:I
@@ -161,7 +161,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/widget/OptionMenu;->addItem(ILjava/lang/String;I)V
 
-    .line 146
+    .line 158
     :cond_0
     return-object v0
 .end method
@@ -175,7 +175,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 98
+    .line 110
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
@@ -184,7 +184,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 99
+    .line 111
     return-object p0
 .end method
 
@@ -194,7 +194,7 @@
     .parameter "optionMenu"
 
     .prologue
-    .line 103
+    .line 115
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
@@ -205,7 +205,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 104
+    .line 116
     return-object p0
 .end method
 
@@ -216,7 +216,7 @@
     .parameter "bundle"
 
     .prologue
-    .line 108
+    .line 120
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
 
     new-instance v1, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;
@@ -225,7 +225,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 109
+    .line 121
     return-object p0
 .end method
 
@@ -233,7 +233,7 @@
     .locals 4
 
     .prologue
-    .line 118
+    .line 130
     new-instance v0, Lcom/google/glass/home/search/results/ResultsContainer;
 
     iget-object v1, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->resultPages:Ljava/util/List;
@@ -252,9 +252,9 @@
     .parameter "isStartSoundSearchResult"
 
     .prologue
-    .line 113
+    .line 125
     iput-boolean p1, p0, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->isStartSoundSearchResult:Z
 
-    .line 114
+    .line 126
     return-object p0
 .end method

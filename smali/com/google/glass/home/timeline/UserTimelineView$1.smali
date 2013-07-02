@@ -39,14 +39,14 @@
     .parameter
 
     .prologue
-    .line 57
+    .line 54
     iput-object p1, p0, Lcom/google/glass/home/timeline/UserTimelineView$1;->this$0:Lcom/google/glass/home/timeline/UserTimelineView;
 
     iput-object p3, p0, Lcom/google/glass/home/timeline/UserTimelineView$1;->val$activity:Landroid/app/Activity;
 
     invoke-direct {p0, p2}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;-><init>(Landroid/widget/Adapter;)V
 
-    .line 58
+    .line 55
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
 
     iget-object v1, p0, Lcom/google/glass/home/timeline/UserTimelineView$1;->val$activity:Landroid/app/Activity;
@@ -65,7 +65,7 @@
     .parameter "id"
 
     .prologue
-    .line 67
+    .line 64
     iget-object v0, p0, Lcom/google/glass/home/timeline/UserTimelineView$1;->helper:Lcom/google/glass/util/SettingsHelper;
 
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
@@ -84,7 +84,7 @@
     .parameter "id"
 
     .prologue
-    .line 62
+    .line 59
     iget-object v0, p0, Lcom/google/glass/home/timeline/UserTimelineView$1;->helper:Lcom/google/glass/util/SettingsHelper;
 
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;

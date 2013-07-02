@@ -15,8 +15,6 @@
 
 
 # static fields
-.field private static final ENABLE_LOCAL_GPS:Z = false
-
 .field private static final GPS_STALENESS_THRESHOLD_MS:J = 0x4e20L
 
 .field private static final NETWORK_STALENESS_THRESHOLD_MS:J = 0x1d4c0L
@@ -114,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 31
+    .line 32
     const-class v0, Lcom/google/glass/location/LocationService;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -132,45 +130,45 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 30
+    .line 31
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 140
+    .line 138
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
-    .line 141
+    .line 139
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
-    .line 142
+    .line 140
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->lastKnownLocations:Ljava/util/HashMap;
 
-    .line 145
+    .line 143
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->outgoing:Ljava/util/HashMap;
 
-    .line 148
+    .line 146
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->clientNames:Ljava/util/HashMap;
 
-    .line 151
+    .line 149
     new-instance v0, Landroid/os/Messenger;
 
     new-instance v1, Lcom/google/glass/location/LocationService$1;
@@ -181,63 +179,63 @@
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->incoming:Landroid/os/Messenger;
 
-    .line 163
+    .line 161
     new-instance v0, Lcom/google/glass/location/LocationService$RequestState;
 
     invoke-direct {v0, v2}, Lcom/google/glass/location/LocationService$RequestState;-><init>(Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->remoteGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
-    .line 164
+    .line 162
     new-instance v0, Lcom/google/glass/location/LocationService$RequestState;
 
     invoke-direct {v0, v2}, Lcom/google/glass/location/LocationService$RequestState;-><init>(Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->remoteNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
-    .line 165
+    .line 163
     new-instance v0, Lcom/google/glass/location/LocationService$RequestState;
 
     invoke-direct {v0, v2}, Lcom/google/glass/location/LocationService$RequestState;-><init>(Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->localGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
-    .line 166
+    .line 164
     new-instance v0, Lcom/google/glass/location/LocationService$RequestState;
 
     invoke-direct {v0, v2}, Lcom/google/glass/location/LocationService$RequestState;-><init>(Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->localNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
-    .line 173
+    .line 171
     new-instance v0, Lcom/google/glass/location/LocationService$LocalLocationListener;
 
     invoke-direct {v0, p0, v2}, Lcom/google/glass/location/LocationService$LocalLocationListener;-><init>(Lcom/google/glass/location/LocationService;Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->localGpsListener:Lcom/google/glass/location/LocationService$LocalLocationListener;
 
-    .line 174
+    .line 172
     new-instance v0, Lcom/google/glass/location/LocationService$LocalLocationListener;
 
     invoke-direct {v0, p0, v2}, Lcom/google/glass/location/LocationService$LocalLocationListener;-><init>(Lcom/google/glass/location/LocationService;Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->localNetworkListener:Landroid/location/LocationListener;
 
-    .line 175
+    .line 173
     new-instance v0, Lcom/google/glass/location/LocationService$RemoteLocationListener;
 
     invoke-direct {v0, p0, v2}, Lcom/google/glass/location/LocationService$RemoteLocationListener;-><init>(Lcom/google/glass/location/LocationService;Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->remoteLocationListener:Landroid/location/LocationListener;
 
-    .line 180
+    .line 178
     new-instance v0, Lcom/google/glass/location/LocationService$UpdateRunnable;
 
     invoke-direct {v0, p0, v2}, Lcom/google/glass/location/LocationService$UpdateRunnable;-><init>(Lcom/google/glass/location/LocationService;Lcom/google/glass/location/LocationService$1;)V
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->gpsUpdateRunnable:Ljava/lang/Runnable;
 
-    .line 181
+    .line 179
     new-instance v0, Lcom/google/glass/location/LocationService$UpdateRunnable;
 
     invoke-direct {v0, p0, v2}, Lcom/google/glass/location/LocationService$UpdateRunnable;-><init>(Lcom/google/glass/location/LocationService;Lcom/google/glass/location/LocationService$1;)V
@@ -254,7 +252,7 @@
     .parameter "x2"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0, p1, p2}, Lcom/google/glass/location/LocationService;->handleLocationChanged(Landroid/location/Location;Z)V
 
     return-void
@@ -265,7 +263,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
     return-object v0
@@ -277,7 +275,7 @@
     .parameter "x1"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->onClientDisconnected(Ljava/lang/Integer;)V
 
     return-void
@@ -288,7 +286,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->updateLocationRequests()V
 
     return-void
@@ -300,7 +298,7 @@
     .parameter "x1"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->handleIncomingMessage(Landroid/os/Message;)V
 
     return-void
@@ -311,7 +309,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->handleCompanionConnected()V
 
     return-void
@@ -323,7 +321,7 @@
     .parameter "x1"
 
     .prologue
-    .line 30
+    .line 31
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->postOnClientDisconnected(Ljava/lang/Integer;)V
 
     return-void
@@ -334,7 +332,7 @@
     .parameter "pid"
 
     .prologue
-    .line 582
+    .line 581
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->clientNames:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -347,16 +345,16 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 583
+    .line 582
     .local v0, name:Ljava/lang/String;
     if-nez v0, :cond_0
 
-    .line 584
+    .line 583
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 586
+    .line 585
     .end local v0           #name:Ljava/lang/String;
     :cond_0
     return-object v0
@@ -367,10 +365,10 @@
     .parameter "provider"
 
     .prologue
-    .line 513
+    .line 512
     const/4 v0, 0x0
 
-    .line 514
+    .line 513
     .local v0, combinedRequest:Lcom/google/glass/location/LocationRequest;
     const/4 v2, 0x0
 
@@ -384,7 +382,7 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 515
+    .line 514
     iget-object v4, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -393,7 +391,7 @@
 
     check-cast v3, Lcom/google/glass/location/LocationRequest;
 
-    .line 516
+    .line 515
     .local v3, request:Lcom/google/glass/location/LocationRequest;
     invoke-virtual {v3}, Lcom/google/glass/location/LocationRequest;->getProvider()Ljava/lang/String;
 
@@ -405,16 +403,16 @@
 
     if-eqz v4, :cond_0
 
-    .line 517
+    .line 516
     if-nez v0, :cond_1
 
-    .line 518
+    .line 517
     new-instance v0, Lcom/google/glass/location/LocationRequest;
 
     .end local v0           #combinedRequest:Lcom/google/glass/location/LocationRequest;
     invoke-direct {v0, v3}, Lcom/google/glass/location/LocationRequest;-><init>(Lcom/google/glass/location/LocationRequest;)V
 
-    .line 514
+    .line 513
     .restart local v0       #combinedRequest:Lcom/google/glass/location/LocationRequest;
     :cond_0
     :goto_1
@@ -422,7 +420,7 @@
 
     goto :goto_0
 
-    .line 519
+    .line 518
     :cond_1
     invoke-virtual {v3}, Lcom/google/glass/location/LocationRequest;->getMinTime()J
 
@@ -448,7 +446,7 @@
 
     if-gez v4, :cond_0
 
-    .line 521
+    .line 520
     :cond_2
     new-instance v1, Lcom/google/glass/location/LocationRequest;
 
@@ -490,7 +488,7 @@
     .restart local v0       #combinedRequest:Lcom/google/glass/location/LocationRequest;
     goto :goto_1
 
-    .line 527
+    .line 526
     .end local v3           #request:Lcom/google/glass/location/LocationRequest;
     :cond_3
     return-object v0
@@ -502,10 +500,10 @@
     .parameter "isLocal"
 
     .prologue
-    .line 532
+    .line 531
     if-eqz p2, :cond_1
 
-    .line 533
+    .line 532
     const-string v0, "gps"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -514,14 +512,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 534
+    .line 533
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
-    .line 545
+    .line 544
     :goto_0
     return-object v0
 
-    .line 535
+    .line 534
     :cond_0
     const-string v0, "network"
 
@@ -531,12 +529,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 536
+    .line 535
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
     goto :goto_0
 
-    .line 539
+    .line 538
     :cond_1
     const-string v0, "gps"
 
@@ -546,12 +544,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 540
+    .line 539
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
     goto :goto_0
 
-    .line 541
+    .line 540
     :cond_2
     const-string v0, "network"
 
@@ -561,12 +559,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 542
+    .line 541
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
     goto :goto_0
 
-    .line 545
+    .line 544
     :cond_3
     const/4 v0, 0x0
 
@@ -577,10 +575,10 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 56
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 59
+    .line 57
     sget-object v0, Lcom/google/glass/location/LocationService;->runningInstance:Lcom/google/glass/location/LocationService;
 
     return-object v0
@@ -592,35 +590,35 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 245
+    .line 243
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 246
+    .line 244
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v1, "onCompanionConnected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 247
+    .line 245
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/location/LocationService;->connectedToCompanion:Z
 
-    .line 250
+    .line 248
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
     iput-object v2, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 251
+    .line 249
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
     iput-object v2, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 253
+    .line 251
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->updateLocationRequests()V
 
-    .line 254
+    .line 252
     return-void
 .end method
 
@@ -629,10 +627,10 @@
     .parameter "msg"
 
     .prologue
-    .line 266
+    .line 264
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 267
+    .line 265
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -661,34 +659,34 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 268
+    .line 266
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 279
+    .line 277
     :goto_0
     return-void
 
-    .line 270
+    .line 268
     :pswitch_0
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->handleRegisterClient(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 273
+    .line 271
     :pswitch_1
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->handleRequestUpdates(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 276
+    .line 274
     :pswitch_2
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->handleRemoveUpdates(Landroid/os/Message;)V
 
     goto :goto_0
 
-    .line 268
+    .line 266
     nop
 
     :pswitch_data_0
@@ -707,10 +705,10 @@
     .prologue
     const-wide/16 v7, 0x0
 
-    .line 336
+    .line 334
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 339
+    .line 337
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v5
@@ -727,18 +725,18 @@
 
     if-nez v5, :cond_1
 
-    .line 373
+    .line 371
     :cond_0
     :goto_0
     return-void
 
-    .line 343
+    .line 341
     :cond_1
     invoke-virtual {p1}, Landroid/location/Location;->getProvider()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 344
+    .line 342
     .local v1, provider:Ljava/lang/String;
     sget-object v6, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
@@ -771,17 +769,17 @@
 
     invoke-static {v6, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 345
+    .line 343
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->lastKnownLocations:Ljava/util/HashMap;
 
     invoke-virtual {v5, v1, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 346
+    .line 344
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v3
 
-    .line 347
+    .line 345
     .local v3, uptime:J
     invoke-direct {p0, v1, p2}, Lcom/google/glass/location/LocationService;->getProviderState(Ljava/lang/String;Z)Lcom/google/glass/location/LocationService$RequestState;
 
@@ -789,7 +787,7 @@
 
     iput-wide v3, v5, Lcom/google/glass/location/LocationService$RequestState;->lastLocationTime:J
 
-    .line 349
+    .line 347
     if-nez p2, :cond_2
 
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->isStale(Landroid/location/Location;)Z
@@ -798,7 +796,7 @@
 
     if-nez v5, :cond_5
 
-    .line 350
+    .line 348
     :cond_2
     const/4 v0, 0x0
 
@@ -812,7 +810,7 @@
 
     if-ge v0, v5, :cond_6
 
-    .line 351
+    .line 349
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -821,7 +819,7 @@
 
     check-cast v2, Lcom/google/glass/location/LocationRequest;
 
-    .line 352
+    .line 350
     .local v2, request:Lcom/google/glass/location/LocationRequest;
     invoke-virtual {v2}, Lcom/google/glass/location/LocationRequest;->getProvider()Ljava/lang/String;
 
@@ -833,16 +831,16 @@
 
     if-eqz v5, :cond_3
 
-    .line 353
+    .line 351
     invoke-direct {p0, v2, p1}, Lcom/google/glass/location/LocationService;->sendLocationMessage(Lcom/google/glass/location/LocationRequest;Landroid/location/Location;)V
 
-    .line 350
+    .line 348
     :cond_3
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 344
+    .line 342
     .end local v0           #i:I
     .end local v2           #request:Lcom/google/glass/location/LocationRequest;
     .end local v3           #uptime:J
@@ -851,7 +849,7 @@
 
     goto :goto_1
 
-    .line 357
+    .line 355
     .restart local v3       #uptime:J
     :cond_5
     sget-object v5, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
@@ -860,14 +858,14 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 360
+    .line 358
     :cond_6
     if-eqz p2, :cond_0
 
-    .line 362
+    .line 360
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->updateLocationRequests()V
 
-    .line 365
+    .line 363
     const-string v5, "gps"
 
     invoke-virtual {v1, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -876,14 +874,14 @@
 
     if-eqz v5, :cond_7
 
-    .line 366
+    .line 364
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     iget-object v6, p0, Lcom/google/glass/location/LocationService;->gpsUpdateRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 367
+    .line 365
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     iget-object v6, p0, Lcom/google/glass/location/LocationService;->gpsUpdateRunnable:Ljava/lang/Runnable;
@@ -896,7 +894,7 @@
 
     goto/16 :goto_0
 
-    .line 368
+    .line 366
     :cond_7
     const-string v5, "network"
 
@@ -906,14 +904,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 369
+    .line 367
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     iget-object v6, p0, Lcom/google/glass/location/LocationService;->networkUpdateRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v5, v6}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 370
+    .line 368
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     iget-object v6, p0, Lcom/google/glass/location/LocationService;->networkUpdateRunnable:Ljava/lang/Runnable;
@@ -932,10 +930,10 @@
     .parameter "msg"
 
     .prologue
-    .line 283
+    .line 281
     iget v4, p1, Landroid/os/Message;->arg1:I
 
-    .line 284
+    .line 282
     .local v4, pid:I
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
@@ -947,7 +945,7 @@
 
     move-result-object v3
 
-    .line 285
+    .line 283
     .local v3, name:Ljava/lang/String;
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->outgoing:Ljava/util/HashMap;
 
@@ -959,7 +957,7 @@
 
     invoke-virtual {v5, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 286
+    .line 284
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->clientNames:Ljava/util/HashMap;
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -990,7 +988,7 @@
 
     invoke-virtual {v5, v6, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 288
+    .line 286
     sget-object v5, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -1039,7 +1037,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 292
+    .line 290
     :try_start_0
     iget-object v5, p1, Landroid/os/Message;->replyTo:Landroid/os/Messenger;
 
@@ -1057,7 +1055,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 303
+    .line 301
     :goto_0
     iget-object v5, p0, Lcom/google/glass/location/LocationService;->lastKnownLocations:Ljava/util/HashMap;
 
@@ -1083,7 +1081,7 @@
 
     check-cast v2, Landroid/location/Location;
 
-    .line 304
+    .line 302
     .local v2, location:Landroid/location/Location;
     const/4 v5, -0x1
 
@@ -1091,13 +1089,13 @@
 
     goto :goto_1
 
-    .line 298
+    .line 296
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #location:Landroid/location/Location;
     :catch_0
     move-exception v0
 
-    .line 299
+    .line 297
     .local v0, e:Landroid/os/RemoteException;
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1107,7 +1105,7 @@
 
     goto :goto_0
 
-    .line 306
+    .line 304
     .end local v0           #e:Landroid/os/RemoteException;
     .restart local v1       #i$:Ljava/util/Iterator;
     :cond_0
@@ -1119,7 +1117,7 @@
     .parameter "msg"
 
     .prologue
-    .line 320
+    .line 318
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v2
@@ -1128,22 +1126,22 @@
 
     move-result-object v1
 
-    .line 321
+    .line 319
     .local v1, request:Lcom/google/glass/location/LocationRequest;
     if-nez v1, :cond_0
 
-    .line 322
+    .line 320
     sget-object v2, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v3, "Malformed removeUpdates message!"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 333
+    .line 331
     :goto_0
     return-void
 
-    .line 326
+    .line 324
     :cond_0
     sget-object v2, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
@@ -1167,7 +1165,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 327
+    .line 325
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1180,7 +1178,7 @@
     :goto_1
     if-ltz v0, :cond_2
 
-    .line 328
+    .line 326
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1195,18 +1193,18 @@
 
     if-eqz v2, :cond_1
 
-    .line 329
+    .line 327
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 327
+    .line 325
     :cond_1
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_1
 
-    .line 332
+    .line 330
     :cond_2
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->onListenersChanged()V
 
@@ -1218,7 +1216,7 @@
     .parameter "msg"
 
     .prologue
-    .line 309
+    .line 307
     invoke-virtual {p1}, Landroid/os/Message;->getData()Landroid/os/Bundle;
 
     move-result-object v1
@@ -1227,22 +1225,22 @@
 
     move-result-object v0
 
-    .line 310
+    .line 308
     .local v0, request:Lcom/google/glass/location/LocationRequest;
     if-nez v0, :cond_0
 
-    .line 311
+    .line 309
     sget-object v1, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v2, "Malformed requestUpdates message!"
 
     invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 317
+    .line 315
     :goto_0
     return-void
 
-    .line 314
+    .line 312
     :cond_0
     sget-object v1, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
@@ -1270,12 +1268,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 315
+    .line 313
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 316
+    .line 314
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->onListenersChanged()V
 
     goto :goto_0
@@ -1291,15 +1289,15 @@
 
     const/4 v1, 0x0
 
-    .line 550
+    .line 549
     if-ne p0, p1, :cond_1
 
-    .line 556
+    .line 555
     :cond_0
     :goto_0
     return v0
 
-    .line 553
+    .line 552
     :cond_1
     if-eqz p0, :cond_2
 
@@ -1308,10 +1306,10 @@
     :cond_2
     move v0, v1
 
-    .line 554
+    .line 553
     goto :goto_0
 
-    .line 556
+    .line 555
     :cond_3
     invoke-virtual {p0}, Lcom/google/glass/location/LocationRequest;->getProvider()Ljava/lang/String;
 
@@ -1361,12 +1359,12 @@
     .locals 6
 
     .prologue
-    .line 562
+    .line 561
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 563
+    .line 562
     .local v0, now:J
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->localGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
@@ -1395,12 +1393,12 @@
     .locals 6
 
     .prologue
-    .line 567
+    .line 566
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    .line 568
+    .line 567
     .local v0, now:J
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->localNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
@@ -1434,12 +1432,12 @@
 
     const/4 v2, 0x1
 
-    .line 572
+    .line 571
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 573
+    .line 572
     .local v0, now:J
     const-string v4, "gps"
 
@@ -1453,7 +1451,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 574
+    .line 573
     invoke-virtual {p1}, Landroid/location/Location;->getTime()J
 
     move-result-wide v4
@@ -1466,7 +1464,7 @@
 
     if-ltz v4, :cond_1
 
-    .line 578
+    .line 577
     :cond_0
     :goto_0
     return v2
@@ -1474,10 +1472,10 @@
     :cond_1
     move v2, v3
 
-    .line 574
+    .line 573
     goto :goto_0
 
-    .line 575
+    .line 574
     :cond_2
     const-string v4, "network"
 
@@ -1491,7 +1489,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 576
+    .line 575
     invoke-virtual {p1}, Landroid/location/Location;->getTime()J
 
     move-result-wide v4
@@ -1514,10 +1512,10 @@
     .parameter "pid"
 
     .prologue
-    .line 403
+    .line 401
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 404
+    .line 402
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -1526,18 +1524,18 @@
 
     move-result-object v1
 
-    .line 405
+    .line 403
     .local v1, name:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->outgoing:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 406
+    .line 404
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->clientNames:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 407
+    .line 405
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -1550,7 +1548,7 @@
     :goto_0
     if-ltz v0, :cond_1
 
-    .line 408
+    .line 406
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1569,18 +1567,18 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 409
+    .line 407
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->requests:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 407
+    .line 405
     :cond_0
     add-int/lit8 v0, v0, -0x1
 
     goto :goto_0
 
-    .line 412
+    .line 410
     :cond_1
     sget-object v2, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
@@ -1626,10 +1624,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 413
+    .line 411
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->onListenersChanged()V
 
-    .line 414
+    .line 412
     return-void
 .end method
 
@@ -1637,7 +1635,7 @@
     .locals 1
 
     .prologue
-    .line 430
+    .line 428
     const-string v0, "gps"
 
     invoke-direct {p0, v0}, Lcom/google/glass/location/LocationService;->getCombinedRequest(Ljava/lang/String;)Lcom/google/glass/location/LocationRequest;
@@ -1646,7 +1644,7 @@
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
 
-    .line 431
+    .line 429
     const-string v0, "network"
 
     invoke-direct {p0, v0}, Lcom/google/glass/location/LocationService;->getCombinedRequest(Ljava/lang/String;)Lcom/google/glass/location/LocationRequest;
@@ -1655,10 +1653,10 @@
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->combinedNetworkRequest:Lcom/google/glass/location/LocationRequest;
 
-    .line 432
+    .line 430
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->updateLocationRequests()V
 
-    .line 433
+    .line 431
     return-void
 .end method
 
@@ -1667,7 +1665,7 @@
     .parameter "pid"
 
     .prologue
-    .line 417
+    .line 415
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/location/LocationService$5;
@@ -1676,7 +1674,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 423
+    .line 421
     return-void
 .end method
 
@@ -1687,7 +1685,7 @@
     .parameter "location"
 
     .prologue
-    .line 380
+    .line 378
     const/4 v1, 0x0
 
     const/16 v2, 0x65
@@ -1696,21 +1694,21 @@
 
     move-result-object v0
 
-    .line 381
+    .line 379
     .local v0, message:Landroid/os/Message;
     iput p2, v0, Landroid/os/Message;->arg1:I
 
-    .line 382
+    .line 380
     iput-object p3, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 383
+    .line 381
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-direct {p0, v1, v0}, Lcom/google/glass/location/LocationService;->sendMessage(Ljava/lang/Integer;Landroid/os/Message;)V
 
-    .line 384
+    .line 382
     return-void
 .end method
 
@@ -1720,7 +1718,7 @@
     .parameter "location"
 
     .prologue
-    .line 376
+    .line 374
     invoke-virtual {p1}, Lcom/google/glass/location/LocationRequest;->getPid()I
 
     move-result v0
@@ -1731,7 +1729,7 @@
 
     invoke-direct {p0, v0, v1, p2}, Lcom/google/glass/location/LocationService;->sendLocationMessage(IILandroid/location/Location;)V
 
-    .line 377
+    .line 375
     return-void
 .end method
 
@@ -1741,7 +1739,7 @@
     .parameter "msg"
 
     .prologue
-    .line 387
+    .line 385
     iget-object v2, p0, Lcom/google/glass/location/LocationService;->outgoing:Ljava/util/HashMap;
 
     invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1750,11 +1748,11 @@
 
     check-cast v1, Landroid/os/Messenger;
 
-    .line 388
+    .line 386
     .local v1, messenger:Landroid/os/Messenger;
     if-nez v1, :cond_0
 
-    .line 389
+    .line 387
     sget-object v2, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1777,11 +1775,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 399
+    .line 397
     :goto_0
     return-void
 
-    .line 394
+    .line 392
     :cond_0
     :try_start_0
     invoke-virtual {v1, p2}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
@@ -1790,11 +1788,11 @@
 
     goto :goto_0
 
-    .line 395
+    .line 393
     :catch_0
     move-exception v0
 
-    .line 397
+    .line 395
     .local v0, e:Landroid/os/RemoteException;
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService;->onClientDisconnected(Ljava/lang/Integer;)V
 
@@ -1802,28 +1800,130 @@
 .end method
 
 .method private updateLocationRequests()V
-    .locals 9
+    .locals 11
 
     .prologue
-    .line 441
+    const/4 v9, 0x0
+
+    const/4 v10, 0x1
+
+    .line 439
     const/4 v6, 0x0
 
-    .line 460
+    .line 442
     .local v6, changed:Z
+    sget-object v0, Lcom/google/glass/util/Labs$Feature;->GPS_ENABLE_LOCAL:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
+
+    const-string v1, "gps"
+
+    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->getProvider(Ljava/lang/String;)Landroid/location/LocationProvider;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
+
+    iget-object v1, p0, Lcom/google/glass/location/LocationService;->localGpsState:Lcom/google/glass/location/LocationService$RequestState;
+
+    iget-object v1, v1, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
+
+    invoke-static {v0, v1}, Lcom/google/glass/location/LocationService;->hasSameRequestParameters(Lcom/google/glass/location/LocationRequest;Lcom/google/glass/location/LocationRequest;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    .line 445
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
+
+    iget-object v1, p0, Lcom/google/glass/location/LocationService;->localGpsListener:Lcom/google/glass/location/LocationService$LocalLocationListener;
+
+    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
+
+    .line 446
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
+
+    iget-object v1, p0, Lcom/google/glass/location/LocationService;->localGpsListener:Lcom/google/glass/location/LocationService$LocalLocationListener;
+
+    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeGpsStatusListener(Landroid/location/GpsStatus$Listener;)V
+
+    .line 447
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
+
+    if-eqz v0, :cond_0
+
+    .line 448
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
+
+    const-string v1, "gps"
+
+    iget-object v2, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
+
+    invoke-virtual {v2}, Lcom/google/glass/location/LocationRequest;->getMinTime()J
+
+    move-result-wide v2
+
+    iget-object v4, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
+
+    invoke-virtual {v4}, Lcom/google/glass/location/LocationRequest;->getMinDistance()F
+
+    move-result v4
+
+    iget-object v5, p0, Lcom/google/glass/location/LocationService;->localGpsListener:Lcom/google/glass/location/LocationService$LocalLocationListener;
+
+    invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
+
+    .line 451
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
+
+    iget-object v1, p0, Lcom/google/glass/location/LocationService;->localGpsListener:Lcom/google/glass/location/LocationService$LocalLocationListener;
+
+    invoke-virtual {v0, v1}, Landroid/location/LocationManager;->addGpsStatusListener(Landroid/location/GpsStatus$Listener;)Z
+
+    .line 453
+    :cond_0
+    iget-object v0, p0, Lcom/google/glass/location/LocationService;->localGpsState:Lcom/google/glass/location/LocationService$RequestState;
+
+    iget-object v1, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
+
+    iput-object v1, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
+
+    .line 454
+    const/4 v6, 0x1
+
+    .line 458
+    :cond_1
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->isLocalGpsLocationStale()Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_9
 
     iget-object v7, p0, Lcom/google/glass/location/LocationService;->combinedGpsRequest:Lcom/google/glass/location/LocationRequest;
 
-    .line 461
+    .line 459
     .local v7, remoteGpsRequest:Lcom/google/glass/location/LocationRequest;
     :goto_0
+    sget-object v0, Lcom/google/glass/util/Labs$Feature;->GPS_ENABLE_REMOTE:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_3
 
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
@@ -1833,19 +1933,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_3
 
-    .line 463
+    .line 462
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     const-string v1, "gps"
 
     invoke-interface {v0, v1}, Lcom/google/glass/location/LocationProxy;->removeLocationUpdates(Ljava/lang/String;)V
 
-    .line 464
-    if-eqz v7, :cond_0
+    .line 463
+    if-eqz v7, :cond_2
 
-    .line 465
+    .line 464
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     const-string v1, "gps"
@@ -1862,21 +1962,21 @@
 
     move-result v4
 
-    const/4 v5, 0x1
+    move v5, v10
 
     invoke-interface/range {v0 .. v5}, Lcom/google/glass/location/LocationProxy;->requestLocationUpdates(Ljava/lang/String;JFZ)V
 
-    .line 468
-    :cond_0
+    .line 467
+    :cond_2
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
     iput-object v7, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 469
+    .line 468
     const/4 v6, 0x1
 
-    .line 473
-    :cond_1
+    .line 472
+    :cond_3
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
     const-string v1, "network"
@@ -1885,7 +1985,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_5
 
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->combinedNetworkRequest:Lcom/google/glass/location/LocationRequest;
 
@@ -1897,21 +1997,21 @@
 
     move-result v0
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_5
 
-    .line 475
+    .line 474
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->localNetworkListener:Landroid/location/LocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 476
+    .line 475
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->combinedNetworkRequest:Lcom/google/glass/location/LocationRequest;
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_4
 
-    .line 477
+    .line 476
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
     const-string v1, "network"
@@ -1932,33 +2032,33 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    .line 481
-    :cond_2
+    .line 480
+    :cond_4
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->combinedNetworkRequest:Lcom/google/glass/location/LocationRequest;
 
     iput-object v1, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 482
+    .line 481
     const/4 v6, 0x1
 
-    .line 486
-    :cond_3
+    .line 485
+    :cond_5
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->isLocalNetworkLocationStale()Z
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_a
 
     iget-object v8, p0, Lcom/google/glass/location/LocationService;->combinedNetworkRequest:Lcom/google/glass/location/LocationRequest;
 
-    .line 488
+    .line 487
     .local v8, remoteNetworkRequest:Lcom/google/glass/location/LocationRequest;
     :goto_1
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_7
 
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
@@ -1968,19 +2068,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_7
 
-    .line 490
+    .line 489
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     const-string v1, "network"
 
     invoke-interface {v0, v1}, Lcom/google/glass/location/LocationProxy;->removeLocationUpdates(Ljava/lang/String;)V
 
-    .line 491
-    if-eqz v8, :cond_4
+    .line 490
+    if-eqz v8, :cond_6
 
-    .line 492
+    .line 491
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     const-string v1, "network"
@@ -1997,24 +2097,24 @@
 
     move-result v4
 
-    const/4 v5, 0x1
+    move v5, v10
 
     invoke-interface/range {v0 .. v5}, Lcom/google/glass/location/LocationProxy;->requestLocationUpdates(Ljava/lang/String;JFZ)V
 
-    .line 495
-    :cond_4
+    .line 494
+    :cond_6
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
     iput-object v8, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 496
+    .line 495
     const/4 v6, 0x1
 
-    .line 499
-    :cond_5
-    if-eqz v6, :cond_6
+    .line 498
+    :cond_7
+    if-eqz v6, :cond_8
 
-    .line 500
+    .line 499
     sget-object v1, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -2031,7 +2131,7 @@
 
     iget-object v0, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_b
 
     const-string v0, "OFF"
 
@@ -2050,7 +2150,7 @@
 
     iget-object v0, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    if-nez v0, :cond_a
+    if-nez v0, :cond_c
 
     const-string v0, "OFF"
 
@@ -2069,7 +2169,7 @@
 
     iget-object v0, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    if-nez v0, :cond_b
+    if-nez v0, :cond_d
 
     const-string v0, "OFF"
 
@@ -2088,7 +2188,7 @@
 
     iget-object v0, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_e
 
     const-string v0, "OFF"
 
@@ -2103,43 +2203,43 @@
 
     invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 506
-    :cond_6
+    .line 505
+    :cond_8
     return-void
 
-    .line 460
     .end local v7           #remoteGpsRequest:Lcom/google/glass/location/LocationRequest;
     .end local v8           #remoteNetworkRequest:Lcom/google/glass/location/LocationRequest;
-    :cond_7
-    const/4 v7, 0x0
+    :cond_9
+    move-object v7, v9
 
+    .line 458
     goto/16 :goto_0
 
-    .line 486
     .restart local v7       #remoteGpsRequest:Lcom/google/glass/location/LocationRequest;
-    :cond_8
-    const/4 v8, 0x0
+    :cond_a
+    move-object v8, v9
 
+    .line 485
     goto/16 :goto_1
 
-    .line 500
+    .line 499
     .restart local v8       #remoteNetworkRequest:Lcom/google/glass/location/LocationRequest;
-    :cond_9
+    :cond_b
     const-string v0, "ON"
 
     goto :goto_2
 
-    :cond_a
+    :cond_c
     const-string v0, "ON"
 
     goto :goto_3
 
-    :cond_b
+    :cond_d
     const-string v0, "ON"
 
     goto :goto_4
 
-    :cond_c
+    :cond_e
     const-string v0, "ON"
 
     goto :goto_5
@@ -2154,7 +2254,7 @@
     .parameter "args"
 
     .prologue
-    .line 591
+    .line 590
     monitor-enter p0
 
     :try_start_0
@@ -2182,7 +2282,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 592
+    .line 591
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2205,12 +2305,12 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 594
+    .line 593
     const-string v4, "\nClient Processes:\n"
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 595
+    .line 594
     iget-object v4, p0, Lcom/google/glass/location/LocationService;->clientNames:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -2235,7 +2335,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 596
+    .line 595
     .local v2, name:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2267,7 +2367,7 @@
 
     goto :goto_0
 
-    .line 591
+    .line 590
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #name:Ljava/lang/String;
     :catchall_0
@@ -2277,7 +2377,7 @@
 
     throw v4
 
-    .line 599
+    .line 598
     .restart local v1       #i$:Ljava/util/Iterator;
     :cond_0
     :try_start_1
@@ -2285,7 +2385,7 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 600
+    .line 599
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -2298,7 +2398,7 @@
 
     if-ge v0, v4, :cond_1
 
-    .line 601
+    .line 600
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -2341,18 +2441,18 @@
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 600
+    .line 599
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 604
+    .line 603
     :cond_1
     const-string v4, "\nLast Known Locations:\n"
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 605
+    .line 604
     iget-object v4, p0, Lcom/google/glass/location/LocationService;->lastKnownLocations:Ljava/util/HashMap;
 
     invoke-virtual {v4}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -2376,7 +2476,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 606
+    .line 605
     .local v3, provider:Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -2422,14 +2522,14 @@
 
     goto :goto_2
 
-    .line 609
+    .line 608
     .end local v3           #provider:Ljava/lang/String;
     :cond_2
     const-string v4, "\nState:"
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 610
+    .line 609
     const-string v4, "\n  Local GPS:      "
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -2444,7 +2544,7 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 611
+    .line 610
     const-string v4, "\n  Remote GPS:     "
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -2459,7 +2559,7 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 612
+    .line 611
     const-string v4, "\n  Local Network:  "
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -2474,7 +2574,7 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 613
+    .line 612
     const-string v4, "\n  Remote Network: "
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
@@ -2489,14 +2589,14 @@
 
     invoke-virtual {v4, v5}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
 
-    .line 614
+    .line 613
     const-string v4, "\n"
 
     invoke-virtual {p2, v4}, Ljava/io/PrintWriter;->append(Ljava/lang/CharSequence;)Ljava/io/PrintWriter;
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 615
+    .line 614
     monitor-exit p0
 
     return-void
@@ -2508,32 +2608,32 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 257
+    .line 255
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 258
+    .line 256
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v1, "onCompanionDisconnected"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 259
+    .line 257
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/location/LocationService;->connectedToCompanion:Z
 
-    .line 260
+    .line 258
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteGpsState:Lcom/google/glass/location/LocationService$RequestState;
 
     iput-object v2, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 261
+    .line 259
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteNetworkState:Lcom/google/glass/location/LocationService$RequestState;
 
     iput-object v2, v0, Lcom/google/glass/location/LocationService$RequestState;->request:Lcom/google/glass/location/LocationRequest;
 
-    .line 262
+    .line 260
     return-void
 .end method
 
@@ -2542,14 +2642,14 @@
     .parameter "intent"
 
     .prologue
-    .line 185
+    .line 183
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v1, "onBind"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 186
+    .line 184
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->incoming:Landroid/os/Messenger;
 
     invoke-virtual {v0}, Landroid/os/Messenger;->getBinder()Landroid/os/IBinder;
@@ -2563,7 +2663,7 @@
     .locals 2
 
     .prologue
-    .line 226
+    .line 224
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/location/LocationService$2;
@@ -2572,7 +2672,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 232
+    .line 230
     return-void
 .end method
 
@@ -2580,7 +2680,7 @@
     .locals 2
 
     .prologue
-    .line 236
+    .line 234
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->handler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/location/LocationService$3;
@@ -2589,7 +2689,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 242
+    .line 240
     return-void
 .end method
 
@@ -2597,20 +2697,20 @@
     .locals 2
 
     .prologue
-    .line 191
+    .line 189
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v1, "onCreate"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 192
+    .line 190
     sput-object p0, Lcom/google/glass/location/LocationService;->runningInstance:Lcom/google/glass/location/LocationService;
 
-    .line 193
+    .line 191
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
-    .line 195
+    .line 193
     const-string v0, "location"
 
     invoke-virtual {p0, v0}, Lcom/google/glass/location/LocationService;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -2621,10 +2721,10 @@
 
     iput-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
-    .line 196
+    .line 194
     invoke-direct {p0}, Lcom/google/glass/location/LocationService;->updateLocationRequests()V
 
-    .line 197
+    .line 195
     return-void
 .end method
 
@@ -2634,41 +2734,41 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 201
+    .line 199
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     const-string v1, "onDestroy"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
+    .line 200
     sput-object v2, Lcom/google/glass/location/LocationService;->runningInstance:Lcom/google/glass/location/LocationService;
 
-    .line 205
+    .line 203
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     if-eqz v0, :cond_0
 
-    .line 206
+    .line 204
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     const-string v1, "gps"
 
     invoke-interface {v0, v1}, Lcom/google/glass/location/LocationProxy;->removeLocationUpdates(Ljava/lang/String;)V
 
-    .line 207
+    .line 205
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     const-string v1, "network"
 
     invoke-interface {v0, v1}, Lcom/google/glass/location/LocationProxy;->removeLocationUpdates(Ljava/lang/String;)V
 
-    .line 208
+    .line 206
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     invoke-interface {v0, v2}, Lcom/google/glass/location/LocationProxy;->setLocationListener(Landroid/location/LocationListener;)V
 
-    .line 210
+    .line 208
     :cond_0
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
@@ -2676,24 +2776,24 @@
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 211
+    .line 209
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->localGpsListener:Lcom/google/glass/location/LocationService$LocalLocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeGpsStatusListener(Landroid/location/GpsStatus$Listener;)V
 
-    .line 212
+    .line 210
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->localProvider:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->localNetworkListener:Landroid/location/LocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 214
+    .line 212
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 215
+    .line 213
     return-void
 .end method
 
@@ -2702,7 +2802,7 @@
     .parameter "proxy"
 
     .prologue
-    .line 219
+    .line 217
     sget-object v0, Lcom/google/glass/location/LocationService;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2733,16 +2833,16 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 220
+    .line 218
     iput-object p1, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
-    .line 221
+    .line 219
     iget-object v0, p0, Lcom/google/glass/location/LocationService;->remoteProvider:Lcom/google/glass/location/LocationProxy;
 
     iget-object v1, p0, Lcom/google/glass/location/LocationService;->remoteLocationListener:Landroid/location/LocationListener;
 
     invoke-interface {v0, v1}, Lcom/google/glass/location/LocationProxy;->setLocationListener(Landroid/location/LocationListener;)V
 
-    .line 222
+    .line 220
     return-void
 .end method

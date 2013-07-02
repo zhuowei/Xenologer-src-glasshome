@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 319
+    .line 322
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->val$menuItem:Lcom/google/glass/widget/TypophileTextView;
@@ -58,10 +58,10 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 322
+    .line 325
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
-    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedMainMenuItem:Lcom/google/glass/widget/TypophileTextView;
+    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedPrimaryMenuItem:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMenu;->access$500(Lcom/google/glass/home/voice/VoiceMenu;)Lcom/google/glass/widget/TypophileTextView;
 
     move-result-object v1
@@ -74,7 +74,7 @@
 
     invoke-virtual {v1, v2}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 323
+    .line 326
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->val$menuItem:Lcom/google/glass/widget/TypophileTextView;
 
     invoke-virtual {v1}, Lcom/google/glass/widget/TypophileTextView;->getY()F
@@ -103,31 +103,31 @@
 
     add-float v0, v1, v2
 
-    .line 325
+    .line 328
     .local v0, startY:F
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
-    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedMainMenuItem:Lcom/google/glass/widget/TypophileTextView;
+    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedPrimaryMenuItem:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMenu;->access$500(Lcom/google/glass/home/voice/VoiceMenu;)Lcom/google/glass/widget/TypophileTextView;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lcom/google/glass/widget/TypophileTextView;->setTranslationY(F)V
 
-    .line 326
+    .line 329
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
-    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedMainMenuItem:Lcom/google/glass/widget/TypophileTextView;
+    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedPrimaryMenuItem:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMenu;->access$500(Lcom/google/glass/home/voice/VoiceMenu;)Lcom/google/glass/widget/TypophileTextView;
 
     move-result-object v1
 
     invoke-virtual {v1, v3}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 327
+    .line 330
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
-    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->menuItemsLayout:Landroid/widget/LinearLayout;
+    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->primaryMenuLayout:Landroid/widget/LinearLayout;
     invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMenu;->access$600(Lcom/google/glass/home/voice/VoiceMenu;)Landroid/widget/LinearLayout;
 
     move-result-object v1
@@ -136,10 +136,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 328
+    .line 331
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
-    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedMainMenuItem:Lcom/google/glass/widget/TypophileTextView;
+    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedPrimaryMenuItem:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {v1}, Lcom/google/glass/home/voice/VoiceMenu;->access$500(Lcom/google/glass/home/voice/VoiceMenu;)Lcom/google/glass/widget/TypophileTextView;
 
     move-result-object v1
@@ -174,6 +174,6 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 341
+    .line 344
     return-void
 .end method

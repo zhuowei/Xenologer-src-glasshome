@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/settings/BluetoothSettingsItemView$2;->onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    value = Lcom/google/glass/home/settings/BluetoothSettingsItemView$2;->onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;

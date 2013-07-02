@@ -44,7 +44,7 @@
     .parameter
 
     .prologue
-    .line 401
+    .line 428
     iput-object p1, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->this$0:Lcom/google/glass/net/ProtoRequestDispatcher;
 
     iput-object p2, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->val$latch:Ljava/util/concurrent/CountDownLatch;
@@ -64,12 +64,12 @@
     .locals 1
 
     .prologue
-    .line 404
+    .line 431
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 405
+    .line 432
     return-void
 .end method
 
@@ -78,17 +78,17 @@
     .parameter "errorCode"
 
     .prologue
-    .line 408
+    .line 435
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->val$errorCodeReference:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 409
+    .line 436
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 410
+    .line 437
     return-void
 .end method
 
@@ -102,18 +102,18 @@
     .end annotation
 
     .prologue
-    .line 413
+    .line 440
     .local p1, responseProto:Lcom/google/protobuf/AbstractMessage;,"TT;"
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->val$responseProtoReference:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 414
+    .line 441
     iget-object v0, p0, Lcom/google/glass/net/ProtoRequestDispatcher$2;->val$latch:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    .line 415
+    .line 442
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .parameter "x0"
 
     .prologue
-    .line 401
+    .line 428
     check-cast p1, Lcom/google/protobuf/AbstractMessage;
 
     .end local p1

@@ -29,8 +29,55 @@
     .locals 0
 
     .prologue
-    .line 10
+    .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
+.end method
+
+.method public static createSendMessageIntent(IILjava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    .locals 3
+    .parameter "triggerMethod"
+    .parameter "messageType"
+    .parameter "toId"
+    .parameter "toName"
+
+    .prologue
+    .line 64
+    new-instance v0, Landroid/content/Intent;
+
+    const-string v1, "com.google.glass.ACTION_SEND_VOICE_MESSAGE"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 65
+    .local v0, voiceMessageIntent:Landroid/content/Intent;
+    const-string v1, "trigger_method"
+
+    invoke-virtual {v0, v1, p0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 66
+    const-string v1, "MESSAGE_TYPE"
+
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    .line 67
+    const-string v1, "TO_ID"
+
+    invoke-virtual {v0, v1, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 68
+    const-string v1, "TO_NAME"
+
+    invoke-virtual {v0, v1, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 69
+    const-string v1, "should_finish_turn_screen_off"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 70
+    return-object v0
 .end method

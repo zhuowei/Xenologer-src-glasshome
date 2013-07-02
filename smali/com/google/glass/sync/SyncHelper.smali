@@ -3,6 +3,14 @@
 .source "SyncHelper.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/glass/sync/SyncHelper$SyncSource;
+    }
+.end annotation
+
+
 # static fields
 .field private static final BACKOFF_SYNC_MODE_MAP:Ljava/util/Map; = null
     .annotation system Ldalvik/annotation/Signature;
@@ -15,8 +23,6 @@
         }
     .end annotation
 .end field
-
-.field public static final CONNECTIVITY_ESTABLISHED_SYNC:Ljava/lang/String; = "com.google.glass.sync.CONNECTIVITY_ESTABLISHED_SYNC"
 
 #the value of this static final field might be set in the static constructor
 .field private static final DEFAULT_SYNC_INTERVAL_SECONDS:J = 0x0L
@@ -59,7 +65,7 @@
 
     sput-object v0, Lcom/google/glass/sync/SyncHelper;->TAG:Ljava/lang/String;
 
-    .line 43
+    .line 56
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x3c
@@ -70,7 +76,7 @@
 
     sput-wide v0, Lcom/google/glass/sync/SyncHelper;->DEFAULT_SYNC_INTERVAL_SECONDS:J
 
-    .line 46
+    .line 59
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0xa
@@ -81,14 +87,14 @@
 
     sput-wide v0, Lcom/google/glass/sync/SyncHelper;->LOCATION_SYNC_INTERVAL_SECONDS:J
 
-    .line 49
+    .line 62
     invoke-static {}, Lcom/google/common/collect/Maps;->newConcurrentMap()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/glass/sync/SyncHelper;->LAST_SYNC_TIME_MAP:Ljava/util/Map;
 
-    .line 56
+    .line 69
     invoke-static {}, Lcom/google/common/collect/Maps;->newConcurrentMap()Ljava/util/concurrent/ConcurrentMap;
 
     move-result-object v0
@@ -102,10 +108,10 @@
     .locals 0
 
     .prologue
-    .line 165
+    .line 170
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 167
+    .line 172
     return-void
 .end method
 
@@ -135,15 +141,15 @@
     .end annotation
 
     .prologue
-    .line 161
+    .line 166
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
-    .line 162
+    .line 167
     sget-object v0, Lcom/google/glass/sync/SyncHelper;->LAST_SYNC_TIME_MAP:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->clear()V
 
-    .line 163
+    .line 168
     return-void
 .end method
 
@@ -155,33 +161,33 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 65
+    .line 78
     invoke-static {p1}, Lcom/google/glass/sync/SyncHelper;->getSyncIntervalSeconds(Ljava/lang/String;)J
 
     move-result-wide v1
 
-    .line 66
+    .line 79
     .local v1, intervalSeconds:J
     invoke-static {p0, p1, v4}, Landroid/content/ContentResolver;->setIsSyncable(Landroid/accounts/Account;Ljava/lang/String;I)V
 
-    .line 67
+    .line 80
     invoke-static {p0, p1, v4}, Landroid/content/ContentResolver;->setSyncAutomatically(Landroid/accounts/Account;Ljava/lang/String;Z)V
 
-    .line 68
+    .line 81
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 69
+    .line 82
     .local v0, bundle:Landroid/os/Bundle;
     const-string v3, "com.google.glass.sync.PERIODIC_SYNC"
 
     invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 70
+    .line 83
     invoke-static {p0, p1, v0, v1, v2}, Landroid/content/ContentResolver;->addPeriodicSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V
 
-    .line 71
+    .line 84
     return-void
 .end method
 
@@ -190,7 +196,7 @@
     .parameter "authority"
 
     .prologue
-    .line 155
+    .line 160
     const-string v0, "com.google.glass.location"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -210,27 +216,13 @@
     goto :goto_0
 .end method
 
-.method public static shouldPerformConnectivityEstablishedSync(Lcom/google/glass/util/Clock;Ljava/lang/String;)Z
-    .locals 1
-    .parameter "clock"
-    .parameter "authority"
-
-    .prologue
-    .line 151
-    invoke-static {p0, p1}, Lcom/google/glass/sync/SyncHelper;->shouldPerformPeriodicSync(Lcom/google/glass/util/Clock;Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public static shouldPerformPeriodicSync(Lcom/google/glass/util/Clock;Ljava/lang/String;)Z
     .locals 7
     .parameter "clock"
     .parameter "authority"
 
     .prologue
-    .line 140
+    .line 153
     sget-object v4, Lcom/google/glass/sync/SyncHelper;->LAST_SYNC_TIME_MAP:Ljava/util/Map;
 
     invoke-interface {v4, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
@@ -251,7 +243,7 @@
 
     move-result-wide v2
 
-    .line 142
+    .line 155
     .local v2, lastSyncTime:J
     :goto_0
     sget-object v4, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
@@ -264,7 +256,7 @@
 
     move-result-wide v0
 
-    .line 143
+    .line 156
     .local v0, intervalMillis:J
     invoke-interface {p0}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
 
@@ -281,7 +273,7 @@
     :goto_1
     return v4
 
-    .line 140
+    .line 153
     .end local v0           #intervalMillis:J
     .end local v2           #lastSyncTime:J
     :cond_0
@@ -289,7 +281,7 @@
 
     goto :goto_0
 
-    .line 143
+    .line 156
     .restart local v0       #intervalMillis:J
     .restart local v2       #lastSyncTime:J
     :cond_1
@@ -298,28 +290,28 @@
     goto :goto_1
 .end method
 
-.method public static triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
+.method public static triggerSync(Landroid/accounts/Account;Ljava/lang/String;Lcom/google/glass/sync/SyncHelper$SyncSource;)V
     .locals 3
     .parameter "primaryAccount"
     .parameter "authority"
-    .parameter "extras"
+    .parameter "syncSource"
 
     .prologue
-    .line 93
+    .line 105
     if-eqz p0, :cond_0
 
-    .line 94
+    .line 106
     new-instance v0, Lcom/google/glass/sync/SyncHelper$1;
 
-    invoke-direct {v0, p2, p1, p0}, Lcom/google/glass/sync/SyncHelper$1;-><init>(Landroid/os/Bundle;Ljava/lang/String;Landroid/accounts/Account;)V
+    invoke-direct {v0, p2, p1, p0}, Lcom/google/glass/sync/SyncHelper$1;-><init>(Lcom/google/glass/sync/SyncHelper$SyncSource;Ljava/lang/String;Landroid/accounts/Account;)V
 
     invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
 
-    .line 120
+    .line 133
     :goto_0
     return-void
 
-    .line 118
+    .line 131
     :cond_0
     sget-object v0, Lcom/google/glass/sync/SyncHelper;->TAG:Ljava/lang/String;
 
@@ -352,29 +344,14 @@
     goto :goto_0
 .end method
 
-.method public static triggerSync(Landroid/content/Context;Ljava/lang/String;)V
-    .locals 1
-    .parameter "context"
-    .parameter "authority"
-
-    .prologue
-    .line 77
-    const/4 v0, 0x0
-
-    invoke-static {p0, p1, v0}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
-
-    .line 78
-    return-void
-.end method
-
-.method public static triggerSync(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
+.method public static triggerSync(Landroid/content/Context;Ljava/lang/String;Lcom/google/glass/sync/SyncHelper$SyncSource;)V
     .locals 2
     .parameter "context"
     .parameter "authority"
-    .parameter "extras"
+    .parameter "syncSource"
 
     .prologue
-    .line 84
+    .line 90
     new-instance v1, Lcom/google/glass/util/AuthUtils;
 
     invoke-direct {v1, p0}, Lcom/google/glass/util/AuthUtils;-><init>(Landroid/content/Context;)V
@@ -383,11 +360,11 @@
 
     move-result-object v0
 
-    .line 85
+    .line 91
     .local v0, primaryAccount:Landroid/accounts/Account;
-    invoke-static {v0, p1, p2}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-static {v0, p1, p2}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Lcom/google/glass/sync/SyncHelper$SyncSource;)V
 
-    .line 86
+    .line 92
     return-void
 .end method
 
@@ -397,7 +374,7 @@
     .parameter "shouldBackoff"
 
     .prologue
-    .line 132
+    .line 145
     sget-object v0, Lcom/google/glass/sync/SyncHelper;->BACKOFF_SYNC_MODE_MAP:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -406,7 +383,7 @@
 
     invoke-interface {v0, p0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 133
+    .line 146
     return-void
 .end method
 
@@ -416,7 +393,7 @@
     .parameter "authority"
 
     .prologue
-    .line 124
+    .line 137
     sget-object v0, Lcom/google/glass/sync/SyncHelper;->LAST_SYNC_TIME_MAP:Ljava/util/Map;
 
     invoke-interface {p0}, Lcom/google/glass/util/Clock;->currentTimeMillis()J
@@ -429,6 +406,6 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 125
+    .line 138
     return-void
 .end method

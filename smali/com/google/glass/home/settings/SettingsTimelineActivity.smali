@@ -14,7 +14,7 @@
     .locals 0
 
     .prologue
-    .line 17
+    .line 15
     invoke-direct {p0}, Lcom/google/glass/home/timeline/TimelineActivity;-><init>()V
 
     return-void
@@ -22,37 +22,11 @@
 
 
 # virtual methods
-.method public getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
-    .locals 1
-
-    .prologue
-    .line 79
-    sget-object v0, Lcom/google/glass/util/Labs$Feature;->OK_GLASS_EVERYWHERE:Lcom/google/glass/util/Labs$Feature;
-
-    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 80
-    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->GUARD:Lcom/google/glass/voice/VoiceConfigDescriptor;
-
-    .line 82
-    :goto_0
-    return-object v0
-
-    :cond_0
-    sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
-
-    goto :goto_0
-.end method
-
 .method protected getTimelineView()Lcom/google/glass/home/settings/SettingsTimelineView;
     .locals 1
 
     .prologue
-    .line 74
+    .line 72
     iget-object v0, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->timeline:Lcom/google/glass/home/settings/SettingsTimelineView;
 
     return-object v0
@@ -62,7 +36,7 @@
     .locals 1
 
     .prologue
-    .line 17
+    .line 15
     invoke-virtual {p0}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->getTimelineView()Lcom/google/glass/home/settings/SettingsTimelineView;
 
     move-result-object v0
@@ -74,7 +48,7 @@
     .locals 1
 
     .prologue
-    .line 60
+    .line 58
     invoke-virtual {p0}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->getTimelineView()Lcom/google/glass/home/settings/SettingsTimelineView;
 
     move-result-object v0
@@ -85,10 +59,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 61
+    .line 59
     const/4 v0, 0x1
 
-    .line 63
+    .line 61
     :goto_0
     return v0
 
@@ -105,17 +79,17 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 35
+    .line 33
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 36
+    .line 34
     new-instance v1, Lcom/google/glass/home/settings/SettingsAdapter;
 
     invoke-direct {v1, p0}, Lcom/google/glass/home/settings/SettingsAdapter;-><init>(Landroid/app/Activity;)V
 
     iput-object v1, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->adapter:Lcom/google/glass/home/settings/SettingsAdapter;
 
-    .line 37
+    .line 35
     sget v1, Lcom/google/glass/home/R$id;->timeline:I
 
     invoke-virtual {p0, v1}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->findViewById(I)Landroid/view/View;
@@ -126,14 +100,14 @@
 
     iput-object v1, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->timeline:Lcom/google/glass/home/settings/SettingsTimelineView;
 
-    .line 38
+    .line 36
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->timeline:Lcom/google/glass/home/settings/SettingsTimelineView;
 
     iget-object v2, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->adapter:Lcom/google/glass/home/settings/SettingsAdapter;
 
     invoke-virtual {v1, v2}, Lcom/google/glass/home/settings/SettingsTimelineView;->setAdapter(Landroid/widget/Adapter;)V
 
-    .line 40
+    .line 38
     sget v1, Lcom/google/glass/home/R$id;->settings_slider:I
 
     invoke-virtual {p0, v1}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->findViewById(I)Landroid/view/View;
@@ -142,13 +116,13 @@
 
     check-cast v0, Lcom/google/glass/widget/SliderView;
 
-    .line 41
+    .line 39
     .local v0, sliderView:Lcom/google/glass/widget/SliderView;
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->timeline:Lcom/google/glass/home/settings/SettingsTimelineView;
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/SliderView;->setScrollView(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 42
+    .line 40
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->adapter:Lcom/google/glass/home/settings/SettingsAdapter;
 
     invoke-virtual {v1}, Lcom/google/glass/home/settings/SettingsAdapter;->getCount()I
@@ -157,14 +131,14 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/SliderView;->setCount(I)V
 
-    .line 45
+    .line 43
     invoke-virtual {p0}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 46
+    .line 44
     return-void
 .end method
 
@@ -173,14 +147,14 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 68
+    .line 66
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {v0}, Lcom/google/glass/util/SettingsHelper;->goToSettingsCover()V
 
-    .line 69
+    .line 67
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
 
     move-result v0
@@ -193,10 +167,10 @@
     .parameter "intent"
 
     .prologue
-    .line 27
+    .line 25
     invoke-super {p0, p1}, Lcom/google/glass/home/timeline/TimelineActivity;->onNewIntent(Landroid/content/Intent;)V
 
-    .line 28
+    .line 26
     new-instance v1, Lcom/google/glass/util/SettingsHelper;
 
     invoke-direct {v1, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
@@ -209,7 +183,7 @@
 
     move-result v0
 
-    .line 29
+    .line 27
     .local v0, index:I
     invoke-virtual {p0}, Lcom/google/glass/home/settings/SettingsTimelineActivity;->getTag()Ljava/lang/String;
 
@@ -235,14 +209,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 30
+    .line 28
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsTimelineActivity;->timeline:Lcom/google/glass/home/settings/SettingsTimelineView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v0, v2}, Lcom/google/glass/home/settings/SettingsTimelineView;->setSelection(IZ)V
 
-    .line 31
+    .line 29
     return-void
 .end method
 
@@ -250,7 +224,7 @@
     .locals 1
 
     .prologue
-    .line 55
+    .line 53
     sget v0, Lcom/google/glass/home/R$layout;->settings_timeline_activity:I
 
     return v0
@@ -260,7 +234,7 @@
     .locals 1
 
     .prologue
-    .line 50
+    .line 48
     const/4 v0, 0x0
 
     return v0

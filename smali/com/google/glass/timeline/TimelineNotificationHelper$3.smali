@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 165
+    .line 182
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$3;->val$renderer:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 185
     iget-object v0, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$3;->val$renderer:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0}, Lcom/google/glass/html/HtmlRenderer;->release()V
 
-    .line 169
+    .line 186
     return-void
 .end method

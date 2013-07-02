@@ -1016,13 +1016,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 376
+    .line 377
     iput v0, p0, Lcom/google/glass/input/OrientationHelper;->offsetYaw:F
 
-    .line 377
+    .line 378
     iput v0, p0, Lcom/google/glass/input/OrientationHelper;->offsetRoll:F
 
-    .line 378
+    .line 379
+    iput v0, p0, Lcom/google/glass/input/OrientationHelper;->offsetPitch:F
+
+    .line 380
     return-void
 .end method
 
@@ -1124,5 +1127,10 @@
     iput v0, p0, Lcom/google/glass/input/OrientationHelper;->offsetRoll:F
 
     .line 370
+    iget v0, p0, Lcom/google/glass/input/OrientationHelper;->lastPitch:F
+
+    iput v0, p0, Lcom/google/glass/input/OrientationHelper;->offsetPitch:F
+
+    .line 371
     return-void
 .end method

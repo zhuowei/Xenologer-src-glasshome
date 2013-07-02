@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 316
+    .line 347
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$2;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.2;"
     iput-object p1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$2;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
@@ -50,7 +50,7 @@
     .parameter "animation"
 
     .prologue
-    .line 319
+    .line 350
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$2;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.2;"
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$2;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
@@ -62,6 +62,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->hideView(Landroid/view/View;ZZ)V
 
-    .line 320
+    .line 351
     return-void
 .end method

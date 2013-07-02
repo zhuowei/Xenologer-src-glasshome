@@ -9,9 +9,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/google/protobuf/GeneratedMessage$2;,
+        Lcom/google/protobuf/GeneratedMessage$4;,
         Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;,
         Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;,
+        Lcom/google/protobuf/GeneratedMessage$CachedDescriptorRetriever;,
         Lcom/google/protobuf/GeneratedMessage$ExtensionDescriptorRetriever;,
         Lcom/google/protobuf/GeneratedMessage$ExtendableBuilder;,
         Lcom/google/protobuf/GeneratedMessage$ExtendableMessage;,
@@ -33,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 38
+    .line 39
     const/4 v0, 0x0
 
     sput-boolean v0, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
@@ -45,10 +46,10 @@
     .locals 0
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMessage;-><init>()V
 
-    .line 41
+    .line 42
     return-void
 .end method
 
@@ -64,12 +65,27 @@
     .end annotation
 
     .prologue
-    .line 43
+    .line 44
     .local p1, builder:Lcom/google/protobuf/GeneratedMessage$Builder;,"Lcom/google/protobuf/GeneratedMessage$Builder<*>;"
     invoke-direct {p0}, Lcom/google/protobuf/AbstractMessage;-><init>()V
 
-    .line 44
+    .line 45
     return-void
+.end method
+
+.method static synthetic access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+
+    .prologue
+    .line 30
+    invoke-static {p0, p1, p2}, Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method static synthetic access$600(Lcom/google/protobuf/GeneratedMessage;)Ljava/util/Map;
@@ -77,7 +93,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29
+    .line 30
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;->getAllFieldsMutable()Ljava/util/Map;
 
     move-result-object v0
@@ -85,30 +101,15 @@
     return-object v0
 .end method
 
-.method static synthetic access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+.method static synthetic access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     .locals 1
     .parameter "x0"
     .parameter "x1"
     .parameter "x2"
 
     .prologue
-    .line 29
+    .line 30
     invoke-static {p0, p1, p2}, Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-    .parameter "x2"
-
-    .prologue
-    .line 29
-    invoke-static {p0, p1, p2}, Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -119,12 +120,12 @@
     .locals 1
 
     .prologue
-    .line 58
+    .line 59
     const/4 v0, 0x1
 
     sput-boolean v0, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
 
-    .line 59
+    .line 60
     return-void
 .end method
 
@@ -142,12 +143,12 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 76
     new-instance v3, Ljava/util/TreeMap;
 
     invoke-direct {v3}, Ljava/util/TreeMap;-><init>()V
 
-    .line 77
+    .line 78
     .local v3, result:Ljava/util/TreeMap;,"Ljava/util/TreeMap<Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
@@ -158,7 +159,7 @@
 
     move-result-object v0
 
-    .line 78
+    .line 79
     .local v0, descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getFields()Ljava/util/List;
 
@@ -183,7 +184,7 @@
 
     check-cast v1, Lcom/google/protobuf/Descriptors$FieldDescriptor;
 
-    .line 79
+    .line 80
     .local v1, field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
@@ -191,14 +192,14 @@
 
     if-eqz v5, :cond_1
 
-    .line 80
+    .line 81
     invoke-virtual {p0, v1}, Lcom/google/protobuf/GeneratedMessage;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/util/List;
 
-    .line 81
+    .line 82
     .local v4, value:Ljava/util/List;,"Ljava/util/List<*>;"
     invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
 
@@ -206,12 +207,12 @@
 
     if-nez v5, :cond_0
 
-    .line 82
+    .line 83
     invoke-virtual {v3, v1, v4}, Ljava/util/TreeMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 85
+    .line 86
     .end local v4           #value:Ljava/util/List;,"Ljava/util/List<*>;"
     :cond_1
     invoke-virtual {p0, v1}, Lcom/google/protobuf/GeneratedMessage;->hasField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Z
@@ -220,7 +221,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 86
+    .line 87
     invoke-virtual {p0, v1}, Lcom/google/protobuf/GeneratedMessage;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v5
@@ -229,7 +230,7 @@
 
     goto :goto_0
 
-    .line 90
+    .line 91
     .end local v1           #field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     :cond_2
     return-object v3
@@ -242,7 +243,7 @@
     .parameter "params"
 
     .prologue
-    .line 1481
+    .line 1577
     :try_start_0
     invoke-virtual {p0, p1, p2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
     :try_end_0
@@ -252,11 +253,11 @@
 
     return-object v1
 
-    .line 1482
+    .line 1578
     :catch_0
     move-exception v0
 
-    .line 1483
+    .line 1579
     .local v0, e:Ljava/lang/NoSuchMethodException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -308,7 +309,7 @@
     .parameter "name"
 
     .prologue
-    .line 174
+    .line 175
     invoke-static {p0}, Lcom/google/protobuf/GeneratedMessageLite;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessageLite;
 
     move-result-object v0
@@ -325,7 +326,7 @@
     .parameter "params"
 
     .prologue
-    .line 1493
+    .line 1589
     :try_start_0
     invoke-virtual {p0, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
@@ -336,11 +337,11 @@
 
     return-object v2
 
-    .line 1494
+    .line 1590
     :catch_0
     move-exception v1
 
-    .line 1495
+    .line 1591
     .local v1, e:Ljava/lang/IllegalAccessException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -350,43 +351,43 @@
 
     throw v2
 
-    .line 1498
+    .line 1594
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :catch_1
     move-exception v1
 
-    .line 1499
+    .line 1595
     .local v1, e:Ljava/lang/reflect/InvocationTargetException;
     invoke-virtual {v1}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
 
     move-result-object v0
 
-    .line 1500
+    .line 1596
     .local v0, cause:Ljava/lang/Throwable;
     instance-of v2, v0, Ljava/lang/RuntimeException;
 
     if-eqz v2, :cond_0
 
-    .line 1501
+    .line 1597
     check-cast v0, Ljava/lang/RuntimeException;
 
     .end local v0           #cause:Ljava/lang/Throwable;
     throw v0
 
-    .line 1502
+    .line 1598
     .restart local v0       #cause:Ljava/lang/Throwable;
     :cond_0
     instance-of v2, v0, Ljava/lang/Error;
 
     if-eqz v2, :cond_1
 
-    .line 1503
+    .line 1599
     check-cast v0, Ljava/lang/Error;
 
     .end local v0           #cause:Ljava/lang/Throwable;
     throw v0
 
-    .line 1505
+    .line 1601
     .restart local v0       #cause:Ljava/lang/Throwable;
     :cond_1
     new-instance v2, Ljava/lang/RuntimeException;
@@ -418,12 +419,50 @@
     .end annotation
 
     .prologue
-    .line 1227
+    .line 1228
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     const/4 v1, 0x0
 
     sget-object v2, Lcom/google/protobuf/Extension$ExtensionType;->IMMUTABLE:Lcom/google/protobuf/Extension$ExtensionType;
+
+    invoke-direct {v0, v1, p0, p1, v2}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;-><init>(Lcom/google/protobuf/GeneratedMessage$ExtensionDescriptorRetriever;Ljava/lang/Class;Lcom/google/protobuf/Message;Lcom/google/protobuf/Extension$ExtensionType;)V
+
+    return-object v0
+.end method
+
+.method public static newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;Ljava/lang/String;Ljava/lang/String;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
+    .locals 3
+    .parameter "singularType"
+    .parameter "defaultInstance"
+    .parameter "descriptorOuterClass"
+    .parameter "extensionName"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<ContainingType::",
+            "Lcom/google/protobuf/Message;",
+            "Type:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Class;",
+            "Lcom/google/protobuf/Message;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lcom/google/protobuf/GeneratedMessage$GeneratedExtension",
+            "<TContainingType;TType;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1293
+    new-instance v0, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
+
+    new-instance v1, Lcom/google/protobuf/GeneratedMessage$3;
+
+    invoke-direct {v1, p0, p2, p3}, Lcom/google/protobuf/GeneratedMessage$3;-><init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v2, Lcom/google/protobuf/Extension$ExtensionType;->MUTABLE:Lcom/google/protobuf/Extension$ExtensionType;
 
     invoke-direct {v0, v1, p0, p1, v2}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;-><init>(Lcom/google/protobuf/GeneratedMessage$ExtensionDescriptorRetriever;Ljava/lang/Class;Lcom/google/protobuf/Message;Lcom/google/protobuf/Extension$ExtensionType;)V
 
@@ -454,7 +493,7 @@
     .end annotation
 
     .prologue
-    .line 1206
+    .line 1207
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     new-instance v1, Lcom/google/protobuf/GeneratedMessage$1;
@@ -462,6 +501,44 @@
     invoke-direct {v1, p0, p1}, Lcom/google/protobuf/GeneratedMessage$1;-><init>(Lcom/google/protobuf/Message;I)V
 
     sget-object v2, Lcom/google/protobuf/Extension$ExtensionType;->IMMUTABLE:Lcom/google/protobuf/Extension$ExtensionType;
+
+    invoke-direct {v0, v1, p2, p3, v2}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;-><init>(Lcom/google/protobuf/GeneratedMessage$ExtensionDescriptorRetriever;Ljava/lang/Class;Lcom/google/protobuf/Message;Lcom/google/protobuf/Extension$ExtensionType;)V
+
+    return-object v0
+.end method
+
+.method public static newMessageScopedGeneratedExtension(Lcom/google/protobuf/Message;Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
+    .locals 3
+    .parameter "scope"
+    .parameter "name"
+    .parameter "singularType"
+    .parameter "defaultInstance"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<ContainingType::",
+            "Lcom/google/protobuf/Message;",
+            "Type:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lcom/google/protobuf/Message;",
+            "Ljava/lang/String;",
+            "Ljava/lang/Class;",
+            "Lcom/google/protobuf/Message;",
+            ")",
+            "Lcom/google/protobuf/GeneratedMessage$GeneratedExtension",
+            "<TContainingType;TType;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1267
+    new-instance v0, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
+
+    new-instance v1, Lcom/google/protobuf/GeneratedMessage$2;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/protobuf/GeneratedMessage$2;-><init>(Lcom/google/protobuf/Message;Ljava/lang/String;)V
+
+    sget-object v2, Lcom/google/protobuf/Extension$ExtensionType;->MUTABLE:Lcom/google/protobuf/Extension$ExtensionType;
 
     invoke-direct {v0, v1, p2, p3, v2}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;-><init>(Lcom/google/protobuf/GeneratedMessage$ExtensionDescriptorRetriever;Ljava/lang/Class;Lcom/google/protobuf/Message;Lcom/google/protobuf/Extension$ExtensionType;)V
 
@@ -484,7 +561,7 @@
     .end annotation
 
     .prologue
-    .line 125
+    .line 126
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;->getAllFieldsMutable()Ljava/util/Map;
 
     move-result-object v0
@@ -500,7 +577,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 71
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -518,7 +595,7 @@
     .parameter "field"
 
     .prologue
-    .line 135
+    .line 136
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -548,7 +625,7 @@
     .end annotation
 
     .prologue
-    .line 47
+    .line 48
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "This is supposed to be overridden by subclasses."
@@ -564,7 +641,7 @@
     .parameter "index"
 
     .prologue
-    .line 146
+    .line 147
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -586,7 +663,7 @@
     .parameter "field"
 
     .prologue
-    .line 140
+    .line 141
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -607,7 +684,7 @@
     .locals 2
 
     .prologue
-    .line 152
+    .line 153
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "This is supposed to be overridden by subclasses."
@@ -622,7 +699,7 @@
     .parameter "field"
 
     .prologue
-    .line 130
+    .line 131
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -646,7 +723,7 @@
     .locals 2
 
     .prologue
-    .line 170
+    .line 171
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "This is supposed to be overridden by subclasses."
@@ -662,7 +739,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 95
+    .line 96
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v5
@@ -688,7 +765,7 @@
 
     check-cast v1, Lcom/google/protobuf/Descriptors$FieldDescriptor;
 
-    .line 97
+    .line 98
     .local v1, field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRequired()Z
 
@@ -696,7 +773,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 98
+    .line 99
     invoke-virtual {p0, v1}, Lcom/google/protobuf/GeneratedMessage;->hasField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Z
 
     move-result v5
@@ -705,12 +782,12 @@
 
     move v5, v6
 
-    .line 120
+    .line 121
     .end local v1           #field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     :goto_0
     return v5
 
-    .line 103
+    .line 104
     .restart local v1       #field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     :cond_1
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getJavaType()Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
@@ -721,21 +798,21 @@
 
     if-ne v5, v7, :cond_0
 
-    .line 104
+    .line 105
     invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->isRepeated()Z
 
     move-result v5
 
     if-eqz v5, :cond_3
 
-    .line 106
+    .line 107
     invoke-virtual {p0, v1}, Lcom/google/protobuf/GeneratedMessage;->getField(Lcom/google/protobuf/Descriptors$FieldDescriptor;)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/util/List;
 
-    .line 107
+    .line 108
     .local v4, messageList:Ljava/util/List;,"Ljava/util/List<Lcom/google/protobuf/Message;>;"
     invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -755,7 +832,7 @@
 
     check-cast v0, Lcom/google/protobuf/Message;
 
-    .line 108
+    .line 109
     .local v0, element:Lcom/google/protobuf/Message;
     invoke-interface {v0}, Lcom/google/protobuf/Message;->isInitialized()Z
 
@@ -765,10 +842,10 @@
 
     move v5, v6
 
-    .line 109
+    .line 110
     goto :goto_0
 
-    .line 113
+    .line 114
     .end local v0           #element:Lcom/google/protobuf/Message;
     .end local v3           #i$:Ljava/util/Iterator;
     .end local v4           #messageList:Ljava/util/List;,"Ljava/util/List<Lcom/google/protobuf/Message;>;"
@@ -793,10 +870,10 @@
 
     move v5, v6
 
-    .line 114
+    .line 115
     goto :goto_0
 
-    .line 120
+    .line 121
     .end local v1           #field:Lcom/google/protobuf/Descriptors$FieldDescriptor;
     :cond_4
     const/4 v5, 0x1
@@ -808,7 +885,7 @@
     .locals 0
 
     .prologue
-    .line 192
+    .line 193
     return-void
 .end method
 
@@ -816,7 +893,7 @@
     .locals 2
 
     .prologue
-    .line 178
+    .line 179
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->internalMutableDefault()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v1
@@ -825,7 +902,7 @@
 
     move-result-object v0
 
-    .line 179
+    .line 180
     .local v0, result:Lcom/google/protobuf/MutableMessage;
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->getDefaultInstanceForType()Lcom/google/protobuf/Message;
 
@@ -833,11 +910,11 @@
 
     if-ne p0, v1, :cond_0
 
-    .line 184
+    .line 185
     :goto_0
     return-object v0
 
-    .line 182
+    .line 183
     :cond_0
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->toByteArray()[B
 
@@ -847,7 +924,7 @@
 
     move-result-object v1
 
-    invoke-interface {v0, v1}, Lcom/google/protobuf/MutableMessage;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;)Z
+    invoke-interface {v0, v1}, Lcom/google/protobuf/MutableMessage;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
     goto :goto_0
 .end method
@@ -856,7 +933,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 30
     invoke-virtual {p0}, Lcom/google/protobuf/GeneratedMessage;->mutableCopy()Lcom/google/protobuf/MutableMessage;
 
     move-result-object v0
@@ -880,7 +957,7 @@
     .end annotation
 
     .prologue
-    .line 165
+    .line 166
     invoke-virtual {p2, p4, p1}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeFieldFrom(ILcom/google/protobuf/CodedInputStream;)Z
 
     move-result v0
@@ -897,7 +974,7 @@
     .end annotation
 
     .prologue
-    .line 2003
+    .line 2099
     new-instance v0, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;-><init>(Lcom/google/protobuf/MessageLite;)V

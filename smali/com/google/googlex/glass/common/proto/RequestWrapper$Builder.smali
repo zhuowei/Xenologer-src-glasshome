@@ -40,23 +40,23 @@
     .locals 1
 
     .prologue
-    .line 340
+    .line 341
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 450
+    .line 451
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 547
+    .line 551
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
-    .line 341
+    .line 342
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->maybeForceBuilderInitialization()V
 
-    .line 342
+    .line 343
     return-void
 .end method
 
@@ -65,23 +65,23 @@
     .parameter "parent"
 
     .prologue
-    .line 346
+    .line 347
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 450
+    .line 451
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 547
+    .line 551
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
-    .line 347
+    .line 348
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->maybeForceBuilderInitialization()V
 
-    .line 348
+    .line 349
     return-void
 .end method
 
@@ -91,7 +91,7 @@
     .parameter "x1"
 
     .prologue
-    .line 323
+    .line 324
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -101,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->create()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 354
+    .line 355
     new-instance v0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;-><init>()V
@@ -125,7 +125,7 @@
     .locals 1
 
     .prologue
-    .line 329
+    .line 330
     sget-object v0, Lcom/google/googlex/glass/common/proto/Batch;->internal_static_googlex_glass_common_proto_RequestWrapper_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -135,14 +135,14 @@
     .locals 1
 
     .prologue
-    .line 350
+    .line 351
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 352
+    .line 353
     :cond_0
     return-void
 .end method
@@ -153,12 +153,12 @@
     .locals 2
 
     .prologue
-    .line 380
+    .line 381
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
 
-    .line 381
+    .line 382
     .local v0, result:Lcom/google/googlex/glass/common/proto/RequestWrapper;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->isInitialized()Z
 
@@ -166,14 +166,14 @@
 
     if-nez v1, :cond_0
 
-    .line 382
+    .line 383
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 384
+    .line 385
     :cond_0
     return-object v0
 .end method
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->build()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -194,7 +194,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->build()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -206,22 +206,22 @@
     .locals 5
 
     .prologue
-    .line 388
+    .line 389
     new-instance v1, Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/RequestWrapper;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/RequestWrapper$1;)V
 
-    .line 389
+    .line 390
     .local v1, result:Lcom/google/googlex/glass/common/proto/RequestWrapper;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 390
+    .line 391
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 391
+    .line 392
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -229,41 +229,41 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 392
+    .line 393
     or-int/lit8 v2, v2, 0x1
 
-    .line 394
+    .line 395
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/RequestWrapper;->path_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->access$502(Lcom/google/googlex/glass/common/proto/RequestWrapper;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 395
+    .line 396
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 396
+    .line 397
     or-int/lit8 v2, v2, 0x2
 
-    .line 398
+    .line 399
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
     #setter for: Lcom/google/googlex/glass/common/proto/RequestWrapper;->data_:Lcom/google/protobuf/ByteString;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->access$602(Lcom/google/googlex/glass/common/proto/RequestWrapper;Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
 
-    .line 399
+    .line 400
     #setter for: Lcom/google/googlex/glass/common/proto/RequestWrapper;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->access$702(Lcom/google/googlex/glass/common/proto/RequestWrapper;I)I
 
-    .line 400
+    .line 401
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onBuilt()V
 
-    .line 401
+    .line 402
     return-object v1
 .end method
 
@@ -271,7 +271,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -283,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -295,34 +295,34 @@
     .locals 1
 
     .prologue
-    .line 358
+    .line 359
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 359
+    .line 360
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 360
+    .line 361
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 361
+    .line 362
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
-    .line 362
+    .line 363
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 363
+    .line 364
     return-object p0
 .end method
 
@@ -330,7 +330,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clear()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -342,7 +342,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clear()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -354,7 +354,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clear()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -366,7 +366,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clear()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -378,14 +378,14 @@
     .locals 1
 
     .prologue
-    .line 592
+    .line 596
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 593
+    .line 597
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -396,10 +396,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
-    .line 594
+    .line 598
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onChanged()V
 
-    .line 595
+    .line 599
     return-object p0
 .end method
 
@@ -407,14 +407,14 @@
     .locals 1
 
     .prologue
-    .line 524
+    .line 528
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 525
+    .line 529
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -425,10 +425,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 526
+    .line 530
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onChanged()V
 
-    .line 527
+    .line 531
     return-object p0
 .end method
 
@@ -436,7 +436,7 @@
     .locals 2
 
     .prologue
-    .line 367
+    .line 368
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->create()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -456,7 +456,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clone()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -468,7 +468,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clone()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -480,7 +480,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clone()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -492,7 +492,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clone()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -504,7 +504,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clone()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -521,7 +521,7 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->clone()Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -533,7 +533,7 @@
     .locals 1
 
     .prologue
-    .line 566
+    .line 570
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
     return-object v0
@@ -543,7 +543,7 @@
     .locals 1
 
     .prologue
-    .line 376
+    .line 377
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -555,7 +555,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -567,7 +567,7 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
@@ -579,48 +579,61 @@
     .locals 1
 
     .prologue
-    .line 372
+    .line 373
     sget-object v0, Lcom/google/googlex/glass/common/proto/Batch;->internal_static_googlex_glass_common_proto_RequestWrapper_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getPath()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 469
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
-
     .line 470
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
     .line 471
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 472
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 474
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 473
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
+    .line 475
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 476
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 480
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -629,16 +642,16 @@
     .locals 3
 
     .prologue
-    .line 488
+    .line 492
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 489
+    .line 493
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 490
+    .line 494
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -646,11 +659,11 @@
 
     move-result-object v0
 
-    .line 493
+    .line 497
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 496
+    .line 500
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -669,7 +682,7 @@
     .locals 2
 
     .prologue
-    .line 556
+    .line 560
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -695,7 +708,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 459
+    .line 460
     iget v1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -715,7 +728,7 @@
     .locals 3
 
     .prologue
-    .line 334
+    .line 335
     sget-object v0, Lcom/google/googlex/glass/common/proto/Batch;->internal_static_googlex_glass_common_proto_RequestWrapper_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/RequestWrapper;
@@ -733,7 +746,7 @@
     .locals 1
 
     .prologue
-    .line 428
+    .line 429
     const/4 v0, 0x1
 
     return v0
@@ -744,18 +757,18 @@
     .parameter "other"
 
     .prologue
-    .line 414
+    .line 415
     invoke-static {}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 424
+    .line 425
     :goto_0
     return-object p0
 
-    .line 415
+    .line 416
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->hasPath()Z
 
@@ -763,14 +776,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 416
+    .line 417
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 417
+    .line 418
     #getter for: Lcom/google/googlex/glass/common/proto/RequestWrapper;->path_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->access$500(Lcom/google/googlex/glass/common/proto/RequestWrapper;)Ljava/lang/Object;
 
@@ -778,10 +791,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 418
+    .line 419
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onChanged()V
 
-    .line 420
+    .line 421
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->hasData()Z
 
@@ -789,14 +802,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 421
+    .line 422
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->getData()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->setData(Lcom/google/protobuf/ByteString;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
-    .line 423
+    .line 424
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -818,10 +831,10 @@
     .end annotation
 
     .prologue
-    .line 435
+    .line 436
     const/4 v2, 0x0
 
-    .line 437
+    .line 438
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/RequestWrapper;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/RequestWrapper;->PARSER:Lcom/google/protobuf/Parser;
@@ -839,21 +852,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 442
+    .line 443
     if-eqz v2, :cond_0
 
-    .line 443
+    .line 444
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/RequestWrapper;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
-    .line 446
+    .line 447
     :cond_0
     return-object p0
 
-    .line 438
+    .line 439
     :catch_0
     move-exception v1
 
-    .line 439
+    .line 440
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -866,19 +879,19 @@
 
     move-object v2, v0
 
-    .line 440
+    .line 441
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 442
+    .line 443
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 443
+    .line 444
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/RequestWrapper;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     :cond_1
@@ -890,12 +903,12 @@
     .parameter "other"
 
     .prologue
-    .line 405
+    .line 406
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     if-eqz v0, :cond_0
 
-    .line 406
+    .line 407
     check-cast p1, Lcom/google/googlex/glass/common/proto/RequestWrapper;
 
     .end local p1
@@ -903,12 +916,12 @@
 
     move-result-object p0
 
-    .line 409
+    .line 410
     .end local p0
     :goto_0
     return-object p0
 
-    .line 408
+    .line 409
     .restart local p0
     .restart local p1
     :cond_0
@@ -928,7 +941,7 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -941,7 +954,7 @@
     .parameter "x0"
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -960,7 +973,7 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -979,7 +992,7 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -992,7 +1005,7 @@
     .parameter "x0"
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -1011,7 +1024,7 @@
     .end annotation
 
     .prologue
-    .line 323
+    .line 324
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;
 
     move-result-object v0
@@ -1024,17 +1037,17 @@
     .parameter "value"
 
     .prologue
-    .line 576
+    .line 580
     if-nez p1, :cond_0
 
-    .line 577
+    .line 581
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 579
+    .line 583
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
@@ -1042,13 +1055,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 580
+    .line 584
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->data_:Lcom/google/protobuf/ByteString;
 
-    .line 581
+    .line 585
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onChanged()V
 
-    .line 582
+    .line 586
     return-object p0
 .end method
 
@@ -1057,17 +1070,17 @@
     .parameter "value"
 
     .prologue
-    .line 508
+    .line 512
     if-nez p1, :cond_0
 
-    .line 509
+    .line 513
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 511
+    .line 515
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
@@ -1075,13 +1088,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 512
+    .line 516
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 513
+    .line 517
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onChanged()V
 
-    .line 514
+    .line 518
     return-object p0
 .end method
 
@@ -1090,17 +1103,17 @@
     .parameter "value"
 
     .prologue
-    .line 538
+    .line 542
     if-nez p1, :cond_0
 
-    .line 539
+    .line 543
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 541
+    .line 545
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
@@ -1108,12 +1121,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->bitField0_:I
 
-    .line 542
+    .line 546
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->path_:Ljava/lang/Object;
 
-    .line 543
+    .line 547
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/RequestWrapper$Builder;->onChanged()V
 
-    .line 544
+    .line 548
     return-object p0
 .end method

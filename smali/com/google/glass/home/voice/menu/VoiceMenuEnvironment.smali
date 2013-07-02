@@ -54,3 +54,6 @@
 
 .method public abstract showProgressBar()V
 .end method
+
+.method public abstract showShareTargetList(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Lcom/google/googlex/glass/common/proto/Entity$Command$CommandType;)V
+.end method

@@ -52,7 +52,7 @@
     .locals 1
 
     .prologue
-    .line 25
+    .line 24
     const-class v0, Lcom/google/glass/home/timeline/MainTimelineView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -69,10 +69,10 @@
     .parameter "context"
 
     .prologue
-    .line 54
+    .line 53
     invoke-direct {p0, p1}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;)V
 
-    .line 55
+    .line 54
     return-void
 .end method
 
@@ -82,10 +82,10 @@
     .parameter "attrs"
 
     .prologue
-    .line 58
+    .line 57
     invoke-direct {p0, p1, p2}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 59
+    .line 58
     return-void
 .end method
 
@@ -96,10 +96,10 @@
     .parameter "defStyle"
 
     .prologue
-    .line 62
+    .line 61
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 63
+    .line 62
     return-void
 .end method
 
@@ -111,39 +111,40 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 98
+    .line 91
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 99
+    .line 92
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 100
+    .line 93
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 101
+    .line 94
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->historyTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 102
+    .line 95
     const/4 v0, 0x0
 
     new-array v0, v0, [Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineView;->setAdapters([Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)V
 
-    .line 103
+    .line 96
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineView;->updateViews(Z)V
 
-    .line 104
+    .line 97
     return-void
 .end method
 
-.method protected abstract createActiveItemAdapter(Landroid/app/Activity;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+.method protected abstract createActiveItemAdapter(Landroid/app/Activity;Lcom/google/glass/home/timeline/NotificationState;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/app/Activity;",
+            "Lcom/google/glass/home/timeline/NotificationState;",
             ")",
             "Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper",
             "<",
@@ -165,13 +166,14 @@
     .end annotation
 .end method
 
-.method protected abstract createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLjava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+.method protected abstract createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLcom/google/glass/home/timeline/NotificationState;Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/app/Activity;",
             "Lcom/google/glass/util/CachedBitmapFactory;",
             "ZZ",
+            "Lcom/google/glass/home/timeline/NotificationState;",
             "Ljava/util/List",
             "<",
             "Landroid/content/Loader",
@@ -188,7 +190,7 @@
     .locals 2
 
     .prologue
-    .line 123
+    .line 116
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -209,10 +211,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 125
+    .line 118
     sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->GUARD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
-    .line 127
+    .line 120
     :goto_0
     return-object v0
 
@@ -228,12 +230,12 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 136
+    .line 129
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineView;->getFirstPinnedItemPosition()I
 
     move-result v2
 
-    .line 137
+    .line 130
     .local v2, firstPinned:I
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineView;->getHomePosition()I
 
@@ -241,26 +243,26 @@
 
     if-ne v2, v5, :cond_1
 
-    .line 138
+    .line 131
     sget-object v5, Lcom/google/glass/home/timeline/MainTimelineView;->TAG:Ljava/lang/String;
 
     const-string v6, "Pinned adapter came back with home position, checking for settings cover view."
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 139
+    .line 132
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v5, :cond_1
 
-    .line 140
+    .line 133
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v5}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
-    .line 141
+    .line 134
     .local v0, adapter:Landroid/widget/Adapter;
     if-eqz v0, :cond_1
 
@@ -270,21 +272,21 @@
 
     if-nez v5, :cond_1
 
-    .line 142
+    .line 135
     sget-object v5, Lcom/google/glass/home/timeline/MainTimelineView;->TAG:Ljava/lang/String;
 
     const-string v6, "settingsAdapter was not null or empty."
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 144
+    .line 137
     iget-object v5, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {p0, v5}, Lcom/google/glass/home/timeline/MainTimelineView;->getAdapterOffset(Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)I
 
     move-result v1
 
-    .line 146
+    .line 139
     .local v1, base:I
     invoke-interface {v0}, Landroid/widget/Adapter;->getCount()I
 
@@ -295,10 +297,10 @@
     :goto_0
     invoke-static {v4}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
 
-    .line 147
+    .line 140
     const/4 v3, 0x0
 
-    .line 148
+    .line 141
     .local v3, offset:I
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -350,10 +352,10 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 149
+    .line 142
     add-int v2, v1, v3
 
-    .line 154
+    .line 147
     .end local v0           #adapter:Landroid/widget/Adapter;
     .end local v1           #base:I
     .end local v2           #firstPinned:I
@@ -361,7 +363,7 @@
     :goto_1
     return v2
 
-    .line 146
+    .line 139
     .restart local v0       #adapter:Landroid/widget/Adapter;
     .restart local v1       #base:I
     .restart local v2       #firstPinned:I
@@ -370,7 +372,7 @@
 
     goto :goto_0
 
-    .line 153
+    .line 146
     .end local v0           #adapter:Landroid/widget/Adapter;
     .end local v1           #base:I
     :cond_1
@@ -403,19 +405,19 @@
     .locals 6
 
     .prologue
-    .line 194
+    .line 187
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->historyTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v3, :cond_0
 
-    .line 195
+    .line 188
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->historyTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v3}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
-    .line 196
+    .line 189
     .local v0, adapter:Landroid/widget/Adapter;
     if-eqz v0, :cond_0
 
@@ -425,18 +427,18 @@
 
     if-nez v3, :cond_0
 
-    .line 199
+    .line 192
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->historyTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {p0, v3}, Lcom/google/glass/home/timeline/MainTimelineView;->getAdapterOffset(Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)I
 
     move-result v1
 
-    .line 200
+    .line 193
     .local v1, base:I
     const/4 v2, 0x0
 
-    .line 201
+    .line 194
     .local v2, offset:I
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -488,17 +490,17 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 202
+    .line 195
     add-int v3, v1, v2
 
-    .line 206
+    .line 199
     .end local v0           #adapter:Landroid/widget/Adapter;
     .end local v1           #base:I
     .end local v2           #offset:I
     :goto_0
     return v3
 
-    .line 205
+    .line 198
     :cond_0
     sget-object v3, Lcom/google/glass/home/timeline/MainTimelineView;->TAG:Ljava/lang/String;
 
@@ -506,7 +508,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 206
+    .line 199
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineView;->getHomePosition()I
 
     move-result v3
@@ -518,19 +520,19 @@
     .locals 6
 
     .prologue
-    .line 159
+    .line 152
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v3, :cond_0
 
-    .line 160
+    .line 153
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v3}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
-    .line 161
+    .line 154
     .local v0, adapter:Landroid/widget/Adapter;
     if-eqz v0, :cond_0
 
@@ -540,21 +542,21 @@
 
     if-nez v3, :cond_0
 
-    .line 162
+    .line 155
     sget-object v3, Lcom/google/glass/home/timeline/MainTimelineView;->TAG:Ljava/lang/String;
 
     const-string v4, "... the pinnedTimelineAdapter"
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 165
+    .line 158
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {p0, v3}, Lcom/google/glass/home/timeline/MainTimelineView;->getAdapterOffset(Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)I
 
     move-result v1
 
-    .line 166
+    .line 159
     .local v1, base:I
     invoke-interface {v0}, Landroid/widget/Adapter;->getCount()I
 
@@ -562,7 +564,7 @@
 
     add-int/lit8 v2, v3, -0x1
 
-    .line 167
+    .line 160
     .local v2, offset:I
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -614,10 +616,10 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 168
+    .line 161
     add-int v3, v1, v2
 
-    .line 173
+    .line 166
     .end local v0           #adapter:Landroid/widget/Adapter;
     .end local v1           #base:I
     .end local v2           #offset:I
@@ -636,12 +638,12 @@
     .locals 3
 
     .prologue
-    .line 108
+    .line 101
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v1, :cond_0
 
-    .line 109
+    .line 102
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
@@ -650,7 +652,7 @@
 
     check-cast v0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
-    .line 110
+    .line 103
     .local v0, adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
@@ -664,16 +666,16 @@
 
     add-int/2addr v1, v2
 
-    .line 115
+    .line 108
     .end local v0           #adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     :goto_0
     return v1
 
-    .line 114
+    .line 107
     :cond_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 115
+    .line 108
     const/4 v1, 0x0
 
     goto :goto_0
@@ -683,12 +685,12 @@
     .locals 6
 
     .prologue
-    .line 178
+    .line 171
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v3, :cond_0
 
-    .line 179
+    .line 172
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v3}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
@@ -697,7 +699,7 @@
 
     check-cast v0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
-    .line 180
+    .line 173
     .local v0, adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     iget-object v3, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
@@ -705,13 +707,13 @@
 
     move-result v1
 
-    .line 181
+    .line 174
     .local v1, base:I
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;->getMostRelevantItemPosition()I
 
     move-result v2
 
-    .line 182
+    .line 175
     .local v2, offset:I
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -763,21 +765,21 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 183
+    .line 176
     add-int v3, v1, v2
 
-    .line 188
+    .line 181
     .end local v0           #adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     .end local v1           #base:I
     .end local v2           #offset:I
     :goto_0
     return v3
 
-    .line 187
+    .line 180
     :cond_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 188
+    .line 181
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineView;->getHomePosition()I
 
     move-result v3
@@ -785,15 +787,17 @@
     goto :goto_0
 .end method
 
-.method public init(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;)Ljava/util/List;
-    .locals 12
+.method public init(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/home/timeline/NotificationState;)Ljava/util/List;
+    .locals 7
     .parameter "activity"
     .parameter "bitmapFactory"
+    .parameter "notificationState"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/app/Activity;",
             "Lcom/google/glass/util/CachedBitmapFactory;",
+            "Lcom/google/glass/home/timeline/NotificationState;",
             ")",
             "Ljava/util/List",
             "<",
@@ -805,22 +809,23 @@
     .end annotation
 
     .prologue
-    const/4 v3, 0x1
+    .line 67
+    invoke-super {p0, p1, p2, p3}, Lcom/google/glass/home/timeline/TimelineView;->init(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/home/timeline/NotificationState;)Ljava/util/List;
 
-    const/4 v4, 0x0
+    move-result-object v6
 
-    .line 74
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    .line 77
-    .local v5, loaders:Ljava/util/List;,"Ljava/util/List<Landroid/content/Loader<Landroid/database/Cursor;>;>;"
+    .line 70
+    .local v6, loaders:Ljava/util/List;,"Ljava/util/List<Landroid/content/Loader<Landroid/database/Cursor;>;>;"
     invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/MainTimelineView;->createSettingsAdapter(Landroid/app/Activity;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+
+    .line 73
+    const/4 v3, 0x1
+
+    const/4 v4, 0x0
 
     move-object v0, p0
 
@@ -828,51 +833,56 @@
 
     move-object v2, p2
 
-    .line 80
-    invoke-virtual/range {v0 .. v5}, Lcom/google/glass/home/timeline/MainTimelineView;->createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLjava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    move-object v5, p3
+
+    invoke-virtual/range {v0 .. v6}, Lcom/google/glass/home/timeline/MainTimelineView;->createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLcom/google/glass/home/timeline/NotificationState;Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 84
-    invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/MainTimelineView;->createActiveItemAdapter(Landroid/app/Activity;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    .line 77
+    invoke-virtual {p0, p1, p3}, Lcom/google/glass/home/timeline/MainTimelineView;->createActiveItemAdapter(Landroid/app/Activity;Lcom/google/glass/home/timeline/NotificationState;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    move-object v6, p0
+    .line 80
+    const/4 v3, 0x0
 
-    move-object v7, p1
+    const/4 v4, 0x1
 
-    move-object v8, p2
+    move-object v0, p0
 
-    move v9, v4
+    move-object v1, p1
 
-    move v10, v3
+    move-object v2, p2
 
-    move-object v11, v5
+    move-object v5, p3
 
-    .line 87
-    invoke-virtual/range {v6 .. v11}, Lcom/google/glass/home/timeline/MainTimelineView;->createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLjava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    invoke-virtual/range {v0 .. v6}, Lcom/google/glass/home/timeline/MainTimelineView;->createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLcom/google/glass/home/timeline/NotificationState;Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineView;->historyTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 91
+    .line 84
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    const/4 v1, 0x0
 
-    aput-object v1, v0, v4
+    iget-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineView;->settingsAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    aput-object v2, v0, v1
 
-    aput-object v1, v0, v3
+    const/4 v1, 0x1
+
+    iget-object v2, p0, Lcom/google/glass/home/timeline/MainTimelineView;->pinnedTimelineAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+
+    aput-object v2, v0, v1
 
     const/4 v1, 0x2
 
@@ -888,23 +898,23 @@
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/MainTimelineView;->setAdapters([Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)V
 
-    .line 93
-    return-object v5
+    .line 86
+    return-object v6
 .end method
 
 .method protected onPreActivate()V
     .locals 2
 
     .prologue
-    .line 211
+    .line 204
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineView;->onPreActivate()V
 
-    .line 212
+    .line 205
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v1, :cond_0
 
-    .line 213
+    .line 206
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
@@ -913,16 +923,16 @@
 
     check-cast v0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
-    .line 214
+    .line 207
     .local v0, adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;->activate()V
 
-    .line 220
+    .line 213
     .end local v0           #adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     :goto_0
     return-void
 
-    .line 218
+    .line 211
     :cond_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
@@ -933,15 +943,15 @@
     .locals 2
 
     .prologue
-    .line 224
+    .line 217
     invoke-super {p0}, Lcom/google/glass/home/timeline/TimelineView;->onPreDeactivate()V
 
-    .line 225
+    .line 218
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     if-eqz v1, :cond_0
 
-    .line 226
+    .line 219
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineView;->activeItemAdapter:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
@@ -950,16 +960,16 @@
 
     check-cast v0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
-    .line 227
+    .line 220
     .local v0, adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;->deactivate()V
 
-    .line 233
+    .line 226
     .end local v0           #adapter:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
     :goto_0
     return-void
 
-    .line 231
+    .line 224
     :cond_0
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 

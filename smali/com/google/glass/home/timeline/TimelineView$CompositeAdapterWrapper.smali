@@ -59,7 +59,7 @@
     .end annotation
 
     .prologue
-    .line 83
+    .line 90
     .local p1, first:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     .local p2, second:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;,"Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper<*>;"
     new-instance v0, Lcom/google/glass/util/CompositeAdapter;
@@ -76,13 +76,13 @@
 
     invoke-direct {p0, v0}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;-><init>(Landroid/widget/Adapter;)V
 
-    .line 84
+    .line 91
     iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->first:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 85
+    .line 92
     iput-object p2, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->second:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
-    .line 86
+    .line 93
     return-void
 .end method
 
@@ -93,7 +93,7 @@
     .parameter "id"
 
     .prologue
-    .line 95
+    .line 102
     iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->first:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->matches(Lcom/google/glass/timeline/TimelineItemId;)Z
@@ -102,19 +102,19 @@
 
     if-eqz v1, :cond_1
 
-    .line 96
+    .line 103
     iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->first:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->findIdPosition(Lcom/google/glass/timeline/TimelineItemId;)I
 
     move-result v0
 
-    .line 104
+    .line 111
     :cond_0
     :goto_0
     return v0
 
-    .line 97
+    .line 104
     :cond_1
     iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->second:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
@@ -124,18 +124,18 @@
 
     if-eqz v1, :cond_2
 
-    .line 98
+    .line 105
     iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->second:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->findIdPosition(Lcom/google/glass/timeline/TimelineItemId;)I
 
     move-result v0
 
-    .line 99
+    .line 106
     .local v0, result:I
     if-ltz v0, :cond_0
 
-    .line 100
+    .line 107
     iget-object v1, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->first:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->getAdapter()Landroid/widget/Adapter;
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 104
+    .line 111
     .end local v0           #result:I
     :cond_2
     const/4 v0, -0x1
@@ -163,7 +163,7 @@
     .parameter "id"
 
     .prologue
-    .line 90
+    .line 97
     iget-object v0, p0, Lcom/google/glass/home/timeline/TimelineView$CompositeAdapterWrapper;->first:Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;->matches(Lcom/google/glass/timeline/TimelineItemId;)Z

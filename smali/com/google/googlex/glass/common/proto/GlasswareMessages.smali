@@ -76,19 +76,19 @@
     .locals 2
 
     .prologue
-    .line 122
+    .line 129
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 635
+    .line 642
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 1639
+    .line 1667
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;
 
     const/4 v1, 0x1
@@ -97,17 +97,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->defaultInstance:Lcom/google/googlex/glass/common/proto/GlasswareMessages;
 
-    .line 1640
+    .line 1668
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->defaultInstance:Lcom/google/googlex/glass/common/proto/GlasswareMessages;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->initFields()V
 
-    .line 1641
+    .line 1669
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 7
+    .locals 8
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -117,82 +117,84 @@
     .end annotation
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     .line 43
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 552
-    iput-byte v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedIsInitialized:B
+    .line 559
+    iput-byte v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedIsInitialized:B
 
-    .line 588
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedSerializedSize:I
+    .line 595
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedSerializedSize:I
 
     .line 44
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->initFields()V
 
     .line 45
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 46
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 49
-    .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 50
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     .line 51
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v3
+    move-result v4
 
     .line 52
-    .local v3, tag:I
-    sparse-switch v3, :sswitch_data_0
+    .local v4, tag:I
+    sparse-switch v4, :sswitch_data_0
 
     .line 57
-    invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 59
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 54
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 55
     goto :goto_0
 
     .line 64
     :sswitch_1
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x1
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    .line 65
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
+    .line 65
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x1
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    .line 66
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -200,54 +202,57 @@
 
     goto :goto_0
 
-    .line 100
-    .end local v3           #tag:I
+    .line 107
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    .line 101
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 108
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 106
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
-    :catchall_0
-    move-exception v5
-
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    throw v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 107
+    .line 113
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_0
+    move-exception v6
+
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 114
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->makeExtensionsImmutable()V
 
-    throw v5
-
-    .line 69
-    .restart local v3       #tag:I
-    :sswitch_2
-    :try_start_2
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x2
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+    throw v6
 
     .line 70
+    .restart local v4       #tag:I
+    :sswitch_2
+    :try_start_2
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
+    .line 71
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x2
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    .line 72
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
@@ -255,115 +260,130 @@
 
     goto :goto_0
 
-    .line 102
-    .end local v3           #tag:I
+    .line 109
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
     :catch_1
-    move-exception v1
+    move-exception v2
 
-    .line 103
-    .local v1, e:Ljava/io/IOException;
+    .line 110
+    .local v2, e:Ljava/io/IOException;
     :try_start_3
-    new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
+    new-instance v6, Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
+    throw v6
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 74
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v3       #tag:I
+    .line 76
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v4       #tag:I
     :sswitch_3
     :try_start_4
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x4
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    .line 75
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
+    .line 77
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x4
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    .line 78
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 79
+    .line 82
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
     :sswitch_4
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x8
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    .line 80
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
+    .line 83
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
-    goto :goto_0
+    or-int/lit8 v6, v6, 0x8
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     .line 84
-    :sswitch_5
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x10
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    .line 85
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 89
-    :sswitch_6
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x20
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    .line 90
+    .line 88
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_5
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
+    .line 89
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x10
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    .line 90
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
 
     goto :goto_0
 
     .line 94
-    :sswitch_7
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x40
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
-
-    .line 95
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_6
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
+    .line 95
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x20
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    .line 96
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
+
+    goto :goto_0
+
+    .line 100
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_7
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 101
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x40
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
+
+    .line 102
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
@@ -371,19 +391,20 @@
 
     goto/16 :goto_0
 
-    .line 106
-    .end local v3           #tag:I
+    .line 113
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
     :cond_1
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 107
+    .line 114
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->makeExtensionsImmutable()V
 
-    .line 109
+    .line 116
     return-void
 
     .line 52
@@ -436,10 +457,10 @@
     .line 20
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 552
+    .line 559
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedIsInitialized:B
 
-    .line 588
+    .line 595
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedSerializedSize:I
 
     .line 21
@@ -475,10 +496,10 @@
     .line 23
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 552
+    .line 559
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedIsInitialized:B
 
-    .line 588
+    .line 595
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedSerializedSize:I
 
     .line 23
@@ -688,7 +709,7 @@
     .locals 1
 
     .prologue
-    .line 112
+    .line 119
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryOuterClass;->internal_static_googlex_glass_common_proto_GlasswareMessages_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -698,42 +719,42 @@
     .locals 1
 
     .prologue
-    .line 544
+    .line 551
     const-string v0, "en_US"
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
 
-    .line 545
+    .line 552
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
 
-    .line 546
+    .line 553
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
 
-    .line 547
+    .line 554
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
 
-    .line 548
+    .line 555
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
 
-    .line 549
+    .line 556
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
 
-    .line 550
+    .line 557
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
 
-    .line 551
+    .line 558
     return-void
 .end method
 
@@ -741,7 +762,7 @@
     .locals 1
 
     .prologue
-    .line 697
+    .line 704
     #calls: Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;->create()Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;->access$100()Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
 
@@ -755,7 +776,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 700
+    .line 707
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->newBuilder()Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
 
     move-result-object v0
@@ -777,7 +798,7 @@
     .end annotation
 
     .prologue
-    .line 677
+    .line 684
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -800,7 +821,7 @@
     .end annotation
 
     .prologue
-    .line 683
+    .line 690
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -822,7 +843,7 @@
     .end annotation
 
     .prologue
-    .line 647
+    .line 654
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -845,7 +866,7 @@
     .end annotation
 
     .prologue
-    .line 653
+    .line 660
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -867,7 +888,7 @@
     .end annotation
 
     .prologue
-    .line 688
+    .line 695
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -890,7 +911,7 @@
     .end annotation
 
     .prologue
-    .line 694
+    .line 701
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -912,7 +933,7 @@
     .end annotation
 
     .prologue
-    .line 667
+    .line 674
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -935,7 +956,7 @@
     .end annotation
 
     .prologue
-    .line 673
+    .line 680
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -957,7 +978,7 @@
     .end annotation
 
     .prologue
-    .line 657
+    .line 664
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -980,7 +1001,7 @@
     .end annotation
 
     .prologue
-    .line 663
+    .line 670
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -1032,19 +1053,19 @@
     .locals 4
 
     .prologue
-    .line 274
+    .line 281
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
 
-    .line 275
+    .line 282
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 276
+    .line 283
     check-cast v1, Ljava/lang/String;
 
-    .line 284
+    .line 291
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1053,16 +1074,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 278
+    .line 285
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 280
+    .line 287
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 281
+    .line 288
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1070,13 +1091,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 282
+    .line 289
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 284
+    .line 291
     goto :goto_0
 .end method
 
@@ -1084,16 +1105,16 @@
     .locals 3
 
     .prologue
-    .line 297
+    .line 304
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
 
-    .line 298
+    .line 305
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 299
+    .line 306
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1101,11 +1122,11 @@
 
     move-result-object v0
 
-    .line 302
+    .line 309
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->description_:Ljava/lang/Object;
 
-    .line 305
+    .line 312
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1124,19 +1145,19 @@
     .locals 4
 
     .prologue
-    .line 162
+    .line 169
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
 
-    .line 163
+    .line 170
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 164
+    .line 171
     check-cast v1, Ljava/lang/String;
 
-    .line 172
+    .line 179
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1145,16 +1166,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 166
+    .line 173
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 168
+    .line 175
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 169
+    .line 176
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1162,13 +1183,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 170
+    .line 177
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 172
+    .line 179
     goto :goto_0
 .end method
 
@@ -1176,16 +1197,16 @@
     .locals 3
 
     .prologue
-    .line 186
+    .line 193
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
 
-    .line 187
+    .line 194
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 188
+    .line 195
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1193,11 +1214,11 @@
 
     move-result-object v0
 
-    .line 191
+    .line 198
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->locale_:Ljava/lang/Object;
 
-    .line 194
+    .line 201
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1216,19 +1237,19 @@
     .locals 4
 
     .prologue
-    .line 391
+    .line 398
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
 
-    .line 392
+    .line 399
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 393
+    .line 400
     check-cast v1, Ljava/lang/String;
 
-    .line 401
+    .line 408
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1237,16 +1258,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 395
+    .line 402
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 397
+    .line 404
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 398
+    .line 405
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1254,13 +1275,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 399
+    .line 406
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 401
+    .line 408
     goto :goto_0
 .end method
 
@@ -1268,16 +1289,16 @@
     .locals 3
 
     .prologue
-    .line 414
+    .line 421
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
 
-    .line 415
+    .line 422
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 416
+    .line 423
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1285,11 +1306,11 @@
 
     move-result-object v0
 
-    .line 419
+    .line 426
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->moreInfoTitle_:Ljava/lang/Object;
 
-    .line 422
+    .line 429
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1308,19 +1329,19 @@
     .locals 4
 
     .prologue
-    .line 218
+    .line 225
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
 
-    .line 219
+    .line 226
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 220
+    .line 227
     check-cast v1, Ljava/lang/String;
 
-    .line 228
+    .line 235
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1329,16 +1350,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 222
+    .line 229
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 224
+    .line 231
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 225
+    .line 232
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1346,13 +1367,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 226
+    .line 233
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 228
+    .line 235
     goto :goto_0
 .end method
 
@@ -1360,16 +1381,16 @@
     .locals 3
 
     .prologue
-    .line 240
+    .line 247
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
 
-    .line 241
+    .line 248
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 242
+    .line 249
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1377,11 +1398,11 @@
 
     move-result-object v0
 
-    .line 245
+    .line 252
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->name_:Ljava/lang/Object;
 
-    .line 248
+    .line 255
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1409,7 +1430,7 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 141
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -1419,19 +1440,19 @@
     .locals 4
 
     .prologue
-    .line 450
+    .line 457
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
 
-    .line 451
+    .line 458
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 452
+    .line 459
     check-cast v1, Ljava/lang/String;
 
-    .line 460
+    .line 467
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1440,16 +1461,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 454
+    .line 461
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 456
+    .line 463
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 457
+    .line 464
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1457,13 +1478,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 458
+    .line 465
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 460
+    .line 467
     goto :goto_0
 .end method
 
@@ -1471,16 +1492,16 @@
     .locals 3
 
     .prologue
-    .line 474
+    .line 481
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
 
-    .line 475
+    .line 482
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 476
+    .line 483
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1488,11 +1509,11 @@
 
     move-result-object v0
 
-    .line 479
+    .line 486
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->permissions_:Ljava/lang/Object;
 
-    .line 482
+    .line 489
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1517,10 +1538,10 @@
 
     const/4 v3, 0x1
 
-    .line 590
+    .line 597
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedSerializedSize:I
 
-    .line 591
+    .line 598
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -1528,26 +1549,26 @@
 
     move v1, v0
 
-    .line 624
+    .line 631
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 593
+    .line 600
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 594
+    .line 601
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 595
+    .line 602
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getLocaleBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1558,7 +1579,7 @@
 
     add-int/2addr v0, v2
 
-    .line 598
+    .line 605
     :cond_1
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -1566,7 +1587,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 599
+    .line 606
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getNameBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1577,7 +1598,7 @@
 
     add-int/2addr v0, v2
 
-    .line 602
+    .line 609
     :cond_2
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -1585,7 +1606,7 @@
 
     if-ne v2, v5, :cond_3
 
-    .line 603
+    .line 610
     const/4 v2, 0x3
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getDescriptionBytes()Lcom/google/protobuf/ByteString;
@@ -1598,7 +1619,7 @@
 
     add-int/2addr v0, v2
 
-    .line 606
+    .line 613
     :cond_3
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -1608,7 +1629,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 607
+    .line 614
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getShortDescriptionBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1619,7 +1640,7 @@
 
     add-int/2addr v0, v2
 
-    .line 610
+    .line 617
     :cond_4
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -1629,7 +1650,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 611
+    .line 618
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getMoreInfoTitleBytes()Lcom/google/protobuf/ByteString;
@@ -1642,7 +1663,7 @@
 
     add-int/2addr v0, v2
 
-    .line 614
+    .line 621
     :cond_5
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -1652,7 +1673,7 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 615
+    .line 622
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getPermissionsBytes()Lcom/google/protobuf/ByteString;
@@ -1665,7 +1686,7 @@
 
     add-int/2addr v0, v2
 
-    .line 618
+    .line 625
     :cond_6
     iget v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -1675,7 +1696,7 @@
 
     if-ne v2, v3, :cond_7
 
-    .line 619
+    .line 626
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getSpeakableNameBytes()Lcom/google/protobuf/ByteString;
@@ -1688,7 +1709,7 @@
 
     add-int/2addr v0, v2
 
-    .line 622
+    .line 629
     :cond_7
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1700,12 +1721,12 @@
 
     add-int/2addr v0, v2
 
-    .line 623
+    .line 630
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 624
+    .line 631
     .end local v0           #size:I
     .restart local v1       #size:I
     goto/16 :goto_0
@@ -1715,19 +1736,19 @@
     .locals 4
 
     .prologue
-    .line 333
+    .line 340
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
 
-    .line 334
+    .line 341
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 335
+    .line 342
     check-cast v1, Ljava/lang/String;
 
-    .line 343
+    .line 350
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1736,16 +1757,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 337
+    .line 344
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 339
+    .line 346
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 340
+    .line 347
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1753,13 +1774,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 341
+    .line 348
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 343
+    .line 350
     goto :goto_0
 .end method
 
@@ -1767,16 +1788,16 @@
     .locals 3
 
     .prologue
-    .line 357
+    .line 364
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
 
-    .line 358
+    .line 365
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 359
+    .line 366
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1784,11 +1805,11 @@
 
     move-result-object v0
 
-    .line 362
+    .line 369
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->shortDescription_:Ljava/lang/Object;
 
-    .line 365
+    .line 372
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1807,19 +1828,19 @@
     .locals 4
 
     .prologue
-    .line 508
+    .line 515
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
 
-    .line 509
+    .line 516
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 510
+    .line 517
     check-cast v1, Ljava/lang/String;
 
-    .line 518
+    .line 525
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1828,16 +1849,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 512
+    .line 519
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 514
+    .line 521
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 515
+    .line 522
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1845,13 +1866,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 516
+    .line 523
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 518
+    .line 525
     goto :goto_0
 .end method
 
@@ -1859,16 +1880,16 @@
     .locals 3
 
     .prologue
-    .line 531
+    .line 538
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
 
-    .line 532
+    .line 539
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 533
+    .line 540
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1876,11 +1897,11 @@
 
     move-result-object v0
 
-    .line 536
+    .line 543
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->speakableName_:Ljava/lang/Object;
 
-    .line 539
+    .line 546
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1909,7 +1930,7 @@
     .locals 2
 
     .prologue
-    .line 263
+    .line 270
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1935,7 +1956,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 150
+    .line 157
     iget v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1955,7 +1976,7 @@
     .locals 2
 
     .prologue
-    .line 380
+    .line 387
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1979,7 +2000,7 @@
     .locals 2
 
     .prologue
-    .line 208
+    .line 215
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -2003,7 +2024,7 @@
     .locals 2
 
     .prologue
-    .line 438
+    .line 445
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -2027,7 +2048,7 @@
     .locals 2
 
     .prologue
-    .line 321
+    .line 328
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -2051,7 +2072,7 @@
     .locals 2
 
     .prologue
-    .line 497
+    .line 504
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -2075,7 +2096,7 @@
     .locals 3
 
     .prologue
-    .line 117
+    .line 124
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryOuterClass;->internal_static_googlex_glass_common_proto_GlasswareMessages_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/GlasswareMessages;
@@ -2093,12 +2114,12 @@
     .locals 1
 
     .prologue
-    .line 638
+    .line 645
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 639
+    .line 646
     const-string v0, "com.google.googlex.glass.common.proto.MutableGlasswareRegistryOuterClass$GlasswareMessages"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -2107,7 +2128,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 641
+    .line 648
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -2120,10 +2141,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 554
+    .line 561
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedIsInitialized:B
 
-    .line 555
+    .line 562
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -2131,17 +2152,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 558
+    .line 565
     :goto_0
     return v1
 
-    .line 555
+    .line 562
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 557
+    .line 564
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->memoizedIsInitialized:B
 
@@ -2152,7 +2173,7 @@
     .locals 1
 
     .prologue
-    .line 698
+    .line 705
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->newBuilder()Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
 
     move-result-object v0
@@ -2165,14 +2186,14 @@
     .parameter "parent"
 
     .prologue
-    .line 707
+    .line 714
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/GlasswareMessages$1;)V
 
-    .line 708
+    .line 715
     .local v0, builder:Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
     return-object v0
 .end method
@@ -2218,7 +2239,7 @@
     .locals 1
 
     .prologue
-    .line 702
+    .line 709
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->newBuilder(Lcom/google/googlex/glass/common/proto/GlasswareMessages;)Lcom/google/googlex/glass/common/proto/GlasswareMessages$Builder;
 
     move-result-object v0
@@ -2259,7 +2280,7 @@
     .end annotation
 
     .prologue
-    .line 631
+    .line 638
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -2283,24 +2304,24 @@
 
     const/4 v1, 0x1
 
-    .line 563
+    .line 570
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getSerializedSize()I
 
-    .line 564
+    .line 571
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 565
+    .line 572
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getLocaleBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 567
+    .line 574
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -2308,14 +2329,14 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 568
+    .line 575
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getNameBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 570
+    .line 577
     :cond_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -2323,7 +2344,7 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 571
+    .line 578
     const/4 v0, 0x3
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getDescriptionBytes()Lcom/google/protobuf/ByteString;
@@ -2332,7 +2353,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 573
+    .line 580
     :cond_2
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -2342,14 +2363,14 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 574
+    .line 581
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getShortDescriptionBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v3, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 576
+    .line 583
     :cond_3
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -2359,7 +2380,7 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 577
+    .line 584
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getMoreInfoTitleBytes()Lcom/google/protobuf/ByteString;
@@ -2368,7 +2389,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 579
+    .line 586
     :cond_4
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -2378,7 +2399,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 580
+    .line 587
     const/4 v0, 0x6
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getPermissionsBytes()Lcom/google/protobuf/ByteString;
@@ -2387,7 +2408,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 582
+    .line 589
     :cond_5
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->bitField0_:I
 
@@ -2397,7 +2418,7 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 583
+    .line 590
     const/4 v0, 0x7
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getSpeakableNameBytes()Lcom/google/protobuf/ByteString;
@@ -2406,7 +2427,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 585
+    .line 592
     :cond_6
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GlasswareMessages;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -2414,6 +2435,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 586
+    .line 593
     return-void
 .end method

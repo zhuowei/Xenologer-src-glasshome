@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/GuestTimelineView;->createDatabaseAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLjava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    value = Lcom/google/glass/home/timeline/GuestTimelineView;->createDatabaseAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLcom/google/glass/home/timeline/NotificationState;Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 126
+    .line 127
     iput-object p1, p0, Lcom/google/glass/home/timeline/GuestTimelineView$4;->this$0:Lcom/google/glass/home/timeline/GuestTimelineView;
 
     invoke-direct {p0, p2}, Lcom/google/glass/home/timeline/database/TimelineCursorManager;-><init>(Z)V
@@ -52,25 +52,25 @@
     .end annotation
 
     .prologue
-    .line 131
+    .line 132
     .local p1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
     invoke-super {p0, p1, p2}, Lcom/google/glass/home/timeline/database/TimelineCursorManager;->onLoadComplete(Landroid/content/Loader;Landroid/database/Cursor;)V
 
-    .line 134
+    .line 135
     sget-object v0, Lcom/google/glass/home/timeline/MainTimelineView;->TAG:Ljava/lang/String;
 
     const-string v1, "New timeline database content loaded; updating views."
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 135
+    .line 136
     iget-object v0, p0, Lcom/google/glass/home/timeline/GuestTimelineView$4;->this$0:Lcom/google/glass/home/timeline/GuestTimelineView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/GuestTimelineView;->updateViews(Z)V
 
-    .line 136
+    .line 137
     return-void
 .end method
 
@@ -80,7 +80,7 @@
     .parameter "x1"
 
     .prologue
-    .line 126
+    .line 127
     check-cast p2, Landroid/database/Cursor;
 
     .end local p2

@@ -36,25 +36,25 @@
     .parameter "layoutId"
 
     .prologue
-    .line 625
+    .line 638
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 626
+    .line 639
     iput p1, p0, Lcom/google/glass/widget/MosaicView$CellSpec;->row:I
 
-    .line 627
+    .line 640
     iput p2, p0, Lcom/google/glass/widget/MosaicView$CellSpec;->column:I
 
-    .line 628
+    .line 641
     iput p4, p0, Lcom/google/glass/widget/MosaicView$CellSpec;->colSpan:I
 
-    .line 629
+    .line 642
     iput p3, p0, Lcom/google/glass/widget/MosaicView$CellSpec;->rowSpan:I
 
-    .line 630
+    .line 643
     iput p5, p0, Lcom/google/glass/widget/MosaicView$CellSpec;->layoutId:I
 
-    .line 631
+    .line 644
     return-void
 .end method
 
@@ -68,7 +68,7 @@
     .parameter "x5"
 
     .prologue
-    .line 618
+    .line 631
     invoke-direct/range {p0 .. p5}, Lcom/google/glass/widget/MosaicView$CellSpec;-><init>(IIIII)V
 
     return-void

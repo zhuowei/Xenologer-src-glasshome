@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 133
+    .line 131
     iput-object p1, p0, Lcom/google/glass/location/LocationService$UpdateRunnable;->this$0:Lcom/google/glass/location/LocationService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 133
+    .line 131
     invoke-direct {p0, p1}, Lcom/google/glass/location/LocationService$UpdateRunnable;-><init>(Lcom/google/glass/location/LocationService;)V
 
     return-void
@@ -53,12 +53,12 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 134
     iget-object v0, p0, Lcom/google/glass/location/LocationService$UpdateRunnable;->this$0:Lcom/google/glass/location/LocationService;
 
     #calls: Lcom/google/glass/location/LocationService;->updateLocationRequests()V
     invoke-static {v0}, Lcom/google/glass/location/LocationService;->access$200(Lcom/google/glass/location/LocationService;)V
 
-    .line 137
+    .line 135
     return-void
 .end method

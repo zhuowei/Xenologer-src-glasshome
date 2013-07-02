@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 134
+    .line 133
     iput-object p1, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;->this$0:Lcom/google/glass/home/timeline/ReadMoreTimelineView;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;->val$split:Ljava/util/List;
@@ -48,7 +48,7 @@
     .parameter "callback"
 
     .prologue
-    .line 156
+    .line 155
     new-instance v1, Lcom/google/glass/home/timeline/TimelineItemLoader$ReadResult;
 
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;->val$split:Ljava/util/List;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p2, v1}, Lcom/google/glass/home/timeline/TimelineItemLoader$ReadCallback;->onItemRead(Lcom/google/glass/home/timeline/TimelineItemLoader$ReadResult;)V
 
-    .line 158
+    .line 157
     return-void
 .end method
 
@@ -76,12 +76,12 @@
     .parameter "id"
 
     .prologue
-    .line 142
+    .line 141
     invoke-virtual {p1}, Lcom/google/glass/timeline/TimelineItemId;->getItemId()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 143
+    .line 142
     .local v2, target:Ljava/lang/String;
     const/4 v0, 0x0
 
@@ -96,7 +96,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 144
+    .line 143
     iget-object v3, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;->val$split:Ljava/util/List;
 
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -115,19 +115,19 @@
 
     if-eqz v3, :cond_0
 
-    .line 148
+    .line 147
     .end local v0           #i:I
     :goto_1
     return v0
 
-    .line 143
+    .line 142
     .restart local v0       #i:I
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 148
+    .line 147
     :cond_1
     const/4 v0, -0x1
 
@@ -138,7 +138,7 @@
     .locals 1
 
     .prologue
-    .line 137
+    .line 136
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;->val$split:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I

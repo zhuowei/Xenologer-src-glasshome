@@ -59,9 +59,6 @@
 .method public abstract mergeFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Z
 .end method
 
-.method public abstract mergePartialFrom(Lcom/google/protobuf/CodedInputStream;)Z
-.end method
-
 .method public abstract mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 .end method
 
@@ -96,12 +93,6 @@
 .end method
 
 .method public abstract parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Z
-.end method
-
-.method public abstract parsePartialFrom(Lcom/google/protobuf/CodedInputStream;)Z
-.end method
-
-.method public abstract parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
 .end method
 
 .method public abstract writeToWithCachedSizes(Lcom/google/protobuf/CodedOutputStream;)V

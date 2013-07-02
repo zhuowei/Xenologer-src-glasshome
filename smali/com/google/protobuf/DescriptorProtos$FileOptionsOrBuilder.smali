@@ -94,6 +94,9 @@
 .method public abstract getJavaPackageBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getJavaStringCheckUtf8()Z
+.end method
+
 .method public abstract getJavaUseJavaproto2()Z
 .end method
 
@@ -203,6 +206,9 @@
 .end method
 
 .method public abstract hasJavaPackage()Z
+.end method
+
+.method public abstract hasJavaStringCheckUtf8()Z
 .end method
 
 .method public abstract hasJavaUseJavaproto2()Z

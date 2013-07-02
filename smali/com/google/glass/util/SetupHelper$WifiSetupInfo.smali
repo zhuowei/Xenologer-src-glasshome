@@ -30,18 +30,18 @@
     .parameter "key"
 
     .prologue
-    .line 131
+    .line 130
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 132
+    .line 131
     iput-object p1, p0, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;->ssid:Ljava/lang/String;
 
-    .line 133
+    .line 132
     iput-object p2, p0, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;->encryption:Lcom/google/glass/util/WifiHelper$Encryption;
 
-    .line 134
+    .line 133
     iput-object p3, p0, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;->key:Ljava/lang/String;
 
-    .line 135
+    .line 134
     return-void
 .end method

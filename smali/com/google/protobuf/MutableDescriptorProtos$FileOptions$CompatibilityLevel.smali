@@ -73,7 +73,7 @@
 
     const/4 v3, 0x0
 
-    .line 7059
+    .line 7505
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     const-string v1, "NO_COMPATIBILITY"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->NO_COMPATIBILITY:Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
-    .line 7069
+    .line 7515
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     const-string v1, "PROTO1_COMPATIBLE"
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->PROTO1_COMPATIBLE:Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
-    .line 7080
+    .line 7526
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     const-string v1, "DEPRECATED_PROTO1_COMPATIBLE"
@@ -104,7 +104,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->DEPRECATED_PROTO1_COMPATIBLE:Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
-    .line 7050
+    .line 7496
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
@@ -123,14 +123,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
-    .line 7130
+    .line 7576
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 7150
+    .line 7596
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->values()[Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     move-result-object v0
@@ -153,16 +153,16 @@
     .end annotation
 
     .prologue
-    .line 7164
+    .line 7610
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 7165
+    .line 7611
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->index:I
 
-    .line 7166
+    .line 7612
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->value:I
 
-    .line 7167
+    .line 7613
     return-void
 .end method
 
@@ -170,7 +170,7 @@
     .locals 2
 
     .prologue
-    .line 7147
+    .line 7593
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -203,7 +203,7 @@
     .end annotation
 
     .prologue
-    .line 7127
+    .line 7573
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -214,34 +214,34 @@
     .parameter "value"
 
     .prologue
-    .line 7117
+    .line 7563
     sparse-switch p0, :sswitch_data_0
 
-    .line 7121
+    .line 7567
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 7118
+    .line 7564
     :sswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->NO_COMPATIBILITY:Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     goto :goto_0
 
-    .line 7119
+    .line 7565
     :sswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->PROTO1_COMPATIBLE:Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     goto :goto_0
 
-    .line 7120
+    .line 7566
     :sswitch_2
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->DEPRECATED_PROTO1_COMPATIBLE:Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     goto :goto_0
 
-    .line 7117
+    .line 7563
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -255,7 +255,7 @@
     .parameter "desc"
 
     .prologue
-    .line 7154
+    .line 7600
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -266,7 +266,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 7155
+    .line 7601
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -275,7 +275,7 @@
 
     throw v0
 
-    .line 7158
+    .line 7604
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
@@ -293,7 +293,7 @@
     .parameter "name"
 
     .prologue
-    .line 7050
+    .line 7496
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -309,7 +309,7 @@
     .locals 1
 
     .prologue
-    .line 7050
+    .line 7496
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->clone()Ljava/lang/Object;
@@ -327,7 +327,7 @@
     .locals 1
 
     .prologue
-    .line 7143
+    .line 7589
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -339,7 +339,7 @@
     .locals 1
 
     .prologue
-    .line 7114
+    .line 7560
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->value:I
 
     return v0
@@ -349,7 +349,7 @@
     .locals 2
 
     .prologue
-    .line 7139
+    .line 7585
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

@@ -38,18 +38,18 @@
     .locals 1
 
     .prologue
-    .line 306
+    .line 307
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 407
+    .line 408
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 307
+    .line 308
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 308
+    .line 309
     return-void
 .end method
 
@@ -58,18 +58,18 @@
     .parameter "parent"
 
     .prologue
-    .line 312
+    .line 313
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 407
+    .line 408
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 313
+    .line 314
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 314
+    .line 315
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .parameter "x1"
 
     .prologue
-    .line 289
+    .line 290
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -89,7 +89,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -101,7 +101,7 @@
     .locals 1
 
     .prologue
-    .line 320
+    .line 321
     new-instance v0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;-><init>()V
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 295
+    .line 296
     sget-object v0, Lcom/google/googlex/glass/common/proto/Setup;->internal_static_googlex_glass_common_proto_SetupUserAccountRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -123,14 +123,14 @@
     .locals 1
 
     .prologue
-    .line 316
+    .line 317
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 318
+    .line 319
     :cond_0
     return-void
 .end method
@@ -141,12 +141,12 @@
     .locals 2
 
     .prologue
-    .line 344
+    .line 345
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
 
-    .line 345
+    .line 346
     .local v0, result:Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->isInitialized()Z
 
@@ -154,14 +154,14 @@
 
     if-nez v1, :cond_0
 
-    .line 346
+    .line 347
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 348
+    .line 349
     :cond_0
     return-object v0
 .end method
@@ -170,7 +170,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -182,7 +182,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -194,22 +194,22 @@
     .locals 5
 
     .prologue
-    .line 352
+    .line 353
     new-instance v1, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$1;)V
 
-    .line 353
+    .line 354
     .local v1, result:Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
-    .line 354
+    .line 355
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 355
+    .line 356
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -217,24 +217,24 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 356
+    .line 357
     or-int/lit8 v2, v2, 0x1
 
-    .line 358
+    .line 359
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->access$502(Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 359
+    .line 360
     #setter for: Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->access$602(Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;I)I
 
-    .line 360
+    .line 361
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->onBuilt()V
 
-    .line 361
+    .line 362
     return-object v1
 .end method
 
@@ -242,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -254,7 +254,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -266,22 +266,22 @@
     .locals 1
 
     .prologue
-    .line 324
+    .line 325
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 325
+    .line 326
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 326
+    .line 327
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
-    .line 327
+    .line 328
     return-object p0
 .end method
 
@@ -289,7 +289,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -301,7 +301,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -313,7 +313,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -325,7 +325,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -337,14 +337,14 @@
     .locals 1
 
     .prologue
-    .line 481
+    .line 485
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
-    .line 482
+    .line 486
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -355,10 +355,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 483
+    .line 487
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->onChanged()V
 
-    .line 484
+    .line 488
     return-object p0
 .end method
 
@@ -366,7 +366,7 @@
     .locals 2
 
     .prologue
-    .line 331
+    .line 332
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -386,7 +386,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -398,7 +398,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -410,7 +410,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -422,7 +422,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -434,7 +434,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -451,7 +451,7 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -463,7 +463,7 @@
     .locals 1
 
     .prologue
-    .line 340
+    .line 341
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -475,7 +475,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -487,7 +487,7 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
@@ -499,48 +499,61 @@
     .locals 1
 
     .prologue
-    .line 336
+    .line 337
     sget-object v0, Lcom/google/googlex/glass/common/proto/Setup;->internal_static_googlex_glass_common_proto_SetupUserAccountRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getDeviceId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 426
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
-
     .line 427
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
     .line 428
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 429
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 431
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 430
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
+    .line 432
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 433
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 437
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -549,16 +562,16 @@
     .locals 3
 
     .prologue
-    .line 445
+    .line 449
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 446
+    .line 450
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 447
+    .line 451
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -566,11 +579,11 @@
 
     move-result-object v0
 
-    .line 450
+    .line 454
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 453
+    .line 457
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -591,7 +604,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 416
+    .line 417
     iget v1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -611,7 +624,7 @@
     .locals 3
 
     .prologue
-    .line 300
+    .line 301
     sget-object v0, Lcom/google/googlex/glass/common/proto/Setup;->internal_static_googlex_glass_common_proto_SetupUserAccountRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
@@ -629,7 +642,7 @@
     .locals 1
 
     .prologue
-    .line 385
+    .line 386
     const/4 v0, 0x1
 
     return v0
@@ -640,18 +653,18 @@
     .parameter "other"
 
     .prologue
-    .line 374
+    .line 375
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 381
+    .line 382
     :goto_0
     return-object p0
 
-    .line 375
+    .line 376
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->hasDeviceId()Z
 
@@ -659,14 +672,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 376
+    .line 377
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
-    .line 377
+    .line 378
     #getter for: Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->access$500(Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;)Ljava/lang/Object;
 
@@ -674,10 +687,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 378
+    .line 379
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->onChanged()V
 
-    .line 380
+    .line 381
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -699,10 +712,10 @@
     .end annotation
 
     .prologue
-    .line 392
+    .line 393
     const/4 v2, 0x0
 
-    .line 394
+    .line 395
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -720,21 +733,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 399
+    .line 400
     if-eqz v2, :cond_0
 
-    .line 400
+    .line 401
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
-    .line 403
+    .line 404
     :cond_0
     return-object p0
 
-    .line 395
+    .line 396
     :catch_0
     move-exception v1
 
-    .line 396
+    .line 397
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -747,19 +760,19 @@
 
     move-object v2, v0
 
-    .line 397
+    .line 398
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 399
+    .line 400
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 400
+    .line 401
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     :cond_1
@@ -771,12 +784,12 @@
     .parameter "other"
 
     .prologue
-    .line 365
+    .line 366
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     if-eqz v0, :cond_0
 
-    .line 366
+    .line 367
     check-cast p1, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest;
 
     .end local p1
@@ -784,12 +797,12 @@
 
     move-result-object p0
 
-    .line 369
+    .line 370
     .end local p0
     :goto_0
     return-object p0
 
-    .line 368
+    .line 369
     .restart local p0
     .restart local p1
     :cond_0
@@ -809,7 +822,7 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -822,7 +835,7 @@
     .parameter "x0"
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -841,7 +854,7 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -860,7 +873,7 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -873,7 +886,7 @@
     .parameter "x0"
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -892,7 +905,7 @@
     .end annotation
 
     .prologue
-    .line 289
+    .line 290
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;
 
     move-result-object v0
@@ -905,17 +918,17 @@
     .parameter "value"
 
     .prologue
-    .line 465
+    .line 469
     if-nez p1, :cond_0
 
-    .line 466
+    .line 470
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 468
+    .line 472
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
@@ -923,13 +936,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
-    .line 469
+    .line 473
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 470
+    .line 474
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->onChanged()V
 
-    .line 471
+    .line 475
     return-object p0
 .end method
 
@@ -938,17 +951,17 @@
     .parameter "value"
 
     .prologue
-    .line 495
+    .line 499
     if-nez p1, :cond_0
 
-    .line 496
+    .line 500
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 498
+    .line 502
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
@@ -956,12 +969,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->bitField0_:I
 
-    .line 499
+    .line 503
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 500
+    .line 504
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/SetupUserAccountRequest$Builder;->onChanged()V
 
-    .line 501
+    .line 505
     return-object p0
 .end method

@@ -55,25 +55,25 @@
     .locals 1
 
     .prologue
-    .line 10811
+    .line 11832
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 10945
+    .line 11966
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 11050
+    .line 12074
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 10812
+    .line 11833
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->maybeForceBuilderInitialization()V
 
-    .line 10813
+    .line 11834
     return-void
 .end method
 
@@ -82,25 +82,25 @@
     .parameter "parent"
 
     .prologue
-    .line 10817
+    .line 11838
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 10945
+    .line 11966
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 11050
+    .line 12074
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 10818
+    .line 11839
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->maybeForceBuilderInitialization()V
 
-    .line 10819
+    .line 11840
     return-void
 .end method
 
@@ -110,17 +110,17 @@
     .parameter "x1"
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-direct {p0, p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
 .end method
 
-.method static synthetic access$7600()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
+.method static synthetic access$8600()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->create()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -132,7 +132,7 @@
     .locals 1
 
     .prologue
-    .line 10826
+    .line 11847
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;-><init>()V
@@ -144,8 +144,8 @@
     .locals 1
 
     .prologue
-    .line 10800
-    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$7300()Lcom/google/protobuf/Descriptors$Descriptor;
+    .line 11821
+    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$8300()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
@@ -167,12 +167,12 @@
     .end annotation
 
     .prologue
-    .line 11155
+    .line 12179
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 11156
+    .line 12180
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
@@ -189,12 +189,12 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 11161
+    .line 12185
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 11163
+    .line 12187
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -205,15 +205,15 @@
     .locals 1
 
     .prologue
-    .line 10821
+    .line 11842
     sget-boolean v0, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
 
     if-eqz v0, :cond_0
 
-    .line 10822
+    .line 11843
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->getOptionsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 10824
+    .line 11845
     :cond_0
     return-void
 .end method
@@ -224,12 +224,12 @@
     .locals 2
 
     .prologue
-    .line 10858
+    .line 11879
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
 
-    .line 10859
+    .line 11880
     .local v0, result:Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->isInitialized()Z
 
@@ -237,14 +237,14 @@
 
     if-nez v1, :cond_0
 
-    .line 10860
+    .line 11881
     invoke-static {v0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 10862
+    .line 11883
     :cond_0
     return-object v0
 .end method
@@ -253,7 +253,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->build()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -265,7 +265,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->build()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -277,22 +277,22 @@
     .locals 5
 
     .prologue
-    .line 10866
+    .line 11887
     new-instance v1, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/protobuf/DescriptorProtos$1;)V
 
-    .line 10867
+    .line 11888
     .local v1, result:Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 10868
+    .line 11889
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 10869
+    .line 11890
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -300,67 +300,67 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 10870
+    .line 11891
     or-int/lit8 v2, v2, 0x1
 
-    .line 10872
+    .line 11893
     :cond_0
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->name_:Ljava/lang/Object;
-    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$7902(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$8902(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 10873
+    .line 11894
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 10874
+    .line 11895
     or-int/lit8 v2, v2, 0x2
 
-    .line 10876
+    .line 11897
     :cond_1
     iget v3, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->number_:I
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->number_:I
-    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$8002(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;I)I
+    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$9002(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;I)I
 
-    .line 10877
+    .line 11898
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 10878
+    .line 11899
     or-int/lit8 v2, v2, 0x4
 
-    .line 10880
+    .line 11901
     :cond_2
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v3, :cond_3
 
-    .line 10881
+    .line 11902
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
-    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$8102(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;)Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
+    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$9102(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;)Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 10885
+    .line 11906
     :goto_0
     #setter for: Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$8202(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;I)I
+    invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$9202(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;I)I
 
-    .line 10886
+    .line 11907
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onBuilt()V
 
-    .line 10887
+    .line 11908
     return-object v1
 
-    .line 10883
+    .line 11904
     :cond_3
     iget-object v3, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -371,7 +371,7 @@
     check-cast v3, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
-    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$8102(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;)Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
+    invoke-static {v1, v3}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$9102(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;)Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     goto :goto_0
 .end method
@@ -380,7 +380,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -392,7 +392,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -404,7 +404,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -416,46 +416,46 @@
     .locals 1
 
     .prologue
-    .line 10830
+    .line 11851
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 10831
+    .line 11852
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 10832
+    .line 11853
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 10833
+    .line 11854
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->number_:I
 
-    .line 10834
+    .line 11855
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 10835
+    .line 11856
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 10836
+    .line 11857
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 10840
+    .line 11861
     :goto_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -463,10 +463,10 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 10841
+    .line 11862
     return-object p0
 
-    .line 10838
+    .line 11859
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -479,7 +479,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -491,7 +491,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -503,7 +503,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -515,14 +515,14 @@
     .locals 1
 
     .prologue
-    .line 10999
+    .line 12023
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11000
+    .line 12024
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -533,10 +533,10 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 11001
+    .line 12025
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11002
+    .line 12026
     return-object p0
 .end method
 
@@ -544,22 +544,22 @@
     .locals 1
 
     .prologue
-    .line 11044
+    .line 12068
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11045
+    .line 12069
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->number_:I
 
-    .line 11046
+    .line 12070
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11047
+    .line 12071
     return-object p0
 .end method
 
@@ -567,22 +567,22 @@
     .locals 1
 
     .prologue
-    .line 11122
+    .line 12146
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 11123
+    .line 12147
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 11124
+    .line 12148
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11128
+    .line 12152
     :goto_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -590,10 +590,10 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11129
+    .line 12153
     return-object p0
 
-    .line 11126
+    .line 12150
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -606,7 +606,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -618,7 +618,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -630,7 +630,7 @@
     .locals 2
 
     .prologue
-    .line 10845
+    .line 11866
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->create()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -650,7 +650,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -662,7 +662,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -674,7 +674,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -691,7 +691,7 @@
     .end annotation
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -703,7 +703,7 @@
     .locals 1
 
     .prologue
-    .line 10854
+    .line 11875
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -715,7 +715,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -727,7 +727,7 @@
     .locals 1
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
@@ -739,8 +739,8 @@
     .locals 1
 
     .prologue
-    .line 10850
-    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$7300()Lcom/google/protobuf/Descriptors$Descriptor;
+    .line 11871
+    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$8300()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
@@ -748,41 +748,54 @@
 .end method
 
 .method public getName()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 10956
-    iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
+    .line 11977
+    iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 10957
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 11978
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 10958
+    move-object v0, v1
+
+    .line 11979
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 11981
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 10960
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
+    .line 11982
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 10963
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 11983
+    iput-object v2, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
+
+    .line 11987
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -791,16 +804,16 @@
     .locals 3
 
     .prologue
-    .line 10971
+    .line 11995
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 10972
+    .line 11996
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 10973
+    .line 11997
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -808,11 +821,11 @@
 
     move-result-object v0
 
-    .line 10976
+    .line 12000
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 10979
+    .line 12003
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -831,7 +844,7 @@
     .locals 1
 
     .prologue
-    .line 11029
+    .line 12053
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->number_:I
 
     return v0
@@ -841,15 +854,15 @@
     .locals 1
 
     .prologue
-    .line 11063
+    .line 12087
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 11064
+    .line 12088
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 11066
+    .line 12090
     :goto_0
     return-object v0
 
@@ -869,17 +882,17 @@
     .locals 1
 
     .prologue
-    .line 11135
+    .line 12159
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11136
+    .line 12160
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11137
+    .line 12161
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->getOptionsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -897,12 +910,12 @@
     .locals 1
 
     .prologue
-    .line 11143
+    .line 12167
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 11144
+    .line 12168
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -911,7 +924,7 @@
 
     check-cast v0, Lcom/google/protobuf/DescriptorProtos$EnumValueOptionsOrBuilder;
 
-    .line 11146
+    .line 12170
     :goto_0
     return-object v0
 
@@ -927,7 +940,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 10950
+    .line 11971
     iget v1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -947,7 +960,7 @@
     .locals 2
 
     .prologue
-    .line 11023
+    .line 12047
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -971,7 +984,7 @@
     .locals 2
 
     .prologue
-    .line 11057
+    .line 12081
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -995,8 +1008,8 @@
     .locals 3
 
     .prologue
-    .line 10805
-    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$7400()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
+    .line 11826
+    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$8400()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
 
@@ -1015,14 +1028,14 @@
     .locals 1
 
     .prologue
-    .line 10917
+    .line 11938
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->hasOptions()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 10918
+    .line 11939
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->getOptions()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
@@ -1033,10 +1046,10 @@
 
     if-nez v0, :cond_0
 
-    .line 10920
+    .line 11941
     const/4 v0, 0x0
 
-    .line 10923
+    .line 11944
     :goto_0
     return v0
 
@@ -1057,7 +1070,7 @@
     .end annotation
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -1070,7 +1083,7 @@
     .parameter "x0"
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -1089,7 +1102,7 @@
     .end annotation
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -1108,10 +1121,10 @@
     .end annotation
 
     .prologue
-    .line 10930
+    .line 11951
     const/4 v2, 0x0
 
-    .line 10932
+    .line 11953
     .local v2, parsedMessage:Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
     :try_start_0
     sget-object v3, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->PARSER:Lcom/google/protobuf/Parser;
@@ -1129,21 +1142,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 10937
+    .line 11958
     if-eqz v2, :cond_0
 
-    .line 10938
+    .line 11959
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
-    .line 10941
+    .line 11962
     :cond_0
     return-object p0
 
-    .line 10933
+    .line 11954
     :catch_0
     move-exception v1
 
-    .line 10934
+    .line 11955
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1156,19 +1169,19 @@
 
     move-object v2, v0
 
-    .line 10935
+    .line 11956
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 10937
+    .line 11958
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 10938
+    .line 11959
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     :cond_1
@@ -1180,18 +1193,18 @@
     .parameter "other"
 
     .prologue
-    .line 10900
+    .line 11921
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 10913
+    .line 11934
     :goto_0
     return-object p0
 
-    .line 10901
+    .line 11922
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->hasName()Z
 
@@ -1199,25 +1212,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 10902
+    .line 11923
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 10903
+    .line 11924
     #getter for: Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->name_:Ljava/lang/Object;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$7900(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->access$8900(Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;)Ljava/lang/Object;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 10904
+    .line 11925
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 10906
+    .line 11927
     :cond_1
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->hasNumber()Z
 
@@ -1225,14 +1238,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 10907
+    .line 11928
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->getNumber()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->setNumber(I)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
-    .line 10909
+    .line 11930
     :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->hasOptions()Z
 
@@ -1240,14 +1253,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 10910
+    .line 11931
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->getOptions()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeOptions(Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
-    .line 10912
+    .line 11933
     :cond_3
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1263,12 +1276,12 @@
     .parameter "other"
 
     .prologue
-    .line 10891
+    .line 11912
     instance-of v0, p1, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     if-eqz v0, :cond_0
 
-    .line 10892
+    .line 11913
     check-cast p1, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto;
 
     .end local p1
@@ -1276,12 +1289,12 @@
 
     move-result-object p0
 
-    .line 10895
+    .line 11916
     .end local p0
     :goto_0
     return-object p0
 
-    .line 10894
+    .line 11915
     .restart local p0
     .restart local p1
     :cond_0
@@ -1301,7 +1314,7 @@
     .end annotation
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -1314,7 +1327,7 @@
     .parameter "x0"
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -1333,7 +1346,7 @@
     .end annotation
 
     .prologue
-    .line 10794
+    .line 11815
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;
 
     move-result-object v0
@@ -1346,12 +1359,12 @@
     .parameter "value"
 
     .prologue
-    .line 11103
+    .line 12127
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 11104
+    .line 12128
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1368,7 +1381,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 11106
+    .line 12130
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     invoke-static {v0}, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;->newBuilder(Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;)Lcom/google/protobuf/DescriptorProtos$EnumValueOptions$Builder;
@@ -1385,11 +1398,11 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 11111
+    .line 12135
     :goto_0
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11115
+    .line 12139
     :goto_1
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -1397,16 +1410,16 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11116
+    .line 12140
     return-object p0
 
-    .line 11109
+    .line 12133
     :cond_0
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     goto :goto_0
 
-    .line 11113
+    .line 12137
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1420,17 +1433,17 @@
     .parameter "value"
 
     .prologue
-    .line 10987
+    .line 12011
     if-nez p1, :cond_0
 
-    .line 10988
+    .line 12012
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 10990
+    .line 12014
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -1438,13 +1451,13 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 10991
+    .line 12015
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 10992
+    .line 12016
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 10993
+    .line 12017
     return-object p0
 .end method
 
@@ -1453,17 +1466,17 @@
     .parameter "value"
 
     .prologue
-    .line 11009
+    .line 12033
     if-nez p1, :cond_0
 
-    .line 11010
+    .line 12034
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11012
+    .line 12036
     :cond_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -1471,13 +1484,13 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11013
+    .line 12037
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->name_:Ljava/lang/Object;
 
-    .line 11014
+    .line 12038
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11015
+    .line 12039
     return-object p0
 .end method
 
@@ -1486,20 +1499,20 @@
     .parameter "value"
 
     .prologue
-    .line 11035
+    .line 12059
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11036
+    .line 12060
     iput p1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->number_:I
 
-    .line 11037
+    .line 12061
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11038
+    .line 12062
     return-object p0
 .end method
 
@@ -1508,22 +1521,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 11090
+    .line 12114
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 11091
+    .line 12115
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$EnumValueOptions$Builder;->build()Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 11092
+    .line 12116
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11096
+    .line 12120
     :goto_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -1531,10 +1544,10 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11097
+    .line 12121
     return-object p0
 
-    .line 11094
+    .line 12118
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1552,29 +1565,29 @@
     .parameter "value"
 
     .prologue
-    .line 11073
+    .line 12097
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 11074
+    .line 12098
     if-nez p1, :cond_0
 
-    .line 11075
+    .line 12099
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 11077
+    .line 12101
     :cond_0
     iput-object p1, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->options_:Lcom/google/protobuf/DescriptorProtos$EnumValueOptions;
 
-    .line 11078
+    .line 12102
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->onChanged()V
 
-    .line 11082
+    .line 12106
     :goto_0
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
@@ -1582,10 +1595,10 @@
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->bitField0_:I
 
-    .line 11083
+    .line 12107
     return-object p0
 
-    .line 11080
+    .line 12104
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$EnumValueDescriptorProto$Builder;->optionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 

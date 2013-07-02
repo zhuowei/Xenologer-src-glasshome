@@ -13,6 +13,9 @@
     <item type="id" name="tag_timeline_database_adapter_read_callback" />
     <item type="id" name="tag_loading_task" />
     <item type="id" name="tag_cell_layout_type" />
+    <item type="id" name="tag_horizontal_scroll_fade_out_on_scroll" />
+    <item type="id" name="tag_notification_state_listener" />
+    <item type="id" name="tag_owned_views" />
     <item type="id" name="tag_item_crc32" />
     <item type="id" name="tag_item_read_more" />
     <item type="id" name="tag_item_time_label_text" />
@@ -58,6 +61,8 @@
     <item type="id" name="scroll_view">false</item>
     <item type="id" name="secondary_label">false</item>
     <item type="id" name="image">false</item>
+    <item type="id" name="gradient">false</item>
+    <item type="id" name="text">false</item>
     <item type="id" name="attribution">false</item>
     <item type="id" name="gf_expandable_row">false</item>
     <item type="id" name="gf_label">false</item>
@@ -105,12 +110,19 @@
     <item type="id" name="time">false</item>
     <item type="id" name="clock">false</item>
     <item type="id" name="guard_phrase_hint">false</item>
-    <item type="id" name="text">false</item>
     <item type="id" name="error_icon">false</item>
     <item type="id" name="error_message">false</item>
     <item type="id" name="error_sub_message">false</item>
     <item type="id" name="ms_dialog">false</item>
     <item type="id" name="label">false</item>
+    <item type="id" name="cover_image">false</item>
+    <item type="id" name="progress_slider">false</item>
+    <item type="id" name="artist_name">false</item>
+    <item type="id" name="duration_layout">false</item>
+    <item type="id" name="song_time">false</item>
+    <item type="id" name="song_duration">false</item>
+    <item type="id" name="play_status">false</item>
+    <item type="id" name="song_title">false</item>
     <item type="id" name="left_panel">false</item>
     <item type="id" name="turn_icon">false</item>
     <item type="id" name="time_remaining">false</item>
@@ -123,6 +135,7 @@
     <item type="id" name="head_wake_icon_head">false</item>
     <item type="id" name="head_wake_icon_cap">false</item>
     <item type="id" name="viewfinder">false</item>
+    <item type="id" name="html_pages">false</item>
     <item type="id" name="status">false</item>
     <item type="id" name="data_connection_image">false</item>
     <item type="id" name="setting_title_text">false</item>
@@ -162,26 +175,28 @@
     <item type="id" name="license_slider">false</item>
     <item type="id" name="license_web_view">false</item>
     <item type="id" name="voice_menu">false</item>
-    <item type="id" name="progress_slider">false</item>
+    <item type="id" name="microphone_container">false</item>
+    <item type="id" name="sound_levels">false</item>
+    <item type="id" name="pulsing_circle">false</item>
+    <item type="id" name="gray_circle">false</item>
+    <item type="id" name="red_circle">false</item>
+    <item type="id" name="microphone">false</item>
+    <item type="id" name="voice_input_guard_phrase">false</item>
+    <item type="id" name="voice_input_selected_item">false</item>
+    <item type="id" name="voice_input_subselected_item">false</item>
+    <item type="id" name="voice_input_prompt">false</item>
+    <item type="id" name="streaming_text">false</item>
+    <item type="id" name="streaming_text_main">false</item>
+    <item type="id" name="cancel_tip">false</item>
     <item type="id" name="voice_menu_top_layout">false</item>
-    <item type="id" name="main_menu">false</item>
+    <item type="id" name="primary_menu">false</item>
     <item type="id" name="voice_menu_guard_phrase">false</item>
-    <item type="id" name="voice_menu_selected_main_menu_item">false</item>
-    <item type="id" name="voice_menu_main_scroll_view">false</item>
+    <item type="id" name="voice_menu_selected_primary_menu_item">false</item>
+    <item type="id" name="voice_menu_primary_scroll_view">false</item>
     <item type="id" name="voice_menu_items">false</item>
     <item type="id" name="voice_menu_secondary_scroll_view">false</item>
     <item type="id" name="voice_menu_secondary_menu_layout">false</item>
     <item type="id" name="voice_menu_selected_secondary_menu_item">false</item>
-    <item type="id" name="voice_search_guard_phrase">false</item>
-    <item type="id" name="voice_search_selected_item">false</item>
-    <item type="id" name="voice_search_subselected_item">false</item>
-    <item type="id" name="voice_search_prompt">false</item>
-    <item type="id" name="streaming_text">false</item>
-    <item type="id" name="streaming_text_main">false</item>
-    <item type="id" name="microphone_container">false</item>
-    <item type="id" name="sound_levels">false</item>
-    <item type="id" name="microphone">false</item>
-    <item type="id" name="cancel_tip">false</item>
     <item type="id" name="word">false</item>
     <item type="id" name="pronunciation">false</item>
     <item type="id" name="definition">false</item>
@@ -245,6 +260,8 @@
     <item type="id" name="column2">false</item>
     <item type="id" name="column3">false</item>
     <item type="id" name="webview">false</item>
+    <item type="id" name="container">false</item>
+    <item type="id" name="tuggable_view">false</item>
     <item type="id" name="wifi_aps">false</item>
     <item type="id" name="qr_scan">false</item>
     <item type="id" name="barcode_viewfinder">false</item>
@@ -272,6 +289,10 @@
     <item type="id" name="head_wake_turn_on_state">false</item>
     <item type="id" name="head_wake_turn_off_state">false</item>
     <item type="id" name="head_wake_set_trigger_angle">false</item>
+    <item type="id" name="musicplayer_menu_play">false</item>
+    <item type="id" name="musicplayer_menu_pause">false</item>
+    <item type="id" name="musicplayer_menu_next">false</item>
+    <item type="id" name="musicplayer_menu_previous">false</item>
     <item type="id" name="wifi_menu_switch">false</item>
     <item type="id" name="wifi_menu_join">false</item>
     <item type="id" name="wifi_menu_forget_network">false</item>

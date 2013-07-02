@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 128
+    .line 129
     iput-object p1, p0, Lcom/google/glass/voice/network/translate/NetworkTts$1;->this$0:Lcom/google/glass/voice/network/translate/NetworkTts;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -52,17 +52,17 @@
     .parameter "filePath"
 
     .prologue
-    .line 131
+    .line 132
     const/4 v2, 0x0
 
-    .line 133
+    .line 134
     .local v2, ttsInput:Ljava/io/FileInputStream;
     :try_start_0
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 134
+    .line 135
     .local v1, ttsFile:Ljava/io/File;
     new-instance v3, Ljava/io/FileInputStream;
 
@@ -72,7 +72,7 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 136
+    .line 137
     .end local v2           #ttsInput:Ljava/io/FileInputStream;
     .local v3, ttsInput:Ljava/io/FileInputStream;
     :try_start_1
@@ -80,14 +80,14 @@
 
     invoke-virtual {v4}, Lcom/google/glass/voice/network/translate/NetworkTts;->stopSpeaking()V
 
-    .line 137
+    .line 138
     new-instance v4, Landroid/media/MediaPlayer;
 
     invoke-direct {v4}, Landroid/media/MediaPlayer;-><init>()V
 
     invoke-static {v4}, Lcom/google/glass/voice/network/translate/NetworkTts;->access$002(Landroid/media/MediaPlayer;)Landroid/media/MediaPlayer;
 
-    .line 138
+    .line 139
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->access$000()Landroid/media/MediaPlayer;
 
     move-result-object v4
@@ -98,7 +98,7 @@
 
     invoke-virtual {v4, v5}, Landroid/media/MediaPlayer;->setOnCompletionListener(Landroid/media/MediaPlayer$OnCompletionListener;)V
 
-    .line 140
+    .line 141
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->access$000()Landroid/media/MediaPlayer;
 
     move-result-object v4
@@ -107,7 +107,7 @@
 
     invoke-virtual {v4, v5}, Landroid/media/MediaPlayer;->setAudioStreamType(I)V
 
-    .line 141
+    .line 142
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->access$000()Landroid/media/MediaPlayer;
 
     move-result-object v4
@@ -118,21 +118,21 @@
 
     invoke-virtual {v4, v5}, Landroid/media/MediaPlayer;->setDataSource(Ljava/io/FileDescriptor;)V
 
-    .line 142
+    .line 143
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->access$000()Landroid/media/MediaPlayer;
 
     move-result-object v4
 
     invoke-virtual {v4}, Landroid/media/MediaPlayer;->prepare()V
 
-    .line 143
+    .line 144
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->access$000()Landroid/media/MediaPlayer;
 
     move-result-object v4
 
     invoke-virtual {v4}, Landroid/media/MediaPlayer;->start()V
 
-    .line 144
+    .line 145
     const/4 v4, 0x1
 
     invoke-static {v4}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -143,10 +143,10 @@
 
     move-result-object v4
 
-    .line 152
+    .line 153
     if-eqz v3, :cond_0
 
-    .line 154
+    .line 155
     :try_start_2
     invoke-virtual {v3}, Ljava/io/FileInputStream;->close()V
     :try_end_2
@@ -156,18 +156,18 @@
     :goto_0
     move-object v2, v3
 
-    .line 160
+    .line 161
     .end local v1           #ttsFile:Ljava/io/File;
     .end local v3           #ttsInput:Ljava/io/FileInputStream;
     .restart local v2       #ttsInput:Ljava/io/FileInputStream;
     :goto_1
     return-object v4
 
-    .line 145
+    .line 146
     :catch_0
     move-exception v0
 
-    .line 146
+    .line 147
     .local v0, e:Ljava/io/IOException;
     :goto_2
     :try_start_3
@@ -211,16 +211,16 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 152
+    .line 153
     if-eqz v2, :cond_1
 
-    .line 154
+    .line 155
     :try_start_4
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_4
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_4
 
-    .line 160
+    .line 161
     .end local v0           #e:Ljava/io/IOException;
     :cond_1
     :goto_3
@@ -232,11 +232,11 @@
 
     goto :goto_1
 
-    .line 148
+    .line 149
     :catch_1
     move-exception v0
 
-    .line 149
+    .line 150
     .local v0, e:Ljava/lang/IllegalStateException;
     :goto_4
     :try_start_5
@@ -280,10 +280,10 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
 
-    .line 152
+    .line 153
     if-eqz v2, :cond_1
 
-    .line 154
+    .line 155
     :try_start_6
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_6
@@ -291,13 +291,13 @@
 
     goto :goto_3
 
-    .line 155
+    .line 156
     :catch_2
     move-exception v4
 
     goto :goto_3
 
-    .line 152
+    .line 153
     .end local v0           #e:Ljava/lang/IllegalStateException;
     :catchall_0
     move-exception v4
@@ -305,18 +305,18 @@
     :goto_5
     if-eqz v2, :cond_2
 
-    .line 154
+    .line 155
     :try_start_7
     invoke-virtual {v2}, Ljava/io/FileInputStream;->close()V
     :try_end_7
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_5
 
-    .line 157
+    .line 158
     :cond_2
     :goto_6
     throw v4
 
-    .line 155
+    .line 156
     .end local v2           #ttsInput:Ljava/io/FileInputStream;
     .restart local v1       #ttsFile:Ljava/io/File;
     .restart local v3       #ttsInput:Ljava/io/FileInputStream;
@@ -340,7 +340,7 @@
 
     goto :goto_6
 
-    .line 152
+    .line 153
     .end local v2           #ttsInput:Ljava/io/FileInputStream;
     .restart local v1       #ttsFile:Ljava/io/File;
     .restart local v3       #ttsInput:Ljava/io/FileInputStream;
@@ -353,7 +353,7 @@
     .restart local v2       #ttsInput:Ljava/io/FileInputStream;
     goto :goto_5
 
-    .line 148
+    .line 149
     .end local v2           #ttsInput:Ljava/io/FileInputStream;
     .restart local v3       #ttsInput:Ljava/io/FileInputStream;
     :catch_6
@@ -365,7 +365,7 @@
     .restart local v2       #ttsInput:Ljava/io/FileInputStream;
     goto :goto_4
 
-    .line 145
+    .line 146
     .end local v2           #ttsInput:Ljava/io/FileInputStream;
     .restart local v3       #ttsInput:Ljava/io/FileInputStream;
     :catch_7
@@ -383,7 +383,7 @@
     .parameter "x0"
 
     .prologue
-    .line 128
+    .line 129
     invoke-virtual {p0, p1}, Lcom/google/glass/voice/network/translate/NetworkTts$1;->load(Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0

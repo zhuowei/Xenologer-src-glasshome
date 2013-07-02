@@ -3,7 +3,7 @@
 .source "TimelineNotificationHelper.java"
 
 # interfaces
-.implements Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
+.implements Lcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 146
+    .line 154
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$2$1;->this$0:Lcom/google/glass/timeline/TimelineNotificationHelper$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,36 +37,11 @@
 
 
 # virtual methods
-.method public onRender(Lcom/google/glass/html/HtmlRenderer;Landroid/graphics/Bitmap;)V
-    .locals 2
-    .parameter "renderer"
-    .parameter "bitmap"
+.method public onPageCountChange(I)V
+    .locals 0
+    .parameter "pages"
 
     .prologue
-    .line 149
-    invoke-virtual {p1}, Lcom/google/glass/html/HtmlRenderer;->isDoneLoadingResources()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 150
-    invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Done loading HTML resources."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 151
-    iget-object v0, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$2$1;->this$0:Lcom/google/glass/timeline/TimelineNotificationHelper$2;
-
-    iget-object v0, v0, Lcom/google/glass/timeline/TimelineNotificationHelper$2;->val$resourceLoadLatch:Ljava/util/concurrent/CountDownLatch;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
-
-    .line 153
-    :cond_0
+    .line 159
     return-void
 .end method

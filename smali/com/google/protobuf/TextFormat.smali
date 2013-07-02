@@ -168,7 +168,7 @@
     .parameter "c"
 
     .prologue
-    .line 1876
+    .line 1870
     const/16 v0, 0x30
 
     if-gt v0, p0, :cond_0
@@ -177,14 +177,14 @@
 
     if-gt p0, v0, :cond_0
 
-    .line 1877
+    .line 1871
     add-int/lit8 v0, p0, -0x30
 
-    .line 1881
+    .line 1875
     :goto_0
     return v0
 
-    .line 1878
+    .line 1872
     :cond_0
     const/16 v0, 0x61
 
@@ -194,14 +194,14 @@
 
     if-gt p0, v0, :cond_1
 
-    .line 1879
+    .line 1873
     add-int/lit8 v0, p0, -0x61
 
     add-int/lit8 v0, v0, 0xa
 
     goto :goto_0
 
-    .line 1881
+    .line 1875
     :cond_1
     add-int/lit8 v0, p0, -0x41
 
@@ -215,7 +215,7 @@
     .parameter "input"
 
     .prologue
-    .line 1720
+    .line 1714
     new-instance v0, Lcom/google/protobuf/TextFormat$1;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/TextFormat$1;-><init>(Lcom/google/protobuf/ByteString;)V
@@ -232,7 +232,7 @@
     .parameter "input"
 
     .prologue
-    .line 1678
+    .line 1672
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-interface {p0}, Lcom/google/protobuf/TextFormat$ByteSequence;->size()I
@@ -241,7 +241,7 @@
 
     invoke-direct {v1, v3}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1679
+    .line 1673
     .local v1, builder:Ljava/lang/StringBuilder;
     const/4 v2, 0x0
 
@@ -253,32 +253,32 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 1680
+    .line 1674
     invoke-interface {p0, v2}, Lcom/google/protobuf/TextFormat$ByteSequence;->byteAt(I)B
 
     move-result v0
 
-    .line 1681
+    .line 1675
     .local v0, b:B
     sparse-switch v0, :sswitch_data_0
 
-    .line 1697
+    .line 1691
     const/16 v3, 0x20
 
     if-lt v0, v3, :cond_0
 
-    .line 1698
+    .line 1692
     int-to-char v3, v0
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1679
+    .line 1673
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1683
+    .line 1677
     :sswitch_0
     const-string v3, "\\a"
 
@@ -286,7 +286,7 @@
 
     goto :goto_1
 
-    .line 1684
+    .line 1678
     :sswitch_1
     const-string v3, "\\b"
 
@@ -294,7 +294,7 @@
 
     goto :goto_1
 
-    .line 1685
+    .line 1679
     :sswitch_2
     const-string v3, "\\f"
 
@@ -302,7 +302,7 @@
 
     goto :goto_1
 
-    .line 1686
+    .line 1680
     :sswitch_3
     const-string v3, "\\n"
 
@@ -310,7 +310,7 @@
 
     goto :goto_1
 
-    .line 1687
+    .line 1681
     :sswitch_4
     const-string v3, "\\r"
 
@@ -318,7 +318,7 @@
 
     goto :goto_1
 
-    .line 1688
+    .line 1682
     :sswitch_5
     const-string v3, "\\t"
 
@@ -326,7 +326,7 @@
 
     goto :goto_1
 
-    .line 1689
+    .line 1683
     :sswitch_6
     const-string v3, "\\v"
 
@@ -334,7 +334,7 @@
 
     goto :goto_1
 
-    .line 1690
+    .line 1684
     :sswitch_7
     const-string v3, "\\\\"
 
@@ -342,7 +342,7 @@
 
     goto :goto_1
 
-    .line 1691
+    .line 1685
     :sswitch_8
     const-string v3, "\\\'"
 
@@ -350,7 +350,7 @@
 
     goto :goto_1
 
-    .line 1692
+    .line 1686
     :sswitch_9
     const-string v3, "\\\""
 
@@ -358,13 +358,13 @@
 
     goto :goto_1
 
-    .line 1700
+    .line 1694
     :cond_0
     const/16 v3, 0x5c
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1701
+    .line 1695
     ushr-int/lit8 v3, v0, 0x6
 
     and-int/lit8 v3, v3, 0x3
@@ -375,7 +375,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1702
+    .line 1696
     ushr-int/lit8 v3, v0, 0x3
 
     and-int/lit8 v3, v3, 0x7
@@ -386,7 +386,7 @@
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 1703
+    .line 1697
     and-int/lit8 v3, v0, 0x7
 
     add-int/lit8 v3, v3, 0x30
@@ -397,7 +397,7 @@
 
     goto :goto_1
 
-    .line 1708
+    .line 1702
     .end local v0           #b:B
     :cond_1
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -406,7 +406,7 @@
 
     return-object v3
 
-    .line 1681
+    .line 1675
     nop
 
     :sswitch_data_0
@@ -429,7 +429,7 @@
     .parameter "input"
 
     .prologue
-    .line 1734
+    .line 1728
     new-instance v0, Lcom/google/protobuf/TextFormat$2;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/TextFormat$2;-><init>([B)V
@@ -446,7 +446,7 @@
     .parameter "input"
 
     .prologue
-    .line 1846
+    .line 1840
     invoke-static {p0}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
 
     move-result-object v0
@@ -473,7 +473,7 @@
     .parameter "c"
 
     .prologue
-    .line 1865
+    .line 1859
     const/16 v0, 0x30
 
     if-gt v0, p0, :cond_0
@@ -517,7 +517,7 @@
     .parameter "c"
 
     .prologue
-    .line 1860
+    .line 1854
     const/16 v0, 0x30
 
     if-gt v0, p0, :cond_0
@@ -711,7 +711,7 @@
     .end annotation
 
     .prologue
-    .line 1891
+    .line 1885
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -737,7 +737,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1911
+    .line 1905
     invoke-static {p0, v0, v0}, Lcom/google/protobuf/TextFormat;->parseInteger(Ljava/lang/String;ZZ)J
 
     move-result-wide v0
@@ -757,14 +757,14 @@
     .end annotation
 
     .prologue
-    .line 1929
+    .line 1923
     const/4 v3, 0x0
 
-    .line 1931
+    .line 1925
     .local v3, pos:I
     const/4 v1, 0x0
 
-    .line 1932
+    .line 1926
     .local v1, negative:Z
     const-string v7, "-"
 
@@ -774,10 +774,10 @@
 
     if-eqz v7, :cond_1
 
-    .line 1933
+    .line 1927
     if-nez p1, :cond_0
 
-    .line 1934
+    .line 1928
     new-instance v7, Ljava/lang/NumberFormatException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -802,18 +802,18 @@
 
     throw v7
 
-    .line 1936
+    .line 1930
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
-    .line 1937
+    .line 1931
     const/4 v1, 0x1
 
-    .line 1940
+    .line 1934
     :cond_1
     const/16 v4, 0xa
 
-    .line 1941
+    .line 1935
     .local v4, radix:I
     const-string v7, "0x"
 
@@ -823,24 +823,24 @@
 
     if-eqz v7, :cond_5
 
-    .line 1942
+    .line 1936
     add-int/lit8 v3, v3, 0x2
 
-    .line 1943
+    .line 1937
     const/16 v4, 0x10
 
-    .line 1948
+    .line 1942
     :cond_2
     :goto_0
     invoke-virtual {p0, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1950
+    .line 1944
     .local v2, numberText:Ljava/lang/String;
     const-wide/16 v5, 0x0
 
-    .line 1951
+    .line 1945
     .local v5, result:J
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
@@ -850,25 +850,25 @@
 
     if-ge v7, v8, :cond_8
 
-    .line 1953
+    .line 1947
     invoke-static {v2, v4}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
 
     move-result-wide v5
 
-    .line 1954
+    .line 1948
     if-eqz v1, :cond_3
 
-    .line 1955
+    .line 1949
     neg-long v5, v5
 
-    .line 1961
+    .line 1955
     :cond_3
     if-nez p2, :cond_e
 
-    .line 1962
+    .line 1956
     if-eqz p1, :cond_6
 
-    .line 1963
+    .line 1957
     const-wide/32 v7, 0x7fffffff
 
     cmp-long v7, v5, v7
@@ -881,7 +881,7 @@
 
     if-gez v7, :cond_e
 
-    .line 1964
+    .line 1958
     :cond_4
     new-instance v7, Ljava/lang/NumberFormatException;
 
@@ -907,7 +907,7 @@
 
     throw v7
 
-    .line 1944
+    .line 1938
     .end local v2           #numberText:Ljava/lang/String;
     .end local v5           #result:J
     :cond_5
@@ -919,12 +919,12 @@
 
     if-eqz v7, :cond_2
 
-    .line 1945
+    .line 1939
     const/16 v4, 0x8
 
     goto :goto_0
 
-    .line 1968
+    .line 1962
     .restart local v2       #numberText:Ljava/lang/String;
     .restart local v5       #result:J
     :cond_6
@@ -940,7 +940,7 @@
 
     if-gez v7, :cond_e
 
-    .line 1969
+    .line 1963
     :cond_7
     new-instance v7, Ljava/lang/NumberFormatException;
 
@@ -966,29 +966,29 @@
 
     throw v7
 
-    .line 1975
+    .line 1969
     :cond_8
     new-instance v0, Ljava/math/BigInteger;
 
     invoke-direct {v0, v2, v4}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;I)V
 
-    .line 1976
+    .line 1970
     .local v0, bigValue:Ljava/math/BigInteger;
     if-eqz v1, :cond_9
 
-    .line 1977
+    .line 1971
     invoke-virtual {v0}, Ljava/math/BigInteger;->negate()Ljava/math/BigInteger;
 
     move-result-object v0
 
-    .line 1981
+    .line 1975
     :cond_9
     if-nez p2, :cond_b
 
-    .line 1982
+    .line 1976
     if-eqz p1, :cond_a
 
-    .line 1983
+    .line 1977
     invoke-virtual {v0}, Ljava/math/BigInteger;->bitLength()I
 
     move-result v7
@@ -997,7 +997,7 @@
 
     if-le v7, v8, :cond_d
 
-    .line 1984
+    .line 1978
     new-instance v7, Ljava/lang/NumberFormatException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1022,7 +1022,7 @@
 
     throw v7
 
-    .line 1988
+    .line 1982
     :cond_a
     invoke-virtual {v0}, Ljava/math/BigInteger;->bitLength()I
 
@@ -1032,7 +1032,7 @@
 
     if-le v7, v8, :cond_d
 
-    .line 1989
+    .line 1983
     new-instance v7, Ljava/lang/NumberFormatException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1057,11 +1057,11 @@
 
     throw v7
 
-    .line 1994
+    .line 1988
     :cond_b
     if-eqz p1, :cond_c
 
-    .line 1995
+    .line 1989
     invoke-virtual {v0}, Ljava/math/BigInteger;->bitLength()I
 
     move-result v7
@@ -1070,7 +1070,7 @@
 
     if-le v7, v8, :cond_d
 
-    .line 1996
+    .line 1990
     new-instance v7, Ljava/lang/NumberFormatException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1095,7 +1095,7 @@
 
     throw v7
 
-    .line 2000
+    .line 1994
     :cond_c
     invoke-virtual {v0}, Ljava/math/BigInteger;->bitLength()I
 
@@ -1105,7 +1105,7 @@
 
     if-le v7, v8, :cond_d
 
-    .line 2001
+    .line 1995
     new-instance v7, Ljava/lang/NumberFormatException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -1130,13 +1130,13 @@
 
     throw v7
 
-    .line 2007
+    .line 2001
     :cond_d
     invoke-virtual {v0}, Ljava/math/BigInteger;->longValue()J
 
     move-result-wide v5
 
-    .line 2010
+    .line 2004
     .end local v0           #bigValue:Ljava/math/BigInteger;
     :cond_e
     return-wide v5
@@ -1154,7 +1154,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 1902
+    .line 1896
     invoke-static {p0, v0, v0}, Lcom/google/protobuf/TextFormat;->parseInteger(Ljava/lang/String;ZZ)J
 
     move-result-wide v0
@@ -1174,7 +1174,7 @@
     .end annotation
 
     .prologue
-    .line 1922
+    .line 1916
     const/4 v0, 0x0
 
     const/4 v1, 0x1
@@ -1811,7 +1811,7 @@
 
     const/16 v10, 0x27
 
-    .line 1752
+    .line 1746
     invoke-interface {p0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v7
@@ -1820,7 +1820,7 @@
 
     move-result-object v3
 
-    .line 1760
+    .line 1754
     .local v3, input:Lcom/google/protobuf/ByteString;
     invoke-virtual {v3}, Lcom/google/protobuf/ByteString;->size()I
 
@@ -1828,11 +1828,11 @@
 
     new-array v6, v7, [B
 
-    .line 1761
+    .line 1755
     .local v6, result:[B
     const/4 v4, 0x0
 
-    .line 1762
+    .line 1756
     .local v4, pos:I
     const/4 v2, 0x0
 
@@ -1844,16 +1844,16 @@
 
     if-ge v2, v7, :cond_7
 
-    .line 1763
+    .line 1757
     invoke-virtual {v3, v2}, Lcom/google/protobuf/ByteString;->byteAt(I)B
 
     move-result v0
 
-    .line 1764
+    .line 1758
     .local v0, c:B
     if-ne v0, v9, :cond_6
 
-    .line 1765
+    .line 1759
     add-int/lit8 v7, v2, 0x1
 
     invoke-virtual {v3}, Lcom/google/protobuf/ByteString;->size()I
@@ -1862,27 +1862,27 @@
 
     if-ge v7, v8, :cond_5
 
-    .line 1766
+    .line 1760
     add-int/lit8 v2, v2, 0x1
 
-    .line 1767
+    .line 1761
     invoke-virtual {v3, v2}, Lcom/google/protobuf/ByteString;->byteAt(I)B
 
     move-result v0
 
-    .line 1768
+    .line 1762
     invoke-static {v0}, Lcom/google/protobuf/TextFormat;->isOctal(B)Z
 
     move-result v7
 
     if-eqz v7, :cond_2
 
-    .line 1770
+    .line 1764
     invoke-static {v0}, Lcom/google/protobuf/TextFormat;->digitValue(B)I
 
     move-result v1
 
-    .line 1771
+    .line 1765
     .local v1, code:I
     add-int/lit8 v7, v2, 0x1
 
@@ -1904,10 +1904,10 @@
 
     if-eqz v7, :cond_0
 
-    .line 1772
+    .line 1766
     add-int/lit8 v2, v2, 0x1
 
-    .line 1773
+    .line 1767
     mul-int/lit8 v7, v1, 0x8
 
     invoke-virtual {v3, v2}, Lcom/google/protobuf/ByteString;->byteAt(I)B
@@ -1920,7 +1920,7 @@
 
     add-int v1, v7, v8
 
-    .line 1775
+    .line 1769
     :cond_0
     add-int/lit8 v7, v2, 0x1
 
@@ -1942,10 +1942,10 @@
 
     if-eqz v7, :cond_1
 
-    .line 1776
+    .line 1770
     add-int/lit8 v2, v2, 0x1
 
-    .line 1777
+    .line 1771
     mul-int/lit8 v7, v1, 0x8
 
     invoke-virtual {v3, v2}, Lcom/google/protobuf/ByteString;->byteAt(I)B
@@ -1958,7 +1958,7 @@
 
     add-int v1, v7, v8
 
-    .line 1780
+    .line 1774
     :cond_1
     add-int/lit8 v5, v4, 0x1
 
@@ -1970,7 +1970,7 @@
 
     move v4, v5
 
-    .line 1762
+    .line 1756
     .end local v1           #code:I
     .end local v5           #pos:I
     .restart local v4       #pos:I
@@ -1979,11 +1979,11 @@
 
     goto :goto_0
 
-    .line 1782
+    .line 1776
     :cond_2
     sparse-switch v0, :sswitch_data_0
 
-    .line 1812
+    .line 1806
     new-instance v7, Lcom/google/protobuf/TextFormat$InvalidEscapeSequenceException;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -2014,7 +2014,7 @@
 
     throw v7
 
-    .line 1783
+    .line 1777
     :sswitch_0
     add-int/lit8 v5, v4, 0x1
 
@@ -2030,7 +2030,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1784
+    .line 1778
     :sswitch_1
     add-int/lit8 v5, v4, 0x1
 
@@ -2046,7 +2046,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1785
+    .line 1779
     :sswitch_2
     add-int/lit8 v5, v4, 0x1
 
@@ -2062,7 +2062,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1786
+    .line 1780
     :sswitch_3
     add-int/lit8 v5, v4, 0x1
 
@@ -2078,7 +2078,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1787
+    .line 1781
     :sswitch_4
     add-int/lit8 v5, v4, 0x1
 
@@ -2094,7 +2094,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1788
+    .line 1782
     :sswitch_5
     add-int/lit8 v5, v4, 0x1
 
@@ -2110,7 +2110,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1789
+    .line 1783
     :sswitch_6
     add-int/lit8 v5, v4, 0x1
 
@@ -2126,7 +2126,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1790
+    .line 1784
     :sswitch_7
     add-int/lit8 v5, v4, 0x1
 
@@ -2140,7 +2140,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1791
+    .line 1785
     :sswitch_8
     add-int/lit8 v5, v4, 0x1
 
@@ -2154,7 +2154,7 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1792
+    .line 1786
     :sswitch_9
     add-int/lit8 v5, v4, 0x1
 
@@ -2170,11 +2170,11 @@
     .restart local v4       #pos:I
     goto :goto_1
 
-    .line 1796
+    .line 1790
     :sswitch_a
     const/4 v1, 0x0
 
-    .line 1797
+    .line 1791
     .restart local v1       #code:I
     add-int/lit8 v7, v2, 0x1
 
@@ -2196,10 +2196,10 @@
 
     if-eqz v7, :cond_4
 
-    .line 1798
+    .line 1792
     add-int/lit8 v2, v2, 0x1
 
-    .line 1799
+    .line 1793
     invoke-virtual {v3, v2}, Lcom/google/protobuf/ByteString;->byteAt(I)B
 
     move-result v7
@@ -2208,7 +2208,7 @@
 
     move-result v1
 
-    .line 1804
+    .line 1798
     add-int/lit8 v7, v2, 0x1
 
     invoke-virtual {v3}, Lcom/google/protobuf/ByteString;->size()I
@@ -2229,10 +2229,10 @@
 
     if-eqz v7, :cond_3
 
-    .line 1805
+    .line 1799
     add-int/lit8 v2, v2, 0x1
 
-    .line 1806
+    .line 1800
     mul-int/lit8 v7, v1, 0x10
 
     invoke-virtual {v3, v2}, Lcom/google/protobuf/ByteString;->byteAt(I)B
@@ -2245,7 +2245,7 @@
 
     add-int v1, v7, v8
 
-    .line 1808
+    .line 1802
     :cond_3
     add-int/lit8 v5, v4, 0x1
 
@@ -2257,12 +2257,12 @@
 
     move v4, v5
 
-    .line 1809
+    .line 1803
     .end local v5           #pos:I
     .restart local v4       #pos:I
     goto/16 :goto_1
 
-    .line 1801
+    .line 1795
     :cond_4
     new-instance v7, Lcom/google/protobuf/TextFormat$InvalidEscapeSequenceException;
 
@@ -2272,7 +2272,7 @@
 
     throw v7
 
-    .line 1817
+    .line 1811
     .end local v1           #code:I
     :cond_5
     new-instance v7, Lcom/google/protobuf/TextFormat$InvalidEscapeSequenceException;
@@ -2283,7 +2283,7 @@
 
     throw v7
 
-    .line 1821
+    .line 1815
     :cond_6
     add-int/lit8 v5, v4, 0x1
 
@@ -2297,7 +2297,7 @@
     .restart local v4       #pos:I
     goto/16 :goto_1
 
-    .line 1825
+    .line 1819
     .end local v0           #c:B
     :cond_7
     const/4 v7, 0x0
@@ -2308,7 +2308,7 @@
 
     return-object v7
 
-    .line 1782
+    .line 1776
     nop
 
     :sswitch_data_0
@@ -2337,7 +2337,7 @@
     .end annotation
 
     .prologue
-    .line 1855
+    .line 1849
     invoke-static {p0}, Lcom/google/protobuf/TextFormat;->unescapeBytes(Ljava/lang/CharSequence;)Lcom/google/protobuf/ByteString;
 
     move-result-object v0

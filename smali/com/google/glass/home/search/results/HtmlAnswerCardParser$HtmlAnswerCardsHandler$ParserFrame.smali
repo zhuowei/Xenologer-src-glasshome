@@ -32,23 +32,23 @@
     .parameter "endDepth"
 
     .prologue
-    .line 160
+    .line 541
     iput-object p1, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;->this$0:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 161
+    .line 542
     iput-object p2, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;->type:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
 
-    .line 162
+    .line 543
     iput p3, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;->endDepth:I
 
-    .line 163
+    .line 544
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;->extra:Ljava/lang/Object;
 
-    .line 164
+    .line 545
     return-void
 .end method
 
@@ -57,18 +57,18 @@
     .parameter "x0"
 
     .prologue
-    .line 154
+    .line 535
     iget-object v0, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;->type:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
 
     return-object v0
 .end method
 
-.method static synthetic access$700(Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;)I
+.method static synthetic access$800(Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 154
+    .line 535
     iget v0, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$ParserFrame;->endDepth:I
 
     return v0

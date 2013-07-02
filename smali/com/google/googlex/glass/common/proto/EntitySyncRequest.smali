@@ -60,19 +60,19 @@
     .locals 2
 
     .prologue
-    .line 101
+    .line 102
     new-instance v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 286
+    .line 287
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 719
+    .line 723
     new-instance v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     const/4 v1, 0x1
@@ -81,17 +81,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->defaultInstance:Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
-    .line 720
+    .line 724
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->defaultInstance:Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->initFields()V
 
-    .line 721
+    .line 725
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 7
+    .locals 8
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -101,82 +101,84 @@
     .end annotation
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     .line 42
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 231
-    iput-byte v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedIsInitialized:B
+    .line 232
+    iput-byte v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedIsInitialized:B
 
-    .line 255
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedSerializedSize:I
+    .line 256
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedSerializedSize:I
 
     .line 43
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->initFields()V
 
     .line 44
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 45
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 48
-    .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 49
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     .line 50
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v3
+    move-result v4
 
     .line 51
-    .local v3, tag:I
-    sparse-switch v3, :sswitch_data_0
+    .local v4, tag:I
+    sparse-switch v4, :sswitch_data_0
 
     .line 56
-    invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 58
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 53
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 54
     goto :goto_0
 
     .line 63
     :sswitch_1
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x1
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
-
-    .line 64
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
+    .line 64
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x1
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+
+    .line 65
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -184,54 +186,55 @@
 
     goto :goto_0
 
-    .line 79
-    .end local v3           #tag:I
-    :catch_0
-    move-exception v1
-
     .line 80
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
+    :catch_0
+    move-exception v2
+
+    .line 81
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 85
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
-    :catchall_0
-    move-exception v5
-
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    throw v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 86
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_0
+    move-exception v6
+
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 87
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->makeExtensionsImmutable()V
 
-    throw v5
-
-    .line 68
-    .restart local v3       #tag:I
-    :sswitch_2
-    :try_start_2
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x2
-
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+    throw v6
 
     .line 69
+    .restart local v4       #tag:I
+    :sswitch_2
+    :try_start_2
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x2
+
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+
+    .line 70
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
-    move-result v5
+    move-result v6
 
-    iput-boolean v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
+    iput-boolean v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
@@ -239,47 +242,47 @@
 
     goto :goto_0
 
-    .line 81
-    .end local v3           #tag:I
-    :catch_1
-    move-exception v1
-
     .line 82
-    .local v1, e:Ljava/io/IOException;
-    :try_start_3
-    new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v4           #tag:I
+    :catch_1
+    move-exception v2
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    .line 83
+    .local v2, e:Ljava/io/IOException;
+    :try_start_3
+    new-instance v6, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
+    throw v6
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 73
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v3       #tag:I
+    .line 74
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v4       #tag:I
     :sswitch_3
     :try_start_4
-    iget v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+    iget v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
-    or-int/lit8 v5, v5, 0x4
+    or-int/lit8 v6, v6, 0x4
 
-    iput v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
+    iput v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
-    .line 74
+    .line 75
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
-    move-result v5
+    move-result v6
 
-    iput-boolean v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
+    iput-boolean v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
@@ -287,19 +290,19 @@
 
     goto :goto_0
 
-    .line 85
-    .end local v3           #tag:I
-    :cond_1
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
     .line 86
+    .end local v4           #tag:I
+    :cond_1
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 87
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->makeExtensionsImmutable()V
 
-    .line 88
+    .line 89
     return-void
 
     .line 51
@@ -350,10 +353,10 @@
     .line 19
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 231
+    .line 232
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedIsInitialized:B
 
-    .line 255
+    .line 256
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedSerializedSize:I
 
     .line 20
@@ -389,10 +392,10 @@
     .line 22
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 231
+    .line 232
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedIsInitialized:B
 
-    .line 255
+    .line 256
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedSerializedSize:I
 
     .line 22
@@ -488,7 +491,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 92
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -500,18 +503,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 227
+    .line 228
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 228
+    .line 229
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
 
-    .line 229
+    .line 230
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
 
-    .line 230
+    .line 231
     return-void
 .end method
 
@@ -519,7 +522,7 @@
     .locals 1
 
     .prologue
-    .line 348
+    .line 349
     #calls: Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->access$100()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
@@ -533,7 +536,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 351
+    .line 352
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -555,7 +558,7 @@
     .end annotation
 
     .prologue
-    .line 328
+    .line 329
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -578,7 +581,7 @@
     .end annotation
 
     .prologue
-    .line 334
+    .line 335
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -600,7 +603,7 @@
     .end annotation
 
     .prologue
-    .line 298
+    .line 299
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -623,7 +626,7 @@
     .end annotation
 
     .prologue
-    .line 304
+    .line 305
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -645,7 +648,7 @@
     .end annotation
 
     .prologue
-    .line 339
+    .line 340
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -668,7 +671,7 @@
     .end annotation
 
     .prologue
-    .line 345
+    .line 346
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -690,7 +693,7 @@
     .end annotation
 
     .prologue
-    .line 318
+    .line 319
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -713,7 +716,7 @@
     .end annotation
 
     .prologue
-    .line 324
+    .line 325
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -735,7 +738,7 @@
     .end annotation
 
     .prologue
-    .line 308
+    .line 309
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -758,7 +761,7 @@
     .end annotation
 
     .prologue
-    .line 314
+    .line 315
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -776,7 +779,7 @@
     .locals 1
 
     .prologue
-    .line 194
+    .line 195
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
 
     return v0
@@ -820,19 +823,19 @@
     .locals 4
 
     .prologue
-    .line 139
+    .line 140
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 140
+    .line 141
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 141
+    .line 142
     check-cast v1, Ljava/lang/String;
 
-    .line 149
+    .line 150
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -841,16 +844,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 143
+    .line 144
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 145
+    .line 146
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 146
+    .line 147
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -858,13 +861,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 147
+    .line 148
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 149
+    .line 150
     goto :goto_0
 .end method
 
@@ -872,16 +875,16 @@
     .locals 3
 
     .prologue
-    .line 162
+    .line 163
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 163
+    .line 164
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 164
+    .line 165
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -889,11 +892,11 @@
 
     move-result-object v0
 
-    .line 167
+    .line 168
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
 
-    .line 170
+    .line 171
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -912,7 +915,7 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 224
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
 
     return v0
@@ -931,7 +934,7 @@
     .end annotation
 
     .prologue
-    .line 113
+    .line 114
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -941,10 +944,10 @@
     .locals 4
 
     .prologue
-    .line 257
+    .line 258
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedSerializedSize:I
 
-    .line 258
+    .line 259
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -952,19 +955,19 @@
 
     move v1, v0
 
-    .line 275
+    .line 276
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 260
+    .line 261
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 261
+    .line 262
     iget v2, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
@@ -973,7 +976,7 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 262
+    .line 263
     const/4 v2, 0x5
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getDeviceIdBytes()Lcom/google/protobuf/ByteString;
@@ -986,7 +989,7 @@
 
     add-int/2addr v0, v2
 
-    .line 265
+    .line 266
     :cond_1
     iget v2, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
@@ -996,7 +999,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 266
+    .line 267
     const/4 v2, 0x6
 
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
@@ -1007,7 +1010,7 @@
 
     add-int/2addr v0, v2
 
-    .line 269
+    .line 270
     :cond_2
     iget v2, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
@@ -1017,7 +1020,7 @@
 
     if-ne v2, v3, :cond_3
 
-    .line 270
+    .line 271
     const/4 v2, 0x7
 
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
@@ -1028,7 +1031,7 @@
 
     add-int/2addr v0, v2
 
-    .line 273
+    .line 274
     :cond_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1040,12 +1043,12 @@
 
     add-int/2addr v0, v2
 
-    .line 274
+    .line 275
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 275
+    .line 276
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -1065,7 +1068,7 @@
     .locals 2
 
     .prologue
-    .line 184
+    .line 185
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1091,7 +1094,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 128
+    .line 129
     iget v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1111,7 +1114,7 @@
     .locals 2
 
     .prologue
-    .line 210
+    .line 211
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1135,7 +1138,7 @@
     .locals 3
 
     .prologue
-    .line 96
+    .line 97
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
@@ -1153,12 +1156,12 @@
     .locals 1
 
     .prologue
-    .line 289
+    .line 290
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 290
+    .line 291
     const-string v0, "com.google.googlex.glass.common.proto.MutableEntitySync$EntitySyncRequest"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1167,7 +1170,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 292
+    .line 293
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1180,10 +1183,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 233
+    .line 234
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedIsInitialized:B
 
-    .line 234
+    .line 235
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -1191,17 +1194,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 237
+    .line 238
     :goto_0
     return v1
 
-    .line 234
+    .line 235
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 236
+    .line 237
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->memoizedIsInitialized:B
 
@@ -1212,7 +1215,7 @@
     .locals 1
 
     .prologue
-    .line 349
+    .line 350
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1225,14 +1228,14 @@
     .parameter "parent"
 
     .prologue
-    .line 358
+    .line 359
     new-instance v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/EntitySyncRequest$1;)V
 
-    .line 359
+    .line 360
     .local v0, builder:Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
     return-object v0
 .end method
@@ -1278,7 +1281,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->newBuilder(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1319,7 +1322,7 @@
     .end annotation
 
     .prologue
-    .line 282
+    .line 283
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1337,10 +1340,10 @@
     .end annotation
 
     .prologue
-    .line 242
+    .line 243
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getSerializedSize()I
 
-    .line 243
+    .line 244
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -1349,7 +1352,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 244
+    .line 245
     const/4 v0, 0x5
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getDeviceIdBytes()Lcom/google/protobuf/ByteString;
@@ -1358,7 +1361,7 @@
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 246
+    .line 247
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
@@ -1368,14 +1371,14 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 247
+    .line 248
     const/4 v0, 0x6
 
     iget-boolean v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 249
+    .line 250
     :cond_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
 
@@ -1385,14 +1388,14 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 250
+    .line 251
     const/4 v0, 0x7
 
     iget-boolean v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 252
+    .line 253
     :cond_2
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1400,6 +1403,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 253
+    .line 254
     return-void
 .end method

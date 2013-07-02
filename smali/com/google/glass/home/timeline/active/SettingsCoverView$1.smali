@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 63
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$1;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,12 +42,12 @@
     .parameter "isConnected"
 
     .prologue
-    .line 70
+    .line 66
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/SettingsCoverView$1;->this$0:Lcom/google/glass/home/timeline/active/SettingsCoverView;
 
     #calls: Lcom/google/glass/home/timeline/active/SettingsCoverView;->updateConnectivity()V
     invoke-static {v0}, Lcom/google/glass/home/timeline/active/SettingsCoverView;->access$000(Lcom/google/glass/home/timeline/active/SettingsCoverView;)V
 
-    .line 71
+    .line 67
     return-void
 .end method

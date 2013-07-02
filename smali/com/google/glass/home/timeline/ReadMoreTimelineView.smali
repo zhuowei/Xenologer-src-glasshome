@@ -19,14 +19,14 @@
     .parameter "context"
 
     .prologue
-    .line 48
+    .line 46
     const/4 v0, 0x0
 
     const/4 v1, 0x0
 
     invoke-direct {p0, p1, v0, v1}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 49
+    .line 47
     return-void
 .end method
 
@@ -36,12 +36,12 @@
     .parameter "attrs"
 
     .prologue
-    .line 52
+    .line 50
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 53
+    .line 51
     return-void
 .end method
 
@@ -52,17 +52,17 @@
     .parameter "defStyle"
 
     .prologue
-    .line 56
+    .line 54
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/home/timeline/TimelineView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 45
+    .line 43
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
-    .line 57
+    .line 55
     return-void
 .end method
 
@@ -71,13 +71,13 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 32
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/widget/SliderView;)V
+.method static synthetic access$100(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Ljava/util/List;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/widget/SliderView;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -86,13 +86,13 @@
     .parameter "x4"
 
     .prologue
-    .line 34
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->applyNewData(Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/widget/SliderView;)V
+    .line 32
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->appendRemainingText(Ljava/util/List;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/widget/SliderView;)V
 
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Ljava/util/List;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/widget/SliderView;)V
+.method static synthetic access$200(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/widget/SliderView;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -101,8 +101,8 @@
     .parameter "x4"
 
     .prologue
-    .line 34
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->appendRemainingText(Ljava/util/List;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/widget/SliderView;)V
+    .line 32
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->applyNewData(Lcom/google/glass/home/timeline/TimelineItemAdapter;Lcom/google/glass/home/timeline/TimelineItemLoader;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/widget/SliderView;)V
 
     return-void
 .end method
@@ -112,7 +112,7 @@
     .parameter "x0"
 
     .prologue
-    .line 34
+    .line 32
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->parentItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     return-object v0
@@ -139,18 +139,18 @@
     .end annotation
 
     .prologue
-    .line 201
+    .line 200
     .local p1, items:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 202
+    .line 201
     new-instance v0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$4;
 
     invoke-direct {v0, p0, p2, p1, p4}, Lcom/google/glass/home/timeline/ReadMoreTimelineView$4;-><init>(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Lcom/google/glass/home/timeline/TimelineItemLoader;Ljava/util/List;Lcom/google/glass/widget/SliderView;)V
 
     invoke-virtual {p3, v0}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->setRemainingTextListener(Lcom/google/glass/home/timeline/TimelineItemAdapter$RemainingTextListener;)V
 
-    .line 234
+    .line 236
     return-void
 .end method
 
@@ -164,20 +164,20 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 166
+    .line 165
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 169
+    .line 168
     iput-object p3, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->parentItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 172
+    .line 171
     invoke-interface {p2}, Lcom/google/glass/home/timeline/TimelineItemLoader;->getCount()I
 
     move-result v0
 
     invoke-virtual {p4, v0}, Lcom/google/glass/widget/SliderView;->setCount(I)V
 
-    .line 175
+    .line 174
     new-array v0, v3, [Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 
     const/4 v1, 0x0
@@ -190,10 +190,10 @@
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->setAdapters([Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;)V
 
-    .line 195
+    .line 194
     invoke-virtual {p0, v3}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->updateViews(Z)V
 
-    .line 196
+    .line 195
     return-void
 .end method
 
@@ -203,7 +203,7 @@
     .locals 1
 
     .prologue
-    .line 244
+    .line 246
     const/4 v0, 0x0
 
     return v0
@@ -213,7 +213,7 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 251
     const/16 v0, 0x20
 
     return v0
@@ -223,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 239
+    .line 241
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->parentItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     return-object v0
@@ -233,7 +233,7 @@
     .locals 1
 
     .prologue
-    .line 34
+    .line 32
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/ReadMoreTimelineView;->getSelectedItemParent()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v0
@@ -241,18 +241,19 @@
     return-object v0
 .end method
 
-.method public init(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/widget/SliderView;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/timeline/TimelineItemId;)V
-    .locals 7
+.method public init(Lcom/google/glass/app/GlassActivity;Lcom/google/glass/widget/SliderView;Lcom/google/glass/home/timeline/NotificationState;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/timeline/TimelineItemId;)V
+    .locals 8
     .parameter "activity"
     .parameter "sliderView"
+    .parameter "notificationState"
     .parameter "bitmapFactory"
     .parameter "id"
 
     .prologue
-    .line 71
+    .line 70
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
-    move-result-object v6
+    move-result-object v7
 
     new-instance v0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$1;
 
@@ -260,17 +261,19 @@
 
     move-object v2, p1
 
-    move-object v3, p4
+    move-object v3, p5
 
-    move-object v4, p3
+    move-object v4, p4
 
-    move-object v5, p2
+    move-object v5, p3
 
-    invoke-direct/range {v0 .. v5}, Lcom/google/glass/home/timeline/ReadMoreTimelineView$1;-><init>(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Lcom/google/glass/app/GlassActivity;Lcom/google/glass/timeline/TimelineItemId;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/SliderView;)V
+    move-object v6, p2
 
-    invoke-interface {v6, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-direct/range {v0 .. v6}, Lcom/google/glass/home/timeline/ReadMoreTimelineView$1;-><init>(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Lcom/google/glass/app/GlassActivity;Lcom/google/glass/timeline/TimelineItemId;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/home/timeline/NotificationState;Lcom/google/glass/widget/SliderView;)V
 
-    .line 114
+    invoke-interface {v7, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    .line 113
     return-void
 .end method
 
@@ -297,18 +300,18 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 128
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 130
+    .line 129
     .local v1, split:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/TimelineItem;>;"
     invoke-static {p1}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->getViewType(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     move-result-object v2
 
-    .line 131
+    .line 130
     .local v2, viewType:Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
     const/4 v3, 0x1
 
@@ -318,12 +321,12 @@
 
     invoke-interface {v3, p1, v1}, Lcom/google/glass/home/timeline/database/ItemViewBinder;->splitBundle(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)V
 
-    .line 134
+    .line 133
     new-instance v0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;
 
     invoke-direct {v0, p0, v1}, Lcom/google/glass/home/timeline/ReadMoreTimelineView$2;-><init>(Lcom/google/glass/home/timeline/ReadMoreTimelineView;Ljava/util/List;)V
 
-    .line 160
+    .line 159
     .local v0, loader:Lcom/google/glass/home/timeline/TimelineItemLoader;
     invoke-static {v1, v0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 

@@ -65,35 +65,35 @@
     .locals 1
 
     .prologue
-    .line 595
+    .line 596
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 768
+    .line 769
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipId;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 920
+    .line 921
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
-    .line 971
+    .line 972
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioFormat;->AMR:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
-    .line 1182
+    .line 1183
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 596
+    .line 597
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 597
+    .line 598
     return-void
 .end method
 
@@ -102,35 +102,35 @@
     .parameter "parent"
 
     .prologue
-    .line 601
+    .line 602
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 768
+    .line 769
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipId;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 920
+    .line 921
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
-    .line 971
+    .line 972
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioFormat;->AMR:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
-    .line 1182
+    .line 1183
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 602
+    .line 603
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 603
+    .line 604
     return-void
 .end method
 
@@ -140,7 +140,7 @@
     .parameter "x1"
 
     .prologue
-    .line 578
+    .line 579
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -150,7 +150,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -162,7 +162,7 @@
     .locals 1
 
     .prologue
-    .line 610
+    .line 611
     new-instance v0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;-><init>()V
@@ -174,7 +174,7 @@
     .locals 1
 
     .prologue
-    .line 584
+    .line 585
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioClip;->internal_static_googlex_glass_common_proto_PostAudioClipRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -195,12 +195,12 @@
     .end annotation
 
     .prologue
-    .line 909
+    .line 910
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 910
+    .line 911
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
@@ -217,12 +217,12 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 915
+    .line 916
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 917
+    .line 918
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -233,17 +233,17 @@
     .locals 1
 
     .prologue
-    .line 605
+    .line 606
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 606
+    .line 607
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->getIdFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 608
+    .line 609
     :cond_0
     return-void
 .end method
@@ -254,12 +254,12 @@
     .locals 2
 
     .prologue
-    .line 652
+    .line 653
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
 
-    .line 653
+    .line 654
     .local v0, result:Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->isInitialized()Z
 
@@ -267,14 +267,14 @@
 
     if-nez v1, :cond_0
 
-    .line 654
+    .line 655
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 656
+    .line 657
     :cond_0
     return-object v0
 .end method
@@ -283,7 +283,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -295,7 +295,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -307,22 +307,22 @@
     .locals 5
 
     .prologue
-    .line 660
+    .line 661
     new-instance v1, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$1;)V
 
-    .line 661
+    .line 662
     .local v1, result:Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 662
+    .line 663
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 663
+    .line 664
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -330,22 +330,22 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 664
+    .line 665
     or-int/lit8 v2, v2, 0x1
 
-    .line 666
+    .line 667
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v3, :cond_8
 
-    .line 667
+    .line 668
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$502(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Lcom/google/googlex/glass/common/proto/AudioClipId;)Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 671
+    .line 672
     :goto_0
     and-int/lit8 v3, v0, 0x2
 
@@ -353,129 +353,129 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 672
+    .line 673
     or-int/lit8 v2, v2, 0x2
 
-    .line 674
+    .line 675
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->rawAudio_:Lcom/google/protobuf/ByteString;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$602(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/ByteString;
 
-    .line 675
+    .line 676
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 676
+    .line 677
     or-int/lit8 v2, v2, 0x4
 
-    .line 678
+    .line 679
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$702(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Lcom/google/googlex/glass/common/proto/AudioFormat;)Lcom/google/googlex/glass/common/proto/AudioFormat;
 
-    .line 679
+    .line 680
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 680
+    .line 681
     or-int/lit8 v2, v2, 0x8
 
-    .line 682
+    .line 683
     :cond_3
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->transcribe_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->transcribe_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$802(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Z)Z
 
-    .line 683
+    .line 684
     and-int/lit8 v3, v0, 0x10
 
     const/16 v4, 0x10
 
     if-ne v3, v4, :cond_4
 
-    .line 684
+    .line 685
     or-int/lit8 v2, v2, 0x10
 
-    .line 686
+    .line 687
     :cond_4
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeAudio_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->storeAudio_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$902(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Z)Z
 
-    .line 687
+    .line 688
     and-int/lit8 v3, v0, 0x20
 
     const/16 v4, 0x20
 
     if-ne v3, v4, :cond_5
 
-    .line 688
+    .line 689
     or-int/lit8 v2, v2, 0x20
 
-    .line 690
+    .line 691
     :cond_5
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeTranscript_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->storeTranscript_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$1002(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Z)Z
 
-    .line 691
+    .line 692
     and-int/lit8 v3, v0, 0x40
 
     const/16 v4, 0x40
 
     if-ne v3, v4, :cond_6
 
-    .line 692
+    .line 693
     or-int/lit8 v2, v2, 0x40
 
-    .line 694
+    .line 695
     :cond_6
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->clientPlatform_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$1102(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 695
+    .line 696
     and-int/lit16 v3, v0, 0x80
 
     const/16 v4, 0x80
 
     if-ne v3, v4, :cond_7
 
-    .line 696
+    .line 697
     or-int/lit16 v2, v2, 0x80
 
-    .line 698
+    .line 699
     :cond_7
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeRawAudio_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->storeRawAudio_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$1202(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;Z)Z
 
-    .line 699
+    .line 700
     #setter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$1302(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;I)I
 
-    .line 700
+    .line 701
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onBuilt()V
 
-    .line 701
+    .line 702
     return-object v1
 
-    .line 669
+    .line 670
     :cond_8
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -495,7 +495,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -507,7 +507,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -521,22 +521,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 614
+    .line 615
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 615
+    .line 616
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 616
+    .line 617
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipId;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 620
+    .line 621
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -544,86 +544,86 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 621
+    .line 622
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
-    .line 622
+    .line 623
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 623
+    .line 624
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioFormat;->AMR:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
-    .line 624
+    .line 625
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 625
+    .line 626
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->transcribe_:Z
 
-    .line 626
+    .line 627
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 627
+    .line 628
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeAudio_:Z
 
-    .line 628
+    .line 629
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 629
+    .line 630
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeTranscript_:Z
 
-    .line 630
+    .line 631
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 631
+    .line 632
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 632
+    .line 633
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 633
+    .line 634
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeRawAudio_:Z
 
-    .line 634
+    .line 635
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 635
+    .line 636
     return-object p0
 
-    .line 618
+    .line 619
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -636,7 +636,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -648,7 +648,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -660,7 +660,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -672,7 +672,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -684,22 +684,22 @@
     .locals 1
 
     .prologue
-    .line 1016
+    .line 1017
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1017
+    .line 1018
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioFormat;->AMR:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
-    .line 1018
+    .line 1019
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1019
+    .line 1020
     return-object p0
 .end method
 
@@ -707,14 +707,14 @@
     .locals 1
 
     .prologue
-    .line 1261
+    .line 1265
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1262
+    .line 1266
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -725,10 +725,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 1263
+    .line 1267
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1264
+    .line 1268
     return-object p0
 .end method
 
@@ -736,22 +736,22 @@
     .locals 1
 
     .prologue
-    .line 864
+    .line 865
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 865
+    .line 866
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AudioClipId;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 866
+    .line 867
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 870
+    .line 871
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -759,10 +759,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 871
+    .line 872
     return-object p0
 
-    .line 868
+    .line 869
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -775,14 +775,14 @@
     .locals 1
 
     .prologue
-    .line 965
+    .line 966
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 966
+    .line 967
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -793,10 +793,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
-    .line 967
+    .line 968
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 968
+    .line 969
     return-object p0
 .end method
 
@@ -804,22 +804,22 @@
     .locals 1
 
     .prologue
-    .line 1124
+    .line 1125
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1125
+    .line 1126
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeAudio_:Z
 
-    .line 1126
+    .line 1127
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1127
+    .line 1128
     return-object p0
 .end method
 
@@ -827,22 +827,22 @@
     .locals 1
 
     .prologue
-    .line 1331
+    .line 1335
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1332
+    .line 1336
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeRawAudio_:Z
 
-    .line 1333
+    .line 1337
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1334
+    .line 1338
     return-object p0
 .end method
 
@@ -850,22 +850,22 @@
     .locals 1
 
     .prologue
-    .line 1176
+    .line 1177
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1177
+    .line 1178
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeTranscript_:Z
 
-    .line 1178
+    .line 1179
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1179
+    .line 1180
     return-object p0
 .end method
 
@@ -873,22 +873,22 @@
     .locals 1
 
     .prologue
-    .line 1068
+    .line 1069
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1069
+    .line 1070
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->transcribe_:Z
 
-    .line 1070
+    .line 1071
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1071
+    .line 1072
     return-object p0
 .end method
 
@@ -896,7 +896,7 @@
     .locals 2
 
     .prologue
-    .line 639
+    .line 640
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -916,7 +916,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -928,7 +928,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -940,7 +940,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -952,7 +952,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -964,7 +964,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -981,7 +981,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -993,48 +993,61 @@
     .locals 1
 
     .prologue
-    .line 990
+    .line 991
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     return-object v0
 .end method
 
 .method public getClientPlatform()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1203
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
-
     .line 1204
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
     .line 1205
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 1206
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1208
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1207
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
+    .line 1209
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 1210
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 1214
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1043,16 +1056,16 @@
     .locals 3
 
     .prologue
-    .line 1223
+    .line 1227
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 1224
+    .line 1228
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1225
+    .line 1229
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1060,11 +1073,11 @@
 
     move-result-object v0
 
-    .line 1228
+    .line 1232
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 1231
+    .line 1235
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1083,7 +1096,7 @@
     .locals 1
 
     .prologue
-    .line 648
+    .line 649
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -1095,7 +1108,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -1107,7 +1120,7 @@
     .locals 1
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
@@ -1119,7 +1132,7 @@
     .locals 1
 
     .prologue
-    .line 644
+    .line 645
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioClip;->internal_static_googlex_glass_common_proto_PostAudioClipRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -1129,15 +1142,15 @@
     .locals 1
 
     .prologue
-    .line 789
+    .line 790
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 790
+    .line 791
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 792
+    .line 793
     :goto_0
     return-object v0
 
@@ -1157,17 +1170,17 @@
     .locals 1
 
     .prologue
-    .line 881
+    .line 882
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 882
+    .line 883
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 883
+    .line 884
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->getIdFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -1185,12 +1198,12 @@
     .locals 1
 
     .prologue
-    .line 893
+    .line 894
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 894
+    .line 895
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -1199,7 +1212,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/AudioClipIdOrBuilder;
 
-    .line 896
+    .line 897
     :goto_0
     return-object v0
 
@@ -1213,7 +1226,7 @@
     .locals 1
 
     .prologue
-    .line 939
+    .line 940
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
     return-object v0
@@ -1223,7 +1236,7 @@
     .locals 1
 
     .prologue
-    .line 1097
+    .line 1098
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeAudio_:Z
 
     return v0
@@ -1233,7 +1246,7 @@
     .locals 1
 
     .prologue
-    .line 1306
+    .line 1310
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeRawAudio_:Z
 
     return v0
@@ -1243,7 +1256,7 @@
     .locals 1
 
     .prologue
-    .line 1151
+    .line 1152
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeTranscript_:Z
 
     return v0
@@ -1253,7 +1266,7 @@
     .locals 1
 
     .prologue
-    .line 1043
+    .line 1044
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->transcribe_:Z
 
     return v0
@@ -1263,7 +1276,7 @@
     .locals 2
 
     .prologue
-    .line 980
+    .line 981
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1287,7 +1300,7 @@
     .locals 2
 
     .prologue
-    .line 1192
+    .line 1193
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -1313,7 +1326,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 779
+    .line 780
     iget v1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1333,7 +1346,7 @@
     .locals 2
 
     .prologue
-    .line 929
+    .line 930
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1357,7 +1370,7 @@
     .locals 2
 
     .prologue
-    .line 1085
+    .line 1086
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1381,7 +1394,7 @@
     .locals 2
 
     .prologue
-    .line 1295
+    .line 1299
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x80
@@ -1405,7 +1418,7 @@
     .locals 2
 
     .prologue
-    .line 1140
+    .line 1141
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -1429,7 +1442,7 @@
     .locals 2
 
     .prologue
-    .line 1032
+    .line 1033
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1453,7 +1466,7 @@
     .locals 3
 
     .prologue
-    .line 589
+    .line 590
     sget-object v0, Lcom/google/googlex/glass/common/proto/AudioClip;->internal_static_googlex_glass_common_proto_PostAudioClipRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
@@ -1471,7 +1484,7 @@
     .locals 1
 
     .prologue
-    .line 746
+    .line 747
     const/4 v0, 0x1
 
     return v0
@@ -1482,18 +1495,18 @@
     .parameter "other"
 
     .prologue
-    .line 714
+    .line 715
     invoke-static {}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 742
+    .line 743
     :goto_0
     return-object p0
 
-    .line 715
+    .line 716
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasId()Z
 
@@ -1501,14 +1514,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 716
+    .line 717
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getId()Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeId(Lcom/google/googlex/glass/common/proto/AudioClipId;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 718
+    .line 719
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasRawAudio()Z
 
@@ -1516,14 +1529,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 719
+    .line 720
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getRawAudio()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->setRawAudio(Lcom/google/protobuf/ByteString;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 721
+    .line 722
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasAudioFormat()Z
 
@@ -1531,14 +1544,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 722
+    .line 723
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getAudioFormat()Lcom/google/googlex/glass/common/proto/AudioFormat;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->setAudioFormat(Lcom/google/googlex/glass/common/proto/AudioFormat;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 724
+    .line 725
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasTranscribe()Z
 
@@ -1546,14 +1559,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 725
+    .line 726
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getTranscribe()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->setTranscribe(Z)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 727
+    .line 728
     :cond_4
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasStoreAudio()Z
 
@@ -1561,14 +1574,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 728
+    .line 729
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getStoreAudio()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->setStoreAudio(Z)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 730
+    .line 731
     :cond_5
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasStoreTranscript()Z
 
@@ -1576,14 +1589,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 731
+    .line 732
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getStoreTranscript()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->setStoreTranscript(Z)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 733
+    .line 734
     :cond_6
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasClientPlatform()Z
 
@@ -1591,14 +1604,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 734
+    .line 735
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 735
+    .line 736
     #getter for: Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->clientPlatform_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->access$1100(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;)Ljava/lang/Object;
 
@@ -1606,10 +1619,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 736
+    .line 737
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 738
+    .line 739
     :cond_7
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->hasStoreRawAudio()Z
 
@@ -1617,14 +1630,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 739
+    .line 740
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getStoreRawAudio()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->setStoreRawAudio(Z)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 741
+    .line 742
     :cond_8
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1646,10 +1659,10 @@
     .end annotation
 
     .prologue
-    .line 753
+    .line 754
     const/4 v2, 0x0
 
-    .line 755
+    .line 756
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -1667,21 +1680,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 760
+    .line 761
     if-eqz v2, :cond_0
 
-    .line 761
+    .line 762
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
-    .line 764
+    .line 765
     :cond_0
     return-object p0
 
-    .line 756
+    .line 757
     :catch_0
     move-exception v1
 
-    .line 757
+    .line 758
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1694,19 +1707,19 @@
 
     move-object v2, v0
 
-    .line 758
+    .line 759
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 760
+    .line 761
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 761
+    .line 762
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     :cond_1
@@ -1718,12 +1731,12 @@
     .parameter "other"
 
     .prologue
-    .line 705
+    .line 706
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     if-eqz v0, :cond_0
 
-    .line 706
+    .line 707
     check-cast p1, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest;
 
     .end local p1
@@ -1731,12 +1744,12 @@
 
     move-result-object p0
 
-    .line 709
+    .line 710
     .end local p0
     :goto_0
     return-object p0
 
-    .line 708
+    .line 709
     .restart local p0
     .restart local p1
     :cond_0
@@ -1756,7 +1769,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -1769,7 +1782,7 @@
     .parameter "x0"
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -1788,7 +1801,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -1807,7 +1820,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -1820,7 +1833,7 @@
     .parameter "x0"
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -1839,7 +1852,7 @@
     .end annotation
 
     .prologue
-    .line 578
+    .line 579
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;
 
     move-result-object v0
@@ -1852,12 +1865,12 @@
     .parameter "value"
 
     .prologue
-    .line 841
+    .line 842
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 842
+    .line 843
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -1874,7 +1887,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 844
+    .line 845
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/AudioClipId;->newBuilder(Lcom/google/googlex/glass/common/proto/AudioClipId;)Lcom/google/googlex/glass/common/proto/AudioClipId$Builder;
@@ -1891,11 +1904,11 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 849
+    .line 850
     :goto_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 853
+    .line 854
     :goto_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -1903,16 +1916,16 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 854
+    .line 855
     return-object p0
 
-    .line 847
+    .line 848
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     goto :goto_0
 
-    .line 851
+    .line 852
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1926,17 +1939,17 @@
     .parameter "value"
 
     .prologue
-    .line 1000
+    .line 1001
     if-nez p1, :cond_0
 
-    .line 1001
+    .line 1002
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1003
+    .line 1004
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -1944,13 +1957,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1004
+    .line 1005
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->audioFormat_:Lcom/google/googlex/glass/common/proto/AudioFormat;
 
-    .line 1005
+    .line 1006
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1006
+    .line 1007
     return-object p0
 .end method
 
@@ -1959,17 +1972,17 @@
     .parameter "value"
 
     .prologue
-    .line 1244
+    .line 1248
     if-nez p1, :cond_0
 
-    .line 1245
+    .line 1249
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1247
+    .line 1251
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -1977,13 +1990,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1248
+    .line 1252
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 1249
+    .line 1253
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1250
+    .line 1254
     return-object p0
 .end method
 
@@ -1992,17 +2005,17 @@
     .parameter "value"
 
     .prologue
-    .line 1276
+    .line 1280
     if-nez p1, :cond_0
 
-    .line 1277
+    .line 1281
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1279
+    .line 1283
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -2010,13 +2023,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1280
+    .line 1284
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->clientPlatform_:Ljava/lang/Object;
 
-    .line 1281
+    .line 1285
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1282
+    .line 1286
     return-object p0
 .end method
 
@@ -2025,22 +2038,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 824
+    .line 825
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 825
+    .line 826
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/AudioClipId$Builder;->build()Lcom/google/googlex/glass/common/proto/AudioClipId;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 826
+    .line 827
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 830
+    .line 831
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -2048,10 +2061,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 831
+    .line 832
     return-object p0
 
-    .line 828
+    .line 829
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2069,29 +2082,29 @@
     .parameter "value"
 
     .prologue
-    .line 803
+    .line 804
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 804
+    .line 805
     if-nez p1, :cond_0
 
-    .line 805
+    .line 806
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 807
+    .line 808
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->id_:Lcom/google/googlex/glass/common/proto/AudioClipId;
 
-    .line 808
+    .line 809
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 812
+    .line 813
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -2099,10 +2112,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 813
+    .line 814
     return-object p0
 
-    .line 810
+    .line 811
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->idBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -2116,17 +2129,17 @@
     .parameter "value"
 
     .prologue
-    .line 949
+    .line 950
     if-nez p1, :cond_0
 
-    .line 950
+    .line 951
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 952
+    .line 953
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
@@ -2134,13 +2147,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 953
+    .line 954
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->rawAudio_:Lcom/google/protobuf/ByteString;
 
-    .line 954
+    .line 955
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 955
+    .line 956
     return-object p0
 .end method
 
@@ -2149,20 +2162,20 @@
     .parameter "value"
 
     .prologue
-    .line 1109
+    .line 1110
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1110
+    .line 1111
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeAudio_:Z
 
-    .line 1111
+    .line 1112
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1112
+    .line 1113
     return-object p0
 .end method
 
@@ -2171,20 +2184,20 @@
     .parameter "value"
 
     .prologue
-    .line 1317
+    .line 1321
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1318
+    .line 1322
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeRawAudio_:Z
 
-    .line 1319
+    .line 1323
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1320
+    .line 1324
     return-object p0
 .end method
 
@@ -2193,20 +2206,20 @@
     .parameter "value"
 
     .prologue
-    .line 1162
+    .line 1163
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x20
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1163
+    .line 1164
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->storeTranscript_:Z
 
-    .line 1164
+    .line 1165
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1165
+    .line 1166
     return-object p0
 .end method
 
@@ -2215,19 +2228,19 @@
     .parameter "value"
 
     .prologue
-    .line 1054
+    .line 1055
     iget v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->bitField0_:I
 
-    .line 1055
+    .line 1056
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->transcribe_:Z
 
-    .line 1056
+    .line 1057
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/PostAudioClipRequest$Builder;->onChanged()V
 
-    .line 1057
+    .line 1058
     return-object p0
 .end method

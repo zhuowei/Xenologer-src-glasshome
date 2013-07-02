@@ -40,18 +40,18 @@
     .locals 1
 
     .prologue
-    .line 342
+    .line 343
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 452
+    .line 453
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 343
+    .line 344
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 344
+    .line 345
     return-void
 .end method
 
@@ -60,18 +60,18 @@
     .parameter "parent"
 
     .prologue
-    .line 348
+    .line 349
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 452
+    .line 453
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 349
+    .line 350
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->maybeForceBuilderInitialization()V
 
-    .line 350
+    .line 351
     return-void
 .end method
 
@@ -81,7 +81,7 @@
     .parameter "x1"
 
     .prologue
-    .line 325
+    .line 326
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->create()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 356
+    .line 357
     new-instance v0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;-><init>()V
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 331
+    .line 332
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timezone;->internal_static_googlex_glass_common_proto_GetTimeZoneResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -125,14 +125,14 @@
     .locals 1
 
     .prologue
-    .line 352
+    .line 353
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 354
+    .line 355
     :cond_0
     return-void
 .end method
@@ -143,12 +143,12 @@
     .locals 2
 
     .prologue
-    .line 382
+    .line 383
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
 
-    .line 383
+    .line 384
     .local v0, result:Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->isInitialized()Z
 
@@ -156,14 +156,14 @@
 
     if-nez v1, :cond_0
 
-    .line 384
+    .line 385
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 386
+    .line 387
     :cond_0
     return-object v0
 .end method
@@ -172,7 +172,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->build()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -184,7 +184,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->build()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -196,22 +196,22 @@
     .locals 5
 
     .prologue
-    .line 390
+    .line 391
     new-instance v1, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$1;)V
 
-    .line 391
+    .line 392
     .local v1, result:Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 392
+    .line 393
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 393
+    .line 394
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -219,41 +219,41 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 394
+    .line 395
     or-int/lit8 v2, v2, 0x1
 
-    .line 396
+    .line 397
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->timeZone_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->access$502(Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 397
+    .line 398
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 398
+    .line 399
     or-int/lit8 v2, v2, 0x2
 
-    .line 400
+    .line 401
     :cond_1
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->reverseSuccessful_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->reverseSuccessful_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->access$602(Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;Z)Z
 
-    .line 401
+    .line 402
     #setter for: Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->access$702(Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;I)I
 
-    .line 402
+    .line 403
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onBuilt()V
 
-    .line 403
+    .line 404
     return-object v1
 .end method
 
@@ -261,7 +261,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -273,7 +273,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -285,34 +285,34 @@
     .locals 1
 
     .prologue
-    .line 360
+    .line 361
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 361
+    .line 362
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 362
+    .line 363
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 363
+    .line 364
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->reverseSuccessful_:Z
 
-    .line 364
+    .line 365
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 365
+    .line 366
     return-object p0
 .end method
 
@@ -320,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -332,7 +332,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -344,7 +344,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clear()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -368,22 +368,22 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 595
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 592
+    .line 596
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->reverseSuccessful_:Z
 
-    .line 593
+    .line 597
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onChanged()V
 
-    .line 594
+    .line 598
     return-object p0
 .end method
 
@@ -391,14 +391,14 @@
     .locals 1
 
     .prologue
-    .line 526
+    .line 530
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 527
+    .line 531
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -409,10 +409,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 528
+    .line 532
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onChanged()V
 
-    .line 529
+    .line 533
     return-object p0
 .end method
 
@@ -420,7 +420,7 @@
     .locals 2
 
     .prologue
-    .line 369
+    .line 370
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->create()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -440,7 +440,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -452,7 +452,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -464,7 +464,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -476,7 +476,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -488,7 +488,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -505,7 +505,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->clone()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -517,7 +517,7 @@
     .locals 1
 
     .prologue
-    .line 378
+    .line 379
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -529,7 +529,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -541,7 +541,7 @@
     .locals 1
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
@@ -553,7 +553,7 @@
     .locals 1
 
     .prologue
-    .line 374
+    .line 375
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timezone;->internal_static_googlex_glass_common_proto_GetTimeZoneResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -563,48 +563,61 @@
     .locals 1
 
     .prologue
-    .line 568
+    .line 572
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->reverseSuccessful_:Z
 
     return v0
 .end method
 
 .method public getTimeZone()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 471
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
-
     .line 472
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
     .line 473
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 474
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 476
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 475
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
+    .line 477
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 478
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 482
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -613,16 +626,16 @@
     .locals 3
 
     .prologue
-    .line 490
+    .line 494
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 491
+    .line 495
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 492
+    .line 496
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -630,11 +643,11 @@
 
     move-result-object v0
 
-    .line 495
+    .line 499
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 498
+    .line 502
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -653,7 +666,7 @@
     .locals 2
 
     .prologue
-    .line 558
+    .line 562
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -679,7 +692,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 461
+    .line 462
     iget v1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -699,7 +712,7 @@
     .locals 3
 
     .prologue
-    .line 336
+    .line 337
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timezone;->internal_static_googlex_glass_common_proto_GetTimeZoneResponse_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
@@ -717,7 +730,7 @@
     .locals 1
 
     .prologue
-    .line 430
+    .line 431
     const/4 v0, 0x1
 
     return v0
@@ -728,18 +741,18 @@
     .parameter "other"
 
     .prologue
-    .line 416
+    .line 417
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 426
+    .line 427
     :goto_0
     return-object p0
 
-    .line 417
+    .line 418
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->hasTimeZone()Z
 
@@ -747,14 +760,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 418
+    .line 419
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 419
+    .line 420
     #getter for: Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->timeZone_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->access$500(Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;)Ljava/lang/Object;
 
@@ -762,10 +775,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 420
+    .line 421
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onChanged()V
 
-    .line 422
+    .line 423
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->hasReverseSuccessful()Z
 
@@ -773,14 +786,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 423
+    .line 424
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->getReverseSuccessful()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->setReverseSuccessful(Z)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
-    .line 425
+    .line 426
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -802,10 +815,10 @@
     .end annotation
 
     .prologue
-    .line 437
+    .line 438
     const/4 v2, 0x0
 
-    .line 439
+    .line 440
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;->PARSER:Lcom/google/protobuf/Parser;
@@ -823,21 +836,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 444
+    .line 445
     if-eqz v2, :cond_0
 
-    .line 445
+    .line 446
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
-    .line 448
+    .line 449
     :cond_0
     return-object p0
 
-    .line 440
+    .line 441
     :catch_0
     move-exception v1
 
-    .line 441
+    .line 442
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -850,19 +863,19 @@
 
     move-object v2, v0
 
-    .line 442
+    .line 443
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 444
+    .line 445
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 445
+    .line 446
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     :cond_1
@@ -874,12 +887,12 @@
     .parameter "other"
 
     .prologue
-    .line 407
+    .line 408
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     if-eqz v0, :cond_0
 
-    .line 408
+    .line 409
     check-cast p1, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse;
 
     .end local p1
@@ -887,12 +900,12 @@
 
     move-result-object p0
 
-    .line 411
+    .line 412
     .end local p0
     :goto_0
     return-object p0
 
-    .line 410
+    .line 411
     .restart local p0
     .restart local p1
     :cond_0
@@ -912,7 +925,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -925,7 +938,7 @@
     .parameter "x0"
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -944,7 +957,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -963,7 +976,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -976,7 +989,7 @@
     .parameter "x0"
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -995,7 +1008,7 @@
     .end annotation
 
     .prologue
-    .line 325
+    .line 326
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;
 
     move-result-object v0
@@ -1008,20 +1021,20 @@
     .parameter "value"
 
     .prologue
-    .line 578
+    .line 582
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 579
+    .line 583
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->reverseSuccessful_:Z
 
-    .line 580
+    .line 584
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onChanged()V
 
-    .line 581
+    .line 585
     return-object p0
 .end method
 
@@ -1030,17 +1043,17 @@
     .parameter "value"
 
     .prologue
-    .line 510
+    .line 514
     if-nez p1, :cond_0
 
-    .line 511
+    .line 515
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 513
+    .line 517
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
@@ -1048,13 +1061,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 514
+    .line 518
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 515
+    .line 519
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onChanged()V
 
-    .line 516
+    .line 520
     return-object p0
 .end method
 
@@ -1063,17 +1076,17 @@
     .parameter "value"
 
     .prologue
-    .line 540
+    .line 544
     if-nez p1, :cond_0
 
-    .line 541
+    .line 545
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 543
+    .line 547
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
@@ -1081,12 +1094,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->bitField0_:I
 
-    .line 544
+    .line 548
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->timeZone_:Ljava/lang/Object;
 
-    .line 545
+    .line 549
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/GetTimeZoneResponse$Builder;->onChanged()V
 
-    .line 546
+    .line 550
     return-object p0
 .end method

@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onRender(Lcom/google/glass/html/HtmlRenderer;Landroid/graphics/Bitmap;)V
+.method public abstract onRender(Lcom/google/glass/html/HtmlRenderer;)V
 .end method

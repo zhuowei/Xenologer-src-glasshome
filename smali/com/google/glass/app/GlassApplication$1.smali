@@ -25,12 +25,12 @@
     .parameter "x0"
 
     .prologue
-    .line 131
+    .line 137
     iput-object p1, p0, Lcom/google/glass/app/GlassApplication$1;->this$0:Lcom/google/glass/app/GlassApplication;
 
     invoke-direct {p0, p2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 132
+    .line 138
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

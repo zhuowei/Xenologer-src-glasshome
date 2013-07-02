@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 10758
+    .line 11290
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     const-string v1, "JS_NORMAL"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->JS_NORMAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
-    .line 10766
+    .line 11298
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     const-string v1, "JS_STRING"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->JS_STRING:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
-    .line 10774
+    .line 11306
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     const-string v1, "JS_NUMBER"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->JS_NUMBER:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
-    .line 10749
+    .line 11281
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
-    .line 10819
+    .line 11351
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 10839
+    .line 11371
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->values()[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 10853
+    .line 11385
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 10854
+    .line 11386
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->index:I
 
-    .line 10855
+    .line 11387
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->value:I
 
-    .line 10856
+    .line 11388
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 10836
+    .line 11368
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 10816
+    .line 11348
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 10806
+    .line 11338
     packed-switch p0, :pswitch_data_0
 
-    .line 10810
+    .line 11342
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 10807
+    .line 11339
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->JS_NORMAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     goto :goto_0
 
-    .line 10808
+    .line 11340
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->JS_STRING:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     goto :goto_0
 
-    .line 10809
+    .line 11341
     :pswitch_2
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->JS_NUMBER:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     goto :goto_0
 
-    .line 10806
+    .line 11338
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 10843
+    .line 11375
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 10844
+    .line 11376
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 10847
+    .line 11379
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 10749
+    .line 11281
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 10749
+    .line 11281
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 10832
+    .line 11364
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 10803
+    .line 11335
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 10828
+    .line 11360
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

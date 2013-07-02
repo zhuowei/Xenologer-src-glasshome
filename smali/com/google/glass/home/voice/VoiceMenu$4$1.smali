@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 332
+    .line 335
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMenu$4$1;->this$1:Lcom/google/glass/home/voice/VoiceMenu$4;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,27 +39,27 @@
     .parameter "animation"
 
     .prologue
-    .line 335
+    .line 338
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$4$1;->this$1:Lcom/google/glass/home/voice/VoiceMenu$4;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/VoiceMenu$4;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 336
+    .line 339
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$4$1;->this$1:Lcom/google/glass/home/voice/VoiceMenu$4;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/VoiceMenu$4;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 338
+    .line 341
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$4$1;->this$1:Lcom/google/glass/home/voice/VoiceMenu$4;
 
     iget-object v0, v0, Lcom/google/glass/home/voice/VoiceMenu$4;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
-    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedMainMenuItem:Lcom/google/glass/widget/TypophileTextView;
+    #getter for: Lcom/google/glass/home/voice/VoiceMenu;->selectedPrimaryMenuItem:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {v0}, Lcom/google/glass/home/voice/VoiceMenu;->access$500(Lcom/google/glass/home/voice/VoiceMenu;)Lcom/google/glass/widget/TypophileTextView;
 
     move-result-object v0
@@ -72,6 +72,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 339
+    .line 342
     return-void
 .end method

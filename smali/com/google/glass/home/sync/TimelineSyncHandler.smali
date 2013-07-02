@@ -1,5 +1,5 @@
 .class Lcom/google/glass/home/sync/TimelineSyncHandler;
-.super Lcom/google/glass/home/sync/BackOffSyncHandler;
+.super Lcom/google/glass/sync/BackOffSyncHandler;
 .source "TimelineSyncHandler.java"
 
 
@@ -8,13 +8,17 @@
 
 
 # instance fields
-.field private final attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
+.field private final attachmentUploader:Lcom/google/glass/timeline/AttachmentUploader;
 
 .field private final downloadSyncHelper:Lcom/google/glass/home/sync/DownloadSyncHelper;
+
+.field private final oldItemPurger:Lcom/google/glass/home/sync/OldItemPurger;
 
 .field private final stylesheetUpdater:Lcom/google/glass/home/sync/StylesheetUpdater;
 
 .field private final uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
+
+.field private final userEventFlusher:Lcom/google/glass/home/sync/UserEventFlusher;
 
 
 # direct methods
@@ -22,7 +26,7 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 28
     const-class v0, Lcom/google/glass/home/sync/TimelineSyncHandler;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -40,28 +44,28 @@
     .parameter "syncWindowHelper"
 
     .prologue
-    .line 34
-    invoke-direct/range {p0 .. p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;-><init>()V
+    .line 37
+    invoke-direct/range {p0 .. p0}, Lcom/google/glass/sync/BackOffSyncHandler;-><init>()V
 
-    .line 35
-    new-instance v1, Lcom/google/glass/timeline/AttachmentHelper;
+    .line 38
+    new-instance v1, Lcom/google/glass/timeline/AttachmentUploader;
 
     move-object/from16 v0, p1
 
-    invoke-direct {v1, v0}, Lcom/google/glass/timeline/AttachmentHelper;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v0}, Lcom/google/glass/timeline/AttachmentUploader;-><init>(Landroid/content/Context;)V
 
     move-object/from16 v0, p0
 
-    iput-object v1, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
+    iput-object v1, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->attachmentUploader:Lcom/google/glass/timeline/AttachmentUploader;
 
-    .line 36
+    .line 39
     new-instance v4, Lcom/google/glass/util/BatteryHelper;
 
     move-object/from16 v0, p1
 
     invoke-direct {v4, v0}, Lcom/google/glass/util/BatteryHelper;-><init>(Landroid/content/Context;)V
 
-    .line 37
+    .line 40
     .local v4, batteryHelper:Lcom/google/glass/util/BatteryHelper;
     new-instance v5, Lcom/google/glass/util/PowerHelper;
 
@@ -69,7 +73,7 @@
 
     invoke-direct {v5, v0}, Lcom/google/glass/util/PowerHelper;-><init>(Landroid/content/Context;)V
 
-    .line 38
+    .line 41
     .local v5, powerHelper:Lcom/google/glass/util/PowerHelper;
     new-instance v6, Lcom/google/glass/util/WifiHelper;
 
@@ -77,19 +81,19 @@
 
     invoke-direct {v6, v0}, Lcom/google/glass/util/WifiHelper;-><init>(Landroid/content/Context;)V
 
-    .line 39
+    .line 42
     .local v6, wifiHelper:Lcom/google/glass/util/WifiHelper;
     new-instance v7, Lcom/google/glass/util/Clock$Impl;
 
     invoke-direct {v7}, Lcom/google/glass/util/Clock$Impl;-><init>()V
 
-    .line 40
+    .line 43
     .local v7, clock:Lcom/google/glass/util/Clock$Impl;
     new-instance v9, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v9}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
 
-    .line 41
+    .line 44
     .local v9, timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
     new-instance v1, Lcom/google/glass/home/sync/DownloadSyncHelper;
 
@@ -103,18 +107,18 @@
 
     move-object/from16 v10, p2
 
-    invoke-direct/range {v1 .. v10}, Lcom/google/glass/home/sync/DownloadSyncHelper;-><init>(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/home/sync/SyncStatusReporter;Lcom/google/glass/util/BatteryHelper;Lcom/google/glass/util/PowerHelper;Lcom/google/glass/util/WifiHelper;Lcom/google/glass/util/Clock;Lcom/google/glass/home/timeline/TimelineNotificationManager;Lcom/google/glass/timeline/TimelineHelper;Lcom/google/glass/home/sync/TimelineSyncWindowHelper;)V
+    invoke-direct/range {v1 .. v10}, Lcom/google/glass/home/sync/DownloadSyncHelper;-><init>(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/sync/SyncStatusReporter;Lcom/google/glass/util/BatteryHelper;Lcom/google/glass/util/PowerHelper;Lcom/google/glass/util/WifiHelper;Lcom/google/glass/util/Clock;Lcom/google/glass/home/timeline/TimelineNotificationManager;Lcom/google/glass/timeline/TimelineHelper;Lcom/google/glass/home/sync/TimelineSyncWindowHelper;)V
 
     move-object/from16 v0, p0
 
     iput-object v1, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->downloadSyncHelper:Lcom/google/glass/home/sync/DownloadSyncHelper;
 
-    .line 44
+    .line 47
     new-instance v10, Lcom/google/glass/home/sync/UploadSyncHelper;
 
     move-object/from16 v0, p0
 
-    iget-object v0, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
+    iget-object v0, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->attachmentUploader:Lcom/google/glass/timeline/AttachmentUploader;
 
     move-object/from16 v16, v0
 
@@ -132,13 +136,13 @@
 
     move-object/from16 v18, v7
 
-    invoke-direct/range {v10 .. v18}, Lcom/google/glass/home/sync/UploadSyncHelper;-><init>(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/home/sync/SyncStatusReporter;Lcom/google/glass/util/BatteryHelper;Lcom/google/glass/util/PowerHelper;Lcom/google/glass/util/WifiHelper;Lcom/google/glass/timeline/AttachmentHelper;Lcom/google/glass/timeline/TimelineHelper;Lcom/google/glass/util/Clock;)V
+    invoke-direct/range {v10 .. v18}, Lcom/google/glass/home/sync/UploadSyncHelper;-><init>(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/sync/SyncStatusReporter;Lcom/google/glass/util/BatteryHelper;Lcom/google/glass/util/PowerHelper;Lcom/google/glass/util/WifiHelper;Lcom/google/glass/timeline/AttachmentUploader;Lcom/google/glass/timeline/TimelineHelper;Lcom/google/glass/util/Clock;)V
 
     move-object/from16 v0, p0
 
     iput-object v10, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
 
-    .line 46
+    .line 49
     new-instance v1, Lcom/google/glass/home/sync/StylesheetUpdater;
 
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
@@ -153,7 +157,29 @@
 
     iput-object v1, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->stylesheetUpdater:Lcom/google/glass/home/sync/StylesheetUpdater;
 
-    .line 48
+    .line 51
+    new-instance v1, Lcom/google/glass/home/sync/OldItemPurger;
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v1, v0, v9}, Lcom/google/glass/home/sync/OldItemPurger;-><init>(Landroid/content/Context;Lcom/google/glass/timeline/TimelineHelper;)V
+
+    move-object/from16 v0, p0
+
+    iput-object v1, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->oldItemPurger:Lcom/google/glass/home/sync/OldItemPurger;
+
+    .line 52
+    new-instance v1, Lcom/google/glass/home/sync/UserEventFlusher;
+
+    move-object/from16 v0, p1
+
+    invoke-direct {v1, v0}, Lcom/google/glass/home/sync/UserEventFlusher;-><init>(Landroid/content/Context;)V
+
+    move-object/from16 v0, p0
+
+    iput-object v1, v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->userEventFlusher:Lcom/google/glass/home/sync/UserEventFlusher;
+
+    .line 53
     return-void
 .end method
 
@@ -161,7 +187,7 @@
     .locals 1
 
     .prologue
-    .line 26
+    .line 27
     sget-object v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -172,7 +198,7 @@
     .parameter "x0"
 
     .prologue
-    .line 26
+    .line 27
     iget-object v0, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
 
     return-object v0
@@ -184,12 +210,12 @@
     .locals 1
 
     .prologue
-    .line 102
+    .line 124
     iget-object v0, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
 
     invoke-virtual {v0}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelOpportunisticUpload()V
 
-    .line 103
+    .line 125
     return-void
 .end method
 
@@ -197,22 +223,33 @@
     .locals 1
 
     .prologue
-    .line 94
+    .line 116
     sget-object v0, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public sync()V
-    .locals 5
+    .locals 6
 
     .prologue
-    .line 61
+    const/4 v5, 0x1
+
+    .line 68
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->userEventFlusher:Lcom/google/glass/home/sync/UserEventFlusher;
+
+    invoke-interface {v3, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    .line 70
     new-instance v2, Lcom/google/glass/home/sync/SyncStats;
 
     invoke-direct {v2}, Lcom/google/glass/home/sync/SyncStats;-><init>()V
 
-    .line 62
+    .line 72
     .local v2, syncStats:Lcom/google/glass/home/sync/SyncStats;
     new-instance v1, Ljava/util/concurrent/FutureTask;
 
@@ -222,7 +259,7 @@
 
     invoke-direct {v1, v3}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
 
-    .line 70
+    .line 82
     .local v1, futureUpload:Ljava/util/concurrent/FutureTask;,"Ljava/util/concurrent/FutureTask<Ljava/lang/Void;>;"
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
@@ -230,80 +267,124 @@
 
     invoke-interface {v3, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 73
+    .line 90
+    :try_start_0
     iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->stylesheetUpdater:Lcom/google/glass/home/sync/StylesheetUpdater;
 
     invoke-virtual {v3}, Lcom/google/glass/home/sync/StylesheetUpdater;->checkForUpdates()V
 
-    .line 74
+    .line 91
     iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->downloadSyncHelper:Lcom/google/glass/home/sync/DownloadSyncHelper;
 
     invoke-virtual {v3, v2}, Lcom/google/glass/home/sync/DownloadSyncHelper;->sync(Lcom/google/glass/home/sync/SyncStats;)V
 
-    .line 78
-    :try_start_0
+    .line 92
     sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
     const-string v4, "Timeline download complete.  Waiting for timeline upload to complete."
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 79
+    .line 94
     invoke-virtual {v1}, Ljava/util/concurrent/FutureTask;->get()Ljava/lang/Object;
 
-    .line 80
+    .line 95
     sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
     const-string v4, "Timeline upload complete."
 
     invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/util/concurrent/ExecutionException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 89
-    :goto_0
-    invoke-virtual {v2}, Lcom/google/glass/home/sync/SyncStats;->log()V
-
-    .line 90
-    return-void
-
-    .line 81
-    :catch_0
-    move-exception v0
-
-    .line 82
-    .local v0, e:Ljava/lang/InterruptedException;
-    sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
-
-    const-string v4, "Exception waiting for timeline upload to complete -- aborting upload."
-
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 83
+    .line 103
     iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
 
     invoke-virtual {v3}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelUpload()V
 
+    .line 104
+    invoke-virtual {v1, v5}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+
+    .line 107
+    :goto_0
+    invoke-virtual {v2}, Lcom/google/glass/home/sync/SyncStats;->log()V
+
+    .line 111
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->oldItemPurger:Lcom/google/glass/home/sync/OldItemPurger;
+
+    invoke-interface {v3, v4}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+
+    .line 112
+    return-void
+
+    .line 96
+    :catch_0
+    move-exception v0
+
+    .line 97
+    .local v0, e:Ljava/lang/InterruptedException;
+    :try_start_1
+    sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
+
+    const-string v4, "Interrupted when waiting for timeline upload to complete."
+
+    invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 103
+    iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
+
+    invoke-virtual {v3}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelUpload()V
+
+    .line 104
+    invoke-virtual {v1, v5}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+
     goto :goto_0
 
-    .line 84
+    .line 98
     .end local v0           #e:Ljava/lang/InterruptedException;
     :catch_1
     move-exception v0
 
-    .line 85
+    .line 99
     .local v0, e:Ljava/util/concurrent/ExecutionException;
+    :try_start_2
     sget-object v3, Lcom/google/glass/home/sync/TimelineSyncHandler;->TAG:Ljava/lang/String;
 
-    const-string v4, "Exception waiting for timeline upload to complete -- aborting upload."
+    const-string v4, "Exception waiting for timeline upload to complete."
 
     invoke-static {v3, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 86
+    .line 103
     iget-object v3, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
 
     invoke-virtual {v3}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelUpload()V
 
+    .line 104
+    invoke-virtual {v1, v5}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+
     goto :goto_0
+
+    .line 103
+    .end local v0           #e:Ljava/util/concurrent/ExecutionException;
+    :catchall_0
+    move-exception v3
+
+    iget-object v4, p0, Lcom/google/glass/home/sync/TimelineSyncHandler;->uploadSyncHelper:Lcom/google/glass/home/sync/UploadSyncHelper;
+
+    invoke-virtual {v4}, Lcom/google/glass/home/sync/UploadSyncHelper;->cancelUpload()V
+
+    .line 104
+    invoke-virtual {v1, v5}, Ljava/util/concurrent/FutureTask;->cancel(Z)Z
+
+    throw v3
 .end method

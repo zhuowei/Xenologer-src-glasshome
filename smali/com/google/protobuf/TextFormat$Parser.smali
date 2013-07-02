@@ -274,7 +274,7 @@
     .line 1461
     invoke-direct/range {p0 .. p1}, Lcom/google/protobuf/TextFormat$Parser;->skipFieldValue(Lcom/google/protobuf/TextFormat$Tokenizer;)V
 
-    .line 1586
+    .line 1580
     :goto_3
     return-void
 
@@ -669,7 +669,7 @@
 
     move-result-object v13
 
-    .line 1576
+    .line 1570
     .end local v3           #endToken:Ljava/lang/String;
     .end local v11           #subField:Lcom/google/protobuf/MessageReflection$MergeTarget;
     .end local v13           #value:Ljava/lang/Object;
@@ -681,7 +681,7 @@
 
     if-eqz v14, :cond_12
 
-    .line 1577
+    .line 1571
     move-object/from16 v0, p3
 
     invoke-interface {v0, v6, v13}, Lcom/google/protobuf/MessageReflection$MergeTarget;->addRepeatedField(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/Object;)Lcom/google/protobuf/MessageReflection$MergeTarget;
@@ -836,33 +836,18 @@
 
     move-result-object v13
 
-    .line 1542
+    .line 1539
     .local v13, value:Lcom/google/protobuf/ByteString;
-    move-object/from16 v0, p3
-
-    instance-of v14, v0, Lcom/google/protobuf/MessageReflection$MutableMessageAdapter;
-
-    if-eqz v14, :cond_f
-
-    .line 1543
-    check-cast v13, Lcom/google/protobuf/ByteString;
-
-    .end local v13           #value:Lcom/google/protobuf/ByteString;
-    invoke-virtual {v13}, Lcom/google/protobuf/ByteString;->toByteArray()[B
-
-    move-result-object v13
-
-    .local v13, value:[B
     goto :goto_7
 
-    .line 1548
+    .line 1542
     .local v13, value:Ljava/lang/Object;
     :pswitch_9
     invoke-virtual {v6}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getEnumType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v4
 
-    .line 1550
+    .line 1544
     .local v4, enumType:Lcom/google/protobuf/Descriptors$EnumDescriptor;
     invoke-virtual/range {p1 .. p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->lookingAtInteger()Z
 
@@ -870,22 +855,22 @@
 
     if-eqz v14, :cond_11
 
-    .line 1551
+    .line 1545
     invoke-virtual/range {p1 .. p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->consumeInt32()I
 
     move-result v10
 
-    .line 1552
+    .line 1546
     .local v10, number:I
     invoke-virtual {v4, v10}, Lcom/google/protobuf/Descriptors$EnumDescriptor;->findValueByNumber(I)Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     move-result-object v13
 
-    .line 1553
+    .line 1547
     .local v13, value:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
     if-nez v13, :cond_f
 
-    .line 1554
+    .line 1548
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -932,7 +917,7 @@
 
     throw v14
 
-    .line 1559
+    .line 1553
     .end local v10           #number:I
     .local v13, value:Ljava/lang/Object;
     :cond_11
@@ -940,17 +925,17 @@
 
     move-result-object v7
 
-    .line 1560
+    .line 1554
     .local v7, id:Ljava/lang/String;
     invoke-virtual {v4, v7}, Lcom/google/protobuf/Descriptors$EnumDescriptor;->findValueByName(Ljava/lang/String;)Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     move-result-object v13
 
-    .line 1561
+    .line 1555
     .local v13, value:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
     if-nez v13, :cond_f
 
-    .line 1562
+    .line 1556
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -997,7 +982,7 @@
 
     throw v14
 
-    .line 1572
+    .line 1566
     .end local v4           #enumType:Lcom/google/protobuf/Descriptors$EnumDescriptor;
     .end local v7           #id:Ljava/lang/String;
     .local v13, value:Ljava/lang/Object;
@@ -1010,7 +995,7 @@
 
     throw v14
 
-    .line 1578
+    .line 1572
     .end local v13           #value:Ljava/lang/Object;
     :cond_12
     move-object/from16 v0, p0
@@ -1029,7 +1014,7 @@
 
     if-eqz v14, :cond_13
 
-    .line 1581
+    .line 1575
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -1066,7 +1051,7 @@
 
     throw v14
 
-    .line 1584
+    .line 1578
     :cond_13
     move-object/from16 v0, p3
 
@@ -1122,7 +1107,7 @@
     .end annotation
 
     .prologue
-    .line 1592
+    .line 1586
     const-string v0, "["
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsume(Ljava/lang/String;)Z
@@ -1131,11 +1116,11 @@
 
     if-eqz v0, :cond_2
 
-    .line 1595
+    .line 1589
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->consumeIdentifier()Ljava/lang/String;
 
-    .line 1596
+    .line 1590
     const-string v0, "."
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsume(Ljava/lang/String;)Z
@@ -1144,12 +1129,12 @@
 
     if-nez v0, :cond_0
 
-    .line 1597
+    .line 1591
     const-string v0, "]"
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/TextFormat$Tokenizer;->consume(Ljava/lang/String;)V
 
-    .line 1608
+    .line 1602
     :goto_0
     const-string v0, ":"
 
@@ -1175,10 +1160,10 @@
 
     if-nez v0, :cond_3
 
-    .line 1610
+    .line 1604
     invoke-direct {p0, p1}, Lcom/google/protobuf/TextFormat$Parser;->skipFieldValue(Lcom/google/protobuf/TextFormat$Tokenizer;)V
 
-    .line 1616
+    .line 1610
     :goto_1
     const-string v0, ";"
 
@@ -1188,22 +1173,22 @@
 
     if-nez v0, :cond_1
 
-    .line 1617
+    .line 1611
     const-string v0, ","
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsume(Ljava/lang/String;)Z
 
-    .line 1619
+    .line 1613
     :cond_1
     return-void
 
-    .line 1599
+    .line 1593
     :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->consumeIdentifier()Ljava/lang/String;
 
     goto :goto_0
 
-    .line 1612
+    .line 1606
     :cond_3
     invoke-direct {p0, p1}, Lcom/google/protobuf/TextFormat$Parser;->skipFieldMessage(Lcom/google/protobuf/TextFormat$Tokenizer;)V
 
@@ -1220,7 +1205,7 @@
     .end annotation
 
     .prologue
-    .line 1627
+    .line 1621
     const-string v1, "<"
 
     invoke-virtual {p1, v1}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsume(Ljava/lang/String;)Z
@@ -1229,10 +1214,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 1628
+    .line 1622
     const-string v0, ">"
 
-    .line 1633
+    .line 1627
     .local v0, delimiter:Ljava/lang/String;
     :goto_0
     const-string v1, ">"
@@ -1251,29 +1236,29 @@
 
     if-nez v1, :cond_1
 
-    .line 1634
+    .line 1628
     invoke-direct {p0, p1}, Lcom/google/protobuf/TextFormat$Parser;->skipField(Lcom/google/protobuf/TextFormat$Tokenizer;)V
 
     goto :goto_0
 
-    .line 1630
+    .line 1624
     .end local v0           #delimiter:Ljava/lang/String;
     :cond_0
     const-string v1, "{"
 
     invoke-virtual {p1, v1}, Lcom/google/protobuf/TextFormat$Tokenizer;->consume(Ljava/lang/String;)V
 
-    .line 1631
+    .line 1625
     const-string v0, "}"
 
     .restart local v0       #delimiter:Ljava/lang/String;
     goto :goto_0
 
-    .line 1636
+    .line 1630
     :cond_1
     invoke-virtual {p1, v0}, Lcom/google/protobuf/TextFormat$Tokenizer;->consume(Ljava/lang/String;)V
 
-    .line 1637
+    .line 1631
     return-void
 .end method
 
@@ -1287,14 +1272,14 @@
     .end annotation
 
     .prologue
-    .line 1643
+    .line 1637
     invoke-virtual {p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsumeString()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 1644
+    .line 1638
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsumeString()Z
 
@@ -1302,11 +1287,11 @@
 
     if-nez v0, :cond_0
 
-    .line 1655
+    .line 1649
     :cond_1
     return-void
 
-    .line 1647
+    .line 1641
     :cond_2
     invoke-virtual {p1}, Lcom/google/protobuf/TextFormat$Tokenizer;->tryConsumeIdentifier()Z
 
@@ -1338,7 +1323,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1652
+    .line 1646
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

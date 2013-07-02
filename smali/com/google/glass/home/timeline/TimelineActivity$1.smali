@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 120
+    .line 140
     invoke-static {}, Lcom/google/glass/input/SwipeDirection;->values()[Lcom/google/glass/input/SwipeDirection;
 
     move-result-object v0

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 447
+    .line 448
     iput-object p1, p0, Lcom/google/glass/util/WifiHelper$5;->this$0:Lcom/google/glass/util/WifiHelper;
 
     iput-object p2, p0, Lcom/google/glass/util/WifiHelper$5;->val$callback:Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;
@@ -43,29 +43,33 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 3
 
     .prologue
-    .line 450
+    .line 451
     invoke-static {}, Lcom/google/glass/util/WifiHelper;->access$100()Ljava/lang/String;
 
     move-result-object v0
 
     const-string v1, "Connection timed out."
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v2, 0x0
 
-    .line 451
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-static {v0, v1, v2}, Lcom/google/glass/util/Log;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 452
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper$5;->this$0:Lcom/google/glass/util/WifiHelper;
 
     #calls: Lcom/google/glass/util/WifiHelper;->cancelConnectivityReceiver()V
     invoke-static {v0}, Lcom/google/glass/util/WifiHelper;->access$400(Lcom/google/glass/util/WifiHelper;)V
 
-    .line 452
+    .line 453
     iget-object v0, p0, Lcom/google/glass/util/WifiHelper$5;->val$callback:Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;
 
     invoke-interface {v0}, Lcom/google/glass/util/WifiHelper$WifiConnectionCallback;->onConnectionFailed()V
 
-    .line 453
+    .line 454
     return-void
 .end method

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="600" android:versionName="XE6.0" package="com.google.glass.home"
+<manifest android:versionCode="700" android:versionName="XE7" package="com.google.glass.home"
   xmlns:android="http://schemas.android.com/apk/res/android">
     <permission android:name="com.google.glass.home.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     <permission android:name="com.google.glass.home.permission.SETUP_WIFI" android:protectionLevel="signature" />
@@ -79,6 +79,13 @@
         <activity android:name=".settings.FactoryResetActivity" />
         <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.EntityListActivity" android:exported="true" android:launchMode="singleTask" />
         <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.VoiceMainMenuActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Fade" android:name=".voice.TouchMainMenuActivity" android:exported="true" android:launchMode="singleTask" />
+        <activity android:theme="@style/GlassTheme.Translucent.FadeExitOnly" android:name=".voice.VoiceContextMenuActivity" android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="com.google.glass.action.VOICE_CONTEXT_MENU" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:theme="@style/GlassTheme.FadeExitOnly" android:name=".voice.VoiceMessageActivity" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="com.google.glass.ACTION_SEND_VOICE_MESSAGE" />
@@ -112,6 +119,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".timeline.EntityFilteredTimelineActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_ENTITY_TIMELINE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".timeline.BundleTimelineActivity" android:launchMode="standard">
             <intent-filter>
                 <action android:name="com.google.glass.ACTION_GO_TO_BUNDLE" />
@@ -120,7 +133,13 @@
         </activity>
         <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".timeline.ReadMoreTimelineActivity" android:launchMode="standard">
             <intent-filter>
-                <action android:name="com.google.glass.ACTION_READ_MORE" />
+                <action android:name="com.google.glass.ACTION_READ_MORE_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:theme="@style/GlassTheme.BundleTimeline" android:name=".timeline.ReadMoreHtmlActivity" android:launchMode="standard">
+            <intent-filter>
+                <action android:name="com.google.glass.ACTION_READ_MORE_HTML" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -132,8 +151,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <service android:name="com.google.glass.camera.SharedCameraService" />
-        <service android:name="com.google.glass.voice.VoiceService" />
         <service android:name=".sync.TimelineSyncService">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
@@ -152,12 +169,6 @@
             </intent-filter>
             <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/location_sync_adapter" />
         </service>
-        <service android:name=".sync.SavedAudioSyncService">
-            <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
-            </intent-filter>
-            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/saved_audio_sync_adapter" />
-        </service>
         <service android:name=".timeline.TimelineNotificationService" />
         <service android:name="com.google.glass.location.GpsBackgroundService" />
         <service android:name="com.google.glass.location.LocationService" android:permission="android.permission.ACCESS_FINE_LOCATION" android:exported="true" />
@@ -167,7 +178,6 @@
         <provider android:label="@string/provider_label_timeline" android:name="com.google.glass.timeline.TimelineProvider" android:authorities="com.google.glass.timeline" />
         <provider android:label="@string/provider_label_entity" android:name="com.google.glass.entity.EntityProvider" android:authorities="com.google.glass.entity" />
         <provider android:label="@string/provider_label_location" android:name="com.google.glass.location.LocationContentProviderStub" android:authorities="com.google.glass.location" />
-        <provider android:label="@string/provider_label_audio" android:name="com.google.glass.logging.audio.SavedAudioContentProviderStub" android:authorities="com.google.glass.savedaudio" />
         <receiver android:name=".voice.MicrophoneMuteReceiver">
             <intent-filter>
                 <action android:name="com.google.glass.action.TOGGLE_MICROPHONE_MUTE" />

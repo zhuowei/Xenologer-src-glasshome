@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 66
+    .line 71
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     iput-object p2, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
@@ -51,7 +51,7 @@
     .locals 9
 
     .prologue
-    .line 74
+    .line 79
     iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasBundleId()Z
@@ -80,7 +80,7 @@
 
     if-nez v5, :cond_4
 
-    .line 78
+    .line 83
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
 
     move-result-object v5
@@ -111,7 +111,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 80
+    .line 85
     iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -128,11 +128,11 @@
 
     move-result-object v2
 
-    .line 84
+    .line 89
     .local v2, cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
     if-nez v2, :cond_0
 
-    .line 85
+    .line 90
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
 
     move-result-object v5
@@ -163,19 +163,19 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 122
+    .line 129
     .end local v2           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
     :goto_0
     return-void
 
-    .line 91
+    .line 96
     .restart local v2       #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
     :cond_0
     iget-object v4, v2, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v4, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 92
+    .line 97
     .local v4, mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     iget-object v5, v2, Landroid/util/Pair;->second:Ljava/lang/Object;
 
@@ -189,10 +189,10 @@
 
     if-eq v5, v6, :cond_3
 
-    .line 93
+    .line 98
     iget-object v1, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 105
+    .line 110
     .end local v2           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
     .local v1, bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :goto_1
@@ -206,17 +206,17 @@
 
     move-result-object v0
 
-    .line 106
+    .line 111
     .local v0, bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
     invoke-static {v0, v4}, Lcom/google/glass/timeline/TimelineNotificationHelper;->preloadAttachments(Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    .line 107
+    .line 112
     if-eqz v1, :cond_1
 
-    .line 108
+    .line 113
     invoke-static {v0, v1}, Lcom/google/glass/timeline/TimelineNotificationHelper;->preloadAttachments(Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    .line 112
+    .line 117
     :cond_1
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
 
@@ -246,7 +246,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
+    .line 118
     new-instance v5, Landroid/content/Intent;
 
     invoke-direct {v5}, Landroid/content/Intent;-><init>()V
@@ -257,8 +257,13 @@
 
     move-result-object v3
 
-    .line 114
+    .line 119
     .local v3, intent:Landroid/content/Intent;
+    const-string v5, "item"
+
+    invoke-virtual {v3, v5, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 120
     const-string v5, "item_id"
 
     new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
@@ -267,10 +272,10 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 115
+    .line 121
     if-eqz v1, :cond_2
 
-    .line 116
+    .line 122
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->access$000()Ljava/lang/String;
 
     move-result-object v5
@@ -299,7 +304,12 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
+    .line 123
+    const-string v5, "bundle_item"
+
+    invoke-virtual {v3, v5, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 124
     const-string v5, "bundle_item_id"
 
     new-instance v6, Lcom/google/glass/timeline/TimelineItemId;
@@ -308,7 +318,7 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 119
+    .line 126
     :cond_2
     const-string v5, "numNotifications"
 
@@ -316,7 +326,7 @@
 
     invoke-virtual {v3, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 120
+    .line 127
     iget-object v5, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$context:Landroid/content/Context;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -345,7 +355,7 @@
 
     goto/16 :goto_0
 
-    .line 95
+    .line 100
     .end local v0           #bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
     .end local v1           #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v3           #intent:Landroid/content/Intent;
@@ -356,14 +366,14 @@
     .restart local v1       #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     goto/16 :goto_1
 
-    .line 100
+    .line 105
     .end local v1           #bundleTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v2           #cover:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Integer;>;"
     .end local v4           #mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :cond_4
     iget-object v4, p0, Lcom/google/glass/timeline/TimelineNotificationHelper$1;->val$item:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 101
+    .line 106
     .restart local v4       #mainTimelineItem:Lcom/google/googlex/glass/common/proto/TimelineItem;
     const/4 v1, 0x0
 

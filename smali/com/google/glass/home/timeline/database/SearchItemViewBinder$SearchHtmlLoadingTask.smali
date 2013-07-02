@@ -34,32 +34,34 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/glass/home/timeline/database/SearchItemViewBinder;Lcom/google/googlex/glass/common/proto/Attachment;Ljava/lang/String;Landroid/view/ViewGroup;)V
+.method public constructor <init>(Lcom/google/glass/home/timeline/database/SearchItemViewBinder;Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Attachment;Ljava/lang/String;Landroid/view/ViewGroup;)V
     .locals 2
     .parameter
+    .parameter "context"
     .parameter "attachment"
     .parameter "recognitionResult"
     .parameter "viewGroup"
 
     .prologue
-    .line 51
+    .line 54
     iput-object p1, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->this$0:Lcom/google/glass/home/timeline/database/SearchItemViewBinder;
 
-    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>()V
-
-    .line 52
-    iput-object p2, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-
-    .line 53
-    iput-object p3, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->recognitionResult:Ljava/lang/String;
-
-    .line 54
-    iput-object p4, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->viewGroup:Landroid/view/ViewGroup;
+    .line 55
+    invoke-direct {p0, p2}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>(Landroid/content/Context;)V
 
     .line 56
+    iput-object p3, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+
+    .line 57
+    iput-object p4, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->recognitionResult:Ljava/lang/String;
+
+    .line 58
+    iput-object p5, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->viewGroup:Landroid/view/ViewGroup;
+
+    .line 60
     new-instance v0, Lcom/google/glass/timeline/AttachmentHelper;
 
-    invoke-virtual {p4}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    invoke-virtual {p5}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -67,7 +69,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
-    .line 57
+    .line 61
     return-void
 .end method
 
@@ -78,7 +80,7 @@
     .parameter "x0"
 
     .prologue
-    .line 43
+    .line 46
     check-cast p1, [B
 
     .end local p1
@@ -94,10 +96,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 76
+    .line 94
     if-nez p1, :cond_1
 
-    .line 79
+    .line 97
     invoke-static {}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->access$000()Ljava/lang/String;
 
     move-result-object v3
@@ -106,18 +108,18 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 92
+    .line 110
     :cond_0
     :goto_0
     return-void
 
-    .line 83
+    .line 101
     :cond_1
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p1}, Ljava/lang/String;-><init>([B)V
 
-    .line 84
+    .line 102
     .local v0, cardData:Ljava/lang/String;
     new-instance v1, Lcom/google/glass/home/search/results/AnswerCardProcessor;
 
@@ -131,7 +133,7 @@
 
     invoke-direct {v1, v3, v4}, Lcom/google/glass/home/search/results/AnswerCardProcessor;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 86
+    .line 104
     .local v1, cardProcessor:Lcom/google/glass/home/search/results/AnswerCardProcessor;
     const/4 v3, 0x1
 
@@ -139,7 +141,7 @@
 
     move-result-object v2
 
-    .line 89
+    .line 107
     .local v2, results:Lcom/google/glass/home/search/results/ResultsContainer;
     if-eqz v2, :cond_0
 
@@ -149,7 +151,7 @@
 
     if-lez v3, :cond_0
 
-    .line 90
+    .line 108
     iget-object v3, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->viewGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v5}, Lcom/google/glass/home/search/results/ResultsContainer;->getViewAt(I)Landroid/view/View;
@@ -161,66 +163,106 @@
     goto :goto_0
 .end method
 
-.method protected bridge synthetic loadContent()Ljava/lang/Object;
+.method protected getUserEventTag()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 43
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->loadContent()[B
+    .line 65
+    const-string v0, "sh"
+
+    return-object v0
+.end method
+
+.method protected bridge synthetic loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 46
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->loadContent(Lcom/google/glass/util/Condition;)[B
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected loadContent()[B
-    .locals 5
+.method protected loadContent(Lcom/google/glass/util/Condition;)[B
+    .locals 6
+    .parameter "isCancelled"
 
     .prologue
-    .line 66
-    iget-object v1, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
+    .line 75
+    const/4 v0, 0x0
 
-    iget-object v2, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+    .line 78
+    .local v0, data:[B
+    :try_start_0
+    iget-object v2, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
-    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/Attachment;->getId()Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
-    move-result-object v2
+    invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/Attachment;->getId()Ljava/lang/String;
 
-    sget-object v3, Lcom/google/glass/util/CachedFilesManager$Type;->HTML:Lcom/google/glass/util/CachedFilesManager$Type;
+    move-result-object v3
 
-    iget-object v4, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+    sget-object v4, Lcom/google/glass/util/CachedFilesManager$Type;->HTML:Lcom/google/glass/util/CachedFilesManager$Type;
 
-    invoke-virtual {v1, v2, v3, v4}, Lcom/google/glass/timeline/AttachmentHelper;->getAttachmentBytes(Ljava/lang/String;Lcom/google/glass/util/CachedFilesManager$Type;Lcom/google/googlex/glass/common/proto/Attachment;)[B
+    iget-object v5, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+
+    invoke-virtual {v2, v3, v4, v5}, Lcom/google/glass/timeline/AttachmentHelper;->getAttachmentBytes(Ljava/lang/String;Lcom/google/glass/util/CachedFilesManager$Type;Lcom/google/googlex/glass/common/proto/Attachment;)[B
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
-    .line 68
-    .local v0, data:[B
+    .line 85
     if-nez v0, :cond_0
 
-    .line 69
+    .line 86
     invoke-static {}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->access$000()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    const-string v2, "Attachment content not on file system and could not be downloaded."
+    const-string v3, "Attachment content not on file system and could not be downloaded."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
     :cond_0
-    return-object v0
+    move-object v2, v0
+
+    .line 89
+    :goto_0
+    return-object v2
+
+    .line 80
+    :catch_0
+    move-exception v1
+
+    .line 81
+    .local v1, e:Ljava/lang/InterruptedException;
+    invoke-static {}, Lcom/google/glass/home/timeline/database/SearchItemViewBinder;->access$000()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "Interrupted while requesting attachment content."
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 82
+    const/4 v2, 0x0
+
+    goto :goto_0
 .end method
 
 .method protected prepareContent()V
     .locals 1
 
     .prologue
-    .line 61
+    .line 70
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/SearchItemViewBinder$SearchHtmlLoadingTask;->viewGroup:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 62
+    .line 71
     return-void
 .end method

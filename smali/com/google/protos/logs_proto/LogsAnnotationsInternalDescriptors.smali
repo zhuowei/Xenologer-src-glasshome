@@ -9,12 +9,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     .prologue
     const/4 v5, 0x1
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     .line 10
     const/4 v2, 0x7
@@ -23,7 +23,7 @@
 
     const-string v2, "\n2logs/proto/logs_annotations/logs_annotations.proto\u0012\nlogs_proto\u001a!net/proto2/proto/descriptor.proto\";\n\u000cFieldDetails\u0012+\n\u0007id_type\u0018\u0001 \u0003(\u000e2\u001a.logs_proto.IdentifierType\"w\n\u000eMessageDetails\u00126\n\rmay_appear_in\u0018\u0001 \u0003(\u000b2\u001f.logs_proto.MessageDetails.Type\u001a-\n\u0004Type\u0012\u0013\n\u000bsource_type\u0018\u0001 \u0002(\t\u0012\u0010\n\u0008log_type\u0018\u0002 \u0002(\t*\u00cf\t\n\u000eIdentifierType\u0012\u000f\n\u000bLOGSID_NONE\u0010\u0000\u0012\u0015\n\u0011LOGSID_IP_ADDRESS\u0010\u0001\u0012\u001e\n\u001aLOGSID_IP_ADDRESS_INTERNAL\u0010\u0002\u0012\u0015\n\u0011LOGSID_USER_AGENT\u0010\u0003\u0012\u001e\n\u001aL"
 
-    aput-object v2, v1, v4
+    aput-object v2, v1, v6
 
     const-string v2, "OGSID_SENSITIVE_TIMESTAMP\u0010\u0004\u0012\u001d\n\u0019LOGSID_SENSITIVE_LOCATION\u0010\u0005\u0012\u001f\n\u001bLOGSID_APPROXIMATE_LOCATION\u0010\u000f\u0012\u001a\n\u0016LOGSID_COARSE_LOCATION\u0010\u0006\u0012\u0019\n\u0015LOGSID_OTHER_LOCATION\u0010\t\u0012\u001b\n\u0017LOGSID_OTHER_VERSION_ID\u0010\u0007\u0012\u0012\n\u000eLOGSID_REFERER\u0010\u0008\u0012!\n\u001dLOGSID_THIRD_PARTY_PARAMETERS\u0010\u0010\u0012 \n\u001cLOGSID_OTHER_PSEUDONYMOUS_ID\u0010\n\u0012\u000f\n\u000bLOGSID_PREF\u0010\u000b\u0012\u0013\n\u000fLOGSID_ZWIEBACK\u0010\u000c\u0012\u0013\n\u000fLOGSID_BISCOTTI\u0010\r\u0012\u001c\n\u0018LOGSID_CUSTOM_SESSION_ID\u0010\u000e\u0012\u001c\n\u0018LOGSID_OTHER_PERSONAL_ID\u0010\u0014\u0012\u0012\n\u000eLOGSID_GAIA_I"
 
@@ -67,15 +67,23 @@
 
     .line 85
     .local v0, assigner:Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;
-    new-array v2, v5, [Lcom/google/protobuf/Descriptors$FileDescriptor;
+    const-class v2, Lcom/google/protos/logs_proto/LogsAnnotationsInternalDescriptors;
 
-    sget-object v3, Lcom/google/protobuf/DescriptorProtosInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
+    new-array v3, v5, [Ljava/lang/String;
 
-    aput-object v3, v2, v4
+    const-string v4, "com.google.protobuf.DescriptorProtosInternalDescriptors"
 
-    invoke-static {v1, v2, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;[Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+    aput-object v4, v3, v6
 
-    .line 90
+    new-array v4, v5, [Ljava/lang/String;
+
+    const-string v5, "net/proto2/proto/descriptor.proto"
+
+    aput-object v5, v4, v6
+
+    invoke-static {v1, v2, v3, v4, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;[Ljava/lang/String;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+
+    .line 93
     return-void
 .end method
 

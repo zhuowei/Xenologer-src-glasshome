@@ -3,5 +3,5 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
     <com.google.glass.home.timeline.active.ClockView android:layout_gravity="center" android:id="@id/clock" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-12.0px" />
-    <com.google.glass.home.timeline.active.GuardPhraseView android:layout_gravity="bottom|center" android:id="@id/guard_phrase_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="29.0px" glass:tip="@string/guard_phrase_hint" style="@style/TipsViewText" />
+    <com.google.glass.home.timeline.active.GuardPhraseView android:layout_gravity="bottom|center" android:id="@id/guard_phrase_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/guard_phrase_bottom_margin" glass:tip="@string/guard_phrase_hint" style="@style/TipsViewText" />
 </FrameLayout>

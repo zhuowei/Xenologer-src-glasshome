@@ -61,6 +61,24 @@
     .end annotation
 .end method
 
+.method public abstract getContactGroup(I)Lcom/google/googlex/glass/common/proto/Entity$ContactGroup;
+.end method
+
+.method public abstract getContactGroupCount()I
+.end method
+
+.method public abstract getContactGroupList()Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/Entity$ContactGroup;",
+            ">;"
+        }
+    .end annotation
+.end method
+
 .method public abstract getDisplayName()Ljava/lang/String;
 .end method
 

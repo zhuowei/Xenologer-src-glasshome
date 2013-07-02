@@ -60,20 +60,20 @@
     .locals 1
 
     .prologue
-    .line 2597
+    .line 2605
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 2733
+    .line 2741
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2598
+    .line 2606
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->maybeForceBuilderInitialization()V
 
-    .line 2599
+    .line 2607
     return-void
 .end method
 
@@ -82,20 +82,20 @@
     .parameter "parent"
 
     .prologue
-    .line 2603
+    .line 2611
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 2733
+    .line 2741
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2604
+    .line 2612
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->maybeForceBuilderInitialization()V
 
-    .line 2605
+    .line 2613
     return-void
 .end method
 
@@ -105,7 +105,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-direct {p0, p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -115,7 +115,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->create()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 2612
+    .line 2620
     new-instance v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     invoke-direct {v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;-><init>()V
@@ -139,7 +139,7 @@
     .locals 2
 
     .prologue
-    .line 2736
+    .line 2744
     iget v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -148,7 +148,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 2737
+    .line 2745
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
@@ -157,14 +157,14 @@
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2738
+    .line 2746
     iget v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2740
+    .line 2748
     :cond_0
     return-void
 .end method
@@ -173,7 +173,7 @@
     .locals 1
 
     .prologue
-    .line 2586
+    .line 2594
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations;->access$800()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -198,12 +198,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 3051
+    .line 3059
     iget-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_0
 
-    .line 3052
+    .line 3060
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
@@ -227,18 +227,18 @@
 
     iput-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 3058
+    .line 3066
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 3060
+    .line 3068
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 3052
+    .line 3060
     :cond_1
     const/4 v0, 0x0
 
@@ -249,17 +249,17 @@
     .locals 1
 
     .prologue
-    .line 2607
+    .line 2615
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2608
+    .line 2616
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getMayAppearInFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 2610
+    .line 2618
     :cond_0
     return-void
 .end method
@@ -281,28 +281,28 @@
     .end annotation
 
     .prologue
-    .line 2922
+    .line 2930
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;>;"
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2923
+    .line 2931
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2924
+    .line 2932
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 2926
+    .line 2934
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2930
+    .line 2938
     :goto_0
     return-object p0
 
-    .line 2928
+    .line 2936
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -317,15 +317,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 2903
+    .line 2911
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2904
+    .line 2912
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2905
+    .line 2913
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type$Builder;->build()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
@@ -334,14 +334,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 2906
+    .line 2914
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2910
+    .line 2918
     :goto_0
     return-object p0
 
-    .line 2908
+    .line 2916
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -360,38 +360,38 @@
     .parameter "value"
 
     .prologue
-    .line 2862
+    .line 2870
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 2863
+    .line 2871
     if-nez p2, :cond_0
 
-    .line 2864
+    .line 2872
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2866
+    .line 2874
     :cond_0
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2867
+    .line 2875
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 2868
+    .line 2876
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2872
+    .line 2880
     :goto_0
     return-object p0
 
-    .line 2870
+    .line 2878
     :cond_1
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -405,15 +405,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 2884
+    .line 2892
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2885
+    .line 2893
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2886
+    .line 2894
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type$Builder;->build()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
@@ -422,14 +422,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2887
+    .line 2895
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2891
+    .line 2899
     :goto_0
     return-object p0
 
-    .line 2889
+    .line 2897
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -447,38 +447,38 @@
     .parameter "value"
 
     .prologue
-    .line 2840
+    .line 2848
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 2841
+    .line 2849
     if-nez p1, :cond_0
 
-    .line 2842
+    .line 2850
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2844
+    .line 2852
     :cond_0
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2845
+    .line 2853
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2846
+    .line 2854
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2850
+    .line 2858
     :goto_0
     return-object p0
 
-    .line 2848
+    .line 2856
     :cond_1
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -491,7 +491,7 @@
     .locals 2
 
     .prologue
-    .line 3020
+    .line 3028
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getMayAppearInFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -514,7 +514,7 @@
     .parameter "index"
 
     .prologue
-    .line 3033
+    .line 3041
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getMayAppearInFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -536,7 +536,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->build()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -548,7 +548,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->build()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -560,12 +560,12 @@
     .locals 2
 
     .prologue
-    .line 2640
+    .line 2648
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->buildPartial()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
 
-    .line 2641
+    .line 2649
     .local v0, result:Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
     invoke-virtual {v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->isInitialized()Z
 
@@ -573,14 +573,14 @@
 
     if-nez v1, :cond_0
 
-    .line 2642
+    .line 2650
     invoke-static {v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 2644
+    .line 2652
     :cond_0
     return-object v0
 .end method
@@ -589,7 +589,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->buildPartial()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -601,7 +601,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->buildPartial()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -613,24 +613,24 @@
     .locals 4
 
     .prologue
-    .line 2648
+    .line 2656
     new-instance v1, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, p0, v2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/protos/logs_proto/LogsAnnotations$1;)V
 
-    .line 2649
+    .line 2657
     .local v1, result:Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
     iget v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2650
+    .line 2658
     .local v0, from_bitField0_:I
     iget-object v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v2, :cond_1
 
-    .line 2651
+    .line 2659
     iget v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
@@ -639,7 +639,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 2652
+    .line 2660
     iget-object v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -648,28 +648,28 @@
 
     iput-object v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2653
+    .line 2661
     iget v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v2, v2, -0x2
 
     iput v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2655
+    .line 2663
     :cond_0
     iget-object v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     #setter for: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
     invoke-static {v1, v2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2502(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;Ljava/util/List;)Ljava/util/List;
 
-    .line 2659
+    .line 2667
     :goto_0
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onBuilt()V
 
-    .line 2660
+    .line 2668
     return-object v1
 
-    .line 2657
+    .line 2665
     :cond_1
     iget-object v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -687,7 +687,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clear()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -699,7 +699,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clear()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -711,7 +711,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clear()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -723,7 +723,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clear()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -735,33 +735,33 @@
     .locals 1
 
     .prologue
-    .line 2616
+    .line 2624
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 2617
+    .line 2625
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2618
+    .line 2626
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2619
+    .line 2627
     iget v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2623
+    .line 2631
     :goto_0
     return-object p0
 
-    .line 2621
+    .line 2629
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -774,33 +774,33 @@
     .locals 1
 
     .prologue
-    .line 2941
+    .line 2949
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2942
+    .line 2950
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2943
+    .line 2951
     iget v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2944
+    .line 2952
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2948
+    .line 2956
     :goto_0
     return-object p0
 
-    .line 2946
+    .line 2954
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -813,7 +813,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clone()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -825,7 +825,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clone()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -837,7 +837,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clone()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -849,7 +849,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clone()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -861,7 +861,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clone()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -873,7 +873,7 @@
     .locals 2
 
     .prologue
-    .line 2627
+    .line 2635
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->create()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -898,7 +898,7 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->clone()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -910,7 +910,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getDefaultInstanceForType()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -922,7 +922,7 @@
     .locals 1
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getDefaultInstanceForType()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -934,7 +934,7 @@
     .locals 1
 
     .prologue
-    .line 2636
+    .line 2644
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getDefaultInstance()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v0
@@ -946,7 +946,7 @@
     .locals 1
 
     .prologue
-    .line 2632
+    .line 2640
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations;->access$800()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -959,12 +959,12 @@
     .parameter "index"
 
     .prologue
-    .line 2784
+    .line 2792
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2785
+    .line 2793
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -973,7 +973,7 @@
 
     check-cast v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
 
-    .line 2787
+    .line 2795
     :goto_0
     return-object v0
 
@@ -994,7 +994,7 @@
     .parameter "index"
 
     .prologue
-    .line 2978
+    .line 2986
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getMayAppearInFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1021,7 +1021,7 @@
     .end annotation
 
     .prologue
-    .line 3046
+    .line 3054
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getMayAppearInFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1037,19 +1037,19 @@
     .locals 1
 
     .prologue
-    .line 2769
+    .line 2777
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2770
+    .line 2778
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 2772
+    .line 2780
     :goto_0
     return v0
 
@@ -1076,19 +1076,19 @@
     .end annotation
 
     .prologue
-    .line 2754
+    .line 2762
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2755
+    .line 2763
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 2757
+    .line 2765
     :goto_0
     return-object v0
 
@@ -1107,12 +1107,12 @@
     .parameter "index"
 
     .prologue
-    .line 2990
+    .line 2998
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2991
+    .line 2999
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1121,7 +1121,7 @@
 
     check-cast v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$TypeOrBuilder;
 
-    .line 2992
+    .line 3000
     :goto_0
     return-object v0
 
@@ -1150,19 +1150,19 @@
     .end annotation
 
     .prologue
-    .line 3005
+    .line 3013
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 3006
+    .line 3014
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 3008
+    .line 3016
     :goto_0
     return-object v0
 
@@ -1180,7 +1180,7 @@
     .locals 3
 
     .prologue
-    .line 2591
+    .line 2599
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations;->access$900()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -1200,7 +1200,7 @@
     .locals 2
 
     .prologue
-    .line 2705
+    .line 2713
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1211,7 +1211,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 2706
+    .line 2714
     invoke-virtual {p0, v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->getMayAppearIn(I)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
 
     move-result-object v1
@@ -1222,20 +1222,20 @@
 
     if-nez v1, :cond_0
 
-    .line 2708
+    .line 2716
     const/4 v1, 0x0
 
-    .line 2711
+    .line 2719
     :goto_1
     return v1
 
-    .line 2705
+    .line 2713
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2711
+    .line 2719
     :cond_1
     const/4 v1, 0x1
 
@@ -1253,7 +1253,7 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0, p1, p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1266,7 +1266,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0, p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1285,7 +1285,7 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0, p1, p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1304,7 +1304,7 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0, p1, p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1317,7 +1317,7 @@
     .parameter "x0"
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0, p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1336,7 +1336,7 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2588
     invoke-virtual {p0, p1, p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1355,10 +1355,10 @@
     .end annotation
 
     .prologue
-    .line 2718
+    .line 2726
     const/4 v2, 0x0
 
-    .line 2720
+    .line 2728
     .local v2, parsedMessage:Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
     :try_start_0
     sget-object v3, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
@@ -1376,21 +1376,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2725
+    .line 2733
     if-eqz v2, :cond_0
 
-    .line 2726
+    .line 2734
     invoke-virtual {p0, v2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
-    .line 2729
+    .line 2737
     :cond_0
     return-object p0
 
-    .line 2721
+    .line 2729
     :catch_0
     move-exception v1
 
-    .line 2722
+    .line 2730
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1403,19 +1403,19 @@
 
     move-object v2, v0
 
-    .line 2723
+    .line 2731
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2725
+    .line 2733
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 2726
+    .line 2734
     invoke-virtual {p0, v2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mergeFrom(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     :cond_1
@@ -1427,12 +1427,12 @@
     .parameter "other"
 
     .prologue
-    .line 2664
+    .line 2672
     instance-of v0, p1, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     if-eqz v0, :cond_0
 
-    .line 2665
+    .line 2673
     check-cast p1, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     .end local p1
@@ -1440,12 +1440,12 @@
 
     move-result-object p0
 
-    .line 2668
+    .line 2676
     .end local p0
     :goto_0
     return-object p0
 
-    .line 2667
+    .line 2675
     .restart local p0
     .restart local p1
     :cond_0
@@ -1461,24 +1461,24 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2673
+    .line 2681
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getDefaultInstance()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 2701
+    .line 2709
     :goto_0
     return-object p0
 
-    .line 2674
+    .line 2682
     :cond_0
     iget-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_3
 
-    .line 2675
+    .line 2683
     #getter for: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2500(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Ljava/util/List;
 
@@ -1490,7 +1490,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2676
+    .line 2684
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1499,7 +1499,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2677
+    .line 2685
     #getter for: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2500(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Ljava/util/List;
 
@@ -1507,18 +1507,18 @@
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2678
+    .line 2686
     iget v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2683
+    .line 2691
     :goto_1
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2700
+    .line 2708
     :cond_1
     :goto_2
     invoke-virtual {p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
@@ -1529,11 +1529,11 @@
 
     goto :goto_0
 
-    .line 2680
+    .line 2688
     :cond_2
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2681
+    .line 2689
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     #getter for: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
@@ -1545,7 +1545,7 @@
 
     goto :goto_1
 
-    .line 2686
+    .line 2694
     :cond_3
     #getter for: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2500(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Ljava/util/List;
@@ -1558,7 +1558,7 @@
 
     if-nez v1, :cond_1
 
-    .line 2687
+    .line 2695
     iget-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
@@ -1567,15 +1567,15 @@
 
     if-eqz v1, :cond_5
 
-    .line 2688
+    .line 2696
     iget-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 2689
+    .line 2697
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 2690
+    .line 2698
     #getter for: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2500(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Ljava/util/List;
 
@@ -1583,14 +1583,14 @@
 
     iput-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
-    .line 2691
+    .line 2699
     iget v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, -0x2
 
     iput v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->bitField0_:I
 
-    .line 2692
+    .line 2700
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->access$2600()Z
 
     move-result v1
@@ -1606,7 +1606,7 @@
 
     goto :goto_2
 
-    .line 2696
+    .line 2704
     :cond_5
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1625,27 +1625,27 @@
     .parameter "index"
 
     .prologue
-    .line 2959
+    .line 2967
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2960
+    .line 2968
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2961
+    .line 2969
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 2962
+    .line 2970
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2966
+    .line 2974
     :goto_0
     return-object p0
 
-    .line 2964
+    .line 2972
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1660,15 +1660,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 2822
+    .line 2830
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 2823
+    .line 2831
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2824
+    .line 2832
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type$Builder;->build()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
@@ -1677,14 +1677,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2825
+    .line 2833
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2829
+    .line 2837
     :goto_0
     return-object p0
 
-    .line 2827
+    .line 2835
     :cond_0
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1703,38 +1703,38 @@
     .parameter "value"
 
     .prologue
-    .line 2800
+    .line 2808
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 2801
+    .line 2809
     if-nez p2, :cond_0
 
-    .line 2802
+    .line 2810
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2804
+    .line 2812
     :cond_0
     invoke-direct {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->ensureMayAppearInIsMutable()V
 
-    .line 2805
+    .line 2813
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2806
+    .line 2814
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->onChanged()V
 
-    .line 2810
+    .line 2818
     :goto_0
     return-object p0
 
-    .line 2808
+    .line 2816
     :cond_1
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->mayAppearInBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 10658
+    .line 11190
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     const-string v1, "NORMAL"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->NORMAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
-    .line 10667
+    .line 11199
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     const-string v1, "BYTES"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->BYTES:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
-    .line 10649
+    .line 11181
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
-    .line 10704
+    .line 11236
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 10724
+    .line 11256
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->values()[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 10738
+    .line 11270
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 10739
+    .line 11271
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->index:I
 
-    .line 10740
+    .line 11272
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->value:I
 
-    .line 10741
+    .line 11273
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 10721
+    .line 11253
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 10701
+    .line 11233
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 10692
+    .line 11224
     packed-switch p0, :pswitch_data_0
 
-    .line 10695
+    .line 11227
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 10693
+    .line 11225
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->NORMAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     goto :goto_0
 
-    .line 10694
+    .line 11226
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->BYTES:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     goto :goto_0
 
-    .line 10692
+    .line 11224
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 10728
+    .line 11260
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 10729
+    .line 11261
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 10732
+    .line 11264
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 10649
+    .line 11181
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 10649
+    .line 11181
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 10717
+    .line 11249
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 10689
+    .line 11221
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 10713
+    .line 11245
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

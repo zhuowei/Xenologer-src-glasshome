@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 253
+    .line 255
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$3;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
     .parameter "extra"
 
     .prologue
-    .line 256
+    .line 258
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 257
+    .line 259
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$3;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/VideoPlayer$2;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -91,7 +91,7 @@
 
     invoke-interface {v0}, Lcom/google/glass/home/timeline/VideoPlayerListener;->onError()V
 
-    .line 258
+    .line 260
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$3;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/VideoPlayer$2;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -103,7 +103,7 @@
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/VideoEventLogger;->onError()V
 
-    .line 259
+    .line 261
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$3;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/VideoPlayer$2;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -113,7 +113,7 @@
     #setter for: Lcom/google/glass/home/timeline/VideoPlayer;->isPlayerError:Z
     invoke-static {v0, v1}, Lcom/google/glass/home/timeline/VideoPlayer;->access$902(Lcom/google/glass/home/timeline/VideoPlayer;Z)Z
 
-    .line 260
+    .line 262
     const/4 v0, 0x0
 
     return v0

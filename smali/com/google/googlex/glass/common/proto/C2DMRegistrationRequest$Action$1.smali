@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 226
+    .line 232
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 228
+    .line 234
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->valueOf(I)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 226
+    .line 232
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action$1;->findValueByNumber(I)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     move-result-object v0

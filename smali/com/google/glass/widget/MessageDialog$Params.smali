@@ -53,7 +53,7 @@
     .locals 0
 
     .prologue
-    .line 101
+    .line 102
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -64,7 +64,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$Params;-><init>()V
 
     return-void
@@ -75,7 +75,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporaryIcon:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -87,7 +87,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporaryIcon:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -98,7 +98,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->sound:Lcom/google/glass/sound/SoundManager$SoundId;
 
     return-object v0
@@ -110,7 +110,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->sound:Lcom/google/glass/sound/SoundManager$SoundId;
 
     return-object p1
@@ -121,7 +121,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->soundManager:Lcom/google/glass/sound/SoundManager;
 
     return-object v0
@@ -133,7 +133,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->soundManager:Lcom/google/glass/sound/SoundManager;
 
     return-object p1
@@ -144,7 +144,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->message:Ljava/lang/CharSequence;
 
     return-object v0
@@ -156,7 +156,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->message:Ljava/lang/CharSequence;
 
     return-object p1
@@ -167,7 +167,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->secondaryMessage:Ljava/lang/CharSequence;
 
     return-object v0
@@ -179,7 +179,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->secondaryMessage:Ljava/lang/CharSequence;
 
     return-object p1
@@ -190,7 +190,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->icon:Landroid/graphics/drawable/Drawable;
 
     return-object v0
@@ -202,7 +202,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->icon:Landroid/graphics/drawable/Drawable;
 
     return-object p1
@@ -213,7 +213,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldShowProgress:Z
 
     return v0
@@ -225,7 +225,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldShowProgress:Z
 
     return p1
@@ -236,7 +236,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldAutoHide:Z
 
     return v0
@@ -248,7 +248,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldAutoHide:Z
 
     return p1
@@ -259,7 +259,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldHandleConfirm:Z
 
     return v0
@@ -271,7 +271,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldHandleConfirm:Z
 
     return p1
@@ -282,7 +282,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->listener:Lcom/google/glass/widget/MessageDialog$Listener;
 
     return-object v0
@@ -294,7 +294,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->listener:Lcom/google/glass/widget/MessageDialog$Listener;
 
     return-object p1
@@ -305,7 +305,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldAnimate:Z
 
     return v0
@@ -317,7 +317,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldAnimate:Z
 
     return p1
@@ -328,7 +328,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->isExpanded:Z
 
     return v0
@@ -340,7 +340,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->isExpanded:Z
 
     return p1
@@ -351,7 +351,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldKeepScreenOn:Z
 
     return v0
@@ -363,7 +363,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->shouldKeepScreenOn:Z
 
     return p1
@@ -374,7 +374,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-boolean v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->isDismissable:Z
 
     return v0
@@ -386,7 +386,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-boolean p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->isDismissable:Z
 
     return p1
@@ -397,7 +397,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporaryMessage:Ljava/lang/CharSequence;
 
     return-object v0
@@ -409,7 +409,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporaryMessage:Ljava/lang/CharSequence;
 
     return-object p1
@@ -420,7 +420,7 @@
     .parameter "x0"
 
     .prologue
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporarySecondaryMessage:Ljava/lang/CharSequence;
 
     return-object v0
@@ -432,7 +432,7 @@
     .parameter "x1"
 
     .prologue
-    .line 101
+    .line 102
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporarySecondaryMessage:Ljava/lang/CharSequence;
 
     return-object p1
@@ -444,7 +444,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 122
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$Params;->temporaryMessage:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_0

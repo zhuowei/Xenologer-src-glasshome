@@ -41,7 +41,7 @@
     .parameter
 
     .prologue
-    .line 99
+    .line 97
     iput-object p1, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
     iput-object p2, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->val$frame:[B
@@ -60,7 +60,7 @@
     .parameter "params"
 
     .prologue
-    .line 108
+    .line 106
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
     iget-object v0, v0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
@@ -92,7 +92,7 @@
     .parameter "x0"
 
     .prologue
-    .line 99
+    .line 97
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -108,10 +108,10 @@
     .parameter "barcode"
 
     .prologue
-    .line 113
+    .line 111
     if-eqz p1, :cond_0
 
-    .line 114
+    .line 112
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
     invoke-virtual {v0}, Lcom/google/glass/barcode/BarcodeScanner$1;->getTag()Ljava/lang/String;
@@ -122,7 +122,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
+    .line 115
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
     iget-object v0, v0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
@@ -138,7 +138,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 118
+    .line 116
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
     iget-object v0, v0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
@@ -148,11 +148,11 @@
     #calls: Lcom/google/glass/barcode/BarcodeScanner;->stopScanning(ZLcom/google/android/libraries/barhopper/Barcode;)V
     invoke-static {v0, v1, p1}, Lcom/google/glass/barcode/BarcodeScanner;->access$700(Lcom/google/glass/barcode/BarcodeScanner;ZLcom/google/android/libraries/barhopper/Barcode;)V
 
-    .line 125
+    .line 123
     :goto_0
     return-void
 
-    .line 124
+    .line 122
     :cond_0
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
@@ -171,7 +171,7 @@
     .parameter "x0"
 
     .prologue
-    .line 99
+    .line 97
     check-cast p1, Lcom/google/android/libraries/barhopper/Barcode;
 
     .end local p1
@@ -184,7 +184,7 @@
     .locals 2
 
     .prologue
-    .line 103
+    .line 101
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1$1;->this$1:Lcom/google/glass/barcode/BarcodeScanner$1;
 
     iget-object v0, v0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
@@ -194,6 +194,6 @@
     #setter for: Lcom/google/glass/barcode/BarcodeScanner;->shouldIgnorePreviewFrames:Z
     invoke-static {v0, v1}, Lcom/google/glass/barcode/BarcodeScanner;->access$002(Lcom/google/glass/barcode/BarcodeScanner;Z)Z
 
-    .line 104
+    .line 102
     return-void
 .end method

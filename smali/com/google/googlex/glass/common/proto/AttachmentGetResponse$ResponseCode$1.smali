@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 163
+    .line 164
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 165
+    .line 166
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->valueOf(I)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 163
+    .line 164
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode$1;->findValueByNumber(I)Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     move-result-object v0

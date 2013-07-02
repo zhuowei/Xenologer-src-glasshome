@@ -78,19 +78,19 @@
     .locals 2
 
     .prologue
-    .line 3798
+    .line 7121
     new-instance v0, Lcom/google/glass/companion/Proto$LocationRequest$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$LocationRequest$1;-><init>()V
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 4072
+    .line 7395
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
-    .line 4521
+    .line 7847
     new-instance v0, Lcom/google/glass/companion/Proto$LocationRequest;
 
     const/4 v1, 0x1
@@ -99,17 +99,17 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->defaultInstance:Lcom/google/glass/companion/Proto$LocationRequest;
 
-    .line 4522
+    .line 7848
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->defaultInstance:Lcom/google/glass/companion/Proto$LocationRequest;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$LocationRequest;->initFields()V
 
-    .line 4523
+    .line 7849
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 10
+    .locals 11
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -119,95 +119,95 @@
     .end annotation
 
     .prologue
-    const/4 v8, -0x1
+    const/4 v9, -0x1
 
-    .line 3725
+    .line 7047
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
-    .line 3995
-    iput-byte v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
+    .line 7318
+    iput-byte v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
-    .line 4033
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedSerializedSize:I
+    .line 7356
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedSerializedSize:I
 
-    .line 3726
+    .line 7048
     invoke-direct {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->initFields()V
 
-    .line 3727
-    const/4 v2, 0x0
+    .line 7049
+    const/4 v3, 0x0
 
-    .line 3728
-    .local v2, mutable_bitField0_:I
+    .line 7050
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/ByteString;->newOutput()Lcom/google/protobuf/ByteString$Output;
-
-    move-result-object v6
-
-    .line 3730
-    .local v6, unknownFieldsOutput:Lcom/google/protobuf/ByteString$Output;
-    invoke-static {v6}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/google/protobuf/CodedOutputStream;
-
-    move-result-object v5
-
-    .line 3734
-    .local v5, unknownFieldsCodedOutput:Lcom/google/protobuf/CodedOutputStream;
-    const/4 v0, 0x0
-
-    .line 3735
-    .local v0, done:Z
-    :cond_0
-    :goto_0
-    if-nez v0, :cond_2
-
-    .line 3736
-    :try_start_0
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
-
-    move-result v4
-
-    .line 3737
-    .local v4, tag:I
-    sparse-switch v4, :sswitch_data_0
-
-    .line 3742
-    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/glass/companion/Proto$LocationRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
-
-    move-result v8
-
-    if-nez v8, :cond_0
-
-    .line 3744
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    .line 3739
-    :sswitch_0
-    const/4 v0, 0x1
-
-    .line 3740
-    goto :goto_0
-
-    .line 3749
-    :sswitch_1
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v3
-
-    .line 3750
-    .local v3, rawValue:I
-    invoke-static {v3}, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->valueOf(I)Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     move-result-object v7
 
-    .line 3751
-    .local v7, value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
-    if-nez v7, :cond_1
+    .line 7052
+    .local v7, unknownFieldsOutput:Lcom/google/protobuf/ByteString$Output;
+    invoke-static {v7}, Lcom/google/protobuf/CodedOutputStream;->newInstance(Ljava/io/OutputStream;)Lcom/google/protobuf/CodedOutputStream;
 
-    .line 3752
-    invoke-virtual {v5, v4}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+    move-result-object v6
 
-    .line 3753
-    invoke-virtual {v5, v3}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+    .line 7056
+    .local v6, unknownFieldsCodedOutput:Lcom/google/protobuf/CodedOutputStream;
+    const/4 v1, 0x0
+
+    .line 7057
+    .local v1, done:Z
+    :cond_0
+    :goto_0
+    if-nez v1, :cond_2
+
+    .line 7058
+    :try_start_0
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
+
+    move-result v5
+
+    .line 7059
+    .local v5, tag:I
+    sparse-switch v5, :sswitch_data_0
+
+    .line 7064
+    invoke-virtual {p0, p1, v6, p2, v5}, Lcom/google/glass/companion/Proto$LocationRequest;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/CodedOutputStream;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+
+    move-result v9
+
+    if-nez v9, :cond_0
+
+    .line 7066
+    const/4 v1, 0x1
+
+    goto :goto_0
+
+    .line 7061
+    :sswitch_0
+    const/4 v1, 0x1
+
+    .line 7062
+    goto :goto_0
+
+    .line 7071
+    :sswitch_1
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v4
+
+    .line 7072
+    .local v4, rawValue:I
+    invoke-static {v4}, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->valueOf(I)Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+
+    move-result-object v8
+
+    .line 7073
+    .local v8, value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+    if-nez v8, :cond_1
+
+    .line 7074
+    invoke-virtual {v6, v5}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
+
+    .line 7075
+    invoke-virtual {v6, v4}, Lcom/google/protobuf/CodedOutputStream;->writeRawVarint32(I)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -215,63 +215,63 @@
 
     goto :goto_0
 
-    .line 3782
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v7           #value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+    .line 7105
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v8           #value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    .line 3783
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 7106
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    move-result-object v8
+    move-result-object v9
 
-    throw v8
+    throw v9
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 3788
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 7111
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
-    move-exception v8
+    move-exception v9
 
-    .line 3789
+    .line 7112
     :try_start_2
-    invoke-virtual {v5}, Lcom/google/protobuf/CodedOutputStream;->flush()V
+    invoke-virtual {v6}, Lcom/google/protobuf/CodedOutputStream;->flush()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 3793
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    .line 7116
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v10
 
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    .line 3795
+    .line 7118
     :goto_1
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->makeExtensionsImmutable()V
 
-    throw v8
+    throw v9
 
-    .line 3755
-    .restart local v3       #rawValue:I
-    .restart local v4       #tag:I
-    .restart local v7       #value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+    .line 7077
+    .restart local v4       #rawValue:I
+    .restart local v5       #tag:I
+    .restart local v8       #value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
     :cond_1
     :try_start_3
-    iget v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iget v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    or-int/lit8 v8, v8, 0x1
+    or-int/lit8 v9, v9, 0x1
 
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    .line 3756
-    iput-object v7, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+    .line 7078
+    iput-object v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_3 .. :try_end_3} :catch_0
@@ -279,100 +279,103 @@
 
     goto :goto_0
 
-    .line 3784
-    .end local v3           #rawValue:I
-    .end local v4           #tag:I
-    .end local v7           #value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+    .line 7107
+    .end local v4           #rawValue:I
+    .end local v5           #tag:I
+    .end local v8           #value:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
     :catch_1
-    move-exception v1
+    move-exception v2
 
-    .line 3785
-    .local v1, e:Ljava/io/IOException;
+    .line 7108
+    .local v2, e:Ljava/io/IOException;
     :try_start_4
-    new-instance v8, Lcom/google/protobuf/InvalidProtocolBufferException;
+    new-instance v9, Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-direct {v9, v10}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v9, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v9
 
-    invoke-direct {v8, v9}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v8, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v8
-
-    throw v8
+    throw v9
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 3761
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v4       #tag:I
+    .line 7083
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v5       #tag:I
     :sswitch_2
     :try_start_5
-    iget v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
-
-    or-int/lit8 v8, v8, 0x2
-
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
-
-    .line 3762
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v8
+    move-result-object v0
 
-    iput-object v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
+    .line 7084
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+
+    or-int/lit8 v9, v9, 0x2
+
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+
+    .line 7085
+    iput-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 3766
+    .line 7089
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
     :sswitch_3
-    iget v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iget v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    or-int/lit8 v8, v8, 0x4
+    or-int/lit8 v9, v9, 0x4
 
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    .line 3767
+    .line 7090
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt64()J
 
-    move-result-wide v8
+    move-result-wide v9
 
-    iput-wide v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
+    iput-wide v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
 
     goto :goto_0
 
-    .line 3771
+    .line 7094
     :sswitch_4
-    iget v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iget v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    or-int/lit8 v8, v8, 0x8
+    or-int/lit8 v9, v9, 0x8
 
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    .line 3772
+    .line 7095
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readFloat()F
 
-    move-result v8
+    move-result v9
 
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
 
     goto :goto_0
 
-    .line 3776
+    .line 7099
     :sswitch_5
-    iget v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iget v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    or-int/lit8 v8, v8, 0x10
+    or-int/lit8 v9, v9, 0x10
 
-    iput v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
+    iput v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
-    .line 3777
+    .line 7100
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
 
-    move-result v8
+    move-result v9
 
-    iput-boolean v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
+    iput-boolean v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_5 .. :try_end_5} :catch_0
@@ -380,78 +383,78 @@
 
     goto/16 :goto_0
 
-    .line 3789
-    .end local v4           #tag:I
+    .line 7112
+    .end local v5           #tag:I
     :cond_2
     :try_start_6
-    invoke-virtual {v5}, Lcom/google/protobuf/CodedOutputStream;->flush()V
+    invoke-virtual {v6}, Lcom/google/protobuf/CodedOutputStream;->flush()V
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_2
 
-    .line 3793
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    .line 7116
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v8
+    move-result-object v9
 
-    iput-object v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    .line 3795
+    .line 7118
     :goto_2
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->makeExtensionsImmutable()V
 
-    .line 3797
+    .line 7120
     return-void
 
-    .line 3790
+    .line 7113
     :catch_2
-    move-exception v8
+    move-exception v9
 
-    .line 3793
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    .line 7116
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v8
+    move-result-object v9
 
-    iput-object v8, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
     goto :goto_2
 
     :catchall_1
-    move-exception v8
-
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
-
-    throw v8
-
-    .line 3790
-    :catch_3
     move-exception v9
 
-    .line 3793
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v10
 
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+
+    throw v9
+
+    .line 7113
+    :catch_3
+    move-exception v10
+
+    .line 7116
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+
+    move-result-object v10
+
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
     goto :goto_1
 
     :catchall_2
-    move-exception v8
+    move-exception v9
 
-    invoke-virtual {v6}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
+    invoke-virtual {v7}, Lcom/google/protobuf/ByteString$Output;->toByteString()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v10
 
-    iput-object v9, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
+    iput-object v10, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    throw v8
+    throw v9
 
-    .line 3737
+    .line 7059
     nop
 
     :sswitch_data_0
@@ -477,7 +480,7 @@
     .end annotation
 
     .prologue
-    .line 3701
+    .line 7023
     invoke-direct {p0, p1, p2}, Lcom/google/glass/companion/Proto$LocationRequest;-><init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
     return-void
@@ -490,23 +493,23 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 3707
+    .line 7029
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessageLite;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
 
-    .line 3995
+    .line 7318
     iput-byte v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
-    .line 4033
+    .line 7356
     iput v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedSerializedSize:I
 
-    .line 3708
+    .line 7030
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->getUnknownFields()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
-    .line 3709
+    .line 7031
     return-void
 .end method
 
@@ -516,7 +519,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     invoke-direct {p0, p1}, Lcom/google/glass/companion/Proto$LocationRequest;-><init>(Lcom/google/protobuf/GeneratedMessageLite$Builder;)V
 
     return-void
@@ -529,16 +532,16 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 3710
+    .line 7032
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessageLite;-><init>()V
 
-    .line 3995
+    .line 7318
     iput-byte v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
-    .line 4033
+    .line 7356
     iput v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedSerializedSize:I
 
-    .line 3710
+    .line 7032
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
@@ -546,95 +549,95 @@
     return-void
 .end method
 
-.method static synthetic access$2702(Lcom/google/glass/companion/Proto$LocationRequest;Lcom/google/glass/companion/Proto$LocationRequest$RequestType;)Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
+.method static synthetic access$6802(Lcom/google/glass/companion/Proto$LocationRequest;Lcom/google/glass/companion/Proto$LocationRequest$RequestType;)Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     iput-object p1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     return-object p1
 .end method
 
-.method static synthetic access$2800(Lcom/google/glass/companion/Proto$LocationRequest;)Ljava/lang/Object;
+.method static synthetic access$6900(Lcom/google/glass/companion/Proto$LocationRequest;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 3701
+    .line 7023
     iget-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method static synthetic access$2802(Lcom/google/glass/companion/Proto$LocationRequest;Ljava/lang/Object;)Ljava/lang/Object;
+.method static synthetic access$6902(Lcom/google/glass/companion/Proto$LocationRequest;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     iput-object p1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method static synthetic access$2902(Lcom/google/glass/companion/Proto$LocationRequest;J)J
+.method static synthetic access$7002(Lcom/google/glass/companion/Proto$LocationRequest;J)J
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     iput-wide p1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
 
     return-wide p1
 .end method
 
-.method static synthetic access$3002(Lcom/google/glass/companion/Proto$LocationRequest;F)F
+.method static synthetic access$7102(Lcom/google/glass/companion/Proto$LocationRequest;F)F
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     iput p1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
 
     return p1
 .end method
 
-.method static synthetic access$3102(Lcom/google/glass/companion/Proto$LocationRequest;Z)Z
+.method static synthetic access$7202(Lcom/google/glass/companion/Proto$LocationRequest;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     iput-boolean p1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
 
     return p1
 .end method
 
-.method static synthetic access$3202(Lcom/google/glass/companion/Proto$LocationRequest;I)I
+.method static synthetic access$7302(Lcom/google/glass/companion/Proto$LocationRequest;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 3701
+    .line 7023
     iput p1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     return p1
 .end method
 
-.method static synthetic access$3300(Lcom/google/glass/companion/Proto$LocationRequest;)Lcom/google/protobuf/ByteString;
+.method static synthetic access$7400(Lcom/google/glass/companion/Proto$LocationRequest;)Lcom/google/protobuf/ByteString;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 3701
+    .line 7023
     iget-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
     return-object v0
@@ -644,7 +647,7 @@
     .locals 1
 
     .prologue
-    .line 3714
+    .line 7036
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->defaultInstance:Lcom/google/glass/companion/Proto$LocationRequest;
 
     return-object v0
@@ -654,32 +657,32 @@
     .locals 2
 
     .prologue
-    .line 3989
+    .line 7312
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->START_LISTENING:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
-    .line 3990
+    .line 7313
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
-    .line 3991
+    .line 7314
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
 
-    .line 3992
+    .line 7315
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
 
-    .line 3993
+    .line 7316
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
 
-    .line 3994
+    .line 7317
     return-void
 .end method
 
@@ -687,9 +690,9 @@
     .locals 1
 
     .prologue
-    .line 4134
+    .line 7457
     #calls: Lcom/google/glass/companion/Proto$LocationRequest$Builder;->create()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
-    invoke-static {}, Lcom/google/glass/companion/Proto$LocationRequest$Builder;->access$2500()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
+    invoke-static {}, Lcom/google/glass/companion/Proto$LocationRequest$Builder;->access$6600()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
 
     move-result-object v0
 
@@ -701,7 +704,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 4137
+    .line 7460
     invoke-static {}, Lcom/google/glass/companion/Proto$LocationRequest;->newBuilder()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
 
     move-result-object v0
@@ -723,7 +726,7 @@
     .end annotation
 
     .prologue
-    .line 4114
+    .line 7437
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -746,7 +749,7 @@
     .end annotation
 
     .prologue
-    .line 4120
+    .line 7443
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -768,7 +771,7 @@
     .end annotation
 
     .prologue
-    .line 4084
+    .line 7407
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -791,7 +794,7 @@
     .end annotation
 
     .prologue
-    .line 4090
+    .line 7413
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -813,7 +816,7 @@
     .end annotation
 
     .prologue
-    .line 4125
+    .line 7448
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -836,7 +839,7 @@
     .end annotation
 
     .prologue
-    .line 4131
+    .line 7454
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -858,7 +861,7 @@
     .end annotation
 
     .prologue
-    .line 4104
+    .line 7427
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -881,7 +884,7 @@
     .end annotation
 
     .prologue
-    .line 4110
+    .line 7433
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -903,7 +906,7 @@
     .end annotation
 
     .prologue
-    .line 4094
+    .line 7417
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -926,7 +929,7 @@
     .end annotation
 
     .prologue
-    .line 4100
+    .line 7423
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -944,7 +947,7 @@
     .locals 1
 
     .prologue
-    .line 3718
+    .line 7040
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->defaultInstance:Lcom/google/glass/companion/Proto$LocationRequest;
 
     return-object v0
@@ -954,7 +957,7 @@
     .locals 1
 
     .prologue
-    .line 3701
+    .line 7023
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->getDefaultInstanceForType()Lcom/google/glass/companion/Proto$LocationRequest;
 
     move-result-object v0
@@ -966,7 +969,7 @@
     .locals 1
 
     .prologue
-    .line 3962
+    .line 7285
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
 
     return v0
@@ -976,7 +979,7 @@
     .locals 2
 
     .prologue
-    .line 3947
+    .line 7270
     iget-wide v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
 
     return-wide v0
@@ -995,7 +998,7 @@
     .end annotation
 
     .prologue
-    .line 3810
+    .line 7133
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -1005,19 +1008,19 @@
     .locals 4
 
     .prologue
-    .line 3897
+    .line 7220
     iget-object v1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
-    .line 3898
+    .line 7221
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 3899
+    .line 7222
     check-cast v1, Ljava/lang/String;
 
-    .line 3907
+    .line 7230
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -1026,16 +1029,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 3901
+    .line 7224
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 3903
+    .line 7226
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3904
+    .line 7227
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -1043,13 +1046,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 3905
+    .line 7228
     iput-object v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 3907
+    .line 7230
     goto :goto_0
 .end method
 
@@ -1057,16 +1060,16 @@
     .locals 3
 
     .prologue
-    .line 3915
+    .line 7238
     iget-object v1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
-    .line 3916
+    .line 7239
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 3917
+    .line 7240
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1074,11 +1077,11 @@
 
     move-result-object v0
 
-    .line 3920
+    .line 7243
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->provider_:Ljava/lang/Object;
 
-    .line 3923
+    .line 7246
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1097,7 +1100,7 @@
     .locals 1
 
     .prologue
-    .line 3985
+    .line 7308
     iget-boolean v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
 
     return v0
@@ -1113,10 +1116,10 @@
 
     const/4 v3, 0x1
 
-    .line 4035
+    .line 7358
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedSerializedSize:I
 
-    .line 4036
+    .line 7359
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -1124,26 +1127,26 @@
 
     move v1, v0
 
-    .line 4061
+    .line 7384
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 4038
+    .line 7361
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 4039
+    .line 7362
     iget v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 4040
+    .line 7363
     iget-object v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     invoke-virtual {v2}, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->getNumber()I
@@ -1156,7 +1159,7 @@
 
     add-int/2addr v0, v2
 
-    .line 4043
+    .line 7366
     :cond_1
     iget v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1164,7 +1167,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 4044
+    .line 7367
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->getProviderBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -1175,7 +1178,7 @@
 
     add-int/2addr v0, v2
 
-    .line 4047
+    .line 7370
     :cond_2
     iget v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1183,7 +1186,7 @@
 
     if-ne v2, v5, :cond_3
 
-    .line 4048
+    .line 7371
     const/4 v2, 0x3
 
     iget-wide v3, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
@@ -1194,7 +1197,7 @@
 
     add-int/2addr v0, v2
 
-    .line 4051
+    .line 7374
     :cond_3
     iget v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1204,7 +1207,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 4052
+    .line 7375
     iget v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
 
     invoke-static {v5, v2}, Lcom/google/protobuf/CodedOutputStream;->computeFloatSize(IF)I
@@ -1213,7 +1216,7 @@
 
     add-int/2addr v0, v2
 
-    .line 4055
+    .line 7378
     :cond_4
     iget v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1223,7 +1226,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 4056
+    .line 7379
     const/4 v2, 0x5
 
     iget-boolean v3, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
@@ -1234,7 +1237,7 @@
 
     add-int/2addr v0, v2
 
-    .line 4059
+    .line 7382
     :cond_5
     iget-object v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
@@ -1244,12 +1247,12 @@
 
     add-int/2addr v0, v2
 
-    .line 4060
+    .line 7383
     iput v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 4061
+    .line 7384
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -1259,7 +1262,7 @@
     .locals 1
 
     .prologue
-    .line 3882
+    .line 7205
     iget-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     return-object v0
@@ -1269,7 +1272,7 @@
     .locals 2
 
     .prologue
-    .line 3956
+    .line 7279
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1293,7 +1296,7 @@
     .locals 2
 
     .prologue
-    .line 3937
+    .line 7260
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1317,7 +1320,7 @@
     .locals 2
 
     .prologue
-    .line 3891
+    .line 7214
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1341,7 +1344,7 @@
     .locals 2
 
     .prologue
-    .line 3975
+    .line 7298
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1367,7 +1370,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 3876
+    .line 7199
     iget v1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1387,12 +1390,12 @@
     .locals 1
 
     .prologue
-    .line 4075
+    .line 7398
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
     if-nez v0, :cond_0
 
-    .line 4076
+    .line 7399
     const-string v0, "com.google.glass.companion.MutableProto$LocationRequest"
 
     invoke-static {v0}, Lcom/google/glass/companion/Proto$LocationRequest;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessageLite;
@@ -1401,7 +1404,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
-    .line 4078
+    .line 7401
     :cond_0
     sget-object v0, Lcom/google/glass/companion/Proto$LocationRequest;->mutableDefault:Lcom/google/protobuf/MutableMessageLite;
 
@@ -1416,10 +1419,10 @@
 
     const/4 v2, 0x0
 
-    .line 3997
+    .line 7320
     iget-byte v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
-    .line 3998
+    .line 7321
     .local v0, isInitialized:B
     const/4 v3, -0x1
 
@@ -1427,17 +1430,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 4009
+    .line 7332
     :goto_0
     return v1
 
     :cond_0
     move v1, v2
 
-    .line 3998
+    .line 7321
     goto :goto_0
 
-    .line 4000
+    .line 7323
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->hasType()Z
 
@@ -1445,15 +1448,15 @@
 
     if-nez v3, :cond_2
 
-    .line 4001
+    .line 7324
     iput-byte v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
     move v1, v2
 
-    .line 4002
+    .line 7325
     goto :goto_0
 
-    .line 4004
+    .line 7327
     :cond_2
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->hasProvider()Z
 
@@ -1461,15 +1464,15 @@
 
     if-nez v3, :cond_3
 
-    .line 4005
+    .line 7328
     iput-byte v2, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
     move v1, v2
 
-    .line 4006
+    .line 7329
     goto :goto_0
 
-    .line 4008
+    .line 7331
     :cond_3
     iput-byte v1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->memoizedIsInitialized:B
 
@@ -1480,7 +1483,7 @@
     .locals 1
 
     .prologue
-    .line 4135
+    .line 7458
     invoke-static {}, Lcom/google/glass/companion/Proto$LocationRequest;->newBuilder()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
 
     move-result-object v0
@@ -1492,7 +1495,7 @@
     .locals 1
 
     .prologue
-    .line 3701
+    .line 7023
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->newBuilderForType()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
 
     move-result-object v0
@@ -1504,7 +1507,7 @@
     .locals 1
 
     .prologue
-    .line 4139
+    .line 7462
     invoke-static {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->newBuilder(Lcom/google/glass/companion/Proto$LocationRequest;)Lcom/google/glass/companion/Proto$LocationRequest$Builder;
 
     move-result-object v0
@@ -1516,7 +1519,7 @@
     .locals 1
 
     .prologue
-    .line 3701
+    .line 7023
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->toBuilder()Lcom/google/glass/companion/Proto$LocationRequest$Builder;
 
     move-result-object v0
@@ -1533,7 +1536,7 @@
     .end annotation
 
     .prologue
-    .line 4068
+    .line 7391
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessageLite;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1557,17 +1560,17 @@
 
     const/4 v1, 0x1
 
-    .line 4014
+    .line 7337
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->getSerializedSize()I
 
-    .line 4015
+    .line 7338
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 4016
+    .line 7339
     iget-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->type_:Lcom/google/glass/companion/Proto$LocationRequest$RequestType;
 
     invoke-virtual {v0}, Lcom/google/glass/companion/Proto$LocationRequest$RequestType;->getNumber()I
@@ -1576,7 +1579,7 @@
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 4018
+    .line 7341
     :cond_0
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1584,14 +1587,14 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 4019
+    .line 7342
     invoke-virtual {p0}, Lcom/google/glass/companion/Proto$LocationRequest;->getProviderBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 4021
+    .line 7344
     :cond_1
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1599,14 +1602,14 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 4022
+    .line 7345
     const/4 v0, 0x3
 
     iget-wide v1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minTime_:J
 
     invoke-virtual {p1, v0, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt64(IJ)V
 
-    .line 4024
+    .line 7347
     :cond_2
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1616,12 +1619,12 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 4025
+    .line 7348
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->minDistance_:F
 
     invoke-virtual {p1, v3, v0}, Lcom/google/protobuf/CodedOutputStream;->writeFloat(IF)V
 
-    .line 4027
+    .line 7350
     :cond_3
     iget v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->bitField0_:I
 
@@ -1631,19 +1634,19 @@
 
     if-ne v0, v1, :cond_4
 
-    .line 4028
+    .line 7351
     const/4 v0, 0x5
 
     iget-boolean v1, p0, Lcom/google/glass/companion/Proto$LocationRequest;->sendLastKnownLocation_:Z
 
     invoke-virtual {p1, v0, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 4030
+    .line 7353
     :cond_4
     iget-object v0, p0, Lcom/google/glass/companion/Proto$LocationRequest;->unknownFields:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {p1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeRawBytes(Lcom/google/protobuf/ByteString;)V
 
-    .line 4031
+    .line 7354
     return-void
 .end method

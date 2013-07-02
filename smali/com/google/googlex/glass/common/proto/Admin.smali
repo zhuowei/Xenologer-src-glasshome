@@ -57,11 +57,15 @@
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Admin;->internal_static_googlex_glass_common_proto_WipeConfirmationRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    new-array v2, v5, [Ljava/lang/String;
+    new-array v2, v6, [Ljava/lang/String;
 
     const-string v3, "DeviceId"
 
     aput-object v3, v2, v4
+
+    const-string v3, "Email"
+
+    aput-object v3, v2, v5
 
     invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
 

@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 92
+    .line 93
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 97
+    .line 98
     new-instance v0, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 93
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GetSessionIdResponse$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GetSessionIdResponse;
 
     move-result-object v0

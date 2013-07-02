@@ -505,21 +505,21 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 354
+    .line 369
     iget v3, p0, Lcom/google/glass/widget/SliderView;->count:I
 
     const/4 v4, 0x2
 
     if-ge v3, v4, :cond_0
 
-    .line 355
+    .line 370
     invoke-direct {p0, v5}, Lcom/google/glass/widget/SliderView;->hideSlider(Z)V
 
-    .line 368
+    .line 383
     :goto_0
     return-void
 
-    .line 360
+    .line 375
     :cond_0
     iget-object v3, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
@@ -529,7 +529,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 361
+    .line 376
     .local v1, sliderParams:Landroid/widget/FrameLayout$LayoutParams;
     const/high16 v3, 0x3f80
 
@@ -537,7 +537,7 @@
 
     div-float v0, v3, v4
 
-    .line 362
+    .line 377
     .local v0, numItemsOnScreen:F
     invoke-direct {p0}, Lcom/google/glass/widget/SliderView;->getBaseSliderWidth()I
 
@@ -549,24 +549,24 @@
 
     float-to-int v2, v3
 
-    .line 363
+    .line 378
     .local v2, sliderWidth:I
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 364
+    .line 379
     const/4 v3, 0x0
 
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 365
+    .line 380
     iget-object v3, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
     invoke-virtual {v3, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 366
+    .line 381
     invoke-direct {p0, v5}, Lcom/google/glass/widget/SliderView;->showSlider(Z)V
 
-    .line 367
+    .line 382
     iget v3, p0, Lcom/google/glass/widget/SliderView;->index:F
 
     invoke-virtual {p0, v3}, Lcom/google/glass/widget/SliderView;->setProportionalIndex(F)V
@@ -580,12 +580,12 @@
     .locals 1
 
     .prologue
-    .line 322
+    .line 337
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/google/glass/widget/SliderView;->hideSlider(Z)V
 
-    .line 323
+    .line 338
     return-void
 .end method
 
@@ -659,21 +659,36 @@
 .end method
 
 .method public setManualProgress(F)V
+    .locals 1
+    .parameter "progress"
+
+    .prologue
+    .line 305
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lcom/google/glass/widget/SliderView;->setManualProgress(FZ)V
+
+    .line 306
+    return-void
+.end method
+
+.method public setManualProgress(FZ)V
     .locals 4
     .parameter "progress"
+    .parameter "animate"
 
     .prologue
     const/4 v3, 0x0
 
-    .line 305
+    .line 316
     const/4 v2, 0x1
 
     invoke-direct {p0, v2}, Lcom/google/glass/widget/SliderView;->hideIndeterminateSlider(Z)V
 
-    .line 306
+    .line 317
     invoke-direct {p0, v3}, Lcom/google/glass/widget/SliderView;->showSlider(Z)V
 
-    .line 308
+    .line 319
     invoke-virtual {p0}, Lcom/google/glass/widget/SliderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -684,7 +699,7 @@
 
     iget v1, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 309
+    .line 320
     .local v1, width:I
     iget-object v2, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
@@ -694,21 +709,42 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 310
+    .line 321
     .local v0, sliderParams:Landroid/widget/FrameLayout$LayoutParams;
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 311
+    .line 322
     neg-int v2, v1
 
     invoke-virtual {v0, v2, v3, v3, v3}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 312
+    .line 323
     iget-object v2, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 313
+    .line 324
+    if-eqz p2, :cond_0
+
+    .line 325
+    iget-object v2, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
+
+    invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    move-result-object v2
+
+    int-to-float v3, v1
+
+    mul-float/2addr v3, p1
+
+    invoke-virtual {v2, v3}, Landroid/view/ViewPropertyAnimator;->translationX(F)Landroid/view/ViewPropertyAnimator;
+
+    .line 329
+    :goto_0
+    return-void
+
+    .line 327
+    :cond_0
     iget-object v2, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
     int-to-float v3, v1
@@ -717,8 +753,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 314
-    return-void
+    goto :goto_0
 .end method
 
 .method public setProportionalIndex(F)V
@@ -856,13 +891,13 @@
     .parameter "scale"
 
     .prologue
-    .line 346
+    .line 361
     iput p1, p0, Lcom/google/glass/widget/SliderView;->slideableScale:F
 
-    .line 347
+    .line 362
     invoke-direct {p0}, Lcom/google/glass/widget/SliderView;->updateSliderWidth()V
 
-    .line 348
+    .line 363
     return-void
 .end method
 
@@ -878,16 +913,16 @@
     .end annotation
 
     .prologue
-    .line 375
+    .line 390
     .local p1, scrollView:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView<**>;"
     invoke-static {p1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 376
+    .line 391
     iget-object v0, p0, Lcom/google/glass/widget/SliderView;->positionListener:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;
 
-    invoke-virtual {p1, v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->setPositionListener(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;)V
+    invoke-virtual {p1, v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->addPositionListener(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$PositionListener;)V
 
-    .line 377
+    .line 392
     return-void
 .end method
 
@@ -899,7 +934,7 @@
 
     const/4 v3, 0x0
 
-    .line 327
+    .line 342
     invoke-virtual {p0}, Lcom/google/glass/widget/SliderView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -910,7 +945,7 @@
 
     iget v1, v2, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 328
+    .line 343
     .local v1, width:I
     iget-object v2, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
@@ -920,25 +955,25 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 329
+    .line 344
     .local v0, sliderParams:Landroid/widget/FrameLayout$LayoutParams;
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 330
+    .line 345
     invoke-virtual {v0, v3, v3, v3, v3}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 331
+    .line 346
     iget-object v2, p0, Lcom/google/glass/widget/SliderView;->slider:Landroid/view/View;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 332
+    .line 347
     invoke-direct {p0, v4}, Lcom/google/glass/widget/SliderView;->hideSlider(Z)V
 
-    .line 334
+    .line 349
     invoke-direct {p0, v4}, Lcom/google/glass/widget/SliderView;->showIndeterminateSlider(Z)V
 
-    .line 335
+    .line 350
     iget-object v2, p0, Lcom/google/glass/widget/SliderView;->indeterminateSlider:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -949,7 +984,7 @@
 
     invoke-virtual {v2}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
-    .line 336
+    .line 351
     return-void
 .end method
 
@@ -1049,10 +1084,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 340
+    .line 355
     invoke-direct {p0, v1}, Lcom/google/glass/widget/SliderView;->showSlider(Z)V
 
-    .line 341
+    .line 356
     iget-object v0, p0, Lcom/google/glass/widget/SliderView;->indeterminateSlider:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1063,9 +1098,9 @@
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->stop()V
 
-    .line 342
+    .line 357
     invoke-direct {p0, v1}, Lcom/google/glass/widget/SliderView;->hideIndeterminateSlider(Z)V
 
-    .line 343
+    .line 358
     return-void
 .end method

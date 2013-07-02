@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 67
+    .line 65
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMenu$1;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 70
+    .line 68
     iget v3, p1, Landroid/os/Message;->what:I
 
     packed-switch v3, :pswitch_data_0
 
-    .line 89
+    .line 87
     :cond_0
     :goto_0
     return-void
 
-    .line 72
+    .line 70
     :pswitch_0
     iget-object v4, p0, Lcom/google/glass/home/voice/VoiceMenu$1;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
@@ -62,13 +62,13 @@
 
     goto :goto_0
 
-    .line 77
+    .line 75
     :pswitch_1
     iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v2, Lcom/google/glass/widget/TypophileTextView;
 
-    .line 80
+    .line 78
     .local v2, textView:Lcom/google/glass/widget/TypophileTextView;
     iget-object v3, p0, Lcom/google/glass/home/voice/VoiceMenu$1;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
@@ -100,11 +100,11 @@
 
     check-cast v1, Lcom/google/glass/widget/TypophileTextView;
 
-    .line 81
+    .line 79
     .local v1, t:Lcom/google/glass/widget/TypophileTextView;
     if-eq v1, v2, :cond_1
 
-    .line 82
+    .line 80
     invoke-virtual {v1}, Lcom/google/glass/widget/TypophileTextView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
@@ -121,7 +121,7 @@
 
     goto :goto_1
 
-    .line 70
+    .line 68
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

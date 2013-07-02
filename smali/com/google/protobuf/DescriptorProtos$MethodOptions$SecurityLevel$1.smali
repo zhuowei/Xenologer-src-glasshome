@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 29763
+    .line 31003
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 29765
+    .line 31005
     invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;->valueOf(I)Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 29763
+    .line 31003
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel$1;->findValueByNumber(I)Lcom/google/protobuf/DescriptorProtos$MethodOptions$SecurityLevel;
 
     move-result-object v0

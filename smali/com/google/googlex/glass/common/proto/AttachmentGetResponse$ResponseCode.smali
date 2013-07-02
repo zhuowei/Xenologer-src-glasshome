@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 130
+    .line 131
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     const-string v1, "SUCCESS"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 134
+    .line 135
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     const-string v1, "FAIL"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->FAIL:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 125
+    .line 126
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->$VALUES:[Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
-    .line 162
+    .line 163
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 182
+    .line 183
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->values()[Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 196
+    .line 197
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 197
+    .line 198
     iput p3, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->index:I
 
-    .line 198
+    .line 199
     iput p4, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->value:I
 
-    .line 199
+    .line 200
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 179
+    .line 180
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 159
+    .line 160
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 150
+    .line 151
     packed-switch p0, :pswitch_data_0
 
-    .line 153
+    .line 154
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 151
+    .line 152
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->SUCCESS:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     goto :goto_0
 
-    .line 152
+    .line 153
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->FAIL:Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     goto :goto_0
 
-    .line 150
+    .line 151
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 186
+    .line 187
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 187
+    .line 188
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 190
+    .line 191
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->VALUES:[Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 125
+    .line 126
     const-class v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 126
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->$VALUES:[Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 175
+    .line 176
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 147
+    .line 148
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 171
+    .line 172
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetResponse$ResponseCode;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

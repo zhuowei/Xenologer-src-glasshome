@@ -48,7 +48,7 @@
 
     const/4 v2, 0x0
 
-    .line 50
+    .line 33
     new-instance v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
     const-string v1, "NO_SPEECH_DETECTED"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;->NO_SPEECH_DETECTED:Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
-    .line 51
+    .line 34
     new-instance v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
     const-string v1, "SPEECH_DETECTED"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;->SPEECH_DETECTED:Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
-    .line 52
+    .line 35
     new-instance v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
     const-string v1, "DELAY_END_OF_SPEECH"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;->DELAY_END_OF_SPEECH:Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
-    .line 53
+    .line 36
     new-instance v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
     const-string v1, "END_OF_SPEECH"
@@ -84,7 +84,7 @@
 
     sput-object v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;->END_OF_SPEECH:Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
-    .line 49
+    .line 32
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
@@ -121,7 +121,7 @@
     .end annotation
 
     .prologue
-    .line 49
+    .line 32
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -132,7 +132,7 @@
     .parameter "name"
 
     .prologue
-    .line 49
+    .line 32
     const-class v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -148,7 +148,7 @@
     .locals 1
 
     .prologue
-    .line 49
+    .line 32
     sget-object v0, Lcom/google/glass/voice/network/EndpointerEventProcessor$State;->$VALUES:[Lcom/google/glass/voice/network/EndpointerEventProcessor$State;
 
     invoke-virtual {v0}, [Lcom/google/glass/voice/network/EndpointerEventProcessor$State;->clone()Ljava/lang/Object;

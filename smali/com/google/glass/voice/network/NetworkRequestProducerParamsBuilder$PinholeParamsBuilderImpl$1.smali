@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 126
+    .line 128
     iput-object p1, p0, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl$1;->this$0:Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;
 
     iput-object p3, p0, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl$1;->val$requestIdSupplier:Lcom/google/common/base/Supplier;
@@ -53,7 +53,7 @@
     .locals 2
 
     .prologue
-    .line 129
+    .line 131
     iget-object v0, p0, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl$1;->this$0:Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;
 
     iget-object v1, p0, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl$1;->val$requestIdSupplier:Lcom/google/common/base/Supplier;
@@ -69,7 +69,7 @@
     .locals 1
 
     .prologue
-    .line 126
+    .line 128
     invoke-virtual {p0}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl$1;->build()Lcom/google/speech/s3/PinholeStream$PinholeParams;
 
     move-result-object v0

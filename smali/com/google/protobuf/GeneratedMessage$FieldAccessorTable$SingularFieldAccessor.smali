@@ -68,10 +68,10 @@
     .local p4, builderClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMessage$Builder;>;"
     const/4 v3, 0x0
 
-    .line 1641
+    .line 1737
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1642
+    .line 1738
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -93,13 +93,13 @@
     new-array v1, v3, [Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p3, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p3, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
-    .line 1643
+    .line 1739
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -121,13 +121,13 @@
     new-array v1, v3, [Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->getMethodBuilder:Ljava/lang/reflect/Method;
 
-    .line 1644
+    .line 1740
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
@@ -136,7 +136,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->type:Ljava/lang/Class;
 
-    .line 1645
+    .line 1741
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -164,13 +164,13 @@
     aput-object v2, v1, v3
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->setMethod:Ljava/lang/reflect/Method;
 
-    .line 1646
+    .line 1742
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -192,13 +192,13 @@
     new-array v1, v3, [Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p3, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p3, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethod:Ljava/lang/reflect/Method;
 
-    .line 1648
+    .line 1744
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -220,13 +220,13 @@
     new-array v1, v3, [Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethodBuilder:Ljava/lang/reflect/Method;
 
-    .line 1650
+    .line 1746
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -248,13 +248,13 @@
     new-array v1, v3, [Ljava/lang/Class;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->getMethodOrDie(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$800(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p4, v0, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->clearMethod:Ljava/lang/reflect/Method;
 
-    .line 1651
+    .line 1747
     return-void
 .end method
 
@@ -266,7 +266,7 @@
     .parameter "value"
 
     .prologue
-    .line 1688
+    .line 1784
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "addRepeatedField() called on a singular field."
@@ -281,7 +281,7 @@
     .parameter "builder"
 
     .prologue
-    .line 1706
+    .line 1802
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->clearMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -289,9 +289,9 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1707
+    .line 1803
     return-void
 .end method
 
@@ -300,7 +300,7 @@
     .parameter "builder"
 
     .prologue
-    .line 1668
+    .line 1764
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->getMethodBuilder:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -308,7 +308,7 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -320,7 +320,7 @@
     .parameter "message"
 
     .prologue
-    .line 1665
+    .line 1761
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -328,7 +328,7 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -340,7 +340,7 @@
     .parameter "builder"
 
     .prologue
-    .line 1713
+    .line 1809
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getFieldBuilder() called on a non-Message type."
@@ -356,7 +356,7 @@
     .parameter "index"
 
     .prologue
-    .line 1679
+    .line 1775
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."
@@ -372,7 +372,7 @@
     .parameter "index"
 
     .prologue
-    .line 1675
+    .line 1771
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."
@@ -387,7 +387,7 @@
     .parameter "builder"
 
     .prologue
-    .line 1702
+    .line 1798
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedFieldSize() called on a singular field."
@@ -402,7 +402,7 @@
     .parameter "message"
 
     .prologue
-    .line 1698
+    .line 1794
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedFieldSize() called on a singular field."
@@ -417,7 +417,7 @@
     .parameter "builder"
 
     .prologue
-    .line 1695
+    .line 1791
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethodBuilder:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -425,7 +425,7 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -443,7 +443,7 @@
     .parameter "message"
 
     .prologue
-    .line 1692
+    .line 1788
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -451,7 +451,7 @@
     new-array v1, v1, [Ljava/lang/Object;
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -468,7 +468,7 @@
     .locals 2
 
     .prologue
-    .line 1709
+    .line 1805
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "newBuilderForField() called on a non-Message type."
@@ -484,7 +484,7 @@
     .parameter "value"
 
     .prologue
-    .line 1671
+    .line 1767
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable$SingularFieldAccessor;->setMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
@@ -496,9 +496,9 @@
     aput-object p2, v1, v2
 
     #calls: Lcom/google/protobuf/GeneratedMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$900(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMessage;->access$1000(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1672
+    .line 1768
     return-void
 .end method
 
@@ -509,7 +509,7 @@
     .parameter "value"
 
     .prologue
-    .line 1684
+    .line 1780
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "setRepeatedField() called on a singular field."

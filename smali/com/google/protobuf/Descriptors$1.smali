@@ -25,7 +25,7 @@
     .locals 3
 
     .prologue
-    .line 1107
+    .line 1219
     invoke-static {}, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->values()[Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
 
     move-result-object v0
@@ -67,7 +67,7 @@
     :try_end_1
     .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_12
 
-    .line 1028
+    .line 1140
     :goto_1
     invoke-static {}, Lcom/google/protobuf/Descriptors$FieldDescriptor$Type;->values()[Lcom/google/protobuf/Descriptors$FieldDescriptor$Type;
 
@@ -459,7 +459,7 @@
 
     goto/16 :goto_2
 
-    .line 1107
+    .line 1219
     :catch_12
     move-exception v0
 

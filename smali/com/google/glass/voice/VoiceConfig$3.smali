@@ -23,7 +23,7 @@
     .parameter "x3"
 
     .prologue
-    .line 76
+    .line 80
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/voice/VoiceConfig;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -31,17 +31,30 @@
 
 
 # virtual methods
-.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+.method public bridge synthetic getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/HotwordRecognizer;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 80
+    invoke-virtual {p0, p1}, Lcom/google/glass/voice/VoiceConfig$3;->getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
     .locals 2
     .parameter "context"
 
     .prologue
-    .line 79
+    .line 83
     invoke-static {p1}, Lcom/google/glass/voice/VoiceService;->getPlusShareTargetEntities(Landroid/content/Context;)Ljava/util/Collection;
 
     move-result-object v0
 
-    .line 81
+    .line 85
     .local v0, plusShareTargetEntities:Ljava/util/Collection;,"Ljava/util/Collection<Lcom/google/googlex/glass/common/proto/Entity;>;"
     invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
@@ -49,10 +62,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 82
+    .line 86
     const/4 v1, 0x0
 
-    .line 85
+    .line 89
     :goto_0
     return-object v1
 

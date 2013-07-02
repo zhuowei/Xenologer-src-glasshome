@@ -45,17 +45,17 @@
     .end annotation
 
     .prologue
-    .line 654
+    .line 713
     .local p1, actions:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/UserAction;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 655
+    .line 714
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;->actions:Ljava/util/List;
 
-    .line 656
+    .line 715
     iput-wide p2, p0, Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;->maxRowId:J
 
-    .line 657
+    .line 716
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "x2"
 
     .prologue
-    .line 643
+    .line 702
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/timeline/TimelineHelper$GetPendingActionsResponse;-><init>(Ljava/util/List;J)V
 
     return-void

@@ -57,6 +57,20 @@
     return-object v0
 .end method
 
+.method static invalidUtf8()Lcom/google/protobuf/InvalidProtocolBufferException;
+    .locals 2
+
+    .prologue
+    .line 92
+    new-instance v0, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    const-string v1, "Protocol message had invalid UTF-8."
+
+    invoke-direct {v0, v1}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
 .method static invalidWireType()Lcom/google/protobuf/InvalidProtocolBufferException;
     .locals 2
 

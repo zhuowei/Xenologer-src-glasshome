@@ -12,7 +12,7 @@
     .locals 1
 
     .prologue
-    .line 13
+    .line 12
     const-class v0, Lcom/google/glass/voice/StaticSensoryRecognizer;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -30,17 +30,17 @@
     .parameter "searchFilePath"
 
     .prologue
-    .line 16
+    .line 15
     invoke-direct {p0}, Lcom/google/glass/voice/Sensory;-><init>()V
 
-    .line 17
+    .line 16
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/voice/StaticSensoryRecognizer;->nativeInitPhrasespot(Ljava/lang/String;Ljava/lang/String;)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/glass/voice/StaticSensoryRecognizer;->sensoryContext:J
 
-    .line 18
+    .line 17
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .parameter "config"
 
     .prologue
-    .line 21
+    .line 20
     new-instance v0, Lcom/google/glass/voice/StaticSensoryRecognizer;
 
     iget-object v1, p1, Lcom/google/glass/voice/VoiceConfig;->recogFile:Ljava/lang/String;
@@ -72,23 +72,23 @@
 
 
 # virtual methods
-.method stringToCommand(Ljava/lang/String;)Lcom/google/glass/voice/VoiceCommand;
+.method public stringToCommand(Ljava/lang/String;)Lcom/google/glass/voice/VoiceCommand;
     .locals 7
     .parameter "str"
 
     .prologue
     const/4 v2, 0x0
 
-    .line 27
+    .line 26
     if-nez p1, :cond_0
 
     move-object v0, v2
 
-    .line 39
+    .line 38
     :goto_0
     return-object v0
 
-    .line 31
+    .line 30
     :cond_0
     sget-object v3, Lcom/google/glass/voice/VoiceCommand;->staticCommands:Ljava/util/List;
 
@@ -110,7 +110,7 @@
 
     check-cast v0, Lcom/google/glass/voice/VoiceCommand;
 
-    .line 32
+    .line 31
     .local v0, c:Lcom/google/glass/voice/VoiceCommand;
     invoke-virtual {v0}, Lcom/google/glass/voice/VoiceCommand;->getLiteral()Ljava/lang/String;
 
@@ -124,16 +124,20 @@
 
     goto :goto_0
 
-    .line 37
+    .line 36
     .end local v0           #c:Lcom/google/glass/voice/VoiceCommand;
     :cond_2
     sget-object v3, Lcom/google/glass/voice/StaticSensoryRecognizer;->TAG:Ljava/lang/String;
 
     const-string v4, "Unknown literal recognized by Sensory"
 
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v5, 0x0
 
-    .line 38
+    new-array v5, v5, [Ljava/lang/Object;
+
+    invoke-static {v3, v4, v5}, Lcom/google/glass/util/Log;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 37
     const/4 v3, 0x6
 
     sget-object v4, Lcom/google/glass/voice/StaticSensoryRecognizer;->TAG:Ljava/lang/String;
@@ -156,10 +160,10 @@
 
     move-result-object v5
 
-    invoke-static {v3, v4, v5}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4, v5}, Lcom/google/glass/util/Log;->logPii(ILjava/lang/String;Ljava/lang/String;)V
 
     move-object v0, v2
 
-    .line 39
+    .line 38
     goto :goto_0
 .end method

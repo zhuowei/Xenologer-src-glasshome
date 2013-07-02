@@ -31,24 +31,24 @@
     .parameter
 
     .prologue
-    .line 272
+    .line 279
     iput-object p1, p0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->this$0:Lcom/google/protobuf/LiteralByteString;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 273
+    .line 280
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->position:I
 
-    .line 274
+    .line 281
     invoke-virtual {p1}, Lcom/google/protobuf/LiteralByteString;->size()I
 
     move-result v0
 
     iput v0, p0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->limit:I
 
-    .line 275
+    .line 282
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .parameter "x1"
 
     .prologue
-    .line 268
+    .line 275
     invoke-direct {p0, p1}, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;-><init>(Lcom/google/protobuf/LiteralByteString;)V
 
     return-void
@@ -70,7 +70,7 @@
     .locals 2
 
     .prologue
-    .line 278
+    .line 285
     iget v0, p0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->position:I
 
     iget v1, p0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->limit:I
@@ -92,7 +92,7 @@
     .locals 1
 
     .prologue
-    .line 283
+    .line 290
     invoke-virtual {p0}, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->nextByte()B
 
     move-result v0
@@ -108,7 +108,7 @@
     .locals 1
 
     .prologue
-    .line 268
+    .line 275
     invoke-virtual {p0}, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->next()Ljava/lang/Byte;
 
     move-result-object v0
@@ -120,7 +120,7 @@
     .locals 4
 
     .prologue
-    .line 288
+    .line 295
     :try_start_0
     iget-object v1, p0, Lcom/google/protobuf/LiteralByteString$LiteralByteIterator;->this$0:Lcom/google/protobuf/LiteralByteString;
 
@@ -138,11 +138,11 @@
 
     return v1
 
-    .line 289
+    .line 296
     :catch_0
     move-exception v0
 
-    .line 290
+    .line 297
     .local v0, e:Ljava/lang/ArrayIndexOutOfBoundsException;
     new-instance v1, Ljava/util/NoSuchElementException;
 
@@ -159,7 +159,7 @@
     .locals 1
 
     .prologue
-    .line 295
+    .line 302
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

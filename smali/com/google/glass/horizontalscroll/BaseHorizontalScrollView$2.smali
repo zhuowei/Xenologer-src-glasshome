@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 190
+    .line 244
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$2;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.2;"
     iput-object p1, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$2;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
@@ -42,12 +42,12 @@
     .locals 2
 
     .prologue
-    .line 193
+    .line 247
     .local p0, this:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$2;,"Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView.2;"
     iget-object v0, p0, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView$2;->this$0:Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;
 
     #getter for: Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->soundManager:Lcom/google/glass/sound/SoundManager;
-    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$000(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/sound/SoundManager;
+    invoke-static {v0}, Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;->access$100(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
 
@@ -55,6 +55,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 194
+    .line 248
     return-void
 .end method

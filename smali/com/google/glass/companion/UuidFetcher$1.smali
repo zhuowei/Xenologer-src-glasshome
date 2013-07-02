@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 37
+    .line 38
     iput-object p1, p0, Lcom/google/glass/companion/UuidFetcher$1;->this$0:Lcom/google/glass/companion/UuidFetcher;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 40
+    .line 41
     const-string v1, "android.bluetooth.device.action.UUID"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -53,7 +53,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 41
+    .line 42
     iget-object v1, p0, Lcom/google/glass/companion/UuidFetcher$1;->this$0:Lcom/google/glass/companion/UuidFetcher;
 
     #getter for: Lcom/google/glass/companion/UuidFetcher;->pendingAddresses:Ljava/util/Set;
@@ -67,7 +67,7 @@
 
     if-nez v1, :cond_0
 
-    .line 42
+    .line 43
     const-string v1, "android.bluetooth.device.extra.DEVICE"
 
     invoke-virtual {p2, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
@@ -76,11 +76,11 @@
 
     check-cast v0, Landroid/bluetooth/BluetoothDevice;
 
-    .line 43
+    .line 44
     .local v0, btDevice:Landroid/bluetooth/BluetoothDevice;
     if-nez v0, :cond_1
 
-    .line 44
+    .line 45
     invoke-static {}, Lcom/google/glass/companion/UuidFetcher;->access$100()Ljava/lang/String;
 
     move-result-object v1
@@ -118,22 +118,22 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 50
+    .line 51
     .end local v0           #btDevice:Landroid/bluetooth/BluetoothDevice;
     :cond_0
     :goto_0
     return-void
 
-    .line 47
+    .line 48
     .restart local v0       #btDevice:Landroid/bluetooth/BluetoothDevice;
     :cond_1
     iget-object v1, p0, Lcom/google/glass/companion/UuidFetcher$1;->this$0:Lcom/google/glass/companion/UuidFetcher;
 
-    new-instance v2, Lcom/google/glass/companion/BluetoothDeviceWrapper;
+    new-instance v2, Lcom/google/glass/bluetooth/BluetoothDeviceWrapper;
 
-    invoke-direct {v2, v0}, Lcom/google/glass/companion/BluetoothDeviceWrapper;-><init>(Landroid/bluetooth/BluetoothDevice;)V
+    invoke-direct {v2, v0}, Lcom/google/glass/bluetooth/BluetoothDeviceWrapper;-><init>(Landroid/bluetooth/BluetoothDevice;)V
 
-    invoke-virtual {v1, v2}, Lcom/google/glass/companion/UuidFetcher;->onUuidReceived(Lcom/google/glass/companion/BluetoothDeviceWrapper;)V
+    invoke-virtual {v1, v2}, Lcom/google/glass/companion/UuidFetcher;->onUuidReceived(Lcom/google/glass/bluetooth/BluetoothDeviceWrapper;)V
 
     goto :goto_0
 .end method

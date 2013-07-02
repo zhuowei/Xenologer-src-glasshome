@@ -153,6 +153,25 @@
 
     .line 56
     :cond_1
+    sget-object v0, Lcom/google/glass/util/Labs$Feature;->VOLUME_SLIDER:Lcom/google/glass/util/Labs$Feature;
+
+    invoke-static {v0}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 57
+    const/16 v0, 0x8
+
+    new-instance v1, Lcom/google/glass/home/settings/VolumeSettingsItemView;
+
+    invoke-direct {v1, p1}, Lcom/google/glass/home/settings/VolumeSettingsItemView;-><init>(Landroid/content/Context;)V
+
+    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
+
+    .line 60
+    :cond_2
     const/4 v0, 0x7
 
     new-instance v1, Lcom/google/glass/home/settings/GuestSettingsItemView;
@@ -161,7 +180,7 @@
 
     invoke-direct {p0, v0, v1}, Lcom/google/glass/home/settings/SettingsAdapter;->addView(ILcom/google/glass/home/settings/SettingsCard;)V
 
-    .line 57
+    .line 61
     return-void
 .end method
 
@@ -171,7 +190,7 @@
     .parameter "view"
 
     .prologue
-    .line 66
+    .line 70
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v1
@@ -190,23 +209,23 @@
 
     move-result-object v0
 
-    .line 67
+    .line 71
     .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     sget v1, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item:I
 
     invoke-virtual {p2, v1, v0}, Lcom/google/glass/home/settings/SettingsCard;->setTag(ILjava/lang/Object;)V
 
-    .line 68
+    .line 72
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsAdapter;->items:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 69
+    .line 73
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsAdapter;->views:Ljava/util/List;
 
     invoke-interface {v1, p2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 70
+    .line 74
     return-void
 .end method
 
@@ -215,17 +234,17 @@
     .parameter "onLoad"
 
     .prologue
-    .line 110
+    .line 114
     if-eqz p0, :cond_0
 
-    .line 111
+    .line 115
     invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
 
     invoke-interface {v0, p0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 113
+    .line 117
     :cond_0
     return-void
 .end method
@@ -236,7 +255,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 83
     iget-object v0, p0, Lcom/google/glass/home/settings/SettingsAdapter;->views:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -251,7 +270,7 @@
     .parameter "position"
 
     .prologue
-    .line 84
+    .line 88
     iget-object v0, p0, Lcom/google/glass/home/settings/SettingsAdapter;->items:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -266,7 +285,7 @@
     .parameter "position"
 
     .prologue
-    .line 89
+    .line 93
     int-to-long v0, p1
 
     return-wide v0
@@ -279,7 +298,7 @@
     .parameter "parent"
 
     .prologue
-    .line 94
+    .line 98
     iget-object v1, p0, Lcom/google/glass/home/settings/SettingsAdapter;->views:Ljava/util/List;
 
     invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -288,13 +307,13 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 97
+    .line 101
     .local v0, view:Landroid/view/View;
     sget v1, Lcom/google/glass/home/R$id;->tag_horizontal_scroll_item_view_recycler:I
 
     invoke-virtual {v0, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
-    .line 99
+    .line 103
     return-object v0
 .end method
 
@@ -302,7 +321,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 78
     const/4 v0, 0x0
 
     return v0
@@ -313,6 +332,6 @@
     .parameter "view"
 
     .prologue
-    .line 104
+    .line 108
     return-void
 .end method

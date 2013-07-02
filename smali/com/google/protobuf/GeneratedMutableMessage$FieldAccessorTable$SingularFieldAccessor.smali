@@ -58,10 +58,10 @@
     .local p3, messageClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMutableMessage;>;"
     const/4 v3, 0x0
 
-    .line 215
+    .line 229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 216
+    .line 230
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -89,7 +89,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
-    .line 217
+    .line 231
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
     invoke-virtual {v0}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
@@ -98,7 +98,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->type:Ljava/lang/Class;
 
-    .line 218
+    .line 232
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -132,7 +132,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->setMethod:Ljava/lang/reflect/Method;
 
-    .line 219
+    .line 233
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,7 +160,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethod:Ljava/lang/reflect/Method;
 
-    .line 220
+    .line 234
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -188,7 +188,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->clearMethod:Ljava/lang/reflect/Method;
 
-    .line 221
+    .line 235
     return-void
 .end method
 
@@ -200,10 +200,26 @@
     .parameter "value"
 
     .prologue
-    .line 249
+    .line 280
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "getRepeatedField() called on a singular field."
+    const-string v1, "addRepeatedField() called on a singular field."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public addRepeatedRaw(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
+    .locals 2
+    .parameter "message"
+    .parameter "value"
+
+    .prologue
+    .line 285
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "addRawRepeatedField() called on a singular field."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -215,7 +231,7 @@
     .parameter "message"
 
     .prologue
-    .line 260
+    .line 296
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->clearMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -225,7 +241,7 @@
     #calls: Lcom/google/protobuf/GeneratedMutableMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMutableMessage;->access$100(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 261
+    .line 297
     return-void
 .end method
 
@@ -234,7 +250,7 @@
     .parameter "message"
 
     .prologue
-    .line 230
+    .line 244
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->getMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -254,10 +270,25 @@
     .parameter "message"
 
     .prologue
-    .line 233
+    .line 251
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getMutable() called on a non-Message type."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public getRaw(Lcom/google/protobuf/GeneratedMutableMessage;)Ljava/lang/Object;
+    .locals 2
+    .parameter "message"
+
+    .prologue
+    .line 247
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "getRawField() called on a non-bytes type."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -270,7 +301,7 @@
     .parameter "index"
 
     .prologue
-    .line 240
+    .line 262
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "getRepeatedField() called on a singular field."
@@ -285,10 +316,26 @@
     .parameter "message"
 
     .prologue
-    .line 256
+    .line 292
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "getRepeatedField() called on a singular field."
+    const-string v1, "getRepeatedFieldCount() called on a singular field."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public getRepeatedRaw(Lcom/google/protobuf/GeneratedMutableMessage;I)Ljava/lang/Object;
+    .locals 2
+    .parameter "message"
+    .parameter "index"
+
+    .prologue
+    .line 266
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "getRawRepeatedField() called on a singular field."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
@@ -300,7 +347,7 @@
     .parameter "message"
 
     .prologue
-    .line 253
+    .line 289
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->hasMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x0
@@ -325,7 +372,7 @@
     .locals 2
 
     .prologue
-    .line 263
+    .line 299
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string v1, "newMessageForField() called on a non-Message type."
@@ -341,7 +388,7 @@
     .parameter "value"
 
     .prologue
-    .line 237
+    .line 255
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->setMethod:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
@@ -355,8 +402,24 @@
     #calls: Lcom/google/protobuf/GeneratedMutableMessage;->invokeOrDie(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     invoke-static {v0, p1, v1}, Lcom/google/protobuf/GeneratedMutableMessage;->access$100(Ljava/lang/reflect/Method;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 238
+    .line 256
     return-void
+.end method
+
+.method public setRaw(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
+    .locals 2
+    .parameter "message"
+    .parameter "value"
+
+    .prologue
+    .line 258
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "setRawField() called on a non-bytes type."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 .end method
 
 .method public setRepeated(Lcom/google/protobuf/GeneratedMutableMessage;ILjava/lang/Object;)V
@@ -366,10 +429,27 @@
     .parameter "value"
 
     .prologue
-    .line 245
+    .line 271
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "getRepeatedField() called on a singular field."
+    const-string v1, "setRepeatedField() called on a singular field."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public setRepeatedRaw(Lcom/google/protobuf/GeneratedMutableMessage;ILjava/lang/Object;)V
+    .locals 2
+    .parameter "message"
+    .parameter "index"
+    .parameter "value"
+
+    .prologue
+    .line 276
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "setRawRepeatedField() called on a singular field."
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 

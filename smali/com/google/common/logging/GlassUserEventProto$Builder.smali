@@ -59,30 +59,30 @@
     .locals 1
 
     .prologue
-    .line 517
+    .line 519
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 795
+    .line 797
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 892
+    .line 897
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 989
+    .line 997
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 518
+    .line 520
     invoke-direct {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->maybeForceBuilderInitialization()V
 
-    .line 519
+    .line 521
     return-void
 .end method
 
@@ -91,30 +91,30 @@
     .parameter "parent"
 
     .prologue
-    .line 523
+    .line 525
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 795
+    .line 797
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 892
+    .line 897
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 989
+    .line 997
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 524
+    .line 526
     invoke-direct {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->maybeForceBuilderInitialization()V
 
-    .line 525
+    .line 527
     return-void
 .end method
 
@@ -124,7 +124,7 @@
     .parameter "x1"
 
     .prologue
-    .line 500
+    .line 502
     invoke-direct {p0, p1}, Lcom/google/common/logging/GlassUserEventProto$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -134,7 +134,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto$Builder;->create()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -146,7 +146,7 @@
     .locals 1
 
     .prologue
-    .line 532
+    .line 534
     new-instance v0, Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     invoke-direct {v0}, Lcom/google/common/logging/GlassUserEventProto$Builder;-><init>()V
@@ -158,7 +158,7 @@
     .locals 1
 
     .prologue
-    .line 506
+    .line 508
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -179,12 +179,12 @@
     .end annotation
 
     .prologue
-    .line 1130
+    .line 1138
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1131
+    .line 1139
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
@@ -201,12 +201,12 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 1136
+    .line 1144
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1138
+    .line 1146
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -217,17 +217,17 @@
     .locals 1
 
     .prologue
-    .line 527
+    .line 529
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 528
+    .line 530
     invoke-direct {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->getPerformanceStatsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 530
+    .line 532
     :cond_0
     return-void
 .end method
@@ -238,12 +238,12 @@
     .locals 2
 
     .prologue
-    .line 568
+    .line 570
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->buildPartial()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
 
-    .line 569
+    .line 571
     .local v0, result:Lcom/google/common/logging/GlassUserEventProto;
     invoke-virtual {v0}, Lcom/google/common/logging/GlassUserEventProto;->isInitialized()Z
 
@@ -251,14 +251,14 @@
 
     if-nez v1, :cond_0
 
-    .line 570
+    .line 572
     invoke-static {v0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 572
+    .line 574
     :cond_0
     return-object v0
 .end method
@@ -267,7 +267,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -279,7 +279,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->build()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -291,22 +291,22 @@
     .locals 5
 
     .prologue
-    .line 576
+    .line 578
     new-instance v1, Lcom/google/common/logging/GlassUserEventProto;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/common/logging/GlassUserEventProto;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/common/logging/GlassUserEventProto$1;)V
 
-    .line 577
+    .line 579
     .local v1, result:Lcom/google/common/logging/GlassUserEventProto;
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 578
+    .line 580
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 579
+    .line 581
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -314,101 +314,101 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 580
+    .line 582
     or-int/lit8 v2, v2, 0x1
 
-    .line 582
+    .line 584
     :cond_0
     iget-wide v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventTimeMs_:J
 
     #setter for: Lcom/google/common/logging/GlassUserEventProto;->eventTimeMs_:J
     invoke-static {v1, v3, v4}, Lcom/google/common/logging/GlassUserEventProto;->access$502(Lcom/google/common/logging/GlassUserEventProto;J)J
 
-    .line 583
+    .line 585
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 584
+    .line 586
     or-int/lit8 v2, v2, 0x2
 
-    .line 586
+    .line 588
     :cond_1
     iget-wide v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventSerial_:J
 
     #setter for: Lcom/google/common/logging/GlassUserEventProto;->eventSerial_:J
     invoke-static {v1, v3, v4}, Lcom/google/common/logging/GlassUserEventProto;->access$602(Lcom/google/common/logging/GlassUserEventProto;J)J
 
-    .line 587
+    .line 589
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 588
+    .line 590
     or-int/lit8 v2, v2, 0x4
 
-    .line 590
+    .line 592
     :cond_2
     iget-object v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
     #setter for: Lcom/google/common/logging/GlassUserEventProto;->eventType_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassUserEventProto;->access$702(Lcom/google/common/logging/GlassUserEventProto;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 591
+    .line 593
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 592
+    .line 594
     or-int/lit8 v2, v2, 0x8
 
-    .line 594
+    .line 596
     :cond_3
     iget-object v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
     #setter for: Lcom/google/common/logging/GlassUserEventProto;->eventData_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassUserEventProto;->access$802(Lcom/google/common/logging/GlassUserEventProto;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 595
+    .line 597
     and-int/lit8 v3, v0, 0x10
 
     const/16 v4, 0x10
 
     if-ne v3, v4, :cond_4
 
-    .line 596
+    .line 598
     or-int/lit8 v2, v2, 0x10
 
-    .line 598
+    .line 600
     :cond_4
     iget-object v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v3, :cond_5
 
-    .line 599
+    .line 601
     iget-object v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     #setter for: Lcom/google/common/logging/GlassUserEventProto;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
     invoke-static {v1, v3}, Lcom/google/common/logging/GlassUserEventProto;->access$902(Lcom/google/common/logging/GlassUserEventProto;Lcom/google/common/logging/GlassUserEventPerformanceStats;)Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 603
+    .line 605
     :goto_0
     #setter for: Lcom/google/common/logging/GlassUserEventProto;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/common/logging/GlassUserEventProto;->access$1002(Lcom/google/common/logging/GlassUserEventProto;I)I
 
-    .line 604
+    .line 606
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onBuilt()V
 
-    .line 605
+    .line 607
     return-object v1
 
-    .line 601
+    .line 603
     :cond_5
     iget-object v3, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -428,7 +428,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->buildPartial()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -440,7 +440,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->buildPartial()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -454,66 +454,66 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 536
+    .line 538
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 537
+    .line 539
     iput-wide v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventTimeMs_:J
 
-    .line 538
+    .line 540
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 539
+    .line 541
     iput-wide v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventSerial_:J
 
-    .line 540
+    .line 542
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 541
+    .line 543
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 542
+    .line 544
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 543
+    .line 545
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 544
+    .line 546
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 545
+    .line 547
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 546
+    .line 548
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 550
+    .line 552
     :goto_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -521,10 +521,10 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 551
+    .line 553
     return-object p0
 
-    .line 548
+    .line 550
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -537,7 +537,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clear()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -549,7 +549,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clear()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -561,7 +561,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clear()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -573,7 +573,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clear()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -585,14 +585,14 @@
     .locals 1
 
     .prologue
-    .line 966
+    .line 974
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 967
+    .line 975
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -603,10 +603,10 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 968
+    .line 976
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 969
+    .line 977
     return-object p0
 .end method
 
@@ -614,22 +614,22 @@
     .locals 2
 
     .prologue
-    .line 789
+    .line 791
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 790
+    .line 792
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventSerial_:J
 
-    .line 791
+    .line 793
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 792
+    .line 794
     return-object p0
 .end method
 
@@ -637,22 +637,22 @@
     .locals 2
 
     .prologue
-    .line 725
+    .line 727
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 726
+    .line 728
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventTimeMs_:J
 
-    .line 727
+    .line 729
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 728
+    .line 730
     return-object p0
 .end method
 
@@ -660,14 +660,14 @@
     .locals 1
 
     .prologue
-    .line 869
+    .line 874
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 870
+    .line 875
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -678,10 +678,10 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 871
+    .line 876
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 872
+    .line 877
     return-object p0
 .end method
 
@@ -689,22 +689,22 @@
     .locals 1
 
     .prologue
-    .line 1085
+    .line 1093
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1086
+    .line 1094
     invoke-static {}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1087
+    .line 1095
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 1091
+    .line 1099
     :goto_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -712,10 +712,10 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 1092
+    .line 1100
     return-object p0
 
-    .line 1089
+    .line 1097
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -728,7 +728,7 @@
     .locals 2
 
     .prologue
-    .line 555
+    .line 557
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto$Builder;->create()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -748,7 +748,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clone()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -760,7 +760,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clone()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -772,7 +772,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clone()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -784,7 +784,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clone()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -796,7 +796,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clone()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -813,7 +813,7 @@
     .end annotation
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->clone()Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -825,7 +825,7 @@
     .locals 1
 
     .prologue
-    .line 564
+    .line 566
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -837,7 +837,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->getDefaultInstanceForType()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -849,7 +849,7 @@
     .locals 1
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->getDefaultInstanceForType()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
@@ -861,48 +861,61 @@
     .locals 1
 
     .prologue
-    .line 560
+    .line 562
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getEventData()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 911
-    iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
+    .line 916
+    iget-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 912
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 917
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 913
-    check-cast v0, Lcom/google/protobuf/ByteString;
-
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 915
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
+    move-object v0, v1
 
     .line 918
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 920
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 921
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 922
+    iput-object v2, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
+
+    .line 926
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -911,16 +924,16 @@
     .locals 3
 
     .prologue
-    .line 930
+    .line 938
     iget-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 931
+    .line 939
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 932
+    .line 940
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -928,11 +941,11 @@
 
     move-result-object v0
 
-    .line 935
+    .line 943
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 938
+    .line 946
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -951,7 +964,7 @@
     .locals 2
 
     .prologue
-    .line 758
+    .line 760
     iget-wide v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventSerial_:J
 
     return-wide v0
@@ -961,48 +974,61 @@
     .locals 2
 
     .prologue
-    .line 696
+    .line 698
     iget-wide v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventTimeMs_:J
 
     return-wide v0
 .end method
 
 .method public getEventType()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 814
-    iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
-
-    .line 815
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
     .line 816
-    check-cast v0, Lcom/google/protobuf/ByteString;
+    iget-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+    .line 817
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    move-result-object v1
+    if-nez v3, :cond_1
+
+    move-object v0, v1
 
     .line 818
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 820
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
 
     .line 821
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 822
+    iput-object v2, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
+
+    .line 826
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1011,16 +1037,16 @@
     .locals 3
 
     .prologue
-    .line 833
+    .line 838
     iget-object v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 834
+    .line 839
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 835
+    .line 840
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1028,11 +1054,11 @@
 
     move-result-object v0
 
-    .line 838
+    .line 843
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 841
+    .line 846
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1051,15 +1077,15 @@
     .locals 1
 
     .prologue
-    .line 1010
+    .line 1018
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1011
+    .line 1019
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1013
+    .line 1021
     :goto_0
     return-object v0
 
@@ -1079,17 +1105,17 @@
     .locals 1
 
     .prologue
-    .line 1102
+    .line 1110
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 1103
+    .line 1111
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 1104
+    .line 1112
     invoke-direct {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->getPerformanceStatsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -1107,12 +1133,12 @@
     .locals 1
 
     .prologue
-    .line 1114
+    .line 1122
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1115
+    .line 1123
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -1121,7 +1147,7 @@
 
     check-cast v0, Lcom/google/common/logging/GlassUserEventPerformanceStatsOrBuilder;
 
-    .line 1117
+    .line 1125
     :goto_0
     return-object v0
 
@@ -1135,7 +1161,7 @@
     .locals 2
 
     .prologue
-    .line 901
+    .line 906
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1159,7 +1185,7 @@
     .locals 2
 
     .prologue
-    .line 744
+    .line 746
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1185,7 +1211,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 683
+    .line 685
     iget v1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1205,7 +1231,7 @@
     .locals 2
 
     .prologue
-    .line 804
+    .line 806
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1229,7 +1255,7 @@
     .locals 2
 
     .prologue
-    .line 1000
+    .line 1008
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1253,7 +1279,7 @@
     .locals 3
 
     .prologue
-    .line 511
+    .line 513
     sget-object v0, Lcom/google/common/logging/GlassExtensions;->internal_static_googlex_glass_GlassUserEventProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/common/logging/GlassUserEventProto;
@@ -1271,14 +1297,14 @@
     .locals 1
 
     .prologue
-    .line 643
+    .line 645
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->hasPerformanceStats()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 644
+    .line 646
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->getPerformanceStats()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
@@ -1289,10 +1315,10 @@
 
     if-nez v0, :cond_0
 
-    .line 646
+    .line 648
     const/4 v0, 0x0
 
-    .line 649
+    .line 651
     :goto_0
     return v0
 
@@ -1307,18 +1333,18 @@
     .parameter "other"
 
     .prologue
-    .line 618
+    .line 620
     invoke-static {}, Lcom/google/common/logging/GlassUserEventProto;->getDefaultInstance()Lcom/google/common/logging/GlassUserEventProto;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 639
+    .line 641
     :goto_0
     return-object p0
 
-    .line 619
+    .line 621
     :cond_0
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasEventTimeMs()Z
 
@@ -1326,14 +1352,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 620
+    .line 622
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getEventTimeMs()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/logging/GlassUserEventProto$Builder;->setEventTimeMs(J)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
-    .line 622
+    .line 624
     :cond_1
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasEventSerial()Z
 
@@ -1341,14 +1367,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 623
+    .line 625
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getEventSerial()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/common/logging/GlassUserEventProto$Builder;->setEventSerial(J)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
-    .line 625
+    .line 627
     :cond_2
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasEventType()Z
 
@@ -1356,14 +1382,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 626
+    .line 628
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 627
+    .line 629
     #getter for: Lcom/google/common/logging/GlassUserEventProto;->eventType_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/common/logging/GlassUserEventProto;->access$700(Lcom/google/common/logging/GlassUserEventProto;)Ljava/lang/Object;
 
@@ -1371,10 +1397,10 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 628
+    .line 630
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 630
+    .line 632
     :cond_3
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasEventData()Z
 
@@ -1382,14 +1408,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 631
+    .line 633
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 632
+    .line 634
     #getter for: Lcom/google/common/logging/GlassUserEventProto;->eventData_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/common/logging/GlassUserEventProto;->access$800(Lcom/google/common/logging/GlassUserEventProto;)Ljava/lang/Object;
 
@@ -1397,10 +1423,10 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 633
+    .line 635
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 635
+    .line 637
     :cond_4
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->hasPerformanceStats()Z
 
@@ -1408,14 +1434,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 636
+    .line 638
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getPerformanceStats()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergePerformanceStats(Lcom/google/common/logging/GlassUserEventPerformanceStats;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
-    .line 638
+    .line 640
     :cond_5
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1437,10 +1463,10 @@
     .end annotation
 
     .prologue
-    .line 656
+    .line 658
     const/4 v2, 0x0
 
-    .line 658
+    .line 660
     .local v2, parsedMessage:Lcom/google/common/logging/GlassUserEventProto;
     :try_start_0
     sget-object v3, Lcom/google/common/logging/GlassUserEventProto;->PARSER:Lcom/google/protobuf/Parser;
@@ -1458,21 +1484,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 663
+    .line 665
     if-eqz v2, :cond_0
 
-    .line 664
+    .line 666
     invoke-virtual {p0, v2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
-    .line 667
+    .line 669
     :cond_0
     return-object p0
 
-    .line 659
+    .line 661
     :catch_0
     move-exception v1
 
-    .line 660
+    .line 662
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1485,19 +1511,19 @@
 
     move-object v2, v0
 
-    .line 661
+    .line 663
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 663
+    .line 665
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 664
+    .line 666
     invoke-virtual {p0, v2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/common/logging/GlassUserEventProto;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     :cond_1
@@ -1509,12 +1535,12 @@
     .parameter "other"
 
     .prologue
-    .line 609
+    .line 611
     instance-of v0, p1, Lcom/google/common/logging/GlassUserEventProto;
 
     if-eqz v0, :cond_0
 
-    .line 610
+    .line 612
     check-cast p1, Lcom/google/common/logging/GlassUserEventProto;
 
     .end local p1
@@ -1522,12 +1548,12 @@
 
     move-result-object p0
 
-    .line 613
+    .line 615
     .end local p0
     :goto_0
     return-object p0
 
-    .line 612
+    .line 614
     .restart local p0
     .restart local p1
     :cond_0
@@ -1547,7 +1573,7 @@
     .end annotation
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -1560,7 +1586,7 @@
     .parameter "x0"
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0, p1}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -1579,7 +1605,7 @@
     .end annotation
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -1598,7 +1624,7 @@
     .end annotation
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -1611,7 +1637,7 @@
     .parameter "x0"
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0, p1}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -1630,7 +1656,7 @@
     .end annotation
 
     .prologue
-    .line 500
+    .line 502
     invoke-virtual {p0, p1, p2}, Lcom/google/common/logging/GlassUserEventProto$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/common/logging/GlassUserEventProto$Builder;
 
     move-result-object v0
@@ -1643,12 +1669,12 @@
     .parameter "value"
 
     .prologue
-    .line 1062
+    .line 1070
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1063
+    .line 1071
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1665,7 +1691,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1065
+    .line 1073
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     invoke-static {v0}, Lcom/google/common/logging/GlassUserEventPerformanceStats;->newBuilder(Lcom/google/common/logging/GlassUserEventPerformanceStats;)Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;
@@ -1682,11 +1708,11 @@
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1070
+    .line 1078
     :goto_0
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 1074
+    .line 1082
     :goto_1
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1694,16 +1720,16 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 1075
+    .line 1083
     return-object p0
 
-    .line 1068
+    .line 1076
     :cond_0
     iput-object p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     goto :goto_0
 
-    .line 1072
+    .line 1080
     :cond_1
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1717,17 +1743,17 @@
     .parameter "value"
 
     .prologue
-    .line 950
+    .line 958
     if-nez p1, :cond_0
 
-    .line 951
+    .line 959
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 953
+    .line 961
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1735,13 +1761,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 954
+    .line 962
     iput-object p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 955
+    .line 963
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 956
+    .line 964
     return-object p0
 .end method
 
@@ -1750,17 +1776,17 @@
     .parameter "value"
 
     .prologue
-    .line 980
+    .line 988
     if-nez p1, :cond_0
 
-    .line 981
+    .line 989
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 983
+    .line 991
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1768,13 +1794,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 984
+    .line 992
     iput-object p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventData_:Ljava/lang/Object;
 
-    .line 985
+    .line 993
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 986
+    .line 994
     return-object p0
 .end method
 
@@ -1783,20 +1809,20 @@
     .parameter "value"
 
     .prologue
-    .line 772
+    .line 774
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 773
+    .line 775
     iput-wide p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventSerial_:J
 
-    .line 774
+    .line 776
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 775
+    .line 777
     return-object p0
 .end method
 
@@ -1805,20 +1831,20 @@
     .parameter "value"
 
     .prologue
-    .line 709
+    .line 711
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 710
+    .line 712
     iput-wide p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventTimeMs_:J
 
-    .line 711
+    .line 713
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 712
+    .line 714
     return-object p0
 .end method
 
@@ -1827,17 +1853,17 @@
     .parameter "value"
 
     .prologue
-    .line 853
+    .line 858
     if-nez p1, :cond_0
 
-    .line 854
+    .line 859
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 856
+    .line 861
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1845,13 +1871,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 857
+    .line 862
     iput-object p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 858
+    .line 863
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 859
+    .line 864
     return-object p0
 .end method
 
@@ -1860,17 +1886,17 @@
     .parameter "value"
 
     .prologue
-    .line 883
+    .line 888
     if-nez p1, :cond_0
 
-    .line 884
+    .line 889
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 886
+    .line 891
     :cond_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1878,13 +1904,13 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 887
+    .line 892
     iput-object p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->eventType_:Ljava/lang/Object;
 
-    .line 888
+    .line 893
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 889
+    .line 894
     return-object p0
 .end method
 
@@ -1893,22 +1919,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1045
+    .line 1053
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1046
+    .line 1054
     invoke-virtual {p1}, Lcom/google/common/logging/GlassUserEventPerformanceStats$Builder;->build()Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1047
+    .line 1055
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 1051
+    .line 1059
     :goto_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1916,10 +1942,10 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 1052
+    .line 1060
     return-object p0
 
-    .line 1049
+    .line 1057
     :cond_0
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1937,29 +1963,29 @@
     .parameter "value"
 
     .prologue
-    .line 1024
+    .line 1032
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1025
+    .line 1033
     if-nez p1, :cond_0
 
-    .line 1026
+    .line 1034
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1028
+    .line 1036
     :cond_0
     iput-object p1, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStats_:Lcom/google/common/logging/GlassUserEventPerformanceStats;
 
-    .line 1029
+    .line 1037
     invoke-virtual {p0}, Lcom/google/common/logging/GlassUserEventProto$Builder;->onChanged()V
 
-    .line 1033
+    .line 1041
     :goto_0
     iget v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
@@ -1967,10 +1993,10 @@
 
     iput v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->bitField0_:I
 
-    .line 1034
+    .line 1042
     return-object p0
 
-    .line 1031
+    .line 1039
     :cond_1
     iget-object v0, p0, Lcom/google/common/logging/GlassUserEventProto$Builder;->performanceStatsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 

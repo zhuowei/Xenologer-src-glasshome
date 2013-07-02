@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/util/CachedBitmapFactory;->loadBitmap(Ljava/lang/String;II)Landroid/graphics/Bitmap;
+    value = Lcom/google/glass/util/CachedBitmapFactory;->loadBitmap(Ljava/lang/String;IILcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,25 +30,30 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/util/CachedBitmapFactory;
 
+.field final synthetic val$isCancelled:Lcom/google/glass/util/Condition;
+
 .field final synthetic val$minHeight:I
 
 .field final synthetic val$minWidth:I
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/util/CachedBitmapFactory;II)V
+.method constructor <init>(Lcom/google/glass/util/CachedBitmapFactory;IILcom/google/glass/util/Condition;)V
     .locals 0
+    .parameter
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 174
+    .line 191
     iput-object p1, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->this$0:Lcom/google/glass/util/CachedBitmapFactory;
 
     iput p2, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->val$minWidth:I
 
     iput p3, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->val$minHeight:I
+
+    iput-object p4, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->val$isCancelled:Lcom/google/glass/util/Condition;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,16 +63,18 @@
 
 # virtual methods
 .method public load(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 2
+    .locals 3
     .parameter "filePath"
 
     .prologue
-    .line 177
+    .line 194
     iget v0, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->val$minWidth:I
 
     iget v1, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->val$minHeight:I
 
-    invoke-static {p1, v0, v1}, Lcom/google/glass/util/CachedBitmapFactory;->loadBitmapFile(Ljava/lang/String;II)Landroid/graphics/Bitmap;
+    iget-object v2, p0, Lcom/google/glass/util/CachedBitmapFactory$1;->val$isCancelled:Lcom/google/glass/util/Condition;
+
+    invoke-static {p1, v0, v1, v2}, Lcom/google/glass/util/CachedBitmapFactory;->loadBitmapFile(Ljava/lang/String;IILcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -79,7 +86,7 @@
     .parameter "x0"
 
     .prologue
-    .line 174
+    .line 191
     invoke-virtual {p0, p1}, Lcom/google/glass/util/CachedBitmapFactory$1;->load(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0

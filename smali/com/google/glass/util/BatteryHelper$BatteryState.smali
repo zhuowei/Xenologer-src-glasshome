@@ -43,7 +43,7 @@
     .locals 0
 
     .prologue
-    .line 27
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,100 +52,142 @@
 
 # virtual methods
 .method public getUserEventActionData(Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 7
     .parameter "action"
 
     .prologue
-    .line 68
-    const-string v0, "a"
+    .line 78
+    const-string v1, ""
 
-    const/16 v1, 0xa
+    .line 80
+    .local v1, gasGaugeData:Ljava/lang/String;
+    :try_start_0
+    #calls: Lcom/google/glass/util/BatteryHelper;->readPartialDataFlash()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/util/BatteryHelper;->access$000()Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    move-result-object v1
 
-    const/4 v2, 0x0
+    .line 84
+    :goto_0
+    const-string v2, "a"
 
-    const-string v3, "p"
+    const/16 v3, 0xc
 
-    aput-object v3, v1, v2
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v2, 0x1
+    const/4 v4, 0x0
 
-    iget v3, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->percent:F
+    const-string v5, "p"
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    iget v5, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->percent:F
+
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x2
+
+    const-string v5, "t"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x3
+
+    iget-wide v5, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->timeToDischarge:J
+
+    invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x4
+
+    const-string v5, "cg"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x5
+
+    iget-boolean v5, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->isCharging:Z
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x6
+
+    const-string v5, "cd"
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x7
+
+    iget-boolean v5, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->isCharged:Z
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/16 v4, 0x8
+
+    const-string v5, "ip"
+
+    aput-object v5, v3, v4
+
+    const/16 v4, 0x9
+
+    iget-boolean v5, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->isPowered:Z
+
+    invoke-static {v5}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/16 v4, 0xa
+
+    const-string v5, "gg"
+
+    aput-object v5, v3, v4
+
+    const/16 v4, 0xb
+
+    aput-object v1, v3, v4
+
+    invoke-static {v2, p1, v3}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    return-object v2
+
+    .line 81
+    :catch_0
+    move-exception v0
+
+    .line 82
+    .local v0, e:Ljava/io/IOException;
+    invoke-static {}, Lcom/google/glass/util/BatteryHelper;->access$100()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
     move-result-object v3
 
-    aput-object v3, v1, v2
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v2, 0x2
-
-    const-string v3, "t"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x3
-
-    iget-wide v3, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->timeToDischarge:J
-
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x4
-
-    const-string v3, "cg"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x5
-
-    iget-boolean v3, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->isCharging:Z
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x6
-
-    const-string v3, "cd"
-
-    aput-object v3, v1, v2
-
-    const/4 v2, 0x7
-
-    iget-boolean v3, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->isCharged:Z
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x8
-
-    const-string v3, "ip"
-
-    aput-object v3, v1, v2
-
-    const/16 v2, 0x9
-
-    iget-boolean v3, p0, Lcom/google/glass/util/BatteryHelper$BatteryState;->isPowered:Z
-
-    invoke-static {v3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, p1, v1}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method

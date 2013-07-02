@@ -16,8 +16,5 @@
 .method public abstract onVoiceCommand(Lcom/google/glass/voice/VoiceCommand;)V
 .end method
 
-.method public abstract onVoiceServiceConnected()V
-.end method
-
-.method public abstract onVoiceServiceDisconnected()V
+.method public abstract onVoiceConfigChanged(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 .end method

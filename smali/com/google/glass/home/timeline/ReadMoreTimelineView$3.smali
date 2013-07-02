@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 175
+    .line 174
     iput-object p1, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$3;->this$0:Lcom/google/glass/home/timeline/ReadMoreTimelineView;
 
     iput-object p3, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$3;->val$loader:Lcom/google/glass/home/timeline/TimelineItemLoader;
@@ -54,7 +54,7 @@
     .parameter "id"
 
     .prologue
-    .line 185
+    .line 184
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$3;->val$loader:Lcom/google/glass/home/timeline/TimelineItemLoader;
 
     invoke-interface {v0, p1}, Lcom/google/glass/home/timeline/TimelineItemLoader;->find(Lcom/google/glass/timeline/TimelineItemId;)I
@@ -69,7 +69,7 @@
     .parameter "id"
 
     .prologue
-    .line 180
+    .line 179
     const/4 v0, 0x1
 
     return v0
@@ -81,13 +81,13 @@
     .parameter "view"
 
     .prologue
-    .line 190
+    .line 189
     iget-object v0, p0, Lcom/google/glass/home/timeline/ReadMoreTimelineView$3;->adapter:Landroid/widget/Adapter;
 
     check-cast v0, Lcom/google/glass/home/timeline/TimelineItemAdapter;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/home/timeline/TimelineItemAdapter;->rebind(ILandroid/view/View;)V
 
-    .line 191
+    .line 190
     return-void
 .end method

@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 240
+    .line 241
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$HangOutWithItem$1;->this$0:Lcom/google/glass/home/voice/menu/EntityMenuItem$HangOutWithItem;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$HangOutWithItem$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
@@ -46,7 +46,7 @@
     .locals 3
 
     .prologue
-    .line 243
+    .line 244
     new-instance v0, Lcom/google/glass/util/HangoutHelper;
 
     iget-object v1, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$HangOutWithItem$1;->val$environment:Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;
@@ -57,7 +57,7 @@
 
     invoke-direct {v0, v1}, Lcom/google/glass/util/HangoutHelper;-><init>(Landroid/content/Context;)V
 
-    .line 244
+    .line 245
     .local v0, hangoutHelper:Lcom/google/glass/util/HangoutHelper;
     iget-object v1, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$HangOutWithItem$1;->this$0:Lcom/google/glass/home/voice/menu/EntityMenuItem$HangOutWithItem;
 
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/HangoutHelper;->startHangout(Lcom/google/googlex/glass/common/proto/Entity;Z)V
 
-    .line 245
+    .line 246
     return-void
 .end method

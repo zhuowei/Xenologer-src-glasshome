@@ -38,11 +38,11 @@
     .locals 0
 
     .prologue
-    .line 85
+    .line 92
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 208
+    .line 215
     return-void
 .end method
 
@@ -63,7 +63,7 @@
     .end annotation
 
     .prologue
-    .line 295
+    .line 302
     .local p0, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<TT;>;"
     .local p1, list:Ljava/util/Collection;,"Ljava/util/Collection<-TT;>;"
     instance-of v3, p0, Lcom/google/protobuf/LazyStringList;
@@ -72,7 +72,7 @@
 
     move-object v3, p0
 
-    .line 298
+    .line 305
     check-cast v3, Lcom/google/protobuf/LazyStringList;
 
     invoke-interface {v3}, Lcom/google/protobuf/LazyStringList;->getUnderlyingElements()Ljava/util/List;
@@ -81,7 +81,7 @@
 
     invoke-static {v3}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
 
-    .line 302
+    .line 309
     :goto_0
     instance-of v3, p0, Ljava/util/Collection;
 
@@ -89,25 +89,25 @@
 
     move-object v0, p0
 
-    .line 303
+    .line 310
     check-cast v0, Ljava/util/Collection;
 
-    .line 304
+    .line 311
     .local v0, collection:Ljava/util/Collection;,"Ljava/util/Collection<TT;>;"
     invoke-interface {p1, v0}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
 
-    .line 310
+    .line 317
     .end local v0           #collection:Ljava/util/Collection;,"Ljava/util/Collection<TT;>;"
     :cond_0
     return-void
 
-    .line 300
+    .line 307
     :cond_1
     invoke-static {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->checkForNullValues(Ljava/lang/Iterable;)V
 
     goto :goto_0
 
-    .line 306
+    .line 313
     :cond_2
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -125,7 +125,7 @@
 
     move-result-object v2
 
-    .line 307
+    .line 314
     .local v2, value:Ljava/lang/Object;,"TT;"
     invoke-interface {p1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
@@ -144,7 +144,7 @@
     .end annotation
 
     .prologue
-    .line 313
+    .line 320
     .local p0, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<*>;"
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -162,18 +162,18 @@
 
     move-result-object v1
 
-    .line 314
+    .line 321
     .local v1, value:Ljava/lang/Object;
     if-nez v1, :cond_0
 
-    .line 315
+    .line 322
     new-instance v2, Ljava/lang/NullPointerException;
 
     invoke-direct {v2}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v2
 
-    .line 318
+    .line 325
     .end local v1           #value:Ljava/lang/Object;
     :cond_1
     return-void
@@ -184,7 +184,7 @@
     .parameter "message"
 
     .prologue
-    .line 283
+    .line 290
     new-instance v0, Lcom/google/protobuf/UninitializedMessageException;
 
     invoke-direct {v0, p0}, Lcom/google/protobuf/UninitializedMessageException;-><init>(Lcom/google/protobuf/MessageLite;)V
@@ -206,7 +206,7 @@
     .locals 1
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->clone()Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -224,7 +224,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->clone()Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -243,7 +243,7 @@
     .end annotation
 
     .prologue
-    .line 273
+    .line 280
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-static {}, Lcom/google/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Lcom/google/protobuf/ExtensionRegistryLite;
 
@@ -267,42 +267,42 @@
     .end annotation
 
     .prologue
-    .line 261
+    .line 268
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p1}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
-    .line 262
+    .line 269
     .local v0, firstByte:I
     const/4 v3, -0x1
 
     if-ne v0, v3, :cond_0
 
-    .line 263
+    .line 270
     const/4 v3, 0x0
 
-    .line 268
+    .line 275
     :goto_0
     return v3
 
-    .line 265
+    .line 272
     :cond_0
     invoke-static {v0, p1}, Lcom/google/protobuf/CodedInputStream;->readRawVarint32(ILjava/io/InputStream;)I
 
     move-result v2
 
-    .line 266
+    .line 273
     .local v2, size:I
     new-instance v1, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;
 
     invoke-direct {v1, p1, v2}, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;-><init>(Ljava/io/InputStream;I)V
 
-    .line 267
+    .line 274
     .local v1, limitedInput:Ljava/io/InputStream;
     invoke-virtual {p0, v1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 268
+    .line 275
     const/4 v3, 0x1
 
     goto :goto_0
@@ -326,18 +326,18 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 112
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->newCodedInput()Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v1
 
-    .line 106
+    .line 113
     .local v1, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 107
+    .line 114
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
@@ -345,24 +345,24 @@
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 108
+    .line 115
     return-object p0
 
-    .line 109
+    .line 116
     .end local v1           #input:Lcom/google/protobuf/CodedInputStream;
     :catch_0
     move-exception v0
 
-    .line 110
+    .line 117
     .local v0, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     throw v0
 
-    .line 111
+    .line 118
     .end local v0           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catch_1
     move-exception v0
 
-    .line 112
+    .line 119
     .local v0, e:Ljava/io/IOException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -393,18 +393,18 @@
     .end annotation
 
     .prologue
-    .line 123
+    .line 130
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/ByteString;->newCodedInput()Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v1
 
-    .line 124
+    .line 131
     .local v1, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 125
+    .line 132
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
@@ -412,24 +412,24 @@
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 126
+    .line 133
     return-object p0
 
-    .line 127
+    .line 134
     .end local v1           #input:Lcom/google/protobuf/CodedInputStream;
     :catch_0
     move-exception v0
 
-    .line 128
+    .line 135
     .local v0, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     throw v0
 
-    .line 129
+    .line 136
     .end local v0           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catch_1
     move-exception v0
 
-    .line 130
+    .line 137
     .local v0, e:Ljava/io/IOException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -458,7 +458,7 @@
     .end annotation
 
     .prologue
-    .line 93
+    .line 100
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-static {}, Lcom/google/protobuf/ExtensionRegistryLite;->getEmptyRegistry()Lcom/google/protobuf/ExtensionRegistryLite;
 
@@ -506,22 +506,22 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 193
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-static {p1}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 187
+    .line 194
     .local v0, codedInput:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 188
+    .line 195
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
 
-    .line 189
+    .line 196
     return-object p0
 .end method
 
@@ -545,22 +545,22 @@
     .end annotation
 
     .prologue
-    .line 196
+    .line 203
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-static {p1}, Lcom/google/protobuf/CodedInputStream;->newInstance(Ljava/io/InputStream;)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v0
 
-    .line 197
+    .line 204
     .local v0, codedInput:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v0, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 198
+    .line 205
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
 
-    .line 199
+    .line 206
     return-object p0
 .end method
 
@@ -580,7 +580,7 @@
     .end annotation
 
     .prologue
-    .line 138
+    .line 145
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     const/4 v0, 0x0
 
@@ -611,18 +611,18 @@
     .end annotation
 
     .prologue
-    .line 145
+    .line 152
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     :try_start_0
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/CodedInputStream;->newInstance([BII)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v1
 
-    .line 147
+    .line 154
     .local v1, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 148
+    .line 155
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
@@ -630,24 +630,24 @@
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 149
+    .line 156
     return-object p0
 
-    .line 150
+    .line 157
     .end local v1           #input:Lcom/google/protobuf/CodedInputStream;
     :catch_0
     move-exception v0
 
-    .line 151
+    .line 158
     .local v0, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     throw v0
 
-    .line 152
+    .line 159
     .end local v0           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catch_1
     move-exception v0
 
-    .line 153
+    .line 160
     .local v0, e:Ljava/io/IOException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -679,18 +679,18 @@
     .end annotation
 
     .prologue
-    .line 171
+    .line 178
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     :try_start_0
     invoke-static {p1, p2, p3}, Lcom/google/protobuf/CodedInputStream;->newInstance([BII)Lcom/google/protobuf/CodedInputStream;
 
     move-result-object v1
 
-    .line 173
+    .line 180
     .local v1, input:Lcom/google/protobuf/CodedInputStream;
     invoke-virtual {p0, v1, p4}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
-    .line 174
+    .line 181
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/CodedInputStream;->checkLastTagWas(I)V
@@ -698,24 +698,24 @@
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 175
+    .line 182
     return-object p0
 
-    .line 176
+    .line 183
     .end local v1           #input:Lcom/google/protobuf/CodedInputStream;
     :catch_0
     move-exception v0
 
-    .line 177
+    .line 184
     .local v0, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     throw v0
 
-    .line 178
+    .line 185
     .end local v0           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catch_1
     move-exception v0
 
-    .line 179
+    .line 186
     .local v0, e:Ljava/io/IOException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -745,7 +745,7 @@
     .end annotation
 
     .prologue
-    .line 163
+    .line 170
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     const/4 v0, 0x0
 
@@ -768,7 +768,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/ByteString;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -788,7 +788,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -807,7 +807,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -827,7 +827,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -846,7 +846,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Ljava/io/InputStream;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -866,7 +866,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -885,7 +885,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom([B)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -906,7 +906,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom([BII)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -928,7 +928,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1, p2, p3, p4}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom([BIILcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 
@@ -948,7 +948,7 @@
     .end annotation
 
     .prologue
-    .line 84
+    .line 91
     .local p0, this:Lcom/google/protobuf/AbstractMessageLite$Builder;,"Lcom/google/protobuf/AbstractMessageLite$Builder<TBuilderType;>;"
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/AbstractMessageLite$Builder;->mergeFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/AbstractMessageLite$Builder;
 

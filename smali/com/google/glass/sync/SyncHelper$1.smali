@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
+    value = Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Lcom/google/glass/sync/SyncHelper$SyncSource;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,21 +20,21 @@
 # instance fields
 .field final synthetic val$authority:Ljava/lang/String;
 
-.field final synthetic val$extras:Landroid/os/Bundle;
-
 .field final synthetic val$primaryAccount:Landroid/accounts/Account;
+
+.field final synthetic val$syncSource:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
 
 # direct methods
-.method constructor <init>(Landroid/os/Bundle;Ljava/lang/String;Landroid/accounts/Account;)V
+.method constructor <init>(Lcom/google/glass/sync/SyncHelper$SyncSource;Ljava/lang/String;Landroid/accounts/Account;)V
     .locals 0
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 94
-    iput-object p1, p0, Lcom/google/glass/sync/SyncHelper$1;->val$extras:Landroid/os/Bundle;
+    .line 106
+    iput-object p1, p0, Lcom/google/glass/sync/SyncHelper$1;->val$syncSource:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
     iput-object p2, p0, Lcom/google/glass/sync/SyncHelper$1;->val$authority:Ljava/lang/String;
 
@@ -53,34 +53,27 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 97
-    iget-object v2, p0, Lcom/google/glass/sync/SyncHelper$1;->val$extras:Landroid/os/Bundle;
-
-    if-nez v2, :cond_1
-
+    .line 109
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 98
-    .local v0, bundle:Landroid/os/Bundle;
-    :goto_0
-    const-string v2, "com.google.glass.sync.POWER_CONNECTED_SYNC"
+    .line 110
+    .local v0, extras:Landroid/os/Bundle;
+    iget-object v2, p0, Lcom/google/glass/sync/SyncHelper$1;->val$syncSource:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
+    sget-object v3, Lcom/google/glass/sync/SyncHelper$SyncSource;->POWER_CONNECTED:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
-    move-result v2
+    if-ne v2, v3, :cond_1
 
-    if-eqz v2, :cond_2
-
-    .line 100
+    .line 112
     const-string v2, "force"
 
     invoke-virtual {v0, v2, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 113
+    .line 125
     :cond_0
-    :goto_1
+    :goto_0
     invoke-static {}, Lcom/google/glass/sync/SyncHelper;->access$100()Ljava/lang/String;
 
     move-result-object v2
@@ -101,15 +94,25 @@
 
     move-result-object v3
 
+    const-string v4, ", syncSource="
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/google/glass/sync/SyncHelper$1;->val$syncSource:Lcom/google/glass/sync/SyncHelper$SyncSource;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
     const-string v4, ", extras="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/google/glass/sync/SyncHelper$1;->val$extras:Landroid/os/Bundle;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
@@ -125,35 +128,25 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 114
+    .line 127
     iget-object v2, p0, Lcom/google/glass/sync/SyncHelper$1;->val$primaryAccount:Landroid/accounts/Account;
 
     iget-object v3, p0, Lcom/google/glass/sync/SyncHelper$1;->val$authority:Ljava/lang/String;
 
     invoke-static {v2, v3, v0}, Landroid/content/ContentResolver;->requestSync(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    .line 115
+    .line 128
     return-void
 
-    .line 97
-    .end local v0           #bundle:Landroid/os/Bundle;
+    .line 113
     :cond_1
-    iget-object v0, p0, Lcom/google/glass/sync/SyncHelper$1;->val$extras:Landroid/os/Bundle;
+    iget-object v2, p0, Lcom/google/glass/sync/SyncHelper$1;->val$syncSource:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
-    goto :goto_0
+    sget-object v3, Lcom/google/glass/sync/SyncHelper$SyncSource;->GCM:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
-    .line 101
-    .restart local v0       #bundle:Landroid/os/Bundle;
-    :cond_2
-    const-string v2, "com.google.glass.sync.GCM_SYNC"
+    if-ne v2, v3, :cond_0
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 105
+    .line 117
     invoke-static {}, Lcom/google/glass/sync/SyncHelper;->access$000()Ljava/util/Map;
 
     move-result-object v2
@@ -164,7 +157,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     invoke-static {}, Lcom/google/glass/sync/SyncHelper;->access$000()Ljava/util/Map;
 
@@ -182,24 +175,22 @@
 
     move-result v1
 
-    .line 107
+    .line 119
     .local v1, inBackoffMode:Z
-    :goto_2
+    :goto_1
     if-nez v1, :cond_0
 
-    .line 109
-    iget-object v2, p0, Lcom/google/glass/sync/SyncHelper$1;->val$extras:Landroid/os/Bundle;
+    .line 121
+    const-string v2, "ignore_backoff"
 
-    const-string v3, "ignore_backoff"
+    invoke-virtual {v0, v2, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    invoke-virtual {v2, v3, v4}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
+    goto :goto_0
 
-    goto :goto_1
-
-    .line 105
+    .line 117
     .end local v1           #inBackoffMode:Z
-    :cond_3
+    :cond_2
     const/4 v1, 0x0
 
-    goto :goto_2
+    goto :goto_1
 .end method

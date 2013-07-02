@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/TimelineItemAdapter;-><init>(Landroid/content/Context;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/home/timeline/TimelineItemLoader;ZZ)V
+    value = Lcom/google/glass/home/timeline/TimelineItemAdapter;-><init>(Landroid/content/Context;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/home/timeline/TimelineItemLoader;ZZLcom/google/glass/home/timeline/NotificationState;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 143
+    .line 164
     iput-object p1, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$1;->this$0:Lcom/google/glass/home/timeline/TimelineItemAdapter;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$1;->val$context:Landroid/content/Context;
@@ -56,14 +56,14 @@
     .locals 6
 
     .prologue
-    .line 146
+    .line 167
     iget-object v3, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$1;->val$context:Landroid/content/Context;
 
     invoke-static {v3}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v2
 
-    .line 147
+    .line 168
     .local v2, inflater:Landroid/view/LayoutInflater;
     new-instance v0, Lcom/google/glass/home/timeline/TimelineItemContainerView;
 
@@ -71,7 +71,7 @@
 
     invoke-direct {v0, v3}, Lcom/google/glass/home/timeline/TimelineItemContainerView;-><init>(Landroid/content/Context;)V
 
-    .line 148
+    .line 169
     .local v0, container:Lcom/google/glass/home/timeline/TimelineItemContainerView;
     const/4 v1, 0x0
 
@@ -81,7 +81,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 149
+    .line 170
     iget-object v3, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$1;->val$cache:Ljava/util/concurrent/LinkedBlockingQueue;
 
     iget-object v4, p0, Lcom/google/glass/home/timeline/TimelineItemAdapter$1;->val$binder:Lcom/google/glass/home/timeline/database/ItemViewBinder;
@@ -98,12 +98,12 @@
 
     invoke-virtual {v3, v4}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
 
-    .line 148
+    .line 169
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 151
+    .line 172
     :cond_0
     return-void
 .end method

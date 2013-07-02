@@ -25,13 +25,13 @@
     .parameter "limit"
 
     .prologue
-    .line 212
+    .line 219
     invoke-direct {p0, p1}, Ljava/io/FilterInputStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 213
+    .line 220
     iput p2, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
-    .line 214
+    .line 221
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .end annotation
 
     .prologue
-    .line 218
+    .line 225
     invoke-super {p0}, Ljava/io/FilterInputStream;->available()I
 
     move-result v0
@@ -69,30 +69,30 @@
     .end annotation
 
     .prologue
-    .line 223
+    .line 230
     iget v1, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
     if-gtz v1, :cond_1
 
-    .line 224
+    .line 231
     const/4 v0, -0x1
 
-    .line 230
+    .line 237
     :cond_0
     :goto_0
     return v0
 
-    .line 226
+    .line 233
     :cond_1
     invoke-super {p0}, Ljava/io/FilterInputStream;->read()I
 
     move-result v0
 
-    .line 227
+    .line 234
     .local v0, result:I
     if-ltz v0, :cond_0
 
-    .line 228
+    .line 235
     iget v1, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
     add-int/lit8 v1, v1, -0x1
@@ -114,20 +114,20 @@
     .end annotation
 
     .prologue
-    .line 236
+    .line 243
     iget v1, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
     if-gtz v1, :cond_1
 
-    .line 237
+    .line 244
     const/4 v0, -0x1
 
-    .line 244
+    .line 251
     :cond_0
     :goto_0
     return v0
 
-    .line 239
+    .line 246
     :cond_1
     iget v1, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
@@ -135,16 +135,16 @@
 
     move-result p3
 
-    .line 240
+    .line 247
     invoke-super {p0, p1, p2, p3}, Ljava/io/FilterInputStream;->read([BII)I
 
     move-result v0
 
-    .line 241
+    .line 248
     .local v0, result:I
     if-ltz v0, :cond_0
 
-    .line 242
+    .line 249
     iget v1, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
     sub-int/2addr v1, v0
@@ -164,7 +164,7 @@
     .end annotation
 
     .prologue
-    .line 249
+    .line 256
     iget v2, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
     int-to-long v2, v2
@@ -177,7 +177,7 @@
 
     move-result-wide v0
 
-    .line 250
+    .line 257
     .local v0, result:J
     const-wide/16 v2, 0x0
 
@@ -185,7 +185,7 @@
 
     if-ltz v2, :cond_0
 
-    .line 251
+    .line 258
     iget v2, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
     int-to-long v2, v2
@@ -196,7 +196,7 @@
 
     iput v2, p0, Lcom/google/protobuf/AbstractMessageLite$Builder$LimitedInputStream;->limit:I
 
-    .line 253
+    .line 260
     :cond_0
     return-wide v0
 .end method

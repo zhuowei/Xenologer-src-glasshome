@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 281
+    .line 284
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMenu$3;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/VoiceMenu$3;->val$postAnimationRunnable:Ljava/lang/Runnable;
@@ -44,17 +44,17 @@
     .parameter "animation"
 
     .prologue
-    .line 284
+    .line 287
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$3;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 285
+    .line 288
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$3;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 287
+    .line 290
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$3;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
@@ -71,6 +71,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 288
+    .line 291
     return-void
 .end method

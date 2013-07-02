@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/voice/VoiceAnnotationActivity;
-.super Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+.super Lcom/google/glass/voice/BaseVoiceInputActivity;
 .source "VoiceAnnotationActivity.java"
 
 
@@ -28,15 +28,15 @@
     .locals 1
 
     .prologue
-    .line 30
-    invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;-><init>()V
+    .line 29
+    invoke-direct {p0}, Lcom/google/glass/voice/BaseVoiceInputActivity;-><init>()V
 
-    .line 47
+    .line 46
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->isRecognitionResultExpanded:Z
 
-    .line 53
+    .line 52
     new-instance v0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity$1;-><init>(Lcom/google/glass/home/voice/VoiceAnnotationActivity;)V
@@ -51,7 +51,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 29
     invoke-direct {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->confirmAnnotation()V
 
     return-void
@@ -63,7 +63,7 @@
     .parameter "x1"
 
     .prologue
-    .line 30
+    .line 29
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->onAnnotationCommitted(Ljava/lang/String;)V
 
     return-void
@@ -73,17 +73,17 @@
     .locals 5
 
     .prologue
-    .line 148
+    .line 147
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->isFinishing()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 150
+    .line 149
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->recognitionResult:Ljava/lang/String;
 
-    .line 151
+    .line 150
     .local v1, textToReturn:Ljava/lang/String;
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -91,7 +91,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 152
+    .line 151
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -100,16 +100,16 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 153
+    .line 152
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->finish()V
 
-    .line 179
+    .line 178
     .end local v1           #textToReturn:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 157
+    .line 156
     .restart local v1       #textToReturn:Ljava/lang/String;
     :cond_1
     new-instance v2, Lcom/google/glass/widget/MessageDialog$Builder;
@@ -162,7 +162,7 @@
 
     move-result-object v0
 
-    .line 177
+    .line 176
     .local v0, dialog:Lcom/google/glass/widget/MessageDialog;
     invoke-virtual {p0, v0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->showMessage(Lcom/google/glass/widget/MessageDialog;)V
 
@@ -174,26 +174,26 @@
     .parameter "recognitionResult"
 
     .prologue
-    .line 182
+    .line 181
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 183
+    .line 182
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "annotation_result"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 184
+    .line 183
     const/4 v1, -0x1
 
     invoke-virtual {p0, v1, v0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 185
+    .line 184
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->finish()V
 
-    .line 186
+    .line 185
     return-void
 .end method
 
@@ -201,21 +201,21 @@
     .locals 3
 
     .prologue
-    .line 212
+    .line 211
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->cancelTip:Lcom/google/glass/widget/TypophileTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/TypophileTextView;->setAlpha(F)V
 
-    .line 213
+    .line 212
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->cancelTip:Lcom/google/glass/widget/TypophileTextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 214
+    .line 213
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->cancelTip:Lcom/google/glass/widget/TypophileTextView;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/TypophileTextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -232,7 +232,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 215
+    .line 214
     return-void
 .end method
 
@@ -242,7 +242,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 75
     sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
@@ -252,7 +252,7 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 207
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getSpeakNowPromptResId()I
 
     move-result v0
@@ -264,7 +264,7 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 80
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getInitialVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     move-result-object v0
@@ -276,7 +276,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 202
     sget v0, Lcom/google/glass/home/R$string;->voice_annotation_speak_your_message:I
 
     return v0
@@ -286,7 +286,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 197
     const/4 v0, 0x5
 
     return v0
@@ -298,7 +298,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 138
+    .line 137
     sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getVoiceConfig()Lcom/google/glass/voice/VoiceConfigDescriptor;
@@ -311,12 +311,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 139
+    .line 138
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 140
+    .line 139
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->handler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->handler:Landroid/os/Handler;
@@ -327,15 +327,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 141
+    .line 140
     const/4 v0, 0x1
 
-    .line 143
+    .line 142
     :goto_0
     return v0
 
     :cond_0
-    invoke-super {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onConfirm()Z
+    invoke-super {p0}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onConfirm()Z
 
     move-result v0
 
@@ -347,10 +347,10 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 68
-    invoke-super {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onCreate(Landroid/os/Bundle;)V
+    .line 67
+    invoke-super {p0, p1}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 70
+    .line 69
     sget v0, Lcom/google/glass/home/R$id;->header:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->findViewById(I)Landroid/view/View;
@@ -361,7 +361,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 71
+    .line 70
     sget v0, Lcom/google/glass/home/R$id;->cancel_tip:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->findViewById(I)Landroid/view/View;
@@ -372,7 +372,7 @@
 
     iput-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->cancelTip:Lcom/google/glass/widget/TypophileTextView;
 
-    .line 72
+    .line 71
     return-void
 .end method
 
@@ -383,7 +383,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 86
+    .line 85
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -392,7 +392,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 87
+    .line 86
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
@@ -401,33 +401,33 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 88
+    .line 87
     sget-object v0, Lcom/google/glass/logging/UserEventAction;->VOICE_MESSAGE_DISMISS:Lcom/google/glass/logging/UserEventAction;
 
     const-string v1, "t"
 
     invoke-virtual {p0, v0, v1}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 89
+    .line 88
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->handler:Landroid/os/Handler;
 
     invoke-virtual {v0, v2}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 90
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->detachVoiceSearchUi()V
+    .line 89
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->detachVoiceInputCallback()V
 
-    .line 91
+    .line 90
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->recognitionResult:Ljava/lang/String;
 
-    .line 92
+    .line 91
     invoke-virtual {p0, v2}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->setResult(I)V
 
-    .line 93
+    .line 92
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->finish()V
 
-    .line 94
+    .line 93
     const/4 v0, 0x1
 
     return v0
@@ -438,12 +438,12 @@
     .parameter "recognitionResult"
 
     .prologue
-    .line 121
+    .line 120
     iget-object v2, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->recognitionResult:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 122
+    .line 121
     invoke-virtual {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -452,24 +452,24 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 124
+    .line 123
     :cond_0
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->recognitionResult:Ljava/lang/String;
 
-    .line 126
+    .line 125
     sget-object v2, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     invoke-virtual {p0, v2}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    .line 128
+    .line 127
     invoke-direct {p0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->showCancelTip()V
 
-    .line 130
+    .line 129
     invoke-static {p1}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->getResultDuration(Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 131
+    .line 130
     .local v0, showResultDuration:J
     iget-object v2, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->handler:Landroid/os/Handler;
 
@@ -483,7 +483,7 @@
 
     invoke-virtual {v2, v3, v0, v1}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
-    .line 132
+    .line 131
     return-void
 .end method
 
@@ -495,7 +495,7 @@
 
     const/4 v3, 0x1
 
-    .line 106
+    .line 105
     iget-boolean v2, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->isRecognitionResultExpanded:Z
 
     if-nez v2, :cond_0
@@ -506,21 +506,21 @@
 
     if-le v2, v3, :cond_0
 
-    .line 107
+    .line 106
     iput-boolean v3, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->isRecognitionResultExpanded:Z
 
-    .line 109
+    .line 108
     sget v2, Lcom/google/glass/home/R$id;->streaming_text:I
 
     invoke-virtual {p0, v2}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    check-cast v1, Lcom/google/glass/search/StreamingTextView;
+    check-cast v1, Lcom/google/glass/voice/StreamingTextView;
 
-    .line 110
-    .local v1, streamingTextView:Lcom/google/glass/search/StreamingTextView;
-    invoke-virtual {v1}, Lcom/google/glass/search/StreamingTextView;->getY()F
+    .line 109
+    .local v1, streamingTextView:Lcom/google/glass/voice/StreamingTextView;
+    invoke-virtual {v1}, Lcom/google/glass/voice/StreamingTextView;->getY()F
 
     move-result v2
 
@@ -528,7 +528,7 @@
 
     sub-float v0, v2, v3
 
-    .line 112
+    .line 111
     .local v0, moveUpBy:F
     sget v2, Lcom/google/glass/home/R$id;->header:I
 
@@ -552,8 +552,8 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 114
-    invoke-virtual {v1}, Lcom/google/glass/search/StreamingTextView;->animate()Landroid/view/ViewPropertyAnimator;
+    .line 113
+    invoke-virtual {v1}, Lcom/google/glass/voice/StreamingTextView;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v2
 
@@ -569,9 +569,9 @@
 
     invoke-virtual {v2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 117
+    .line 116
     .end local v0           #moveUpBy:F
-    .end local v1           #streamingTextView:Lcom/google/glass/search/StreamingTextView;
+    .end local v1           #streamingTextView:Lcom/google/glass/voice/StreamingTextView;
     :cond_0
     return-void
 .end method
@@ -580,8 +580,8 @@
     .locals 1
 
     .prologue
-    .line 193
-    sget v0, Lcom/google/glass/home/R$layout;->voice_search_activity:I
+    .line 192
+    sget v0, Lcom/google/glass/home/R$layout;->voice_input_activity:I
 
     return v0
 .end method
@@ -590,7 +590,7 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 100
     const/4 v0, 0x0
 
     return v0

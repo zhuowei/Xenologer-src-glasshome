@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 231
+    .line 233
     iput-object p1, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$1;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "mp"
 
     .prologue
-    .line 234
+    .line 236
     invoke-static {}, Lcom/google/glass/home/timeline/VideoPlayer;->access$100()Ljava/lang/String;
 
     move-result-object v0
@@ -51,7 +51,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 235
+    .line 237
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$1;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/VideoPlayer$2;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -63,7 +63,7 @@
 
     invoke-interface {v0}, Lcom/google/glass/home/timeline/VideoPlayerListener;->onVideoPlaybackStopped()V
 
-    .line 236
+    .line 238
     iget-object v0, p0, Lcom/google/glass/home/timeline/VideoPlayer$2$1;->this$1:Lcom/google/glass/home/timeline/VideoPlayer$2;
 
     iget-object v0, v0, Lcom/google/glass/home/timeline/VideoPlayer$2;->this$0:Lcom/google/glass/home/timeline/VideoPlayer;
@@ -75,6 +75,6 @@
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/VideoEventLogger;->onPlaybackFinished()V
 
-    .line 237
+    .line 239
     return-void
 .end method

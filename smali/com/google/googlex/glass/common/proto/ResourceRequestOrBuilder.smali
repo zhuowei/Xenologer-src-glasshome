@@ -10,6 +10,12 @@
 .method public abstract getFingerprint()J
 .end method
 
+.method public abstract getLanguageCode()Ljava/lang/String;
+.end method
+
+.method public abstract getLanguageCodeBytes()Lcom/google/protobuf/ByteString;
+.end method
+
 .method public abstract getName()Ljava/lang/String;
 .end method
 
@@ -20,6 +26,9 @@
 .end method
 
 .method public abstract hasFingerprint()Z
+.end method
+
+.method public abstract hasLanguageCode()Z
 .end method
 
 .method public abstract hasName()Z

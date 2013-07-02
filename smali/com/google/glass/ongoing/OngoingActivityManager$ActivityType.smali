@@ -30,6 +30,8 @@
 
 .field public static final enum HOME:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
+.field public static final enum MUSIC:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
+
 .field public static final enum NAVIGATION:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
 .field public static final enum PHONE_CALL:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
@@ -39,25 +41,25 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 8
 
     .prologue
-    const/4 v6, 0x4
+    const/4 v7, 0x4
 
-    const/4 v5, 0x3
+    const/4 v6, 0x3
 
-    const/4 v4, 0x2
+    const/4 v5, 0x2
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 39
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
     const-string v1, "HOME"
 
-    invoke-direct {v0, v1, v2}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v3}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->HOME:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
@@ -66,7 +68,7 @@
 
     const-string v1, "PHONE_CALL"
 
-    invoke-direct {v0, v1, v3}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v4}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->PHONE_CALL:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
@@ -75,7 +77,7 @@
 
     const-string v1, "NAVIGATION"
 
-    invoke-direct {v0, v1, v4}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v5}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->NAVIGATION:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
@@ -84,7 +86,7 @@
 
     const-string v1, "HANGOUT"
 
-    invoke-direct {v0, v1, v5}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v6}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->HANGOUT:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
@@ -93,34 +95,51 @@
 
     const-string v1, "RELOGIN"
 
-    invoke-direct {v0, v1, v6}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0, v1, v7}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->RELOGIN:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
+    .line 45
+    new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
+
+    const-string v1, "MUSIC"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v2}, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->MUSIC:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
+
     .line 38
-    const/4 v0, 0x5
+    const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->HOME:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->PHONE_CALL:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v4
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->NAVIGATION:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v5
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->HANGOUT:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
-    aput-object v1, v0, v5
+    aput-object v1, v0, v6
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->RELOGIN:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 
-    aput-object v1, v0, v6
+    aput-object v1, v0, v7
+
+    const/4 v1, 0x5
+
+    sget-object v2, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->MUSIC:Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
+
+    aput-object v2, v0, v1
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;->$VALUES:[Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;
 

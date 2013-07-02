@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 124
+    .line 123
     invoke-static {}, Lcom/google/glass/home/camera/QrCodeHandler$Type;->values()[Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     move-result-object v0

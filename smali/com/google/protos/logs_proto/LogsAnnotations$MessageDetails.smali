@@ -77,12 +77,12 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 2498
+    .line 2506
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 3067
+    .line 3075
     new-instance v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     const/4 v1, 0x1
@@ -91,12 +91,12 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->defaultInstance:Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
-    .line 3068
+    .line 3076
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->defaultInstance:Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     invoke-direct {v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->initFields()V
 
-    .line 3069
+    .line 3077
     return-void
 .end method
 
@@ -118,10 +118,10 @@
     .line 1658
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 2451
+    .line 2459
     iput-byte v5, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedIsInitialized:B
 
-    .line 2475
+    .line 2483
     iput v5, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedSerializedSize:I
 
     .line 1659
@@ -352,10 +352,10 @@
     .line 1635
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 2451
+    .line 2459
     iput-byte v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedIsInitialized:B
 
-    .line 2475
+    .line 2483
     iput v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedSerializedSize:I
 
     .line 1636
@@ -391,10 +391,10 @@
     .line 1638
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 2451
+    .line 2459
     iput-byte v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedIsInitialized:B
 
-    .line 2475
+    .line 2483
     iput v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedSerializedSize:I
 
     .line 1638
@@ -476,14 +476,14 @@
     .locals 1
 
     .prologue
-    .line 2449
+    .line 2457
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
 
-    .line 2450
+    .line 2458
     return-void
 .end method
 
@@ -491,7 +491,7 @@
     .locals 1
 
     .prologue
-    .line 2560
+    .line 2568
     #calls: Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->create()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;->access$2100()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
@@ -505,7 +505,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 2563
+    .line 2571
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->newBuilder()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -527,7 +527,7 @@
     .end annotation
 
     .prologue
-    .line 2540
+    .line 2548
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -550,7 +550,7 @@
     .end annotation
 
     .prologue
-    .line 2546
+    .line 2554
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -572,7 +572,7 @@
     .end annotation
 
     .prologue
-    .line 2510
+    .line 2518
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -595,7 +595,7 @@
     .end annotation
 
     .prologue
-    .line 2516
+    .line 2524
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -617,7 +617,7 @@
     .end annotation
 
     .prologue
-    .line 2551
+    .line 2559
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -640,7 +640,7 @@
     .end annotation
 
     .prologue
-    .line 2557
+    .line 2565
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -662,7 +662,7 @@
     .end annotation
 
     .prologue
-    .line 2530
+    .line 2538
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -685,7 +685,7 @@
     .end annotation
 
     .prologue
-    .line 2536
+    .line 2544
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -707,7 +707,7 @@
     .end annotation
 
     .prologue
-    .line 2520
+    .line 2528
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -730,7 +730,7 @@
     .end annotation
 
     .prologue
-    .line 2526
+    .line 2534
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -783,7 +783,7 @@
     .parameter "index"
 
     .prologue
-    .line 2433
+    .line 2441
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -799,7 +799,7 @@
     .locals 1
 
     .prologue
-    .line 2422
+    .line 2430
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -822,7 +822,7 @@
     .end annotation
 
     .prologue
-    .line 2399
+    .line 2407
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
 
     return-object v0
@@ -833,7 +833,7 @@
     .parameter "index"
 
     .prologue
-    .line 2445
+    .line 2453
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -858,7 +858,7 @@
     .end annotation
 
     .prologue
-    .line 2411
+    .line 2419
     iget-object v0, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
 
     return-object v0
@@ -887,10 +887,10 @@
     .locals 5
 
     .prologue
-    .line 2477
+    .line 2485
     iget v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedSerializedSize:I
 
-    .line 2478
+    .line 2486
     .local v1, size:I
     const/4 v3, -0x1
 
@@ -898,19 +898,19 @@
 
     move v2, v1
 
-    .line 2487
+    .line 2495
     .end local v1           #size:I
     .local v2, size:I
     :goto_0
     return v2
 
-    .line 2480
+    .line 2488
     .end local v2           #size:I
     .restart local v1       #size:I
     :cond_0
     const/4 v1, 0x0
 
-    .line 2481
+    .line 2489
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -923,7 +923,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 2482
+    .line 2490
     const/4 v4, 0x1
 
     iget-object v3, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
@@ -940,12 +940,12 @@
 
     add-int/2addr v1, v3
 
-    .line 2481
+    .line 2489
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 2485
+    .line 2493
     :cond_1
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -957,12 +957,12 @@
 
     add-int/2addr v1, v3
 
-    .line 2486
+    .line 2494
     iput v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedSerializedSize:I
 
     move v2, v1
 
-    .line 2487
+    .line 2495
     .end local v1           #size:I
     .restart local v2       #size:I
     goto :goto_0
@@ -1002,12 +1002,12 @@
     .locals 1
 
     .prologue
-    .line 2501
+    .line 2509
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 2502
+    .line 2510
     const-string v0, "com.google.protos.logs_proto.MutableLogsAnnotations$MessageDetails"
 
     invoke-static {v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1016,7 +1016,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 2504
+    .line 2512
     :cond_0
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1031,10 +1031,10 @@
 
     const/4 v2, 0x1
 
-    .line 2453
+    .line 2461
     iget-byte v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedIsInitialized:B
 
-    .line 2454
+    .line 2462
     .local v1, isInitialized:B
     const/4 v4, -0x1
 
@@ -1042,17 +1042,17 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 2463
+    .line 2471
     :goto_0
     return v2
 
     :cond_0
     move v2, v3
 
-    .line 2454
+    .line 2462
     goto :goto_0
 
-    .line 2456
+    .line 2464
     :cond_1
     const/4 v0, 0x0
 
@@ -1064,7 +1064,7 @@
 
     if-ge v0, v4, :cond_3
 
-    .line 2457
+    .line 2465
     invoke-virtual {p0, v0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getMayAppearIn(I)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
 
     move-result-object v4
@@ -1075,21 +1075,21 @@
 
     if-nez v4, :cond_2
 
-    .line 2458
+    .line 2466
     iput-byte v3, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedIsInitialized:B
 
     move v2, v3
 
-    .line 2459
+    .line 2467
     goto :goto_0
 
-    .line 2456
+    .line 2464
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 2462
+    .line 2470
     :cond_3
     iput-byte v2, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->memoizedIsInitialized:B
 
@@ -1137,7 +1137,7 @@
     .locals 1
 
     .prologue
-    .line 2561
+    .line 2569
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->newBuilder()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1150,14 +1150,14 @@
     .parameter "parent"
 
     .prologue
-    .line 2570
+    .line 2578
     new-instance v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/protos/logs_proto/LogsAnnotations$1;)V
 
-    .line 2571
+    .line 2579
     .local v0, builder:Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
     return-object v0
 .end method
@@ -1190,7 +1190,7 @@
     .locals 1
 
     .prologue
-    .line 2565
+    .line 2573
     invoke-static {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->newBuilder(Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Builder;
 
     move-result-object v0
@@ -1207,7 +1207,7 @@
     .end annotation
 
     .prologue
-    .line 2494
+    .line 2502
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1225,10 +1225,10 @@
     .end annotation
 
     .prologue
-    .line 2468
+    .line 2476
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getSerializedSize()I
 
-    .line 2469
+    .line 2477
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -1241,7 +1241,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 2470
+    .line 2478
     const/4 v2, 0x1
 
     iget-object v1, p0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->mayAppearIn_:Ljava/util/List;
@@ -1254,12 +1254,12 @@
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2469
+    .line 2477
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2472
+    .line 2480
     :cond_0
     invoke-virtual {p0}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1267,6 +1267,6 @@
 
     invoke-virtual {v1, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 2473
+    .line 2481
     return-void
 .end method

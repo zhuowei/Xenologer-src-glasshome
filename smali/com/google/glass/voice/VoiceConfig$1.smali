@@ -25,7 +25,7 @@
     .parameter "x5"
 
     .prologue
-    .line 23
+    .line 28
     invoke-direct/range {p0 .. p6}, Lcom/google/glass/voice/VoiceConfig;-><init>(Lcom/google/glass/voice/VoiceConfig$Type;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
@@ -33,12 +33,25 @@
 
 
 # virtual methods
-.method public getSensoryRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+.method public bridge synthetic getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/HotwordRecognizer;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 28
+    invoke-virtual {p0, p1}, Lcom/google/glass/voice/VoiceConfig$1;->getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public getHotwordRecognizer(Landroid/content/Context;)Lcom/google/glass/voice/Sensory;
     .locals 1
     .parameter "context"
 
     .prologue
-    .line 26
+    .line 31
     const/4 v0, 0x0
 
     return-object v0

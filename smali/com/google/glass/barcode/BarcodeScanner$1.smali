@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 73
+    .line 71
     iput-object p1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
     invoke-direct {p0}, Lcom/google/glass/camera/SharedCameraClient;-><init>()V
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 134
     invoke-static {}, Lcom/google/glass/barcode/BarcodeScanner;->access$800()Ljava/lang/String;
 
     move-result-object v0
@@ -46,12 +46,12 @@
     return-object v0
 .end method
 
-.method protected onCameraError(Ljava/lang/String;)V
+.method public onCameraError(Ljava/lang/String;)V
     .locals 2
     .parameter "message"
 
     .prologue
-    .line 131
+    .line 129
     iget-object v0, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
     #getter for: Lcom/google/glass/barcode/BarcodeScanner;->listener:Lcom/google/glass/barcode/BarcodeScanner$BarcodeScannerListener;
@@ -63,17 +63,17 @@
 
     invoke-interface {v0, v1}, Lcom/google/glass/barcode/BarcodeScanner$BarcodeScannerListener;->onError(Lcom/google/glass/barcode/BarcodeScanner$BarcodeError;)V
 
-    .line 132
+    .line 130
     return-void
 .end method
 
-.method protected onPreviewFrame([BJ)V
+.method public onPreviewFrame([BJ)V
     .locals 5
     .parameter "frame"
     .parameter "captureTimeNanos"
 
     .prologue
-    .line 77
+    .line 75
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
     #getter for: Lcom/google/glass/barcode/BarcodeScanner;->shouldIgnorePreviewFrames:Z
@@ -83,12 +83,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 127
+    .line 125
     :cond_0
     :goto_0
     return-void
 
-    .line 82
+    .line 80
     :cond_1
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
@@ -99,13 +99,13 @@
 
     if-nez v1, :cond_2
 
-    .line 83
+    .line 81
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
     #setter for: Lcom/google/glass/barcode/BarcodeScanner;->firstPreviewFrameTimeNanos:J
     invoke-static {v1, p2, p3}, Lcom/google/glass/barcode/BarcodeScanner;->access$202(Lcom/google/glass/barcode/BarcodeScanner;J)J
 
-    .line 87
+    .line 85
     :cond_2
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
@@ -124,7 +124,7 @@
 
     if-nez v1, :cond_0
 
-    .line 92
+    .line 90
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
     #getter for: Lcom/google/glass/barcode/BarcodeScanner;->firstPreviewFrameTimeNanos:J
@@ -145,7 +145,7 @@
 
     if-lez v1, :cond_3
 
-    .line 93
+    .line 91
     iget-object v1, p0, Lcom/google/glass/barcode/BarcodeScanner$1;->this$0:Lcom/google/glass/barcode/BarcodeScanner;
 
     #getter for: Lcom/google/glass/barcode/BarcodeScanner;->listener:Lcom/google/glass/barcode/BarcodeScanner$BarcodeScannerListener;
@@ -157,11 +157,11 @@
 
     invoke-interface {v1, v2}, Lcom/google/glass/barcode/BarcodeScanner$BarcodeScannerListener;->onError(Lcom/google/glass/barcode/BarcodeScanner$BarcodeError;)V
 
-    .line 98
+    .line 96
     :cond_3
     sget-object v0, Lcom/google/glass/camera/SharedCameraConstants;->PREVIEW_SIZE:Lcom/google/glass/camera/Size;
 
-    .line 99
+    .line 97
     .local v0, previewSize:Lcom/google/glass/camera/Size;
     new-instance v1, Lcom/google/glass/barcode/BarcodeScanner$1$1;
 

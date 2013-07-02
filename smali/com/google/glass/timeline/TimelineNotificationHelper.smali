@@ -8,7 +8,11 @@
 
 .field private static final ATTACHMENT_TYPES_TO_PRELOAD:[Ljava/lang/String; = null
 
+.field public static final EXTRA_BUNDLE_ITEM:Ljava/lang/String; = "bundle_item"
+
 .field public static final EXTRA_BUNDLE_ITEM_ID:Ljava/lang/String; = "bundle_item_id"
+
+.field public static final EXTRA_ITEM:Ljava/lang/String; = "item"
 
 .field public static final EXTRA_ITEM_ID:Ljava/lang/String; = "item_id"
 
@@ -33,7 +37,7 @@
 
     sput-object v0, Lcom/google/glass/timeline/TimelineNotificationHelper;->TAG:Ljava/lang/String;
 
-    .line 52
+    .line 58
     invoke-static {}, Lcom/google/glass/timeline/TimelineNotificationHelper;->getAttachmentTypesToPreload()[Ljava/lang/String;
 
     move-result-object v0
@@ -67,12 +71,12 @@
     .locals 2
 
     .prologue
-    .line 187
+    .line 204
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 188
+    .line 205
     .local v0, types:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     sget-object v1, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_IMAGE_MIME_TYPES:[Ljava/lang/String;
 
@@ -82,12 +86,12 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 189
+    .line 206
     const-string v1, "video/vnd.google-glass.stream-url"
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 190
+    .line 207
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v1
@@ -110,7 +114,7 @@
     .parameter "numNotifications"
 
     .prologue
-    .line 66
+    .line 71
     invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getThreadPoolExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v0
@@ -121,7 +125,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 124
+    .line 131
     return-void
 .end method
 
@@ -133,12 +137,12 @@
     .end annotation
 
     .prologue
-    .line 135
+    .line 142
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtml()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 136
+    .line 143
     .local v2, html:Ljava/lang/String;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -146,12 +150,12 @@
 
     if-nez v6, :cond_1
 
-    .line 137
+    .line 144
     new-instance v4, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v4}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 139
+    .line 146
     .local v4, renderer:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<Lcom/google/glass/html/HtmlRenderer;>;"
     :try_start_0
     new-instance v5, Ljava/util/concurrent/CountDownLatch;
@@ -160,7 +164,7 @@
 
     invoke-direct {v5, v6}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    .line 142
+    .line 149
     .local v5, resourceLoadLatch:Ljava/util/concurrent/CountDownLatch;
     invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
@@ -174,7 +178,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 160
+    .line 177
     const-wide/16 v6, 0x1e
 
     :try_start_1
@@ -185,7 +189,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 165
+    .line 182
     :goto_0
     invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
@@ -197,20 +201,20 @@
 
     invoke-interface {v6, v7}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 184
+    .line 201
     .end local v4           #renderer:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<Lcom/google/glass/html/HtmlRenderer;>;"
     .end local v5           #resourceLoadLatch:Ljava/util/concurrent/CountDownLatch;
     :cond_0
     :goto_1
     return-void
 
-    .line 161
+    .line 178
     .restart local v4       #renderer:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<Lcom/google/glass/html/HtmlRenderer;>;"
     .restart local v5       #resourceLoadLatch:Ljava/util/concurrent/CountDownLatch;
     :catch_0
     move-exception v1
 
-    .line 162
+    .line 179
     .local v1, e:Ljava/lang/InterruptedException;
     :try_start_2
     sget-object v6, Lcom/google/glass/timeline/TimelineNotificationHelper;->TAG:Ljava/lang/String;
@@ -223,7 +227,7 @@
 
     goto :goto_0
 
-    .line 165
+    .line 182
     .end local v1           #e:Ljava/lang/InterruptedException;
     .end local v5           #resourceLoadLatch:Ljava/util/concurrent/CountDownLatch;
     :catchall_0
@@ -241,7 +245,7 @@
 
     throw v6
 
-    .line 175
+    .line 192
     .end local v4           #renderer:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<Lcom/google/glass/html/HtmlRenderer;>;"
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachmentList()Ljava/util/List;
@@ -266,7 +270,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Attachment;
 
-    .line 176
+    .line 193
     .local v0, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment;->getContentType()Ljava/lang/String;
 
@@ -280,7 +284,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 178
+    .line 195
     sget-object v6, Lcom/google/glass/timeline/TimelineNotificationHelper;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -313,10 +317,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 179
+    .line 196
     const/4 v6, 0x0
 
-    invoke-virtual {p0, v0, v6}, Lcom/google/glass/util/CachedBitmapFactory;->decodeAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Z)Landroid/graphics/Bitmap;
+    const/4 v7, 0x0
+
+    invoke-virtual {p0, v0, v6, v7}, Lcom/google/glass/util/CachedBitmapFactory;->decodeAttachment(Lcom/google/googlex/glass/common/proto/Attachment;ZLcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     goto :goto_1
 .end method

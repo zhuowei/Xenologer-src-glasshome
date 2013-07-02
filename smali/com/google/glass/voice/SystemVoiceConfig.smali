@@ -21,6 +21,8 @@
 
 .field public static final enum GUARD:Lcom/google/glass/voice/SystemVoiceConfig;
 
+.field public static final enum INCOMING_CALL:Lcom/google/glass/voice/SystemVoiceConfig;
+
 .field public static final enum MAIN_MENU:Lcom/google/glass/voice/SystemVoiceConfig;
 
 .field public static final enum NAVIGATION:Lcom/google/glass/voice/SystemVoiceConfig;
@@ -31,9 +33,13 @@
 
 .field public static final enum OFF:Lcom/google/glass/voice/SystemVoiceConfig;
 
+.field public static final enum PHOTO_SHARE_TARGETS:Lcom/google/glass/voice/SystemVoiceConfig;
+
 .field public static final enum PLUS_SHARE_TARGETS:Lcom/google/glass/voice/SystemVoiceConfig;
 
 .field public static final enum SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
+
+.field public static final enum SHARE:Lcom/google/glass/voice/SystemVoiceConfig;
 
 .field public static final enum SOUND_SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
 
@@ -118,60 +124,93 @@
     .line 16
     new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
 
-    const-string v1, "NOTIFICATION"
+    const-string v1, "PHOTO_SHARE_TARGETS"
 
     const/4 v2, 0x6
 
     invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;IZ)V
 
-    sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->NOTIFICATION:Lcom/google/glass/voice/SystemVoiceConfig;
+    sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->PHOTO_SHARE_TARGETS:Lcom/google/glass/voice/SystemVoiceConfig;
 
     .line 17
     new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
 
-    const-string v1, "SEARCH"
+    const-string v1, "NOTIFICATION"
 
     const/4 v2, 0x7
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->NOTIFICATION:Lcom/google/glass/voice/SystemVoiceConfig;
+
+    .line 18
+    new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
+
+    const-string v1, "SHARE"
+
+    const/16 v2, 0x8
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->SHARE:Lcom/google/glass/voice/SystemVoiceConfig;
+
+    .line 19
+    new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
+
+    const-string v1, "INCOMING_CALL"
+
+    const/16 v2, 0x9
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;IZ)V
+
+    sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->INCOMING_CALL:Lcom/google/glass/voice/SystemVoiceConfig;
+
+    .line 20
+    new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
+
+    const-string v1, "SEARCH"
+
+    const/16 v2, 0xa
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
 
-    .line 18
+    .line 21
     new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
 
     const-string v1, "SOUND_SEARCH"
 
-    const/16 v2, 0x8
+    const/16 v2, 0xb
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->SOUND_SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
 
-    .line 19
+    .line 22
     new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
 
     const-string v1, "NAVIGATION"
 
-    const/16 v2, 0x9
+    const/16 v2, 0xc
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->NAVIGATION:Lcom/google/glass/voice/SystemVoiceConfig;
 
-    .line 20
+    .line 23
     new-instance v0, Lcom/google/glass/voice/SystemVoiceConfig;
 
     const-string v1, "VOICE_RECORD"
 
-    const/16 v2, 0xa
+    const/16 v2, 0xd
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;I)V
 
     sput-object v0, Lcom/google/glass/voice/SystemVoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/SystemVoiceConfig;
 
     .line 9
-    const/16 v0, 0xb
+    const/16 v0, 0xe
 
     new-array v0, v0, [Lcom/google/glass/voice/SystemVoiceConfig;
 
@@ -203,29 +242,47 @@
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->NOTIFICATION:Lcom/google/glass/voice/SystemVoiceConfig;
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->PHOTO_SHARE_TARGETS:Lcom/google/glass/voice/SystemVoiceConfig;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->NOTIFICATION:Lcom/google/glass/voice/SystemVoiceConfig;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->SOUND_SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->SHARE:Lcom/google/glass/voice/SystemVoiceConfig;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->NAVIGATION:Lcom/google/glass/voice/SystemVoiceConfig;
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->INCOMING_CALL:Lcom/google/glass/voice/SystemVoiceConfig;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
+
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xb
+
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->SOUND_SEARCH:Lcom/google/glass/voice/SystemVoiceConfig;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xc
+
+    sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->NAVIGATION:Lcom/google/glass/voice/SystemVoiceConfig;
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xd
 
     sget-object v2, Lcom/google/glass/voice/SystemVoiceConfig;->VOICE_RECORD:Lcom/google/glass/voice/SystemVoiceConfig;
 
@@ -247,12 +304,12 @@
     .end annotation
 
     .prologue
-    .line 23
+    .line 26
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0}, Lcom/google/glass/voice/SystemVoiceConfig;-><init>(Ljava/lang/String;IZ)V
 
-    .line 24
+    .line 27
     return-void
 .end method
 
@@ -260,7 +317,7 @@
     .locals 0
     .parameter
     .parameter
-    .parameter "sensory"
+    .parameter "hotword"
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
@@ -268,13 +325,13 @@
     .end annotation
 
     .prologue
-    .line 26
+    .line 29
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 27
+    .line 30
     iput-boolean p3, p0, Lcom/google/glass/voice/SystemVoiceConfig;->isHotwordBased:Z
 
-    .line 28
+    .line 31
     return-void
 .end method
 

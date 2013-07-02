@@ -30,7 +30,7 @@
     .line 31
     new-instance v0, Ljava/util/HashSet;
 
-    const/16 v1, 0x8
+    const/16 v1, 0x9
 
     invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(I)V
 
@@ -89,6 +89,15 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 40
+    .line 39
+    const/16 v1, 0x15f
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 41
     return-object v0
 .end method

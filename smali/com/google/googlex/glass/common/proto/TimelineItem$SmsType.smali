@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 740
+    .line 764
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     const-string v1, "NATIVE"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->NATIVE:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
-    .line 748
+    .line 772
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     const-string v1, "GOOGLE_VOICE"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->GOOGLE_VOICE:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
-    .line 757
+    .line 781
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     const-string v1, "COMPANION_DECIDES"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->COMPANION_DECIDES:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
-    .line 731
+    .line 755
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->$VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
-    .line 803
+    .line 827
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 823
+    .line 847
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->values()[Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 837
+    .line 861
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 838
+    .line 862
     iput p3, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->index:I
 
-    .line 839
+    .line 863
     iput p4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->value:I
 
-    .line 840
+    .line 864
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 820
+    .line 844
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 800
+    .line 824
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 790
+    .line 814
     packed-switch p0, :pswitch_data_0
 
-    .line 794
+    .line 818
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 791
+    .line 815
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->NATIVE:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     goto :goto_0
 
-    .line 792
+    .line 816
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->GOOGLE_VOICE:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     goto :goto_0
 
-    .line 793
+    .line 817
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->COMPANION_DECIDES:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     goto :goto_0
 
-    .line 790
+    .line 814
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 827
+    .line 851
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 828
+    .line 852
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 831
+    .line 855
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 731
+    .line 755
     const-class v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 731
+    .line 755
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->$VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 816
+    .line 840
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 787
+    .line 811
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 812
+    .line 836
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

@@ -26,7 +26,11 @@
 
 .field public static final IS_COMMUNICATION_TARGET:Ljava/lang/String; = "is_communication_target"
 
+.field public static final IS_IN_MY_CONTACTS:Ljava/lang/String; = "is_in_my_contacts"
+
 .field public static final IS_SHARE_TARGET:Ljava/lang/String; = "is_share_target"
+
+.field public static final OBFUSCATED_GAIA_ID:Ljava/lang/String; = "obfuscated_gaia_id"
 
 .field public static final PHONE_NUMBER:Ljava/lang/String; = "phone_number"
 
@@ -42,13 +46,15 @@
 
 .field public static final SOURCE:Ljava/lang/String; = "source"
 
+.field public static final TYPE:Ljava/lang/String; = "type"
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 150
+    .line 114
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

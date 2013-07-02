@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 7131
+    .line 7577
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 7131
+    .line 7577
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel$1;->findValueByNumber(I)Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "number"
 
     .prologue
-    .line 7133
+    .line 7579
     invoke-static {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;->valueOf(I)Lcom/google/protobuf/MutableDescriptorProtos$FileOptions$CompatibilityLevel;
 
     move-result-object v0

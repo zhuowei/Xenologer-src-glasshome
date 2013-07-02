@@ -47,21 +47,21 @@
     .end annotation
 
     .prologue
-    .line 50
+    .line 54
     .local p1, cards:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/home/search/results/HtmlAnswerCard;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 51
+    .line 55
     invoke-static {p1}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;->cards:Ljava/util/List;
 
-    .line 52
+    .line 56
     iput-object p2, p0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;->autoplayTtsFormatString:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
 
-    .line 53
+    .line 57
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .parameter "x2"
 
     .prologue
-    .line 45
+    .line 49
     invoke-direct {p0, p1, p2}, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;-><init>(Ljava/util/List;Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;)V
 
     return-void

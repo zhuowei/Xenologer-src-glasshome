@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 461
+    .line 464
     iput-object p1, p0, Lcom/google/glass/share/ShareActivity$2$1;->this$1:Lcom/google/glass/share/ShareActivity$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 5
 
     .prologue
-    .line 464
+    .line 467
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$2$1;->this$1:Lcom/google/glass/share/ShareActivity$2;
 
     iget-object v0, v0, Lcom/google/glass/share/ShareActivity$2;->this$0:Lcom/google/glass/share/ShareActivity;
@@ -67,6 +67,6 @@
     #calls: Lcom/google/glass/share/ShareActivity;->shareItem(Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;Ljava/lang/String;I)V
     invoke-static {v0, v1, v2, v3, v4}, Lcom/google/glass/share/ShareActivity;->access$500(Lcom/google/glass/share/ShareActivity;Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;Ljava/lang/String;I)V
 
-    .line 465
+    .line 468
     return-void
 .end method

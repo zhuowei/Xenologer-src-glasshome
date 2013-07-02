@@ -23,10 +23,10 @@
     .locals 1
 
     .prologue
-    .line 27
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 39
+    .line 40
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->glasswareIconLoadingTask:Lcom/google/glass/util/GlasswareIconLoadingTask;
@@ -41,7 +41,7 @@
     .parameter "view"
 
     .prologue
-    .line 124
+    .line 128
     sget v2, Lcom/google/glass/home/R$id;->source_icon:I
 
     invoke-virtual {p3, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -50,7 +50,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 126
+    .line 130
     .local v0, iconView:Landroid/widget/ImageView;
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasSource()Z
 
@@ -70,7 +70,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 127
+    .line 131
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSource()Ljava/lang/String;
 
     move-result-object v2
@@ -85,7 +85,7 @@
 
     move-result-object v1
 
-    .line 128
+    .line 132
     .local v1, projectId:Ljava/lang/String;
     new-instance v2, Lcom/google/glass/util/GlasswareIconLoadingTask;
 
@@ -95,17 +95,17 @@
 
     iput-object v2, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->glasswareIconLoadingTask:Lcom/google/glass/util/GlasswareIconLoadingTask;
 
-    .line 130
+    .line 134
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->glasswareIconLoadingTask:Lcom/google/glass/util/GlasswareIconLoadingTask;
 
     invoke-static {p3, v2}, Lcom/google/glass/util/DeferredContentLoader;->loadForScrollItemSubview(Landroid/view/View;Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
-    .line 134
+    .line 138
     .end local v1           #projectId:Ljava/lang/String;
     :goto_0
     return-void
 
-    .line 132
+    .line 136
     :cond_0
     const/16 v2, 0x8
 
@@ -120,12 +120,12 @@
     .parameter "view"
 
     .prologue
-    .line 157
+    .line 161
     invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->provideInfoText(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 158
+    .line 162
     .local v0, infoText:Ljava/lang/String;
     sget v2, Lcom/google/glass/home/R$id;->info:I
 
@@ -135,7 +135,7 @@
 
     check-cast v1, Lcom/google/glass/widget/TypophileTextView;
 
-    .line 159
+    .line 163
     .local v1, infoView:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -143,19 +143,19 @@
 
     if-nez v2, :cond_0
 
-    .line 160
+    .line 164
     invoke-virtual {v1, v0}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 161
+    .line 165
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/glass/widget/TypophileTextView;->setVisibility(I)V
 
-    .line 165
+    .line 169
     :goto_0
     return-void
 
-    .line 163
+    .line 167
     :cond_0
     const/4 v2, 0x4
 
@@ -174,7 +174,7 @@
 
     const/16 v2, 0x8
 
-    .line 137
+    .line 141
     sget v1, Lcom/google/glass/home/R$id;->sync:I
 
     invoke-virtual {p2, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -183,7 +183,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 139
+    .line 143
     .local v0, syncingView:Landroid/widget/ImageView;
     invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->shouldHideSyncIcon(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
@@ -191,14 +191,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 140
+    .line 144
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 154
+    .line 158
     :goto_0
     return-void
 
-    .line 142
+    .line 146
     :cond_0
     invoke-static {p1}, Lcom/google/glass/timeline/TimelineHelper;->canSyncToCompanion(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
@@ -206,25 +206,25 @@
 
     if-eqz v1, :cond_2
 
-    .line 143
+    .line 147
     invoke-static {p1}, Lcom/google/glass/timeline/TimelineHelper;->isSyncingToCompanion(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 144
+    .line 148
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 146
+    .line 150
     :cond_1
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 148
+    .line 152
     :cond_2
     invoke-static {p1}, Lcom/google/glass/timeline/TimelineHelper;->isSyncingToCloud(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 
@@ -232,12 +232,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 149
+    .line 153
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 151
+    .line 155
     :cond_3
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
@@ -255,7 +255,7 @@
 
     const/4 v9, 0x0
 
-    .line 86
+    .line 90
     sget v7, Lcom/google/glass/home/R$id;->timestamp:I
 
     invoke-virtual {p3, v7}, Landroid/view/View;->findViewById(I)Landroid/view/View;
@@ -264,13 +264,13 @@
 
     check-cast v3, Lcom/google/glass/widget/TypophileTextView;
 
-    .line 88
+    .line 92
     .local v3, timeView:Lcom/google/glass/widget/TypophileTextView;
     invoke-static {p2}, Lcom/google/glass/timeline/TimelineHelper;->getDisplayTime(Lcom/google/googlex/glass/common/proto/TimelineItem;)J
 
     move-result-wide v4
 
-    .line 91
+    .line 95
     .local v4, timestamp:J
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIsPinned()Z
 
@@ -292,7 +292,7 @@
 
     move v1, v8
 
-    .line 97
+    .line 101
     .local v1, hasPinScore:Z
     :goto_0
     const-wide/16 v10, 0x0
@@ -316,16 +316,16 @@
 
     if-nez v7, :cond_3
 
-    .line 100
+    .line 104
     :cond_1
     const/4 v7, 0x0
 
     invoke-virtual {v3, v7}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 101
+    .line 105
     iput v9, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->timestampWidth:I
 
-    .line 121
+    .line 125
     :goto_1
     return-void
 
@@ -333,23 +333,23 @@
     :cond_2
     move v1, v9
 
-    .line 91
+    .line 95
     goto :goto_0
 
-    .line 105
+    .line 109
     .restart local v1       #hasPinScore:Z
     :cond_3
     invoke-static {p1, v4, v5}, Lcom/google/glass/util/DateHelper;->getRelativeTimestamp(Landroid/content/Context;J)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 107
+    .line 111
     .local v2, relativeTime:Ljava/lang/String;
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachmentList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 108
+    .line 112
     .local v0, attachments:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Attachment;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -375,7 +375,7 @@
 
     if-eqz v7, :cond_4
 
-    .line 109
+    .line 113
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v7
@@ -396,7 +396,7 @@
 
     move-result-object v6
 
-    .line 113
+    .line 117
     .local v6, toRelativeTime:Ljava/lang/String;
     invoke-virtual {v6, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -404,7 +404,7 @@
 
     if-nez v7, :cond_4
 
-    .line 114
+    .line 118
     sget v7, Lcom/google/glass/home/R$string;->timeline_time_from_to:I
 
     const/4 v10, 0x2
@@ -419,12 +419,12 @@
 
     move-result-object v2
 
-    .line 119
+    .line 123
     .end local v6           #toRelativeTime:Ljava/lang/String;
     :cond_4
     invoke-virtual {v3, v2}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 120
+    .line 124
     invoke-virtual {v3}, Lcom/google/glass/widget/TypophileTextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v7
@@ -451,10 +451,10 @@
     .parameter "originalItem"
 
     .prologue
-    .line 198
+    .line 202
     if-eqz p2, :cond_0
 
-    .line 199
+    .line 203
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -481,17 +481,17 @@
 
     move-result-object v0
 
-    .line 200
+    .line 204
     .local v0, id:Ljava/lang/String;
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setId(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 202
+    .line 206
     .end local v0           #id:Ljava/lang/String;
     :cond_0
     return-void
 .end method
 
-.method public bind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
+.method public bind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;Lcom/google/glass/home/timeline/TimelineItemAdapter$ContentSizedListener;)Z
     .locals 2
     .parameter "context"
     .parameter "item"
@@ -500,24 +500,25 @@
     .parameter "view"
     .parameter "bitmapFactory"
     .parameter "textClipListener"
+    .parameter "contentSizedListener"
 
     .prologue
-    .line 47
+    .line 49
     if-nez p4, :cond_0
 
-    .line 48
+    .line 50
     invoke-direct {p0, p1, p2, p5}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->bindTimestamp(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Landroid/view/View;)V
 
-    .line 49
+    .line 51
     invoke-direct {p0, p1, p2, p5}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->bindGlasswareIcon(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Landroid/view/View;)V
 
-    .line 50
+    .line 52
     invoke-direct {p0, p2, p5}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->bindSyncIcon(Lcom/google/googlex/glass/common/proto/TimelineItem;Landroid/view/View;)V
 
-    .line 51
+    .line 53
     invoke-direct {p0, p2, p5}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->bindInfo(Lcom/google/googlex/glass/common/proto/TimelineItem;Landroid/view/View;)V
 
-    .line 55
+    .line 57
     :cond_0
     sget v1, Lcom/google/glass/home/R$id;->timeline_item_footer:I
 
@@ -529,28 +530,28 @@
 
     move-result-object v0
 
-    .line 56
+    .line 58
     .local v0, timelineItemFooter:Landroid/view/View;
     if-eqz v0, :cond_1
 
-    .line 57
+    .line 59
     if-eqz p4, :cond_2
 
-    .line 58
+    .line 60
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 64
+    .line 66
     :cond_1
     :goto_0
-    invoke-virtual/range {p0 .. p7}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
+    invoke-virtual/range {p0 .. p8}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;Lcom/google/glass/home/timeline/TimelineItemAdapter$ContentSizedListener;)Z
 
     move-result v1
 
     return v1
 
-    .line 60
+    .line 62
     :cond_2
     const/4 v1, 0x0
 
@@ -565,28 +566,28 @@
     .parameter "willBindSameItem"
 
     .prologue
-    .line 182
+    .line 186
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->glasswareIconLoadingTask:Lcom/google/glass/util/GlasswareIconLoadingTask;
 
     if-eqz v0, :cond_0
 
-    .line 183
+    .line 187
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->glasswareIconLoadingTask:Lcom/google/glass/util/GlasswareIconLoadingTask;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/GlasswareIconLoadingTask;->cancel(Z)V
 
-    .line 184
+    .line 188
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->glasswareIconLoadingTask:Lcom/google/glass/util/GlasswareIconLoadingTask;
 
-    .line 186
+    .line 190
     :cond_0
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->onClear(Landroid/view/View;Z)V
 
-    .line 187
+    .line 191
     return-void
 .end method
 
@@ -595,12 +596,12 @@
     .parameter "item"
 
     .prologue
-    .line 211
+    .line 215
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getId()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 212
+    .line 216
     .local v0, id:Ljava/lang/String;
     const-string v2, ":"
 
@@ -610,7 +611,7 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 213
+    .line 217
     .local v1, splitPoint:I
     if-lez v1, :cond_0
 
@@ -620,7 +621,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 214
+    .line 218
     invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v2
@@ -629,7 +630,7 @@
 
     move-result v2
 
-    .line 216
+    .line 220
     :goto_0
     return v2
 
@@ -646,13 +647,13 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 86
     iget v0, p0, Lcom/google/glass/home/timeline/database/BaseItemViewBinder;->timestampWidth:I
 
     return v0
 .end method
 
-.method protected abstract onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;)Z
+.method protected abstract onBind(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;ZZLandroid/view/View;Lcom/google/glass/util/CachedBitmapFactory;Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;Lcom/google/glass/home/timeline/TimelineItemAdapter$ContentSizedListener;)Z
 .end method
 
 .method protected abstract onClear(Landroid/view/View;Z)V
@@ -663,7 +664,7 @@
     .parameter "item"
 
     .prologue
-    .line 169
+    .line 173
     const/4 v0, 0x0
 
     return-object v0
@@ -674,7 +675,7 @@
     .parameter "item"
 
     .prologue
-    .line 174
+    .line 178
     const/4 v0, 0x0
 
     return v0
@@ -685,7 +686,7 @@
     .parameter "item"
 
     .prologue
-    .line 74
+    .line 78
     const/4 v0, 0x1
 
     return v0

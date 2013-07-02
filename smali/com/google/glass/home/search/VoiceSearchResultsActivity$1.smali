@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 358
+    .line 436
     iput-object p1, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$1;->this$0:Lcom/google/glass/home/search/VoiceSearchResultsActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/search/VoiceSearchResultsActivity$1;->val$networkUri:Ljava/lang/String;
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 361
+    .line 439
     invoke-static {}, Lcom/google/glass/voice/network/translate/NetworkTts;->getSharedInstance()Lcom/google/glass/voice/network/translate/NetworkTts;
 
     move-result-object v0
@@ -55,6 +55,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/translate/NetworkTts;->requestTtsAndPlay(Ljava/lang/String;)Z
 
-    .line 362
+    .line 440
     return-void
 .end method

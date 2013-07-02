@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 107
+    .line 117
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter$1;->this$0:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
     iput-boolean p2, p0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter$1;->val$goHome:Z
@@ -46,17 +46,17 @@
     .locals 1
 
     .prologue
-    .line 111
+    .line 121
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter$1;->this$0:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/active/ActiveItemAdapter;->notifyDataSetChanged()V
 
-    .line 112
+    .line 122
     iget-boolean v0, p0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter$1;->val$goHome:Z
 
     if-eqz v0, :cond_0
 
-    .line 113
+    .line 123
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/ActiveItemAdapter$1;->this$0:Lcom/google/glass/home/timeline/active/ActiveItemAdapter;
 
     #getter for: Lcom/google/glass/home/timeline/active/ActiveItemAdapter;->context:Landroid/app/Activity;
@@ -66,7 +66,7 @@
 
     invoke-static {v0}, Lcom/google/glass/timeline/TimelineHelper;->goToTimelineHome(Landroid/content/Context;)V
 
-    .line 115
+    .line 125
     :cond_0
     return-void
 .end method

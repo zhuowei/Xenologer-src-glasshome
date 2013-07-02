@@ -21,6 +21,7 @@
         Lcom/google/protobuf/MutableDescriptorProtos$ServiceDescriptorProto;,
         Lcom/google/protobuf/MutableDescriptorProtos$EnumValueDescriptorProto;,
         Lcom/google/protobuf/MutableDescriptorProtos$EnumDescriptorProto;,
+        Lcom/google/protobuf/MutableDescriptorProtos$OneofDescriptorProto;,
         Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;,
         Lcom/google/protobuf/MutableDescriptorProtos$DescriptorProto;,
         Lcom/google/protobuf/MutableDescriptorProtos$FileDescriptorProto;,
@@ -92,6 +93,10 @@
 
 .field private static internal_static_proto2_MethodOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
+.field private static internal_static_proto2_OneofDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+.field private static internal_static_proto2_OneofDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+
 .field private static internal_static_proto2_ServiceDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
 .field private static internal_static_proto2_ServiceDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
@@ -140,12 +145,12 @@
 
     const/4 v5, 0x0
 
-    .line 20285
+    .line 20914
     sget-object v0, Lcom/google/protobuf/DescriptorProtosInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 20286
+    .line 20915
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -162,7 +167,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileDescriptorSet_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20288
+    .line 20917
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileDescriptorSet_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -177,7 +182,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileDescriptorSet_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20292
+    .line 20921
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -194,7 +199,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20294
+    .line 20923
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -263,7 +268,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20298
+    .line 20927
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -280,12 +285,12 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20300
+    .line 20929
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/4 v2, 0x7
+    const/16 v2, 0x8
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -317,6 +322,12 @@
 
     const/4 v3, 0x6
 
+    const-string v4, "OneofDecl"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x7
+
     const-string v4, "Options"
 
     aput-object v4, v2, v3
@@ -325,7 +336,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20304
+    .line 20933
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
@@ -340,7 +351,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_ExtensionRange_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20306
+    .line 20935
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_ExtensionRange_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -359,7 +370,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_DescriptorProto_ExtensionRange_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20310
+    .line 20939
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -376,12 +387,12 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20312
+    .line 20941
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/16 v2, 0x8
+    const/16 v2, 0x9
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -419,6 +430,12 @@
 
     const/4 v3, 0x7
 
+    const-string v4, "OneofIndex"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x8
+
     const-string v4, "Options"
 
     aput-object v4, v2, v3
@@ -427,7 +444,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20316
+    .line 20945
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -442,9 +459,43 @@
 
     check-cast v0, Lcom/google/protobuf/Descriptors$Descriptor;
 
+    sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_OneofDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+    .line 20947
+    new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+
+    sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_OneofDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+    new-array v2, v6, [Ljava/lang/String;
+
+    const-string v3, "Name"
+
+    aput-object v3, v2, v5
+
+    invoke-direct {v0, v1, v2}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;-><init>(Lcom/google/protobuf/Descriptors$Descriptor;[Ljava/lang/String;)V
+
+    sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_OneofDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+
+    .line 20951
+    invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->getMessageTypes()Ljava/util/List;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/protobuf/Descriptors$Descriptor;
+
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20318
+    .line 20953
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -467,7 +518,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20322
+    .line 20957
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -476,7 +527,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x5
+    const/4 v1, 0x6
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -486,7 +537,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20324
+    .line 20959
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -509,7 +560,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20328
+    .line 20963
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -518,7 +569,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x6
+    const/4 v1, 0x7
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -528,7 +579,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20330
+    .line 20965
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -555,7 +606,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20334
+    .line 20969
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -564,7 +615,7 @@
 
     move-result-object v0
 
-    const/4 v1, 0x7
+    const/16 v1, 0x8
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -574,7 +625,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20336
+    .line 20971
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -601,7 +652,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20340
+    .line 20975
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -610,7 +661,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x8
+    const/16 v1, 0x9
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -620,7 +671,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20342
+    .line 20977
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -647,7 +698,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20346
+    .line 20981
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -656,7 +707,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x9
+    const/16 v1, 0xa
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -666,12 +717,12 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20348
+    .line 20983
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/16 v2, 0x1a
+    const/16 v2, 0x1b
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -769,53 +820,59 @@
 
     const/16 v3, 0x11
 
-    const-string v4, "OptimizeFor"
+    const-string v4, "JavaStringCheckUtf8"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x12
 
-    const-string v4, "GoPackage"
+    const-string v4, "OptimizeFor"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x13
 
-    const-string v4, "JavascriptPackage"
+    const-string v4, "GoPackage"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x14
 
-    const-string v4, "SzlApiVersion"
+    const-string v4, "JavascriptPackage"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x15
 
-    const-string v4, "CcGenericServices"
+    const-string v4, "SzlApiVersion"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x16
 
-    const-string v4, "JavaGenericServices"
+    const-string v4, "CcGenericServices"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x17
 
-    const-string v4, "PyGenericServices"
+    const-string v4, "JavaGenericServices"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x18
 
-    const-string v4, "Deprecated"
+    const-string v4, "PyGenericServices"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x19
+
+    const-string v4, "Deprecated"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x1a
 
     const-string v4, "UninterpretedOption"
 
@@ -825,7 +882,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20352
+    .line 20987
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -834,7 +891,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -844,7 +901,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20354
+    .line 20989
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -871,7 +928,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20358
+    .line 20993
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -880,7 +937,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xb
+    const/16 v1, 0xc
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -890,7 +947,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20360
+    .line 20995
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -953,7 +1010,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20364
+    .line 20999
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
@@ -968,7 +1025,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20366
+    .line 21001
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -987,7 +1044,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20370
+    .line 21005
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -996,7 +1053,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xc
+    const/16 v1, 0xd
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1006,7 +1063,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20372
+    .line 21007
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1033,7 +1090,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20376
+    .line 21011
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -1042,7 +1099,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xd
+    const/16 v1, 0xe
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1052,7 +1109,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20378
+    .line 21013
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1071,7 +1128,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20382
+    .line 21017
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -1080,7 +1137,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xe
+    const/16 v1, 0xf
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1090,7 +1147,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20384
+    .line 21019
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1117,7 +1174,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20388
+    .line 21023
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -1126,7 +1183,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0xf
+    const/16 v1, 0x10
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1136,7 +1193,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20390
+    .line 21025
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1229,7 +1286,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20394
+    .line 21029
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -1238,7 +1295,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x10
+    const/16 v1, 0x11
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1248,12 +1305,12 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20396
+    .line 21031
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/16 v2, 0x9
+    const/16 v2, 0xb
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -1291,11 +1348,23 @@
 
     const/4 v3, 0x7
 
-    const-string v4, "Deprecated"
+    const-string v4, "Deadline"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x8
+
+    const-string v4, "FailFast"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0x9
+
+    const-string v4, "Deprecated"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xa
 
     const-string v4, "UninterpretedOption"
 
@@ -1305,7 +1374,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20400
+    .line 21035
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -1314,7 +1383,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x11
+    const/16 v1, 0x12
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1324,7 +1393,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20402
+    .line 21037
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1369,7 +1438,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20406
+    .line 21041
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
@@ -1384,7 +1453,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20408
+    .line 21043
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1403,7 +1472,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20412
+    .line 21047
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -1412,7 +1481,7 @@
 
     move-result-object v0
 
-    const/16 v1, 0x12
+    const/16 v1, 0x13
 
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1422,7 +1491,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20414
+    .line 21049
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1437,7 +1506,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20418
+    .line 21053
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
@@ -1452,7 +1521,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_Location_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 20420
+    .line 21055
     new-instance v0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_Location_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -1479,7 +1548,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_Location_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
-    .line 20424
+    .line 21059
     return-void
 .end method
 
@@ -1518,7 +1587,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_OneofDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1528,7 +1597,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_OneofDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1538,7 +1607,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1548,7 +1617,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1558,7 +1627,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1568,7 +1637,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1578,7 +1647,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1588,7 +1657,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1598,7 +1667,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1608,7 +1677,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1628,7 +1697,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1638,7 +1707,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamDescriptorProto_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1648,7 +1717,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1658,7 +1727,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FileOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1668,7 +1737,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1678,7 +1747,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MessageOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1688,7 +1757,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1698,7 +1767,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1708,7 +1777,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1718,7 +1787,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_FieldOptions_UpgradedOption_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1738,7 +1807,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1748,7 +1817,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1758,7 +1827,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1768,7 +1837,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_EnumValueOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1778,7 +1847,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1788,7 +1857,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_ServiceOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1798,7 +1867,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1808,7 +1877,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_MethodOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1818,7 +1887,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1828,7 +1897,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_StreamOptions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1848,7 +1917,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1858,7 +1927,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1868,7 +1937,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
@@ -1878,7 +1947,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_UninterpretedOption_NamePart_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     return-object v0
 .end method
@@ -1888,12 +1957,32 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_Location_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method static synthetic access$4500()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+    .locals 1
+
+    .prologue
+    .line 6
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_fieldAccessorTable:Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
+
+    return-object v0
+.end method
+
+.method static synthetic access$4600()Lcom/google/protobuf/Descriptors$Descriptor;
+    .locals 1
+
+    .prologue
+    .line 6
+    sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->internal_static_proto2_SourceCodeInfo_Location_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
+
+    return-object v0
+.end method
+
+.method static synthetic access$4700()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
     .locals 1
 
     .prologue
@@ -1957,7 +2046,7 @@
     .locals 1
 
     .prologue
-    .line 20280
+    .line 20909
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     return-object v0

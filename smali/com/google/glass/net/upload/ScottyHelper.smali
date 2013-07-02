@@ -6,9 +6,15 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/google/glass/net/upload/ScottyHelper$ServerHeaders;,
+        Lcom/google/glass/net/upload/ScottyHelper$ClientHeaders;,
         Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
     }
 .end annotation
+
+
+# static fields
+.field private static final HEADER_PREFIX:Ljava/lang/String; = "X-Goog-Upload-"
 
 
 # direct methods
@@ -16,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 24
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +38,7 @@
     .end annotation
 
     .prologue
-    .line 48
+    .line 108
     iget-object v2, p0, Lcom/google/glass/net/SimplifiedHttpResponse;->headers:Lcom/google/common/collect/ImmutableMap;
 
     const-string v3, "X-Goog-Upload-Status"
@@ -43,11 +49,11 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 50
+    .line 110
     .local v1, headerValue:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 51
+    .line 111
     new-instance v2, Ljava/net/ProtocolException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -72,7 +78,7 @@
 
     throw v2
 
-    .line 55
+    .line 115
     :cond_0
     :try_start_0
     const-class v2, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
@@ -91,11 +97,11 @@
 
     return-object v2
 
-    .line 56
+    .line 116
     :catch_0
     move-exception v0
 
-    .line 57
+    .line 117
     .local v0, e:Ljava/lang/IllegalArgumentException;
     new-instance v2, Ljava/net/ProtocolException;
 
@@ -150,12 +156,12 @@
     .end annotation
 
     .prologue
-    .line 65
+    .line 125
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v1
 
-    .line 66
+    .line 126
     .local v1, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const-string v2, "X-Goog-Upload-Command"
 
@@ -165,7 +171,7 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 67
+    .line 127
     const-string v2, "X-Goog-Last-Modified"
 
     invoke-virtual {p2}, Ljava/io/File;->lastModified()J
@@ -178,7 +184,7 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 68
+    .line 128
     const-string v2, "X-Goog-Upload-File-Name"
 
     invoke-virtual {p2}, Ljava/io/File;->getName()Ljava/lang/String;
@@ -187,16 +193,16 @@
 
     invoke-interface {v1, v2, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 70
+    .line 130
     invoke-virtual {p0}, Lcom/google/glass/util/AuthUtils;->createAuthHeaders()Ljava/util/Map;
 
     move-result-object v0
 
-    .line 72
+    .line 132
     .local v0, authHeaders:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
-    .line 73
+    .line 133
     new-instance v2, Lorg/apache/http/auth/InvalidCredentialsException;
 
     const-string v3, "Unable to create auth headers."
@@ -205,10 +211,10 @@
 
     throw v2
 
-    .line 76
+    .line 136
     :cond_0
     invoke-interface {v1, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
-    .line 78
+    .line 138
     return-object v1
 .end method

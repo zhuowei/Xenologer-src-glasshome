@@ -40,9 +40,10 @@
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/glass/home/timeline/database/VideoItemViewBinder;Lcom/google/googlex/glass/common/proto/Attachment;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/glass/util/CachedBitmapFactory;)V
+.method public constructor <init>(Lcom/google/glass/home/timeline/database/VideoItemViewBinder;Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Attachment;Landroid/widget/ImageView;Landroid/widget/ImageView;Landroid/widget/ImageView;Lcom/google/glass/util/CachedBitmapFactory;)V
     .locals 1
     .parameter
+    .parameter "context"
     .parameter "attachment"
     .parameter "thumbnailView"
     .parameter "placeholderView"
@@ -50,49 +51,50 @@
     .parameter "bitmapFactory"
 
     .prologue
-    .line 40
+    .line 44
     iput-object p1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->this$0:Lcom/google/glass/home/timeline/database/VideoItemViewBinder;
 
-    invoke-direct {p0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>()V
-
-    .line 41
-    iput-object p2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-
-    .line 42
-    iput-object p6, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
-
-    .line 43
-    iput-object p3, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
-
-    .line 44
-    iput-object p4, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->placeholderView:Landroid/widget/ImageView;
-
     .line 45
-    iput-object p5, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->playView:Landroid/widget/ImageView;
+    invoke-direct {p0, p2}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;-><init>(Landroid/content/Context;)V
 
     .line 46
+    iput-object p3, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
+
+    .line 47
+    iput-object p7, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
+
+    .line 48
+    iput-object p4, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
+
+    .line 49
+    iput-object p5, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->placeholderView:Landroid/widget/ImageView;
+
+    .line 50
+    iput-object p6, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->playView:Landroid/widget/ImageView;
+
+    .line 51
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
-    .line 47
+    .line 52
     return-void
 .end method
 
 .method private loadContentFromCache()Landroid/graphics/Bitmap;
-    .locals 4
+    .locals 5
 
     .prologue
-    .line 66
+    .line 76
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
     invoke-static {v1}, Lcom/google/glass/timeline/TimelineHelper;->getThumbnailFilename(Lcom/google/googlex/glass/common/proto/Attachment;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 67
+    .line 77
     .local v0, thumbnailFilename:Ljava/lang/String;
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
@@ -108,7 +110,9 @@
 
     const/4 v3, 0x1
 
-    invoke-virtual {v1, v2, v3}, Lcom/google/glass/util/CachedBitmapFactory;->decodeFile(Ljava/lang/String;Z)Landroid/graphics/Bitmap;
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v2, v3, v4}, Lcom/google/glass/util/CachedBitmapFactory;->decodeFile(Ljava/lang/String;ZLcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
@@ -124,32 +128,32 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 92
+    .line 102
     if-eqz p1, :cond_0
 
-    .line 93
+    .line 103
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 94
+    .line 104
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v0, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->showView(Landroid/view/View;Z)V
 
-    .line 95
+    .line 105
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->playView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v0, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->showView(Landroid/view/View;Z)V
 
-    .line 96
+    .line 106
     iget-object v0, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->placeholderView:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {p0, v0, v2, v1}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->hideView(Landroid/view/View;ZZ)V
 
-    .line 98
+    .line 108
     :cond_0
     return-void
 .end method
@@ -159,7 +163,7 @@
     .parameter "x0"
 
     .prologue
-    .line 30
+    .line 33
     check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1
@@ -168,18 +172,29 @@
     return-void
 .end method
 
-.method protected loadContent()Landroid/graphics/Bitmap;
-    .locals 5
+.method protected getUserEventTag()Ljava/lang/String;
+    .locals 1
 
     .prologue
-    .line 73
+    .line 56
+    const-string v0, "v"
+
+    return-object v0
+.end method
+
+.method protected loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
+    .locals 5
+    .parameter "isCancelled"
+
+    .prologue
+    .line 83
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
     invoke-static {v2}, Lcom/google/glass/timeline/TimelineHelper;->getThumbnailFilename(Lcom/google/googlex/glass/common/proto/Attachment;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 74
+    .line 84
     .local v0, thumbnailFilename:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
 
@@ -191,10 +206,10 @@
 
     if-nez v2, :cond_2
 
-    .line 76
+    .line 86
     const/4 v1, 0x0
 
-    .line 77
+    .line 87
     .local v1, videoFilePath:Ljava/lang/String;
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
@@ -204,26 +219,26 @@
 
     if-eqz v2, :cond_1
 
-    .line 78
+    .line 88
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
 
     invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/Attachment;->getClientCachePath()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 83
+    .line 93
     :cond_0
     :goto_0
-    invoke-static {v1, v0}, Lcom/google/glass/camera/VideoWrapper;->createThumbnail(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Bitmap;
+    invoke-static {v1, v0}, Lcom/google/glass/camera/CameraUtils;->createVideoThumbnail(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 85
+    .line 95
     .end local v1           #videoFilePath:Ljava/lang/String;
     :goto_1
     return-object v2
 
-    .line 79
+    .line 89
     .restart local v1       #videoFilePath:Ljava/lang/String;
     :cond_1
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->attachment:Lcom/google/googlex/glass/common/proto/Attachment;
@@ -234,7 +249,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 80
+    .line 90
     invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
 
     move-result-object v2
@@ -253,7 +268,7 @@
 
     goto :goto_0
 
-    .line 85
+    .line 95
     .end local v1           #videoFilePath:Ljava/lang/String;
     :cond_2
     iget-object v2, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
@@ -270,19 +285,20 @@
 
     const/4 v4, 0x0
 
-    invoke-virtual {v2, v3, v4}, Lcom/google/glass/util/CachedBitmapFactory;->decodeFile(Ljava/lang/String;Z)Landroid/graphics/Bitmap;
+    invoke-virtual {v2, v3, v4, p1}, Lcom/google/glass/util/CachedBitmapFactory;->decodeFile(Ljava/lang/String;ZLcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
     goto :goto_1
 .end method
 
-.method protected bridge synthetic loadContent()Ljava/lang/Object;
+.method protected bridge synthetic loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 30
-    invoke-virtual {p0}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->loadContent()Landroid/graphics/Bitmap;
+    .line 33
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -295,54 +311,54 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 51
+    .line 61
     invoke-direct {p0}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->loadContentFromCache()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 52
+    .line 62
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_0
 
-    .line 53
+    .line 63
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 54
+    .line 64
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->showView(Landroid/view/View;Z)V
 
-    .line 55
+    .line 65
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->playView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->showView(Landroid/view/View;Z)V
 
-    .line 56
+    .line 66
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->placeholderView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->hideView(Landroid/view/View;ZZ)V
 
-    .line 57
+    .line 67
     invoke-virtual {p0, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->cancel(Z)V
 
-    .line 63
+    .line 73
     :goto_0
     return-void
 
-    .line 59
+    .line 69
     :cond_0
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->thumbnailView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->hideView(Landroid/view/View;ZZ)V
 
-    .line 60
+    .line 70
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->playView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->hideView(Landroid/view/View;ZZ)V
 
-    .line 61
+    .line 71
     iget-object v1, p0, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->placeholderView:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v1, v2}, Lcom/google/glass/home/timeline/database/VideoItemViewBinder$VideoAttachmentLoadingTask;->showView(Landroid/view/View;Z)V

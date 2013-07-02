@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 55
+    .line 56
     iput-object p1, p0, Lcom/google/glass/util/SettingsHelper$1;->val$context:Landroid/content/Context;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 2
 
     .prologue
-    .line 58
+    .line 59
     new-instance v0, Lcom/google/glass/util/SettingsHelper;
 
     iget-object v1, p0, Lcom/google/glass/util/SettingsHelper$1;->val$context:Landroid/content/Context;
@@ -50,6 +50,6 @@
 
     invoke-virtual {v0}, Lcom/google/glass/util/SettingsHelper;->goToSettingsCover()V
 
-    .line 59
+    .line 60
     return-void
 .end method

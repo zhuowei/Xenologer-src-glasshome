@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 392
+    .line 394
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 397
+    .line 399
     new-instance v0, Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 392
+    .line 394
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Update$Mutations$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Update$Mutations;
 
     move-result-object v0

@@ -55,30 +55,30 @@
     .locals 1
 
     .prologue
-    .line 976
+    .line 977
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1104
+    .line 1105
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1177
+    .line 1181
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1293
+    .line 1297
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->NO_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 977
+    .line 978
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 978
+    .line 979
     return-void
 .end method
 
@@ -87,30 +87,30 @@
     .parameter "parent"
 
     .prologue
-    .line 982
+    .line 983
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 1104
+    .line 1105
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1177
+    .line 1181
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1293
+    .line 1297
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->NO_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 983
+    .line 984
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 984
+    .line 985
     return-void
 .end method
 
@@ -120,7 +120,7 @@
     .parameter "x1"
 
     .prologue
-    .line 959
+    .line 960
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -130,7 +130,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -142,7 +142,7 @@
     .locals 1
 
     .prologue
-    .line 991
+    .line 992
     new-instance v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;-><init>()V
@@ -154,7 +154,7 @@
     .locals 1
 
     .prologue
-    .line 965
+    .line 966
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownload;->internal_static_googlex_glass_common_proto_ImageDownloadRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -175,12 +175,12 @@
     .end annotation
 
     .prologue
-    .line 1282
+    .line 1286
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1283
+    .line 1287
     new-instance v0, Lcom/google/protobuf/SingleFieldBuilder;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
@@ -197,12 +197,12 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 1288
+    .line 1292
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1290
+    .line 1294
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -213,17 +213,17 @@
     .locals 1
 
     .prologue
-    .line 986
+    .line 987
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->access$1100()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 987
+    .line 988
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->getRequestedDimensionsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
-    .line 989
+    .line 990
     :cond_0
     return-void
 .end method
@@ -234,12 +234,12 @@
     .locals 2
 
     .prologue
-    .line 1023
+    .line 1024
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
 
-    .line 1024
+    .line 1025
     .local v0, result:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->isInitialized()Z
 
@@ -247,14 +247,14 @@
 
     if-nez v1, :cond_0
 
-    .line 1025
+    .line 1026
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 1027
+    .line 1028
     :cond_0
     return-object v0
 .end method
@@ -263,7 +263,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -275,7 +275,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -287,22 +287,22 @@
     .locals 5
 
     .prologue
-    .line 1031
+    .line 1032
     new-instance v1, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$1;)V
 
-    .line 1032
+    .line 1033
     .local v1, result:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1033
+    .line 1034
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 1034
+    .line 1035
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -310,39 +310,39 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 1035
+    .line 1036
     or-int/lit8 v2, v2, 0x1
 
-    .line 1037
+    .line 1038
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->url_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->access$1302(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1038
+    .line 1039
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 1039
+    .line 1040
     or-int/lit8 v2, v2, 0x2
 
-    .line 1041
+    .line 1042
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v3, :cond_3
 
-    .line 1042
+    .line 1043
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     #setter for: Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->access$1402(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1046
+    .line 1047
     :goto_0
     and-int/lit8 v3, v0, 0x4
 
@@ -350,27 +350,27 @@
 
     if-ne v3, v4, :cond_2
 
-    .line 1047
+    .line 1048
     or-int/lit8 v2, v2, 0x4
 
-    .line 1049
+    .line 1050
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     #setter for: Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->access$1502(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 1050
+    .line 1051
     #setter for: Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->access$1602(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;I)I
 
-    .line 1051
+    .line 1052
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onBuilt()V
 
-    .line 1052
+    .line 1053
     return-object v1
 
-    .line 1044
+    .line 1045
     :cond_3
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -390,7 +390,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -402,7 +402,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -414,34 +414,34 @@
     .locals 1
 
     .prologue
-    .line 995
+    .line 996
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 996
+    .line 997
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 997
+    .line 998
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 998
+    .line 999
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 999
+    .line 1000
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1003
+    .line 1004
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -449,22 +449,22 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1004
+    .line 1005
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->NO_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 1005
+    .line 1006
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1006
+    .line 1007
     return-object p0
 
-    .line 1001
+    .line 1002
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -477,7 +477,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -489,7 +489,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -501,7 +501,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -513,7 +513,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -525,22 +525,22 @@
     .locals 1
 
     .prologue
-    .line 1322
+    .line 1326
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1323
+    .line 1327
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->NO_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 1324
+    .line 1328
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1325
+    .line 1329
     return-object p0
 .end method
 
@@ -548,22 +548,22 @@
     .locals 1
 
     .prologue
-    .line 1249
+    .line 1253
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1250
+    .line 1254
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1251
+    .line 1255
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1255
+    .line 1259
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -571,10 +571,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1256
+    .line 1260
     return-object p0
 
-    .line 1253
+    .line 1257
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -587,14 +587,14 @@
     .locals 1
 
     .prologue
-    .line 1158
+    .line 1162
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1159
+    .line 1163
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -605,10 +605,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1160
+    .line 1164
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1161
+    .line 1165
     return-object p0
 .end method
 
@@ -616,7 +616,7 @@
     .locals 2
 
     .prologue
-    .line 1010
+    .line 1011
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -636,7 +636,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -648,7 +648,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -660,7 +660,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -672,7 +672,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -684,7 +684,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -701,7 +701,7 @@
     .end annotation
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -713,7 +713,7 @@
     .locals 1
 
     .prologue
-    .line 1304
+    .line 1308
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     return-object v0
@@ -723,7 +723,7 @@
     .locals 1
 
     .prologue
-    .line 1019
+    .line 1020
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -735,7 +735,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -747,7 +747,7 @@
     .locals 1
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
@@ -759,7 +759,7 @@
     .locals 1
 
     .prologue
-    .line 1015
+    .line 1016
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownload;->internal_static_googlex_glass_common_proto_ImageDownloadRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -769,15 +769,15 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1194
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1191
+    .line 1195
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1193
+    .line 1197
     :goto_0
     return-object v0
 
@@ -797,17 +797,17 @@
     .locals 1
 
     .prologue
-    .line 1262
+    .line 1266
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1263
+    .line 1267
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1264
+    .line 1268
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->getRequestedDimensionsFieldBuilder()Lcom/google/protobuf/SingleFieldBuilder;
 
     move-result-object v0
@@ -825,12 +825,12 @@
     .locals 1
 
     .prologue
-    .line 1270
+    .line 1274
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1271
+    .line 1275
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/SingleFieldBuilder;->getMessageOrBuilder()Lcom/google/protobuf/MessageOrBuilder;
@@ -839,7 +839,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensionsOrBuilder;
 
-    .line 1273
+    .line 1277
     :goto_0
     return-object v0
 
@@ -850,41 +850,54 @@
 .end method
 
 .method public getUrl()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1115
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
-
     .line 1116
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
     .line 1117
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 1118
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1120
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1119
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
+    .line 1121
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 1122
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 1126
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -893,16 +906,16 @@
     .locals 3
 
     .prologue
-    .line 1130
+    .line 1134
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1131
+    .line 1135
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1132
+    .line 1136
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -910,11 +923,11 @@
 
     move-result-object v0
 
-    .line 1135
+    .line 1139
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1138
+    .line 1142
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -933,7 +946,7 @@
     .locals 2
 
     .prologue
-    .line 1298
+    .line 1302
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -957,7 +970,7 @@
     .locals 2
 
     .prologue
-    .line 1184
+    .line 1188
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -983,7 +996,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1109
+    .line 1110
     iget v1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1003,7 +1016,7 @@
     .locals 3
 
     .prologue
-    .line 970
+    .line 971
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownload;->internal_static_googlex_glass_common_proto_ImageDownloadRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
@@ -1021,7 +1034,7 @@
     .locals 1
 
     .prologue
-    .line 1082
+    .line 1083
     const/4 v0, 0x1
 
     return v0
@@ -1032,18 +1045,18 @@
     .parameter "other"
 
     .prologue
-    .line 1065
+    .line 1066
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 1078
+    .line 1079
     :goto_0
     return-object p0
 
-    .line 1066
+    .line 1067
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->hasUrl()Z
 
@@ -1051,14 +1064,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1067
+    .line 1068
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1068
+    .line 1069
     #getter for: Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->url_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->access$1300(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;)Ljava/lang/Object;
 
@@ -1066,10 +1079,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1069
+    .line 1070
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1071
+    .line 1072
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->hasRequestedDimensions()Z
 
@@ -1077,14 +1090,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1072
+    .line 1073
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getRequestedDimensions()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeRequestedDimensions(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
-    .line 1074
+    .line 1075
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->hasCropType()Z
 
@@ -1092,14 +1105,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 1075
+    .line 1076
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getCropType()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->setCropType(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
-    .line 1077
+    .line 1078
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1121,10 +1134,10 @@
     .end annotation
 
     .prologue
-    .line 1089
+    .line 1090
     const/4 v2, 0x0
 
-    .line 1091
+    .line 1092
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -1142,21 +1155,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1096
+    .line 1097
     if-eqz v2, :cond_0
 
-    .line 1097
+    .line 1098
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
-    .line 1100
+    .line 1101
     :cond_0
     return-object p0
 
-    .line 1092
+    .line 1093
     :catch_0
     move-exception v1
 
-    .line 1093
+    .line 1094
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1169,19 +1182,19 @@
 
     move-object v2, v0
 
-    .line 1094
+    .line 1095
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1096
+    .line 1097
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1097
+    .line 1098
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     :cond_1
@@ -1193,12 +1206,12 @@
     .parameter "other"
 
     .prologue
-    .line 1056
+    .line 1057
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     if-eqz v0, :cond_0
 
-    .line 1057
+    .line 1058
     check-cast p1, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;
 
     .end local p1
@@ -1206,12 +1219,12 @@
 
     move-result-object p0
 
-    .line 1060
+    .line 1061
     .end local p0
     :goto_0
     return-object p0
 
-    .line 1059
+    .line 1060
     .restart local p0
     .restart local p1
     :cond_0
@@ -1231,7 +1244,7 @@
     .end annotation
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -1244,7 +1257,7 @@
     .parameter "x0"
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -1263,7 +1276,7 @@
     .end annotation
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -1282,7 +1295,7 @@
     .end annotation
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -1295,7 +1308,7 @@
     .parameter "x0"
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -1314,7 +1327,7 @@
     .end annotation
 
     .prologue
-    .line 959
+    .line 960
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;
 
     move-result-object v0
@@ -1327,12 +1340,12 @@
     .parameter "value"
 
     .prologue
-    .line 1230
+    .line 1234
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1231
+    .line 1235
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1349,7 +1362,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1233
+    .line 1237
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;->newBuilder(Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;)Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;
@@ -1366,11 +1379,11 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1238
+    .line 1242
     :goto_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1242
+    .line 1246
     :goto_1
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -1378,16 +1391,16 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1243
+    .line 1247
     return-object p0
 
-    .line 1236
+    .line 1240
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     goto :goto_0
 
-    .line 1240
+    .line 1244
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1401,17 +1414,17 @@
     .parameter "value"
 
     .prologue
-    .line 1310
+    .line 1314
     if-nez p1, :cond_0
 
-    .line 1311
+    .line 1315
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1313
+    .line 1317
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -1419,13 +1432,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1314
+    .line 1318
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->cropType_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 1315
+    .line 1319
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1316
+    .line 1320
     return-object p0
 .end method
 
@@ -1434,22 +1447,22 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1217
+    .line 1221
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1218
+    .line 1222
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions$Builder;->build()Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1219
+    .line 1223
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1223
+    .line 1227
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -1457,10 +1470,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1224
+    .line 1228
     return-object p0
 
-    .line 1221
+    .line 1225
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1478,29 +1491,29 @@
     .parameter "value"
 
     .prologue
-    .line 1200
+    .line 1204
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1201
+    .line 1205
     if-nez p1, :cond_0
 
-    .line 1202
+    .line 1206
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1204
+    .line 1208
     :cond_0
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensions_:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$RequestedDimensions;
 
-    .line 1205
+    .line 1209
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1209
+    .line 1213
     :goto_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -1508,10 +1521,10 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1210
+    .line 1214
     return-object p0
 
-    .line 1207
+    .line 1211
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->requestedDimensionsBuilder_:Lcom/google/protobuf/SingleFieldBuilder;
 
@@ -1525,17 +1538,17 @@
     .parameter "value"
 
     .prologue
-    .line 1146
+    .line 1150
     if-nez p1, :cond_0
 
-    .line 1147
+    .line 1151
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1149
+    .line 1153
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -1543,13 +1556,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1150
+    .line 1154
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1151
+    .line 1155
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1152
+    .line 1156
     return-object p0
 .end method
 
@@ -1558,17 +1571,17 @@
     .parameter "value"
 
     .prologue
-    .line 1168
+    .line 1172
     if-nez p1, :cond_0
 
-    .line 1169
+    .line 1173
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1171
+    .line 1175
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
@@ -1576,12 +1589,12 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->bitField0_:I
 
-    .line 1172
+    .line 1176
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->url_:Ljava/lang/Object;
 
-    .line 1173
+    .line 1177
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$Builder;->onChanged()V
 
-    .line 1174
+    .line 1178
     return-object p0
 .end method

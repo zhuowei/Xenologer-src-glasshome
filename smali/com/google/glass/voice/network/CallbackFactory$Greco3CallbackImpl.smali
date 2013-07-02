@@ -57,26 +57,26 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 59
     .local p2, callback:Lcom/google/android/speech/callback/Callback;,"Lcom/google/android/speech/callback/Callback<Lcom/google/speech/s3/S3$S3Response;Lcom/google/android/speech/exception/RecognizeException;>;"
     iput-object p1, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->this$0:Lcom/google/glass/voice/network/CallbackFactory;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 57
+    .line 60
     iput-object p3, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->endpointerProcessor:Lcom/google/glass/voice/network/EndpointerEventProcessor;
 
-    .line 58
+    .line 61
     new-instance v0, Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;
 
     invoke-direct {v0, p2}, Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;-><init>(Lcom/google/android/speech/callback/Callback;)V
 
     iput-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->recognitionEventProcessor:Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;
 
-    .line 59
+    .line 62
     iput-object p2, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->callback:Lcom/google/android/speech/callback/Callback;
 
-    .line 60
+    .line 63
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .parameter "event"
 
     .prologue
-    .line 83
+    .line 88
     return-void
 .end method
 
@@ -96,12 +96,12 @@
     .parameter "event"
 
     .prologue
-    .line 69
+    .line 72
     iget-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->endpointerProcessor:Lcom/google/glass/voice/network/EndpointerEventProcessor;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/voice/network/EndpointerEventProcessor;->process(Lcom/google/speech/recognizer/api/RecognizerProtos$EndpointerEvent;)V
 
-    .line 70
+    .line 73
     return-void
 .end method
 
@@ -110,12 +110,12 @@
     .parameter "exception"
 
     .prologue
-    .line 77
+    .line 82
     iget-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->callback:Lcom/google/android/speech/callback/Callback;
 
     invoke-interface {v0, p1}, Lcom/google/android/speech/callback/Callback;->onError(Ljava/lang/Object;)V
 
-    .line 78
+    .line 83
     return-void
 .end method
 
@@ -124,12 +124,12 @@
     .parameter "endMs"
 
     .prologue
-    .line 73
+    .line 77
     iget-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->endpointerProcessor:Lcom/google/glass/voice/network/EndpointerEventProcessor;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/voice/network/EndpointerEventProcessor;->updateProgress(J)V
 
-    .line 74
+    .line 78
     return-void
 .end method
 
@@ -138,11 +138,11 @@
     .parameter "event"
 
     .prologue
-    .line 64
+    .line 67
     iget-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;->recognitionEventProcessor:Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;->process(Lcom/google/speech/recognizer/api/RecognizerProtos$RecognitionEvent;)V
 
-    .line 65
+    .line 68
     return-void
 .end method

@@ -22,7 +22,7 @@
     .locals 0
 
     .prologue
-    .line 49
+    .line 50
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
     .locals 0
 
     .prologue
-    .line 57
+    .line 58
     return-void
 .end method
 
@@ -42,26 +42,27 @@
     .locals 1
 
     .prologue
-    .line 61
+    .line 62
     const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public onResult(Lcom/google/glass/voice/SensoryResult;)V
+.method public onResult(Lcom/google/glass/voice/HotwordResult;)V
     .locals 0
-    .parameter "sensoryResult"
+    .parameter "hotwordResult"
 
     .prologue
-    .line 68
+    .line 69
     return-void
 .end method
 
-.method public prepareToSaveAudio()V
+.method public prepareToSaveAudio(Ljava/lang/String;)V
     .locals 0
+    .parameter "name"
 
     .prologue
-    .line 51
+    .line 52
     return-void
 .end method
 
@@ -71,7 +72,7 @@
     .parameter "savedAudioStorage"
 
     .prologue
-    .line 65
+    .line 66
     return-void
 .end method
 
@@ -82,6 +83,6 @@
     .parameter "readByteCount"
 
     .prologue
-    .line 54
+    .line 55
     return-void
 .end method

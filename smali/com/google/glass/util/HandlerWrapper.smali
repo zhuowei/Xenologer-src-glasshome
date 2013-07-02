@@ -108,6 +108,20 @@
     return v0
 .end method
 
+.method public removeCallbacks(Ljava/lang/Runnable;)V
+    .locals 1
+    .parameter "runnable"
+
+    .prologue
+    .line 40
+    iget-object v0, p0, Lcom/google/glass/util/HandlerWrapper;->handler:Landroid/os/Handler;
+
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 41
+    return-void
+.end method
+
 .method public removeCallbacksAndMessages(Ljava/lang/Object;)V
     .locals 1
     .parameter "token"

@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/sync/LocationSyncHandler;
-.super Lcom/google/glass/home/sync/BackOffSyncHandler;
+.super Lcom/google/glass/sync/BackOffSyncHandler;
 .source "LocationSyncHandler.java"
 
 # interfaces
@@ -9,7 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Lcom/google/glass/home/sync/BackOffSyncHandler;",
+        "Lcom/google/glass/sync/BackOffSyncHandler;",
         "Lcom/google/glass/net/ProtoResponseHandler",
         "<",
         "Lcom/google/googlex/glass/common/proto/LocationUpdateResponse;",
@@ -41,7 +41,7 @@
     .locals 3
 
     .prologue
-    .line 37
+    .line 38
     const-class v0, Lcom/google/glass/home/sync/LocationSyncHandler;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -50,7 +50,7 @@
 
     sput-object v0, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
-    .line 40
+    .line 41
     sget-object v0, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x1e
@@ -61,7 +61,7 @@
 
     sput-wide v0, Lcom/google/glass/home/sync/LocationSyncHandler;->LOCATION_UPDATE_TIMEOUT_MS:J
 
-    .line 43
+    .line 44
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x2
@@ -72,7 +72,7 @@
 
     sput-wide v0, Lcom/google/glass/home/sync/LocationSyncHandler;->MAX_LOCATION_AGE_MS:J
 
-    .line 46
+    .line 47
     sget-object v0, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x5
@@ -91,25 +91,25 @@
     .parameter "context"
 
     .prologue
-    .line 52
-    invoke-direct {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;-><init>()V
+    .line 53
+    invoke-direct {p0}, Lcom/google/glass/sync/BackOffSyncHandler;-><init>()V
 
-    .line 49
+    .line 50
     invoke-static {}, Lcom/google/glass/location/GlassLocationManager;->getInstance()Lcom/google/glass/location/GlassLocationManager;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->locationManager:Lcom/google/glass/location/GlassLocationManager;
 
-    .line 50
+    .line 51
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->lastSuccessTime:J
 
-    .line 53
+    .line 54
     iput-object p1, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->context:Landroid/content/Context;
 
-    .line 54
+    .line 55
     return-void
 .end method
 
@@ -119,12 +119,12 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 121
+    .line 122
     new-instance v8, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v8, v9}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    .line 122
+    .line 123
     .local v8, locationRef:Ljava/util/concurrent/atomic/AtomicReference;,"Ljava/util/concurrent/atomic/AtomicReference<Landroid/location/Location;>;"
     new-instance v7, Ljava/util/concurrent/CountDownLatch;
 
@@ -132,13 +132,13 @@
 
     invoke-direct {v7, v0}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    .line 123
+    .line 124
     .local v7, latch:Ljava/util/concurrent/CountDownLatch;
     new-instance v5, Lcom/google/glass/home/sync/LocationSyncHandler$1;
 
     invoke-direct {v5, p0, v8, v7}, Lcom/google/glass/home/sync/LocationSyncHandler$1;-><init>(Lcom/google/glass/home/sync/LocationSyncHandler;Ljava/util/concurrent/atomic/AtomicReference;Ljava/util/concurrent/CountDownLatch;)V
 
-    .line 134
+    .line 135
     .local v5, listener:Landroid/location/LocationListener;
     iget-object v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->locationManager:Lcom/google/glass/location/GlassLocationManager;
 
@@ -150,7 +150,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/glass/location/GlassLocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;)V
 
-    .line 136
+    .line 137
     :try_start_0
     sget-wide v0, Lcom/google/glass/home/sync/LocationSyncHandler;->LOCATION_UPDATE_TIMEOUT_MS:J
 
@@ -161,12 +161,12 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 141
+    .line 142
     iget-object v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->locationManager:Lcom/google/glass/location/GlassLocationManager;
 
     invoke-virtual {v0, v5}, Lcom/google/glass/location/GlassLocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 143
+    .line 144
     invoke-virtual {v8}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -176,11 +176,11 @@
     :goto_0
     return-object v0
 
-    .line 137
+    .line 138
     :catch_0
     move-exception v6
 
-    .line 138
+    .line 139
     .local v6, e:Ljava/lang/InterruptedException;
     :try_start_1
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -191,7 +191,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 141
+    .line 142
     iget-object v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->locationManager:Lcom/google/glass/location/GlassLocationManager;
 
     invoke-virtual {v0, v5}, Lcom/google/glass/location/GlassLocationManager;->removeUpdates(Landroid/location/LocationListener;)V
@@ -218,15 +218,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 166
+    .line 167
     if-nez p0, :cond_1
 
-    .line 172
+    .line 173
     :cond_0
     :goto_0
     return v0
 
-    .line 169
+    .line 170
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -244,7 +244,7 @@
 
     if-gtz v1, :cond_0
 
-    .line 172
+    .line 173
     const/4 v0, 0x1
 
     goto :goto_0
@@ -255,7 +255,7 @@
     .parameter "location"
 
     .prologue
-    .line 148
+    .line 149
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -266,7 +266,7 @@
 
     sub-long v6, v1, v3
 
-    .line 149
+    .line 150
     .local v6, ageMs:J
     sget-object v1, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
@@ -296,7 +296,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 151
+    .line 152
     new-instance v1, Lcom/google/glass/util/SettingsSecure;
 
     iget-object v2, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->context:Landroid/content/Context;
@@ -313,7 +313,7 @@
 
     move-result-object v8
 
-    .line 153
+    .line 154
     .local v8, deviceId:Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -333,7 +333,7 @@
 
     move-result-object v10
 
-    .line 154
+    .line 155
     .local v10, source:Ljava/lang/String;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/LocationUpdateRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/LocationUpdateRequest$Builder;
 
@@ -351,7 +351,7 @@
 
     move-result-object v9
 
-    .line 158
+    .line 159
     .local v9, request:Lcom/google/googlex/glass/common/proto/LocationUpdateRequest$Builder;
     iget-object v1, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->context:Landroid/content/Context;
 
@@ -363,11 +363,11 @@
 
     move-result-object v0
 
-    .line 159
+    .line 160
     .local v0, dispatcher:Lcom/google/glass/net/ProtoRequestDispatcher;
     if-eqz v0, :cond_0
 
-    .line 160
+    .line 161
     sget-object v1, Lcom/google/glass/net/ServerConstants$Action;->REPORT_LOCATION:Lcom/google/glass/net/ServerConstants$Action;
 
     invoke-virtual {v9}, Lcom/google/googlex/glass/common/proto/LocationUpdateRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/LocationUpdateRequest;
@@ -382,92 +382,35 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/google/glass/net/ProtoRequestDispatcher;->blockingDispatch(Lcom/google/glass/net/ServerConstants$Action;Lcom/google/protobuf/AbstractMessage;Lcom/google/protobuf/Parser;Lcom/google/glass/net/ProtoResponseHandler;Z)Z
 
-    .line 163
+    .line 164
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic getDelayRemainingSecs()J
-    .locals 2
-
-    .prologue
-    .line 35
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->getDelayRemainingSecs()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
 .method protected getTag()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 58
+    .line 59
     sget-object v0, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method public bridge synthetic handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 35
-    invoke-super {p0, p1}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic handleSuccess()V
-    .locals 0
-
-    .prologue
-    .line 35
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->handleSuccess()V
-
-    return-void
-.end method
-
-.method public bridge synthetic hasFailures()Z
-    .locals 1
-
-    .prologue
-    .line 35
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->hasFailures()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public bridge synthetic hasServerFailures()Z
-    .locals 1
-
-    .prologue
-    .line 35
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->hasServerFailures()Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public onCancel()V
     .locals 2
 
     .prologue
-    .line 63
+    .line 64
     sget-object v0, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
     const-string v1, "Sync request cancelled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 64
+    .line 65
     return-void
 .end method
 
@@ -476,7 +419,7 @@
     .parameter "errorCode"
 
     .prologue
-    .line 68
+    .line 69
     sget-object v0, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -499,10 +442,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 69
+    .line 70
     invoke-virtual {p0, p1}, Lcom/google/glass/home/sync/LocationSyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
-    .line 70
+    .line 71
     return-void
 .end method
 
@@ -511,24 +454,24 @@
     .parameter "responseProto"
 
     .prologue
-    .line 74
+    .line 75
     sget-object v0, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
     const-string v1, "Successfully reported location."
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 75
+    .line 76
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->lastSuccessTime:J
 
-    .line 76
+    .line 77
     invoke-virtual {p0}, Lcom/google/glass/home/sync/LocationSyncHandler;->handleSuccess()V
 
-    .line 77
+    .line 78
     return-void
 .end method
 
@@ -537,7 +480,7 @@
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 36
     check-cast p1, Lcom/google/googlex/glass/common/proto/LocationUpdateResponse;
 
     .end local p1
@@ -550,15 +493,15 @@
     .locals 10
 
     .prologue
-    .line 80
+    .line 81
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 84
+    .line 85
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v3
 
-    .line 85
+    .line 86
     .local v3, now:J
     iget-wide v5, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->lastSuccessTime:J
 
@@ -568,14 +511,14 @@
 
     if-gez v5, :cond_0
 
-    .line 86
+    .line 87
     sget-object v5, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
     const-string v6, "Starting sync."
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
+    .line 97
     :goto_0
     iget-object v5, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->locationManager:Lcom/google/glass/location/GlassLocationManager;
 
@@ -585,7 +528,7 @@
 
     move-result-object v1
 
-    .line 97
+    .line 98
     .local v1, gpsLocation:Landroid/location/Location;
     invoke-static {v1}, Lcom/google/glass/home/sync/LocationSyncHandler;->isUsableLocation(Landroid/location/Location;)Z
 
@@ -593,15 +536,15 @@
 
     if-eqz v5, :cond_2
 
-    .line 98
+    .line 99
     invoke-direct {p0, v1}, Lcom/google/glass/home/sync/LocationSyncHandler;->reportLocation(Landroid/location/Location;)V
 
-    .line 118
+    .line 119
     .end local v1           #gpsLocation:Landroid/location/Location;
     :goto_1
     return-void
 
-    .line 87
+    .line 88
     :cond_0
     iget-wide v5, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->lastSuccessTime:J
 
@@ -613,7 +556,7 @@
 
     if-ltz v5, :cond_1
 
-    .line 88
+    .line 89
     sget-object v5, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -654,7 +597,7 @@
 
     goto :goto_0
 
-    .line 91
+    .line 92
     :cond_1
     sget-object v5, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
@@ -696,7 +639,7 @@
 
     goto :goto_1
 
-    .line 102
+    .line 103
     .restart local v1       #gpsLocation:Landroid/location/Location;
     :cond_2
     iget-object v5, p0, Lcom/google/glass/home/sync/LocationSyncHandler;->locationManager:Lcom/google/glass/location/GlassLocationManager;
@@ -707,7 +650,7 @@
 
     move-result-object v2
 
-    .line 103
+    .line 104
     .local v2, netLocation:Landroid/location/Location;
     invoke-static {v2}, Lcom/google/glass/home/sync/LocationSyncHandler;->isUsableLocation(Landroid/location/Location;)Z
 
@@ -715,27 +658,27 @@
 
     if-eqz v5, :cond_3
 
-    .line 104
+    .line 105
     invoke-direct {p0, v2}, Lcom/google/glass/home/sync/LocationSyncHandler;->reportLocation(Landroid/location/Location;)V
 
     goto :goto_1
 
-    .line 108
+    .line 109
     :cond_3
     invoke-direct {p0}, Lcom/google/glass/home/sync/LocationSyncHandler;->awaitLocationUpdate()Landroid/location/Location;
 
     move-result-object v0
 
-    .line 109
+    .line 110
     .local v0, freshLocation:Landroid/location/Location;
     if-eqz v0, :cond_4
 
-    .line 110
+    .line 111
     invoke-direct {p0, v0}, Lcom/google/glass/home/sync/LocationSyncHandler;->reportLocation(Landroid/location/Location;)V
 
     goto :goto_1
 
-    .line 116
+    .line 117
     :cond_4
     sget-object v5, Lcom/google/glass/home/sync/LocationSyncHandler;->TAG:Ljava/lang/String;
 
@@ -743,20 +686,8 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 117
+    .line 118
     invoke-virtual {p0}, Lcom/google/glass/home/sync/LocationSyncHandler;->handleSuccess()V
 
     goto/16 :goto_1
-.end method
-
-.method public bridge synthetic shouldRetry()Z
-    .locals 1
-
-    .prologue
-    .line 35
-    invoke-super {p0}, Lcom/google/glass/home/sync/BackOffSyncHandler;->shouldRetry()Z
-
-    move-result v0
-
-    return v0
 .end method

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 213
+    .line 208
     iput-object p1, p0, Lcom/google/glass/home/ScreenOffService$3;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -64,18 +64,18 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 5
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 216
+    .line 211
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 217
+    .line 212
     .local v0, action:Ljava/lang/String;
     const-string v2, "com.google.glass.action.DON_STATE"
 
@@ -83,14 +83,14 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_2
 
-    .line 218
+    .line 213
     invoke-static {p2}, Lcom/google/glass/hidden/DonState;->isDonned(Landroid/content/Intent;)Z
 
     move-result v1
 
-    .line 219
+    .line 214
     .local v1, donned:Z
     if-nez v1, :cond_0
 
@@ -103,16 +103,16 @@
 
     if-eqz v2, :cond_0
 
-    .line 220
+    .line 215
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "DonState switched to doffed inside notification window.  Closing window."
+    const-string v3, "DonState switched to doffed inside notification window, closing window"
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 221
+    .line 216
     iget-object v2, p0, Lcom/google/glass/home/ScreenOffService$3;->this$0:Lcom/google/glass/home/ScreenOffService;
 
     const/4 v3, 0x1
@@ -120,14 +120,28 @@
     #calls: Lcom/google/glass/home/ScreenOffService;->closeNotificationWindow(Z)V
     invoke-static {v2, v3}, Lcom/google/glass/home/ScreenOffService;->access$100(Lcom/google/glass/home/ScreenOffService;Z)V
 
+    .line 220
+    :cond_0
+    if-nez v1, :cond_1
+
+    .line 221
+    iget-object v2, p0, Lcom/google/glass/home/ScreenOffService$3;->this$0:Lcom/google/glass/home/ScreenOffService;
+
+    #getter for: Lcom/google/glass/home/ScreenOffService;->ttsHelper:Lcom/google/glass/util/TtsHelper;
+    invoke-static {v2}, Lcom/google/glass/home/ScreenOffService;->access$600(Lcom/google/glass/home/ScreenOffService;)Lcom/google/glass/util/TtsHelper;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/google/glass/util/TtsHelper;->stopSpeaking()V
+
     .line 226
     .end local v1           #donned:Z
-    :cond_0
+    :cond_1
     :goto_0
     return-void
 
     .line 224
-    :cond_1
+    :cond_2
     invoke-static {}, Lcom/google/glass/home/ScreenOffService;->access$000()Ljava/lang/String;
 
     move-result-object v2

@@ -33,7 +33,7 @@
     .parameter
 
     .prologue
-    .line 190
+    .line 196
     iput-object p1, p0, Lcom/google/glass/home/GCMIntentService$1$1;->this$0:Lcom/google/glass/home/GCMIntentService$1;
 
     invoke-direct {p0}, Lcom/google/glass/net/SimpleProtoResponseHandler;-><init>()V
@@ -48,7 +48,7 @@
     .parameter "errorCode"
 
     .prologue
-    .line 196
+    .line 202
     sget-object v0, Lcom/google/glass/home/GCMIntentService$2;->$SwitchMap$com$google$googlex$glass$common$proto$ResponseWrapper$ErrorCode:[I
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->ordinal()I
@@ -59,11 +59,11 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 203
+    .line 209
     :goto_0
     return-void
 
-    .line 200
+    .line 206
     :pswitch_0
     iget-object v0, p0, Lcom/google/glass/home/GCMIntentService$1$1;->this$0:Lcom/google/glass/home/GCMIntentService$1;
 
@@ -79,7 +79,7 @@
 
     goto :goto_0
 
-    .line 196
+    .line 202
     nop
 
     :pswitch_data_0

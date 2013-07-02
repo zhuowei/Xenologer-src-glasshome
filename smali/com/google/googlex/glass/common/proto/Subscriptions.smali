@@ -131,7 +131,7 @@
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Notification_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    const/16 v2, 0xa
+    const/16 v2, 0xb
 
     new-array v2, v2, [Ljava/lang/String;
 
@@ -143,43 +143,49 @@
 
     aput-object v3, v2, v6
 
-    const-string v3, "Operation"
+    const-string v3, "Source"
 
     aput-object v3, v2, v7
 
-    const-string v3, "MenuAction"
+    const-string v3, "Operation"
 
     aput-object v3, v2, v8
 
-    const-string v3, "UserAction"
+    const-string v3, "MenuAction"
 
     aput-object v3, v2, v9
 
     const/4 v3, 0x5
 
-    const-string v4, "VerifyToken"
+    const-string v4, "UserAction"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x6
 
-    const-string v4, "UserToken"
+    const-string v4, "VerifyToken"
 
     aput-object v4, v2, v3
 
     const/4 v3, 0x7
 
-    const-string v4, "CallbackUrl"
+    const-string v4, "UserToken"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x8
 
-    const-string v4, "UserId"
+    const-string v4, "CallbackUrl"
 
     aput-object v4, v2, v3
 
     const/16 v3, 0x9
+
+    const-string v4, "UserId"
+
+    aput-object v4, v2, v3
+
+    const/16 v3, 0xa
 
     const-string v4, "Timestamp"
 

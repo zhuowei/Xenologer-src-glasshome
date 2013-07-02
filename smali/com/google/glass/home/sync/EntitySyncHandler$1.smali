@@ -30,20 +30,25 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/sync/EntitySyncHandler;
 
+.field final synthetic val$entitiesFromDevice:Ljava/util/Map;
+
 .field final synthetic val$requiresFullRefresh:Z
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/sync/EntitySyncHandler;Z)V
+.method constructor <init>(Lcom/google/glass/home/sync/EntitySyncHandler;Ljava/util/Map;Z)V
     .locals 0
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 92
+    .line 94
     iput-object p1, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->this$0:Lcom/google/glass/home/sync/EntitySyncHandler;
 
-    iput-boolean p2, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$requiresFullRefresh:Z
+    iput-object p2, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$entitiesFromDevice:Ljava/util/Map;
+
+    iput-boolean p3, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$requiresFullRefresh:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -56,7 +61,7 @@
     .locals 2
 
     .prologue
-    .line 95
+    .line 97
     invoke-static {}, Lcom/google/glass/home/sync/EntitySyncHandler;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -65,7 +70,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 96
+    .line 98
     return-void
 .end method
 
@@ -74,7 +79,7 @@
     .parameter "errorCode"
 
     .prologue
-    .line 100
+    .line 102
     invoke-static {}, Lcom/google/glass/home/sync/EntitySyncHandler;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -99,21 +104,21 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
+    .line 103
     iget-object v0, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->this$0:Lcom/google/glass/home/sync/EntitySyncHandler;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/home/sync/EntitySyncHandler;->handleFail(Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;)V
 
-    .line 102
+    .line 104
     return-void
 .end method
 
 .method public onSuccess(Lcom/google/googlex/glass/common/proto/EntitySyncResponse;)V
-    .locals 3
+    .locals 4
     .parameter "responseProto"
 
     .prologue
-    .line 106
+    .line 108
     invoke-static {}, Lcom/google/glass/home/sync/EntitySyncHandler;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -148,35 +153,37 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 107
+    .line 109
     iget-object v0, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->this$0:Lcom/google/glass/home/sync/EntitySyncHandler;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncResponse;->getEntitiesList()Ljava/util/List;
 
     move-result-object v1
 
-    iget-boolean v2, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$requiresFullRefresh:Z
+    iget-object v2, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$entitiesFromDevice:Ljava/util/Map;
 
-    #calls: Lcom/google/glass/home/sync/EntitySyncHandler;->updateEntityProvider(Ljava/util/List;Z)V
-    invoke-static {v0, v1, v2}, Lcom/google/glass/home/sync/EntitySyncHandler;->access$100(Lcom/google/glass/home/sync/EntitySyncHandler;Ljava/util/List;Z)V
+    iget-boolean v3, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$requiresFullRefresh:Z
 
-    .line 108
+    #calls: Lcom/google/glass/home/sync/EntitySyncHandler;->updateEntityProvider(Ljava/util/List;Ljava/util/Map;Z)V
+    invoke-static {v0, v1, v2, v3}, Lcom/google/glass/home/sync/EntitySyncHandler;->access$100(Lcom/google/glass/home/sync/EntitySyncHandler;Ljava/util/List;Ljava/util/Map;Z)V
+
+    .line 111
     iget-object v0, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->this$0:Lcom/google/glass/home/sync/EntitySyncHandler;
 
     invoke-virtual {v0}, Lcom/google/glass/home/sync/EntitySyncHandler;->handleSuccess()V
 
-    .line 110
+    .line 113
     iget-boolean v0, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->val$requiresFullRefresh:Z
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 114
     iget-object v0, p0, Lcom/google/glass/home/sync/EntitySyncHandler$1;->this$0:Lcom/google/glass/home/sync/EntitySyncHandler;
 
     #calls: Lcom/google/glass/home/sync/EntitySyncHandler;->updateLastFullRefreshTime()V
     invoke-static {v0}, Lcom/google/glass/home/sync/EntitySyncHandler;->access$200(Lcom/google/glass/home/sync/EntitySyncHandler;)V
 
-    .line 113
+    .line 116
     :cond_0
     return-void
 .end method
@@ -186,7 +193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 92
+    .line 94
     check-cast p1, Lcom/google/googlex/glass/common/proto/EntitySyncResponse;
 
     .end local p1

@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 10511
+    .line 11043
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     const-string v1, "STRING"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->STRING:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
-    .line 10526
+    .line 11058
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     const-string v1, "CORD"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->CORD:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
-    .line 10543
+    .line 11075
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     const-string v1, "STRING_PIECE"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->STRING_PIECE:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
-    .line 10502
+    .line 11034
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
-    .line 10604
+    .line 11136
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType$1;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType$1;-><init>()V
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 10624
+    .line 11156
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->values()[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 10638
+    .line 11170
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 10639
+    .line 11171
     iput p3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->index:I
 
-    .line 10640
+    .line 11172
     iput p4, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->value:I
 
-    .line 10641
+    .line 11173
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 10621
+    .line 11153
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 10601
+    .line 11133
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 10591
+    .line 11123
     packed-switch p0, :pswitch_data_0
 
-    .line 10595
+    .line 11127
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 10592
+    .line 11124
     :pswitch_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->STRING:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     goto :goto_0
 
-    .line 10593
+    .line 11125
     :pswitch_1
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->CORD:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     goto :goto_0
 
-    .line 10594
+    .line 11126
     :pswitch_2
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->STRING_PIECE:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     goto :goto_0
 
-    .line 10591
+    .line 11123
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 10628
+    .line 11160
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 10629
+    .line 11161
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 10632
+    .line 11164
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 10502
+    .line 11034
     const-class v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 10502
+    .line 11034
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->$VALUES:[Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 10617
+    .line 11149
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 10588
+    .line 11120
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 10613
+    .line 11145
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$CType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

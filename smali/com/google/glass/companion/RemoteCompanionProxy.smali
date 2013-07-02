@@ -60,12 +60,12 @@
     .parameter "application"
 
     .prologue
-    .line 131
+    .line 132
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/companion/RemoteCompanionProxy;-><init>(Landroid/app/Application;Z)V
 
-    .line 132
+    .line 133
     return-void
 .end method
 
@@ -75,7 +75,7 @@
     .parameter "checkConnection"
 
     .prologue
-    .line 119
+    .line 120
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
@@ -94,34 +94,34 @@
 
     iput-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->listeners:Ljava/util/Set;
 
-    .line 76
+    .line 77
     new-instance v0, Lcom/google/glass/companion/RemoteCompanionProxy$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/companion/RemoteCompanionProxy$1;-><init>(Lcom/google/glass/companion/RemoteCompanionProxy;)V
 
     iput-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->companionStateListener:Lcom/google/glass/util/SafeBroadcastReceiver;
 
-    .line 97
+    .line 98
     new-instance v0, Lcom/google/glass/companion/RemoteCompanionProxy$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/companion/RemoteCompanionProxy$2;-><init>(Lcom/google/glass/companion/RemoteCompanionProxy;)V
 
     iput-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->serviceConnection:Landroid/content/ServiceConnection;
 
-    .line 120
+    .line 121
     iput-object p1, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->application:Landroid/app/Application;
 
-    .line 121
+    .line 122
     if-eqz p2, :cond_0
 
-    .line 122
+    .line 123
     new-instance v0, Lcom/google/glass/companion/ConnectionChecker;
 
     invoke-direct {v0, p1}, Lcom/google/glass/companion/ConnectionChecker;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->connectionChecker:Lcom/google/glass/companion/ConnectionChecker;
 
-    .line 126
+    .line 127
     :goto_0
     new-instance v0, Landroid/content/Intent;
 
@@ -135,10 +135,10 @@
 
     invoke-virtual {p1, v0, v1, v2}, Landroid/app/Application;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
 
-    .line 128
+    .line 129
     return-void
 
-    .line 124
+    .line 125
     :cond_0
     const/4 v0, 0x0
 
@@ -285,32 +285,32 @@
     .locals 6
 
     .prologue
-    .line 135
+    .line 136
     iget-object v2, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->connectionChecker:Lcom/google/glass/companion/ConnectionChecker;
 
     if-eqz v2, :cond_0
 
-    .line 136
+    .line 137
     iget-object v2, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->connectionChecker:Lcom/google/glass/companion/ConnectionChecker;
 
     iget-boolean v3, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->isCompanionConnected:Z
 
     invoke-virtual {v2, v3}, Lcom/google/glass/companion/ConnectionChecker;->setConnectState(Z)V
 
-    .line 137
+    .line 138
     iget-object v2, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->connectionChecker:Lcom/google/glass/companion/ConnectionChecker;
 
     iget-object v3, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->companionService:Lcom/google/glass/companion/IRemoteCompanionService;
 
     invoke-virtual {v2, v3}, Lcom/google/glass/companion/ConnectionChecker;->setCompanionService(Lcom/google/glass/companion/IRemoteCompanionService;)V
 
-    .line 139
+    .line 140
     :cond_0
     iget-object v3, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->listeners:Ljava/util/Set;
 
     monitor-enter v3
 
-    .line 140
+    .line 141
     :try_start_0
     iget-object v2, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->listeners:Ljava/util/Set;
 
@@ -332,7 +332,7 @@
 
     check-cast v1, Lcom/google/glass/companion/CompanionStateChangeListener;
 
-    .line 141
+    .line 142
     .local v1, listener:Lcom/google/glass/companion/CompanionStateChangeListener;
     iget-boolean v2, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->isCompanionConnected:Z
 
@@ -344,7 +344,7 @@
 
     goto :goto_0
 
-    .line 143
+    .line 144
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #listener:Lcom/google/glass/companion/CompanionStateChangeListener;
     :catchall_0
@@ -363,7 +363,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 144
+    .line 145
     return-void
 .end method
 
@@ -372,13 +372,13 @@
     .parameter "isConnected"
 
     .prologue
-    .line 229
+    .line 230
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 230
+    .line 231
     sput-object p0, Lcom/google/glass/companion/RemoteCompanionProxy;->isCompanionConnectedForTest:Ljava/lang/Boolean;
 
-    .line 231
+    .line 232
     return-void
 .end method
 
@@ -389,12 +389,12 @@
     .parameter "listener"
 
     .prologue
-    .line 202
+    .line 203
     new-instance v0, Lcom/google/glass/companion/RemoteCompanionProxy$3;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/companion/RemoteCompanionProxy$3;-><init>(Lcom/google/glass/companion/RemoteCompanionProxy;Lcom/google/glass/companion/CompanionStateChangeListener;)V
 
-    .line 215
+    .line 216
     .local v0, runnable:Ljava/lang/Runnable;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -410,19 +410,19 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 216
+    .line 217
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 221
+    .line 222
     :goto_0
     iget-object v1, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->listeners:Ljava/util/Set;
 
     invoke-interface {v1, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 222
+    .line 223
     return-void
 
-    .line 218
+    .line 219
     :cond_0
     invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
@@ -437,7 +437,7 @@
     .locals 1
 
     .prologue
-    .line 198
+    .line 199
     iget-boolean v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->isCompanionConnected:Z
 
     return v0
@@ -447,19 +447,19 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 191
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->connectionChecker:Lcom/google/glass/companion/ConnectionChecker;
 
     if-eqz v0, :cond_0
 
-    .line 191
+    .line 192
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->connectionChecker:Lcom/google/glass/companion/ConnectionChecker;
 
     invoke-virtual {v0}, Lcom/google/glass/companion/ConnectionChecker;->isTetheringErrorDetected()Z
 
     move-result v0
 
-    .line 193
+    .line 194
     :goto_0
     return v0
 
@@ -474,12 +474,12 @@
     .parameter "listener"
 
     .prologue
-    .line 225
+    .line 226
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->listeners:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
-    .line 226
+    .line 227
     return-void
 .end method
 
@@ -488,10 +488,10 @@
     .parameter "bundle"
 
     .prologue
-    .line 161
+    .line 162
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->companionService:Lcom/google/glass/companion/IRemoteCompanionService;
 
-    .line 162
+    .line 163
     .local v0, companionServiceCopy:Lcom/google/glass/companion/IRemoteCompanionService;
     if-eqz v0, :cond_0
 
@@ -501,24 +501,24 @@
 
     if-eqz v2, :cond_0
 
-    .line 164
+    .line 165
     :try_start_0
     invoke-interface {v0, p1}, Lcom/google/glass/companion/IRemoteCompanionService;->send(Landroid/os/Bundle;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 165
+    .line 166
     const/4 v2, 0x1
 
-    .line 170
+    .line 171
     :goto_0
     return v2
 
-    .line 166
+    .line 167
     :catch_0
     move-exception v1
 
-    .line 167
+    .line 168
     .local v1, e:Landroid/os/RemoteException;
     sget-object v2, Lcom/google/glass/companion/RemoteCompanionProxy;->TAG:Ljava/lang/String;
 
@@ -526,7 +526,7 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 170
+    .line 171
     .end local v1           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0
@@ -539,7 +539,7 @@
     .parameter "envelope"
 
     .prologue
-    .line 152
+    .line 153
     invoke-static {p1}, Lcom/google/glass/companion/CompanionMessagingUtil;->createBundle(Lcom/google/glass/companion/Proto$Envelope;)Landroid/os/Bundle;
 
     move-result-object v0
@@ -556,31 +556,31 @@
     .parameter "bundle"
 
     .prologue
-    .line 177
+    .line 178
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy;->companionService:Lcom/google/glass/companion/IRemoteCompanionService;
 
-    .line 178
+    .line 179
     .local v0, companionServiceCopy:Lcom/google/glass/companion/IRemoteCompanionService;
     if-eqz v0, :cond_0
 
-    .line 180
+    .line 181
     :try_start_0
     invoke-interface {v0, p1}, Lcom/google/glass/companion/IRemoteCompanionService;->send(Landroid/os/Bundle;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 181
+    .line 182
     const/4 v2, 0x1
 
-    .line 186
+    .line 187
     :goto_0
     return v2
 
-    .line 182
+    .line 183
     :catch_0
     move-exception v1
 
-    .line 183
+    .line 184
     .local v1, e:Landroid/os/RemoteException;
     sget-object v2, Lcom/google/glass/companion/RemoteCompanionProxy;->TAG:Ljava/lang/String;
 
@@ -588,7 +588,7 @@
 
     invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 186
+    .line 187
     .end local v1           #e:Landroid/os/RemoteException;
     :cond_0
     const/4 v2, 0x0

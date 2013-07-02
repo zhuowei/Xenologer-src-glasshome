@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 150
+    .line 155
     iput-object p1, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;->val$entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "environment"
 
     .prologue
-    .line 166
+    .line 171
     invoke-interface {p1}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->getContext()Lcom/google/glass/app/GlassActivity;
 
     move-result-object v0
@@ -67,7 +67,7 @@
     .parameter "environment"
 
     .prologue
-    .line 172
+    .line 177
     new-instance v1, Lcom/google/glass/app/GlassError;
 
     invoke-direct {v1}, Lcom/google/glass/app/GlassError;-><init>()V
@@ -84,7 +84,7 @@
 
     move-result-object v0
 
-    .line 175
+    .line 180
     .local v0, error:Lcom/google/glass/app/GlassError;
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;->isCompanionConnected(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Z
 
@@ -92,16 +92,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 176
+    .line 181
     sget v1, Lcom/google/glass/home/R$string;->error_no_phone_or_email:I
 
     invoke-virtual {v0, v1}, Lcom/google/glass/app/GlassError;->setPrimaryMessageId(I)Lcom/google/glass/app/GlassError;
 
-    .line 180
+    .line 185
     :goto_0
     return-object v0
 
-    .line 178
+    .line 183
     :cond_0
     sget v1, Lcom/google/glass/home/R$string;->error_no_email:I
 
@@ -119,7 +119,7 @@
 
     const/4 v3, 0x0
 
-    .line 159
+    .line 164
     iget-object v4, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;->val$entity:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {v4}, Lcom/google/googlex/glass/common/proto/Entity;->getEmail()Ljava/lang/String;
@@ -134,7 +134,7 @@
 
     move v0, v2
 
-    .line 160
+    .line 165
     .local v0, hasEmail:Z
     :goto_0
     iget-object v4, p0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;->val$entity:Lcom/google/googlex/glass/common/proto/Entity;
@@ -151,7 +151,7 @@
 
     move v1, v2
 
-    .line 162
+    .line 167
     .local v1, hasPhoneNumber:Z
     :goto_1
     invoke-direct {p0, p1}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendSmsWithEmailFallbackItem$1;->isCompanionConnected(Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;)Z
@@ -174,20 +174,20 @@
     :cond_2
     move v0, v3
 
-    .line 159
+    .line 164
     goto :goto_0
 
     .restart local v0       #hasEmail:Z
     :cond_3
     move v1, v3
 
-    .line 160
+    .line 165
     goto :goto_1
 
     .restart local v1       #hasPhoneNumber:Z
     :cond_4
     move v2, v3
 
-    .line 162
+    .line 167
     goto :goto_2
 .end method

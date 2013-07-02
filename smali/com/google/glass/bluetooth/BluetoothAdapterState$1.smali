@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 26
+    .line 24
     iput-object p1, p0, Lcom/google/glass/bluetooth/BluetoothAdapterState$1;->this$0:Lcom/google/glass/bluetooth/BluetoothAdapterState;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 49
+    .line 47
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,7 +64,7 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 6
     .parameter "context"
     .parameter "intent"
@@ -72,7 +72,7 @@
     .prologue
     const/16 v5, 0xa
 
-    .line 29
+    .line 27
     const-string v3, "android.bluetooth.adapter.action.STATE_CHANGED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -85,11 +85,11 @@
 
     if-nez v3, :cond_1
 
-    .line 45
+    .line 43
     :cond_0
     return-void
 
-    .line 33
+    .line 31
     :cond_1
     const-string v3, "android.bluetooth.adapter.extra.STATE"
 
@@ -97,13 +97,13 @@
 
     move-result v0
 
-    .line 36
+    .line 34
     .local v0, adapterState:I
     const/16 v3, 0xc
 
     if-ne v0, v3, :cond_2
 
-    .line 37
+    .line 35
     iget-object v3, p0, Lcom/google/glass/bluetooth/BluetoothAdapterState$1;->this$0:Lcom/google/glass/bluetooth/BluetoothAdapterState;
 
     #getter for: Lcom/google/glass/bluetooth/BluetoothAdapterState;->listeners:Ljava/util/Set;
@@ -129,19 +129,19 @@
 
     check-cast v2, Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;
 
-    .line 38
+    .line 36
     .local v2, l:Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;
     invoke-interface {v2}, Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;->onBluetoothAdapterEnabled()V
 
     goto :goto_0
 
-    .line 40
+    .line 38
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #l:Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;
     :cond_2
     if-ne v0, v5, :cond_0
 
-    .line 41
+    .line 39
     iget-object v3, p0, Lcom/google/glass/bluetooth/BluetoothAdapterState$1;->this$0:Lcom/google/glass/bluetooth/BluetoothAdapterState;
 
     #getter for: Lcom/google/glass/bluetooth/BluetoothAdapterState;->listeners:Ljava/util/Set;
@@ -167,7 +167,7 @@
 
     check-cast v2, Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;
 
-    .line 42
+    .line 40
     .restart local v2       #l:Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;
     invoke-interface {v2}, Lcom/google/glass/bluetooth/BluetoothAdapterState$Listener;->onBluetoothAdapterDisabled()V
 

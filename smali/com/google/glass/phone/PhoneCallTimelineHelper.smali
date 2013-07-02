@@ -4,6 +4,8 @@
 
 
 # static fields
+.field public static final PHONE_CALL_ATTACHMENT:Lcom/google/googlex/glass/common/proto/Attachment; = null
+
 .field private static final TAG:Ljava/lang/String; = null
 
 .field private static final WAKE_LOCK_TIMEOUT_MS:J = 0x2710L
@@ -17,10 +19,10 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 25
+    .line 28
     const-class v0, Lcom/google/glass/phone/PhoneCallTimelineHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -28,6 +30,23 @@
     move-result-object v0
 
     sput-object v0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->TAG:Ljava/lang/String;
+
+    .line 34
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/Attachment;->newBuilder()Lcom/google/googlex/glass/common/proto/Attachment$Builder;
+
+    move-result-object v0
+
+    const-string v1, "application/vnd.google-glass.phone-call-proto"
+
+    invoke-virtual {v0, v1}, Lcom/google/googlex/glass/common/proto/Attachment$Builder;->setContentType(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/Attachment$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Attachment$Builder;->build()Lcom/google/googlex/glass/common/proto/Attachment;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->PHONE_CALL_ATTACHMENT:Lcom/google/googlex/glass/common/proto/Attachment;
 
     return-void
 .end method
@@ -37,20 +56,20 @@
     .parameter "context"
 
     .prologue
-    .line 34
+    .line 41
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 32
+    .line 39
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
-    .line 35
+    .line 42
     iput-object p1, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
 
-    .line 36
+    .line 43
     return-void
 .end method
 
@@ -58,7 +77,7 @@
     .locals 1
 
     .prologue
-    .line 24
+    .line 27
     sget-object v0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -69,7 +88,7 @@
     .parameter "x0"
 
     .prologue
-    .line 24
+    .line 27
     iget-object v0, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
 
     return-object v0
@@ -80,61 +99,104 @@
     .parameter "x0"
 
     .prologue
-    .line 24
+    .line 27
     iget-object v0, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
     return-object v0
 .end method
 
-.method static synthetic access$300(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Ljava/lang/String;)V
+.method static synthetic access$300(Lcom/google/glass/phone/PhoneCallTimelineHelper;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
+    .parameter "x2"
 
     .prologue
-    .line 24
-    invoke-static {p0, p1}, Lcom/google/glass/phone/PhoneCallTimelineHelper;->addMenuItems(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Ljava/lang/String;)V
+    .line 27
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/phone/PhoneCallTimelineHelper;->addMenuItems(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private static addMenuItems(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Ljava/lang/String;)V
-    .locals 2
+.method private addMenuItems(Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Ljava/lang/String;)V
+    .locals 4
     .parameter "builder"
     .parameter "phoneNumber"
 
     .prologue
-    .line 122
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    .line 151
+    invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_0
+    if-nez v1, :cond_0
 
-    .line 123
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    .line 152
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VOICE_CALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+
+    invoke-virtual {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setId(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+
+    .line 157
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuValue;->newBuilder()Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
+
+    sget v3, Lcom/google/glass/common/R$string;->phone_call_reply_menu_display_name:I
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->setDisplayName(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/google/googlex/glass/common/proto/MenuItem$State;->DEFAULT:Lcom/google/googlex/glass/common/proto/MenuItem$State;
+
+    invoke-virtual {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->setState(Lcom/google/googlex/glass/common/proto/MenuItem$State;)Lcom/google/googlex/glass/common/proto/MenuValue$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuValue$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuValue;
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VOICE_CALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    .line 161
+    .local v0, replyMenuValue:Lcom/google/googlex/glass/common/proto/MenuValue;
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    invoke-virtual {v0, v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    move-result-object v1
 
-    move-result-object v0
+    sget-object v2, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    invoke-virtual {v0, p1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setId(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    invoke-virtual {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 125
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->addValue(Lcom/google/googlex/glass/common/proto/MenuValue;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+
+    .line 163
+    .end local v0           #replyMenuValue:Lcom/google/googlex/glass/common/proto/MenuValue;
     :cond_0
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addMenuItemBuilder()Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    move-result-object v0
+    move-result-object v1
 
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->DELETE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    sget-object v2, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->DELETE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    invoke-virtual {v0, v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
+    invoke-virtual {v1, v2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->setAction(Lcom/google/googlex/glass/common/proto/MenuItem$Action;)Lcom/google/googlex/glass/common/proto/MenuItem$Builder;
 
-    .line 126
+    .line 164
     return-void
 .end method
 
@@ -147,24 +209,24 @@
     .end annotation
 
     .prologue
-    .line 165
+    .line 203
     const-wide/16 v3, 0x0
 
-    .line 166
+    .line 204
     .local v3, hours:J
     const-wide/16 v5, 0x0
 
-    .line 167
+    .line 205
     .local v5, minutes:J
     const-wide/16 v7, 0x0
 
-    .line 169
+    .line 207
     .local v7, seconds:J
     const-wide/16 v9, 0x3e8
 
     div-long v0, p1, v9
 
-    .line 171
+    .line 209
     .local v0, elapsedSeconds:J
     const-wide/16 v9, 0x3c
 
@@ -172,42 +234,42 @@
 
     if-ltz v9, :cond_0
 
-    .line 172
+    .line 210
     const-wide/16 v9, 0x3c
 
     div-long v5, v0, v9
 
-    .line 173
+    .line 211
     const-wide/16 v9, 0x3c
 
     mul-long/2addr v9, v5
 
     sub-long/2addr v0, v9
 
-    .line 175
+    .line 213
     :cond_0
     move-wide v7, v0
 
-    .line 177
+    .line 215
     const-wide/16 v9, 0x3c
 
     cmp-long v9, v5, v9
 
     if-ltz v9, :cond_1
 
-    .line 178
+    .line 216
     const-wide/16 v9, 0x3c
 
     div-long v3, v5, v9
 
-    .line 179
+    .line 217
     const-wide/16 v9, 0x3c
 
     mul-long/2addr v9, v3
 
     sub-long/2addr v5, v9
 
-    .line 183
+    .line 221
     :cond_1
     const-wide/16 v9, 0x0
 
@@ -215,7 +277,7 @@
 
     if-lez v9, :cond_2
 
-    .line 184
+    .line 222
     iget-object v9, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
 
     sget v10, Lcom/google/glass/common/R$string;->phone_call_duration_hours_minutes_seconds:I
@@ -252,12 +314,12 @@
 
     move-result-object v2
 
-    .line 193
+    .line 231
     .local v2, formattedText:Ljava/lang/String;
     :goto_0
     return-object v2
 
-    .line 186
+    .line 224
     .end local v2           #formattedText:Ljava/lang/String;
     :cond_2
     const-wide/16 v9, 0x0
@@ -266,7 +328,7 @@
 
     if-lez v9, :cond_3
 
-    .line 187
+    .line 225
     iget-object v9, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
 
     sget v10, Lcom/google/glass/common/R$string;->phone_call_duration_minutes_seconds:I
@@ -298,7 +360,7 @@
     .restart local v2       #formattedText:Ljava/lang/String;
     goto :goto_0
 
-    .line 190
+    .line 228
     .end local v2           #formattedText:Ljava/lang/String;
     :cond_3
     iget-object v9, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
@@ -330,12 +392,12 @@
     .parameter "entity"
 
     .prologue
-    .line 108
+    .line 137
     invoke-virtual {p0, p1}, Lcom/google/glass/phone/PhoneCallTimelineHelper;->sanitizeEntity(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/Entity;
 
     move-result-object p1
 
-    .line 110
+    .line 139
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getDisplayName()Ljava/lang/String;
 
     move-result-object v1
@@ -346,17 +408,17 @@
 
     if-nez v1, :cond_0
 
-    .line 111
+    .line 140
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getDisplayName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 117
+    .line 146
     .local v0, name:Ljava/lang/String;
     :goto_0
     return-object v0
 
-    .line 112
+    .line 141
     .end local v0           #name:Ljava/lang/String;
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getPhoneNumber()Ljava/lang/String;
@@ -369,7 +431,7 @@
 
     if-nez v1, :cond_1
 
-    .line 113
+    .line 142
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getPhoneNumber()Ljava/lang/String;
 
     move-result-object v0
@@ -377,7 +439,7 @@
     .restart local v0       #name:Ljava/lang/String;
     goto :goto_0
 
-    .line 115
+    .line 144
     .end local v0           #name:Ljava/lang/String;
     :cond_1
     iget-object v1, p0, Lcom/google/glass/phone/PhoneCallTimelineHelper;->context:Landroid/content/Context;
@@ -398,7 +460,7 @@
     .end annotation
 
     .prologue
-    .line 155
+    .line 193
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
@@ -412,7 +474,7 @@
     .end annotation
 
     .prologue
-    .line 145
+    .line 183
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity;->newBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
 
     move-result-object v0
@@ -441,7 +503,7 @@
     .parameter "call"
 
     .prologue
-    .line 45
+    .line 52
     new-instance v0, Lcom/google/glass/phone/PhoneCallTimelineHelper$1;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/phone/PhoneCallTimelineHelper$1;-><init>(Lcom/google/glass/phone/PhoneCallTimelineHelper;Lcom/google/glass/phone/PhoneCall;)V
@@ -456,7 +518,7 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/phone/PhoneCallTimelineHelper$1;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 97
+    .line 126
     return-void
 .end method
 
@@ -467,7 +529,7 @@
     .end annotation
 
     .prologue
-    .line 136
+    .line 174
     if-eqz p1, :cond_1
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->hasDisplayName()Z
@@ -482,7 +544,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 139
+    .line 177
     .end local p1
     :cond_0
     :goto_0

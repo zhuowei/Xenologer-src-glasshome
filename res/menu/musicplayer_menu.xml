@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:glass="http://schemas.android.com/apk/res/com.google.glass.home">
+    <item glass:id="@id/musicplayer_menu_play" glass:name="@string/musicplayer_menu_play" glass:image="@drawable/ic_musicplayer_play" />
+    <item glass:id="@id/musicplayer_menu_pause" glass:name="@string/musicplayer_menu_pause" glass:image="@drawable/ic_musicplayer_pause" />
+    <item glass:id="@id/musicplayer_menu_next" glass:name="@string/musicplayer_menu_next" glass:image="@drawable/ic_musicplayer_next" />
+    <item glass:id="@id/musicplayer_menu_previous" glass:name="@string/musicplayer_menu_previous" glass:image="@drawable/ic_musicplayer_previous" />
+</menu>

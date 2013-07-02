@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final BYTES_PER_SENSORY_READ:I = 0xa0
+.field public static final BYTES_PER_MICROPHONE_READ:I = 0xa0
 
 .field public static final SAVE_TO_DISK_BUFFER_CAPACITY:I = 0x1f40
 
@@ -44,26 +44,13 @@
     return-void
 .end method
 
-.method public constructor <init>(JLjava/lang/String;)V
-    .locals 0
-    .parameter "sampleRate"
-    .parameter "destinationPath"
-
-    .prologue
-    .line 34
-    invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/logging/audio/FileAudioSaver;-><init>(JLjava/lang/String;)V
-
-    .line 35
-    return-void
-.end method
-
 
 # virtual methods
 .method protected onFinishSavingAudio()V
     .locals 3
 
     .prologue
-    .line 55
+    .line 51
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/logging/audio/BufferedAudioSaver;->bufferedStream:Ljava/io/BufferedOutputStream;
 
@@ -71,15 +58,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 59
+    .line 55
     :goto_0
     return-void
 
-    .line 56
+    .line 52
     :catch_0
     move-exception v0
 
-    .line 57
+    .line 53
     .local v0, e:Ljava/io/IOException;
     sget-object v1, Lcom/google/glass/logging/audio/BufferedAudioSaver;->TAG:Ljava/lang/String;
 
@@ -94,7 +81,7 @@
     .locals 3
 
     .prologue
-    .line 40
+    .line 36
     new-instance v0, Ljava/io/BufferedOutputStream;
 
     invoke-virtual {p0}, Lcom/google/glass/logging/audio/BufferedAudioSaver;->getFileOutputStream()Ljava/io/FileOutputStream;
@@ -107,7 +94,7 @@
 
     iput-object v0, p0, Lcom/google/glass/logging/audio/BufferedAudioSaver;->bufferedStream:Ljava/io/BufferedOutputStream;
 
-    .line 41
+    .line 37
     return-void
 .end method
 
@@ -118,7 +105,7 @@
     .parameter "readByteCount"
 
     .prologue
-    .line 46
+    .line 42
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/logging/audio/BufferedAudioSaver;->bufferedStream:Ljava/io/BufferedOutputStream;
 
@@ -126,15 +113,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 50
+    .line 46
     :goto_0
     return-void
 
-    .line 47
+    .line 43
     :catch_0
     move-exception v0
 
-    .line 48
+    .line 44
     .local v0, e:Ljava/io/IOException;
     sget-object v1, Lcom/google/glass/logging/audio/BufferedAudioSaver;->TAG:Ljava/lang/String;
 

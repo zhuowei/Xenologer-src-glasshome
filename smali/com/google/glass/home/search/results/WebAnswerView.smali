@@ -2,29 +2,51 @@
 .super Lcom/google/glass/horizontalscroll/LinearLayoutCard;
 .source "WebAnswerView.java"
 
+# interfaces
+.implements Lcom/google/glass/home/search/results/LazyLoadable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/glass/home/search/results/WebAnswerView$StaticCssLoader;,
+        Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewClient;,
+        Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewJavascriptInterface;
+    }
+.end annotation
+
 
 # static fields
 .field private static final TAG:Ljava/lang/String;
 
-.field private static glassCss:Ljava/lang/String;
-
 .field private static glassJs:Ljava/lang/String;
+
+.field private static final log:Lcom/google/glass/util/FormattingLogger;
 
 
 # instance fields
+.field private clientData:Ljava/lang/String;
+
+.field private container:Landroid/widget/FrameLayout;
+
 .field private context:Landroid/content/Context;
 
-.field private webView:Landroid/webkit/WebView;
+.field private isLazyLoading:Z
+
+.field webView:Landroid/webkit/WebView;
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+.end field
+
+.field private webViewClient:Landroid/webkit/WebViewClient;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 30
+    .line 50
     const-class v0, Lcom/google/glass/home/search/results/WebAnswerView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -33,77 +55,163 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/WebAnswerView;->TAG:Ljava/lang/String;
 
-    .line 32
-    sput-object v1, Lcom/google/glass/home/search/results/WebAnswerView;->glassCss:Ljava/lang/String;
+    .line 51
+    invoke-static {}, Lcom/google/glass/util/FormattingLoggers;->getContextLogger()Lcom/google/glass/util/FormattingLogger;
 
-    .line 33
-    sput-object v1, Lcom/google/glass/home/search/results/WebAnswerView;->glassJs:Ljava/lang/String;
+    move-result-object v0
+
+    sput-object v0, Lcom/google/glass/home/search/results/WebAnswerView;->log:Lcom/google/glass/util/FormattingLogger;
+
+    .line 53
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/google/glass/home/search/results/WebAnswerView;->glassJs:Ljava/lang/String;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 0
-    .parameter "context"
-
-    .prologue
-    .line 39
-    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;)V
-
-    .line 40
-    iput-object p1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
-
-    .line 41
-    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->init()V
-
-    .line 42
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 0
-    .parameter "context"
-    .parameter "attrs"
-
-    .prologue
-    .line 45
-    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    .line 46
-    iput-object p1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
-
-    .line 47
-    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->init()V
-
-    .line 48
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IZ)V
+    .locals 2
     .parameter "context"
     .parameter "attrs"
     .parameter "defStyle"
+    .parameter "isLazyLoading"
 
     .prologue
-    .line 51
+    const/4 v1, 0x0
+
+    .line 82
     invoke-direct {p0, p1, p2, p3}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 52
+    .line 61
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    .line 62
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    .line 64
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->container:Landroid/widget/FrameLayout;
+
+    .line 65
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webViewClient:Landroid/webkit/WebViewClient;
+
+    .line 83
     iput-object p1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
 
-    .line 53
+    .line 84
+    iput-boolean p4, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    .line 85
     invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->init()V
 
-    .line 54
+    .line 86
     return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;Z)V
+    .locals 2
+    .parameter "context"
+    .parameter "attrs"
+    .parameter "isLazyLoading"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 75
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+    .line 61
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    .line 62
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    .line 64
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->container:Landroid/widget/FrameLayout;
+
+    .line 65
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webViewClient:Landroid/webkit/WebViewClient;
+
+    .line 76
+    iput-object p1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
+
+    .line 77
+    iput-boolean p3, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    .line 78
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->init()V
+
+    .line 79
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;Z)V
+    .locals 2
+    .parameter "context"
+    .parameter "isLazyLoading"
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 68
+    invoke-direct {p0, p1}, Lcom/google/glass/horizontalscroll/LinearLayoutCard;-><init>(Landroid/content/Context;)V
+
+    .line 61
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    .line 62
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    .line 64
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->container:Landroid/widget/FrameLayout;
+
+    .line 65
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webViewClient:Landroid/webkit/WebViewClient;
+
+    .line 69
+    iput-object p1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
+
+    .line 70
+    iput-boolean p2, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    .line 71
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->init()V
+
+    .line 72
+    return-void
+.end method
+
+.method static synthetic access$000()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 49
+    sget-object v0, Lcom/google/glass/home/search/results/WebAnswerView;->TAG:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100()Lcom/google/glass/util/FormattingLogger;
+    .locals 1
+
+    .prologue
+    .line 49
+    sget-object v0, Lcom/google/glass/home/search/results/WebAnswerView;->log:Lcom/google/glass/util/FormattingLogger;
+
+    return-object v0
 .end method
 
 .method private init()V
     .locals 2
 
     .prologue
-    .line 57
+    .line 90
     invoke-virtual {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -112,13 +220,49 @@
 
     move-result-object v0
 
-    .line 58
+    .line 91
     .local v0, inflater:Landroid/view/LayoutInflater;
+    iget-boolean v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    if-eqz v1, :cond_0
+
+    .line 92
+    sget v1, Lcom/google/glass/home/R$layout;->voice_search_web_answer_lazy:I
+
+    invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    .line 93
+    sget v1, Lcom/google/glass/home/R$id;->container:I
+
+    invoke-virtual {p0, v1}, Lcom/google/glass/home/search/results/WebAnswerView;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout;
+
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->container:Landroid/widget/FrameLayout;
+
+    .line 100
+    :goto_0
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->loadJs()V
+
+    .line 101
+    invoke-virtual {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->getWebAnswerViewClient()Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewClient;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webViewClient:Landroid/webkit/WebViewClient;
+
+    .line 102
+    return-void
+
+    .line 97
+    :cond_0
     sget v1, Lcom/google/glass/home/R$layout;->voice_search_web_answer:I
 
     invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    .line 60
+    .line 98
     sget v1, Lcom/google/glass/home/R$id;->webview:I
 
     invoke-virtual {p0, v1}, Lcom/google/glass/home/search/results/WebAnswerView;->findViewById(I)Landroid/view/View;
@@ -129,75 +273,41 @@
 
     iput-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
 
-    .line 61
-    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->loadCss()V
-
-    .line 62
-    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->loadJs()V
-
-    .line 63
-    return-void
+    goto :goto_0
 .end method
 
-.method private loadCss()V
-    .locals 4
+.method private loadDataIntoWebView()V
+    .locals 6
 
     .prologue
-    .line 112
-    sget-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->glassCss:Ljava/lang/String;
+    .line 160
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
 
-    if-eqz v2, :cond_0
+    if-nez v0, :cond_0
 
-    .line 123
+    .line 166
     :goto_0
     return-void
 
-    .line 117
+    .line 163
     :cond_0
-    :try_start_0
-    new-instance v0, Ljava/io/File;
-
-    iget-object v2, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    invoke-virtual {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->getData()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string v3, "stylesheets/base_style.css"
+    .line 164
+    .local v2, fullData:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
 
-    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    const-string v1, "https://www.google.com"
 
-    .line 118
-    .local v0, cssFile:Ljava/io/File;
-    sget-object v2, Lcom/google/common/base/Charsets;->UTF_8:Ljava/nio/charset/Charset;
+    const-string v3, "text/html"
 
-    invoke-static {v0, v2}, Lcom/google/common/io/Files;->toString(Ljava/io/File;Ljava/nio/charset/Charset;)Ljava/lang/String;
+    const-string v4, "UTF-8"
 
-    move-result-object v2
+    const/4 v5, 0x0
 
-    sput-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->glassCss:Ljava/lang/String;
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 119
-    .end local v0           #cssFile:Ljava/io/File;
-    :catch_0
-    move-exception v1
-
-    .line 120
-    .local v1, e:Ljava/io/IOException;
-    sget-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->TAG:Ljava/lang/String;
-
-    const-string v3, "Failed to load Glass CSS"
-
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 121
-    const/4 v2, 0x0
-
-    sput-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->glassCss:Ljava/lang/String;
+    invoke-virtual/range {v0 .. v5}, Landroid/webkit/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 .end method
@@ -206,16 +316,16 @@
     .locals 4
 
     .prologue
-    .line 98
+    .line 199
     sget-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->glassJs:Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 109
+    .line 210
     :goto_0
     return-void
 
-    .line 102
+    .line 203
     :cond_0
     :try_start_0
     iget-object v2, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
@@ -230,7 +340,7 @@
 
     move-result-object v1
 
-    .line 103
+    .line 204
     .local v1, is:Ljava/io/InputStream;
     new-instance v2, Ljava/io/InputStreamReader;
 
@@ -244,19 +354,19 @@
 
     sput-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->glassJs:Ljava/lang/String;
 
-    .line 104
+    .line 205
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 105
+    .line 206
     .end local v1           #is:Ljava/io/InputStream;
     :catch_0
     move-exception v0
 
-    .line 106
+    .line 207
     .local v0, e:Ljava/io/IOException;
     sget-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->TAG:Ljava/lang/String;
 
@@ -264,7 +374,7 @@
 
     invoke-static {v2, v3, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 107
+    .line 208
     const/4 v2, 0x0
 
     sput-object v2, Lcom/google/glass/home/search/results/WebAnswerView;->glassJs:Ljava/lang/String;
@@ -272,20 +382,96 @@
     goto :goto_0
 .end method
 
-
-# virtual methods
-.method public loadData(Ljava/lang/String;)V
-    .locals 7
-    .parameter "data"
+.method private setupWebView()V
+    .locals 6
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    const/4 v3, 0x1
+    const/4 v4, 0x0
+
+    .line 123
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    if-nez v1, :cond_0
+
+    .line 145
+    :goto_0
+    return-void
+
+    .line 130
+    :cond_0
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
 
     const/4 v2, 0x0
 
-    .line 66
+    invoke-virtual {v1, v5, v2}, Landroid/webkit/WebView;->setLayerType(ILandroid/graphics/Paint;)V
+
+    .line 131
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    invoke-virtual {v1, v4}, Landroid/webkit/WebView;->setBackgroundColor(I)V
+
+    .line 133
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    const/16 v2, 0x64
+
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setInitialScale(I)V
+
+    .line 135
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    new-instance v2, Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewJavascriptInterface;
+
+    invoke-direct {v2}, Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewJavascriptInterface;-><init>()V
+
+    const-string v3, "GlassDebug"
+
+    invoke-virtual {v1, v2, v3}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 137
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+
+    move-result-object v0
+
+    .line 138
+    .local v0, settings:Landroid/webkit/WebSettings;
+    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
+
+    .line 139
+    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setSupportZoom(Z)V
+
+    .line 140
+    sget-object v1, Landroid/webkit/WebSettings$ZoomDensity;->FAR:Landroid/webkit/WebSettings$ZoomDensity;
+
+    invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setDefaultZoom(Landroid/webkit/WebSettings$ZoomDensity;)V
+
+    .line 141
+    invoke-virtual {v0, v4}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
+
+    .line 143
+    invoke-virtual {v0, v5}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+
+    .line 144
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    iget-object v2, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webViewClient:Landroid/webkit/WebViewClient;
+
+    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
+
+    goto :goto_0
+.end method
+
+
+# virtual methods
+.method public getData()Ljava/lang/String;
+    .locals 2
+
+    .prologue
+    .line 107
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -294,21 +480,20 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    move-result-object v1
+
+    sget-object v0, Lcom/google/glass/home/search/results/WebAnswerView$StaticCssLoader;->glassCss:Ljava/lang/String;
+
+    if-nez v0, :cond_0
+
+    const-string v0, ""
+
+    :goto_0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v0
 
-    sget-object v1, Lcom/google/glass/home/search/results/WebAnswerView;->glassCss:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "</style>"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "<script>"
+    const-string v1, "</style><script>"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -326,7 +511,55 @@
 
     move-result-object v0
 
-    const-string v1, "<script>AutoSizer.init();</script>"
+    const-string v1, "<script>"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "try {"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "  AutoSizer.init(false, function(){});"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "} catch (e) {"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "  GlassDebug && GlassDebug.logDebug && "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "      GlassDebug.logDebug(\'exception calling AutoSizer.init: \' + "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "          e.message);"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "}"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "</script>"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -338,7 +571,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->clientData:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -350,63 +585,126 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
-    .line 78
-    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+    return-object v0
 
-    invoke-virtual {v0, v3, v5}, Landroid/webkit/WebView;->setLayerType(ILandroid/graphics/Paint;)V
+    :cond_0
+    sget-object v0, Lcom/google/glass/home/search/results/WebAnswerView$StaticCssLoader;->glassCss:Ljava/lang/String;
 
-    .line 79
-    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+    goto :goto_0
+.end method
 
-    invoke-virtual {v0, v2}, Landroid/webkit/WebView;->setBackgroundColor(I)V
+.method protected getWebAnswerViewClient()Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewClient;
+    .locals 2
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
 
-    .line 81
-    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+    .prologue
+    .line 192
+    new-instance v0, Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewClient;
 
-    const/16 v1, 0x64
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setInitialScale(I)V
+    invoke-direct {v0, v1}, Lcom/google/glass/home/search/results/WebAnswerView$WebAnswerViewClient;-><init>(Landroid/content/Context;)V
 
-    .line 82
-    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+    return-object v0
+.end method
 
-    invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+.method public reloadData()V
+    .locals 1
 
-    move-result-object v6
+    .prologue
+    .line 187
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->clientData:Ljava/lang/String;
 
-    .line 83
-    .local v6, settings:Landroid/webkit/WebSettings;
-    invoke-virtual {v6, v2}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
+    invoke-virtual {p0, v0}, Lcom/google/glass/home/search/results/WebAnswerView;->setData(Ljava/lang/String;)V
 
-    .line 84
-    invoke-virtual {v6, v2}, Landroid/webkit/WebSettings;->setSupportZoom(Z)V
-
-    .line 85
-    sget-object v0, Landroid/webkit/WebSettings$ZoomDensity;->FAR:Landroid/webkit/WebSettings$ZoomDensity;
-
-    invoke-virtual {v6, v0}, Landroid/webkit/WebSettings;->setDefaultZoom(Landroid/webkit/WebSettings$ZoomDensity;)V
-
-    .line 86
-    invoke-virtual {v6, v2}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
-
-    .line 88
-    invoke-virtual {v6, v3}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
-
-    .line 90
-    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
-
-    const-string v1, "https://www.google.com"
-
-    const-string v3, "text/html"
-
-    const-string v4, "UTF-8"
-
-    move-object v2, p1
-
-    invoke-virtual/range {v0 .. v5}, Landroid/webkit/WebView;->loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 92
+    .line 188
     return-void
+.end method
+
+.method public seen()V
+    .locals 2
+
+    .prologue
+    .line 149
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    if-eqz v0, :cond_0
+
+    .line 157
+    :goto_0
+    return-void
+
+    .line 153
+    :cond_0
+    new-instance v0, Landroid/webkit/WebView;
+
+    invoke-virtual {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    .line 154
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->container:Landroid/widget/FrameLayout;
+
+    iget-object v1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    .line 155
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->setupWebView()V
+
+    .line 156
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->loadDataIntoWebView()V
+
+    goto :goto_0
+.end method
+
+.method public setData(Ljava/lang/String;)V
+    .locals 1
+    .parameter "data"
+
+    .prologue
+    .line 169
+    iput-object p1, p0, Lcom/google/glass/home/search/results/WebAnswerView;->clientData:Ljava/lang/String;
+
+    .line 170
+    sget-object v0, Lcom/google/glass/home/search/results/WebAnswerView$StaticCssLoader;->glassCss:Ljava/lang/String;
+
+    if-nez v0, :cond_1
+
+    .line 172
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->context:Landroid/content/Context;
+
+    invoke-static {v0, p0}, Lcom/google/glass/home/search/results/WebAnswerView$StaticCssLoader;->refreshAfterLoad(Landroid/content/Context;Lcom/google/glass/home/search/results/WebAnswerView;)V
+
+    .line 183
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 177
+    :cond_1
+    iget-boolean v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->isLazyLoading:Z
+
+    if-nez v0, :cond_2
+
+    .line 178
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->setupWebView()V
+
+    .line 180
+    :cond_2
+    iget-object v0, p0, Lcom/google/glass/home/search/results/WebAnswerView;->webView:Landroid/webkit/WebView;
+
+    if-eqz v0, :cond_0
+
+    .line 181
+    invoke-direct {p0}, Lcom/google/glass/home/search/results/WebAnswerView;->loadDataIntoWebView()V
+
+    goto :goto_0
 .end method

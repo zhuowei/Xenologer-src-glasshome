@@ -67,7 +67,7 @@
 
     const/4 v2, 0x0
 
-    .line 150
+    .line 151
     new-instance v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     const-string v1, "NO_CROP"
@@ -76,7 +76,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->NO_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 159
+    .line 160
     new-instance v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     const-string v1, "SMART_CROP"
@@ -85,7 +85,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->SMART_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 139
+    .line 140
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
@@ -100,14 +100,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->$VALUES:[Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
-    .line 198
+    .line 199
     new-instance v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 218
+    .line 219
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->values()[Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     move-result-object v0
@@ -130,16 +130,16 @@
     .end annotation
 
     .prologue
-    .line 232
+    .line 233
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 233
+    .line 234
     iput p3, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->index:I
 
-    .line 234
+    .line 235
     iput p4, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->value:I
 
-    .line 235
+    .line 236
     return-void
 .end method
 
@@ -147,7 +147,7 @@
     .locals 2
 
     .prologue
-    .line 215
+    .line 216
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -180,7 +180,7 @@
     .end annotation
 
     .prologue
-    .line 195
+    .line 196
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -191,28 +191,28 @@
     .parameter "value"
 
     .prologue
-    .line 186
+    .line 187
     packed-switch p0, :pswitch_data_0
 
-    .line 189
+    .line 190
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 187
+    .line 188
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->NO_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     goto :goto_0
 
-    .line 188
+    .line 189
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->SMART_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     goto :goto_0
 
-    .line 186
+    .line 187
     nop
 
     :pswitch_data_0
@@ -227,7 +227,7 @@
     .parameter "desc"
 
     .prologue
-    .line 222
+    .line 223
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -238,7 +238,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 223
+    .line 224
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -247,7 +247,7 @@
 
     throw v0
 
-    .line 226
+    .line 227
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->VALUES:[Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
@@ -265,7 +265,7 @@
     .parameter "name"
 
     .prologue
-    .line 139
+    .line 140
     const-class v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -281,7 +281,7 @@
     .locals 1
 
     .prologue
-    .line 139
+    .line 140
     sget-object v0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->$VALUES:[Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->clone()Ljava/lang/Object;
@@ -299,7 +299,7 @@
     .locals 1
 
     .prologue
-    .line 211
+    .line 212
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -311,7 +311,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 184
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->value:I
 
     return v0
@@ -321,7 +321,7 @@
     .locals 2
 
     .prologue
-    .line 207
+    .line 208
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

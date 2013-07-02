@@ -1,14 +1,11 @@
 .class Lcom/google/glass/home/HomeApplication$9;
-.super Ljava/lang/Object;
+.super Lcom/google/glass/util/SafeBroadcastReceiver;
 .source "HomeApplication.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/HomeApplication;->registerGcm()V
+    value = Lcom/google/glass/home/HomeApplication;->enablePowerConnectedSync(Landroid/accounts/Account;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,102 +17,91 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/HomeApplication;
 
+.field final synthetic val$primaryAccount:Landroid/accounts/Account;
+
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/HomeApplication;)V
+.method constructor <init>(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 372
+    .line 379
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lcom/google/glass/home/HomeApplication$9;->val$primaryAccount:Landroid/accounts/Account;
+
+    invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method protected getTag()Ljava/lang/String;
+    .locals 2
 
     .prologue
-    .line 375
-    iget-object v2, p0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
+    .line 392
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getApplicationContext()Landroid/content/Context;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
-
-    .line 376
-    .local v0, context:Landroid/content/Context;
-    invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->checkDevice(Landroid/content/Context;)V
-
-    .line 377
-    invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->checkManifest(Landroid/content/Context;)V
-
-    .line 378
-    invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->getRegistrationId(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 379
-    .local v1, registrationId:Ljava/lang/String;
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v2
+    move-result-object v0
 
-    if-eqz v2, :cond_0
+    const-string v1, "/powerConnectedReceiver"
 
-    .line 380
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "Registering for GCM ..."
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v0
 
-    .line 381
-    const/4 v2, 0x1
+    return-object v0
+.end method
 
-    new-array v2, v2, [Ljava/lang/String;
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
+    .parameter "context"
+    .parameter "intent"
 
-    const/4 v3, 0x0
+    .prologue
+    .line 382
+    invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$9;->getTag()Ljava/lang/String;
 
-    const-string v4, "229668747847"
+    move-result-object v0
 
-    aput-object v4, v2, v3
+    const-string v1, "Power connected. Requesting sync."
 
-    invoke-static {v0, v2}, Lcom/google/android/gcm/GCMRegistrar;->register(Landroid/content/Context;[Ljava/lang/String;)V
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 406
-    :goto_0
-    return-void
+    .line 384
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$9;->val$primaryAccount:Landroid/accounts/Account;
 
-    .line 383
-    :cond_0
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
+    const-string v1, "com.google.glass.timeline"
 
-    move-result-object v2
+    sget-object v2, Lcom/google/glass/sync/SyncHelper$SyncSource;->POWER_CONNECTED:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
-    const-string v3, "Already registered for GCM."
-
-    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1, v2}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Lcom/google/glass/sync/SyncHelper$SyncSource;)V
 
     .line 386
-    iget-object v2, p0, Lcom/google/glass/home/HomeApplication$9;->this$0:Lcom/google/glass/home/HomeApplication;
+    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$9;->val$primaryAccount:Landroid/accounts/Account;
 
-    invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getRequestDispatcher()Lcom/google/glass/net/ProtoRequestDispatcher;
+    const-string v1, "com.google.glass.entity"
 
-    move-result-object v2
+    sget-object v2, Lcom/google/glass/sync/SyncHelper$SyncSource;->POWER_CONNECTED:Lcom/google/glass/sync/SyncHelper$SyncSource;
 
-    new-instance v3, Lcom/google/glass/home/HomeApplication$9$1;
+    invoke-static {v0, v1, v2}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/accounts/Account;Ljava/lang/String;Lcom/google/glass/sync/SyncHelper$SyncSource;)V
 
-    invoke-direct {v3, p0, v1}, Lcom/google/glass/home/HomeApplication$9$1;-><init>(Lcom/google/glass/home/HomeApplication$9;Ljava/lang/String;)V
-
-    invoke-static {v2, v1, v3}, Lcom/google/glass/home/GCMIntentService;->isRegisteredWithGlassServer(Lcom/google/glass/net/ProtoRequestDispatcher;Ljava/lang/String;Lcom/google/glass/net/ProtoResponseHandler;)V
-
-    goto :goto_0
+    .line 388
+    return-void
 .end method

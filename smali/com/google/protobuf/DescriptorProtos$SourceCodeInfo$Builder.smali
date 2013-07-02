@@ -60,20 +60,20 @@
     .locals 1
 
     .prologue
-    .line 39060
+    .line 40486
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 39190
+    .line 40616
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39061
+    .line 40487
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->maybeForceBuilderInitialization()V
 
-    .line 39062
+    .line 40488
     return-void
 .end method
 
@@ -82,20 +82,20 @@
     .parameter "parent"
 
     .prologue
-    .line 39066
+    .line 40492
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 39190
+    .line 40616
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39067
+    .line 40493
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->maybeForceBuilderInitialization()V
 
-    .line 39068
+    .line 40494
     return-void
 .end method
 
@@ -105,17 +105,17 @@
     .parameter "x1"
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-direct {p0, p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
 .end method
 
-.method static synthetic access$29200()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
+.method static synthetic access$30500()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->create()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 39075
+    .line 40501
     new-instance v0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     invoke-direct {v0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;-><init>()V
@@ -139,7 +139,7 @@
     .locals 2
 
     .prologue
-    .line 39193
+    .line 40619
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
@@ -148,7 +148,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 39194
+    .line 40620
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
@@ -157,14 +157,14 @@
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39195
+    .line 40621
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39197
+    .line 40623
     :cond_0
     return-void
 .end method
@@ -173,8 +173,8 @@
     .locals 1
 
     .prologue
-    .line 39049
-    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$27800()Lcom/google/protobuf/Descriptors$Descriptor;
+    .line 40475
+    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$29100()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
@@ -198,12 +198,12 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 40246
+    .line 41672
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_0
 
-    .line 40247
+    .line 41673
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
@@ -227,18 +227,18 @@
 
     iput-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 40253
+    .line 41679
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 40255
+    .line 41681
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 40247
+    .line 41673
     :cond_1
     const/4 v0, 0x0
 
@@ -249,15 +249,15 @@
     .locals 1
 
     .prologue
-    .line 39070
+    .line 40496
     sget-boolean v0, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
 
     if-eqz v0, :cond_0
 
-    .line 39071
+    .line 40497
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getLocationFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 39073
+    .line 40499
     :cond_0
     return-void
 .end method
@@ -279,28 +279,28 @@
     .end annotation
 
     .prologue
-    .line 39789
+    .line 41215
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;>;"
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39790
+    .line 41216
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39791
+    .line 41217
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 39793
+    .line 41219
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39797
+    .line 41223
     :goto_0
     return-object p0
 
-    .line 39795
+    .line 41221
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -315,15 +315,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 39729
+    .line 41155
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39730
+    .line 41156
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39731
+    .line 41157
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
@@ -332,14 +332,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 39732
+    .line 41158
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39736
+    .line 41162
     :goto_0
     return-object p0
 
-    .line 39734
+    .line 41160
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -358,38 +358,38 @@
     .parameter "value"
 
     .prologue
-    .line 39606
+    .line 41032
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 39607
+    .line 41033
     if-nez p2, :cond_0
 
-    .line 39608
+    .line 41034
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 39610
+    .line 41036
     :cond_0
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39611
+    .line 41037
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 39612
+    .line 41038
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39616
+    .line 41042
     :goto_0
     return-object p0
 
-    .line 39614
+    .line 41040
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -403,15 +403,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 39669
+    .line 41095
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39670
+    .line 41096
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39671
+    .line 41097
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
@@ -420,14 +420,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 39672
+    .line 41098
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39676
+    .line 41102
     :goto_0
     return-object p0
 
-    .line 39674
+    .line 41100
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -445,38 +445,38 @@
     .parameter "value"
 
     .prologue
-    .line 39543
+    .line 40969
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 39544
+    .line 40970
     if-nez p1, :cond_0
 
-    .line 39545
+    .line 40971
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 39547
+    .line 40973
     :cond_0
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39548
+    .line 40974
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 39549
+    .line 40975
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39553
+    .line 40979
     :goto_0
     return-object p0
 
-    .line 39551
+    .line 40977
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -489,7 +489,7 @@
     .locals 2
 
     .prologue
-    .line 40133
+    .line 41559
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getLocationFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -512,7 +512,7 @@
     .parameter "index"
 
     .prologue
-    .line 40187
+    .line 41613
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getLocationFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -534,12 +534,12 @@
     .locals 2
 
     .prologue
-    .line 39103
+    .line 40529
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
 
-    .line 39104
+    .line 40530
     .local v0, result:Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->isInitialized()Z
 
@@ -547,14 +547,14 @@
 
     if-nez v1, :cond_0
 
-    .line 39105
+    .line 40531
     invoke-static {v0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 39107
+    .line 40533
     :cond_0
     return-object v0
 .end method
@@ -563,7 +563,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -575,7 +575,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -587,24 +587,24 @@
     .locals 4
 
     .prologue
-    .line 39111
+    .line 40537
     new-instance v1, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     const/4 v2, 0x0
 
     invoke-direct {v1, p0, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/protobuf/DescriptorProtos$1;)V
 
-    .line 39112
+    .line 40538
     .local v1, result:Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39113
+    .line 40539
     .local v0, from_bitField0_:I
     iget-object v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v2, :cond_1
 
-    .line 39114
+    .line 40540
     iget v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
@@ -613,7 +613,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 39115
+    .line 40541
     iget-object v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -622,28 +622,28 @@
 
     iput-object v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39116
+    .line 40542
     iget v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v2, v2, -0x2
 
     iput v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39118
+    .line 40544
     :cond_0
     iget-object v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29502(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30802(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;Ljava/util/List;)Ljava/util/List;
 
-    .line 39122
+    .line 40548
     :goto_0
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onBuilt()V
 
-    .line 39123
+    .line 40549
     return-object v1
 
-    .line 39120
+    .line 40546
     :cond_1
     iget-object v2, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -652,7 +652,7 @@
     move-result-object v2
 
     #setter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29502(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30802(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;Ljava/util/List;)Ljava/util/List;
 
     goto :goto_0
 .end method
@@ -661,7 +661,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -673,7 +673,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->buildPartial()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -685,7 +685,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -697,33 +697,33 @@
     .locals 1
 
     .prologue
-    .line 39079
+    .line 40505
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 39080
+    .line 40506
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39081
+    .line 40507
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39082
+    .line 40508
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39086
+    .line 40512
     :goto_0
     return-object p0
 
-    .line 39084
+    .line 40510
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -736,7 +736,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -748,7 +748,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -760,7 +760,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clear()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -772,33 +772,33 @@
     .locals 1
 
     .prologue
-    .line 39849
+    .line 41275
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39850
+    .line 41276
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39851
+    .line 41277
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39852
+    .line 41278
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39856
+    .line 41282
     :goto_0
     return-object p0
 
-    .line 39854
+    .line 41280
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -811,7 +811,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -823,7 +823,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -835,7 +835,7 @@
     .locals 2
 
     .prologue
-    .line 39090
+    .line 40516
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->create()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -855,7 +855,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -867,7 +867,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -879,7 +879,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -896,7 +896,7 @@
     .end annotation
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->clone()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -908,7 +908,7 @@
     .locals 1
 
     .prologue
-    .line 39099
+    .line 40525
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -920,7 +920,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -932,7 +932,7 @@
     .locals 1
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getDefaultInstanceForType()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v0
@@ -944,8 +944,8 @@
     .locals 1
 
     .prologue
-    .line 39095
-    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$27800()Lcom/google/protobuf/Descriptors$Descriptor;
+    .line 40521
+    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$29100()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
@@ -957,12 +957,12 @@
     .parameter "index"
 
     .prologue
-    .line 39364
+    .line 40790
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39365
+    .line 40791
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -971,7 +971,7 @@
 
     check-cast v0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
 
-    .line 39367
+    .line 40793
     :goto_0
     return-object v0
 
@@ -992,7 +992,7 @@
     .parameter "index"
 
     .prologue
-    .line 39968
+    .line 41394
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getLocationFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1019,7 +1019,7 @@
     .end annotation
 
     .prologue
-    .line 40241
+    .line 41667
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->getLocationFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1035,19 +1035,19 @@
     .locals 1
 
     .prologue
-    .line 39308
+    .line 40734
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39309
+    .line 40735
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 39311
+    .line 40737
     :goto_0
     return v0
 
@@ -1074,19 +1074,19 @@
     .end annotation
 
     .prologue
-    .line 39252
+    .line 40678
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39253
+    .line 40679
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 39255
+    .line 40681
     :goto_0
     return-object v0
 
@@ -1105,12 +1105,12 @@
     .parameter "index"
 
     .prologue
-    .line 40021
+    .line 41447
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 40022
+    .line 41448
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1119,7 +1119,7 @@
 
     check-cast v0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$LocationOrBuilder;
 
-    .line 40023
+    .line 41449
     :goto_0
     return-object v0
 
@@ -1148,19 +1148,19 @@
     .end annotation
 
     .prologue
-    .line 40077
+    .line 41503
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 40078
+    .line 41504
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 40080
+    .line 41506
     :goto_0
     return-object v0
 
@@ -1178,8 +1178,8 @@
     .locals 3
 
     .prologue
-    .line 39054
-    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$27900()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
+    .line 40480
+    invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->access$29200()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     move-result-object v0
 
@@ -1198,7 +1198,7 @@
     .locals 1
 
     .prologue
-    .line 39168
+    .line 40594
     const/4 v0, 0x1
 
     return v0
@@ -1215,7 +1215,7 @@
     .end annotation
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -1228,7 +1228,7 @@
     .parameter "x0"
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -1247,7 +1247,7 @@
     .end annotation
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -1266,10 +1266,10 @@
     .end annotation
 
     .prologue
-    .line 39175
+    .line 40601
     const/4 v2, 0x0
 
-    .line 39177
+    .line 40603
     .local v2, parsedMessage:Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
     :try_start_0
     sget-object v3, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->PARSER:Lcom/google/protobuf/Parser;
@@ -1287,21 +1287,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 39182
+    .line 40608
     if-eqz v2, :cond_0
 
-    .line 39183
+    .line 40609
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
-    .line 39186
+    .line 40612
     :cond_0
     return-object p0
 
-    .line 39178
+    .line 40604
     :catch_0
     move-exception v1
 
-    .line 39179
+    .line 40605
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1314,19 +1314,19 @@
 
     move-object v2, v0
 
-    .line 39180
+    .line 40606
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 39182
+    .line 40608
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 39183
+    .line 40609
     invoke-virtual {p0, v2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     :cond_1
@@ -1340,26 +1340,26 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 39136
+    .line 40562
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->getDefaultInstance()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 39164
+    .line 40590
     :goto_0
     return-object p0
 
-    .line 39137
+    .line 40563
     :cond_0
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_3
 
-    .line 39138
+    .line 40564
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29500(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
 
     move-result-object v0
 
@@ -1369,7 +1369,7 @@
 
     if-nez v0, :cond_1
 
-    .line 39139
+    .line 40565
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1378,26 +1378,26 @@
 
     if-eqz v0, :cond_2
 
-    .line 39140
+    .line 40566
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29500(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39141
+    .line 40567
     iget v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39146
+    .line 40572
     :goto_1
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39163
+    .line 40589
     :cond_1
     :goto_2
     invoke-virtual {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
@@ -1408,15 +1408,15 @@
 
     goto :goto_0
 
-    .line 39143
+    .line 40569
     :cond_2
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39144
+    .line 40570
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29500(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
 
     move-result-object v1
 
@@ -1424,10 +1424,10 @@
 
     goto :goto_1
 
-    .line 39149
+    .line 40575
     :cond_3
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29500(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
 
     move-result-object v1
 
@@ -1437,7 +1437,7 @@
 
     if-nez v1, :cond_1
 
-    .line 39150
+    .line 40576
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
@@ -1446,30 +1446,30 @@
 
     if-eqz v1, :cond_5
 
-    .line 39151
+    .line 40577
     iget-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 39152
+    .line 40578
     iput-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 39153
+    .line 40579
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29500(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
-    .line 39154
+    .line 40580
     iget v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, -0x2
 
     iput v1, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->bitField0_:I
 
-    .line 39155
+    .line 40581
     sget-boolean v1, Lcom/google/protobuf/GeneratedMessage;->alwaysUseFieldBuilders:Z
 
     if-eqz v1, :cond_4
@@ -1483,12 +1483,12 @@
 
     goto :goto_2
 
-    .line 39159
+    .line 40585
     :cond_5
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->location_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$29500(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;->access$30800(Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;)Ljava/util/List;
 
     move-result-object v1
 
@@ -1502,12 +1502,12 @@
     .parameter "other"
 
     .prologue
-    .line 39127
+    .line 40553
     instance-of v0, p1, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     if-eqz v0, :cond_0
 
-    .line 39128
+    .line 40554
     check-cast p1, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo;
 
     .end local p1
@@ -1515,12 +1515,12 @@
 
     move-result-object p0
 
-    .line 39131
+    .line 40557
     .end local p0
     :goto_0
     return-object p0
 
-    .line 39130
+    .line 40556
     .restart local p0
     .restart local p1
     :cond_0
@@ -1540,7 +1540,7 @@
     .end annotation
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -1553,7 +1553,7 @@
     .parameter "x0"
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0, p1}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -1572,7 +1572,7 @@
     .end annotation
 
     .prologue
-    .line 39043
+    .line 40469
     invoke-virtual {p0, p1, p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;
 
     move-result-object v0
@@ -1585,27 +1585,27 @@
     .parameter "index"
 
     .prologue
-    .line 39908
+    .line 41334
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39909
+    .line 41335
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39910
+    .line 41336
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 39911
+    .line 41337
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39915
+    .line 41341
     :goto_0
     return-object p0
 
-    .line 39913
+    .line 41339
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1620,15 +1620,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 39484
+    .line 40910
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 39485
+    .line 40911
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39486
+    .line 40912
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location$Builder;->build()Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Location;
@@ -1637,14 +1637,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 39487
+    .line 40913
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39491
+    .line 40917
     :goto_0
     return-object p0
 
-    .line 39489
+    .line 40915
     :cond_0
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1663,38 +1663,38 @@
     .parameter "value"
 
     .prologue
-    .line 39421
+    .line 40847
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 39422
+    .line 40848
     if-nez p2, :cond_0
 
-    .line 39423
+    .line 40849
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 39425
+    .line 40851
     :cond_0
     invoke-direct {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->ensureLocationIsMutable()V
 
-    .line 39426
+    .line 40852
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->location_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 39427
+    .line 40853
     invoke-virtual {p0}, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->onChanged()V
 
-    .line 39431
+    .line 40857
     :goto_0
     return-object p0
 
-    .line 39429
+    .line 40855
     :cond_1
     iget-object v0, p0, Lcom/google/protobuf/DescriptorProtos$SourceCodeInfo$Builder;->locationBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

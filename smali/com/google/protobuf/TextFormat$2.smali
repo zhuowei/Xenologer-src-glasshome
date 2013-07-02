@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1734
+    .line 1728
     iput-object p1, p0, Lcom/google/protobuf/TextFormat$2;->val$input:[B
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "offset"
 
     .prologue
-    .line 1739
+    .line 1733
     iget-object v0, p0, Lcom/google/protobuf/TextFormat$2;->val$input:[B
 
     aget-byte v0, v0, p1
@@ -54,7 +54,7 @@
     .locals 1
 
     .prologue
-    .line 1736
+    .line 1730
     iget-object v0, p0, Lcom/google/protobuf/TextFormat$2;->val$input:[B
 
     array-length v0, v0

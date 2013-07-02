@@ -9,12 +9,12 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     .prologue
     const/4 v5, 0x1
 
-    const/4 v4, 0x0
+    const/4 v6, 0x0
 
     .line 10
     const/4 v2, 0x7
@@ -23,7 +23,7 @@
 
     const-string v2, "\nAjava/com/google/googlex/glass/common/clientserverproto/sync.proto\u0012\u001agooglex_glass_common_proto\u001aEjava/com/google/googlex/glass/common/clientserverproto/timeline.proto\"\u0095\u0002\n\u000bSyncRequest\u00122\n\u0006select\u0018\u0001 \u0001(\u000b2\".googlex_glass_common_proto.Select\u0012W\n\u001ainsert_replace_on_conflict\u0018\u0002 \u0003(\u000b23.googlex_glass_common_proto.InsertReplaceOnConflict\u00122\n\u0006update\u0018\u0003 \u0003(\u000b2\".googlex_glass_common_proto.Update\u00122\n\u0006delete\u0018\u0004 \u0003(\u000b2\".google"
 
-    aput-object v2, v1, v4
+    aput-object v2, v1, v6
 
     const-string v2, "x_glass_common_proto.Delete\u0012\u0011\n\tdevice_id\u0018\u0005 \u0002(\t\"\u00ce\u0003\n\u000cSyncResponse\u0012L\n\rresponse_code\u0018\u0001 \u0002(\u000e25.googlex_glass_common_proto.SyncResponse.ResponseCode\u0012@\n\u000eselected_items\u0018\u0002 \u0003(\u000b2(.googlex_glass_common_proto.TimelineItem\u0012\u001e\n\u0016insert_failed_item_ids\u0018\u0003 \u0003(\t\u0012\u001e\n\u0016update_failed_item_ids\u0018\u0004 \u0003(\t\u0012\u001e\n\u0016delete_failed_item_ids\u0018\u0005 \u0003(\t\u0012\u0017\n\u000fsync_start_time\u0018\u0006 \u0001(\u0004\u0012\u0015\n\rsync_end_time\u0018\u0007 \u0001(\u0004\u0012\u001f\n\u0017sync_continuation_token\u0018\u0008 \u0001(\u000c\u0012\u0019\n\u0011select_start"
 
@@ -49,13 +49,13 @@
 
     const/4 v2, 0x5
 
-    const-string v3, " \u0001(\u000c\"%\n\u000cResponseCode\u0012\u000b\n\u0007SUCCESS\u0010\u0000\u0012\u0008\n\u0004FAIL\u0010\u0001\"\u008a\u0001\n\u0017AttachmentInsertRequest\u0012\u0011\n\tdevice_id\u0018\u0001 \u0001(\t\u0012\u0011\n\tmime_type\u0018\u0002 \u0001(\t\u0012\u000f\n\u0007content\u0018\u0003 \u0001(\u000c\u0012\u0013\n\u000bdescription\u0018\u0004 \u0001(\t\u0012\u000c\n\u0004name\u0018\u0005 \u0001(\t\u0012\u0015\n\rcreation_time\u0018\u0006 \u0001(\u0004\"\u00b2\u0001\n\u0018AttachmentInsertResponse\u0012X\n\rresponse_code\u0018\u0001 \u0001(\u000e2A.googlex_glass_common_proto.AttachmentInsertResponse.ResponseCode\u0012\u0015\n\rattachment_id\u0018\u0002 \u0001(\t\"%\n\u000cResponseCode\u0012\u000b\n\u0007SUCCESS\u0010\u0000\u0012\u0008\n\u0004FAIL\u0010\u0001B)\n%com.google.googlex.glass.common"
+    const-string v3, " \u0001(\u000c\"%\n\u000cResponseCode\u0012\u000b\n\u0007SUCCESS\u0010\u0000\u0012\u0008\n\u0004FAIL\u0010\u0001\"\u009a\u0001\n\u0017AttachmentInsertRequest\u0012\u0011\n\tdevice_id\u0018\u0001 \u0001(\t\u0012\u0011\n\tmime_type\u0018\u0002 \u0001(\t\u0012\u000f\n\u0007content\u0018\u0003 \u0001(\u000c\u0012\u0013\n\u000bdescription\u0018\u0004 \u0001(\t\u0012\u000c\n\u0004name\u0018\u0005 \u0001(\t\u0012\u0015\n\rcreation_time\u0018\u0006 \u0001(\u0004\u0012\u000e\n\u0006source\u0018\u0007 \u0001(\t\"\u00b2\u0001\n\u0018AttachmentInsertResponse\u0012X\n\rresponse_code\u0018\u0001 \u0001(\u000e2A.googlex_glass_common_proto.AttachmentInsertResponse.ResponseCode\u0012\u0015\n\rattachment_id\u0018\u0002 \u0001(\t\"%\n\u000cResponseCode\u0012\u000b\n\u0007SUCCESS\u0010\u0000\u0012\u0008\n\u0004FAIL\u0010\u0001B)\n%com.google.goog"
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x6
 
-    const-string v3, ".protoP\u0001"
+    const-string v3, "lex.glass.common.protoP\u0001"
 
     aput-object v3, v1, v2
 
@@ -67,15 +67,23 @@
 
     .line 81
     .local v0, assigner:Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;
-    new-array v2, v5, [Lcom/google/protobuf/Descriptors$FileDescriptor;
+    const-class v2, Lcom/google/googlex/glass/common/proto/SyncInternalDescriptors;
 
-    sget-object v3, Lcom/google/googlex/glass/common/proto/TimelineInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
+    new-array v3, v5, [Ljava/lang/String;
 
-    aput-object v3, v2, v4
+    const-string v4, "com.google.googlex.glass.common.proto.TimelineInternalDescriptors"
 
-    invoke-static {v1, v2, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;[Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+    aput-object v4, v3, v6
 
-    .line 86
+    new-array v4, v5, [Ljava/lang/String;
+
+    const-string v5, "java/com/google/googlex/glass/common/clientserverproto/timeline.proto"
+
+    aput-object v5, v4, v6
+
+    invoke-static {v1, v2, v3, v4, v0}, Lcom/google/protobuf/Descriptors$FileDescriptor;->internalBuildGeneratedFileFrom([Ljava/lang/String;Ljava/lang/Class;[Ljava/lang/String;[Ljava/lang/String;Lcom/google/protobuf/Descriptors$FileDescriptor$InternalDescriptorAssigner;)V
+
+    .line 89
     return-void
 .end method
 

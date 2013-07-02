@@ -34,7 +34,13 @@
 .method public abstract getClientLogging()I
 .end method
 
+.method public abstract getDeadline()D
+.end method
+
 .method public abstract getDeprecated()Z
+.end method
+
+.method public abstract getFailFast()Z
 .end method
 
 .method public abstract getSecurityLabel()Ljava/lang/String;
@@ -94,7 +100,13 @@
 .method public abstract hasClientLogging()Z
 .end method
 
+.method public abstract hasDeadline()Z
+.end method
+
 .method public abstract hasDeprecated()Z
+.end method
+
+.method public abstract hasFailFast()Z
 .end method
 
 .method public abstract hasSecurityLabel()Z

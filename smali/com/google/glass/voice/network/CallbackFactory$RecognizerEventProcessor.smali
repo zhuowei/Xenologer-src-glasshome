@@ -39,7 +39,7 @@
     .locals 1
 
     .prologue
-    .line 88
+    .line 93
     const-class v0, Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -66,11 +66,11 @@
     .end annotation
 
     .prologue
-    .line 92
+    .line 97
     .local p1, callback:Lcom/google/android/speech/callback/Callback;,"Lcom/google/android/speech/callback/Callback<Lcom/google/speech/s3/S3$S3Response;Lcom/google/android/speech/exception/RecognizeException;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 93
+    .line 98
     invoke-static {p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -79,7 +79,7 @@
 
     iput-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;->callback:Lcom/google/android/speech/callback/Callback;
 
-    .line 94
+    .line 99
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .parameter "event"
 
     .prologue
-    .line 100
+    .line 105
     iget-object v0, p0, Lcom/google/glass/voice/network/CallbackFactory$RecognizerEventProcessor;->callback:Lcom/google/android/speech/callback/Callback;
 
     invoke-static {p1}, Lcom/google/android/speech/message/S3ResponseBuilder;->createInProgress(Lcom/google/speech/recognizer/api/RecognizerProtos$RecognitionEvent;)Lcom/google/speech/s3/S3$S3Response;
@@ -99,6 +99,6 @@
 
     invoke-interface {v0, v1}, Lcom/google/android/speech/callback/Callback;->onResult(Ljava/lang/Object;)V
 
-    .line 101
+    .line 106
     return-void
 .end method

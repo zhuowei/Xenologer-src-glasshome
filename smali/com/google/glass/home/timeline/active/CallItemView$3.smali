@@ -1,11 +1,11 @@
 .class Lcom/google/glass/home/timeline/active/CallItemView$3;
-.super Lcom/google/glass/entity/MatchEntity;
+.super Lcom/google/glass/util/ImageProxyBitmapLoadingTask;
 .source "CallItemView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/active/CallItemView;->updateCallerPhoto()V
+    value = Lcom/google/glass/home/timeline/active/CallItemView;->updateCallerPhoto(Lcom/google/googlex/glass/common/proto/Entity;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,144 +17,107 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/timeline/active/CallItemView;
 
-.field final synthetic val$itemSubview:Landroid/view/View;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/timeline/active/CallItemView;Landroid/view/View;)V
-    .locals 0
+.method constructor <init>(Lcom/google/glass/home/timeline/active/CallItemView;Landroid/content/Context;Ljava/lang/String;IILcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)V
+    .locals 6
     .parameter
-    .parameter
+    .parameter "x0"
+    .parameter "x1"
+    .parameter "x2"
+    .parameter "x3"
+    .parameter "x4"
 
     .prologue
-    .line 275
+    .line 380
     iput-object p1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
 
-    iput-object p2, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->val$itemSubview:Landroid/view/View;
+    move-object v0, p0
 
-    invoke-direct {p0}, Lcom/google/glass/entity/MatchEntity;-><init>()V
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move v3, p4
+
+    move v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v5}, Lcom/google/glass/util/ImageProxyBitmapLoadingTask;-><init>(Landroid/content/Context;Ljava/lang/String;IILcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onEntityMatched(Lcom/google/googlex/glass/common/proto/Entity;)V
-    .locals 8
-    .parameter "entity"
-
-    .prologue
-    .line 284
-    iget-object v1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
-
-    #setter for: Lcom/google/glass/home/timeline/active/CallItemView;->callerIdMatch:Lcom/google/googlex/glass/common/proto/Entity;
-    invoke-static {v1, p1}, Lcom/google/glass/home/timeline/active/CallItemView;->access$802(Lcom/google/glass/home/timeline/active/CallItemView;Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/Entity;
-
-    .line 286
-    iget-object v1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
-
-    #getter for: Lcom/google/glass/home/timeline/active/CallItemView;->callerIdMatch:Lcom/google/googlex/glass/common/proto/Entity;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/active/CallItemView;->access$800(Lcom/google/glass/home/timeline/active/CallItemView;)Lcom/google/googlex/glass/common/proto/Entity;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/google/glass/entity/EntityHelper;->getFirstImageUrl(Lcom/google/googlex/glass/common/proto/Entity;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 287
-    .local v3, imageUrl:Ljava/lang/String;
-    invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 288
-    invoke-static {}, Lcom/google/glass/home/timeline/active/CallItemView;->access$500()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "Loading user\'s image."
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 289
-    iget-object v1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/timeline/active/CallItemView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v7
-
-    .line 290
-    .local v7, display:Landroid/util/DisplayMetrics;
-    new-instance v0, Lcom/google/glass/home/timeline/active/CallItemView$3$1;
-
-    iget-object v1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/timeline/active/CallItemView;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    iget v4, v7, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget v5, v7, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    sget-object v6, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->SMART_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
-
-    move-object v1, p0
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/glass/home/timeline/active/CallItemView$3$1;-><init>(Lcom/google/glass/home/timeline/active/CallItemView$3;Landroid/content/Context;Ljava/lang/String;IILcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)V
-
-    .line 306
-    .local v0, imageTask:Lcom/google/glass/util/ImageProxyBitmapLoadingTask;
-    iget-object v1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->val$itemSubview:Landroid/view/View;
-
-    invoke-static {v1, v0}, Lcom/google/glass/util/DeferredContentLoader;->loadForScrollItemSubview(Landroid/view/View;Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
-
-    .line 310
-    .end local v0           #imageTask:Lcom/google/glass/util/ImageProxyBitmapLoadingTask;
-    .end local v7           #display:Landroid/util/DisplayMetrics;
-    :cond_0
-    iget-object v1, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
-
-    #getter for: Lcom/google/glass/home/timeline/active/CallItemView;->callerPhoto:Landroid/widget/ImageView;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/active/CallItemView;->access$700(Lcom/google/glass/home/timeline/active/CallItemView;)Landroid/widget/ImageView;
-
-    move-result-object v1
-
-    const/16 v2, 0x8
-
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 311
-    return-void
-.end method
-
-.method public onNoMatchFound()V
+.method protected bindContent(Landroid/graphics/Bitmap;)V
     .locals 2
+    .parameter "result"
 
     .prologue
-    .line 279
+    .line 388
+    if-eqz p1, :cond_0
+
+    .line 389
     iget-object v0, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
 
     #getter for: Lcom/google/glass/home/timeline/active/CallItemView;->callerPhoto:Landroid/widget/ImageView;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/active/CallItemView;->access$700(Lcom/google/glass/home/timeline/active/CallItemView;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/active/CallItemView;->access$600(Lcom/google/glass/home/timeline/active/CallItemView;)Landroid/widget/ImageView;
 
     move-result-object v0
 
-    const/16 v1, 0x8
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    .line 390
+    iget-object v0, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
 
-    .line 280
+    #getter for: Lcom/google/glass/home/timeline/active/CallItemView;->callerPhoto:Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/active/CallItemView;->access$600(Lcom/google/glass/home/timeline/active/CallItemView;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/glass/home/timeline/active/CallItemView$3;->showView(Landroid/view/View;Z)V
+
+    .line 392
+    :cond_0
+    return-void
+.end method
+
+.method protected bridge synthetic bindContent(Ljava/lang/Object;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 380
+    check-cast p1, Landroid/graphics/Bitmap;
+
+    .end local p1
+    invoke-virtual {p0, p1}, Lcom/google/glass/home/timeline/active/CallItemView$3;->bindContent(Landroid/graphics/Bitmap;)V
+
+    return-void
+.end method
+
+.method protected prepareContent()V
+    .locals 3
+
+    .prologue
+    .line 383
+    iget-object v0, p0, Lcom/google/glass/home/timeline/active/CallItemView$3;->this$0:Lcom/google/glass/home/timeline/active/CallItemView;
+
+    #getter for: Lcom/google/glass/home/timeline/active/CallItemView;->callerPhoto:Landroid/widget/ImageView;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/active/CallItemView;->access$600(Lcom/google/glass/home/timeline/active/CallItemView;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/glass/home/timeline/active/CallItemView$3;->hideView(Landroid/view/View;ZZ)V
+
+    .line 384
     return-void
 .end method

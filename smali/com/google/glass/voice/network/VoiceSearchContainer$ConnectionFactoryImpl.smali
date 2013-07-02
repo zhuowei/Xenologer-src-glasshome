@@ -34,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 449
+    .line 457
     const-class v0, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -51,13 +51,13 @@
     .parameter "ctx"
 
     .prologue
-    .line 456
+    .line 464
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 457
+    .line 465
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->context:Landroid/content/Context;
 
-    .line 458
+    .line 466
     return-void
 .end method
 
@@ -66,7 +66,7 @@
     .parameter "serverInfo"
 
     .prologue
-    .line 462
+    .line 470
     monitor-enter p0
 
     :try_start_0
@@ -74,14 +74,14 @@
 
     if-nez v0, :cond_0
 
-    .line 463
+    .line 471
     invoke-static {}, Ljavax/net/SocketFactory;->getDefault()Ljavax/net/SocketFactory;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->plainSocketFactory:Ljavax/net/SocketFactory;
 
-    .line 464
+    .line 472
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getConnectionTimeoutMsec()I
 
     move-result v1
@@ -101,13 +101,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 468
+    .line 476
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 464
+    .line 472
     :cond_1
     :try_start_1
     new-instance v0, Landroid/net/SSLSessionCache;
@@ -120,7 +120,7 @@
 
     goto :goto_0
 
-    .line 462
+    .line 470
     :catchall_0
     move-exception v0
 
@@ -141,7 +141,7 @@
     .end annotation
 
     .prologue
-    .line 496
+    .line 504
     new-instance v0, Ljava/net/URL;
 
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->getUrl()Ljava/lang/String;
@@ -168,7 +168,7 @@
     .end annotation
 
     .prologue
-    .line 502
+    .line 510
     sget-object v1, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -191,14 +191,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 503
+    .line 511
     invoke-virtual {p2}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v0
 
     check-cast v0, Ljava/net/HttpURLConnection;
 
-    .line 505
+    .line 513
     .local v0, conn:Ljava/net/HttpURLConnection;
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->getReadTimeoutMsec()I
 
@@ -206,28 +206,28 @@
 
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 506
+    .line 514
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->getConnectionTimeoutMsec()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
-    .line 507
+    .line 515
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->hasChunkSize()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 508
+    .line 516
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->getChunkSize()I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setChunkedStreamingMode(I)V
 
-    .line 510
+    .line 518
     :cond_0
     return-object v0
 .end method
@@ -242,21 +242,21 @@
     .end annotation
 
     .prologue
-    .line 472
+    .line 480
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->maybeInitSocketConnection(Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;)V
 
-    .line 474
+    .line 482
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getHost()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 475
+    .line 483
     .local v0, host:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getPort()I
 
     move-result v1
 
-    .line 477
+    .line 485
     .local v1, port:I
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getUseSsl()Z
 
@@ -264,7 +264,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 478
+    .line 486
     sget-object v3, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -297,43 +297,43 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 479
+    .line 487
     iget-object v3, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->sslSocketFactory:Ljavax/net/ssl/SSLSocketFactory;
 
     invoke-virtual {v3, v0, v1}, Ljavax/net/ssl/SSLSocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;
 
     move-result-object v2
 
-    .line 485
+    .line 493
     .local v2, socket:Ljava/net/Socket;
     :goto_0
     invoke-static {v2}, Lcom/google/android/speech/network/IoUtils;->tagSocket(Ljava/net/Socket;)V
 
-    .line 486
+    .line 494
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getOutBufferSize()I
 
     move-result v3
 
     invoke-virtual {v2, v3}, Ljava/net/Socket;->setSendBufferSize(I)V
 
-    .line 487
+    .line 495
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getInBufferSize()I
 
     move-result v3
 
     invoke-virtual {v2, v3}, Ljava/net/Socket;->setReceiveBufferSize(I)V
 
-    .line 488
+    .line 496
     invoke-virtual {p1}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$ServerInfo;->getConnectionTimeoutMsec()I
 
     move-result v3
 
     invoke-virtual {v2, v3}, Ljava/net/Socket;->setSoTimeout(I)V
 
-    .line 490
+    .line 498
     return-object v2
 
-    .line 481
+    .line 489
     .end local v2           #socket:Ljava/net/Socket;
     :cond_0
     sget-object v3, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->TAG:Ljava/lang/String;
@@ -368,7 +368,7 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 482
+    .line 490
     iget-object v3, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$ConnectionFactoryImpl;->plainSocketFactory:Ljavax/net/SocketFactory;
 
     invoke-virtual {v3, v0, v1}, Ljavax/net/SocketFactory;->createSocket(Ljava/lang/String;I)Ljava/net/Socket;

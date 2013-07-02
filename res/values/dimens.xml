@@ -9,7 +9,6 @@
     <dimen name="voice_menu_item_size">40.0px</dimen>
     <dimen name="voice_menu_item_drawable_padding">34.0px</dimen>
     <dimen name="voice_menu_item_margin_bottom">4.0px</dimen>
-    <dimen name="voice_search_weather_icon_size">48.0px</dimen>
     <item type="dimen" name="background_dim_amount">0.8</item>
     <dimen name="generic_card_padding">40.0px</dimen>
     <dimen name="half_width">280.0px</dimen>
@@ -37,12 +36,20 @@
     <dimen name="adjusted_top_padding">36.0px</dimen>
     <dimen name="adjusted_bottom_padding">20.0px</dimen>
     <dimen name="slider_bar_height">8.0px</dimen>
+    <dimen name="fill_bar_height">12.0px</dimen>
     <dimen name="tip_view_height">40.0px</dimen>
+    <dimen name="guard_phrase_bottom_margin">29.0px</dimen>
     <dimen name="timeline_menu_item_icon_width">100.0px</dimen>
     <dimen name="timeline_menu_item_icon_height">100.0px</dimen>
+    <dimen name="voice_search_weather_icon_size">48.0px</dimen>
     <dimen name="glassware_icon_size">30.0px</dimen>
     <dimen name="glassware_icon_left_margin">15.0px</dimen>
     <dimen name="glassware_icon_bottom_margin">-3.0px</dimen>
     <dimen name="timeline_item_read_more_picture_size">70.0px</dimen>
     <dimen name="timeline_item_read_more_header_padding">20.0px</dimen>
+    <dimen name="music_large_text_size">50.0px</dimen>
+    <dimen name="card_cover_art_width">280.0px</dimen>
+    <dimen name="card_cover_art_height">280.0px</dimen>
+    <dimen name="artist_width">400.0px</dimen>
+    <dimen name="duration_padding">5.0px</dimen>
 </resources>

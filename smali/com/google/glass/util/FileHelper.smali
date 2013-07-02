@@ -553,10 +553,11 @@
     return-object v0
 .end method
 
-.method public static read(Ljava/io/File;[B)I
-    .locals 7
+.method public static read(Ljava/io/File;[BLcom/google/glass/util/Condition;)I
+    .locals 8
     .parameter "file"
     .parameter "into"
+    .parameter "isCancelled"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
@@ -564,92 +565,148 @@
     .end annotation
 
     .prologue
-    .line 111
+    .line 113
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 112
+    .line 114
     new-instance v1, Ljava/io/FileInputStream;
 
     invoke-direct {v1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    .line 114
+    .line 116
     .local v1, fis:Ljava/io/FileInputStream;
+    const/4 v4, 0x0
+
+    .line 117
+    .local v4, read:I
     const/4 v3, 0x0
 
-    .line 115
-    .local v3, read:I
-    const/4 v2, 0x0
-
-    .line 116
-    .local v2, offset:I
-    :goto_0
-    const/16 v4, 0x2000
-
+    .line 118
+    .local v3, offset:I
     :try_start_0
-    invoke-virtual {v1, p1, v2, v4}, Ljava/io/FileInputStream;->read([BII)I
+    invoke-virtual {p0}, Ljava/io/File;->length()J
+
+    move-result-wide v5
+
+    long-to-int v2, v5
+
+    .line 120
+    .local v2, length:I
+    :cond_0
+    const/16 v5, 0x2000
+
+    sub-int v6, v2, v3
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v5
+
+    invoke-virtual {v1, p1, v3, v5}, Ljava/io/FileInputStream;->read([BII)I
+
+    move-result v4
+
+    if-ltz v4, :cond_2
+
+    .line 121
+    add-int/2addr v3, v4
+
+    .line 124
+    if-eqz p2, :cond_1
+
+    invoke-virtual {p2}, Lcom/google/glass/util/Condition;->get()Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-result v3
+    move-result v5
 
-    if-ltz v3, :cond_0
+    if-eqz v5, :cond_1
 
-    .line 117
-    add-int/2addr v2, v3
+    .line 125
+    const/4 v5, 0x0
 
-    goto :goto_0
-
-    .line 122
-    :cond_0
+    .line 134
     :try_start_1
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 125
-    :goto_1
-    return v2
+    .line 137
+    :goto_0
+    return v5
 
-    .line 123
+    .line 135
     :catch_0
     move-exception v0
 
-    .line 124
+    .line 136
     .local v0, e:Ljava/io/IOException;
-    sget-object v4, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
+    sget-object v6, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
-    const-string v5, "Error closing file."
+    const-string v7, "Error closing file."
 
-    invoke-static {v4, v5, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v6, v7, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 121
+    .line 127
     .end local v0           #e:Ljava/io/IOException;
-    :catchall_0
-    move-exception v4
+    :cond_1
+    if-ne v3, v2, :cond_0
 
-    .line 122
+    .line 134
+    :cond_2
     :try_start_2
     invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
     :try_end_2
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 125
-    :goto_2
-    throw v4
+    :goto_1
+    move v5, v3
 
-    .line 123
+    .line 137
+    goto :goto_0
+
+    .line 135
     :catch_1
     move-exception v0
 
-    .line 124
+    .line 136
     .restart local v0       #e:Ljava/io/IOException;
     sget-object v5, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Error closing file."
 
     invoke-static {v5, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    goto :goto_1
+
+    .line 133
+    .end local v0           #e:Ljava/io/IOException;
+    .end local v2           #length:I
+    :catchall_0
+    move-exception v5
+
+    .line 134
+    :try_start_3
+    invoke-virtual {v1}, Ljava/io/FileInputStream;->close()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_2
+
+    .line 137
+    :goto_2
+    throw v5
+
+    .line 135
+    :catch_2
+    move-exception v0
+
+    .line 136
+    .restart local v0       #e:Ljava/io/IOException;
+    sget-object v6, Lcom/google/glass/util/FileHelper;->TAG:Ljava/lang/String;
+
+    const-string v7, "Error closing file."
+
+    invoke-static {v6, v7, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_2
 .end method

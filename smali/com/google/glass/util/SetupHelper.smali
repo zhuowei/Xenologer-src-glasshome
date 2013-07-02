@@ -66,7 +66,7 @@
     .locals 3
 
     .prologue
-    .line 26
+    .line 25
     const-class v0, Lcom/google/glass/util/SetupHelper;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
-    .line 28
+    .line 27
     new-instance v0, Landroid/content/ComponentName;
 
     const-string v1, "com.google.glass.setup"
@@ -86,7 +86,7 @@
 
     sput-object v0, Lcom/google/glass/util/SetupHelper;->SETUP_COMPONENT_NAME:Landroid/content/ComponentName;
 
-    .line 109
+    .line 108
     const-string v0, "^([^\\n]+)\\n([^\\n]+)(\\n([^\\n]+))?$"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -95,7 +95,7 @@
 
     sput-object v0, Lcom/google/glass/util/SetupHelper;->WIFI_SETUP_PATTERN:Ljava/util/regex/Pattern;
 
-    .line 144
+    .line 143
     const-string v0, "[^@]+@[^@]+\\.[^@]+"
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
@@ -111,10 +111,10 @@
     .locals 0
 
     .prologue
-    .line 25
+    .line 24
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 126
+    .line 125
     return-void
 .end method
 
@@ -127,12 +127,12 @@
 
     const/4 v3, 0x0
 
-    .line 244
+    .line 243
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    .line 248
+    .line 247
     .local v1, packageManager:Landroid/content/pm/PackageManager;
     :try_start_0
     sget-object v4, Lcom/google/glass/util/SetupHelper;->SETUP_COMPONENT_NAME:Landroid/content/ComponentName;
@@ -145,15 +145,15 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 258
+    .line 257
     :goto_0
     return v2
 
-    .line 250
+    .line 249
     :catch_0
     move-exception v0
 
-    .line 254
+    .line 253
     .local v0, e:Ljava/lang/IllegalArgumentException;
     sget-object v2, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
@@ -179,11 +179,13 @@
 
     move-result-object v4
 
-    invoke-static {v2, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v5, v3, [Ljava/lang/Object;
+
+    invoke-static {v2, v4, v5}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move v2, v3
 
-    .line 255
+    .line 254
     goto :goto_0
 .end method
 
@@ -194,10 +196,10 @@
     .parameter "key"
 
     .prologue
-    .line 316
+    .line 315
     const-string v0, "NONE"
 
-    .line 317
+    .line 316
     .local v0, encryptionString:Ljava/lang/String;
     sget-object v2, Lcom/google/glass/util/WifiHelper$Encryption;->WPA:Lcom/google/glass/util/WifiHelper$Encryption;
 
@@ -207,41 +209,41 @@
 
     if-ne p1, v2, :cond_3
 
-    .line 319
+    .line 318
     :cond_0
     const-string v0, "WPA"
 
-    .line 324
+    .line 323
     :cond_1
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 326
+    .line 325
     .local v1, sb:Ljava/lang/StringBuilder;
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 327
+    .line 326
     const-string v2, "\n"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 328
+    .line 327
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 329
+    .line 328
     if-eqz p2, :cond_2
 
-    .line 330
+    .line 329
     const-string v2, "\n"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 331
+    .line 330
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 333
+    .line 332
     :cond_2
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -249,14 +251,14 @@
 
     return-object v2
 
-    .line 320
+    .line 319
     .end local v1           #sb:Ljava/lang/StringBuilder;
     :cond_3
     sget-object v2, Lcom/google/glass/util/WifiHelper$Encryption;->WEP:Lcom/google/glass/util/WifiHelper$Encryption;
 
     if-ne p1, v2, :cond_1
 
-    .line 321
+    .line 320
     const-string v0, "WEP"
 
     goto :goto_0
@@ -269,14 +271,14 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 286
+    .line 285
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 287
+    .line 286
     sget-object v6, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     new-instance v7, Ljava/lang/StringBuilder;
@@ -297,13 +299,17 @@
 
     move-result-object v7
 
-    invoke-static {v6, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v8, 0x0
 
-    .line 308
+    new-array v8, v8, [Ljava/lang/Object;
+
+    invoke-static {v6, v7, v8}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 307
     :goto_0
     return-object v5
 
-    .line 291
+    .line 290
     :cond_0
     sget-object v6, Lcom/google/glass/util/SetupHelper;->WIFI_SETUP_PATTERN:Ljava/util/regex/Pattern;
 
@@ -311,7 +317,7 @@
 
     move-result-object v3
 
-    .line 292
+    .line 291
     .local v3, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -319,7 +325,7 @@
 
     if-nez v6, :cond_1
 
-    .line 293
+    .line 292
     const/4 v6, 0x5
 
     sget-object v7, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
@@ -342,11 +348,11 @@
 
     move-result-object v8
 
-    invoke-static {v6, v7, v8, v5}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v6, v7, v8, v5}, Lcom/google/glass/util/Log;->logPii(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 296
+    .line 295
     :cond_1
     const/4 v6, 0x3
 
@@ -370,16 +376,16 @@
 
     move-result-object v8
 
-    invoke-static {v6, v7, v8, v5}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v6, v7, v8, v5}, Lcom/google/glass/util/Log;->logPii(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 298
+    .line 297
     const/4 v5, 0x1
 
     invoke-virtual {v3, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 299
+    .line 298
     .local v4, ssid:Ljava/lang/String;
     const/4 v5, 0x4
 
@@ -387,11 +393,11 @@
 
     move-result-object v2
 
-    .line 300
+    .line 299
     .local v2, key:Ljava/lang/String;
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->NONE:Lcom/google/glass/util/WifiHelper$Encryption;
 
-    .line 301
+    .line 300
     .local v0, encryption:Lcom/google/glass/util/WifiHelper$Encryption;
     const/4 v5, 0x2
 
@@ -399,7 +405,7 @@
 
     move-result-object v1
 
-    .line 302
+    .line 301
     .local v1, encryptionString:Ljava/lang/String;
     const-string v5, "WPA"
 
@@ -409,10 +415,10 @@
 
     if-eqz v5, :cond_3
 
-    .line 303
+    .line 302
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WPA:Lcom/google/glass/util/WifiHelper$Encryption;
 
-    .line 308
+    .line 307
     :cond_2
     :goto_1
     new-instance v5, Lcom/google/glass/util/SetupHelper$WifiSetupInfo;
@@ -421,7 +427,7 @@
 
     goto :goto_0
 
-    .line 304
+    .line 303
     :cond_3
     const-string v5, "WEP"
 
@@ -431,27 +437,31 @@
 
     if-eqz v5, :cond_2
 
-    .line 305
+    .line 304
     sget-object v0, Lcom/google/glass/util/WifiHelper$Encryption;->WEP:Lcom/google/glass/util/WifiHelper$Encryption;
 
     goto :goto_1
 .end method
 
 .method public static parseBarcodeValue(Ljava/lang/String;)Landroid/os/Bundle;
-    .locals 10
+    .locals 11
     .parameter "barcodeValue"
 
     .prologue
+    const/4 v9, 0x1
+
     const/4 v7, 0x0
 
-    .line 152
+    const/4 v10, 0x0
+
+    .line 151
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 153
+    .line 152
     sget-object v6, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     new-instance v8, Ljava/lang/StringBuilder;
@@ -472,21 +482,23 @@
 
     move-result-object v8
 
-    invoke-static {v6, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v9, v10, [Ljava/lang/Object;
+
+    invoke-static {v6, v8, v9}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v6, v7
 
-    .line 183
+    .line 182
     :goto_0
     return-object v6
 
-    .line 157
+    .line 156
     :cond_0
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 159
+    .line 158
     .local v3, parameterList:Ljava/util/List;,"Ljava/util/List<Lorg/apache/http/NameValuePair;>;"
     :try_start_0
     new-instance v6, Ljava/util/Scanner;
@@ -499,12 +511,12 @@
     :try_end_0
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 164
+    .line 163
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
-    .line 165
+    .line 164
     .local v4, parameterMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -524,7 +536,7 @@
 
     check-cast v2, Lorg/apache/http/NameValuePair;
 
-    .line 166
+    .line 165
     .local v2, nameValuePair:Lorg/apache/http/NameValuePair;
     invoke-interface {v2}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
 
@@ -538,27 +550,31 @@
 
     goto :goto_1
 
-    .line 160
+    .line 159
     .end local v1           #i$:Ljava/util/Iterator;
     .end local v2           #nameValuePair:Lorg/apache/http/NameValuePair;
     .end local v4           #parameterMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :catch_0
     move-exception v0
 
-    .line 161
+    .line 160
     .local v0, e:Ljava/lang/IllegalArgumentException;
     sget-object v6, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     const-string v8, "invalid barcode value"
 
-    invoke-static {v6, v8, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    new-array v9, v9, [Ljava/lang/Object;
+
+    aput-object v0, v9, v10
+
+    invoke-static {v6, v8, v9}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v6, v7
 
-    .line 162
+    .line 161
     goto :goto_0
 
-    .line 172
+    .line 171
     .end local v0           #e:Ljava/lang/IllegalArgumentException;
     .restart local v1       #i$:Ljava/util/Iterator;
     .restart local v4       #parameterMap:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
@@ -578,38 +594,38 @@
 
     move-result v5
 
-    .line 178
+    .line 177
     .local v5, version:I
-    const/4 v6, 0x1
+    if-ne v5, v9, :cond_2
 
-    if-ne v5, v6, :cond_2
-
-    .line 179
+    .line 178
     invoke-static {v4}, Lcom/google/glass/util/SetupHelper;->parseVersion1(Ljava/util/Map;)Landroid/os/Bundle;
 
     move-result-object v6
 
     goto :goto_0
 
-    .line 173
+    .line 172
     .end local v5           #version:I
     :catch_1
     move-exception v0
 
-    .line 174
+    .line 173
     .local v0, e:Ljava/lang/NumberFormatException;
     sget-object v6, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     const-string v8, "Invalid barcode version."
 
-    invoke-static {v6, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v9, v10, [Ljava/lang/Object;
+
+    invoke-static {v6, v8, v9}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v6, v7
 
-    .line 175
+    .line 174
     goto :goto_0
 
-    .line 182
+    .line 181
     .end local v0           #e:Ljava/lang/NumberFormatException;
     .restart local v5       #version:I
     :cond_2
@@ -633,16 +649,18 @@
 
     move-result-object v8
 
-    invoke-static {v6, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v9, v10, [Ljava/lang/Object;
+
+    invoke-static {v6, v8, v9}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     move-object v6, v7
 
-    .line 183
+    .line 182
     goto :goto_0
 .end method
 
 .method private static parseVersion1(Ljava/util/Map;)Landroid/os/Bundle;
-    .locals 8
+    .locals 9
     .parameter
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -660,7 +678,9 @@
     .local p0, parameters:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     const/4 v0, 0x0
 
-    .line 194
+    const/4 v8, 0x0
+
+    .line 193
     const-string v5, "email"
 
     invoke-interface {p0, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -669,7 +689,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 195
+    .line 194
     .local v4, username:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -677,7 +697,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 196
+    .line 195
     sget-object v5, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     new-instance v6, Ljava/lang/StringBuilder;
@@ -698,13 +718,15 @@
 
     move-result-object v6
 
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v7, v8, [Ljava/lang/Object;
 
-    .line 235
+    invoke-static {v5, v6, v7}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 234
     :goto_0
     return-object v0
 
-    .line 199
+    .line 198
     :cond_0
     sget-object v5, Lcom/google/glass/util/SetupHelper;->EMAIL_PATTERN:Ljava/util/regex/Pattern;
 
@@ -718,16 +740,18 @@
 
     if-nez v5, :cond_1
 
-    .line 200
+    .line 199
     sget-object v5, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Invalid barcode. Bad email address."
 
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v7, v8, [Ljava/lang/Object;
+
+    invoke-static {v5, v6, v7}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 208
+    .line 207
     :cond_1
     :try_start_0
     const-string v5, "enc"
@@ -742,37 +766,43 @@
 
     move-result v2
 
-    .line 209
+    .line 208
     .local v2, enc:I
     packed-switch v2, :pswitch_data_0
 
-    .line 220
+    .line 219
     sget-object v5, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Unknown encryption type value."
 
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v7, 0x0
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    invoke-static {v5, v6, v7}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 223
+    .line 222
     .end local v2           #enc:I
     :catch_0
     move-exception v1
 
-    .line 224
+    .line 223
     .local v1, e:Ljava/lang/NumberFormatException;
     sget-object v5, Lcom/google/glass/util/SetupHelper;->TAG:Ljava/lang/String;
 
     const-string v6, "Invalid barcode. Bad email address."
 
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    new-array v7, v8, [Ljava/lang/Object;
+
+    invoke-static {v5, v6, v7}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 211
+    .line 210
     .end local v1           #e:Ljava/lang/NumberFormatException;
     .restart local v2       #enc:I
     :pswitch_0
@@ -785,20 +815,20 @@
 
     move-result-object v3
 
-    .line 228
+    .line 227
     .local v3, encryption:Ljava/lang/String;
     :goto_1
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 229
+    .line 228
     .local v0, bundle:Landroid/os/Bundle;
     const-string v5, "username"
 
     invoke-virtual {v0, v5, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 230
+    .line 229
     const-string v6, "ssid"
 
     const-string v5, "ssid"
@@ -811,12 +841,12 @@
 
     invoke-virtual {v0, v6, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 231
+    .line 230
     const-string v5, "encryption"
 
     invoke-virtual {v0, v5, v3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 232
+    .line 231
     const-string v6, "psk"
 
     const-string v5, "psk"
@@ -829,7 +859,7 @@
 
     invoke-virtual {v0, v6, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 233
+    .line 232
     const-string v6, "token"
 
     const-string v5, "code"
@@ -842,7 +872,7 @@
 
     invoke-virtual {v0, v6, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 234
+    .line 233
     const-string v6, "bt_device_for_pair"
 
     const-string v5, "dp"
@@ -855,9 +885,9 @@
 
     invoke-virtual {v0, v6, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 214
+    .line 213
     .end local v0           #bundle:Landroid/os/Bundle;
     .end local v3           #encryption:Ljava/lang/String;
     :pswitch_1
@@ -868,11 +898,11 @@
 
     move-result-object v3
 
-    .line 215
+    .line 214
     .restart local v3       #encryption:Ljava/lang/String;
     goto :goto_1
 
-    .line 217
+    .line 216
     .end local v3           #encryption:Ljava/lang/String;
     :pswitch_2
     sget-object v5, Lcom/google/glass/util/WifiHelper$Encryption;->WEP:Lcom/google/glass/util/WifiHelper$Encryption;
@@ -883,11 +913,13 @@
 
     move-result-object v3
 
-    .line 218
+    .line 217
     .restart local v3       #encryption:Ljava/lang/String;
     goto :goto_1
 
-    .line 209
+    .line 208
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -901,26 +933,26 @@
     .parameter "context"
 
     .prologue
-    .line 275
+    .line 274
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 276
+    .line 275
     .local v0, intent:Landroid/content/Intent;
     sget-object v1, Lcom/google/glass/util/SetupHelper;->SETUP_COMPONENT_NAME:Landroid/content/ComponentName;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 277
+    .line 276
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 278
+    .line 277
     invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 279
+    .line 278
     return-void
 .end method
 
@@ -929,12 +961,12 @@
     .parameter "context"
 
     .prologue
-    .line 265
+    .line 264
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 266
+    .line 265
     .local v0, packageManager:Landroid/content/pm/PackageManager;
     sget-object v1, Lcom/google/glass/util/SetupHelper;->SETUP_COMPONENT_NAME:Landroid/content/ComponentName;
 

@@ -22,7 +22,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 128
+    .line 133
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/glass/home/voice/menu/Requirement;
@@ -42,10 +42,10 @@
 
     invoke-direct {p0, p1, v0}, Lcom/google/glass/home/voice/menu/EntityMenuItem;-><init>(Lcom/google/googlex/glass/common/proto/Entity;[Lcom/google/glass/home/voice/menu/Requirement;)V
 
-    .line 129
+    .line 134
     invoke-virtual {p0, v3}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendEmailMessageItem;->setVoicePendingAfterTrigger(Z)Lcom/google/glass/home/voice/menu/VoiceMenuItem;
 
-    .line 130
+    .line 135
     return-void
 .end method
 
@@ -57,18 +57,18 @@
     .parameter "spoken"
 
     .prologue
-    .line 134
+    .line 139
     sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     invoke-interface {p1, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->preloadVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    .line 135
+    .line 140
     new-instance v0, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendEmailMessageItem$1;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/google/glass/home/voice/menu/EntityMenuItem$SendEmailMessageItem$1;-><init>(Lcom/google/glass/home/voice/menu/EntityMenuItem$SendEmailMessageItem;Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;Z)V
 
     invoke-interface {p1, p0, v0}, Lcom/google/glass/home/voice/menu/VoiceMenuEnvironment;->selectSecondaryMenuItem(Lcom/google/glass/home/voice/menu/VoiceMenuItem;Ljava/lang/Runnable;)V
 
-    .line 142
+    .line 147
     return-void
 .end method

@@ -37,6 +37,12 @@
 .method public abstract getNameBytes()Lcom/google/protobuf/ByteString;
 .end method
 
+.method public abstract getSource()Ljava/lang/String;
+.end method
+
+.method public abstract getSourceBytes()Lcom/google/protobuf/ByteString;
+.end method
+
 .method public abstract hasContent()Z
 .end method
 
@@ -53,4 +59,7 @@
 .end method
 
 .method public abstract hasName()Z
+.end method
+
+.method public abstract hasSource()Z
 .end method

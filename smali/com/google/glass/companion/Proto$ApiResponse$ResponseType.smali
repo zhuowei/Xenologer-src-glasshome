@@ -57,7 +57,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 12227
+    .line 15589
     new-instance v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
 
     const-string v1, "USER_ACTION"
@@ -66,7 +66,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->USER_ACTION:Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
 
-    .line 12218
+    .line 15580
     const/4 v0, 0x1
 
     new-array v0, v0, [Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
@@ -77,7 +77,7 @@
 
     sput-object v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->$VALUES:[Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
 
-    .line 12254
+    .line 15616
     new-instance v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType$1;
 
     invoke-direct {v0}, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType$1;-><init>()V
@@ -100,13 +100,13 @@
     .end annotation
 
     .prologue
-    .line 12263
+    .line 15625
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 12264
+    .line 15626
     iput p4, p0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->value:I
 
-    .line 12265
+    .line 15627
     return-void
 .end method
 
@@ -123,7 +123,7 @@
     .end annotation
 
     .prologue
-    .line 12251
+    .line 15613
     sget-object v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -134,22 +134,22 @@
     .parameter "value"
 
     .prologue
-    .line 12243
+    .line 15605
     packed-switch p0, :pswitch_data_0
 
-    .line 12245
+    .line 15607
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 12244
+    .line 15606
     :pswitch_0
     sget-object v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->USER_ACTION:Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
 
     goto :goto_0
 
-    .line 12243
+    .line 15605
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -161,7 +161,7 @@
     .parameter "name"
 
     .prologue
-    .line 12218
+    .line 15580
     const-class v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -177,7 +177,7 @@
     .locals 1
 
     .prologue
-    .line 12218
+    .line 15580
     sget-object v0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->$VALUES:[Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;
 
     invoke-virtual {v0}, [Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->clone()Ljava/lang/Object;
@@ -195,7 +195,7 @@
     .locals 1
 
     .prologue
-    .line 12240
+    .line 15602
     iget v0, p0, Lcom/google/glass/companion/Proto$ApiResponse$ResponseType;->value:I
 
     return v0

@@ -16,22 +16,41 @@
 
 
 # instance fields
-.field private voiceService:Lcom/google/glass/voice/VoiceService;
+.field private final endpointerEventPreprocessors:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
-.method public constructor <init>(Lcom/google/glass/voice/VoiceService;)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
-    .parameter "voiceService"
+    .parameter
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
-    .line 29
+    .line 32
+    .local p1, endpointerEventPreprocessors:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/network/EndpointerEventProcessor$EventPreprocessor;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
-    iput-object p1, p0, Lcom/google/glass/voice/network/CallbackFactory;->voiceService:Lcom/google/glass/voice/VoiceService;
+    .line 33
+    iput-object p1, p0, Lcom/google/glass/voice/network/CallbackFactory;->endpointerEventPreprocessors:Ljava/util/List;
 
-    .line 31
+    .line 34
     return-void
 .end method
 
@@ -60,15 +79,15 @@
     .end annotation
 
     .prologue
-    .line 38
+    .line 41
     .local p1, wrapped:Lcom/google/android/speech/callback/Callback;,"Lcom/google/android/speech/callback/Callback<Lcom/google/speech/s3/S3$S3Response;Lcom/google/android/speech/exception/RecognizeException;>;"
     new-instance v0, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;
 
     new-instance v1, Lcom/google/glass/voice/network/EndpointerEventProcessor;
 
-    iget-object v2, p0, Lcom/google/glass/voice/network/CallbackFactory;->voiceService:Lcom/google/glass/voice/VoiceService;
+    iget-object v2, p0, Lcom/google/glass/voice/network/CallbackFactory;->endpointerEventPreprocessors:Ljava/util/List;
 
-    invoke-direct {v1, p2, p4, v2}, Lcom/google/glass/voice/network/EndpointerEventProcessor;-><init>(Lcom/google/android/speech/audio/EndpointerListener;Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;Lcom/google/glass/voice/VoiceService;)V
+    invoke-direct {v1, p2, p4, v2}, Lcom/google/glass/voice/network/EndpointerEventProcessor;-><init>(Lcom/google/android/speech/audio/EndpointerListener;Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$EndpointerParams;Ljava/util/List;)V
 
     invoke-direct {v0, p0, p1, v1}, Lcom/google/glass/voice/network/CallbackFactory$Greco3CallbackImpl;-><init>(Lcom/google/glass/voice/network/CallbackFactory;Lcom/google/android/speech/callback/Callback;Lcom/google/glass/voice/network/EndpointerEventProcessor;)V
 

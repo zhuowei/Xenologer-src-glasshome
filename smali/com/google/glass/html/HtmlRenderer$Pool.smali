@@ -38,23 +38,23 @@
     .parameter "bitmapFactory"
 
     .prologue
-    .line 81
+    .line 90
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 79
+    .line 88
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v1, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->availableRenderers:Ljava/util/ArrayList;
 
-    .line 82
+    .line 91
     iput-object p1, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->context:Landroid/content/Context;
 
-    .line 83
+    .line 92
     iput-object p2, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->bitmapFactory:Lcom/google/glass/util/CachedBitmapFactory;
 
-    .line 84
+    .line 93
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -63,7 +63,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 88
+    .line 97
     invoke-static {}, Lcom/google/glass/util/MainThreadExecutorManager;->getMainThreadExecutor()Ljava/util/concurrent/Executor;
 
     move-result-object v1
@@ -74,12 +74,12 @@
 
     invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 84
+    .line 93
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 95
+    .line 104
     :cond_0
     return-void
 .end method
@@ -90,7 +90,7 @@
     .locals 4
 
     .prologue
-    .line 99
+    .line 108
     monitor-enter p0
 
     :try_start_0
@@ -102,7 +102,7 @@
 
     if-lez v1, :cond_0
 
-    .line 100
+    .line 109
     iget-object v1, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->availableRenderers:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->availableRenderers:Ljava/util/ArrayList;
@@ -119,7 +119,7 @@
 
     check-cast v0, Lcom/google/glass/html/HtmlRenderer;
 
-    .line 104
+    .line 113
     .local v0, renderer:Lcom/google/glass/html/HtmlRenderer;
     :goto_0
     const/4 v1, 0x1
@@ -129,12 +129,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 105
+    .line 114
     monitor-exit p0
 
     return-object v0
 
-    .line 102
+    .line 111
     .end local v0           #renderer:Lcom/google/glass/html/HtmlRenderer;
     :cond_0
     :try_start_1
@@ -153,7 +153,7 @@
     .restart local v0       #renderer:Lcom/google/glass/html/HtmlRenderer;
     goto :goto_0
 
-    .line 99
+    .line 108
     .end local v0           #renderer:Lcom/google/glass/html/HtmlRenderer;
     :catchall_0
     move-exception v1
@@ -168,7 +168,7 @@
     .parameter "renderer"
 
     .prologue
-    .line 109
+    .line 118
     monitor-enter p0
 
     const/4 v0, 0x0
@@ -177,7 +177,7 @@
     #calls: Lcom/google/glass/html/HtmlRenderer;->setIsAllocated(Z)V
     invoke-static {p1, v0}, Lcom/google/glass/html/HtmlRenderer;->access$100(Lcom/google/glass/html/HtmlRenderer;Z)V
 
-    .line 110
+    .line 119
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->availableRenderers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -188,20 +188,20 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 111
+    .line 120
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$Pool;->availableRenderers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 115
+    .line 124
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 113
+    .line 122
     :cond_0
     :try_start_1
     #calls: Lcom/google/glass/html/HtmlRenderer;->destroy()V
@@ -211,7 +211,7 @@
 
     goto :goto_0
 
-    .line 109
+    .line 118
     :catchall_0
     move-exception v0
 

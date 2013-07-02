@@ -111,7 +111,7 @@
 
     move-result-object v4
 
-    invoke-interface {v1, v4}, Lcom/google/protobuf/MutableMessageLite;->mergePartialFrom(Lcom/google/protobuf/CodedInputStream;)Z
+    invoke-interface {v1, v4}, Lcom/google/protobuf/MutableMessageLite;->mergeFrom(Lcom/google/protobuf/CodedInputStream;)Z
 
     move-result v4
 

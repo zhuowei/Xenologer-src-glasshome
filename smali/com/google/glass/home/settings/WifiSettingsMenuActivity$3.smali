@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 297
+    .line 288
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 300
+    .line 291
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
@@ -50,7 +50,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 301
+    .line 292
     return-void
 .end method
 
@@ -58,7 +58,7 @@
     .locals 2
 
     .prologue
-    .line 305
+    .line 296
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->getTag()Ljava/lang/String;
@@ -70,7 +70,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 307
+    .line 298
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$3;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     #getter for: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->apsView:Lcom/google/glass/home/settings/WifiHorizontalScrollView;
@@ -82,6 +82,6 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/settings/WifiHorizontalScrollView;->setVisibility(I)V
 
-    .line 308
+    .line 299
     return-void
 .end method

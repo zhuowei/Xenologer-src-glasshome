@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 256
+    .line 260
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$2;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "headsetEnabled"
 
     .prologue
-    .line 266
+    .line 270
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .locals 1
 
     .prologue
-    .line 259
+    .line 263
     const/4 v0, 0x1
 
     return v0
@@ -60,6 +60,6 @@
     .locals 0
 
     .prologue
-    .line 263
+    .line 267
     return-void
 .end method

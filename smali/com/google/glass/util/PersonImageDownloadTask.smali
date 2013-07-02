@@ -3,8 +3,23 @@
 .source "PersonImageDownloadTask.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/google/glass/util/PersonImageDownloadTask$1;,
+        Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+    }
+.end annotation
+
+
+# static fields
+.field private static final NO_IMAGE_ID:I = -0x1
+
+
 # instance fields
-.field private alwaysShowLabel:Z
+.field private defaultImage:I
+
+.field private labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
 
 .field private final nameView:Landroid/widget/TextView;
 
@@ -34,7 +49,7 @@
     .parameter "height"
 
     .prologue
-    .line 34
+    .line 55
     sget-object v5, Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;->SMART_CROP:Lcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;
 
     move-object v0, p0
@@ -49,18 +64,23 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/glass/util/ImageProxyBitmapLoadingTask;-><init>(Landroid/content/Context;Ljava/lang/String;IILcom/google/googlex/glass/common/proto/ImageDownloadRequest$CropType;)V
 
-    .line 22
-    const/4 v0, 0x0
+    .line 42
+    sget-object v0, Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;->DEFAULT:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
 
-    iput-boolean v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->alwaysShowLabel:Z
+    iput-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
 
-    .line 35
+    .line 44
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
+
+    .line 56
     iput-object p3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
 
-    .line 36
+    .line 57
     iput-object p4, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
 
-    .line 37
+    .line 58
     invoke-static {p1}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
     move-result-object v0
@@ -71,85 +91,62 @@
 
     iput-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->profileImageUrlCache:Landroid/util/LruCache;
 
-    .line 38
+    .line 59
     return-void
-.end method
-
-.method private setViewVisibilities(ZZ)V
-    .locals 2
-    .parameter "hasImage"
-    .parameter "animate"
-
-    .prologue
-    const/4 v1, 0x1
-
-    .line 70
-    if-eqz p1, :cond_1
-
-    .line 71
-    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
-
-    invoke-virtual {p0, v0, p2}, Lcom/google/glass/util/PersonImageDownloadTask;->showView(Landroid/view/View;Z)V
-
-    .line 72
-    iget-boolean v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->alwaysShowLabel:Z
-
-    if-nez v0, :cond_0
-
-    .line 73
-    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
-
-    invoke-virtual {p0, v0, p2, v1}, Lcom/google/glass/util/PersonImageDownloadTask;->hideView(Landroid/view/View;ZZ)V
-
-    .line 79
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 76
-    :cond_1
-    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
-
-    invoke-virtual {p0, v0, p2, v1}, Lcom/google/glass/util/PersonImageDownloadTask;->hideView(Landroid/view/View;ZZ)V
-
-    .line 77
-    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
-
-    invoke-virtual {p0, v0, p2}, Lcom/google/glass/util/PersonImageDownloadTask;->showView(Landroid/view/View;Z)V
-
-    goto :goto_0
 .end method
 
 
 # virtual methods
 .method protected bindContent(Landroid/graphics/Bitmap;)V
-    .locals 2
+    .locals 3
     .parameter "bitmap"
 
     .prologue
     const/4 v1, 0x1
 
-    .line 126
+    .line 174
+    if-eqz p1, :cond_1
+
+    .line 175
     iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 127
-    if-eqz p1, :cond_0
+    .line 179
+    :cond_0
+    :goto_0
+    if-eqz p1, :cond_2
 
     move v0, v1
 
-    :goto_0
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/util/PersonImageDownloadTask;->setViewVisibilities(ZZ)V
+    :goto_1
+    invoke-virtual {p0, v0, v1}, Lcom/google/glass/util/PersonImageDownloadTask;->setViewVisibilities(ZZ)V
 
-    .line 128
+    .line 180
     return-void
 
-    .line 127
-    :cond_0
-    const/4 v0, 0x0
+    .line 176
+    :cond_1
+    iget v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
+
+    const/4 v2, -0x1
+
+    if-eq v0, v2, :cond_0
+
+    .line 177
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
+
+    iget v2, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     goto :goto_0
+
+    .line 179
+    :cond_2
+    const/4 v0, 0x0
+
+    goto :goto_1
 .end method
 
 .method protected bridge synthetic bindContent(Ljava/lang/Object;)V
@@ -157,7 +154,7 @@
     .parameter "x0"
 
     .prologue
-    .line 17
+    .line 18
     check-cast p1, Landroid/graphics/Bitmap;
 
     .end local p1
@@ -172,31 +169,32 @@
 .method protected abstract getDisplayText()Ljava/lang/String;
 .end method
 
-.method protected loadContent()Landroid/graphics/Bitmap;
+.method protected loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
     .locals 4
+    .parameter "isCancelled"
 
     .prologue
-    .line 103
+    .line 151
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->onPreLoad()V
 
-    .line 105
+    .line 153
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->getImageUrl()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 106
+    .line 154
     .local v2, imageUrl:Ljava/lang/String;
-    invoke-super {p0}, Lcom/google/glass/util/ImageProxyBitmapLoadingTask;->loadContent()Landroid/graphics/Bitmap;
+    invoke-super {p0, p1}, Lcom/google/glass/util/ImageProxyBitmapLoadingTask;->loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 107
+    .line 155
     .local v0, bitmap:Landroid/graphics/Bitmap;
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->getCacheId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 110
+    .line 158
     .local v1, cacheId:Ljava/lang/String;
     if-eqz v2, :cond_0
 
@@ -204,22 +202,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 111
+    .line 159
     iget-object v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->profileImageUrlCache:Landroid/util/LruCache;
 
     invoke-virtual {v3, v1, v2}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 114
+    .line 162
     :cond_0
     return-object v0
 .end method
 
-.method protected bridge synthetic loadContent()Ljava/lang/Object;
+.method protected bridge synthetic loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/Object;
     .locals 1
+    .parameter "x0"
 
     .prologue
-    .line 17
-    invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->loadContent()Landroid/graphics/Bitmap;
+    .line 18
+    invoke-virtual {p0, p1}, Lcom/google/glass/util/PersonImageDownloadTask;->loadContent(Lcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -230,7 +229,7 @@
     .locals 0
 
     .prologue
-    .line 122
+    .line 170
     return-void
 .end method
 
@@ -240,12 +239,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 42
+    .line 63
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->getCacheId()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 44
+    .line 65
     .local v1, cacheId:Ljava/lang/String;
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->getImageUrl()Ljava/lang/String;
 
@@ -255,7 +254,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 45
+    .line 66
     iget-object v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->profileImageUrlCache:Landroid/util/LruCache;
 
     invoke-virtual {v3, v1}, Landroid/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -266,13 +265,13 @@
 
     invoke-virtual {p0, v3}, Lcom/google/glass/util/PersonImageDownloadTask;->setImageUrl(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 48
+    .line 69
     :cond_0
     iget-object v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
 
     if-eqz v3, :cond_1
 
-    .line 49
+    .line 70
     iget-object v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->getDisplayText()Ljava/lang/String;
@@ -281,54 +280,206 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 53
+    .line 74
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->loadContentFromCache()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 54
+    .line 75
     .local v0, bitmap:Landroid/graphics/Bitmap;
     if-eqz v0, :cond_3
 
     const/4 v2, 0x1
 
-    .line 55
+    .line 76
     .local v2, hasImage:Z
     :goto_0
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_4
 
-    .line 56
+    .line 77
     iget-object v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 57
+    .line 78
     invoke-virtual {p0, v4}, Lcom/google/glass/util/PersonImageDownloadTask;->cancel(Z)V
 
-    .line 60
+    .line 83
     :cond_2
-    invoke-direct {p0, v2, v4}, Lcom/google/glass/util/PersonImageDownloadTask;->setViewVisibilities(ZZ)V
+    :goto_1
+    invoke-virtual {p0, v2, v4}, Lcom/google/glass/util/PersonImageDownloadTask;->setViewVisibilities(ZZ)V
 
-    .line 61
+    .line 84
     return-void
 
     .end local v2           #hasImage:Z
     :cond_3
     move v2, v4
 
-    .line 54
+    .line 75
     goto :goto_0
+
+    .line 79
+    .restart local v2       #hasImage:Z
+    :cond_4
+    iget v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
+
+    const/4 v5, -0x1
+
+    if-eq v3, v5, :cond_2
+
+    .line 80
+    iget-object v3, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
+
+    iget v5, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
+
+    invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_1
 .end method
 
-.method public setAlwaysShowLabel(Z)V
+.method public setDefaultImageResId(I)V
     .locals 0
-    .parameter "alwaysShowLabel"
+    .parameter "id"
 
     .prologue
-    .line 85
-    iput-boolean p1, p0, Lcom/google/glass/util/PersonImageDownloadTask;->alwaysShowLabel:Z
+    .line 133
+    iput p1, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
 
-    .line 86
+    .line 134
     return-void
+.end method
+
+.method public setLabelVisibility(Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;)V
+    .locals 2
+    .parameter "labelVisibility"
+
+    .prologue
+    .line 123
+    invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->isRunning()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-virtual {p0}, Lcom/google/glass/util/PersonImageDownloadTask;->isFinished()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 124
+    :cond_0
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string v1, "Must call setLabelVisibility before the task is run"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 126
+    :cond_1
+    iput-object p1, p0, Lcom/google/glass/util/PersonImageDownloadTask;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    .line 127
+    return-void
+.end method
+
+.method setViewVisibilities(ZZ)V
+    .locals 3
+    .parameter "hasImage"
+    .parameter "animate"
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 94
+    if-nez p1, :cond_0
+
+    iget v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->defaultImage:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_1
+
+    .line 95
+    :cond_0
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
+
+    invoke-virtual {p0, v0, p2}, Lcom/google/glass/util/PersonImageDownloadTask;->showView(Landroid/view/View;Z)V
+
+    .line 101
+    :goto_0
+    sget-object v0, Lcom/google/glass/util/PersonImageDownloadTask$1;->$SwitchMap$com$google$glass$util$PersonImageDownloadTask$LabelVisibility:[I
+
+    iget-object v1, p0, Lcom/google/glass/util/PersonImageDownloadTask;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    invoke-virtual {v1}, Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_0
+
+    .line 116
+    :goto_1
+    return-void
+
+    .line 97
+    :cond_1
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->pictureView:Landroid/widget/ImageView;
+
+    invoke-virtual {p0, v0, p2, v2}, Lcom/google/glass/util/PersonImageDownloadTask;->hideView(Landroid/view/View;ZZ)V
+
+    goto :goto_0
+
+    .line 103
+    :pswitch_0
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
+
+    invoke-virtual {p0, v0, p2, v2}, Lcom/google/glass/util/PersonImageDownloadTask;->hideView(Landroid/view/View;ZZ)V
+
+    goto :goto_1
+
+    .line 106
+    :pswitch_1
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
+
+    invoke-virtual {p0, v0, p2}, Lcom/google/glass/util/PersonImageDownloadTask;->showView(Landroid/view/View;Z)V
+
+    goto :goto_1
+
+    .line 109
+    :pswitch_2
+    if-eqz p1, :cond_2
+
+    .line 110
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
+
+    invoke-virtual {p0, v0, p2, v2}, Lcom/google/glass/util/PersonImageDownloadTask;->hideView(Landroid/view/View;ZZ)V
+
+    goto :goto_1
+
+    .line 112
+    :cond_2
+    iget-object v0, p0, Lcom/google/glass/util/PersonImageDownloadTask;->nameView:Landroid/widget/TextView;
+
+    invoke-virtual {p0, v0, p2}, Lcom/google/glass/util/PersonImageDownloadTask;->showView(Landroid/view/View;Z)V
+
+    goto :goto_1
+
+    .line 101
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_1
+        :pswitch_2
+    .end packed-switch
 .end method

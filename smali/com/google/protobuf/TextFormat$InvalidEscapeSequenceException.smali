@@ -24,9 +24,9 @@
     .parameter "description"
 
     .prologue
-    .line 1836
+    .line 1830
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
-    .line 1837
+    .line 1831
     return-void
 .end method

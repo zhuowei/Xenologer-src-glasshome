@@ -45,6 +45,8 @@
 
 .field public static final NUMBER_FIELD_NUMBER:I = 0x3
 
+.field public static final ONEOF_INDEX_FIELD_NUMBER:I = 0x9
+
 .field public static final OPTIONS_FIELD_NUMBER:I = 0x8
 
 .field public static PARSER:Lcom/google/protobuf/Parser; = null
@@ -82,6 +84,8 @@
 
 .field private number_:I
 
+.field private oneofIndex_:I
+
 .field private options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
 .field private typeName_:Ljava/lang/Object;
@@ -94,12 +98,12 @@
     .locals 2
 
     .prologue
-    .line 4420
+    .line 4617
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
-    .line 4430
+    .line 4627
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     const/4 v1, 0x1
@@ -108,17 +112,17 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
-    .line 4431
+    .line 4628
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->initFields()V
 
-    .line 4432
+    .line 4629
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->makeImmutable()V
 
-    .line 4433
+    .line 4630
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     invoke-static {v0}, Lcom/google/protobuf/AbstractMutableMessageLite;->internalNewParserForType(Lcom/google/protobuf/MutableMessageLite;)Lcom/google/protobuf/Parser;
@@ -127,7 +131,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 4435
+    .line 4632
     return-void
 .end method
 
@@ -135,40 +139,40 @@
     .locals 1
 
     .prologue
-    .line 3122
+    .line 3241
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMutableMessage;-><init>()V
 
-    .line 3563
+    .line 3682
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3666
+    .line 3785
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3702
+    .line 3821
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;->TYPE_DOUBLE:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
-    .line 3758
+    .line 3877
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3876
+    .line 3995
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3976
+    .line 4095
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 3122
+    .line 3241
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->initFields()V
 
     return-void
@@ -179,40 +183,40 @@
     .parameter "noInit"
 
     .prologue
-    .line 3123
+    .line 3242
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMutableMessage;-><init>()V
 
-    .line 3563
+    .line 3682
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3666
+    .line 3785
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3702
+    .line 3821
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;->TYPE_DOUBLE:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
-    .line 3758
+    .line 3877
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3876
+    .line 3995
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3976
+    .line 4095
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 3123
+    .line 3242
     return-void
 .end method
 
@@ -220,7 +224,7 @@
     .locals 2
 
     .prologue
-    .line 4096
+    .line 4276
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
@@ -229,14 +233,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 4097
+    .line 4277
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->newMessage()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 4099
+    .line 4279
     :cond_0
     return-void
 .end method
@@ -245,7 +249,7 @@
     .locals 1
 
     .prologue
-    .line 3137
+    .line 3256
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     return-object v0
@@ -255,7 +259,7 @@
     .locals 1
 
     .prologue
-    .line 3144
+    .line 3263
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$800()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -267,24 +271,24 @@
     .locals 1
 
     .prologue
-    .line 3131
+    .line 3250
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3132
+    .line 3251
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;->TYPE_DOUBLE:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
-    .line 3133
+    .line 3252
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 3134
+    .line 3253
     return-void
 .end method
 
@@ -292,7 +296,7 @@
     .locals 1
 
     .prologue
-    .line 3128
+    .line 3247
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;-><init>()V
@@ -306,7 +310,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clear()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -318,97 +322,107 @@
     .locals 2
 
     .prologue
-    .line 4397
+    const/4 v1, 0x0
+
+    .line 4592
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4398
+    .line 4593
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMutableMessage;->clear()Lcom/google/protobuf/GeneratedMutableMessage;
 
-    .line 4399
+    .line 4594
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 4400
+    .line 4595
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4401
-    const/4 v0, 0x0
+    .line 4596
+    iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
 
-    iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
-
-    .line 4402
+    .line 4597
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4403
+    .line 4598
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 4404
+    .line 4599
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4405
+    .line 4600
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;->TYPE_DOUBLE:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
-    .line 4406
+    .line 4601
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4407
+    .line 4602
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 4408
+    .line 4603
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4409
+    .line 4604
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 4410
+    .line 4605
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4411
+    .line 4606
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4412
+    .line 4607
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4413
+    .line 4608
+    iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
+
+    .line 4609
+    iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    and-int/lit16 v0, v0, -0x81
+
+    iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    .line 4610
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
@@ -417,20 +431,20 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 4414
+    .line 4611
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->clear()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 4416
+    .line 4613
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    and-int/lit16 v0, v0, -0x81
+    and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4417
+    .line 4614
     return-object p0
 .end method
 
@@ -438,7 +452,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clear()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -450,7 +464,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clear()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -462,22 +476,22 @@
     .locals 1
 
     .prologue
-    .line 4087
+    .line 4206
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4088
+    .line 4207
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4089
+    .line 4208
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4090
+    .line 4209
     return-object p0
 .end method
 
@@ -485,22 +499,22 @@
     .locals 1
 
     .prologue
-    .line 3969
+    .line 4088
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3970
+    .line 4089
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3971
+    .line 4090
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3972
+    .line 4091
     return-object p0
 .end method
 
@@ -508,22 +522,22 @@
     .locals 1
 
     .prologue
-    .line 3695
+    .line 3814
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3696
+    .line 3815
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3697
+    .line 3816
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->LABEL_OPTIONAL:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3698
+    .line 3817
     return-object p0
 .end method
 
@@ -531,22 +545,22 @@
     .locals 1
 
     .prologue
-    .line 3626
+    .line 3745
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3627
+    .line 3746
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3628
+    .line 3747
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3629
+    .line 3748
     return-object p0
 .end method
 
@@ -554,22 +568,45 @@
     .locals 1
 
     .prologue
-    .line 3659
+    .line 3778
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3660
+    .line 3779
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3661
+    .line 3780
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
 
-    .line 3662
+    .line 3781
+    return-object p0
+.end method
+
+.method public clearOneofIndex()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
+    .locals 1
+
+    .prologue
+    .line 4267
+    invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
+
+    .line 4268
+    iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    and-int/lit16 v0, v0, -0x81
+
+    iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    .line 4269
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
+
+    .line 4270
     return-object p0
 .end method
 
@@ -577,17 +614,17 @@
     .locals 2
 
     .prologue
-    .line 4138
+    .line 4318
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4139
+    .line 4319
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    and-int/lit16 v0, v0, -0x81
+    and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4140
+    .line 4320
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
@@ -596,12 +633,12 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 4141
+    .line 4321
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-virtual {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->clear()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 4143
+    .line 4323
     :cond_0
     return-object p0
 .end method
@@ -610,22 +647,22 @@
     .locals 1
 
     .prologue
-    .line 3751
+    .line 3870
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3752
+    .line 3871
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3753
+    .line 3872
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;->TYPE_DOUBLE:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
-    .line 3754
+    .line 3873
     return-object p0
 .end method
 
@@ -633,22 +670,22 @@
     .locals 1
 
     .prologue
-    .line 3869
+    .line 3988
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3870
+    .line 3989
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3871
+    .line 3990
     sget-object v0, Lcom/google/protobuf/Internal;->EMPTY_BYTE_ARRAY:[B
 
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3872
+    .line 3991
     return-object p0
 .end method
 
@@ -656,7 +693,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -668,7 +705,7 @@
     .locals 1
 
     .prologue
-    .line 4156
+    .line 4336
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -684,7 +721,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -696,7 +733,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -713,7 +750,7 @@
     .end annotation
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->clone()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -725,7 +762,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -737,7 +774,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -749,7 +786,7 @@
     .locals 1
 
     .prologue
-    .line 3140
+    .line 3259
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultInstance:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     return-object v0
@@ -759,7 +796,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDefaultInstanceForType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -771,24 +808,24 @@
     .locals 4
 
     .prologue
-    .line 4003
+    .line 4122
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4004
+    .line 4123
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 4005
+    .line 4124
     check-cast v1, Ljava/lang/String;
 
-    .line 4013
+    .line 4132
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 4007
+    .line 4126
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -798,13 +835,13 @@
 
     check-cast v0, [B
 
-    .line 4008
+    .line 4127
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4010
+    .line 4129
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -812,13 +849,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 4011
+    .line 4130
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 4013
+    .line 4132
     goto :goto_0
 .end method
 
@@ -826,10 +863,10 @@
     .locals 4
 
     .prologue
-    .line 4028
+    .line 4147
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4029
+    .line 4148
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -837,20 +874,20 @@
 
     move-object v2, v1
 
-    .line 4030
+    .line 4149
     check-cast v2, Ljava/lang/String;
 
-    .line 4031
+    .line 4150
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 4032
+    .line 4151
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4035
+    .line 4154
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -873,24 +910,24 @@
     .locals 4
 
     .prologue
-    .line 3897
+    .line 4016
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3898
+    .line 4017
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 3899
+    .line 4018
     check-cast v1, Ljava/lang/String;
 
-    .line 3907
+    .line 4026
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 3901
+    .line 4020
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -900,13 +937,13 @@
 
     check-cast v0, [B
 
-    .line 3902
+    .line 4021
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3904
+    .line 4023
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -914,13 +951,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 3905
+    .line 4024
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 3907
+    .line 4026
     goto :goto_0
 .end method
 
@@ -928,10 +965,10 @@
     .locals 4
 
     .prologue
-    .line 3919
+    .line 4038
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3920
+    .line 4039
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -939,20 +976,20 @@
 
     move-object v2, v1
 
-    .line 3921
+    .line 4040
     check-cast v2, Ljava/lang/String;
 
-    .line 3922
+    .line 4041
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 3923
+    .line 4042
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3926
+    .line 4045
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -975,7 +1012,7 @@
     .locals 1
 
     .prologue
-    .line 3677
+    .line 3796
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     return-object v0
@@ -985,20 +1022,20 @@
     .locals 1
 
     .prologue
-    .line 4116
+    .line 4296
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4117
+    .line 4297
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->ensureOptionsInitialized()V
 
-    .line 4118
+    .line 4298
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    or-int/lit16 v0, v0, 0x80
+    or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4119
+    .line 4299
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     return-object v0
@@ -1008,24 +1045,24 @@
     .locals 4
 
     .prologue
-    .line 3574
+    .line 3693
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3575
+    .line 3694
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 3576
+    .line 3695
     check-cast v1, Ljava/lang/String;
 
-    .line 3584
+    .line 3703
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 3578
+    .line 3697
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -1035,13 +1072,13 @@
 
     check-cast v0, [B
 
-    .line 3579
+    .line 3698
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3581
+    .line 3700
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -1049,13 +1086,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 3582
+    .line 3701
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 3584
+    .line 3703
     goto :goto_0
 .end method
 
@@ -1063,10 +1100,10 @@
     .locals 4
 
     .prologue
-    .line 3591
+    .line 3710
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3592
+    .line 3711
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -1074,20 +1111,20 @@
 
     move-object v2, v1
 
-    .line 3593
+    .line 3712
     check-cast v2, Ljava/lang/String;
 
-    .line 3594
+    .line 3713
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 3595
+    .line 3714
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3598
+    .line 3717
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -1110,8 +1147,18 @@
     .locals 1
 
     .prologue
-    .line 3644
+    .line 3763
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
+
+    return v0
+.end method
+
+.method public getOneofIndex()I
+    .locals 1
+
+    .prologue
+    .line 4238
+    iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
 
     return v0
 .end method
@@ -1120,7 +1167,7 @@
     .locals 1
 
     .prologue
-    .line 4110
+    .line 4290
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     return-object v0
@@ -1139,7 +1186,7 @@
     .end annotation
 
     .prologue
-    .line 3155
+    .line 3274
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -1157,10 +1204,10 @@
 
     const/4 v2, 0x1
 
-    .line 4351
+    .line 4542
     const/4 v0, 0x0
 
-    .line 4352
+    .line 4543
     .local v0, size:I
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1168,7 +1215,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 4353
+    .line 4544
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getNameAsBytes()[B
 
     move-result-object v1
@@ -1179,7 +1226,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4356
+    .line 4547
     :cond_0
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1187,7 +1234,7 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 4357
+    .line 4548
     const/4 v1, 0x3
 
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
@@ -1198,7 +1245,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4360
+    .line 4551
     :cond_1
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1206,7 +1253,7 @@
 
     if-ne v1, v4, :cond_2
 
-    .line 4361
+    .line 4552
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     invoke-virtual {v1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->getNumber()I
@@ -1219,7 +1266,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4364
+    .line 4555
     :cond_2
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1227,7 +1274,7 @@
 
     if-ne v1, v5, :cond_3
 
-    .line 4365
+    .line 4556
     const/4 v1, 0x5
 
     iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
@@ -1242,7 +1289,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4368
+    .line 4559
     :cond_3
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1252,7 +1299,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 4369
+    .line 4560
     const/4 v1, 0x6
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getTypeNameAsBytes()[B
@@ -1265,7 +1312,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4372
+    .line 4563
     :cond_4
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1275,7 +1322,7 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 4373
+    .line 4564
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getExtendeeAsBytes()[B
 
     move-result-object v1
@@ -1286,7 +1333,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4376
+    .line 4567
     :cond_5
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1296,7 +1343,7 @@
 
     if-ne v1, v2, :cond_6
 
-    .line 4377
+    .line 4568
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDefaultValueAsBytes()[B
@@ -1309,7 +1356,7 @@
 
     add-int/2addr v0, v1
 
-    .line 4380
+    .line 4571
     :cond_6
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -1319,7 +1366,28 @@
 
     if-ne v1, v2, :cond_7
 
-    .line 4381
+    .line 4572
+    const/16 v1, 0x9
+
+    iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
+
+    invoke-static {v1, v2}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    .line 4575
+    :cond_7
+    iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    and-int/lit16 v1, v1, 0x100
+
+    const/16 v2, 0x100
+
+    if-ne v1, v2, :cond_8
+
+    .line 4576
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-static {v5, v1}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
@@ -1328,8 +1396,8 @@
 
     add-int/2addr v0, v1
 
-    .line 4384
-    :cond_7
+    .line 4579
+    :cond_8
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v1
@@ -1340,10 +1408,10 @@
 
     add-int/2addr v0, v1
 
-    .line 4385
+    .line 4580
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->cachedSize:I
 
-    .line 4386
+    .line 4581
     return v0
 .end method
 
@@ -1351,7 +1419,7 @@
     .locals 1
 
     .prologue
-    .line 3723
+    .line 3842
     iget-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     return-object v0
@@ -1361,24 +1429,24 @@
     .locals 4
 
     .prologue
-    .line 3785
+    .line 3904
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3786
+    .line 3905
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 3787
+    .line 3906
     check-cast v1, Ljava/lang/String;
 
-    .line 3795
+    .line 3914
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
 
-    .line 3789
+    .line 3908
     .restart local v1       #ref:Ljava/lang/Object;
     :cond_0
     check-cast v1, [B
@@ -1388,13 +1456,13 @@
 
     check-cast v0, [B
 
-    .line 3790
+    .line 3909
     .local v0, byteArray:[B
     invoke-static {v0}, Lcom/google/protobuf/Internal;->toStringUtf8([B)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 3792
+    .line 3911
     .local v2, s:Ljava/lang/String;
     invoke-static {v0}, Lcom/google/protobuf/Internal;->isValidUtf8([B)Z
 
@@ -1402,13 +1470,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 3793
+    .line 3912
     iput-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 3795
+    .line 3914
     goto :goto_0
 .end method
 
@@ -1416,10 +1484,10 @@
     .locals 4
 
     .prologue
-    .line 3810
+    .line 3929
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3811
+    .line 3930
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
@@ -1427,20 +1495,20 @@
 
     move-object v2, v1
 
-    .line 3812
+    .line 3931
     check-cast v2, Ljava/lang/String;
 
-    .line 3813
+    .line 3932
     .local v2, s:Ljava/lang/String;
     invoke-static {v2}, Lcom/google/protobuf/Internal;->toByteArray(Ljava/lang/String;)[B
 
     move-result-object v0
 
-    .line 3814
+    .line 3933
     .local v0, byteArray:[B
     iput-object v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3817
+    .line 3936
     .end local v0           #byteArray:[B
     .end local v1           #ref:Ljava/lang/Object;
     .end local v2           #s:Ljava/lang/String;
@@ -1463,7 +1531,7 @@
     .locals 2
 
     .prologue
-    .line 3989
+    .line 4108
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -1487,7 +1555,7 @@
     .locals 2
 
     .prologue
-    .line 3886
+    .line 4005
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -1511,7 +1579,7 @@
     .locals 2
 
     .prologue
-    .line 3671
+    .line 3790
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1537,7 +1605,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 3568
+    .line 3687
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1557,7 +1625,7 @@
     .locals 2
 
     .prologue
-    .line 3638
+    .line 3757
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1577,11 +1645,11 @@
     goto :goto_0
 .end method
 
-.method public hasOptions()Z
+.method public hasOneofIndex()Z
     .locals 2
 
     .prologue
-    .line 4104
+    .line 4225
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x80
@@ -1601,11 +1669,35 @@
     goto :goto_0
 .end method
 
+.method public hasOptions()Z
+    .locals 2
+
+    .prologue
+    .line 4284
+    iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    and-int/lit16 v0, v0, 0x100
+
+    const/16 v1, 0x100
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public hasType()Z
     .locals 2
 
     .prologue
-    .line 3712
+    .line 3831
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1629,7 +1721,7 @@
     .locals 2
 
     .prologue
-    .line 3771
+    .line 3890
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1653,7 +1745,7 @@
     .locals 2
 
     .prologue
-    .line 3148
+    .line 3267
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos;->access$900()Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable;
 
     move-result-object v0
@@ -1671,12 +1763,12 @@
     .locals 1
 
     .prologue
-    .line 4423
+    .line 4620
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
     if-nez v0, :cond_0
 
-    .line 4424
+    .line 4621
     const-string v0, "com.google.protobuf.DescriptorProtos$FieldDescriptorProto"
 
     invoke-static {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->internalImmutableDefault(Ljava/lang/String;)Lcom/google/protobuf/Message;
@@ -1685,7 +1777,7 @@
 
     sput-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
-    .line 4426
+    .line 4623
     :cond_0
     sget-object v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->immutableDefault:Lcom/google/protobuf/Message;
 
@@ -1696,14 +1788,14 @@
     .locals 1
 
     .prologue
-    .line 4147
+    .line 4327
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasOptions()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 4148
+    .line 4328
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getOptions()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     move-result-object v0
@@ -1714,10 +1806,10 @@
 
     if-nez v0, :cond_0
 
-    .line 4149
+    .line 4329
     const/4 v0, 0x0
 
-    .line 4152
+    .line 4332
     :goto_0
     return v0
 
@@ -1732,7 +1824,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -1745,21 +1837,21 @@
     .parameter "other"
 
     .prologue
-    .line 4170
+    .line 4350
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4171
+    .line 4351
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDefaultInstance()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 4223
+    .line 4406
     :goto_0
     return-object p0
 
-    .line 4172
+    .line 4352
     :cond_0
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasName()Z
 
@@ -1767,26 +1859,26 @@
 
     if-eqz v1, :cond_1
 
-    .line 4173
+    .line 4353
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4174
+    .line 4354
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_a
 
-    .line 4175
+    .line 4355
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 4181
+    .line 4361
     :cond_1
     :goto_1
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasExtendee()Z
@@ -1795,26 +1887,26 @@
 
     if-eqz v1, :cond_2
 
-    .line 4182
+    .line 4362
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x20
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4183
+    .line 4363
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_a
+    if-eqz v1, :cond_b
 
-    .line 4184
+    .line 4364
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 4190
+    .line 4370
     :cond_2
     :goto_2
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasNumber()Z
@@ -1823,14 +1915,14 @@
 
     if-eqz v1, :cond_3
 
-    .line 4191
+    .line 4371
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getNumber()I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->setNumber(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
-    .line 4193
+    .line 4373
     :cond_3
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasLabel()Z
 
@@ -1838,14 +1930,14 @@
 
     if-eqz v1, :cond_4
 
-    .line 4194
+    .line 4374
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getLabel()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->setLabel(Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
-    .line 4196
+    .line 4376
     :cond_4
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasType()Z
 
@@ -1853,14 +1945,14 @@
 
     if-eqz v1, :cond_5
 
-    .line 4197
+    .line 4377
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->setType(Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
-    .line 4199
+    .line 4379
     :cond_5
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasTypeName()Z
 
@@ -1868,26 +1960,26 @@
 
     if-eqz v1, :cond_6
 
-    .line 4200
+    .line 4380
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x10
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4201
+    .line 4381
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_c
 
-    .line 4202
+    .line 4382
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 4208
+    .line 4388
     :cond_6
     :goto_3
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasDefaultValue()Z
@@ -1896,26 +1988,26 @@
 
     if-eqz v1, :cond_7
 
-    .line 4209
+    .line 4389
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x40
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4210
+    .line 4390
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
     instance-of v1, v1, Ljava/lang/String;
 
-    if-eqz v1, :cond_c
+    if-eqz v1, :cond_d
 
-    .line 4211
+    .line 4391
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
     iput-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4217
+    .line 4397
     :cond_7
     :goto_4
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasOptions()Z
@@ -1924,10 +2016,10 @@
 
     if-eqz v1, :cond_8
 
-    .line 4218
+    .line 4398
     invoke-direct {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->ensureOptionsInitialized()V
 
-    .line 4219
+    .line 4399
     iget-object v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getOptions()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
@@ -1936,15 +2028,30 @@
 
     invoke-virtual {v1, v2}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->mergeFrom(Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;)Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 4220
+    .line 4400
     iget v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    or-int/lit16 v1, v1, 0x80
+    or-int/lit16 v1, v1, 0x100
 
     iput v1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4222
+    .line 4402
     :cond_8
+    invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->hasOneofIndex()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_9
+
+    .line 4403
+    invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getOneofIndex()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->setOneofIndex(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
+
+    .line 4405
+    :cond_9
     invoke-virtual {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v1
@@ -1953,8 +2060,8 @@
 
     goto/16 :goto_0
 
-    .line 4177
-    :cond_9
+    .line 4357
+    :cond_a
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
     check-cast v1, [B
@@ -1963,7 +2070,7 @@
 
     check-cast v0, [B
 
-    .line 4178
+    .line 4358
     .local v0, ba:[B
     array-length v1, v0
 
@@ -1975,9 +2082,9 @@
 
     goto/16 :goto_1
 
-    .line 4186
+    .line 4366
     .end local v0           #ba:[B
-    :cond_a
+    :cond_b
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
     check-cast v1, [B
@@ -1986,7 +2093,7 @@
 
     check-cast v0, [B
 
-    .line 4187
+    .line 4367
     .restart local v0       #ba:[B
     array-length v1, v0
 
@@ -1998,9 +2105,9 @@
 
     goto/16 :goto_2
 
-    .line 4204
+    .line 4384
     .end local v0           #ba:[B
-    :cond_b
+    :cond_c
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
     check-cast v1, [B
@@ -2009,7 +2116,7 @@
 
     check-cast v0, [B
 
-    .line 4205
+    .line 4385
     .restart local v0       #ba:[B
     array-length v1, v0
 
@@ -2021,9 +2128,9 @@
 
     goto :goto_3
 
-    .line 4213
+    .line 4393
     .end local v0           #ba:[B
-    :cond_c
+    :cond_d
     iget-object v1, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
     check-cast v1, [B
@@ -2032,7 +2139,7 @@
 
     check-cast v0, [B
 
-    .line 4214
+    .line 4394
     .restart local v0       #ba:[B
     array-length v1, v0
 
@@ -2050,15 +2157,15 @@
     .parameter "other"
 
     .prologue
-    .line 4161
+    .line 4341
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4162
+    .line 4342
     instance-of v0, p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     if-eqz v0, :cond_0
 
-    .line 4163
+    .line 4343
     check-cast p1, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     .end local p1
@@ -2066,7 +2173,7 @@
 
     move-result-object v0
 
-    .line 4165
+    .line 4345
     :goto_0
     return-object v0
 
@@ -2086,7 +2193,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->mergeFrom(Lcom/google/protobuf/MutableMessage;)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -2094,16 +2201,16 @@
     return-object v0
 .end method
 
-.method public mergePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
+.method public mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Z
     .locals 8
     .parameter "input"
     .parameter "extensionRegistry"
 
     .prologue
-    .line 4229
+    .line 4412
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4231
+    .line 4414
     :try_start_0
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -2113,45 +2220,45 @@
 
     move-result-object v4
 
-    .line 4234
+    .line 4417
     .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     const/4 v0, 0x0
 
-    .line 4235
+    .line 4418
     .local v0, done:Z
     :cond_0
     :goto_0
     if-nez v0, :cond_4
 
-    .line 4236
+    .line 4419
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result v3
 
-    .line 4237
+    .line 4420
     .local v3, tag:I
     sparse-switch v3, :sswitch_data_0
 
-    .line 4242
+    .line 4425
     invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
     move-result v6
 
     if-nez v6, :cond_0
 
-    .line 4244
+    .line 4427
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 4239
+    .line 4422
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 4240
+    .line 4423
     goto :goto_0
 
-    .line 4249
+    .line 4432
     :sswitch_1
     iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2159,7 +2266,7 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4250
+    .line 4433
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v6
@@ -2168,14 +2275,14 @@
 
     goto :goto_0
 
-    .line 4307
+    .line 4495
     .end local v0           #done:Z
     .end local v3           #tag:I
     .end local v4           #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     :catch_0
     move-exception v1
 
-    .line 4308
+    .line 4496
     .local v1, e:Ljava/io/IOException;
     const/4 v6, 0x0
 
@@ -2183,7 +2290,7 @@
     :goto_1
     return v6
 
-    .line 4254
+    .line 4437
     .restart local v0       #done:Z
     .restart local v3       #tag:I
     .restart local v4       #unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
@@ -2194,7 +2301,7 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4255
+    .line 4438
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v6
@@ -2203,7 +2310,7 @@
 
     goto :goto_0
 
-    .line 4259
+    .line 4442
     :sswitch_3
     iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2211,7 +2318,7 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4260
+    .line 4443
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
 
     move-result v6
@@ -2220,30 +2327,30 @@
 
     goto :goto_0
 
-    .line 4264
+    .line 4447
     :sswitch_4
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
 
     move-result v2
 
-    .line 4265
+    .line 4448
     .local v2, rawValue:I
     invoke-static {v2}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->valueOf(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     move-result-object v5
 
-    .line 4266
+    .line 4449
     .local v5, value:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
     if-nez v5, :cond_1
 
-    .line 4267
+    .line 4450
     const/4 v6, 0x4
 
     invoke-virtual {v4, v6, v2}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
 
     goto :goto_0
 
-    .line 4269
+    .line 4452
     :cond_1
     iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2251,12 +2358,12 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4270
+    .line 4453
     iput-object v5, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     goto :goto_0
 
-    .line 4275
+    .line 4458
     .end local v2           #rawValue:I
     .end local v5           #value:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
     :sswitch_5
@@ -2264,24 +2371,24 @@
 
     move-result v2
 
-    .line 4276
+    .line 4459
     .restart local v2       #rawValue:I
     invoke-static {v2}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;->valueOf(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     move-result-object v5
 
-    .line 4277
+    .line 4460
     .local v5, value:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
     if-nez v5, :cond_2
 
-    .line 4278
+    .line 4461
     const/4 v6, 0x5
 
     invoke-virtual {v4, v6, v2}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
 
     goto :goto_0
 
-    .line 4280
+    .line 4463
     :cond_2
     iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2289,12 +2396,12 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4281
+    .line 4464
     iput-object v5, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
     goto :goto_0
 
-    .line 4286
+    .line 4469
     .end local v2           #rawValue:I
     .end local v5           #value:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
     :sswitch_6
@@ -2304,7 +2411,7 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4287
+    .line 4470
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v6
@@ -2313,7 +2420,7 @@
 
     goto :goto_0
 
-    .line 4291
+    .line 4474
     :sswitch_7
     iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2321,7 +2428,7 @@
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4292
+    .line 4475
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readByteArray()[B
 
     move-result-object v6
@@ -2330,7 +2437,7 @@
 
     goto/16 :goto_0
 
-    .line 4296
+    .line 4479
     :sswitch_8
     iget-object v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
@@ -2340,29 +2447,46 @@
 
     if-ne v6, v7, :cond_3
 
-    .line 4297
+    .line 4480
     invoke-static {}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;->newMessage()Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     move-result-object v6
 
     iput-object v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 4299
+    .line 4482
     :cond_3
     iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    or-int/lit16 v6, v6, 0x80
+    or-int/lit16 v6, v6, 0x100
 
     iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4300
+    .line 4483
     iget-object v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
     invoke-virtual {p1, v6, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/MutableMessageLite;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
     goto/16 :goto_0
 
-    .line 4305
+    .line 4487
+    :sswitch_9
+    iget v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    or-int/lit16 v6, v6, 0x80
+
+    iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    .line 4488
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
+
+    move-result v6
+
+    iput v6, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
+
+    goto/16 :goto_0
+
+    .line 4493
     .end local v3           #tag:I
     :cond_4
     invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
@@ -2373,12 +2497,12 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4306
+    .line 4494
     const/4 v6, 0x1
 
     goto/16 :goto_1
 
-    .line 4237
+    .line 4420
     nop
 
     :sswitch_data_0
@@ -2392,6 +2516,7 @@
         0x32 -> :sswitch_6
         0x3a -> :sswitch_7
         0x42 -> :sswitch_8
+        0x48 -> :sswitch_9
     .end sparse-switch
 .end method
 
@@ -2399,7 +2524,7 @@
     .locals 1
 
     .prologue
-    .line 3125
+    .line 3244
     new-instance v0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     invoke-direct {v0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;-><init>()V
@@ -2411,7 +2536,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -2423,7 +2548,7 @@
     .locals 1
 
     .prologue
-    .line 3117
+    .line 3236
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->newMessageForType()Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
 
     move-result-object v0
@@ -2436,10 +2561,10 @@
     .parameter "value"
 
     .prologue
-    .line 4050
+    .line 4169
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4051
+    .line 4170
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2448,7 +2573,7 @@
 
     throw v0
 
-    .line 4052
+    .line 4171
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2456,10 +2581,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4053
+    .line 4172
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4054
+    .line 4173
     return-object p0
 .end method
 
@@ -2468,10 +2593,10 @@
     .parameter "value"
 
     .prologue
-    .line 4069
+    .line 4188
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4070
+    .line 4189
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2480,7 +2605,7 @@
 
     throw v0
 
-    .line 4071
+    .line 4190
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2488,10 +2613,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4072
+    .line 4191
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->defaultValue_:Ljava/lang/Object;
 
-    .line 4073
+    .line 4192
     return-object p0
 .end method
 
@@ -2500,10 +2625,10 @@
     .parameter "value"
 
     .prologue
-    .line 3938
+    .line 4057
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3939
+    .line 4058
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2512,7 +2637,7 @@
 
     throw v0
 
-    .line 3940
+    .line 4059
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2520,10 +2645,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3941
+    .line 4060
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3942
+    .line 4061
     return-object p0
 .end method
 
@@ -2532,10 +2657,10 @@
     .parameter "value"
 
     .prologue
-    .line 3954
+    .line 4073
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3955
+    .line 4074
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2544,7 +2669,7 @@
 
     throw v0
 
-    .line 3956
+    .line 4075
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2552,10 +2677,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3957
+    .line 4076
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->extendee_:Ljava/lang/Object;
 
-    .line 3958
+    .line 4077
     return-object p0
 .end method
 
@@ -2564,20 +2689,20 @@
     .parameter "value"
 
     .prologue
-    .line 3683
+    .line 3802
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3684
+    .line 3803
     if-nez p1, :cond_0
 
-    .line 3685
+    .line 3804
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 3687
+    .line 3806
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2585,10 +2710,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3688
+    .line 3807
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
-    .line 3689
+    .line 3808
     return-object p0
 .end method
 
@@ -2597,10 +2722,10 @@
     .parameter "value"
 
     .prologue
-    .line 3605
+    .line 3724
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3606
+    .line 3725
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2609,7 +2734,7 @@
 
     throw v0
 
-    .line 3607
+    .line 3726
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2617,10 +2742,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3608
+    .line 3727
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3609
+    .line 3728
     return-object p0
 .end method
 
@@ -2629,10 +2754,10 @@
     .parameter "value"
 
     .prologue
-    .line 3616
+    .line 3735
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3617
+    .line 3736
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2641,7 +2766,7 @@
 
     throw v0
 
-    .line 3618
+    .line 3737
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2649,10 +2774,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3619
+    .line 3738
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->name_:Ljava/lang/Object;
 
-    .line 3620
+    .line 3739
     return-object p0
 .end method
 
@@ -2661,20 +2786,42 @@
     .parameter "value"
 
     .prologue
-    .line 3650
+    .line 3769
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3651
+    .line 3770
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3652
+    .line 3771
     iput p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
 
-    .line 3653
+    .line 3772
+    return-object p0
+.end method
+
+.method public setOneofIndex(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;
+    .locals 1
+    .parameter "value"
+
+    .prologue
+    .line 4251
+    invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
+
+    .line 4252
+    iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    or-int/lit16 v0, v0, 0x80
+
+    iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    .line 4253
+    iput p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
+
+    .line 4254
     return-object p0
 .end method
 
@@ -2683,31 +2830,31 @@
     .parameter "value"
 
     .prologue
-    .line 4126
+    .line 4306
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 4127
+    .line 4307
     if-nez p1, :cond_0
 
-    .line 4128
+    .line 4308
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 4130
+    .line 4310
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    or-int/lit16 v0, v0, 0x80
+    or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 4131
+    .line 4311
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
 
-    .line 4132
+    .line 4312
     return-object p0
 .end method
 
@@ -2716,20 +2863,20 @@
     .parameter "value"
 
     .prologue
-    .line 3734
+    .line 3853
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3735
+    .line 3854
     if-nez p1, :cond_0
 
-    .line 3736
+    .line 3855
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 3738
+    .line 3857
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2737,10 +2884,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3739
+    .line 3858
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
 
-    .line 3740
+    .line 3859
     return-object p0
 .end method
 
@@ -2749,10 +2896,10 @@
     .parameter "value"
 
     .prologue
-    .line 3832
+    .line 3951
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3833
+    .line 3952
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2761,7 +2908,7 @@
 
     throw v0
 
-    .line 3834
+    .line 3953
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2769,10 +2916,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3835
+    .line 3954
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3836
+    .line 3955
     return-object p0
 .end method
 
@@ -2781,10 +2928,10 @@
     .parameter "value"
 
     .prologue
-    .line 3851
+    .line 3970
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->assertMutable()V
 
-    .line 3852
+    .line 3971
     if-nez p1, :cond_0
 
     new-instance v0, Ljava/lang/NullPointerException;
@@ -2793,7 +2940,7 @@
 
     throw v0
 
-    .line 3853
+    .line 3972
     :cond_0
     iget v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2801,10 +2948,10 @@
 
     iput v0, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
-    .line 3854
+    .line 3973
     iput-object p1, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->typeName_:Ljava/lang/Object;
 
-    .line 3855
+    .line 3974
     return-object p0
 .end method
 
@@ -2817,7 +2964,7 @@
     .end annotation
 
     .prologue
-    .line 4393
+    .line 4588
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMutableMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -2843,12 +2990,12 @@
 
     const/4 v3, 0x1
 
-    .line 4315
+    .line 4503
     invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->getTotalBytesWritten()I
 
     move-result v1
 
-    .line 4316
+    .line 4504
     .local v1, bytesWrittenBefore:I
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2856,14 +3003,14 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 4317
+    .line 4505
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getNameAsBytes()[B
 
     move-result-object v2
 
     invoke-virtual {p1, v3, v2}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 4319
+    .line 4507
     :cond_0
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2873,14 +3020,14 @@
 
     if-ne v2, v3, :cond_1
 
-    .line 4320
+    .line 4508
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getExtendeeAsBytes()[B
 
     move-result-object v2
 
     invoke-virtual {p1, v4, v2}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 4322
+    .line 4510
     :cond_1
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2888,14 +3035,14 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 4323
+    .line 4511
     const/4 v2, 0x3
 
     iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->number_:I
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 4325
+    .line 4513
     :cond_2
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2903,7 +3050,7 @@
 
     if-ne v2, v5, :cond_3
 
-    .line 4326
+    .line 4514
     iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->label_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;
 
     invoke-virtual {v2}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Label;->getNumber()I
@@ -2912,7 +3059,7 @@
 
     invoke-virtual {p1, v5, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 4328
+    .line 4516
     :cond_3
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2920,7 +3067,7 @@
 
     if-ne v2, v6, :cond_4
 
-    .line 4329
+    .line 4517
     const/4 v2, 0x5
 
     iget-object v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->type_:Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto$Type;
@@ -2931,7 +3078,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 4331
+    .line 4519
     :cond_4
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2941,7 +3088,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 4332
+    .line 4520
     const/4 v2, 0x6
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getTypeNameAsBytes()[B
@@ -2950,7 +3097,7 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 4334
+    .line 4522
     :cond_5
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
@@ -2960,7 +3107,7 @@
 
     if-ne v2, v3, :cond_6
 
-    .line 4335
+    .line 4523
     const/4 v2, 0x7
 
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getDefaultValueAsBytes()[B
@@ -2969,35 +3116,52 @@
 
     invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeByteArray(I[B)V
 
-    .line 4337
+    .line 4525
     :cond_6
+    iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
+
+    and-int/lit16 v2, v2, 0x100
+
+    const/16 v3, 0x100
+
+    if-ne v2, v3, :cond_7
+
+    .line 4526
+    iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
+
+    invoke-virtual {p1, v6, v2}, Lcom/google/protobuf/CodedOutputStream;->writeMessageWithCachedSizes(ILcom/google/protobuf/MutableMessageLite;)V
+
+    .line 4528
+    :cond_7
     iget v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->bitField0_:I
 
     and-int/lit16 v2, v2, 0x80
 
     const/16 v3, 0x80
 
-    if-ne v2, v3, :cond_7
+    if-ne v2, v3, :cond_8
 
-    .line 4338
-    iget-object v2, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->options_:Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions;
+    .line 4529
+    const/16 v2, 0x9
 
-    invoke-virtual {p1, v6, v2}, Lcom/google/protobuf/CodedOutputStream;->writeMessageWithCachedSizes(ILcom/google/protobuf/MutableMessageLite;)V
+    iget v3, p0, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->oneofIndex_:I
 
-    .line 4340
-    :cond_7
+    invoke-virtual {p1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
+
+    .line 4531
+    :cond_8
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v2
 
     invoke-virtual {v2, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 4341
+    .line 4532
     invoke-virtual {p1}, Lcom/google/protobuf/CodedOutputStream;->getTotalBytesWritten()I
 
     move-result v0
 
-    .line 4342
+    .line 4533
     .local v0, bytesWrittenAfter:I
     invoke-virtual {p0}, Lcom/google/protobuf/MutableDescriptorProtos$FieldDescriptorProto;->getCachedSize()I
 
@@ -3005,9 +3169,9 @@
 
     sub-int v3, v0, v1
 
-    if-eq v2, v3, :cond_8
+    if-eq v2, v3, :cond_9
 
-    .line 4343
+    .line 4534
     new-instance v2, Ljava/lang/RuntimeException;
 
     const-string v3, "Serialized size doesn\'t match cached size. You may forget to call getSerializedSize() or the message is being modified concurrently."
@@ -3016,7 +3180,7 @@
 
     throw v2
 
-    .line 4348
-    :cond_8
+    .line 4539
+    :cond_9
     return-void
 .end method

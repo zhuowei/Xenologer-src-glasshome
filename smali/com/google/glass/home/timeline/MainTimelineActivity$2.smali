@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 102
+    .line 103
     iput-object p1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,15 +38,14 @@
     .locals 2
 
     .prologue
-    .line 116
+    .line 117
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     iget-object v1, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
-    #calls: Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
-    invoke-static {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$300(Lcom/google/glass/home/timeline/MainTimelineActivity;)Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/glass/home/timeline/MainTimelineActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
 
@@ -67,13 +66,13 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 105
+    .line 106
     const-string v0, "com.google.glass.ACTION_NOTIFICATION_RECEIVED"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -86,7 +85,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 109
+    .line 110
     invoke-virtual {p0}, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -95,17 +94,17 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 110
+    .line 111
     iget-object v0, p0, Lcom/google/glass/home/timeline/MainTimelineActivity$2;->this$0:Lcom/google/glass/home/timeline/MainTimelineActivity;
 
     #getter for: Lcom/google/glass/home/timeline/MainTimelineActivity;->timelineView:Lcom/google/glass/home/timeline/MainTimelineView;
-    invoke-static {v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$200(Lcom/google/glass/home/timeline/MainTimelineActivity;)Lcom/google/glass/home/timeline/MainTimelineView;
+    invoke-static {v0}, Lcom/google/glass/home/timeline/MainTimelineActivity;->access$100(Lcom/google/glass/home/timeline/MainTimelineActivity;)Lcom/google/glass/home/timeline/MainTimelineView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/google/glass/home/timeline/MainTimelineView;->updateQueryParameters()V
 
-    .line 112
+    .line 113
     :cond_0
     return-void
 .end method

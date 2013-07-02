@@ -1703,18 +1703,18 @@
     .parameter "nationalNumber"
 
     .prologue
-    .line 2862
+    .line 2863
     const-string v4, ";phone-context="
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 2863
+    .line 2864
     .local v1, indexOfPhoneContext:I
     if-lez v1, :cond_3
 
-    .line 2864
+    .line 2865
     const-string v4, ";phone-context="
 
     invoke-virtual {v4}, Ljava/lang/String;->length()I
@@ -1723,7 +1723,7 @@
 
     add-int v3, v1, v4
 
-    .line 2867
+    .line 2868
     .local v3, phoneContextStart:I
     invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
@@ -1733,25 +1733,25 @@
 
     if-ne v4, v5, :cond_0
 
-    .line 2871
+    .line 2872
     const/16 v4, 0x3b
 
     invoke-virtual {p1, v4, v3}, Ljava/lang/String;->indexOf(II)I
 
     move-result v2
 
-    .line 2872
+    .line 2873
     .local v2, phoneContextEnd:I
     if-lez v2, :cond_2
 
-    .line 2873
+    .line 2874
     invoke-virtual {p1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {p2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2881
+    .line 2882
     .end local v2           #phoneContextEnd:I
     :cond_0
     :goto_0
@@ -1775,7 +1775,7 @@
 
     invoke-virtual {p2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2891
+    .line 2892
     .end local v3           #phoneContextStart:I
     :goto_1
     const-string v4, ";isub="
@@ -1784,22 +1784,22 @@
 
     move-result v0
 
-    .line 2892
+    .line 2893
     .local v0, indexOfIsdn:I
     if-lez v0, :cond_1
 
-    .line 2893
+    .line 2894
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     invoke-virtual {p2, v0, v4}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 2899
+    .line 2900
     :cond_1
     return-void
 
-    .line 2875
+    .line 2876
     .end local v0           #indexOfIsdn:I
     .restart local v2       #phoneContextEnd:I
     .restart local v3       #phoneContextStart:I
@@ -1812,7 +1812,7 @@
 
     goto :goto_0
 
-    .line 2886
+    .line 2887
     .end local v2           #phoneContextEnd:I
     .end local v3           #phoneContextStart:I
     :cond_3
@@ -1831,14 +1831,14 @@
     .parameter "defaultRegion"
 
     .prologue
-    .line 2624
+    .line 2625
     invoke-direct {p0, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidRegionCode(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 2626
+    .line 2627
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -1859,11 +1859,11 @@
 
     if-nez v0, :cond_1
 
-    .line 2628
+    .line 2629
     :cond_0
     const/4 v0, 0x0
 
-    .line 2631
+    .line 2632
     :goto_0
     return v0
 
@@ -2122,7 +2122,7 @@
     .parameter "numberFormat"
 
     .prologue
-    .line 1660
+    .line 1661
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->formatNsn(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/String;)Ljava/lang/String;
@@ -2140,12 +2140,12 @@
     .parameter "carrierCode"
 
     .prologue
-    .line 1671
+    .line 1672
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->intlNumberFormats()Ljava/util/List;
 
     move-result-object v2
 
-    .line 1674
+    .line 1675
     .local v2, intlNumberFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -2162,14 +2162,14 @@
 
     move-result-object v0
 
-    .line 1678
+    .line 1679
     .local v0, availableFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     :goto_0
     invoke-virtual {p0, v0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->chooseFormattingPatternForNumber(Ljava/util/List;Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
     move-result-object v1
 
-    .line 1679
+    .line 1680
     .local v1, formattingPattern:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     if-nez v1, :cond_2
 
@@ -2177,7 +2177,7 @@
     :goto_1
     return-object p1
 
-    .line 1674
+    .line 1675
     .end local v0           #availableFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     .end local v1           #formattingPattern:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     .restart local p1
@@ -2188,7 +2188,7 @@
 
     goto :goto_0
 
-    .line 1679
+    .line 1680
     .restart local v0       #availableFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     .restart local v1       #formattingPattern:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     :cond_2
@@ -2207,12 +2207,12 @@
     .parameter "carrierCode"
 
     .prologue
-    .line 1713
+    .line 1714
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->getFormat()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1714
+    .line 1715
     .local v6, numberFormatRule:Ljava/lang/String;
     iget-object v7, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
@@ -2228,11 +2228,11 @@
 
     move-result-object v3
 
-    .line 1716
+    .line 1717
     .local v3, m:Ljava/util/regex/Matcher;
     const-string v2, ""
 
-    .line 1717
+    .line 1718
     .local v2, formattedNationalNumber:Ljava/lang/String;
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -2256,12 +2256,12 @@
 
     if-lez v7, :cond_2
 
-    .line 1721
+    .line 1722
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->getDomesticCarrierCodeFormattingRule()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1722
+    .line 1723
     .local v0, carrierCodeFormattingRule:Ljava/lang/String;
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->CC_PATTERN:Ljava/util/regex/Pattern;
 
@@ -2273,7 +2273,7 @@
 
     move-result-object v0
 
-    .line 1726
+    .line 1727
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->FIRST_GROUP_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v7, v6}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -2284,26 +2284,26 @@
 
     move-result-object v6
 
-    .line 1728
+    .line 1729
     invoke-virtual {v3, v6}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1742
+    .line 1743
     .end local v0           #carrierCodeFormattingRule:Ljava/lang/String;
     :goto_0
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->RFC3966:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     if-ne p3, v7, :cond_1
 
-    .line 1744
+    .line 1745
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->SEPARATOR_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v7, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
 
-    .line 1745
+    .line 1746
     .local v4, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v4}, Ljava/util/regex/Matcher;->lookingAt()Z
 
@@ -2311,14 +2311,14 @@
 
     if-eqz v7, :cond_0
 
-    .line 1746
+    .line 1747
     const-string v7, ""
 
     invoke-virtual {v4, v7}, Ljava/util/regex/Matcher;->replaceFirst(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1749
+    .line 1750
     :cond_0
     invoke-virtual {v4, v2}, Ljava/util/regex/Matcher;->reset(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -2330,18 +2330,18 @@
 
     move-result-object v2
 
-    .line 1751
+    .line 1752
     .end local v4           #matcher:Ljava/util/regex/Matcher;
     :cond_1
     return-object v2
 
-    .line 1731
+    .line 1732
     :cond_2
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->getNationalPrefixFormattingRule()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1732
+    .line 1733
     .local v5, nationalPrefixFormattingRule:Ljava/lang/String;
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -2355,14 +2355,14 @@
 
     if-lez v7, :cond_3
 
-    .line 1735
+    .line 1736
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->FIRST_GROUP_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v7, v6}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 1736
+    .line 1737
     .local v1, firstGroupMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v1, v5}, Ljava/util/regex/Matcher;->replaceFirst(Ljava/lang/String;)Ljava/lang/String;
 
@@ -2372,10 +2372,10 @@
 
     move-result-object v2
 
-    .line 1738
+    .line 1739
     goto :goto_0
 
-    .line 1739
+    .line 1740
     .end local v1           #firstGroupMatcher:Ljava/util/regex/Matcher;
     :cond_3
     invoke-virtual {v3, v6}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
@@ -2391,6 +2391,12 @@
 
     .prologue
     .line 973
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->FIRST_GROUP_ONLY_PREFIX_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -2401,7 +2407,18 @@
 
     move-result v0
 
+    if-eqz v0, :cond_1
+
+    :cond_0
+    const/4 v0, 0x1
+
+    :goto_0
     return v0
+
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
 
 .method private getCountryCodeForValidRegion(Ljava/lang/String;)I
@@ -2409,16 +2426,16 @@
     .parameter "regionCode"
 
     .prologue
-    .line 2115
+    .line 2116
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegion(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v0
 
-    .line 2116
+    .line 2117
     .local v0, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-nez v0, :cond_0
 
-    .line 2117
+    .line 2118
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2443,7 +2460,7 @@
 
     throw v1
 
-    .line 2119
+    .line 2120
     :cond_0
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getCountryCode()I
 
@@ -2577,7 +2594,7 @@
     .parameter "regionCode"
 
     .prologue
-    .line 1168
+    .line 1169
     const-string v0, "001"
 
     invoke-virtual {v0, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -2607,12 +2624,12 @@
     .parameter "metadata"
 
     .prologue
-    .line 1884
+    .line 1885
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
     move-result-object v0
 
-    .line 1885
+    .line 1886
     .local v0, generalNumberDesc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->hasNationalNumberPattern()Z
 
@@ -2626,15 +2643,15 @@
 
     if-nez v2, :cond_1
 
-    .line 1887
+    .line 1888
     :cond_0
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->UNKNOWN:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 1930
+    .line 1931
     :goto_0
     return-object v2
 
-    .line 1890
+    .line 1891
     :cond_1
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPremiumRate()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2646,12 +2663,12 @@
 
     if-eqz v2, :cond_2
 
-    .line 1891
+    .line 1892
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->PREMIUM_RATE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1893
+    .line 1894
     :cond_2
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getTollFree()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2663,12 +2680,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 1894
+    .line 1895
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->TOLL_FREE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1896
+    .line 1897
     :cond_3
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getSharedCost()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2680,12 +2697,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 1897
+    .line 1898
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->SHARED_COST:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1899
+    .line 1900
     :cond_4
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getVoip()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2697,12 +2714,12 @@
 
     if-eqz v2, :cond_5
 
-    .line 1900
+    .line 1901
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->VOIP:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1902
+    .line 1903
     :cond_5
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPersonalNumber()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2714,12 +2731,12 @@
 
     if-eqz v2, :cond_6
 
-    .line 1903
+    .line 1904
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->PERSONAL_NUMBER:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1905
+    .line 1906
     :cond_6
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPager()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2731,12 +2748,12 @@
 
     if-eqz v2, :cond_7
 
-    .line 1906
+    .line 1907
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->PAGER:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1908
+    .line 1909
     :cond_7
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getUan()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2748,12 +2765,12 @@
 
     if-eqz v2, :cond_8
 
-    .line 1909
+    .line 1910
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->UAN:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1911
+    .line 1912
     :cond_8
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getVoicemail()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2765,12 +2782,12 @@
 
     if-eqz v2, :cond_9
 
-    .line 1912
+    .line 1913
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->VOICEMAIL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1915
+    .line 1916
     :cond_9
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getFixedLine()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2780,23 +2797,23 @@
 
     move-result v1
 
-    .line 1916
+    .line 1917
     .local v1, isFixedLine:Z
     if-eqz v1, :cond_c
 
-    .line 1917
+    .line 1918
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->isSameMobileAndFixedLinePattern()Z
 
     move-result v2
 
     if-eqz v2, :cond_a
 
-    .line 1918
+    .line 1919
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE_OR_MOBILE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto :goto_0
 
-    .line 1919
+    .line 1920
     :cond_a
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getMobile()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -2808,18 +2825,18 @@
 
     if-eqz v2, :cond_b
 
-    .line 1920
+    .line 1921
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE_OR_MOBILE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto/16 :goto_0
 
-    .line 1922
+    .line 1923
     :cond_b
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto/16 :goto_0
 
-    .line 1926
+    .line 1927
     :cond_c
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->isSameMobileAndFixedLinePattern()Z
 
@@ -2837,12 +2854,12 @@
 
     if-eqz v2, :cond_d
 
-    .line 1928
+    .line 1929
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->MOBILE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     goto/16 :goto_0
 
-    .line 1930
+    .line 1931
     :cond_d
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->UNKNOWN:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
@@ -2866,13 +2883,13 @@
     .end annotation
 
     .prologue
-    .line 2050
+    .line 2051
     .local p2, regionCodes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2051
+    .line 2052
     .local v2, nationalNumber:Ljava/lang/String;
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -2892,13 +2909,13 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 2054
+    .line 2055
     .local v3, regionCode:Ljava/lang/String;
     invoke-virtual {p0, v3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegion(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v1
 
-    .line 2055
+    .line 2056
     .local v1, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     invoke-virtual {v1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->hasLeadingDigits()Z
 
@@ -2906,7 +2923,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 2056
+    .line 2057
     iget-object v4, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
     invoke-virtual {v1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getLeadingDigits()Ljava/lang/String;
@@ -2927,13 +2944,13 @@
 
     if-eqz v4, :cond_0
 
-    .line 2064
+    .line 2065
     .end local v1           #metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     .end local v3           #regionCode:Ljava/lang/String;
     :goto_0
     return-object v3
 
-    .line 2060
+    .line 2061
     .restart local v1       #metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     .restart local v3       #regionCode:Ljava/lang/String;
     :cond_1
@@ -2947,7 +2964,7 @@
 
     goto :goto_0
 
-    .line 2064
+    .line 2065
     .end local v1           #metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     .end local v3           #regionCode:Ljava/lang/String;
     :cond_2
@@ -2963,39 +2980,39 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 1495
+    .line 1496
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 1496
+    .line 1497
     .local v0, countryCallingCode:I
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1497
+    .line 1498
     .local v4, phoneNumberRegion:Ljava/lang/String;
     invoke-direct {p0, v0, v4}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v2
 
-    .line 1499
+    .line 1500
     .local v2, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-nez v2, :cond_1
 
-    .line 1505
+    .line 1506
     :cond_0
     :goto_0
     return v5
 
-    .line 1502
+    .line 1503
     :cond_1
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1503
+    .line 1504
     .local v3, nationalNumber:Ljava/lang/String;
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->numberFormats()Ljava/util/List;
 
@@ -3005,7 +3022,7 @@
 
     move-result-object v1
 
-    .line 1505
+    .line 1506
     .local v1, formatRule:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     if-eqz v1, :cond_0
 
@@ -3019,7 +3036,7 @@
     .parameter "number"
 
     .prologue
-    .line 1491
+    .line 1492
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->isItalianLeadingZero()Z
 
     move-result v0
@@ -3052,7 +3069,7 @@
     .parameter "countryCallingCode"
 
     .prologue
-    .line 1000
+    .line 1001
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCallingCodeToRegionCodeMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3072,7 +3089,7 @@
     .parameter "secondNumber"
 
     .prologue
-    .line 2980
+    .line 2981
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNationalNumber()J
 
     move-result-wide v2
@@ -3081,7 +3098,7 @@
 
     move-result-object v0
 
-    .line 2981
+    .line 2982
     .local v0, firstNumberNationalNumber:Ljava/lang/String;
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNationalNumber()J
 
@@ -3091,7 +3108,7 @@
 
     move-result-object v1
 
-    .line 2983
+    .line 2984
     .local v1, secondNumberNationalNumber:Ljava/lang/String;
     invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
@@ -3123,7 +3140,7 @@
     .parameter "numberDesc"
 
     .prologue
-    .line 1964
+    .line 1965
     iget-object v2, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getPossibleNumberPattern()Ljava/lang/String;
@@ -3138,7 +3155,7 @@
 
     move-result-object v1
 
-    .line 1967
+    .line 1968
     .local v1, possibleNumberPatternMatcher:Ljava/util/regex/Matcher;
     iget-object v2, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
@@ -3154,7 +3171,7 @@
 
     move-result-object v0
 
-    .line 1970
+    .line 1971
     .local v0, nationalNumberPatternMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -3184,7 +3201,7 @@
     .parameter "regionCode"
 
     .prologue
-    .line 993
+    .line 994
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->supportedRegions:Ljava/util/Set;
@@ -3252,7 +3269,7 @@
     .parameter "formattedNumber"
 
     .prologue
-    .line 1826
+    .line 1827
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasExtension()Z
 
     move-result v0
@@ -3269,12 +3286,12 @@
 
     if-lez v0, :cond_0
 
-    .line 1827
+    .line 1828
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->RFC3966:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     if-ne p3, v0, :cond_1
 
-    .line 1828
+    .line 1829
     const-string v0, ";ext="
 
     invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -3287,12 +3304,12 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1837
+    .line 1838
     :cond_0
     :goto_0
     return-void
 
-    .line 1830
+    .line 1831
     :cond_1
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->hasPreferredExtnPrefix()Z
 
@@ -3300,7 +3317,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1831
+    .line 1832
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPreferredExtnPrefix()Ljava/lang/String;
 
     move-result-object v0
@@ -3317,7 +3334,7 @@
 
     goto :goto_0
 
-    .line 1833
+    .line 1834
     :cond_2
     const-string v0, " ext. "
 
@@ -3605,10 +3622,10 @@
     .end annotation
 
     .prologue
-    .line 2753
+    .line 2754
     if-nez p1, :cond_0
 
-    .line 2754
+    .line 2755
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->NOT_A_NUMBER:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3619,7 +3636,7 @@
 
     throw v2
 
-    .line 2756
+    .line 2757
     :cond_0
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
@@ -3629,7 +3646,7 @@
 
     if-le v2, v3, :cond_1
 
-    .line 2757
+    .line 2758
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->TOO_LONG:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3640,13 +3657,13 @@
 
     throw v2
 
-    .line 2761
+    .line 2762
     :cond_1
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2762
+    .line 2763
     .local v14, nationalNumber:Ljava/lang/StringBuilder;
     move-object/from16 v0, p0
 
@@ -3654,7 +3671,7 @@
 
     invoke-direct {v0, v1, v14}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->buildNationalNumberForParsing(Ljava/lang/String;Ljava/lang/StringBuilder;)V
 
-    .line 2764
+    .line 2765
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -3665,7 +3682,7 @@
 
     if-nez v2, :cond_2
 
-    .line 2765
+    .line 2766
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->NOT_A_NUMBER:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3676,7 +3693,7 @@
 
     throw v2
 
-    .line 2771
+    .line 2772
     :cond_2
     if-eqz p4, :cond_3
 
@@ -3694,7 +3711,7 @@
 
     if-nez v2, :cond_3
 
-    .line 2772
+    .line 2773
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->INVALID_COUNTRY_CODE:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3705,18 +3722,18 @@
 
     throw v2
 
-    .line 2776
+    .line 2777
     :cond_3
     if-eqz p3, :cond_4
 
-    .line 2777
+    .line 2778
     move-object/from16 v0, p5
 
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setRawInput(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2781
+    .line 2782
     :cond_4
     move-object/from16 v0, p0
 
@@ -3724,7 +3741,7 @@
 
     move-result-object v11
 
-    .line 2782
+    .line 2783
     .local v11, extension:Ljava/lang/String;
     invoke-virtual {v11}, Ljava/lang/String;->length()I
 
@@ -3732,12 +3749,12 @@
 
     if-lez v2, :cond_5
 
-    .line 2783
+    .line 2784
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v11}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setExtension(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2786
+    .line 2787
     :cond_5
     move-object/from16 v0, p0
 
@@ -3747,17 +3764,17 @@
 
     move-result-object v4
 
-    .line 2789
+    .line 2790
     .local v4, regionMetadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2790
+    .line 2791
     .local v5, normalizedNationalNumber:Ljava/lang/StringBuilder;
     const/4 v9, 0x0
 
-    .line 2795
+    .line 2796
     .local v9, countryCode:I
     :try_start_0
     invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -3776,18 +3793,18 @@
 
     move-result v9
 
-    .line 2813
+    .line 2814
     :cond_6
     if-eqz v9, :cond_9
 
-    .line 2814
+    .line 2815
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v9}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 2815
+    .line 2816
     .local v15, phoneNumberRegion:Ljava/lang/String;
     move-object/from16 v0, p2
 
@@ -3797,14 +3814,14 @@
 
     if-nez v2, :cond_7
 
-    .line 2817
+    .line 2818
     move-object/from16 v0, p0
 
     invoke-direct {v0, v9, v15}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v4
 
-    .line 2831
+    .line 2832
     .end local v15           #phoneNumberRegion:Ljava/lang/String;
     :cond_7
     :goto_0
@@ -3816,7 +3833,7 @@
 
     if-ge v2, v3, :cond_b
 
-    .line 2832
+    .line 2833
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->TOO_SHORT_NSN:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3827,11 +3844,11 @@
 
     throw v2
 
-    .line 2797
+    .line 2798
     :catch_0
     move-exception v10
 
-    .line 2798
+    .line 2799
     .local v10, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->PLUS_CHARS_PATTERN:Ljava/util/regex/Pattern;
 
@@ -3843,7 +3860,7 @@
 
     move-result-object v13
 
-    .line 2799
+    .line 2800
     .local v13, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v10}, Lcom/google/i18n/phonenumbers/NumberParseException;->getErrorType()Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
 
@@ -3859,7 +3876,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 2802
+    .line 2803
     invoke-virtual {v13}, Ljava/util/regex/Matcher;->end()I
 
     move-result v2
@@ -3878,10 +3895,10 @@
 
     move-result v9
 
-    .line 2805
+    .line 2806
     if-nez v9, :cond_6
 
-    .line 2806
+    .line 2807
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->INVALID_COUNTRY_CODE:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3892,7 +3909,7 @@
 
     throw v2
 
-    .line 2810
+    .line 2811
     :cond_8
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
@@ -3908,58 +3925,58 @@
 
     throw v2
 
-    .line 2822
+    .line 2823
     .end local v10           #e:Lcom/google/i18n/phonenumbers/NumberParseException;
     .end local v13           #matcher:Ljava/util/regex/Matcher;
     :cond_9
     invoke-static {v14}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->normalize(Ljava/lang/StringBuilder;)V
 
-    .line 2823
+    .line 2824
     invoke-virtual {v5, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 2824
+    .line 2825
     if-eqz p2, :cond_a
 
-    .line 2825
+    .line 2826
     invoke-virtual {v4}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getCountryCode()I
 
     move-result v9
 
-    .line 2826
+    .line 2827
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v9}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setCountryCode(I)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     goto :goto_0
 
-    .line 2827
+    .line 2828
     :cond_a
     if-eqz p3, :cond_7
 
-    .line 2828
+    .line 2829
     invoke-virtual/range {p5 .. p5}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearCountryCodeSource()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     goto :goto_0
 
-    .line 2835
+    .line 2836
     :cond_b
     if-eqz v4, :cond_c
 
-    .line 2836
+    .line 2837
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2837
+    .line 2838
     .local v8, carrierCode:Ljava/lang/StringBuilder;
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5, v4, v8}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeStripNationalPrefixAndCarrierCode(Ljava/lang/StringBuilder;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Ljava/lang/StringBuilder;)Z
 
-    .line 2838
+    .line 2839
     if-eqz p3, :cond_c
 
-    .line 2839
+    .line 2840
     invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -3968,20 +3985,20 @@
 
     invoke-virtual {v0, v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setPreferredDomesticCarrierCode(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2842
+    .line 2843
     .end local v8           #carrierCode:Ljava/lang/StringBuilder;
     :cond_c
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->length()I
 
     move-result v12
 
-    .line 2843
+    .line 2844
     .local v12, lengthOfNationalNumber:I
     const/4 v2, 0x2
 
     if-ge v12, v2, :cond_d
 
-    .line 2844
+    .line 2845
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->TOO_SHORT_NSN:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -3992,13 +4009,13 @@
 
     throw v2
 
-    .line 2847
+    .line 2848
     :cond_d
     const/16 v2, 0x10
 
     if-le v12, v2, :cond_e
 
-    .line 2848
+    .line 2849
     new-instance v2, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v3, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->TOO_LONG:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -4009,7 +4026,7 @@
 
     throw v2
 
-    .line 2851
+    .line 2852
     :cond_e
     const/4 v2, 0x0
 
@@ -4021,14 +4038,14 @@
 
     if-ne v2, v3, :cond_f
 
-    .line 2852
+    .line 2853
     const/4 v2, 0x1
 
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setItalianLeadingZero(Z)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2854
+    .line 2855
     :cond_f
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -4042,7 +4059,7 @@
 
     invoke-virtual {v0, v2, v3}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setNationalNumber(J)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2855
+    .line 2856
     return-void
 .end method
 
@@ -4056,12 +4073,12 @@
 
     const/4 v4, 0x0
 
-    .line 2477
+    .line 2478
     invoke-virtual {p1, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v1
 
-    .line 2478
+    .line 2479
     .local v1, m:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->lookingAt()Z
 
@@ -4069,12 +4086,12 @@
 
     if-eqz v6, :cond_0
 
-    .line 2479
+    .line 2480
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
 
     move-result v2
 
-    .line 2482
+    .line 2483
     .local v2, matchEnd:I
     sget-object v6, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->CAPTURING_DIGIT_PATTERN:Ljava/util/regex/Pattern;
 
@@ -4086,7 +4103,7 @@
 
     move-result-object v0
 
-    .line 2483
+    .line 2484
     .local v0, digitMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -4094,7 +4111,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 2484
+    .line 2485
     invoke-virtual {v0, v5}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v6
@@ -4103,7 +4120,7 @@
 
     move-result-object v3
 
-    .line 2485
+    .line 2486
     .local v3, normalizedGroup:Ljava/lang/String;
     const-string v6, "0"
 
@@ -4113,7 +4130,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 2492
+    .line 2493
     .end local v0           #digitMatcher:Ljava/util/regex/Matcher;
     .end local v2           #matchEnd:I
     .end local v3           #normalizedGroup:Ljava/lang/String;
@@ -4121,7 +4138,7 @@
     :goto_0
     return v4
 
-    .line 2489
+    .line 2490
     .restart local v0       #digitMatcher:Ljava/util/regex/Matcher;
     .restart local v2       #matchEnd:I
     :cond_1
@@ -4129,7 +4146,7 @@
 
     move v4, v5
 
-    .line 2490
+    .line 2491
     goto :goto_0
 .end method
 
@@ -4144,7 +4161,7 @@
 
     const/4 v2, 0x0
 
-    .line 1641
+    .line 1642
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$2;->$SwitchMap$com$google$i18n$phonenumbers$PhoneNumberUtil$PhoneNumberFormat:[I
 
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->ordinal()I
@@ -4155,11 +4172,11 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1654
+    .line 1655
     :goto_0
     return-void
 
-    .line 1643
+    .line 1644
     :pswitch_0
     invoke-virtual {p3, v2, p1}, Ljava/lang/StringBuilder;->insert(II)Ljava/lang/StringBuilder;
 
@@ -4169,7 +4186,7 @@
 
     goto :goto_0
 
-    .line 1646
+    .line 1647
     :pswitch_1
     const-string v0, " "
 
@@ -4185,7 +4202,7 @@
 
     goto :goto_0
 
-    .line 1649
+    .line 1650
     :pswitch_2
     const-string v0, "-"
 
@@ -4207,7 +4224,7 @@
 
     goto :goto_0
 
-    .line 1641
+    .line 1642
     nop
 
     :pswitch_data_0
@@ -4227,12 +4244,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1470
+    .line 1471
     invoke-static {p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->normalizeDigitsOnly(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1471
+    .line 1472
     .local v1, normalizedNationalNumber:Ljava/lang/String;
     invoke-virtual {v1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -4240,7 +4257,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1477
+    .line 1478
     :try_start_0
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
@@ -4260,16 +4277,16 @@
 
     move-result v2
 
-    .line 1483
+    .line 1484
     :cond_0
     :goto_0
     return v2
 
-    .line 1479
+    .line 1480
     :catch_0
     move-exception v0
 
-    .line 1480
+    .line 1481
     .local v0, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     goto :goto_0
 .end method
@@ -4310,12 +4327,12 @@
     .parameter "number"
 
     .prologue
-    .line 2219
+    .line 2220
     invoke-virtual {p1, p2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v0
 
-    .line 2220
+    .line 2221
     .local v0, numberMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -4323,14 +4340,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 2221
+    .line 2222
     sget-object v1, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->IS_POSSIBLE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
-    .line 2226
+    .line 2227
     :goto_0
     return-object v1
 
-    .line 2223
+    .line 2224
     :cond_0
     invoke-virtual {v0}, Ljava/util/regex/Matcher;->lookingAt()Z
 
@@ -4338,12 +4355,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 2224
+    .line 2225
     sget-object v1, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->TOO_LONG:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
     goto :goto_0
 
-    .line 2226
+    .line 2227
     :cond_1
     sget-object v1, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->TOO_SHORT:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
@@ -4359,7 +4376,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 3083
+    .line 3084
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v3
@@ -4368,22 +4385,22 @@
 
     move-result-object v0
 
-    .line 3084
+    .line 3085
     .local v0, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-nez v0, :cond_1
 
-    .line 3090
+    .line 3091
     :cond_0
     :goto_0
     return v2
 
-    .line 3089
+    .line 3090
     :cond_1
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3090
+    .line 3091
     .local v1, nationalSignificantNumber:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getNoInternationalDialling()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -4418,7 +4435,7 @@
     .end annotation
 
     .prologue
-    .line 1686
+    .line 1687
     .local p1, availableFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -4438,13 +4455,13 @@
 
     check-cast v2, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1687
+    .line 1688
     .local v2, numFormat:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->leadingDigitsPatternSize()I
 
     move-result v3
 
-    .line 1688
+    .line 1689
     .local v3, size:I
     if-eqz v3, :cond_1
 
@@ -4470,7 +4487,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1691
+    .line 1692
     :cond_1
     iget-object v4, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
@@ -4486,7 +4503,7 @@
 
     move-result-object v1
 
-    .line 1692
+    .line 1693
     .local v1, m:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
 
@@ -4494,7 +4511,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 1697
+    .line 1698
     .end local v1           #m:Ljava/util/regex/Matcher;
     .end local v2           #numFormat:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     .end local v3           #size:I
@@ -4515,7 +4532,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 2351
+    .line 2352
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
@@ -4533,17 +4550,17 @@
     :cond_0
     move v2, v3
 
-    .line 2364
+    .line 2365
     :goto_0
     return v2
 
-    .line 2356
+    .line 2357
     :cond_1
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
-    .line 2357
+    .line 2358
     .local v1, numberLength:I
     const/4 v0, 0x1
 
@@ -4555,7 +4572,7 @@
 
     if-gt v0, v1, :cond_3
 
-    .line 2358
+    .line 2359
     invoke-virtual {p1, v3, v0}, Ljava/lang/StringBuilder;->substring(II)Ljava/lang/String;
 
     move-result-object v4
@@ -4564,7 +4581,7 @@
 
     move-result v2
 
-    .line 2359
+    .line 2360
     .local v2, potentialCountryCode:I
     iget-object v4, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCallingCodeToRegionCodeMap:Ljava/util/Map;
 
@@ -4578,7 +4595,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 2360
+    .line 2361
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->substring(I)Ljava/lang/String;
 
     move-result-object v3
@@ -4587,7 +4604,7 @@
 
     goto :goto_0
 
-    .line 2357
+    .line 2358
     :cond_2
     add-int/lit8 v0, v0, 0x1
 
@@ -4597,7 +4614,7 @@
     :cond_3
     move v2, v3
 
-    .line 2364
+    .line 2365
     goto :goto_0
 .end method
 
@@ -4619,7 +4636,7 @@
     .end annotation
 
     .prologue
-    .line 2715
+    .line 2716
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$Leniency;->VALID:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$Leniency;
 
     const-wide v4, 0x7fffffffffffffffL
@@ -4658,7 +4675,7 @@
     .end annotation
 
     .prologue
-    .line 2736
+    .line 2737
     new-instance v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$1;
 
     move-object v1, p0
@@ -4682,7 +4699,7 @@
     .parameter "numberFormat"
 
     .prologue
-    .line 1018
+    .line 1019
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNationalNumber()J
 
     move-result-wide v2
@@ -4699,12 +4716,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 1024
+    .line 1025
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getRawInput()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1025
+    .line 1026
     .local v1, rawInput:Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -4712,12 +4729,12 @@
 
     if-lez v2, :cond_0
 
-    .line 1031
+    .line 1032
     .end local v1           #rawInput:Ljava/lang/String;
     :goto_0
     return-object v1
 
-    .line 1029
+    .line 1030
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -4725,11 +4742,11 @@
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1030
+    .line 1031
     .local v0, formattedNumber:Ljava/lang/StringBuilder;
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->format(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1031
+    .line 1032
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -4744,41 +4761,41 @@
     .parameter "formattedNumber"
 
     .prologue
-    .line 1041
+    .line 1042
     const/4 v4, 0x0
 
     invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 1042
+    .line 1043
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 1043
+    .line 1044
     .local v0, countryCallingCode:I
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1044
+    .line 1045
     .local v2, nationalSignificantNumber:Ljava/lang/String;
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->E164:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     if-ne p2, v4, :cond_0
 
-    .line 1047
+    .line 1048
     invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1048
+    .line 1049
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->E164:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-direct {p0, v0, v4, p3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->prefixNumberWithCountryCallingCode(ILcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1067
+    .line 1068
     :goto_0
     return-void
 
-    .line 1052
+    .line 1053
     :cond_0
     invoke-direct {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->hasValidCountryCallingCode(I)Z
 
@@ -4786,24 +4803,24 @@
 
     if-nez v4, :cond_1
 
-    .line 1053
+    .line 1054
     invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    .line 1059
+    .line 1060
     :cond_1
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1062
+    .line 1063
     .local v3, regionCode:Ljava/lang/String;
     invoke-direct {p0, v0, v3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v1
 
-    .line 1064
+    .line 1065
     .local v1, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     invoke-direct {p0, v2, v1, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->formatNsn(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;)Ljava/lang/String;
 
@@ -4811,10 +4828,10 @@
 
     invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1065
+    .line 1066
     invoke-direct {p0, p1, v1, p2, p3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeAppendFormattedExtension(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1066
+    .line 1067
     invoke-direct {p0, v0, p2, p3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->prefixNumberWithCountryCallingCode(ILcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
     goto :goto_0
@@ -4839,19 +4856,19 @@
     .end annotation
 
     .prologue
-    .line 1083
+    .line 1084
     .local p3, userDefinedFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 1084
+    .line 1085
     .local v0, countryCallingCode:I
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1085
+    .line 1086
     .local v6, nationalSignificantNumber:Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->hasValidCountryCallingCode(I)Z
 
@@ -4859,25 +4876,25 @@
 
     if-nez v9, :cond_0
 
-    .line 1129
+    .line 1130
     .end local v6           #nationalSignificantNumber:Ljava/lang/String;
     :goto_0
     return-object v6
 
-    .line 1091
+    .line 1092
     .restart local v6       #nationalSignificantNumber:Ljava/lang/String;
     :cond_0
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1093
+    .line 1094
     .local v8, regionCode:Ljava/lang/String;
     invoke-direct {p0, v0, v8}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v3
 
-    .line 1096
+    .line 1097
     .local v3, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -4885,49 +4902,49 @@
 
     invoke-direct {v1, v9}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1098
+    .line 1099
     .local v1, formattedNumber:Ljava/lang/StringBuilder;
     invoke-virtual {p0, p3, v6}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->chooseFormattingPatternForNumber(Ljava/util/List;Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
     move-result-object v2
 
-    .line 1100
+    .line 1101
     .local v2, formattingPattern:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     if-nez v2, :cond_1
 
-    .line 1102
+    .line 1103
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1127
+    .line 1128
     :goto_1
     invoke-direct {p0, p1, v3, p2, v1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeAppendFormattedExtension(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1128
+    .line 1129
     invoke-direct {p0, v0, p2, v1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->prefixNumberWithCountryCallingCode(ILcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1129
+    .line 1130
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
     goto :goto_0
 
-    .line 1104
+    .line 1105
     :cond_1
     new-instance v7, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
     invoke-direct {v7}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;-><init>()V
 
-    .line 1108
+    .line 1109
     .local v7, numFormatCopy:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     invoke-virtual {v7, v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->mergeFrom(Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1109
+    .line 1110
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->getNationalPrefixFormattingRule()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1110
+    .line 1111
     .local v5, nationalPrefixFormattingRule:Ljava/lang/String;
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
@@ -4935,12 +4952,12 @@
 
     if-lez v9, :cond_2
 
-    .line 1111
+    .line 1112
     invoke-virtual {v3}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getNationalPrefix()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1112
+    .line 1113
     .local v4, nationalPrefix:Ljava/lang/String;
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -4948,7 +4965,7 @@
 
     if-lez v9, :cond_3
 
-    .line 1114
+    .line 1115
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->NP_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v9, v5}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -4959,7 +4976,7 @@
 
     move-result-object v5
 
-    .line 1116
+    .line 1117
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->FG_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v9, v5}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -4972,10 +4989,10 @@
 
     move-result-object v5
 
-    .line 1118
+    .line 1119
     invoke-virtual {v7, v5}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->setNationalPrefixFormattingRule(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1124
+    .line 1125
     .end local v4           #nationalPrefix:Ljava/lang/String;
     :cond_2
     :goto_2
@@ -4987,7 +5004,7 @@
 
     goto :goto_1
 
-    .line 1121
+    .line 1122
     .restart local v4       #nationalPrefix:Ljava/lang/String;
     :cond_3
     invoke-virtual {v7}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->clearNationalPrefixFormattingRule()Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
@@ -5001,7 +5018,7 @@
     .parameter "regionCallingFrom"
 
     .prologue
-    .line 1370
+    .line 1371
     invoke-virtual/range {p1 .. p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasRawInput()Z
 
     move-result v17
@@ -5020,18 +5037,18 @@
 
     if-nez v17, :cond_2
 
-    .line 1374
+    .line 1375
     :cond_0
     invoke-virtual/range {p1 .. p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getRawInput()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1463
+    .line 1464
     :cond_1
     :goto_0
     return-object v5
 
-    .line 1376
+    .line 1377
     :cond_2
     invoke-virtual/range {p1 .. p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasCountryCodeSource()Z
 
@@ -5039,7 +5056,7 @@
 
     if-nez v17, :cond_3
 
-    .line 1377
+    .line 1378
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     move-object/from16 v0, p0
@@ -5054,7 +5071,7 @@
 
     goto :goto_0
 
-    .line 1380
+    .line 1381
     :cond_3
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$2;->$SwitchMap$com$google$i18n$phonenumbers$Phonenumber$PhoneNumber$CountryCodeSource:[I
 
@@ -5070,7 +5087,7 @@
 
     packed-switch v17, :pswitch_data_0
 
-    .line 1393
+    .line 1394
     invoke-virtual/range {p1 .. p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v17
@@ -5083,7 +5100,7 @@
 
     move-result-object v16
 
-    .line 1396
+    .line 1397
     .local v16, regionCode:Ljava/lang/String;
     const/16 v17, 0x1
 
@@ -5097,7 +5114,7 @@
 
     move-result-object v10
 
-    .line 1397
+    .line 1398
     .local v10, nationalPrefix:Ljava/lang/String;
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -5111,7 +5128,7 @@
 
     move-result-object v8
 
-    .line 1398
+    .line 1399
     .local v8, nationalFormat:Ljava/lang/String;
     if-eqz v10, :cond_4
 
@@ -5121,11 +5138,11 @@
 
     if-nez v17, :cond_5
 
-    .line 1401
+    .line 1402
     :cond_4
     move-object v5, v8
 
-    .line 1451
+    .line 1452
     .end local v8           #nationalFormat:Ljava/lang/String;
     .end local v10           #nationalPrefix:Ljava/lang/String;
     .end local v16           #regionCode:Ljava/lang/String;
@@ -5135,7 +5152,7 @@
 
     move-result-object v15
 
-    .line 1454
+    .line 1455
     .local v15, rawInput:Ljava/lang/String;
     if-eqz v5, :cond_1
 
@@ -5145,7 +5162,7 @@
 
     if-lez v17, :cond_1
 
-    .line 1455
+    .line 1456
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->DIALLABLE_CHAR_MAPPINGS:Ljava/util/Map;
 
     const/16 v18, 0x1
@@ -5158,7 +5175,7 @@
 
     move-result-object v11
 
-    .line 1457
+    .line 1458
     .local v11, normalizedFormattedNumber:Ljava/lang/String;
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->DIALLABLE_CHAR_MAPPINGS:Ljava/util/Map;
 
@@ -5172,7 +5189,7 @@
 
     move-result-object v12
 
-    .line 1459
+    .line 1460
     .local v12, normalizedRawInput:Ljava/lang/String;
     invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5180,12 +5197,12 @@
 
     if-nez v17, :cond_1
 
-    .line 1460
+    .line 1461
     move-object v5, v15
 
     goto :goto_0
 
-    .line 1382
+    .line 1383
     .end local v5           #formattedNumber:Ljava/lang/String;
     .end local v11           #normalizedFormattedNumber:Ljava/lang/String;
     .end local v12           #normalizedRawInput:Ljava/lang/String;
@@ -5203,22 +5220,22 @@
 
     move-result-object v5
 
-    .line 1383
+    .line 1384
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto :goto_1
 
-    .line 1385
+    .line 1386
     .end local v5           #formattedNumber:Ljava/lang/String;
     :pswitch_1
     invoke-virtual/range {p0 .. p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->formatOutOfCountryCallingNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 1386
+    .line 1387
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto :goto_1
 
-    .line 1388
+    .line 1389
     .end local v5           #formattedNumber:Ljava/lang/String;
     :pswitch_2
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
@@ -5239,11 +5256,11 @@
 
     move-result-object v5
 
-    .line 1389
+    .line 1390
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto :goto_1
 
-    .line 1405
+    .line 1406
     .end local v5           #formattedNumber:Ljava/lang/String;
     .restart local v8       #nationalFormat:Ljava/lang/String;
     .restart local v10       #nationalPrefix:Ljava/lang/String;
@@ -5265,14 +5282,14 @@
 
     if-eqz v17, :cond_6
 
-    .line 1408
+    .line 1409
     move-object v5, v8
 
-    .line 1409
+    .line 1410
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto :goto_1
 
-    .line 1413
+    .line 1414
     .end local v5           #formattedNumber:Ljava/lang/String;
     :cond_6
     move-object/from16 v0, p0
@@ -5283,13 +5300,13 @@
 
     move-result-object v7
 
-    .line 1414
+    .line 1415
     .local v7, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     invoke-virtual/range {p0 .. p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 1415
+    .line 1416
     .local v9, nationalNumber:Ljava/lang/String;
     invoke-virtual {v7}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->numberFormats()Ljava/util/List;
 
@@ -5303,25 +5320,25 @@
 
     move-result-object v4
 
-    .line 1420
+    .line 1421
     .local v4, formatRule:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     if-nez v4, :cond_7
 
-    .line 1421
+    .line 1422
     move-object v5, v8
 
-    .line 1422
+    .line 1423
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto :goto_1
 
-    .line 1427
+    .line 1428
     .end local v5           #formattedNumber:Ljava/lang/String;
     :cond_7
     invoke-virtual {v4}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->getNationalPrefixFormattingRule()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1429
+    .line 1430
     .local v3, candidateNationalPrefixRule:Ljava/lang/String;
     const-string v17, "$1"
 
@@ -5331,18 +5348,18 @@
 
     move-result v6
 
-    .line 1430
+    .line 1431
     .local v6, indexOfFirstGroup:I
     if-gtz v6, :cond_8
 
-    .line 1431
+    .line 1432
     move-object v5, v8
 
-    .line 1432
+    .line 1433
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto/16 :goto_1
 
-    .line 1434
+    .line 1435
     .end local v5           #formattedNumber:Ljava/lang/String;
     :cond_8
     const/16 v17, 0x0
@@ -5353,40 +5370,40 @@
 
     move-result-object v3
 
-    .line 1436
+    .line 1437
     invoke-static {v3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->normalizeDigitsOnly(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1437
+    .line 1438
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v17
 
     if-nez v17, :cond_9
 
-    .line 1439
+    .line 1440
     move-object v5, v8
 
-    .line 1440
+    .line 1441
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto/16 :goto_1
 
-    .line 1443
+    .line 1444
     .end local v5           #formattedNumber:Ljava/lang/String;
     :cond_9
     new-instance v13, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
     invoke-direct {v13}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;-><init>()V
 
-    .line 1444
+    .line 1445
     .local v13, numFormatCopy:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     invoke-virtual {v13, v4}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->mergeFrom(Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1445
+    .line 1446
     invoke-virtual {v13}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->clearNationalPrefixFormattingRule()Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1446
+    .line 1447
     new-instance v14, Ljava/util/ArrayList;
 
     const/16 v17, 0x1
@@ -5395,11 +5412,11 @@
 
     invoke-direct {v14, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 1447
+    .line 1448
     .local v14, numberFormats:Ljava/util/List;,"Ljava/util/List<Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;>;"
     invoke-interface {v14, v13}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1448
+    .line 1449
     sget-object v17, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     move-object/from16 v0, p0
@@ -5415,7 +5432,7 @@
     .restart local v5       #formattedNumber:Ljava/lang/String;
     goto/16 :goto_1
 
-    .line 1380
+    .line 1381
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -5430,18 +5447,18 @@
     .parameter "carrierCode"
 
     .prologue
-    .line 1144
+    .line 1145
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 1145
+    .line 1146
     .local v0, countryCallingCode:I
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1146
+    .line 1147
     .local v3, nationalSignificantNumber:Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->hasValidCountryCallingCode(I)Z
 
@@ -5449,25 +5466,25 @@
 
     if-nez v5, :cond_0
 
-    .line 1163
+    .line 1164
     .end local v3           #nationalSignificantNumber:Ljava/lang/String;
     :goto_0
     return-object v3
 
-    .line 1153
+    .line 1154
     .restart local v3       #nationalSignificantNumber:Ljava/lang/String;
     :cond_0
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1155
+    .line 1156
     .local v4, regionCode:Ljava/lang/String;
     invoke-direct {p0, v0, v4}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v2
 
-    .line 1157
+    .line 1158
     .local v2, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -5475,7 +5492,7 @@
 
     invoke-direct {v1, v5}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 1158
+    .line 1159
     .local v1, formattedNumber:Ljava/lang/StringBuilder;
     sget-object v5, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -5485,17 +5502,17 @@
 
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1160
+    .line 1161
     sget-object v5, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-direct {p0, p1, v2, v5, v1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeAppendFormattedExtension(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1161
+    .line 1162
     sget-object v5, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-direct {p0, v0, v5, v1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->prefixNumberWithCountryCallingCode(ILcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1163
+    .line 1164
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -5509,7 +5526,7 @@
     .parameter "fallbackCarrierCode"
 
     .prologue
-    .line 1192
+    .line 1193
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasPreferredDomesticCarrierCode()Z
 
     move-result v0
@@ -5536,7 +5553,7 @@
     .parameter "numberFormat"
 
     .prologue
-    .line 1704
+    .line 1705
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->formatNsnUsingPattern(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/String;)Ljava/lang/String;
@@ -5555,12 +5572,12 @@
     .prologue
     const/4 v7, 0x1
 
-    .line 1211
+    .line 1212
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 1212
+    .line 1213
     .local v0, countryCallingCode:I
     invoke-direct {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->hasValidCountryCallingCode(I)Z
 
@@ -5568,7 +5585,7 @@
 
     if-nez v8, :cond_1
 
-    .line 1213
+    .line 1214
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasRawInput()Z
 
     move-result v7
@@ -5579,21 +5596,21 @@
 
     move-result-object v7
 
-    .line 1268
+    .line 1269
     :goto_0
     return-object v7
 
-    .line 1213
+    .line 1214
     :cond_0
     const-string v7, ""
 
     goto :goto_0
 
-    .line 1216
+    .line 1217
     :cond_1
     const-string v1, ""
 
-    .line 1218
+    .line 1219
     .local v1, formattedNumber:Ljava/lang/String;
     new-instance v8, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
@@ -5607,13 +5624,13 @@
 
     move-result-object v4
 
-    .line 1219
+    .line 1220
     .local v4, numberNoExt:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1220
+    .line 1221
     .local v6, regionCode:Ljava/lang/String;
     invoke-virtual {p2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -5621,12 +5638,12 @@
 
     if-eqz v8, :cond_c
 
-    .line 1221
+    .line 1222
     invoke-virtual {p0, v4}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNumberType(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     move-result-object v5
 
-    .line 1222
+    .line 1223
     .local v5, numberType:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
     sget-object v8, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
@@ -5643,7 +5660,7 @@
     :cond_2
     move v3, v7
 
-    .line 1226
+    .line 1227
     .local v3, isFixedLineOrMobile:Z
     :goto_1
     const-string v8, "CO"
@@ -5658,14 +5675,14 @@
 
     if-ne v5, v8, :cond_5
 
-    .line 1227
+    .line 1228
     const-string v8, "3"
 
     invoke-virtual {p0, v4, v8}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->formatNationalNumberWithCarrierCode(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1268
+    .line 1269
     .end local v3           #isFixedLineOrMobile:Z
     .end local v5           #numberType:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
     :cond_3
@@ -5678,7 +5695,7 @@
 
     goto :goto_0
 
-    .line 1222
+    .line 1223
     .restart local v1       #formattedNumber:Ljava/lang/String;
     .restart local v5       #numberType:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
     :cond_4
@@ -5686,7 +5703,7 @@
 
     goto :goto_1
 
-    .line 1229
+    .line 1230
     .restart local v3       #isFixedLineOrMobile:Z
     :cond_5
     const-string v8, "BR"
@@ -5699,7 +5716,7 @@
 
     if-eqz v3, :cond_7
 
-    .line 1230
+    .line 1231
     invoke-virtual {v4}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasPreferredDomesticCarrierCode()Z
 
     move-result v8
@@ -5728,7 +5745,7 @@
 
     goto :goto_4
 
-    .line 1236
+    .line 1237
     :cond_7
     const-string v8, "HU"
 
@@ -5738,7 +5755,7 @@
 
     if-eqz v8, :cond_8
 
-    .line 1240
+    .line 1241
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -5773,7 +5790,7 @@
 
     goto :goto_2
 
-    .line 1247
+    .line 1248
     :cond_8
     if-eq v0, v7, :cond_a
 
@@ -5811,7 +5828,7 @@
 
     if-eqz v8, :cond_b
 
-    .line 1259
+    .line 1260
     sget-object v8, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-virtual {p0, v4, v8}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->format(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;)Ljava/lang/String;
@@ -5820,7 +5837,7 @@
 
     goto :goto_2
 
-    .line 1261
+    .line 1262
     :cond_b
     sget-object v8, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -5830,7 +5847,7 @@
 
     goto :goto_2
 
-    .line 1264
+    .line 1265
     .end local v3           #isFixedLineOrMobile:Z
     .end local v5           #numberType:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
     :cond_c
@@ -5840,7 +5857,7 @@
 
     if-eqz v8, :cond_3
 
-    .line 1265
+    .line 1266
     if-eqz p3, :cond_d
 
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
@@ -5860,7 +5877,7 @@
 
     goto/16 :goto_0
 
-    .line 1268
+    .line 1269
     :cond_e
     sget-object v8, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->DIALLABLE_CHAR_MAPPINGS:Ljava/util/Map;
 
@@ -5879,14 +5896,14 @@
     .prologue
     const/4 v11, 0x0
 
-    .line 1292
+    .line 1293
     invoke-direct {p0, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidRegionCode(Ljava/lang/String;)Z
 
     move-result v9
 
     if-nez v9, :cond_1
 
-    .line 1293
+    .line 1294
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
     sget-object v10, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
@@ -5917,31 +5934,31 @@
 
     invoke-virtual {v9, v10, v11}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 1297
+    .line 1298
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-virtual {p0, p1, v9}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->format(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1350
+    .line 1351
     :cond_0
     :goto_0
     return-object v7
 
-    .line 1299
+    .line 1300
     :cond_1
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 1300
+    .line 1301
     .local v0, countryCallingCode:I
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1301
+    .line 1302
     .local v7, nationalSignificantNumber:Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->hasValidCountryCallingCode(I)Z
 
@@ -5949,19 +5966,19 @@
 
     if-eqz v9, :cond_0
 
-    .line 1304
+    .line 1305
     const/4 v9, 0x1
 
     if-ne v0, v9, :cond_2
 
-    .line 1305
+    .line 1306
     invoke-virtual {p0, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isNANPACountry(Ljava/lang/String;)Z
 
     move-result v9
 
     if-eqz v9, :cond_3
 
-    .line 1308
+    .line 1309
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -5992,7 +6009,7 @@
 
     goto :goto_0
 
-    .line 1310
+    .line 1311
     :cond_2
     invoke-direct {p0, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getCountryCodeForValidRegion(Ljava/lang/String;)I
 
@@ -6000,7 +6017,7 @@
 
     if-ne v0, v9, :cond_3
 
-    .line 1317
+    .line 1318
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-virtual {p0, p1, v9}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->format(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;)Ljava/lang/String;
@@ -6009,23 +6026,23 @@
 
     goto :goto_0
 
-    .line 1320
+    .line 1321
     :cond_3
     invoke-virtual {p0, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegion(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v6
 
-    .line 1321
+    .line 1322
     .local v6, metadataForRegionCallingFrom:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     invoke-virtual {v6}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getInternationalPrefix()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1325
+    .line 1326
     .local v3, internationalPrefix:Ljava/lang/String;
     const-string v4, ""
 
-    .line 1326
+    .line 1327
     .local v4, internationalPrefixForFormatting:Ljava/lang/String;
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->UNIQUE_INTERNATIONAL_PREFIX:Ljava/util/regex/Pattern;
 
@@ -6039,23 +6056,23 @@
 
     if-eqz v9, :cond_5
 
-    .line 1327
+    .line 1328
     move-object v4, v3
 
-    .line 1333
+    .line 1334
     :cond_4
     :goto_1
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 1335
+    .line 1336
     .local v8, regionCode:Ljava/lang/String;
     invoke-direct {p0, v0, v8}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v5
 
-    .line 1337
+    .line 1338
     .local v5, metadataForRegion:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -6063,26 +6080,26 @@
 
     move-result-object v1
 
-    .line 1339
+    .line 1340
     .local v1, formattedNationalNumber:Ljava/lang/String;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1340
+    .line 1341
     .local v2, formattedNumber:Ljava/lang/StringBuilder;
     sget-object v9, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     invoke-direct {p0, p1, v5, v9, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeAppendFormattedExtension(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1342
+    .line 1343
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v9
 
     if-lez v9, :cond_6
 
-    .line 1343
+    .line 1344
     const-string v9, " "
 
     invoke-virtual {v2, v11, v9}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
@@ -6101,7 +6118,7 @@
 
     invoke-virtual {v9, v11, v4}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1350
+    .line 1351
     :goto_2
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -6109,7 +6126,7 @@
 
     goto/16 :goto_0
 
-    .line 1328
+    .line 1329
     .end local v1           #formattedNationalNumber:Ljava/lang/String;
     .end local v2           #formattedNumber:Ljava/lang/StringBuilder;
     .end local v5           #metadataForRegion:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
@@ -6121,14 +6138,14 @@
 
     if-eqz v9, :cond_4
 
-    .line 1329
+    .line 1330
     invoke-virtual {v6}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPreferredInternationalPrefix()Ljava/lang/String;
 
     move-result-object v4
 
     goto :goto_1
 
-    .line 1346
+    .line 1347
     .restart local v1       #formattedNationalNumber:Ljava/lang/String;
     .restart local v2       #formattedNumber:Ljava/lang/StringBuilder;
     .restart local v5       #metadataForRegion:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
@@ -6147,12 +6164,12 @@
     .parameter "regionCallingFrom"
 
     .prologue
-    .line 1534
+    .line 1535
     invoke-virtual/range {p1 .. p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getRawInput()Ljava/lang/String;
 
     move-result-object v12
 
-    .line 1537
+    .line 1538
     .local v12, rawInput:Ljava/lang/String;
     invoke-virtual {v12}, Ljava/lang/String;->length()I
 
@@ -6160,22 +6177,22 @@
 
     if-nez v14, :cond_0
 
-    .line 1538
+    .line 1539
     invoke-virtual/range {p0 .. p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->formatOutOfCountryCallingNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 1618
+    .line 1619
     :goto_0
     return-object v14
 
-    .line 1540
+    .line 1541
     :cond_0
     invoke-virtual/range {p1 .. p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v2
 
-    .line 1541
+    .line 1542
     .local v2, countryCode:I
     move-object/from16 v0, p0
 
@@ -6187,10 +6204,10 @@
 
     move-object v14, v12
 
-    .line 1542
+    .line 1543
     goto :goto_0
 
-    .line 1548
+    .line 1549
     :cond_1
     sget-object v14, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->ALL_PLUS_NUMBER_GROUPING_SYMBOLS:Ljava/util/Map;
 
@@ -6200,12 +6217,12 @@
 
     move-result-object v12
 
-    .line 1553
+    .line 1554
     invoke-virtual/range {p0 .. p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 1554
+    .line 1555
     .local v10, nationalNumber:Ljava/lang/String;
     invoke-virtual {v10}, Ljava/lang/String;->length()I
 
@@ -6215,7 +6232,7 @@
 
     if-le v14, v15, :cond_2
 
-    .line 1555
+    .line 1556
     const/4 v14, 0x0
 
     const/4 v15, 0x3
@@ -6228,18 +6245,18 @@
 
     move-result v3
 
-    .line 1556
+    .line 1557
     .local v3, firstNationalNumberDigit:I
     const/4 v14, -0x1
 
     if-eq v3, v14, :cond_2
 
-    .line 1557
+    .line 1558
     invoke-virtual {v12, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 1560
+    .line 1561
     .end local v3           #firstNationalNumberDigit:I
     :cond_2
     move-object/from16 v0, p0
@@ -6250,13 +6267,13 @@
 
     move-result-object v9
 
-    .line 1561
+    .line 1562
     .local v9, metadataForRegionCallingFrom:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     const/4 v14, 0x1
 
     if-ne v2, v14, :cond_3
 
-    .line 1562
+    .line 1563
     move-object/from16 v0, p0
 
     move-object/from16 v1, p2
@@ -6267,7 +6284,7 @@
 
     if-eqz v14, :cond_5
 
-    .line 1563
+    .line 1564
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -6292,7 +6309,7 @@
 
     goto :goto_0
 
-    .line 1565
+    .line 1566
     :cond_3
     if-eqz v9, :cond_5
 
@@ -6306,7 +6323,7 @@
 
     if-ne v2, v14, :cond_5
 
-    .line 1567
+    .line 1568
     invoke-virtual {v9}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->numberFormats()Ljava/util/List;
 
     move-result-object v14
@@ -6317,36 +6334,36 @@
 
     move-result-object v5
 
-    .line 1570
+    .line 1571
     .local v5, formattingPattern:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     if-nez v5, :cond_4
 
     move-object v14, v12
 
-    .line 1572
+    .line 1573
     goto :goto_0
 
-    .line 1574
+    .line 1575
     :cond_4
     new-instance v11, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
     invoke-direct {v11}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;-><init>()V
 
-    .line 1575
+    .line 1576
     .local v11, newFormat:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     invoke-virtual {v11, v5}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->mergeFrom(Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1577
+    .line 1578
     const-string v14, "(\\d+)(.*)"
 
     invoke-virtual {v11, v14}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->setPattern(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1579
+    .line 1580
     const-string v14, "$1$2"
 
     invoke-virtual {v11, v14}, Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;->setFormat(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
 
-    .line 1585
+    .line 1586
     sget-object v14, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->NATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     move-object/from16 v0, p0
@@ -6357,22 +6374,22 @@
 
     goto/16 :goto_0
 
-    .line 1587
+    .line 1588
     .end local v5           #formattingPattern:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     .end local v11           #newFormat:Lcom/google/i18n/phonenumbers/Phonemetadata$NumberFormat;
     :cond_5
     const-string v7, ""
 
-    .line 1591
+    .line 1592
     .local v7, internationalPrefixForFormatting:Ljava/lang/String;
     if-eqz v9, :cond_6
 
-    .line 1592
+    .line 1593
     invoke-virtual {v9}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getInternationalPrefix()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1593
+    .line 1594
     .local v6, internationalPrefix:Ljava/lang/String;
     sget-object v14, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->UNIQUE_INTERNATIONAL_PREFIX:Ljava/util/regex/Pattern;
 
@@ -6388,7 +6405,7 @@
 
     move-object v7, v6
 
-    .line 1598
+    .line 1599
     .end local v6           #internationalPrefix:Ljava/lang/String;
     :cond_6
     :goto_1
@@ -6396,7 +6413,7 @@
 
     invoke-direct {v4, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1599
+    .line 1600
     .local v4, formattedNumber:Ljava/lang/StringBuilder;
     move-object/from16 v0, p0
 
@@ -6404,7 +6421,7 @@
 
     move-result-object v13
 
-    .line 1601
+    .line 1602
     .local v13, regionCode:Ljava/lang/String;
     move-object/from16 v0, p0
 
@@ -6412,7 +6429,7 @@
 
     move-result-object v8
 
-    .line 1602
+    .line 1603
     .local v8, metadataForRegion:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     sget-object v14, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
@@ -6422,14 +6439,14 @@
 
     invoke-direct {v0, v1, v8, v14, v4}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeAppendFormattedExtension(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;Ljava/lang/StringBuilder;)V
 
-    .line 1604
+    .line 1605
     invoke-virtual {v7}, Ljava/lang/String;->length()I
 
     move-result v14
 
     if-lez v14, :cond_8
 
-    .line 1605
+    .line 1606
     const/4 v14, 0x0
 
     const-string v15, " "
@@ -6456,7 +6473,7 @@
 
     invoke-virtual {v14, v15, v7}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1618
+    .line 1619
     :goto_2
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -6464,7 +6481,7 @@
 
     goto/16 :goto_0
 
-    .line 1593
+    .line 1594
     .end local v4           #formattedNumber:Ljava/lang/StringBuilder;
     .end local v8           #metadataForRegion:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     .end local v13           #regionCode:Ljava/lang/String;
@@ -6476,7 +6493,7 @@
 
     goto :goto_1
 
-    .line 1610
+    .line 1611
     .end local v6           #internationalPrefix:Ljava/lang/String;
     .restart local v4       #formattedNumber:Ljava/lang/StringBuilder;
     .restart local v8       #metadataForRegion:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
@@ -6516,7 +6533,7 @@
 
     invoke-virtual/range {v14 .. v16}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 1614
+    .line 1615
     sget-object v14, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;->INTERNATIONAL:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberFormat;
 
     move-object/from16 v0, p0
@@ -6531,7 +6548,7 @@
     .parameter "regionCode"
 
     .prologue
-    .line 2343
+    .line 2344
     new-instance v0, Lcom/google/i18n/phonenumbers/AsYouTypeFormatter;
 
     invoke-direct {v0, p1}, Lcom/google/i18n/phonenumbers/AsYouTypeFormatter;-><init>(Ljava/lang/String;)V
@@ -6544,14 +6561,14 @@
     .parameter "regionCode"
 
     .prologue
-    .line 2096
+    .line 2097
     invoke-direct {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidRegionCode(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 2097
+    .line 2098
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
     sget-object v1, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
@@ -6588,10 +6605,10 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 2101
+    .line 2102
     const/4 v0, 0x0
 
-    .line 2103
+    .line 2104
     :goto_0
     return v0
 
@@ -6609,7 +6626,7 @@
     .parameter "regionCode"
 
     .prologue
-    .line 1763
+    .line 1764
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     invoke-virtual {p0, p1, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getExampleNumberForType(Ljava/lang/String;Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
@@ -6624,21 +6641,21 @@
     .parameter "countryCallingCode"
 
     .prologue
-    .line 1802
+    .line 1803
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForNonGeographicalRegion(I)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v2
 
-    .line 1803
+    .line 1804
     .local v2, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-eqz v2, :cond_1
 
-    .line 1804
+    .line 1805
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
     move-result-object v0
 
-    .line 1806
+    .line 1807
     .local v0, desc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     :try_start_0
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->hasExampleNumber()Z
@@ -6647,7 +6664,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1807
+    .line 1808
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -6682,17 +6699,17 @@
 
     move-result-object v3
 
-    .line 1816
+    .line 1817
     .end local v0           #desc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     :goto_0
     return-object v3
 
-    .line 1809
+    .line 1810
     .restart local v0       #desc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     :catch_0
     move-exception v1
 
-    .line 1810
+    .line 1811
     .local v1, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
@@ -6704,7 +6721,7 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 1816
+    .line 1817
     .end local v0           #desc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     .end local v1           #e:Lcom/google/i18n/phonenumbers/NumberParseException;
     :cond_0
@@ -6713,7 +6730,7 @@
 
     goto :goto_0
 
-    .line 1813
+    .line 1814
     :cond_1
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
@@ -6750,14 +6767,14 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1778
+    .line 1779
     invoke-direct {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidRegionCode(Ljava/lang/String;)Z
 
     move-result v3
 
     if-nez v3, :cond_1
 
-    .line 1779
+    .line 1780
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
     sget-object v4, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
@@ -6782,12 +6799,12 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 1790
+    .line 1791
     :cond_0
     :goto_0
     return-object v2
 
-    .line 1782
+    .line 1783
     :cond_1
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegion(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
@@ -6797,7 +6814,7 @@
 
     move-result-object v0
 
-    .line 1784
+    .line 1785
     .local v0, desc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     :try_start_0
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->hasExampleNumber()Z
@@ -6806,7 +6823,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1785
+    .line 1786
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getExampleNumber()Ljava/lang/String;
 
     move-result-object v3
@@ -6819,11 +6836,11 @@
 
     goto :goto_0
 
-    .line 1787
+    .line 1788
     :catch_0
     move-exception v1
 
-    .line 1788
+    .line 1789
     .local v1, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
@@ -7015,12 +7032,12 @@
     .parameter "countryCallingCode"
 
     .prologue
-    .line 1952
+    .line 1953
     iget-object v1, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCodeToNonGeographicalMetadataMap:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 1953
+    .line 1954
     :try_start_0
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCallingCodeToRegionCodeMap:Ljava/util/Map;
 
@@ -7034,16 +7051,16 @@
 
     if-nez v0, :cond_0
 
-    .line 1954
+    .line 1955
     const/4 v0, 0x0
 
     monitor-exit v1
 
-    .line 1960
+    .line 1961
     :goto_0
     return-object v0
 
-    .line 1956
+    .line 1957
     :cond_0
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCodeToNonGeographicalMetadataMap:Ljava/util/Map;
 
@@ -7057,20 +7074,20 @@
 
     if-nez v0, :cond_1
 
-    .line 1957
+    .line 1958
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->currentFilePrefix:Ljava/lang/String;
 
     const-string v2, "001"
 
     invoke-virtual {p0, v0, v2, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->loadMetadataFromFile(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1959
+    .line 1960
     :cond_1
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1960
+    .line 1961
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCodeToNonGeographicalMetadataMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -7085,7 +7102,7 @@
 
     goto :goto_0
 
-    .line 1959
+    .line 1960
     :catchall_0
     move-exception v0
 
@@ -7102,27 +7119,27 @@
     .parameter "regionCode"
 
     .prologue
-    .line 1938
+    .line 1939
     invoke-direct {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidRegionCode(Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1939
+    .line 1940
     const/4 v0, 0x0
 
-    .line 1948
+    .line 1949
     :goto_0
     return-object v0
 
-    .line 1941
+    .line 1942
     :cond_0
     iget-object v1, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regionToMetadataMap:Ljava/util/Map;
 
     monitor-enter v1
 
-    .line 1942
+    .line 1943
     :try_start_0
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regionToMetadataMap:Ljava/util/Map;
 
@@ -7132,20 +7149,20 @@
 
     if-nez v0, :cond_1
 
-    .line 1945
+    .line 1946
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->currentFilePrefix:Ljava/lang/String;
 
     const/4 v2, 0x0
 
     invoke-virtual {p0, v0, p1, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->loadMetadataFromFile(Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1947
+    .line 1948
     :cond_1
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1948
+    .line 1949
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regionToMetadataMap:Ljava/util/Map;
 
     invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -7156,7 +7173,7 @@
 
     goto :goto_0
 
-    .line 1947
+    .line 1948
     :catchall_0
     move-exception v0
 
@@ -7173,7 +7190,7 @@
     .parameter "number"
 
     .prologue
-    .line 1630
+    .line 1631
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->isItalianLeadingZero()Z
@@ -7187,7 +7204,7 @@
     :goto_0
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 1631
+    .line 1632
     .local v0, nationalNumber:Ljava/lang/StringBuilder;
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNationalNumber()J
 
@@ -7195,14 +7212,14 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 1632
+    .line 1633
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 1630
+    .line 1631
     .end local v0           #nationalNumber:Ljava/lang/StringBuilder;
     :cond_0
     const-string v1, ""
@@ -7218,16 +7235,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2137
+    .line 2138
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegion(Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v0
 
-    .line 2138
+    .line 2139
     .local v0, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-nez v0, :cond_2
 
-    .line 2139
+    .line 2140
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
     sget-object v4, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
@@ -7266,19 +7283,19 @@
 
     move-object v1, v2
 
-    .line 2155
+    .line 2156
     :cond_1
     :goto_0
     return-object v1
 
-    .line 2145
+    .line 2146
     .restart local p1
     :cond_2
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getNationalPrefix()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2147
+    .line 2148
     .local v1, nationalPrefix:Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -7288,14 +7305,14 @@
 
     move-object v1, v2
 
-    .line 2148
+    .line 2149
     goto :goto_0
 
-    .line 2150
+    .line 2151
     :cond_3
     if-eqz p2, :cond_1
 
-    .line 2153
+    .line 2154
     const-string v2, "~"
 
     const-string v3, ""
@@ -7313,7 +7330,7 @@
     .parameter "type"
 
     .prologue
-    .line 1840
+    .line 1841
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$2;->$SwitchMap$com$google$i18n$phonenumbers$PhoneNumberUtil$PhoneNumberType:[I
 
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->ordinal()I
@@ -7324,7 +7341,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 1863
+    .line 1864
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
     move-result-object v0
@@ -7332,7 +7349,7 @@
     :goto_0
     return-object v0
 
-    .line 1842
+    .line 1843
     :pswitch_0
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPremiumRate()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7340,7 +7357,7 @@
 
     goto :goto_0
 
-    .line 1844
+    .line 1845
     :pswitch_1
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getTollFree()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7348,7 +7365,7 @@
 
     goto :goto_0
 
-    .line 1846
+    .line 1847
     :pswitch_2
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getMobile()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7356,7 +7373,7 @@
 
     goto :goto_0
 
-    .line 1849
+    .line 1850
     :pswitch_3
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getFixedLine()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7364,7 +7381,7 @@
 
     goto :goto_0
 
-    .line 1851
+    .line 1852
     :pswitch_4
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getSharedCost()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7372,7 +7389,7 @@
 
     goto :goto_0
 
-    .line 1853
+    .line 1854
     :pswitch_5
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getVoip()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7380,7 +7397,7 @@
 
     goto :goto_0
 
-    .line 1855
+    .line 1856
     :pswitch_6
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPersonalNumber()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7388,7 +7405,7 @@
 
     goto :goto_0
 
-    .line 1857
+    .line 1858
     :pswitch_7
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getPager()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7396,7 +7413,7 @@
 
     goto :goto_0
 
-    .line 1859
+    .line 1860
     :pswitch_8
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getUan()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7404,7 +7421,7 @@
 
     goto :goto_0
 
-    .line 1861
+    .line 1862
     :pswitch_9
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getVoicemail()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
@@ -7412,7 +7429,7 @@
 
     goto :goto_0
 
-    .line 1840
+    .line 1841
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -7434,12 +7451,12 @@
     .parameter "number"
 
     .prologue
-    .line 1874
+    .line 1875
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1875
+    .line 1876
     .local v2, regionCode:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
@@ -7449,24 +7466,24 @@
 
     move-result-object v0
 
-    .line 1876
+    .line 1877
     .local v0, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-nez v0, :cond_0
 
-    .line 1877
+    .line 1878
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->UNKNOWN:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
-    .line 1880
+    .line 1881
     :goto_0
     return-object v3
 
-    .line 1879
+    .line 1880
     :cond_0
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1880
+    .line 1881
     .local v1, nationalSignificantNumber:Ljava/lang/String;
     invoke-direct {p0, v1, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNumberTypeHelper(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
@@ -7480,7 +7497,7 @@
     .parameter "countryCallingCode"
 
     .prologue
-    .line 2073
+    .line 2074
     iget-object v1, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCallingCodeToRegionCodeMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -7493,7 +7510,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 2074
+    .line 2075
     .local v0, regionCodes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
@@ -7519,12 +7536,12 @@
     .parameter "number"
 
     .prologue
-    .line 2033
+    .line 2034
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 2034
+    .line 2035
     .local v0, countryCode:I
     iget-object v3, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCallingCodeToRegionCodeMap:Ljava/util/Map;
 
@@ -7538,16 +7555,16 @@
 
     check-cast v2, Ljava/util/List;
 
-    .line 2035
+    .line 2036
     .local v2, regions:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-nez v2, :cond_0
 
-    .line 2036
+    .line 2037
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 2037
+    .line 2038
     .local v1, numberString:Ljava/lang/String;
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
@@ -7583,15 +7600,15 @@
 
     invoke-virtual {v3, v4, v5}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 2039
+    .line 2040
     const/4 v3, 0x0
 
-    .line 2044
+    .line 2045
     .end local v1           #numberString:Ljava/lang/String;
     :goto_0
     return-object v3
 
-    .line 2041
+    .line 2042
     :cond_0
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -7601,7 +7618,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 2042
+    .line 2043
     const/4 v3, 0x0
 
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -7612,7 +7629,7 @@
 
     goto :goto_0
 
-    .line 2044
+    .line 2045
     :cond_1
     invoke-direct {p0, p1, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForNumberFromRegionList(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Ljava/util/List;)Ljava/lang/String;
 
@@ -7635,7 +7652,7 @@
     .end annotation
 
     .prologue
-    .line 2083
+    .line 2084
     iget-object v1, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->countryCallingCodeToRegionCodeMap:Ljava/util/Map;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -7648,7 +7665,7 @@
 
     check-cast v0, Ljava/util/List;
 
-    .line 2084
+    .line 2085
     .local v0, regionCodes:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-nez v0, :cond_0
 
@@ -7718,31 +7735,31 @@
     .parameter "number"
 
     .prologue
-    .line 2193
+    .line 2194
     invoke-static {p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isViablePhoneNumber(Ljava/lang/String;)Z
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 2195
+    .line 2196
     const/4 v1, 0x0
 
-    .line 2199
+    .line 2200
     :goto_0
     return v1
 
-    .line 2197
+    .line 2198
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2198
+    .line 2199
     .local v0, strippedNumber:Ljava/lang/StringBuilder;
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeStripExtension(Ljava/lang/StringBuilder;)Ljava/lang/String;
 
-    .line 2199
+    .line 2200
     sget-object v1, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->VALID_ALPHA_PHONE_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -7761,7 +7778,7 @@
     .parameter "countryCallingCode"
 
     .prologue
-    .line 2173
+    .line 2174
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v1
@@ -7770,14 +7787,14 @@
 
     move-result-object v0
 
-    .line 2176
+    .line 2177
     .local v0, mainMetadataForCallingCode:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-nez v0, :cond_0
 
-    .line 2177
+    .line 2178
     const/4 v1, 0x0
 
-    .line 2179
+    .line 2180
     :goto_0
     return v1
 
@@ -7794,7 +7811,7 @@
     .parameter "regionCode"
 
     .prologue
-    .line 2164
+    .line 2165
     iget-object v0, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->nanpaRegions:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
@@ -7809,12 +7826,12 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 982
+    .line 983
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNumberType(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
     move-result-object v0
 
-    .line 985
+    .line 986
     .local v0, numberType:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
     sget-object v1, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;->FIXED_LINE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
 
@@ -7842,43 +7859,43 @@
     .parameter "secondNumberIn"
 
     .prologue
-    .line 2923
+    .line 2924
     new-instance v0, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 2924
+    .line 2925
     .local v0, firstNumber:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {v0, p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->mergeFrom(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2925
+    .line 2926
     new-instance v2, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 2926
+    .line 2927
     .local v2, secondNumber:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {v2, p2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->mergeFrom(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2929
+    .line 2930
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearRawInput()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2930
+    .line 2931
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearCountryCodeSource()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2931
+    .line 2932
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearPreferredDomesticCarrierCode()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2932
+    .line 2933
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearRawInput()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2933
+    .line 2934
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearCountryCodeSource()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2934
+    .line 2935
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearPreferredDomesticCarrierCode()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2935
+    .line 2936
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasExtension()Z
 
     move-result v4
@@ -7895,10 +7912,10 @@
 
     if-nez v4, :cond_0
 
-    .line 2937
+    .line 2938
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearExtension()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2939
+    .line 2940
     :cond_0
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasExtension()Z
 
@@ -7916,10 +7933,10 @@
 
     if-nez v4, :cond_1
 
-    .line 2941
+    .line 2942
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->clearExtension()Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2944
+    .line 2945
     :cond_1
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->hasExtension()Z
 
@@ -7947,44 +7964,44 @@
 
     if-nez v4, :cond_2
 
-    .line 2946
+    .line 2947
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NO_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
-    .line 2974
+    .line 2975
     :goto_0
     return-object v4
 
-    .line 2948
+    .line 2949
     :cond_2
     invoke-virtual {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v1
 
-    .line 2949
+    .line 2950
     .local v1, firstNumberCountryCode:I
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v3
 
-    .line 2951
+    .line 2952
     .local v3, secondNumberCountryCode:I
     if-eqz v1, :cond_5
 
     if-eqz v3, :cond_5
 
-    .line 2952
+    .line 2953
     invoke-virtual {v0, v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->exactlySameAs(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Z
 
     move-result v4
 
     if-eqz v4, :cond_3
 
-    .line 2953
+    .line 2954
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->EXACT_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     goto :goto_0
 
-    .line 2954
+    .line 2955
     :cond_3
     if-ne v1, v3, :cond_4
 
@@ -7994,34 +8011,34 @@
 
     if-eqz v4, :cond_4
 
-    .line 2959
+    .line 2960
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->SHORT_NSN_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     goto :goto_0
 
-    .line 2962
+    .line 2963
     :cond_4
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NO_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     goto :goto_0
 
-    .line 2966
+    .line 2967
     :cond_5
     invoke-virtual {v0, v3}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setCountryCode(I)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2968
+    .line 2969
     invoke-virtual {v0, v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->exactlySameAs(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Z
 
     move-result v4
 
     if-eqz v4, :cond_6
 
-    .line 2969
+    .line 2970
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NSN_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     goto :goto_0
 
-    .line 2971
+    .line 2972
     :cond_6
     invoke-direct {p0, v0, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isNationalNumberSuffixOfTheOther(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Z
 
@@ -8029,12 +8046,12 @@
 
     if-eqz v4, :cond_7
 
-    .line 2972
+    .line 2973
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->SHORT_NSN_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     goto :goto_0
 
-    .line 2974
+    .line 2975
     :cond_7
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NO_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
@@ -8047,7 +8064,7 @@
     .parameter "secondNumber"
 
     .prologue
-    .line 3040
+    .line 3041
     :try_start_0
     const-string v0, "ZZ"
 
@@ -8055,7 +8072,7 @@
 
     move-result-object v9
 
-    .line 3041
+    .line 3042
     .local v9, secondNumberAsProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {p0, p1, v9}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isNumberMatch(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
     :try_end_0
@@ -8063,17 +8080,17 @@
 
     move-result-object v8
 
-    .line 3069
+    .line 3070
     .end local v9           #secondNumberAsProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     :cond_0
     :goto_0
     return-object v8
 
-    .line 3042
+    .line 3043
     :catch_0
     move-exception v6
 
-    .line 3043
+    .line 3044
     .local v6, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     invoke-virtual {v6}, Lcom/google/i18n/phonenumbers/NumberParseException;->getErrorType()Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
 
@@ -8083,7 +8100,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 3047
+    .line 3048
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
@@ -8092,7 +8109,7 @@
 
     move-result-object v7
 
-    .line 3049
+    .line 3050
     .local v7, firstNumberRegion:Ljava/lang/String;
     :try_start_1
     const-string v0, "ZZ"
@@ -8103,29 +8120,29 @@
 
     if-nez v0, :cond_1
 
-    .line 3050
+    .line 3051
     invoke-virtual {p0, p2, v7}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parse(Ljava/lang/String;Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     move-result-object v10
 
-    .line 3051
+    .line 3052
     .local v10, secondNumberWithFirstNumberRegion:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {p0, p1, v10}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isNumberMatch(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     move-result-object v8
 
-    .line 3052
+    .line 3053
     .local v8, match:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
     sget-object v0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->EXACT_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     if-ne v8, v0, :cond_0
 
-    .line 3053
+    .line 3054
     sget-object v8, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NSN_MATCH:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
 
     goto :goto_0
 
-    .line 3059
+    .line 3060
     .end local v8           #match:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
     .end local v10           #secondNumberWithFirstNumberRegion:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     :cond_1
@@ -8133,7 +8150,7 @@
 
     invoke-direct {v5}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 3060
+    .line 3061
     .local v5, secondNumberProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     const/4 v2, 0x0
 
@@ -8147,7 +8164,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parseHelper(Ljava/lang/String;Ljava/lang/String;ZZLcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 3061
+    .line 3062
     invoke-virtual {p0, p1, v5}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isNumberMatch(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
     :try_end_1
     .catch Lcom/google/i18n/phonenumbers/NumberParseException; {:try_start_1 .. :try_end_1} :catch_1
@@ -8156,12 +8173,12 @@
 
     goto :goto_0
 
-    .line 3063
+    .line 3064
     .end local v5           #secondNumberProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     :catch_1
     move-exception v0
 
-    .line 3069
+    .line 3070
     .end local v7           #firstNumberRegion:Ljava/lang/String;
     :cond_2
     sget-object v8, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NOT_A_NUMBER:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
@@ -8175,7 +8192,7 @@
     .parameter "secondNumber"
 
     .prologue
-    .line 3000
+    .line 3001
     :try_start_0
     const-string v3, "ZZ"
 
@@ -8187,7 +8204,7 @@
 
     move-result-object v17
 
-    .line 3001
+    .line 3002
     .local v17, firstNumberAsProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     move-object/from16 v0, p0
 
@@ -8201,16 +8218,16 @@
 
     move-result-object v3
 
-    .line 3023
+    .line 3024
     .end local v17           #firstNumberAsProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     :goto_0
     return-object v3
 
-    .line 3002
+    .line 3003
     :catch_0
     move-exception v15
 
-    .line 3003
+    .line 3004
     .local v15, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     invoke-virtual {v15}, Lcom/google/i18n/phonenumbers/NumberParseException;->getErrorType()Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
 
@@ -8220,7 +8237,7 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 3005
+    .line 3006
     :try_start_1
     const-string v3, "ZZ"
 
@@ -8232,7 +8249,7 @@
 
     move-result-object v18
 
-    .line 3006
+    .line 3007
     .local v18, secondNumberAsProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     move-object/from16 v0, p0
 
@@ -8248,12 +8265,12 @@
 
     goto :goto_0
 
-    .line 3007
+    .line 3008
     .end local v18           #secondNumberAsProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     :catch_1
     move-exception v16
 
-    .line 3008
+    .line 3009
     .local v16, e2:Lcom/google/i18n/phonenumbers/NumberParseException;
     invoke-virtual/range {v16 .. v16}, Lcom/google/i18n/phonenumbers/NumberParseException;->getErrorType()Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
 
@@ -8263,19 +8280,19 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 3010
+    .line 3011
     :try_start_2
     new-instance v8, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v8}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 3011
+    .line 3012
     .local v8, firstNumberProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     new-instance v14, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v14}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 3012
+    .line 3013
     .local v14, secondNumberProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     const/4 v5, 0x0
 
@@ -8289,7 +8306,7 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parseHelper(Ljava/lang/String;Ljava/lang/String;ZZLcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 3013
+    .line 3014
     const/4 v11, 0x0
 
     const/4 v12, 0x0
@@ -8302,7 +8319,7 @@
 
     invoke-direct/range {v9 .. v14}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parseHelper(Ljava/lang/String;Ljava/lang/String;ZZLcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 3014
+    .line 3015
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v8, v14}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isNumberMatch(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
@@ -8313,13 +8330,13 @@
 
     goto :goto_0
 
-    .line 3015
+    .line 3016
     .end local v8           #firstNumberProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     .end local v14           #secondNumberProto:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     :catch_2
     move-exception v3
 
-    .line 3023
+    .line 3024
     .end local v16           #e2:Lcom/google/i18n/phonenumbers/NumberParseException;
     :cond_0
     sget-object v3, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;->NOT_A_NUMBER:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$MatchType;
@@ -8332,7 +8349,7 @@
     .parameter "number"
 
     .prologue
-    .line 2209
+    .line 2210
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isPossibleNumberWithReason(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
     move-result-object v0
@@ -8358,7 +8375,7 @@
     .parameter "regionDialingFrom"
 
     .prologue
-    .line 2303
+    .line 2304
     :try_start_0
     invoke-virtual {p0, p1, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parse(Ljava/lang/String;Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
@@ -8370,15 +8387,15 @@
 
     move-result v1
 
-    .line 2305
+    .line 2306
     :goto_0
     return v1
 
-    .line 2304
+    .line 2305
     :catch_0
     move-exception v0
 
-    .line 2305
+    .line 2306
     .local v0, e:Lcom/google/i18n/phonenumbers/NumberParseException;
     const/4 v1, 0x0
 
@@ -8390,18 +8407,18 @@
     .parameter "number"
 
     .prologue
-    .line 2252
+    .line 2253
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2253
+    .line 2254
     .local v3, nationalNumber:Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 2258
+    .line 2259
     .local v0, countryCode:I
     invoke-direct {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->hasValidCountryCallingCode(I)Z
 
@@ -8409,32 +8426,32 @@
 
     if-nez v7, :cond_0
 
-    .line 2259
+    .line 2260
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->INVALID_COUNTRY_CODE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
-    .line 2279
+    .line 2280
     :goto_0
     return-object v7
 
-    .line 2261
+    .line 2262
     :cond_0
     invoke-virtual {p0, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForCountryCode(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2263
+    .line 2264
     .local v6, regionCode:Ljava/lang/String;
     invoke-direct {p0, v0, v6}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v2
 
-    .line 2264
+    .line 2265
     .local v2, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
     move-result-object v1
 
-    .line 2266
+    .line 2267
     .local v1, generalNumDesc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     invoke-virtual {v1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->hasNationalNumberPattern()Z
 
@@ -8442,7 +8459,7 @@
 
     if-nez v7, :cond_3
 
-    .line 2267
+    .line 2268
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->LOGGER:Ljava/util/logging/Logger;
 
     sget-object v8, Ljava/util/logging/Level;->FINER:Ljava/util/logging/Level;
@@ -8451,40 +8468,40 @@
 
     invoke-virtual {v7, v8, v9}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;)V
 
-    .line 2268
+    .line 2269
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    .line 2269
+    .line 2270
     .local v4, numberLength:I
     const/4 v7, 0x2
 
     if-ge v4, v7, :cond_1
 
-    .line 2270
+    .line 2271
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->TOO_SHORT:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
     goto :goto_0
 
-    .line 2271
+    .line 2272
     :cond_1
     const/16 v7, 0x10
 
     if-le v4, v7, :cond_2
 
-    .line 2272
+    .line 2273
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->TOO_LONG:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
     goto :goto_0
 
-    .line 2274
+    .line 2275
     :cond_2
     sget-object v7, Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;->IS_POSSIBLE:Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
     goto :goto_0
 
-    .line 2277
+    .line 2278
     .end local v4           #numberLength:I
     :cond_3
     iget-object v7, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
@@ -8497,7 +8514,7 @@
 
     move-result-object v5
 
-    .line 2279
+    .line 2280
     .local v5, possibleNumberPattern:Ljava/util/regex/Pattern;
     invoke-direct {p0, v5, v3}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->testNumberLengthAgainstPattern(Ljava/util/regex/Pattern;Ljava/lang/String;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
@@ -8511,12 +8528,12 @@
     .parameter "number"
 
     .prologue
-    .line 1981
+    .line 1982
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getRegionCodeForNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1982
+    .line 1983
     .local v0, regionCode:Ljava/lang/String;
     invoke-virtual {p0, p1, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidNumberForRegion(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;Ljava/lang/String;)Z
 
@@ -8535,18 +8552,18 @@
 
     const/4 v6, 0x0
 
-    .line 2002
+    .line 2003
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getCountryCode()I
 
     move-result v0
 
-    .line 2003
+    .line 2004
     .local v0, countryCode:I
     invoke-direct {p0, v0, p2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getMetadataForRegionOrCallingCode(ILjava/lang/String;)Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
 
     move-result-object v2
 
-    .line 2004
+    .line 2005
     .local v2, metadata:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;
     if-eqz v2, :cond_0
 
@@ -8567,24 +8584,24 @@
     :cond_0
     move v5, v6
 
-    .line 2021
+    .line 2022
     :cond_1
     :goto_0
     return v5
 
-    .line 2011
+    .line 2012
     :cond_2
     invoke-virtual {v2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
     move-result-object v1
 
-    .line 2012
+    .line 2013
     .local v1, generalNumDesc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNationalSignificantNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2017
+    .line 2018
     .local v3, nationalSignificantNumber:Ljava/lang/String;
     invoke-virtual {v1}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->hasNationalNumberPattern()Z
 
@@ -8592,12 +8609,12 @@
 
     if-nez v7, :cond_4
 
-    .line 2018
+    .line 2019
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v4
 
-    .line 2019
+    .line 2020
     .local v4, numberLength:I
     const/4 v7, 0x2
 
@@ -8612,7 +8629,7 @@
 
     goto :goto_0
 
-    .line 2021
+    .line 2022
     .end local v4           #numberLength:I
     :cond_4
     invoke-direct {p0, v3, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->getNumberTypeHelper(Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$PhoneNumberType;
@@ -9031,21 +9048,21 @@
     .end annotation
 
     .prologue
-    .line 2403
+    .line 2404
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
 
     move-result v12
 
     if-nez v12, :cond_0
 
-    .line 2404
+    .line 2405
     const/4 v9, 0x0
 
-    .line 2469
+    .line 2470
     :goto_0
     return v9
 
-    .line 2406
+    .line 2407
     :cond_0
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -9053,41 +9070,41 @@
 
     invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2408
+    .line 2409
     .local v4, fullNumber:Ljava/lang/StringBuilder;
     const-string v7, "NonMatch"
 
-    .line 2409
+    .line 2410
     .local v7, possibleCountryIddPrefix:Ljava/lang/String;
     if-eqz p2, :cond_1
 
-    .line 2410
+    .line 2411
     invoke-virtual/range {p2 .. p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getInternationalPrefix()Ljava/lang/String;
 
     move-result-object v7
 
-    .line 2413
+    .line 2414
     :cond_1
     invoke-virtual {p0, v4, v7}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeStripInternationalPrefixAndNormalize(Ljava/lang/StringBuilder;Ljava/lang/String;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
 
     move-result-object v1
 
-    .line 2415
+    .line 2416
     .local v1, countryCodeSource:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
     if-eqz p4, :cond_2
 
-    .line 2416
+    .line 2417
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setCountryCodeSource(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2418
+    .line 2419
     :cond_2
     sget-object v12, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;->FROM_DEFAULT_COUNTRY:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
 
     if-eq v1, v12, :cond_5
 
-    .line 2419
+    .line 2420
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->length()I
 
     move-result v12
@@ -9096,7 +9113,7 @@
 
     if-gt v12, v13, :cond_3
 
-    .line 2420
+    .line 2421
     new-instance v12, Lcom/google/i18n/phonenumbers/NumberParseException;
 
     sget-object v13, Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;->TOO_SHORT_AFTER_IDD:Lcom/google/i18n/phonenumbers/NumberParseException$ErrorType;
@@ -9107,7 +9124,7 @@
 
     throw v12
 
-    .line 2424
+    .line 2425
     :cond_3
     move-object/from16 v0, p3
 
@@ -9115,18 +9132,18 @@
 
     move-result v9
 
-    .line 2425
+    .line 2426
     .local v9, potentialCountryCode:I
     if-eqz v9, :cond_4
 
-    .line 2426
+    .line 2427
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v9}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setCountryCode(I)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     goto :goto_0
 
-    .line 2432
+    .line 2433
     :cond_4
     new-instance v12, Lcom/google/i18n/phonenumbers/NumberParseException;
 
@@ -9138,29 +9155,29 @@
 
     throw v12
 
-    .line 2434
+    .line 2435
     .end local v9           #potentialCountryCode:I
     :cond_5
     if-eqz p2, :cond_9
 
-    .line 2438
+    .line 2439
     invoke-virtual/range {p2 .. p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getCountryCode()I
 
     move-result v2
 
-    .line 2439
+    .line 2440
     .local v2, defaultCountryCode:I
     invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 2440
+    .line 2441
     .local v3, defaultCountryCodeString:Ljava/lang/String;
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2441
+    .line 2442
     .local v6, normalizedNumber:Ljava/lang/String;
     invoke-virtual {v6, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -9168,7 +9185,7 @@
 
     if-eqz v12, :cond_9
 
-    .line 2442
+    .line 2443
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/String;->length()I
@@ -9181,13 +9198,13 @@
 
     invoke-direct {v10, v12}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 2444
+    .line 2445
     .local v10, potentialNationalNumber:Ljava/lang/StringBuilder;
     invoke-virtual/range {p2 .. p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
 
     move-result-object v5
 
-    .line 2445
+    .line 2446
     .local v5, generalDesc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
     iget-object v12, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
@@ -9199,7 +9216,7 @@
 
     move-result-object v11
 
-    .line 2447
+    .line 2448
     .local v11, validNumberPattern:Ljava/util/regex/Pattern;
     const/4 v12, 0x0
 
@@ -9207,7 +9224,7 @@
 
     invoke-virtual {p0, v10, v0, v12}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->maybeStripNationalPrefixAndCarrierCode(Ljava/lang/StringBuilder;Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;Ljava/lang/StringBuilder;)Z
 
-    .line 2449
+    .line 2450
     iget-object v12, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
     invoke-virtual {v5}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;->getPossibleNumberPattern()Ljava/lang/String;
@@ -9218,7 +9235,7 @@
 
     move-result-object v8
 
-    .line 2454
+    .line 2455
     .local v8, possibleNumberPattern:Ljava/util/regex/Pattern;
     invoke-virtual {v11, v4}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -9253,23 +9270,23 @@
 
     if-ne v12, v13, :cond_9
 
-    .line 2458
+    .line 2459
     :cond_7
     move-object/from16 v0, p3
 
     invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 2459
+    .line 2460
     if-eqz p4, :cond_8
 
-    .line 2460
+    .line 2461
     sget-object v12, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;->FROM_NUMBER_WITHOUT_PLUS_SIGN:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
 
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v12}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setCountryCodeSource(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2462
+    .line 2463
     :cond_8
     move-object/from16 v0, p5
 
@@ -9277,10 +9294,10 @@
 
     move v9, v2
 
-    .line 2463
+    .line 2464
     goto/16 :goto_0
 
-    .line 2468
+    .line 2469
     .end local v2           #defaultCountryCode:I
     .end local v3           #defaultCountryCodeString:Ljava/lang/String;
     .end local v5           #generalDesc:Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
@@ -9295,7 +9312,7 @@
 
     invoke-virtual {v0, v12}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setCountryCode(I)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2469
+    .line 2470
     const/4 v9, 0x0
 
     goto/16 :goto_0
@@ -9306,14 +9323,14 @@
     .parameter "number"
 
     .prologue
-    .line 2600
+    .line 2601
     sget-object v4, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->EXTN_PATTERN:Ljava/util/regex/Pattern;
 
     invoke-virtual {v4, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v3
 
-    .line 2603
+    .line 2604
     .local v3, m:Ljava/util/regex/Matcher;
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->find()Z
 
@@ -9337,7 +9354,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 2605
+    .line 2606
     const/4 v1, 0x1
 
     .local v1, i:I
@@ -9349,19 +9366,19 @@
     :goto_0
     if-gt v1, v2, :cond_1
 
-    .line 2606
+    .line 2607
     invoke-virtual {v3, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v4
 
     if-eqz v4, :cond_0
 
-    .line 2609
+    .line 2610
     invoke-virtual {v3, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2610
+    .line 2611
     .local v0, extension:Ljava/lang/String;
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->start()I
 
@@ -9373,14 +9390,14 @@
 
     invoke-virtual {p1, v4, v5}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 2615
+    .line 2616
     .end local v0           #extension:Ljava/lang/String;
     .end local v1           #i:I
     .end local v2           #length:I
     :goto_1
     return-object v0
 
-    .line 2605
+    .line 2606
     .restart local v1       #i:I
     .restart local v2       #length:I
     :cond_0
@@ -9388,7 +9405,7 @@
 
     goto :goto_0
 
-    .line 2615
+    .line 2616
     .end local v1           #i:I
     .end local v2           #length:I
     :cond_1
@@ -9403,21 +9420,21 @@
     .parameter "possibleIddPrefix"
 
     .prologue
-    .line 2511
+    .line 2512
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 2512
+    .line 2513
     sget-object v2, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;->FROM_DEFAULT_COUNTRY:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
 
-    .line 2525
+    .line 2526
     :goto_0
     return-object v2
 
-    .line 2515
+    .line 2516
     :cond_0
     sget-object v2, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->PLUS_CHARS_PATTERN:Ljava/util/regex/Pattern;
 
@@ -9425,7 +9442,7 @@
 
     move-result-object v1
 
-    .line 2516
+    .line 2517
     .local v1, m:Ljava/util/regex/Matcher;
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->lookingAt()Z
 
@@ -9433,7 +9450,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2517
+    .line 2518
     const/4 v2, 0x0
 
     invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
@@ -9442,15 +9459,15 @@
 
     invoke-virtual {p1, v2, v3}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
-    .line 2519
+    .line 2520
     invoke-static {p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->normalize(Ljava/lang/StringBuilder;)V
 
-    .line 2520
+    .line 2521
     sget-object v2, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;->FROM_NUMBER_WITH_PLUS_SIGN:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber$CountryCodeSource;
 
     goto :goto_0
 
-    .line 2523
+    .line 2524
     :cond_1
     iget-object v2, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
@@ -9458,11 +9475,11 @@
 
     move-result-object v0
 
-    .line 2524
+    .line 2525
     .local v0, iddPattern:Ljava/util/regex/Pattern;
     invoke-static {p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->normalize(Ljava/lang/StringBuilder;)V
 
-    .line 2525
+    .line 2526
     invoke-direct {p0, v0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parsePrefixAsIdd(Ljava/util/regex/Pattern;Ljava/lang/StringBuilder;)Z
 
     move-result v2
@@ -9490,18 +9507,18 @@
 
     const/4 v8, 0x0
 
-    .line 2542
+    .line 2543
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
 
-    .line 2543
+    .line 2544
     .local v3, numberLength:I
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getNationalPrefixForParsing()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 2544
+    .line 2545
     .local v4, possibleNationalPrefix:Ljava/lang/String;
     if-eqz v3, :cond_0
 
@@ -9511,12 +9528,12 @@
 
     if-nez v10, :cond_1
 
-    .line 2588
+    .line 2589
     :cond_0
     :goto_0
     return v8
 
-    .line 2549
+    .line 2550
     :cond_1
     iget-object v10, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
@@ -9528,7 +9545,7 @@
 
     move-result-object v5
 
-    .line 2550
+    .line 2551
     .local v5, prefixMatcher:Ljava/util/regex/Matcher;
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->lookingAt()Z
 
@@ -9536,7 +9553,7 @@
 
     if-eqz v10, :cond_0
 
-    .line 2551
+    .line 2552
     iget-object v10, p0, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->regexCache:Lcom/google/i18n/phonenumbers/RegexCache;
 
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getGeneralDesc()Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneNumberDesc;
@@ -9551,7 +9568,7 @@
 
     move-result-object v1
 
-    .line 2554
+    .line 2555
     .local v1, nationalNumberRule:Ljava/util/regex/Pattern;
     invoke-virtual {v1, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
@@ -9561,19 +9578,19 @@
 
     move-result v0
 
-    .line 2558
+    .line 2559
     .local v0, isViableOriginalNumber:Z
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->groupCount()I
 
     move-result v2
 
-    .line 2559
+    .line 2560
     .local v2, numOfGroups:I
     invoke-virtual {p2}, Lcom/google/i18n/phonenumbers/Phonemetadata$PhoneMetadata;->getNationalPrefixTransformRule()Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2560
+    .line 2561
     .local v6, transformRule:Ljava/lang/String;
     if-eqz v6, :cond_2
 
@@ -9589,7 +9606,7 @@
 
     if-nez v10, :cond_5
 
-    .line 2563
+    .line 2564
     :cond_2
     if-eqz v0, :cond_3
 
@@ -9611,7 +9628,7 @@
 
     if-eqz v10, :cond_0
 
-    .line 2567
+    .line 2568
     :cond_3
     if-eqz p3, :cond_4
 
@@ -9623,14 +9640,14 @@
 
     if-eqz v10, :cond_4
 
-    .line 2568
+    .line 2569
     invoke-virtual {v5, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v10
 
     invoke-virtual {p3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2570
+    .line 2571
     :cond_4
     invoke-virtual {v5}, Ljava/util/regex/Matcher;->end()I
 
@@ -9640,16 +9657,16 @@
 
     move v8, v9
 
-    .line 2571
+    .line 2572
     goto :goto_0
 
-    .line 2575
+    .line 2576
     :cond_5
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 2576
+    .line 2577
     .local v7, transformedNumber:Ljava/lang/StringBuilder;
     invoke-virtual {v5, v6}, Ljava/util/regex/Matcher;->replaceFirst(Ljava/lang/String;)Ljava/lang/String;
 
@@ -9657,7 +9674,7 @@
 
     invoke-virtual {v7, v8, v3, v10}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2577
+    .line 2578
     if-eqz v0, :cond_6
 
     invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -9674,20 +9691,20 @@
 
     if-eqz v10, :cond_0
 
-    .line 2581
+    .line 2582
     :cond_6
     if-eqz p3, :cond_7
 
     if-le v2, v9, :cond_7
 
-    .line 2582
+    .line 2583
     invoke-virtual {v5, v9}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v10
 
     invoke-virtual {p3, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2584
+    .line 2585
     :cond_7
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
@@ -9701,7 +9718,7 @@
 
     move v8, v9
 
-    .line 2585
+    .line 2586
     goto/16 :goto_0
 .end method
 
@@ -9716,16 +9733,16 @@
     .end annotation
 
     .prologue
-    .line 2656
+    .line 2657
     new-instance v0, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 2657
+    .line 2658
     .local v0, phoneNumber:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parse(Ljava/lang/String;Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 2658
+    .line 2659
     return-object v0
 .end method
 
@@ -9741,7 +9758,7 @@
     .end annotation
 
     .prologue
-    .line 2667
+    .line 2668
     const/4 v3, 0x0
 
     const/4 v4, 0x1
@@ -9756,7 +9773,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parseHelper(Ljava/lang/String;Ljava/lang/String;ZZLcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 2668
+    .line 2669
     return-void
 .end method
 
@@ -9771,16 +9788,16 @@
     .end annotation
 
     .prologue
-    .line 2687
+    .line 2688
     new-instance v0, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v0}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 2688
+    .line 2689
     .local v0, phoneNumber:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {p0, p1, p2, v0}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parseAndKeepRawInput(Ljava/lang/String;Ljava/lang/String;Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 2689
+    .line 2690
     return-object v0
 .end method
 
@@ -9798,7 +9815,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2699
+    .line 2700
     move-object v0, p0
 
     move-object v1, p1
@@ -9811,7 +9828,7 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->parseHelper(Ljava/lang/String;Ljava/lang/String;ZZLcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)V
 
-    .line 2700
+    .line 2701
     return-void
 .end method
 
@@ -9822,43 +9839,43 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 2317
+    .line 2318
     invoke-virtual {p0, p1}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 2332
+    .line 2333
     :goto_0
     return v3
 
-    .line 2320
+    .line 2321
     :cond_0
     new-instance v2, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     invoke-direct {v2}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;-><init>()V
 
-    .line 2321
+    .line 2322
     .local v2, numberCopy:Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
     invoke-virtual {v2, p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->mergeFrom(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2322
+    .line 2323
     invoke-virtual {p1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->getNationalNumber()J
 
     move-result-wide v0
 
-    .line 2324
+    .line 2325
     .local v0, nationalNumber:J
     :cond_1
     const-wide/16 v4, 0xa
 
     div-long/2addr v0, v4
 
-    .line 2325
+    .line 2326
     invoke-virtual {v2, v0, v1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setNationalNumber(J)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
-    .line 2326
+    .line 2327
     invoke-virtual {p0, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isPossibleNumberWithReason(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Lcom/google/i18n/phonenumbers/PhoneNumberUtil$ValidationResult;
 
     move-result-object v4
@@ -9873,13 +9890,13 @@
 
     if-nez v4, :cond_3
 
-    .line 2328
+    .line 2329
     :cond_2
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 2330
+    .line 2331
     :cond_3
     invoke-virtual {p0, v2}, Lcom/google/i18n/phonenumbers/PhoneNumberUtil;->isValidNumber(Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;)Z
 
@@ -9887,7 +9904,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 2331
+    .line 2332
     invoke-virtual {p1, v0, v1}, Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;->setNationalNumber(J)Lcom/google/i18n/phonenumbers/Phonenumber$PhoneNumber;
 
     goto :goto_0

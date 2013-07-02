@@ -49,31 +49,32 @@
     return-void
 .end method
 
-.method private addCardToResults(Lcom/google/glass/home/search/results/ResultsContainer$Builder;Lcom/google/glass/home/search/results/HtmlAnswerCard;)V
+.method private addCardToResults(Lcom/google/glass/home/search/results/ResultsContainer$Builder;Lcom/google/glass/home/search/results/HtmlAnswerCard;Z)V
     .locals 7
     .parameter "results"
     .parameter "card"
+    .parameter "useLazyLoading"
 
     .prologue
-    .line 75
+    .line 77
     new-instance v3, Lcom/google/glass/home/search/results/WebAnswerView;
 
     iget-object v4, p0, Lcom/google/glass/home/search/results/AnswerCardProcessor;->context:Landroid/content/Context;
 
-    invoke-direct {v3, v4}, Lcom/google/glass/home/search/results/WebAnswerView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v3, v4, p3}, Lcom/google/glass/home/search/results/WebAnswerView;-><init>(Landroid/content/Context;Z)V
 
-    .line 76
+    .line 78
     .local v3, view:Lcom/google/glass/home/search/results/WebAnswerView;
     iget-object v4, p2, Lcom/google/glass/home/search/results/HtmlAnswerCard;->displayHtml:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Lcom/google/glass/home/search/results/WebAnswerView;->loadData(Ljava/lang/String;)V
+    invoke-virtual {v3, v4}, Lcom/google/glass/home/search/results/WebAnswerView;->setData(Ljava/lang/String;)V
 
-    .line 78
+    .line 80
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 79
+    .line 81
     .local v0, bundle:Landroid/os/Bundle;
     new-instance v1, Lcom/google/glass/widget/OptionMenu;
 
@@ -81,11 +82,11 @@
 
     invoke-direct {v1, v4}, Lcom/google/glass/widget/OptionMenu;-><init>(Landroid/content/Context;)V
 
-    .line 80
+    .line 82
     .local v1, optionMenu:Lcom/google/glass/widget/OptionMenu;
     iget-object v2, p2, Lcom/google/glass/home/search/results/HtmlAnswerCard;->ttsFormatString:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
 
-    .line 81
+    .line 83
     .local v2, tts:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
     if-eqz v2, :cond_0
 
@@ -97,28 +98,28 @@
 
     if-nez v4, :cond_0
 
-    .line 82
+    .line 84
     const-string v4, "TTS_FORMAT_STRING_KEY"
 
     iget-object v5, v2, Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;->value:Ljava/lang/String;
 
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 83
+    .line 85
     const-string v4, "TTS_LANGUAGE_KEY"
 
     iget-object v5, v2, Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;->lang:Ljava/lang/String;
 
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 84
+    .line 86
     invoke-virtual {v2}, Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;->shouldReadOnDevice()Z
 
     move-result v4
 
     if-nez v4, :cond_0
 
-    .line 85
+    .line 87
     const-string v4, "URL_KEY"
 
     iget-object v5, v2, Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;->value:Ljava/lang/String;
@@ -131,16 +132,16 @@
 
     invoke-virtual {v0, v4, v5}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 89
+    .line 91
     :cond_0
     iget-object v4, p0, Lcom/google/glass/home/search/results/AnswerCardProcessor;->context:Landroid/content/Context;
 
     invoke-virtual {p2, v4, v1, v0}, Lcom/google/glass/home/search/results/HtmlAnswerCard;->addMenuActionsToResults(Landroid/content/Context;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)V
 
-    .line 90
+    .line 92
     invoke-virtual {p1, v3, v1, v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->addView(Landroid/view/View;Lcom/google/glass/widget/OptionMenu;Landroid/os/Bundle;)Lcom/google/glass/home/search/results/ResultsContainer$Builder;
 
-    .line 91
+    .line 93
     return-void
 .end method
 
@@ -182,7 +183,7 @@
     .line 58
     const/4 v7, 0x0
 
-    .line 71
+    .line 72
     :goto_1
     return-object v7
 
@@ -215,7 +216,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_5
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -225,18 +226,31 @@
 
     .line 61
     .local v1, card:Lcom/google/glass/home/search/results/HtmlAnswerCard;
-    invoke-direct {p0, v0, v1}, Lcom/google/glass/home/search/results/AnswerCardProcessor;->addCardToResults(Lcom/google/glass/home/search/results/ResultsContainer$Builder;Lcom/google/glass/home/search/results/HtmlAnswerCard;)V
+    if-eqz p2, :cond_3
+
+    if-eqz p3, :cond_4
+
+    :cond_3
+    const/4 v7, 0x1
+
+    :goto_3
+    invoke-direct {p0, v0, v1, v7}, Lcom/google/glass/home/search/results/AnswerCardProcessor;->addCardToResults(Lcom/google/glass/home/search/results/ResultsContainer$Builder;Lcom/google/glass/home/search/results/HtmlAnswerCard;Z)V
 
     goto :goto_2
 
-    .line 64
+    :cond_4
+    const/4 v7, 0x0
+
+    goto :goto_3
+
+    .line 65
     .end local v1           #card:Lcom/google/glass/home/search/results/HtmlAnswerCard;
-    :cond_3
-    if-nez p2, :cond_4
+    :cond_5
+    if-nez p2, :cond_6
 
     iget-object v7, v5, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;->autoplayTtsFormatString:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_6
 
     iget-object v7, v5, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;->autoplayTtsFormatString:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
 
@@ -246,20 +260,20 @@
 
     move-result v7
 
-    if-nez v7, :cond_4
+    if-nez v7, :cond_6
 
-    .line 66
+    .line 67
     iget-object v7, v5, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;->autoplayTtsFormatString:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
 
     iget-object v6, v7, Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;->value:Ljava/lang/String;
 
-    .line 67
+    .line 68
     .local v6, text:Ljava/lang/String;
     iget-object v7, v5, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardResults;->autoplayTtsFormatString:Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;
 
     iget-object v4, v7, Lcom/google/glass/home/search/results/HtmlAnswerCard$TtsFormatString;->lang:Ljava/lang/String;
 
-    .line 68
+    .line 69
     .local v4, lang:Ljava/lang/String;
     iget-object v7, p0, Lcom/google/glass/home/search/results/AnswerCardProcessor;->context:Landroid/content/Context;
 
@@ -269,10 +283,10 @@
 
     invoke-static {v7, v6, v4, v8}, Lcom/google/glass/timeline/TimelineHelper;->formatAndSpeakText(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)V
 
-    .line 71
+    .line 72
     .end local v4           #lang:Ljava/lang/String;
     .end local v6           #text:Ljava/lang/String;
-    :cond_4
+    :cond_6
     invoke-virtual {v0}, Lcom/google/glass/home/search/results/ResultsContainer$Builder;->build()Lcom/google/glass/home/search/results/ResultsContainer;
 
     move-result-object v7

@@ -51,12 +51,13 @@
     return-void
 .end method
 
-.method public static create(Landroid/content/Context;Lcom/google/android/speech/SpeechSettings;Lcom/google/android/speech/utils/NetworkInformation;Lcom/google/android/speech/helper/SpeechLocationHelper;)Lcom/google/android/speech/params/NetworkRequestProducerParams;
+.method public static create(Landroid/content/Context;Lcom/google/android/speech/SpeechSettings;Lcom/google/android/speech/utils/NetworkInformation;Lcom/google/android/speech/helper/SpeechLocationHelper;Lcom/google/glass/voice/network/Cookies;)Lcom/google/android/speech/params/NetworkRequestProducerParams;
     .locals 8
     .parameter "context"
     .parameter "speechSettings"
     .parameter "networkInfo"
     .parameter "locationHelper"
+    .parameter "cookies"
 
     .prologue
     const/4 v3, 0x0
@@ -78,7 +79,7 @@
 
     new-instance v4, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;
 
-    invoke-direct {v4, p3, v3}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;-><init>(Lcom/google/android/speech/helper/SpeechLocationHelper;Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$1;)V
+    invoke-direct {v4, p3, p4, v3}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$PinholeParamsBuilderImpl;-><init>(Lcom/google/android/speech/helper/SpeechLocationHelper;Lcom/google/glass/voice/network/Cookies;Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder$1;)V
 
     invoke-static {p0}, Lcom/google/glass/voice/network/NetworkRequestProducerParamsBuilder;->getDeviceParams(Landroid/content/Context;)Lcom/google/android/speech/params/DeviceParams;
 

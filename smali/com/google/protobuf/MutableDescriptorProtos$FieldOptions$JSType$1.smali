@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 10820
+    .line 11352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "x0"
 
     .prologue
-    .line 10820
+    .line 11352
     invoke-virtual {p0, p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType$1;->findValueByNumber(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "number"
 
     .prologue
-    .line 10822
+    .line 11354
     invoke-static {p1}, Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;->valueOf(I)Lcom/google/protobuf/MutableDescriptorProtos$FieldOptions$JSType;
 
     move-result-object v0

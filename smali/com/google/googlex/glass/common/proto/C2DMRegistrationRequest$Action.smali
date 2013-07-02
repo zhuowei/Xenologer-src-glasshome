@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 164
+    .line 170
     new-instance v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     const-string v1, "REGISTER"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 172
+    .line 178
     new-instance v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     const-string v1, "UNREGISTER"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->UNREGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 180
+    .line 186
     new-instance v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     const-string v1, "CHECK_REGISTERED"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->CHECK_REGISTERED:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 155
+    .line 161
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->$VALUES:[Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 225
+    .line 231
     new-instance v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 245
+    .line 251
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->values()[Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 259
+    .line 265
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 260
+    .line 266
     iput p3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->index:I
 
-    .line 261
+    .line 267
     iput p4, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->value:I
 
-    .line 262
+    .line 268
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 242
+    .line 248
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 222
+    .line 228
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 212
+    .line 218
     packed-switch p0, :pswitch_data_0
 
-    .line 216
+    .line 222
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 213
+    .line 219
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     goto :goto_0
 
-    .line 214
+    .line 220
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->UNREGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     goto :goto_0
 
-    .line 215
+    .line 221
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->CHECK_REGISTERED:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     goto :goto_0
 
-    .line 212
+    .line 218
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 249
+    .line 255
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 250
+    .line 256
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 253
+    .line 259
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->VALUES:[Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 155
+    .line 161
     const-class v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 155
+    .line 161
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->$VALUES:[Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 238
+    .line 244
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 209
+    .line 215
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 234
+    .line 240
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/voice/VoiceMenu;->selectMainMenuItem(Lcom/google/glass/widget/TypophileTextView;Ljava/lang/Runnable;)V
+    value = Lcom/google/glass/home/voice/VoiceMenu;->selectPrimaryMenuItem(Lcom/google/glass/widget/TypophileTextView;Ljava/lang/Runnable;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 361
+    .line 379
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceMenu$5;->this$0:Lcom/google/glass/home/voice/VoiceMenu;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/VoiceMenu$5;->val$postAnimationRunnable:Ljava/lang/Runnable;
@@ -49,17 +49,17 @@
     .parameter "animation"
 
     .prologue
-    .line 364
+    .line 382
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$5;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 365
+    .line 383
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$5;->val$postAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 367
+    .line 385
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceMenu$5;->val$t:Lcom/google/glass/widget/TypophileTextView;
 
@@ -71,6 +71,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
 
-    .line 368
+    .line 386
     return-void
 .end method

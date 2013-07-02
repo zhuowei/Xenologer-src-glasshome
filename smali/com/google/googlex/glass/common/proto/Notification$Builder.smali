@@ -62,6 +62,8 @@
 
 .field private operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
+.field private source_:Ljava/lang/Object;
+
 .field private timestamp_:J
 
 .field private userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
@@ -100,57 +102,62 @@
     .locals 1
 
     .prologue
-    .line 871
+    .line 944
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1127
+    .line 1211
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1224
+    .line 1311
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1321
+    .line 1411
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1511
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 1372
+    .line 1562
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
-    .line 1702
+    .line 1892
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 2032
+    .line 2222
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2135
+    .line 2328
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2238
+    .line 2434
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 872
+    .line 945
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->maybeForceBuilderInitialization()V
 
-    .line 873
+    .line 946
     return-void
 .end method
 
@@ -159,57 +166,62 @@
     .parameter "parent"
 
     .prologue
-    .line 877
+    .line 950
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 1127
+    .line 1211
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1224
+    .line 1311
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1321
+    .line 1411
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1511
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 1372
+    .line 1562
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
-    .line 1702
+    .line 1892
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 2032
+    .line 2222
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2135
+    .line 2328
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2238
+    .line 2434
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 878
+    .line 951
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->maybeForceBuilderInitialization()V
 
-    .line 879
+    .line 952
     return-void
 .end method
 
@@ -219,7 +231,7 @@
     .parameter "x1"
 
     .prologue
-    .line 854
+    .line 927
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/Notification$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -229,7 +241,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->create()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -241,7 +253,7 @@
     .locals 1
 
     .prologue
-    .line 887
+    .line 960
     new-instance v0, Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;-><init>()V
@@ -253,41 +265,7 @@
     .locals 2
 
     .prologue
-    .line 1375
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, 0x8
-
-    const/16 v1, 0x8
-
-    if-eq v0, v1, :cond_0
-
-    .line 1376
-    new-instance v0, Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    .line 1377
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    or-int/lit8 v0, v0, 0x8
-
-    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    .line 1379
-    :cond_0
-    return-void
-.end method
-
-.method private ensureUserActionIsMutable()V
-    .locals 2
-
-    .prologue
-    .line 1705
+    .line 1565
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -296,7 +274,41 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 1706
+    .line 1566
+    new-instance v0, Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+
+    .line 1567
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x10
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1569
+    :cond_0
+    return-void
+.end method
+
+.method private ensureUserActionIsMutable()V
+    .locals 2
+
+    .prologue
+    .line 1895
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x20
+
+    const/16 v1, 0x20
+
+    if-eq v0, v1, :cond_0
+
+    .line 1896
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
@@ -305,14 +317,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 1707
+    .line 1897
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit8 v0, v0, 0x10
+    or-int/lit8 v0, v0, 0x20
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1709
+    .line 1899
     :cond_0
     return-void
 .end method
@@ -321,7 +333,7 @@
     .locals 1
 
     .prologue
-    .line 860
+    .line 933
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Notification_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -342,81 +354,15 @@
     .end annotation
 
     .prologue
-    .line 1690
+    .line 1880
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1691
+    .line 1881
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, 0x8
-
-    const/16 v3, 0x8
-
-    if-ne v0, v3, :cond_1
-
-    const/4 v0, 0x1
-
-    :goto_0
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getParentForChildren()Lcom/google/protobuf/GeneratedMessage$BuilderParent;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->isClean()Z
-
-    move-result v4
-
-    invoke-direct {v1, v2, v0, v3, v4}, Lcom/google/protobuf/RepeatedFieldBuilder;-><init>(Ljava/util/List;ZLcom/google/protobuf/GeneratedMessage$BuilderParent;Z)V
-
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
-
-    .line 1697
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    .line 1699
-    :cond_0
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
-
-    return-object v0
-
-    .line 1691
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
-    .locals 5
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/google/protobuf/RepeatedFieldBuilder",
-            "<",
-            "Lcom/google/googlex/glass/common/proto/UserAction;",
-            "Lcom/google/googlex/glass/common/proto/UserAction$Builder;",
-            "Lcom/google/googlex/glass/common/proto/UserActionOrBuilder;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 2020
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
-
-    if-nez v0, :cond_0
-
-    .line 2021
-    new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
-
-    iget-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
@@ -439,20 +385,86 @@
 
     invoke-direct {v1, v2, v0, v3, v4}, Lcom/google/protobuf/RepeatedFieldBuilder;-><init>(Ljava/util/List;ZLcom/google/protobuf/GeneratedMessage$BuilderParent;Z)V
 
+    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+
+    .line 1887
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+
+    .line 1889
+    :cond_0
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+
+    return-object v0
+
+    .line 1881
+    :cond_1
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method private getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/google/protobuf/RepeatedFieldBuilder",
+            "<",
+            "Lcom/google/googlex/glass/common/proto/UserAction;",
+            "Lcom/google/googlex/glass/common/proto/UserAction$Builder;",
+            "Lcom/google/googlex/glass/common/proto/UserActionOrBuilder;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 2210
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+
+    if-nez v0, :cond_0
+
+    .line 2211
+    new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
+
+    iget-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x20
+
+    const/16 v3, 0x20
+
+    if-ne v0, v3, :cond_1
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getParentForChildren()Lcom/google/protobuf/GeneratedMessage$BuilderParent;
+
+    move-result-object v3
+
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->isClean()Z
+
+    move-result v4
+
+    invoke-direct {v1, v2, v0, v3, v4}, Lcom/google/protobuf/RepeatedFieldBuilder;-><init>(Ljava/util/List;ZLcom/google/protobuf/GeneratedMessage$BuilderParent;Z)V
+
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 2027
+    .line 2217
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 2029
+    .line 2219
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 2021
+    .line 2211
     :cond_1
     const/4 v0, 0x0
 
@@ -463,20 +475,20 @@
     .locals 1
 
     .prologue
-    .line 881
+    .line 954
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 882
+    .line 955
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getMenuActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 883
+    .line 956
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 885
+    .line 958
     :cond_0
     return-void
 .end method
@@ -501,28 +513,28 @@
     .end annotation
 
     .prologue
-    .line 1561
+    .line 1751
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/MenuItem;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1562
+    .line 1752
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1563
+    .line 1753
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1565
+    .line 1755
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1569
+    .line 1759
     :goto_0
     return-object p0
 
-    .line 1567
+    .line 1757
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -546,28 +558,28 @@
     .end annotation
 
     .prologue
-    .line 1891
+    .line 2081
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/UserAction;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1892
+    .line 2082
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1893
+    .line 2083
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 1895
+    .line 2085
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1899
+    .line 2089
     :goto_0
     return-object p0
 
-    .line 1897
+    .line 2087
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -584,15 +596,15 @@
     .end annotation
 
     .prologue
-    .line 1542
+    .line 1732
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1543
+    .line 1733
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1544
+    .line 1734
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuItem;
@@ -601,14 +613,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1545
+    .line 1735
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1549
+    .line 1739
     :goto_0
     return-object p0
 
-    .line 1547
+    .line 1737
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -629,38 +641,38 @@
     .end annotation
 
     .prologue
-    .line 1501
+    .line 1691
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1502
+    .line 1692
     if-nez p2, :cond_0
 
-    .line 1503
+    .line 1693
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1505
+    .line 1695
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1506
+    .line 1696
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1507
+    .line 1697
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1511
+    .line 1701
     :goto_0
     return-object p0
 
-    .line 1509
+    .line 1699
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -676,15 +688,15 @@
     .end annotation
 
     .prologue
-    .line 1523
+    .line 1713
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1524
+    .line 1714
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1525
+    .line 1715
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuItem;
@@ -693,14 +705,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1526
+    .line 1716
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1530
+    .line 1720
     :goto_0
     return-object p0
 
-    .line 1528
+    .line 1718
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -720,38 +732,38 @@
     .end annotation
 
     .prologue
-    .line 1479
+    .line 1669
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1480
+    .line 1670
     if-nez p1, :cond_0
 
-    .line 1481
+    .line 1671
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1483
+    .line 1673
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1484
+    .line 1674
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1485
+    .line 1675
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1489
+    .line 1679
     :goto_0
     return-object p0
 
-    .line 1487
+    .line 1677
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -766,7 +778,7 @@
     .end annotation
 
     .prologue
-    .line 1659
+    .line 1849
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getMenuActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -791,7 +803,7 @@
     .end annotation
 
     .prologue
-    .line 1672
+    .line 1862
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getMenuActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -815,15 +827,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1872
+    .line 2062
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1873
+    .line 2063
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1874
+    .line 2064
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -832,14 +844,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1875
+    .line 2065
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1879
+    .line 2069
     :goto_0
     return-object p0
 
-    .line 1877
+    .line 2067
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -858,38 +870,38 @@
     .parameter "value"
 
     .prologue
-    .line 1831
+    .line 2021
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1832
+    .line 2022
     if-nez p2, :cond_0
 
-    .line 1833
+    .line 2023
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1835
+    .line 2025
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1836
+    .line 2026
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 1837
+    .line 2027
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1841
+    .line 2031
     :goto_0
     return-object p0
 
-    .line 1839
+    .line 2029
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -903,15 +915,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1853
+    .line 2043
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1854
+    .line 2044
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1855
+    .line 2045
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -920,14 +932,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1856
+    .line 2046
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1860
+    .line 2050
     :goto_0
     return-object p0
 
-    .line 1858
+    .line 2048
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -945,38 +957,38 @@
     .parameter "value"
 
     .prologue
-    .line 1809
+    .line 1999
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1810
+    .line 2000
     if-nez p1, :cond_0
 
-    .line 1811
+    .line 2001
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1813
+    .line 2003
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1814
+    .line 2004
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1815
+    .line 2005
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1819
+    .line 2009
     :goto_0
     return-object p0
 
-    .line 1817
+    .line 2007
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -989,7 +1001,7 @@
     .locals 2
 
     .prologue
-    .line 1989
+    .line 2179
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1012,7 +1024,7 @@
     .parameter "index"
 
     .prologue
-    .line 2002
+    .line 2192
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1034,12 +1046,12 @@
     .locals 2
 
     .prologue
-    .line 937
+    .line 1012
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
 
-    .line 938
+    .line 1013
     .local v0, result:Lcom/google/googlex/glass/common/proto/Notification;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Notification;->isInitialized()Z
 
@@ -1047,14 +1059,14 @@
 
     if-nez v1, :cond_0
 
-    .line 939
+    .line 1014
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 941
+    .line 1016
     :cond_0
     return-object v0
 .end method
@@ -1063,7 +1075,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->build()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1075,7 +1087,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->build()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1087,22 +1099,22 @@
     .locals 5
 
     .prologue
-    .line 945
+    .line 1020
     new-instance v1, Lcom/google/googlex/glass/common/proto/Notification;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/Notification;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/Notification$1;)V
 
-    .line 946
+    .line 1021
     .local v1, result:Lcom/google/googlex/glass/common/proto/Notification;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 947
+    .line 1022
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 948
+    .line 1023
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -1110,94 +1122,73 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 949
+    .line 1024
     or-int/lit8 v2, v2, 0x1
 
-    .line 951
+    .line 1026
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->collection_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$502(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 952
+    .line 1027
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 953
+    .line 1028
     or-int/lit8 v2, v2, 0x2
 
-    .line 955
+    .line 1030
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->itemId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$602(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 956
+    .line 1031
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 957
+    .line 1032
     or-int/lit8 v2, v2, 0x4
 
-    .line 959
+    .line 1034
     :cond_2
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
 
-    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$702(Lcom/google/googlex/glass/common/proto/Notification;Lcom/google/googlex/glass/common/proto/Subscription$Operation;)Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->source_:Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$702(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 960
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
-
-    if-nez v3, :cond_a
-
-    .line 961
-    iget v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    and-int/lit8 v3, v3, 0x8
+    .line 1035
+    and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 962
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+    .line 1036
+    or-int/lit8 v2, v2, 0x8
 
-    invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    .line 963
-    iget v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    and-int/lit8 v3, v3, -0x9
-
-    iput v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    .line 965
+    .line 1038
     :cond_3
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$802(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$802(Lcom/google/googlex/glass/common/proto/Notification;Lcom/google/googlex/glass/common/proto/Subscription$Operation;)Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 969
-    :goto_0
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+    .line 1039
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v3, :cond_b
 
-    .line 970
+    .line 1040
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x10
@@ -1206,7 +1197,45 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 971
+    .line 1041
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+
+    invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+
+    .line 1042
+    iget v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v3, v3, -0x11
+
+    iput v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1044
+    :cond_4
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
+
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$902(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
+
+    .line 1048
+    :goto_0
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+
+    if-nez v3, :cond_c
+
+    .line 1049
+    iget v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v3, v3, 0x20
+
+    const/16 v4, 0x20
+
+    if-ne v3, v4, :cond_5
+
+    .line 1050
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -1215,118 +1244,118 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 972
+    .line 1051
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v3, v3, -0x11
+    and-int/lit8 v3, v3, -0x21
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 974
-    :cond_4
+    .line 1053
+    :cond_5
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$902(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$1002(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
 
-    .line 978
+    .line 1057
     :goto_1
-    and-int/lit8 v3, v0, 0x20
-
-    const/16 v4, 0x20
-
-    if-ne v3, v4, :cond_5
-
-    .line 979
-    or-int/lit8 v2, v2, 0x8
-
-    .line 981
-    :cond_5
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
-
-    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->verifyToken_:Ljava/lang/Object;
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$1002(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 982
     and-int/lit8 v3, v0, 0x40
 
     const/16 v4, 0x40
 
     if-ne v3, v4, :cond_6
 
-    .line 983
+    .line 1058
     or-int/lit8 v2, v2, 0x10
 
-    .line 985
+    .line 1060
     :cond_6
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->userToken_:Ljava/lang/Object;
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->verifyToken_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$1102(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 986
+    .line 1061
     and-int/lit16 v3, v0, 0x80
 
     const/16 v4, 0x80
 
     if-ne v3, v4, :cond_7
 
-    .line 987
+    .line 1062
     or-int/lit8 v2, v2, 0x20
 
-    .line 989
+    .line 1064
     :cond_7
-    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->callbackUrl_:Ljava/lang/Object;
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->userToken_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$1202(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 990
+    .line 1065
     and-int/lit16 v3, v0, 0x100
 
     const/16 v4, 0x100
 
     if-ne v3, v4, :cond_8
 
-    .line 991
+    .line 1066
     or-int/lit8 v2, v2, 0x40
 
-    .line 993
+    .line 1068
     :cond_8
-    iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
+    iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->userId_:J
-    invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/Notification;->access$1302(Lcom/google/googlex/glass/common/proto/Notification;J)J
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->callbackUrl_:Ljava/lang/Object;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$1302(Lcom/google/googlex/glass/common/proto/Notification;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 994
+    .line 1069
     and-int/lit16 v3, v0, 0x200
 
     const/16 v4, 0x200
 
     if-ne v3, v4, :cond_9
 
-    .line 995
+    .line 1070
     or-int/lit16 v2, v2, 0x80
 
-    .line 997
+    .line 1072
     :cond_9
+    iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
+
+    #setter for: Lcom/google/googlex/glass/common/proto/Notification;->userId_:J
+    invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/Notification;->access$1402(Lcom/google/googlex/glass/common/proto/Notification;J)J
+
+    .line 1073
+    and-int/lit16 v3, v0, 0x400
+
+    const/16 v4, 0x400
+
+    if-ne v3, v4, :cond_a
+
+    .line 1074
+    or-int/lit16 v2, v2, 0x100
+
+    .line 1076
+    :cond_a
     iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->timestamp_:J
 
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->timestamp_:J
-    invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/Notification;->access$1402(Lcom/google/googlex/glass/common/proto/Notification;J)J
+    invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/Notification;->access$1502(Lcom/google/googlex/glass/common/proto/Notification;J)J
 
-    .line 998
+    .line 1077
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->bitField0_:I
-    invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Notification;->access$1502(Lcom/google/googlex/glass/common/proto/Notification;I)I
+    invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Notification;->access$1602(Lcom/google/googlex/glass/common/proto/Notification;I)I
 
-    .line 999
+    .line 1078
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onBuilt()V
 
-    .line 1000
+    .line 1079
     return-object v1
 
-    .line 967
-    :cond_a
+    .line 1046
+    :cond_b
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/RepeatedFieldBuilder;->build()Ljava/util/List;
@@ -1334,12 +1363,12 @@
     move-result-object v3
 
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$802(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$902(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
 
     goto :goto_0
 
-    .line 976
-    :cond_b
+    .line 1055
+    :cond_c
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v3}, Lcom/google/protobuf/RepeatedFieldBuilder;->build()Ljava/util/List;
@@ -1347,7 +1376,7 @@
     move-result-object v3
 
     #setter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
-    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$902(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Notification;->access$1002(Lcom/google/googlex/glass/common/proto/Notification;Ljava/util/List;)Ljava/util/List;
 
     goto :goto_1
 .end method
@@ -1356,7 +1385,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1368,7 +1397,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1382,145 +1411,157 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 891
+    .line 964
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 892
+    .line 965
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 893
+    .line 966
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 894
+    .line 967
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 895
+    .line 968
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 896
-    sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    .line 969
+    const-string v0, ""
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
 
-    .line 897
+    .line 970
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 898
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+    .line 971
+    sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    if-nez v0, :cond_0
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
-    .line 899
-    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    .line 900
+    .line 972
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 904
-    :goto_0
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+    .line 973
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
-    .line 905
+    .line 974
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
-    .line 906
+    .line 975
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 910
-    :goto_1
-    const-string v0, ""
+    .line 979
+    :goto_0
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
+    if-nez v0, :cond_1
 
-    .line 911
+    .line 980
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+
+    .line 981
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 912
+    .line 985
+    :goto_1
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 913
+    .line 986
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 914
+    .line 987
     const-string v0, ""
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 915
+    .line 988
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 916
-    iput-wide v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
+    .line 989
+    const-string v0, ""
 
-    .line 917
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+
+    .line 990
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 918
-    iput-wide v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->timestamp_:J
+    .line 991
+    iput-wide v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
 
-    .line 919
+    .line 992
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x201
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 920
+    .line 993
+    iput-wide v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->timestamp_:J
+
+    .line 994
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit16 v0, v0, -0x401
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 995
     return-object p0
 
-    .line 902
+    .line 977
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1528,7 +1569,7 @@
 
     goto :goto_0
 
-    .line 908
+    .line 983
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1541,7 +1582,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clear()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1553,7 +1594,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clear()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1565,7 +1606,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clear()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1577,7 +1618,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clear()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1589,14 +1630,14 @@
     .locals 1
 
     .prologue
-    .line 2317
+    .line 2516
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit16 v0, v0, -0x81
+    and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2318
+    .line 2517
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1607,10 +1648,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 2319
+    .line 2518
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2320
+    .line 2519
     return-object p0
 .end method
 
@@ -1618,14 +1659,14 @@
     .locals 1
 
     .prologue
-    .line 1201
+    .line 1288
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1202
+    .line 1289
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1636,10 +1677,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1203
+    .line 1290
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1204
+    .line 1291
     return-object p0
 .end method
 
@@ -1647,14 +1688,14 @@
     .locals 1
 
     .prologue
-    .line 1298
+    .line 1388
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1299
+    .line 1389
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1665,10 +1706,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1300
+    .line 1390
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1301
+    .line 1391
     return-object p0
 .end method
 
@@ -1678,33 +1719,33 @@
     .end annotation
 
     .prologue
-    .line 1580
+    .line 1770
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1581
+    .line 1771
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
-    .line 1582
+    .line 1772
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v0, v0, -0x9
+    and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1583
+    .line 1773
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1587
+    .line 1777
     :goto_0
     return-object p0
 
-    .line 1585
+    .line 1775
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1717,22 +1758,51 @@
     .locals 1
 
     .prologue
-    .line 1366
+    .line 1556
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, -0x9
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1557
+    sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+
+    .line 1558
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
+
+    .line 1559
+    return-object p0
+.end method
+
+.method public clearSource()Lcom/google/googlex/glass/common/proto/Notification$Builder;
+    .locals 1
+
+    .prologue
+    .line 1488
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1367
-    sget-object v0, Lcom/google/googlex/glass/common/proto/Subscription$Operation;->INSERT:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    .line 1489
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    move-result-object v0
 
-    .line 1368
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Notification;->getSource()Ljava/lang/String;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1490
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1369
+    .line 1491
     return-object p0
 .end method
 
@@ -1740,22 +1810,22 @@
     .locals 2
 
     .prologue
-    .line 2443
+    .line 2642
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit16 v0, v0, -0x201
+    and-int/lit16 v0, v0, -0x401
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2444
+    .line 2643
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->timestamp_:J
 
-    .line 2445
+    .line 2644
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2446
+    .line 2645
     return-object p0
 .end method
 
@@ -1763,33 +1833,33 @@
     .locals 1
 
     .prologue
-    .line 1910
+    .line 2100
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1911
+    .line 2101
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 1912
+    .line 2102
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v0, v0, -0x11
+    and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1913
+    .line 2103
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1917
+    .line 2107
     :goto_0
     return-object p0
 
-    .line 1915
+    .line 2105
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1802,22 +1872,22 @@
     .locals 2
 
     .prologue
-    .line 2387
+    .line 2586
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit16 v0, v0, -0x101
+    and-int/lit16 v0, v0, -0x201
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2388
+    .line 2587
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
 
-    .line 2389
+    .line 2588
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2390
+    .line 2589
     return-object p0
 .end method
 
@@ -1825,14 +1895,14 @@
     .locals 1
 
     .prologue
-    .line 2214
+    .line 2410
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v0, v0, -0x41
+    and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2215
+    .line 2411
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1843,10 +1913,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2216
+    .line 2412
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2217
+    .line 2413
     return-object p0
 .end method
 
@@ -1854,14 +1924,14 @@
     .locals 1
 
     .prologue
-    .line 2111
+    .line 2304
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v0, v0, -0x21
+    and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2112
+    .line 2305
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -1872,10 +1942,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2113
+    .line 2306
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2114
+    .line 2307
     return-object p0
 .end method
 
@@ -1883,7 +1953,7 @@
     .locals 2
 
     .prologue
-    .line 924
+    .line 999
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->create()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1903,7 +1973,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clone()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1915,7 +1985,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clone()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1927,7 +1997,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clone()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1939,7 +2009,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clone()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1951,7 +2021,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clone()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1968,7 +2038,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->clone()Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -1977,41 +2047,54 @@
 .end method
 
 .method public getCallbackUrl()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 2259
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+    .line 2455
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 2260
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 2456
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 2261
+    move-object v0, v1
+
+    .line 2457
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 2459
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 2263
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+    .line 2460
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 2266
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 2461
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+
+    .line 2465
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -2020,16 +2103,16 @@
     .locals 3
 
     .prologue
-    .line 2279
+    .line 2478
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 2280
+    .line 2479
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 2281
+    .line 2480
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2037,11 +2120,11 @@
 
     move-result-object v0
 
-    .line 2284
+    .line 2483
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 2287
+    .line 2486
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2057,41 +2140,54 @@
 .end method
 
 .method public getCollection()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1146
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
+    .line 1230
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1147
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1231
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1148
+    move-object v0, v1
+
+    .line 1232
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1234
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1150
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
+    .line 1235
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1153
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1236
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
+
+    .line 1240
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -2100,16 +2196,16 @@
     .locals 3
 
     .prologue
-    .line 1165
+    .line 1252
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1166
+    .line 1253
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1167
+    .line 1254
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2117,11 +2213,11 @@
 
     move-result-object v0
 
-    .line 1170
+    .line 1257
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1173
+    .line 1260
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2140,7 +2236,7 @@
     .locals 1
 
     .prologue
-    .line 933
+    .line 1008
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -2152,7 +2248,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -2164,7 +2260,7 @@
     .locals 1
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
@@ -2176,48 +2272,61 @@
     .locals 1
 
     .prologue
-    .line 929
+    .line 1004
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Notification_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getItemId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1243
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
+    .line 1330
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1244
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1331
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1245
+    move-object v0, v1
+
+    .line 1332
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1334
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1247
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
+    .line 1335
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1250
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1336
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
+
+    .line 1340
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -2226,16 +2335,16 @@
     .locals 3
 
     .prologue
-    .line 1262
+    .line 1352
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1263
+    .line 1353
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1264
+    .line 1354
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2243,11 +2352,11 @@
 
     move-result-object v0
 
-    .line 1267
+    .line 1357
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1270
+    .line 1360
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2269,12 +2378,12 @@
     .end annotation
 
     .prologue
-    .line 1423
+    .line 1613
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1424
+    .line 1614
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2283,7 +2392,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/MenuItem;
 
-    .line 1426
+    .line 1616
     :goto_0
     return-object v0
 
@@ -2306,7 +2415,7 @@
     .end annotation
 
     .prologue
-    .line 1617
+    .line 1807
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getMenuActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2336,7 +2445,7 @@
     .end annotation
 
     .prologue
-    .line 1685
+    .line 1875
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getMenuActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2354,19 +2463,19 @@
     .end annotation
 
     .prologue
-    .line 1408
+    .line 1598
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1409
+    .line 1599
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1411
+    .line 1601
     :goto_0
     return v0
 
@@ -2396,19 +2505,19 @@
     .end annotation
 
     .prologue
-    .line 1393
+    .line 1583
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1394
+    .line 1584
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1396
+    .line 1586
     :goto_0
     return-object v0
 
@@ -2429,12 +2538,12 @@
     .end annotation
 
     .prologue
-    .line 1629
+    .line 1819
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1630
+    .line 1820
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2443,7 +2552,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/MenuItemOrBuilder;
 
-    .line 1631
+    .line 1821
     :goto_0
     return-object v0
 
@@ -2475,19 +2584,19 @@
     .end annotation
 
     .prologue
-    .line 1644
+    .line 1834
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1645
+    .line 1835
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1647
+    .line 1837
     :goto_0
     return-object v0
 
@@ -2505,17 +2614,110 @@
     .locals 1
 
     .prologue
-    .line 1340
+    .line 1530
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     return-object v0
+.end method
+
+.method public getSource()Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 1430
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1431
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 1432
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 1434
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1435
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 1436
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1440
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
+    :cond_0
+    :goto_0
+    return-object v2
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
+
+    goto :goto_0
+.end method
+
+.method public getSourceBytes()Lcom/google/protobuf/ByteString;
+    .locals 3
+
+    .prologue
+    .line 1452
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1453
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v2, v1, Ljava/lang/String;
+
+    if-eqz v2, :cond_0
+
+    .line 1454
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 1457
+    .local v0, b:Lcom/google/protobuf/ByteString;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1460
+    .end local v0           #b:Lcom/google/protobuf/ByteString;
+    :goto_0
+    return-object v0
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_0
+    check-cast v1, Lcom/google/protobuf/ByteString;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v0, v1
+
+    goto :goto_0
 .end method
 
 .method public getTimestamp()J
     .locals 2
 
     .prologue
-    .line 2416
+    .line 2615
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->timestamp_:J
 
     return-wide v0
@@ -2526,12 +2728,12 @@
     .parameter "index"
 
     .prologue
-    .line 1753
+    .line 1943
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1754
+    .line 1944
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2540,7 +2742,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UserAction;
 
-    .line 1756
+    .line 1946
     :goto_0
     return-object v0
 
@@ -2561,7 +2763,7 @@
     .parameter "index"
 
     .prologue
-    .line 1947
+    .line 2137
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2588,7 +2790,7 @@
     .end annotation
 
     .prologue
-    .line 2015
+    .line 2205
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -2604,19 +2806,19 @@
     .locals 1
 
     .prologue
-    .line 1738
+    .line 1928
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1739
+    .line 1929
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 1741
+    .line 1931
     :goto_0
     return v0
 
@@ -2643,19 +2845,19 @@
     .end annotation
 
     .prologue
-    .line 1723
+    .line 1913
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1724
+    .line 1914
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 1726
+    .line 1916
     :goto_0
     return-object v0
 
@@ -2674,12 +2876,12 @@
     .parameter "index"
 
     .prologue
-    .line 1959
+    .line 2149
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1960
+    .line 2150
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2688,7 +2890,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UserActionOrBuilder;
 
-    .line 1961
+    .line 2151
     :goto_0
     return-object v0
 
@@ -2717,19 +2919,19 @@
     .end annotation
 
     .prologue
-    .line 1974
+    .line 2164
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 1975
+    .line 2165
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 1977
+    .line 2167
     :goto_0
     return-object v0
 
@@ -2747,48 +2949,61 @@
     .locals 2
 
     .prologue
-    .line 2362
+    .line 2561
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
 
     return-wide v0
 .end method
 
 .method public getUserToken()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 2156
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
+    .line 2349
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2157
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 2350
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 2158
+    move-object v0, v1
+
+    .line 2351
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 2353
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 2160
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
+    .line 2354
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 2163
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 2355
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
+
+    .line 2359
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -2797,16 +3012,16 @@
     .locals 3
 
     .prologue
-    .line 2176
+    .line 2372
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2177
+    .line 2373
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 2178
+    .line 2374
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2814,11 +3029,11 @@
 
     move-result-object v0
 
-    .line 2181
+    .line 2377
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2184
+    .line 2380
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2834,41 +3049,54 @@
 .end method
 
 .method public getVerifyToken()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 2053
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
+    .line 2243
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2054
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 2244
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 2055
+    move-object v0, v1
+
+    .line 2245
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 2247
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 2057
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
+    .line 2248
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 2060
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 2249
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
+
+    .line 2253
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -2877,16 +3105,16 @@
     .locals 3
 
     .prologue
-    .line 2073
+    .line 2266
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2074
+    .line 2267
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 2075
+    .line 2268
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2894,11 +3122,11 @@
 
     move-result-object v0
 
-    .line 2078
+    .line 2271
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2081
+    .line 2274
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2917,12 +3145,12 @@
     .locals 2
 
     .prologue
-    .line 2248
+    .line 2444
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit16 v0, v0, 0x80
+    and-int/lit16 v0, v0, 0x100
 
-    const/16 v1, 0x80
+    const/16 v1, 0x100
 
     if-ne v0, v1, :cond_0
 
@@ -2943,7 +3171,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1136
+    .line 1220
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -2963,7 +3191,7 @@
     .locals 2
 
     .prologue
-    .line 1233
+    .line 1320
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -2987,7 +3215,31 @@
     .locals 2
 
     .prologue
-    .line 1330
+    .line 1520
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, 0x8
+
+    const/16 v1, 0x8
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public hasSource()Z
+    .locals 2
+
+    .prologue
+    .line 1420
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -3011,7 +3263,31 @@
     .locals 2
 
     .prologue
-    .line 2404
+    .line 2603
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit16 v0, v0, 0x400
+
+    const/16 v1, 0x400
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public hasUserId()Z
+    .locals 2
+
+    .prologue
+    .line 2550
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x200
@@ -3031,16 +3307,16 @@
     goto :goto_0
 .end method
 
-.method public hasUserId()Z
+.method public hasUserToken()Z
     .locals 2
 
     .prologue
-    .line 2351
+    .line 2338
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit16 v0, v0, 0x100
+    and-int/lit16 v0, v0, 0x80
 
-    const/16 v1, 0x100
+    const/16 v1, 0x80
 
     if-ne v0, v1, :cond_0
 
@@ -3055,11 +3331,11 @@
     goto :goto_0
 .end method
 
-.method public hasUserToken()Z
+.method public hasVerifyToken()Z
     .locals 2
 
     .prologue
-    .line 2145
+    .line 2232
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -3079,35 +3355,11 @@
     goto :goto_0
 .end method
 
-.method public hasVerifyToken()Z
-    .locals 2
-
-    .prologue
-    .line 2042
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, 0x20
-
-    const/16 v1, 0x20
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
 .method protected internalGetFieldAccessorTable()Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
     .locals 3
 
     .prologue
-    .line 865
+    .line 938
     sget-object v0, Lcom/google/googlex/glass/common/proto/Subscriptions;->internal_static_googlex_glass_common_proto_Notification_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/Notification;
@@ -3125,7 +3377,7 @@
     .locals 1
 
     .prologue
-    .line 1105
+    .line 1189
     const/4 v0, 0x1
 
     return v0
@@ -3138,18 +3390,18 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1013
+    .line 1092
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Notification;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 1101
+    .line 1185
     :goto_0
     return-object p0
 
-    .line 1014
+    .line 1093
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasCollection()Z
 
@@ -3157,14 +3409,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1015
+    .line 1094
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1016
+    .line 1095
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->collection_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$500(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
 
@@ -3172,10 +3424,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1017
+    .line 1096
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1019
+    .line 1098
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasItemId()Z
 
@@ -3183,14 +3435,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1020
+    .line 1099
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1021
+    .line 1100
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->itemId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$600(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
 
@@ -3198,79 +3450,58 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1022
+    .line 1101
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1024
+    .line 1103
     :cond_2
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasOperation()Z
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasSource()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 1025
+    .line 1104
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x4
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1105
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->source_:Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$700(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1106
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
+
+    .line 1108
+    :cond_3
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasOperation()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4
+
+    .line 1109
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->getOperation()Lcom/google/googlex/glass/common/proto/Subscription$Operation;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->setOperation(Lcom/google/googlex/glass/common/proto/Subscription$Operation;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
-    .line 1027
-    :cond_3
+    .line 1111
+    :cond_4
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_d
 
-    .line 1028
+    .line 1112
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$800(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    .line 1029
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_b
-
-    .line 1030
-    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$800(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
-
-    .line 1031
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    and-int/lit8 v0, v0, -0x9
-
-    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    .line 1036
-    :goto_1
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
-
-    .line 1053
-    :cond_4
-    :goto_2
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
-
-    if-nez v0, :cond_10
-
-    .line 1054
-    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v0
@@ -3281,145 +3512,192 @@
 
     if-nez v0, :cond_5
 
-    .line 1055
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+    .line 1113
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_c
 
-    .line 1056
-    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
+    .line 1114
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
-    .line 1057
+    .line 1115
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1062
+    .line 1120
+    :goto_1
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
+
+    .line 1137
+    :cond_5
+    :goto_2
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
+
+    if-nez v0, :cond_11
+
+    .line 1138
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_6
+
+    .line 1139
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 1140
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
+
+    .line 1141
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    and-int/lit8 v0, v0, -0x21
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1146
     :goto_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1079
-    :cond_5
+    .line 1163
+    :cond_6
     :goto_4
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasVerifyToken()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
-
-    .line 1080
-    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    or-int/lit8 v0, v0, 0x20
-
-    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
-
-    .line 1081
-    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->verifyToken_:Ljava/lang/Object;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
-
-    .line 1082
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
-
-    .line 1084
-    :cond_6
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasUserToken()Z
-
-    move-result v0
-
     if-eqz v0, :cond_7
 
-    .line 1085
+    .line 1164
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1086
-    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userToken_:Ljava/lang/Object;
+    .line 1165
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->verifyToken_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1100(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 1087
+    .line 1166
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1089
+    .line 1168
     :cond_7
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasCallbackUrl()Z
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasUserToken()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 1090
+    .line 1169
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
     or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1091
-    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->callbackUrl_:Ljava/lang/Object;
+    .line 1170
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userToken_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1200(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 1092
+    .line 1171
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1094
+    .line 1173
     :cond_8
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasUserId()Z
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasCallbackUrl()Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    .line 1095
+    .line 1174
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    or-int/lit16 v0, v0, 0x100
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1175
+    #getter for: Lcom/google/googlex/glass/common/proto/Notification;->callbackUrl_:Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1300(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
+
+    .line 1176
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
+
+    .line 1178
+    :cond_9
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasUserId()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_a
+
+    .line 1179
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->getUserId()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->setUserId(J)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
-    .line 1097
-    :cond_9
+    .line 1181
+    :cond_a
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->hasTimestamp()Z
 
     move-result v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
-    .line 1098
+    .line 1182
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->getTimestamp()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->setTimestamp(J)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
-    .line 1100
-    :cond_a
+    .line 1184
+    :cond_b
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Notification;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
@@ -3428,15 +3706,15 @@
 
     goto/16 :goto_0
 
-    .line 1033
-    :cond_b
+    .line 1117
+    :cond_c
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1034
+    .line 1118
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$800(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v2
 
@@ -3444,10 +3722,10 @@
 
     goto/16 :goto_1
 
-    .line 1039
-    :cond_c
+    .line 1123
+    :cond_d
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$800(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v0
 
@@ -3455,46 +3733,46 @@
 
     move-result v0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_5
 
-    .line 1040
+    .line 1124
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
-    .line 1041
+    .line 1125
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 1042
+    .line 1126
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1043
+    .line 1127
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$800(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
-    .line 1044
+    .line 1128
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v0, v0, -0x9
+    and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1045
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->access$1600()Z
+    .line 1129
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->access$1700()Z
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getMenuActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -3505,17 +3783,17 @@
 
     goto/16 :goto_2
 
-    :cond_d
+    :cond_e
     move-object v0, v1
 
     goto :goto_5
 
-    .line 1049
-    :cond_e
+    .line 1133
+    :cond_f
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->menuAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$800(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v2
 
@@ -3523,15 +3801,15 @@
 
     goto/16 :goto_2
 
-    .line 1059
-    :cond_f
+    .line 1143
+    :cond_10
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1060
+    .line 1144
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v1
 
@@ -3539,10 +3817,10 @@
 
     goto/16 :goto_3
 
-    .line 1065
-    :cond_10
+    .line 1149
+    :cond_11
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v0
 
@@ -3550,62 +3828,62 @@
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_6
 
-    .line 1066
+    .line 1150
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
 
     move-result v0
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
-    .line 1067
+    .line 1151
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 1068
+    .line 1152
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 1069
+    .line 1153
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
-    .line 1070
+    .line 1154
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    and-int/lit8 v0, v0, -0x11
+    and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1071
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->access$1700()Z
+    .line 1155
+    invoke-static {}, Lcom/google/googlex/glass/common/proto/Notification;->access$1800()Z
 
     move-result v0
 
-    if-eqz v0, :cond_11
+    if-eqz v0, :cond_12
 
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v1
 
-    :cond_11
+    :cond_12
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     goto/16 :goto_4
 
-    .line 1075
-    :cond_12
+    .line 1159
+    :cond_13
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Notification;->userAction_:Ljava/util/List;
-    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$900(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
+    invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Notification;->access$1000(Lcom/google/googlex/glass/common/proto/Notification;)Ljava/util/List;
 
     move-result-object v1
 
@@ -3625,10 +3903,10 @@
     .end annotation
 
     .prologue
-    .line 1112
+    .line 1196
     const/4 v2, 0x0
 
-    .line 1114
+    .line 1198
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/Notification;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/Notification;->PARSER:Lcom/google/protobuf/Parser;
@@ -3646,21 +3924,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1119
+    .line 1203
     if-eqz v2, :cond_0
 
-    .line 1120
+    .line 1204
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Notification;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
-    .line 1123
+    .line 1207
     :cond_0
     return-object p0
 
-    .line 1115
+    .line 1199
     :catch_0
     move-exception v1
 
-    .line 1116
+    .line 1200
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -3673,19 +3951,19 @@
 
     move-object v2, v0
 
-    .line 1117
+    .line 1201
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1119
+    .line 1203
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1120
+    .line 1204
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Notification;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     :cond_1
@@ -3697,12 +3975,12 @@
     .parameter "other"
 
     .prologue
-    .line 1004
+    .line 1083
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/Notification;
 
     if-eqz v0, :cond_0
 
-    .line 1005
+    .line 1084
     check-cast p1, Lcom/google/googlex/glass/common/proto/Notification;
 
     .end local p1
@@ -3710,12 +3988,12 @@
 
     move-result-object p0
 
-    .line 1008
+    .line 1087
     .end local p0
     :goto_0
     return-object p0
 
-    .line 1007
+    .line 1086
     .restart local p0
     .restart local p1
     :cond_0
@@ -3735,7 +4013,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -3748,7 +4026,7 @@
     .parameter "x0"
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -3767,7 +4045,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -3786,7 +4064,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -3799,7 +4077,7 @@
     .parameter "x0"
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -3818,7 +4096,7 @@
     .end annotation
 
     .prologue
-    .line 854
+    .line 927
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
 
     move-result-object v0
@@ -3833,27 +4111,27 @@
     .end annotation
 
     .prologue
-    .line 1598
+    .line 1788
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1599
+    .line 1789
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1600
+    .line 1790
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1601
+    .line 1791
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1605
+    .line 1795
     :goto_0
     return-object p0
 
-    .line 1603
+    .line 1793
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -3867,27 +4145,27 @@
     .parameter "index"
 
     .prologue
-    .line 1928
+    .line 2118
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1929
+    .line 2119
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1930
+    .line 2120
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1931
+    .line 2121
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1935
+    .line 2125
     :goto_0
     return-object p0
 
-    .line 1933
+    .line 2123
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -3901,31 +4179,31 @@
     .parameter "value"
 
     .prologue
-    .line 2300
+    .line 2499
     if-nez p1, :cond_0
 
-    .line 2301
+    .line 2500
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2303
+    .line 2502
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit16 v0, v0, 0x80
+    or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2304
+    .line 2503
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 2305
+    .line 2504
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2306
+    .line 2505
     return-object p0
 .end method
 
@@ -3934,31 +4212,31 @@
     .parameter "value"
 
     .prologue
-    .line 2332
+    .line 2531
     if-nez p1, :cond_0
 
-    .line 2333
+    .line 2532
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2335
+    .line 2534
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit16 v0, v0, 0x80
+    or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2336
+    .line 2535
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->callbackUrl_:Ljava/lang/Object;
 
-    .line 2337
+    .line 2536
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2338
+    .line 2537
     return-object p0
 .end method
 
@@ -3967,17 +4245,17 @@
     .parameter "value"
 
     .prologue
-    .line 1185
+    .line 1272
     if-nez p1, :cond_0
 
-    .line 1186
+    .line 1273
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1188
+    .line 1275
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
@@ -3985,13 +4263,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1189
+    .line 1276
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1190
+    .line 1277
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1191
+    .line 1278
     return-object p0
 .end method
 
@@ -4000,17 +4278,17 @@
     .parameter "value"
 
     .prologue
-    .line 1215
+    .line 1302
     if-nez p1, :cond_0
 
-    .line 1216
+    .line 1303
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1218
+    .line 1305
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
@@ -4018,13 +4296,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1219
+    .line 1306
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->collection_:Ljava/lang/Object;
 
-    .line 1220
+    .line 1307
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1221
+    .line 1308
     return-object p0
 .end method
 
@@ -4033,17 +4311,17 @@
     .parameter "value"
 
     .prologue
-    .line 1282
+    .line 1372
     if-nez p1, :cond_0
 
-    .line 1283
+    .line 1373
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1285
+    .line 1375
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
@@ -4051,13 +4329,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1286
+    .line 1376
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1287
+    .line 1377
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1288
+    .line 1378
     return-object p0
 .end method
 
@@ -4066,17 +4344,17 @@
     .parameter "value"
 
     .prologue
-    .line 1312
+    .line 1402
     if-nez p1, :cond_0
 
-    .line 1313
+    .line 1403
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1315
+    .line 1405
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
@@ -4084,13 +4362,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1316
+    .line 1406
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->itemId_:Ljava/lang/Object;
 
-    .line 1317
+    .line 1407
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1318
+    .line 1408
     return-object p0
 .end method
 
@@ -4102,15 +4380,15 @@
     .end annotation
 
     .prologue
-    .line 1461
+    .line 1651
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1462
+    .line 1652
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1463
+    .line 1653
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/MenuItem$Builder;->build()Lcom/google/googlex/glass/common/proto/MenuItem;
@@ -4119,14 +4397,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1464
+    .line 1654
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1468
+    .line 1658
     :goto_0
     return-object p0
 
-    .line 1466
+    .line 1656
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4147,38 +4425,38 @@
     .end annotation
 
     .prologue
-    .line 1439
+    .line 1629
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1440
+    .line 1630
     if-nez p2, :cond_0
 
-    .line 1441
+    .line 1631
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1443
+    .line 1633
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureMenuActionIsMutable()V
 
-    .line 1444
+    .line 1634
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1445
+    .line 1635
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1449
+    .line 1639
     :goto_0
     return-object p0
 
-    .line 1447
+    .line 1637
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->menuActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4192,17 +4470,50 @@
     .parameter "value"
 
     .prologue
-    .line 1350
+    .line 1540
     if-nez p1, :cond_0
 
-    .line 1351
+    .line 1541
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1353
+    .line 1543
+    :cond_0
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x8
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1544
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+
+    .line 1545
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
+
+    .line 1546
+    return-object p0
+.end method
+
+.method public setSource(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
+    .locals 1
+    .parameter "value"
+
+    .prologue
+    .line 1472
+    if-nez p1, :cond_0
+
+    .line 1473
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1475
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
@@ -4210,13 +4521,46 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 1354
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->operation_:Lcom/google/googlex/glass/common/proto/Subscription$Operation;
+    .line 1476
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
 
-    .line 1355
+    .line 1477
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1356
+    .line 1478
+    return-object p0
+.end method
+
+.method public setSourceBytes(Lcom/google/protobuf/ByteString;)Lcom/google/googlex/glass/common/proto/Notification$Builder;
+    .locals 1
+    .parameter "value"
+
+    .prologue
+    .line 1502
+    if-nez p1, :cond_0
+
+    .line 1503
+    new-instance v0, Ljava/lang/NullPointerException;
+
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
+
+    throw v0
+
+    .line 1505
+    :cond_0
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    or-int/lit8 v0, v0, 0x4
+
+    iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
+
+    .line 1506
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->source_:Ljava/lang/Object;
+
+    .line 1507
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
+
+    .line 1508
     return-object p0
 .end method
 
@@ -4225,20 +4569,20 @@
     .parameter "value"
 
     .prologue
-    .line 2428
+    .line 2627
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit16 v0, v0, 0x200
+    or-int/lit16 v0, v0, 0x400
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2429
+    .line 2628
     iput-wide p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->timestamp_:J
 
-    .line 2430
+    .line 2629
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2431
+    .line 2630
     return-object p0
 .end method
 
@@ -4248,15 +4592,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 1791
+    .line 1981
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 1792
+    .line 1982
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1793
+    .line 1983
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -4265,14 +4609,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1794
+    .line 1984
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1798
+    .line 1988
     :goto_0
     return-object p0
 
-    .line 1796
+    .line 1986
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4291,38 +4635,38 @@
     .parameter "value"
 
     .prologue
-    .line 1769
+    .line 1959
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 1770
+    .line 1960
     if-nez p2, :cond_0
 
-    .line 1771
+    .line 1961
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1773
+    .line 1963
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->ensureUserActionIsMutable()V
 
-    .line 1774
+    .line 1964
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1775
+    .line 1965
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 1779
+    .line 1969
     :goto_0
     return-object p0
 
-    .line 1777
+    .line 1967
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -4336,20 +4680,20 @@
     .parameter "value"
 
     .prologue
-    .line 2373
+    .line 2572
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit16 v0, v0, 0x100
+    or-int/lit16 v0, v0, 0x200
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2374
+    .line 2573
     iput-wide p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userId_:J
 
-    .line 2375
+    .line 2574
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2376
+    .line 2575
     return-object p0
 .end method
 
@@ -4358,31 +4702,31 @@
     .parameter "value"
 
     .prologue
-    .line 2197
+    .line 2393
     if-nez p1, :cond_0
 
-    .line 2198
+    .line 2394
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2200
+    .line 2396
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit8 v0, v0, 0x40
+    or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2201
+    .line 2397
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2202
+    .line 2398
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2203
+    .line 2399
     return-object p0
 .end method
 
@@ -4391,31 +4735,31 @@
     .parameter "value"
 
     .prologue
-    .line 2229
+    .line 2425
     if-nez p1, :cond_0
 
-    .line 2230
+    .line 2426
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2232
+    .line 2428
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit8 v0, v0, 0x40
+    or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2233
+    .line 2429
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->userToken_:Ljava/lang/Object;
 
-    .line 2234
+    .line 2430
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2235
+    .line 2431
     return-object p0
 .end method
 
@@ -4424,31 +4768,31 @@
     .parameter "value"
 
     .prologue
-    .line 2094
+    .line 2287
     if-nez p1, :cond_0
 
-    .line 2095
+    .line 2288
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2097
+    .line 2290
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit8 v0, v0, 0x20
+    or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2098
+    .line 2291
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2099
+    .line 2292
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2100
+    .line 2293
     return-object p0
 .end method
 
@@ -4457,30 +4801,30 @@
     .parameter "value"
 
     .prologue
-    .line 2126
+    .line 2319
     if-nez p1, :cond_0
 
-    .line 2127
+    .line 2320
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 2129
+    .line 2322
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    or-int/lit8 v0, v0, 0x20
+    or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->bitField0_:I
 
-    .line 2130
+    .line 2323
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Notification$Builder;->verifyToken_:Ljava/lang/Object;
 
-    .line 2131
+    .line 2324
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Notification$Builder;->onChanged()V
 
-    .line 2132
+    .line 2325
     return-object p0
 .end method

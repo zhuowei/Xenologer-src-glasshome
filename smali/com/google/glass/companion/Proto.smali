@@ -29,6 +29,8 @@
         Lcom/google/glass/companion/Proto$LocationMessageOrBuilder;,
         Lcom/google/glass/companion/Proto$LocationRequest;,
         Lcom/google/glass/companion/Proto$LocationRequestOrBuilder;,
+        Lcom/google/glass/companion/Proto$MotionEvent;,
+        Lcom/google/glass/companion/Proto$MotionEventOrBuilder;,
         Lcom/google/glass/companion/Proto$Envelope;,
         Lcom/google/glass/companion/Proto$EnvelopeOrBuilder;
     }
@@ -40,7 +42,7 @@
     .locals 0
 
     .prologue
-    .line 12725
+    .line 16087
     return-void
 .end method
 

@@ -73,7 +73,7 @@
 
     const/4 v2, 0x0
 
-    .line 494
+    .line 518
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     const-string v1, "NOT_SYNCED"
@@ -82,7 +82,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 502
+    .line 526
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     const-string v1, "SYNCED"
@@ -91,7 +91,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 511
+    .line 535
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     const-string v1, "SYNC_FAILED"
@@ -100,7 +100,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->SYNC_FAILED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 484
+    .line 508
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
@@ -119,14 +119,14 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->$VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 558
+    .line 582
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 578
+    .line 602
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->values()[Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     move-result-object v0
@@ -149,16 +149,16 @@
     .end annotation
 
     .prologue
-    .line 592
+    .line 616
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 593
+    .line 617
     iput p3, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->index:I
 
-    .line 594
+    .line 618
     iput p4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->value:I
 
-    .line 595
+    .line 619
     return-void
 .end method
 
@@ -166,7 +166,7 @@
     .locals 2
 
     .prologue
-    .line 575
+    .line 599
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +199,7 @@
     .end annotation
 
     .prologue
-    .line 555
+    .line 579
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,34 +210,34 @@
     .parameter "value"
 
     .prologue
-    .line 545
+    .line 569
     packed-switch p0, :pswitch_data_0
 
-    .line 549
+    .line 573
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 546
+    .line 570
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     goto :goto_0
 
-    .line 547
+    .line 571
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     goto :goto_0
 
-    .line 548
+    .line 572
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->SYNC_FAILED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     goto :goto_0
 
-    .line 545
+    .line 569
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -251,7 +251,7 @@
     .parameter "desc"
 
     .prologue
-    .line 582
+    .line 606
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +262,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 583
+    .line 607
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +271,7 @@
 
     throw v0
 
-    .line 586
+    .line 610
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
@@ -289,7 +289,7 @@
     .parameter "name"
 
     .prologue
-    .line 484
+    .line 508
     const-class v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +305,7 @@
     .locals 1
 
     .prologue
-    .line 484
+    .line 508
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->$VALUES:[Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->clone()Ljava/lang/Object;
@@ -323,7 +323,7 @@
     .locals 1
 
     .prologue
-    .line 571
+    .line 595
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +335,7 @@
     .locals 1
 
     .prologue
-    .line 542
+    .line 566
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->value:I
 
     return v0
@@ -345,7 +345,7 @@
     .locals 2
 
     .prologue
-    .line 567
+    .line 591
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

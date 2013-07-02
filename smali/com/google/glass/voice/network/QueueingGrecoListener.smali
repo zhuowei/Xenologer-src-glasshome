@@ -101,7 +101,7 @@
 
     iput-boolean v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->isCanceled:Z
 
-    .line 314
+    .line 318
     return-void
 .end method
 
@@ -262,7 +262,7 @@
     .parameter "obj"
 
     .prologue
-    .line 106
+    .line 110
     monitor-enter p0
 
     :try_start_0
@@ -270,17 +270,17 @@
 
     move-result-object v0
 
-    .line 107
+    .line 111
     .local v0, message:Landroid/os/Message;
     iput p1, v0, Landroid/os/Message;->what:I
 
-    .line 108
+    .line 112
     if-eqz p2, :cond_0
 
-    .line 109
+    .line 113
     iput-object p2, v0, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 112
+    .line 116
     :cond_0
     sget-object v1, Lcom/google/glass/voice/network/QueueingGrecoListener;->TAG:Ljava/lang/String;
 
@@ -304,7 +304,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 113
+    .line 117
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-virtual {v1, v0}, Ljava/util/concurrent/LinkedBlockingQueue;->put(Ljava/lang/Object;)V
@@ -312,14 +312,14 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 117
+    .line 121
     .end local v0           #message:Landroid/os/Message;
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 106
+    .line 110
     :catchall_0
     move-exception v1
 
@@ -327,7 +327,7 @@
 
     throw v1
 
-    .line 114
+    .line 118
     :catch_0
     move-exception v1
 
@@ -338,12 +338,12 @@
     .locals 1
 
     .prologue
-    .line 141
+    .line 145
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onBeginningOfSpeech()V
 
-    .line 142
+    .line 146
     return-void
 .end method
 
@@ -351,17 +351,17 @@
     .locals 1
 
     .prologue
-    .line 156
+    .line 160
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onDone()V
 
-    .line 157
+    .line 161
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->isCanceled:Z
 
-    .line 158
+    .line 162
     return-void
 .end method
 
@@ -369,12 +369,12 @@
     .locals 1
 
     .prologue
-    .line 172
+    .line 176
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onEndOfSpeech()V
 
-    .line 173
+    .line 177
     return-void
 .end method
 
@@ -383,17 +383,17 @@
     .parameter "exception"
 
     .prologue
-    .line 187
+    .line 191
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onError(Lcom/google/android/speech/exception/RecognizeException;)V
 
-    .line 188
+    .line 192
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->isCanceled:Z
 
-    .line 189
+    .line 193
     return-void
 .end method
 
@@ -402,12 +402,12 @@
     .parameter "majelResponse"
 
     .prologue
-    .line 203
+    .line 207
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;)V
 
-    .line 204
+    .line 208
     return-void
 .end method
 
@@ -416,12 +416,12 @@
     .parameter "bytes"
 
     .prologue
-    .line 233
+    .line 237
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onMediaDataResult([B)V
 
-    .line 234
+    .line 238
     return-void
 .end method
 
@@ -429,17 +429,17 @@
     .locals 1
 
     .prologue
-    .line 248
+    .line 252
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onNoSpeechDetected()V
 
-    .line 249
+    .line 253
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->isCanceled:Z
 
-    .line 250
+    .line 254
     return-void
 .end method
 
@@ -448,12 +448,12 @@
     .parameter "pinholeResponse"
 
     .prologue
-    .line 218
+    .line 222
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onPinholeResult(Lcom/google/speech/s3/PinholeStream$PinholeOutput;)V
 
-    .line 219
+    .line 223
     return-void
 .end method
 
@@ -463,12 +463,12 @@
     .parameter "snr"
 
     .prologue
-    .line 265
+    .line 269
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onReadyForSpeech(FF)V
 
-    .line 266
+    .line 270
     return-void
 .end method
 
@@ -476,12 +476,12 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 284
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onRecognitionCancelled()V
 
-    .line 281
+    .line 285
     return-void
 .end method
 
@@ -490,12 +490,12 @@
     .parameter "recognitionEvent"
 
     .prologue
-    .line 295
+    .line 299
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onRecognitionResult(Lcom/google/speech/recognizer/api/RecognizerProtos$RecognitionEvent;)V
 
-    .line 296
+    .line 300
     return-void
 .end method
 
@@ -504,12 +504,12 @@
     .parameter "earsResponse"
 
     .prologue
-    .line 310
+    .line 314
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     invoke-virtual {v0, p1}, Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;->onSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
 
-    .line 311
+    .line 315
     return-void
 .end method
 
@@ -528,10 +528,10 @@
     .end annotation
 
     .prologue
-    .line 370
+    .line 374
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
-    .line 371
+    .line 375
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     return-object v0
@@ -545,10 +545,10 @@
 
     const/4 v0, 0x0
 
-    .line 376
+    .line 380
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
-    .line 377
+    .line 381
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handler:Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;
 
     invoke-virtual {v2, v1}, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->hasMessages(I)Z
@@ -696,7 +696,7 @@
     .locals 2
 
     .prologue
-    .line 131
+    .line 135
     monitor-enter p0
 
     :try_start_0
@@ -704,12 +704,12 @@
 
     if-nez v0, :cond_0
 
-    .line 132
+    .line 136
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 133
+    .line 137
     const/4 v0, 0x1
 
     const/4 v1, 0x0
@@ -718,14 +718,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 138
+    .line 142
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 135
+    .line 139
     :cond_1
     :try_start_1
     invoke-direct {p0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnBeginningOfSpeech()V
@@ -734,7 +734,7 @@
 
     goto :goto_0
 
-    .line 131
+    .line 135
     :catchall_0
     move-exception v0
 
@@ -747,7 +747,7 @@
     .locals 2
 
     .prologue
-    .line 146
+    .line 150
     monitor-enter p0
 
     :try_start_0
@@ -755,12 +755,12 @@
 
     if-nez v0, :cond_0
 
-    .line 147
+    .line 151
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 148
+    .line 152
     const/16 v0, 0xb
 
     const/4 v1, 0x0
@@ -769,14 +769,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 153
+    .line 157
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 150
+    .line 154
     :cond_1
     :try_start_1
     invoke-direct {p0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnDone()V
@@ -785,7 +785,7 @@
 
     goto :goto_0
 
-    .line 146
+    .line 150
     :catchall_0
     move-exception v0
 
@@ -798,7 +798,7 @@
     .locals 2
 
     .prologue
-    .line 162
+    .line 166
     monitor-enter p0
 
     :try_start_0
@@ -806,12 +806,12 @@
 
     if-nez v0, :cond_0
 
-    .line 163
+    .line 167
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 164
+    .line 168
     const/4 v0, 0x2
 
     const/4 v1, 0x0
@@ -820,14 +820,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 169
+    .line 173
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 166
+    .line 170
     :cond_1
     :try_start_1
     invoke-direct {p0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnEndOfSpeech()V
@@ -836,7 +836,7 @@
 
     goto :goto_0
 
-    .line 162
+    .line 166
     :catchall_0
     move-exception v0
 
@@ -850,7 +850,7 @@
     .parameter "exception"
 
     .prologue
-    .line 177
+    .line 181
     monitor-enter p0
 
     :try_start_0
@@ -858,26 +858,26 @@
 
     if-nez v0, :cond_0
 
-    .line 178
+    .line 182
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 179
+    .line 183
     const/16 v0, 0xc
 
     invoke-direct {p0, v0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->addToQueue(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 184
+    .line 188
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 181
+    .line 185
     :cond_1
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnError(Lcom/google/android/speech/exception/RecognizeException;)V
@@ -886,7 +886,7 @@
 
     goto :goto_0
 
-    .line 177
+    .line 181
     :catchall_0
     move-exception v0
 
@@ -900,7 +900,7 @@
     .parameter "majelResponse"
 
     .prologue
-    .line 193
+    .line 197
     monitor-enter p0
 
     :try_start_0
@@ -908,26 +908,26 @@
 
     if-nez v0, :cond_0
 
-    .line 194
+    .line 198
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 195
+    .line 199
     const/4 v0, 0x6
 
     invoke-direct {p0, v0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->addToQueue(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 200
+    .line 204
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 197
+    .line 201
     :cond_1
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnMajelResult(Lcom/google/majel/proto/MajelProtos$MajelResponse;)V
@@ -936,7 +936,7 @@
 
     goto :goto_0
 
-    .line 193
+    .line 197
     :catchall_0
     move-exception v0
 
@@ -950,7 +950,7 @@
     .parameter "bytes"
 
     .prologue
-    .line 223
+    .line 227
     monitor-enter p0
 
     :try_start_0
@@ -958,26 +958,26 @@
 
     if-nez v0, :cond_0
 
-    .line 224
+    .line 228
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 225
+    .line 229
     const/16 v0, 0x8
 
     invoke-direct {p0, v0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->addToQueue(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 230
+    .line 234
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 227
+    .line 231
     :cond_1
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnMediaDataResult([B)V
@@ -986,7 +986,7 @@
 
     goto :goto_0
 
-    .line 223
+    .line 227
     :catchall_0
     move-exception v0
 
@@ -999,7 +999,7 @@
     .locals 2
 
     .prologue
-    .line 238
+    .line 242
     monitor-enter p0
 
     :try_start_0
@@ -1007,12 +1007,12 @@
 
     if-nez v0, :cond_0
 
-    .line 239
+    .line 243
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 240
+    .line 244
     const/4 v0, 0x3
 
     const/4 v1, 0x0
@@ -1021,14 +1021,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 245
+    .line 249
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 242
+    .line 246
     :cond_1
     :try_start_1
     invoke-direct {p0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnNoSpeechDetected()V
@@ -1037,7 +1037,7 @@
 
     goto :goto_0
 
-    .line 238
+    .line 242
     :catchall_0
     move-exception v0
 
@@ -1051,7 +1051,7 @@
     .parameter "pinholeResponse"
 
     .prologue
-    .line 208
+    .line 212
     monitor-enter p0
 
     :try_start_0
@@ -1059,26 +1059,26 @@
 
     if-nez v0, :cond_0
 
-    .line 209
+    .line 213
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 210
+    .line 214
     const/4 v0, 0x7
 
     invoke-direct {p0, v0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->addToQueue(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 215
+    .line 219
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 212
+    .line 216
     :cond_1
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnPinholeResult(Lcom/google/speech/s3/PinholeStream$PinholeOutput;)V
@@ -1087,7 +1087,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 212
     :catchall_0
     move-exception v0
 
@@ -1102,7 +1102,7 @@
     .parameter "snr"
 
     .prologue
-    .line 254
+    .line 258
     monitor-enter p0
 
     :try_start_0
@@ -1110,12 +1110,12 @@
 
     if-nez v1, :cond_0
 
-    .line 255
+    .line 259
     iget-object v1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v1, :cond_1
 
-    .line 256
+    .line 260
     const/4 v1, 0x2
 
     new-array v0, v1, [F
@@ -1128,7 +1128,7 @@
 
     aput p2, v0, v1
 
-    .line 257
+    .line 261
     .local v0, args:[F
     const/4 v1, 0x0
 
@@ -1136,7 +1136,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 262
+    .line 266
     .end local v0           #args:[F
     :cond_0
     :goto_0
@@ -1144,7 +1144,7 @@
 
     return-void
 
-    .line 259
+    .line 263
     :cond_1
     :try_start_1
     invoke-direct {p0, p1, p2}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnReadyForSpeech(FF)V
@@ -1153,7 +1153,7 @@
 
     goto :goto_0
 
-    .line 254
+    .line 258
     :catchall_0
     move-exception v1
 
@@ -1166,7 +1166,7 @@
     .locals 2
 
     .prologue
-    .line 270
+    .line 274
     monitor-enter p0
 
     :try_start_0
@@ -1174,12 +1174,12 @@
 
     if-nez v0, :cond_0
 
-    .line 271
+    .line 275
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 272
+    .line 276
     const/4 v0, 0x4
 
     const/4 v1, 0x0
@@ -1188,14 +1188,14 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 277
+    .line 281
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 274
+    .line 278
     :cond_1
     :try_start_1
     invoke-direct {p0}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnRecognitionCancelled()V
@@ -1204,7 +1204,7 @@
 
     goto :goto_0
 
-    .line 270
+    .line 274
     :catchall_0
     move-exception v0
 
@@ -1218,7 +1218,7 @@
     .parameter "recognitionEvent"
 
     .prologue
-    .line 285
+    .line 289
     monitor-enter p0
 
     :try_start_0
@@ -1226,26 +1226,26 @@
 
     if-nez v0, :cond_0
 
-    .line 286
+    .line 290
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 287
+    .line 291
     const/16 v0, 0x9
 
     invoke-direct {p0, v0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->addToQueue(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 292
+    .line 296
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 289
+    .line 293
     :cond_1
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnRecognitionResult(Lcom/google/speech/recognizer/api/RecognizerProtos$RecognitionEvent;)V
@@ -1254,7 +1254,7 @@
 
     goto :goto_0
 
-    .line 285
+    .line 289
     :catchall_0
     move-exception v0
 
@@ -1268,7 +1268,7 @@
     .parameter "earsResponse"
 
     .prologue
-    .line 300
+    .line 304
     monitor-enter p0
 
     :try_start_0
@@ -1276,26 +1276,26 @@
 
     if-nez v0, :cond_0
 
-    .line 301
+    .line 305
     iget-object v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
     if-nez v0, :cond_1
 
-    .line 302
+    .line 306
     const/16 v0, 0xa
 
     invoke-direct {p0, v0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->addToQueue(ILjava/lang/Object;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 307
+    .line 311
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-void
 
-    .line 304
+    .line 308
     :cond_1
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->dispatchOnSoundSearchResult(Lcom/google/audio/ears/proto/EarsService$EarsResultsResponse;)V
@@ -1304,7 +1304,7 @@
 
     goto :goto_0
 
-    .line 300
+    .line 304
     :catchall_0
     move-exception v0
 
@@ -1317,25 +1317,25 @@
     .locals 1
 
     .prologue
-    .line 125
+    .line 129
     monitor-enter p0
 
     :try_start_0
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
-    .line 126
+    .line 130
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->isCanceled:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 127
+    .line 131
     monitor-exit p0
 
     return-void
 
-    .line 125
+    .line 129
     :catchall_0
     move-exception v0
 
@@ -1348,7 +1348,7 @@
     .locals 1
 
     .prologue
-    .line 121
+    .line 125
     monitor-enter p0
 
     const/4 v0, 0x1
@@ -1358,12 +1358,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 122
+    .line 126
     monitor-exit p0
 
     return-void
 
-    .line 121
+    .line 125
     :catchall_0
     move-exception v0
 
@@ -1385,31 +1385,51 @@
 
     if-eqz v2, :cond_0
 
-    .line 71
-    new-instance v2, Ljava/lang/IllegalStateException;
+    .line 73
+    sget-object v2, Lcom/google/glass/voice/network/QueueingGrecoListener;->TAG:Ljava/lang/String;
 
-    const-string v3, "Listener was already set"
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    throw v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v4, "Listener was already set - current: "
 
-    .line 70
-    :catchall_0
-    move-exception v2
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    monitor-exit p0
+    move-result-object v3
 
-    throw v2
+    iget-object v4, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
-    .line 74
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " new: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 76
     :cond_0
-    :try_start_1
     iput-object p1, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->listener:Lcom/google/android/speech/listeners/RecognitionEventListenerAdapter;
 
-    .line 77
+    .line 78
+    iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
+
+    if-eqz v2, :cond_2
+
+    .line 80
     new-instance v2, Landroid/os/HandlerThread;
 
     const-string v3, "QueueingGrecoListener"
@@ -1418,12 +1438,12 @@
 
     iput-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handlerThread:Landroid/os/HandlerThread;
 
-    .line 78
+    .line 81
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handlerThread:Landroid/os/HandlerThread;
 
     invoke-virtual {v2}, Landroid/os/HandlerThread;->start()V
 
-    .line 79
+    .line 82
     new-instance v2, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;
 
     iget-object v3, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handlerThread:Landroid/os/HandlerThread;
@@ -1438,16 +1458,16 @@
 
     iput-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handler:Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;
 
-    .line 80
+    .line 83
     iget-object v3, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     monitor-enter v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 81
+    .line 84
     :goto_0
-    :try_start_2
+    :try_start_1
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-virtual {v2}, Ljava/util/concurrent/LinkedBlockingQueue;->isEmpty()Z
@@ -1456,7 +1476,7 @@
 
     if-nez v2, :cond_1
 
-    .line 82
+    .line 85
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
 
     invoke-virtual {v2}, Ljava/util/concurrent/LinkedBlockingQueue;->poll()Ljava/lang/Object;
@@ -1465,7 +1485,7 @@
 
     check-cast v1, Landroid/os/Message;
 
-    .line 83
+    .line 86
     .local v1, message:Landroid/os/Message;
     sget-object v2, Lcom/google/glass/voice/network/QueueingGrecoListener;->TAG:Ljava/lang/String;
 
@@ -1491,58 +1511,69 @@
 
     invoke-static {v2, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 84
+    .line 87
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handler:Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;
 
     invoke-virtual {v2, v1}, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->sendMessage(Landroid/os/Message;)Z
 
     goto :goto_0
 
-    .line 86
+    .line 89
     .end local v1           #message:Landroid/os/Message;
-    :catchall_1
+    :catchall_0
     move-exception v2
 
     monitor-exit v3
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    :try_start_2
+    throw v2
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    :try_start_3
+    .line 70
+    :catchall_1
+    move-exception v2
+
+    monitor-exit p0
+
     throw v2
+
+    .line 89
+    :cond_1
+    :try_start_3
+    monitor-exit v3
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    :cond_1
+    .line 92
     :try_start_4
-    monitor-exit v3
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    .line 89
-    :try_start_5
     invoke-static {}, Landroid/os/Message;->obtain()Landroid/os/Message;
 
     move-result-object v0
 
-    .line 90
+    .line 93
     .local v0, done:Landroid/os/Message;
     const/16 v2, 0xd
 
     iput v2, v0, Landroid/os/Message;->what:I
 
-    .line 91
+    .line 94
     iget-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->handler:Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;
 
     invoke-virtual {v2, v0}, Lcom/google/glass/voice/network/QueueingGrecoListener$QueueHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 94
+    .line 97
     const/4 v2, 0x0
 
     iput-object v2, p0, Lcom/google/glass/voice/network/QueueingGrecoListener;->queue:Ljava/util/concurrent/LinkedBlockingQueue;
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
-    .line 95
+    .line 99
+    .end local v0           #done:Landroid/os/Message;
+    :cond_2
     monitor-exit p0
 
     return-void

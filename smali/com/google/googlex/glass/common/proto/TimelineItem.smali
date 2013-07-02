@@ -84,6 +84,8 @@
 
 .field public static final SMS_TYPE_FIELD_NUMBER:I = 0x14
 
+.field public static final SOURCE_ACCOUNT_ID_FIELD_NUMBER:I = 0x25
+
 .field public static final SOURCE_FIELD_NUMBER:I = 0x4
 
 .field public static final SOURCE_ITEM_ID_FIELD_NUMBER:I = 0x1e
@@ -91,6 +93,8 @@
 .field public static final SOURCE_TYPE_FIELD_NUMBER:I = 0xe
 
 .field public static final SPEAKABLE_TEXT_FIELD_NUMBER:I = 0x13
+
+.field public static final SPEAKABLE_TYPE_FIELD_NUMBER:I = 0x26
 
 .field public static final TEXT_FIELD_NUMBER:I = 0x8
 
@@ -200,6 +204,8 @@
 
 .field private smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
+.field private sourceAccountId_:Ljava/lang/Object;
+
 .field private sourceItemId_:Ljava/lang/Object;
 
 .field private sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
@@ -207,6 +213,8 @@
 .field private source_:Ljava/lang/Object;
 
 .field private speakableText_:Ljava/lang/Object;
+
+.field private speakableType_:Ljava/lang/Object;
 
 .field private text_:Ljava/lang/Object;
 
@@ -220,19 +228,19 @@
     .locals 2
 
     .prologue
-    .line 346
+    .line 370
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 2602
+    .line 2852
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 7265
+    .line 7974
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     const/4 v1, 0x1
@@ -241,17 +249,17 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->defaultInstance:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    .line 7266
+    .line 7975
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->defaultInstance:Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->initFields()V
 
-    .line 7267
+    .line 7976
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 12
+    .locals 13
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -264,85 +272,87 @@
     .line 46
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 2332
-    const/4 v9, -0x1
+    .line 2568
+    const/4 v10, -0x1
 
-    iput-byte v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedIsInitialized:B
+    iput-byte v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedIsInitialized:B
 
-    .line 2446
-    const/4 v9, -0x1
+    .line 2688
+    const/4 v10, -0x1
 
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedSerializedSize:I
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedSerializedSize:I
 
     .line 47
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->initFields()V
 
     .line 48
-    const/4 v2, 0x0
-
-    .line 49
-    .local v2, mutable_bitField0_:I
     const/4 v3, 0x0
 
+    .line 49
+    .local v3, mutable_bitField0_:I
+    const/4 v4, 0x0
+
     .line 50
-    .local v3, mutable_bitField1_:I
+    .local v4, mutable_bitField1_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v7
+    move-result-object v8
 
     .line 53
-    .local v7, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v8, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 54
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_17
+    if-nez v1, :cond_17
 
     .line 55
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v6
+    move-result v7
 
     .line 56
-    .local v6, tag:I
-    sparse-switch v6, :sswitch_data_0
+    .local v7, tag:I
+    sparse-switch v7, :sswitch_data_0
 
     .line 61
-    invoke-virtual {p0, p1, v7, p2, v6}, Lcom/google/googlex/glass/common/proto/TimelineItem;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v8, p2, v7}, Lcom/google/googlex/glass/common/proto/TimelineItem;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v9
+    move-result v10
 
-    if-nez v9, :cond_0
+    if-nez v10, :cond_0
 
     .line 63
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 58
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 59
     goto :goto_0
 
     .line 68
     :sswitch_1
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x1
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 69
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v9
+    move-result-object v0
 
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
+    .line 69
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x1
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 70
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -350,36 +360,1181 @@
 
     goto :goto_0
 
-    .line 309
-    .end local v6           #tag:I
+    .line 333
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v7           #tag:I
     :catch_0
-    move-exception v1
+    move-exception v2
 
-    .line 310
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 334
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
-    move-result-object v9
+    move-result-object v10
 
-    throw v9
+    throw v10
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 315
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .line 339
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
-    move-exception v9
+    move-exception v10
 
-    const v10, 0x8000
+    const/high16 v11, 0x1
 
-    and-int/2addr v10, v2
+    and-int/2addr v11, v3
+
+    const/high16 v12, 0x1
+
+    if-ne v11, v12, :cond_1
+
+    .line 340
+    iget-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
+
+    invoke-static {v11}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
+
+    .line 342
+    :cond_1
+    const/high16 v11, 0x100
+
+    and-int/2addr v11, v3
+
+    const/high16 v12, 0x100
+
+    if-ne v11, v12, :cond_2
+
+    .line 343
+    iget-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
+
+    invoke-static {v11}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
+
+    .line 345
+    :cond_2
+    const/high16 v11, 0x400
+
+    and-int/2addr v11, v3
+
+    const/high16 v12, 0x400
+
+    if-ne v11, v12, :cond_3
+
+    .line 346
+    iget-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+
+    invoke-static {v11}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+
+    .line 348
+    :cond_3
+    const/high16 v11, 0x800
+
+    and-int/2addr v11, v3
+
+    const/high16 v12, 0x800
+
+    if-ne v11, v12, :cond_4
+
+    .line 349
+    iget-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
+
+    invoke-static {v11}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
+
+    .line 351
+    :cond_4
+    const/high16 v11, 0x20
+
+    and-int/2addr v11, v3
+
+    const/high16 v12, 0x20
+
+    if-ne v11, v12, :cond_5
+
+    .line 352
+    new-instance v11, Lcom/google/protobuf/UnmodifiableLazyStringList;
+
+    iget-object v12, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
+
+    invoke-direct {v11, v12}, Lcom/google/protobuf/UnmodifiableLazyStringList;-><init>(Lcom/google/protobuf/LazyStringList;)V
+
+    iput-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
+
+    .line 354
+    :cond_5
+    invoke-virtual {v8}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v11
+
+    iput-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 355
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->makeExtensionsImmutable()V
+
+    throw v10
+
+    .line 74
+    .restart local v7       #tag:I
+    :sswitch_2
+    :try_start_2
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x8
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 75
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
+
+    move-result-wide v10
+
+    iput-wide v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creationTime_:J
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
+
+    goto/16 :goto_0
+
+    .line 335
+    .end local v7           #tag:I
+    :catch_1
+    move-exception v2
+
+    .line 336
+    .local v2, e:Ljava/io/IOException;
+    :try_start_3
+    new-instance v10, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-direct {v10, v11}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v10, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    move-result-object v10
+
+    throw v10
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 79
+    .end local v2           #e:Ljava/io/IOException;
+    .restart local v7       #tag:I
+    :sswitch_3
+    :try_start_4
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x10
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 80
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
+
+    move-result-wide v10
+
+    iput-wide v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->modifiedTime_:J
+
+    goto/16 :goto_0
+
+    .line 84
+    :sswitch_4
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 85
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x400
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 86
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 90
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_5
+    const/4 v6, 0x0
+
+    .line 91
+    .local v6, subBuilder:Lcom/google/googlex/glass/common/proto/Entity$Builder;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     const v11, 0x8000
 
-    if-ne v10, v11, :cond_1
+    and-int/2addr v10, v11
+
+    const v11, 0x8000
+
+    if-ne v10, v11, :cond_6
+
+    .line 92
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-virtual {v10}, Lcom/google/googlex/glass/common/proto/Entity;->toBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
+
+    move-result-object v6
+
+    .line 94
+    :cond_6
+    sget-object v10, Lcom/google/googlex/glass/common/proto/Entity;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/google/googlex/glass/common/proto/Entity;
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
+
+    .line 95
+    if-eqz v6, :cond_7
+
+    .line 96
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
+
+    invoke-virtual {v6, v10}, Lcom/google/googlex/glass/common/proto/Entity$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/Entity$Builder;
+
+    .line 97
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/Entity$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity;
+
+    move-result-object v10
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
+
+    .line 99
+    :cond_7
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const v11, 0x8000
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    goto/16 :goto_0
+
+    .line 103
+    .end local v6           #subBuilder:Lcom/google/googlex/glass/common/proto/Entity$Builder;
+    :sswitch_6
+    const/high16 v10, 0x1
+
+    and-int/2addr v10, v3
+
+    const/high16 v11, 0x1
+
+    if-eq v10, v11, :cond_8
+
+    .line 104
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
+
+    .line 105
+    const/high16 v10, 0x1
+
+    or-int/2addr v3, v10
+
+    .line 107
+    :cond_8
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
+
+    sget-object v11, Lcom/google/googlex/glass/common/proto/Entity;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v11, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v11
+
+    invoke-interface {v10, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    .line 111
+    :sswitch_7
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 112
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x1
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 113
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 117
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_8
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 118
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x4
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 119
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 123
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_9
+    const/high16 v10, 0x100
+
+    and-int/2addr v10, v3
+
+    const/high16 v11, 0x100
+
+    if-eq v10, v11, :cond_9
+
+    .line 124
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
+
+    .line 125
+    const/high16 v10, 0x100
+
+    or-int/2addr v3, v10
+
+    .line 127
+    :cond_9
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
+
+    sget-object v11, Lcom/google/googlex/glass/common/proto/Attachment;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v11, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v11
+
+    invoke-interface {v10, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    .line 131
+    :sswitch_a
+    const/4 v6, 0x0
+
+    .line 132
+    .local v6, subBuilder:Lcom/google/googlex/glass/common/proto/Location$Builder;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x40
+
+    and-int/2addr v10, v11
+
+    const/high16 v11, 0x40
+
+    if-ne v10, v11, :cond_a
+
+    .line 133
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
+
+    invoke-virtual {v10}, Lcom/google/googlex/glass/common/proto/Location;->toBuilder()Lcom/google/googlex/glass/common/proto/Location$Builder;
+
+    move-result-object v6
+
+    .line 135
+    :cond_a
+    sget-object v10, Lcom/google/googlex/glass/common/proto/Location;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/google/googlex/glass/common/proto/Location;
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
+
+    .line 136
+    if-eqz v6, :cond_b
+
+    .line 137
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
+
+    invoke-virtual {v6, v10}, Lcom/google/googlex/glass/common/proto/Location$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Location;)Lcom/google/googlex/glass/common/proto/Location$Builder;
+
+    .line 138
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/Location$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Location;
+
+    move-result-object v10
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
+
+    .line 140
+    :cond_b
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x40
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    goto/16 :goto_0
+
+    .line 144
+    .end local v6           #subBuilder:Lcom/google/googlex/glass/common/proto/Location$Builder;
+    :sswitch_b
+    const/high16 v10, 0x400
+
+    and-int/2addr v10, v3
+
+    const/high16 v11, 0x400
+
+    if-eq v10, v11, :cond_c
+
+    .line 145
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+
+    .line 146
+    const/high16 v10, 0x400
+
+    or-int/2addr v3, v10
+
+    .line 148
+    :cond_c
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+
+    sget-object v11, Lcom/google/googlex/glass/common/proto/MenuItem;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v11, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v11
+
+    invoke-interface {v10, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    .line 152
+    :sswitch_c
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v5
+
+    .line 153
+    .local v5, rawValue:I
+    invoke-static {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+
+    move-result-object v9
+
+    .line 154
+    .local v9, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    if-nez v9, :cond_d
+
+    .line 155
+    const/16 v10, 0xc
+
+    invoke-virtual {v8, v10, v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+
+    goto/16 :goto_0
+
+    .line 157
+    :cond_d
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x100
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 158
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+
+    goto/16 :goto_0
+
+    .line 163
+    .end local v5           #rawValue:I
+    .end local v9           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    :sswitch_d
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v5
+
+    .line 164
+    .restart local v5       #rawValue:I
+    invoke-static {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+
+    move-result-object v9
+
+    .line 165
+    .local v9, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+    if-nez v9, :cond_e
+
+    .line 166
+    const/16 v10, 0xd
+
+    invoke-virtual {v8, v10, v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+
+    goto/16 :goto_0
+
+    .line 168
+    :cond_e
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x400
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 169
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+
+    goto/16 :goto_0
+
+    .line 174
+    .end local v5           #rawValue:I
+    .end local v9           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+    :sswitch_e
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v5
+
+    .line 175
+    .restart local v5       #rawValue:I
+    invoke-static {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
+
+    move-result-object v9
+
+    .line 176
+    .local v9, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
+    if-nez v9, :cond_f
+
+    .line 177
+    const/16 v10, 0xe
+
+    invoke-virtual {v8, v10, v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+
+    goto/16 :goto_0
+
+    .line 179
+    :cond_f
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x800
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 180
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
+
+    goto/16 :goto_0
+
+    .line 185
+    .end local v5           #rawValue:I
+    .end local v9           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
+    :sswitch_f
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x200
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 186
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
+
+    move-result v10
+
+    iput-boolean v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isDeleted_:Z
+
+    goto/16 :goto_0
+
+    .line 190
+    :sswitch_10
+    const/4 v6, 0x0
+
+    .line 191
+    .local v6, subBuilder:Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x80
+
+    and-int/2addr v10, v11
+
+    const/high16 v11, 0x80
+
+    if-ne v10, v11, :cond_10
+
+    .line 192
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
+
+    invoke-virtual {v10}, Lcom/google/googlex/glass/common/proto/NotificationConfig;->toBuilder()Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
+
+    move-result-object v6
+
+    .line 194
+    :cond_10
+    sget-object v10, Lcom/google/googlex/glass/common/proto/NotificationConfig;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v10
+
+    check-cast v10, Lcom/google/googlex/glass/common/proto/NotificationConfig;
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
+
+    .line 195
+    if-eqz v6, :cond_11
+
+    .line 196
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
+
+    invoke-virtual {v6, v10}, Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/NotificationConfig;)Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
+
+    .line 197
+    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/NotificationConfig;
+
+    move-result-object v10
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
+
+    .line 199
+    :cond_11
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x80
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    goto/16 :goto_0
+
+    .line 203
+    .end local v6           #subBuilder:Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
+    :sswitch_11
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x20
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 204
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
+
+    move-result-wide v10
+
+    iput-wide v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->displayTime_:J
+
+    goto/16 :goto_0
+
+    .line 208
+    :sswitch_12
+    const/high16 v10, 0x800
+
+    and-int/2addr v10, v3
+
+    const/high16 v11, 0x800
+
+    if-eq v10, v11, :cond_12
+
+    .line 209
+    new-instance v10, Ljava/util/ArrayList;
+
+    invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
+
+    .line 210
+    const/high16 v10, 0x800
+
+    or-int/2addr v3, v10
+
+    .line 212
+    :cond_12
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
+
+    sget-object v11, Lcom/google/googlex/glass/common/proto/MenuItem;->PARSER:Lcom/google/protobuf/Parser;
+
+    invoke-virtual {p1, v11, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
+
+    move-result-object v11
+
+    invoke-interface {v10, v11}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto/16 :goto_0
+
+    .line 216
+    :sswitch_13
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 217
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x20
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 218
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 222
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_14
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v5
+
+    .line 223
+    .restart local v5       #rawValue:I
+    invoke-static {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
+
+    move-result-object v9
+
+    .line 224
+    .local v9, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
+    if-nez v9, :cond_13
+
+    .line 225
+    const/16 v10, 0x14
+
+    invoke-virtual {v8, v10, v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+
+    goto/16 :goto_0
+
+    .line 227
+    :cond_13
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x1000
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 228
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
+
+    goto/16 :goto_0
+
+    .line 233
+    .end local v5           #rawValue:I
+    .end local v9           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
+    :sswitch_15
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x100
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 234
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
+
+    move-result v10
+
+    iput-boolean v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isPinned_:Z
+
+    goto/16 :goto_0
+
+    .line 238
+    :sswitch_16
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 239
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x2
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 240
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 244
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_17
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 245
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x8
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 246
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 250
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_18
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 251
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x2
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 252
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 256
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_19
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 257
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    const/high16 v10, 0x20
+
+    and-int/2addr v10, v3
+
+    const/high16 v11, 0x20
+
+    if-eq v10, v11, :cond_14
+
+    .line 258
+    new-instance v10, Lcom/google/protobuf/LazyStringArrayList;
+
+    invoke-direct {v10}, Lcom/google/protobuf/LazyStringArrayList;-><init>()V
+
+    iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
+
+    .line 259
+    const/high16 v10, 0x20
+
+    or-int/2addr v3, v10
+
+    .line 261
+    :cond_14
+    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
+
+    invoke-interface {v10, v0}, Lcom/google/protobuf/LazyStringList;->add(Lcom/google/protobuf/ByteString;)V
+
+    goto/16 :goto_0
+
+    .line 265
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_1a
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 266
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x2000
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 267
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 271
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_1b
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x4
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 272
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
+
+    move-result v10
+
+    iput-boolean v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isBundleCover_:Z
+
+    goto/16 :goto_0
+
+    .line 276
+    :sswitch_1c
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 277
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x1000
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 278
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 282
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_1d
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 283
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x4000
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 284
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 288
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_1e
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v5
+
+    .line 289
+    .restart local v5       #rawValue:I
+    invoke-static {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+
+    move-result-object v9
+
+    .line 290
+    .local v9, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    if-nez v9, :cond_15
+
+    .line 291
+    const/16 v10, 0x21
+
+    invoke-virtual {v8, v10, v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+
+    goto/16 :goto_0
+
+    .line 293
+    :cond_15
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x200
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 294
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+
+    goto/16 :goto_0
+
+    .line 299
+    .end local v5           #rawValue:I
+    .end local v9           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+    :sswitch_1f
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
+
+    move-result v5
+
+    .line 300
+    .restart local v5       #rawValue:I
+    invoke-static {v5}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+
+    move-result-object v9
+
+    .line 301
+    .local v9, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+    if-nez v9, :cond_16
+
+    .line 302
+    const/16 v10, 0x22
+
+    invoke-virtual {v8, v10, v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
+
+    goto/16 :goto_0
+
+    .line 304
+    :cond_16
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x800
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 305
+    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+
+    goto/16 :goto_0
+
+    .line 310
+    .end local v5           #rawValue:I
+    .end local v9           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+    :sswitch_20
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit8 v10, v10, 0x40
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 311
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
+
+    move-result-wide v10
+
+    iput-wide v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinTime_:J
+
+    goto/16 :goto_0
+
+    .line 315
+    :sswitch_21
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x80
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     .line 316
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
+
+    move-result v10
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinScore_:I
+
+    goto/16 :goto_0
+
+    .line 320
+    :sswitch_22
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 321
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    or-int/lit16 v10, v10, 0x2000
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 322
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
+
+    goto/16 :goto_0
+
+    .line 326
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    :sswitch_23
+    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 327
+    .restart local v0       #bs:Lcom/google/protobuf/ByteString;
+    iget v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v11, 0x10
+
+    or-int/2addr v10, v11
+
+    iput v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    .line 328
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
+    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
+
+    goto/16 :goto_0
+
+    .line 339
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v7           #tag:I
+    :cond_17
+    const/high16 v10, 0x1
+
+    and-int/2addr v10, v3
+
+    const/high16 v11, 0x1
+
+    if-ne v10, v11, :cond_18
+
+    .line 340
     iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
     invoke-static {v10}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -388,17 +1543,17 @@
 
     iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
-    .line 318
-    :cond_1
-    const/high16 v10, 0x40
+    .line 342
+    :cond_18
+    const/high16 v10, 0x100
 
-    and-int/2addr v10, v2
+    and-int/2addr v10, v3
 
-    const/high16 v11, 0x40
+    const/high16 v11, 0x100
 
-    if-ne v10, v11, :cond_2
+    if-ne v10, v11, :cond_19
 
-    .line 319
+    .line 343
     iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     invoke-static {v10}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -407,17 +1562,17 @@
 
     iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
-    .line 321
-    :cond_2
-    const/high16 v10, 0x100
+    .line 345
+    :cond_19
+    const/high16 v10, 0x400
 
-    and-int/2addr v10, v2
+    and-int/2addr v10, v3
 
-    const/high16 v11, 0x100
+    const/high16 v11, 0x400
 
-    if-ne v10, v11, :cond_3
+    if-ne v10, v11, :cond_1a
 
-    .line 322
+    .line 346
     iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
     invoke-static {v10}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -426,17 +1581,17 @@
 
     iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
-    .line 324
-    :cond_3
-    const/high16 v10, 0x200
+    .line 348
+    :cond_1a
+    const/high16 v10, 0x800
 
-    and-int/2addr v10, v2
+    and-int/2addr v10, v3
 
-    const/high16 v11, 0x200
+    const/high16 v11, 0x800
 
-    if-ne v10, v11, :cond_4
+    if-ne v10, v11, :cond_1b
 
-    .line 325
+    .line 349
     iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
     invoke-static {v10}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -445,17 +1600,17 @@
 
     iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
-    .line 327
-    :cond_4
-    const/high16 v10, 0x10
+    .line 351
+    :cond_1b
+    const/high16 v10, 0x20
 
-    and-int/2addr v10, v2
+    and-int/2addr v10, v3
 
-    const/high16 v11, 0x10
+    const/high16 v11, 0x20
 
-    if-ne v10, v11, :cond_5
+    if-ne v10, v11, :cond_1c
 
-    .line 328
+    .line 352
     new-instance v10, Lcom/google/protobuf/UnmodifiableLazyStringList;
 
     iget-object v11, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
@@ -464,1083 +1619,18 @@
 
     iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
-    .line 330
-    :cond_5
-    invoke-virtual {v7}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    .line 354
+    :cond_1c
+    invoke-virtual {v8}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v10
 
     iput-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 331
+    .line 355
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->makeExtensionsImmutable()V
 
-    throw v9
-
-    .line 73
-    .restart local v6       #tag:I
-    :sswitch_2
-    :try_start_2
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x8
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 74
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
-
-    move-result-wide v9
-
-    iput-wide v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creationTime_:J
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_1
-
-    goto/16 :goto_0
-
-    .line 311
-    .end local v6           #tag:I
-    :catch_1
-    move-exception v1
-
-    .line 312
-    .local v1, e:Ljava/io/IOException;
-    :try_start_3
-    new-instance v9, Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-direct {v9, v10}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v9, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v9
-
-    throw v9
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 78
-    .end local v1           #e:Ljava/io/IOException;
-    .restart local v6       #tag:I
-    :sswitch_3
-    :try_start_4
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 79
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
-
-    move-result-wide v9
-
-    iput-wide v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->modifiedTime_:J
-
-    goto/16 :goto_0
-
-    .line 83
-    :sswitch_4
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x400
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 84
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 88
-    :sswitch_5
-    const/4 v5, 0x0
-
-    .line 89
-    .local v5, subBuilder:Lcom/google/googlex/glass/common/proto/Entity$Builder;
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    and-int/lit16 v9, v9, 0x4000
-
-    const/16 v10, 0x4000
-
-    if-ne v9, v10, :cond_6
-
-    .line 90
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v9}, Lcom/google/googlex/glass/common/proto/Entity;->toBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
-
-    move-result-object v5
-
-    .line 92
-    :cond_6
-    sget-object v9, Lcom/google/googlex/glass/common/proto/Entity;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v9, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/google/googlex/glass/common/proto/Entity;
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
-
-    .line 93
-    if-eqz v5, :cond_7
-
-    .line 94
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
-
-    invoke-virtual {v5, v9}, Lcom/google/googlex/glass/common/proto/Entity$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/Entity$Builder;
-
-    .line 95
-    invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/Entity$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
-
-    .line 97
-    :cond_7
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x4000
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    goto/16 :goto_0
-
-    .line 101
-    .end local v5           #subBuilder:Lcom/google/googlex/glass/common/proto/Entity$Builder;
-    :sswitch_6
-    const v9, 0x8000
-
-    and-int/2addr v9, v2
-
-    const v10, 0x8000
-
-    if-eq v9, v10, :cond_8
-
-    .line 102
-    new-instance v9, Ljava/util/ArrayList;
-
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
-
-    .line 103
-    const v9, 0x8000
-
-    or-int/2addr v2, v9
-
-    .line 105
-    :cond_8
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
-
-    sget-object v10, Lcom/google/googlex/glass/common/proto/Entity;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v10
-
-    invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_0
-
-    .line 109
-    :sswitch_7
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const v10, 0x8000
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 110
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 114
-    :sswitch_8
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x2
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 115
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 119
-    :sswitch_9
-    const/high16 v9, 0x40
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x40
-
-    if-eq v9, v10, :cond_9
-
-    .line 120
-    new-instance v9, Ljava/util/ArrayList;
-
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
-
-    .line 121
-    const/high16 v9, 0x40
-
-    or-int/2addr v2, v9
-
-    .line 123
-    :cond_9
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
-
-    sget-object v10, Lcom/google/googlex/glass/common/proto/Attachment;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v10
-
-    invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_0
-
-    .line 127
-    :sswitch_a
-    const/4 v5, 0x0
-
-    .line 128
-    .local v5, subBuilder:Lcom/google/googlex/glass/common/proto/Location$Builder;
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x10
-
-    and-int/2addr v9, v10
-
-    const/high16 v10, 0x10
-
-    if-ne v9, v10, :cond_a
-
-    .line 129
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
-
-    invoke-virtual {v9}, Lcom/google/googlex/glass/common/proto/Location;->toBuilder()Lcom/google/googlex/glass/common/proto/Location$Builder;
-
-    move-result-object v5
-
-    .line 131
-    :cond_a
-    sget-object v9, Lcom/google/googlex/glass/common/proto/Location;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v9, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/google/googlex/glass/common/proto/Location;
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
-
-    .line 132
-    if-eqz v5, :cond_b
-
-    .line 133
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
-
-    invoke-virtual {v5, v9}, Lcom/google/googlex/glass/common/proto/Location$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Location;)Lcom/google/googlex/glass/common/proto/Location$Builder;
-
-    .line 134
-    invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/Location$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Location;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
-
-    .line 136
-    :cond_b
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x10
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    goto/16 :goto_0
-
-    .line 140
-    .end local v5           #subBuilder:Lcom/google/googlex/glass/common/proto/Location$Builder;
-    :sswitch_b
-    const/high16 v9, 0x100
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x100
-
-    if-eq v9, v10, :cond_c
-
-    .line 141
-    new-instance v9, Ljava/util/ArrayList;
-
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
-
-    .line 142
-    const/high16 v9, 0x100
-
-    or-int/2addr v2, v9
-
-    .line 144
-    :cond_c
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
-
-    sget-object v10, Lcom/google/googlex/glass/common/proto/MenuItem;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v10
-
-    invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_0
-
-    .line 148
-    :sswitch_c
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v4
-
-    .line 149
-    .local v4, rawValue:I
-    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-
-    move-result-object v8
-
-    .line 150
-    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-    if-nez v8, :cond_d
-
-    .line 151
-    const/16 v9, 0xc
-
-    invoke-virtual {v7, v9, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
-
-    goto/16 :goto_0
-
-    .line 153
-    :cond_d
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x40
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 154
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-
-    goto/16 :goto_0
-
-    .line 159
-    .end local v4           #rawValue:I
-    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-    :sswitch_d
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v4
-
-    .line 160
-    .restart local v4       #rawValue:I
-    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-
-    move-result-object v8
-
-    .line 161
-    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-    if-nez v8, :cond_e
-
-    .line 162
-    const/16 v9, 0xd
-
-    invoke-virtual {v7, v9, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
-
-    goto/16 :goto_0
-
-    .line 164
-    :cond_e
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x100
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 165
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-
-    goto/16 :goto_0
-
-    .line 170
-    .end local v4           #rawValue:I
-    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-    :sswitch_e
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v4
-
-    .line 171
-    .restart local v4       #rawValue:I
-    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
-
-    move-result-object v8
-
-    .line 172
-    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
-    if-nez v8, :cond_f
-
-    .line 173
-    const/16 v9, 0xe
-
-    invoke-virtual {v7, v9, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
-
-    goto/16 :goto_0
-
-    .line 175
-    :cond_f
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x800
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 176
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
-
-    goto/16 :goto_0
-
-    .line 181
-    .end local v4           #rawValue:I
-    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
-    :sswitch_f
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x200
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 182
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
-
-    move-result v9
-
-    iput-boolean v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isDeleted_:Z
-
-    goto/16 :goto_0
-
-    .line 186
-    :sswitch_10
-    const/4 v5, 0x0
-
-    .line 187
-    .local v5, subBuilder:Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x20
-
-    and-int/2addr v9, v10
-
-    const/high16 v10, 0x20
-
-    if-ne v9, v10, :cond_10
-
-    .line 188
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
-
-    invoke-virtual {v9}, Lcom/google/googlex/glass/common/proto/NotificationConfig;->toBuilder()Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
-
-    move-result-object v5
-
-    .line 190
-    :cond_10
-    sget-object v9, Lcom/google/googlex/glass/common/proto/NotificationConfig;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v9, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v9
-
-    check-cast v9, Lcom/google/googlex/glass/common/proto/NotificationConfig;
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
-
-    .line 191
-    if-eqz v5, :cond_11
-
-    .line 192
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
-
-    invoke-virtual {v5, v9}, Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/NotificationConfig;)Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
-
-    .line 193
-    invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/NotificationConfig;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
-
-    .line 195
-    :cond_11
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x20
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    goto/16 :goto_0
-
-    .line 199
-    .end local v5           #subBuilder:Lcom/google/googlex/glass/common/proto/NotificationConfig$Builder;
-    :sswitch_11
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x20
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 200
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
-
-    move-result-wide v9
-
-    iput-wide v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->displayTime_:J
-
-    goto/16 :goto_0
-
-    .line 204
-    :sswitch_12
-    const/high16 v9, 0x200
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x200
-
-    if-eq v9, v10, :cond_12
-
-    .line 205
-    new-instance v9, Ljava/util/ArrayList;
-
-    invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
-
-    .line 206
-    const/high16 v9, 0x200
-
-    or-int/2addr v2, v9
-
-    .line 208
-    :cond_12
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
-
-    sget-object v10, Lcom/google/googlex/glass/common/proto/MenuItem;->PARSER:Lcom/google/protobuf/Parser;
-
-    invoke-virtual {p1, v10, p2}, Lcom/google/protobuf/CodedInputStream;->readMessage(Lcom/google/protobuf/Parser;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protobuf/MessageLite;
-
-    move-result-object v10
-
-    invoke-interface {v9, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto/16 :goto_0
-
-    .line 212
-    :sswitch_13
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x8
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 213
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 217
-    :sswitch_14
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v4
-
-    .line 218
-    .restart local v4       #rawValue:I
-    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
-
-    move-result-object v8
-
-    .line 219
-    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
-    if-nez v8, :cond_13
-
-    .line 220
-    const/16 v9, 0x14
-
-    invoke-virtual {v7, v9, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
-
-    goto/16 :goto_0
-
-    .line 222
-    :cond_13
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x400
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 223
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
-
-    goto/16 :goto_0
-
-    .line 228
-    .end local v4           #rawValue:I
-    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
-    :sswitch_15
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x100
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 229
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
-
-    move-result v9
-
-    iput-boolean v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isPinned_:Z
-
-    goto/16 :goto_0
-
-    .line 233
-    :sswitch_16
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x1
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 234
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 238
-    :sswitch_17
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x4
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 239
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 243
-    :sswitch_18
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x2
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 244
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 248
-    :sswitch_19
-    const/high16 v9, 0x10
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x10
-
-    if-eq v9, v10, :cond_14
-
-    .line 249
-    new-instance v9, Lcom/google/protobuf/LazyStringArrayList;
-
-    invoke-direct {v9}, Lcom/google/protobuf/LazyStringArrayList;-><init>()V
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
-
-    .line 250
-    const/high16 v9, 0x10
-
-    or-int/2addr v2, v9
-
-    .line 252
-    :cond_14
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
-
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v10
-
-    invoke-interface {v9, v10}, Lcom/google/protobuf/LazyStringList;->add(Lcom/google/protobuf/ByteString;)V
-
-    goto/16 :goto_0
-
-    .line 256
-    :sswitch_1a
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x800
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 257
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 261
-    :sswitch_1b
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x4
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 262
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBool()Z
-
-    move-result v9
-
-    iput-boolean v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isBundleCover_:Z
-
-    goto/16 :goto_0
-
-    .line 266
-    :sswitch_1c
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x1000
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 267
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 271
-    :sswitch_1d
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x2000
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 272
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
-
-    goto/16 :goto_0
-
-    .line 276
-    :sswitch_1e
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v4
-
-    .line 277
-    .restart local v4       #rawValue:I
-    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-
-    move-result-object v8
-
-    .line 278
-    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-    if-nez v8, :cond_15
-
-    .line 279
-    const/16 v9, 0x21
-
-    invoke-virtual {v7, v9, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
-
-    goto/16 :goto_0
-
-    .line 281
-    :cond_15
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x80
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 282
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-
-    goto/16 :goto_0
-
-    .line 287
-    .end local v4           #rawValue:I
-    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
-    :sswitch_1f
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readEnum()I
-
-    move-result v4
-
-    .line 288
-    .restart local v4       #rawValue:I
-    invoke-static {v4}, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;->valueOf(I)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-
-    move-result-object v8
-
-    .line 289
-    .local v8, value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-    if-nez v8, :cond_16
-
-    .line 290
-    const/16 v9, 0x22
-
-    invoke-virtual {v7, v9, v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->mergeVarintField(II)Lcom/google/protobuf/UnknownFieldSet$Builder;
-
-    goto/16 :goto_0
-
-    .line 292
-    :cond_16
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    const/high16 v10, 0x200
-
-    or-int/2addr v9, v10
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 293
-    iput-object v8, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-
-    goto/16 :goto_0
-
-    .line 298
-    .end local v4           #rawValue:I
-    .end local v8           #value:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
-    :sswitch_20
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit8 v9, v9, 0x40
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 299
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readUInt64()J
-
-    move-result-wide v9
-
-    iput-wide v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinTime_:J
-
-    goto/16 :goto_0
-
-    .line 303
-    :sswitch_21
-    iget v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    or-int/lit16 v9, v9, 0x80
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
-
-    .line 304
-    invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
-
-    move-result v9
-
-    iput v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinScore_:I
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-    .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_4 .. :try_end_4} :catch_0
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_1
-
-    goto/16 :goto_0
-
-    .line 315
-    .end local v6           #tag:I
-    :cond_17
-    const v9, 0x8000
-
-    and-int/2addr v9, v2
-
-    const v10, 0x8000
-
-    if-ne v9, v10, :cond_18
-
-    .line 316
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
-
-    invoke-static {v9}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
-
-    .line 318
-    :cond_18
-    const/high16 v9, 0x40
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x40
-
-    if-ne v9, v10, :cond_19
-
-    .line 319
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
-
-    invoke-static {v9}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
-
-    .line 321
-    :cond_19
-    const/high16 v9, 0x100
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x100
-
-    if-ne v9, v10, :cond_1a
-
-    .line 322
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
-
-    invoke-static {v9}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
-
-    .line 324
-    :cond_1a
-    const/high16 v9, 0x200
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x200
-
-    if-ne v9, v10, :cond_1b
-
-    .line 325
-    iget-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
-
-    invoke-static {v9}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
-
-    .line 327
-    :cond_1b
-    const/high16 v9, 0x10
-
-    and-int/2addr v9, v2
-
-    const/high16 v10, 0x10
-
-    if-ne v9, v10, :cond_1c
-
-    .line 328
-    new-instance v9, Lcom/google/protobuf/UnmodifiableLazyStringList;
-
-    iget-object v10, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
-
-    invoke-direct {v9, v10}, Lcom/google/protobuf/UnmodifiableLazyStringList;-><init>(Lcom/google/protobuf/LazyStringList;)V
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
-
-    .line 330
-    :cond_1c
-    invoke-virtual {v7}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
-
-    move-result-object v9
-
-    iput-object v9, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
-    .line 331
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->makeExtensionsImmutable()V
-
-    .line 333
+    .line 357
     return-void
 
     .line 56
@@ -1580,6 +1670,8 @@
         0x110 -> :sswitch_1f
         0x118 -> :sswitch_20
         0x120 -> :sswitch_21
+        0x12a -> :sswitch_22
+        0x132 -> :sswitch_23
     .end sparse-switch
 .end method
 
@@ -1619,10 +1711,10 @@
     .line 23
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 2332
+    .line 2568
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedIsInitialized:B
 
-    .line 2446
+    .line 2688
     iput v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedSerializedSize:I
 
     .line 24
@@ -1658,10 +1750,10 @@
     .line 26
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 2332
+    .line 2568
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedIsInitialized:B
 
-    .line 2446
+    .line 2688
     iput v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedSerializedSize:I
 
     .line 26
@@ -1798,7 +1890,7 @@
 
     .prologue
     .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -1810,12 +1902,35 @@
 
     .prologue
     .line 17
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method static synthetic access$1900(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 17
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static synthetic access$1902(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 17
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method static synthetic access$1902(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/Entity;
+.method static synthetic access$2002(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/Entity;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1827,7 +1942,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$2000(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
+.method static synthetic access$2100(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
     .locals 1
     .parameter "x0"
 
@@ -1838,7 +1953,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2002(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)Ljava/util/List;
+.method static synthetic access$2102(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)Ljava/util/List;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1850,36 +1965,13 @@
     return-object p1
 .end method
 
-.method static synthetic access$2100(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2102(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 17
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
-
-    return-object p1
-.end method
-
 .method static synthetic access$2200(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -1891,7 +1983,7 @@
 
     .prologue
     .line 17
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
     return-object p1
 .end method
@@ -1902,7 +1994,7 @@
 
     .prologue
     .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -1914,7 +2006,7 @@
 
     .prologue
     .line 17
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
     return-object p1
 .end method
@@ -1925,7 +2017,7 @@
 
     .prologue
     .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
 
     return-object v0
 .end method
@@ -1937,12 +2029,35 @@
 
     .prologue
     .line 17
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method static synthetic access$2500(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 17
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2502(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 17
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
 
     return-object p1
 .end method
 
-.method static synthetic access$2500(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/protobuf/LazyStringList;
+.method static synthetic access$2600(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/protobuf/LazyStringList;
     .locals 1
     .parameter "x0"
 
@@ -1953,7 +2068,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2502(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/protobuf/LazyStringList;)Lcom/google/protobuf/LazyStringList;
+.method static synthetic access$2602(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/protobuf/LazyStringList;)Lcom/google/protobuf/LazyStringList;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1965,7 +2080,30 @@
     return-object p1
 .end method
 
-.method static synthetic access$2600(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
+.method static synthetic access$2700(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 17
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2702(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 17
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    return-object p1
+.end method
+
+.method static synthetic access$2800(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
@@ -1976,7 +2114,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$2602(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
+.method static synthetic access$2802(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -1988,48 +2126,13 @@
     return-object p1
 .end method
 
-.method static synthetic access$2700(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2702(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)Ljava/util/List;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 17
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2802(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/Location;)Lcom/google/googlex/glass/common/proto/Location;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 17
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
-
-    return-object p1
-.end method
-
 .method static synthetic access$2900(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 17
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     return-object v0
 .end method
@@ -2041,7 +2144,7 @@
 
     .prologue
     .line 17
-    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     return-object p1
 .end method
@@ -2056,7 +2159,42 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
+.method static synthetic access$3002(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/Location;)Lcom/google/googlex/glass/common/proto/Location;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 17
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
+
+    return-object p1
+.end method
+
+.method static synthetic access$3100(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 17
+    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+
+    return-object v0
+.end method
+
+.method static synthetic access$3102(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)Ljava/util/List;
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 17
+    iput-object p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
+
+    return-object p1
+.end method
+
+.method static synthetic access$3200(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
     .locals 1
     .parameter "x0"
 
@@ -2067,7 +2205,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3002(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)Ljava/util/List;
+.method static synthetic access$3202(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/util/List;)Ljava/util/List;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2079,7 +2217,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3102(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/NotificationConfig;)Lcom/google/googlex/glass/common/proto/NotificationConfig;
+.method static synthetic access$3302(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/NotificationConfig;)Lcom/google/googlex/glass/common/proto/NotificationConfig;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2091,7 +2229,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3202(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+.method static synthetic access$3402(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2103,7 +2241,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3302(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
+.method static synthetic access$3502(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2115,7 +2253,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3402(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+.method static synthetic access$3602(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2127,7 +2265,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3502(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
+.method static synthetic access$3702(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;)Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2139,7 +2277,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3602(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;)Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
+.method static synthetic access$3802(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;)Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2151,7 +2289,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3700(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
+.method static synthetic access$3900(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/lang/Object;
     .locals 1
     .parameter "x0"
 
@@ -2162,7 +2300,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$3702(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
+.method static synthetic access$3902(Lcom/google/googlex/glass/common/proto/TimelineItem;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2174,7 +2312,7 @@
     return-object p1
 .end method
 
-.method static synthetic access$3802(Lcom/google/googlex/glass/common/proto/TimelineItem;I)I
+.method static synthetic access$4002(Lcom/google/googlex/glass/common/proto/TimelineItem;I)I
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -2184,26 +2322,6 @@
     iput p1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     return p1
-.end method
-
-.method static synthetic access$3900()Z
-    .locals 1
-
-    .prologue
-    .line 17
-    sget-boolean v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->alwaysUseFieldBuilders:Z
-
-    return v0
-.end method
-
-.method static synthetic access$4000()Z
-    .locals 1
-
-    .prologue
-    .line 17
-    sget-boolean v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->alwaysUseFieldBuilders:Z
-
-    return v0
 .end method
 
 .method static synthetic access$4100()Z
@@ -2217,6 +2335,26 @@
 .end method
 
 .method static synthetic access$4200()Z
+    .locals 1
+
+    .prologue
+    .line 17
+    sget-boolean v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->alwaysUseFieldBuilders:Z
+
+    return v0
+.end method
+
+.method static synthetic access$4300()Z
+    .locals 1
+
+    .prologue
+    .line 17
+    sget-boolean v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->alwaysUseFieldBuilders:Z
+
+    return v0
+.end method
+
+.method static synthetic access$4400()Z
     .locals 1
 
     .prologue
@@ -2322,7 +2460,7 @@
     .locals 1
 
     .prologue
-    .line 336
+    .line 360
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_TimelineItem_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -2336,170 +2474,180 @@
 
     const/4 v1, 0x0
 
-    .line 2298
+    .line 2532
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
 
-    .line 2299
+    .line 2533
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
 
-    .line 2300
+    .line 2534
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isBundleCover_:Z
 
-    .line 2301
+    .line 2535
     iput-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creationTime_:J
 
-    .line 2302
+    .line 2536
     iput-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->modifiedTime_:J
 
-    .line 2303
+    .line 2537
     iput-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->displayTime_:J
 
-    .line 2304
+    .line 2538
     iput-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinTime_:J
 
-    .line 2305
+    .line 2539
     iput v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinScore_:I
 
-    .line 2306
+    .line 2540
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isPinned_:Z
 
-    .line 2307
+    .line 2541
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isDeleted_:Z
 
-    .line 2308
+    .line 2542
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
 
-    .line 2309
+    .line 2543
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;->GLASSWARE:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
-    .line 2310
+    .line 2544
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
 
-    .line 2311
+    .line 2545
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
+
+    .line 2546
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
 
-    .line 2312
+    .line 2547
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Entity;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 2313
+    .line 2548
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
-    .line 2314
+    .line 2549
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
-    .line 2315
+    .line 2550
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
-    .line 2316
+    .line 2551
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
 
-    .line 2317
+    .line 2552
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
 
-    .line 2318
+    .line 2553
     sget-object v0, Lcom/google/protobuf/LazyStringArrayList;->EMPTY:Lcom/google/protobuf/LazyStringList;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
-    .line 2319
+    .line 2554
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    .line 2555
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
 
-    .line 2320
+    .line 2556
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
-    .line 2321
+    .line 2557
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Location;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Location;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
 
-    .line 2322
+    .line 2558
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
-    .line 2323
+    .line 2559
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
-    .line 2324
+    .line 2560
     invoke-static {}, Lcom/google/googlex/glass/common/proto/NotificationConfig;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
-    .line 2325
+    .line 2561
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 2326
+    .line 2562
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;->NOT_SYNCED:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
-    .line 2327
+    .line 2563
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;->ALWAYS:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
-    .line 2328
+    .line 2564
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;->NEVER:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
-    .line 2329
+    .line 2565
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;->NATIVE:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
-    .line 2330
+    .line 2566
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
 
-    .line 2331
+    .line 2567
     return-void
 .end method
 
@@ -2507,7 +2655,7 @@
     .locals 1
 
     .prologue
-    .line 2664
+    .line 2914
     #calls: Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->create()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->access$100()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
@@ -2521,7 +2669,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 2667
+    .line 2917
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v0
@@ -2543,7 +2691,7 @@
     .end annotation
 
     .prologue
-    .line 2644
+    .line 2894
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -2566,7 +2714,7 @@
     .end annotation
 
     .prologue
-    .line 2650
+    .line 2900
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -2588,7 +2736,7 @@
     .end annotation
 
     .prologue
-    .line 2614
+    .line 2864
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -2611,7 +2759,7 @@
     .end annotation
 
     .prologue
-    .line 2620
+    .line 2870
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -2633,7 +2781,7 @@
     .end annotation
 
     .prologue
-    .line 2655
+    .line 2905
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -2656,7 +2804,7 @@
     .end annotation
 
     .prologue
-    .line 2661
+    .line 2911
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -2678,7 +2826,7 @@
     .end annotation
 
     .prologue
-    .line 2634
+    .line 2884
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -2701,7 +2849,7 @@
     .end annotation
 
     .prologue
-    .line 2640
+    .line 2890
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -2723,7 +2871,7 @@
     .end annotation
 
     .prologue
-    .line 2624
+    .line 2874
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -2746,7 +2894,7 @@
     .end annotation
 
     .prologue
-    .line 2630
+    .line 2880
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -2765,7 +2913,7 @@
     .parameter "index"
 
     .prologue
-    .line 1929
+    .line 2163
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2781,7 +2929,7 @@
     .locals 1
 
     .prologue
-    .line 1919
+    .line 2153
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -2804,7 +2952,7 @@
     .end annotation
 
     .prologue
-    .line 1898
+    .line 2132
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     return-object v0
@@ -2815,7 +2963,7 @@
     .parameter "index"
 
     .prologue
-    .line 1940
+    .line 2174
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2840,7 +2988,7 @@
     .end annotation
 
     .prologue
-    .line 1909
+    .line 2143
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
 
     return-object v0
@@ -2850,19 +2998,19 @@
     .locals 4
 
     .prologue
-    .line 942
+    .line 966
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
 
-    .line 943
+    .line 967
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 944
+    .line 968
     check-cast v1, Ljava/lang/String;
 
-    .line 952
+    .line 976
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -2871,16 +3019,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 946
+    .line 970
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 948
+    .line 972
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 949
+    .line 973
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -2888,13 +3036,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 950
+    .line 974
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 952
+    .line 976
     goto :goto_0
 .end method
 
@@ -2902,16 +3050,16 @@
     .locals 3
 
     .prologue
-    .line 972
+    .line 996
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
 
-    .line 973
+    .line 997
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 974
+    .line 998
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -2919,11 +3067,11 @@
 
     move-result-object v0
 
-    .line 977
+    .line 1001
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bundleId_:Ljava/lang/Object;
 
-    .line 980
+    .line 1004
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -2942,19 +3090,19 @@
     .locals 4
 
     .prologue
-    .line 1397
+    .line 1478
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
 
-    .line 1398
+    .line 1479
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1399
+    .line 1480
     check-cast v1, Ljava/lang/String;
 
-    .line 1407
+    .line 1488
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -2963,16 +3111,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1401
+    .line 1482
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1403
+    .line 1484
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1404
+    .line 1485
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -2980,13 +3128,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1405
+    .line 1486
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1407
+    .line 1488
     goto :goto_0
 .end method
 
@@ -2994,16 +3142,16 @@
     .locals 3
 
     .prologue
-    .line 1420
+    .line 1501
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
 
-    .line 1421
+    .line 1502
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1422
+    .line 1503
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -3011,11 +3159,11 @@
 
     move-result-object v0
 
-    .line 1425
+    .line 1506
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->canonicalUrl_:Ljava/lang/Object;
 
-    .line 1428
+    .line 1509
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -3034,7 +3182,7 @@
     .locals 1
 
     .prologue
-    .line 2207
+    .line 2441
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
     return-object v0
@@ -3044,7 +3192,7 @@
     .locals 1
 
     .prologue
-    .line 2169
+    .line 2403
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     return-object v0
@@ -3054,7 +3202,7 @@
     .locals 1
 
     .prologue
-    .line 2222
+    .line 2456
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
 
     return-object v0
@@ -3064,7 +3212,7 @@
     .locals 1
 
     .prologue
-    .line 2192
+    .line 2426
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
 
     return-object v0
@@ -3074,7 +3222,7 @@
     .locals 2
 
     .prologue
-    .line 1051
+    .line 1075
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creationTime_:J
 
     return-wide v0
@@ -3084,7 +3232,7 @@
     .locals 1
 
     .prologue
-    .line 1452
+    .line 1533
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
 
     return-object v0
@@ -3094,7 +3242,7 @@
     .locals 1
 
     .prologue
-    .line 1462
+    .line 1543
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
 
     return-object v0
@@ -3138,7 +3286,7 @@
     .locals 2
 
     .prologue
-    .line 1105
+    .line 1129
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->displayTime_:J
 
     return-wide v0
@@ -3148,19 +3296,19 @@
     .locals 4
 
     .prologue
-    .line 1710
+    .line 1791
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
 
-    .line 1711
+    .line 1792
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1712
+    .line 1793
     check-cast v1, Ljava/lang/String;
 
-    .line 1720
+    .line 1801
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -3169,16 +3317,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1714
+    .line 1795
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1716
+    .line 1797
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1717
+    .line 1798
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -3186,13 +3334,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1718
+    .line 1799
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1720
+    .line 1801
     goto :goto_0
 .end method
 
@@ -3200,16 +3348,16 @@
     .locals 3
 
     .prologue
-    .line 1733
+    .line 1814
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
 
-    .line 1734
+    .line 1815
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1735
+    .line 1816
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -3217,11 +3365,11 @@
 
     move-result-object v0
 
-    .line 1738
+    .line 1819
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->html_:Ljava/lang/Object;
 
-    .line 1741
+    .line 1822
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -3241,7 +3389,7 @@
     .parameter "index"
 
     .prologue
-    .line 1782
+    .line 1863
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
     invoke-interface {v0, p1}, Lcom/google/protobuf/LazyStringList;->get(I)Ljava/lang/Object;
@@ -3258,7 +3406,7 @@
     .parameter "index"
 
     .prologue
-    .line 1795
+    .line 1876
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
     invoke-interface {v0, p1}, Lcom/google/protobuf/LazyStringList;->getByteString(I)Lcom/google/protobuf/ByteString;
@@ -3272,7 +3420,7 @@
     .locals 1
 
     .prologue
-    .line 1770
+    .line 1851
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
     invoke-interface {v0}, Lcom/google/protobuf/LazyStringList;->size()I
@@ -3295,7 +3443,7 @@
     .end annotation
 
     .prologue
-    .line 1758
+    .line 1839
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
     return-object v0
@@ -3305,19 +3453,19 @@
     .locals 4
 
     .prologue
-    .line 870
+    .line 894
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
 
-    .line 871
+    .line 895
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 872
+    .line 896
     check-cast v1, Ljava/lang/String;
 
-    .line 880
+    .line 904
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -3326,16 +3474,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 874
+    .line 898
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 876
+    .line 900
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 877
+    .line 901
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -3343,13 +3491,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 878
+    .line 902
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 880
+    .line 904
     goto :goto_0
 .end method
 
@@ -3357,16 +3505,16 @@
     .locals 3
 
     .prologue
-    .line 894
+    .line 918
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
 
-    .line 895
+    .line 919
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 896
+    .line 920
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -3374,11 +3522,11 @@
 
     move-result-object v0
 
-    .line 899
+    .line 923
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->id_:Ljava/lang/Object;
 
-    .line 902
+    .line 926
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -3397,19 +3545,19 @@
     .locals 4
 
     .prologue
-    .line 1544
+    .line 1625
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
-    .line 1545
+    .line 1626
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1546
+    .line 1627
     check-cast v1, Ljava/lang/String;
 
-    .line 1554
+    .line 1635
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -3418,16 +3566,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1548
+    .line 1629
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1550
+    .line 1631
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1551
+    .line 1632
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -3435,13 +3583,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1552
+    .line 1633
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1554
+    .line 1635
     goto :goto_0
 .end method
 
@@ -3449,16 +3597,16 @@
     .locals 3
 
     .prologue
-    .line 1568
+    .line 1649
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
-    .line 1569
+    .line 1650
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1570
+    .line 1651
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -3466,11 +3614,11 @@
 
     move-result-object v0
 
-    .line 1573
+    .line 1654
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->inReplyTo_:Ljava/lang/Object;
 
-    .line 1576
+    .line 1657
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -3489,7 +3637,7 @@
     .locals 1
 
     .prologue
-    .line 1026
+    .line 1050
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isBundleCover_:Z
 
     return v0
@@ -3499,7 +3647,7 @@
     .locals 1
 
     .prologue
-    .line 1213
+    .line 1237
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isDeleted_:Z
 
     return v0
@@ -3509,7 +3657,7 @@
     .locals 1
 
     .prologue
-    .line 1190
+    .line 1214
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isPinned_:Z
 
     return v0
@@ -3519,7 +3667,7 @@
     .locals 1
 
     .prologue
-    .line 1963
+    .line 2197
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
 
     return-object v0
@@ -3529,7 +3677,7 @@
     .locals 1
 
     .prologue
-    .line 1973
+    .line 2207
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
 
     return-object v0
@@ -3540,7 +3688,7 @@
     .parameter "index"
 
     .prologue
-    .line 2029
+    .line 2263
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3556,7 +3704,7 @@
     .locals 1
 
     .prologue
-    .line 2016
+    .line 2250
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -3579,7 +3727,7 @@
     .end annotation
 
     .prologue
-    .line 1989
+    .line 2223
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
     return-object v0
@@ -3590,7 +3738,7 @@
     .parameter "index"
 
     .prologue
-    .line 2043
+    .line 2277
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3615,7 +3763,7 @@
     .end annotation
 
     .prologue
-    .line 2003
+    .line 2237
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
 
     return-object v0
@@ -3625,7 +3773,7 @@
     .locals 2
 
     .prologue
-    .line 1076
+    .line 1100
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->modifiedTime_:J
 
     return-wide v0
@@ -3635,7 +3783,7 @@
     .locals 1
 
     .prologue
-    .line 2133
+    .line 2367
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
     return-object v0
@@ -3645,7 +3793,7 @@
     .locals 1
 
     .prologue
-    .line 2144
+    .line 2378
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
     return-object v0
@@ -3664,7 +3812,7 @@
     .end annotation
 
     .prologue
-    .line 358
+    .line 382
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -3677,7 +3825,7 @@
     .end annotation
 
     .prologue
-    .line 2095
+    .line 2329
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3695,7 +3843,7 @@
     .end annotation
 
     .prologue
-    .line 2083
+    .line 2317
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -3721,7 +3869,7 @@
     .end annotation
 
     .prologue
-    .line 2058
+    .line 2292
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
     return-object v0
@@ -3734,7 +3882,7 @@
     .end annotation
 
     .prologue
-    .line 2108
+    .line 2342
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3762,7 +3910,7 @@
     .end annotation
 
     .prologue
-    .line 2071
+    .line 2305
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
 
     return-object v0
@@ -3772,7 +3920,7 @@
     .locals 1
 
     .prologue
-    .line 1163
+    .line 1187
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinScore_:I
 
     return v0
@@ -3782,7 +3930,7 @@
     .locals 2
 
     .prologue
-    .line 1134
+    .line 1158
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinTime_:J
 
     return-wide v0
@@ -3794,19 +3942,19 @@
     .end annotation
 
     .prologue
-    .line 2262
+    .line 2496
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
 
-    .line 2263
+    .line 2497
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 2264
+    .line 2498
     check-cast v1, Ljava/lang/String;
 
-    .line 2272
+    .line 2506
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -3815,16 +3963,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 2266
+    .line 2500
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 2268
+    .line 2502
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 2269
+    .line 2503
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -3832,13 +3980,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 2270
+    .line 2504
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 2272
+    .line 2506
     goto :goto_0
 .end method
 
@@ -3848,16 +3996,16 @@
     .end annotation
 
     .prologue
-    .line 2285
+    .line 2519
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
 
-    .line 2286
+    .line 2520
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 2287
+    .line 2521
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -3865,11 +4013,11 @@
 
     move-result-object v0
 
-    .line 2290
+    .line 2524
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sendToPhoneUrl_:Ljava/lang/Object;
 
-    .line 2293
+    .line 2527
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -3898,10 +4046,10 @@
 
     const/4 v5, 0x1
 
-    .line 2448
+    .line 2690
     iget v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedSerializedSize:I
 
-    .line 2449
+    .line 2691
     .local v2, size:I
     const/4 v4, -0x1
 
@@ -3909,26 +4057,26 @@
 
     move v3, v2
 
-    .line 2591
+    .line 2841
     .end local v2           #size:I
     .local v3, size:I
     :goto_0
     return v3
 
-    .line 2451
+    .line 2693
     .end local v3           #size:I
     .restart local v2       #size:I
     :cond_0
     const/4 v2, 0x0
 
-    .line 2452
+    .line 2694
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v4, v4, 0x1
 
     if-ne v4, v5, :cond_1
 
-    .line 2453
+    .line 2695
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v4
@@ -3939,7 +4087,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2456
+    .line 2698
     :cond_1
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -3947,7 +4095,7 @@
 
     if-ne v4, v9, :cond_2
 
-    .line 2457
+    .line 2699
     iget-wide v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creationTime_:J
 
     invoke-static {v7, v4, v5}, Lcom/google/protobuf/CodedOutputStream;->computeUInt64Size(IJ)I
@@ -3956,7 +4104,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2460
+    .line 2702
     :cond_2
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -3964,7 +4112,7 @@
 
     if-ne v4, v10, :cond_3
 
-    .line 2461
+    .line 2703
     const/4 v4, 0x3
 
     iget-wide v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->modifiedTime_:J
@@ -3975,7 +4123,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2464
+    .line 2706
     :cond_3
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -3985,7 +4133,7 @@
 
     if-ne v4, v5, :cond_4
 
-    .line 2465
+    .line 2707
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v4
@@ -3996,17 +4144,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2468
+    .line 2710
     :cond_4
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    and-int/lit16 v4, v4, 0x4000
+    const v5, 0x8000
 
-    const/16 v5, 0x4000
+    and-int/2addr v4, v5
+
+    const v5, 0x8000
 
     if-ne v4, v5, :cond_5
 
-    .line 2469
+    .line 2711
     const/4 v4, 0x5
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
@@ -4017,7 +4167,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2472
+    .line 2714
     :cond_5
     const/4 v1, 0x0
 
@@ -4031,7 +4181,7 @@
 
     if-ge v1, v4, :cond_6
 
-    .line 2473
+    .line 2715
     const/4 v5, 0x6
 
     iget-object v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
@@ -4048,24 +4198,24 @@
 
     add-int/2addr v2, v4
 
-    .line 2472
+    .line 2714
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 2476
+    .line 2718
     :cond_6
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const v5, 0x8000
+    const/high16 v5, 0x1
 
     and-int/2addr v4, v5
 
-    const v5, 0x8000
+    const/high16 v5, 0x1
 
     if-ne v4, v5, :cond_7
 
-    .line 2477
+    .line 2719
     const/4 v4, 0x7
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getInReplyToBytes()Lcom/google/protobuf/ByteString;
@@ -4078,19 +4228,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2480
+    .line 2722
     :cond_7
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x2
+    const/high16 v5, 0x4
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x2
+    const/high16 v5, 0x4
 
     if-ne v4, v5, :cond_8
 
-    .line 2481
+    .line 2723
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getTextBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v4
@@ -4101,7 +4251,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2484
+    .line 2726
     :cond_8
     const/4 v1, 0x0
 
@@ -4114,7 +4264,7 @@
 
     if-ge v1, v4, :cond_9
 
-    .line 2485
+    .line 2727
     const/16 v5, 0x9
 
     iget-object v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
@@ -4131,24 +4281,24 @@
 
     add-int/2addr v2, v4
 
-    .line 2484
+    .line 2726
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 2488
+    .line 2730
     :cond_9
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x10
+    const/high16 v5, 0x40
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x10
+    const/high16 v5, 0x40
 
     if-ne v4, v5, :cond_a
 
-    .line 2489
+    .line 2731
     const/16 v4, 0xa
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
@@ -4159,7 +4309,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2492
+    .line 2734
     :cond_a
     const/4 v1, 0x0
 
@@ -4172,7 +4322,7 @@
 
     if-ge v1, v4, :cond_b
 
-    .line 2493
+    .line 2735
     const/16 v5, 0xb
 
     iget-object v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
@@ -4189,24 +4339,24 @@
 
     add-int/2addr v2, v4
 
-    .line 2492
+    .line 2734
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_3
 
-    .line 2496
+    .line 2738
     :cond_b
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x40
+    const/high16 v5, 0x100
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x40
+    const/high16 v5, 0x100
 
     if-ne v4, v5, :cond_c
 
-    .line 2497
+    .line 2739
     const/16 v4, 0xc
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
@@ -4221,19 +4371,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2500
+    .line 2742
     :cond_c
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x100
+    const/high16 v5, 0x400
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x100
+    const/high16 v5, 0x400
 
     if-ne v4, v5, :cond_d
 
-    .line 2501
+    .line 2743
     const/16 v4, 0xd
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -4248,7 +4398,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2504
+    .line 2746
     :cond_d
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4258,7 +4408,7 @@
 
     if-ne v4, v5, :cond_e
 
-    .line 2505
+    .line 2747
     const/16 v4, 0xe
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
@@ -4273,7 +4423,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2508
+    .line 2750
     :cond_e
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4283,7 +4433,7 @@
 
     if-ne v4, v5, :cond_f
 
-    .line 2509
+    .line 2751
     const/16 v4, 0xf
 
     iget-boolean v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isDeleted_:Z
@@ -4294,19 +4444,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2512
+    .line 2754
     :cond_f
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x20
+    const/high16 v5, 0x80
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x20
+    const/high16 v5, 0x80
 
     if-ne v4, v5, :cond_10
 
-    .line 2513
+    .line 2755
     iget-object v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
     invoke-static {v10, v4}, Lcom/google/protobuf/CodedOutputStream;->computeMessageSize(ILcom/google/protobuf/MessageLite;)I
@@ -4315,7 +4465,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2516
+    .line 2758
     :cond_10
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4325,7 +4475,7 @@
 
     if-ne v4, v5, :cond_11
 
-    .line 2517
+    .line 2759
     const/16 v4, 0x11
 
     iget-wide v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->displayTime_:J
@@ -4336,7 +4486,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2520
+    .line 2762
     :cond_11
     const/4 v1, 0x0
 
@@ -4349,7 +4499,7 @@
 
     if-ge v1, v4, :cond_12
 
-    .line 2521
+    .line 2763
     const/16 v5, 0x12
 
     iget-object v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
@@ -4366,24 +4516,24 @@
 
     add-int/2addr v2, v4
 
-    .line 2520
+    .line 2762
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_4
 
-    .line 2524
+    .line 2766
     :cond_12
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x8
+    const/high16 v5, 0x20
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x8
+    const/high16 v5, 0x20
 
     if-ne v4, v5, :cond_13
 
-    .line 2525
+    .line 2767
     const/16 v4, 0x13
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableTextBytes()Lcom/google/protobuf/ByteString;
@@ -4396,19 +4546,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2528
+    .line 2770
     :cond_13
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x400
+    const/high16 v5, 0x1000
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x400
+    const/high16 v5, 0x1000
 
     if-ne v4, v5, :cond_14
 
-    .line 2529
+    .line 2771
     const/16 v4, 0x14
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
@@ -4423,7 +4573,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2532
+    .line 2774
     :cond_14
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4433,7 +4583,7 @@
 
     if-ne v4, v5, :cond_15
 
-    .line 2533
+    .line 2775
     const/16 v4, 0x15
 
     iget-boolean v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isPinned_:Z
@@ -4444,19 +4594,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2536
+    .line 2778
     :cond_15
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x1
+    const/high16 v5, 0x2
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x1
+    const/high16 v5, 0x2
 
     if-ne v4, v5, :cond_16
 
-    .line 2537
+    .line 2779
     const/16 v4, 0x17
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getTitleBytes()Lcom/google/protobuf/ByteString;
@@ -4469,19 +4619,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2540
+    .line 2782
     :cond_16
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x4
+    const/high16 v5, 0x8
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x4
+    const/high16 v5, 0x8
 
     if-ne v4, v5, :cond_17
 
-    .line 2541
+    .line 2783
     const/16 v4, 0x18
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtmlBytes()Lcom/google/protobuf/ByteString;
@@ -4494,7 +4644,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2544
+    .line 2786
     :cond_17
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4502,7 +4652,7 @@
 
     if-ne v4, v7, :cond_18
 
-    .line 2545
+    .line 2787
     const/16 v4, 0x19
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleIdBytes()Lcom/google/protobuf/ByteString;
@@ -4515,11 +4665,11 @@
 
     add-int/2addr v2, v4
 
-    .line 2549
+    .line 2791
     :cond_18
     const/4 v0, 0x0
 
-    .line 2550
+    .line 2792
     .local v0, dataSize:I
     const/4 v1, 0x0
 
@@ -4532,7 +4682,7 @@
 
     if-ge v1, v4, :cond_19
 
-    .line 2551
+    .line 2793
     iget-object v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
 
     invoke-interface {v4, v1}, Lcom/google/protobuf/LazyStringList;->getByteString(I)Lcom/google/protobuf/ByteString;
@@ -4545,16 +4695,16 @@
 
     add-int/2addr v0, v4
 
-    .line 2550
+    .line 2792
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_5
 
-    .line 2554
+    .line 2796
     :cond_19
     add-int/2addr v2, v0
 
-    .line 2555
+    .line 2797
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtmlPageList()Ljava/util/List;
 
     move-result-object v4
@@ -4567,18 +4717,18 @@
 
     add-int/2addr v2, v4
 
-    .line 2557
+    .line 2799
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x800
+    const/high16 v5, 0x2000
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x800
+    const/high16 v5, 0x2000
 
     if-ne v4, v5, :cond_1a
 
-    .line 2558
+    .line 2800
     const/16 v4, 0x1c
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSendToPhoneUrlBytes()Lcom/google/protobuf/ByteString;
@@ -4591,7 +4741,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2561
+    .line 2803
     :cond_1a
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4599,7 +4749,7 @@
 
     if-ne v4, v8, :cond_1b
 
-    .line 2562
+    .line 2804
     const/16 v4, 0x1d
 
     iget-boolean v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isBundleCover_:Z
@@ -4610,7 +4760,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2565
+    .line 2807
     :cond_1b
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4620,7 +4770,7 @@
 
     if-ne v4, v5, :cond_1c
 
-    .line 2566
+    .line 2808
     const/16 v4, 0x1e
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceItemIdBytes()Lcom/google/protobuf/ByteString;
@@ -4633,17 +4783,17 @@
 
     add-int/2addr v2, v4
 
-    .line 2569
+    .line 2811
     :cond_1c
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    and-int/lit16 v4, v4, 0x2000
+    and-int/lit16 v4, v4, 0x4000
 
-    const/16 v5, 0x2000
+    const/16 v5, 0x4000
 
     if-ne v4, v5, :cond_1d
 
-    .line 2570
+    .line 2812
     const/16 v4, 0x1f
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCanonicalUrlBytes()Lcom/google/protobuf/ByteString;
@@ -4656,19 +4806,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2573
+    .line 2815
     :cond_1d
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x80
+    const/high16 v5, 0x200
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x80
+    const/high16 v5, 0x200
 
     if-ne v4, v5, :cond_1e
 
-    .line 2574
+    .line 2816
     const/16 v4, 0x21
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
@@ -4683,19 +4833,19 @@
 
     add-int/2addr v2, v4
 
-    .line 2577
+    .line 2819
     :cond_1e
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v5, 0x200
+    const/high16 v5, 0x800
 
     and-int/2addr v4, v5
 
-    const/high16 v5, 0x200
+    const/high16 v5, 0x800
 
     if-ne v4, v5, :cond_1f
 
-    .line 2578
+    .line 2820
     const/16 v4, 0x22
 
     iget-object v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -4710,7 +4860,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2581
+    .line 2823
     :cond_1f
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4720,7 +4870,7 @@
 
     if-ne v4, v5, :cond_20
 
-    .line 2582
+    .line 2824
     const/16 v4, 0x23
 
     iget-wide v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinTime_:J
@@ -4731,7 +4881,7 @@
 
     add-int/2addr v2, v4
 
-    .line 2585
+    .line 2827
     :cond_20
     iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -4741,7 +4891,7 @@
 
     if-ne v4, v5, :cond_21
 
-    .line 2586
+    .line 2828
     const/16 v4, 0x24
 
     iget v5, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinScore_:I
@@ -4752,8 +4902,56 @@
 
     add-int/2addr v2, v4
 
-    .line 2589
+    .line 2831
     :cond_21
+    iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    and-int/lit16 v4, v4, 0x2000
+
+    const/16 v5, 0x2000
+
+    if-ne v4, v5, :cond_22
+
+    .line 2832
+    const/16 v4, 0x25
+
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceAccountIdBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSize(ILcom/google/protobuf/ByteString;)I
+
+    move-result v4
+
+    add-int/2addr v2, v4
+
+    .line 2835
+    :cond_22
+    iget v4, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v5, 0x10
+
+    and-int/2addr v4, v5
+
+    const/high16 v5, 0x10
+
+    if-ne v4, v5, :cond_23
+
+    .line 2836
+    const/16 v4, 0x26
+
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableTypeBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSize(ILcom/google/protobuf/ByteString;)I
+
+    move-result v4
+
+    add-int/2addr v2, v4
+
+    .line 2839
+    :cond_23
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v4
@@ -4764,12 +4962,12 @@
 
     add-int/2addr v2, v4
 
-    .line 2590
+    .line 2840
     iput v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedSerializedSize:I
 
     move v3, v2
 
-    .line 2591
+    .line 2841
     .end local v2           #size:I
     .restart local v3       #size:I
     goto/16 :goto_0
@@ -4780,7 +4978,7 @@
     .parameter "index"
 
     .prologue
-    .line 1506
+    .line 1587
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4796,7 +4994,7 @@
     .locals 1
 
     .prologue
-    .line 1496
+    .line 1577
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -4819,7 +5017,7 @@
     .end annotation
 
     .prologue
-    .line 1475
+    .line 1556
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
     return-object v0
@@ -4830,7 +5028,7 @@
     .parameter "index"
 
     .prologue
-    .line 1517
+    .line 1598
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -4855,7 +5053,7 @@
     .end annotation
 
     .prologue
-    .line 1486
+    .line 1567
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
 
     return-object v0
@@ -4867,7 +5065,7 @@
     .end annotation
 
     .prologue
-    .line 2237
+    .line 2471
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
 
     return-object v0
@@ -4877,19 +5075,19 @@
     .locals 4
 
     .prologue
-    .line 1256
+    .line 1280
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
 
-    .line 1257
+    .line 1281
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1258
+    .line 1282
     check-cast v1, Ljava/lang/String;
 
-    .line 1266
+    .line 1290
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -4898,16 +5096,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1260
+    .line 1284
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1262
+    .line 1286
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1263
+    .line 1287
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -4915,30 +5113,82 @@
 
     if-eqz v3, :cond_1
 
-    .line 1264
+    .line 1288
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1266
+    .line 1290
     goto :goto_0
 .end method
 
-.method public getSourceBytes()Lcom/google/protobuf/ByteString;
+.method public getSourceAccountId()Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 1421
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
+
+    .line 1422
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-eqz v3, :cond_0
+
+    .line 1423
+    check-cast v1, Ljava/lang/String;
+
+    .line 1431
+    .end local v1           #ref:Ljava/lang/Object;
+    :goto_0
+    return-object v1
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_0
+    move-object v0, v1
+
+    .line 1425
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 1427
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1428
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 1429
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
+
+    :cond_1
+    move-object v1, v2
+
+    .line 1431
+    goto :goto_0
+.end method
+
+.method public getSourceAccountIdBytes()Lcom/google/protobuf/ByteString;
     .locals 3
 
     .prologue
-    .line 1288
-    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
+    .line 1444
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
 
-    .line 1289
+    .line 1445
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1290
+    .line 1446
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -4946,11 +5196,51 @@
 
     move-result-object v0
 
-    .line 1293
+    .line 1449
+    .local v0, b:Lcom/google/protobuf/ByteString;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceAccountId_:Ljava/lang/Object;
+
+    .line 1452
+    .end local v0           #b:Lcom/google/protobuf/ByteString;
+    :goto_0
+    return-object v0
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_0
+    check-cast v1, Lcom/google/protobuf/ByteString;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method public getSourceBytes()Lcom/google/protobuf/ByteString;
+    .locals 3
+
+    .prologue
+    .line 1312
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
+
+    .line 1313
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v2, v1, Ljava/lang/String;
+
+    if-eqz v2, :cond_0
+
+    .line 1314
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 1317
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->source_:Ljava/lang/Object;
 
-    .line 1296
+    .line 1320
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -4969,19 +5259,19 @@
     .locals 4
 
     .prologue
-    .line 1339
+    .line 1363
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
 
-    .line 1340
+    .line 1364
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1341
+    .line 1365
     check-cast v1, Ljava/lang/String;
 
-    .line 1349
+    .line 1373
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -4990,16 +5280,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1343
+    .line 1367
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1345
+    .line 1369
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1346
+    .line 1370
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -5007,13 +5297,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1347
+    .line 1371
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1349
+    .line 1373
     goto :goto_0
 .end method
 
@@ -5021,16 +5311,16 @@
     .locals 3
 
     .prologue
-    .line 1363
+    .line 1387
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
 
-    .line 1364
+    .line 1388
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1365
+    .line 1389
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -5038,11 +5328,11 @@
 
     move-result-object v0
 
-    .line 1368
+    .line 1392
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceItemId_:Ljava/lang/Object;
 
-    .line 1371
+    .line 1395
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -5061,7 +5351,7 @@
     .locals 1
 
     .prologue
-    .line 1312
+    .line 1336
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
 
     return-object v0
@@ -5071,19 +5361,19 @@
     .locals 4
 
     .prologue
-    .line 1842
+    .line 2061
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
 
-    .line 1843
+    .line 2062
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1844
+    .line 2063
     check-cast v1, Ljava/lang/String;
 
-    .line 1852
+    .line 2071
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -5092,16 +5382,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1846
+    .line 2065
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1848
+    .line 2067
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1849
+    .line 2068
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -5109,13 +5399,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1850
+    .line 2069
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1852
+    .line 2071
     goto :goto_0
 .end method
 
@@ -5123,16 +5413,16 @@
     .locals 3
 
     .prologue
-    .line 1876
+    .line 2110
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
 
-    .line 1877
+    .line 2111
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1878
+    .line 2112
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -5140,11 +5430,103 @@
 
     move-result-object v0
 
-    .line 1881
+    .line 2115
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableText_:Ljava/lang/Object;
 
-    .line 1884
+    .line 2118
+    .end local v0           #b:Lcom/google/protobuf/ByteString;
+    :goto_0
+    return-object v0
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_0
+    check-cast v1, Lcom/google/protobuf/ByteString;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v0, v1
+
+    goto :goto_0
+.end method
+
+.method public getSpeakableType()Ljava/lang/String;
+    .locals 4
+
+    .prologue
+    .line 1935
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    .line 1936
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-eqz v3, :cond_0
+
+    .line 1937
+    check-cast v1, Ljava/lang/String;
+
+    .line 1945
+    .end local v1           #ref:Ljava/lang/Object;
+    :goto_0
+    return-object v1
+
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_0
+    move-object v0, v1
+
+    .line 1939
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 1941
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1942
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 1943
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    :cond_1
+    move-object v1, v2
+
+    .line 1945
+    goto :goto_0
+.end method
+
+.method public getSpeakableTypeBytes()Lcom/google/protobuf/ByteString;
+    .locals 3
+
+    .prologue
+    .line 1975
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    .line 1976
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v2, v1, Ljava/lang/String;
+
+    if-eqz v2, :cond_0
+
+    .line 1977
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    invoke-static {v1}, Lcom/google/protobuf/ByteString;->copyFromUtf8(Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 1980
+    .local v0, b:Lcom/google/protobuf/ByteString;
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->speakableType_:Ljava/lang/Object;
+
+    .line 1983
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -5163,19 +5545,19 @@
     .locals 4
 
     .prologue
-    .line 1654
+    .line 1735
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
 
-    .line 1655
+    .line 1736
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1656
+    .line 1737
     check-cast v1, Ljava/lang/String;
 
-    .line 1664
+    .line 1745
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -5184,16 +5566,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1658
+    .line 1739
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1660
+    .line 1741
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1661
+    .line 1742
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -5201,13 +5583,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1662
+    .line 1743
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1664
+    .line 1745
     goto :goto_0
 .end method
 
@@ -5215,16 +5597,16 @@
     .locals 3
 
     .prologue
-    .line 1676
+    .line 1757
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
 
-    .line 1677
+    .line 1758
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1678
+    .line 1759
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -5232,11 +5614,11 @@
 
     move-result-object v0
 
-    .line 1681
+    .line 1762
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->text_:Ljava/lang/Object;
 
-    .line 1684
+    .line 1765
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -5255,19 +5637,19 @@
     .locals 4
 
     .prologue
-    .line 1600
+    .line 1681
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
-    .line 1601
+    .line 1682
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 1602
+    .line 1683
     check-cast v1, Ljava/lang/String;
 
-    .line 1610
+    .line 1691
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -5276,16 +5658,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 1604
+    .line 1685
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 1606
+    .line 1687
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1607
+    .line 1688
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -5293,13 +5675,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 1608
+    .line 1689
     iput-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 1610
+    .line 1691
     goto :goto_0
 .end method
 
@@ -5307,16 +5689,16 @@
     .locals 3
 
     .prologue
-    .line 1622
+    .line 1703
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
-    .line 1623
+    .line 1704
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1624
+    .line 1705
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -5324,11 +5706,11 @@
 
     move-result-object v0
 
-    .line 1627
+    .line 1708
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->title_:Ljava/lang/Object;
 
-    .line 1630
+    .line 1711
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -5357,7 +5739,7 @@
     .locals 2
 
     .prologue
-    .line 924
+    .line 948
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -5381,12 +5763,12 @@
     .locals 2
 
     .prologue
-    .line 1386
+    .line 1467
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    and-int/lit16 v0, v0, 0x2000
+    and-int/lit16 v0, v0, 0x4000
 
-    const/16 v1, 0x2000
+    const/16 v1, 0x4000
 
     if-ne v0, v1, :cond_0
 
@@ -5405,9 +5787,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x100
+    const/high16 v1, 0x400
 
-    .line 2201
+    .line 2435
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5429,9 +5811,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x40
+    const/high16 v1, 0x100
 
-    .line 2158
+    .line 2392
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5453,9 +5835,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x200
+    const/high16 v1, 0x800
 
-    .line 2216
+    .line 2450
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5477,9 +5859,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x80
+    const/high16 v1, 0x200
 
-    .line 2182
+    .line 2416
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5501,7 +5883,7 @@
     .locals 2
 
     .prologue
-    .line 1040
+    .line 1064
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -5525,12 +5907,12 @@
     .locals 2
 
     .prologue
-    .line 1442
+    const v1, 0x8000
+
+    .line 1523
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    and-int/lit16 v0, v0, 0x4000
-
-    const/16 v1, 0x4000
+    and-int/2addr v0, v1
 
     if-ne v0, v1, :cond_0
 
@@ -5549,7 +5931,7 @@
     .locals 2
 
     .prologue
-    .line 1092
+    .line 1116
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -5573,9 +5955,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x4
+    const/high16 v1, 0x8
 
-    .line 1699
+    .line 1780
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5599,7 +5981,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 858
+    .line 882
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -5619,9 +6001,9 @@
     .locals 2
 
     .prologue
-    const v1, 0x8000
+    const/high16 v1, 0x1
 
-    .line 1532
+    .line 1613
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5643,7 +6025,7 @@
     .locals 2
 
     .prologue
-    .line 1005
+    .line 1029
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -5667,7 +6049,7 @@
     .locals 2
 
     .prologue
-    .line 1203
+    .line 1227
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x200
@@ -5691,7 +6073,7 @@
     .locals 2
 
     .prologue
-    .line 1178
+    .line 1202
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x100
@@ -5715,9 +6097,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x10
+    const/high16 v1, 0x40
 
-    .line 1953
+    .line 2187
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5739,7 +6121,7 @@
     .locals 2
 
     .prologue
-    .line 1065
+    .line 1089
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -5763,9 +6145,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x20
+    const/high16 v1, 0x80
 
-    .line 2122
+    .line 2356
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5787,7 +6169,7 @@
     .locals 2
 
     .prologue
-    .line 1150
+    .line 1174
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x80
@@ -5811,7 +6193,7 @@
     .locals 2
 
     .prologue
-    .line 1121
+    .line 1145
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -5837,9 +6219,9 @@
     .end annotation
 
     .prologue
-    const/high16 v1, 0x800
+    const/high16 v1, 0x2000
 
-    .line 2251
+    .line 2485
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5863,9 +6245,9 @@
     .end annotation
 
     .prologue
-    const/high16 v1, 0x400
+    const/high16 v1, 0x1000
 
-    .line 2231
+    .line 2465
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5887,7 +6269,7 @@
     .locals 2
 
     .prologue
-    .line 1236
+    .line 1260
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x400
@@ -5907,11 +6289,35 @@
     goto :goto_0
 .end method
 
+.method public hasSourceAccountId()Z
+    .locals 2
+
+    .prologue
+    .line 1410
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    and-int/lit16 v0, v0, 0x2000
+
+    const/16 v1, 0x2000
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public hasSourceItemId()Z
     .locals 2
 
     .prologue
-    .line 1327
+    .line 1351
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x1000
@@ -5935,7 +6341,7 @@
     .locals 2
 
     .prologue
-    .line 1306
+    .line 1330
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x800
@@ -5959,9 +6365,33 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x8
+    const/high16 v1, 0x20
 
-    .line 1820
+    .line 2024
+    iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    and-int/2addr v0, v1
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public hasSpeakableType()Z
+    .locals 2
+
+    .prologue
+    const/high16 v1, 0x10
+
+    .line 1907
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -5983,9 +6413,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x2
+    const/high16 v1, 0x4
 
-    .line 1644
+    .line 1725
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -6007,9 +6437,9 @@
     .locals 2
 
     .prologue
-    const/high16 v1, 0x1
+    const/high16 v1, 0x2
 
-    .line 1590
+    .line 1671
     iget v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/2addr v0, v1
@@ -6031,7 +6461,7 @@
     .locals 3
 
     .prologue
-    .line 341
+    .line 365
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_TimelineItem_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/TimelineItem;
@@ -6049,12 +6479,12 @@
     .locals 1
 
     .prologue
-    .line 2605
+    .line 2855
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 2606
+    .line 2856
     const-string v0, "com.google.googlex.glass.common.proto.MutableTimeline$TimelineItem"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -6063,7 +6493,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 2608
+    .line 2858
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/TimelineItem;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -6076,10 +6506,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 2334
+    .line 2570
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedIsInitialized:B
 
-    .line 2335
+    .line 2571
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -6087,17 +6517,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2338
+    .line 2574
     :goto_0
     return v1
 
-    .line 2335
+    .line 2571
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 2337
+    .line 2573
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->memoizedIsInitialized:B
 
@@ -6108,7 +6538,7 @@
     .locals 1
 
     .prologue
-    .line 2665
+    .line 2915
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v0
@@ -6121,14 +6551,14 @@
     .parameter "parent"
 
     .prologue
-    .line 2674
+    .line 2924
     new-instance v0, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/TimelineItem$1;)V
 
-    .line 2675
+    .line 2925
     .local v0, builder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
     return-object v0
 .end method
@@ -6174,7 +6604,7 @@
     .locals 1
 
     .prologue
-    .line 2669
+    .line 2919
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder(Lcom/google/googlex/glass/common/proto/TimelineItem;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
     move-result-object v0
@@ -6215,7 +6645,7 @@
     .end annotation
 
     .prologue
-    .line 2598
+    .line 2848
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -6243,24 +6673,24 @@
 
     const/4 v2, 0x1
 
-    .line 2343
+    .line 2579
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSerializedSize()I
 
-    .line 2344
+    .line 2580
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
 
     if-ne v1, v2, :cond_0
 
-    .line 2345
+    .line 2581
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2347
+    .line 2583
     :cond_0
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6268,12 +6698,12 @@
 
     if-ne v1, v6, :cond_1
 
-    .line 2348
+    .line 2584
     iget-wide v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creationTime_:J
 
     invoke-virtual {p1, v4, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
-    .line 2350
+    .line 2586
     :cond_1
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6281,14 +6711,14 @@
 
     if-ne v1, v7, :cond_2
 
-    .line 2351
+    .line 2587
     const/4 v1, 0x3
 
     iget-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->modifiedTime_:J
 
     invoke-virtual {p1, v1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
-    .line 2353
+    .line 2589
     :cond_2
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6298,31 +6728,33 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 2354
+    .line 2590
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 
     invoke-virtual {p1, v5, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2356
+    .line 2592
     :cond_3
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    and-int/lit16 v1, v1, 0x4000
+    const v2, 0x8000
 
-    const/16 v2, 0x4000
+    and-int/2addr v1, v2
+
+    const v2, 0x8000
 
     if-ne v1, v2, :cond_4
 
-    .line 2357
+    .line 2593
     const/4 v1, 0x5
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->creator_:Lcom/google/googlex/glass/common/proto/Entity;
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2359
+    .line 2595
     :cond_4
     const/4 v0, 0x0
 
@@ -6336,7 +6768,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 2360
+    .line 2596
     const/4 v2, 0x6
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->shareTarget_:Ljava/util/List;
@@ -6349,24 +6781,24 @@
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2359
+    .line 2595
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 2362
+    .line 2598
     :cond_5
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const v2, 0x8000
+    const/high16 v2, 0x1
 
     and-int/2addr v1, v2
 
-    const v2, 0x8000
+    const/high16 v2, 0x1
 
     if-ne v1, v2, :cond_6
 
-    .line 2363
+    .line 2599
     const/4 v1, 0x7
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getInReplyToBytes()Lcom/google/protobuf/ByteString;
@@ -6375,26 +6807,26 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2365
+    .line 2601
     :cond_6
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x2
+    const/high16 v2, 0x4
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x2
+    const/high16 v2, 0x4
 
     if-ne v1, v2, :cond_7
 
-    .line 2366
+    .line 2602
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getTextBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v1
 
     invoke-virtual {p1, v6, v1}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2368
+    .line 2604
     :cond_7
     const/4 v0, 0x0
 
@@ -6407,7 +6839,7 @@
 
     if-ge v0, v1, :cond_8
 
-    .line 2369
+    .line 2605
     const/16 v2, 0x9
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->attachment_:Ljava/util/List;
@@ -6420,31 +6852,31 @@
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2368
+    .line 2604
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 2371
+    .line 2607
     :cond_8
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x10
+    const/high16 v2, 0x40
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x10
+    const/high16 v2, 0x40
 
     if-ne v1, v2, :cond_9
 
-    .line 2372
+    .line 2608
     const/16 v1, 0xa
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->location_:Lcom/google/googlex/glass/common/proto/Location;
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2374
+    .line 2610
     :cond_9
     const/4 v0, 0x0
 
@@ -6457,7 +6889,7 @@
 
     if-ge v0, v1, :cond_a
 
-    .line 2375
+    .line 2611
     const/16 v2, 0xb
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->menuItem_:Ljava/util/List;
@@ -6470,24 +6902,24 @@
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2374
+    .line 2610
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 2377
+    .line 2613
     :cond_a
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x40
+    const/high16 v2, 0x100
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x40
+    const/high16 v2, 0x100
 
     if-ne v1, v2, :cond_b
 
-    .line 2378
+    .line 2614
     const/16 v1, 0xc
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
@@ -6498,19 +6930,19 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 2380
+    .line 2616
     :cond_b
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x100
+    const/high16 v2, 0x400
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x100
+    const/high16 v2, 0x400
 
     if-ne v1, v2, :cond_c
 
-    .line 2381
+    .line 2617
     const/16 v1, 0xd
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->cloudSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -6521,7 +6953,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 2383
+    .line 2619
     :cond_c
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6531,7 +6963,7 @@
 
     if-ne v1, v2, :cond_d
 
-    .line 2384
+    .line 2620
     const/16 v1, 0xe
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->sourceType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SourceType;
@@ -6542,7 +6974,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 2386
+    .line 2622
     :cond_d
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6552,31 +6984,31 @@
 
     if-ne v1, v2, :cond_e
 
-    .line 2387
+    .line 2623
     const/16 v1, 0xf
 
     iget-boolean v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isDeleted_:Z
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 2389
+    .line 2625
     :cond_e
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x20
+    const/high16 v2, 0x80
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x20
+    const/high16 v2, 0x80
 
     if-ne v1, v2, :cond_f
 
-    .line 2390
+    .line 2626
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->notification_:Lcom/google/googlex/glass/common/proto/NotificationConfig;
 
     invoke-virtual {p1, v7, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2392
+    .line 2628
     :cond_f
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6586,14 +7018,14 @@
 
     if-ne v1, v2, :cond_10
 
-    .line 2393
+    .line 2629
     const/16 v1, 0x11
 
     iget-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->displayTime_:J
 
     invoke-virtual {p1, v1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
-    .line 2395
+    .line 2631
     :cond_10
     const/4 v0, 0x0
 
@@ -6606,7 +7038,7 @@
 
     if-ge v0, v1, :cond_11
 
-    .line 2396
+    .line 2632
     const/16 v2, 0x12
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pendingAction_:Ljava/util/List;
@@ -6619,24 +7051,24 @@
 
     invoke-virtual {p1, v2, v1}, Lcom/google/protobuf/CodedOutputStream;->writeMessage(ILcom/google/protobuf/MessageLite;)V
 
-    .line 2395
+    .line 2631
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_3
 
-    .line 2398
+    .line 2634
     :cond_11
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x8
+    const/high16 v2, 0x20
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x8
+    const/high16 v2, 0x20
 
     if-ne v1, v2, :cond_12
 
-    .line 2399
+    .line 2635
     const/16 v1, 0x13
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableTextBytes()Lcom/google/protobuf/ByteString;
@@ -6645,19 +7077,19 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2401
+    .line 2637
     :cond_12
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x400
+    const/high16 v2, 0x1000
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x400
+    const/high16 v2, 0x1000
 
     if-ne v1, v2, :cond_13
 
-    .line 2402
+    .line 2638
     const/16 v1, 0x14
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->smsType_:Lcom/google/googlex/glass/common/proto/TimelineItem$SmsType;
@@ -6668,7 +7100,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 2404
+    .line 2640
     :cond_13
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6678,26 +7110,26 @@
 
     if-ne v1, v2, :cond_14
 
-    .line 2405
+    .line 2641
     const/16 v1, 0x15
 
     iget-boolean v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isPinned_:Z
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 2407
+    .line 2643
     :cond_14
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x1
+    const/high16 v2, 0x2
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x1
+    const/high16 v2, 0x2
 
     if-ne v1, v2, :cond_15
 
-    .line 2408
+    .line 2644
     const/16 v1, 0x17
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getTitleBytes()Lcom/google/protobuf/ByteString;
@@ -6706,19 +7138,19 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2410
+    .line 2646
     :cond_15
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x4
+    const/high16 v2, 0x8
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x4
+    const/high16 v2, 0x8
 
     if-ne v1, v2, :cond_16
 
-    .line 2411
+    .line 2647
     const/16 v1, 0x18
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtmlBytes()Lcom/google/protobuf/ByteString;
@@ -6727,7 +7159,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2413
+    .line 2649
     :cond_16
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6735,7 +7167,7 @@
 
     if-ne v1, v4, :cond_17
 
-    .line 2414
+    .line 2650
     const/16 v1, 0x19
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getBundleIdBytes()Lcom/google/protobuf/ByteString;
@@ -6744,7 +7176,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2416
+    .line 2652
     :cond_17
     const/4 v0, 0x0
 
@@ -6757,7 +7189,7 @@
 
     if-ge v0, v1, :cond_18
 
-    .line 2417
+    .line 2653
     const/16 v1, 0x1a
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->htmlPage_:Lcom/google/protobuf/LazyStringList;
@@ -6768,24 +7200,24 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2416
+    .line 2652
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_4
 
-    .line 2419
+    .line 2655
     :cond_18
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x800
+    const/high16 v2, 0x2000
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x800
+    const/high16 v2, 0x2000
 
     if-ne v1, v2, :cond_19
 
-    .line 2420
+    .line 2656
     const/16 v1, 0x1c
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSendToPhoneUrlBytes()Lcom/google/protobuf/ByteString;
@@ -6794,7 +7226,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2422
+    .line 2658
     :cond_19
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6802,14 +7234,14 @@
 
     if-ne v1, v5, :cond_1a
 
-    .line 2423
+    .line 2659
     const/16 v1, 0x1d
 
     iget-boolean v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->isBundleCover_:Z
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBool(IZ)V
 
-    .line 2425
+    .line 2661
     :cond_1a
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6819,7 +7251,7 @@
 
     if-ne v1, v2, :cond_1b
 
-    .line 2426
+    .line 2662
     const/16 v1, 0x1e
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceItemIdBytes()Lcom/google/protobuf/ByteString;
@@ -6828,17 +7260,17 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2428
+    .line 2664
     :cond_1b
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    and-int/lit16 v1, v1, 0x2000
+    and-int/lit16 v1, v1, 0x4000
 
-    const/16 v2, 0x2000
+    const/16 v2, 0x4000
 
     if-ne v1, v2, :cond_1c
 
-    .line 2429
+    .line 2665
     const/16 v1, 0x1f
 
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCanonicalUrlBytes()Lcom/google/protobuf/ByteString;
@@ -6847,19 +7279,19 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 2431
+    .line 2667
     :cond_1c
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x80
+    const/high16 v2, 0x200
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x80
+    const/high16 v2, 0x200
 
     if-ne v1, v2, :cond_1d
 
-    .line 2432
+    .line 2668
     const/16 v1, 0x21
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncStatus_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncStatus;
@@ -6870,19 +7302,19 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 2434
+    .line 2670
     :cond_1d
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
-    const/high16 v2, 0x200
+    const/high16 v2, 0x800
 
     and-int/2addr v1, v2
 
-    const/high16 v2, 0x200
+    const/high16 v2, 0x800
 
     if-ne v1, v2, :cond_1e
 
-    .line 2435
+    .line 2671
     const/16 v1, 0x22
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->companionSyncProtocol_:Lcom/google/googlex/glass/common/proto/TimelineItem$SyncProtocol;
@@ -6893,7 +7325,7 @@
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeEnum(II)V
 
-    .line 2437
+    .line 2673
     :cond_1e
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6903,14 +7335,14 @@
 
     if-ne v1, v2, :cond_1f
 
-    .line 2438
+    .line 2674
     const/16 v1, 0x23
 
     iget-wide v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinTime_:J
 
     invoke-virtual {p1, v1, v2, v3}, Lcom/google/protobuf/CodedOutputStream;->writeUInt64(IJ)V
 
-    .line 2440
+    .line 2676
     :cond_1f
     iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
 
@@ -6920,21 +7352,61 @@
 
     if-ne v1, v2, :cond_20
 
-    .line 2441
+    .line 2677
     const/16 v1, 0x24
 
     iget v2, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->pinScore_:I
 
     invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 2443
+    .line 2679
     :cond_20
+    iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    and-int/lit16 v1, v1, 0x2000
+
+    const/16 v2, 0x2000
+
+    if-ne v1, v2, :cond_21
+
+    .line 2680
+    const/16 v1, 0x25
+
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSourceAccountIdBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
+
+    .line 2682
+    :cond_21
+    iget v1, p0, Lcom/google/googlex/glass/common/proto/TimelineItem;->bitField0_:I
+
+    const/high16 v2, 0x10
+
+    and-int/2addr v1, v2
+
+    const/high16 v2, 0x10
+
+    if-ne v1, v2, :cond_22
+
+    .line 2683
+    const/16 v1, 0x26
+
+    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableTypeBytes()Lcom/google/protobuf/ByteString;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v1, v2}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
+
+    .line 2685
+    :cond_22
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 2444
+    .line 2686
     return-void
 .end method

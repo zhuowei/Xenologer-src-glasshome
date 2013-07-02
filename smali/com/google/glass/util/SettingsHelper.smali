@@ -28,6 +28,8 @@
 
 .field public static final ON_HEAD_DETECTION_ID:I = 0x5
 
+.field public static final VOLUME_ID:I = 0x8
+
 .field public static final WIFI_ID:I = 0x0
 
 .field public static final WINK_TO_PHOTO_ID:I = 0x4
@@ -45,10 +47,10 @@
     .parameter "context"
 
     .prologue
-    .line 63
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 49
+    .line 50
     new-instance v0, Lcom/google/glass/util/CustomItemIdGenerator;
 
     const-string v1, "settings"
@@ -57,10 +59,10 @@
 
     iput-object v0, p0, Lcom/google/glass/util/SettingsHelper;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
-    .line 64
+    .line 65
     iput-object p1, p0, Lcom/google/glass/util/SettingsHelper;->context:Landroid/content/Context;
 
-    .line 65
+    .line 66
     return-void
 .end method
 
@@ -69,7 +71,7 @@
     .parameter "context"
 
     .prologue
-    .line 55
+    .line 56
     new-instance v0, Lcom/google/glass/util/SettingsHelper$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/util/SettingsHelper$1;-><init>(Landroid/content/Context;)V
@@ -84,7 +86,7 @@
     .parameter "position"
 
     .prologue
-    .line 110
+    .line 111
     iget-object v0, p0, Lcom/google/glass/util/SettingsHelper;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/util/CustomItemIdGenerator;->createId(I)Ljava/lang/String;
@@ -100,7 +102,7 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 92
+    .line 93
     iget-object v3, p0, Lcom/google/glass/util/SettingsHelper;->context:Landroid/content/Context;
 
     const/4 v4, 0x0
@@ -115,18 +117,18 @@
 
     move-result-object v0
 
-    .line 94
+    .line 95
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
-    .line 95
+    .line 96
     const-string v3, "com.google.glass.EXTRA_GUEST_MODE_TOGGLE_TIME"
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
     move-result-wide v1
 
-    .line 97
+    .line 98
     :cond_0
     return-wide v1
 .end method
@@ -136,7 +138,7 @@
     .parameter "id"
 
     .prologue
-    .line 120
+    .line 121
     iget-object v0, p0, Lcom/google/glass/util/SettingsHelper;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/util/CustomItemIdGenerator;->getPosition(Ljava/lang/String;)I
@@ -150,12 +152,12 @@
     .locals 1
 
     .prologue
-    .line 69
+    .line 70
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/google/glass/util/SettingsHelper;->goToSettings(I)V
 
-    .line 70
+    .line 71
     return-void
 .end method
 
@@ -164,30 +166,30 @@
     .parameter "settingsId"
 
     .prologue
-    .line 74
+    .line 75
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.ACTION_GO_TO_SETTINGS"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 75
+    .line 76
     .local v0, intent:Landroid/content/Intent;
     const/high16 v1, 0x1000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 76
+    .line 77
     const-string v1, "settings_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 77
+    .line 78
     iget-object v1, p0, Lcom/google/glass/util/SettingsHelper;->context:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 78
+    .line 79
     return-void
 .end method
 
@@ -195,7 +197,7 @@
     .locals 3
 
     .prologue
-    .line 125
+    .line 126
     new-instance v0, Lcom/google/glass/timeline/TimelineItemId;
 
     invoke-static {}, Lcom/google/googlex/glass/common/proto/TimelineItem;->newBuilder()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
@@ -218,13 +220,13 @@
 
     invoke-direct {v0, v1}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    .line 127
+    .line 128
     .local v0, settingsCoverId:Lcom/google/glass/timeline/TimelineItemId;
     iget-object v1, p0, Lcom/google/glass/util/SettingsHelper;->context:Landroid/content/Context;
 
     invoke-static {v1, v0}, Lcom/google/glass/timeline/TimelineHelper;->goToTimeline(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;)V
 
-    .line 128
+    .line 129
     return-void
 .end method
 
@@ -235,10 +237,10 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 102
+    .line 103
     if-nez p1, :cond_0
 
-    .line 105
+    .line 106
     :goto_0
     return v0
 
@@ -258,7 +260,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 82
+    .line 83
     iget-object v2, p0, Lcom/google/glass/util/SettingsHelper;->context:Landroid/content/Context;
 
     const/4 v3, 0x0
@@ -273,18 +275,18 @@
 
     move-result-object v0
 
-    .line 84
+    .line 85
     .local v0, intent:Landroid/content/Intent;
     if-eqz v0, :cond_0
 
-    .line 85
+    .line 86
     const-string v2, "com.google.glass.EXTRA_GUEST_MODE_ENABLED"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
     move-result v1
 
-    .line 87
+    .line 88
     :cond_0
     return v1
 .end method
@@ -294,7 +296,7 @@
     .parameter "id"
 
     .prologue
-    .line 115
+    .line 116
     iget-object v0, p0, Lcom/google/glass/util/SettingsHelper;->idGenerator:Lcom/google/glass/util/CustomItemIdGenerator;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/util/CustomItemIdGenerator;->isId(Ljava/lang/String;)Z

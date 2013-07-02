@@ -32,7 +32,7 @@
     .locals 0
 
     .prologue
-    .line 228
+    .line 230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
     .parameter "number"
 
     .prologue
-    .line 230
+    .line 232
     invoke-static {p1}, Lcom/google/glass/proto/MapRenderRequest$Type;->valueOf(I)Lcom/google/glass/proto/MapRenderRequest$Type;
 
     move-result-object v0
@@ -58,7 +58,7 @@
     .parameter "x0"
 
     .prologue
-    .line 228
+    .line 230
     invoke-virtual {p0, p1}, Lcom/google/glass/proto/MapRenderRequest$Type$1;->findValueByNumber(I)Lcom/google/glass/proto/MapRenderRequest$Type;
 
     move-result-object v0

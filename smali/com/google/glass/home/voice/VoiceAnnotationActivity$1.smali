@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 53
+    .line 52
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,17 +39,17 @@
     .parameter "msg"
 
     .prologue
-    .line 56
+    .line 55
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 63
+    .line 62
     :cond_0
     :goto_0
     return-void
 
-    .line 58
+    .line 57
     :pswitch_0
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
@@ -59,7 +59,7 @@
 
     if-nez v0, :cond_0
 
-    .line 59
+    .line 58
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$1;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     #calls: Lcom/google/glass/home/voice/VoiceAnnotationActivity;->confirmAnnotation()V
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 56
+    .line 55
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

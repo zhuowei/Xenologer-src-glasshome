@@ -26,9 +26,9 @@
 
 .field final synthetic val$filename:Ljava/lang/String;
 
-.field final synthetic val$sampleRate:J
+.field final synthetic val$hotwordResults:Ljava/util/List;
 
-.field final synthetic val$sensoryResults:Ljava/util/List;
+.field final synthetic val$sampleRate:J
 
 
 # direct methods
@@ -42,14 +42,14 @@
     .parameter
 
     .prologue
-    .line 186
+    .line 168
     iput-object p1, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->this$0:Lcom/google/glass/logging/audio/SavedAudioStorage;
 
     iput-object p2, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$context:Landroid/content/Context;
 
     iput-object p3, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$filename:Ljava/lang/String;
 
-    iput-object p4, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$sensoryResults:Ljava/util/List;
+    iput-object p4, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$hotwordResults:Ljava/util/List;
 
     iput-wide p5, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$sampleRate:J
 
@@ -66,7 +66,7 @@
     .locals 8
 
     .prologue
-    .line 190
+    .line 172
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->this$0:Lcom/google/glass/logging/audio/SavedAudioStorage;
 
@@ -74,7 +74,7 @@
 
     iget-object v2, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$filename:Ljava/lang/String;
 
-    iget-object v3, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$sensoryResults:Ljava/util/List;
+    iget-object v3, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$hotwordResults:Ljava/util/List;
 
     iget-wide v4, p0, Lcom/google/glass/logging/audio/SavedAudioStorage$1;->val$sampleRate:J
 
@@ -85,15 +85,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 194
+    .line 176
     :goto_0
     return-void
 
-    .line 191
+    .line 173
     :catch_0
     move-exception v7
 
-    .line 192
+    .line 174
     .local v7, e:Ljava/lang/Exception;
     invoke-static {}, Lcom/google/glass/logging/audio/SavedAudioStorage;->access$100()Ljava/lang/String;
 

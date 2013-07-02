@@ -1,14 +1,14 @@
 .class public Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;
-.super Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+.super Lcom/google/glass/voice/BaseVoiceInputActivity;
 .source "GlasswareVoiceInputActivity.java"
 
 
 # static fields
 .field public static final EXTRA_INPUT_TYPE_TEXT:Ljava/lang/String; = "input_type_text"
 
-.field public static final EXTRA_PROJECT_ID:Ljava/lang/String; = "project_id"
-
 .field public static final EXTRA_PROMPT_TEXT:Ljava/lang/String; = "prompt_text"
+
+.field public static final EXTRA_RECIPIENT:Ljava/lang/String; = "recipient"
 
 
 # instance fields
@@ -16,9 +16,9 @@
 
 .field private inputTypeText:Ljava/lang/String;
 
-.field private projectId:Ljava/lang/String;
-
 .field private promptText:Ljava/lang/String;
+
+.field private recipient:Lcom/google/googlex/glass/common/proto/Entity;
 
 .field private recognitionResult:Ljava/lang/String;
 
@@ -31,16 +31,16 @@
 
     .prologue
     .line 29
-    invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/voice/BaseVoiceInputActivity;-><init>()V
 
-    .line 47
+    .line 49
     new-instance v0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity$1;-><init>(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)V
 
     iput-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->createTimelineItemRunnable:Ljava/lang/Runnable;
 
-    .line 54
+    .line 56
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
@@ -61,18 +61,18 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)Ljava/lang/String;
+.method static synthetic access$100(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;)Lcom/google/googlex/glass/common/proto/Entity;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 29
-    iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->projectId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recipient:Lcom/google/googlex/glass/common/proto/Entity;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Ljava/lang/String;Ljava/lang/String;)V
+.method static synthetic access$200(Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -80,7 +80,7 @@
 
     .prologue
     .line 29
-    invoke-direct {p0, p1, p2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->insertTimelineItem(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->insertTimelineItem(Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -100,22 +100,22 @@
     .locals 4
 
     .prologue
-    .line 136
+    .line 139
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->isFinishing()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 173
+    .line 176
     :goto_0
     return-void
 
-    .line 140
+    .line 143
     :cond_0
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recognitionResult:Ljava/lang/String;
 
-    .line 141
+    .line 144
     .local v0, currentRecognitionResult:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -123,7 +123,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 142
+    .line 145
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v1
@@ -132,12 +132,12 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 143
+    .line 146
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->finish()V
 
     goto :goto_0
 
-    .line 147
+    .line 150
     :cond_1
     new-instance v1, Lcom/google/glass/widget/MessageDialog$Builder;
 
@@ -198,7 +198,7 @@
     .locals 1
 
     .prologue
-    .line 203
+    .line 206
     sget v0, Lcom/google/glass/home/R$id;->cancel_tip:I
 
     invoke-virtual {p0, v0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->findViewById(I)Landroid/view/View;
@@ -208,111 +208,99 @@
     return-object v0
 .end method
 
-.method private insertTimelineItem(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 8
-    .parameter "projectId"
+.method private insertTimelineItem(Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
+    .locals 7
+    .parameter "recipient"
     .parameter "recognitionResult"
 
     .prologue
-    .line 176
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "Inserting timeline item."
-
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 177
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "api:"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
     .line 179
-    .local v0, glasswareId:Ljava/lang/String;
-    iget-object v3, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
-
-    new-instance v4, Lcom/google/glass/util/SettingsSecure;
-
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Lcom/google/glass/util/SettingsSecure;-><init>(Landroid/content/ContentResolver;)V
-
-    invoke-virtual {v3, p0, v4}, Lcom/google/glass/timeline/TimelineHelper;->createTimelineItemBuilder(Landroid/content/Context;Lcom/google/glass/util/SettingsSecure;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-
-    move-result-object v1
-
-    .line 183
-    .local v1, itemBuilder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-    invoke-virtual {v1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setSource(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-
-    .line 188
-    invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v3, p0, v4}, Lcom/google/glass/entity/EntityHelper;->getFirstEntityForUser(Landroid/content/Context;Z)Lcom/google/googlex/glass/common/proto/Entity;
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 189
-    .local v2, user:Lcom/google/googlex/glass/common/proto/Entity;
-    if-eqz v2, :cond_0
+    const-string v3, "Inserting timeline item."
 
-    .line 190
-    invoke-virtual {v1, v2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setCreator(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 193
-    :cond_0
-    new-instance v3, Lcom/google/glass/timeline/TimelineHelper;
+    .line 181
+    iget-object v2, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
-    invoke-direct {v3}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
+    new-instance v3, Lcom/google/glass/util/SettingsSecure;
 
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->build()Lcom/google/googlex/glass/common/proto/TimelineItem;
+    invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
 
-    sget-object v5, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->LAUNCH:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
+    invoke-direct {v3, v4}, Lcom/google/glass/util/SettingsSecure;-><init>(Landroid/content/ContentResolver;)V
+
+    invoke-virtual {v2, p0, v3}, Lcom/google/glass/timeline/TimelineHelper;->createTimelineItemBuilder(Landroid/content/Context;Lcom/google/glass/util/SettingsSecure;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    move-result-object v0
+
+    .line 185
+    .local v0, itemBuilder:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity;->getSource()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setSource(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addShareTarget(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    .line 191
+    invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, p0, v3}, Lcom/google/glass/entity/EntityHelper;->getFirstEntityForUser(Landroid/content/Context;Z)Lcom/google/googlex/glass/common/proto/Entity;
+
+    move-result-object v1
+
+    .line 192
+    .local v1, user:Lcom/google/googlex/glass/common/proto/Entity;
+    if-eqz v1, :cond_0
+
+    .line 193
+    invoke-virtual {v0, v1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setCreator(Lcom/google/googlex/glass/common/proto/Entity;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    .line 196
+    :cond_0
+    new-instance v2, Lcom/google/glass/timeline/TimelineHelper;
+
+    invoke-direct {v2}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
+
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->build()Lcom/google/googlex/glass/common/proto/TimelineItem;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;->LAUNCH:Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;
 
     invoke-static {}, Lcom/google/googlex/glass/common/proto/UserAction;->newBuilder()Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
-    move-result-object v6
+    move-result-object v5
 
-    sget-object v7, Lcom/google/googlex/glass/common/proto/UserAction$Type;->LAUNCH:Lcom/google/googlex/glass/common/proto/UserAction$Type;
+    sget-object v6, Lcom/google/googlex/glass/common/proto/UserAction$Type;->LAUNCH:Lcom/google/googlex/glass/common/proto/UserAction$Type;
 
-    invoke-virtual {v6, v7}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->setType(Lcom/google/googlex/glass/common/proto/UserAction$Type;)Lcom/google/googlex/glass/common/proto/UserAction$Builder;
+    invoke-virtual {v5, v6}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->setType(Lcom/google/googlex/glass/common/proto/UserAction$Type;)Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
+    invoke-virtual {v5}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v3, p0, v4, v5, v6}, Lcom/google/glass/timeline/TimelineHelper;->insertTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;Lcom/google/googlex/glass/common/proto/UserAction;)Landroid/net/Uri;
+    invoke-virtual {v2, p0, v3, v4, v5}, Lcom/google/glass/timeline/TimelineHelper;->insertTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/glass/logging/UserEventAction$TimelineItemInserted;Lcom/google/googlex/glass/common/proto/UserAction;)Landroid/net/Uri;
 
-    .line 200
+    .line 203
     return-void
 .end method
 
@@ -322,7 +310,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 73
     sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
@@ -332,7 +320,7 @@
     .locals 1
 
     .prologue
-    .line 90
+    .line 93
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->inputTypeText:Ljava/lang/String;
 
     return-object v0
@@ -342,7 +330,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 88
     iget-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->promptText:Ljava/lang/String;
 
     return-object v0
@@ -352,7 +340,7 @@
     .locals 1
 
     .prologue
-    .line 75
+    .line 78
     sget-object v0, Lcom/google/glass/voice/VoiceConfigDescriptor;->VOICE_RECORD:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     return-object v0
@@ -362,7 +350,7 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 83
     const/4 v0, 0x3
 
     return v0
@@ -373,73 +361,69 @@
     .parameter "savedInstanceState"
 
     .prologue
-    .line 58
-    invoke-super {p0, p1}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;->onCreate(Landroid/os/Bundle;)V
-
     .line 60
-    const-string v0, "Prompt text required"
+    invoke-super {p0, p1}, Lcom/google/glass/voice/BaseVoiceInputActivity;->onCreate(Landroid/os/Bundle;)V
 
+    .line 62
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
+
+    .line 63
+    .local v0, intent:Landroid/content/Intent;
+    const-string v1, "Prompt text required"
 
     const-string v2, "prompt_text"
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v1, Ljava/lang/String;
 
-    move-result-object v0
+    iput-object v1, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->promptText:Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->promptText:Ljava/lang/String;
-
-    .line 62
-    const-string v0, "Input type text required"
-
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v1
+    .line 65
+    const-string v1, "Input type text required"
 
     const-string v2, "input_type_text"
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v1, Ljava/lang/String;
 
-    move-result-object v0
+    iput-object v1, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->inputTypeText:Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
+    .line 67
+    const-string v2, "Recipient required"
 
-    iput-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->inputTypeText:Ljava/lang/String;
+    const-string v1, "recipient"
 
-    .line 64
-    const-string v0, "Project ID required"
-
-    invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
     move-result-object v1
 
-    const-string v2, "project_id"
+    check-cast v1, Lcom/google/googlex/glass/common/proto/Entity;
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v1, Lcom/google/googlex/glass/common/proto/Entity;
 
-    move-result-object v0
+    iput-object v1, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recipient:Lcom/google/googlex/glass/common/proto/Entity;
 
-    check-cast v0, Ljava/lang/String;
-
-    iput-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->projectId:Ljava/lang/String;
-
-    .line 66
+    .line 69
     return-void
 .end method
 
@@ -448,7 +432,7 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 127
+    .line 130
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -457,7 +441,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 128
+    .line 131
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
@@ -466,7 +450,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 129
+    .line 132
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -475,15 +459,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 130
+    .line 133
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recognitionResult:Ljava/lang/String;
 
-    .line 131
+    .line 134
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->finish()V
 
-    .line 132
+    .line 135
     const/4 v0, 0x1
 
     return v0
@@ -494,12 +478,12 @@
     .parameter "recognitionResult"
 
     .prologue
-    .line 108
+    .line 111
     iget-object v3, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recognitionResult:Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 109
+    .line 112
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getTag()Ljava/lang/String;
 
     move-result-object v3
@@ -508,32 +492,32 @@
 
     invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
+    .line 114
     :cond_0
     iput-object p1, p0, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->recognitionResult:Ljava/lang/String;
 
-    .line 113
+    .line 116
     sget-object v3, Lcom/google/glass/voice/VoiceConfigDescriptor;->OFF:Lcom/google/glass/voice/VoiceConfigDescriptor;
 
     invoke-virtual {p0, v3}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->setVoiceConfig(Lcom/google/glass/voice/VoiceConfigDescriptor;)V
 
-    .line 115
+    .line 118
     invoke-direct {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getCancelTip()Landroid/view/View;
 
     move-result-object v0
 
-    .line 116
+    .line 119
     .local v0, cancelTip:Landroid/view/View;
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 117
+    .line 120
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 118
+    .line 121
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
@@ -548,12 +532,12 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 121
+    .line 124
     invoke-static {p1}, Lcom/google/glass/home/voice/VoiceMessageActivity;->getResultDuration(Ljava/lang/String;)J
 
     move-result-wide v1
 
-    .line 122
+    .line 125
     .local v1, showResultDuration:J
     invoke-virtual {p0}, Lcom/google/glass/home/voice/GlasswareVoiceInputActivity;->getHandler()Landroid/os/Handler;
 
@@ -563,7 +547,7 @@
 
     invoke-virtual {v3, v4, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 123
+    .line 126
     return-void
 .end method
 
@@ -571,7 +555,7 @@
     .locals 1
 
     .prologue
-    .line 103
+    .line 106
     const/4 v0, 0x0
 
     return v0

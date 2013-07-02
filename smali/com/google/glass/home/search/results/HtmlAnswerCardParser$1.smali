@@ -27,114 +27,7 @@
     .locals 3
 
     .prologue
-    .line 525
-    invoke-static {}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->values()[Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    move-result-object v0
-
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    :try_start_0
-    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->READ_ALOUD:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_d
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->SHARE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_c
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->VOICE_CALL:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_b
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->NAVIGATE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_a
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->SEARCH:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_9
-
-    :goto_4
-    :try_start_5
-    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
-
-    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->VIEW_WEB_SITE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_8
-
-    .line 316
-    :goto_5
+    .line 685
     invoke-static {}, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;->values()[Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
 
     move-result-object v0
@@ -145,7 +38,7 @@
 
     sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType:[I
 
-    :try_start_6
+    :try_start_0
     sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType:[I
 
     sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;->TTS:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
@@ -157,11 +50,11 @@
     const/4 v2, 0x1
 
     aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_7
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_d
 
-    :goto_6
-    :try_start_7
+    :goto_0
+    :try_start_1
     sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType:[I
 
     sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;->ACTION:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
@@ -173,11 +66,11 @@
     const/4 v2, 0x2
 
     aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_6
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_c
 
-    :goto_7
-    :try_start_8
+    :goto_1
+    :try_start_2
     sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType:[I
 
     sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;->CARD:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
@@ -189,11 +82,11 @@
     const/4 v2, 0x3
 
     aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_5
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_b
 
-    :goto_8
-    :try_start_9
+    :goto_2
+    :try_start_3
     sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType:[I
 
     sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;->COMMON:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
@@ -205,11 +98,11 @@
     const/4 v2, 0x4
 
     aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_a
 
-    :goto_9
-    :try_start_a
+    :goto_3
+    :try_start_4
     sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType:[I
 
     sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;->AUTOPLAY_TTS:Lcom/google/glass/home/search/results/HtmlAnswerCardParser$HtmlAnswerCardsHandler$StateType;
@@ -221,10 +114,117 @@
     const/4 v2, 0x5
 
     aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_9
+
+    .line 456
+    :goto_4
+    invoke-static {}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->values()[Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    move-result-object v0
+
+    array-length v0, v0
+
+    new-array v0, v0, [I
+
+    sput-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    :try_start_5
+    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->SHARE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x1
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_8
+
+    :goto_5
+    :try_start_6
+    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->READ_ALOUD:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_7
+
+    :goto_6
+    :try_start_7
+    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->VOICE_CALL:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_6
+
+    :goto_7
+    :try_start_8
+    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->NAVIGATE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_5
+
+    :goto_8
+    :try_start_9
+    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->SEARCH:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_4
+
+    :goto_9
+    :try_start_a
+    sget-object v0, Lcom/google/glass/home/search/results/HtmlAnswerCardParser$1;->$SwitchMap$com$google$glass$home$search$results$HtmlAnswerCard$ParsableActionType:[I
+
+    sget-object v1, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->VIEW_WEB_SITE:Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;
+
+    invoke-virtual {v1}, Lcom/google/glass/home/search/results/HtmlAnswerCard$ParsableActionType;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
     :try_end_a
     .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_3
 
-    .line 199
+    .line 401
     :goto_a
     invoke-static {}, Lcom/google/glass/home/search/results/HtmlAnswerCard$DisplayContext;->values()[Lcom/google/glass/home/search/results/HtmlAnswerCard$DisplayContext;
 
@@ -301,7 +301,7 @@
 
     goto :goto_b
 
-    .line 316
+    .line 456
     :catch_3
     move-exception v0
 
@@ -327,12 +327,12 @@
 
     goto :goto_6
 
-    .line 525
     :catch_8
     move-exception v0
 
     goto :goto_5
 
+    .line 685
     :catch_9
     move-exception v0
 

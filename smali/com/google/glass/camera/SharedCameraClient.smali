@@ -1,5 +1,5 @@
 .class public abstract Lcom/google/glass/camera/SharedCameraClient;
-.super Ljava/lang/Object;
+.super Lcom/google/glass/camera/ISharedCameraClient$Stub;
 .source "SharedCameraClient.java"
 
 
@@ -21,6 +21,8 @@
 
 .field private isUsingViewfinder:Z
 
+.field private previewSurface:Landroid/view/Surface;
+
 .field private final previewSurfaceAvailableCondition:Ljava/util/concurrent/locks/Condition;
 
 .field private final previewSurfaceListener:Landroid/view/TextureView$SurfaceTextureListener;
@@ -35,12 +37,12 @@
     .locals 1
 
     .prologue
-    .line 110
+    .line 115
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;-><init>(Landroid/os/Handler;)V
 
-    .line 111
+    .line 116
     return-void
 .end method
 
@@ -49,17 +51,17 @@
     .parameter "callbackHandler"
 
     .prologue
-    .line 114
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 119
+    invoke-direct {p0}, Lcom/google/glass/camera/ISharedCameraClient$Stub;-><init>()V
 
-    .line 39
+    .line 42
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
-    .line 42
+    .line 45
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->newCondition()Ljava/util/concurrent/locks/Condition;
@@ -68,35 +70,35 @@
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceAvailableCondition:Ljava/util/concurrent/locks/Condition;
 
-    .line 48
+    .line 51
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->destroyedPreviewSurfaces:Ljava/util/Set;
 
-    .line 63
+    .line 66
     new-instance v0, Lcom/google/glass/camera/SharedCameraClient$1;
 
     invoke-direct {v0, p0}, Lcom/google/glass/camera/SharedCameraClient$1;-><init>(Lcom/google/glass/camera/SharedCameraClient;)V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceListener:Landroid/view/TextureView$SurfaceTextureListener;
 
-    .line 115
+    .line 120
     if-nez p1, :cond_0
 
-    .line 116
+    .line 121
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
-    .line 120
+    .line 125
     :goto_0
     return-void
 
-    .line 118
+    .line 123
     :cond_0
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
@@ -164,35 +166,35 @@
     .parameter "shouldShow"
 
     .prologue
-    .line 539
+    .line 568
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->getViewfinder()Landroid/view/TextureView;
 
     move-result-object v0
 
-    .line 540
+    .line 569
     .local v0, viewfinder:Landroid/view/TextureView;
     if-eqz v0, :cond_0
 
-    .line 541
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$16;
+    .line 570
+    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$15;
 
-    invoke-direct {v1, p0, v0, p1}, Lcom/google/glass/camera/SharedCameraClient$16;-><init>(Lcom/google/glass/camera/SharedCameraClient;Landroid/view/TextureView;Z)V
+    invoke-direct {v1, p0, v0, p1}, Lcom/google/glass/camera/SharedCameraClient$15;-><init>(Lcom/google/glass/camera/SharedCameraClient;Landroid/view/TextureView;Z)V
 
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->post(Ljava/lang/Runnable;)Z
 
-    .line 551
+    .line 580
     :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method dispatchAudioError(Ljava/lang/String;)V
+.method public dispatchAudioError(Ljava/lang/String;)V
     .locals 2
     .parameter "message"
 
     .prologue
-    .line 424
+    .line 452
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$8;
@@ -201,33 +203,33 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 430
+    .line 458
     return-void
 .end method
 
-.method dispatchBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+.method public dispatchBarcodeFound(Landroid/content/Intent;)V
     .locals 2
     .parameter "barcode"
 
     .prologue
-    .line 444
+    .line 474
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$10;
 
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$10;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/android/libraries/barhopper/Barcode;)V
+    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$10;-><init>(Lcom/google/glass/camera/SharedCameraClient;Landroid/content/Intent;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 450
+    .line 480
     return-void
 .end method
 
-.method dispatchCameraAcquired()V
+.method public dispatchCameraAcquired()V
     .locals 2
 
     .prologue
-    .line 384
+    .line 408
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$4;
@@ -236,16 +238,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 390
+    .line 414
     return-void
 .end method
 
-.method dispatchCameraError(Ljava/lang/String;)V
+.method public dispatchCameraError(Ljava/lang/String;)V
     .locals 2
     .parameter "message"
 
     .prologue
-    .line 414
+    .line 441
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$7;
@@ -254,15 +256,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 420
+    .line 447
     return-void
 .end method
 
-.method dispatchCameraReleased()V
+.method public dispatchCameraReleased()V
     .locals 2
 
     .prologue
-    .line 394
+    .line 419
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$5;
@@ -271,15 +273,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 400
+    .line 425
     return-void
 .end method
 
-.method dispatchCameraShutter()V
+.method public dispatchCameraShutter()V
     .locals 2
 
     .prologue
-    .line 404
+    .line 430
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$6;
@@ -288,34 +290,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 410
+    .line 436
     return-void
 .end method
 
-.method dispatchClipletRecorded(Lcom/google/glass/camera/Video;)V
-    .locals 2
-    .parameter "video"
-
-    .prologue
-    .line 495
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
-
-    new-instance v1, Lcom/google/glass/camera/SharedCameraClient$15;
-
-    invoke-direct {v1, p0, p1}, Lcom/google/glass/camera/SharedCameraClient$15;-><init>(Lcom/google/glass/camera/SharedCameraClient;Lcom/google/glass/camera/Video;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 501
-    return-void
-.end method
-
-.method dispatchPictureSaved(Lcom/google/glass/camera/Picture;)V
+.method public dispatchPictureSaved(Lcom/google/glass/camera/Picture;)V
     .locals 2
     .parameter "picture"
 
     .prologue
-    .line 374
+    .line 397
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$3;
@@ -324,16 +308,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 380
+    .line 403
     return-void
 .end method
 
-.method dispatchPictureTaken(Lcom/google/glass/camera/Picture;)V
+.method public dispatchPictureTaken(Lcom/google/glass/camera/Picture;)V
     .locals 2
     .parameter "picture"
 
     .prologue
-    .line 364
+    .line 386
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$2;
@@ -342,17 +326,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 370
+    .line 392
     return-void
 .end method
 
-.method dispatchPreviewFrame([BJ)V
+.method public dispatchPreviewFrame([BJ)V
     .locals 2
     .parameter "previewFrame"
     .parameter "captureTimeNanos"
 
     .prologue
-    .line 434
+    .line 463
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$9;
@@ -361,15 +345,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 440
+    .line 469
     return-void
 .end method
 
-.method dispatchStartPreview()V
+.method public dispatchStartPreview()V
     .locals 2
 
     .prologue
-    .line 454
+    .line 485
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$11;
@@ -378,16 +362,16 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 460
+    .line 491
     return-void
 .end method
 
-.method dispatchStartRecording(Lcom/google/glass/camera/Video;)V
+.method public dispatchStartRecording(Lcom/google/glass/camera/Video;)V
     .locals 2
     .parameter "video"
 
     .prologue
-    .line 474
+    .line 507
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$13;
@@ -396,15 +380,15 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 480
+    .line 513
     return-void
 .end method
 
-.method dispatchStopPreview()V
+.method public dispatchStopPreview()V
     .locals 2
 
     .prologue
-    .line 464
+    .line 496
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$12;
@@ -413,18 +397,18 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 470
+    .line 502
     return-void
 .end method
 
-.method dispatchStopRecording(Lcom/google/glass/camera/Video;ZZ)V
+.method public dispatchStopRecording(Lcom/google/glass/camera/Video;ZZ)V
     .locals 2
     .parameter "video"
     .parameter "reachedMaxDuration"
     .parameter "storageFull"
 
     .prologue
-    .line 485
+    .line 519
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->callbackHandler:Landroid/os/Handler;
 
     new-instance v1, Lcom/google/glass/camera/SharedCameraClient$14;
@@ -433,7 +417,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 491
+    .line 525
     return-void
 .end method
 
@@ -442,25 +426,25 @@
     .parameter "o"
 
     .prologue
-    .line 515
+    .line 544
     instance-of v1, p1, Lcom/google/glass/camera/SharedCameraClient;
 
     if-nez v1, :cond_0
 
-    .line 516
+    .line 545
     const/4 v1, 0x0
 
-    .line 519
+    .line 548
     :goto_0
     return v1
 
     :cond_0
     move-object v0, p1
 
-    .line 518
+    .line 547
     check-cast v0, Lcom/google/glass/camera/SharedCameraClient;
 
-    .line 519
+    .line 548
     .local v0, c:Lcom/google/glass/camera/SharedCameraClient;
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraClient;->getTag()Ljava/lang/String;
 
@@ -486,46 +470,139 @@
     .end annotation
 
     .prologue
-    .line 527
+    .line 556
     :try_start_0
-    invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->releaseDestroyedPreviewSurfaces()V
+    invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->stopUsingViewfinder()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 529
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+    .line 558
+    invoke-super {p0}, Lcom/google/glass/camera/ISharedCameraClient$Stub;->finalize()V
 
-    .line 531
+    .line 560
     return-void
 
-    .line 529
+    .line 558
     :catchall_0
     move-exception v0
 
-    invoke-super {p0}, Ljava/lang/Object;->finalize()V
+    invoke-super {p0}, Lcom/google/glass/camera/ISharedCameraClient$Stub;->finalize()V
 
     throw v0
 .end method
 
-.method protected abstract getTag()Ljava/lang/String;
+.method public getPreviewSurface()Landroid/view/Surface;
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 261
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    .line 263
+    :try_start_0
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurface:Landroid/view/Surface;
+
+    if-nez v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    invoke-virtual {v0}, Landroid/view/TextureView;->isAvailable()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 264
+    new-instance v0, Landroid/view/Surface;
+
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    invoke-virtual {v1}, Landroid/view/TextureView;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
+
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurface:Landroid/view/Surface;
+
+    .line 268
+    :goto_0
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurface:Landroid/view/Surface;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 270
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    return-object v0
+
+    .line 266
+    :cond_0
+    const/4 v0, 0x0
+
+    :try_start_1
+    iput-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurface:Landroid/view/Surface;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    goto :goto_0
+
+    .line 270
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v0
+.end method
+
+.method public getTag()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    .line 529
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
 .method public getViewfinder()Landroid/view/TextureView;
     .locals 2
 
     .prologue
-    .line 242
+    .line 251
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 244
+    .line 253
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 246
+    .line 255
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -546,7 +623,7 @@
     .locals 1
 
     .prologue
-    .line 510
+    .line 539
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -558,22 +635,22 @@
     return v0
 .end method
 
-.method protected isViewfinderValid()Z
+.method public isViewfinderValid()Z
     .locals 2
 
     .prologue
-    .line 228
+    .line 237
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 230
+    .line 239
     :try_start_0
     iget-boolean v0, p0, Lcom/google/glass/camera/SharedCameraClient;->isPreviewSurfaceValid:Z
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 232
+    .line 241
     iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -595,16 +672,16 @@
     .parameter "message"
 
     .prologue
-    .line 300
+    .line 325
     return-void
 .end method
 
-.method protected onBarcodeFound(Lcom/google/android/libraries/barhopper/Barcode;)V
+.method public onBarcodeFound(Landroid/content/Intent;)V
     .locals 0
     .parameter "barcode"
 
     .prologue
-    .line 360
+    .line 381
     return-void
 .end method
 
@@ -612,7 +689,7 @@
     .locals 0
 
     .prologue
-    .line 276
+    .line 301
     return-void
 .end method
 
@@ -621,7 +698,7 @@
     .parameter "message"
 
     .prologue
-    .line 292
+    .line 317
     return-void
 .end method
 
@@ -629,7 +706,7 @@
     .locals 0
 
     .prologue
-    .line 280
+    .line 305
     return-void
 .end method
 
@@ -637,16 +714,7 @@
     .locals 0
 
     .prologue
-    .line 284
-    return-void
-.end method
-
-.method protected onClipletRecorded(Lcom/google/glass/camera/Video;)V
-    .locals 0
-    .parameter "video"
-
-    .prologue
-    .line 339
+    .line 309
     return-void
 .end method
 
@@ -655,7 +723,7 @@
     .parameter "picture"
 
     .prologue
-    .line 272
+    .line 297
     return-void
 .end method
 
@@ -664,17 +732,17 @@
     .parameter "picture"
 
     .prologue
-    .line 264
+    .line 289
     return-void
 .end method
 
-.method protected onPreviewFrame([BJ)V
+.method public onPreviewFrame([BJ)V
     .locals 0
     .parameter "frame"
     .parameter "captureTimeNanos"
 
     .prologue
-    .line 352
+    .line 372
     return-void
 .end method
 
@@ -682,26 +750,26 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 329
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 305
+    .line 330
     return-void
 .end method
 
-.method protected onStartRecording(Lcom/google/glass/camera/Video;)V
+.method public onStartRecording(Lcom/google/glass/camera/Video;)V
     .locals 1
     .parameter "video"
 
     .prologue
-    .line 318
+    .line 344
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 319
+    .line 345
     return-void
 .end method
 
@@ -709,47 +777,192 @@
     .locals 1
 
     .prologue
-    .line 309
+    .line 334
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 310
+    .line 335
     return-void
 .end method
 
-.method protected onStopRecording(Lcom/google/glass/camera/Video;ZZ)V
+.method public onStopRecording(Lcom/google/glass/camera/Video;ZZ)V
     .locals 1
     .parameter "video"
     .parameter "reachedMaxDuration"
     .parameter "storageFull"
 
     .prologue
-    .line 330
+    .line 357
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/google/glass/camera/SharedCameraClient;->fadeViewfinder(Z)V
 
-    .line 331
+    .line 358
     return-void
 .end method
 
-.method releaseDestroyedPreviewSurfaces()V
+.method public setViewfinder(Landroid/view/TextureView;)V
+    .locals 2
+    .parameter "viewfinder"
+
+    .prologue
+    .line 201
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    .line 203
+    if-eqz p1, :cond_0
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 204
+    const-string v0, "Ignoring previously set viewfinder."
+
+    invoke-static {p0, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 219
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 221
+    :goto_0
+    return-void
+
+    .line 209
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    if-eqz v0, :cond_1
+
+    .line 210
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
+
+    .line 214
+    :cond_1
+    iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    .line 215
+    if-eqz p1, :cond_2
+
+    .line 216
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceListener:Landroid/view/TextureView$SurfaceTextureListener;
+
+    invoke-virtual {p1, v0}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 219
+    :cond_2
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v0
+.end method
+
+.method public shouldUseInvisiblePreview()Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 279
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public startUsingViewfinder()V
+    .locals 2
+
+    .prologue
+    .line 226
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    .line 228
+    const/4 v0, 0x1
+
+    :try_start_0
+    iput-boolean v0, p0, Lcom/google/glass/camera/SharedCameraClient;->isUsingViewfinder:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 230
+    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 232
+    return-void
+
+    .line 230
+    :catchall_0
+    move-exception v0
+
+    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    throw v0
+.end method
+
+.method public stopUsingViewfinder()V
     .locals 4
 
     .prologue
-    .line 172
+    .line 179
     iget-object v2, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 175
+    .line 182
     const/4 v2, 0x0
 
     :try_start_0
     iput-boolean v2, p0, Lcom/google/glass/camera/SharedCameraClient;->isUsingViewfinder:Z
 
-    .line 177
+    .line 184
     iget-object v2, p0, Lcom/google/glass/camera/SharedCameraClient;->destroyedPreviewSurfaces:Ljava/util/Set;
 
     invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -770,20 +983,20 @@
 
     check-cast v1, Landroid/graphics/SurfaceTexture;
 
-    .line 178
+    .line 185
     .local v1, surface:Landroid/graphics/SurfaceTexture;
     const-string v2, "Releasing preview surface."
 
-    invoke-static {p0, v2}, Lcom/google/glass/camera/SharedCameraLogging;->logDebug(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {p0, v2}, Lcom/google/glass/camera/SharedCameraLogging;->logDebug(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
 
-    .line 179
+    .line 186
     invoke-virtual {v1}, Landroid/graphics/SurfaceTexture;->release()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_0
 
-    .line 183
+    .line 190
     .end local v0           #i$:Ljava/util/Iterator;
     .end local v1           #surface:Landroid/graphics/SurfaceTexture;
     :catchall_0
@@ -795,7 +1008,7 @@
 
     throw v2
 
-    .line 181
+    .line 188
     .restart local v0       #i$:Ljava/util/Iterator;
     :cond_0
     :try_start_1
@@ -805,140 +1018,20 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 183
+    .line 190
     iget-object v2, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v2}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 185
+    .line 192
     return-void
-.end method
-
-.method public setViewfinder(Landroid/view/TextureView;)V
-    .locals 2
-    .parameter "viewfinder"
-
-    .prologue
-    .line 194
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
-
-    .line 196
-    if-eqz p1, :cond_0
-
-    :try_start_0
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
-
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 197
-    const-string v0, "Ignoring previously set viewfinder."
-
-    invoke-static {p0, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logWarning(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 212
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 214
-    :goto_0
-    return-void
-
-    .line 202
-    :cond_0
-    :try_start_1
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
-
-    if-eqz v0, :cond_1
-
-    .line 203
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
-
-    .line 207
-    :cond_1
-    iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
-
-    .line 208
-    if-eqz p1, :cond_2
-
-    .line 209
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceListener:Landroid/view/TextureView$SurfaceTextureListener;
-
-    invoke-virtual {p1, v0}, Landroid/view/TextureView;->setSurfaceTextureListener(Landroid/view/TextureView$SurfaceTextureListener;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 212
-    :cond_2
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    throw v0
-.end method
-
-.method protected startUsingViewfinder()V
-    .locals 2
-
-    .prologue
-    .line 218
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
-
-    .line 220
-    const/4 v0, 0x1
-
-    :try_start_0
-    iput-boolean v0, p0, Lcom/google/glass/camera/SharedCameraClient;->isUsingViewfinder:Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 222
-    iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 224
-    return-void
-
-    .line 222
-    :catchall_0
-    move-exception v0
-
-    iget-object v1, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
-
-    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    throw v0
 .end method
 
 .method public toString()Ljava/lang/String;
     .locals 1
 
     .prologue
-    .line 505
+    .line 534
     invoke-virtual {p0}, Lcom/google/glass/camera/SharedCameraClient;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -946,7 +1039,7 @@
     return-object v0
 .end method
 
-.method waitForPreviewSurface(J)Z
+.method public waitForPreviewSurface(J)Z
     .locals 7
     .parameter "timeoutNanos"
 
@@ -955,27 +1048,27 @@
 
     const/4 v3, 0x1
 
-    .line 130
+    .line 136
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 133
+    .line 139
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 163
+    .line 169
     :goto_0
     return v3
 
-    .line 137
+    .line 143
     :cond_0
     iget-object v5, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v5}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 139
+    .line 145
     :try_start_0
     iget-object v5, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
 
@@ -985,30 +1078,30 @@
 
     if-eqz v5, :cond_1
 
-    .line 140
+    .line 146
     const-string v4, "Preview surface already available."
 
-    invoke-static {p0, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {p0, v4}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 163
+    .line 169
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     goto :goto_0
 
-    .line 144
+    .line 150
     :cond_1
     :try_start_1
     const-string v5, "Preview surface not available yet. Waiting..."
 
-    invoke-static {p0, v5}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {p0, v5}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 146
+    .line 152
     :cond_2
     :try_start_2
     iget-object v5, p0, Lcom/google/glass/camera/SharedCameraClient;->viewfinder:Landroid/view/TextureView;
@@ -1019,14 +1112,14 @@
 
     if-nez v5, :cond_3
 
-    .line 147
+    .line 153
     iget-object v5, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceAvailableCondition:Ljava/util/concurrent/locks/Condition;
 
     invoke-interface {v5, p1, p2}, Ljava/util/concurrent/locks/Condition;->awaitNanos(J)J
 
     move-result-wide v1
 
-    .line 149
+    .line 155
     .local v1, timeRemainingNanos:J
     const-wide/16 v5, 0x0
 
@@ -1034,15 +1127,15 @@
 
     if-gtz v5, :cond_2
 
-    .line 150
+    .line 156
     const-string v3, "Timed out while waiting for the preview surface."
 
-    invoke-static {p0, v3}, Lcom/google/glass/camera/SharedCameraLogging;->logError(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {p0, v3}, Lcom/google/glass/camera/SharedCameraLogging;->logError(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 163
+    .line 169
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
@@ -1051,7 +1144,7 @@
 
     goto :goto_0
 
-    .line 154
+    .line 160
     .end local v1           #timeRemainingNanos:J
     :cond_3
     const/4 v5, 0x1
@@ -1059,35 +1152,35 @@
     :try_start_3
     iput-boolean v5, p0, Lcom/google/glass/camera/SharedCameraClient;->isPreviewSurfaceValid:Z
 
-    .line 155
+    .line 161
     const-string v5, "Preview surface became available."
 
-    invoke-static {p0, v5}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;)V
+    invoke-static {p0, v5}, Lcom/google/glass/camera/SharedCameraLogging;->logVerbose(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
     .catch Ljava/lang/InterruptedException; {:try_start_3 .. :try_end_3} :catch_0
 
-    .line 163
+    .line 169
     iget-object v4, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     goto :goto_0
 
-    .line 157
+    .line 163
     :catch_0
     move-exception v0
 
-    .line 158
+    .line 164
     .local v0, e:Ljava/lang/InterruptedException;
     :try_start_4
     const-string v3, "Interrupted while waiting for the recording preview surface."
 
-    invoke-static {p0, v3, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logError(Lcom/google/glass/camera/SharedCameraClient;Ljava/lang/String;Ljava/lang/Exception;)V
+    invoke-static {p0, v3, v0}, Lcom/google/glass/camera/SharedCameraLogging;->logError(Lcom/google/glass/camera/ISharedCameraClient;Ljava/lang/String;Ljava/lang/Exception;)V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 163
+    .line 169
     iget-object v3, p0, Lcom/google/glass/camera/SharedCameraClient;->previewSurfaceLock:Ljava/util/concurrent/locks/ReentrantLock;
 
     invoke-virtual {v3}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V

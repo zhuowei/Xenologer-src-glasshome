@@ -65,19 +65,19 @@
     .locals 2
 
     .prologue
-    .line 233
+    .line 234
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 331
+    .line 332
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 608
+    .line 609
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
     const/4 v1, 0x1
@@ -86,12 +86,12 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->defaultInstance:Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
-    .line 609
+    .line 610
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->defaultInstance:Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->initFields()V
 
-    .line 610
+    .line 611
     return-void
 .end method
 
@@ -108,67 +108,67 @@
     .prologue
     const/4 v5, -0x1
 
-    .line 179
+    .line 180
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 283
+    .line 284
     iput-byte v5, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedIsInitialized:B
 
-    .line 304
+    .line 305
     iput v5, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedSerializedSize:I
 
-    .line 180
+    .line 181
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->initFields()V
 
-    .line 181
+    .line 182
     const/4 v2, 0x0
 
-    .line 182
+    .line 183
     .local v2, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
     move-result-object v4
 
-    .line 185
+    .line 186
     .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
     const/4 v0, 0x0
 
-    .line 186
+    .line 187
     .local v0, done:Z
     :cond_0
     :goto_0
     if-nez v0, :cond_1
 
-    .line 187
+    .line 188
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
     move-result v3
 
-    .line 188
+    .line 189
     .local v3, tag:I
     sparse-switch v3, :sswitch_data_0
 
-    .line 193
+    .line 194
     invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 195
+    .line 196
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 190
+    .line 191
     :sswitch_0
     const/4 v0, 0x1
 
-    .line 191
+    .line 192
     goto :goto_0
 
-    .line 200
+    .line 201
     :sswitch_1
     iget v5, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
@@ -176,7 +176,7 @@
 
     iput v5, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
-    .line 201
+    .line 202
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
 
     move-result v5
@@ -189,12 +189,12 @@
 
     goto :goto_0
 
-    .line 211
+    .line 212
     .end local v3           #tag:I
     :catch_0
     move-exception v1
 
-    .line 212
+    .line 213
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -205,7 +205,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 217
+    .line 218
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v5
@@ -216,12 +216,12 @@
 
     iput-object v6, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 218
+    .line 219
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->makeExtensionsImmutable()V
 
     throw v5
 
-    .line 205
+    .line 206
     .restart local v3       #tag:I
     :sswitch_2
     :try_start_2
@@ -231,7 +231,7 @@
 
     iput v5, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
-    .line 206
+    .line 207
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readInt32()I
 
     move-result v5
@@ -244,12 +244,12 @@
 
     goto :goto_0
 
-    .line 213
+    .line 214
     .end local v3           #tag:I
     :catch_1
     move-exception v1
 
-    .line 214
+    .line 215
     .local v1, e:Ljava/io/IOException;
     :try_start_3
     new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
@@ -268,7 +268,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 217
+    .line 218
     .end local v1           #e:Ljava/io/IOException;
     :cond_1
     invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
@@ -277,13 +277,13 @@
 
     iput-object v5, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 218
+    .line 219
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->makeExtensionsImmutable()V
 
-    .line 220
+    .line 221
     return-void
 
-    .line 188
+    .line 189
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0
@@ -304,7 +304,7 @@
     .end annotation
 
     .prologue
-    .line 150
+    .line 151
     invoke-direct {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;-><init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
 
     return-void
@@ -325,23 +325,23 @@
     .local p1, builder:Lcom/google/protobuf/GeneratedMessage$Builder;,"Lcom/google/protobuf/GeneratedMessage$Builder<*>;"
     const/4 v0, -0x1
 
-    .line 156
+    .line 157
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 283
+    .line 284
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedIsInitialized:B
 
-    .line 304
+    .line 305
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedSerializedSize:I
 
-    .line 157
+    .line 158
     invoke-virtual {p1}, Lcom/google/protobuf/GeneratedMessage$Builder;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
-    .line 158
+    .line 159
     return-void
 .end method
 
@@ -351,7 +351,7 @@
     .parameter "x1"
 
     .prologue
-    .line 150
+    .line 151
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
     return-void
@@ -364,16 +364,16 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 159
+    .line 160
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 283
+    .line 284
     iput-byte v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedIsInitialized:B
 
-    .line 304
+    .line 305
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedSerializedSize:I
 
-    .line 159
+    .line 160
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->getDefaultInstance()Lcom/google/protobuf/UnknownFieldSet;
 
     move-result-object v0
@@ -387,7 +387,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     sget-boolean v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->alwaysUseFieldBuilders:Z
 
     return v0
@@ -399,7 +399,7 @@
     .parameter "x1"
 
     .prologue
-    .line 150
+    .line 151
     iput p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->widthPixels_:I
 
     return p1
@@ -411,7 +411,7 @@
     .parameter "x1"
 
     .prologue
-    .line 150
+    .line 151
     iput p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->heightPixels_:I
 
     return p1
@@ -423,7 +423,7 @@
     .parameter "x1"
 
     .prologue
-    .line 150
+    .line 151
     iput p1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
     return p1
@@ -433,7 +433,7 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 164
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->defaultInstance:Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
     return-object v0
@@ -443,7 +443,7 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 224
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_AttachmentGetRequest_ScreenDimensions_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -455,13 +455,13 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 280
+    .line 281
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->widthPixels_:I
 
-    .line 281
+    .line 282
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->heightPixels_:I
 
-    .line 282
+    .line 283
     return-void
 .end method
 
@@ -469,7 +469,7 @@
     .locals 1
 
     .prologue
-    .line 393
+    .line 394
     #calls: Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;->create()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;->access$200()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
@@ -483,7 +483,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 396
+    .line 397
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->newBuilder()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -505,7 +505,7 @@
     .end annotation
 
     .prologue
-    .line 373
+    .line 374
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -528,7 +528,7 @@
     .end annotation
 
     .prologue
-    .line 379
+    .line 380
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -550,7 +550,7 @@
     .end annotation
 
     .prologue
-    .line 343
+    .line 344
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -573,7 +573,7 @@
     .end annotation
 
     .prologue
-    .line 349
+    .line 350
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -595,7 +595,7 @@
     .end annotation
 
     .prologue
-    .line 384
+    .line 385
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -618,7 +618,7 @@
     .end annotation
 
     .prologue
-    .line 390
+    .line 391
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -640,7 +640,7 @@
     .end annotation
 
     .prologue
-    .line 363
+    .line 364
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -663,7 +663,7 @@
     .end annotation
 
     .prologue
-    .line 369
+    .line 370
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -685,7 +685,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 354
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -708,7 +708,7 @@
     .end annotation
 
     .prologue
-    .line 359
+    .line 360
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -726,7 +726,7 @@
     .locals 1
 
     .prologue
-    .line 167
+    .line 168
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->defaultInstance:Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
     return-object v0
@@ -736,7 +736,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
     move-result-object v0
@@ -748,7 +748,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
 
     move-result-object v0
@@ -760,7 +760,7 @@
     .locals 1
 
     .prologue
-    .line 276
+    .line 277
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->heightPixels_:I
 
     return v0
@@ -779,7 +779,7 @@
     .end annotation
 
     .prologue
-    .line 245
+    .line 246
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -793,10 +793,10 @@
 
     const/4 v3, 0x1
 
-    .line 306
+    .line 307
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedSerializedSize:I
 
-    .line 307
+    .line 308
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -804,26 +804,26 @@
 
     move v1, v0
 
-    .line 320
+    .line 321
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 309
+    .line 310
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 310
+    .line 311
     iget v2, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 311
+    .line 312
     iget v2, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->widthPixels_:I
 
     invoke-static {v3, v2}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
@@ -832,7 +832,7 @@
 
     add-int/2addr v0, v2
 
-    .line 314
+    .line 315
     :cond_1
     iget v2, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
@@ -840,7 +840,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 315
+    .line 316
     iget v2, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->heightPixels_:I
 
     invoke-static {v4, v2}, Lcom/google/protobuf/CodedOutputStream;->computeInt32Size(II)I
@@ -849,7 +849,7 @@
 
     add-int/2addr v0, v2
 
-    .line 318
+    .line 319
     :cond_2
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -861,12 +861,12 @@
 
     add-int/2addr v0, v2
 
-    .line 319
+    .line 320
     iput v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 320
+    .line 321
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -876,7 +876,7 @@
     .locals 1
 
     .prologue
-    .line 174
+    .line 175
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
 
     return-object v0
@@ -886,7 +886,7 @@
     .locals 1
 
     .prologue
-    .line 261
+    .line 262
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->widthPixels_:I
 
     return v0
@@ -896,7 +896,7 @@
     .locals 2
 
     .prologue
-    .line 270
+    .line 271
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -922,7 +922,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 255
+    .line 256
     iget v1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -942,7 +942,7 @@
     .locals 3
 
     .prologue
-    .line 228
+    .line 229
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_AttachmentGetRequest_ScreenDimensions_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;
@@ -960,12 +960,12 @@
     .locals 1
 
     .prologue
-    .line 334
+    .line 335
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 335
+    .line 336
     const-string v0, "com.google.googlex.glass.common.proto.MutableSync$AttachmentGetRequest$ScreenDimensions"
 
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -974,7 +974,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 337
+    .line 338
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -987,10 +987,10 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 285
+    .line 286
     iget-byte v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedIsInitialized:B
 
-    .line 286
+    .line 287
     .local v0, isInitialized:B
     const/4 v2, -0x1
 
@@ -998,17 +998,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 289
+    .line 290
     :goto_0
     return v1
 
-    .line 286
+    .line 287
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 288
+    .line 289
     :cond_1
     iput-byte v1, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->memoizedIsInitialized:B
 
@@ -1019,7 +1019,7 @@
     .locals 1
 
     .prologue
-    .line 394
+    .line 395
     invoke-static {}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->newBuilder()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1032,14 +1032,14 @@
     .parameter "parent"
 
     .prologue
-    .line 403
+    .line 404
     new-instance v0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$1;)V
 
-    .line 404
+    .line 405
     .local v0, builder:Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
     return-object v0
 .end method
@@ -1048,7 +1048,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->newBuilderForType()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1061,7 +1061,7 @@
     .parameter "x0"
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->newBuilderForType(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1073,7 +1073,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->newBuilderForType()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1085,7 +1085,7 @@
     .locals 1
 
     .prologue
-    .line 398
+    .line 399
     invoke-static {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->newBuilder(Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;)Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1097,7 +1097,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->toBuilder()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1109,7 +1109,7 @@
     .locals 1
 
     .prologue
-    .line 150
+    .line 151
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->toBuilder()Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions$Builder;
 
     move-result-object v0
@@ -1126,7 +1126,7 @@
     .end annotation
 
     .prologue
-    .line 327
+    .line 328
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1148,22 +1148,22 @@
 
     const/4 v1, 0x1
 
-    .line 294
+    .line 295
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->getSerializedSize()I
 
-    .line 295
+    .line 296
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 296
+    .line 297
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->widthPixels_:I
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 298
+    .line 299
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->bitField0_:I
 
@@ -1171,12 +1171,12 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 299
+    .line 300
     iget v0, p0, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->heightPixels_:I
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeInt32(II)V
 
-    .line 301
+    .line 302
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/AttachmentGetRequest$ScreenDimensions;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1184,6 +1184,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 302
+    .line 303
     return-void
 .end method

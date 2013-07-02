@@ -1,11 +1,11 @@
 .class Lcom/google/glass/timeline/TimelineOptionsHelper$7;
-.super Lcom/google/glass/widget/MessageDialog$SimpleListener;
+.super Lcom/google/glass/timeline/TimelineHelper$Update;
 .source "TimelineOptionsHelper.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/timeline/TimelineOptionsHelper;->showConfirmationDialog(Lcom/google/googlex/glass/common/proto/MenuItem;Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;)V
+    value = Lcom/google/glass/timeline/TimelineOptionsHelper;->onTogglePinned(Lcom/google/googlex/glass/common/proto/TimelineItem;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,120 +17,118 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
-.field final synthetic val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
+.field final synthetic val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-.field final synthetic val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
+.field final synthetic val$userAction:Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/timeline/TimelineOptionsHelper;Lcom/google/googlex/glass/common/proto/MenuItem;Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;)V
+.method constructor <init>(Lcom/google/glass/timeline/TimelineOptionsHelper;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;Lcom/google/googlex/glass/common/proto/UserAction$Builder;)V
     .locals 0
     .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 932
+    .line 981
     iput-object p1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
-    iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
+    iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    iput-object p3, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
+    iput-object p3, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$userAction:Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
-    invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/timeline/TimelineHelper$Update;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDismissed()V
-    .locals 3
+.method public onExecute()Lcom/google/googlex/glass/common/proto/TimelineItem;
+    .locals 7
 
     .prologue
-    .line 935
-    invoke-static {}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$100()Ljava/lang/String;
+    const/4 v4, 0x0
+
+    .line 986
+    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getIsPinned()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v5, 0x1
+
+    .line 988
+    .local v5, clearPin:Z
+    :goto_0
+    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
+
+    #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
+    invoke-static {v0}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$200(Lcom/google/glass/timeline/TimelineOptionsHelper;)Lcom/google/glass/timeline/TimelineHelper;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
+    invoke-static {v1}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$000(Lcom/google/glass/timeline/TimelineOptionsHelper;)Lcom/google/glass/app/GlassActivity;
 
-    iget-object v2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
+    move-result-object v1
 
-    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->getAction()Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    iget-object v2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$updatedItem:Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+
+    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->build()Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$userAction:Lcom/google/googlex/glass/common/proto/UserAction$Builder;
 
-    move-result-object v1
+    invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
 
-    const-string v2, " cancelled"
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual/range {v0 .. v5}, Lcom/google/glass/timeline/TimelineHelper;->updateTimelineItem(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/UserAction;ZZ)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
-    move-result-object v1
+    move-result-object v6
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 990
+    .local v6, result:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 936
-    return-void
-.end method
-
-.method public onDone()V
-    .locals 3
-
-    .prologue
-    .line 940
-    invoke-static {}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$100()Ljava/lang/String;
+    #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->soundManager:Lcom/google/glass/sound/SoundManager;
+    invoke-static {v0}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$400(Lcom/google/glass/timeline/TimelineOptionsHelper;)Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    sget-object v1, Lcom/google/glass/sound/SoundManager$SoundId;->SUCCESS:Lcom/google/glass/sound/SoundManager$SoundId;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    iget-object v2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
+    .line 994
+    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
 
-    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->getAction()Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    #getter for: Lcom/google/glass/timeline/TimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
+    invoke-static {v0}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$000(Lcom/google/glass/timeline/TimelineOptionsHelper;)Lcom/google/glass/app/GlassActivity;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v1, Lcom/google/glass/timeline/TimelineItemId;
 
-    move-result-object v1
+    invoke-direct {v1, v6}, Lcom/google/glass/timeline/TimelineItemId;-><init>(Lcom/google/googlex/glass/common/proto/TimelineItem;)V
 
-    const-string v2, " confirmed"
+    invoke-static {v0, v1}, Lcom/google/glass/timeline/TimelineHelper;->goToTimeline(Landroid/content/Context;Lcom/google/glass/timeline/TimelineItemId;)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 995
+    return-object v6
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 941
-    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
-
-    if-eqz v0, :cond_0
-
-    .line 942
-    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
-
-    iget-object v1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$7;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
-
-    invoke-interface {v0, v1}, Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;->onConfirmed(Lcom/google/googlex/glass/common/proto/MenuItem;)V
-
-    .line 944
+    .end local v5           #clearPin:Z
+    .end local v6           #result:Lcom/google/googlex/glass/common/proto/TimelineItem;
     :cond_0
-    return-void
+    move v5, v4
+
+    .line 986
+    goto :goto_0
 .end method

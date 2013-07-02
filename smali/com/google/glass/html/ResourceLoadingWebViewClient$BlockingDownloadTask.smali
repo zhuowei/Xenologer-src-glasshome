@@ -98,7 +98,9 @@
 
     .prologue
     .line 82
-    invoke-virtual {p0}, Lcom/google/glass/html/ResourceLoadingWebViewClient$BlockingDownloadTask;->loadContent()Ljava/lang/String;
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/google/glass/html/ResourceLoadingWebViewClient$BlockingDownloadTask;->loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/String;
 
     move-result-object v0
 

@@ -53,7 +53,7 @@
     .parameter
 
     .prologue
-    .line 380
+    .line 379
     iput-object p1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
     iput-object p2, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->val$text:Ljava/lang/CharSequence;
@@ -80,17 +80,17 @@
     .parameter "params"
 
     .prologue
-    .line 383
+    .line 382
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView$1;->isCancelled()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 384
+    .line 383
     const/4 v0, 0x0
 
-    .line 388
+    .line 387
     :goto_0
     return-object v0
 
@@ -122,7 +122,7 @@
     .parameter "x0"
 
     .prologue
-    .line 380
+    .line 379
     check-cast p1, [Ljava/lang/Void;
 
     .end local p1
@@ -138,18 +138,18 @@
     .parameter "result"
 
     .prologue
-    .line 394
+    .line 393
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView$1;->isCancelled()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 415
+    .line 414
     :goto_0
     return-void
 
-    .line 397
+    .line 396
     :cond_0
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
@@ -160,7 +160,7 @@
 
     if-eq v1, p0, :cond_1
 
-    .line 402
+    .line 401
     invoke-static {}, Lcom/google/glass/widget/DynamicSizeTextView;->access$200()Ljava/lang/String;
 
     move-result-object v1
@@ -171,28 +171,28 @@
 
     goto :goto_0
 
-    .line 407
+    .line 406
     :cond_1
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
     #calls: Lcom/google/glass/widget/DynamicSizeTextView;->applyTextSize(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
     invoke-static {v1, p1}, Lcom/google/glass/widget/DynamicSizeTextView;->access$300(Lcom/google/glass/widget/DynamicSizeTextView;Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
 
-    .line 410
+    .line 409
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setAlpha(F)V
 
-    .line 411
+    .line 410
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setVisibility(I)V
 
-    .line 412
+    .line 411
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
     invoke-virtual {v1}, Lcom/google/glass/widget/DynamicSizeTextView;->getResources()Landroid/content/res/Resources;
@@ -205,7 +205,7 @@
 
     move-result v0
 
-    .line 414
+    .line 413
     .local v0, duration:I
     iget-object v1, p0, Lcom/google/glass/widget/DynamicSizeTextView$1;->this$0:Lcom/google/glass/widget/DynamicSizeTextView;
 
@@ -235,7 +235,7 @@
     .parameter "x0"
 
     .prologue
-    .line 380
+    .line 379
     check-cast p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
 
     .end local p1

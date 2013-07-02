@@ -15,5 +15,5 @@
 
 
 # virtual methods
-.method public abstract onUuidFetchCallback(Lcom/google/glass/companion/BluetoothDeviceWrapper;)V
+.method public abstract onUuidFetchCallback(Lcom/google/glass/bluetooth/BluetoothDeviceWrapper;)V
 .end method

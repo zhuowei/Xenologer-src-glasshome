@@ -42,7 +42,7 @@
 
     sput-object v0, Lcom/google/glass/util/AsyncThreadExecutorManager;->serialInstance:Ljava/util/concurrent/Executor;
 
-    .line 33
+    .line 34
     sget-object v0, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
 
     sput-object v0, Lcom/google/glass/util/AsyncThreadExecutorManager;->threadPoolInstance:Ljava/util/concurrent/Executor;
@@ -54,10 +54,10 @@
     .locals 0
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 37
+    .line 38
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .locals 1
 
     .prologue
-    .line 45
+    .line 46
     sget-object v0, Lcom/google/glass/util/AsyncThreadExecutorManager;->serialInstance:Ljava/util/concurrent/Executor;
 
     return-object v0
@@ -96,7 +96,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 55
     sget-object v0, Lcom/google/glass/util/AsyncThreadExecutorManager;->threadPoolInstance:Ljava/util/concurrent/Executor;
 
     return-object v0
@@ -106,7 +106,7 @@
     .locals 2
 
     .prologue
-    .line 61
+    .line 62
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -131,23 +131,23 @@
     .parameter "executor"
 
     .prologue
-    .line 69
+    .line 70
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 70
+    .line 71
     invoke-static {p0}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 71
+    .line 72
     sput-object p0, Lcom/google/glass/util/AsyncThreadExecutorManager;->serialInstance:Ljava/util/concurrent/Executor;
 
-    .line 72
+    .line 73
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
     sput-object v0, Lcom/google/glass/util/AsyncThreadExecutorManager;->serialInstanceThread:Ljava/lang/Thread;
 
-    .line 73
+    .line 74
     return-void
 .end method
 
@@ -156,15 +156,15 @@
     .parameter "executor"
 
     .prologue
-    .line 80
+    .line 81
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 81
+    .line 82
     invoke-static {p0}, Lcom/google/glass/util/Assert;->assertNotNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 82
+    .line 83
     sput-object p0, Lcom/google/glass/util/AsyncThreadExecutorManager;->threadPoolInstance:Ljava/util/concurrent/Executor;
 
-    .line 83
+    .line 84
     return-void
 .end method

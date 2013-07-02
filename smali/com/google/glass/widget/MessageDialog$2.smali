@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 170
+    .line 171
     iput-object p1, p0, Lcom/google/glass/widget/MessageDialog$2;->this$0:Lcom/google/glass/widget/MessageDialog;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 180
+    .line 181
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -64,13 +64,13 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 2
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 173
+    .line 174
     const-string v0, "android.intent.action.SCREEN_OFF"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -83,12 +83,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lcom/google/glass/widget/MessageDialog$2;->this$0:Lcom/google/glass/widget/MessageDialog;
 
     invoke-virtual {v0}, Lcom/google/glass/widget/MessageDialog;->onScreenOff()V
 
-    .line 176
+    .line 177
     :cond_0
     return-void
 .end method

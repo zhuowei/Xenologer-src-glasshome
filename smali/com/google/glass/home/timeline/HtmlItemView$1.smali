@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 46
+    .line 70
     iput-object p1, p0, Lcom/google/glass/home/timeline/HtmlItemView$1;->this$0:Lcom/google/glass/home/timeline/HtmlItemView;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/HtmlItemView$1;->val$imageView:Landroid/widget/ImageView;
@@ -42,29 +42,16 @@
 
 
 # virtual methods
-.method public onRender(Lcom/google/glass/html/HtmlRenderer;Landroid/graphics/Bitmap;)V
-    .locals 2
+.method public onRender(Lcom/google/glass/html/HtmlRenderer;)V
+    .locals 1
     .parameter "renderer"
-    .parameter "bitmap"
 
     .prologue
-    .line 49
-    iget-object v0, p0, Lcom/google/glass/home/timeline/HtmlItemView$1;->this$0:Lcom/google/glass/home/timeline/HtmlItemView;
-
-    sget v1, Lcom/google/glass/home/R$id;->tag_html_item_renderer:I
-
-    invoke-virtual {v0, v1}, Lcom/google/glass/home/timeline/HtmlItemView;->getTag(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    if-ne p1, v0, :cond_0
-
-    .line 50
+    .line 73
     iget-object v0, p0, Lcom/google/glass/home/timeline/HtmlItemView$1;->val$imageView:Landroid/widget/ImageView;
 
-    invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 52
-    :cond_0
+    .line 74
     return-void
 .end method

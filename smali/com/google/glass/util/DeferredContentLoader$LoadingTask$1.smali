@@ -34,7 +34,7 @@
     .parameter
 
     .prologue
-    .line 106
+    .line 110
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.1;"
     iput-object p1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
@@ -50,7 +50,7 @@
     .parameter "x0"
 
     .prologue
-    .line 106
+    .line 110
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.1;"
     check-cast p1, [Ljava/lang/Void;
 
@@ -63,7 +63,7 @@
 .end method
 
 .method protected final varargs doInBackground([Ljava/lang/Void;)Ljava/lang/Object;
-    .locals 1
+    .locals 5
     .parameter "params"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -74,30 +74,79 @@
     .end annotation
 
     .prologue
-    .line 109
+    .line 113
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.1;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 112
+    .line 116
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
-    invoke-virtual {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled()Z
+    #getter for: Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
+    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Lcom/google/glass/util/Condition;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/util/Condition;->get()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 113
+    .line 117
     const/4 v0, 0x0
 
-    .line 115
+    .line 123
     :goto_0
     return-object v0
 
+    .line 119
     :cond_0
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
-    invoke-virtual {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->loadContent()Ljava/lang/Object;
+    #getter for: Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->context:Landroid/content/Context;
+    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$200(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/app/GlassApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/glass/logging/UserEventAction;->DEFERRED_CONTENT_LOAD:Lcom/google/glass/logging/UserEventAction;
+
+    const-string v2, "t"
+
+    iget-object v3, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
+
+    invoke-virtual {v3}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->getUserEventTag()Ljava/lang/String;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    new-array v4, v4, [Ljava/lang/Object;
+
+    invoke-static {v2, v3, v4}, Lcom/google/glass/logging/UserEventHelper;->createEventTuple(Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
+
+    .line 123
+    iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
+
+    iget-object v1, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
+
+    #getter for: Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
+    invoke-static {v1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Lcom/google/glass/util/Condition;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->loadContent(Lcom/google/glass/util/Condition;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -114,18 +163,18 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 142
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.1;"
     .local p1, result:Ljava/lang/Object;,"TResult;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 135
+    .line 143
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
     #calls: Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->stop()V
-    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
+    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$300(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
-    .line 136
+    .line 144
     return-void
 .end method
 
@@ -139,36 +188,41 @@
     .end annotation
 
     .prologue
-    .line 120
+    .line 128
     .local p0, this:Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;,"Lcom/google/glass/util/DeferredContentLoader$LoadingTask.1;"
     .local p1, result:Ljava/lang/Object;,"TResult;"
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 121
+    .line 129
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
     #calls: Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->stop()V
-    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
+    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$300(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
-    .line 124
+    .line 132
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
-    invoke-virtual {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled()Z
+    #getter for: Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->isCancelled:Lcom/google/glass/util/Condition;
+    invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->access$100(Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)Lcom/google/glass/util/Condition;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/glass/util/Condition;->get()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 130
+    .line 138
     :cond_0
     :goto_0
     return-void
 
-    .line 127
+    .line 135
     :cond_1
     if-eqz p1, :cond_0
 
-    .line 128
+    .line 136
     iget-object v0, p0, Lcom/google/glass/util/DeferredContentLoader$LoadingTask$1;->this$0:Lcom/google/glass/util/DeferredContentLoader$LoadingTask;
 
     invoke-virtual {v0, p1}, Lcom/google/glass/util/DeferredContentLoader$LoadingTask;->bindContent(Ljava/lang/Object;)V

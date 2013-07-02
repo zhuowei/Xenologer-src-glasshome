@@ -33,10 +33,10 @@
     .parameter "regularForm"
 
     .prologue
-    .line 936
+    .line 938
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 937
+    .line 939
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -47,14 +47,14 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;->messageClassName:Ljava/lang/String;
 
-    .line 938
+    .line 940
     invoke-interface {p1}, Lcom/google/protobuf/MessageLite;->toByteArray()[B
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;->asBytes:[B
 
-    .line 939
+    .line 941
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .end annotation
 
     .prologue
-    .line 949
+    .line 951
     :try_start_0
     iget-object v4, p0, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;->messageClassName:Ljava/lang/String;
 
@@ -77,7 +77,7 @@
 
     move-result-object v2
 
-    .line 950
+    .line 952
     .local v2, messageClass:Ljava/lang/Class;
     const-string v4, "newBuilder"
 
@@ -89,7 +89,7 @@
 
     move-result-object v3
 
-    .line 951
+    .line 953
     .local v3, newBuilder:Ljava/lang/reflect/Method;
     const/4 v4, 0x0
 
@@ -103,13 +103,13 @@
 
     check-cast v0, Lcom/google/protobuf/MessageLite$Builder;
 
-    .line 953
+    .line 955
     .local v0, builder:Lcom/google/protobuf/MessageLite$Builder;
     iget-object v4, p0, Lcom/google/protobuf/GeneratedMessageLite$SerializedForm;->asBytes:[B
 
     invoke-interface {v0, v4}, Lcom/google/protobuf/MessageLite$Builder;->mergeFrom([B)Lcom/google/protobuf/MessageLite$Builder;
 
-    .line 954
+    .line 956
     invoke-interface {v0}, Lcom/google/protobuf/MessageLite$Builder;->buildPartial()Lcom/google/protobuf/MessageLite;
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
@@ -122,14 +122,14 @@
 
     return-object v4
 
-    .line 955
+    .line 957
     .end local v0           #builder:Lcom/google/protobuf/MessageLite$Builder;
     .end local v2           #messageClass:Ljava/lang/Class;
     .end local v3           #newBuilder:Ljava/lang/reflect/Method;
     :catch_0
     move-exception v1
 
-    .line 956
+    .line 958
     .local v1, e:Ljava/lang/ClassNotFoundException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -139,12 +139,12 @@
 
     throw v4
 
-    .line 957
+    .line 959
     .end local v1           #e:Ljava/lang/ClassNotFoundException;
     :catch_1
     move-exception v1
 
-    .line 958
+    .line 960
     .local v1, e:Ljava/lang/NoSuchMethodException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -154,12 +154,12 @@
 
     throw v4
 
-    .line 959
+    .line 961
     .end local v1           #e:Ljava/lang/NoSuchMethodException;
     :catch_2
     move-exception v1
 
-    .line 960
+    .line 962
     .local v1, e:Ljava/lang/IllegalAccessException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -169,12 +169,12 @@
 
     throw v4
 
-    .line 961
+    .line 963
     .end local v1           #e:Ljava/lang/IllegalAccessException;
     :catch_3
     move-exception v1
 
-    .line 962
+    .line 964
     .local v1, e:Ljava/lang/reflect/InvocationTargetException;
     new-instance v4, Ljava/lang/RuntimeException;
 
@@ -188,12 +188,12 @@
 
     throw v4
 
-    .line 963
+    .line 965
     .end local v1           #e:Ljava/lang/reflect/InvocationTargetException;
     :catch_4
     move-exception v1
 
-    .line 964
+    .line 966
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     new-instance v4, Ljava/lang/RuntimeException;
 

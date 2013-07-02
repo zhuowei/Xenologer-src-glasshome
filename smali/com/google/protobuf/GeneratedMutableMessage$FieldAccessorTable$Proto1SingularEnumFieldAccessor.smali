@@ -39,18 +39,18 @@
     .end annotation
 
     .prologue
-    .line 488
+    .line 643
     .local p3, messageClass:Ljava/lang/Class;,"Ljava/lang/Class<+Lcom/google/protobuf/GeneratedMutableMessage;>;"
     invoke-direct {p0, p1, p2, p3}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;-><init>(Lcom/google/protobuf/Descriptors$FieldDescriptor;Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 489
+    .line 644
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getEnumType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularEnumFieldAccessor;->enumDescriptor:Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
-    .line 490
+    .line 645
     invoke-virtual {p1}, Lcom/google/protobuf/Descriptors$FieldDescriptor;->getDefaultValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 
     iput-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularEnumFieldAccessor;->defaultValue:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
-    .line 492
+    .line 647
     return-void
 .end method
 
@@ -70,7 +70,7 @@
     .parameter "message"
 
     .prologue
-    .line 499
+    .line 654
     iget-object v2, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularEnumFieldAccessor;->enumDescriptor:Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     invoke-super {p0, p1}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->get(Lcom/google/protobuf/GeneratedMutableMessage;)Ljava/lang/Object;
@@ -87,14 +87,14 @@
 
     move-result-object v0
 
-    .line 501
+    .line 656
     .local v0, value:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
     if-nez v0, :cond_0
 
-    .line 502
+    .line 657
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$Proto1SingularEnumFieldAccessor;->defaultValue:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
-    .line 504
+    .line 659
     .end local v0           #value:Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
     :cond_0
     return-object v0
@@ -106,7 +106,7 @@
     .parameter "value"
 
     .prologue
-    .line 509
+    .line 664
     check-cast p2, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;
 
     .end local p2
@@ -114,7 +114,7 @@
 
     move-result v0
 
-    .line 510
+    .line 665
     .local v0, number:I
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -122,6 +122,6 @@
 
     invoke-super {p0, p1, v1}, Lcom/google/protobuf/GeneratedMutableMessage$FieldAccessorTable$SingularFieldAccessor;->set(Lcom/google/protobuf/GeneratedMutableMessage;Ljava/lang/Object;)V
 
-    .line 511
+    .line 666
     return-void
 .end method

@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 365
+    .line 368
     iput-object p1, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     iput-object p2, p0, Lcom/google/glass/share/ShareActivity$1;->val$shareTarget:Lcom/google/googlex/glass/common/proto/Entity;
@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 378
+    .line 381
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     #calls: Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
@@ -55,7 +55,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 379
+    .line 382
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 380
+    .line 383
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     #getter for: Lcom/google/glass/share/ShareActivity;->annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
@@ -80,7 +80,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/voice/VoiceAnnotationHelper;->startAnnotationForResult(I)V
 
-    .line 381
+    .line 384
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/share/ShareActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
@@ -91,7 +91,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 382
+    .line 385
     const/4 v0, 0x1
 
     return v0
@@ -101,7 +101,7 @@
     .locals 2
 
     .prologue
-    .line 368
+    .line 371
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     #calls: Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
@@ -109,11 +109,11 @@
 
     move-result-object v0
 
-    const-string v1, "Share cancelled"
+    const-string v1, "Share canceled"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 369
+    .line 372
     return-void
 .end method
 
@@ -121,7 +121,7 @@
     .locals 3
 
     .prologue
-    .line 373
+    .line 376
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity$1;->this$0:Lcom/google/glass/share/ShareActivity;
 
     iget-object v1, p0, Lcom/google/glass/share/ShareActivity$1;->val$shareTarget:Lcom/google/googlex/glass/common/proto/Entity;
@@ -131,6 +131,6 @@
     #calls: Lcom/google/glass/share/ShareActivity;->onShareTargetConfirmed(Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
     invoke-static {v0, v1, v2}, Lcom/google/glass/share/ShareActivity;->access$100(Lcom/google/glass/share/ShareActivity;Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
 
-    .line 374
+    .line 377
     return-void
 .end method

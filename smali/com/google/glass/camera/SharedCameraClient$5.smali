@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 394
+    .line 419
     iput-object p1, p0, Lcom/google/glass/camera/SharedCameraClient$5;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 397
+    .line 422
     iget-object v0, p0, Lcom/google/glass/camera/SharedCameraClient$5;->this$0:Lcom/google/glass/camera/SharedCameraClient;
 
     invoke-virtual {v0}, Lcom/google/glass/camera/SharedCameraClient;->onCameraReleased()V
 
-    .line 398
+    .line 423
     return-void
 .end method

@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 90
+    .line 91
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     const-string v1, "DISCONNECTED"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 91
+    .line 92
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     const-string v1, "CONNECTING"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->CONNECTING:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 92
+    .line 93
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     const-string v1, "CONNECTED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->CONNECTED:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 89
+    .line 90
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 89
+    .line 90
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 89
+    .line 90
     const-class v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 90
     sget-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->$VALUES:[Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     invoke-virtual {v0}, [Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->clone()Ljava/lang/Object;

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 333
+    .line 324
     iput-object p1, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4$1;->this$1:Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;
 
     invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
@@ -38,14 +38,14 @@
     .locals 1
 
     .prologue
-    .line 337
+    .line 328
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4$1;->this$1:Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;
 
     iget-object v0, v0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->closeOptionsMenu()V
 
-    .line 338
+    .line 329
     iget-object v0, p0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4$1;->this$1:Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;
 
     iget-object v0, v0, Lcom/google/glass/home/settings/WifiSettingsMenuActivity$4;->this$0:Lcom/google/glass/home/settings/WifiSettingsMenuActivity;
@@ -53,6 +53,6 @@
     #calls: Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->goBackToTimeline()V
     invoke-static {v0}, Lcom/google/glass/home/settings/WifiSettingsMenuActivity;->access$300(Lcom/google/glass/home/settings/WifiSettingsMenuActivity;)V
 
-    .line 339
+    .line 330
     return-void
 .end method

@@ -105,18 +105,18 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->REPORT_USER_EVENT:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 86
+    .line 84
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "GCM_REGISTRATION"
 
-    const-string v2, "c2dm"
+    const-string v2, "gcm"
 
     invoke-direct {v0, v1, v7, v2}, Lcom/google/glass/net/ServerConstants$Action;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->GCM_REGISTRATION:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 89
+    .line 87
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "REPORT_LOCATION"
@@ -127,7 +127,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->REPORT_LOCATION:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 93
+    .line 91
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "ENTITY_SYNC"
@@ -140,7 +140,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->ENTITY_SYNC:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 96
+    .line 94
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "TIMELINE_SYNC"
@@ -153,7 +153,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->TIMELINE_SYNC:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 99
+    .line 97
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "REMOTE_WIPE_CONFIRMATION"
@@ -166,7 +166,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->REMOTE_WIPE_CONFIRMATION:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 102
+    .line 100
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "DOWNLOAD_IMAGE"
@@ -179,7 +179,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->DOWNLOAD_IMAGE:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 105
+    .line 103
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "TIMEZONE"
@@ -192,7 +192,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->TIMEZONE:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 107
+    .line 105
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "ATTACHMENT_GET"
@@ -205,7 +205,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->ATTACHMENT_GET:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 109
+    .line 107
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "ATTACHMENT_INSERT"
@@ -218,7 +218,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants$Action;->ATTACHMENT_INSERT:Lcom/google/glass/net/ServerConstants$Action;
 
-    .line 112
+    .line 110
     new-instance v0, Lcom/google/glass/net/ServerConstants$Action;
 
     const-string v1, "RESOURCE"
@@ -323,13 +323,13 @@
     .end annotation
 
     .prologue
-    .line 117
+    .line 115
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 118
+    .line 116
     iput-object p3, p0, Lcom/google/glass/net/ServerConstants$Action;->path:Ljava/lang/String;
 
-    .line 119
+    .line 117
     return-void
 .end method
 

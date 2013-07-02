@@ -242,7 +242,7 @@
 
     const/4 v2, 0x0
 
-    .line 3089
+    .line 3097
     const-class v0, Lcom/google/protos/logs_proto/LogsAnnotations$IdentifierType;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -251,7 +251,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->idType:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3104
+    .line 3112
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -260,7 +260,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->tempLogsOnly:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3121
+    .line 3129
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -269,7 +269,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->isPrivateLog:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3139
+    .line 3147
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -278,7 +278,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->notLoggedInSawmill:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3154
+    .line 3162
     const-class v0, Lcom/google/protos/logs_proto/LogsAnnotations$FieldDetails;
 
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$FieldDetails;->getDefaultInstance()Lcom/google/protos/logs_proto/LogsAnnotations$FieldDetails;
@@ -291,7 +291,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->fieldDetails:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3172
+    .line 3180
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -300,7 +300,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->isEncrypted:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3190
+    .line 3198
     const-class v0, Lcom/google/protos/logs_proto/LogsAnnotations$FormatType;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -309,7 +309,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->fieldFormat:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3210
+    .line 3218
     const-class v0, Lcom/google/protos/logs_proto/LogsAnnotations$IdentifierType;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -318,7 +318,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->msgIdType:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3227
+    .line 3235
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -327,7 +327,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->msgTempLogsOnly:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3243
+    .line 3251
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -336,7 +336,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->msgNotLoggedInSawmill:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3258
+    .line 3266
     const-class v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
 
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;->getDefaultInstance()Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails;
@@ -349,7 +349,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->msgDetails:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3280
+    .line 3288
     const-class v0, Ljava/lang/String;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -358,7 +358,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->fieldEncryptionKeyName:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3302
+    .line 3310
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -367,7 +367,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->fileNotUsedForLoggingExceptEnums:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3325
+    .line 3333
     const-class v0, Ljava/lang/Boolean;
 
     invoke-static {v0, v2}, Lcom/google/protobuf/GeneratedMessage;->newFileScopedGeneratedExtension(Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
@@ -376,12 +376,12 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->fileVettedForLogsAnnotations:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
-    .line 3352
+    .line 3360
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotationsInternalDescriptors;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 3353
+    .line 3361
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -398,7 +398,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_FieldDetails_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 3355
+    .line 3363
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_FieldDetails_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -413,7 +413,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_FieldDetails_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 3359
+    .line 3367
     invoke-static {}, Lcom/google/protos/logs_proto/LogsAnnotations;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     move-result-object v0
@@ -430,7 +430,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 3361
+    .line 3369
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -445,7 +445,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 3365
+    .line 3373
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     invoke-virtual {v0}, Lcom/google/protobuf/Descriptors$Descriptor;->getNestedTypes()Ljava/util/List;
@@ -460,7 +460,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_Type_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 3367
+    .line 3375
     new-instance v0, Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_Type_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
@@ -479,7 +479,7 @@
 
     sput-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->internal_static_logs_proto_MessageDetails_Type_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
-    .line 3371
+    .line 3379
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->idType:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -496,7 +496,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3372
+    .line 3380
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->tempLogsOnly:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -513,7 +513,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3373
+    .line 3381
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->isPrivateLog:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -530,7 +530,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3374
+    .line 3382
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->notLoggedInSawmill:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -549,7 +549,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3375
+    .line 3383
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->fieldDetails:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -568,7 +568,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3376
+    .line 3384
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->isEncrypted:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -587,7 +587,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3377
+    .line 3385
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->fieldFormat:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -606,7 +606,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3378
+    .line 3386
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->msgIdType:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -625,7 +625,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3379
+    .line 3387
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->msgTempLogsOnly:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -644,7 +644,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3380
+    .line 3388
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->msgNotLoggedInSawmill:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -663,7 +663,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3381
+    .line 3389
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->msgDetails:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -682,7 +682,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3382
+    .line 3390
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->fieldEncryptionKeyName:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -701,7 +701,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3383
+    .line 3391
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->fileNotUsedForLoggingExceptEnums:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -720,7 +720,7 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3384
+    .line 3392
     sget-object v1, Lcom/google/protos/logs_proto/LogsAnnotations;->fileVettedForLogsAnnotations:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
@@ -739,10 +739,10 @@
 
     invoke-virtual {v1, v0}, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;->internalInit(Lcom/google/protobuf/Descriptors$FieldDescriptor;)V
 
-    .line 3385
+    .line 3393
     invoke-static {}, Lcom/google/protobuf/DescriptorProtos;->getDescriptor()Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 3386
+    .line 3394
     return-void
 .end method
 
@@ -820,7 +820,7 @@
     .locals 1
 
     .prologue
-    .line 3347
+    .line 3355
     sget-object v0, Lcom/google/protos/logs_proto/LogsAnnotations;->descriptor:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     return-object v0

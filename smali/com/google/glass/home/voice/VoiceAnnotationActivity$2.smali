@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 163
+    .line 162
     iput-object p1, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     iput-object p2, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->val$textToReturn:Ljava/lang/String;
@@ -43,7 +43,7 @@
     .locals 3
 
     .prologue
-    .line 166
+    .line 165
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     sget-object v1, Lcom/google/glass/logging/UserEventAction;->VOICE_MESSAGE_DISMISS:Lcom/google/glass/logging/UserEventAction;
@@ -52,19 +52,19 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->logUserEvent(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 167
+    .line 166
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->setResult(I)V
 
-    .line 168
+    .line 167
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->finish()V
 
-    .line 169
+    .line 168
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .locals 2
 
     .prologue
-    .line 173
+    .line 172
     iget-object v0, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->this$0:Lcom/google/glass/home/voice/VoiceAnnotationActivity;
 
     iget-object v1, p0, Lcom/google/glass/home/voice/VoiceAnnotationActivity$2;->val$textToReturn:Ljava/lang/String;
@@ -80,6 +80,6 @@
     #calls: Lcom/google/glass/home/voice/VoiceAnnotationActivity;->onAnnotationCommitted(Ljava/lang/String;)V
     invoke-static {v0, v1}, Lcom/google/glass/home/voice/VoiceAnnotationActivity;->access$100(Lcom/google/glass/home/voice/VoiceAnnotationActivity;Ljava/lang/String;)V
 
-    .line 174
+    .line 173
     return-void
 .end method

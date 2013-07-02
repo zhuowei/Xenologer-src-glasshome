@@ -112,6 +112,40 @@
     return-void
 .end method
 
+.method public static assertFloatingEquals(FF)V
+    .locals 2
+    .parameter "expected"
+    .parameter "actual"
+
+    .prologue
+    .line 101
+    sub-float v0, p0, p1
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    cmpg-float v0, v0, v1
+
+    if-gez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    invoke-static {v0}, Lcom/google/glass/util/Assert;->assertTrue(Z)V
+
+    .line 102
+    return-void
+
+    .line 101
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
 .method public static assertIsTest()V
     .locals 2
 

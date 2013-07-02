@@ -40,7 +40,7 @@
 
     const/4 v2, 0x0
 
-    .line 185
+    .line 199
     new-instance v0, Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;
 
     const-string v1, "MESSAGE"
@@ -57,7 +57,7 @@
 
     sput-object v0, Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;->EXTENSION_SET:Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;
 
-    .line 184
+    .line 198
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;
@@ -86,7 +86,7 @@
     .end annotation
 
     .prologue
-    .line 184
+    .line 198
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -97,7 +97,7 @@
     .parameter "name"
 
     .prologue
-    .line 184
+    .line 198
     const-class v0, Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -113,7 +113,7 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 198
     sget-object v0, Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;->$VALUES:[Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;
 
     invoke-virtual {v0}, [Lcom/google/protobuf/MessageReflection$MergeTarget$ContainerType;->clone()Ljava/lang/Object;

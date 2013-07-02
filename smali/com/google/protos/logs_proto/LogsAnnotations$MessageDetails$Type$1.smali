@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 1852
+    .line 1854
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 1857
+    .line 1859
     new-instance v0, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 1852
+    .line 1854
     invoke-virtual {p0, p1, p2}, Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/protos/logs_proto/LogsAnnotations$MessageDetails$Type;
 
     move-result-object v0

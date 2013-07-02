@@ -25,7 +25,7 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 6
+    .locals 8
     .parameter "savedInstanceState"
 
     .prologue
@@ -33,114 +33,161 @@
     invoke-super {p0, p1}, Landroid/app/ListActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 44
-    sget v4, Lcom/google/userfeedback/android/api/R$layout;->gf_preview_activity:I
+    sget v5, Lcom/google/userfeedback/android/api/R$layout;->gf_preview_activity:I
 
-    invoke-virtual {p0, v4}, Lcom/google/userfeedback/android/api/PreviewActivity;->setContentView(I)V
+    invoke-virtual {p0, v5}, Lcom/google/userfeedback/android/api/PreviewActivity;->setContentView(I)V
 
-    .line 46
-    move-object v2, p0
-
-    .line 47
-    .local v2, thisActivity:Landroid/app/Activity;
-    sget v4, Lcom/google/userfeedback/android/api/R$id;->gf_send_from_preview:I
-
-    invoke-virtual {p0, v4}, Lcom/google/userfeedback/android/api/PreviewActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/Button;
-
-    iput-object v4, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mSubmitFeedback:Landroid/widget/Button;
-
-    .line 48
-    iget-object v4, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mSubmitFeedback:Landroid/widget/Button;
-
-    new-instance v5, Lcom/google/userfeedback/android/api/PreviewActivity$1;
-
-    invoke-direct {v5, p0, v2}, Lcom/google/userfeedback/android/api/PreviewActivity$1;-><init>(Lcom/google/userfeedback/android/api/PreviewActivity;Landroid/app/Activity;)V
-
-    invoke-virtual {v4, v5}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 67
-    sget v4, Lcom/google/userfeedback/android/api/R$id;->gf_back:I
-
-    invoke-virtual {p0, v4}, Lcom/google/userfeedback/android/api/PreviewActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/Button;
-
-    iput-object v4, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mGoBack:Landroid/widget/Button;
-
-    .line 68
-    iget-object v4, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mGoBack:Landroid/widget/Button;
-
-    new-instance v5, Lcom/google/userfeedback/android/api/PreviewActivity$2;
-
-    invoke-direct {v5, p0}, Lcom/google/userfeedback/android/api/PreviewActivity$2;-><init>(Lcom/google/userfeedback/android/api/PreviewActivity;)V
-
-    invoke-virtual {v4, v5}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 75
+    .line 45
     invoke-static {}, Lcom/google/userfeedback/android/api/UserFeedback;->userFeedback()Lcom/google/userfeedback/android/api/UserFeedback;
 
-    move-result-object v3
+    move-result-object v5
 
-    .line 76
-    .local v3, uf:Lcom/google/userfeedback/android/api/UserFeedback;
-    if-nez v3, :cond_0
+    invoke-virtual {v5}, Lcom/google/userfeedback/android/api/UserFeedback;->getSpec()Lcom/google/userfeedback/android/api/UserFeedbackSpec;
 
-    .line 77
-    invoke-virtual {p0}, Lcom/google/userfeedback/android/api/PreviewActivity;->finish()V
+    move-result-object v5
 
-    .line 91
-    :goto_0
-    return-void
+    invoke-virtual {v5}, Lcom/google/userfeedback/android/api/UserFeedbackSpec;->getUiConfigurationOptions()Lcom/google/userfeedback/android/api/UiConfigurationOptions;
+
+    move-result-object v0
+
+    .line 47
+    .local v0, config:Lcom/google/userfeedback/android/api/UiConfigurationOptions;
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getBackgroundColor()I
+
+    move-result v5
+
+    if-eqz v5, :cond_0
+
+    .line 48
+    invoke-virtual {p0}, Lcom/google/userfeedback/android/api/PreviewActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object v5
+
+    invoke-virtual {p0}, Lcom/google/userfeedback/android/api/PreviewActivity;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v6
+
+    invoke-virtual {v0}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->getBackgroundColor()I
+
+    move-result v7
+
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getColor(I)I
+
+    move-result v6
+
+    invoke-virtual {v5, v6}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 51
+    :cond_0
+    move-object v3, p0
+
+    .line 52
+    .local v3, thisActivity:Landroid/app/Activity;
+    sget v5, Lcom/google/userfeedback/android/api/R$id;->gf_send_from_preview:I
+
+    invoke-virtual {p0, v5}, Lcom/google/userfeedback/android/api/PreviewActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/Button;
+
+    iput-object v5, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mSubmitFeedback:Landroid/widget/Button;
+
+    .line 53
+    iget-object v5, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mSubmitFeedback:Landroid/widget/Button;
+
+    new-instance v6, Lcom/google/userfeedback/android/api/PreviewActivity$1;
+
+    invoke-direct {v6, p0, v3}, Lcom/google/userfeedback/android/api/PreviewActivity$1;-><init>(Lcom/google/userfeedback/android/api/PreviewActivity;Landroid/app/Activity;)V
+
+    invoke-virtual {v5, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 72
+    sget v5, Lcom/google/userfeedback/android/api/R$id;->gf_back:I
+
+    invoke-virtual {p0, v5}, Lcom/google/userfeedback/android/api/PreviewActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/Button;
+
+    iput-object v5, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mGoBack:Landroid/widget/Button;
+
+    .line 73
+    iget-object v5, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mGoBack:Landroid/widget/Button;
+
+    new-instance v6, Lcom/google/userfeedback/android/api/PreviewActivity$2;
+
+    invoke-direct {v6, p0}, Lcom/google/userfeedback/android/api/PreviewActivity$2;-><init>(Lcom/google/userfeedback/android/api/PreviewActivity;)V
+
+    invoke-virtual {v5, v6}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 80
-    :cond_0
-    invoke-virtual {v3}, Lcom/google/userfeedback/android/api/UserFeedback;->getReport()Lcom/google/userfeedback/android/api/UserFeedbackReport;
+    invoke-static {}, Lcom/google/userfeedback/android/api/UserFeedback;->userFeedback()Lcom/google/userfeedback/android/api/UserFeedback;
 
-    move-result-object v1
+    move-result-object v4
 
     .line 81
-    .local v1, report:Lcom/google/userfeedback/android/api/UserFeedbackReport;
-    if-nez v1, :cond_1
+    .local v4, uf:Lcom/google/userfeedback/android/api/UserFeedback;
+    if-nez v4, :cond_1
 
     .line 82
     invoke-virtual {p0}, Lcom/google/userfeedback/android/api/PreviewActivity;->finish()V
 
-    goto :goto_0
+    .line 96
+    :goto_0
+    return-void
+
+    .line 85
+    :cond_1
+    invoke-virtual {v4}, Lcom/google/userfeedback/android/api/UserFeedback;->getReport()Lcom/google/userfeedback/android/api/UserFeedbackReport;
+
+    move-result-object v2
 
     .line 86
-    :cond_1
-    :try_start_0
-    new-instance v4, Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
-
-    invoke-direct {v4, p0, v1}, Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;-><init>(Landroid/content/Context;Lcom/google/userfeedback/android/api/UserFeedbackReport;)V
-
-    iput-object v4, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mAdapter:Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
+    .local v2, report:Lcom/google/userfeedback/android/api/UserFeedbackReport;
+    if-nez v2, :cond_2
 
     .line 87
-    iget-object v4, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mAdapter:Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
+    invoke-virtual {p0}, Lcom/google/userfeedback/android/api/PreviewActivity;->finish()V
 
-    invoke-virtual {p0, v4}, Lcom/google/userfeedback/android/api/PreviewActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
+    goto :goto_0
+
+    .line 91
+    :cond_2
+    :try_start_0
+    new-instance v5, Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
+
+    invoke-direct {v5, p0, v2}, Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;-><init>(Landroid/content/Context;Lcom/google/userfeedback/android/api/UserFeedbackReport;)V
+
+    iput-object v5, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mAdapter:Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
+
+    .line 92
+    iget-object v5, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mAdapter:Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
+
+    invoke-virtual {p0, v5}, Lcom/google/userfeedback/android/api/PreviewActivity;->setListAdapter(Landroid/widget/ListAdapter;)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 88
+    .line 93
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    .line 89
-    .local v0, e:Ljava/lang/NoSuchFieldException;
-    const-string v4, "GFEEDBACK"
+    .line 94
+    .local v1, e:Ljava/lang/NoSuchFieldException;
+    const-string v5, "GFEEDBACK"
 
-    const-string v5, "failed to read in report fields"
+    const-string v6, "failed to read in report fields"
 
-    invoke-static {v4, v5, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v5, v6, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method
@@ -149,13 +196,13 @@
     .locals 0
 
     .prologue
-    .line 101
+    .line 106
     invoke-super {p0}, Landroid/app/ListActivity;->onDestroy()V
 
-    .line 102
+    .line 107
     invoke-static {p0}, Lcom/google/userfeedback/android/api/UserFeedback;->flushBitmapsOnDestroy(Landroid/app/Activity;)V
 
-    .line 103
+    .line 108
     return-void
 .end method
 
@@ -167,14 +214,14 @@
     .parameter "id"
 
     .prologue
-    .line 95
+    .line 100
     invoke-super/range {p0 .. p5}, Landroid/app/ListActivity;->onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
 
-    .line 96
+    .line 101
     iget-object v0, p0, Lcom/google/userfeedback/android/api/PreviewActivity;->mAdapter:Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;
 
     invoke-virtual {v0, p3}, Lcom/google/userfeedback/android/api/UserFeedbackReportAdapter;->onListItemClick(I)V
 
-    .line 97
+    .line 102
     return-void
 .end method

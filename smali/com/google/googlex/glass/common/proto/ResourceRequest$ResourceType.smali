@@ -30,6 +30,10 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType; = null
 
+.field public static final enum GLASSWARE_ICON_LARGE:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType; = null
+
+.field public static final GLASSWARE_ICON_LARGE_VALUE:I = 0x5
+
 .field public static final enum GLASSWARE_ICON_MEDIUM:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType; = null
 
 .field public static final GLASSWARE_ICON_MEDIUM_VALUE:I = 0x3
@@ -37,6 +41,10 @@
 .field public static final enum GLASSWARE_ICON_SMALL:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType; = null
 
 .field public static final GLASSWARE_ICON_SMALL_VALUE:I = 0x2
+
+.field public static final enum GLASSWARE_MESSAGES:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType; = null
+
+.field public static final GLASSWARE_MESSAGES_VALUE:I = 0x4
 
 .field public static final enum STYLESHEET:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType; = null
 
@@ -64,69 +72,101 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 8
 
     .prologue
+    const/4 v7, 0x0
+
+    const/4 v6, 0x4
+
     const/4 v5, 0x3
 
-    const/4 v4, 0x0
+    const/4 v4, 0x2
 
-    const/4 v3, 0x2
-
-    const/4 v2, 0x1
-
-    .line 138
-    new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
-
-    const-string v1, "STYLESHEET"
-
-    invoke-direct {v0, v1, v4, v4, v2}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
-
-    sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->STYLESHEET:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+    const/4 v3, 0x1
 
     .line 146
     new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
-    const-string v1, "GLASSWARE_ICON_SMALL"
+    const-string v1, "STYLESHEET"
 
-    invoke-direct {v0, v1, v2, v2, v3}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v7, v7, v3}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
 
-    sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_SMALL:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+    sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->STYLESHEET:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     .line 154
     new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
+    const-string v1, "GLASSWARE_ICON_SMALL"
+
+    invoke-direct {v0, v1, v3, v3, v4}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
+
+    sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_SMALL:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    .line 162
+    new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
     const-string v1, "GLASSWARE_ICON_MEDIUM"
 
-    invoke-direct {v0, v1, v3, v3, v5}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v4, v4, v5}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_MEDIUM:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
-    .line 129
-    new-array v0, v5, [Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+    .line 170
+    new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    const-string v1, "GLASSWARE_ICON_LARGE"
+
+    const/4 v2, 0x5
+
+    invoke-direct {v0, v1, v5, v5, v2}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
+
+    sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_LARGE:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    .line 179
+    new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    const-string v1, "GLASSWARE_MESSAGES"
+
+    invoke-direct {v0, v1, v6, v6, v6}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;-><init>(Ljava/lang/String;III)V
+
+    sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_MESSAGES:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    .line 137
+    const/4 v0, 0x5
+
+    new-array v0, v0, [Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->STYLESHEET:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
-    aput-object v1, v0, v4
+    aput-object v1, v0, v7
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_SMALL:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
-    aput-object v1, v0, v2
+    aput-object v1, v0, v3
 
     sget-object v1, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_MEDIUM:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
-    aput-object v1, v0, v3
+    aput-object v1, v0, v4
+
+    sget-object v1, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_LARGE:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    aput-object v1, v0, v5
+
+    sget-object v1, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_MESSAGES:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    aput-object v1, v0, v6
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->$VALUES:[Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
-    .line 199
+    .line 243
     new-instance v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 219
+    .line 263
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->values()[Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     move-result-object v0
@@ -149,16 +189,16 @@
     .end annotation
 
     .prologue
-    .line 233
+    .line 277
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 234
+    .line 278
     iput p3, p0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->index:I
 
-    .line 235
+    .line 279
     iput p4, p0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->value:I
 
-    .line 236
+    .line 280
     return-void
 .end method
 
@@ -166,7 +206,7 @@
     .locals 2
 
     .prologue
-    .line 216
+    .line 260
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ResourceRequest;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -199,7 +239,7 @@
     .end annotation
 
     .prologue
-    .line 196
+    .line 240
     sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -210,39 +250,53 @@
     .parameter "value"
 
     .prologue
-    .line 186
+    .line 228
     packed-switch p0, :pswitch_data_0
 
-    .line 190
+    .line 234
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 187
+    .line 229
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->STYLESHEET:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     goto :goto_0
 
-    .line 188
+    .line 230
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_SMALL:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     goto :goto_0
 
-    .line 189
+    .line 231
     :pswitch_2
     sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_MEDIUM:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     goto :goto_0
 
-    .line 186
+    .line 232
+    :pswitch_3
+    sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_ICON_LARGE:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    goto :goto_0
+
+    .line 233
+    :pswitch_4
+    sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->GLASSWARE_MESSAGES:Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
+
+    goto :goto_0
+
+    .line 228
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
         :pswitch_1
         :pswitch_2
+        :pswitch_4
+        :pswitch_3
     .end packed-switch
 .end method
 
@@ -251,7 +305,7 @@
     .parameter "desc"
 
     .prologue
-    .line 223
+    .line 267
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -262,7 +316,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 224
+    .line 268
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -271,7 +325,7 @@
 
     throw v0
 
-    .line 227
+    .line 271
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->VALUES:[Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
@@ -289,7 +343,7 @@
     .parameter "name"
 
     .prologue
-    .line 129
+    .line 137
     const-class v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -305,7 +359,7 @@
     .locals 1
 
     .prologue
-    .line 129
+    .line 137
     sget-object v0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->$VALUES:[Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->clone()Ljava/lang/Object;
@@ -323,7 +377,7 @@
     .locals 1
 
     .prologue
-    .line 212
+    .line 256
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -335,7 +389,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 225
     iget v0, p0, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->value:I
 
     return v0
@@ -345,7 +399,7 @@
     .locals 2
 
     .prologue
-    .line 208
+    .line 252
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ResourceRequest$ResourceType;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

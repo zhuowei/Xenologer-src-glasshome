@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 202
+    .line 203
     iput-object p1, p0, Lcom/google/glass/companion/RemoteCompanionProxy$3;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     iput-object p2, p0, Lcom/google/glass/companion/RemoteCompanionProxy$3;->val$listener:Lcom/google/glass/companion/CompanionStateChangeListener;
@@ -46,7 +46,7 @@
     .locals 4
 
     .prologue
-    .line 205
+    .line 206
     invoke-static {}, Lcom/google/glass/util/Assert;->isTest()Z
 
     move-result v0
@@ -59,7 +59,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 206
+    .line 207
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$3;->val$listener:Lcom/google/glass/companion/CompanionStateChangeListener;
 
     invoke-static {}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$800()Ljava/lang/Boolean;
@@ -86,11 +86,11 @@
 
     invoke-interface {v0, v1, v2, v3}, Lcom/google/glass/companion/CompanionStateChangeListener;->onStateChange(ZII)V
 
-    .line 212
+    .line 213
     :goto_0
     return-void
 
-    .line 209
+    .line 210
     :cond_0
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$3;->val$listener:Lcom/google/glass/companion/CompanionStateChangeListener;
 

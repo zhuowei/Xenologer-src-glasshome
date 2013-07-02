@@ -94,6 +94,8 @@
     .end annotation
 .end field
 
+.field private labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -285,7 +287,7 @@
     .parameter "context"
 
     .prologue
-    .line 111
+    .line 114
     invoke-direct {p0, p1}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;)V
 
     .line 91
@@ -300,7 +302,12 @@
 
     iput v0, p0, Lcom/google/glass/widget/MosaicView;->entitySetIndex:I
 
-    .line 112
+    .line 111
+    sget-object v0, Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;->DEFAULT:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    iput-object v0, p0, Lcom/google/glass/widget/MosaicView;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    .line 115
     return-void
 .end method
 
@@ -310,7 +317,7 @@
     .parameter "attrs"
 
     .prologue
-    .line 115
+    .line 118
     invoke-direct {p0, p1, p2}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 91
@@ -325,7 +332,12 @@
 
     iput v0, p0, Lcom/google/glass/widget/MosaicView;->entitySetIndex:I
 
-    .line 116
+    .line 111
+    sget-object v0, Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;->DEFAULT:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    iput-object v0, p0, Lcom/google/glass/widget/MosaicView;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    .line 119
     return-void
 .end method
 
@@ -336,7 +348,7 @@
     .parameter "defStyle"
 
     .prologue
-    .line 119
+    .line 122
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 91
@@ -351,7 +363,12 @@
 
     iput v0, p0, Lcom/google/glass/widget/MosaicView;->entitySetIndex:I
 
-    .line 120
+    .line 111
+    sget-object v0, Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;->DEFAULT:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    iput-object v0, p0, Lcom/google/glass/widget/MosaicView;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    .line 123
     return-void
 .end method
 
@@ -416,14 +433,14 @@
     .parameter "layoutParams"
 
     .prologue
-    .line 321
+    .line 324
     if-nez p2, :cond_0
 
     const/4 v0, -0x1
 
     if-ne p3, v0, :cond_0
 
-    .line 322
+    .line 325
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Must supply an entity and/or a remainingCount"
@@ -432,7 +449,7 @@
 
     throw v0
 
-    .line 329
+    .line 332
     :cond_0
     sget-object v9, Lcom/google/glass/widget/MosaicView;->mainThreadHandler:Landroid/os/Handler;
 
@@ -458,7 +475,7 @@
 
     invoke-virtual {v9, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 359
+    .line 362
     return-void
 .end method
 
@@ -470,7 +487,7 @@
     .parameter "height"
 
     .prologue
-    .line 363
+    .line 366
     sget v1, Lcom/google/glass/common/R$id;->image:I
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -479,7 +496,7 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 364
+    .line 367
     .local v3, imageView:Landroid/widget/ImageView;
     sget v1, Lcom/google/glass/common/R$id;->text:I
 
@@ -489,7 +506,7 @@
 
     check-cast v4, Landroid/widget/TextView;
 
-    .line 365
+    .line 369
     .local v4, textView:Landroid/widget/TextView;
     new-instance v0, Lcom/google/glass/util/EntityImageDownloadTask;
 
@@ -505,16 +522,21 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/glass/util/EntityImageDownloadTask;-><init>(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/Entity;Landroid/widget/ImageView;Landroid/widget/TextView;II)V
 
-    .line 367
-    .local v0, imageDownloadTask:Lcom/google/glass/util/ImageProxyBitmapLoadingTask;
+    .line 371
+    .local v0, imageDownloadTask:Lcom/google/glass/util/EntityImageDownloadTask;
+    iget-object v1, p0, Lcom/google/glass/widget/MosaicView;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    invoke-virtual {v0, v1}, Lcom/google/glass/util/EntityImageDownloadTask;->setLabelVisibility(Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;)V
+
+    .line 372
     iget-object v1, p0, Lcom/google/glass/widget/MosaicView;->imageDownloadTasks:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 369
+    .line 374
     invoke-static {p0, v0}, Lcom/google/glass/util/DeferredContentLoader;->loadForScrollItemSubview(Landroid/view/View;Lcom/google/glass/util/DeferredContentLoader$LoadingTask;)V
 
-    .line 370
+    .line 375
     return-void
 .end method
 
@@ -525,7 +547,7 @@
     .parameter "remainingCount"
 
     .prologue
-    .line 373
+    .line 378
     sget v1, Lcom/google/glass/common/R$id;->text:I
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
@@ -534,11 +556,11 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 374
+    .line 379
     .local v0, text:Landroid/widget/TextView;
     if-eqz p2, :cond_0
 
-    .line 375
+    .line 380
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -567,11 +589,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 379
+    .line 384
     :goto_0
     return-void
 
-    .line 377
+    .line 382
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -603,7 +625,7 @@
     .parameter "cellHeight"
 
     .prologue
-    .line 278
+    .line 281
     iget v3, p1, Lcom/google/glass/widget/MosaicView$CellSpec;->row:I
 
     iget v4, p1, Lcom/google/glass/widget/MosaicView$CellSpec;->rowSpan:I
@@ -612,7 +634,7 @@
 
     move-result-object v2
 
-    .line 279
+    .line 282
     .local v2, rowSpec:Landroid/widget/GridLayout$Spec;
     iget v3, p1, Lcom/google/glass/widget/MosaicView$CellSpec;->column:I
 
@@ -622,13 +644,13 @@
 
     move-result-object v0
 
-    .line 280
+    .line 283
     .local v0, colSpec:Landroid/widget/GridLayout$Spec;
     new-instance v1, Landroid/widget/GridLayout$LayoutParams;
 
     invoke-direct {v1, v2, v0}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/widget/GridLayout$Spec;Landroid/widget/GridLayout$Spec;)V
 
-    .line 281
+    .line 284
     .local v1, params:Landroid/widget/GridLayout$LayoutParams;
     iget v3, p1, Lcom/google/glass/widget/MosaicView$CellSpec;->colSpan:I
 
@@ -636,14 +658,14 @@
 
     iput v3, v1, Landroid/widget/GridLayout$LayoutParams;->width:I
 
-    .line 282
+    .line 285
     iget v3, p1, Lcom/google/glass/widget/MosaicView$CellSpec;->rowSpan:I
 
     mul-int/2addr v3, p3
 
     iput v3, v1, Landroid/widget/GridLayout$LayoutParams;->height:I
 
-    .line 283
+    .line 286
     return-object v1
 .end method
 
@@ -678,12 +700,12 @@
 
     const/4 v7, 0x0
 
-    .line 224
+    .line 227
     invoke-static {p0, p1}, Lcom/google/glass/widget/MosaicView;->getEntitiesWithImages(Ljava/util/List;I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 227
+    .line 230
     .local v0, drawEntities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     invoke-interface {p0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -691,7 +713,7 @@
 
     check-cast v2, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 228
+    .line 231
     .local v2, firstEntity:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-interface {v0, v2}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
@@ -699,16 +721,16 @@
 
     if-nez v5, :cond_0
 
-    .line 229
+    .line 232
     invoke-interface {v0, v7, v2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 232
+    .line 235
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 235
+    .line 238
     .local v4, numInitialDrawEntities:I
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -716,7 +738,7 @@
 
     if-nez v5, :cond_2
 
-    .line 236
+    .line 239
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v5
@@ -731,7 +753,7 @@
 
     invoke-interface {v0, v5}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 250
+    .line 253
     :cond_1
     :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -740,25 +762,25 @@
 
     if-le v5, p1, :cond_4
 
-    .line 252
+    .line 255
     add-int/lit8 v5, p1, -0x1
 
     invoke-static {v0, v5}, Lcom/google/glass/widget/MosaicView;->trimToSize(Ljava/util/List;I)Ljava/util/List;
 
     move-result-object v0
 
-    .line 253
+    .line 256
     sget-object v5, Lcom/google/glass/widget/MosaicView$GroupCountType;->ADD_CELL:Lcom/google/glass/widget/MosaicView$GroupCountType;
 
     invoke-static {v0, v5}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v5
 
-    .line 261
+    .line 264
     :goto_1
     return-object v5
 
-    .line 237
+    .line 240
     :cond_2
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -768,7 +790,7 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 240
+    .line 243
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -787,7 +809,7 @@
 
     check-cast v1, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 241
+    .line 244
     .local v1, entity:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-interface {v0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -801,12 +823,12 @@
 
     if-nez v5, :cond_3
 
-    .line 243
+    .line 246
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 254
+    .line 257
     .end local v1           #entity:Lcom/google/googlex/glass/common/proto/Entity;
     .end local v3           #i$:Ljava/util/Iterator;
     :cond_4
@@ -824,7 +846,7 @@
 
     if-ge v4, v8, :cond_5
 
-    .line 257
+    .line 260
     sget-object v5, Lcom/google/glass/widget/MosaicView$GroupCountType;->IN_LAST_CELL:Lcom/google/glass/widget/MosaicView$GroupCountType;
 
     invoke-static {v0, v5}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
@@ -833,7 +855,7 @@
 
     goto :goto_1
 
-    .line 258
+    .line 261
     :cond_5
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -845,7 +867,7 @@
 
     if-le v5, v6, :cond_6
 
-    .line 259
+    .line 262
     add-int/lit8 v5, p1, -0x1
 
     invoke-static {v0, v5}, Lcom/google/glass/widget/MosaicView;->trimToSize(Ljava/util/List;I)Ljava/util/List;
@@ -860,7 +882,7 @@
 
     goto :goto_1
 
-    .line 261
+    .line 264
     :cond_6
     sget-object v5, Lcom/google/glass/widget/MosaicView$GroupCountType;->NONE:Lcom/google/glass/widget/MosaicView$GroupCountType;
 
@@ -893,13 +915,13 @@
     .end annotation
 
     .prologue
-    .line 422
+    .line 435
     .local p0, input:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     invoke-static {}, Lcom/google/common/collect/Lists;->newLinkedList()Ljava/util/LinkedList;
 
     move-result-object v2
 
-    .line 423
+    .line 436
     .local v2, ret:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -919,7 +941,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 424
+    .line 437
     .local v0, entity:Lcom/google/googlex/glass/common/proto/Entity;
     sget-object v3, Lcom/google/glass/widget/MosaicView;->hasImagePredicate:Lcom/google/common/base/Predicate;
 
@@ -929,17 +951,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 425
+    .line 438
     invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 426
+    .line 439
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v3
 
     if-ne v3, p1, :cond_0
 
-    .line 431
+    .line 444
     .end local v0           #entity:Lcom/google/googlex/glass/common/proto/Entity;
     :cond_1
     return-object v2
@@ -965,7 +987,7 @@
     .end annotation
 
     .prologue
-    .line 270
+    .line 273
     .local p0, list:Ljava/util/List;,"Ljava/util/List<TT;>;"
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -973,14 +995,14 @@
 
     if-le v0, p1, :cond_0
 
-    .line 271
+    .line 274
     const/4 v0, 0x0
 
     invoke-interface {p0, v0, p1}, Ljava/util/List;->subList(II)Ljava/util/List;
 
     move-result-object p0
 
-    .line 273
+    .line 276
     .end local p0           #list:Ljava/util/List;,"Ljava/util/List<TT;>;"
     :cond_0
     return-object p0
@@ -992,17 +1014,17 @@
     .locals 1
 
     .prologue
-    .line 416
+    .line 421
     iget-object v0, p0, Lcom/google/glass/widget/MosaicView;->imageDownloadTasks:Ljava/util/List;
 
     invoke-static {v0}, Lcom/google/glass/util/DeferredContentLoader;->cancel(Ljava/util/List;)V
 
-    .line 417
+    .line 422
     iget-object v0, p0, Lcom/google/glass/widget/MosaicView;->imageDownloadTasks:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 418
+    .line 423
     return-void
 .end method
 
@@ -1010,7 +1032,7 @@
     .locals 7
 
     .prologue
-    .line 385
+    .line 390
     const/4 v2, 0x0
 
     .local v2, i:I
@@ -1021,14 +1043,14 @@
 
     if-ge v2, v6, :cond_3
 
-    .line 386
+    .line 391
     invoke-virtual {p0, v2}, Lcom/google/glass/widget/MosaicView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/FrameLayout;
 
-    .line 389
+    .line 394
     .local v1, cellView:Landroid/widget/FrameLayout;
     sget v6, Lcom/google/glass/common/R$id;->tag_cell_layout_type:I
 
@@ -1042,7 +1064,7 @@
 
     move-result v4
 
-    .line 392
+    .line 397
     .local v4, layoutId:I
     sget v6, Lcom/google/glass/common/R$id;->image:I
 
@@ -1052,16 +1074,16 @@
 
     check-cast v3, Landroid/widget/ImageView;
 
-    .line 393
+    .line 398
     .local v3, imageView:Landroid/widget/ImageView;
     if-eqz v3, :cond_0
 
-    .line 394
+    .line 399
     const/4 v6, 0x0
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 396
+    .line 401
     :cond_0
     sget v6, Lcom/google/glass/common/R$id;->text:I
 
@@ -1071,16 +1093,16 @@
 
     check-cast v5, Landroid/widget/TextView;
 
-    .line 397
+    .line 402
     .local v5, textView:Landroid/widget/TextView;
     if-eqz v5, :cond_1
 
-    .line 398
+    .line 403
     const-string v6, ""
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 402
+    .line 407
     :cond_1
     sget-object v6, Lcom/google/glass/widget/MosaicView;->cellLayoutCache:Landroid/util/SparseArray;
 
@@ -1090,11 +1112,11 @@
 
     check-cast v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    .line 403
+    .line 408
     .local v0, cache:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/widget/FrameLayout;>;"
     if-nez v0, :cond_2
 
-    .line 404
+    .line 409
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     .end local v0           #cache:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/widget/FrameLayout;>;"
@@ -1102,22 +1124,22 @@
 
     invoke-direct {v0, v6}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
 
-    .line 405
+    .line 410
     .restart local v0       #cache:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/widget/FrameLayout;>;"
     sget-object v6, Lcom/google/glass/widget/MosaicView;->cellLayoutCache:Landroid/util/SparseArray;
 
     invoke-virtual {v6, v4, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 407
+    .line 412
     :cond_2
     invoke-virtual {v0, v1}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
 
-    .line 385
+    .line 390
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 411
+    .line 416
     .end local v0           #cache:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/widget/FrameLayout;>;"
     .end local v1           #cellView:Landroid/widget/FrameLayout;
     .end local v3           #imageView:Landroid/widget/ImageView;
@@ -1126,7 +1148,7 @@
     :cond_3
     invoke-virtual {p0}, Lcom/google/glass/widget/MosaicView;->removeAllViews()V
 
-    .line 412
+    .line 417
     return-void
 .end method
 
@@ -1136,13 +1158,13 @@
     .parameter "height"
 
     .prologue
-    .line 124
+    .line 127
     if-le p1, p2, :cond_0
 
-    .line 125
+    .line 128
     const/16 v0, 0x8
 
-    .line 127
+    .line 130
     :goto_0
     return v0
 
@@ -1168,7 +1190,7 @@
     .end annotation
 
     .prologue
-    .line 144
+    .line 147
     .local p1, allEntities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     if-eqz p1, :cond_0
 
@@ -1178,7 +1200,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 145
+    .line 148
     :cond_0
     sget-object v4, Lcom/google/glass/widget/MosaicView;->TAG:Ljava/lang/String;
 
@@ -1186,12 +1208,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 218
+    .line 221
     :cond_1
     :goto_0
     return-void
 
-    .line 148
+    .line 151
     :cond_2
     move-object/from16 v0, p0
 
@@ -1203,7 +1225,7 @@
 
     iput v4, v0, Lcom/google/glass/widget/MosaicView;->entitySetIndex:I
 
-    .line 156
+    .line 159
     move-object/from16 v0, p0
 
     move/from16 v1, p2
@@ -1220,7 +1242,7 @@
 
     move-result-object v23
 
-    .line 158
+    .line 161
     .local v23, drawEntitiesAndGroupCount:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;Lcom/google/glass/widget/MosaicView$GroupCountType;>;"
     move-object/from16 v0, v23
 
@@ -1230,7 +1252,7 @@
 
     check-cast v24, Ljava/util/List;
 
-    .line 159
+    .line 162
     .local v24, drawParticipants:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     move-object/from16 v0, v23
 
@@ -1240,7 +1262,7 @@
 
     check-cast v25, Lcom/google/glass/widget/MosaicView$GroupCountType;
 
-    .line 162
+    .line 165
     .local v25, groupCountType:Lcom/google/glass/widget/MosaicView$GroupCountType;
     sget-boolean v4, Lcom/google/glass/widget/MosaicView;->$assertionsDisabled:Z
 
@@ -1262,13 +1284,13 @@
 
     throw v4
 
-    .line 164
+    .line 167
     :cond_3
     invoke-interface/range {v24 .. v24}, Ljava/util/List;->size()I
 
     move-result v28
 
-    .line 165
+    .line 168
     .local v28, numOfCells:I
     sget-object v4, Lcom/google/glass/widget/MosaicView$GroupCountType;->ADD_CELL:Lcom/google/glass/widget/MosaicView$GroupCountType;
 
@@ -1276,10 +1298,10 @@
 
     if-ne v0, v4, :cond_4
 
-    .line 166
+    .line 169
     add-int/lit8 v28, v28, 0x1
 
-    .line 171
+    .line 174
     :cond_4
     move/from16 v0, p2
 
@@ -1287,7 +1309,7 @@
 
     if-le v0, v1, :cond_5
 
-    .line 172
+    .line 175
     sget-object v4, Lcom/google/glass/widget/MosaicView;->LANDSCAPE_MOSAIC_MAP:Landroid/util/SparseArray;
 
     move/from16 v0, v28
@@ -1298,12 +1320,12 @@
 
     check-cast v27, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 178
+    .line 181
     .local v27, mosaic:Lcom/google/glass/widget/MosaicView$MosaicSpec;
     :goto_1
     if-nez v27, :cond_6
 
-    .line 179
+    .line 182
     sget-object v4, Lcom/google/glass/widget/MosaicView;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1330,7 +1352,7 @@
 
     goto :goto_0
 
-    .line 174
+    .line 177
     .end local v27           #mosaic:Lcom/google/glass/widget/MosaicView$MosaicSpec;
     :cond_5
     sget-object v4, Lcom/google/glass/widget/MosaicView;->PORTRAIT_MOSAIC_MAP:Landroid/util/SparseArray;
@@ -1346,7 +1368,7 @@
     .restart local v27       #mosaic:Lcom/google/glass/widget/MosaicView$MosaicSpec;
     goto :goto_1
 
-    .line 183
+    .line 186
     :cond_6
     move-object/from16 v0, v27
 
@@ -1356,7 +1378,7 @@
 
     invoke-virtual {v0, v4}, Lcom/google/glass/widget/MosaicView;->setColumnCount(I)V
 
-    .line 184
+    .line 187
     move-object/from16 v0, v27
 
     iget v4, v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->rows:I
@@ -1365,14 +1387,14 @@
 
     invoke-virtual {v0, v4}, Lcom/google/glass/widget/MosaicView;->setRowCount(I)V
 
-    .line 186
+    .line 189
     move-object/from16 v0, v27
 
     iget v4, v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->columns:I
 
     div-int v22, p2, v4
 
-    .line 187
+    .line 190
     .local v22, cellWidth:I
     move-object/from16 v0, v27
 
@@ -1380,14 +1402,14 @@
 
     div-int v20, p3, v4
 
-    .line 190
+    .line 193
     .local v20, cellHeight:I
     invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/MosaicView;->clearImages()V
 
-    .line 191
+    .line 194
     invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/MosaicView;->cancelImageDownloads()V
 
-    .line 195
+    .line 198
     const/16 v26, 0x0
 
     .local v26, i:I
@@ -1400,14 +1422,14 @@
 
     if-ge v0, v4, :cond_8
 
-    .line 196
+    .line 199
     move-object/from16 v0, v27
 
     iget-object v4, v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->cellSpecs:[Lcom/google/glass/widget/MosaicView$CellSpec;
 
     aget-object v21, v4, v26
 
-    .line 197
+    .line 200
     .local v21, cellSpec:Lcom/google/glass/widget/MosaicView$CellSpec;
     move-object/from16 v0, p0
 
@@ -1421,7 +1443,7 @@
 
     move-result-object v11
 
-    .line 200
+    .line 203
     .local v11, params:Landroid/widget/GridLayout$LayoutParams;
     sget-object v4, Lcom/google/glass/widget/MosaicView$GroupCountType;->IN_LAST_CELL:Lcom/google/glass/widget/MosaicView$GroupCountType;
 
@@ -1439,7 +1461,7 @@
 
     if-ne v0, v4, :cond_7
 
-    .line 201
+    .line 204
     invoke-interface/range {p1 .. p1}, Ljava/util/List;->size()I
 
     move-result v4
@@ -1450,13 +1472,13 @@
 
     sub-int v7, v4, v5
 
-    .line 202
+    .line 205
     .local v7, remainingCount:I
     move-object/from16 v0, v27
 
     iget v10, v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->embededRemainingCountLayoutId:I
 
-    .line 208
+    .line 211
     .local v10, layoutId:I
     :goto_3
     move-object/from16 v0, p0
@@ -1481,18 +1503,18 @@
 
     invoke-direct/range {v4 .. v11}, Lcom/google/glass/widget/MosaicView;->addCell(ILcom/google/googlex/glass/common/proto/Entity;IIIILandroid/widget/GridLayout$LayoutParams;)V
 
-    .line 195
+    .line 198
     add-int/lit8 v26, v26, 0x1
 
     goto :goto_2
 
-    .line 204
+    .line 207
     .end local v7           #remainingCount:I
     .end local v10           #layoutId:I
     :cond_7
     const/4 v7, -0x1
 
-    .line 205
+    .line 208
     .restart local v7       #remainingCount:I
     move-object/from16 v0, v21
 
@@ -1501,7 +1523,7 @@
     .restart local v10       #layoutId:I
     goto :goto_3
 
-    .line 211
+    .line 214
     .end local v7           #remainingCount:I
     .end local v10           #layoutId:I
     .end local v11           #params:Landroid/widget/GridLayout$LayoutParams;
@@ -1513,7 +1535,7 @@
 
     if-ne v0, v4, :cond_1
 
-    .line 212
+    .line 215
     move-object/from16 v0, v27
 
     iget-object v4, v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->cellSpecs:[Lcom/google/glass/widget/MosaicView$CellSpec;
@@ -1522,7 +1544,7 @@
 
     aget-object v21, v4, v5
 
-    .line 213
+    .line 216
     .restart local v21       #cellSpec:Lcom/google/glass/widget/MosaicView$CellSpec;
     move-object/from16 v0, p0
 
@@ -1536,7 +1558,7 @@
 
     move-result-object v11
 
-    .line 215
+    .line 218
     .restart local v11       #params:Landroid/widget/GridLayout$LayoutParams;
     move-object/from16 v0, p0
 
@@ -1593,7 +1615,7 @@
     .end annotation
 
     .prologue
-    .line 291
+    .line 294
     .local p1, imageUrls:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     if-eqz p1, :cond_0
 
@@ -1603,7 +1625,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 292
+    .line 295
     :cond_0
     sget-object v2, Lcom/google/glass/widget/MosaicView;->TAG:Ljava/lang/String;
 
@@ -1611,11 +1633,11 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 305
+    .line 308
     :goto_0
     return-void
 
-    .line 297
+    .line 300
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1625,7 +1647,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 298
+    .line 301
     .local v0, entities:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Entity;>;"
     const/4 v1, 0x0
 
@@ -1637,7 +1659,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 300
+    .line 303
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity;->newBuilder()Lcom/google/googlex/glass/common/proto/Entity$Builder;
 
     move-result-object v2
@@ -1666,14 +1688,26 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 298
+    .line 301
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
 
-    .line 304
+    .line 307
     :cond_2
     invoke-virtual {p0, v0, p2, p3}, Lcom/google/glass/widget/MosaicView;->setEntities(Ljava/util/List;II)V
 
     goto :goto_0
+.end method
+
+.method public setLabelVisibility(Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;)V
+    .locals 0
+    .parameter "labelVisibility"
+
+    .prologue
+    .line 430
+    iput-object p1, p0, Lcom/google/glass/widget/MosaicView;->labelVisibility:Lcom/google/glass/util/PersonImageDownloadTask$LabelVisibility;
+
+    .line 431
+    return-void
 .end method

@@ -13,6 +13,8 @@
 
 
 # instance fields
+.field private backgroundColor:I
+
 .field private headerBackgroundResourceId:I
 
 .field private hideTitleBar:Z
@@ -27,10 +29,10 @@
     .locals 0
 
     .prologue
-    .line 59
+    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 61
+    .line 69
     return-void
 .end method
 
@@ -93,15 +95,39 @@
     return-void
 .end method
 
+.method static synthetic access$500(Lcom/google/userfeedback/android/api/UiConfigurationOptions;I)V
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 10
+    invoke-direct {p0, p1}, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->setBackgroundColor(I)V
+
+    return-void
+.end method
+
+.method private setBackgroundColor(I)V
+    .locals 0
+    .parameter "resourceId"
+
+    .prologue
+    .line 113
+    iput p1, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->backgroundColor:I
+
+    .line 114
+    return-void
+.end method
+
 .method private setHeaderBackgroundResourceId(I)V
     .locals 0
     .parameter "resourceId"
 
     .prologue
-    .line 72
+    .line 80
     iput p1, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->headerBackgroundResourceId:I
 
-    .line 73
+    .line 81
     return-void
 .end method
 
@@ -110,10 +136,10 @@
     .parameter "shouldHideTitleBar"
 
     .prologue
-    .line 64
+    .line 72
     iput-boolean p1, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->hideTitleBar:Z
 
-    .line 65
+    .line 73
     return-void
 .end method
 
@@ -122,10 +148,10 @@
     .parameter "resourceId"
 
     .prologue
-    .line 83
+    .line 91
     iput p1, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->sectionHeaderBackgroundResourceId:I
 
-    .line 84
+    .line 92
     return-void
 .end method
 
@@ -134,28 +160,38 @@
     .parameter "resourceId"
 
     .prologue
-    .line 94
+    .line 109
     iput p1, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->sectionHeaderFontColor:I
 
-    .line 95
+    .line 110
     return-void
 .end method
 
 
 # virtual methods
+.method public getBackgroundColor()I
+    .locals 1
+
+    .prologue
+    .line 105
+    iget v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->backgroundColor:I
+
+    return v0
+.end method
+
 .method public getHeaderBackgroundResourceId()I
     .locals 1
 
     .prologue
-    .line 76
+    .line 84
     iget v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->headerBackgroundResourceId:I
 
     if-eqz v0, :cond_0
 
-    .line 77
+    .line 85
     iget v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->headerBackgroundResourceId:I
 
-    .line 79
+    .line 87
     :goto_0
     return v0
 
@@ -169,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 76
     iget-boolean v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->hideTitleBar:Z
 
     return v0
@@ -179,15 +215,15 @@
     .locals 1
 
     .prologue
-    .line 87
+    .line 95
     iget v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->sectionHeaderBackgroundResourceId:I
 
     if-eqz v0, :cond_0
 
-    .line 88
+    .line 96
     iget v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->sectionHeaderBackgroundResourceId:I
 
-    .line 90
+    .line 98
     :goto_0
     return v0
 
@@ -201,7 +237,7 @@
     .locals 1
 
     .prologue
-    .line 98
+    .line 117
     iget v0, p0, Lcom/google/userfeedback/android/api/UiConfigurationOptions;->sectionHeaderFontColor:I
 
     return v0

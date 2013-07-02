@@ -7,9 +7,9 @@
 
 
 # static fields
-.field private static final ATTACHMENT_COPY_MARGIN_BYTES:I = 0x400000
-
 .field public static final EXTRA_ALLOW_VOICE_ANNOTATION:Ljava/lang/String; = "voice_annotation"
+
+.field public static final EXTRA_CHOSEN_SHARE_TARGET:Ljava/lang/String; = "chosen_share_target"
 
 .field public static final EXTRA_CONFIRMED_KEY:Ljava/lang/String; = "confirmed_string"
 
@@ -34,6 +34,8 @@
 
 # instance fields
 .field private annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
+
+.field private attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
 .field private handler:Landroid/os/Handler;
 
@@ -64,7 +66,7 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 75
     const-class v0, Lcom/google/glass/share/ShareActivity;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -80,10 +82,10 @@
     .locals 1
 
     .prologue
-    .line 80
+    .line 73
     invoke-direct {p0}, Lcom/google/glass/app/GlassActivity;-><init>()V
 
-    .line 132
+    .line 126
     new-instance v0, Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-direct {v0}, Lcom/google/glass/timeline/TimelineHelper;-><init>()V
@@ -98,7 +100,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 73
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -113,7 +115,7 @@
     .parameter "x2"
 
     .prologue
-    .line 80
+    .line 73
     invoke-direct {p0, p1, p2}, Lcom/google/glass/share/ShareActivity;->onShareTargetConfirmed(Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
 
     return-void
@@ -124,7 +126,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 73
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -137,7 +139,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 73
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
 
     return-object v0
@@ -148,7 +150,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 73
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
     return-object v0
@@ -163,7 +165,7 @@
     .parameter "x4"
 
     .prologue
-    .line 80
+    .line 73
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/glass/share/ShareActivity;->shareItem(Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;Ljava/lang/String;I)V
 
     return-void
@@ -174,7 +176,7 @@
     .parameter "x0"
 
     .prologue
-    .line 80
+    .line 73
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->handler:Landroid/os/Handler;
 
     return-object v0
@@ -186,599 +188,34 @@
     .parameter "x1"
 
     .prologue
-    .line 80
+    .line 73
     invoke-static {p0, p1}, Lcom/google/glass/share/ShareActivity;->copyFieldsToSharedItem(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)V
 
     return-void
 .end method
 
-.method static synthetic access$800(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)Z
+.method static synthetic access$800(Lcom/google/glass/share/ShareActivity;)Lcom/google/glass/timeline/AttachmentHelper;
     .locals 1
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 80
-    invoke-static {p0, p1}, Lcom/google/glass/share/ShareActivity;->cloneAttachmentsInCache(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)Z
+    .line 73
+    iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
-    move-result v0
-
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$900(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+.method static synthetic access$900(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Z)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
+    .parameter "x2"
 
     .prologue
-    .line 80
-    invoke-static {p0, p1}, Lcom/google/glass/share/ShareActivity;->logShareEvent(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+    .line 73
+    invoke-static {p0, p1, p2}, Lcom/google/glass/share/ShareActivity;->logShareEvent(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Z)V
 
     return-void
-.end method
-
-.method private static cloneAttachmentsInCache(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)Z
-    .locals 26
-    .parameter "context"
-    .parameter "item"
-
-    .prologue
-    .line 544
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
-
-    .line 545
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getAttachmentCount()I
-
-    move-result v22
-
-    if-nez v22, :cond_0
-
-    .line 546
-    const/16 v22, 0x1
-
-    .line 609
-    :goto_0
-    return v22
-
-    .line 549
-    :cond_0
-    invoke-static {}, Lcom/google/glass/util/CachedFilesManager;->getSharedInstance()Lcom/google/glass/util/CachedFilesManager;
-
-    move-result-object v12
-
-    .line 552
-    .local v12, cachedFilesManager:Lcom/google/glass/util/CachedFilesManager;
-    const-wide/16 v6, 0x0
-
-    .line 553
-    .local v6, bytesRequired:J
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getAttachmentList()Ljava/util/List;
-
-    move-result-object v22
-
-    invoke-interface/range {v22 .. v22}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v16
-
-    .local v16, i$:Ljava/util/Iterator;
-    :cond_1
-    :goto_1
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v22
-
-    if-eqz v22, :cond_2
-
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/google/googlex/glass/common/proto/Attachment;
-
-    .line 554
-    .local v3, attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-    invoke-static {v3, v12}, Lcom/google/glass/share/ShareActivity;->getFileForAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Lcom/google/glass/util/CachedFilesManager;)Ljava/io/File;
-
-    move-result-object v13
-
-    .line 555
-    .local v13, file:Ljava/io/File;
-    if-eqz v13, :cond_1
-
-    .line 556
-    invoke-virtual {v13}, Ljava/io/File;->length()J
-
-    move-result-wide v22
-
-    add-long v6, v6, v22
-
-    goto :goto_1
-
-    .line 561
-    .end local v3           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-    .end local v13           #file:Ljava/io/File;
-    :cond_2
-    const-wide/16 v22, 0x0
-
-    cmp-long v22, v6, v22
-
-    if-nez v22, :cond_3
-
-    .line 562
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->clearAttachment()Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-
-    .line 563
-    const/16 v22, 0x1
-
-    goto :goto_0
-
-    .line 566
-    :cond_3
-    new-instance v21, Lcom/google/glass/util/StorageHelper;
-
-    move-object/from16 v0, v21
-
-    move-object/from16 v1, p0
-
-    invoke-direct {v0, v1}, Lcom/google/glass/util/StorageHelper;-><init>(Landroid/content/Context;)V
-
-    .line 567
-    .local v21, storageHelper:Lcom/google/glass/util/StorageHelper;
-    const-wide/32 v22, 0x400000
-
-    add-long v8, v6, v22
-
-    .line 568
-    .local v8, bytesToReserve:J
-    invoke-virtual/range {v21 .. v21}, Lcom/google/glass/util/StorageHelper;->getAvailableBytesInExternalStorage()J
-
-    move-result-wide v4
-
-    .line 569
-    .local v4, bytesFree:J
-    cmp-long v22, v4, v8
-
-    if-gez v22, :cond_4
-
-    .line 570
-    sub-long v10, v8, v4
-
-    .line 571
-    .local v10, bytesToTrim:J
-    sget-object v22, Lcom/google/glass/share/ShareActivity;->TAG:Ljava/lang/String;
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Trying to trim "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v0, v10, v11}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, " bytes from CachedFilesManager"
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 572
-    invoke-virtual {v12, v10, v11}, Lcom/google/glass/util/CachedFilesManager;->trimBySize(J)Z
-
-    move-result v22
-
-    if-nez v22, :cond_4
-
-    .line 573
-    sget-object v22, Lcom/google/glass/share/ShareActivity;->TAG:Ljava/lang/String;
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Insufficient space to copy "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v0, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, " bytes of attachments for item "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getId()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, ", Free bytes: "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v21 .. v21}, Lcom/google/glass/util/StorageHelper;->getAvailableBytesInExternalStorage()J
-
-    move-result-wide v24
-
-    invoke-virtual/range {v23 .. v25}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 575
-    invoke-virtual/range {v21 .. v21}, Lcom/google/glass/util/StorageHelper;->showFullStorageDialog()V
-
-    .line 576
-    const/16 v22, 0x0
-
-    goto/16 :goto_0
-
-    .line 587
-    .end local v10           #bytesToTrim:J
-    :cond_4
-    sget-object v22, Lcom/google/glass/share/ShareActivity;->TAG:Ljava/lang/String;
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Copying "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    move-object/from16 v0, v23
-
-    invoke-virtual {v0, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, " bytes of attachments for "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getId()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 588
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v19
-
-    .line 589
-    .local v19, startTime:J
-    const/4 v14, 0x0
-
-    .local v14, i:I
-    :goto_2
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getAttachmentCount()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    if-ge v14, v0, :cond_7
-
-    .line 590
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v14}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getAttachment(I)Lcom/google/googlex/glass/common/proto/Attachment;
-
-    move-result-object v3
-
-    .line 591
-    .restart local v3       #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-    invoke-static {v3, v12}, Lcom/google/glass/share/ShareActivity;->getFileForAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Lcom/google/glass/util/CachedFilesManager;)Ljava/io/File;
-
-    move-result-object v13
-
-    .line 592
-    .restart local v13       #file:Ljava/io/File;
-    if-eqz v13, :cond_6
-
-    .line 594
-    new-instance v22, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v22 .. v22}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getId()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    const-string v23, "-"
-
-    invoke-virtual/range {v22 .. v23}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v0, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v22
-
-    invoke-virtual/range {v22 .. v22}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v17
-
-    .line 595
-    .local v17, name:Ljava/lang/String;
-    sget-object v22, Lcom/google/glass/util/CachedFilesManager$Type;->SHARE:Lcom/google/glass/util/CachedFilesManager$Type;
-
-    invoke-static {v13}, Lcom/google/glass/util/FileSaver;->newSaver(Ljava/io/File;)Lcom/google/glass/util/FileSaver$Saver;
-
-    move-result-object v23
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v17
-
-    move-object/from16 v2, v23
-
-    invoke-virtual {v12, v0, v1, v2}, Lcom/google/glass/util/CachedFilesManager;->save(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;Lcom/google/glass/util/FileSaver$Saver;)Z
-
-    move-result v22
-
-    if-eqz v22, :cond_5
-
-    .line 596
-    sget-object v22, Lcom/google/glass/util/CachedFilesManager$Type;->SHARE:Lcom/google/glass/util/CachedFilesManager$Type;
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v12, v0, v1}, Lcom/google/glass/util/CachedFilesManager;->getPath(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v18
-
-    .line 597
-    .local v18, pathToCopy:Ljava/lang/String;
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v14}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getAttachmentBuilder(I)Lcom/google/googlex/glass/common/proto/Attachment$Builder;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v18
-
-    invoke-virtual {v0, v1}, Lcom/google/googlex/glass/common/proto/Attachment$Builder;->setClientCachePath(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/Attachment$Builder;
-
-    .line 589
-    .end local v17           #name:Ljava/lang/String;
-    .end local v18           #pathToCopy:Ljava/lang/String;
-    :goto_3
-    add-int/lit8 v14, v14, 0x1
-
-    goto :goto_2
-
-    .line 599
-    .restart local v17       #name:Ljava/lang/String;
-    :cond_5
-    sget-object v22, Lcom/google/glass/share/ShareActivity;->TAG:Ljava/lang/String;
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Failed to copy attachment "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/Attachment;->getId()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, " on "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getId()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 600
-    add-int/lit8 v15, v14, -0x1
-
-    .end local v14           #i:I
-    .local v15, i:I
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v14}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->removeAttachment(I)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-
-    .end local v17           #name:Ljava/lang/String;
-    :goto_4
-    move v14, v15
-
-    .end local v15           #i:I
-    .restart local v14       #i:I
-    goto :goto_3
-
-    .line 603
-    :cond_6
-    sget-object v22, Lcom/google/glass/share/ShareActivity;->TAG:Ljava/lang/String;
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Could not find attachment "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual {v3}, Lcom/google/googlex/glass/common/proto/Attachment;->getId()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, " on "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {p1 .. p1}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->getId()Ljava/lang/String;
-
-    move-result-object v24
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 604
-    add-int/lit8 v15, v14, -0x1
-
-    .end local v14           #i:I
-    .restart local v15       #i:I
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v14}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->removeAttachment(I)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
-
-    goto :goto_4
-
-    .line 608
-    .end local v3           #attachment:Lcom/google/googlex/glass/common/proto/Attachment;
-    .end local v13           #file:Ljava/io/File;
-    .end local v15           #i:I
-    .restart local v14       #i:I
-    :cond_7
-    sget-object v22, Lcom/google/glass/share/ShareActivity;->TAG:Ljava/lang/String;
-
-    new-instance v23, Ljava/lang/StringBuilder;
-
-    invoke-direct/range {v23 .. v23}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v24, "Copied attachments in "
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v24
-
-    sub-long v24, v24, v19
-
-    invoke-virtual/range {v23 .. v25}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    const-string v24, " ms"
-
-    invoke-virtual/range {v23 .. v24}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v23
-
-    invoke-virtual/range {v23 .. v23}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v23
-
-    invoke-static/range {v22 .. v23}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 609
-    const/16 v22, 0x1
-
-    goto/16 :goto_0
-.end method
-
-.method public static cloneAttachmentsInCacheForTest(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)Z
-    .locals 1
-    .parameter "context"
-    .parameter "item"
-    .annotation build Lcom/google/common/annotations/VisibleForTesting;
-    .end annotation
-
-    .prologue
-    .line 659
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
-
-    .line 660
-    invoke-static {p0, p1}, Lcom/google/glass/share/ShareActivity;->cloneAttachmentsInCache(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)Z
-
-    move-result v0
-
-    return v0
 .end method
 
 .method private static copyFieldsToSharedItem(Lcom/google/googlex/glass/common/proto/TimelineItem;Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;)V
@@ -787,21 +224,21 @@
     .parameter "target"
 
     .prologue
-    .line 512
+    .line 516
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasTitle()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 513
+    .line 517
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getTitle()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
+    invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setTitle(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 515
+    .line 519
     :cond_0
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasText()Z
 
@@ -809,14 +246,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 516
+    .line 520
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getText()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 518
+    .line 522
     :cond_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasSpeakableText()Z
 
@@ -824,14 +261,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 519
+    .line 523
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getSpeakableText()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setSpeakableText(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 521
+    .line 525
     :cond_2
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasHtml()Z
 
@@ -839,14 +276,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 522
+    .line 526
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getHtml()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setHtml(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 524
+    .line 528
     :cond_3
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasCanonicalUrl()Z
 
@@ -854,14 +291,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 525
+    .line 529
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getCanonicalUrl()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setCanonicalUrl(Ljava/lang/String;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 527
+    .line 531
     :cond_4
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasLocation()Z
 
@@ -869,14 +306,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 528
+    .line 532
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getLocation()Lcom/google/googlex/glass/common/proto/Location;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->setLocation(Lcom/google/googlex/glass/common/proto/Location;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 530
+    .line 534
     :cond_5
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/TimelineItem;->getAttachmentList()Ljava/util/List;
 
@@ -884,101 +321,21 @@
 
     invoke-virtual {p1, v0}, Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;->addAllAttachment(Ljava/lang/Iterable;)Lcom/google/googlex/glass/common/proto/TimelineItem$Builder;
 
-    .line 531
+    .line 535
     return-void
 .end method
 
-.method private static getFileForAttachment(Lcom/google/googlex/glass/common/proto/Attachment;Lcom/google/glass/util/CachedFilesManager;)Ljava/io/File;
-    .locals 4
-    .parameter "attachment"
-    .parameter "cachedFilesManager"
-
-    .prologue
-    .line 618
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->hasClientCachePath()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 619
-    new-instance v0, Ljava/io/File;
-
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->getClientCachePath()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-direct {v0, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 620
-    .local v0, file:Ljava/io/File;
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 635
-    .end local v0           #file:Ljava/io/File;
-    :cond_0
-    :goto_0
-    return-object v0
-
-    .line 625
-    :cond_1
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->hasId()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 626
-    sget-object v2, Lcom/google/glass/util/CachedFilesManager$Type;->ATTACHMENT:Lcom/google/glass/util/CachedFilesManager$Type;
-
-    invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Attachment;->getId()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v2, v3}, Lcom/google/glass/util/CachedFilesManager;->getPath(Lcom/google/glass/util/CachedFilesManager$Type;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 627
-    .local v1, filename:Ljava/lang/String;
-    if-eqz v1, :cond_2
-
-    .line 628
-    new-instance v0, Ljava/io/File;
-
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    .line 629
-    .restart local v0       #file:Ljava/io/File;
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 635
-    .end local v0           #file:Ljava/io/File;
-    .end local v1           #filename:Ljava/lang/String;
-    :cond_2
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method private static logShareEvent(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;)V
+.method private static logShareEvent(Landroid/content/Context;Lcom/google/googlex/glass/common/proto/TimelineItem;Z)V
     .locals 7
     .parameter "context"
     .parameter "timelineItem"
+    .parameter "wasAnnotated"
 
     .prologue
-    .line 640
+    .line 546
     const-string v2, "0"
 
-    .line 641
+    .line 547
     .local v2, sharedType:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_IMAGE_MIME_TYPES:[Ljava/lang/String;
 
@@ -988,21 +345,17 @@
 
     if-eqz v3, :cond_1
 
-    .line 643
+    .line 549
     const-string v2, "1"
 
-    .line 649
+    .line 555
     :cond_0
     :goto_0
-    invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/TimelineItem;->hasText()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
+    if-eqz p2, :cond_2
 
     const-string v0, "1"
 
-    .line 651
+    .line 557
     .local v0, annotated:Ljava/lang/String;
     :goto_1
     const-string v3, "t"
@@ -1025,7 +378,7 @@
 
     move-result-object v1
 
-    .line 653
+    .line 559
     .local v1, data:Ljava/lang/String;
     invoke-static {p0}, Lcom/google/glass/app/GlassApplication;->from(Landroid/content/Context;)Lcom/google/glass/app/GlassApplication;
 
@@ -1039,10 +392,10 @@
 
     invoke-virtual {v3, v4, v1}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 655
+    .line 561
     return-void
 
-    .line 644
+    .line 550
     .end local v0           #annotated:Ljava/lang/String;
     .end local v1           #data:Ljava/lang/String;
     :cond_1
@@ -1054,12 +407,12 @@
 
     if-eqz v3, :cond_0
 
-    .line 646
+    .line 552
     const-string v2, "2"
 
     goto :goto_0
 
-    .line 649
+    .line 555
     :cond_2
     const-string v0, "0"
 
@@ -1074,7 +427,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 403
+    .line 406
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -1109,7 +462,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 404
+    .line 407
     new-instance v1, Landroid/content/Intent;
 
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
@@ -1118,7 +471,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 406
+    .line 409
     .local v1, returnedIntent:Landroid/content/Intent;
     const-string v2, "update_timeline_share"
 
@@ -1128,7 +481,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 407
+    .line 410
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -1137,28 +490,28 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 408
+    .line 411
     invoke-virtual {v1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 409
+    .line 412
     .local v0, itemIdToShare:Landroid/net/Uri;
     invoke-direct {p0, p1, v0, p2, v5}, Lcom/google/glass/share/ShareActivity;->shareItem(Lcom/google/googlex/glass/common/proto/Entity;Landroid/net/Uri;Ljava/lang/String;I)V
 
-    .line 412
+    .line 415
     .end local v0           #itemIdToShare:Landroid/net/Uri;
     :cond_0
     const-string v2, "share_target"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 415
+    .line 418
     const/4 v2, -0x1
 
     invoke-virtual {p0, v2, v1}, Lcom/google/glass/share/ShareActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 416
+    .line 419
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -1167,10 +520,10 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 417
+    .line 420
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->finishAndTurnScreenOffIfRequested()V
 
-    .line 418
+    .line 421
     return-void
 .end method
 
@@ -1182,12 +535,12 @@
     .parameter "attemptNumber"
 
     .prologue
-    .line 431
+    .line 434
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v4
 
-    .line 432
+    .line 435
     .local v4, context:Landroid/content/Context;
     new-instance v0, Lcom/google/glass/share/ShareActivity$2;
 
@@ -1203,11 +556,11 @@
 
     invoke-direct/range {v0 .. v6}, Lcom/google/glass/share/ShareActivity$2;-><init>(Lcom/google/glass/share/ShareActivity;ILcom/google/googlex/glass/common/proto/Entity;Landroid/content/Context;Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 505
+    .line 509
     .local v0, update:Lcom/google/glass/timeline/TimelineHelper$Update;
     invoke-static {v0}, Lcom/google/glass/timeline/TimelineHelper;->atomicUpdateTimelineItemAsync(Lcom/google/glass/timeline/TimelineHelper$Update;)V
 
-    .line 506
+    .line 510
     return-void
 .end method
 
@@ -1220,19 +573,19 @@
     .parameter "data"
 
     .prologue
-    .line 321
+    .line 324
     const/16 v2, 0x64
 
     if-ne v2, p1, :cond_0
 
-    .line 322
+    .line 325
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
 
     invoke-virtual {v2, p2, p3}, Lcom/google/glass/voice/VoiceAnnotationHelper;->onActivityResult(ILandroid/content/Intent;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 323
+    .line 326
     .local v0, annotation:Ljava/lang/String;
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1240,7 +593,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 324
+    .line 327
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -1249,13 +602,13 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 331
+    .line 334
     .end local v0           #annotation:Ljava/lang/String;
     :cond_0
     :goto_0
     return-void
 
-    .line 328
+    .line 331
     .restart local v0       #annotation:Ljava/lang/String;
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
@@ -1270,7 +623,7 @@
 
     check-cast v1, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 329
+    .line 332
     .local v1, shareTarget:Lcom/google/googlex/glass/common/proto/Entity;
     invoke-direct {p0, v1, v0}, Lcom/google/glass/share/ShareActivity;->onShareTargetConfirmed(Lcom/google/googlex/glass/common/proto/Entity;Ljava/lang/String;)V
 
@@ -1281,7 +634,7 @@
     .locals 1
 
     .prologue
-    .line 220
+    .line 224
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     if-eqz v0, :cond_0
@@ -1294,10 +647,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 221
+    .line 225
     const/4 v0, 0x1
 
-    .line 224
+    .line 228
     :goto_0
     return v0
 
@@ -1310,219 +663,256 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 5
+    .locals 7
     .parameter "savedInstanceState"
 
     .prologue
-    .line 158
+    .line 154
     invoke-super {p0, p1}, Lcom/google/glass/app/GlassActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 159
-    new-instance v2, Landroid/os/Handler;
+    .line 155
+    new-instance v4, Landroid/os/Handler;
 
-    invoke-direct {v2}, Landroid/os/Handler;-><init>()V
+    invoke-direct {v4}, Landroid/os/Handler;-><init>()V
 
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->handler:Landroid/os/Handler;
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->handler:Landroid/os/Handler;
 
-    .line 161
-    new-instance v2, Lcom/google/glass/voice/VoiceAnnotationHelper;
+    .line 157
+    new-instance v4, Lcom/google/glass/timeline/AttachmentHelper;
 
-    invoke-direct {v2, p0}, Lcom/google/glass/voice/VoiceAnnotationHelper;-><init>(Landroid/app/Activity;)V
+    invoke-direct {v4, p0}, Lcom/google/glass/timeline/AttachmentHelper;-><init>(Landroid/content/Context;)V
 
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->attachmentHelper:Lcom/google/glass/timeline/AttachmentHelper;
 
-    .line 163
+    .line 158
+    new-instance v4, Lcom/google/glass/voice/VoiceAnnotationHelper;
+
+    invoke-direct {v4, p0}, Lcom/google/glass/voice/VoiceAnnotationHelper;-><init>(Landroid/app/Activity;)V
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->annotationHelper:Lcom/google/glass/voice/VoiceAnnotationHelper;
+
+    .line 160
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lcom/google/glass/share/ShareActivity;->onNewIntent(Landroid/content/Intent;)V
-
-    .line 166
-    sget v2, Lcom/google/glass/common/R$anim;->show_contextual:I
-
-    invoke-static {p0, v2}, Lcom/google/glass/util/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->showMenuAnimation:Landroid/view/animation/Animation;
-
-    .line 169
-    new-instance v2, Lcom/google/glass/util/SettingsHelper;
-
-    invoke-direct {v2, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v2}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 172
-    new-instance v2, Ljava/util/ArrayList;
-
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
-
-    .line 176
-    invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v2, p0, v3}, Lcom/google/glass/entity/EntityHelper;->getFirstEntityForUser(Landroid/content/Context;Z)Lcom/google/googlex/glass/common/proto/Entity;
 
     move-result-object v1
 
-    .line 177
-    .local v1, user:Lcom/google/googlex/glass/common/proto/Entity;
+    .line 161
+    .local v1, intent:Landroid/content/Intent;
+    invoke-virtual {p0, v1}, Lcom/google/glass/share/ShareActivity;->onNewIntent(Landroid/content/Intent;)V
+
+    .line 165
     if-eqz v1, :cond_0
 
-    .line 178
-    iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+    const-string v4, "chosen_share_target"
 
-    invoke-interface {v2, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v4}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    .line 195
-    .end local v1           #user:Lcom/google/googlex/glass/common/proto/Entity;
-    :cond_0
-    :goto_0
-    iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+    move-result v4
 
-    invoke-interface {v2}, Ljava/util/List;->isEmpty()Z
+    if-eqz v4, :cond_0
 
-    move-result v2
+    .line 166
+    const-string v4, "chosen_share_target"
 
-    if-eqz v2, :cond_4
-
-    .line 197
-    sget v2, Lcom/google/glass/common/R$id;->share_container:I
-
-    invoke-virtual {p0, v2}, Lcom/google/glass/share/ShareActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    const/16 v3, 0x8
-
-    invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
-
-    .line 198
-    sget v2, Lcom/google/glass/common/R$string;->sharing_no_share_targets:I
-
-    invoke-virtual {p0, v2}, Lcom/google/glass/share/ShareActivity;->showMessage(I)V
-
-    .line 199
-    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "Unable to load share targets!"
-
-    invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 204
-    :goto_1
-    return-void
-
-    .line 181
-    :cond_1
-    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    const-string v3, "valid_share_targets"
-
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 182
-    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    const-string v3, "valid_share_targets"
-
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/List;
-
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
-
-    goto :goto_0
-
-    .line 185
-    :cond_2
-    iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
-
-    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Lcom/google/glass/timeline/TimelineHelper;->queryTimelineItem(Landroid/content/ContentResolver;Landroid/net/Uri;)Lcom/google/googlex/glass/common/proto/TimelineItem;
+    invoke-virtual {v1, v4}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
     move-result-object v0
 
-    .line 187
-    .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    if-eqz v0, :cond_3
+    check-cast v0, Lcom/google/googlex/glass/common/proto/Entity;
 
-    .line 188
+    .line 167
+    .local v0, chosenShareTarget:Lcom/google/googlex/glass/common/proto/Entity;
+    invoke-virtual {p0, v0}, Lcom/google/glass/share/ShareActivity;->onShareTargetSelected(Lcom/google/googlex/glass/common/proto/Entity;)Z
+
+    .line 209
+    .end local v0           #chosenShareTarget:Lcom/google/googlex/glass/common/proto/Entity;
+    :goto_0
+    return-void
+
+    .line 172
+    :cond_0
+    sget v4, Lcom/google/glass/common/R$anim;->show_contextual:I
+
+    invoke-static {p0, v4}, Lcom/google/glass/util/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->showMenuAnimation:Landroid/view/animation/Animation;
+
+    .line 175
+    new-instance v4, Lcom/google/glass/util/SettingsHelper;
+
+    invoke-direct {v4, p0}, Lcom/google/glass/util/SettingsHelper;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v4}, Lcom/google/glass/util/SettingsHelper;->isGuestModeEnabled()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 177
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+
+    .line 181
     invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
 
-    move-result-object v2
+    move-result-object v4
 
-    invoke-virtual {v2, v0}, Lcom/google/glass/entity/EntityHelper;->getMatchingShareTargets(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
+    const/4 v5, 0x0
 
-    move-result-object v2
+    invoke-virtual {v4, p0, v5}, Lcom/google/glass/entity/EntityHelper;->getFirstEntityForUser(Landroid/content/Context;Z)Lcom/google/googlex/glass/common/proto/Entity;
 
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+    move-result-object v3
+
+    .line 182
+    .local v3, user:Lcom/google/googlex/glass/common/proto/Entity;
+    if-eqz v3, :cond_1
+
+    .line 183
+    iget-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+
+    invoke-interface {v4, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 200
+    .end local v3           #user:Lcom/google/googlex/glass/common/proto/Entity;
+    :cond_1
+    :goto_1
+    iget-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->isEmpty()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_5
+
+    .line 202
+    sget v4, Lcom/google/glass/common/R$id;->share_container:I
+
+    invoke-virtual {p0, v4}, Lcom/google/glass/share/ShareActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
+
+    .line 203
+    sget v4, Lcom/google/glass/common/R$string;->sharing_no_share_targets:I
+
+    invoke-virtual {p0, v4}, Lcom/google/glass/share/ShareActivity;->showMessage(I)V
+
+    .line 204
+    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "Unable to load share targets!"
+
+    invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_0
+
+    .line 186
+    :cond_2
+    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v4
+
+    const-string v5, "valid_share_targets"
+
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    .line 187
+    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v4
+
+    const-string v5, "valid_share_targets"
+
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/List;
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+
+    goto :goto_1
 
     .line 190
     :cond_3
-    new-instance v2, Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/google/glass/share/ShareActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getContentResolver()Landroid/content/ContentResolver;
 
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+    move-result-object v5
 
-    goto :goto_0
+    invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
 
-    .line 201
-    .end local v0           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
-    :cond_4
-    sget v2, Lcom/google/glass/common/R$id;->share_targets:I
+    move-result-object v6
 
-    invoke-virtual {p0, v2}, Lcom/google/glass/share/ShareActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v6}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v6
+
+    invoke-virtual {v4, v5, v6}, Lcom/google/glass/timeline/TimelineHelper;->queryTimelineItem(Landroid/content/ContentResolver;Landroid/net/Uri;)Lcom/google/googlex/glass/common/proto/TimelineItem;
 
     move-result-object v2
 
-    check-cast v2, Lcom/google/glass/share/ShareHorizontalScrollView;
+    .line 192
+    .local v2, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    if-eqz v2, :cond_4
 
-    iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
+    .line 193
+    invoke-static {}, Lcom/google/glass/entity/EntityHelper;->getSharedInstance()Lcom/google/glass/entity/EntityHelper;
 
-    .line 202
-    iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
+    move-result-object v4
 
-    invoke-virtual {v2, p0}, Lcom/google/glass/share/ShareHorizontalScrollView;->init(Lcom/google/glass/share/ShareHorizontalScrollView$Listener;)V
+    invoke-virtual {v4, v2}, Lcom/google/glass/entity/EntityHelper;->getMatchingShareTargets(Lcom/google/googlex/glass/common/proto/TimelineItem;)Ljava/util/List;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
 
     goto :goto_1
+
+    .line 195
+    :cond_4
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
+
+    goto :goto_1
+
+    .line 206
+    .end local v2           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
+    :cond_5
+    sget v4, Lcom/google/glass/common/R$id;->share_targets:I
+
+    invoke-virtual {p0, v4}, Lcom/google/glass/share/ShareActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/google/glass/share/ShareHorizontalScrollView;
+
+    iput-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
+
+    .line 207
+    iget-object v4, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
+
+    invoke-virtual {v4, p0}, Lcom/google/glass/share/ShareHorizontalScrollView;->init(Lcom/google/glass/share/ShareHorizontalScrollView$Listener;)V
+
+    goto/16 :goto_0
 .end method
 
 .method public onDismiss(Lcom/google/glass/input/InputListener$DismissAction;)Z
@@ -1530,7 +920,7 @@
     .parameter "dismissAction"
 
     .prologue
-    .line 313
+    .line 316
     const/4 v0, 0x0
 
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
@@ -1539,10 +929,10 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/google/glass/share/ShareActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 314
+    .line 317
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->finish()V
 
-    .line 315
+    .line 318
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getSoundManager()Lcom/google/glass/sound/SoundManager;
 
     move-result-object v0
@@ -1551,7 +941,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 316
+    .line 319
     const/4 v0, 0x1
 
     return v0
@@ -1563,19 +953,19 @@
     .parameter "wentDown"
 
     .prologue
-    .line 305
+    .line 308
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     if-eqz v0, :cond_0
 
-    .line 306
+    .line 309
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/share/ShareHorizontalScrollView;->onFingerCountChanged(IZ)Z
 
     move-result v0
 
-    .line 308
+    .line 311
     :goto_0
     return v0
 
@@ -1592,7 +982,7 @@
     .parameter "intent"
 
     .prologue
-    .line 152
+    .line 148
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v0
@@ -1623,10 +1013,10 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 153
+    .line 149
     invoke-virtual {p0, p1}, Lcom/google/glass/share/ShareActivity;->setIntent(Landroid/content/Intent;)V
 
-    .line 154
+    .line 150
     return-void
 .end method
 
@@ -1634,21 +1024,21 @@
     .locals 1
 
     .prologue
-    .line 268
+    .line 271
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     if-eqz v0, :cond_0
 
-    .line 269
+    .line 272
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     invoke-virtual {v0}, Lcom/google/glass/share/ShareHorizontalScrollView;->deactivate()V
 
-    .line 272
+    .line 275
     :cond_0
     invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onPause()V
 
-    .line 273
+    .line 276
     return-void
 .end method
 
@@ -1663,12 +1053,12 @@
     .parameter "numSwipesY"
 
     .prologue
-    .line 280
+    .line 283
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     if-eqz v0, :cond_0
 
-    .line 281
+    .line 284
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     move v1, p1
@@ -1687,7 +1077,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lcom/google/glass/share/ShareHorizontalScrollView;->onPrepareSwipe(IFFFFII)Z
 
-    .line 284
+    .line 287
     :cond_0
     const/4 v0, 0x0
 
@@ -1700,24 +1090,24 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 231
+    .line 234
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     if-eqz v2, :cond_0
 
-    .line 232
+    .line 235
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     invoke-virtual {v2}, Lcom/google/glass/share/ShareHorizontalScrollView;->activate()V
 
-    .line 235
+    .line 238
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     iget-object v3, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
 
     invoke-virtual {v2, v3}, Lcom/google/glass/share/ShareHorizontalScrollView;->setShareTargets(Ljava/util/List;)V
 
-    .line 236
+    .line 239
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -1754,7 +1144,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 241
     sget v2, Lcom/google/glass/common/R$id;->share_menu_slider:I
 
     invoke-virtual {p0, v2}, Lcom/google/glass/share/ShareActivity;->findViewById(I)Landroid/view/View;
@@ -1765,19 +1155,19 @@
 
     iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->sliderView:Lcom/google/glass/widget/SliderView;
 
-    .line 239
+    .line 242
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->sliderView:Lcom/google/glass/widget/SliderView;
 
     iget-object v3, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     invoke-virtual {v2, v3}, Lcom/google/glass/widget/SliderView;->setScrollView(Lcom/google/glass/horizontalscroll/BaseHorizontalScrollView;)V
 
-    .line 240
+    .line 243
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->sliderView:Lcom/google/glass/widget/SliderView;
 
     invoke-virtual {v2, v5}, Lcom/google/glass/widget/SliderView;->setVisibility(I)V
 
-    .line 241
+    .line 244
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->sliderView:Lcom/google/glass/widget/SliderView;
 
     iget-object v3, p0, Lcom/google/glass/share/ShareActivity;->shareTargets:Ljava/util/List;
@@ -1788,7 +1178,7 @@
 
     invoke-virtual {v2, v3}, Lcom/google/glass/widget/SliderView;->setCount(I)V
 
-    .line 244
+    .line 247
     iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->timelineHelper:Lcom/google/glass/timeline/TimelineHelper;
 
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getContentResolver()Landroid/content/ContentResolver;
@@ -1807,18 +1197,18 @@
 
     move-result-object v0
 
-    .line 246
+    .line 249
     .local v0, item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     if-eqz v0, :cond_0
 
-    .line 247
+    .line 250
     sget-object v2, Lcom/google/glass/timeline/TimelineHelper;->SUPPORTED_IMAGE_MIME_TYPES:[Ljava/lang/String;
 
     invoke-static {v0, v2}, Lcom/google/glass/timeline/TimelineHelper;->getAttachmentsOfTypes(Lcom/google/googlex/glass/common/proto/TimelineItem;[Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 249
+    .line 252
     .local v1, photos:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Attachment;>;"
     invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
@@ -1826,7 +1216,7 @@
 
     if-nez v2, :cond_0
 
-    .line 254
+    .line 256
     invoke-interface {v1, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -1839,7 +1229,7 @@
 
     iput-object v2, p0, Lcom/google/glass/share/ShareActivity;->iconPath:Ljava/lang/String;
 
-    .line 259
+    .line 261
     .end local v0           #item:Lcom/google/googlex/glass/common/proto/TimelineItem;
     .end local v1           #photos:Ljava/util/List;,"Ljava/util/List<Lcom/google/googlex/glass/common/proto/Attachment;>;"
     :cond_0
@@ -1849,7 +1239,12 @@
 
     invoke-virtual {v2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 260
+    .line 262
+    iget-object v2, p0, Lcom/google/glass/share/ShareActivity;->showMenuAnimation:Landroid/view/animation/Animation;
+
+    if-eqz v2, :cond_1
+
+    .line 263
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getContentView()Landroid/view/View;
 
     move-result-object v2
@@ -1858,10 +1253,11 @@
 
     invoke-static {v2, v3}, Lcom/google/glass/util/AnimationUtils;->startAnimation(Landroid/view/View;Landroid/view/animation/Animation;)V
 
-    .line 261
+    .line 265
+    :cond_1
     invoke-super {p0}, Lcom/google/glass/app/GlassActivity;->onResume()V
 
-    .line 262
+    .line 266
     return-void
 .end method
 
@@ -1874,26 +1270,26 @@
 
     const/4 v0, 0x0
 
-    .line 335
+    .line 338
     if-nez p1, :cond_0
 
-    .line 392
+    .line 395
     :goto_0
     return v0
 
-    .line 339
+    .line 342
     :cond_0
     iget-object v6, p0, Lcom/google/glass/share/ShareActivity;->iconPath:Ljava/lang/String;
 
     if-eqz v6, :cond_1
 
-    .line 343
+    .line 346
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v3
 
-    .line 345
+    .line 348
     .local v3, intent:Landroid/content/Intent;
     const-string v6, "progress_string"
 
@@ -1901,7 +1297,7 @@
 
     move-result-object v4
 
-    .line 346
+    .line 349
     .local v4, progressMessage:Ljava/lang/String;
     const-string v6, "confirmed_string"
 
@@ -1909,7 +1305,7 @@
 
     move-result-object v2
 
-    .line 347
+    .line 350
     .local v2, confirmedMessage:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1917,14 +1313,14 @@
 
     if-eqz v6, :cond_2
 
-    .line 348
+    .line 351
     sget v6, Lcom/google/glass/common/R$string;->sharing_menu_share_confirming:I
 
     invoke-virtual {p0, v6}, Lcom/google/glass/share/ShareActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 350
+    .line 353
     :cond_2
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -1932,14 +1328,14 @@
 
     if-eqz v6, :cond_3
 
-    .line 351
+    .line 354
     sget v6, Lcom/google/glass/common/R$string;->sharing_menu_share_confirmed:I
 
     invoke-virtual {p0, v6}, Lcom/google/glass/share/ShareActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 355
+    .line 358
     :cond_3
     const-string v6, "voice_annotation"
 
@@ -1957,7 +1353,7 @@
 
     move v0, v5
 
-    .line 358
+    .line 361
     .local v0, allowAnnotate:Z
     :cond_4
     new-instance v6, Lcom/google/glass/widget/MessageDialog$Builder;
@@ -2006,11 +1402,11 @@
 
     move-result-object v1
 
-    .line 386
+    .line 389
     .local v1, builder:Lcom/google/glass/widget/MessageDialog$Builder;
     if-eqz v0, :cond_5
 
-    .line 387
+    .line 390
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getTag()Ljava/lang/String;
 
     move-result-object v6
@@ -2019,12 +1415,12 @@
 
     invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 388
+    .line 391
     sget v6, Lcom/google/glass/common/R$string;->sharing_menu_tap_to_annotate:I
 
     invoke-virtual {v1, v6}, Lcom/google/glass/widget/MessageDialog$Builder;->setTemporarySecondaryMessage(I)Lcom/google/glass/widget/MessageDialog$Builder;
 
-    .line 391
+    .line 394
     :cond_5
     invoke-virtual {v1}, Lcom/google/glass/widget/MessageDialog$Builder;->build()Lcom/google/glass/widget/MessageDialog;
 
@@ -2034,7 +1430,7 @@
 
     move v0, v5
 
-    .line 392
+    .line 395
     goto/16 :goto_0
 .end method
 
@@ -2046,22 +1442,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 289
+    .line 292
     iget-object v1, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     if-nez v1, :cond_0
 
-    .line 300
+    .line 303
     :goto_0
     return v0
 
-    .line 294
+    .line 297
     :cond_0
     sget-object v1, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
 
     if-ne p2, v1, :cond_1
 
-    .line 295
+    .line 298
     iget-object v1, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     sget-object v2, Lcom/google/glass/input/SwipeDirection;->UP:Lcom/google/glass/input/SwipeDirection;
@@ -2070,13 +1466,13 @@
 
     goto :goto_0
 
-    .line 299
+    .line 302
     :cond_1
     iget-object v0, p0, Lcom/google/glass/share/ShareActivity;->shareTargetsView:Lcom/google/glass/share/ShareHorizontalScrollView;
 
     invoke-virtual {v0, p1, p2}, Lcom/google/glass/share/ShareHorizontalScrollView;->onSwipe(ILcom/google/glass/input/SwipeDirection;)Z
 
-    .line 300
+    .line 303
     const/4 v0, 0x1
 
     goto :goto_0
@@ -2086,7 +1482,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 218
     sget v0, Lcom/google/glass/common/R$layout;->share_activity:I
 
     return v0
@@ -2098,7 +1494,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 208
+    .line 213
     invoke-virtual {p0}, Lcom/google/glass/share/ShareActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1

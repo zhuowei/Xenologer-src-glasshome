@@ -52,12 +52,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 59
+    .line 64
     new-instance v0, Lcom/google/android/libraries/barhopper/Barcode;
 
     invoke-direct {v0}, Lcom/google/android/libraries/barhopper/Barcode;-><init>()V
 
-    .line 60
+    .line 65
     .local v0, barcode:Lcom/google/android/libraries/barhopper/Barcode;
     const-string v1, "raw_value"
 
@@ -67,7 +67,7 @@
 
     iput-object v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->rawValue:Ljava/lang/String;
 
-    .line 61
+    .line 66
     const-string v1, "display_value"
 
     invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
@@ -76,7 +76,7 @@
 
     iput-object v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->displayValue:Ljava/lang/String;
 
-    .line 62
+    .line 67
     const-string v1, "value_format"
 
     invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -85,7 +85,7 @@
 
     iput v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->valueFormat:I
 
-    .line 63
+    .line 68
     const-string v1, "format"
 
     invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
@@ -94,7 +94,7 @@
 
     iput v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->format:I
 
-    .line 64
+    .line 69
     const-string v1, "has_wifi"
 
     invoke-virtual {p1, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
@@ -103,14 +103,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 65
+    .line 70
     new-instance v1, Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
     invoke-direct {v1}, Lcom/google/android/libraries/barhopper/Barcode$WiFi;-><init>()V
 
     iput-object v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
-    .line 66
+    .line 71
     iget-object v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
     const-string v2, "wifi_encryption_type"
@@ -123,7 +123,7 @@
 
     iput v2, v1, Lcom/google/android/libraries/barhopper/Barcode$WiFi;->encryptionType:I
 
-    .line 68
+    .line 73
     iget-object v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
     const-string v2, "wifi_password"
@@ -134,7 +134,7 @@
 
     iput-object v2, v1, Lcom/google/android/libraries/barhopper/Barcode$WiFi;->password:Ljava/lang/String;
 
-    .line 69
+    .line 74
     iget-object v1, v0, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
     const-string v2, "wifi_ssid"
@@ -145,24 +145,42 @@
 
     iput-object v2, v1, Lcom/google/android/libraries/barhopper/Barcode$WiFi;->ssid:Ljava/lang/String;
 
-    .line 71
+    .line 76
     :cond_0
     return-object v0
 .end method
 
 .method public sendBarcode(Lcom/google/android/libraries/barhopper/Barcode;)V
-    .locals 3
+    .locals 2
     .parameter "barcode"
 
     .prologue
     .line 41
+    iget-object v0, p0, Lcom/google/glass/barcode/QrHelper;->context:Landroid/content/Context;
+
+    invoke-virtual {p0, p1}, Lcom/google/glass/barcode/QrHelper;->toIntent(Lcom/google/android/libraries/barhopper/Barcode;)Landroid/content/Intent;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+
+    .line 42
+    return-void
+.end method
+
+.method public toIntent(Lcom/google/android/libraries/barhopper/Barcode;)Landroid/content/Intent;
+    .locals 3
+    .parameter "barcode"
+
+    .prologue
+    .line 46
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "com.google.glass.action.PROCESS_BARCODE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 42
+    .line 47
     .local v0, intent:Landroid/content/Intent;
     const-string v1, "raw_value"
 
@@ -170,40 +188,40 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 43
+    .line 48
     const-string v1, "display_value"
 
     iget-object v2, p1, Lcom/google/android/libraries/barhopper/Barcode;->displayValue:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 44
+    .line 49
     const-string v1, "value_format"
 
     iget v2, p1, Lcom/google/android/libraries/barhopper/Barcode;->valueFormat:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 45
+    .line 50
     const-string v1, "format"
 
     iget v2, p1, Lcom/google/android/libraries/barhopper/Barcode;->format:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 46
+    .line 51
     iget-object v1, p1, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
 
     if-eqz v1, :cond_0
 
-    .line 47
+    .line 52
     const-string v1, "has_wifi"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 48
+    .line 53
     const-string v1, "wifi_encryption_type"
 
     iget-object v2, p1, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
@@ -212,7 +230,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 49
+    .line 54
     const-string v1, "wifi_password"
 
     iget-object v2, p1, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
@@ -221,7 +239,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 50
+    .line 55
     const-string v1, "wifi_ssid"
 
     iget-object v2, p1, Lcom/google/android/libraries/barhopper/Barcode;->wifi:Lcom/google/android/libraries/barhopper/Barcode$WiFi;
@@ -230,16 +248,11 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 54
+    .line 59
     :goto_0
-    iget-object v1, p0, Lcom/google/glass/barcode/QrHelper;->context:Landroid/content/Context;
+    return-object v0
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    .line 55
-    return-void
-
-    .line 52
+    .line 57
     :cond_0
     const-string v1, "has_wifi"
 

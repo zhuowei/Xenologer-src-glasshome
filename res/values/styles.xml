@@ -197,6 +197,10 @@
         <item name="android:singleLine">true</item>
         <item name="fontWeight">light</item>
     </style>
+    <style name="GuardPhraseText" parent="@style/TipsViewText">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="fontWeight">thin</item>
+    </style>
     <style name="GlassTheme" parent="@*android:style/Theme">
         <item name="android:screenOrientation">landscape</item>
         <item name="android:windowBackground">@*android:color/black</item>
@@ -220,6 +224,9 @@
     </style>
     <style name="GlassTheme.Translucent.Fade" parent="@style/GlassTheme.Translucent">
         <item name="android:windowAnimationStyle">@style/Animation.Fade</item>
+    </style>
+    <style name="GlassTheme.Translucent.FadeExitOnly" parent="@style/GlassTheme.Translucent">
+        <item name="android:windowAnimationStyle">@style/Animation.FadeExitOnly</item>
     </style>
     <style name="GlassTheme.MainTimeline" parent="@style/GlassTheme">
         <item name="android:windowAnimationStyle">@style/Animation.MainTimeline</item>

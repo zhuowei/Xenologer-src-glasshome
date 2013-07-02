@@ -10,13 +10,13 @@
 
 .field protected final powerHelper:Lcom/google/glass/util/PowerHelper;
 
-.field protected final syncReporter:Lcom/google/glass/home/sync/SyncStatusReporter;
+.field protected final syncReporter:Lcom/google/glass/sync/SyncStatusReporter;
 
 .field protected final wifiHelper:Lcom/google/glass/util/WifiHelper;
 
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/home/sync/SyncStatusReporter;Lcom/google/glass/util/BatteryHelper;Lcom/google/glass/util/PowerHelper;Lcom/google/glass/util/WifiHelper;)V
+.method constructor <init>(Lcom/google/glass/home/HomeApplication;Lcom/google/glass/sync/SyncStatusReporter;Lcom/google/glass/util/BatteryHelper;Lcom/google/glass/util/PowerHelper;Lcom/google/glass/util/WifiHelper;)V
     .locals 0
     .parameter "application"
     .parameter "syncReporter"
@@ -25,25 +25,25 @@
     .parameter "wifiHelper"
 
     .prologue
-    .line 27
+    .line 28
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 28
+    .line 29
     iput-object p1, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->application:Lcom/google/glass/home/HomeApplication;
 
-    .line 29
-    iput-object p2, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->syncReporter:Lcom/google/glass/home/sync/SyncStatusReporter;
-
     .line 30
-    iput-object p3, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->batteryHelper:Lcom/google/glass/util/BatteryHelper;
+    iput-object p2, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->syncReporter:Lcom/google/glass/sync/SyncStatusReporter;
 
     .line 31
-    iput-object p4, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->powerHelper:Lcom/google/glass/util/PowerHelper;
+    iput-object p3, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->batteryHelper:Lcom/google/glass/util/BatteryHelper;
 
     .line 32
-    iput-object p5, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->wifiHelper:Lcom/google/glass/util/WifiHelper;
+    iput-object p4, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->powerHelper:Lcom/google/glass/util/PowerHelper;
 
     .line 33
+    iput-object p5, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->wifiHelper:Lcom/google/glass/util/WifiHelper;
+
+    .line 34
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .parameter "settingsSecure"
 
     .prologue
-    .line 40
+    .line 41
     invoke-static {}, Lcom/google/googlex/glass/common/proto/SyncRequest;->newBuilder()Lcom/google/googlex/glass/common/proto/SyncRequest$Builder;
 
     move-result-object v0
@@ -76,7 +76,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 37
     iget-object v0, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->application:Lcom/google/glass/home/HomeApplication;
 
     invoke-virtual {v0}, Lcom/google/glass/home/HomeApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
@@ -93,7 +93,7 @@
     .parameter "duration"
 
     .prologue
-    .line 44
+    .line 45
     iget-object v5, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->batteryHelper:Lcom/google/glass/util/BatteryHelper;
 
     invoke-virtual {v5}, Lcom/google/glass/util/BatteryHelper;->isPowered()Z
@@ -104,7 +104,7 @@
 
     const-string v1, "1"
 
-    .line 45
+    .line 46
     .local v1, isPowered:Ljava/lang/String;
     :goto_0
     iget-object v5, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->powerHelper:Lcom/google/glass/util/PowerHelper;
@@ -117,7 +117,7 @@
 
     const-string v2, "1"
 
-    .line 46
+    .line 47
     .local v2, isScreenOn:Ljava/lang/String;
     :goto_1
     iget-object v5, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->wifiHelper:Lcom/google/glass/util/WifiHelper;
@@ -130,7 +130,7 @@
 
     const-string v3, "1"
 
-    .line 47
+    .line 48
     .local v3, isWifiConnected:Ljava/lang/String;
     :goto_2
     const-string v5, "b"
@@ -191,7 +191,7 @@
 
     move-result-object v0
 
-    .line 53
+    .line 54
     .local v0, data:Ljava/lang/String;
     iget-object v5, p0, Lcom/google/glass/home/sync/AbstractTimelineSyncHelper;->application:Lcom/google/glass/home/HomeApplication;
 
@@ -199,14 +199,14 @@
 
     move-result-object v4
 
-    .line 54
+    .line 55
     .local v4, userEventHelper:Lcom/google/glass/logging/UserEventHelper;
     invoke-virtual {v4, p1, v0}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 55
+    .line 56
     return-void
 
-    .line 44
+    .line 45
     .end local v0           #data:Ljava/lang/String;
     .end local v1           #isPowered:Ljava/lang/String;
     .end local v2           #isScreenOn:Ljava/lang/String;
@@ -217,14 +217,14 @@
 
     goto :goto_0
 
-    .line 45
+    .line 46
     .restart local v1       #isPowered:Ljava/lang/String;
     :cond_1
     const-string v2, "0"
 
     goto :goto_1
 
-    .line 46
+    .line 47
     .restart local v2       #isScreenOn:Ljava/lang/String;
     :cond_2
     const-string v3, "0"

@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 252
+    .line 253
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 258
     new-instance v0, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 252
+    .line 253
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/AudioClipTranscript$Token;
 
     move-result-object v0

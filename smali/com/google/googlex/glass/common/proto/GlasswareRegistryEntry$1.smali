@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 165
+    .line 174
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 170
+    .line 179
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 165
+    .line 174
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry;
 
     move-result-object v0

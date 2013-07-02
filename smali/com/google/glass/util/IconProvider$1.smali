@@ -48,7 +48,7 @@
 
 # virtual methods
 .method public load(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 2
+    .locals 3
     .parameter "filePath"
 
     .prologue
@@ -67,7 +67,9 @@
 
     move-result v1
 
-    invoke-static {p1, v0, v1}, Lcom/google/glass/util/CachedBitmapFactory;->loadBitmapFile(Ljava/lang/String;II)Landroid/graphics/Bitmap;
+    const/4 v2, 0x0
+
+    invoke-static {p1, v0, v1, v2}, Lcom/google/glass/util/CachedBitmapFactory;->loadBitmapFile(Ljava/lang/String;IILcom/google/glass/util/Condition;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 

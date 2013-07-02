@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 422
+    .line 430
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,12 +43,12 @@
     .locals 2
 
     .prologue
-    .line 432
+    .line 440
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;->inputStream:Ljava/io/InputStream;
 
     if-nez v0, :cond_0
 
-    .line 433
+    .line 441
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "InputStream not set."
@@ -57,7 +57,7 @@
 
     throw v0
 
-    .line 435
+    .line 443
     :cond_0
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;->inputStream:Ljava/io/InputStream;
 
@@ -69,9 +69,9 @@
     .parameter "inputStream"
 
     .prologue
-    .line 427
+    .line 435
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$AudioInputStreamFactoryImpl;->inputStream:Ljava/io/InputStream;
 
-    .line 428
+    .line 436
     return-void
 .end method

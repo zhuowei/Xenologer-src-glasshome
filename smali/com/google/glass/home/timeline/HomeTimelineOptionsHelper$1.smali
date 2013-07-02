@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 63
+    .line 75
     iput-object p1, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$1;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
     iput-object p2, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$1;->val$sent:Ljava/util/concurrent/atomic/AtomicBoolean;
@@ -43,7 +43,7 @@
     .locals 2
 
     .prologue
-    .line 66
+    .line 78
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$1;->val$sent:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
@@ -52,7 +52,7 @@
 
     if-nez v0, :cond_0
 
-    .line 67
+    .line 79
     iget-object v0, p0, Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper$1;->this$0:Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;
 
     #getter for: Lcom/google/glass/home/timeline/HomeTimelineOptionsHelper;->activity:Lcom/google/glass/app/GlassActivity;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/sound/SoundManager;->playSound(Lcom/google/glass/sound/SoundManager$SoundId;)I
 
-    .line 69
+    .line 81
     :cond_0
     return-void
 .end method

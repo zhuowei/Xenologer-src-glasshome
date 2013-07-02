@@ -1,5 +1,5 @@
 .class public Lcom/google/glass/home/search/SoundSearchActivity;
-.super Lcom/google/glass/home/voice/BaseVoiceInputActivity;
+.super Lcom/google/glass/voice/BaseVoiceInputActivity;
 .source "SoundSearchActivity.java"
 
 
@@ -13,7 +13,7 @@
 
     .prologue
     .line 19
-    invoke-direct {p0}, Lcom/google/glass/home/voice/BaseVoiceInputActivity;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/voice/BaseVoiceInputActivity;-><init>()V
 
     return-void
 .end method

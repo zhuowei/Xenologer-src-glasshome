@@ -29,7 +29,7 @@
     .parameter "x4"
 
     .prologue
-    .line 35
+    .line 37
     iput-object p1, p0, Lcom/google/glass/util/ImageProxyBitmapLoadingTask$1;->this$0:Lcom/google/glass/util/ImageProxyBitmapLoadingTask;
 
     move-object v0, p0
@@ -56,7 +56,7 @@
     .parameter "x0"
 
     .prologue
-    .line 35
+    .line 37
     check-cast p1, Ljava/lang/String;
 
     .end local p1
@@ -70,7 +70,7 @@
     .parameter "path"
 
     .prologue
-    .line 37
+    .line 39
     return-void
 .end method
 
@@ -78,6 +78,6 @@
     .locals 0
 
     .prologue
-    .line 36
+    .line 38
     return-void
 .end method

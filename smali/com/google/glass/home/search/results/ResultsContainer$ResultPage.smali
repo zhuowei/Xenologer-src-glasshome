@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "ResultsContainer.java"
 
+# interfaces
+.implements Lcom/google/glass/home/search/results/LazyLoadable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
@@ -30,19 +33,19 @@
     .parameter "bundle"
 
     .prologue
-    .line 74
+    .line 78
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 79
     iput-object p1, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
 
-    .line 76
+    .line 80
     iput-object p2, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->optionMenu:Lcom/google/glass/widget/OptionMenu;
 
-    .line 77
+    .line 81
     iput-object p3, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->bundle:Landroid/os/Bundle;
 
-    .line 78
+    .line 82
     return-void
 .end method
 
@@ -52,7 +55,7 @@
     .locals 1
 
     .prologue
-    .line 89
+    .line 93
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->bundle:Landroid/os/Bundle;
 
     return-object v0
@@ -62,7 +65,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 89
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->optionMenu:Lcom/google/glass/widget/OptionMenu;
 
     return-object v0
@@ -72,8 +75,38 @@
     .locals 1
 
     .prologue
-    .line 81
+    .line 85
     iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
 
     return-object v0
+.end method
+
+.method public seen()V
+    .locals 2
+
+    .prologue
+    .line 98
+    iget-object v1, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
+
+    instance-of v1, v1, Lcom/google/glass/home/search/results/LazyLoadable;
+
+    if-eqz v1, :cond_0
+
+    .line 99
+    iget-object v0, p0, Lcom/google/glass/home/search/results/ResultsContainer$ResultPage;->view:Landroid/view/View;
+
+    check-cast v0, Lcom/google/glass/home/search/results/LazyLoadable;
+
+    .line 100
+    .local v0, lazyLoadableView:Lcom/google/glass/home/search/results/LazyLoadable;
+    invoke-interface {v0}, Lcom/google/glass/home/search/results/LazyLoadable;->seen()V
+
+    .line 102
+    .end local v0           #lazyLoadableView:Lcom/google/glass/home/search/results/LazyLoadable;
+    :cond_0
+    return-void
 .end method

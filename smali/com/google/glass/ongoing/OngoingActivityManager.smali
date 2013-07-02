@@ -67,7 +67,7 @@
 
     sput-object v0, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
 
-    .line 48
+    .line 49
     new-instance v0, Landroid/content/ComponentName;
 
     const-string v1, "com.google.glass.home"
@@ -87,20 +87,20 @@
     .parameter "messengerFactory"
 
     .prologue
-    .line 120
+    .line 121
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 98
+    .line 99
     sget-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionState:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 99
+    .line 100
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->outgoing:Landroid/os/Messenger;
 
-    .line 100
+    .line 101
     new-instance v0, Landroid/os/Messenger;
 
     new-instance v1, Landroid/os/Handler;
@@ -111,34 +111,34 @@
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->incoming:Landroid/os/Messenger;
 
-    .line 103
+    .line 104
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionLock:Ljava/lang/Object;
 
-    .line 105
+    .line 106
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager$2;
 
     invoke-direct {v0, p0}, Lcom/google/glass/ongoing/OngoingActivityManager$2;-><init>(Lcom/google/glass/ongoing/OngoingActivityManager;)V
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connection:Landroid/content/ServiceConnection;
 
-    .line 117
+    .line 118
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
-    .line 121
+    .line 122
     iput-object p1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->context:Landroid/content/Context;
 
-    .line 122
+    .line 123
     iput-object p2, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->messengerFactory:Lcom/google/glass/ongoing/OngoingActivityManager$MessengerFactory;
 
-    .line 123
+    .line 124
     return-void
 .end method
 
@@ -170,12 +170,12 @@
     .locals 5
 
     .prologue
-    .line 169
+    .line 170
     iget-object v2, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 170
+    .line 171
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionState:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
@@ -183,7 +183,7 @@
 
     if-ne v1, v3, :cond_0
 
-    .line 171
+    .line 172
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -212,18 +212,18 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 173
+    .line 174
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
-    .line 174
+    .line 175
     .local v0, intent:Landroid/content/Intent;
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->ONGOING_ACTIVITY_SERVICE:Landroid/content/ComponentName;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 175
+    .line 176
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->context:Landroid/content/Context;
 
     iget-object v3, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connection:Landroid/content/ServiceConnection;
@@ -236,21 +236,21 @@
 
     if-eqz v1, :cond_1
 
-    .line 176
+    .line 177
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->CONNECTING:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     iput-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionState:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 181
+    .line 182
     .end local v0           #intent:Landroid/content/Intent;
     :cond_0
     :goto_0
     monitor-exit v2
 
-    .line 182
+    .line 183
     return-void
 
-    .line 178
+    .line 179
     .restart local v0       #intent:Landroid/content/Intent;
     :cond_1
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
@@ -261,7 +261,7 @@
 
     goto :goto_0
 
-    .line 181
+    .line 182
     .end local v0           #intent:Landroid/content/Intent;
     :catchall_0
     move-exception v1
@@ -279,10 +279,10 @@
     .parameter "factory"
 
     .prologue
-    .line 85
+    .line 86
     invoke-static {}, Lcom/google/glass/util/Assert;->assertIsTest()V
 
-    .line 86
+    .line 87
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityManager;
 
     invoke-direct {v0, p0, p1}, Lcom/google/glass/ongoing/OngoingActivityManager;-><init>(Landroid/content/Context;Lcom/google/glass/ongoing/OngoingActivityManager$MessengerFactory;)V
@@ -295,23 +295,23 @@
     .parameter "context"
 
     .prologue
-    .line 68
+    .line 69
     const-class v2, Lcom/google/glass/ongoing/OngoingActivityManager;
 
     monitor-enter v2
 
-    .line 69
+    .line 70
     :try_start_0
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->instance:Lcom/google/glass/ongoing/OngoingActivityManager;
 
     if-nez v1, :cond_0
 
-    .line 70
+    .line 71
     invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 71
+    .line 72
     .local v0, appContext:Landroid/content/Context;
     new-instance v1, Lcom/google/glass/ongoing/OngoingActivityManager;
 
@@ -323,24 +323,24 @@
 
     sput-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->instance:Lcom/google/glass/ongoing/OngoingActivityManager;
 
-    .line 78
+    .line 79
     .end local v0           #appContext:Landroid/content/Context;
     :cond_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 79
+    .line 80
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->instance:Lcom/google/glass/ongoing/OngoingActivityManager;
 
     invoke-direct {v1}, Lcom/google/glass/ongoing/OngoingActivityManager;->connectIfNecessary()V
 
-    .line 80
+    .line 81
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->instance:Lcom/google/glass/ongoing/OngoingActivityManager;
 
     return-object v1
 
-    .line 78
+    .line 79
     :catchall_0
     move-exception v1
 
@@ -358,7 +358,7 @@
     .parameter "service"
 
     .prologue
-    .line 186
+    .line 187
     sget-object v4, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -385,12 +385,12 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 187
+    .line 188
     iget-object v5, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 188
+    .line 189
     :try_start_0
     iget-object v4, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->messengerFactory:Lcom/google/glass/ongoing/OngoingActivityManager$MessengerFactory;
 
@@ -400,12 +400,12 @@
 
     iput-object v4, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->outgoing:Landroid/os/Messenger;
 
-    .line 189
+    .line 190
     sget-object v4, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->CONNECTED:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     iput-object v4, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionState:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 191
+    .line 192
     const/4 v4, 0x0
 
     const/4 v6, 0x1
@@ -414,7 +414,7 @@
 
     move-result-object v3
 
-    .line 192
+    .line 193
     .local v3, registration:Landroid/os/Message;
     iget-object v4, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->incoming:Landroid/os/Messenger;
 
@@ -422,7 +422,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 194
+    .line 195
     :try_start_1
     sget-object v4, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
 
@@ -430,25 +430,25 @@
 
     invoke-static {v4, v6}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 195
+    .line 196
     invoke-direct {p0, v3}, Lcom/google/glass/ongoing/OngoingActivityManager;->sendMessage(Landroid/os/Message;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 199
+    .line 200
     :goto_0
     :try_start_2
     monitor-exit v5
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 202
+    .line 203
     iget-object v5, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
     monitor-enter v5
 
-    .line 203
+    .line 204
     :try_start_3
     iget-object v4, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
@@ -476,7 +476,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 205
+    .line 206
     .local v2, message:Lcom/google/glass/ongoing/OngoingActivityMessage;
     :try_start_4
     invoke-direct {p0, v2}, Lcom/google/glass/ongoing/OngoingActivityManager;->sendOngoingActivityMessage(Lcom/google/glass/ongoing/OngoingActivityMessage;)V
@@ -486,11 +486,11 @@
 
     goto :goto_1
 
-    .line 206
+    .line 207
     :catch_0
     move-exception v0
 
-    .line 210
+    .line 211
     .end local v2           #message:Lcom/google/glass/ongoing/OngoingActivityMessage;
     :cond_0
     :try_start_5
@@ -498,15 +498,15 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 211
+    .line 212
     return-void
 
-    .line 196
+    .line 197
     .end local v1           #i$:Ljava/util/Iterator;
     :catch_1
     move-exception v0
 
-    .line 197
+    .line 198
     .local v0, e:Landroid/os/RemoteException;
     :try_start_6
     sget-object v4, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
@@ -533,7 +533,7 @@
 
     goto :goto_0
 
-    .line 199
+    .line 200
     .end local v0           #e:Landroid/os/RemoteException;
     .end local v3           #registration:Landroid/os/Message;
     :catchall_0
@@ -545,7 +545,7 @@
 
     throw v4
 
-    .line 210
+    .line 211
     .restart local v3       #registration:Landroid/os/Message;
     :catchall_1
     move-exception v4
@@ -562,38 +562,38 @@
     .locals 2
 
     .prologue
-    .line 215
+    .line 216
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 216
+    .line 217
     :try_start_0
     sget-object v0, Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;->DISCONNECTED:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionState:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
-    .line 217
+    .line 218
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->outgoing:Landroid/os/Messenger;
 
-    .line 218
+    .line 219
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 219
+    .line 220
     sget-object v0, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
 
     const-string v1, "Disconnected from OngoingActivityService!"
 
     invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 220
+    .line 221
     return-void
 
-    .line 218
+    .line 219
     :catchall_0
     move-exception v0
 
@@ -615,7 +615,7 @@
     .end annotation
 
     .prologue
-    .line 234
+    .line 235
     :try_start_0
     invoke-static {}, Landroid/os/Process;->myPid()I
 
@@ -623,25 +623,25 @@
 
     iput v1, p1, Landroid/os/Message;->arg1:I
 
-    .line 235
+    .line 236
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->outgoing:Landroid/os/Messenger;
 
     invoke-virtual {v1, p1}, Landroid/os/Messenger;->send(Landroid/os/Message;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 240
+    .line 241
     return-void
 
-    .line 236
+    .line 237
     :catch_0
     move-exception v0
 
-    .line 237
+    .line 238
     .local v0, e:Landroid/os/RemoteException;
     invoke-direct {p0}, Lcom/google/glass/ongoing/OngoingActivityManager;->handleDisconnection()V
 
-    .line 238
+    .line 239
     throw v0
 .end method
 
@@ -650,12 +650,12 @@
     .parameter "message"
 
     .prologue
-    .line 154
+    .line 155
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 155
+    .line 156
     :try_start_0
     iget-object v0, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->connectionState:Lcom/google/glass/ongoing/OngoingActivityManager$ConnectionState;
 
@@ -665,28 +665,28 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 157
+    .line 158
     :try_start_1
     invoke-direct {p0, p1}, Lcom/google/glass/ongoing/OngoingActivityManager;->sendOngoingActivityMessage(Lcom/google/glass/ongoing/OngoingActivityMessage;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 164
+    .line 165
     :goto_0
     :try_start_2
     monitor-exit v1
 
-    .line 165
+    .line 166
     return-void
 
-    .line 162
+    .line 163
     :cond_0
     invoke-direct {p0}, Lcom/google/glass/ongoing/OngoingActivityManager;->connectIfNecessary()V
 
     goto :goto_0
 
-    .line 164
+    .line 165
     :catchall_0
     move-exception v0
 
@@ -696,7 +696,7 @@
 
     throw v0
 
-    .line 158
+    .line 159
     :catch_0
     move-exception v0
 
@@ -713,7 +713,7 @@
     .end annotation
 
     .prologue
-    .line 224
+    .line 225
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityManager;->TAG:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -736,7 +736,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 225
+    .line 226
     const/4 v1, 0x0
 
     const/4 v2, 0x2
@@ -745,7 +745,7 @@
 
     move-result-object v0
 
-    .line 226
+    .line 227
     .local v0, androidMessage:Landroid/os/Message;
     invoke-virtual {p1}, Lcom/google/glass/ongoing/OngoingActivityMessage;->toBundle()Landroid/os/Bundle;
 
@@ -753,10 +753,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
 
-    .line 227
+    .line 228
     invoke-direct {p0, v0}, Lcom/google/glass/ongoing/OngoingActivityManager;->sendMessage(Landroid/os/Message;)V
 
-    .line 228
+    .line 229
     return-void
 .end method
 
@@ -767,7 +767,7 @@
     .parameter "activity"
 
     .prologue
-    .line 145
+    .line 146
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityMessage;
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityMessage$Operation;->HIDE:Lcom/google/glass/ongoing/OngoingActivityMessage$Operation;
@@ -776,30 +776,30 @@
 
     invoke-direct {v0, p1, v1, v2}, Lcom/google/glass/ongoing/OngoingActivityMessage;-><init>(Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;Lcom/google/glass/ongoing/OngoingActivityMessage$Operation;Landroid/os/Bundle;)V
 
-    .line 146
+    .line 147
     .local v0, message:Lcom/google/glass/ongoing/OngoingActivityMessage;
     iget-object v2, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 147
+    .line 148
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
     invoke-interface {v1, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 148
+    .line 149
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 149
+    .line 150
     invoke-direct {p0, v0}, Lcom/google/glass/ongoing/OngoingActivityManager;->sendMessageOrConnect(Lcom/google/glass/ongoing/OngoingActivityMessage;)V
 
-    .line 150
+    .line 151
     return-void
 
-    .line 148
+    .line 149
     :catchall_0
     move-exception v1
 
@@ -817,37 +817,37 @@
     .parameter "params"
 
     .prologue
-    .line 132
+    .line 133
     new-instance v0, Lcom/google/glass/ongoing/OngoingActivityMessage;
 
     sget-object v1, Lcom/google/glass/ongoing/OngoingActivityMessage$Operation;->SHOW:Lcom/google/glass/ongoing/OngoingActivityMessage$Operation;
 
     invoke-direct {v0, p1, v1, p2}, Lcom/google/glass/ongoing/OngoingActivityMessage;-><init>(Lcom/google/glass/ongoing/OngoingActivityManager$ActivityType;Lcom/google/glass/ongoing/OngoingActivityMessage$Operation;Landroid/os/Bundle;)V
 
-    .line 133
+    .line 134
     .local v0, message:Lcom/google/glass/ongoing/OngoingActivityMessage;
     iget-object v2, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 134
+    .line 135
     :try_start_0
     iget-object v1, p0, Lcom/google/glass/ongoing/OngoingActivityManager;->ongoingActivities:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 135
+    .line 136
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 136
+    .line 137
     invoke-direct {p0, v0}, Lcom/google/glass/ongoing/OngoingActivityManager;->sendMessageOrConnect(Lcom/google/glass/ongoing/OngoingActivityMessage;)V
 
-    .line 137
+    .line 138
     return-void
 
-    .line 135
+    .line 136
     :catchall_0
     move-exception v1
 

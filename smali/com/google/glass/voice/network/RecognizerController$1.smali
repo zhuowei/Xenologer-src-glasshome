@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/voice/network/RecognizerController;-><init>(Lcom/google/android/speech/Recognizer;Lcom/google/android/speech/SpeechLevelSource;Lcom/google/android/speech/SpeechSettings;)V
+    value = Lcom/google/glass/voice/network/RecognizerController;-><init>(Lcom/google/android/speech/Recognizer;Lcom/google/android/speech/SpeechLevelSource;Lcom/google/android/speech/SpeechSettings;Lcom/google/glass/voice/network/Cookies;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 170
+    .line 173
     iput-object p1, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
     invoke-direct {p0, p2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
@@ -40,26 +40,30 @@
     .parameter "msg"
 
     .prologue
-    .line 173
+    .line 176
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 189
+    .line 192
     :goto_0
     return-void
 
-    .line 175
+    .line 178
     :pswitch_0
-    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Ljava/lang/String;
+    invoke-static {}, Lcom/google/glass/voice/network/RecognizerController;->access$000()Lcom/google/glass/util/FormattingLogger;
 
     move-result-object v0
 
     const-string v1, "Manually timed out request after 20000ms."
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    const/4 v2, 0x0
 
-    .line 176
+    new-array v2, v2, [Ljava/lang/Object;
+
+    invoke-interface {v0, v1, v2}, Lcom/google/glass/util/FormattingLogger;->e(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 179
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
     #getter for: Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
@@ -69,7 +73,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 177
+    .line 180
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
     #getter for: Lcom/google/glass/voice/network/RecognizerController;->queueingGrecoListener:Lcom/google/glass/voice/network/QueueingGrecoListener;
@@ -89,7 +93,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/voice/network/QueueingGrecoListener;->onError(Lcom/google/android/speech/exception/RecognizeException;)V
 
-    .line 182
+    .line 185
     :cond_0
     iget-object v0, p0, Lcom/google/glass/voice/network/RecognizerController$1;->this$0:Lcom/google/glass/voice/network/RecognizerController;
 
@@ -100,14 +104,12 @@
 
     invoke-interface {v0}, Lcom/google/android/speech/Recognizer;->cancel()V
 
-    .line 186
+    .line 189
     invoke-static {}, Lcom/google/glass/net/NetworkUtil;->pingGoogle()Z
 
     goto :goto_0
 
-    .line 173
-    nop
-
+    .line 176
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

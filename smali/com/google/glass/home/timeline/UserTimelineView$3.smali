@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/timeline/UserTimelineView;->createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLjava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
+    value = Lcom/google/glass/home/timeline/UserTimelineView;->createTimelineItemAdapter(Landroid/app/Activity;Lcom/google/glass/util/CachedBitmapFactory;ZZLcom/google/glass/home/timeline/NotificationState;Ljava/util/List;)Lcom/google/glass/home/timeline/TimelineView$AdapterWrapper;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 102
+    .line 99
     iput-object p1, p0, Lcom/google/glass/home/timeline/UserTimelineView$3;->this$0:Lcom/google/glass/home/timeline/UserTimelineView;
 
     iput-object p3, p0, Lcom/google/glass/home/timeline/UserTimelineView$3;->val$onLoadRunnables:Ljava/util/List;
@@ -57,25 +57,25 @@
     .end annotation
 
     .prologue
-    .line 107
+    .line 104
     .local p1, loader:Landroid/content/Loader;,"Landroid/content/Loader<Landroid/database/Cursor;>;"
     invoke-super {p0, p1, p2}, Lcom/google/glass/home/timeline/database/TimelineCursorManager;->onLoadComplete(Landroid/content/Loader;Landroid/database/Cursor;)V
 
-    .line 110
+    .line 107
     sget-object v2, Lcom/google/glass/home/timeline/MainTimelineView;->TAG:Ljava/lang/String;
 
     const-string v3, "New timeline database content loaded; updating views."
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 111
+    .line 108
     iget-object v2, p0, Lcom/google/glass/home/timeline/UserTimelineView$3;->this$0:Lcom/google/glass/home/timeline/UserTimelineView;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Lcom/google/glass/home/timeline/UserTimelineView;->updateViews(Z)V
 
-    .line 114
+    .line 111
     iget-object v2, p0, Lcom/google/glass/home/timeline/UserTimelineView$3;->val$onLoadRunnables:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -96,20 +96,20 @@
 
     check-cast v1, Ljava/lang/Runnable;
 
-    .line 115
+    .line 112
     .local v1, runnable:Ljava/lang/Runnable;
     invoke-interface {v1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 117
+    .line 114
     .end local v1           #runnable:Ljava/lang/Runnable;
     :cond_0
     iget-object v2, p0, Lcom/google/glass/home/timeline/UserTimelineView$3;->val$onLoadRunnables:Ljava/util/List;
 
     invoke-interface {v2}, Ljava/util/List;->clear()V
 
-    .line 118
+    .line 115
     return-void
 .end method
 
@@ -119,7 +119,7 @@
     .parameter "x1"
 
     .prologue
-    .line 102
+    .line 99
     check-cast p2, Landroid/database/Cursor;
 
     .end local p2

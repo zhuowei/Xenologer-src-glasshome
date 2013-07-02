@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1207
+    .line 1208
     iput-object p1, p0, Lcom/google/protobuf/GeneratedMessage$1;->val$scope:Lcom/google/protobuf/Message;
 
     iput p2, p0, Lcom/google/protobuf/GeneratedMessage$1;->val$descriptorIndex:I
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 1210
+    .line 1211
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$1;->val$scope:Lcom/google/protobuf/Message;
 
     invoke-interface {v0}, Lcom/google/protobuf/Message;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;IZLcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
+    value = Lcom/google/glass/html/HtmlRenderer;->render(Lcom/google/googlex/glass/common/proto/TimelineItem;IZZLcom/google/glass/html/HtmlRenderer$OnPageCountChangeListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/html/HtmlRenderer;
 
-.field final synthetic val$listener:Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/html/HtmlRenderer;Lcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
+.method constructor <init>(Lcom/google/glass/html/HtmlRenderer;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 285
+    .line 371
     iput-object p1, p0, Lcom/google/glass/html/HtmlRenderer$3;->this$0:Lcom/google/glass/html/HtmlRenderer;
-
-    iput-object p2, p0, Lcom/google/glass/html/HtmlRenderer$3;->val$listener:Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,25 +43,40 @@
     .parameter "picture"
 
     .prologue
-    .line 288
+    .line 374
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$3;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
     #getter for: Lcom/google/glass/html/HtmlRenderer;->isAllocated:Z
+    invoke-static {v0}, Lcom/google/glass/html/HtmlRenderer;->access$1100(Lcom/google/glass/html/HtmlRenderer;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$3;->this$0:Lcom/google/glass/html/HtmlRenderer;
+
+    #getter for: Lcom/google/glass/html/HtmlRenderer;->autoSizerFinished:Z
     invoke-static {v0}, Lcom/google/glass/html/HtmlRenderer;->access$700(Lcom/google/glass/html/HtmlRenderer;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 289
+    .line 375
     iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$3;->this$0:Lcom/google/glass/html/HtmlRenderer;
 
-    iget-object v1, p0, Lcom/google/glass/html/HtmlRenderer$3;->val$listener:Lcom/google/glass/html/HtmlRenderer$OnRenderListener;
+    const/4 v1, 0x1
 
-    #calls: Lcom/google/glass/html/HtmlRenderer;->renderToImage(Landroid/webkit/WebView;Lcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
-    invoke-static {v0, p1, v1}, Lcom/google/glass/html/HtmlRenderer;->access$1000(Lcom/google/glass/html/HtmlRenderer;Landroid/webkit/WebView;Lcom/google/glass/html/HtmlRenderer$OnRenderListener;)V
+    #setter for: Lcom/google/glass/html/HtmlRenderer;->webviewHasRendered:Z
+    invoke-static {v0, v1}, Lcom/google/glass/html/HtmlRenderer;->access$1402(Lcom/google/glass/html/HtmlRenderer;Z)Z
 
-    .line 291
+    .line 376
+    iget-object v0, p0, Lcom/google/glass/html/HtmlRenderer$3;->this$0:Lcom/google/glass/html/HtmlRenderer;
+
+    #calls: Lcom/google/glass/html/HtmlRenderer;->renderToImage(Landroid/webkit/WebView;)V
+    invoke-static {v0, p1}, Lcom/google/glass/html/HtmlRenderer;->access$1500(Lcom/google/glass/html/HtmlRenderer;Landroid/webkit/WebView;)V
+
+    .line 378
     :cond_0
     return-void
 .end method

@@ -27,16 +27,16 @@
     .parameter "scanTimeoutNanos"
 
     .prologue
-    .line 266
+    .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 267
+    .line 266
     iput p1, p0, Lcom/google/glass/barcode/BarcodeScanner$Builder;->cameraFrameModulus:I
 
-    .line 268
+    .line 267
     iput-wide p2, p0, Lcom/google/glass/barcode/BarcodeScanner$Builder;->scanTimeoutNanos:J
 
-    .line 269
+    .line 268
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .parameter "listener"
 
     .prologue
-    .line 280
+    .line 279
     new-instance v0, Lcom/google/glass/barcode/BarcodeScanner;
 
     iget v2, p0, Lcom/google/glass/barcode/BarcodeScanner$Builder;->cameraFrameModulus:I
@@ -69,7 +69,7 @@
     .parameter "cameraFrameModulus"
 
     .prologue
-    .line 272
+    .line 271
     new-instance v0, Lcom/google/glass/barcode/BarcodeScanner$Builder;
 
     iget-wide v1, p0, Lcom/google/glass/barcode/BarcodeScanner$Builder;->scanTimeoutNanos:J
@@ -84,7 +84,7 @@
     .parameter "scanTimeoutNanos"
 
     .prologue
-    .line 276
+    .line 275
     new-instance v0, Lcom/google/glass/barcode/BarcodeScanner$Builder;
 
     iget v1, p0, Lcom/google/glass/barcode/BarcodeScanner$Builder;->cameraFrameModulus:I

@@ -1,14 +1,11 @@
 .class Lcom/google/glass/home/HomeApplication$6;
-.super Ljava/lang/Object;
+.super Lcom/google/glass/util/SafeBroadcastReceiver;
 .source "HomeApplication.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/glass/home/HomeApplication;->onAccountReady(Landroid/accounts/Account;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/google/glass/home/HomeApplication;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,140 +17,104 @@
 # instance fields
 .field final synthetic this$0:Lcom/google/glass/home/HomeApplication;
 
-.field final synthetic val$primaryAccount:Landroid/accounts/Account;
-
 
 # direct methods
-.method constructor <init>(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
+.method constructor <init>(Lcom/google/glass/home/HomeApplication;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 292
+    .line 236
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    iput-object p2, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 5
+.method protected getTag()Ljava/lang/String;
+    .locals 2
 
     .prologue
-    .line 297
+    .line 247
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
     invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Enabling sync."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 298
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    const-string v1, "com.google.glass.timeline"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->enableSync(Landroid/accounts/Account;Ljava/lang/String;)V
-
-    .line 299
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    const-string v1, "com.google.glass.entity"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->enableSync(Landroid/accounts/Account;Ljava/lang/String;)V
-
-    .line 300
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    const-string v1, "com.google.glass.location"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->enableSync(Landroid/accounts/Account;Ljava/lang/String;)V
-
-    .line 301
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    const-string v1, "com.google.glass.savedaudio"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->enableSync(Landroid/accounts/Account;Ljava/lang/String;)V
-
-    .line 302
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    #calls: Lcom/google/glass/home/HomeApplication;->enablePowerConnectedSync(Landroid/accounts/Account;)V
-    invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$700(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
-
-    .line 303
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication$6;->val$primaryAccount:Landroid/accounts/Account;
-
-    #calls: Lcom/google/glass/home/HomeApplication;->enableConnectivityEstablishedSync(Landroid/accounts/Account;)V
-    invoke-static {v0, v1}, Lcom/google/glass/home/HomeApplication;->access$800(Lcom/google/glass/home/HomeApplication;Landroid/accounts/Account;)V
-
-    .line 306
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    const-string v1, "com.google.glass.location"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 309
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    const-string v1, "com.google.glass.entity"
-
-    invoke-static {v0, v1}, Lcom/google/glass/sync/SyncHelper;->triggerSync(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 312
-    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "Registering for GCM."
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 313
-    iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    #getter for: Lcom/google/glass/home/HomeApplication;->retryGcmRegistrationReceiver:Lcom/google/glass/util/SafeBroadcastReceiver;
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$900(Lcom/google/glass/home/HomeApplication;)Lcom/google/glass/util/SafeBroadcastReceiver;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
-
-    invoke-virtual {v1}, Lcom/google/glass/home/HomeApplication;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    new-array v2, v2, [Ljava/lang/String;
+    move-result-object v0
 
-    const/4 v3, 0x0
+    const-string v1, "/headsetPlugReceiver"
 
-    const-string v4, "retry_gcm_register"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    aput-object v4, v2, v3
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 315
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 3
+    .parameter "context"
+    .parameter "intent"
+
+    .prologue
+    .line 239
+    invoke-static {}, Lcom/google/glass/home/HomeApplication;->access$000()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Received intent: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 240
+    const-string v0, "android.intent.action.HEADSET_PLUG"
+
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 241
     iget-object v0, p0, Lcom/google/glass/home/HomeApplication$6;->this$0:Lcom/google/glass/home/HomeApplication;
 
-    #calls: Lcom/google/glass/home/HomeApplication;->registerGcm()V
-    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$500(Lcom/google/glass/home/HomeApplication;)V
+    #calls: Lcom/google/glass/home/HomeApplication;->updateVolume()V
+    invoke-static {v0}, Lcom/google/glass/home/HomeApplication;->access$700(Lcom/google/glass/home/HomeApplication;)V
 
-    .line 316
+    .line 243
+    :cond_0
     return-void
 .end method

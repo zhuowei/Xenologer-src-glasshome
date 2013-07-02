@@ -66,7 +66,7 @@
 .end method
 
 .method private sendFeedback(Ljava/lang/String;)V
-    .locals 10
+    .locals 11
     .parameter "description"
 
     .prologue
@@ -91,7 +91,7 @@
     .line 104
     invoke-virtual {p0}, Lcom/google/glass/logging/FeedbackActivity;->finish()V
 
-    .line 143
+    .line 140
     :goto_0
     return-void
 
@@ -212,8 +212,12 @@
 
     invoke-direct {v6, p0}, Lcom/google/glass/logging/CompanionLogReader;-><init>(Landroid/content/Context;)V
 
-    .line 122
+    .line 119
     .local v6, companionLogReader:Lcom/google/glass/logging/CompanionLogReader;
+    invoke-static {}, Lcom/google/glass/util/AsyncThreadExecutorManager;->getSerialExecutor()Ljava/util/concurrent/Executor;
+
+    move-result-object v10
+
     new-instance v0, Lcom/google/glass/logging/FeedbackActivity$2;
 
     move-object v1, p0
@@ -222,9 +226,9 @@
 
     invoke-direct/range {v0 .. v8}, Lcom/google/glass/logging/FeedbackActivity$2;-><init>(Lcom/google/glass/logging/FeedbackActivity;Ljava/lang/String;Ljava/lang/String;Lcom/google/glass/util/ScreenshotUtil$Screenshot;ZLcom/google/glass/logging/CompanionLogReader;[Ljava/lang/String;Lcom/google/glass/util/Feedback$RecoveryAction;)V
 
-    invoke-static {v0}, Landroid/os/AsyncTask;->execute(Ljava/lang/Runnable;)V
+    invoke-interface {v10, v0}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
-    .line 142
+    .line 139
     invoke-virtual {p0}, Lcom/google/glass/logging/FeedbackActivity;->finish()V
 
     goto :goto_0

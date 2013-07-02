@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1720
+    .line 1714
     iput-object p1, p0, Lcom/google/protobuf/TextFormat$1;->val$input:Lcom/google/protobuf/ByteString;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "offset"
 
     .prologue
-    .line 1725
+    .line 1719
     iget-object v0, p0, Lcom/google/protobuf/TextFormat$1;->val$input:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/ByteString;->byteAt(I)B
@@ -56,7 +56,7 @@
     .locals 1
 
     .prologue
-    .line 1722
+    .line 1716
     iget-object v0, p0, Lcom/google/protobuf/TextFormat$1;->val$input:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->size()I

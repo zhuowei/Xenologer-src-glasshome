@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 196
+    .line 202
     invoke-static {}, Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;->values()[Lcom/google/googlex/glass/common/proto/ResponseWrapper$ErrorCode;
 
     move-result-object v0

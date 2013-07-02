@@ -1,80 +1,62 @@
-.class synthetic Lcom/google/protobuf/GeneratedMessage$2;
-.super Ljava/lang/Object;
+.class final Lcom/google/protobuf/GeneratedMessage$2;
+.super Lcom/google/protobuf/GeneratedMessage$CachedDescriptorRetriever;
 .source "GeneratedMessage.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/protobuf/GeneratedMessage;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/protobuf/GeneratedMessage;->newMessageScopedGeneratedExtension(Lcom/google/protobuf/Message;Ljava/lang/String;Ljava/lang/Class;Lcom/google/protobuf/Message;)Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x8
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType:[I
+# instance fields
+.field final synthetic val$name:Ljava/lang/String;
+
+.field final synthetic val$scope:Lcom/google/protobuf/Message;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/google/protobuf/Message;Ljava/lang/String;)V
+    .locals 1
+    .parameter
+    .parameter
 
     .prologue
-    .line 1376
-    invoke-static {}, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->values()[Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
+    .line 1268
+    iput-object p1, p0, Lcom/google/protobuf/GeneratedMessage$2;->val$scope:Lcom/google/protobuf/Message;
+
+    iput-object p2, p0, Lcom/google/protobuf/GeneratedMessage$2;->val$name:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/google/protobuf/GeneratedMessage$CachedDescriptorRetriever;-><init>(Lcom/google/protobuf/GeneratedMessage$1;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected loadDescriptor()Lcom/google/protobuf/Descriptors$FieldDescriptor;
+    .locals 2
+
+    .prologue
+    .line 1270
+    iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$2;->val$scope:Lcom/google/protobuf/Message;
+
+    invoke-interface {v0}, Lcom/google/protobuf/Message;->getDescriptorForType()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
 
-    array-length v0, v0
+    iget-object v1, p0, Lcom/google/protobuf/GeneratedMessage$2;->val$name:Ljava/lang/String;
 
-    new-array v0, v0, [I
+    invoke-virtual {v0, v1}, Lcom/google/protobuf/Descriptors$Descriptor;->findFieldByName(Ljava/lang/String;)Lcom/google/protobuf/Descriptors$FieldDescriptor;
 
-    sput-object v0, Lcom/google/protobuf/GeneratedMessage$2;->$SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType:[I
+    move-result-object v0
 
-    :try_start_0
-    sget-object v0, Lcom/google/protobuf/GeneratedMessage$2;->$SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType:[I
-
-    sget-object v1, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->MESSAGE:Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
-
-    invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
-
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/google/protobuf/GeneratedMessage$2;->$SwitchMap$com$google$protobuf$Descriptors$FieldDescriptor$JavaType:[I
-
-    sget-object v1, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->ENUM:Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;
-
-    invoke-virtual {v1}, Lcom/google/protobuf/Descriptors$FieldDescriptor$JavaType;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
-
-    :goto_1
-    return-void
-
-    :catch_0
-    move-exception v0
-
-    goto :goto_1
-
-    :catch_1
-    move-exception v0
-
-    goto :goto_0
+    return-object v0
 .end method

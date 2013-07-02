@@ -44,7 +44,7 @@
 
     const/4 v2, 0x0
 
-    .line 30
+    .line 28
     new-instance v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
     const-string v1, "ACTIVE"
@@ -53,7 +53,7 @@
 
     sput-object v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;->ACTIVE:Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
-    .line 31
+    .line 29
     new-instance v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
     const-string v1, "FINAL"
@@ -62,7 +62,7 @@
 
     sput-object v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;->FINAL:Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
-    .line 32
+    .line 30
     new-instance v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
     const-string v1, "CANCELLED"
@@ -71,7 +71,7 @@
 
     sput-object v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;->CANCELLED:Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
-    .line 29
+    .line 27
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
@@ -104,7 +104,7 @@
     .end annotation
 
     .prologue
-    .line 29
+    .line 27
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void
@@ -115,7 +115,7 @@
     .parameter "name"
 
     .prologue
-    .line 29
+    .line 27
     const-class v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -131,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 29
+    .line 27
     sget-object v0, Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;->$VALUES:[Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;
 
     invoke-virtual {v0}, [Lcom/google/glass/net/upload/ScottyHelper$SessionStatus;->clone()Ljava/lang/Object;

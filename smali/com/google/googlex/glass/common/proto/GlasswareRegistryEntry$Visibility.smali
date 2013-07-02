@@ -42,9 +42,13 @@
 
 .field public static final HIDDEN_WHEN_DISABLED_VALUE:I = 0x2
 
-.field public static final enum PUBLIC:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+.field public static final enum PUBLIC:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility; = null
 
-.field public static final PUBLIC_VALUE:I
+.field public static final PUBLIC_VALUE:I = 0x0
+
+.field public static final enum TEAM_ONLY:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility; = null
+
+.field public static final TEAM_ONLY_VALUE:I = 0x4
 
 .field private static final VALUES:[Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
@@ -68,9 +72,11 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     .prologue
+    const/4 v6, 0x4
+
     const/4 v5, 0x3
 
     const/4 v4, 0x2
@@ -79,7 +85,7 @@
 
     const/4 v2, 0x0
 
-    .line 195
+    .line 204
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     const-string v1, "PUBLIC"
@@ -88,7 +94,7 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->PUBLIC:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
-    .line 203
+    .line 212
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     const-string v1, "CONFIDENTIAL"
@@ -97,26 +103,35 @@
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->CONFIDENTIAL:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
-    .line 211
+    .line 220
+    new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+
+    const-string v1, "TEAM_ONLY"
+
+    invoke-direct {v0, v1, v4, v4, v6}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;-><init>(Ljava/lang/String;III)V
+
+    sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->TEAM_ONLY:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+
+    .line 228
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     const-string v1, "HIDDEN_WHEN_DISABLED"
 
-    invoke-direct {v0, v1, v4, v4, v4}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v5, v5, v4}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN_WHEN_DISABLED:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
-    .line 220
+    .line 237
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     const-string v1, "HIDDEN"
 
-    invoke-direct {v0, v1, v5, v5, v5}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;-><init>(Ljava/lang/String;III)V
+    invoke-direct {v0, v1, v6, v6, v5}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
-    .line 186
-    const/4 v0, 0x4
+    .line 195
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
@@ -128,24 +143,28 @@
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN_WHEN_DISABLED:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+    sget-object v1, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->TEAM_ONLY:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+    sget-object v1, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN_WHEN_DISABLED:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     aput-object v1, v0, v5
 
+    sget-object v1, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+
+    aput-object v1, v0, v6
+
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->$VALUES:[Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
-    .line 275
+    .line 301
     new-instance v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility$1;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility$1;-><init>()V
 
     sput-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
-    .line 295
+    .line 321
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->values()[Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     move-result-object v0
@@ -168,16 +187,16 @@
     .end annotation
 
     .prologue
-    .line 309
+    .line 335
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 310
+    .line 336
     iput p3, p0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->index:I
 
-    .line 311
+    .line 337
     iput p4, p0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->value:I
 
-    .line 312
+    .line 338
     return-void
 .end method
 
@@ -185,7 +204,7 @@
     .locals 2
 
     .prologue
-    .line 292
+    .line 318
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry;->getDescriptor()Lcom/google/protobuf/Descriptors$Descriptor;
 
     move-result-object v0
@@ -218,7 +237,7 @@
     .end annotation
 
     .prologue
-    .line 272
+    .line 298
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->internalValueMap:Lcom/google/protobuf/Internal$EnumLiteMap;
 
     return-object v0
@@ -229,48 +248,53 @@
     .parameter "value"
 
     .prologue
-    .line 261
+    .line 286
     packed-switch p0, :pswitch_data_0
 
-    .line 266
+    .line 292
     const/4 v0, 0x0
 
     :goto_0
     return-object v0
 
-    .line 262
+    .line 287
     :pswitch_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->PUBLIC:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     goto :goto_0
 
-    .line 263
+    .line 288
     :pswitch_1
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->CONFIDENTIAL:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     goto :goto_0
 
-    .line 264
+    .line 289
     :pswitch_2
+    sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->TEAM_ONLY:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
+
+    goto :goto_0
+
+    .line 290
+    :pswitch_3
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN_WHEN_DISABLED:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     goto :goto_0
 
-    .line 265
-    :pswitch_3
+    .line 291
+    :pswitch_4
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->HIDDEN:Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     goto :goto_0
 
-    .line 261
-    nop
-
+    .line 286
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
         :pswitch_1
-        :pswitch_2
         :pswitch_3
+        :pswitch_4
+        :pswitch_2
     .end packed-switch
 .end method
 
@@ -279,7 +303,7 @@
     .parameter "desc"
 
     .prologue
-    .line 299
+    .line 325
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$EnumValueDescriptor;->getType()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -290,7 +314,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 300
+    .line 326
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "EnumValueDescriptor is not for this type."
@@ -299,7 +323,7 @@
 
     throw v0
 
-    .line 303
+    .line 329
     :cond_0
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->VALUES:[Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
@@ -317,7 +341,7 @@
     .parameter "name"
 
     .prologue
-    .line 186
+    .line 195
     const-class v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -333,7 +357,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 195
     sget-object v0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->$VALUES:[Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;
 
     invoke-virtual {v0}, [Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->clone()Ljava/lang/Object;
@@ -351,7 +375,7 @@
     .locals 1
 
     .prologue
-    .line 288
+    .line 314
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0
@@ -363,7 +387,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 283
     iget v0, p0, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->value:I
 
     return v0
@@ -373,7 +397,7 @@
     .locals 2
 
     .prologue
-    .line 284
+    .line 310
     invoke-static {}, Lcom/google/googlex/glass/common/proto/GlasswareRegistryEntry$Visibility;->getDescriptor()Lcom/google/protobuf/Descriptors$EnumDescriptor;
 
     move-result-object v0

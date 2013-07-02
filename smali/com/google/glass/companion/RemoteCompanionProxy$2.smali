@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 97
+    .line 98
     iput-object p1, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "binder"
 
     .prologue
-    .line 111
+    .line 112
     invoke-static {}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -72,7 +72,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 112
+    .line 113
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     invoke-static {p2}, Lcom/google/glass/companion/IRemoteCompanionService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/google/glass/companion/IRemoteCompanionService;
@@ -82,7 +82,7 @@
     #setter for: Lcom/google/glass/companion/RemoteCompanionProxy;->companionService:Lcom/google/glass/companion/IRemoteCompanionService;
     invoke-static {v0, v1}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$502(Lcom/google/glass/companion/RemoteCompanionProxy;Lcom/google/glass/companion/IRemoteCompanionService;)Lcom/google/glass/companion/IRemoteCompanionService;
 
-    .line 113
+    .line 114
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     #getter for: Lcom/google/glass/companion/RemoteCompanionProxy;->companionStateListener:Lcom/google/glass/util/SafeBroadcastReceiver;
@@ -109,13 +109,13 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/google/glass/util/SafeBroadcastReceiver;->register(Landroid/content/Context;[Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 115
+    .line 116
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     #calls: Lcom/google/glass/companion/RemoteCompanionProxy;->notifyCompanionStateChange()V
     invoke-static {v0}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$400(Lcom/google/glass/companion/RemoteCompanionProxy;)V
 
-    .line 116
+    .line 117
     return-void
 .end method
 
@@ -124,7 +124,7 @@
     .parameter "name"
 
     .prologue
-    .line 100
+    .line 101
     invoke-static {}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$000()Ljava/lang/String;
 
     move-result-object v0
@@ -153,7 +153,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 101
+    .line 102
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     const/4 v1, 0x0
@@ -161,7 +161,7 @@
     #setter for: Lcom/google/glass/companion/RemoteCompanionProxy;->companionService:Lcom/google/glass/companion/IRemoteCompanionService;
     invoke-static {v0, v1}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$502(Lcom/google/glass/companion/RemoteCompanionProxy;Lcom/google/glass/companion/IRemoteCompanionService;)Lcom/google/glass/companion/IRemoteCompanionService;
 
-    .line 102
+    .line 103
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     #getter for: Lcom/google/glass/companion/RemoteCompanionProxy;->companionStateListener:Lcom/google/glass/util/SafeBroadcastReceiver;
@@ -178,7 +178,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/glass/util/SafeBroadcastReceiver;->unregister(Landroid/content/Context;)V
 
-    .line 105
+    .line 106
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     const/4 v1, 0x0
@@ -186,12 +186,12 @@
     #setter for: Lcom/google/glass/companion/RemoteCompanionProxy;->isCompanionConnected:Z
     invoke-static {v0, v1}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$102(Lcom/google/glass/companion/RemoteCompanionProxy;Z)Z
 
-    .line 106
+    .line 107
     iget-object v0, p0, Lcom/google/glass/companion/RemoteCompanionProxy$2;->this$0:Lcom/google/glass/companion/RemoteCompanionProxy;
 
     #calls: Lcom/google/glass/companion/RemoteCompanionProxy;->notifyCompanionStateChange()V
     invoke-static {v0}, Lcom/google/glass/companion/RemoteCompanionProxy;->access$400(Lcom/google/glass/companion/RemoteCompanionProxy;)V
 
-    .line 107
+    .line 108
     return-void
 .end method

@@ -56,19 +56,19 @@
     .locals 2
 
     .prologue
-    .line 96
+    .line 97
     new-instance v0, Lcom/google/glass/proto/MapRenderResponse$1;
 
     invoke-direct {v0}, Lcom/google/glass/proto/MapRenderResponse$1;-><init>()V
 
     sput-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
-    .line 245
+    .line 246
     const/4 v0, 0x0
 
     sput-object v0, Lcom/google/glass/proto/MapRenderResponse;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 610
+    .line 614
     new-instance v0, Lcom/google/glass/proto/MapRenderResponse;
 
     const/4 v1, 0x1
@@ -77,17 +77,17 @@
 
     sput-object v0, Lcom/google/glass/proto/MapRenderResponse;->defaultInstance:Lcom/google/glass/proto/MapRenderResponse;
 
-    .line 611
+    .line 615
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->defaultInstance:Lcom/google/glass/proto/MapRenderResponse;
 
     invoke-direct {v0}, Lcom/google/glass/proto/MapRenderResponse;->initFields()V
 
-    .line 612
+    .line 616
     return-void
 .end method
 
 .method private constructor <init>(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)V
-    .locals 7
+    .locals 8
     .parameter "input"
     .parameter "extensionRegistry"
     .annotation system Ldalvik/annotation/Throws;
@@ -97,82 +97,84 @@
     .end annotation
 
     .prologue
-    const/4 v5, -0x1
+    const/4 v6, -0x1
 
     .line 42
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 193
-    iput-byte v5, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
+    .line 194
+    iput-byte v6, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
 
-    .line 218
-    iput v5, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedSerializedSize:I
+    .line 219
+    iput v6, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedSerializedSize:I
 
     .line 43
     invoke-direct {p0}, Lcom/google/glass/proto/MapRenderResponse;->initFields()V
 
     .line 44
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
     .line 45
-    .local v2, mutable_bitField0_:I
+    .local v3, mutable_bitField0_:I
     invoke-static {}, Lcom/google/protobuf/UnknownFieldSet;->newBuilder()Lcom/google/protobuf/UnknownFieldSet$Builder;
 
-    move-result-object v4
+    move-result-object v5
 
     .line 48
-    .local v4, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
-    const/4 v0, 0x0
+    .local v5, unknownFields:Lcom/google/protobuf/UnknownFieldSet$Builder;
+    const/4 v1, 0x0
 
     .line 49
-    .local v0, done:Z
+    .local v1, done:Z
     :cond_0
     :goto_0
-    if-nez v0, :cond_1
+    if-nez v1, :cond_1
 
     .line 50
     :try_start_0
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readTag()I
 
-    move-result v3
+    move-result v4
 
     .line 51
-    .local v3, tag:I
-    sparse-switch v3, :sswitch_data_0
+    .local v4, tag:I
+    sparse-switch v4, :sswitch_data_0
 
     .line 56
-    invoke-virtual {p0, p1, v4, p2, v3}, Lcom/google/glass/proto/MapRenderResponse;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
+    invoke-virtual {p0, p1, v5, p2, v4}, Lcom/google/glass/proto/MapRenderResponse;->parseUnknownField(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/UnknownFieldSet$Builder;Lcom/google/protobuf/ExtensionRegistryLite;I)Z
 
-    move-result v5
+    move-result v6
 
-    if-nez v5, :cond_0
+    if-nez v6, :cond_0
 
     .line 58
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     goto :goto_0
 
     .line 53
     :sswitch_0
-    const/4 v0, 0x1
+    const/4 v1, 0x1
 
     .line 54
     goto :goto_0
 
     .line 63
     :sswitch_1
-    iget v5, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x1
-
-    iput v5, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
-
-    .line 64
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
+    .line 64
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    iget v6, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x1
+
+    iput v6, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
+
+    .line 65
+    iput-object v0, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
@@ -180,54 +182,55 @@
 
     goto :goto_0
 
-    .line 74
-    .end local v3           #tag:I
-    :catch_0
-    move-exception v1
-
     .line 75
-    .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v4           #tag:I
+    :catch_0
+    move-exception v2
+
+    .line 76
+    .local v2, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
-    invoke-virtual {v1, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 80
-    .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
-    :catchall_0
-    move-exception v5
-
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+    invoke-virtual {v2, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    iput-object v6, p0, Lcom/google/glass/proto/MapRenderResponse;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+    throw v6
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 81
+    .end local v2           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
+    :catchall_0
+    move-exception v6
+
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v7
+
+    iput-object v7, p0, Lcom/google/glass/proto/MapRenderResponse;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 82
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->makeExtensionsImmutable()V
 
-    throw v5
-
-    .line 68
-    .restart local v3       #tag:I
-    :sswitch_2
-    :try_start_2
-    iget v5, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
-
-    or-int/lit8 v5, v5, 0x2
-
-    iput v5, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
+    throw v6
 
     .line 69
+    .restart local v4       #tag:I
+    :sswitch_2
+    :try_start_2
+    iget v6, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
+
+    or-int/lit8 v6, v6, 0x2
+
+    iput v6, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
+
+    .line 70
     invoke-virtual {p1}, Lcom/google/protobuf/CodedInputStream;->readBytes()Lcom/google/protobuf/ByteString;
 
-    move-result-object v5
+    move-result-object v6
 
-    iput-object v5, p0, Lcom/google/glass/proto/MapRenderResponse;->image_:Lcom/google/protobuf/ByteString;
+    iput-object v6, p0, Lcom/google/glass/proto/MapRenderResponse;->image_:Lcom/google/protobuf/ByteString;
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_2 .. :try_end_2} :catch_0
@@ -235,43 +238,43 @@
 
     goto :goto_0
 
-    .line 76
-    .end local v3           #tag:I
-    :catch_1
-    move-exception v1
-
     .line 77
-    .local v1, e:Ljava/io/IOException;
-    :try_start_3
-    new-instance v5, Lcom/google/protobuf/InvalidProtocolBufferException;
+    .end local v4           #tag:I
+    :catch_1
+    move-exception v2
 
-    invoke-virtual {v1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    .line 78
+    .local v2, e:Ljava/io/IOException;
+    :try_start_3
+    new-instance v6, Lcom/google/protobuf/InvalidProtocolBufferException;
+
+    invoke-virtual {v2}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v6, v7}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v6, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
 
     move-result-object v6
 
-    invoke-direct {v5, v6}, Lcom/google/protobuf/InvalidProtocolBufferException;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v5, p0}, Lcom/google/protobuf/InvalidProtocolBufferException;->setUnfinishedMessage(Lcom/google/protobuf/MessageLite;)Lcom/google/protobuf/InvalidProtocolBufferException;
-
-    move-result-object v5
-
-    throw v5
+    throw v6
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 80
-    .end local v1           #e:Ljava/io/IOException;
-    :cond_1
-    invoke-virtual {v4}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/google/glass/proto/MapRenderResponse;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
-
     .line 81
+    .end local v2           #e:Ljava/io/IOException;
+    :cond_1
+    invoke-virtual {v5}, Lcom/google/protobuf/UnknownFieldSet$Builder;->build()Lcom/google/protobuf/UnknownFieldSet;
+
+    move-result-object v6
+
+    iput-object v6, p0, Lcom/google/glass/proto/MapRenderResponse;->unknownFields:Lcom/google/protobuf/UnknownFieldSet;
+
+    .line 82
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->makeExtensionsImmutable()V
 
-    .line 83
+    .line 84
     return-void
 
     .line 51
@@ -319,10 +322,10 @@
     .line 19
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;)V
 
-    .line 193
+    .line 194
     iput-byte v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
 
-    .line 218
+    .line 219
     iput v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedSerializedSize:I
 
     .line 20
@@ -358,10 +361,10 @@
     .line 22
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage;-><init>()V
 
-    .line 193
+    .line 194
     iput-byte v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
 
-    .line 218
+    .line 219
     iput v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedSerializedSize:I
 
     .line 22
@@ -445,7 +448,7 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 87
     sget-object v0, Lcom/google/glass/proto/MapRenderingService;->internal_static_glass_proto_MapRenderResponse_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -455,17 +458,17 @@
     .locals 1
 
     .prologue
-    .line 190
+    .line 191
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
 
-    .line 191
+    .line 192
     sget-object v0, Lcom/google/protobuf/ByteString;->EMPTY:Lcom/google/protobuf/ByteString;
 
     iput-object v0, p0, Lcom/google/glass/proto/MapRenderResponse;->image_:Lcom/google/protobuf/ByteString;
 
-    .line 192
+    .line 193
     return-void
 .end method
 
@@ -473,7 +476,7 @@
     .locals 1
 
     .prologue
-    .line 307
+    .line 308
     #calls: Lcom/google/glass/proto/MapRenderResponse$Builder;->create()Lcom/google/glass/proto/MapRenderResponse$Builder;
     invoke-static {}, Lcom/google/glass/proto/MapRenderResponse$Builder;->access$100()Lcom/google/glass/proto/MapRenderResponse$Builder;
 
@@ -487,7 +490,7 @@
     .parameter "prototype"
 
     .prologue
-    .line 310
+    .line 311
     invoke-static {}, Lcom/google/glass/proto/MapRenderResponse;->newBuilder()Lcom/google/glass/proto/MapRenderResponse$Builder;
 
     move-result-object v0
@@ -509,7 +512,7 @@
     .end annotation
 
     .prologue
-    .line 287
+    .line 288
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -532,7 +535,7 @@
     .end annotation
 
     .prologue
-    .line 293
+    .line 294
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseDelimitedFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -554,7 +557,7 @@
     .end annotation
 
     .prologue
-    .line 257
+    .line 258
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;)Ljava/lang/Object;
@@ -577,7 +580,7 @@
     .end annotation
 
     .prologue
-    .line 263
+    .line 264
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/ByteString;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -599,7 +602,7 @@
     .end annotation
 
     .prologue
-    .line 298
+    .line 299
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;)Ljava/lang/Object;
@@ -622,7 +625,7 @@
     .end annotation
 
     .prologue
-    .line 304
+    .line 305
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -644,7 +647,7 @@
     .end annotation
 
     .prologue
-    .line 277
+    .line 278
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;)Ljava/lang/Object;
@@ -667,7 +670,7 @@
     .end annotation
 
     .prologue
-    .line 283
+    .line 284
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom(Ljava/io/InputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -689,7 +692,7 @@
     .end annotation
 
     .prologue
-    .line 267
+    .line 268
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0}, Lcom/google/protobuf/Parser;->parseFrom([B)Ljava/lang/Object;
@@ -712,7 +715,7 @@
     .end annotation
 
     .prologue
-    .line 273
+    .line 274
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     invoke-interface {v0, p0, p1}, Lcom/google/protobuf/Parser;->parseFrom([BLcom/google/protobuf/ExtensionRegistryLite;)Ljava/lang/Object;
@@ -764,19 +767,19 @@
     .locals 4
 
     .prologue
-    .line 132
+    .line 133
     iget-object v1, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
 
-    .line 133
+    .line 134
     .local v1, ref:Ljava/lang/Object;
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_0
 
-    .line 134
+    .line 135
     check-cast v1, Ljava/lang/String;
 
-    .line 142
+    .line 143
     .end local v1           #ref:Ljava/lang/Object;
     :goto_0
     return-object v1
@@ -785,16 +788,16 @@
     :cond_0
     move-object v0, v1
 
-    .line 136
+    .line 137
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .line 138
+    .line 139
     .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 139
+    .line 140
     .local v2, s:Ljava/lang/String;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
@@ -802,13 +805,13 @@
 
     if-eqz v3, :cond_1
 
-    .line 140
+    .line 141
     iput-object v2, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
 
     :cond_1
     move-object v1, v2
 
-    .line 142
+    .line 143
     goto :goto_0
 .end method
 
@@ -816,16 +819,16 @@
     .locals 3
 
     .prologue
-    .line 154
+    .line 155
     iget-object v1, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
 
-    .line 155
+    .line 156
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 156
+    .line 157
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -833,11 +836,11 @@
 
     move-result-object v0
 
-    .line 159
+    .line 160
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/glass/proto/MapRenderResponse;->id_:Ljava/lang/Object;
 
-    .line 162
+    .line 163
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -856,7 +859,7 @@
     .locals 1
 
     .prologue
-    .line 186
+    .line 187
     iget-object v0, p0, Lcom/google/glass/proto/MapRenderResponse;->image_:Lcom/google/protobuf/ByteString;
 
     return-object v0
@@ -875,7 +878,7 @@
     .end annotation
 
     .prologue
-    .line 108
+    .line 109
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->PARSER:Lcom/google/protobuf/Parser;
 
     return-object v0
@@ -889,10 +892,10 @@
 
     const/4 v3, 0x1
 
-    .line 220
+    .line 221
     iget v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedSerializedSize:I
 
-    .line 221
+    .line 222
     .local v0, size:I
     const/4 v2, -0x1
 
@@ -900,26 +903,26 @@
 
     move v1, v0
 
-    .line 234
+    .line 235
     .end local v0           #size:I
     .local v1, size:I
     :goto_0
     return v1
 
-    .line 223
+    .line 224
     .end local v1           #size:I
     .restart local v0       #size:I
     :cond_0
     const/4 v0, 0x0
 
-    .line 224
+    .line 225
     iget v2, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
 
     and-int/lit8 v2, v2, 0x1
 
     if-ne v2, v3, :cond_1
 
-    .line 225
+    .line 226
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->getIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v2
@@ -930,7 +933,7 @@
 
     add-int/2addr v0, v2
 
-    .line 228
+    .line 229
     :cond_1
     iget v2, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
 
@@ -938,7 +941,7 @@
 
     if-ne v2, v4, :cond_2
 
-    .line 229
+    .line 230
     iget-object v2, p0, Lcom/google/glass/proto/MapRenderResponse;->image_:Lcom/google/protobuf/ByteString;
 
     invoke-static {v4, v2}, Lcom/google/protobuf/CodedOutputStream;->computeBytesSize(ILcom/google/protobuf/ByteString;)I
@@ -947,7 +950,7 @@
 
     add-int/2addr v0, v2
 
-    .line 232
+    .line 233
     :cond_2
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -959,12 +962,12 @@
 
     add-int/2addr v0, v2
 
-    .line 233
+    .line 234
     iput v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedSerializedSize:I
 
     move v1, v0
 
-    .line 234
+    .line 235
     .end local v0           #size:I
     .restart local v1       #size:I
     goto :goto_0
@@ -986,7 +989,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 122
+    .line 123
     iget v1, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1006,7 +1009,7 @@
     .locals 2
 
     .prologue
-    .line 176
+    .line 177
     iget v0, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1030,7 +1033,7 @@
     .locals 3
 
     .prologue
-    .line 91
+    .line 92
     sget-object v0, Lcom/google/glass/proto/MapRenderingService;->internal_static_glass_proto_MapRenderResponse_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/glass/proto/MapRenderResponse;
@@ -1048,12 +1051,12 @@
     .locals 1
 
     .prologue
-    .line 248
+    .line 249
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
     if-nez v0, :cond_0
 
-    .line 249
+    .line 250
     const-string v0, "com.google.glass.proto.MutableMapRenderingService$MapRenderResponse"
 
     invoke-static {v0}, Lcom/google/glass/proto/MapRenderResponse;->internalMutableDefault(Ljava/lang/String;)Lcom/google/protobuf/MutableMessage;
@@ -1062,7 +1065,7 @@
 
     sput-object v0, Lcom/google/glass/proto/MapRenderResponse;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
-    .line 251
+    .line 252
     :cond_0
     sget-object v0, Lcom/google/glass/proto/MapRenderResponse;->mutableDefault:Lcom/google/protobuf/MutableMessage;
 
@@ -1077,10 +1080,10 @@
 
     const/4 v1, 0x1
 
-    .line 195
+    .line 196
     iget-byte v0, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
 
-    .line 196
+    .line 197
     .local v0, isInitialized:B
     const/4 v3, -0x1
 
@@ -1088,17 +1091,17 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 203
+    .line 204
     :goto_0
     return v1
 
     :cond_0
     move v1, v2
 
-    .line 196
+    .line 197
     goto :goto_0
 
-    .line 198
+    .line 199
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->hasId()Z
 
@@ -1106,15 +1109,15 @@
 
     if-nez v3, :cond_2
 
-    .line 199
+    .line 200
     iput-byte v2, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
 
     move v1, v2
 
-    .line 200
+    .line 201
     goto :goto_0
 
-    .line 202
+    .line 203
     :cond_2
     iput-byte v1, p0, Lcom/google/glass/proto/MapRenderResponse;->memoizedIsInitialized:B
 
@@ -1125,7 +1128,7 @@
     .locals 1
 
     .prologue
-    .line 308
+    .line 309
     invoke-static {}, Lcom/google/glass/proto/MapRenderResponse;->newBuilder()Lcom/google/glass/proto/MapRenderResponse$Builder;
 
     move-result-object v0
@@ -1138,14 +1141,14 @@
     .parameter "parent"
 
     .prologue
-    .line 317
+    .line 318
     new-instance v0, Lcom/google/glass/proto/MapRenderResponse$Builder;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p1, v1}, Lcom/google/glass/proto/MapRenderResponse$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/glass/proto/MapRenderResponse$1;)V
 
-    .line 318
+    .line 319
     .local v0, builder:Lcom/google/glass/proto/MapRenderResponse$Builder;
     return-object v0
 .end method
@@ -1191,7 +1194,7 @@
     .locals 1
 
     .prologue
-    .line 312
+    .line 313
     invoke-static {p0}, Lcom/google/glass/proto/MapRenderResponse;->newBuilder(Lcom/google/glass/proto/MapRenderResponse;)Lcom/google/glass/proto/MapRenderResponse$Builder;
 
     move-result-object v0
@@ -1232,7 +1235,7 @@
     .end annotation
 
     .prologue
-    .line 241
+    .line 242
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage;->writeReplace()Ljava/lang/Object;
 
     move-result-object v0
@@ -1254,24 +1257,24 @@
 
     const/4 v1, 0x1
 
-    .line 208
+    .line 209
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->getSerializedSize()I
 
-    .line 209
+    .line 210
     iget v0, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 210
+    .line 211
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->getIdBytes()Lcom/google/protobuf/ByteString;
 
     move-result-object v0
 
     invoke-virtual {p1, v1, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 212
+    .line 213
     :cond_0
     iget v0, p0, Lcom/google/glass/proto/MapRenderResponse;->bitField0_:I
 
@@ -1279,12 +1282,12 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 213
+    .line 214
     iget-object v0, p0, Lcom/google/glass/proto/MapRenderResponse;->image_:Lcom/google/protobuf/ByteString;
 
     invoke-virtual {p1, v2, v0}, Lcom/google/protobuf/CodedOutputStream;->writeBytes(ILcom/google/protobuf/ByteString;)V
 
-    .line 215
+    .line 216
     :cond_1
     invoke-virtual {p0}, Lcom/google/glass/proto/MapRenderResponse;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -1292,6 +1295,6 @@
 
     invoke-virtual {v0, p1}, Lcom/google/protobuf/UnknownFieldSet;->writeTo(Lcom/google/protobuf/CodedOutputStream;)V
 
-    .line 216
+    .line 217
     return-void
 .end method

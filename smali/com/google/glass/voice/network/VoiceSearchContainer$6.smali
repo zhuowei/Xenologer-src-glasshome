@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 333
+    .line 339
     iput-object p1, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$6;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -51,7 +51,7 @@
     .locals 1
 
     .prologue
-    .line 336
+    .line 342
     iget-object v0, p0, Lcom/google/glass/voice/network/VoiceSearchContainer$6;->this$0:Lcom/google/glass/voice/network/VoiceSearchContainer;
 
     #getter for: Lcom/google/glass/voice/network/VoiceSearchContainer;->config:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
@@ -70,7 +70,7 @@
     .locals 1
 
     .prologue
-    .line 333
+    .line 339
     invoke-virtual {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer$6;->get()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$PairHttpServerInfo;
 
     move-result-object v0

@@ -68,7 +68,7 @@
 
     const/4 v4, 0x1
 
-    .line 42
+    .line 41
     new-instance v0, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v1, "HANGOUT"
@@ -81,7 +81,7 @@
 
     sput-object v0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->HANGOUT:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 43
+    .line 42
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "GLASSCAST"
@@ -98,7 +98,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->GLASSCAST:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 44
+    .line 43
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "GEO"
@@ -115,7 +115,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->GEO:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 45
+    .line 44
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "SPEAK"
@@ -132,7 +132,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->SPEAK:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 46
+    .line 45
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "PHONE"
@@ -149,7 +149,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->PHONE:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 47
+    .line 46
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "LINK"
@@ -166,7 +166,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->LINK:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 48
+    .line 47
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "EMAIL"
@@ -183,7 +183,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->EMAIL:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 49
+    .line 48
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "GUIDE"
@@ -200,7 +200,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->GUIDE:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 50
+    .line 49
     new-instance v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     const-string v6, "SMS"
@@ -217,7 +217,7 @@
 
     sput-object v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->SMS:Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
-    .line 41
+    .line 40
     const/16 v0, 0x9
 
     new-array v0, v0, [Lcom/google/glass/home/camera/QrCodeHandler$Type;
@@ -289,10 +289,10 @@
     .end annotation
 
     .prologue
-    .line 56
+    .line 55
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 57
+    .line 56
     const/4 v0, 0x2
 
     invoke-static {p3, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
@@ -301,13 +301,13 @@
 
     iput-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->prefixPattern:Ljava/util/regex/Pattern;
 
-    .line 58
+    .line 57
     iput-boolean p4, p0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->requiresLab:Z
 
-    .line 59
+    .line 58
     iput-object p5, p0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->userEvent:Ljava/lang/String;
 
-    .line 60
+    .line 59
     return-void
 .end method
 
@@ -316,7 +316,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 40
     iget-boolean v0, p0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->requiresLab:Z
 
     return v0
@@ -327,7 +327,7 @@
     .parameter "x0"
 
     .prologue
-    .line 41
+    .line 40
     iget-object v0, p0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->userEvent:Ljava/lang/String;
 
     return-object v0
@@ -352,10 +352,10 @@
     .prologue
     const/4 v7, 0x0
 
-    .line 68
+    .line 67
     iget-object v4, p0, Lcom/google/android/libraries/barhopper/Barcode;->rawValue:Ljava/lang/String;
 
-    .line 69
+    .line 68
     .local v4, rawValue:Ljava/lang/String;
     invoke-static {}, Lcom/google/glass/home/camera/QrCodeHandler$Type;->values()[Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
@@ -373,7 +373,7 @@
 
     aget-object v5, v0, v1
 
-    .line 70
+    .line 69
     .local v5, type:Lcom/google/glass/home/camera/QrCodeHandler$Type;
     iget-object v8, v5, Lcom/google/glass/home/camera/QrCodeHandler$Type;->prefixPattern:Ljava/util/regex/Pattern;
 
@@ -381,7 +381,7 @@
 
     move-result-object v3
 
-    .line 71
+    .line 70
     .local v3, matcher:Ljava/util/regex/Matcher;
     invoke-virtual {v3}, Ljava/util/regex/Matcher;->find()Z
 
@@ -389,14 +389,14 @@
 
     if-eqz v8, :cond_2
 
-    .line 72
+    .line 71
     const/4 v8, 0x1
 
     invoke-virtual {v3, v8}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 73
+    .line 72
     .local v6, value:Ljava/lang/String;
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -404,7 +404,7 @@
 
     if-eqz v8, :cond_1
 
-    .line 81
+    .line 80
     .end local v3           #matcher:Ljava/util/regex/Matcher;
     .end local v5           #type:Lcom/google/glass/home/camera/QrCodeHandler$Type;
     .end local v6           #value:Ljava/lang/String;
@@ -412,7 +412,7 @@
     :goto_1
     return-object v7
 
-    .line 76
+    .line 75
     .restart local v3       #matcher:Ljava/util/regex/Matcher;
     .restart local v5       #type:Lcom/google/glass/home/camera/QrCodeHandler$Type;
     .restart local v6       #value:Ljava/lang/String;
@@ -423,7 +423,7 @@
 
     goto :goto_1
 
-    .line 69
+    .line 68
     .end local v6           #value:Ljava/lang/String;
     :cond_2
     add-int/lit8 v1, v1, 0x1
@@ -436,7 +436,7 @@
     .parameter "name"
 
     .prologue
-    .line 41
+    .line 40
     const-class v0, Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -452,7 +452,7 @@
     .locals 1
 
     .prologue
-    .line 41
+    .line 40
     sget-object v0, Lcom/google/glass/home/camera/QrCodeHandler$Type;->$VALUES:[Lcom/google/glass/home/camera/QrCodeHandler$Type;
 
     invoke-virtual {v0}, [Lcom/google/glass/home/camera/QrCodeHandler$Type;->clone()Ljava/lang/Object;

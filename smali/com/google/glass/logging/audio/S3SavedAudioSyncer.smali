@@ -55,7 +55,7 @@
     .locals 3
 
     .prologue
-    .line 67
+    .line 66
     const-class v0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -64,7 +64,7 @@
 
     sput-object v0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->TAG:Ljava/lang/String;
 
-    .line 97
+    .line 96
     sget-object v0, Ljava/util/concurrent/TimeUnit;->HOURS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v1, 0x2
@@ -98,25 +98,25 @@
     .end annotation
 
     .prologue
-    .line 100
+    .line 99
     .local p2, headers:Ljava/util/Map;,"Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
+    .line 83
     const-wide/high16 v0, -0x8000
 
     iput-wide v0, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->installIdInvalidateTime:J
 
-    .line 101
+    .line 100
     iput-object p1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->magicHeader:Ljava/lang/String;
 
-    .line 102
+    .line 101
     iput-object p2, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->httpHeaders:Ljava/util/Map;
 
-    .line 103
+    .line 102
     iput-object p3, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->httpRequestDispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
-    .line 104
+    .line 103
     return-void
 .end method
 
@@ -125,7 +125,7 @@
     .parameter "clientLog"
 
     .prologue
-    .line 255
+    .line 254
     invoke-static {}, Lcom/google/android/speech/message/S3RequestUtils;->createBaseS3Request()Lcom/google/speech/s3/S3$S3Request;
 
     move-result-object v0
@@ -149,7 +149,7 @@
     .locals 2
 
     .prologue
-    .line 251
+    .line 250
     invoke-static {}, Lcom/google/android/speech/message/S3RequestUtils;->createBaseS3Request()Lcom/google/speech/s3/S3$S3Request;
 
     move-result-object v0
@@ -169,12 +169,12 @@
     .parameter "httpRequestDispatcher"
 
     .prologue
-    .line 108
+    .line 107
     invoke-static {p0}, Lcom/google/glass/voice/network/VoiceSearchContainer;->getConfiguration(Landroid/content/Context;)Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
 
     move-result-object v0
 
-    .line 109
+    .line 108
     .local v0, configuration:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;
     new-instance v1, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;
 
@@ -207,7 +207,7 @@
     .end annotation
 
     .prologue
-    .line 129
+    .line 128
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v3
@@ -216,17 +216,17 @@
 
     move-result-object v2
 
-    .line 131
+    .line 130
     .local v2, requestId:Ljava/lang/String;
     invoke-direct {p0, p1, p2, v2}, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->getRecognizeRequestBody(Landroid/content/Context;Lcom/google/glass/logging/audio/SavedAudioRecord;Ljava/lang/String;)[B
 
     move-result-object v1
 
-    .line 132
+    .line 131
     .local v1, recognizeRequestBody:[B
     invoke-direct {p0, v1}, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->makeRequest([B)V
 
-    .line 134
+    .line 133
     invoke-virtual {p2}, Lcom/google/glass/logging/audio/SavedAudioRecord;->getRecognizedCommands()Ljava/lang/String;
 
     move-result-object v3
@@ -235,25 +235,27 @@
 
     move-result-object v0
 
-    .line 136
+    .line 135
     .local v0, logRequestBody:[B
     invoke-direct {p0, v0}, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->makeRequest([B)V
 
-    .line 137
+    .line 136
     return-void
 .end method
 
 .method private getAppVersion(Landroid/content/Context;)Ljava/lang/String;
-    .locals 4
+    .locals 5
     .parameter "context"
 
     .prologue
-    .line 355
+    const/4 v4, 0x0
+
+    .line 354
     iget-object v1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->appVersion:Ljava/lang/String;
 
     if-nez v1, :cond_0
 
-    .line 357
+    .line 356
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -275,7 +277,7 @@
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 364
+    .line 363
     :cond_0
     :goto_0
     iget-object v1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->appVersion:Ljava/lang/String;
@@ -287,11 +289,11 @@
     :goto_1
     return-object v1
 
-    .line 359
+    .line 358
     :catch_0
     move-exception v0
 
-    .line 360
+    .line 359
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     sget-object v1, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->TAG:Ljava/lang/String;
 
@@ -299,11 +301,17 @@
 
     move-result-object v2
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const/4 v3, 0x1
+
+    new-array v3, v3, [Ljava/lang/Object;
+
+    aput-object v0, v3, v4
+
+    invoke-static {v1, v2, v3}, Lcom/google/glass/util/Log;->e(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 364
+    .line 363
     .end local v0           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :cond_1
     iget-object v1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->appVersion:Ljava/lang/String;
@@ -328,30 +336,30 @@
     .end annotation
 
     .prologue
-    .line 343
+    .line 342
     invoke-static {}, Lcom/google/common/collect/Maps;->newHashMap()Ljava/util/HashMap;
 
     move-result-object v0
 
-    .line 344
+    .line 343
     .local v0, headers:Ljava/util/HashMap;,"Ljava/util/HashMap<Ljava/lang/String;Ljava/lang/String;>;"
     invoke-virtual {p0}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$Configuration;->getSingleHttpServerInfo()Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;
 
     move-result-object v3
 
-    .line 345
+    .line 344
     .local v3, serverInfo:Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;
     invoke-virtual {v3}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->getHttpHeaderKeyList()Ljava/util/List;
 
     move-result-object v2
 
-    .line 346
+    .line 345
     .local v2, keys:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {v3}, Lcom/google/wireless/voicesearch/proto/GstaticConfiguration$HttpServerInfo;->getHttpHeaderValueList()Ljava/util/List;
 
     move-result-object v4
 
-    .line 347
+    .line 346
     .local v4, values:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     const/4 v1, 0x0
 
@@ -363,7 +371,7 @@
 
     if-ge v1, v5, :cond_0
 
-    .line 348
+    .line 347
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -374,12 +382,12 @@
 
     invoke-virtual {v0, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 347
+    .line 346
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 350
+    .line 349
     :cond_0
     return-object v0
 .end method
@@ -396,24 +404,24 @@
     .end annotation
 
     .prologue
-    .line 208
+    .line 207
     new-instance v5, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;
 
     invoke-direct {v5}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;-><init>()V
 
-    .line 209
+    .line 208
     .local v5, recognizerLog:Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;
     invoke-static {p2}, Lcom/google/glass/voice/AlignmentInfo;->parseRecognizedCommandsString(Ljava/lang/String;)Ljava/util/List;
 
     move-result-object v1
 
-    .line 212
+    .line 211
     .local v1, alignmentInfos:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/AlignmentInfo;>;"
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 213
+    .line 212
     .local v3, concatenatedHypothesis:Ljava/lang/StringBuilder;
     invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -433,13 +441,13 @@
 
     check-cast v0, Lcom/google/glass/voice/AlignmentInfo;
 
-    .line 214
+    .line 213
     .local v0, alignmentInfo:Lcom/google/glass/voice/AlignmentInfo;
     new-instance v6, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;
 
     invoke-direct {v6}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;-><init>()V
 
-    .line 215
+    .line 214
     .local v6, recognizerSegmentLog:Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;
     new-instance v8, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerHypothesisLog;
 
@@ -453,44 +461,44 @@
 
     invoke-virtual {v6, v8}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;->addHypothesis(Lcom/google/speech/logs/RecognizerOuterClass$RecognizerHypothesisLog;)Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;
 
-    .line 217
+    .line 216
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
     move-result v8
 
     if-lez v8, :cond_0
 
-    .line 218
+    .line 217
     const-string v8, " "
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 220
+    .line 219
     :cond_0
     iget-object v8, v0, Lcom/google/glass/voice/AlignmentInfo;->text:Ljava/lang/String;
 
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 221
+    .line 220
     iget-wide v8, v0, Lcom/google/glass/voice/AlignmentInfo;->startMillis:J
 
     long-to-int v8, v8
 
     invoke-virtual {v6, v8}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;->setRelativeStartTimeMs(I)Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;
 
-    .line 222
+    .line 221
     iget-wide v8, v0, Lcom/google/glass/voice/AlignmentInfo;->endMillis:J
 
     long-to-int v8, v8
 
     invoke-virtual {v6, v8}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;->setRelativeEndTimeMs(I)Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;
 
-    .line 223
+    .line 222
     invoke-virtual {v5, v6}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;->addRecognizerSegment(Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;)Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;
 
     goto :goto_0
 
-    .line 226
+    .line 225
     .end local v0           #alignmentInfo:Lcom/google/glass/voice/AlignmentInfo;
     .end local v6           #recognizerSegmentLog:Lcom/google/speech/logs/RecognizerOuterClass$RecognizerSegmentLog;
     :cond_1
@@ -508,24 +516,24 @@
 
     invoke-virtual {v5, v8}, Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;->setTopHypothesis(Lcom/google/speech/logs/RecognizerOuterClass$RecognizerHypothesisLog;)Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;
 
-    .line 228
+    .line 227
     new-instance v2, Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;
 
     invoke-direct {v2}, Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;-><init>()V
 
-    .line 229
+    .line 228
     .local v2, clientEvent:Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;
     invoke-virtual {v2, p3}, Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;->setRequestId(Ljava/lang/String;)Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;
 
-    .line 230
+    .line 229
     invoke-virtual {v2, v5}, Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;->setEmbeddedRecognizerLog(Lcom/google/speech/logs/RecognizerOuterClass$RecognizerLog;)Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;
 
-    .line 231
+    .line 230
     const/16 v8, 0x34
 
     invoke-virtual {v2, v8}, Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;->setEventType(I)Lcom/google/speech/logs/VoicesearchClientLogProto$ClientEvent;
 
-    .line 234
+    .line 233
     new-instance v8, Lcom/google/speech/logs/VoicesearchClientLogProto$VoiceSearchClientLog;
 
     invoke-direct {v8}, Lcom/google/speech/logs/VoicesearchClientLogProto$VoiceSearchClientLog;-><init>()V
@@ -592,7 +600,7 @@
 
     move-result-object v7
 
-    .line 245
+    .line 244
     .local v7, voiceSearchClientLog:Lcom/google/speech/logs/VoicesearchClientLogProto$VoiceSearchClientLog;
     iget-object v8, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->magicHeader:Ljava/lang/String;
 
@@ -643,12 +651,12 @@
     .end annotation
 
     .prologue
-    .line 142
+    .line 141
     invoke-virtual {p0, p1, p2, p3}, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->createVoiceRecognizeRequest(Landroid/content/Context;Lcom/google/glass/logging/audio/SavedAudioRecord;Ljava/lang/String;)Lcom/google/speech/s3/S3$S3Request;
 
     move-result-object v1
 
-    .line 143
+    .line 142
     .local v1, initialRequest:Lcom/google/speech/s3/S3$S3Request;
     invoke-virtual {p2}, Lcom/google/glass/logging/audio/SavedAudioRecord;->getTimestamp()J
 
@@ -656,7 +664,7 @@
 
     invoke-virtual {p0, v1, v2, v3}, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->setInstallId(Lcom/google/speech/s3/S3$S3Request;J)V
 
-    .line 145
+    .line 144
     new-instance v2, Ljava/io/File;
 
     invoke-virtual {p2}, Lcom/google/glass/logging/audio/SavedAudioRecord;->getFilename()Ljava/lang/String;
@@ -669,7 +677,7 @@
 
     move-result-object v0
 
-    .line 146
+    .line 145
     .local v0, audioBytes:[B
     iget-object v2, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->magicHeader:Ljava/lang/String;
 
@@ -719,24 +727,24 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 265
+    .line 264
     new-instance v0, Ljava/io/ByteArrayOutputStream;
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    .line 266
+    .line 265
     .local v0, baos:Ljava/io/ByteArrayOutputStream;
     new-instance v3, Lcom/google/android/speech/message/S3RequestStream;
 
     invoke-direct {v3, v0, p0, v4}, Lcom/google/android/speech/message/S3RequestStream;-><init>(Ljava/io/OutputStream;Ljava/lang/String;Z)V
 
-    .line 267
+    .line 266
     .local v3, requestStream:Lcom/google/android/speech/message/S3RequestStream;
     invoke-static {p1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v2
 
-    .line 268
+    .line 267
     .local v2, requestList:Ljava/util/List;,"Ljava/util/List<Lcom/google/speech/s3/S3$S3Request;>;"
     invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -746,7 +754,7 @@
 
     invoke-virtual {v3, v4}, Lcom/google/android/speech/message/S3RequestStream;->writeHeader(Lcom/google/speech/s3/S3$S3Request;)V
 
-    .line 269
+    .line 268
     const/4 v1, 0x1
 
     .local v1, i:I
@@ -757,7 +765,7 @@
 
     if-ge v1, v4, :cond_0
 
-    .line 270
+    .line 269
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -766,19 +774,19 @@
 
     invoke-virtual {v3, v4}, Lcom/google/android/speech/message/S3RequestStream;->write(Lcom/google/speech/s3/S3$S3Request;)V
 
-    .line 269
+    .line 268
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 272
+    .line 271
     :cond_0
     invoke-virtual {v3}, Lcom/google/android/speech/message/S3RequestStream;->close()V
 
-    .line 273
+    .line 272
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->flush()V
 
-    .line 274
+    .line 273
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
 
     move-result-object v4
@@ -791,7 +799,7 @@
     .parameter "context"
 
     .prologue
-    .line 169
+    .line 168
     new-instance v0, Lcom/google/speech/s3/S3$S3ClientInfo;
 
     invoke-direct {v0}, Lcom/google/speech/s3/S3$S3ClientInfo;-><init>()V
@@ -837,7 +845,7 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 188
+    .line 187
     new-instance v0, Lcom/google/speech/speech/s3/Recognizer$S3RecognizerInfo;
 
     invoke-direct {v0}, Lcom/google/speech/speech/s3/Recognizer$S3RecognizerInfo;-><init>()V
@@ -903,7 +911,7 @@
     .locals 3
 
     .prologue
-    .line 178
+    .line 177
     new-instance v1, Lcom/google/speech/s3/S3$Locale;
 
     invoke-direct {v1}, Lcom/google/speech/s3/S3$Locale;-><init>()V
@@ -926,7 +934,7 @@
 
     move-result-object v0
 
-    .line 182
+    .line 181
     .local v0, locale:Lcom/google/speech/s3/S3$Locale;
     new-instance v1, Lcom/google/speech/s3/S3$S3UserInfo;
 
@@ -944,11 +952,13 @@
 .end method
 
 .method private static logResponses([B)V
-    .locals 8
+    .locals 10
     .parameter "body"
 
     .prologue
-    .line 320
+    const/4 v8, 0x1
+
+    .line 319
     new-instance v5, Lcom/google/android/speech/message/S3ResponseStream;
 
     new-instance v6, Ljava/io/ByteArrayInputStream;
@@ -957,7 +967,7 @@
 
     invoke-direct {v5, v6}, Lcom/google/android/speech/message/S3ResponseStream;-><init>(Ljava/io/InputStream;)V
 
-    .line 324
+    .line 323
     .local v5, responses:Lcom/google/android/speech/message/S3ResponseStream;
     :cond_0
     :try_start_0
@@ -965,13 +975,13 @@
 
     move-result-object v4
 
-    .line 325
+    .line 324
     .local v4, response:Lcom/google/speech/s3/S3$S3Response;
     invoke-static {v4}, Lcom/google/glass/util/ProtoDebugUtils;->asciiDebug(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 326
+    .line 325
     .local v0, ascii:Ljava/lang/String;
     const-string v6, "\n"
 
@@ -1001,20 +1011,20 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 327
+    .line 326
     .local v3, line:Ljava/lang/String;
     const/4 v6, 0x3
 
     sget-object v7, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->TAG:Ljava/lang/String;
 
-    invoke-static {v6, v7, v3}, Lcom/google/glass/util/LogHelper;->logPii(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-static {v6, v7, v3}, Lcom/google/glass/util/Log;->logPii(ILjava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 335
+    .line 334
     .end local v0           #ascii:Ljava/lang/String;
     .end local v2           #i$:Ljava/util/Iterator;
     .end local v3           #line:Ljava/lang/String;
@@ -1022,26 +1032,34 @@
     :catch_0
     move-exception v1
 
-    .line 336
+    .line 335
     .local v1, e:Ljava/io/IOException;
     :try_start_1
     sget-object v6, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->TAG:Ljava/lang/String;
 
     const-string v7, "Failed to read S3Response"
 
-    invoke-static {v6, v7, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const/4 v8, 0x1
+
+    new-array v8, v8, [Ljava/lang/Object;
+
+    const/4 v9, 0x0
+
+    aput-object v1, v8, v9
+
+    invoke-static {v6, v7, v8}, Lcom/google/glass/util/Log;->w(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 338
+    .line 337
     invoke-static {v5}, Lcom/google/common/io/Closeables;->closeQuietly(Ljava/io/Closeable;)V
 
-    .line 340
+    .line 339
     .end local v1           #e:Ljava/io/IOException;
     :goto_1
     return-void
 
-    .line 330
+    .line 329
     .restart local v0       #ascii:Ljava/lang/String;
     .restart local v2       #i$:Ljava/util/Iterator;
     .restart local v4       #response:Lcom/google/speech/s3/S3$S3Response;
@@ -1062,11 +1080,9 @@
 
     move-result v6
 
-    const/4 v7, 0x1
+    if-ne v6, v8, :cond_0
 
-    if-ne v6, v7, :cond_0
-
-    .line 338
+    .line 337
     :cond_2
     invoke-static {v5}, Lcom/google/common/io/Closeables;->closeQuietly(Ljava/io/Closeable;)V
 
@@ -1093,7 +1109,7 @@
     .end annotation
 
     .prologue
-    .line 284
+    .line 283
     iget-object v2, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->httpRequestDispatcher:Lcom/google/glass/net/HttpRequestDispatcher;
 
     const-string v3, "https://www.google.com/m/voice-search/fallback"
@@ -1104,11 +1120,11 @@
 
     move-result-object v0
 
-    .line 287
+    .line 286
     .local v0, response:Lcom/google/glass/net/SimplifiedHttpResponse;
     if-nez v0, :cond_0
 
-    .line 288
+    .line 287
     new-instance v2, Lcom/google/glass/logging/audio/SyncFailedException;
 
     const-string v3, "Connection failed or no response from the server."
@@ -1117,17 +1133,17 @@
 
     throw v2
 
-    .line 291
+    .line 290
     :cond_0
     iget v1, v0, Lcom/google/glass/net/SimplifiedHttpResponse;->statusCode:I
 
-    .line 292
+    .line 291
     .local v1, statusCode:I
     const/16 v2, 0xc8
 
     if-eq v1, v2, :cond_1
 
-    .line 293
+    .line 292
     new-instance v2, Lcom/google/glass/logging/audio/SyncFailedException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1152,7 +1168,7 @@
 
     throw v2
 
-    .line 295
+    .line 294
     :cond_1
     return-void
 .end method
@@ -1166,7 +1182,7 @@
     .parameter "requestId"
 
     .prologue
-    .line 159
+    .line 158
     invoke-static {}, Lcom/google/android/speech/message/S3RequestUtils;->createBaseS3Request()Lcom/google/speech/s3/S3$S3Request;
 
     move-result-object v0
@@ -1229,7 +1245,7 @@
     .parameter "savedAudioRecord"
 
     .prologue
-    .line 152
+    .line 151
     new-instance v0, Lcom/google/speech/s3/Audio$S3AudioInfo;
 
     invoke-direct {v0}, Lcom/google/speech/s3/Audio$S3AudioInfo;-><init>()V
@@ -1265,21 +1281,21 @@
     .end annotation
 
     .prologue
-    .line 299
+    .line 298
     invoke-virtual {p1}, Lcom/google/speech/s3/S3$S3Request;->hasS3UserInfoExtension()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 300
+    .line 299
     new-instance v1, Lcom/google/speech/s3/S3$S3UserInfo;
 
     invoke-direct {v1}, Lcom/google/speech/s3/S3$S3UserInfo;-><init>()V
 
     invoke-virtual {p1, v1}, Lcom/google/speech/s3/S3$S3Request;->setS3UserInfoExtension(Lcom/google/speech/s3/S3$S3UserInfo;)Lcom/google/speech/s3/S3$S3Request;
 
-    .line 310
+    .line 309
     :goto_0
     iget-wide v1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->installIdInvalidateTime:J
 
@@ -1287,7 +1303,7 @@
 
     if-lez v1, :cond_0
 
-    .line 311
+    .line 310
     invoke-static {}, Ljava/util/UUID;->randomUUID()Ljava/util/UUID;
 
     move-result-object v1
@@ -1298,14 +1314,14 @@
 
     iput-object v1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->installId:Ljava/lang/String;
 
-    .line 312
+    .line 311
     sget-wide v1, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->INSTALL_ID_WINDOW_SIZE_MILLIS:J
 
     add-long/2addr v1, p2
 
     iput-wide v1, p0, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->installIdInvalidateTime:J
 
-    .line 315
+    .line 314
     :cond_0
     invoke-virtual {p1}, Lcom/google/speech/s3/S3$S3Request;->getS3UserInfoExtension()Lcom/google/speech/s3/S3$S3UserInfo;
 
@@ -1315,10 +1331,10 @@
 
     invoke-virtual {v1, v2}, Lcom/google/speech/s3/S3$S3UserInfo;->setInstallId(Ljava/lang/String;)Lcom/google/speech/s3/S3$S3UserInfo;
 
-    .line 316
+    .line 315
     return-void
 
-    .line 303
+    .line 302
     :cond_1
     :try_start_0
     invoke-virtual {p1}, Lcom/google/speech/s3/S3$S3Request;->getS3UserInfoExtension()Lcom/google/speech/s3/S3$S3UserInfo;
@@ -1339,11 +1355,11 @@
 
     goto :goto_0
 
-    .line 305
+    .line 304
     :catch_0
     move-exception v0
 
-    .line 306
+    .line 305
     .local v0, e:Lcom/google/protobuf/micro/InvalidProtocolBufferMicroException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -1363,20 +1379,20 @@
     .end annotation
 
     .prologue
-    .line 116
+    .line 115
     :try_start_0
     invoke-direct {p0, p1, p2}, Lcom/google/glass/logging/audio/S3SavedAudioSyncer;->doSync(Landroid/content/Context;Lcom/google/glass/logging/audio/SavedAudioRecord;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 120
+    .line 119
     return-void
 
-    .line 117
+    .line 116
     :catch_0
     move-exception v0
 
-    .line 118
+    .line 117
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Lcom/google/glass/logging/audio/SyncFailedException;
 

@@ -26,12 +26,12 @@
     .parameter
 
     .prologue
-    .line 105
+    .line 106
     iput-object p1, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-direct {p0}, Lcom/google/glass/util/SafeBroadcastReceiver;-><init>()V
 
-    .line 111
+    .line 112
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
@@ -45,7 +45,7 @@
     .locals 2
 
     .prologue
-    .line 137
+    .line 138
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -71,7 +71,7 @@
     return-object v0
 .end method
 
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onReceiveInternal(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 8
     .parameter "context"
     .parameter "intent"
@@ -79,7 +79,7 @@
     .prologue
     const-wide/16 v6, 0x0
 
-    .line 115
+    .line 116
     invoke-virtual {p0}, Lcom/google/glass/home/HomeApplication$2;->getTag()Ljava/lang/String;
 
     move-result-object v2
@@ -104,7 +104,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 116
+    .line 117
     const-string v2, "android.intent.action.SCREEN_ON"
 
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -117,14 +117,14 @@
 
     if-eqz v2, :cond_1
 
-    .line 119
+    .line 120
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
     iput-wide v2, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
-    .line 120
+    .line 121
     iget-object v2, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;
@@ -137,12 +137,12 @@
 
     invoke-virtual {v2, v3, v4}, Lcom/google/glass/logging/UserEventHelper;->log(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)V
 
-    .line 133
+    .line 134
     :cond_0
     :goto_0
     return-void
 
-    .line 122
+    .line 123
     :cond_1
     const-string v2, "android.intent.action.SCREEN_OFF"
 
@@ -156,14 +156,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 126
+    .line 127
     iget-wide v2, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
     cmp-long v2, v2, v6
 
     if-eqz v2, :cond_0
 
-    .line 127
+    .line 128
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
@@ -172,11 +172,11 @@
 
     sub-long v0, v2, v4
 
-    .line 128
+    .line 129
     .local v0, screenOnDuration:J
     iput-wide v6, p0, Lcom/google/glass/home/HomeApplication$2;->lastScreenOnTime:J
 
-    .line 129
+    .line 130
     iget-object v2, p0, Lcom/google/glass/home/HomeApplication$2;->this$0:Lcom/google/glass/home/HomeApplication;
 
     invoke-virtual {v2}, Lcom/google/glass/home/HomeApplication;->getUserEventHelper()Lcom/google/glass/logging/UserEventHelper;

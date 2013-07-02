@@ -84,7 +84,7 @@
     .locals 3
 
     .prologue
-    .line 37
+    .line 38
     const-class v0, Lcom/google/glass/widget/DynamicSizeTextView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -93,7 +93,7 @@
 
     sput-object v0, Lcom/google/glass/widget/DynamicSizeTextView;->TAG:Ljava/lang/String;
 
-    .line 40
+    .line 41
     new-instance v0, Lcom/google/glass/util/PriorityThreadFactory;
 
     const/4 v1, 0x1
@@ -108,14 +108,14 @@
 
     sput-object v0, Lcom/google/glass/widget/DynamicSizeTextView;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
 
-    .line 152
+    .line 153
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Lcom/google/glass/widget/DynamicSizeTextView;->layoutCache:Ljava/util/Map;
 
-    .line 216
+    .line 217
     new-instance v0, Landroid/util/LruCache;
 
     const/16 v1, 0x14
@@ -132,13 +132,13 @@
     .parameter "context"
 
     .prologue
-    .line 241
+    .line 242
     invoke-direct {p0, p1}, Lcom/google/glass/widget/TypophileTextView;-><init>(Landroid/content/Context;)V
 
-    .line 242
+    .line 243
     invoke-direct {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->initialize()V
 
-    .line 243
+    .line 244
     return-void
 .end method
 
@@ -148,13 +148,13 @@
     .parameter "attrs"
 
     .prologue
-    .line 246
+    .line 247
     invoke-direct {p0, p1, p2}, Lcom/google/glass/widget/TypophileTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 247
+    .line 248
     invoke-direct {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->initialize()V
 
-    .line 248
+    .line 249
     return-void
 .end method
 
@@ -169,7 +169,7 @@
     .parameter "x6"
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct/range {p0 .. p6}, Lcom/google/glass/widget/DynamicSizeTextView;->calculateTextSize(Ljava/lang/CharSequence;IFFZLandroid/text/Layout$Alignment;)Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
 
     move-result-object v0
@@ -182,7 +182,7 @@
     .parameter "x0"
 
     .prologue
-    .line 36
+    .line 37
     iget-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
     return-object v0
@@ -192,7 +192,7 @@
     .locals 1
 
     .prologue
-    .line 36
+    .line 37
     sget-object v0, Lcom/google/glass/widget/DynamicSizeTextView;->TAG:Ljava/lang/String;
 
     return-object v0
@@ -204,7 +204,7 @@
     .parameter "x1"
 
     .prologue
-    .line 36
+    .line 37
     invoke-direct {p0, p1}, Lcom/google/glass/widget/DynamicSizeTextView;->applyTextSize(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
 
     return-void
@@ -217,20 +217,20 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 510
+    .line 509
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 514
+    .line 513
     const/4 v3, 0x0
 
     invoke-virtual {p0, v4, v3}, Lcom/google/glass/widget/DynamicSizeTextView;->setTextSize(IF)V
 
-    .line 517
+    .line 516
     iget v3, p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;->textSize:F
 
     invoke-virtual {p0, v4, v3}, Lcom/google/glass/widget/DynamicSizeTextView;->setTextSize(IF)V
 
-    .line 529
+    .line 528
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v3
@@ -239,7 +239,7 @@
 
     move-result-object v0
 
-    .line 530
+    .line 529
     .local v0, f:Landroid/graphics/Paint$FontMetrics;
     iget v3, v0, Landroid/graphics/Paint$FontMetrics;->bottom:F
 
@@ -247,26 +247,26 @@
 
     float-to-int v2, v3
 
-    .line 531
+    .line 530
     .local v2, padding:I
     invoke-virtual {p0, v4, v2, v4, v4}, Lcom/google/glass/widget/DynamicSizeTextView;->setPadding(IIII)V
 
-    .line 534
+    .line 533
     iget v3, p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;->numLines:I
 
     invoke-virtual {p0, v3}, Lcom/google/glass/widget/DynamicSizeTextView;->setMaxLines(I)V
 
-    .line 535
+    .line 534
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p0, v3}, Lcom/google/glass/widget/DynamicSizeTextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 538
+    .line 537
     iget-object v3, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textClipListener:Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;
 
     if-eqz v3, :cond_0
 
-    .line 541
+    .line 540
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -275,7 +275,7 @@
 
     move-result-object v1
 
-    .line 542
+    .line 541
     .local v1, originalText:Ljava/lang/String;
     iget v3, p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;->textEnd:I
 
@@ -285,7 +285,7 @@
 
     if-ge v3, v4, :cond_0
 
-    .line 543
+    .line 542
     iget-object v3, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textClipListener:Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;
 
     iget v4, p1, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;->textEnd:I
@@ -296,7 +296,7 @@
 
     invoke-interface {v3, v4}, Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;->onTextClipped(Ljava/lang/String;)V
 
-    .line 546
+    .line 545
     .end local v1           #originalText:Ljava/lang/String;
     :cond_0
     return-void
@@ -312,10 +312,10 @@
     .parameter "alignment"
 
     .prologue
-    .line 426
+    .line 425
     const/16 v24, 0x0
 
-    .line 427
+    .line 426
     .local v24, startIndex:I
     move-object/from16 v0, p0
 
@@ -327,7 +327,7 @@
 
     add-int/lit8 v14, v4, -0x1
 
-    .line 428
+    .line 427
     .local v14, endIndex:I
     move-object/from16 v0, p0
 
@@ -341,7 +341,7 @@
 
     int-to-float v8, v4
 
-    .line 431
+    .line 430
     .local v8, largestSizeThatFits:F
     move-object/from16 v0, p0
 
@@ -351,7 +351,7 @@
 
     move/from16 v16, v8
 
-    .line 434
+    .line 433
     .end local v8           #largestSizeThatFits:F
     .local v16, largestSizeThatFits:F
     :goto_0
@@ -359,12 +359,12 @@
 
     if-gt v0, v14, :cond_1
 
-    .line 435
+    .line 434
     add-int v4, v24, v14
 
     shr-int/lit8 v15, v4, 0x1
 
-    .line 438
+    .line 437
     .local v15, index:I
     move-object/from16 v0, p0
 
@@ -378,7 +378,7 @@
 
     int-to-float v5, v4
 
-    .line 439
+    .line 438
     .local v5, textSizePx:F
     new-instance v3, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
 
@@ -394,7 +394,7 @@
 
     invoke-direct/range {v3 .. v9}, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;-><init>(IFLandroid/text/Layout$Alignment;FFZ)V
 
-    .line 443
+    .line 442
     .local v3, key:Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
     move-object/from16 v0, p0
 
@@ -402,7 +402,7 @@
 
     move-result-object v17
 
-    .line 446
+    .line 445
     .local v17, layout:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;"
     move-object/from16 v0, p0
 
@@ -412,7 +412,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->reflowWithText(Landroid/util/Pair;Ljava/lang/CharSequence;)V
 
-    .line 447
+    .line 446
     move-object/from16 v0, v17
 
     iget-object v4, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -423,7 +423,7 @@
 
     move-result v18
 
-    .line 450
+    .line 449
     .local v18, layoutHeight:I
     move-object/from16 v0, p0
 
@@ -435,7 +435,7 @@
 
     invoke-virtual {v4, v0}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
 
-    .line 453
+    .line 452
     invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getHeight()I
 
     move-result v4
@@ -444,14 +444,14 @@
 
     if-gt v0, v4, :cond_0
 
-    .line 454
+    .line 453
     move/from16 v0, v16
 
     invoke-static {v0, v5}, Ljava/lang/Math;->max(FF)F
 
     move-result v8
 
-    .line 457
+    .line 456
     .end local v16           #largestSizeThatFits:F
     .restart local v8       #largestSizeThatFits:F
     add-int/lit8 v14, v15, -0x1
@@ -459,12 +459,12 @@
     :goto_1
     move/from16 v16, v8
 
-    .line 463
+    .line 462
     .end local v8           #largestSizeThatFits:F
     .restart local v16       #largestSizeThatFits:F
     goto :goto_0
 
-    .line 461
+    .line 460
     :cond_0
     add-int/lit8 v24, v15, 0x1
 
@@ -484,7 +484,7 @@
     :cond_1
     move/from16 v8, v16
 
-    .line 467
+    .line 466
     .end local v16           #largestSizeThatFits:F
     .restart local v8       #largestSizeThatFits:F
     :cond_2
@@ -504,7 +504,7 @@
 
     invoke-direct/range {v6 .. v12}, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;-><init>(IFLandroid/text/Layout$Alignment;FFZ)V
 
-    .line 469
+    .line 468
     .restart local v3       #key:Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;
     move-object/from16 v0, p0
 
@@ -512,7 +512,7 @@
 
     move-result-object v17
 
-    .line 472
+    .line 471
     .restart local v17       #layout:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;"
     move-object/from16 v0, p0
 
@@ -522,7 +522,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->reflowWithText(Landroid/util/Pair;Ljava/lang/CharSequence;)V
 
-    .line 473
+    .line 472
     move-object/from16 v0, v17
 
     iget-object v4, v0, Landroid/util/Pair;->second:Ljava/lang/Object;
@@ -533,7 +533,7 @@
 
     move-result v18
 
-    .line 478
+    .line 477
     .restart local v18       #layoutHeight:I
     move-object/from16 v0, v17
 
@@ -545,7 +545,7 @@
 
     move-result v13
 
-    .line 479
+    .line 478
     .local v13, allLines:I
     move-object/from16 v0, v17
 
@@ -557,7 +557,7 @@
 
     move-result v20
 
-    .line 480
+    .line 479
     .local v20, pad:I
     mul-int/lit8 v4, v20, 0x2
 
@@ -565,7 +565,7 @@
 
     div-int v21, v4, v13
 
-    .line 481
+    .line 480
     .local v21, pixelsPerLine:I
     const/4 v4, 0x1
 
@@ -583,7 +583,7 @@
 
     move-result v19
 
-    .line 482
+    .line 481
     .local v19, numVisibleLines:I
     move-object/from16 v0, v17
 
@@ -597,7 +597,7 @@
 
     move-result v25
 
-    .line 485
+    .line 484
     .local v25, textEnd:I
     move-object/from16 v0, p0
 
@@ -609,7 +609,7 @@
 
     invoke-virtual {v4, v0}, Ljava/util/concurrent/LinkedBlockingQueue;->offer(Ljava/lang/Object;)Z
 
-    .line 488
+    .line 487
     new-instance v22, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
 
     move-object/from16 v0, v22
@@ -620,7 +620,7 @@
 
     invoke-direct {v0, v8, v1, v2}, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;-><init>(FII)V
 
-    .line 489
+    .line 488
     .local v22, result:Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
     new-instance v23, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
 
@@ -640,7 +640,7 @@
 
     invoke-direct {v0, v1, v2, v4, v6}, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;-><init>(Ljava/lang/CharSequence;IIZ)V
 
-    .line 491
+    .line 490
     .local v23, sizingCacheKey:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
     sget-object v4, Lcom/google/glass/widget/DynamicSizeTextView;->sizingCache:Landroid/util/LruCache;
 
@@ -650,7 +650,7 @@
 
     invoke-virtual {v4, v0, v1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 492
+    .line 491
     return-object v22
 .end method
 
@@ -671,12 +671,12 @@
     .end annotation
 
     .prologue
-    .line 550
+    .line 549
     invoke-direct {p0, p1}, Lcom/google/glass/widget/DynamicSizeTextView;->getPool(Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;)Ljava/util/concurrent/LinkedBlockingQueue;
 
     move-result-object v9
 
-    .line 553
+    .line 552
     .local v9, pool:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;>;"
     invoke-virtual {v9}, Ljava/util/concurrent/LinkedBlockingQueue;->poll()Ljava/lang/Object;
 
@@ -684,16 +684,16 @@
 
     check-cast v8, Landroid/util/Pair;
 
-    .line 554
+    .line 553
     .local v8, cachedLayout:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;"
     if-nez v8, :cond_0
 
-    .line 555
+    .line 554
     new-instance v1, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;
 
     invoke-direct {v1}, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;-><init>()V
 
-    .line 556
+    .line 555
     .local v1, textContainer:Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;
     new-instance v2, Landroid/text/TextPaint;
 
@@ -703,13 +703,13 @@
 
     invoke-direct {v2, v3}, Landroid/text/TextPaint;-><init>(Landroid/graphics/Paint;)V
 
-    .line 557
+    .line 556
     .local v2, paint:Landroid/text/TextPaint;
     iget v3, p1, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->textSizePx:F
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 558
+    .line 557
     new-instance v0, Landroid/text/DynamicLayout;
 
     iget v3, p1, Lcom/google/glass/widget/DynamicSizeTextView$LayoutCacheKey;->width:I
@@ -724,13 +724,13 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/text/DynamicLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
-    .line 566
+    .line 565
     .local v0, layout:Landroid/text/DynamicLayout;
     invoke-static {v1, v0}, Landroid/util/Pair;->create(Ljava/lang/Object;Ljava/lang/Object;)Landroid/util/Pair;
 
     move-result-object v8
 
-    .line 568
+    .line 567
     .end local v0           #layout:Landroid/text/DynamicLayout;
     .end local v1           #textContainer:Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;
     .end local v2           #paint:Landroid/text/TextPaint;
@@ -757,12 +757,12 @@
     .end annotation
 
     .prologue
-    .line 575
+    .line 574
     sget-object v2, Lcom/google/glass/widget/DynamicSizeTextView;->layoutCache:Ljava/util/Map;
 
     monitor-enter v2
 
-    .line 576
+    .line 575
     :try_start_0
     sget-object v1, Lcom/google/glass/widget/DynamicSizeTextView;->layoutCache:Ljava/util/Map;
 
@@ -772,11 +772,11 @@
 
     check-cast v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
-    .line 577
+    .line 576
     .local v0, pool:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;>;"
     if-nez v0, :cond_0
 
-    .line 578
+    .line 577
     new-instance v0, Ljava/util/concurrent/LinkedBlockingQueue;
 
     .end local v0           #pool:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;>;"
@@ -784,20 +784,20 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
 
-    .line 579
+    .line 578
     .restart local v0       #pool:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;>;"
     sget-object v1, Lcom/google/glass/widget/DynamicSizeTextView;->layoutCache:Ljava/util/Map;
 
     invoke-interface {v1, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 581
+    .line 580
     :cond_0
     monitor-exit v2
 
-    .line 582
+    .line 581
     return-object v0
 
-    .line 581
+    .line 580
     .end local v0           #pool:Ljava/util/concurrent/LinkedBlockingQueue;,"Ljava/util/concurrent/LinkedBlockingQueue<Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;>;"
     :catchall_0
     move-exception v1
@@ -813,7 +813,7 @@
     .locals 2
 
     .prologue
-    .line 253
+    .line 254
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -826,12 +826,12 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizes:Landroid/content/res/TypedArray;
 
-    .line 256
+    .line 257
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->sizeTextOnBackgroundThread:Z
 
-    .line 257
+    .line 258
     return-void
 .end method
 
@@ -856,18 +856,18 @@
     .local p1, layout:Landroid/util/Pair;,"Landroid/util/Pair<Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;Landroid/text/DynamicLayout;>;"
     const/4 v4, 0x0
 
-    .line 499
+    .line 498
     iget-object v1, p1, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;
 
-    .line 500
+    .line 499
     .local v1, textContainer:Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;
     invoke-virtual {v1}, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->length()I
 
     move-result v0
 
-    .line 501
+    .line 500
     .local v0, lengthBeforeChange:I
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
@@ -875,7 +875,7 @@
 
     invoke-virtual {v1, p2, v4, v2}, Lcom/google/glass/widget/DynamicSizeTextView$MutableCharSequence;->changeText(Ljava/lang/CharSequence;II)V
 
-    .line 504
+    .line 503
     iget-object v2, p1, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v2, Landroid/text/DynamicLayout;
@@ -886,7 +886,7 @@
 
     invoke-static {v2, v1, v4, v0, v3}, Lcom/google/glass/util/HiddenApiHelper;->reflow(Landroid/text/DynamicLayout;Ljava/lang/CharSequence;III)V
 
-    .line 506
+    .line 505
     return-void
 .end method
 
@@ -894,51 +894,17 @@
     .locals 19
 
     .prologue
-    .line 315
+    .line 317
     invoke-static {}, Lcom/google/glass/util/Assert;->assertUiThread()V
 
-    .line 318
-    invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getWidth()I
-
-    move-result v3
-
-    .line 319
-    .local v3, width:I
-    invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    .line 322
-    .local v4, text:Ljava/lang/CharSequence;
-    invoke-static/range {p0 .. p0}, Lcom/google/glass/util/HiddenApiHelper;->getTextViewLineSpacingMultiplier(Landroid/widget/TextView;)F
-
-    move-result v5
-
-    .line 324
-    .local v5, textViewLineSpacingMultiplier:F
-    invoke-static/range {p0 .. p0}, Lcom/google/glass/util/HiddenApiHelper;->getTextViewLineSpacingExtra(Landroid/widget/TextView;)F
-
-    move-result v6
-
-    .line 326
-    .local v6, textViewLineSpacingExtra:F
-    invoke-static/range {p0 .. p0}, Lcom/google/glass/util/HiddenApiHelper;->getTextViewIncludeFontPadding(Landroid/widget/TextView;)Z
-
-    move-result v7
-
-    .line 330
-    .local v7, textViewIncludeFontPadding:Z
-    sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
-
-    .line 334
-    .local v8, alignment:Landroid/text/Layout$Alignment;
+    .line 321
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
     if-eqz v2, :cond_0
 
-    .line 335
+    .line 322
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
@@ -947,22 +913,38 @@
 
     invoke-virtual {v2, v9}, Landroid/os/AsyncTask;->cancel(Z)Z
 
-    .line 336
+    .line 323
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
-    .line 340
+    .line 326
     :cond_0
+    invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    .line 329
+    .local v4, text:Ljava/lang/CharSequence;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_1
 
-    .line 343
+    .line 330
+    invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getWidth()I
+
+    move-result v3
+
+    .line 333
+    .local v3, width:I
+    sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
+
+    .line 336
+    .local v8, alignment:Landroid/text/Layout$Alignment;
     new-instance v18, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
 
     invoke-virtual/range {p0 .. p0}, Lcom/google/glass/widget/DynamicSizeTextView;->getHeight()I
@@ -977,7 +959,7 @@
 
     invoke-direct {v0, v4, v3, v2, v9}, Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;-><init>(Ljava/lang/CharSequence;IIZ)V
 
-    .line 345
+    .line 338
     .local v18, sizingCacheKey:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
     sget-object v2, Lcom/google/glass/widget/DynamicSizeTextView;->sizingCache:Landroid/util/LruCache;
 
@@ -989,28 +971,25 @@
 
     check-cast v16, Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
 
-    .line 346
+    .line 339
     .local v16, cached:Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
     if-eqz v16, :cond_2
 
-    .line 347
+    .line 340
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v2}, Lcom/google/glass/widget/DynamicSizeTextView;->setVisibility(I)V
 
-    .line 348
+    .line 341
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
 
     invoke-direct {v0, v1}, Lcom/google/glass/widget/DynamicSizeTextView;->applyTextSize(Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;)V
 
-    .line 371
-    .end local v16           #cached:Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
-    .end local v18           #sizingCacheKey:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
-    :cond_1
+    .line 369
     :goto_0
     const/4 v2, 0x0
 
@@ -1018,20 +997,45 @@
 
     iput-boolean v2, v0, Lcom/google/glass/widget/DynamicSizeTextView;->sizeTextOnBackgroundThread:Z
 
-    .line 372
+    .line 371
+    .end local v3           #width:I
+    .end local v8           #alignment:Landroid/text/Layout$Alignment;
+    .end local v16           #cached:Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
+    .end local v18           #sizingCacheKey:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
+    :cond_1
     return-void
 
-    .line 352
+    .line 343
+    .restart local v3       #width:I
+    .restart local v8       #alignment:Landroid/text/Layout$Alignment;
     .restart local v16       #cached:Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
     .restart local v18       #sizingCacheKey:Lcom/google/glass/widget/DynamicSizeTextView$SizingCacheKey;
     :cond_2
+    invoke-static/range {p0 .. p0}, Lcom/google/glass/util/HiddenApiHelper;->getTextViewLineSpacingMultiplier(Landroid/widget/TextView;)F
+
+    move-result v5
+
+    .line 345
+    .local v5, textViewLineSpacingMultiplier:F
+    invoke-static/range {p0 .. p0}, Lcom/google/glass/util/HiddenApiHelper;->getTextViewLineSpacingExtra(Landroid/widget/TextView;)F
+
+    move-result v6
+
+    .line 347
+    .local v6, textViewLineSpacingExtra:F
+    invoke-static/range {p0 .. p0}, Lcom/google/glass/util/HiddenApiHelper;->getTextViewIncludeFontPadding(Landroid/widget/TextView;)Z
+
+    move-result v7
+
+    .line 351
+    .local v7, textViewIncludeFontPadding:Z
     move-object/from16 v0, p0
 
     iget-boolean v2, v0, Lcom/google/glass/widget/DynamicSizeTextView;->sizeTextOnBackgroundThread:Z
 
     if-eqz v2, :cond_3
 
-    .line 353
+    .line 352
     const/4 v2, 0x4
 
     move-object/from16 v0, p0
@@ -1040,12 +1044,12 @@
 
     move-object/from16 v2, p0
 
-    .line 354
+    .line 353
     invoke-direct/range {v2 .. v8}, Lcom/google/glass/widget/DynamicSizeTextView;->sizeTextOnBackgroundThread(ILjava/lang/CharSequence;FFZLandroid/text/Layout$Alignment;)V
 
     goto :goto_0
 
-    .line 360
+    .line 359
     :cond_3
     const/4 v2, 0x0
 
@@ -1067,12 +1071,12 @@
 
     move-object v15, v8
 
-    .line 361
+    .line 360
     invoke-direct/range {v9 .. v15}, Lcom/google/glass/widget/DynamicSizeTextView;->calculateTextSize(Ljava/lang/CharSequence;IFFZLandroid/text/Layout$Alignment;)Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
 
     move-result-object v17
 
-    .line 364
+    .line 363
     .local v17, result:Lcom/google/glass/widget/DynamicSizeTextView$SizingResult;
     move-object/from16 v0, p0
 
@@ -1093,7 +1097,7 @@
     .parameter "alignment"
 
     .prologue
-    .line 380
+    .line 379
     new-instance v0, Lcom/google/glass/widget/DynamicSizeTextView$1;
 
     move-object v1, p0
@@ -1114,7 +1118,7 @@
 
     iput-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
-    .line 417
+    .line 416
     iget-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
     sget-object v1, Lcom/google/glass/widget/DynamicSizeTextView;->EXECUTOR:Ljava/util/concurrent/ExecutorService;
@@ -1125,42 +1129,54 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
 
-    .line 418
+    .line 417
     return-void
 .end method
 
 
 # virtual methods
+.method isSizeTextOnBackgroundThread()Z
+    .locals 1
+    .annotation build Lcom/google/common/annotations/VisibleForTesting;
+    .end annotation
+
+    .prologue
+    .line 586
+    iget-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->sizeTextOnBackgroundThread:Z
+
+    return v0
+.end method
+
 .method protected onDetachedFromWindow()V
     .locals 2
 
     .prologue
-    .line 261
+    .line 262
     invoke-super {p0}, Lcom/google/glass/widget/TypophileTextView;->onDetachedFromWindow()V
 
-    .line 265
+    .line 266
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->sizeTextOnBackgroundThread:Z
 
-    .line 268
+    .line 269
     iget-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
     if-eqz v0, :cond_0
 
-    .line 269
+    .line 270
     iget-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->cancel(Z)Z
 
-    .line 270
+    .line 271
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textSizeTask:Landroid/os/AsyncTask;
 
-    .line 272
+    .line 273
     :cond_0
     return-void
 .end method
@@ -1174,23 +1190,23 @@
     .parameter "bottom"
 
     .prologue
-    .line 304
+    .line 307
     invoke-super/range {p0 .. p5}, Lcom/google/glass/widget/TypophileTextView;->onLayout(ZIIII)V
 
-    .line 307
+    .line 309
     iget-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->shouldUpdateTextSize:Z
 
     if-eqz v0, :cond_0
 
-    .line 308
+    .line 310
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->shouldUpdateTextSize:Z
 
-    .line 309
+    .line 311
     invoke-direct {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->setMaximumTextSize()V
 
-    .line 311
+    .line 313
     :cond_0
     return-void
 .end method
@@ -1203,18 +1219,24 @@
     .parameter "oldh"
 
     .prologue
-    .line 295
+    .line 297
     invoke-super {p0, p1, p2, p3, p4}, Lcom/google/glass/widget/TypophileTextView;->onSizeChanged(IIII)V
 
-    .line 298
+    .line 299
+    iget-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->shouldUpdateTextSize:Z
+
+    if-nez v0, :cond_0
+
+    .line 300
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->shouldUpdateTextSize:Z
 
-    .line 299
+    .line 301
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->requestLayout()V
 
-    .line 300
+    .line 303
+    :cond_0
     return-void
 .end method
 
@@ -1223,10 +1245,10 @@
     .parameter "isForcedToSmallestSize"
 
     .prologue
-    .line 276
+    .line 277
     iput-boolean p1, p0, Lcom/google/glass/widget/DynamicSizeTextView;->isForcedToSmallestSize:Z
 
-    .line 277
+    .line 278
     return-void
 .end method
 
@@ -1236,18 +1258,24 @@
     .parameter "type"
 
     .prologue
-    .line 286
+    .line 287
     invoke-super {p0, p1, p2}, Lcom/google/glass/widget/TypophileTextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     .line 289
+    iget-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->shouldUpdateTextSize:Z
+
+    if-nez v0, :cond_0
+
+    .line 290
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/google/glass/widget/DynamicSizeTextView;->shouldUpdateTextSize:Z
 
-    .line 290
+    .line 291
     invoke-virtual {p0}, Lcom/google/glass/widget/DynamicSizeTextView;->requestLayout()V
 
-    .line 291
+    .line 293
+    :cond_0
     return-void
 .end method
 
@@ -1256,9 +1284,9 @@
     .parameter "textClipListener"
 
     .prologue
-    .line 281
+    .line 282
     iput-object p1, p0, Lcom/google/glass/widget/DynamicSizeTextView;->textClipListener:Lcom/google/glass/widget/DynamicSizeTextView$TextClipListener;
 
-    .line 282
+    .line 283
     return-void
 .end method

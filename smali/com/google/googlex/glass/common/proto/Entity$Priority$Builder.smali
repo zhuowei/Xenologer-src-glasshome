@@ -38,13 +38,13 @@
     .locals 0
 
     .prologue
-    .line 608
+    .line 741
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 609
+    .line 742
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->maybeForceBuilderInitialization()V
 
-    .line 610
+    .line 743
     return-void
 .end method
 
@@ -53,13 +53,13 @@
     .parameter "parent"
 
     .prologue
-    .line 614
+    .line 747
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 615
+    .line 748
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->maybeForceBuilderInitialization()V
 
-    .line 616
+    .line 749
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .parameter "x1"
 
     .prologue
-    .line 591
+    .line 724
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -79,7 +79,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->create()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -91,7 +91,7 @@
     .locals 1
 
     .prologue
-    .line 622
+    .line 755
     new-instance v0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;-><init>()V
@@ -103,7 +103,7 @@
     .locals 1
 
     .prologue
-    .line 597
+    .line 730
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Priority_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -113,14 +113,14 @@
     .locals 1
 
     .prologue
-    .line 618
+    .line 751
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->access$400()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 620
+    .line 753
     :cond_0
     return-void
 .end method
@@ -131,12 +131,12 @@
     .locals 2
 
     .prologue
-    .line 646
+    .line 779
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
 
-    .line 647
+    .line 780
     .local v0, result:Lcom/google/googlex/glass/common/proto/Entity$Priority;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->isInitialized()Z
 
@@ -144,14 +144,14 @@
 
     if-nez v1, :cond_0
 
-    .line 648
+    .line 781
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 650
+    .line 783
     :cond_0
     return-object v0
 .end method
@@ -160,7 +160,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->build()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -172,7 +172,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->build()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -184,22 +184,22 @@
     .locals 5
 
     .prologue
-    .line 654
+    .line 787
     new-instance v1, Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/Entity$Priority;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/Entity$1;)V
 
-    .line 655
+    .line 788
     .local v1, result:Lcom/google/googlex/glass/common/proto/Entity$Priority;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
-    .line 656
+    .line 789
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 657
+    .line 790
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -207,24 +207,24 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 658
+    .line 791
     or-int/lit8 v2, v2, 0x1
 
-    .line 660
+    .line 793
     :cond_0
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->glasswareAffinity_:I
 
     #setter for: Lcom/google/googlex/glass/common/proto/Entity$Priority;->glasswareAffinity_:I
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->access$602(Lcom/google/googlex/glass/common/proto/Entity$Priority;I)I
 
-    .line 661
+    .line 794
     #setter for: Lcom/google/googlex/glass/common/proto/Entity$Priority;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->access$702(Lcom/google/googlex/glass/common/proto/Entity$Priority;I)I
 
-    .line 662
+    .line 795
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->onBuilt()V
 
-    .line 663
+    .line 796
     return-object v1
 .end method
 
@@ -232,7 +232,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -244,7 +244,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -256,22 +256,22 @@
     .locals 1
 
     .prologue
-    .line 626
+    .line 759
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 627
+    .line 760
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->glasswareAffinity_:I
 
-    .line 628
+    .line 761
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
-    .line 629
+    .line 762
     return-object p0
 .end method
 
@@ -279,7 +279,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -291,7 +291,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -303,7 +303,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -315,7 +315,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clear()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -327,22 +327,22 @@
     .locals 1
 
     .prologue
-    .line 753
+    .line 886
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
-    .line 754
+    .line 887
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->glasswareAffinity_:I
 
-    .line 755
+    .line 888
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->onChanged()V
 
-    .line 756
+    .line 889
     return-object p0
 .end method
 
@@ -350,7 +350,7 @@
     .locals 2
 
     .prologue
-    .line 633
+    .line 766
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->create()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -370,7 +370,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -382,7 +382,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -394,7 +394,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -406,7 +406,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -418,7 +418,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -435,7 +435,7 @@
     .end annotation
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->clone()Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -447,7 +447,7 @@
     .locals 1
 
     .prologue
-    .line 642
+    .line 775
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -459,7 +459,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -471,7 +471,7 @@
     .locals 1
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
@@ -483,7 +483,7 @@
     .locals 1
 
     .prologue
-    .line 638
+    .line 771
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Priority_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -493,7 +493,7 @@
     .locals 1
 
     .prologue
-    .line 728
+    .line 861
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->glasswareAffinity_:I
 
     return v0
@@ -505,7 +505,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 717
+    .line 850
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -525,7 +525,7 @@
     .locals 3
 
     .prologue
-    .line 602
+    .line 735
     sget-object v0, Lcom/google/googlex/glass/common/proto/Timeline;->internal_static_googlex_glass_common_proto_Entity_Priority_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/Entity$Priority;
@@ -543,7 +543,7 @@
     .locals 1
 
     .prologue
-    .line 685
+    .line 818
     const/4 v0, 0x1
 
     return v0
@@ -554,18 +554,18 @@
     .parameter "other"
 
     .prologue
-    .line 676
+    .line 809
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 681
+    .line 814
     :goto_0
     return-object p0
 
-    .line 677
+    .line 810
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->hasGlasswareAffinity()Z
 
@@ -573,14 +573,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 678
+    .line 811
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->getGlasswareAffinity()I
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->setGlasswareAffinity(I)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
-    .line 680
+    .line 813
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Entity$Priority;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -602,10 +602,10 @@
     .end annotation
 
     .prologue
-    .line 692
+    .line 825
     const/4 v2, 0x0
 
-    .line 694
+    .line 827
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/Entity$Priority;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/Entity$Priority;->PARSER:Lcom/google/protobuf/Parser;
@@ -623,21 +623,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 699
+    .line 832
     if-eqz v2, :cond_0
 
-    .line 700
+    .line 833
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Entity$Priority;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
-    .line 703
+    .line 836
     :cond_0
     return-object p0
 
-    .line 695
+    .line 828
     :catch_0
     move-exception v1
 
-    .line 696
+    .line 829
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -650,19 +650,19 @@
 
     move-object v2, v0
 
-    .line 697
+    .line 830
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 699
+    .line 832
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 700
+    .line 833
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Entity$Priority;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     :cond_1
@@ -674,12 +674,12 @@
     .parameter "other"
 
     .prologue
-    .line 667
+    .line 800
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     if-eqz v0, :cond_0
 
-    .line 668
+    .line 801
     check-cast p1, Lcom/google/googlex/glass/common/proto/Entity$Priority;
 
     .end local p1
@@ -687,12 +687,12 @@
 
     move-result-object p0
 
-    .line 671
+    .line 804
     .end local p0
     :goto_0
     return-object p0
 
-    .line 670
+    .line 803
     .restart local p0
     .restart local p1
     :cond_0
@@ -712,7 +712,7 @@
     .end annotation
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -725,7 +725,7 @@
     .parameter "x0"
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -744,7 +744,7 @@
     .end annotation
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -763,7 +763,7 @@
     .end annotation
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -776,7 +776,7 @@
     .parameter "x0"
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -795,7 +795,7 @@
     .end annotation
 
     .prologue
-    .line 591
+    .line 724
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;
 
     move-result-object v0
@@ -808,19 +808,19 @@
     .parameter "value"
 
     .prologue
-    .line 739
+    .line 872
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->bitField0_:I
 
-    .line 740
+    .line 873
     iput p1, p0, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->glasswareAffinity_:I
 
-    .line 741
+    .line 874
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Entity$Priority$Builder;->onChanged()V
 
-    .line 742
+    .line 875
     return-object p0
 .end method

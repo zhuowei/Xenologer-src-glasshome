@@ -62,25 +62,25 @@
     .locals 1
 
     .prologue
-    .line 370
+    .line 371
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 513
+    .line 514
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 610
+    .line 614
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 371
+    .line 372
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->maybeForceBuilderInitialization()V
 
-    .line 372
+    .line 373
     return-void
 .end method
 
@@ -89,25 +89,25 @@
     .parameter "parent"
 
     .prologue
-    .line 376
+    .line 377
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 513
+    .line 514
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 610
+    .line 614
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 377
+    .line 378
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->maybeForceBuilderInitialization()V
 
-    .line 378
+    .line 379
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .parameter "x1"
 
     .prologue
-    .line 353
+    .line 354
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/Delete$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->create()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -139,7 +139,7 @@
     .locals 1
 
     .prologue
-    .line 385
+    .line 386
     new-instance v0, Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;-><init>()V
@@ -151,7 +151,7 @@
     .locals 2
 
     .prologue
-    .line 613
+    .line 617
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -160,7 +160,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 614
+    .line 618
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
@@ -169,14 +169,14 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 615
+    .line 619
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 617
+    .line 621
     :cond_0
     return-void
 .end method
@@ -185,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 359
+    .line 360
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_Delete_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -206,12 +206,12 @@
     .end annotation
 
     .prologue
-    .line 910
+    .line 914
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 911
+    .line 915
     new-instance v1, Lcom/google/protobuf/RepeatedFieldBuilder;
 
     iget-object v2, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
@@ -239,18 +239,18 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 917
+    .line 921
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 919
+    .line 923
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     return-object v0
 
-    .line 911
+    .line 915
     :cond_1
     const/4 v0, 0x0
 
@@ -261,17 +261,17 @@
     .locals 1
 
     .prologue
-    .line 380
+    .line 381
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 381
+    .line 382
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 383
+    .line 384
     :cond_0
     return-void
 .end method
@@ -293,28 +293,28 @@
     .end annotation
 
     .prologue
-    .line 789
+    .line 793
     .local p1, values:Ljava/lang/Iterable;,"Ljava/lang/Iterable<+Lcom/google/googlex/glass/common/proto/UserAction;>;"
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 790
+    .line 794
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 791
+    .line 795
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {p1, v0}, Lcom/google/protobuf/AbstractMessageLite$Builder;->addAll(Ljava/lang/Iterable;Ljava/util/Collection;)V
 
-    .line 793
+    .line 797
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 797
+    .line 801
     :goto_0
     return-object p0
 
-    .line 795
+    .line 799
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -329,15 +329,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 771
+    .line 775
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 772
+    .line 776
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 773
+    .line 777
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -346,14 +346,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 774
+    .line 778
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 778
+    .line 782
     :goto_0
     return-object p0
 
-    .line 776
+    .line 780
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -372,38 +372,38 @@
     .parameter "value"
 
     .prologue
-    .line 732
+    .line 736
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 733
+    .line 737
     if-nez p2, :cond_0
 
-    .line 734
+    .line 738
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 736
+    .line 740
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 737
+    .line 741
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->add(ILjava/lang/Object;)V
 
-    .line 738
+    .line 742
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 742
+    .line 746
     :goto_0
     return-object p0
 
-    .line 740
+    .line 744
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -417,15 +417,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 753
+    .line 757
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 754
+    .line 758
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 755
+    .line 759
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -434,14 +434,14 @@
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 756
+    .line 760
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 760
+    .line 764
     :goto_0
     return-object p0
 
-    .line 758
+    .line 762
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -459,38 +459,38 @@
     .parameter "value"
 
     .prologue
-    .line 711
+    .line 715
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 712
+    .line 716
     if-nez p1, :cond_0
 
-    .line 713
+    .line 717
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 715
+    .line 719
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 716
+    .line 720
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 717
+    .line 721
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 721
+    .line 725
     :goto_0
     return-object p0
 
-    .line 719
+    .line 723
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -503,7 +503,7 @@
     .locals 2
 
     .prologue
-    .line 881
+    .line 885
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -526,7 +526,7 @@
     .parameter "index"
 
     .prologue
-    .line 893
+    .line 897
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -548,12 +548,12 @@
     .locals 2
 
     .prologue
-    .line 415
+    .line 416
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
 
-    .line 416
+    .line 417
     .local v0, result:Lcom/google/googlex/glass/common/proto/Delete;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/Delete;->isInitialized()Z
 
@@ -561,14 +561,14 @@
 
     if-nez v1, :cond_0
 
-    .line 417
+    .line 418
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 419
+    .line 420
     :cond_0
     return-object v0
 .end method
@@ -577,7 +577,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->build()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -589,7 +589,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->build()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -601,22 +601,22 @@
     .locals 5
 
     .prologue
-    .line 423
+    .line 424
     new-instance v1, Lcom/google/googlex/glass/common/proto/Delete;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/Delete;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/Delete$1;)V
 
-    .line 424
+    .line 425
     .local v1, result:Lcom/google/googlex/glass/common/proto/Delete;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 425
+    .line 426
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 426
+    .line 427
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -624,22 +624,22 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 427
+    .line 428
     or-int/lit8 v2, v2, 0x1
 
-    .line 429
+    .line 430
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Delete;->timelineItemId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Delete;->access$502(Lcom/google/googlex/glass/common/proto/Delete;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 430
+    .line 431
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v3, :cond_2
 
-    .line 431
+    .line 432
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, 0x2
@@ -648,7 +648,7 @@
 
     if-ne v3, v4, :cond_1
 
-    .line 432
+    .line 433
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
@@ -657,32 +657,32 @@
 
     iput-object v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 433
+    .line 434
     iget v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v3, v3, -0x3
 
     iput v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 435
+    .line 436
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     #setter for: Lcom/google/googlex/glass/common/proto/Delete;->userAction_:Ljava/util/List;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/Delete;->access$602(Lcom/google/googlex/glass/common/proto/Delete;Ljava/util/List;)Ljava/util/List;
 
-    .line 439
+    .line 440
     :goto_0
     #setter for: Lcom/google/googlex/glass/common/proto/Delete;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/Delete;->access$702(Lcom/google/googlex/glass/common/proto/Delete;I)I
 
-    .line 440
+    .line 441
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onBuilt()V
 
-    .line 441
+    .line 442
     return-object v1
 
-    .line 437
+    .line 438
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -700,7 +700,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -712,7 +712,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -724,45 +724,45 @@
     .locals 1
 
     .prologue
-    .line 389
+    .line 390
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 390
+    .line 391
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 391
+    .line 392
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 392
+    .line 393
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 393
+    .line 394
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 394
+    .line 395
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 398
+    .line 399
     :goto_0
     return-object p0
 
-    .line 396
+    .line 397
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -775,7 +775,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clear()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -787,7 +787,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clear()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -799,7 +799,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clear()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -811,7 +811,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clear()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -823,14 +823,14 @@
     .locals 1
 
     .prologue
-    .line 587
+    .line 591
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 588
+    .line 592
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -841,10 +841,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 589
+    .line 593
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 590
+    .line 594
     return-object p0
 .end method
 
@@ -852,33 +852,33 @@
     .locals 1
 
     .prologue
-    .line 807
+    .line 811
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 808
+    .line 812
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 809
+    .line 813
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 810
+    .line 814
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 814
+    .line 818
     :goto_0
     return-object p0
 
-    .line 812
+    .line 816
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -891,7 +891,7 @@
     .locals 2
 
     .prologue
-    .line 402
+    .line 403
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->create()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -911,7 +911,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clone()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -923,7 +923,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clone()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -935,7 +935,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clone()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -947,7 +947,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clone()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -959,7 +959,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clone()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -976,7 +976,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->clone()Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -988,7 +988,7 @@
     .locals 1
 
     .prologue
-    .line 411
+    .line 412
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -1000,7 +1000,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -1012,7 +1012,7 @@
     .locals 1
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v0
@@ -1024,48 +1024,61 @@
     .locals 1
 
     .prologue
-    .line 407
+    .line 408
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_Delete_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getTimelineItemId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 532
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
-
     .line 533
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
     .line 534
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 535
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 537
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 536
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
+    .line 538
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 539
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 543
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1074,16 +1087,16 @@
     .locals 3
 
     .prologue
-    .line 551
+    .line 555
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 552
+    .line 556
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 553
+    .line 557
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1091,11 +1104,11 @@
 
     move-result-object v0
 
-    .line 556
+    .line 560
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 559
+    .line 563
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1115,12 +1128,12 @@
     .parameter "index"
 
     .prologue
-    .line 658
+    .line 662
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 659
+    .line 663
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1129,7 +1142,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UserAction;
 
-    .line 661
+    .line 665
     :goto_0
     return-object v0
 
@@ -1150,7 +1163,7 @@
     .parameter "index"
 
     .prologue
-    .line 842
+    .line 846
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1177,7 +1190,7 @@
     .end annotation
 
     .prologue
-    .line 905
+    .line 909
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->getUserActionFieldBuilder()Lcom/google/protobuf/RepeatedFieldBuilder;
 
     move-result-object v0
@@ -1193,19 +1206,19 @@
     .locals 1
 
     .prologue
-    .line 644
+    .line 648
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 645
+    .line 649
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v0
 
-    .line 647
+    .line 651
     :goto_0
     return v0
 
@@ -1232,19 +1245,19 @@
     .end annotation
 
     .prologue
-    .line 630
+    .line 634
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 631
+    .line 635
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v0
 
-    .line 633
+    .line 637
     :goto_0
     return-object v0
 
@@ -1263,12 +1276,12 @@
     .parameter "index"
 
     .prologue
-    .line 853
+    .line 857
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 854
+    .line 858
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1277,7 +1290,7 @@
 
     check-cast v0, Lcom/google/googlex/glass/common/proto/UserActionOrBuilder;
 
-    .line 855
+    .line 859
     :goto_0
     return-object v0
 
@@ -1306,19 +1319,19 @@
     .end annotation
 
     .prologue
-    .line 867
+    .line 871
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-eqz v0, :cond_0
 
-    .line 868
+    .line 872
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v0}, Lcom/google/protobuf/RepeatedFieldBuilder;->getMessageOrBuilderList()Ljava/util/List;
 
     move-result-object v0
 
-    .line 870
+    .line 874
     :goto_0
     return-object v0
 
@@ -1338,7 +1351,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 522
+    .line 523
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1358,7 +1371,7 @@
     .locals 3
 
     .prologue
-    .line 364
+    .line 365
     sget-object v0, Lcom/google/googlex/glass/common/proto/Sync;->internal_static_googlex_glass_common_proto_Delete_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/Delete;
@@ -1376,7 +1389,7 @@
     .locals 1
 
     .prologue
-    .line 491
+    .line 492
     const/4 v0, 0x1
 
     return v0
@@ -1389,18 +1402,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 454
+    .line 455
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/Delete;
 
     move-result-object v1
 
     if-ne p1, v1, :cond_0
 
-    .line 487
+    .line 488
     :goto_0
     return-object p0
 
-    .line 455
+    .line 456
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Delete;->hasTimelineItemId()Z
 
@@ -1408,14 +1421,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 456
+    .line 457
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     or-int/lit8 v1, v1, 0x1
 
     iput v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 457
+    .line 458
     #getter for: Lcom/google/googlex/glass/common/proto/Delete;->timelineItemId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Delete;->access$500(Lcom/google/googlex/glass/common/proto/Delete;)Ljava/lang/Object;
 
@@ -1423,16 +1436,16 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 458
+    .line 459
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 460
+    .line 461
     :cond_1
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v1, :cond_4
 
-    .line 461
+    .line 462
     #getter for: Lcom/google/googlex/glass/common/proto/Delete;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Delete;->access$600(Lcom/google/googlex/glass/common/proto/Delete;)Ljava/util/List;
 
@@ -1444,7 +1457,7 @@
 
     if-nez v0, :cond_2
 
-    .line 462
+    .line 463
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -1453,7 +1466,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 463
+    .line 464
     #getter for: Lcom/google/googlex/glass/common/proto/Delete;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Delete;->access$600(Lcom/google/googlex/glass/common/proto/Delete;)Ljava/util/List;
 
@@ -1461,18 +1474,18 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 464
+    .line 465
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 469
+    .line 470
     :goto_1
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 486
+    .line 487
     :cond_2
     :goto_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/Delete;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
@@ -1483,11 +1496,11 @@
 
     goto :goto_0
 
-    .line 466
+    .line 467
     :cond_3
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 467
+    .line 468
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     #getter for: Lcom/google/googlex/glass/common/proto/Delete;->userAction_:Ljava/util/List;
@@ -1499,7 +1512,7 @@
 
     goto :goto_1
 
-    .line 472
+    .line 473
     :cond_4
     #getter for: Lcom/google/googlex/glass/common/proto/Delete;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Delete;->access$600(Lcom/google/googlex/glass/common/proto/Delete;)Ljava/util/List;
@@ -1512,7 +1525,7 @@
 
     if-nez v1, :cond_2
 
-    .line 473
+    .line 474
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->isEmpty()Z
@@ -1521,15 +1534,15 @@
 
     if-eqz v1, :cond_6
 
-    .line 474
+    .line 475
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     invoke-virtual {v1}, Lcom/google/protobuf/RepeatedFieldBuilder;->dispose()V
 
-    .line 475
+    .line 476
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
-    .line 476
+    .line 477
     #getter for: Lcom/google/googlex/glass/common/proto/Delete;->userAction_:Ljava/util/List;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/Delete;->access$600(Lcom/google/googlex/glass/common/proto/Delete;)Ljava/util/List;
 
@@ -1537,14 +1550,14 @@
 
     iput-object v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
-    .line 477
+    .line 478
     iget v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, -0x3
 
     iput v1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 478
+    .line 479
     invoke-static {}, Lcom/google/googlex/glass/common/proto/Delete;->access$800()Z
 
     move-result v1
@@ -1560,7 +1573,7 @@
 
     goto :goto_2
 
-    .line 482
+    .line 483
     :cond_6
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1585,10 +1598,10 @@
     .end annotation
 
     .prologue
-    .line 498
+    .line 499
     const/4 v2, 0x0
 
-    .line 500
+    .line 501
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/Delete;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/Delete;->PARSER:Lcom/google/protobuf/Parser;
@@ -1606,21 +1619,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 505
+    .line 506
     if-eqz v2, :cond_0
 
-    .line 506
+    .line 507
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Delete;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
-    .line 509
+    .line 510
     :cond_0
     return-object p0
 
-    .line 501
+    .line 502
     :catch_0
     move-exception v1
 
-    .line 502
+    .line 503
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -1633,19 +1646,19 @@
 
     move-object v2, v0
 
-    .line 503
+    .line 504
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 505
+    .line 506
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 506
+    .line 507
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/Delete;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     :cond_1
@@ -1657,12 +1670,12 @@
     .parameter "other"
 
     .prologue
-    .line 445
+    .line 446
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/Delete;
 
     if-eqz v0, :cond_0
 
-    .line 446
+    .line 447
     check-cast p1, Lcom/google/googlex/glass/common/proto/Delete;
 
     .end local p1
@@ -1670,12 +1683,12 @@
 
     move-result-object p0
 
-    .line 449
+    .line 450
     .end local p0
     :goto_0
     return-object p0
 
-    .line 448
+    .line 449
     .restart local p0
     .restart local p1
     :cond_0
@@ -1695,7 +1708,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -1708,7 +1721,7 @@
     .parameter "x0"
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -1727,7 +1740,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -1746,7 +1759,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -1759,7 +1772,7 @@
     .parameter "x0"
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -1778,7 +1791,7 @@
     .end annotation
 
     .prologue
-    .line 353
+    .line 354
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/Delete$Builder;
 
     move-result-object v0
@@ -1791,27 +1804,27 @@
     .parameter "index"
 
     .prologue
-    .line 824
+    .line 828
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 825
+    .line 829
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 826
+    .line 830
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 827
+    .line 831
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 831
+    .line 835
     :goto_0
     return-object p0
 
-    .line 829
+    .line 833
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1825,17 +1838,17 @@
     .parameter "value"
 
     .prologue
-    .line 571
+    .line 575
     if-nez p1, :cond_0
 
-    .line 572
+    .line 576
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 574
+    .line 578
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
@@ -1843,13 +1856,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 575
+    .line 579
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 576
+    .line 580
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 577
+    .line 581
     return-object p0
 .end method
 
@@ -1858,17 +1871,17 @@
     .parameter "value"
 
     .prologue
-    .line 601
+    .line 605
     if-nez p1, :cond_0
 
-    .line 602
+    .line 606
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 604
+    .line 608
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
@@ -1876,13 +1889,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->bitField0_:I
 
-    .line 605
+    .line 609
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->timelineItemId_:Ljava/lang/Object;
 
-    .line 606
+    .line 610
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 607
+    .line 611
     return-object p0
 .end method
 
@@ -1892,15 +1905,15 @@
     .parameter "builderForValue"
 
     .prologue
-    .line 694
+    .line 698
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_0
 
-    .line 695
+    .line 699
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 696
+    .line 700
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-virtual {p2}, Lcom/google/googlex/glass/common/proto/UserAction$Builder;->build()Lcom/google/googlex/glass/common/proto/UserAction;
@@ -1909,14 +1922,14 @@
 
     invoke-interface {v0, p1, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 697
+    .line 701
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 701
+    .line 705
     :goto_0
     return-object p0
 
-    .line 699
+    .line 703
     :cond_0
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
@@ -1935,38 +1948,38 @@
     .parameter "value"
 
     .prologue
-    .line 673
+    .line 677
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 
     if-nez v0, :cond_1
 
-    .line 674
+    .line 678
     if-nez p2, :cond_0
 
-    .line 675
+    .line 679
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 677
+    .line 681
     :cond_0
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->ensureUserActionIsMutable()V
 
-    .line 678
+    .line 682
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userAction_:Ljava/util/List;
 
     invoke-interface {v0, p1, p2}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 679
+    .line 683
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/Delete$Builder;->onChanged()V
 
-    .line 683
+    .line 687
     :goto_0
     return-object p0
 
-    .line 681
+    .line 685
     :cond_1
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/Delete$Builder;->userActionBuilder_:Lcom/google/protobuf/RepeatedFieldBuilder;
 

@@ -70,7 +70,7 @@
     .locals 14
 
     .prologue
-    .line 440
+    .line 453
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_1"
@@ -125,7 +125,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_1:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 443
+    .line 456
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_2"
@@ -200,7 +200,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_2:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 449
+    .line 462
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_3"
@@ -295,7 +295,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_3:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 456
+    .line 469
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_4"
@@ -410,7 +410,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_4:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 473
+    .line 486
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_5"
@@ -545,7 +545,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_5:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 491
+    .line 504
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_6"
@@ -700,7 +700,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_6:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 510
+    .line 523
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_7"
@@ -875,7 +875,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_7:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 521
+    .line 534
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "LANDSCAPE_8"
@@ -1070,7 +1070,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->LANDSCAPE_8:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 533
+    .line 546
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "PORTRAIT_1"
@@ -1125,7 +1125,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->PORTRAIT_1:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 536
+    .line 549
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "PORTRAIT_2"
@@ -1200,7 +1200,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->PORTRAIT_2:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 553
+    .line 566
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "PORTRAIT_3"
@@ -1295,7 +1295,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->PORTRAIT_3:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 572
+    .line 585
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "PORTRAIT_4"
@@ -1410,7 +1410,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->PORTRAIT_4:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 591
+    .line 604
     new-instance v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     const-string v9, "PORTRAIT_5"
@@ -1545,7 +1545,7 @@
 
     sput-object v8, Lcom/google/glass/widget/MosaicView$MosaicSpec;->PORTRAIT_5:Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
-    .line 437
+    .line 450
     const/16 v0, 0xd
 
     new-array v0, v0, [Lcom/google/glass/widget/MosaicView$MosaicSpec;
@@ -1651,25 +1651,25 @@
     .end annotation
 
     .prologue
-    .line 606
+    .line 619
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 607
+    .line 620
     iput p3, p0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->rows:I
 
-    .line 608
+    .line 621
     iput p4, p0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->columns:I
 
-    .line 609
+    .line 622
     iput-object p5, p0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->cellSpecs:[Lcom/google/glass/widget/MosaicView$CellSpec;
 
-    .line 610
+    .line 623
     iput p7, p0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->embededRemainingCountLayoutId:I
 
-    .line 611
+    .line 624
     iput p6, p0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->remainingLayoutId:I
 
-    .line 612
+    .line 625
     return-void
 .end method
 
@@ -1678,7 +1678,7 @@
     .parameter "name"
 
     .prologue
-    .line 437
+    .line 450
     const-class v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -1694,7 +1694,7 @@
     .locals 1
 
     .prologue
-    .line 437
+    .line 450
     sget-object v0, Lcom/google/glass/widget/MosaicView$MosaicSpec;->$VALUES:[Lcom/google/glass/widget/MosaicView$MosaicSpec;
 
     invoke-virtual {v0}, [Lcom/google/glass/widget/MosaicView$MosaicSpec;->clone()Ljava/lang/Object;

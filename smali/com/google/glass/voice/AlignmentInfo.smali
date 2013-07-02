@@ -50,30 +50,30 @@
             "(",
             "Ljava/util/List",
             "<",
-            "Lcom/google/glass/voice/SensoryResult;",
+            "Lcom/google/glass/voice/HotwordResult;",
             ">;J)",
             "Ljava/lang/String;"
         }
     .end annotation
 
     .prologue
-    .line 52
-    .local p0, recognizedCommands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/SensoryResult;>;"
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 38
+    .local p0, recognizedCommands:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/HotwordResult;>;"
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 53
-    .local v3, sb:Ljava/lang/StringBuilder;
+    .line 39
+    .local v4, sb:Ljava/lang/StringBuilder;
     neg-long v0, p1
 
-    .line 54
+    .line 40
     .local v0, currentLength:J
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/glass/voice/SensoryResult;>;"
+    .local v2, iterator:Ljava/util/Iterator;,"Ljava/util/Iterator<Lcom/google/glass/voice/HotwordResult;>;"
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -81,76 +81,80 @@
 
     if-eqz v5, :cond_1
 
-    .line 55
+    .line 41
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Lcom/google/glass/voice/SensoryResult;
+    check-cast v3, Lcom/google/glass/voice/HotwordResult;
 
-    .line 56
-    .local v4, sensoryResult:Lcom/google/glass/voice/SensoryResult;
-    invoke-virtual {v4}, Lcom/google/glass/voice/SensoryResult;->getLiteral()Ljava/lang/String;
+    .line 42
+    .local v3, result:Lcom/google/glass/voice/HotwordResult;
+    invoke-virtual {v3}, Lcom/google/glass/voice/HotwordResult;->getRecognizedCommand()Lcom/google/glass/voice/VoiceCommand;
 
     move-result-object v5
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5}, Lcom/google/glass/voice/VoiceCommand;->getLiteral()Ljava/lang/String;
 
-    .line 57
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 43
     const-string v5, ":"
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 58
-    invoke-virtual {v4}, Lcom/google/glass/voice/SensoryResult;->getPhraseStartMillis()J
+    .line 44
+    invoke-virtual {v3}, Lcom/google/glass/voice/HotwordResult;->getPhraseStartMillis()J
 
     move-result-wide v5
 
     add-long/2addr v5, v0
 
-    invoke-virtual {v3, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 59
+    .line 45
     const-string v5, ":"
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 60
-    invoke-virtual {v4}, Lcom/google/glass/voice/SensoryResult;->getPhraseEndMillis()J
+    .line 46
+    invoke-virtual {v3}, Lcom/google/glass/voice/HotwordResult;->getPhraseEndMillis()J
 
     move-result-wide v5
 
     add-long/2addr v5, v0
 
-    invoke-virtual {v3, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 61
+    .line 47
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
     if-eqz v5, :cond_0
 
-    .line 62
+    .line 48
     const-string v5, ","
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 65
+    .line 51
     :cond_0
-    invoke-virtual {v4}, Lcom/google/glass/voice/SensoryResult;->getPhraseEndMillis()J
+    invoke-virtual {v3}, Lcom/google/glass/voice/HotwordResult;->getPhraseEndMillis()J
 
     move-result-wide v5
 
     add-long/2addr v0, v5
 
-    .line 66
+    .line 52
     goto :goto_0
 
-    .line 67
-    .end local v4           #sensoryResult:Lcom/google/glass/voice/SensoryResult;
+    .line 53
+    .end local v3           #result:Lcom/google/glass/voice/HotwordResult;
     :cond_1
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v5
 
@@ -173,12 +177,12 @@
     .end annotation
 
     .prologue
-    .line 75
+    .line 61
     invoke-static {}, Lcom/google/common/collect/Lists;->newArrayList()Ljava/util/ArrayList;
 
     move-result-object v9
 
-    .line 76
+    .line 62
     .local v9, parsedInfos:Ljava/util/List;,"Ljava/util/List<Lcom/google/glass/voice/AlignmentInfo;>;"
     const/16 v0, 0x2c
 
@@ -212,7 +216,7 @@
 
     check-cast v7, Ljava/lang/String;
 
-    .line 77
+    .line 63
     .local v7, commandSegment:Ljava/lang/String;
     const/16 v0, 0x3a
 
@@ -228,7 +232,7 @@
 
     move-result-object v10
 
-    .line 78
+    .line 64
     .local v10, segmentParameters:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -236,7 +240,7 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 79
+    .line 65
     .local v5, literal:Ljava/lang/String;
     new-instance v0, Lcom/google/glass/voice/AlignmentInfo;
 
@@ -276,7 +280,7 @@
 
     goto :goto_0
 
-    .line 83
+    .line 69
     .end local v5           #literal:Ljava/lang/String;
     .end local v7           #commandSegment:Ljava/lang/String;
     .end local v10           #segmentParameters:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
@@ -284,81 +288,57 @@
     return-object v9
 .end method
 
-.method public static parseSensoryAlignmentSegment(Ljava/lang/String;)Lcom/google/glass/voice/AlignmentInfo;
-    .locals 8
-    .parameter "alignmentSegment"
+
+# virtual methods
+.method public toString()Ljava/lang/String;
+    .locals 3
 
     .prologue
-    .line 32
+    .line 74
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 75
+    .local v0, sb:Ljava/lang/StringBuilder;
+    iget-wide v1, p0, Lcom/google/glass/voice/AlignmentInfo;->startMillis:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 76
     const-string v1, " "
 
-    invoke-static {v1}, Lcom/google/common/base/Splitter;->on(Ljava/lang/String;)Lcom/google/common/base/Splitter;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 77
+    iget-wide v1, p0, Lcom/google/glass/voice/AlignmentInfo;->endMillis:J
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 78
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 79
+    iget-object v1, p0, Lcom/google/glass/voice/AlignmentInfo;->text:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 80
+    const-string v1, " "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 81
+    iget v1, p0, Lcom/google/glass/voice/AlignmentInfo;->score:F
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 82
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, p0}, Lcom/google/common/base/Splitter;->split(Ljava/lang/CharSequence;)Ljava/lang/Iterable;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    .line 33
-    .local v7, alignmentParameters:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
-    new-instance v0, Lcom/google/glass/voice/AlignmentInfo;
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-static {v1}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v1
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/String;
-
-    invoke-static {v3}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v3
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/String;
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/String;
-
-    invoke-static {v6}, Ljava/lang/Float;->valueOf(Ljava/lang/String;)Ljava/lang/Float;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/Float;->floatValue()F
-
-    move-result v6
-
-    invoke-direct/range {v0 .. v6}, Lcom/google/glass/voice/AlignmentInfo;-><init>(JJLjava/lang/String;F)V
-
-    .line 38
-    .local v0, alignmentInfo:Lcom/google/glass/voice/AlignmentInfo;
-    return-object v0
+    return-object v1
 .end method

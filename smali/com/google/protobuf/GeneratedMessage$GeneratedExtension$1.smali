@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1307
+    .line 1387
     .local p0, this:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension$1;,"Lcom/google/protobuf/GeneratedMessage$GeneratedExtension.1;"
     iput-object p1, p0, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension$1;->this$0:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension;
 
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 1310
+    .line 1390
     .local p0, this:Lcom/google/protobuf/GeneratedMessage$GeneratedExtension$1;,"Lcom/google/protobuf/GeneratedMessage$GeneratedExtension.1;"
     iget-object v0, p0, Lcom/google/protobuf/GeneratedMessage$GeneratedExtension$1;->val$descriptor:Lcom/google/protobuf/Descriptors$FieldDescriptor;
 

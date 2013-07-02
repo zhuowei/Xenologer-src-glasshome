@@ -42,18 +42,18 @@
     .locals 1
 
     .prologue
-    .line 385
+    .line 386
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 504
+    .line 505
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 386
+    .line 387
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 387
+    .line 388
     return-void
 .end method
 
@@ -62,18 +62,18 @@
     .parameter "parent"
 
     .prologue
-    .line 391
+    .line 392
     invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
-    .line 504
+    .line 505
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 392
+    .line 393
     invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->maybeForceBuilderInitialization()V
 
-    .line 393
+    .line 394
     return-void
 .end method
 
@@ -83,7 +83,7 @@
     .parameter "x1"
 
     .prologue
-    .line 368
+    .line 369
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -93,7 +93,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -105,7 +105,7 @@
     .locals 1
 
     .prologue
-    .line 399
+    .line 400
     new-instance v0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;-><init>()V
@@ -117,7 +117,7 @@
     .locals 1
 
     .prologue
-    .line 374
+    .line 375
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -127,14 +127,14 @@
     .locals 1
 
     .prologue
-    .line 395
+    .line 396
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 397
+    .line 398
     :cond_0
     return-void
 .end method
@@ -145,12 +145,12 @@
     .locals 2
 
     .prologue
-    .line 427
+    .line 428
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
 
-    .line 428
+    .line 429
     .local v0, result:Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->isInitialized()Z
 
@@ -158,14 +158,14 @@
 
     if-nez v1, :cond_0
 
-    .line 429
+    .line 430
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 431
+    .line 432
     :cond_0
     return-object v0
 .end method
@@ -174,7 +174,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -186,7 +186,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -198,22 +198,22 @@
     .locals 5
 
     .prologue
-    .line 435
+    .line 436
     new-instance v1, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/EntitySyncRequest$1;)V
 
-    .line 436
+    .line 437
     .local v1, result:Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 437
+    .line 438
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 438
+    .line 439
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -221,58 +221,58 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 439
+    .line 440
     or-int/lit8 v2, v2, 0x1
 
-    .line 441
+    .line 442
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->access$502(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 442
+    .line 443
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 443
+    .line 444
     or-int/lit8 v2, v2, 0x2
 
-    .line 445
+    .line 446
     :cond_1
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->allShareTargets_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->allShareTargets_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->access$602(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;Z)Z
 
-    .line 446
+    .line 447
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 447
+    .line 448
     or-int/lit8 v2, v2, 0x4
 
-    .line 449
+    .line 450
     :cond_2
     iget-boolean v3, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->enabledTargetsOnly_:Z
 
     #setter for: Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->enabledTargetsOnly_:Z
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->access$702(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;Z)Z
 
-    .line 450
+    .line 451
     #setter for: Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->access$802(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;I)I
 
-    .line 451
+    .line 452
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onBuilt()V
 
-    .line 452
+    .line 453
     return-object v1
 .end method
 
@@ -280,7 +280,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -292,7 +292,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -306,42 +306,42 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 403
+    .line 404
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 404
+    .line 405
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 405
+    .line 406
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 406
+    .line 407
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->allShareTargets_:Z
 
-    .line 407
+    .line 408
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 408
+    .line 409
     iput-boolean v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->enabledTargetsOnly_:Z
 
-    .line 409
+    .line 410
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 410
+    .line 411
     return-object p0
 .end method
 
@@ -349,7 +349,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -361,7 +361,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -373,7 +373,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -385,7 +385,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -397,22 +397,22 @@
     .locals 1
 
     .prologue
-    .line 649
+    .line 653
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 650
+    .line 654
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->allShareTargets_:Z
 
-    .line 651
+    .line 655
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 652
+    .line 656
     return-object p0
 .end method
 
@@ -420,14 +420,14 @@
     .locals 1
 
     .prologue
-    .line 583
+    .line 587
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 584
+    .line 588
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -438,10 +438,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 585
+    .line 589
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 586
+    .line 590
     return-object p0
 .end method
 
@@ -449,22 +449,22 @@
     .locals 1
 
     .prologue
-    .line 709
+    .line 713
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 710
+    .line 714
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->enabledTargetsOnly_:Z
 
-    .line 711
+    .line 715
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 712
+    .line 716
     return-object p0
 .end method
 
@@ -472,7 +472,7 @@
     .locals 2
 
     .prologue
-    .line 414
+    .line 415
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -492,7 +492,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -504,7 +504,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -516,7 +516,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -528,7 +528,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -540,7 +540,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -557,7 +557,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -569,7 +569,7 @@
     .locals 1
 
     .prologue
-    .line 626
+    .line 630
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->allShareTargets_:Z
 
     return v0
@@ -579,7 +579,7 @@
     .locals 1
 
     .prologue
-    .line 423
+    .line 424
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -591,7 +591,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -603,7 +603,7 @@
     .locals 1
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
@@ -615,48 +615,61 @@
     .locals 1
 
     .prologue
-    .line 419
+    .line 420
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getDeviceId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 525
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
-
     .line 526
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
     .line 527
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
+
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 528
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 530
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 529
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
+    .line 531
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
 
     .line 532
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    .line 536
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -665,16 +678,16 @@
     .locals 3
 
     .prologue
-    .line 545
+    .line 549
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 546
+    .line 550
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 547
+    .line 551
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -682,11 +695,11 @@
 
     move-result-object v0
 
-    .line 550
+    .line 554
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 553
+    .line 557
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -705,7 +718,7 @@
     .locals 1
 
     .prologue
-    .line 680
+    .line 684
     iget-boolean v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->enabledTargetsOnly_:Z
 
     return v0
@@ -715,7 +728,7 @@
     .locals 2
 
     .prologue
-    .line 616
+    .line 620
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -741,7 +754,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 514
+    .line 515
     iget v1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -761,7 +774,7 @@
     .locals 2
 
     .prologue
-    .line 667
+    .line 671
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -785,7 +798,7 @@
     .locals 3
 
     .prologue
-    .line 379
+    .line 380
     sget-object v0, Lcom/google/googlex/glass/common/proto/EntitySync;->internal_static_googlex_glass_common_proto_EntitySyncRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
@@ -803,7 +816,7 @@
     .locals 1
 
     .prologue
-    .line 482
+    .line 483
     const/4 v0, 0x1
 
     return v0
@@ -814,18 +827,18 @@
     .parameter "other"
 
     .prologue
-    .line 465
+    .line 466
     invoke-static {}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 478
+    .line 479
     :goto_0
     return-object p0
 
-    .line 466
+    .line 467
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->hasDeviceId()Z
 
@@ -833,14 +846,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 467
+    .line 468
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 468
+    .line 469
     #getter for: Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->access$500(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;)Ljava/lang/Object;
 
@@ -848,10 +861,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 469
+    .line 470
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 471
+    .line 472
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->hasAllShareTargets()Z
 
@@ -859,14 +872,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 472
+    .line 473
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getAllShareTargets()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->setAllShareTargets(Z)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
-    .line 474
+    .line 475
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->hasEnabledTargetsOnly()Z
 
@@ -874,14 +887,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 475
+    .line 476
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getEnabledTargetsOnly()Z
 
     move-result v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->setEnabledTargetsOnly(Z)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
-    .line 477
+    .line 478
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -903,10 +916,10 @@
     .end annotation
 
     .prologue
-    .line 489
+    .line 490
     const/4 v2, 0x0
 
-    .line 491
+    .line 492
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -924,21 +937,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 496
+    .line 497
     if-eqz v2, :cond_0
 
-    .line 497
+    .line 498
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
-    .line 500
+    .line 501
     :cond_0
     return-object p0
 
-    .line 492
+    .line 493
     :catch_0
     move-exception v1
 
-    .line 493
+    .line 494
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -951,19 +964,19 @@
 
     move-object v2, v0
 
-    .line 494
+    .line 495
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 496
+    .line 497
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 497
+    .line 498
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/EntitySyncRequest;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     :cond_1
@@ -975,12 +988,12 @@
     .parameter "other"
 
     .prologue
-    .line 456
+    .line 457
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     if-eqz v0, :cond_0
 
-    .line 457
+    .line 458
     check-cast p1, Lcom/google/googlex/glass/common/proto/EntitySyncRequest;
 
     .end local p1
@@ -988,12 +1001,12 @@
 
     move-result-object p0
 
-    .line 460
+    .line 461
     .end local p0
     :goto_0
     return-object p0
 
-    .line 459
+    .line 460
     .restart local p0
     .restart local p1
     :cond_0
@@ -1013,7 +1026,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1026,7 +1039,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1045,7 +1058,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1064,7 +1077,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1077,7 +1090,7 @@
     .parameter "x0"
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1096,7 +1109,7 @@
     .end annotation
 
     .prologue
-    .line 368
+    .line 369
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;
 
     move-result-object v0
@@ -1109,20 +1122,20 @@
     .parameter "value"
 
     .prologue
-    .line 636
+    .line 640
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 637
+    .line 641
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->allShareTargets_:Z
 
-    .line 638
+    .line 642
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 639
+    .line 643
     return-object p0
 .end method
 
@@ -1131,17 +1144,17 @@
     .parameter "value"
 
     .prologue
-    .line 566
+    .line 570
     if-nez p1, :cond_0
 
-    .line 567
+    .line 571
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 569
+    .line 573
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
@@ -1149,13 +1162,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 570
+    .line 574
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 571
+    .line 575
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 572
+    .line 576
     return-object p0
 .end method
 
@@ -1164,17 +1177,17 @@
     .parameter "value"
 
     .prologue
-    .line 598
+    .line 602
     if-nez p1, :cond_0
 
-    .line 599
+    .line 603
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 601
+    .line 605
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
@@ -1182,13 +1195,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 602
+    .line 606
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 603
+    .line 607
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 604
+    .line 608
     return-object p0
 .end method
 
@@ -1197,19 +1210,19 @@
     .parameter "value"
 
     .prologue
-    .line 693
+    .line 697
     iget v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->bitField0_:I
 
-    .line 694
+    .line 698
     iput-boolean p1, p0, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->enabledTargetsOnly_:Z
 
-    .line 695
+    .line 699
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/EntitySyncRequest$Builder;->onChanged()V
 
-    .line 696
+    .line 700
     return-object p0
 .end method

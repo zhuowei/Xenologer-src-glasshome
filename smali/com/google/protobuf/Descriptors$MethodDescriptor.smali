@@ -47,22 +47,22 @@
     .end annotation
 
     .prologue
-    .line 1503
+    .line 1615
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1504
+    .line 1616
     iput p4, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->index:I
 
-    .line 1505
+    .line 1617
     iput-object p1, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;
 
-    .line 1506
+    .line 1618
     iput-object p2, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
-    .line 1507
+    .line 1619
     iput-object p3, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->service:Lcom/google/protobuf/Descriptors$ServiceDescriptor;
 
-    .line 1509
+    .line 1621
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -95,15 +95,15 @@
 
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->fullName:Ljava/lang/String;
 
-    .line 1511
+    .line 1623
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
-    invoke-static {p2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
+    invoke-static {p2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1300(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
 
     move-result-object v0
 
     invoke-virtual {v0, p0}, Lcom/google/protobuf/Descriptors$DescriptorPool;->addSymbol(Lcom/google/protobuf/Descriptors$GenericDescriptor;)V
 
-    .line 1512
+    .line 1624
     return-void
 .end method
 
@@ -121,13 +121,13 @@
     .end annotation
 
     .prologue
-    .line 1453
+    .line 1565
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/google/protobuf/Descriptors$MethodDescriptor;-><init>(Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;Lcom/google/protobuf/Descriptors$FileDescriptor;Lcom/google/protobuf/Descriptors$ServiceDescriptor;I)V
 
     return-void
 .end method
 
-.method static synthetic access$2200(Lcom/google/protobuf/Descriptors$MethodDescriptor;)V
+.method static synthetic access$2300(Lcom/google/protobuf/Descriptors$MethodDescriptor;)V
     .locals 0
     .parameter "x0"
     .annotation system Ldalvik/annotation/Throws;
@@ -137,19 +137,19 @@
     .end annotation
 
     .prologue
-    .line 1453
+    .line 1565
     invoke-direct {p0}, Lcom/google/protobuf/Descriptors$MethodDescriptor;->crossLink()V
 
     return-void
 .end method
 
-.method static synthetic access$2300(Lcom/google/protobuf/Descriptors$MethodDescriptor;Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;)V
+.method static synthetic access$2400(Lcom/google/protobuf/Descriptors$MethodDescriptor;Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 1453
+    .line 1565
     invoke-direct {p0, p1}, Lcom/google/protobuf/Descriptors$MethodDescriptor;->setProto(Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;)V
 
     return-void
@@ -168,11 +168,11 @@
 
     const/16 v5, 0x22
 
-    .line 1515
+    .line 1627
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
-    invoke-static {v2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
+    invoke-static {v2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1300(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
 
     move-result-object v2
 
@@ -188,13 +188,13 @@
 
     move-result-object v0
 
-    .line 1518
+    .line 1630
     .local v0, input:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     instance-of v2, v0, Lcom/google/protobuf/Descriptors$Descriptor;
 
     if-nez v2, :cond_0
 
-    .line 1519
+    .line 1631
     new-instance v2, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -229,18 +229,18 @@
 
     throw v2
 
-    .line 1522
+    .line 1634
     :cond_0
     check-cast v0, Lcom/google/protobuf/Descriptors$Descriptor;
 
     .end local v0           #input:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     iput-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->inputType:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 1524
+    .line 1636
     iget-object v2, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     #getter for: Lcom/google/protobuf/Descriptors$FileDescriptor;->pool:Lcom/google/protobuf/Descriptors$DescriptorPool;
-    invoke-static {v2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1200(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
+    invoke-static {v2}, Lcom/google/protobuf/Descriptors$FileDescriptor;->access$1300(Lcom/google/protobuf/Descriptors$FileDescriptor;)Lcom/google/protobuf/Descriptors$DescriptorPool;
 
     move-result-object v2
 
@@ -256,13 +256,13 @@
 
     move-result-object v1
 
-    .line 1527
+    .line 1639
     .local v1, output:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     instance-of v2, v1, Lcom/google/protobuf/Descriptors$Descriptor;
 
     if-nez v2, :cond_1
 
-    .line 1528
+    .line 1640
     new-instance v2, Lcom/google/protobuf/Descriptors$DescriptorValidationException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -297,14 +297,14 @@
 
     throw v2
 
-    .line 1531
+    .line 1643
     :cond_1
     check-cast v1, Lcom/google/protobuf/Descriptors$Descriptor;
 
     .end local v1           #output:Lcom/google/protobuf/Descriptors$GenericDescriptor;
     iput-object v1, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->outputType:Lcom/google/protobuf/Descriptors$Descriptor;
 
-    .line 1532
+    .line 1644
     return-void
 .end method
 
@@ -313,10 +313,10 @@
     .parameter "proto"
 
     .prologue
-    .line 1536
+    .line 1648
     iput-object p1, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;
 
-    .line 1537
+    .line 1649
     return-void
 .end method
 
@@ -326,7 +326,7 @@
     .locals 1
 
     .prologue
-    .line 1473
+    .line 1585
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->file:Lcom/google/protobuf/Descriptors$FileDescriptor;
 
     return-object v0
@@ -336,7 +336,7 @@
     .locals 1
 
     .prologue
-    .line 1470
+    .line 1582
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->fullName:Ljava/lang/String;
 
     return-object v0
@@ -346,7 +346,7 @@
     .locals 1
 
     .prologue
-    .line 1458
+    .line 1570
     iget v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->index:I
 
     return v0
@@ -356,7 +356,7 @@
     .locals 1
 
     .prologue
-    .line 1479
+    .line 1591
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->inputType:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -366,7 +366,7 @@
     .locals 1
 
     .prologue
-    .line 1464
+    .line 1576
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;
 
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;->getName()Ljava/lang/String;
@@ -380,7 +380,7 @@
     .locals 1
 
     .prologue
-    .line 1487
+    .line 1599
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;
 
     invoke-virtual {v0}, Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;->getOptions()Lcom/google/protobuf/DescriptorProtos$MethodOptions;
@@ -394,7 +394,7 @@
     .locals 1
 
     .prologue
-    .line 1482
+    .line 1594
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->outputType:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -404,7 +404,7 @@
     .locals 1
 
     .prologue
-    .line 1476
+    .line 1588
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->service:Lcom/google/protobuf/Descriptors$ServiceDescriptor;
 
     return-object v0
@@ -414,7 +414,7 @@
     .locals 1
 
     .prologue
-    .line 1461
+    .line 1573
     iget-object v0, p0, Lcom/google/protobuf/Descriptors$MethodDescriptor;->proto:Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;
 
     return-object v0
@@ -424,7 +424,7 @@
     .locals 1
 
     .prologue
-    .line 1453
+    .line 1565
     invoke-virtual {p0}, Lcom/google/protobuf/Descriptors$MethodDescriptor;->toProto()Lcom/google/protobuf/DescriptorProtos$MethodDescriptorProto;
 
     move-result-object v0

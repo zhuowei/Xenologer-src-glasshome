@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 559
+    .line 650
     invoke-static {}, Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;->values()[Lcom/google/glass/home/timeline/TimelineItemAdapter$ViewType;
 
     move-result-object v0

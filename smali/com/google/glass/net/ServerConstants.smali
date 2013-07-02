@@ -61,7 +61,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants;->TAG:Ljava/lang/String;
 
-    .line 133
+    .line 131
     const-string v0, "Mozilla/5.0 (Linux; U; Android 4.0.4; en-us; Glass 1 Build/IMM76L; %s) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30"
 
     const/4 v1, 0x1
@@ -86,7 +86,7 @@
 
     sput-object v0, Lcom/google/glass/net/ServerConstants;->GLASS_USER_AGENT:Ljava/lang/String;
 
-    .line 137
+    .line 135
     return-void
 .end method
 
@@ -94,7 +94,7 @@
     .locals 0
 
     .prologue
-    .line 235
+    .line 233
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -104,7 +104,7 @@
     .locals 1
 
     .prologue
-    .line 199
+    .line 197
     const-string v0, "b"
 
     invoke-static {v0}, Lcom/google/glass/net/ServerConstants;->makeClientProxyUrl(Ljava/lang/String;)Ljava/lang/String;
@@ -118,7 +118,7 @@
     .locals 2
 
     .prologue
-    .line 220
+    .line 218
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -148,7 +148,7 @@
     .locals 1
 
     .prologue
-    .line 206
+    .line 204
     const-string v0, "https://glass.google.com/"
 
     return-object v0
@@ -158,7 +158,7 @@
     .locals 2
 
     .prologue
-    .line 213
+    .line 211
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -188,7 +188,7 @@
     .locals 1
 
     .prologue
-    .line 232
+    .line 230
     const-string v0, "uploads"
 
     invoke-static {v0}, Lcom/google/glass/net/ServerConstants;->makeUrl(Ljava/lang/String;)Ljava/lang/String;
@@ -202,7 +202,7 @@
     .locals 5
 
     .prologue
-    .line 153
+    .line 151
     sget-object v3, Lcom/google/glass/util/Labs$Feature;->PRODUCTION_SERVERS:Lcom/google/glass/util/Labs$Feature;
 
     invoke-static {v3}, Lcom/google/glass/util/Labs;->isEnabled(Lcom/google/glass/util/Labs$Feature;)Z
@@ -211,14 +211,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 154
+    .line 152
     const-string v0, "clients2.google.com"
 
-    .line 155
+    .line 153
     .local v0, domain:Ljava/lang/String;
     const-string v1, "glass"
 
-    .line 172
+    .line 170
     .local v1, environmentPath:Ljava/lang/String;
     :goto_0
     new-instance v3, Ljava/lang/StringBuilder;
@@ -249,16 +249,16 @@
 
     move-result-object v2
 
-    .line 173
+    .line 171
     .local v2, rootUrl:Ljava/lang/String;
     sget-object v3, Lcom/google/glass/net/ServerConstants;->TAG:Ljava/lang/String;
 
     invoke-static {v3, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 174
+    .line 172
     return-object v2
 
-    .line 156
+    .line 154
     .end local v0           #domain:Ljava/lang/String;
     .end local v1           #environmentPath:Ljava/lang/String;
     .end local v2           #rootUrl:Ljava/lang/String;
@@ -271,17 +271,17 @@
 
     if-eqz v3, :cond_1
 
-    .line 157
+    .line 155
     const-string v0, "glass.sandbox.google.com"
 
-    .line 158
+    .line 156
     .restart local v0       #domain:Ljava/lang/String;
     const-string v1, "staging"
 
     .restart local v1       #environmentPath:Ljava/lang/String;
     goto :goto_0
 
-    .line 159
+    .line 157
     .end local v0           #domain:Ljava/lang/String;
     .end local v1           #environmentPath:Ljava/lang/String;
     :cond_1
@@ -293,17 +293,17 @@
 
     if-eqz v3, :cond_2
 
-    .line 161
+    .line 159
     const-string v0, "glass.sandbox.google.com"
 
-    .line 162
+    .line 160
     .restart local v0       #domain:Ljava/lang/String;
     const-string v1, "autopush"
 
     .restart local v1       #environmentPath:Ljava/lang/String;
     goto :goto_0
 
-    .line 163
+    .line 161
     .end local v0           #domain:Ljava/lang/String;
     .end local v1           #environmentPath:Ljava/lang/String;
     :cond_2
@@ -315,23 +315,23 @@
 
     if-eqz v3, :cond_3
 
-    .line 164
+    .line 162
     const-string v0, "glass.sandbox.google.com"
 
-    .line 165
+    .line 163
     .restart local v0       #domain:Ljava/lang/String;
     const-string v1, "dev"
 
     .restart local v1       #environmentPath:Ljava/lang/String;
     goto :goto_0
 
-    .line 168
+    .line 166
     .end local v0           #domain:Ljava/lang/String;
     .end local v1           #environmentPath:Ljava/lang/String;
     :cond_3
     const-string v0, "clients2.google.com"
 
-    .line 169
+    .line 167
     .restart local v0       #domain:Ljava/lang/String;
     const-string v1, "glass"
 
@@ -343,7 +343,7 @@
     .locals 2
 
     .prologue
-    .line 227
+    .line 225
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -373,7 +373,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 141
     sget-object v0, Lcom/google/glass/net/ServerConstants;->GLASS_USER_AGENT:Ljava/lang/String;
 
     return-object v0
@@ -386,7 +386,7 @@
     .end annotation
 
     .prologue
-    .line 184
+    .line 182
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -435,7 +435,7 @@
     .end annotation
 
     .prologue
-    .line 194
+    .line 192
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

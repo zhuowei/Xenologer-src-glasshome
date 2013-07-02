@@ -28,7 +28,7 @@
     .locals 0
 
     .prologue
-    .line 656
+    .line 690
     invoke-direct {p0}, Lcom/google/protobuf/AbstractParser;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
     .end annotation
 
     .prologue
-    .line 661
+    .line 695
     new-instance v0, Lcom/google/glass/companion/Proto$Envelope;
 
     const/4 v1, 0x0
@@ -68,7 +68,7 @@
     .end annotation
 
     .prologue
-    .line 656
+    .line 690
     invoke-virtual {p0, p1, p2}, Lcom/google/glass/companion/Proto$Envelope$1;->parsePartialFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/glass/companion/Proto$Envelope;
 
     move-result-object v0

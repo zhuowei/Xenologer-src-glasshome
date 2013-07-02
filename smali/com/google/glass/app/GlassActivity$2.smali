@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 167
+    .line 165
     iput-object p1, p0, Lcom/google/glass/app/GlassActivity$2;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-direct {p0}, Lcom/google/glass/util/SimpleAnimationListener;-><init>()V
@@ -39,11 +39,11 @@
     .parameter "animation"
 
     .prologue
-    .line 170
+    .line 168
     iget-object v0, p0, Lcom/google/glass/app/GlassActivity$2;->this$0:Lcom/google/glass/app/GlassActivity;
 
     invoke-virtual {v0}, Lcom/google/glass/app/GlassActivity;->finish()V
 
-    .line 171
+    .line 169
     return-void
 .end method

@@ -54,90 +54,40 @@
     .locals 1
 
     .prologue
-    .line 826
+    .line 832
     invoke-direct {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>()V
 
-    .line 1009
+    .line 1015
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 1044
+    .line 1050
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 1141
+    .line 1150
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1250
+    .line 1262
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1347
+    .line 1362
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1476
+    .line 1494
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1549
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
-
-    .line 827
-    invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->maybeForceBuilderInitialization()V
-
-    .line 828
-    return-void
-.end method
-
-.method private constructor <init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
-    .locals 1
-    .parameter "parent"
-
-    .prologue
-    .line 832
-    invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
-
-    .line 1009
-    sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
-
-    .line 1044
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
-
-    .line 1141
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
-
-    .line 1250
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
-
-    .line 1347
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
-
-    .line 1476
-    const-string v0, ""
-
-    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
-
-    .line 1549
+    .line 1570
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
@@ -149,13 +99,63 @@
     return-void
 .end method
 
+.method private constructor <init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
+    .locals 1
+    .parameter "parent"
+
+    .prologue
+    .line 838
+    invoke-direct {p0, p1}, Lcom/google/protobuf/GeneratedMessage$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
+
+    .line 1015
+    sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
+
+    .line 1050
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
+
+    .line 1150
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
+
+    .line 1262
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
+
+    .line 1362
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
+
+    .line 1494
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
+
+    .line 1570
+    const-string v0, ""
+
+    iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
+
+    .line 839
+    invoke-direct {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->maybeForceBuilderInitialization()V
+
+    .line 840
+    return-void
+.end method
+
 .method synthetic constructor <init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$1;)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 809
+    .line 815
     invoke-direct {p0, p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;-><init>(Lcom/google/protobuf/GeneratedMessage$BuilderParent;)V
 
     return-void
@@ -165,7 +165,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -177,7 +177,7 @@
     .locals 1
 
     .prologue
-    .line 840
+    .line 846
     new-instance v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     invoke-direct {v0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;-><init>()V
@@ -189,7 +189,7 @@
     .locals 1
 
     .prologue
-    .line 815
+    .line 821
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DmRegister;->internal_static_googlex_glass_common_proto_C2DMRegistrationRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
@@ -199,14 +199,14 @@
     .locals 1
 
     .prologue
-    .line 836
+    .line 842
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$300()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 838
+    .line 844
     :cond_0
     return-void
 .end method
@@ -217,12 +217,12 @@
     .locals 2
 
     .prologue
-    .line 880
+    .line 886
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
 
-    .line 881
+    .line 887
     .local v0, result:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
     invoke-virtual {v0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->isInitialized()Z
 
@@ -230,14 +230,14 @@
 
     if-nez v1, :cond_0
 
-    .line 882
+    .line 888
     invoke-static {v0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->newUninitializedMessageException(Lcom/google/protobuf/Message;)Lcom/google/protobuf/UninitializedMessageException;
 
     move-result-object v1
 
     throw v1
 
-    .line 884
+    .line 890
     :cond_0
     return-object v0
 .end method
@@ -246,7 +246,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -258,7 +258,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->build()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -270,22 +270,22 @@
     .locals 5
 
     .prologue
-    .line 888
+    .line 894
     new-instance v1, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, p0, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;-><init>(Lcom/google/protobuf/GeneratedMessage$Builder;Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$1;)V
 
-    .line 889
+    .line 895
     .local v1, result:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 890
+    .line 896
     .local v0, from_bitField0_:I
     const/4 v2, 0x0
 
-    .line 891
+    .line 897
     .local v2, to_bitField0_:I
     and-int/lit8 v3, v0, 0x1
 
@@ -293,160 +293,160 @@
 
     if-ne v3, v4, :cond_0
 
-    .line 892
+    .line 898
     or-int/lit8 v2, v2, 0x1
 
-    .line 894
+    .line 900
     :cond_0
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$502(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 895
+    .line 901
     and-int/lit8 v3, v0, 0x2
 
     const/4 v4, 0x2
 
     if-ne v3, v4, :cond_1
 
-    .line 896
+    .line 902
     or-int/lit8 v2, v2, 0x2
 
-    .line 898
+    .line 904
     :cond_1
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->registrationId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$602(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 899
+    .line 905
     and-int/lit8 v3, v0, 0x4
 
     const/4 v4, 0x4
 
     if-ne v3, v4, :cond_2
 
-    .line 900
+    .line 906
     or-int/lit8 v2, v2, 0x4
 
-    .line 902
+    .line 908
     :cond_2
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$702(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 903
+    .line 909
     and-int/lit8 v3, v0, 0x8
 
     const/16 v4, 0x8
 
     if-ne v3, v4, :cond_3
 
-    .line 904
+    .line 910
     or-int/lit8 v2, v2, 0x8
 
-    .line 906
+    .line 912
     :cond_3
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->locale_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$802(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 907
+    .line 913
     and-int/lit8 v3, v0, 0x10
 
     const/16 v4, 0x10
 
     if-ne v3, v4, :cond_4
 
-    .line 908
+    .line 914
     or-int/lit8 v2, v2, 0x10
 
-    .line 910
+    .line 916
     :cond_4
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->majorVersion_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$902(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 911
+    .line 917
     and-int/lit8 v3, v0, 0x20
 
     const/16 v4, 0x20
 
     if-ne v3, v4, :cond_5
 
-    .line 912
+    .line 918
     or-int/lit8 v2, v2, 0x20
 
-    .line 914
+    .line 920
     :cond_5
     iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->version_:J
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->version_:J
     invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1002(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;J)J
 
-    .line 915
+    .line 921
     and-int/lit8 v3, v0, 0x40
 
     const/16 v4, 0x40
 
     if-ne v3, v4, :cond_6
 
-    .line 916
+    .line 922
     or-int/lit8 v2, v2, 0x40
 
-    .line 918
+    .line 924
     :cond_6
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->deviceOsVersion_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1102(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 919
+    .line 925
     and-int/lit16 v3, v0, 0x80
 
     const/16 v4, 0x80
 
     if-ne v3, v4, :cond_7
 
-    .line 920
+    .line 926
     or-int/lit16 v2, v2, 0x80
 
-    .line 922
+    .line 928
     :cond_7
     iget-object v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->deviceHardware_:Ljava/lang/Object;
     invoke-static {v1, v3}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1202(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 923
+    .line 929
     and-int/lit16 v3, v0, 0x100
 
     const/16 v4, 0x100
 
     if-ne v3, v4, :cond_8
 
-    .line 924
+    .line 930
     or-int/lit16 v2, v2, 0x100
 
-    .line 926
+    .line 932
     :cond_8
     iget-wide v3, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->gsfDeviceId_:J
 
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->gsfDeviceId_:J
     invoke-static {v1, v3, v4}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1302(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;J)J
 
-    .line 927
+    .line 933
     #setter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->bitField0_:I
     invoke-static {v1, v2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1402(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;I)I
 
-    .line 928
+    .line 934
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onBuilt()V
 
-    .line 929
+    .line 935
     return-object v1
 .end method
 
@@ -454,7 +454,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -466,7 +466,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->buildPartial()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -480,114 +480,114 @@
     .prologue
     const-wide/16 v1, 0x0
 
-    .line 844
+    .line 850
     invoke-super {p0}, Lcom/google/protobuf/GeneratedMessage$Builder;->clear()Lcom/google/protobuf/GeneratedMessage$Builder;
 
-    .line 845
+    .line 851
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 846
+    .line 852
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 847
+    .line 853
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 848
+    .line 854
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 849
+    .line 855
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 850
+    .line 856
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 851
+    .line 857
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 852
+    .line 858
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 853
+    .line 859
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 854
+    .line 860
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 855
+    .line 861
     iput-wide v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->version_:J
 
-    .line 856
+    .line 862
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 857
+    .line 863
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 858
+    .line 864
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 859
+    .line 865
     const-string v0, ""
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 860
+    .line 866
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 861
+    .line 867
     iput-wide v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->gsfDeviceId_:J
 
-    .line 862
+    .line 868
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 863
+    .line 869
     return-object p0
 .end method
 
@@ -595,7 +595,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -607,7 +607,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -619,7 +619,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -631,7 +631,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clear()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -643,22 +643,22 @@
     .locals 1
 
     .prologue
-    .line 1038
+    .line 1044
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1039
+    .line 1045
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;->REGISTER:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 1040
+    .line 1046
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1041
+    .line 1047
     return-object p0
 .end method
 
@@ -666,14 +666,14 @@
     .locals 1
 
     .prologue
-    .line 1603
+    .line 1627
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x81
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1604
+    .line 1628
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -684,10 +684,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 1605
+    .line 1629
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1606
+    .line 1630
     return-object p0
 .end method
 
@@ -695,14 +695,14 @@
     .locals 1
 
     .prologue
-    .line 1225
+    .line 1237
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x5
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1226
+    .line 1238
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -713,10 +713,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1227
+    .line 1239
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1228
+    .line 1240
     return-object p0
 .end method
 
@@ -724,14 +724,14 @@
     .locals 1
 
     .prologue
-    .line 1530
+    .line 1551
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x41
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1531
+    .line 1552
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -742,10 +742,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1532
+    .line 1553
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1533
+    .line 1554
     return-object p0
 .end method
 
@@ -753,22 +753,22 @@
     .locals 2
 
     .prologue
-    .line 1648
+    .line 1672
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, -0x101
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1649
+    .line 1673
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->gsfDeviceId_:J
 
-    .line 1650
+    .line 1674
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1651
+    .line 1675
     return-object p0
 .end method
 
@@ -776,14 +776,14 @@
     .locals 1
 
     .prologue
-    .line 1324
+    .line 1339
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x9
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1325
+    .line 1340
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -794,10 +794,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1326
+    .line 1341
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1327
+    .line 1342
     return-object p0
 .end method
 
@@ -805,14 +805,14 @@
     .locals 1
 
     .prologue
-    .line 1421
+    .line 1439
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x11
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1422
+    .line 1440
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -823,10 +823,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1423
+    .line 1441
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1424
+    .line 1442
     return-object p0
 .end method
 
@@ -834,14 +834,14 @@
     .locals 1
 
     .prologue
-    .line 1118
+    .line 1127
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x3
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1119
+    .line 1128
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -852,10 +852,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 1120
+    .line 1129
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1121
+    .line 1130
     return-object p0
 .end method
 
@@ -863,22 +863,22 @@
     .locals 2
 
     .prologue
-    .line 1470
+    .line 1488
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, -0x21
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1471
+    .line 1489
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->version_:J
 
-    .line 1472
+    .line 1490
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1473
+    .line 1491
     return-object p0
 .end method
 
@@ -886,7 +886,7 @@
     .locals 2
 
     .prologue
-    .line 867
+    .line 873
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->create()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -906,7 +906,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -918,7 +918,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -930,7 +930,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -942,7 +942,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -954,7 +954,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -971,7 +971,7 @@
     .end annotation
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->clone()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -983,7 +983,7 @@
     .locals 1
 
     .prologue
-    .line 1020
+    .line 1026
     iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     return-object v0
@@ -993,7 +993,7 @@
     .locals 1
 
     .prologue
-    .line 876
+    .line 882
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -1005,7 +1005,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -1017,7 +1017,7 @@
     .locals 1
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->getDefaultInstanceForType()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
@@ -1029,48 +1029,61 @@
     .locals 1
 
     .prologue
-    .line 872
+    .line 878
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DmRegister;->internal_static_googlex_glass_common_proto_C2DMRegistrationRequest_descriptor:Lcom/google/protobuf/Descriptors$Descriptor;
 
     return-object v0
 .end method
 
 .method public getDeviceHardware()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1560
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
+    .line 1581
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 1561
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1582
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1562
+    move-object v0, v1
+
+    .line 1583
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1585
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1564
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
+    .line 1586
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1567
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1587
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
+
+    .line 1591
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1079,16 +1092,16 @@
     .locals 3
 
     .prologue
-    .line 1575
+    .line 1599
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 1576
+    .line 1600
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1577
+    .line 1601
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1096,11 +1109,11 @@
 
     move-result-object v0
 
-    .line 1580
+    .line 1604
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 1583
+    .line 1607
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1116,41 +1129,54 @@
 .end method
 
 .method public getDeviceId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1164
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
+    .line 1173
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1165
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1174
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1166
+    move-object v0, v1
+
+    .line 1175
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1177
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1168
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
+    .line 1178
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1171
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1179
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
+
+    .line 1183
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1159,16 +1185,16 @@
     .locals 3
 
     .prologue
-    .line 1185
+    .line 1197
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1186
+    .line 1198
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1187
+    .line 1199
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1176,11 +1202,11 @@
 
     move-result-object v0
 
-    .line 1190
+    .line 1202
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1193
+    .line 1205
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1196,41 +1222,54 @@
 .end method
 
 .method public getDeviceOsVersion()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1487
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
+    .line 1505
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1488
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1506
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1489
+    move-object v0, v1
+
+    .line 1507
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1509
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1491
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
+    .line 1510
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1494
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1511
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
+
+    .line 1515
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1239,16 +1278,16 @@
     .locals 3
 
     .prologue
-    .line 1502
+    .line 1523
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1503
+    .line 1524
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1504
+    .line 1525
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1256,11 +1295,11 @@
 
     move-result-object v0
 
-    .line 1507
+    .line 1528
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1510
+    .line 1531
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1279,48 +1318,61 @@
     .locals 2
 
     .prologue
-    .line 1633
+    .line 1657
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->gsfDeviceId_:J
 
     return-wide v0
 .end method
 
 .method public getLocale()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1269
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
+    .line 1281
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1270
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1282
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1271
+    move-object v0, v1
+
+    .line 1283
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1285
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1273
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
+    .line 1286
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1276
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1287
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
+
+    .line 1291
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1329,16 +1381,16 @@
     .locals 3
 
     .prologue
-    .line 1288
+    .line 1303
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1289
+    .line 1304
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1290
+    .line 1305
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1346,11 +1398,11 @@
 
     move-result-object v0
 
-    .line 1293
+    .line 1308
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1296
+    .line 1311
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1366,41 +1418,54 @@
 .end method
 
 .method public getMajorVersion()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1366
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
+    .line 1381
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1367
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
+    .line 1382
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_1
 
-    .line 1368
+    move-object v0, v1
+
+    .line 1383
     check-cast v0, Lcom/google/protobuf/ByteString;
 
-    .end local v0           #ref:Ljava/lang/Object;
+    .line 1385
+    .local v0, bs:Lcom/google/protobuf/ByteString;
     invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 1370
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
+    .line 1386
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
 
-    .line 1373
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    move-result v3
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-eqz v3, :cond_0
+
+    .line 1387
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
+
+    .line 1391
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1409,16 +1474,16 @@
     .locals 3
 
     .prologue
-    .line 1385
+    .line 1403
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1386
+    .line 1404
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1387
+    .line 1405
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1426,11 +1491,11 @@
 
     move-result-object v0
 
-    .line 1390
+    .line 1408
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1393
+    .line 1411
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1446,41 +1511,54 @@
 .end method
 
 .method public getRegistrationId()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 1063
-    iget-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
-
-    .line 1064
-    .local v0, ref:Ljava/lang/Object;
-    instance-of v2, v0, Ljava/lang/String;
-
-    if-nez v2, :cond_0
-
-    .line 1065
-    check-cast v0, Lcom/google/protobuf/ByteString;
-
-    .end local v0           #ref:Ljava/lang/Object;
-    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 1067
-    .local v1, s:Ljava/lang/String;
-    iput-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
+    .line 1069
+    iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
     .line 1070
-    .end local v1           #s:Ljava/lang/String;
-    :goto_0
-    return-object v1
+    .local v1, ref:Ljava/lang/Object;
+    instance-of v3, v1, Ljava/lang/String;
 
-    .restart local v0       #ref:Ljava/lang/Object;
+    if-nez v3, :cond_1
+
+    move-object v0, v1
+
+    .line 1071
+    check-cast v0, Lcom/google/protobuf/ByteString;
+
+    .line 1073
+    .local v0, bs:Lcom/google/protobuf/ByteString;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->toStringUtf8()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 1074
+    .local v2, s:Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/protobuf/ByteString;->isValidUtf8()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 1075
+    iput-object v2, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
+
+    .line 1079
+    .end local v0           #bs:Lcom/google/protobuf/ByteString;
+    .end local v1           #ref:Ljava/lang/Object;
+    .end local v2           #s:Ljava/lang/String;
     :cond_0
-    check-cast v0, Ljava/lang/String;
+    :goto_0
+    return-object v2
 
-    .end local v0           #ref:Ljava/lang/Object;
-    move-object v1, v0
+    .restart local v1       #ref:Ljava/lang/Object;
+    :cond_1
+    check-cast v1, Ljava/lang/String;
+
+    .end local v1           #ref:Ljava/lang/Object;
+    move-object v2, v1
 
     goto :goto_0
 .end method
@@ -1489,16 +1567,16 @@
     .locals 3
 
     .prologue
-    .line 1082
+    .line 1091
     iget-object v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 1083
+    .line 1092
     .local v1, ref:Ljava/lang/Object;
     instance-of v2, v1, Ljava/lang/String;
 
     if-eqz v2, :cond_0
 
-    .line 1084
+    .line 1093
     check-cast v1, Ljava/lang/String;
 
     .end local v1           #ref:Ljava/lang/Object;
@@ -1506,11 +1584,11 @@
 
     move-result-object v0
 
-    .line 1087
+    .line 1096
     .local v0, b:Lcom/google/protobuf/ByteString;
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 1090
+    .line 1099
     .end local v0           #b:Lcom/google/protobuf/ByteString;
     :goto_0
     return-object v0
@@ -1529,7 +1607,7 @@
     .locals 2
 
     .prologue
-    .line 1455
+    .line 1473
     iget-wide v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->version_:J
 
     return-wide v0
@@ -1541,7 +1619,7 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 1014
+    .line 1020
     iget v1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v1, v1, 0x1
@@ -1561,7 +1639,7 @@
     .locals 2
 
     .prologue
-    .line 1554
+    .line 1575
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x80
@@ -1585,7 +1663,7 @@
     .locals 2
 
     .prologue
-    .line 1152
+    .line 1161
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x4
@@ -1609,7 +1687,7 @@
     .locals 2
 
     .prologue
-    .line 1481
+    .line 1499
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x40
@@ -1633,7 +1711,7 @@
     .locals 2
 
     .prologue
-    .line 1627
+    .line 1651
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit16 v0, v0, 0x100
@@ -1657,7 +1735,7 @@
     .locals 2
 
     .prologue
-    .line 1259
+    .line 1271
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x8
@@ -1681,7 +1759,7 @@
     .locals 2
 
     .prologue
-    .line 1356
+    .line 1371
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x10
@@ -1705,7 +1783,7 @@
     .locals 2
 
     .prologue
-    .line 1053
+    .line 1059
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x2
@@ -1729,7 +1807,7 @@
     .locals 2
 
     .prologue
-    .line 1449
+    .line 1467
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     and-int/lit8 v0, v0, 0x20
@@ -1753,7 +1831,7 @@
     .locals 3
 
     .prologue
-    .line 820
+    .line 826
     sget-object v0, Lcom/google/googlex/glass/common/proto/C2DmRegister;->internal_static_googlex_glass_common_proto_C2DMRegistrationRequest_fieldAccessorTable:Lcom/google/protobuf/GeneratedMessage$FieldAccessorTable;
 
     const-class v1, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
@@ -1771,7 +1849,7 @@
     .locals 1
 
     .prologue
-    .line 987
+    .line 993
     const/4 v0, 0x1
 
     return v0
@@ -1782,18 +1860,18 @@
     .parameter "other"
 
     .prologue
-    .line 942
+    .line 948
     invoke-static {}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getDefaultInstance()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_0
 
-    .line 983
+    .line 989
     :goto_0
     return-object p0
 
-    .line 943
+    .line 949
     :cond_0
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasAction()Z
 
@@ -1801,14 +1879,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 944
+    .line 950
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getAction()Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->setAction(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
-    .line 946
+    .line 952
     :cond_1
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasRegistrationId()Z
 
@@ -1816,14 +1894,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 947
+    .line 953
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 948
+    .line 954
     #getter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->registrationId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$600(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Ljava/lang/Object;
 
@@ -1831,10 +1909,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 949
+    .line 955
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 951
+    .line 957
     :cond_2
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasDeviceId()Z
 
@@ -1842,14 +1920,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 952
+    .line 958
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 953
+    .line 959
     #getter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->deviceId_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$700(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Ljava/lang/Object;
 
@@ -1857,10 +1935,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 954
+    .line 960
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 956
+    .line 962
     :cond_3
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasLocale()Z
 
@@ -1868,14 +1946,14 @@
 
     if-eqz v0, :cond_4
 
-    .line 957
+    .line 963
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x8
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 958
+    .line 964
     #getter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->locale_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$800(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Ljava/lang/Object;
 
@@ -1883,10 +1961,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 959
+    .line 965
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 961
+    .line 967
     :cond_4
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasMajorVersion()Z
 
@@ -1894,14 +1972,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 962
+    .line 968
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x10
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 963
+    .line 969
     #getter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->majorVersion_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$900(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Ljava/lang/Object;
 
@@ -1909,10 +1987,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 964
+    .line 970
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 966
+    .line 972
     :cond_5
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasVersion()Z
 
@@ -1920,14 +1998,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 967
+    .line 973
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getVersion()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->setVersion(J)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
-    .line 969
+    .line 975
     :cond_6
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasDeviceOsVersion()Z
 
@@ -1935,14 +2013,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 970
+    .line 976
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x40
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 971
+    .line 977
     #getter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->deviceOsVersion_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1100(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Ljava/lang/Object;
 
@@ -1950,10 +2028,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 972
+    .line 978
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 974
+    .line 980
     :cond_7
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasDeviceHardware()Z
 
@@ -1961,14 +2039,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 975
+    .line 981
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit16 v0, v0, 0x80
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 976
+    .line 982
     #getter for: Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->deviceHardware_:Ljava/lang/Object;
     invoke-static {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->access$1200(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Ljava/lang/Object;
 
@@ -1976,10 +2054,10 @@
 
     iput-object v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 977
+    .line 983
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 979
+    .line 985
     :cond_8
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->hasGsfDeviceId()Z
 
@@ -1987,14 +2065,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 980
+    .line 986
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getGsfDeviceId()J
 
     move-result-wide v0
 
     invoke-virtual {p0, v0, v1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->setGsfDeviceId(J)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
-    .line 982
+    .line 988
     :cond_9
     invoke-virtual {p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->getUnknownFields()Lcom/google/protobuf/UnknownFieldSet;
 
@@ -2016,10 +2094,10 @@
     .end annotation
 
     .prologue
-    .line 994
+    .line 1000
     const/4 v2, 0x0
 
-    .line 996
+    .line 1002
     .local v2, parsedMessage:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
     :try_start_0
     sget-object v3, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;->PARSER:Lcom/google/protobuf/Parser;
@@ -2037,21 +2115,21 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Lcom/google/protobuf/InvalidProtocolBufferException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1001
+    .line 1007
     if-eqz v2, :cond_0
 
-    .line 1002
+    .line 1008
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
-    .line 1005
+    .line 1011
     :cond_0
     return-object p0
 
-    .line 997
+    .line 1003
     :catch_0
     move-exception v1
 
-    .line 998
+    .line 1004
     .local v1, e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :try_start_1
     invoke-virtual {v1}, Lcom/google/protobuf/InvalidProtocolBufferException;->getUnfinishedMessage()Lcom/google/protobuf/MessageLite;
@@ -2064,19 +2142,19 @@
 
     move-object v2, v0
 
-    .line 999
+    .line 1005
     throw v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 1001
+    .line 1007
     .end local v1           #e:Lcom/google/protobuf/InvalidProtocolBufferException;
     :catchall_0
     move-exception v3
 
     if-eqz v2, :cond_1
 
-    .line 1002
+    .line 1008
     invoke-virtual {p0, v2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     :cond_1
@@ -2088,12 +2166,12 @@
     .parameter "other"
 
     .prologue
-    .line 933
+    .line 939
     instance-of v0, p1, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     if-eqz v0, :cond_0
 
-    .line 934
+    .line 940
     check-cast p1, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest;
 
     .end local p1
@@ -2101,12 +2179,12 @@
 
     move-result-object p0
 
-    .line 937
+    .line 943
     .end local p0
     :goto_0
     return-object p0
 
-    .line 936
+    .line 942
     .restart local p0
     .restart local p1
     :cond_0
@@ -2126,7 +2204,7 @@
     .end annotation
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -2139,7 +2217,7 @@
     .parameter "x0"
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -2158,7 +2236,7 @@
     .end annotation
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -2177,7 +2255,7 @@
     .end annotation
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -2190,7 +2268,7 @@
     .parameter "x0"
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0, p1}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/protobuf/Message;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -2209,7 +2287,7 @@
     .end annotation
 
     .prologue
-    .line 809
+    .line 815
     invoke-virtual {p0, p1, p2}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->mergeFrom(Lcom/google/protobuf/CodedInputStream;Lcom/google/protobuf/ExtensionRegistryLite;)Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;
 
     move-result-object v0
@@ -2222,17 +2300,17 @@
     .parameter "value"
 
     .prologue
-    .line 1026
+    .line 1032
     if-nez p1, :cond_0
 
-    .line 1027
+    .line 1033
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1029
+    .line 1035
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2240,13 +2318,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1030
+    .line 1036
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->action_:Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Action;
 
-    .line 1031
+    .line 1037
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1032
+    .line 1038
     return-object p0
 .end method
 
@@ -2255,17 +2333,17 @@
     .parameter "value"
 
     .prologue
-    .line 1591
+    .line 1615
     if-nez p1, :cond_0
 
-    .line 1592
+    .line 1616
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1594
+    .line 1618
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2273,13 +2351,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1595
+    .line 1619
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 1596
+    .line 1620
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1597
+    .line 1621
     return-object p0
 .end method
 
@@ -2288,17 +2366,17 @@
     .parameter "value"
 
     .prologue
-    .line 1613
+    .line 1637
     if-nez p1, :cond_0
 
-    .line 1614
+    .line 1638
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1616
+    .line 1640
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2306,13 +2384,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1617
+    .line 1641
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceHardware_:Ljava/lang/Object;
 
-    .line 1618
+    .line 1642
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1619
+    .line 1643
     return-object p0
 .end method
 
@@ -2321,17 +2399,17 @@
     .parameter "value"
 
     .prologue
-    .line 1207
+    .line 1219
     if-nez p1, :cond_0
 
-    .line 1208
+    .line 1220
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1210
+    .line 1222
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2339,13 +2417,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1211
+    .line 1223
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1212
+    .line 1224
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1213
+    .line 1225
     return-object p0
 .end method
 
@@ -2354,17 +2432,17 @@
     .parameter "value"
 
     .prologue
-    .line 1241
+    .line 1253
     if-nez p1, :cond_0
 
-    .line 1242
+    .line 1254
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1244
+    .line 1256
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2372,13 +2450,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1245
+    .line 1257
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceId_:Ljava/lang/Object;
 
-    .line 1246
+    .line 1258
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1247
+    .line 1259
     return-object p0
 .end method
 
@@ -2387,17 +2465,17 @@
     .parameter "value"
 
     .prologue
-    .line 1518
+    .line 1539
     if-nez p1, :cond_0
 
-    .line 1519
+    .line 1540
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1521
+    .line 1542
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2405,13 +2483,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1522
+    .line 1543
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1523
+    .line 1544
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1524
+    .line 1545
     return-object p0
 .end method
 
@@ -2420,17 +2498,17 @@
     .parameter "value"
 
     .prologue
-    .line 1540
+    .line 1561
     if-nez p1, :cond_0
 
-    .line 1541
+    .line 1562
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1543
+    .line 1564
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2438,13 +2516,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1544
+    .line 1565
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->deviceOsVersion_:Ljava/lang/Object;
 
-    .line 1545
+    .line 1566
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1546
+    .line 1567
     return-object p0
 .end method
 
@@ -2453,20 +2531,20 @@
     .parameter "value"
 
     .prologue
-    .line 1639
+    .line 1663
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit16 v0, v0, 0x100
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1640
+    .line 1664
     iput-wide p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->gsfDeviceId_:J
 
-    .line 1641
+    .line 1665
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1642
+    .line 1666
     return-object p0
 .end method
 
@@ -2475,17 +2553,17 @@
     .parameter "value"
 
     .prologue
-    .line 1308
+    .line 1323
     if-nez p1, :cond_0
 
-    .line 1309
+    .line 1324
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1311
+    .line 1326
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2493,13 +2571,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1312
+    .line 1327
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1313
+    .line 1328
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1314
+    .line 1329
     return-object p0
 .end method
 
@@ -2508,17 +2586,17 @@
     .parameter "value"
 
     .prologue
-    .line 1338
+    .line 1353
     if-nez p1, :cond_0
 
-    .line 1339
+    .line 1354
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1341
+    .line 1356
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2526,13 +2604,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1342
+    .line 1357
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->locale_:Ljava/lang/Object;
 
-    .line 1343
+    .line 1358
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1344
+    .line 1359
     return-object p0
 .end method
 
@@ -2541,17 +2619,17 @@
     .parameter "value"
 
     .prologue
-    .line 1405
+    .line 1423
     if-nez p1, :cond_0
 
-    .line 1406
+    .line 1424
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1408
+    .line 1426
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2559,13 +2637,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1409
+    .line 1427
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1410
+    .line 1428
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1411
+    .line 1429
     return-object p0
 .end method
 
@@ -2574,17 +2652,17 @@
     .parameter "value"
 
     .prologue
-    .line 1435
+    .line 1453
     if-nez p1, :cond_0
 
-    .line 1436
+    .line 1454
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1438
+    .line 1456
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2592,13 +2670,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1439
+    .line 1457
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->majorVersion_:Ljava/lang/Object;
 
-    .line 1440
+    .line 1458
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1441
+    .line 1459
     return-object p0
 .end method
 
@@ -2607,17 +2685,17 @@
     .parameter "value"
 
     .prologue
-    .line 1102
+    .line 1111
     if-nez p1, :cond_0
 
-    .line 1103
+    .line 1112
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1105
+    .line 1114
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2625,13 +2703,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1106
+    .line 1115
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 1107
+    .line 1116
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1108
+    .line 1117
     return-object p0
 .end method
 
@@ -2640,17 +2718,17 @@
     .parameter "value"
 
     .prologue
-    .line 1132
+    .line 1141
     if-nez p1, :cond_0
 
-    .line 1133
+    .line 1142
     new-instance v0, Ljava/lang/NullPointerException;
 
     invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
     throw v0
 
-    .line 1135
+    .line 1144
     :cond_0
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
@@ -2658,13 +2736,13 @@
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1136
+    .line 1145
     iput-object p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->registrationId_:Ljava/lang/Object;
 
-    .line 1137
+    .line 1146
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1138
+    .line 1147
     return-object p0
 .end method
 
@@ -2673,19 +2751,19 @@
     .parameter "value"
 
     .prologue
-    .line 1461
+    .line 1479
     iget v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
     or-int/lit8 v0, v0, 0x20
 
     iput v0, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->bitField0_:I
 
-    .line 1462
+    .line 1480
     iput-wide p1, p0, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->version_:J
 
-    .line 1463
+    .line 1481
     invoke-virtual {p0}, Lcom/google/googlex/glass/common/proto/C2DMRegistrationRequest$Builder;->onChanged()V
 
-    .line 1464
+    .line 1482
     return-object p0
 .end method

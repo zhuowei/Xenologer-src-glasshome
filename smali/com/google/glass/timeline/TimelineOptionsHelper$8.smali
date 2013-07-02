@@ -1,332 +1,136 @@
-.class synthetic Lcom/google/glass/timeline/TimelineOptionsHelper$8;
-.super Ljava/lang/Object;
+.class Lcom/google/glass/timeline/TimelineOptionsHelper$8;
+.super Lcom/google/glass/widget/MessageDialog$SimpleListener;
 .source "TimelineOptionsHelper.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/glass/timeline/TimelineOptionsHelper;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/google/glass/timeline/TimelineOptionsHelper;->showConfirmationDialog(Lcom/google/googlex/glass/common/proto/MenuItem;Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
+# instance fields
+.field final synthetic this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
+
+.field final synthetic val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
+
+.field final synthetic val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method constructor <init>(Lcom/google/glass/timeline/TimelineOptionsHelper;Lcom/google/googlex/glass/common/proto/MenuItem;Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;)V
+    .locals 0
+    .parameter
+    .parameter
+    .parameter
+
+    .prologue
+    .line 1022
+    iput-object p1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->this$0:Lcom/google/glass/timeline/TimelineOptionsHelper;
+
+    iput-object p2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
+
+    iput-object p3, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
+
+    invoke-direct {p0}, Lcom/google/glass/widget/MessageDialog$SimpleListener;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onDismissed()V
     .locals 3
 
     .prologue
-    .line 133
-    invoke-static {}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->values()[Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    .line 1025
+    invoke-static {}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$100()Ljava/lang/String;
 
     move-result-object v0
 
-    array-length v0, v0
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-array v0, v0, [I
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sput-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
+    iget-object v2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
 
-    :try_start_0
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
+    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->getAction()Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->CUSTOM:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    move-result-object v2
 
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result v1
+    move-result-object v1
 
-    const/4 v2, 0x1
+    const-string v2, " cancelled"
 
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_d
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :goto_0
-    :try_start_1
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
+    move-result-object v1
 
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->BROADCAST:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
+    move-result-object v1
 
-    move-result v1
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_c
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_b
-
-    :goto_2
-    :try_start_3
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->REPLY_ALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x4
-
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_a
-
-    :goto_3
-    :try_start_4
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->DELETE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x5
-
-    aput v2, v0, v1
-    :try_end_4
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_9
-
-    :goto_4
-    :try_start_5
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SHARE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x6
-
-    aput v2, v0, v1
-    :try_end_5
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_8
-
-    :goto_5
-    :try_start_6
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->READ_ALOUD:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x7
-
-    aput v2, v0, v1
-    :try_end_6
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_7
-
-    :goto_6
-    :try_start_7
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VOICE_CALL:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x8
-
-    aput v2, v0, v1
-    :try_end_7
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_6
-
-    :goto_7
-    :try_start_8
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->NAVIGATE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0x9
-
-    aput v2, v0, v1
-    :try_end_8
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_5
-
-    :goto_8
-    :try_start_9
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->SEARCH:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xa
-
-    aput v2, v0, v1
-    :try_end_9
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_4
-
-    :goto_9
-    :try_start_a
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->MUTE_MIC:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xb
-
-    aput v2, v0, v1
-    :try_end_a
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_3
-
-    :goto_a
-    :try_start_b
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->HANGOUT:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xc
-
-    aput v2, v0, v1
-    :try_end_b
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_2
-
-    :goto_b
-    :try_start_c
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->VIEW_WEB_SITE:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xd
-
-    aput v2, v0, v1
-    :try_end_c
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_c .. :try_end_c} :catch_1
-
-    :goto_c
-    :try_start_d
-    sget-object v0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->$SwitchMap$com$google$googlex$glass$common$proto$MenuItem$Action:[I
-
-    sget-object v1, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->TOGGLE_PINNED:Lcom/google/googlex/glass/common/proto/MenuItem$Action;
-
-    invoke-virtual {v1}, Lcom/google/googlex/glass/common/proto/MenuItem$Action;->ordinal()I
-
-    move-result v1
-
-    const/16 v2, 0xe
-
-    aput v2, v0, v1
-    :try_end_d
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_d .. :try_end_d} :catch_0
-
-    :goto_d
+    .line 1026
     return-void
+.end method
 
-    :catch_0
-    move-exception v0
+.method public onDone()V
+    .locals 3
 
-    goto :goto_d
+    .prologue
+    .line 1030
+    invoke-static {}, Lcom/google/glass/timeline/TimelineOptionsHelper;->access$100()Ljava/lang/String;
 
-    :catch_1
-    move-exception v0
+    move-result-object v0
 
-    goto :goto_c
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    :catch_2
-    move-exception v0
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    goto :goto_b
+    iget-object v2, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
 
-    :catch_3
-    move-exception v0
+    invoke-virtual {v2}, Lcom/google/googlex/glass/common/proto/MenuItem;->getAction()Lcom/google/googlex/glass/common/proto/MenuItem$Action;
 
-    goto :goto_a
+    move-result-object v2
 
-    :catch_4
-    move-exception v0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    goto :goto_9
+    move-result-object v1
 
-    :catch_5
-    move-exception v0
+    const-string v2, " confirmed"
 
-    goto :goto_8
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :catch_6
-    move-exception v0
+    move-result-object v1
 
-    goto :goto_7
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    :catch_7
-    move-exception v0
+    move-result-object v1
 
-    goto :goto_6
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    :catch_8
-    move-exception v0
+    .line 1031
+    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
 
-    goto :goto_5
+    if-eqz v0, :cond_0
 
-    :catch_9
-    move-exception v0
+    .line 1032
+    iget-object v0, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$listener:Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;
 
-    goto :goto_4
+    iget-object v1, p0, Lcom/google/glass/timeline/TimelineOptionsHelper$8;->val$menuItem:Lcom/google/googlex/glass/common/proto/MenuItem;
 
-    :catch_a
-    move-exception v0
+    invoke-interface {v0, v1}, Lcom/google/glass/timeline/TimelineOptionsHelper$OnConfirmedListener;->onConfirmed(Lcom/google/googlex/glass/common/proto/MenuItem;)V
 
-    goto/16 :goto_3
-
-    :catch_b
-    move-exception v0
-
-    goto/16 :goto_2
-
-    :catch_c
-    move-exception v0
-
-    goto/16 :goto_1
-
-    :catch_d
-    move-exception v0
-
-    goto/16 :goto_0
+    .line 1034
+    :cond_0
+    return-void
 .end method
