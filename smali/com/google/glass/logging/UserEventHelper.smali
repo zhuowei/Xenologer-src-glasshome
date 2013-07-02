@@ -534,85 +534,9 @@
 
     .prologue
     .line 113
-    invoke-static {}, Lcom/google/glass/util/Assert;->assertNotUiThread()V
 
-    .line 114
-    iget-boolean v1, p0, Lcom/google/glass/logging/UserEventHelper;->loggingEnabled:Z
-
-    if-nez v1, :cond_0
-
-    .line 115
-    sget-object v1, Lcom/google/glass/logging/UserEventHelper;->TAG:Ljava/lang/String;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "Not logging user event as logging is disabled: [action="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", data="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "]."
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 124
-    :goto_0
     return-void
 
-    .line 120
-    :cond_0
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 121
-    .local v0, intent:Landroid/content/Intent;
-    const-string v1, "com.google.glass.logging"
-
-    const-string v2, "com.google.glass.logging.UserEventService"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 122
-    const-string v1, "user_event"
-
-    invoke-static {p1, p2}, Lcom/google/glass/logging/UserEventHelper;->createProto(Lcom/google/glass/logging/UserEventAction;Ljava/lang/String;)Lcom/google/common/logging/GlassUserEventProto;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
-
-    .line 123
-    iget-object v1, p0, Lcom/google/glass/logging/UserEventHelper;->context:Landroid/content/Context;
-
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    goto :goto_0
 .end method
 
 .method private static sanitize(Ljava/lang/Object;)Ljava/lang/String;

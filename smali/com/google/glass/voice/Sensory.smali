@@ -384,22 +384,18 @@
     .parameter "context"
 
     .prologue
-    .line 173
-    const-string v0, "/data/data/%s/files/"
+    .line 119
+    invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    const/4 v1, 0x1
+    move-result-object v0
 
-    new-array v1, v1, [Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    const/4 v2, 0x0
+    move-result-object v0
 
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    const-string v1, "/"
 
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
